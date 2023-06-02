@@ -149,6 +149,7 @@ EMRContainersClient::EMRContainersClient(const std::shared_ptr<AWSCredentialsPro
     /* End of legacy constructors due deprecation */
 EMRContainersClient::~EMRContainersClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<EMRContainersEndpointProviderBase>& EMRContainersClient::accessEndpointProvider()
@@ -171,6 +172,7 @@ void EMRContainersClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CancelJobRunOutcome EMRContainersClient::CancelJobRun(const CancelJobRunRequest& request) const
 {
+  AWS_OPERATION_GUARD(CancelJobRun);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CancelJobRun, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -193,6 +195,7 @@ CancelJobRunOutcome EMRContainersClient::CancelJobRun(const CancelJobRunRequest&
 
 CreateJobTemplateOutcome EMRContainersClient::CreateJobTemplate(const CreateJobTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateJobTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateJobTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateJobTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -202,6 +205,7 @@ CreateJobTemplateOutcome EMRContainersClient::CreateJobTemplate(const CreateJobT
 
 CreateManagedEndpointOutcome EMRContainersClient::CreateManagedEndpoint(const CreateManagedEndpointRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateManagedEndpoint);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateManagedEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VirtualClusterIdHasBeenSet())
   {
@@ -218,6 +222,7 @@ CreateManagedEndpointOutcome EMRContainersClient::CreateManagedEndpoint(const Cr
 
 CreateVirtualClusterOutcome EMRContainersClient::CreateVirtualCluster(const CreateVirtualClusterRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateVirtualCluster);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateVirtualCluster, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateVirtualCluster, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -227,6 +232,7 @@ CreateVirtualClusterOutcome EMRContainersClient::CreateVirtualCluster(const Crea
 
 DeleteJobTemplateOutcome EMRContainersClient::DeleteJobTemplate(const DeleteJobTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteJobTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteJobTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -242,6 +248,7 @@ DeleteJobTemplateOutcome EMRContainersClient::DeleteJobTemplate(const DeleteJobT
 
 DeleteManagedEndpointOutcome EMRContainersClient::DeleteManagedEndpoint(const DeleteManagedEndpointRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteManagedEndpoint);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteManagedEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -264,6 +271,7 @@ DeleteManagedEndpointOutcome EMRContainersClient::DeleteManagedEndpoint(const De
 
 DeleteVirtualClusterOutcome EMRContainersClient::DeleteVirtualCluster(const DeleteVirtualClusterRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteVirtualCluster);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteVirtualCluster, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -279,6 +287,7 @@ DeleteVirtualClusterOutcome EMRContainersClient::DeleteVirtualCluster(const Dele
 
 DescribeJobRunOutcome EMRContainersClient::DescribeJobRun(const DescribeJobRunRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeJobRun);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeJobRun, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -301,6 +310,7 @@ DescribeJobRunOutcome EMRContainersClient::DescribeJobRun(const DescribeJobRunRe
 
 DescribeJobTemplateOutcome EMRContainersClient::DescribeJobTemplate(const DescribeJobTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeJobTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeJobTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -316,6 +326,7 @@ DescribeJobTemplateOutcome EMRContainersClient::DescribeJobTemplate(const Descri
 
 DescribeManagedEndpointOutcome EMRContainersClient::DescribeManagedEndpoint(const DescribeManagedEndpointRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeManagedEndpoint);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeManagedEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -338,6 +349,7 @@ DescribeManagedEndpointOutcome EMRContainersClient::DescribeManagedEndpoint(cons
 
 DescribeVirtualClusterOutcome EMRContainersClient::DescribeVirtualCluster(const DescribeVirtualClusterRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeVirtualCluster);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeVirtualCluster, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -353,6 +365,7 @@ DescribeVirtualClusterOutcome EMRContainersClient::DescribeVirtualCluster(const 
 
 GetManagedEndpointSessionCredentialsOutcome EMRContainersClient::GetManagedEndpointSessionCredentials(const GetManagedEndpointSessionCredentialsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetManagedEndpointSessionCredentials);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetManagedEndpointSessionCredentials, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.EndpointIdentifierHasBeenSet())
   {
@@ -376,6 +389,7 @@ GetManagedEndpointSessionCredentialsOutcome EMRContainersClient::GetManagedEndpo
 
 ListJobRunsOutcome EMRContainersClient::ListJobRuns(const ListJobRunsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListJobRuns);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListJobRuns, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VirtualClusterIdHasBeenSet())
   {
@@ -392,6 +406,7 @@ ListJobRunsOutcome EMRContainersClient::ListJobRuns(const ListJobRunsRequest& re
 
 ListJobTemplatesOutcome EMRContainersClient::ListJobTemplates(const ListJobTemplatesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListJobTemplates);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListJobTemplates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListJobTemplates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -401,6 +416,7 @@ ListJobTemplatesOutcome EMRContainersClient::ListJobTemplates(const ListJobTempl
 
 ListManagedEndpointsOutcome EMRContainersClient::ListManagedEndpoints(const ListManagedEndpointsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListManagedEndpoints);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListManagedEndpoints, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VirtualClusterIdHasBeenSet())
   {
@@ -417,6 +433,7 @@ ListManagedEndpointsOutcome EMRContainersClient::ListManagedEndpoints(const List
 
 ListTagsForResourceOutcome EMRContainersClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -432,6 +449,7 @@ ListTagsForResourceOutcome EMRContainersClient::ListTagsForResource(const ListTa
 
 ListVirtualClustersOutcome EMRContainersClient::ListVirtualClusters(const ListVirtualClustersRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListVirtualClusters);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListVirtualClusters, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListVirtualClusters, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -441,6 +459,7 @@ ListVirtualClustersOutcome EMRContainersClient::ListVirtualClusters(const ListVi
 
 StartJobRunOutcome EMRContainersClient::StartJobRun(const StartJobRunRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartJobRun);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartJobRun, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VirtualClusterIdHasBeenSet())
   {
@@ -457,6 +476,7 @@ StartJobRunOutcome EMRContainersClient::StartJobRun(const StartJobRunRequest& re
 
 TagResourceOutcome EMRContainersClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -472,6 +492,7 @@ TagResourceOutcome EMRContainersClient::TagResource(const TagResourceRequest& re
 
 UntagResourceOutcome EMRContainersClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {

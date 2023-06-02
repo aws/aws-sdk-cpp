@@ -54,9 +54,11 @@
 #include <aws/cloudtrail/model/RegisterOrganizationDelegatedAdminResult.h>
 #include <aws/cloudtrail/model/RemoveTagsResult.h>
 #include <aws/cloudtrail/model/RestoreEventDataStoreResult.h>
+#include <aws/cloudtrail/model/StartEventDataStoreIngestionResult.h>
 #include <aws/cloudtrail/model/StartImportResult.h>
 #include <aws/cloudtrail/model/StartLoggingResult.h>
 #include <aws/cloudtrail/model/StartQueryResult.h>
+#include <aws/cloudtrail/model/StopEventDataStoreIngestionResult.h>
 #include <aws/cloudtrail/model/StopImportResult.h>
 #include <aws/cloudtrail/model/StopLoggingResult.h>
 #include <aws/cloudtrail/model/UpdateChannelResult.h>
@@ -138,9 +140,11 @@ namespace Aws
       class RegisterOrganizationDelegatedAdminRequest;
       class RemoveTagsRequest;
       class RestoreEventDataStoreRequest;
+      class StartEventDataStoreIngestionRequest;
       class StartImportRequest;
       class StartLoggingRequest;
       class StartQueryRequest;
+      class StopEventDataStoreIngestionRequest;
       class StopImportRequest;
       class StopLoggingRequest;
       class UpdateChannelRequest;
@@ -185,9 +189,11 @@ namespace Aws
       typedef Aws::Utils::Outcome<RegisterOrganizationDelegatedAdminResult, CloudTrailError> RegisterOrganizationDelegatedAdminOutcome;
       typedef Aws::Utils::Outcome<RemoveTagsResult, CloudTrailError> RemoveTagsOutcome;
       typedef Aws::Utils::Outcome<RestoreEventDataStoreResult, CloudTrailError> RestoreEventDataStoreOutcome;
+      typedef Aws::Utils::Outcome<StartEventDataStoreIngestionResult, CloudTrailError> StartEventDataStoreIngestionOutcome;
       typedef Aws::Utils::Outcome<StartImportResult, CloudTrailError> StartImportOutcome;
       typedef Aws::Utils::Outcome<StartLoggingResult, CloudTrailError> StartLoggingOutcome;
       typedef Aws::Utils::Outcome<StartQueryResult, CloudTrailError> StartQueryOutcome;
+      typedef Aws::Utils::Outcome<StopEventDataStoreIngestionResult, CloudTrailError> StopEventDataStoreIngestionOutcome;
       typedef Aws::Utils::Outcome<StopImportResult, CloudTrailError> StopImportOutcome;
       typedef Aws::Utils::Outcome<StopLoggingResult, CloudTrailError> StopLoggingOutcome;
       typedef Aws::Utils::Outcome<UpdateChannelResult, CloudTrailError> UpdateChannelOutcome;
@@ -232,9 +238,11 @@ namespace Aws
       typedef std::future<RegisterOrganizationDelegatedAdminOutcome> RegisterOrganizationDelegatedAdminOutcomeCallable;
       typedef std::future<RemoveTagsOutcome> RemoveTagsOutcomeCallable;
       typedef std::future<RestoreEventDataStoreOutcome> RestoreEventDataStoreOutcomeCallable;
+      typedef std::future<StartEventDataStoreIngestionOutcome> StartEventDataStoreIngestionOutcomeCallable;
       typedef std::future<StartImportOutcome> StartImportOutcomeCallable;
       typedef std::future<StartLoggingOutcome> StartLoggingOutcomeCallable;
       typedef std::future<StartQueryOutcome> StartQueryOutcomeCallable;
+      typedef std::future<StopEventDataStoreIngestionOutcome> StopEventDataStoreIngestionOutcomeCallable;
       typedef std::future<StopImportOutcome> StopImportOutcomeCallable;
       typedef std::future<StopLoggingOutcome> StopLoggingOutcomeCallable;
       typedef std::future<UpdateChannelOutcome> UpdateChannelOutcomeCallable;
@@ -282,9 +290,11 @@ namespace Aws
     typedef std::function<void(const CloudTrailClient*, const Model::RegisterOrganizationDelegatedAdminRequest&, const Model::RegisterOrganizationDelegatedAdminOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterOrganizationDelegatedAdminResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::RemoveTagsRequest&, const Model::RemoveTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveTagsResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::RestoreEventDataStoreRequest&, const Model::RestoreEventDataStoreOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreEventDataStoreResponseReceivedHandler;
+    typedef std::function<void(const CloudTrailClient*, const Model::StartEventDataStoreIngestionRequest&, const Model::StartEventDataStoreIngestionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartEventDataStoreIngestionResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::StartImportRequest&, const Model::StartImportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartImportResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::StartLoggingRequest&, const Model::StartLoggingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartLoggingResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::StartQueryRequest&, const Model::StartQueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartQueryResponseReceivedHandler;
+    typedef std::function<void(const CloudTrailClient*, const Model::StopEventDataStoreIngestionRequest&, const Model::StopEventDataStoreIngestionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopEventDataStoreIngestionResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::StopImportRequest&, const Model::StopImportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopImportResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::StopLoggingRequest&, const Model::StopLoggingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopLoggingResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::UpdateChannelRequest&, const Model::UpdateChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateChannelResponseReceivedHandler;

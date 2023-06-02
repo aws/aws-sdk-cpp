@@ -318,6 +318,7 @@ ChimeClient::ChimeClient(const std::shared_ptr<AWSCredentialsProvider>& credenti
     /* End of legacy constructors due deprecation */
 ChimeClient::~ChimeClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<ChimeEndpointProviderBase>& ChimeClient::accessEndpointProvider()
@@ -340,6 +341,7 @@ void ChimeClient::OverrideEndpoint(const Aws::String& endpoint)
 
 AssociatePhoneNumberWithUserOutcome ChimeClient::AssociatePhoneNumberWithUser(const AssociatePhoneNumberWithUserRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociatePhoneNumberWithUser);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociatePhoneNumberWithUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -370,6 +372,7 @@ AssociatePhoneNumberWithUserOutcome ChimeClient::AssociatePhoneNumberWithUser(co
 
 AssociatePhoneNumbersWithVoiceConnectorOutcome ChimeClient::AssociatePhoneNumbersWithVoiceConnector(const AssociatePhoneNumbersWithVoiceConnectorRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociatePhoneNumbersWithVoiceConnector);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociatePhoneNumbersWithVoiceConnector, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -388,6 +391,7 @@ AssociatePhoneNumbersWithVoiceConnectorOutcome ChimeClient::AssociatePhoneNumber
 
 AssociatePhoneNumbersWithVoiceConnectorGroupOutcome ChimeClient::AssociatePhoneNumbersWithVoiceConnectorGroup(const AssociatePhoneNumbersWithVoiceConnectorGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociatePhoneNumbersWithVoiceConnectorGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociatePhoneNumbersWithVoiceConnectorGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorGroupIdHasBeenSet())
   {
@@ -406,6 +410,7 @@ AssociatePhoneNumbersWithVoiceConnectorGroupOutcome ChimeClient::AssociatePhoneN
 
 AssociateSigninDelegateGroupsWithAccountOutcome ChimeClient::AssociateSigninDelegateGroupsWithAccount(const AssociateSigninDelegateGroupsWithAccountRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociateSigninDelegateGroupsWithAccount);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateSigninDelegateGroupsWithAccount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -429,6 +434,7 @@ AssociateSigninDelegateGroupsWithAccountOutcome ChimeClient::AssociateSigninDele
 
 BatchCreateAttendeeOutcome ChimeClient::BatchCreateAttendee(const BatchCreateAttendeeRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchCreateAttendee);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchCreateAttendee, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeetingIdHasBeenSet())
   {
@@ -448,6 +454,7 @@ BatchCreateAttendeeOutcome ChimeClient::BatchCreateAttendee(const BatchCreateAtt
 
 BatchCreateChannelMembershipOutcome ChimeClient::BatchCreateChannelMembership(const BatchCreateChannelMembershipRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchCreateChannelMembership);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchCreateChannelMembership, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
@@ -469,6 +476,7 @@ BatchCreateChannelMembershipOutcome ChimeClient::BatchCreateChannelMembership(co
 
 BatchCreateRoomMembershipOutcome ChimeClient::BatchCreateRoomMembership(const BatchCreateRoomMembershipRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchCreateRoomMembership);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchCreateRoomMembership, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -500,6 +508,7 @@ BatchCreateRoomMembershipOutcome ChimeClient::BatchCreateRoomMembership(const Ba
 
 BatchDeletePhoneNumberOutcome ChimeClient::BatchDeletePhoneNumber(const BatchDeletePhoneNumberRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchDeletePhoneNumber);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchDeletePhoneNumber, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchDeletePhoneNumber, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -512,6 +521,7 @@ BatchDeletePhoneNumberOutcome ChimeClient::BatchDeletePhoneNumber(const BatchDel
 
 BatchSuspendUserOutcome ChimeClient::BatchSuspendUser(const BatchSuspendUserRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchSuspendUser);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchSuspendUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -536,6 +546,7 @@ BatchSuspendUserOutcome ChimeClient::BatchSuspendUser(const BatchSuspendUserRequ
 
 BatchUnsuspendUserOutcome ChimeClient::BatchUnsuspendUser(const BatchUnsuspendUserRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchUnsuspendUser);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchUnsuspendUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -560,6 +571,7 @@ BatchUnsuspendUserOutcome ChimeClient::BatchUnsuspendUser(const BatchUnsuspendUs
 
 BatchUpdatePhoneNumberOutcome ChimeClient::BatchUpdatePhoneNumber(const BatchUpdatePhoneNumberRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchUpdatePhoneNumber);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchUpdatePhoneNumber, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchUpdatePhoneNumber, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -572,6 +584,7 @@ BatchUpdatePhoneNumberOutcome ChimeClient::BatchUpdatePhoneNumber(const BatchUpd
 
 BatchUpdateUserOutcome ChimeClient::BatchUpdateUser(const BatchUpdateUserRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchUpdateUser);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchUpdateUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -593,6 +606,7 @@ BatchUpdateUserOutcome ChimeClient::BatchUpdateUser(const BatchUpdateUserRequest
 
 CreateAccountOutcome ChimeClient::CreateAccount(const CreateAccountRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateAccount);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAccount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateAccount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -602,6 +616,7 @@ CreateAccountOutcome ChimeClient::CreateAccount(const CreateAccountRequest& requ
 
 CreateAppInstanceOutcome ChimeClient::CreateAppInstance(const CreateAppInstanceRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateAppInstance);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAppInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateAppInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -613,6 +628,7 @@ CreateAppInstanceOutcome ChimeClient::CreateAppInstance(const CreateAppInstanceR
 
 CreateAppInstanceAdminOutcome ChimeClient::CreateAppInstanceAdmin(const CreateAppInstanceAdminRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateAppInstanceAdmin);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAppInstanceAdmin, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppInstanceArnHasBeenSet())
   {
@@ -631,6 +647,7 @@ CreateAppInstanceAdminOutcome ChimeClient::CreateAppInstanceAdmin(const CreateAp
 
 CreateAppInstanceUserOutcome ChimeClient::CreateAppInstanceUser(const CreateAppInstanceUserRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateAppInstanceUser);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAppInstanceUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateAppInstanceUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -642,6 +659,7 @@ CreateAppInstanceUserOutcome ChimeClient::CreateAppInstanceUser(const CreateAppI
 
 CreateAttendeeOutcome ChimeClient::CreateAttendee(const CreateAttendeeRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateAttendee);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAttendee, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeetingIdHasBeenSet())
   {
@@ -658,6 +676,7 @@ CreateAttendeeOutcome ChimeClient::CreateAttendee(const CreateAttendeeRequest& r
 
 CreateBotOutcome ChimeClient::CreateBot(const CreateBotRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateBot);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateBot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -679,6 +698,7 @@ CreateBotOutcome ChimeClient::CreateBot(const CreateBotRequest& request) const
 
 CreateChannelOutcome ChimeClient::CreateChannel(const CreateChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -690,6 +710,7 @@ CreateChannelOutcome ChimeClient::CreateChannel(const CreateChannelRequest& requ
 
 CreateChannelBanOutcome ChimeClient::CreateChannelBan(const CreateChannelBanRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateChannelBan);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateChannelBan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
@@ -708,6 +729,7 @@ CreateChannelBanOutcome ChimeClient::CreateChannelBan(const CreateChannelBanRequ
 
 CreateChannelMembershipOutcome ChimeClient::CreateChannelMembership(const CreateChannelMembershipRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateChannelMembership);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateChannelMembership, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
@@ -726,6 +748,7 @@ CreateChannelMembershipOutcome ChimeClient::CreateChannelMembership(const Create
 
 CreateChannelModeratorOutcome ChimeClient::CreateChannelModerator(const CreateChannelModeratorRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateChannelModerator);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateChannelModerator, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
@@ -744,6 +767,7 @@ CreateChannelModeratorOutcome ChimeClient::CreateChannelModerator(const CreateCh
 
 CreateMediaCapturePipelineOutcome ChimeClient::CreateMediaCapturePipeline(const CreateMediaCapturePipelineRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateMediaCapturePipeline);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateMediaCapturePipeline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateMediaCapturePipeline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -753,6 +777,7 @@ CreateMediaCapturePipelineOutcome ChimeClient::CreateMediaCapturePipeline(const 
 
 CreateMeetingOutcome ChimeClient::CreateMeeting(const CreateMeetingRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateMeeting);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateMeeting, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateMeeting, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -762,6 +787,7 @@ CreateMeetingOutcome ChimeClient::CreateMeeting(const CreateMeetingRequest& requ
 
 CreateMeetingDialOutOutcome ChimeClient::CreateMeetingDialOut(const CreateMeetingDialOutRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateMeetingDialOut);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateMeetingDialOut, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeetingIdHasBeenSet())
   {
@@ -778,6 +804,7 @@ CreateMeetingDialOutOutcome ChimeClient::CreateMeetingDialOut(const CreateMeetin
 
 CreateMeetingWithAttendeesOutcome ChimeClient::CreateMeetingWithAttendees(const CreateMeetingWithAttendeesRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateMeetingWithAttendees);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateMeetingWithAttendees, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateMeetingWithAttendees, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -790,6 +817,7 @@ CreateMeetingWithAttendeesOutcome ChimeClient::CreateMeetingWithAttendees(const 
 
 CreatePhoneNumberOrderOutcome ChimeClient::CreatePhoneNumberOrder(const CreatePhoneNumberOrderRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreatePhoneNumberOrder);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreatePhoneNumberOrder, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreatePhoneNumberOrder, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -799,6 +827,7 @@ CreatePhoneNumberOrderOutcome ChimeClient::CreatePhoneNumberOrder(const CreatePh
 
 CreateProxySessionOutcome ChimeClient::CreateProxySession(const CreateProxySessionRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateProxySession);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateProxySession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -815,6 +844,7 @@ CreateProxySessionOutcome ChimeClient::CreateProxySession(const CreateProxySessi
 
 CreateRoomOutcome ChimeClient::CreateRoom(const CreateRoomRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateRoom);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateRoom, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -836,6 +866,7 @@ CreateRoomOutcome ChimeClient::CreateRoom(const CreateRoomRequest& request) cons
 
 CreateRoomMembershipOutcome ChimeClient::CreateRoomMembership(const CreateRoomMembershipRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateRoomMembership);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateRoomMembership, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -864,6 +895,7 @@ CreateRoomMembershipOutcome ChimeClient::CreateRoomMembership(const CreateRoomMe
 
 CreateSipMediaApplicationOutcome ChimeClient::CreateSipMediaApplication(const CreateSipMediaApplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateSipMediaApplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateSipMediaApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateSipMediaApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -873,6 +905,7 @@ CreateSipMediaApplicationOutcome ChimeClient::CreateSipMediaApplication(const Cr
 
 CreateSipMediaApplicationCallOutcome ChimeClient::CreateSipMediaApplicationCall(const CreateSipMediaApplicationCallRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateSipMediaApplicationCall);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateSipMediaApplicationCall, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SipMediaApplicationIdHasBeenSet())
   {
@@ -889,6 +922,7 @@ CreateSipMediaApplicationCallOutcome ChimeClient::CreateSipMediaApplicationCall(
 
 CreateSipRuleOutcome ChimeClient::CreateSipRule(const CreateSipRuleRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateSipRule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateSipRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateSipRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -898,6 +932,7 @@ CreateSipRuleOutcome ChimeClient::CreateSipRule(const CreateSipRuleRequest& requ
 
 CreateUserOutcome ChimeClient::CreateUser(const CreateUserRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateUser);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -922,6 +957,7 @@ CreateUserOutcome ChimeClient::CreateUser(const CreateUserRequest& request) cons
 
 CreateVoiceConnectorOutcome ChimeClient::CreateVoiceConnector(const CreateVoiceConnectorRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateVoiceConnector);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateVoiceConnector, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateVoiceConnector, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -931,6 +967,7 @@ CreateVoiceConnectorOutcome ChimeClient::CreateVoiceConnector(const CreateVoiceC
 
 CreateVoiceConnectorGroupOutcome ChimeClient::CreateVoiceConnectorGroup(const CreateVoiceConnectorGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateVoiceConnectorGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateVoiceConnectorGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateVoiceConnectorGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -940,6 +977,7 @@ CreateVoiceConnectorGroupOutcome ChimeClient::CreateVoiceConnectorGroup(const Cr
 
 DeleteAccountOutcome ChimeClient::DeleteAccount(const DeleteAccountRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteAccount);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAccount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -960,6 +998,7 @@ DeleteAccountOutcome ChimeClient::DeleteAccount(const DeleteAccountRequest& requ
 
 DeleteAppInstanceOutcome ChimeClient::DeleteAppInstance(const DeleteAppInstanceRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteAppInstance);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAppInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppInstanceArnHasBeenSet())
   {
@@ -977,6 +1016,7 @@ DeleteAppInstanceOutcome ChimeClient::DeleteAppInstance(const DeleteAppInstanceR
 
 DeleteAppInstanceAdminOutcome ChimeClient::DeleteAppInstanceAdmin(const DeleteAppInstanceAdminRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteAppInstanceAdmin);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAppInstanceAdmin, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppInstanceAdminArnHasBeenSet())
   {
@@ -1001,6 +1041,7 @@ DeleteAppInstanceAdminOutcome ChimeClient::DeleteAppInstanceAdmin(const DeleteAp
 
 DeleteAppInstanceStreamingConfigurationsOutcome ChimeClient::DeleteAppInstanceStreamingConfigurations(const DeleteAppInstanceStreamingConfigurationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteAppInstanceStreamingConfigurations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAppInstanceStreamingConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppInstanceArnHasBeenSet())
   {
@@ -1017,6 +1058,7 @@ DeleteAppInstanceStreamingConfigurationsOutcome ChimeClient::DeleteAppInstanceSt
 
 DeleteAppInstanceUserOutcome ChimeClient::DeleteAppInstanceUser(const DeleteAppInstanceUserRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteAppInstanceUser);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAppInstanceUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppInstanceUserArnHasBeenSet())
   {
@@ -1034,6 +1076,7 @@ DeleteAppInstanceUserOutcome ChimeClient::DeleteAppInstanceUser(const DeleteAppI
 
 DeleteAttendeeOutcome ChimeClient::DeleteAttendee(const DeleteAttendeeRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteAttendee);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAttendee, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeetingIdHasBeenSet())
   {
@@ -1056,6 +1099,7 @@ DeleteAttendeeOutcome ChimeClient::DeleteAttendee(const DeleteAttendeeRequest& r
 
 DeleteChannelOutcome ChimeClient::DeleteChannel(const DeleteChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
@@ -1073,6 +1117,7 @@ DeleteChannelOutcome ChimeClient::DeleteChannel(const DeleteChannelRequest& requ
 
 DeleteChannelBanOutcome ChimeClient::DeleteChannelBan(const DeleteChannelBanRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteChannelBan);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteChannelBan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
@@ -1097,6 +1142,7 @@ DeleteChannelBanOutcome ChimeClient::DeleteChannelBan(const DeleteChannelBanRequ
 
 DeleteChannelMembershipOutcome ChimeClient::DeleteChannelMembership(const DeleteChannelMembershipRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteChannelMembership);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteChannelMembership, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
@@ -1121,6 +1167,7 @@ DeleteChannelMembershipOutcome ChimeClient::DeleteChannelMembership(const Delete
 
 DeleteChannelMessageOutcome ChimeClient::DeleteChannelMessage(const DeleteChannelMessageRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteChannelMessage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteChannelMessage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
@@ -1145,6 +1192,7 @@ DeleteChannelMessageOutcome ChimeClient::DeleteChannelMessage(const DeleteChanne
 
 DeleteChannelModeratorOutcome ChimeClient::DeleteChannelModerator(const DeleteChannelModeratorRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteChannelModerator);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteChannelModerator, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
@@ -1169,6 +1217,7 @@ DeleteChannelModeratorOutcome ChimeClient::DeleteChannelModerator(const DeleteCh
 
 DeleteEventsConfigurationOutcome ChimeClient::DeleteEventsConfiguration(const DeleteEventsConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteEventsConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteEventsConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -1197,6 +1246,7 @@ DeleteEventsConfigurationOutcome ChimeClient::DeleteEventsConfiguration(const De
 
 DeleteMediaCapturePipelineOutcome ChimeClient::DeleteMediaCapturePipeline(const DeleteMediaCapturePipelineRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteMediaCapturePipeline);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteMediaCapturePipeline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MediaPipelineIdHasBeenSet())
   {
@@ -1212,6 +1262,7 @@ DeleteMediaCapturePipelineOutcome ChimeClient::DeleteMediaCapturePipeline(const 
 
 DeleteMeetingOutcome ChimeClient::DeleteMeeting(const DeleteMeetingRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteMeeting);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteMeeting, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeetingIdHasBeenSet())
   {
@@ -1227,6 +1278,7 @@ DeleteMeetingOutcome ChimeClient::DeleteMeeting(const DeleteMeetingRequest& requ
 
 DeletePhoneNumberOutcome ChimeClient::DeletePhoneNumber(const DeletePhoneNumberRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeletePhoneNumber);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeletePhoneNumber, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PhoneNumberIdHasBeenSet())
   {
@@ -1242,6 +1294,7 @@ DeletePhoneNumberOutcome ChimeClient::DeletePhoneNumber(const DeletePhoneNumberR
 
 DeleteProxySessionOutcome ChimeClient::DeleteProxySession(const DeleteProxySessionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteProxySession);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteProxySession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -1264,6 +1317,7 @@ DeleteProxySessionOutcome ChimeClient::DeleteProxySession(const DeleteProxySessi
 
 DeleteRoomOutcome ChimeClient::DeleteRoom(const DeleteRoomRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteRoom);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteRoom, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -1291,6 +1345,7 @@ DeleteRoomOutcome ChimeClient::DeleteRoom(const DeleteRoomRequest& request) cons
 
 DeleteRoomMembershipOutcome ChimeClient::DeleteRoomMembership(const DeleteRoomMembershipRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteRoomMembership);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteRoomMembership, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -1325,6 +1380,7 @@ DeleteRoomMembershipOutcome ChimeClient::DeleteRoomMembership(const DeleteRoomMe
 
 DeleteSipMediaApplicationOutcome ChimeClient::DeleteSipMediaApplication(const DeleteSipMediaApplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteSipMediaApplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteSipMediaApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SipMediaApplicationIdHasBeenSet())
   {
@@ -1340,6 +1396,7 @@ DeleteSipMediaApplicationOutcome ChimeClient::DeleteSipMediaApplication(const De
 
 DeleteSipRuleOutcome ChimeClient::DeleteSipRule(const DeleteSipRuleRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteSipRule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteSipRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SipRuleIdHasBeenSet())
   {
@@ -1355,6 +1412,7 @@ DeleteSipRuleOutcome ChimeClient::DeleteSipRule(const DeleteSipRuleRequest& requ
 
 DeleteVoiceConnectorOutcome ChimeClient::DeleteVoiceConnector(const DeleteVoiceConnectorRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteVoiceConnector);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteVoiceConnector, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -1370,6 +1428,7 @@ DeleteVoiceConnectorOutcome ChimeClient::DeleteVoiceConnector(const DeleteVoiceC
 
 DeleteVoiceConnectorEmergencyCallingConfigurationOutcome ChimeClient::DeleteVoiceConnectorEmergencyCallingConfiguration(const DeleteVoiceConnectorEmergencyCallingConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteVoiceConnectorEmergencyCallingConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteVoiceConnectorEmergencyCallingConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -1386,6 +1445,7 @@ DeleteVoiceConnectorEmergencyCallingConfigurationOutcome ChimeClient::DeleteVoic
 
 DeleteVoiceConnectorGroupOutcome ChimeClient::DeleteVoiceConnectorGroup(const DeleteVoiceConnectorGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteVoiceConnectorGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteVoiceConnectorGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorGroupIdHasBeenSet())
   {
@@ -1401,6 +1461,7 @@ DeleteVoiceConnectorGroupOutcome ChimeClient::DeleteVoiceConnectorGroup(const De
 
 DeleteVoiceConnectorOriginationOutcome ChimeClient::DeleteVoiceConnectorOrigination(const DeleteVoiceConnectorOriginationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteVoiceConnectorOrigination);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteVoiceConnectorOrigination, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -1417,6 +1478,7 @@ DeleteVoiceConnectorOriginationOutcome ChimeClient::DeleteVoiceConnectorOriginat
 
 DeleteVoiceConnectorProxyOutcome ChimeClient::DeleteVoiceConnectorProxy(const DeleteVoiceConnectorProxyRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteVoiceConnectorProxy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteVoiceConnectorProxy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -1433,6 +1495,7 @@ DeleteVoiceConnectorProxyOutcome ChimeClient::DeleteVoiceConnectorProxy(const De
 
 DeleteVoiceConnectorStreamingConfigurationOutcome ChimeClient::DeleteVoiceConnectorStreamingConfiguration(const DeleteVoiceConnectorStreamingConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteVoiceConnectorStreamingConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteVoiceConnectorStreamingConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -1449,6 +1512,7 @@ DeleteVoiceConnectorStreamingConfigurationOutcome ChimeClient::DeleteVoiceConnec
 
 DeleteVoiceConnectorTerminationOutcome ChimeClient::DeleteVoiceConnectorTermination(const DeleteVoiceConnectorTerminationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteVoiceConnectorTermination);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteVoiceConnectorTermination, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -1465,6 +1529,7 @@ DeleteVoiceConnectorTerminationOutcome ChimeClient::DeleteVoiceConnectorTerminat
 
 DeleteVoiceConnectorTerminationCredentialsOutcome ChimeClient::DeleteVoiceConnectorTerminationCredentials(const DeleteVoiceConnectorTerminationCredentialsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteVoiceConnectorTerminationCredentials);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteVoiceConnectorTerminationCredentials, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -1484,6 +1549,7 @@ DeleteVoiceConnectorTerminationCredentialsOutcome ChimeClient::DeleteVoiceConnec
 
 DescribeAppInstanceOutcome ChimeClient::DescribeAppInstance(const DescribeAppInstanceRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeAppInstance);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAppInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppInstanceArnHasBeenSet())
   {
@@ -1501,6 +1567,7 @@ DescribeAppInstanceOutcome ChimeClient::DescribeAppInstance(const DescribeAppIns
 
 DescribeAppInstanceAdminOutcome ChimeClient::DescribeAppInstanceAdmin(const DescribeAppInstanceAdminRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeAppInstanceAdmin);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAppInstanceAdmin, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppInstanceAdminArnHasBeenSet())
   {
@@ -1525,6 +1592,7 @@ DescribeAppInstanceAdminOutcome ChimeClient::DescribeAppInstanceAdmin(const Desc
 
 DescribeAppInstanceUserOutcome ChimeClient::DescribeAppInstanceUser(const DescribeAppInstanceUserRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeAppInstanceUser);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAppInstanceUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppInstanceUserArnHasBeenSet())
   {
@@ -1542,6 +1610,7 @@ DescribeAppInstanceUserOutcome ChimeClient::DescribeAppInstanceUser(const Descri
 
 DescribeChannelOutcome ChimeClient::DescribeChannel(const DescribeChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
@@ -1559,6 +1628,7 @@ DescribeChannelOutcome ChimeClient::DescribeChannel(const DescribeChannelRequest
 
 DescribeChannelBanOutcome ChimeClient::DescribeChannelBan(const DescribeChannelBanRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeChannelBan);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeChannelBan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
@@ -1583,6 +1653,7 @@ DescribeChannelBanOutcome ChimeClient::DescribeChannelBan(const DescribeChannelB
 
 DescribeChannelMembershipOutcome ChimeClient::DescribeChannelMembership(const DescribeChannelMembershipRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeChannelMembership);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeChannelMembership, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
@@ -1607,6 +1678,7 @@ DescribeChannelMembershipOutcome ChimeClient::DescribeChannelMembership(const De
 
 DescribeChannelMembershipForAppInstanceUserOutcome ChimeClient::DescribeChannelMembershipForAppInstanceUser(const DescribeChannelMembershipForAppInstanceUserRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeChannelMembershipForAppInstanceUser);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeChannelMembershipForAppInstanceUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
@@ -1632,6 +1704,7 @@ DescribeChannelMembershipForAppInstanceUserOutcome ChimeClient::DescribeChannelM
 
 DescribeChannelModeratedByAppInstanceUserOutcome ChimeClient::DescribeChannelModeratedByAppInstanceUser(const DescribeChannelModeratedByAppInstanceUserRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeChannelModeratedByAppInstanceUser);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeChannelModeratedByAppInstanceUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
@@ -1657,6 +1730,7 @@ DescribeChannelModeratedByAppInstanceUserOutcome ChimeClient::DescribeChannelMod
 
 DescribeChannelModeratorOutcome ChimeClient::DescribeChannelModerator(const DescribeChannelModeratorRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeChannelModerator);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeChannelModerator, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
@@ -1681,6 +1755,7 @@ DescribeChannelModeratorOutcome ChimeClient::DescribeChannelModerator(const Desc
 
 DisassociatePhoneNumberFromUserOutcome ChimeClient::DisassociatePhoneNumberFromUser(const DisassociatePhoneNumberFromUserRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociatePhoneNumberFromUser);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociatePhoneNumberFromUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -1711,6 +1786,7 @@ DisassociatePhoneNumberFromUserOutcome ChimeClient::DisassociatePhoneNumberFromU
 
 DisassociatePhoneNumbersFromVoiceConnectorOutcome ChimeClient::DisassociatePhoneNumbersFromVoiceConnector(const DisassociatePhoneNumbersFromVoiceConnectorRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociatePhoneNumbersFromVoiceConnector);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociatePhoneNumbersFromVoiceConnector, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -1729,6 +1805,7 @@ DisassociatePhoneNumbersFromVoiceConnectorOutcome ChimeClient::DisassociatePhone
 
 DisassociatePhoneNumbersFromVoiceConnectorGroupOutcome ChimeClient::DisassociatePhoneNumbersFromVoiceConnectorGroup(const DisassociatePhoneNumbersFromVoiceConnectorGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociatePhoneNumbersFromVoiceConnectorGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociatePhoneNumbersFromVoiceConnectorGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorGroupIdHasBeenSet())
   {
@@ -1747,6 +1824,7 @@ DisassociatePhoneNumbersFromVoiceConnectorGroupOutcome ChimeClient::Disassociate
 
 DisassociateSigninDelegateGroupsFromAccountOutcome ChimeClient::DisassociateSigninDelegateGroupsFromAccount(const DisassociateSigninDelegateGroupsFromAccountRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociateSigninDelegateGroupsFromAccount);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateSigninDelegateGroupsFromAccount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -1770,6 +1848,7 @@ DisassociateSigninDelegateGroupsFromAccountOutcome ChimeClient::DisassociateSign
 
 GetAccountOutcome ChimeClient::GetAccount(const GetAccountRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetAccount);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAccount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -1790,6 +1869,7 @@ GetAccountOutcome ChimeClient::GetAccount(const GetAccountRequest& request) cons
 
 GetAccountSettingsOutcome ChimeClient::GetAccountSettings(const GetAccountSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetAccountSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAccountSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -1811,6 +1891,7 @@ GetAccountSettingsOutcome ChimeClient::GetAccountSettings(const GetAccountSettin
 
 GetAppInstanceRetentionSettingsOutcome ChimeClient::GetAppInstanceRetentionSettings(const GetAppInstanceRetentionSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetAppInstanceRetentionSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAppInstanceRetentionSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppInstanceArnHasBeenSet())
   {
@@ -1829,6 +1910,7 @@ GetAppInstanceRetentionSettingsOutcome ChimeClient::GetAppInstanceRetentionSetti
 
 GetAppInstanceStreamingConfigurationsOutcome ChimeClient::GetAppInstanceStreamingConfigurations(const GetAppInstanceStreamingConfigurationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetAppInstanceStreamingConfigurations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAppInstanceStreamingConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppInstanceArnHasBeenSet())
   {
@@ -1845,6 +1927,7 @@ GetAppInstanceStreamingConfigurationsOutcome ChimeClient::GetAppInstanceStreamin
 
 GetAttendeeOutcome ChimeClient::GetAttendee(const GetAttendeeRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetAttendee);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAttendee, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeetingIdHasBeenSet())
   {
@@ -1867,6 +1950,7 @@ GetAttendeeOutcome ChimeClient::GetAttendee(const GetAttendeeRequest& request) c
 
 GetBotOutcome ChimeClient::GetBot(const GetBotRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetBot);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -1894,6 +1978,7 @@ GetBotOutcome ChimeClient::GetBot(const GetBotRequest& request) const
 
 GetChannelMessageOutcome ChimeClient::GetChannelMessage(const GetChannelMessageRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetChannelMessage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetChannelMessage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
@@ -1918,6 +2003,7 @@ GetChannelMessageOutcome ChimeClient::GetChannelMessage(const GetChannelMessageR
 
 GetEventsConfigurationOutcome ChimeClient::GetEventsConfiguration(const GetEventsConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetEventsConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetEventsConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -1946,6 +2032,7 @@ GetEventsConfigurationOutcome ChimeClient::GetEventsConfiguration(const GetEvent
 
 GetGlobalSettingsOutcome ChimeClient::GetGlobalSettings() const
 {
+AWS_OPERATION_GUARD(GetGlobalSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetGlobalSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   const Aws::Vector<Aws::Endpoint::EndpointParameter> staticEndpointParameters;
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(staticEndpointParameters);
@@ -1956,6 +2043,7 @@ GetGlobalSettingsOutcome ChimeClient::GetGlobalSettings() const
 
 GetMediaCapturePipelineOutcome ChimeClient::GetMediaCapturePipeline(const GetMediaCapturePipelineRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetMediaCapturePipeline);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMediaCapturePipeline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MediaPipelineIdHasBeenSet())
   {
@@ -1971,6 +2059,7 @@ GetMediaCapturePipelineOutcome ChimeClient::GetMediaCapturePipeline(const GetMed
 
 GetMeetingOutcome ChimeClient::GetMeeting(const GetMeetingRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetMeeting);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMeeting, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeetingIdHasBeenSet())
   {
@@ -1986,6 +2075,7 @@ GetMeetingOutcome ChimeClient::GetMeeting(const GetMeetingRequest& request) cons
 
 GetMessagingSessionEndpointOutcome ChimeClient::GetMessagingSessionEndpoint(const GetMessagingSessionEndpointRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetMessagingSessionEndpoint);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMessagingSessionEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetMessagingSessionEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1997,6 +2087,7 @@ GetMessagingSessionEndpointOutcome ChimeClient::GetMessagingSessionEndpoint(cons
 
 GetPhoneNumberOutcome ChimeClient::GetPhoneNumber(const GetPhoneNumberRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetPhoneNumber);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPhoneNumber, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PhoneNumberIdHasBeenSet())
   {
@@ -2012,6 +2103,7 @@ GetPhoneNumberOutcome ChimeClient::GetPhoneNumber(const GetPhoneNumberRequest& r
 
 GetPhoneNumberOrderOutcome ChimeClient::GetPhoneNumberOrder(const GetPhoneNumberOrderRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetPhoneNumberOrder);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPhoneNumberOrder, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PhoneNumberOrderIdHasBeenSet())
   {
@@ -2027,6 +2119,7 @@ GetPhoneNumberOrderOutcome ChimeClient::GetPhoneNumberOrder(const GetPhoneNumber
 
 GetPhoneNumberSettingsOutcome ChimeClient::GetPhoneNumberSettings() const
 {
+AWS_OPERATION_GUARD(GetPhoneNumberSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPhoneNumberSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   const Aws::Vector<Aws::Endpoint::EndpointParameter> staticEndpointParameters;
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(staticEndpointParameters);
@@ -2037,6 +2130,7 @@ GetPhoneNumberSettingsOutcome ChimeClient::GetPhoneNumberSettings() const
 
 GetProxySessionOutcome ChimeClient::GetProxySession(const GetProxySessionRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetProxySession);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetProxySession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -2059,6 +2153,7 @@ GetProxySessionOutcome ChimeClient::GetProxySession(const GetProxySessionRequest
 
 GetRetentionSettingsOutcome ChimeClient::GetRetentionSettings(const GetRetentionSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetRetentionSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetRetentionSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -2080,6 +2175,7 @@ GetRetentionSettingsOutcome ChimeClient::GetRetentionSettings(const GetRetention
 
 GetRoomOutcome ChimeClient::GetRoom(const GetRoomRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetRoom);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetRoom, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -2107,6 +2203,7 @@ GetRoomOutcome ChimeClient::GetRoom(const GetRoomRequest& request) const
 
 GetSipMediaApplicationOutcome ChimeClient::GetSipMediaApplication(const GetSipMediaApplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSipMediaApplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSipMediaApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SipMediaApplicationIdHasBeenSet())
   {
@@ -2122,6 +2219,7 @@ GetSipMediaApplicationOutcome ChimeClient::GetSipMediaApplication(const GetSipMe
 
 GetSipMediaApplicationLoggingConfigurationOutcome ChimeClient::GetSipMediaApplicationLoggingConfiguration(const GetSipMediaApplicationLoggingConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSipMediaApplicationLoggingConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSipMediaApplicationLoggingConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SipMediaApplicationIdHasBeenSet())
   {
@@ -2138,6 +2236,7 @@ GetSipMediaApplicationLoggingConfigurationOutcome ChimeClient::GetSipMediaApplic
 
 GetSipRuleOutcome ChimeClient::GetSipRule(const GetSipRuleRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSipRule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSipRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SipRuleIdHasBeenSet())
   {
@@ -2153,6 +2252,7 @@ GetSipRuleOutcome ChimeClient::GetSipRule(const GetSipRuleRequest& request) cons
 
 GetUserOutcome ChimeClient::GetUser(const GetUserRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetUser);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -2180,6 +2280,7 @@ GetUserOutcome ChimeClient::GetUser(const GetUserRequest& request) const
 
 GetUserSettingsOutcome ChimeClient::GetUserSettings(const GetUserSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetUserSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetUserSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -2208,6 +2309,7 @@ GetUserSettingsOutcome ChimeClient::GetUserSettings(const GetUserSettingsRequest
 
 GetVoiceConnectorOutcome ChimeClient::GetVoiceConnector(const GetVoiceConnectorRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetVoiceConnector);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetVoiceConnector, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -2223,6 +2325,7 @@ GetVoiceConnectorOutcome ChimeClient::GetVoiceConnector(const GetVoiceConnectorR
 
 GetVoiceConnectorEmergencyCallingConfigurationOutcome ChimeClient::GetVoiceConnectorEmergencyCallingConfiguration(const GetVoiceConnectorEmergencyCallingConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetVoiceConnectorEmergencyCallingConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetVoiceConnectorEmergencyCallingConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -2239,6 +2342,7 @@ GetVoiceConnectorEmergencyCallingConfigurationOutcome ChimeClient::GetVoiceConne
 
 GetVoiceConnectorGroupOutcome ChimeClient::GetVoiceConnectorGroup(const GetVoiceConnectorGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetVoiceConnectorGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetVoiceConnectorGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorGroupIdHasBeenSet())
   {
@@ -2254,6 +2358,7 @@ GetVoiceConnectorGroupOutcome ChimeClient::GetVoiceConnectorGroup(const GetVoice
 
 GetVoiceConnectorLoggingConfigurationOutcome ChimeClient::GetVoiceConnectorLoggingConfiguration(const GetVoiceConnectorLoggingConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetVoiceConnectorLoggingConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetVoiceConnectorLoggingConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -2270,6 +2375,7 @@ GetVoiceConnectorLoggingConfigurationOutcome ChimeClient::GetVoiceConnectorLoggi
 
 GetVoiceConnectorOriginationOutcome ChimeClient::GetVoiceConnectorOrigination(const GetVoiceConnectorOriginationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetVoiceConnectorOrigination);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetVoiceConnectorOrigination, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -2286,6 +2392,7 @@ GetVoiceConnectorOriginationOutcome ChimeClient::GetVoiceConnectorOrigination(co
 
 GetVoiceConnectorProxyOutcome ChimeClient::GetVoiceConnectorProxy(const GetVoiceConnectorProxyRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetVoiceConnectorProxy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetVoiceConnectorProxy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -2302,6 +2409,7 @@ GetVoiceConnectorProxyOutcome ChimeClient::GetVoiceConnectorProxy(const GetVoice
 
 GetVoiceConnectorStreamingConfigurationOutcome ChimeClient::GetVoiceConnectorStreamingConfiguration(const GetVoiceConnectorStreamingConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetVoiceConnectorStreamingConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetVoiceConnectorStreamingConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -2318,6 +2426,7 @@ GetVoiceConnectorStreamingConfigurationOutcome ChimeClient::GetVoiceConnectorStr
 
 GetVoiceConnectorTerminationOutcome ChimeClient::GetVoiceConnectorTermination(const GetVoiceConnectorTerminationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetVoiceConnectorTermination);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetVoiceConnectorTermination, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -2334,6 +2443,7 @@ GetVoiceConnectorTerminationOutcome ChimeClient::GetVoiceConnectorTermination(co
 
 GetVoiceConnectorTerminationHealthOutcome ChimeClient::GetVoiceConnectorTerminationHealth(const GetVoiceConnectorTerminationHealthRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetVoiceConnectorTerminationHealth);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetVoiceConnectorTerminationHealth, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -2350,6 +2460,7 @@ GetVoiceConnectorTerminationHealthOutcome ChimeClient::GetVoiceConnectorTerminat
 
 InviteUsersOutcome ChimeClient::InviteUsers(const InviteUsersRequest& request) const
 {
+  AWS_OPERATION_GUARD(InviteUsers);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, InviteUsers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -2374,6 +2485,7 @@ InviteUsersOutcome ChimeClient::InviteUsers(const InviteUsersRequest& request) c
 
 ListAccountsOutcome ChimeClient::ListAccounts(const ListAccountsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAccounts);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAccounts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAccounts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2383,6 +2495,7 @@ ListAccountsOutcome ChimeClient::ListAccounts(const ListAccountsRequest& request
 
 ListAppInstanceAdminsOutcome ChimeClient::ListAppInstanceAdmins(const ListAppInstanceAdminsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAppInstanceAdmins);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAppInstanceAdmins, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppInstanceArnHasBeenSet())
   {
@@ -2401,6 +2514,7 @@ ListAppInstanceAdminsOutcome ChimeClient::ListAppInstanceAdmins(const ListAppIns
 
 ListAppInstanceUsersOutcome ChimeClient::ListAppInstanceUsers(const ListAppInstanceUsersRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAppInstanceUsers);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAppInstanceUsers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppInstanceArnHasBeenSet())
   {
@@ -2417,6 +2531,7 @@ ListAppInstanceUsersOutcome ChimeClient::ListAppInstanceUsers(const ListAppInsta
 
 ListAppInstancesOutcome ChimeClient::ListAppInstances(const ListAppInstancesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAppInstances);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAppInstances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAppInstances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2428,6 +2543,7 @@ ListAppInstancesOutcome ChimeClient::ListAppInstances(const ListAppInstancesRequ
 
 ListAttendeeTagsOutcome ChimeClient::ListAttendeeTags(const ListAttendeeTagsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAttendeeTags);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAttendeeTags, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeetingIdHasBeenSet())
   {
@@ -2451,6 +2567,7 @@ ListAttendeeTagsOutcome ChimeClient::ListAttendeeTags(const ListAttendeeTagsRequ
 
 ListAttendeesOutcome ChimeClient::ListAttendees(const ListAttendeesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAttendees);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAttendees, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeetingIdHasBeenSet())
   {
@@ -2467,6 +2584,7 @@ ListAttendeesOutcome ChimeClient::ListAttendees(const ListAttendeesRequest& requ
 
 ListBotsOutcome ChimeClient::ListBots(const ListBotsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListBots);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListBots, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -2488,6 +2606,7 @@ ListBotsOutcome ChimeClient::ListBots(const ListBotsRequest& request) const
 
 ListChannelBansOutcome ChimeClient::ListChannelBans(const ListChannelBansRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListChannelBans);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListChannelBans, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
@@ -2506,6 +2625,7 @@ ListChannelBansOutcome ChimeClient::ListChannelBans(const ListChannelBansRequest
 
 ListChannelMembershipsOutcome ChimeClient::ListChannelMemberships(const ListChannelMembershipsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListChannelMemberships);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListChannelMemberships, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
@@ -2524,6 +2644,7 @@ ListChannelMembershipsOutcome ChimeClient::ListChannelMemberships(const ListChan
 
 ListChannelMembershipsForAppInstanceUserOutcome ChimeClient::ListChannelMembershipsForAppInstanceUser(const ListChannelMembershipsForAppInstanceUserRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListChannelMembershipsForAppInstanceUser);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListChannelMembershipsForAppInstanceUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListChannelMembershipsForAppInstanceUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2538,6 +2659,7 @@ ListChannelMembershipsForAppInstanceUserOutcome ChimeClient::ListChannelMembersh
 
 ListChannelMessagesOutcome ChimeClient::ListChannelMessages(const ListChannelMessagesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListChannelMessages);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListChannelMessages, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
@@ -2556,6 +2678,7 @@ ListChannelMessagesOutcome ChimeClient::ListChannelMessages(const ListChannelMes
 
 ListChannelModeratorsOutcome ChimeClient::ListChannelModerators(const ListChannelModeratorsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListChannelModerators);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListChannelModerators, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
@@ -2574,6 +2697,7 @@ ListChannelModeratorsOutcome ChimeClient::ListChannelModerators(const ListChanne
 
 ListChannelsOutcome ChimeClient::ListChannels(const ListChannelsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListChannels);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListChannels, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppInstanceArnHasBeenSet())
   {
@@ -2590,6 +2714,7 @@ ListChannelsOutcome ChimeClient::ListChannels(const ListChannelsRequest& request
 
 ListChannelsModeratedByAppInstanceUserOutcome ChimeClient::ListChannelsModeratedByAppInstanceUser(const ListChannelsModeratedByAppInstanceUserRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListChannelsModeratedByAppInstanceUser);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListChannelsModeratedByAppInstanceUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListChannelsModeratedByAppInstanceUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2604,6 +2729,7 @@ ListChannelsModeratedByAppInstanceUserOutcome ChimeClient::ListChannelsModerated
 
 ListMediaCapturePipelinesOutcome ChimeClient::ListMediaCapturePipelines(const ListMediaCapturePipelinesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListMediaCapturePipelines);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListMediaCapturePipelines, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListMediaCapturePipelines, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2613,6 +2739,7 @@ ListMediaCapturePipelinesOutcome ChimeClient::ListMediaCapturePipelines(const Li
 
 ListMeetingTagsOutcome ChimeClient::ListMeetingTags(const ListMeetingTagsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListMeetingTags);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListMeetingTags, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeetingIdHasBeenSet())
   {
@@ -2629,6 +2756,7 @@ ListMeetingTagsOutcome ChimeClient::ListMeetingTags(const ListMeetingTagsRequest
 
 ListMeetingsOutcome ChimeClient::ListMeetings(const ListMeetingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListMeetings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListMeetings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListMeetings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2638,6 +2766,7 @@ ListMeetingsOutcome ChimeClient::ListMeetings(const ListMeetingsRequest& request
 
 ListPhoneNumberOrdersOutcome ChimeClient::ListPhoneNumberOrders(const ListPhoneNumberOrdersRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListPhoneNumberOrders);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPhoneNumberOrders, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListPhoneNumberOrders, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2647,6 +2776,7 @@ ListPhoneNumberOrdersOutcome ChimeClient::ListPhoneNumberOrders(const ListPhoneN
 
 ListPhoneNumbersOutcome ChimeClient::ListPhoneNumbers(const ListPhoneNumbersRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListPhoneNumbers);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPhoneNumbers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListPhoneNumbers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2656,6 +2786,7 @@ ListPhoneNumbersOutcome ChimeClient::ListPhoneNumbers(const ListPhoneNumbersRequ
 
 ListProxySessionsOutcome ChimeClient::ListProxySessions(const ListProxySessionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListProxySessions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListProxySessions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -2672,6 +2803,7 @@ ListProxySessionsOutcome ChimeClient::ListProxySessions(const ListProxySessionsR
 
 ListRoomMembershipsOutcome ChimeClient::ListRoomMemberships(const ListRoomMembershipsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListRoomMemberships);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRoomMemberships, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -2700,6 +2832,7 @@ ListRoomMembershipsOutcome ChimeClient::ListRoomMemberships(const ListRoomMember
 
 ListRoomsOutcome ChimeClient::ListRooms(const ListRoomsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListRooms);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRooms, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -2721,6 +2854,7 @@ ListRoomsOutcome ChimeClient::ListRooms(const ListRoomsRequest& request) const
 
 ListSipMediaApplicationsOutcome ChimeClient::ListSipMediaApplications(const ListSipMediaApplicationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListSipMediaApplications);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSipMediaApplications, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListSipMediaApplications, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2730,6 +2864,7 @@ ListSipMediaApplicationsOutcome ChimeClient::ListSipMediaApplications(const List
 
 ListSipRulesOutcome ChimeClient::ListSipRules(const ListSipRulesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListSipRules);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSipRules, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListSipRules, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2739,6 +2874,7 @@ ListSipRulesOutcome ChimeClient::ListSipRules(const ListSipRulesRequest& request
 
 ListSupportedPhoneNumberCountriesOutcome ChimeClient::ListSupportedPhoneNumberCountries(const ListSupportedPhoneNumberCountriesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListSupportedPhoneNumberCountries);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSupportedPhoneNumberCountries, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProductTypeHasBeenSet())
   {
@@ -2753,6 +2889,7 @@ ListSupportedPhoneNumberCountriesOutcome ChimeClient::ListSupportedPhoneNumberCo
 
 ListTagsForResourceOutcome ChimeClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceARNHasBeenSet())
   {
@@ -2767,6 +2904,7 @@ ListTagsForResourceOutcome ChimeClient::ListTagsForResource(const ListTagsForRes
 
 ListUsersOutcome ChimeClient::ListUsers(const ListUsersRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListUsers);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListUsers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -2788,6 +2926,7 @@ ListUsersOutcome ChimeClient::ListUsers(const ListUsersRequest& request) const
 
 ListVoiceConnectorGroupsOutcome ChimeClient::ListVoiceConnectorGroups(const ListVoiceConnectorGroupsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListVoiceConnectorGroups);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListVoiceConnectorGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListVoiceConnectorGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2797,6 +2936,7 @@ ListVoiceConnectorGroupsOutcome ChimeClient::ListVoiceConnectorGroups(const List
 
 ListVoiceConnectorTerminationCredentialsOutcome ChimeClient::ListVoiceConnectorTerminationCredentials(const ListVoiceConnectorTerminationCredentialsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListVoiceConnectorTerminationCredentials);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListVoiceConnectorTerminationCredentials, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -2813,6 +2953,7 @@ ListVoiceConnectorTerminationCredentialsOutcome ChimeClient::ListVoiceConnectorT
 
 ListVoiceConnectorsOutcome ChimeClient::ListVoiceConnectors(const ListVoiceConnectorsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListVoiceConnectors);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListVoiceConnectors, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListVoiceConnectors, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2822,6 +2963,7 @@ ListVoiceConnectorsOutcome ChimeClient::ListVoiceConnectors(const ListVoiceConne
 
 LogoutUserOutcome ChimeClient::LogoutUser(const LogoutUserRequest& request) const
 {
+  AWS_OPERATION_GUARD(LogoutUser);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, LogoutUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -2852,6 +2994,7 @@ LogoutUserOutcome ChimeClient::LogoutUser(const LogoutUserRequest& request) cons
 
 PutAppInstanceRetentionSettingsOutcome ChimeClient::PutAppInstanceRetentionSettings(const PutAppInstanceRetentionSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutAppInstanceRetentionSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutAppInstanceRetentionSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppInstanceArnHasBeenSet())
   {
@@ -2870,6 +3013,7 @@ PutAppInstanceRetentionSettingsOutcome ChimeClient::PutAppInstanceRetentionSetti
 
 PutAppInstanceStreamingConfigurationsOutcome ChimeClient::PutAppInstanceStreamingConfigurations(const PutAppInstanceStreamingConfigurationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutAppInstanceStreamingConfigurations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutAppInstanceStreamingConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppInstanceArnHasBeenSet())
   {
@@ -2886,6 +3030,7 @@ PutAppInstanceStreamingConfigurationsOutcome ChimeClient::PutAppInstanceStreamin
 
 PutEventsConfigurationOutcome ChimeClient::PutEventsConfiguration(const PutEventsConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutEventsConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutEventsConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -2914,6 +3059,7 @@ PutEventsConfigurationOutcome ChimeClient::PutEventsConfiguration(const PutEvent
 
 PutRetentionSettingsOutcome ChimeClient::PutRetentionSettings(const PutRetentionSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutRetentionSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutRetentionSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -2935,6 +3081,7 @@ PutRetentionSettingsOutcome ChimeClient::PutRetentionSettings(const PutRetention
 
 PutSipMediaApplicationLoggingConfigurationOutcome ChimeClient::PutSipMediaApplicationLoggingConfiguration(const PutSipMediaApplicationLoggingConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutSipMediaApplicationLoggingConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutSipMediaApplicationLoggingConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SipMediaApplicationIdHasBeenSet())
   {
@@ -2951,6 +3098,7 @@ PutSipMediaApplicationLoggingConfigurationOutcome ChimeClient::PutSipMediaApplic
 
 PutVoiceConnectorEmergencyCallingConfigurationOutcome ChimeClient::PutVoiceConnectorEmergencyCallingConfiguration(const PutVoiceConnectorEmergencyCallingConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutVoiceConnectorEmergencyCallingConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutVoiceConnectorEmergencyCallingConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -2967,6 +3115,7 @@ PutVoiceConnectorEmergencyCallingConfigurationOutcome ChimeClient::PutVoiceConne
 
 PutVoiceConnectorLoggingConfigurationOutcome ChimeClient::PutVoiceConnectorLoggingConfiguration(const PutVoiceConnectorLoggingConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutVoiceConnectorLoggingConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutVoiceConnectorLoggingConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -2983,6 +3132,7 @@ PutVoiceConnectorLoggingConfigurationOutcome ChimeClient::PutVoiceConnectorLoggi
 
 PutVoiceConnectorOriginationOutcome ChimeClient::PutVoiceConnectorOrigination(const PutVoiceConnectorOriginationRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutVoiceConnectorOrigination);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutVoiceConnectorOrigination, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -2999,6 +3149,7 @@ PutVoiceConnectorOriginationOutcome ChimeClient::PutVoiceConnectorOrigination(co
 
 PutVoiceConnectorProxyOutcome ChimeClient::PutVoiceConnectorProxy(const PutVoiceConnectorProxyRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutVoiceConnectorProxy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutVoiceConnectorProxy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -3015,6 +3166,7 @@ PutVoiceConnectorProxyOutcome ChimeClient::PutVoiceConnectorProxy(const PutVoice
 
 PutVoiceConnectorStreamingConfigurationOutcome ChimeClient::PutVoiceConnectorStreamingConfiguration(const PutVoiceConnectorStreamingConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutVoiceConnectorStreamingConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutVoiceConnectorStreamingConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -3031,6 +3183,7 @@ PutVoiceConnectorStreamingConfigurationOutcome ChimeClient::PutVoiceConnectorStr
 
 PutVoiceConnectorTerminationOutcome ChimeClient::PutVoiceConnectorTermination(const PutVoiceConnectorTerminationRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutVoiceConnectorTermination);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutVoiceConnectorTermination, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -3047,6 +3200,7 @@ PutVoiceConnectorTerminationOutcome ChimeClient::PutVoiceConnectorTermination(co
 
 PutVoiceConnectorTerminationCredentialsOutcome ChimeClient::PutVoiceConnectorTerminationCredentials(const PutVoiceConnectorTerminationCredentialsRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutVoiceConnectorTerminationCredentials);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutVoiceConnectorTerminationCredentials, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -3066,6 +3220,7 @@ PutVoiceConnectorTerminationCredentialsOutcome ChimeClient::PutVoiceConnectorTer
 
 RedactChannelMessageOutcome ChimeClient::RedactChannelMessage(const RedactChannelMessageRequest& request) const
 {
+  AWS_OPERATION_GUARD(RedactChannelMessage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RedactChannelMessage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
@@ -3093,6 +3248,7 @@ RedactChannelMessageOutcome ChimeClient::RedactChannelMessage(const RedactChanne
 
 RedactConversationMessageOutcome ChimeClient::RedactConversationMessage(const RedactConversationMessageRequest& request) const
 {
+  AWS_OPERATION_GUARD(RedactConversationMessage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RedactConversationMessage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -3130,6 +3286,7 @@ RedactConversationMessageOutcome ChimeClient::RedactConversationMessage(const Re
 
 RedactRoomMessageOutcome ChimeClient::RedactRoomMessage(const RedactRoomMessageRequest& request) const
 {
+  AWS_OPERATION_GUARD(RedactRoomMessage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RedactRoomMessage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -3167,6 +3324,7 @@ RedactRoomMessageOutcome ChimeClient::RedactRoomMessage(const RedactRoomMessageR
 
 RegenerateSecurityTokenOutcome ChimeClient::RegenerateSecurityToken(const RegenerateSecurityTokenRequest& request) const
 {
+  AWS_OPERATION_GUARD(RegenerateSecurityToken);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RegenerateSecurityToken, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -3197,6 +3355,7 @@ RegenerateSecurityTokenOutcome ChimeClient::RegenerateSecurityToken(const Regene
 
 ResetPersonalPINOutcome ChimeClient::ResetPersonalPIN(const ResetPersonalPINRequest& request) const
 {
+  AWS_OPERATION_GUARD(ResetPersonalPIN);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ResetPersonalPIN, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -3227,6 +3386,7 @@ ResetPersonalPINOutcome ChimeClient::ResetPersonalPIN(const ResetPersonalPINRequ
 
 RestorePhoneNumberOutcome ChimeClient::RestorePhoneNumber(const RestorePhoneNumberRequest& request) const
 {
+  AWS_OPERATION_GUARD(RestorePhoneNumber);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RestorePhoneNumber, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PhoneNumberIdHasBeenSet())
   {
@@ -3245,6 +3405,7 @@ RestorePhoneNumberOutcome ChimeClient::RestorePhoneNumber(const RestorePhoneNumb
 
 SearchAvailablePhoneNumbersOutcome ChimeClient::SearchAvailablePhoneNumbers(const SearchAvailablePhoneNumbersRequest& request) const
 {
+  AWS_OPERATION_GUARD(SearchAvailablePhoneNumbers);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SearchAvailablePhoneNumbers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SearchAvailablePhoneNumbers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -3257,6 +3418,7 @@ SearchAvailablePhoneNumbersOutcome ChimeClient::SearchAvailablePhoneNumbers(cons
 
 SendChannelMessageOutcome ChimeClient::SendChannelMessage(const SendChannelMessageRequest& request) const
 {
+  AWS_OPERATION_GUARD(SendChannelMessage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SendChannelMessage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
@@ -3275,6 +3437,7 @@ SendChannelMessageOutcome ChimeClient::SendChannelMessage(const SendChannelMessa
 
 StartMeetingTranscriptionOutcome ChimeClient::StartMeetingTranscription(const StartMeetingTranscriptionRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartMeetingTranscription);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartMeetingTranscription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeetingIdHasBeenSet())
   {
@@ -3294,6 +3457,7 @@ StartMeetingTranscriptionOutcome ChimeClient::StartMeetingTranscription(const St
 
 StopMeetingTranscriptionOutcome ChimeClient::StopMeetingTranscription(const StopMeetingTranscriptionRequest& request) const
 {
+  AWS_OPERATION_GUARD(StopMeetingTranscription);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopMeetingTranscription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeetingIdHasBeenSet())
   {
@@ -3313,6 +3477,7 @@ StopMeetingTranscriptionOutcome ChimeClient::StopMeetingTranscription(const Stop
 
 TagAttendeeOutcome ChimeClient::TagAttendee(const TagAttendeeRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagAttendee);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagAttendee, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeetingIdHasBeenSet())
   {
@@ -3339,6 +3504,7 @@ TagAttendeeOutcome ChimeClient::TagAttendee(const TagAttendeeRequest& request) c
 
 TagMeetingOutcome ChimeClient::TagMeeting(const TagMeetingRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagMeeting);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagMeeting, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeetingIdHasBeenSet())
   {
@@ -3358,6 +3524,7 @@ TagMeetingOutcome ChimeClient::TagMeeting(const TagMeetingRequest& request) cons
 
 TagResourceOutcome ChimeClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -3370,6 +3537,7 @@ TagResourceOutcome ChimeClient::TagResource(const TagResourceRequest& request) c
 
 UntagAttendeeOutcome ChimeClient::UntagAttendee(const UntagAttendeeRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagAttendee);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagAttendee, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeetingIdHasBeenSet())
   {
@@ -3396,6 +3564,7 @@ UntagAttendeeOutcome ChimeClient::UntagAttendee(const UntagAttendeeRequest& requ
 
 UntagMeetingOutcome ChimeClient::UntagMeeting(const UntagMeetingRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagMeeting);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagMeeting, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeetingIdHasBeenSet())
   {
@@ -3415,6 +3584,7 @@ UntagMeetingOutcome ChimeClient::UntagMeeting(const UntagMeetingRequest& request
 
 UntagResourceOutcome ChimeClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -3427,6 +3597,7 @@ UntagResourceOutcome ChimeClient::UntagResource(const UntagResourceRequest& requ
 
 UpdateAccountOutcome ChimeClient::UpdateAccount(const UpdateAccountRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateAccount);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAccount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -3447,6 +3618,7 @@ UpdateAccountOutcome ChimeClient::UpdateAccount(const UpdateAccountRequest& requ
 
 UpdateAccountSettingsOutcome ChimeClient::UpdateAccountSettings(const UpdateAccountSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateAccountSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAccountSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -3468,6 +3640,7 @@ UpdateAccountSettingsOutcome ChimeClient::UpdateAccountSettings(const UpdateAcco
 
 UpdateAppInstanceOutcome ChimeClient::UpdateAppInstance(const UpdateAppInstanceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateAppInstance);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAppInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppInstanceArnHasBeenSet())
   {
@@ -3485,6 +3658,7 @@ UpdateAppInstanceOutcome ChimeClient::UpdateAppInstance(const UpdateAppInstanceR
 
 UpdateAppInstanceUserOutcome ChimeClient::UpdateAppInstanceUser(const UpdateAppInstanceUserRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateAppInstanceUser);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAppInstanceUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppInstanceUserArnHasBeenSet())
   {
@@ -3502,6 +3676,7 @@ UpdateAppInstanceUserOutcome ChimeClient::UpdateAppInstanceUser(const UpdateAppI
 
 UpdateBotOutcome ChimeClient::UpdateBot(const UpdateBotRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateBot);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateBot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -3529,6 +3704,7 @@ UpdateBotOutcome ChimeClient::UpdateBot(const UpdateBotRequest& request) const
 
 UpdateChannelOutcome ChimeClient::UpdateChannel(const UpdateChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
@@ -3546,6 +3722,7 @@ UpdateChannelOutcome ChimeClient::UpdateChannel(const UpdateChannelRequest& requ
 
 UpdateChannelMessageOutcome ChimeClient::UpdateChannelMessage(const UpdateChannelMessageRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateChannelMessage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateChannelMessage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
@@ -3570,6 +3747,7 @@ UpdateChannelMessageOutcome ChimeClient::UpdateChannelMessage(const UpdateChanne
 
 UpdateChannelReadMarkerOutcome ChimeClient::UpdateChannelReadMarker(const UpdateChannelReadMarkerRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateChannelReadMarker);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateChannelReadMarker, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
@@ -3588,6 +3766,7 @@ UpdateChannelReadMarkerOutcome ChimeClient::UpdateChannelReadMarker(const Update
 
 UpdateGlobalSettingsOutcome ChimeClient::UpdateGlobalSettings(const UpdateGlobalSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateGlobalSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateGlobalSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateGlobalSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -3597,6 +3776,7 @@ UpdateGlobalSettingsOutcome ChimeClient::UpdateGlobalSettings(const UpdateGlobal
 
 UpdatePhoneNumberOutcome ChimeClient::UpdatePhoneNumber(const UpdatePhoneNumberRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdatePhoneNumber);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdatePhoneNumber, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PhoneNumberIdHasBeenSet())
   {
@@ -3612,6 +3792,7 @@ UpdatePhoneNumberOutcome ChimeClient::UpdatePhoneNumber(const UpdatePhoneNumberR
 
 UpdatePhoneNumberSettingsOutcome ChimeClient::UpdatePhoneNumberSettings(const UpdatePhoneNumberSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdatePhoneNumberSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdatePhoneNumberSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdatePhoneNumberSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -3621,6 +3802,7 @@ UpdatePhoneNumberSettingsOutcome ChimeClient::UpdatePhoneNumberSettings(const Up
 
 UpdateProxySessionOutcome ChimeClient::UpdateProxySession(const UpdateProxySessionRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateProxySession);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateProxySession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -3643,6 +3825,7 @@ UpdateProxySessionOutcome ChimeClient::UpdateProxySession(const UpdateProxySessi
 
 UpdateRoomOutcome ChimeClient::UpdateRoom(const UpdateRoomRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateRoom);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateRoom, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -3670,6 +3853,7 @@ UpdateRoomOutcome ChimeClient::UpdateRoom(const UpdateRoomRequest& request) cons
 
 UpdateRoomMembershipOutcome ChimeClient::UpdateRoomMembership(const UpdateRoomMembershipRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateRoomMembership);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateRoomMembership, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -3704,6 +3888,7 @@ UpdateRoomMembershipOutcome ChimeClient::UpdateRoomMembership(const UpdateRoomMe
 
 UpdateSipMediaApplicationOutcome ChimeClient::UpdateSipMediaApplication(const UpdateSipMediaApplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateSipMediaApplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateSipMediaApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SipMediaApplicationIdHasBeenSet())
   {
@@ -3719,6 +3904,7 @@ UpdateSipMediaApplicationOutcome ChimeClient::UpdateSipMediaApplication(const Up
 
 UpdateSipMediaApplicationCallOutcome ChimeClient::UpdateSipMediaApplicationCall(const UpdateSipMediaApplicationCallRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateSipMediaApplicationCall);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateSipMediaApplicationCall, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SipMediaApplicationIdHasBeenSet())
   {
@@ -3741,6 +3927,7 @@ UpdateSipMediaApplicationCallOutcome ChimeClient::UpdateSipMediaApplicationCall(
 
 UpdateSipRuleOutcome ChimeClient::UpdateSipRule(const UpdateSipRuleRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateSipRule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateSipRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SipRuleIdHasBeenSet())
   {
@@ -3756,6 +3943,7 @@ UpdateSipRuleOutcome ChimeClient::UpdateSipRule(const UpdateSipRuleRequest& requ
 
 UpdateUserOutcome ChimeClient::UpdateUser(const UpdateUserRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateUser);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -3783,6 +3971,7 @@ UpdateUserOutcome ChimeClient::UpdateUser(const UpdateUserRequest& request) cons
 
 UpdateUserSettingsOutcome ChimeClient::UpdateUserSettings(const UpdateUserSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateUserSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateUserSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -3811,6 +4000,7 @@ UpdateUserSettingsOutcome ChimeClient::UpdateUserSettings(const UpdateUserSettin
 
 UpdateVoiceConnectorOutcome ChimeClient::UpdateVoiceConnector(const UpdateVoiceConnectorRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateVoiceConnector);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateVoiceConnector, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -3826,6 +4016,7 @@ UpdateVoiceConnectorOutcome ChimeClient::UpdateVoiceConnector(const UpdateVoiceC
 
 UpdateVoiceConnectorGroupOutcome ChimeClient::UpdateVoiceConnectorGroup(const UpdateVoiceConnectorGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateVoiceConnectorGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateVoiceConnectorGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorGroupIdHasBeenSet())
   {
@@ -3841,6 +4032,7 @@ UpdateVoiceConnectorGroupOutcome ChimeClient::UpdateVoiceConnectorGroup(const Up
 
 ValidateE911AddressOutcome ChimeClient::ValidateE911Address(const ValidateE911AddressRequest& request) const
 {
+  AWS_OPERATION_GUARD(ValidateE911Address);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ValidateE911Address, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ValidateE911Address, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

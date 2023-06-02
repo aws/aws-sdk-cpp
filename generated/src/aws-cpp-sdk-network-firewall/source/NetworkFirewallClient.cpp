@@ -165,6 +165,7 @@ NetworkFirewallClient::NetworkFirewallClient(const std::shared_ptr<AWSCredential
     /* End of legacy constructors due deprecation */
 NetworkFirewallClient::~NetworkFirewallClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<NetworkFirewallEndpointProviderBase>& NetworkFirewallClient::accessEndpointProvider()
@@ -187,6 +188,7 @@ void NetworkFirewallClient::OverrideEndpoint(const Aws::String& endpoint)
 
 AssociateFirewallPolicyOutcome NetworkFirewallClient::AssociateFirewallPolicy(const AssociateFirewallPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociateFirewallPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateFirewallPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AssociateFirewallPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -195,6 +197,7 @@ AssociateFirewallPolicyOutcome NetworkFirewallClient::AssociateFirewallPolicy(co
 
 AssociateSubnetsOutcome NetworkFirewallClient::AssociateSubnets(const AssociateSubnetsRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociateSubnets);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateSubnets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AssociateSubnets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -203,6 +206,7 @@ AssociateSubnetsOutcome NetworkFirewallClient::AssociateSubnets(const AssociateS
 
 CreateFirewallOutcome NetworkFirewallClient::CreateFirewall(const CreateFirewallRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateFirewall);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateFirewall, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateFirewall, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -211,6 +215,7 @@ CreateFirewallOutcome NetworkFirewallClient::CreateFirewall(const CreateFirewall
 
 CreateFirewallPolicyOutcome NetworkFirewallClient::CreateFirewallPolicy(const CreateFirewallPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateFirewallPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateFirewallPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateFirewallPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -219,6 +224,7 @@ CreateFirewallPolicyOutcome NetworkFirewallClient::CreateFirewallPolicy(const Cr
 
 CreateRuleGroupOutcome NetworkFirewallClient::CreateRuleGroup(const CreateRuleGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateRuleGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateRuleGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateRuleGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -227,6 +233,7 @@ CreateRuleGroupOutcome NetworkFirewallClient::CreateRuleGroup(const CreateRuleGr
 
 CreateTLSInspectionConfigurationOutcome NetworkFirewallClient::CreateTLSInspectionConfiguration(const CreateTLSInspectionConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateTLSInspectionConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateTLSInspectionConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateTLSInspectionConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -235,6 +242,7 @@ CreateTLSInspectionConfigurationOutcome NetworkFirewallClient::CreateTLSInspecti
 
 DeleteFirewallOutcome NetworkFirewallClient::DeleteFirewall(const DeleteFirewallRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteFirewall);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteFirewall, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteFirewall, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -243,6 +251,7 @@ DeleteFirewallOutcome NetworkFirewallClient::DeleteFirewall(const DeleteFirewall
 
 DeleteFirewallPolicyOutcome NetworkFirewallClient::DeleteFirewallPolicy(const DeleteFirewallPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteFirewallPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteFirewallPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteFirewallPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -251,6 +260,7 @@ DeleteFirewallPolicyOutcome NetworkFirewallClient::DeleteFirewallPolicy(const De
 
 DeleteResourcePolicyOutcome NetworkFirewallClient::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteResourcePolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -259,6 +269,7 @@ DeleteResourcePolicyOutcome NetworkFirewallClient::DeleteResourcePolicy(const De
 
 DeleteRuleGroupOutcome NetworkFirewallClient::DeleteRuleGroup(const DeleteRuleGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteRuleGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteRuleGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteRuleGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -267,6 +278,7 @@ DeleteRuleGroupOutcome NetworkFirewallClient::DeleteRuleGroup(const DeleteRuleGr
 
 DeleteTLSInspectionConfigurationOutcome NetworkFirewallClient::DeleteTLSInspectionConfiguration(const DeleteTLSInspectionConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteTLSInspectionConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteTLSInspectionConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteTLSInspectionConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -275,6 +287,7 @@ DeleteTLSInspectionConfigurationOutcome NetworkFirewallClient::DeleteTLSInspecti
 
 DescribeFirewallOutcome NetworkFirewallClient::DescribeFirewall(const DescribeFirewallRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeFirewall);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeFirewall, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeFirewall, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -283,6 +296,7 @@ DescribeFirewallOutcome NetworkFirewallClient::DescribeFirewall(const DescribeFi
 
 DescribeFirewallPolicyOutcome NetworkFirewallClient::DescribeFirewallPolicy(const DescribeFirewallPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeFirewallPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeFirewallPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeFirewallPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -291,6 +305,7 @@ DescribeFirewallPolicyOutcome NetworkFirewallClient::DescribeFirewallPolicy(cons
 
 DescribeLoggingConfigurationOutcome NetworkFirewallClient::DescribeLoggingConfiguration(const DescribeLoggingConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeLoggingConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeLoggingConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeLoggingConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -299,6 +314,7 @@ DescribeLoggingConfigurationOutcome NetworkFirewallClient::DescribeLoggingConfig
 
 DescribeResourcePolicyOutcome NetworkFirewallClient::DescribeResourcePolicy(const DescribeResourcePolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeResourcePolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -307,6 +323,7 @@ DescribeResourcePolicyOutcome NetworkFirewallClient::DescribeResourcePolicy(cons
 
 DescribeRuleGroupOutcome NetworkFirewallClient::DescribeRuleGroup(const DescribeRuleGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeRuleGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeRuleGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeRuleGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -315,6 +332,7 @@ DescribeRuleGroupOutcome NetworkFirewallClient::DescribeRuleGroup(const Describe
 
 DescribeRuleGroupMetadataOutcome NetworkFirewallClient::DescribeRuleGroupMetadata(const DescribeRuleGroupMetadataRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeRuleGroupMetadata);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeRuleGroupMetadata, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeRuleGroupMetadata, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -323,6 +341,7 @@ DescribeRuleGroupMetadataOutcome NetworkFirewallClient::DescribeRuleGroupMetadat
 
 DescribeTLSInspectionConfigurationOutcome NetworkFirewallClient::DescribeTLSInspectionConfiguration(const DescribeTLSInspectionConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeTLSInspectionConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeTLSInspectionConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeTLSInspectionConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -331,6 +350,7 @@ DescribeTLSInspectionConfigurationOutcome NetworkFirewallClient::DescribeTLSInsp
 
 DisassociateSubnetsOutcome NetworkFirewallClient::DisassociateSubnets(const DisassociateSubnetsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociateSubnets);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateSubnets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DisassociateSubnets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -339,6 +359,7 @@ DisassociateSubnetsOutcome NetworkFirewallClient::DisassociateSubnets(const Disa
 
 ListFirewallPoliciesOutcome NetworkFirewallClient::ListFirewallPolicies(const ListFirewallPoliciesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListFirewallPolicies);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListFirewallPolicies, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListFirewallPolicies, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -347,6 +368,7 @@ ListFirewallPoliciesOutcome NetworkFirewallClient::ListFirewallPolicies(const Li
 
 ListFirewallsOutcome NetworkFirewallClient::ListFirewalls(const ListFirewallsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListFirewalls);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListFirewalls, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListFirewalls, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -355,6 +377,7 @@ ListFirewallsOutcome NetworkFirewallClient::ListFirewalls(const ListFirewallsReq
 
 ListRuleGroupsOutcome NetworkFirewallClient::ListRuleGroups(const ListRuleGroupsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListRuleGroups);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRuleGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListRuleGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -363,6 +386,7 @@ ListRuleGroupsOutcome NetworkFirewallClient::ListRuleGroups(const ListRuleGroups
 
 ListTLSInspectionConfigurationsOutcome NetworkFirewallClient::ListTLSInspectionConfigurations(const ListTLSInspectionConfigurationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTLSInspectionConfigurations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTLSInspectionConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTLSInspectionConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -371,6 +395,7 @@ ListTLSInspectionConfigurationsOutcome NetworkFirewallClient::ListTLSInspectionC
 
 ListTagsForResourceOutcome NetworkFirewallClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -379,6 +404,7 @@ ListTagsForResourceOutcome NetworkFirewallClient::ListTagsForResource(const List
 
 PutResourcePolicyOutcome NetworkFirewallClient::PutResourcePolicy(const PutResourcePolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutResourcePolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -387,6 +413,7 @@ PutResourcePolicyOutcome NetworkFirewallClient::PutResourcePolicy(const PutResou
 
 TagResourceOutcome NetworkFirewallClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -395,6 +422,7 @@ TagResourceOutcome NetworkFirewallClient::TagResource(const TagResourceRequest& 
 
 UntagResourceOutcome NetworkFirewallClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -403,6 +431,7 @@ UntagResourceOutcome NetworkFirewallClient::UntagResource(const UntagResourceReq
 
 UpdateFirewallDeleteProtectionOutcome NetworkFirewallClient::UpdateFirewallDeleteProtection(const UpdateFirewallDeleteProtectionRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateFirewallDeleteProtection);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateFirewallDeleteProtection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateFirewallDeleteProtection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -411,6 +440,7 @@ UpdateFirewallDeleteProtectionOutcome NetworkFirewallClient::UpdateFirewallDelet
 
 UpdateFirewallDescriptionOutcome NetworkFirewallClient::UpdateFirewallDescription(const UpdateFirewallDescriptionRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateFirewallDescription);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateFirewallDescription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateFirewallDescription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -419,6 +449,7 @@ UpdateFirewallDescriptionOutcome NetworkFirewallClient::UpdateFirewallDescriptio
 
 UpdateFirewallEncryptionConfigurationOutcome NetworkFirewallClient::UpdateFirewallEncryptionConfiguration(const UpdateFirewallEncryptionConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateFirewallEncryptionConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateFirewallEncryptionConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateFirewallEncryptionConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -427,6 +458,7 @@ UpdateFirewallEncryptionConfigurationOutcome NetworkFirewallClient::UpdateFirewa
 
 UpdateFirewallPolicyOutcome NetworkFirewallClient::UpdateFirewallPolicy(const UpdateFirewallPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateFirewallPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateFirewallPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateFirewallPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -435,6 +467,7 @@ UpdateFirewallPolicyOutcome NetworkFirewallClient::UpdateFirewallPolicy(const Up
 
 UpdateFirewallPolicyChangeProtectionOutcome NetworkFirewallClient::UpdateFirewallPolicyChangeProtection(const UpdateFirewallPolicyChangeProtectionRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateFirewallPolicyChangeProtection);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateFirewallPolicyChangeProtection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateFirewallPolicyChangeProtection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -443,6 +476,7 @@ UpdateFirewallPolicyChangeProtectionOutcome NetworkFirewallClient::UpdateFirewal
 
 UpdateLoggingConfigurationOutcome NetworkFirewallClient::UpdateLoggingConfiguration(const UpdateLoggingConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateLoggingConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateLoggingConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateLoggingConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -451,6 +485,7 @@ UpdateLoggingConfigurationOutcome NetworkFirewallClient::UpdateLoggingConfigurat
 
 UpdateRuleGroupOutcome NetworkFirewallClient::UpdateRuleGroup(const UpdateRuleGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateRuleGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateRuleGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateRuleGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -459,6 +494,7 @@ UpdateRuleGroupOutcome NetworkFirewallClient::UpdateRuleGroup(const UpdateRuleGr
 
 UpdateSubnetChangeProtectionOutcome NetworkFirewallClient::UpdateSubnetChangeProtection(const UpdateSubnetChangeProtectionRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateSubnetChangeProtection);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateSubnetChangeProtection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateSubnetChangeProtection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -467,6 +503,7 @@ UpdateSubnetChangeProtectionOutcome NetworkFirewallClient::UpdateSubnetChangePro
 
 UpdateTLSInspectionConfigurationOutcome NetworkFirewallClient::UpdateTLSInspectionConfiguration(const UpdateTLSInspectionConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateTLSInspectionConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateTLSInspectionConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateTLSInspectionConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

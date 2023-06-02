@@ -129,6 +129,7 @@ WorkLinkClient::WorkLinkClient(const std::shared_ptr<AWSCredentialsProvider>& cr
     /* End of legacy constructors due deprecation */
 WorkLinkClient::~WorkLinkClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<WorkLinkEndpointProviderBase>& WorkLinkClient::accessEndpointProvider()

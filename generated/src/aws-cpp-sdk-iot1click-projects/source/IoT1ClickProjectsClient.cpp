@@ -145,6 +145,7 @@ IoT1ClickProjectsClient::IoT1ClickProjectsClient(const std::shared_ptr<AWSCreden
     /* End of legacy constructors due deprecation */
 IoT1ClickProjectsClient::~IoT1ClickProjectsClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<IoT1ClickProjectsEndpointProviderBase>& IoT1ClickProjectsClient::accessEndpointProvider()
@@ -167,6 +168,7 @@ void IoT1ClickProjectsClient::OverrideEndpoint(const Aws::String& endpoint)
 
 AssociateDeviceWithPlacementOutcome IoT1ClickProjectsClient::AssociateDeviceWithPlacement(const AssociateDeviceWithPlacementRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociateDeviceWithPlacement);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateDeviceWithPlacement, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectNameHasBeenSet())
   {
@@ -196,6 +198,7 @@ AssociateDeviceWithPlacementOutcome IoT1ClickProjectsClient::AssociateDeviceWith
 
 CreatePlacementOutcome IoT1ClickProjectsClient::CreatePlacement(const CreatePlacementRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreatePlacement);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreatePlacement, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectNameHasBeenSet())
   {
@@ -212,6 +215,7 @@ CreatePlacementOutcome IoT1ClickProjectsClient::CreatePlacement(const CreatePlac
 
 CreateProjectOutcome IoT1ClickProjectsClient::CreateProject(const CreateProjectRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateProject);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateProject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateProject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -221,6 +225,7 @@ CreateProjectOutcome IoT1ClickProjectsClient::CreateProject(const CreateProjectR
 
 DeletePlacementOutcome IoT1ClickProjectsClient::DeletePlacement(const DeletePlacementRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeletePlacement);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeletePlacement, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PlacementNameHasBeenSet())
   {
@@ -243,6 +248,7 @@ DeletePlacementOutcome IoT1ClickProjectsClient::DeletePlacement(const DeletePlac
 
 DeleteProjectOutcome IoT1ClickProjectsClient::DeleteProject(const DeleteProjectRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteProject);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteProject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectNameHasBeenSet())
   {
@@ -258,6 +264,7 @@ DeleteProjectOutcome IoT1ClickProjectsClient::DeleteProject(const DeleteProjectR
 
 DescribePlacementOutcome IoT1ClickProjectsClient::DescribePlacement(const DescribePlacementRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribePlacement);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribePlacement, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PlacementNameHasBeenSet())
   {
@@ -280,6 +287,7 @@ DescribePlacementOutcome IoT1ClickProjectsClient::DescribePlacement(const Descri
 
 DescribeProjectOutcome IoT1ClickProjectsClient::DescribeProject(const DescribeProjectRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeProject);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeProject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectNameHasBeenSet())
   {
@@ -295,6 +303,7 @@ DescribeProjectOutcome IoT1ClickProjectsClient::DescribeProject(const DescribePr
 
 DisassociateDeviceFromPlacementOutcome IoT1ClickProjectsClient::DisassociateDeviceFromPlacement(const DisassociateDeviceFromPlacementRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociateDeviceFromPlacement);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateDeviceFromPlacement, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectNameHasBeenSet())
   {
@@ -324,6 +333,7 @@ DisassociateDeviceFromPlacementOutcome IoT1ClickProjectsClient::DisassociateDevi
 
 GetDevicesInPlacementOutcome IoT1ClickProjectsClient::GetDevicesInPlacement(const GetDevicesInPlacementRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDevicesInPlacement);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDevicesInPlacement, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectNameHasBeenSet())
   {
@@ -347,6 +357,7 @@ GetDevicesInPlacementOutcome IoT1ClickProjectsClient::GetDevicesInPlacement(cons
 
 ListPlacementsOutcome IoT1ClickProjectsClient::ListPlacements(const ListPlacementsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListPlacements);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPlacements, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectNameHasBeenSet())
   {
@@ -363,6 +374,7 @@ ListPlacementsOutcome IoT1ClickProjectsClient::ListPlacements(const ListPlacemen
 
 ListProjectsOutcome IoT1ClickProjectsClient::ListProjects(const ListProjectsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListProjects);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListProjects, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListProjects, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -372,6 +384,7 @@ ListProjectsOutcome IoT1ClickProjectsClient::ListProjects(const ListProjectsRequ
 
 ListTagsForResourceOutcome IoT1ClickProjectsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -387,6 +400,7 @@ ListTagsForResourceOutcome IoT1ClickProjectsClient::ListTagsForResource(const Li
 
 TagResourceOutcome IoT1ClickProjectsClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -402,6 +416,7 @@ TagResourceOutcome IoT1ClickProjectsClient::TagResource(const TagResourceRequest
 
 UntagResourceOutcome IoT1ClickProjectsClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -422,6 +437,7 @@ UntagResourceOutcome IoT1ClickProjectsClient::UntagResource(const UntagResourceR
 
 UpdatePlacementOutcome IoT1ClickProjectsClient::UpdatePlacement(const UpdatePlacementRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdatePlacement);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdatePlacement, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PlacementNameHasBeenSet())
   {
@@ -444,6 +460,7 @@ UpdatePlacementOutcome IoT1ClickProjectsClient::UpdatePlacement(const UpdatePlac
 
 UpdateProjectOutcome IoT1ClickProjectsClient::UpdateProject(const UpdateProjectRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateProject);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateProject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectNameHasBeenSet())
   {

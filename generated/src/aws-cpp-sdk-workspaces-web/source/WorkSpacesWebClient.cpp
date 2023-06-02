@@ -187,6 +187,7 @@ WorkSpacesWebClient::WorkSpacesWebClient(const std::shared_ptr<AWSCredentialsPro
     /* End of legacy constructors due deprecation */
 WorkSpacesWebClient::~WorkSpacesWebClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<WorkSpacesWebEndpointProviderBase>& WorkSpacesWebClient::accessEndpointProvider()
@@ -209,6 +210,7 @@ void WorkSpacesWebClient::OverrideEndpoint(const Aws::String& endpoint)
 
 AssociateBrowserSettingsOutcome WorkSpacesWebClient::AssociateBrowserSettings(const AssociateBrowserSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociateBrowserSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateBrowserSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BrowserSettingsArnHasBeenSet())
   {
@@ -230,6 +232,7 @@ AssociateBrowserSettingsOutcome WorkSpacesWebClient::AssociateBrowserSettings(co
 
 AssociateIpAccessSettingsOutcome WorkSpacesWebClient::AssociateIpAccessSettings(const AssociateIpAccessSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociateIpAccessSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateIpAccessSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IpAccessSettingsArnHasBeenSet())
   {
@@ -251,6 +254,7 @@ AssociateIpAccessSettingsOutcome WorkSpacesWebClient::AssociateIpAccessSettings(
 
 AssociateNetworkSettingsOutcome WorkSpacesWebClient::AssociateNetworkSettings(const AssociateNetworkSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociateNetworkSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateNetworkSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkSettingsArnHasBeenSet())
   {
@@ -272,6 +276,7 @@ AssociateNetworkSettingsOutcome WorkSpacesWebClient::AssociateNetworkSettings(co
 
 AssociateTrustStoreOutcome WorkSpacesWebClient::AssociateTrustStore(const AssociateTrustStoreRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociateTrustStore);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateTrustStore, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PortalArnHasBeenSet())
   {
@@ -293,6 +298,7 @@ AssociateTrustStoreOutcome WorkSpacesWebClient::AssociateTrustStore(const Associ
 
 AssociateUserAccessLoggingSettingsOutcome WorkSpacesWebClient::AssociateUserAccessLoggingSettings(const AssociateUserAccessLoggingSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociateUserAccessLoggingSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateUserAccessLoggingSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PortalArnHasBeenSet())
   {
@@ -314,6 +320,7 @@ AssociateUserAccessLoggingSettingsOutcome WorkSpacesWebClient::AssociateUserAcce
 
 AssociateUserSettingsOutcome WorkSpacesWebClient::AssociateUserSettings(const AssociateUserSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociateUserSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateUserSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PortalArnHasBeenSet())
   {
@@ -335,6 +342,7 @@ AssociateUserSettingsOutcome WorkSpacesWebClient::AssociateUserSettings(const As
 
 CreateBrowserSettingsOutcome WorkSpacesWebClient::CreateBrowserSettings(const CreateBrowserSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateBrowserSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateBrowserSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateBrowserSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -344,6 +352,7 @@ CreateBrowserSettingsOutcome WorkSpacesWebClient::CreateBrowserSettings(const Cr
 
 CreateIdentityProviderOutcome WorkSpacesWebClient::CreateIdentityProvider(const CreateIdentityProviderRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateIdentityProvider);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateIdentityProvider, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateIdentityProvider, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -353,6 +362,7 @@ CreateIdentityProviderOutcome WorkSpacesWebClient::CreateIdentityProvider(const 
 
 CreateIpAccessSettingsOutcome WorkSpacesWebClient::CreateIpAccessSettings(const CreateIpAccessSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateIpAccessSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateIpAccessSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateIpAccessSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -362,6 +372,7 @@ CreateIpAccessSettingsOutcome WorkSpacesWebClient::CreateIpAccessSettings(const 
 
 CreateNetworkSettingsOutcome WorkSpacesWebClient::CreateNetworkSettings(const CreateNetworkSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateNetworkSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateNetworkSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateNetworkSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -371,6 +382,7 @@ CreateNetworkSettingsOutcome WorkSpacesWebClient::CreateNetworkSettings(const Cr
 
 CreatePortalOutcome WorkSpacesWebClient::CreatePortal(const CreatePortalRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreatePortal);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreatePortal, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreatePortal, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -380,6 +392,7 @@ CreatePortalOutcome WorkSpacesWebClient::CreatePortal(const CreatePortalRequest&
 
 CreateTrustStoreOutcome WorkSpacesWebClient::CreateTrustStore(const CreateTrustStoreRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateTrustStore);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateTrustStore, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateTrustStore, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -389,6 +402,7 @@ CreateTrustStoreOutcome WorkSpacesWebClient::CreateTrustStore(const CreateTrustS
 
 CreateUserAccessLoggingSettingsOutcome WorkSpacesWebClient::CreateUserAccessLoggingSettings(const CreateUserAccessLoggingSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateUserAccessLoggingSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateUserAccessLoggingSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateUserAccessLoggingSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -398,6 +412,7 @@ CreateUserAccessLoggingSettingsOutcome WorkSpacesWebClient::CreateUserAccessLogg
 
 CreateUserSettingsOutcome WorkSpacesWebClient::CreateUserSettings(const CreateUserSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateUserSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateUserSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateUserSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -407,6 +422,7 @@ CreateUserSettingsOutcome WorkSpacesWebClient::CreateUserSettings(const CreateUs
 
 DeleteBrowserSettingsOutcome WorkSpacesWebClient::DeleteBrowserSettings(const DeleteBrowserSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteBrowserSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteBrowserSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BrowserSettingsArnHasBeenSet())
   {
@@ -422,6 +438,7 @@ DeleteBrowserSettingsOutcome WorkSpacesWebClient::DeleteBrowserSettings(const De
 
 DeleteIdentityProviderOutcome WorkSpacesWebClient::DeleteIdentityProvider(const DeleteIdentityProviderRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteIdentityProvider);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteIdentityProvider, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdentityProviderArnHasBeenSet())
   {
@@ -437,6 +454,7 @@ DeleteIdentityProviderOutcome WorkSpacesWebClient::DeleteIdentityProvider(const 
 
 DeleteIpAccessSettingsOutcome WorkSpacesWebClient::DeleteIpAccessSettings(const DeleteIpAccessSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteIpAccessSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteIpAccessSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IpAccessSettingsArnHasBeenSet())
   {
@@ -452,6 +470,7 @@ DeleteIpAccessSettingsOutcome WorkSpacesWebClient::DeleteIpAccessSettings(const 
 
 DeleteNetworkSettingsOutcome WorkSpacesWebClient::DeleteNetworkSettings(const DeleteNetworkSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteNetworkSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteNetworkSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkSettingsArnHasBeenSet())
   {
@@ -467,6 +486,7 @@ DeleteNetworkSettingsOutcome WorkSpacesWebClient::DeleteNetworkSettings(const De
 
 DeletePortalOutcome WorkSpacesWebClient::DeletePortal(const DeletePortalRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeletePortal);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeletePortal, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PortalArnHasBeenSet())
   {
@@ -482,6 +502,7 @@ DeletePortalOutcome WorkSpacesWebClient::DeletePortal(const DeletePortalRequest&
 
 DeleteTrustStoreOutcome WorkSpacesWebClient::DeleteTrustStore(const DeleteTrustStoreRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteTrustStore);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteTrustStore, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TrustStoreArnHasBeenSet())
   {
@@ -497,6 +518,7 @@ DeleteTrustStoreOutcome WorkSpacesWebClient::DeleteTrustStore(const DeleteTrustS
 
 DeleteUserAccessLoggingSettingsOutcome WorkSpacesWebClient::DeleteUserAccessLoggingSettings(const DeleteUserAccessLoggingSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteUserAccessLoggingSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteUserAccessLoggingSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.UserAccessLoggingSettingsArnHasBeenSet())
   {
@@ -512,6 +534,7 @@ DeleteUserAccessLoggingSettingsOutcome WorkSpacesWebClient::DeleteUserAccessLogg
 
 DeleteUserSettingsOutcome WorkSpacesWebClient::DeleteUserSettings(const DeleteUserSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteUserSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteUserSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.UserSettingsArnHasBeenSet())
   {
@@ -527,6 +550,7 @@ DeleteUserSettingsOutcome WorkSpacesWebClient::DeleteUserSettings(const DeleteUs
 
 DisassociateBrowserSettingsOutcome WorkSpacesWebClient::DisassociateBrowserSettings(const DisassociateBrowserSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociateBrowserSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateBrowserSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PortalArnHasBeenSet())
   {
@@ -543,6 +567,7 @@ DisassociateBrowserSettingsOutcome WorkSpacesWebClient::DisassociateBrowserSetti
 
 DisassociateIpAccessSettingsOutcome WorkSpacesWebClient::DisassociateIpAccessSettings(const DisassociateIpAccessSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociateIpAccessSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateIpAccessSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PortalArnHasBeenSet())
   {
@@ -559,6 +584,7 @@ DisassociateIpAccessSettingsOutcome WorkSpacesWebClient::DisassociateIpAccessSet
 
 DisassociateNetworkSettingsOutcome WorkSpacesWebClient::DisassociateNetworkSettings(const DisassociateNetworkSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociateNetworkSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateNetworkSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PortalArnHasBeenSet())
   {
@@ -575,6 +601,7 @@ DisassociateNetworkSettingsOutcome WorkSpacesWebClient::DisassociateNetworkSetti
 
 DisassociateTrustStoreOutcome WorkSpacesWebClient::DisassociateTrustStore(const DisassociateTrustStoreRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociateTrustStore);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateTrustStore, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PortalArnHasBeenSet())
   {
@@ -591,6 +618,7 @@ DisassociateTrustStoreOutcome WorkSpacesWebClient::DisassociateTrustStore(const 
 
 DisassociateUserAccessLoggingSettingsOutcome WorkSpacesWebClient::DisassociateUserAccessLoggingSettings(const DisassociateUserAccessLoggingSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociateUserAccessLoggingSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateUserAccessLoggingSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PortalArnHasBeenSet())
   {
@@ -607,6 +635,7 @@ DisassociateUserAccessLoggingSettingsOutcome WorkSpacesWebClient::DisassociateUs
 
 DisassociateUserSettingsOutcome WorkSpacesWebClient::DisassociateUserSettings(const DisassociateUserSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociateUserSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateUserSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PortalArnHasBeenSet())
   {
@@ -623,6 +652,7 @@ DisassociateUserSettingsOutcome WorkSpacesWebClient::DisassociateUserSettings(co
 
 GetBrowserSettingsOutcome WorkSpacesWebClient::GetBrowserSettings(const GetBrowserSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetBrowserSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBrowserSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BrowserSettingsArnHasBeenSet())
   {
@@ -638,6 +668,7 @@ GetBrowserSettingsOutcome WorkSpacesWebClient::GetBrowserSettings(const GetBrows
 
 GetIdentityProviderOutcome WorkSpacesWebClient::GetIdentityProvider(const GetIdentityProviderRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetIdentityProvider);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetIdentityProvider, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdentityProviderArnHasBeenSet())
   {
@@ -653,6 +684,7 @@ GetIdentityProviderOutcome WorkSpacesWebClient::GetIdentityProvider(const GetIde
 
 GetIpAccessSettingsOutcome WorkSpacesWebClient::GetIpAccessSettings(const GetIpAccessSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetIpAccessSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetIpAccessSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IpAccessSettingsArnHasBeenSet())
   {
@@ -668,6 +700,7 @@ GetIpAccessSettingsOutcome WorkSpacesWebClient::GetIpAccessSettings(const GetIpA
 
 GetNetworkSettingsOutcome WorkSpacesWebClient::GetNetworkSettings(const GetNetworkSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetNetworkSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetNetworkSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkSettingsArnHasBeenSet())
   {
@@ -683,6 +716,7 @@ GetNetworkSettingsOutcome WorkSpacesWebClient::GetNetworkSettings(const GetNetwo
 
 GetPortalOutcome WorkSpacesWebClient::GetPortal(const GetPortalRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetPortal);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPortal, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PortalArnHasBeenSet())
   {
@@ -698,6 +732,7 @@ GetPortalOutcome WorkSpacesWebClient::GetPortal(const GetPortalRequest& request)
 
 GetPortalServiceProviderMetadataOutcome WorkSpacesWebClient::GetPortalServiceProviderMetadata(const GetPortalServiceProviderMetadataRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetPortalServiceProviderMetadata);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPortalServiceProviderMetadata, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PortalArnHasBeenSet())
   {
@@ -713,6 +748,7 @@ GetPortalServiceProviderMetadataOutcome WorkSpacesWebClient::GetPortalServicePro
 
 GetTrustStoreOutcome WorkSpacesWebClient::GetTrustStore(const GetTrustStoreRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetTrustStore);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetTrustStore, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TrustStoreArnHasBeenSet())
   {
@@ -728,6 +764,7 @@ GetTrustStoreOutcome WorkSpacesWebClient::GetTrustStore(const GetTrustStoreReque
 
 GetTrustStoreCertificateOutcome WorkSpacesWebClient::GetTrustStoreCertificate(const GetTrustStoreCertificateRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetTrustStoreCertificate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetTrustStoreCertificate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ThumbprintHasBeenSet())
   {
@@ -749,6 +786,7 @@ GetTrustStoreCertificateOutcome WorkSpacesWebClient::GetTrustStoreCertificate(co
 
 GetUserAccessLoggingSettingsOutcome WorkSpacesWebClient::GetUserAccessLoggingSettings(const GetUserAccessLoggingSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetUserAccessLoggingSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetUserAccessLoggingSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.UserAccessLoggingSettingsArnHasBeenSet())
   {
@@ -764,6 +802,7 @@ GetUserAccessLoggingSettingsOutcome WorkSpacesWebClient::GetUserAccessLoggingSet
 
 GetUserSettingsOutcome WorkSpacesWebClient::GetUserSettings(const GetUserSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetUserSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetUserSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.UserSettingsArnHasBeenSet())
   {
@@ -779,6 +818,7 @@ GetUserSettingsOutcome WorkSpacesWebClient::GetUserSettings(const GetUserSetting
 
 ListBrowserSettingsOutcome WorkSpacesWebClient::ListBrowserSettings(const ListBrowserSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListBrowserSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListBrowserSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListBrowserSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -788,6 +828,7 @@ ListBrowserSettingsOutcome WorkSpacesWebClient::ListBrowserSettings(const ListBr
 
 ListIdentityProvidersOutcome WorkSpacesWebClient::ListIdentityProviders(const ListIdentityProvidersRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListIdentityProviders);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListIdentityProviders, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PortalArnHasBeenSet())
   {
@@ -804,6 +845,7 @@ ListIdentityProvidersOutcome WorkSpacesWebClient::ListIdentityProviders(const Li
 
 ListIpAccessSettingsOutcome WorkSpacesWebClient::ListIpAccessSettings(const ListIpAccessSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListIpAccessSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListIpAccessSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListIpAccessSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -813,6 +855,7 @@ ListIpAccessSettingsOutcome WorkSpacesWebClient::ListIpAccessSettings(const List
 
 ListNetworkSettingsOutcome WorkSpacesWebClient::ListNetworkSettings(const ListNetworkSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListNetworkSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListNetworkSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListNetworkSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -822,6 +865,7 @@ ListNetworkSettingsOutcome WorkSpacesWebClient::ListNetworkSettings(const ListNe
 
 ListPortalsOutcome WorkSpacesWebClient::ListPortals(const ListPortalsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListPortals);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPortals, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListPortals, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -831,6 +875,7 @@ ListPortalsOutcome WorkSpacesWebClient::ListPortals(const ListPortalsRequest& re
 
 ListTagsForResourceOutcome WorkSpacesWebClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -846,6 +891,7 @@ ListTagsForResourceOutcome WorkSpacesWebClient::ListTagsForResource(const ListTa
 
 ListTrustStoreCertificatesOutcome WorkSpacesWebClient::ListTrustStoreCertificates(const ListTrustStoreCertificatesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTrustStoreCertificates);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTrustStoreCertificates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TrustStoreArnHasBeenSet())
   {
@@ -862,6 +908,7 @@ ListTrustStoreCertificatesOutcome WorkSpacesWebClient::ListTrustStoreCertificate
 
 ListTrustStoresOutcome WorkSpacesWebClient::ListTrustStores(const ListTrustStoresRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTrustStores);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTrustStores, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTrustStores, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -871,6 +918,7 @@ ListTrustStoresOutcome WorkSpacesWebClient::ListTrustStores(const ListTrustStore
 
 ListUserAccessLoggingSettingsOutcome WorkSpacesWebClient::ListUserAccessLoggingSettings(const ListUserAccessLoggingSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListUserAccessLoggingSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListUserAccessLoggingSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListUserAccessLoggingSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -880,6 +928,7 @@ ListUserAccessLoggingSettingsOutcome WorkSpacesWebClient::ListUserAccessLoggingS
 
 ListUserSettingsOutcome WorkSpacesWebClient::ListUserSettings(const ListUserSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListUserSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListUserSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListUserSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -889,6 +938,7 @@ ListUserSettingsOutcome WorkSpacesWebClient::ListUserSettings(const ListUserSett
 
 TagResourceOutcome WorkSpacesWebClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -904,6 +954,7 @@ TagResourceOutcome WorkSpacesWebClient::TagResource(const TagResourceRequest& re
 
 UntagResourceOutcome WorkSpacesWebClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -924,6 +975,7 @@ UntagResourceOutcome WorkSpacesWebClient::UntagResource(const UntagResourceReque
 
 UpdateBrowserSettingsOutcome WorkSpacesWebClient::UpdateBrowserSettings(const UpdateBrowserSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateBrowserSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateBrowserSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BrowserSettingsArnHasBeenSet())
   {
@@ -939,6 +991,7 @@ UpdateBrowserSettingsOutcome WorkSpacesWebClient::UpdateBrowserSettings(const Up
 
 UpdateIdentityProviderOutcome WorkSpacesWebClient::UpdateIdentityProvider(const UpdateIdentityProviderRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateIdentityProvider);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateIdentityProvider, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdentityProviderArnHasBeenSet())
   {
@@ -954,6 +1007,7 @@ UpdateIdentityProviderOutcome WorkSpacesWebClient::UpdateIdentityProvider(const 
 
 UpdateIpAccessSettingsOutcome WorkSpacesWebClient::UpdateIpAccessSettings(const UpdateIpAccessSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateIpAccessSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateIpAccessSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IpAccessSettingsArnHasBeenSet())
   {
@@ -969,6 +1023,7 @@ UpdateIpAccessSettingsOutcome WorkSpacesWebClient::UpdateIpAccessSettings(const 
 
 UpdateNetworkSettingsOutcome WorkSpacesWebClient::UpdateNetworkSettings(const UpdateNetworkSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateNetworkSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateNetworkSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkSettingsArnHasBeenSet())
   {
@@ -984,6 +1039,7 @@ UpdateNetworkSettingsOutcome WorkSpacesWebClient::UpdateNetworkSettings(const Up
 
 UpdatePortalOutcome WorkSpacesWebClient::UpdatePortal(const UpdatePortalRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdatePortal);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdatePortal, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PortalArnHasBeenSet())
   {
@@ -999,6 +1055,7 @@ UpdatePortalOutcome WorkSpacesWebClient::UpdatePortal(const UpdatePortalRequest&
 
 UpdateTrustStoreOutcome WorkSpacesWebClient::UpdateTrustStore(const UpdateTrustStoreRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateTrustStore);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateTrustStore, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TrustStoreArnHasBeenSet())
   {
@@ -1014,6 +1071,7 @@ UpdateTrustStoreOutcome WorkSpacesWebClient::UpdateTrustStore(const UpdateTrustS
 
 UpdateUserAccessLoggingSettingsOutcome WorkSpacesWebClient::UpdateUserAccessLoggingSettings(const UpdateUserAccessLoggingSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateUserAccessLoggingSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateUserAccessLoggingSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.UserAccessLoggingSettingsArnHasBeenSet())
   {
@@ -1029,6 +1087,7 @@ UpdateUserAccessLoggingSettingsOutcome WorkSpacesWebClient::UpdateUserAccessLogg
 
 UpdateUserSettingsOutcome WorkSpacesWebClient::UpdateUserSettings(const UpdateUserSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateUserSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateUserSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.UserSettingsArnHasBeenSet())
   {

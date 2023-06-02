@@ -155,6 +155,7 @@ IoTEventsClient::IoTEventsClient(const std::shared_ptr<AWSCredentialsProvider>& 
     /* End of legacy constructors due deprecation */
 IoTEventsClient::~IoTEventsClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<IoTEventsEndpointProviderBase>& IoTEventsClient::accessEndpointProvider()
@@ -177,6 +178,7 @@ void IoTEventsClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CreateAlarmModelOutcome IoTEventsClient::CreateAlarmModel(const CreateAlarmModelRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateAlarmModel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAlarmModel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateAlarmModel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -186,6 +188,7 @@ CreateAlarmModelOutcome IoTEventsClient::CreateAlarmModel(const CreateAlarmModel
 
 CreateDetectorModelOutcome IoTEventsClient::CreateDetectorModel(const CreateDetectorModelRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateDetectorModel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDetectorModel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateDetectorModel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -195,6 +198,7 @@ CreateDetectorModelOutcome IoTEventsClient::CreateDetectorModel(const CreateDete
 
 CreateInputOutcome IoTEventsClient::CreateInput(const CreateInputRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateInput);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateInput, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateInput, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -204,6 +208,7 @@ CreateInputOutcome IoTEventsClient::CreateInput(const CreateInputRequest& reques
 
 DeleteAlarmModelOutcome IoTEventsClient::DeleteAlarmModel(const DeleteAlarmModelRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteAlarmModel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAlarmModel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AlarmModelNameHasBeenSet())
   {
@@ -219,6 +224,7 @@ DeleteAlarmModelOutcome IoTEventsClient::DeleteAlarmModel(const DeleteAlarmModel
 
 DeleteDetectorModelOutcome IoTEventsClient::DeleteDetectorModel(const DeleteDetectorModelRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteDetectorModel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDetectorModel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DetectorModelNameHasBeenSet())
   {
@@ -234,6 +240,7 @@ DeleteDetectorModelOutcome IoTEventsClient::DeleteDetectorModel(const DeleteDete
 
 DeleteInputOutcome IoTEventsClient::DeleteInput(const DeleteInputRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteInput);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteInput, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InputNameHasBeenSet())
   {
@@ -249,6 +256,7 @@ DeleteInputOutcome IoTEventsClient::DeleteInput(const DeleteInputRequest& reques
 
 DescribeAlarmModelOutcome IoTEventsClient::DescribeAlarmModel(const DescribeAlarmModelRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeAlarmModel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAlarmModel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AlarmModelNameHasBeenSet())
   {
@@ -264,6 +272,7 @@ DescribeAlarmModelOutcome IoTEventsClient::DescribeAlarmModel(const DescribeAlar
 
 DescribeDetectorModelOutcome IoTEventsClient::DescribeDetectorModel(const DescribeDetectorModelRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeDetectorModel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeDetectorModel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DetectorModelNameHasBeenSet())
   {
@@ -279,6 +288,7 @@ DescribeDetectorModelOutcome IoTEventsClient::DescribeDetectorModel(const Descri
 
 DescribeDetectorModelAnalysisOutcome IoTEventsClient::DescribeDetectorModelAnalysis(const DescribeDetectorModelAnalysisRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeDetectorModelAnalysis);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeDetectorModelAnalysis, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AnalysisIdHasBeenSet())
   {
@@ -294,6 +304,7 @@ DescribeDetectorModelAnalysisOutcome IoTEventsClient::DescribeDetectorModelAnaly
 
 DescribeInputOutcome IoTEventsClient::DescribeInput(const DescribeInputRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeInput);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeInput, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InputNameHasBeenSet())
   {
@@ -309,6 +320,7 @@ DescribeInputOutcome IoTEventsClient::DescribeInput(const DescribeInputRequest& 
 
 DescribeLoggingOptionsOutcome IoTEventsClient::DescribeLoggingOptions(const DescribeLoggingOptionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeLoggingOptions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeLoggingOptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeLoggingOptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -318,6 +330,7 @@ DescribeLoggingOptionsOutcome IoTEventsClient::DescribeLoggingOptions(const Desc
 
 GetDetectorModelAnalysisResultsOutcome IoTEventsClient::GetDetectorModelAnalysisResults(const GetDetectorModelAnalysisResultsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDetectorModelAnalysisResults);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDetectorModelAnalysisResults, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AnalysisIdHasBeenSet())
   {
@@ -334,6 +347,7 @@ GetDetectorModelAnalysisResultsOutcome IoTEventsClient::GetDetectorModelAnalysis
 
 ListAlarmModelVersionsOutcome IoTEventsClient::ListAlarmModelVersions(const ListAlarmModelVersionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAlarmModelVersions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAlarmModelVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AlarmModelNameHasBeenSet())
   {
@@ -350,6 +364,7 @@ ListAlarmModelVersionsOutcome IoTEventsClient::ListAlarmModelVersions(const List
 
 ListAlarmModelsOutcome IoTEventsClient::ListAlarmModels(const ListAlarmModelsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAlarmModels);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAlarmModels, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAlarmModels, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -359,6 +374,7 @@ ListAlarmModelsOutcome IoTEventsClient::ListAlarmModels(const ListAlarmModelsReq
 
 ListDetectorModelVersionsOutcome IoTEventsClient::ListDetectorModelVersions(const ListDetectorModelVersionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDetectorModelVersions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDetectorModelVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DetectorModelNameHasBeenSet())
   {
@@ -375,6 +391,7 @@ ListDetectorModelVersionsOutcome IoTEventsClient::ListDetectorModelVersions(cons
 
 ListDetectorModelsOutcome IoTEventsClient::ListDetectorModels(const ListDetectorModelsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDetectorModels);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDetectorModels, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDetectorModels, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -384,6 +401,7 @@ ListDetectorModelsOutcome IoTEventsClient::ListDetectorModels(const ListDetector
 
 ListInputRoutingsOutcome IoTEventsClient::ListInputRoutings(const ListInputRoutingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListInputRoutings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListInputRoutings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListInputRoutings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -393,6 +411,7 @@ ListInputRoutingsOutcome IoTEventsClient::ListInputRoutings(const ListInputRouti
 
 ListInputsOutcome IoTEventsClient::ListInputs(const ListInputsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListInputs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListInputs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListInputs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -402,6 +421,7 @@ ListInputsOutcome IoTEventsClient::ListInputs(const ListInputsRequest& request) 
 
 ListTagsForResourceOutcome IoTEventsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -416,6 +436,7 @@ ListTagsForResourceOutcome IoTEventsClient::ListTagsForResource(const ListTagsFo
 
 PutLoggingOptionsOutcome IoTEventsClient::PutLoggingOptions(const PutLoggingOptionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutLoggingOptions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutLoggingOptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutLoggingOptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -425,6 +446,7 @@ PutLoggingOptionsOutcome IoTEventsClient::PutLoggingOptions(const PutLoggingOpti
 
 StartDetectorModelAnalysisOutcome IoTEventsClient::StartDetectorModelAnalysis(const StartDetectorModelAnalysisRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartDetectorModelAnalysis);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartDetectorModelAnalysis, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartDetectorModelAnalysis, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -434,6 +456,7 @@ StartDetectorModelAnalysisOutcome IoTEventsClient::StartDetectorModelAnalysis(co
 
 TagResourceOutcome IoTEventsClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -448,6 +471,7 @@ TagResourceOutcome IoTEventsClient::TagResource(const TagResourceRequest& reques
 
 UntagResourceOutcome IoTEventsClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -467,6 +491,7 @@ UntagResourceOutcome IoTEventsClient::UntagResource(const UntagResourceRequest& 
 
 UpdateAlarmModelOutcome IoTEventsClient::UpdateAlarmModel(const UpdateAlarmModelRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateAlarmModel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAlarmModel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AlarmModelNameHasBeenSet())
   {
@@ -482,6 +507,7 @@ UpdateAlarmModelOutcome IoTEventsClient::UpdateAlarmModel(const UpdateAlarmModel
 
 UpdateDetectorModelOutcome IoTEventsClient::UpdateDetectorModel(const UpdateDetectorModelRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateDetectorModel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDetectorModel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DetectorModelNameHasBeenSet())
   {
@@ -497,6 +523,7 @@ UpdateDetectorModelOutcome IoTEventsClient::UpdateDetectorModel(const UpdateDete
 
 UpdateInputOutcome IoTEventsClient::UpdateInput(const UpdateInputRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateInput);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateInput, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InputNameHasBeenSet())
   {

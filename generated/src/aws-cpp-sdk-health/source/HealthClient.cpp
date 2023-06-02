@@ -139,6 +139,7 @@ HealthClient::HealthClient(const std::shared_ptr<AWSCredentialsProvider>& creden
     /* End of legacy constructors due deprecation */
 HealthClient::~HealthClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<HealthEndpointProviderBase>& HealthClient::accessEndpointProvider()
@@ -161,6 +162,7 @@ void HealthClient::OverrideEndpoint(const Aws::String& endpoint)
 
 DescribeAffectedAccountsForOrganizationOutcome HealthClient::DescribeAffectedAccountsForOrganization(const DescribeAffectedAccountsForOrganizationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeAffectedAccountsForOrganization);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAffectedAccountsForOrganization, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeAffectedAccountsForOrganization, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -169,6 +171,7 @@ DescribeAffectedAccountsForOrganizationOutcome HealthClient::DescribeAffectedAcc
 
 DescribeAffectedEntitiesOutcome HealthClient::DescribeAffectedEntities(const DescribeAffectedEntitiesRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeAffectedEntities);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAffectedEntities, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeAffectedEntities, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -177,6 +180,7 @@ DescribeAffectedEntitiesOutcome HealthClient::DescribeAffectedEntities(const Des
 
 DescribeAffectedEntitiesForOrganizationOutcome HealthClient::DescribeAffectedEntitiesForOrganization(const DescribeAffectedEntitiesForOrganizationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeAffectedEntitiesForOrganization);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAffectedEntitiesForOrganization, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeAffectedEntitiesForOrganization, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -185,6 +189,7 @@ DescribeAffectedEntitiesForOrganizationOutcome HealthClient::DescribeAffectedEnt
 
 DescribeEntityAggregatesOutcome HealthClient::DescribeEntityAggregates(const DescribeEntityAggregatesRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeEntityAggregates);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeEntityAggregates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeEntityAggregates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -193,6 +198,7 @@ DescribeEntityAggregatesOutcome HealthClient::DescribeEntityAggregates(const Des
 
 DescribeEventAggregatesOutcome HealthClient::DescribeEventAggregates(const DescribeEventAggregatesRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeEventAggregates);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeEventAggregates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeEventAggregates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -201,6 +207,7 @@ DescribeEventAggregatesOutcome HealthClient::DescribeEventAggregates(const Descr
 
 DescribeEventDetailsOutcome HealthClient::DescribeEventDetails(const DescribeEventDetailsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeEventDetails);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeEventDetails, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeEventDetails, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -209,6 +216,7 @@ DescribeEventDetailsOutcome HealthClient::DescribeEventDetails(const DescribeEve
 
 DescribeEventDetailsForOrganizationOutcome HealthClient::DescribeEventDetailsForOrganization(const DescribeEventDetailsForOrganizationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeEventDetailsForOrganization);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeEventDetailsForOrganization, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeEventDetailsForOrganization, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -217,6 +225,7 @@ DescribeEventDetailsForOrganizationOutcome HealthClient::DescribeEventDetailsFor
 
 DescribeEventTypesOutcome HealthClient::DescribeEventTypes(const DescribeEventTypesRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeEventTypes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeEventTypes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeEventTypes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -225,6 +234,7 @@ DescribeEventTypesOutcome HealthClient::DescribeEventTypes(const DescribeEventTy
 
 DescribeEventsOutcome HealthClient::DescribeEvents(const DescribeEventsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeEvents);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeEvents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeEvents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -233,6 +243,7 @@ DescribeEventsOutcome HealthClient::DescribeEvents(const DescribeEventsRequest& 
 
 DescribeEventsForOrganizationOutcome HealthClient::DescribeEventsForOrganization(const DescribeEventsForOrganizationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeEventsForOrganization);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeEventsForOrganization, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeEventsForOrganization, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -241,6 +252,7 @@ DescribeEventsForOrganizationOutcome HealthClient::DescribeEventsForOrganization
 
 DescribeHealthServiceStatusForOrganizationOutcome HealthClient::DescribeHealthServiceStatusForOrganization() const
 {
+AWS_OPERATION_GUARD(DescribeHealthServiceStatusForOrganization);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeHealthServiceStatusForOrganization, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   const Aws::Vector<Aws::Endpoint::EndpointParameter> staticEndpointParameters;
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(staticEndpointParameters);
@@ -250,6 +262,7 @@ DescribeHealthServiceStatusForOrganizationOutcome HealthClient::DescribeHealthSe
 
 DisableHealthServiceAccessForOrganizationOutcome HealthClient::DisableHealthServiceAccessForOrganization() const
 {
+AWS_OPERATION_GUARD(DisableHealthServiceAccessForOrganization);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisableHealthServiceAccessForOrganization, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   const Aws::Vector<Aws::Endpoint::EndpointParameter> staticEndpointParameters;
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(staticEndpointParameters);
@@ -259,6 +272,7 @@ DisableHealthServiceAccessForOrganizationOutcome HealthClient::DisableHealthServ
 
 EnableHealthServiceAccessForOrganizationOutcome HealthClient::EnableHealthServiceAccessForOrganization() const
 {
+AWS_OPERATION_GUARD(EnableHealthServiceAccessForOrganization);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, EnableHealthServiceAccessForOrganization, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   const Aws::Vector<Aws::Endpoint::EndpointParameter> staticEndpointParameters;
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(staticEndpointParameters);

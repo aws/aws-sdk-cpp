@@ -144,6 +144,7 @@ IvsrealtimeClient::IvsrealtimeClient(const std::shared_ptr<AWSCredentialsProvide
     /* End of legacy constructors due deprecation */
 IvsrealtimeClient::~IvsrealtimeClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<IvsrealtimeEndpointProviderBase>& IvsrealtimeClient::accessEndpointProvider()
@@ -166,6 +167,7 @@ void IvsrealtimeClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CreateParticipantTokenOutcome IvsrealtimeClient::CreateParticipantToken(const CreateParticipantTokenRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateParticipantToken);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateParticipantToken, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateParticipantToken, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -175,6 +177,7 @@ CreateParticipantTokenOutcome IvsrealtimeClient::CreateParticipantToken(const Cr
 
 CreateStageOutcome IvsrealtimeClient::CreateStage(const CreateStageRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateStage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateStage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateStage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -184,6 +187,7 @@ CreateStageOutcome IvsrealtimeClient::CreateStage(const CreateStageRequest& requ
 
 DeleteStageOutcome IvsrealtimeClient::DeleteStage(const DeleteStageRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteStage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteStage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteStage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -193,6 +197,7 @@ DeleteStageOutcome IvsrealtimeClient::DeleteStage(const DeleteStageRequest& requ
 
 DisconnectParticipantOutcome IvsrealtimeClient::DisconnectParticipant(const DisconnectParticipantRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisconnectParticipant);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisconnectParticipant, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DisconnectParticipant, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -202,6 +207,7 @@ DisconnectParticipantOutcome IvsrealtimeClient::DisconnectParticipant(const Disc
 
 GetParticipantOutcome IvsrealtimeClient::GetParticipant(const GetParticipantRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetParticipant);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetParticipant, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetParticipant, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -211,6 +217,7 @@ GetParticipantOutcome IvsrealtimeClient::GetParticipant(const GetParticipantRequ
 
 GetStageOutcome IvsrealtimeClient::GetStage(const GetStageRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetStage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetStage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetStage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -220,6 +227,7 @@ GetStageOutcome IvsrealtimeClient::GetStage(const GetStageRequest& request) cons
 
 GetStageSessionOutcome IvsrealtimeClient::GetStageSession(const GetStageSessionRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetStageSession);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetStageSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetStageSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -229,6 +237,7 @@ GetStageSessionOutcome IvsrealtimeClient::GetStageSession(const GetStageSessionR
 
 ListParticipantEventsOutcome IvsrealtimeClient::ListParticipantEvents(const ListParticipantEventsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListParticipantEvents);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListParticipantEvents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListParticipantEvents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -238,6 +247,7 @@ ListParticipantEventsOutcome IvsrealtimeClient::ListParticipantEvents(const List
 
 ListParticipantsOutcome IvsrealtimeClient::ListParticipants(const ListParticipantsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListParticipants);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListParticipants, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListParticipants, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -247,6 +257,7 @@ ListParticipantsOutcome IvsrealtimeClient::ListParticipants(const ListParticipan
 
 ListStageSessionsOutcome IvsrealtimeClient::ListStageSessions(const ListStageSessionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListStageSessions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListStageSessions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListStageSessions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -256,6 +267,7 @@ ListStageSessionsOutcome IvsrealtimeClient::ListStageSessions(const ListStageSes
 
 ListStagesOutcome IvsrealtimeClient::ListStages(const ListStagesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListStages);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListStages, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListStages, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -265,6 +277,7 @@ ListStagesOutcome IvsrealtimeClient::ListStages(const ListStagesRequest& request
 
 ListTagsForResourceOutcome IvsrealtimeClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -280,6 +293,7 @@ ListTagsForResourceOutcome IvsrealtimeClient::ListTagsForResource(const ListTags
 
 TagResourceOutcome IvsrealtimeClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -295,6 +309,7 @@ TagResourceOutcome IvsrealtimeClient::TagResource(const TagResourceRequest& requ
 
 UntagResourceOutcome IvsrealtimeClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -315,6 +330,7 @@ UntagResourceOutcome IvsrealtimeClient::UntagResource(const UntagResourceRequest
 
 UpdateStageOutcome IvsrealtimeClient::UpdateStage(const UpdateStageRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateStage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateStage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateStage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

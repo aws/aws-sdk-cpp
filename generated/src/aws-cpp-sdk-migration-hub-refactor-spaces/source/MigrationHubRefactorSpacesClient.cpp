@@ -153,6 +153,7 @@ MigrationHubRefactorSpacesClient::MigrationHubRefactorSpacesClient(const std::sh
     /* End of legacy constructors due deprecation */
 MigrationHubRefactorSpacesClient::~MigrationHubRefactorSpacesClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<MigrationHubRefactorSpacesEndpointProviderBase>& MigrationHubRefactorSpacesClient::accessEndpointProvider()
@@ -175,6 +176,7 @@ void MigrationHubRefactorSpacesClient::OverrideEndpoint(const Aws::String& endpo
 
 CreateApplicationOutcome MigrationHubRefactorSpacesClient::CreateApplication(const CreateApplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateApplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.EnvironmentIdentifierHasBeenSet())
   {
@@ -191,6 +193,7 @@ CreateApplicationOutcome MigrationHubRefactorSpacesClient::CreateApplication(con
 
 CreateEnvironmentOutcome MigrationHubRefactorSpacesClient::CreateEnvironment(const CreateEnvironmentRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateEnvironment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateEnvironment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateEnvironment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -200,6 +203,7 @@ CreateEnvironmentOutcome MigrationHubRefactorSpacesClient::CreateEnvironment(con
 
 CreateRouteOutcome MigrationHubRefactorSpacesClient::CreateRoute(const CreateRouteRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateRoute);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateRoute, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdentifierHasBeenSet())
   {
@@ -223,6 +227,7 @@ CreateRouteOutcome MigrationHubRefactorSpacesClient::CreateRoute(const CreateRou
 
 CreateServiceOutcome MigrationHubRefactorSpacesClient::CreateService(const CreateServiceRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateService);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateService, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdentifierHasBeenSet())
   {
@@ -246,6 +251,7 @@ CreateServiceOutcome MigrationHubRefactorSpacesClient::CreateService(const Creat
 
 DeleteApplicationOutcome MigrationHubRefactorSpacesClient::DeleteApplication(const DeleteApplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteApplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdentifierHasBeenSet())
   {
@@ -268,6 +274,7 @@ DeleteApplicationOutcome MigrationHubRefactorSpacesClient::DeleteApplication(con
 
 DeleteEnvironmentOutcome MigrationHubRefactorSpacesClient::DeleteEnvironment(const DeleteEnvironmentRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteEnvironment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteEnvironment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.EnvironmentIdentifierHasBeenSet())
   {
@@ -283,6 +290,7 @@ DeleteEnvironmentOutcome MigrationHubRefactorSpacesClient::DeleteEnvironment(con
 
 DeleteResourcePolicyOutcome MigrationHubRefactorSpacesClient::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteResourcePolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdentifierHasBeenSet())
   {
@@ -298,6 +306,7 @@ DeleteResourcePolicyOutcome MigrationHubRefactorSpacesClient::DeleteResourcePoli
 
 DeleteRouteOutcome MigrationHubRefactorSpacesClient::DeleteRoute(const DeleteRouteRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteRoute);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteRoute, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdentifierHasBeenSet())
   {
@@ -327,6 +336,7 @@ DeleteRouteOutcome MigrationHubRefactorSpacesClient::DeleteRoute(const DeleteRou
 
 DeleteServiceOutcome MigrationHubRefactorSpacesClient::DeleteService(const DeleteServiceRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteService);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteService, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdentifierHasBeenSet())
   {
@@ -356,6 +366,7 @@ DeleteServiceOutcome MigrationHubRefactorSpacesClient::DeleteService(const Delet
 
 GetApplicationOutcome MigrationHubRefactorSpacesClient::GetApplication(const GetApplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetApplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdentifierHasBeenSet())
   {
@@ -378,6 +389,7 @@ GetApplicationOutcome MigrationHubRefactorSpacesClient::GetApplication(const Get
 
 GetEnvironmentOutcome MigrationHubRefactorSpacesClient::GetEnvironment(const GetEnvironmentRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetEnvironment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetEnvironment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.EnvironmentIdentifierHasBeenSet())
   {
@@ -393,6 +405,7 @@ GetEnvironmentOutcome MigrationHubRefactorSpacesClient::GetEnvironment(const Get
 
 GetResourcePolicyOutcome MigrationHubRefactorSpacesClient::GetResourcePolicy(const GetResourcePolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetResourcePolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdentifierHasBeenSet())
   {
@@ -408,6 +421,7 @@ GetResourcePolicyOutcome MigrationHubRefactorSpacesClient::GetResourcePolicy(con
 
 GetRouteOutcome MigrationHubRefactorSpacesClient::GetRoute(const GetRouteRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetRoute);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetRoute, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdentifierHasBeenSet())
   {
@@ -437,6 +451,7 @@ GetRouteOutcome MigrationHubRefactorSpacesClient::GetRoute(const GetRouteRequest
 
 GetServiceOutcome MigrationHubRefactorSpacesClient::GetService(const GetServiceRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetService);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetService, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdentifierHasBeenSet())
   {
@@ -466,6 +481,7 @@ GetServiceOutcome MigrationHubRefactorSpacesClient::GetService(const GetServiceR
 
 ListApplicationsOutcome MigrationHubRefactorSpacesClient::ListApplications(const ListApplicationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListApplications);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListApplications, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.EnvironmentIdentifierHasBeenSet())
   {
@@ -482,6 +498,7 @@ ListApplicationsOutcome MigrationHubRefactorSpacesClient::ListApplications(const
 
 ListEnvironmentVpcsOutcome MigrationHubRefactorSpacesClient::ListEnvironmentVpcs(const ListEnvironmentVpcsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListEnvironmentVpcs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListEnvironmentVpcs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.EnvironmentIdentifierHasBeenSet())
   {
@@ -498,6 +515,7 @@ ListEnvironmentVpcsOutcome MigrationHubRefactorSpacesClient::ListEnvironmentVpcs
 
 ListEnvironmentsOutcome MigrationHubRefactorSpacesClient::ListEnvironments(const ListEnvironmentsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListEnvironments);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListEnvironments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListEnvironments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -507,6 +525,7 @@ ListEnvironmentsOutcome MigrationHubRefactorSpacesClient::ListEnvironments(const
 
 ListRoutesOutcome MigrationHubRefactorSpacesClient::ListRoutes(const ListRoutesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListRoutes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRoutes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdentifierHasBeenSet())
   {
@@ -530,6 +549,7 @@ ListRoutesOutcome MigrationHubRefactorSpacesClient::ListRoutes(const ListRoutesR
 
 ListServicesOutcome MigrationHubRefactorSpacesClient::ListServices(const ListServicesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListServices);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListServices, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdentifierHasBeenSet())
   {
@@ -553,6 +573,7 @@ ListServicesOutcome MigrationHubRefactorSpacesClient::ListServices(const ListSer
 
 ListTagsForResourceOutcome MigrationHubRefactorSpacesClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -568,6 +589,7 @@ ListTagsForResourceOutcome MigrationHubRefactorSpacesClient::ListTagsForResource
 
 PutResourcePolicyOutcome MigrationHubRefactorSpacesClient::PutResourcePolicy(const PutResourcePolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutResourcePolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -577,6 +599,7 @@ PutResourcePolicyOutcome MigrationHubRefactorSpacesClient::PutResourcePolicy(con
 
 TagResourceOutcome MigrationHubRefactorSpacesClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -592,6 +615,7 @@ TagResourceOutcome MigrationHubRefactorSpacesClient::TagResource(const TagResour
 
 UntagResourceOutcome MigrationHubRefactorSpacesClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -612,6 +636,7 @@ UntagResourceOutcome MigrationHubRefactorSpacesClient::UntagResource(const Untag
 
 UpdateRouteOutcome MigrationHubRefactorSpacesClient::UpdateRoute(const UpdateRouteRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateRoute);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateRoute, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdentifierHasBeenSet())
   {

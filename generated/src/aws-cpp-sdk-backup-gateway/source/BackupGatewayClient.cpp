@@ -154,6 +154,7 @@ BackupGatewayClient::BackupGatewayClient(const std::shared_ptr<AWSCredentialsPro
     /* End of legacy constructors due deprecation */
 BackupGatewayClient::~BackupGatewayClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<BackupGatewayEndpointProviderBase>& BackupGatewayClient::accessEndpointProvider()
@@ -176,6 +177,7 @@ void BackupGatewayClient::OverrideEndpoint(const Aws::String& endpoint)
 
 AssociateGatewayToServerOutcome BackupGatewayClient::AssociateGatewayToServer(const AssociateGatewayToServerRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociateGatewayToServer);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateGatewayToServer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AssociateGatewayToServer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -184,6 +186,7 @@ AssociateGatewayToServerOutcome BackupGatewayClient::AssociateGatewayToServer(co
 
 CreateGatewayOutcome BackupGatewayClient::CreateGateway(const CreateGatewayRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateGateway);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateGateway, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateGateway, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -192,6 +195,7 @@ CreateGatewayOutcome BackupGatewayClient::CreateGateway(const CreateGatewayReque
 
 DeleteGatewayOutcome BackupGatewayClient::DeleteGateway(const DeleteGatewayRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteGateway);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteGateway, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteGateway, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -200,6 +204,7 @@ DeleteGatewayOutcome BackupGatewayClient::DeleteGateway(const DeleteGatewayReque
 
 DeleteHypervisorOutcome BackupGatewayClient::DeleteHypervisor(const DeleteHypervisorRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteHypervisor);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteHypervisor, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteHypervisor, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -208,6 +213,7 @@ DeleteHypervisorOutcome BackupGatewayClient::DeleteHypervisor(const DeleteHyperv
 
 DisassociateGatewayFromServerOutcome BackupGatewayClient::DisassociateGatewayFromServer(const DisassociateGatewayFromServerRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociateGatewayFromServer);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateGatewayFromServer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DisassociateGatewayFromServer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -216,6 +222,7 @@ DisassociateGatewayFromServerOutcome BackupGatewayClient::DisassociateGatewayFro
 
 GetBandwidthRateLimitScheduleOutcome BackupGatewayClient::GetBandwidthRateLimitSchedule(const GetBandwidthRateLimitScheduleRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetBandwidthRateLimitSchedule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBandwidthRateLimitSchedule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetBandwidthRateLimitSchedule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -224,6 +231,7 @@ GetBandwidthRateLimitScheduleOutcome BackupGatewayClient::GetBandwidthRateLimitS
 
 GetGatewayOutcome BackupGatewayClient::GetGateway(const GetGatewayRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetGateway);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetGateway, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetGateway, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -232,6 +240,7 @@ GetGatewayOutcome BackupGatewayClient::GetGateway(const GetGatewayRequest& reque
 
 GetHypervisorOutcome BackupGatewayClient::GetHypervisor(const GetHypervisorRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetHypervisor);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetHypervisor, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetHypervisor, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -240,6 +249,7 @@ GetHypervisorOutcome BackupGatewayClient::GetHypervisor(const GetHypervisorReque
 
 GetHypervisorPropertyMappingsOutcome BackupGatewayClient::GetHypervisorPropertyMappings(const GetHypervisorPropertyMappingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetHypervisorPropertyMappings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetHypervisorPropertyMappings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetHypervisorPropertyMappings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -248,6 +258,7 @@ GetHypervisorPropertyMappingsOutcome BackupGatewayClient::GetHypervisorPropertyM
 
 GetVirtualMachineOutcome BackupGatewayClient::GetVirtualMachine(const GetVirtualMachineRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetVirtualMachine);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetVirtualMachine, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetVirtualMachine, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -256,6 +267,7 @@ GetVirtualMachineOutcome BackupGatewayClient::GetVirtualMachine(const GetVirtual
 
 ImportHypervisorConfigurationOutcome BackupGatewayClient::ImportHypervisorConfiguration(const ImportHypervisorConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(ImportHypervisorConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ImportHypervisorConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ImportHypervisorConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -264,6 +276,7 @@ ImportHypervisorConfigurationOutcome BackupGatewayClient::ImportHypervisorConfig
 
 ListGatewaysOutcome BackupGatewayClient::ListGateways(const ListGatewaysRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListGateways);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListGateways, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListGateways, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -272,6 +285,7 @@ ListGatewaysOutcome BackupGatewayClient::ListGateways(const ListGatewaysRequest&
 
 ListHypervisorsOutcome BackupGatewayClient::ListHypervisors(const ListHypervisorsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListHypervisors);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListHypervisors, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListHypervisors, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -280,6 +294,7 @@ ListHypervisorsOutcome BackupGatewayClient::ListHypervisors(const ListHypervisor
 
 ListTagsForResourceOutcome BackupGatewayClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -288,6 +303,7 @@ ListTagsForResourceOutcome BackupGatewayClient::ListTagsForResource(const ListTa
 
 ListVirtualMachinesOutcome BackupGatewayClient::ListVirtualMachines(const ListVirtualMachinesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListVirtualMachines);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListVirtualMachines, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListVirtualMachines, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -296,6 +312,7 @@ ListVirtualMachinesOutcome BackupGatewayClient::ListVirtualMachines(const ListVi
 
 PutBandwidthRateLimitScheduleOutcome BackupGatewayClient::PutBandwidthRateLimitSchedule(const PutBandwidthRateLimitScheduleRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutBandwidthRateLimitSchedule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutBandwidthRateLimitSchedule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutBandwidthRateLimitSchedule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -304,6 +321,7 @@ PutBandwidthRateLimitScheduleOutcome BackupGatewayClient::PutBandwidthRateLimitS
 
 PutHypervisorPropertyMappingsOutcome BackupGatewayClient::PutHypervisorPropertyMappings(const PutHypervisorPropertyMappingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutHypervisorPropertyMappings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutHypervisorPropertyMappings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutHypervisorPropertyMappings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -312,6 +330,7 @@ PutHypervisorPropertyMappingsOutcome BackupGatewayClient::PutHypervisorPropertyM
 
 PutMaintenanceStartTimeOutcome BackupGatewayClient::PutMaintenanceStartTime(const PutMaintenanceStartTimeRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutMaintenanceStartTime);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutMaintenanceStartTime, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutMaintenanceStartTime, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -320,6 +339,7 @@ PutMaintenanceStartTimeOutcome BackupGatewayClient::PutMaintenanceStartTime(cons
 
 StartVirtualMachinesMetadataSyncOutcome BackupGatewayClient::StartVirtualMachinesMetadataSync(const StartVirtualMachinesMetadataSyncRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartVirtualMachinesMetadataSync);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartVirtualMachinesMetadataSync, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartVirtualMachinesMetadataSync, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -328,6 +348,7 @@ StartVirtualMachinesMetadataSyncOutcome BackupGatewayClient::StartVirtualMachine
 
 TagResourceOutcome BackupGatewayClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -336,6 +357,7 @@ TagResourceOutcome BackupGatewayClient::TagResource(const TagResourceRequest& re
 
 TestHypervisorConfigurationOutcome BackupGatewayClient::TestHypervisorConfiguration(const TestHypervisorConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(TestHypervisorConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TestHypervisorConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TestHypervisorConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -344,6 +366,7 @@ TestHypervisorConfigurationOutcome BackupGatewayClient::TestHypervisorConfigurat
 
 UntagResourceOutcome BackupGatewayClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -352,6 +375,7 @@ UntagResourceOutcome BackupGatewayClient::UntagResource(const UntagResourceReque
 
 UpdateGatewayInformationOutcome BackupGatewayClient::UpdateGatewayInformation(const UpdateGatewayInformationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateGatewayInformation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateGatewayInformation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateGatewayInformation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -360,6 +384,7 @@ UpdateGatewayInformationOutcome BackupGatewayClient::UpdateGatewayInformation(co
 
 UpdateGatewaySoftwareNowOutcome BackupGatewayClient::UpdateGatewaySoftwareNow(const UpdateGatewaySoftwareNowRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateGatewaySoftwareNow);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateGatewaySoftwareNow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateGatewaySoftwareNow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -368,6 +393,7 @@ UpdateGatewaySoftwareNowOutcome BackupGatewayClient::UpdateGatewaySoftwareNow(co
 
 UpdateHypervisorOutcome BackupGatewayClient::UpdateHypervisor(const UpdateHypervisorRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateHypervisor);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateHypervisor, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateHypervisor, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

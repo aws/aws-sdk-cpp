@@ -159,6 +159,7 @@ ConnectCasesClient::ConnectCasesClient(const std::shared_ptr<AWSCredentialsProvi
     /* End of legacy constructors due deprecation */
 ConnectCasesClient::~ConnectCasesClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<ConnectCasesEndpointProviderBase>& ConnectCasesClient::accessEndpointProvider()
@@ -181,6 +182,7 @@ void ConnectCasesClient::OverrideEndpoint(const Aws::String& endpoint)
 
 BatchGetFieldOutcome ConnectCasesClient::BatchGetField(const BatchGetFieldRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchGetField);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchGetField, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainIdHasBeenSet())
   {
@@ -197,6 +199,7 @@ BatchGetFieldOutcome ConnectCasesClient::BatchGetField(const BatchGetFieldReques
 
 BatchPutFieldOptionsOutcome ConnectCasesClient::BatchPutFieldOptions(const BatchPutFieldOptionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchPutFieldOptions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchPutFieldOptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainIdHasBeenSet())
   {
@@ -220,6 +223,7 @@ BatchPutFieldOptionsOutcome ConnectCasesClient::BatchPutFieldOptions(const Batch
 
 CreateCaseOutcome ConnectCasesClient::CreateCase(const CreateCaseRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateCase);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateCase, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainIdHasBeenSet())
   {
@@ -236,6 +240,7 @@ CreateCaseOutcome ConnectCasesClient::CreateCase(const CreateCaseRequest& reques
 
 CreateDomainOutcome ConnectCasesClient::CreateDomain(const CreateDomainRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateDomain);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDomain, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateDomain, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -245,6 +250,7 @@ CreateDomainOutcome ConnectCasesClient::CreateDomain(const CreateDomainRequest& 
 
 CreateFieldOutcome ConnectCasesClient::CreateField(const CreateFieldRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateField);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateField, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainIdHasBeenSet())
   {
@@ -261,6 +267,7 @@ CreateFieldOutcome ConnectCasesClient::CreateField(const CreateFieldRequest& req
 
 CreateLayoutOutcome ConnectCasesClient::CreateLayout(const CreateLayoutRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateLayout);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateLayout, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainIdHasBeenSet())
   {
@@ -277,6 +284,7 @@ CreateLayoutOutcome ConnectCasesClient::CreateLayout(const CreateLayoutRequest& 
 
 CreateRelatedItemOutcome ConnectCasesClient::CreateRelatedItem(const CreateRelatedItemRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateRelatedItem);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateRelatedItem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CaseIdHasBeenSet())
   {
@@ -300,6 +308,7 @@ CreateRelatedItemOutcome ConnectCasesClient::CreateRelatedItem(const CreateRelat
 
 CreateTemplateOutcome ConnectCasesClient::CreateTemplate(const CreateTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainIdHasBeenSet())
   {
@@ -316,6 +325,7 @@ CreateTemplateOutcome ConnectCasesClient::CreateTemplate(const CreateTemplateReq
 
 DeleteDomainOutcome ConnectCasesClient::DeleteDomain(const DeleteDomainRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteDomain);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDomain, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainIdHasBeenSet())
   {
@@ -331,6 +341,7 @@ DeleteDomainOutcome ConnectCasesClient::DeleteDomain(const DeleteDomainRequest& 
 
 GetCaseOutcome ConnectCasesClient::GetCase(const GetCaseRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetCase);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCase, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CaseIdHasBeenSet())
   {
@@ -353,6 +364,7 @@ GetCaseOutcome ConnectCasesClient::GetCase(const GetCaseRequest& request) const
 
 GetCaseEventConfigurationOutcome ConnectCasesClient::GetCaseEventConfiguration(const GetCaseEventConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetCaseEventConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCaseEventConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainIdHasBeenSet())
   {
@@ -369,6 +381,7 @@ GetCaseEventConfigurationOutcome ConnectCasesClient::GetCaseEventConfiguration(c
 
 GetDomainOutcome ConnectCasesClient::GetDomain(const GetDomainRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDomain);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDomain, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainIdHasBeenSet())
   {
@@ -384,6 +397,7 @@ GetDomainOutcome ConnectCasesClient::GetDomain(const GetDomainRequest& request) 
 
 GetLayoutOutcome ConnectCasesClient::GetLayout(const GetLayoutRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetLayout);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetLayout, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainIdHasBeenSet())
   {
@@ -406,6 +420,7 @@ GetLayoutOutcome ConnectCasesClient::GetLayout(const GetLayoutRequest& request) 
 
 GetTemplateOutcome ConnectCasesClient::GetTemplate(const GetTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainIdHasBeenSet())
   {
@@ -428,6 +443,7 @@ GetTemplateOutcome ConnectCasesClient::GetTemplate(const GetTemplateRequest& req
 
 ListCasesForContactOutcome ConnectCasesClient::ListCasesForContact(const ListCasesForContactRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListCasesForContact);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListCasesForContact, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainIdHasBeenSet())
   {
@@ -444,6 +460,7 @@ ListCasesForContactOutcome ConnectCasesClient::ListCasesForContact(const ListCas
 
 ListDomainsOutcome ConnectCasesClient::ListDomains(const ListDomainsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDomains);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDomains, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDomains, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -453,6 +470,7 @@ ListDomainsOutcome ConnectCasesClient::ListDomains(const ListDomainsRequest& req
 
 ListFieldOptionsOutcome ConnectCasesClient::ListFieldOptions(const ListFieldOptionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListFieldOptions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListFieldOptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainIdHasBeenSet())
   {
@@ -476,6 +494,7 @@ ListFieldOptionsOutcome ConnectCasesClient::ListFieldOptions(const ListFieldOpti
 
 ListFieldsOutcome ConnectCasesClient::ListFields(const ListFieldsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListFields);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListFields, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainIdHasBeenSet())
   {
@@ -492,6 +511,7 @@ ListFieldsOutcome ConnectCasesClient::ListFields(const ListFieldsRequest& reques
 
 ListLayoutsOutcome ConnectCasesClient::ListLayouts(const ListLayoutsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListLayouts);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListLayouts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainIdHasBeenSet())
   {
@@ -508,6 +528,7 @@ ListLayoutsOutcome ConnectCasesClient::ListLayouts(const ListLayoutsRequest& req
 
 ListTagsForResourceOutcome ConnectCasesClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ArnHasBeenSet())
   {
@@ -523,6 +544,7 @@ ListTagsForResourceOutcome ConnectCasesClient::ListTagsForResource(const ListTag
 
 ListTemplatesOutcome ConnectCasesClient::ListTemplates(const ListTemplatesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTemplates);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTemplates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainIdHasBeenSet())
   {
@@ -539,6 +561,7 @@ ListTemplatesOutcome ConnectCasesClient::ListTemplates(const ListTemplatesReques
 
 PutCaseEventConfigurationOutcome ConnectCasesClient::PutCaseEventConfiguration(const PutCaseEventConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutCaseEventConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutCaseEventConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainIdHasBeenSet())
   {
@@ -555,6 +578,7 @@ PutCaseEventConfigurationOutcome ConnectCasesClient::PutCaseEventConfiguration(c
 
 SearchCasesOutcome ConnectCasesClient::SearchCases(const SearchCasesRequest& request) const
 {
+  AWS_OPERATION_GUARD(SearchCases);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SearchCases, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainIdHasBeenSet())
   {
@@ -571,6 +595,7 @@ SearchCasesOutcome ConnectCasesClient::SearchCases(const SearchCasesRequest& req
 
 SearchRelatedItemsOutcome ConnectCasesClient::SearchRelatedItems(const SearchRelatedItemsRequest& request) const
 {
+  AWS_OPERATION_GUARD(SearchRelatedItems);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SearchRelatedItems, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CaseIdHasBeenSet())
   {
@@ -594,6 +619,7 @@ SearchRelatedItemsOutcome ConnectCasesClient::SearchRelatedItems(const SearchRel
 
 TagResourceOutcome ConnectCasesClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ArnHasBeenSet())
   {
@@ -609,6 +635,7 @@ TagResourceOutcome ConnectCasesClient::TagResource(const TagResourceRequest& req
 
 UntagResourceOutcome ConnectCasesClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ArnHasBeenSet())
   {
@@ -629,6 +656,7 @@ UntagResourceOutcome ConnectCasesClient::UntagResource(const UntagResourceReques
 
 UpdateCaseOutcome ConnectCasesClient::UpdateCase(const UpdateCaseRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateCase);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateCase, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CaseIdHasBeenSet())
   {
@@ -651,6 +679,7 @@ UpdateCaseOutcome ConnectCasesClient::UpdateCase(const UpdateCaseRequest& reques
 
 UpdateFieldOutcome ConnectCasesClient::UpdateField(const UpdateFieldRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateField);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateField, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainIdHasBeenSet())
   {
@@ -673,6 +702,7 @@ UpdateFieldOutcome ConnectCasesClient::UpdateField(const UpdateFieldRequest& req
 
 UpdateLayoutOutcome ConnectCasesClient::UpdateLayout(const UpdateLayoutRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateLayout);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateLayout, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainIdHasBeenSet())
   {
@@ -695,6 +725,7 @@ UpdateLayoutOutcome ConnectCasesClient::UpdateLayout(const UpdateLayoutRequest& 
 
 UpdateTemplateOutcome ConnectCasesClient::UpdateTemplate(const UpdateTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainIdHasBeenSet())
   {

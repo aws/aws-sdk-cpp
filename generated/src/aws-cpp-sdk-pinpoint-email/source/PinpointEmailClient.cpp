@@ -171,6 +171,7 @@ PinpointEmailClient::PinpointEmailClient(const std::shared_ptr<AWSCredentialsPro
     /* End of legacy constructors due deprecation */
 PinpointEmailClient::~PinpointEmailClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<PinpointEmailEndpointProviderBase>& PinpointEmailClient::accessEndpointProvider()
@@ -193,6 +194,7 @@ void PinpointEmailClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CreateConfigurationSetOutcome PinpointEmailClient::CreateConfigurationSet(const CreateConfigurationSetRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateConfigurationSet);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateConfigurationSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateConfigurationSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -202,6 +204,7 @@ CreateConfigurationSetOutcome PinpointEmailClient::CreateConfigurationSet(const 
 
 CreateConfigurationSetEventDestinationOutcome PinpointEmailClient::CreateConfigurationSetEventDestination(const CreateConfigurationSetEventDestinationRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateConfigurationSetEventDestination);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateConfigurationSetEventDestination, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConfigurationSetNameHasBeenSet())
   {
@@ -218,6 +221,7 @@ CreateConfigurationSetEventDestinationOutcome PinpointEmailClient::CreateConfigu
 
 CreateDedicatedIpPoolOutcome PinpointEmailClient::CreateDedicatedIpPool(const CreateDedicatedIpPoolRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateDedicatedIpPool);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDedicatedIpPool, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateDedicatedIpPool, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -227,6 +231,7 @@ CreateDedicatedIpPoolOutcome PinpointEmailClient::CreateDedicatedIpPool(const Cr
 
 CreateDeliverabilityTestReportOutcome PinpointEmailClient::CreateDeliverabilityTestReport(const CreateDeliverabilityTestReportRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateDeliverabilityTestReport);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDeliverabilityTestReport, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateDeliverabilityTestReport, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -236,6 +241,7 @@ CreateDeliverabilityTestReportOutcome PinpointEmailClient::CreateDeliverabilityT
 
 CreateEmailIdentityOutcome PinpointEmailClient::CreateEmailIdentity(const CreateEmailIdentityRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateEmailIdentity);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateEmailIdentity, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateEmailIdentity, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -245,6 +251,7 @@ CreateEmailIdentityOutcome PinpointEmailClient::CreateEmailIdentity(const Create
 
 DeleteConfigurationSetOutcome PinpointEmailClient::DeleteConfigurationSet(const DeleteConfigurationSetRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteConfigurationSet);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteConfigurationSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConfigurationSetNameHasBeenSet())
   {
@@ -260,6 +267,7 @@ DeleteConfigurationSetOutcome PinpointEmailClient::DeleteConfigurationSet(const 
 
 DeleteConfigurationSetEventDestinationOutcome PinpointEmailClient::DeleteConfigurationSetEventDestination(const DeleteConfigurationSetEventDestinationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteConfigurationSetEventDestination);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteConfigurationSetEventDestination, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConfigurationSetNameHasBeenSet())
   {
@@ -282,6 +290,7 @@ DeleteConfigurationSetEventDestinationOutcome PinpointEmailClient::DeleteConfigu
 
 DeleteDedicatedIpPoolOutcome PinpointEmailClient::DeleteDedicatedIpPool(const DeleteDedicatedIpPoolRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteDedicatedIpPool);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDedicatedIpPool, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PoolNameHasBeenSet())
   {
@@ -297,6 +306,7 @@ DeleteDedicatedIpPoolOutcome PinpointEmailClient::DeleteDedicatedIpPool(const De
 
 DeleteEmailIdentityOutcome PinpointEmailClient::DeleteEmailIdentity(const DeleteEmailIdentityRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteEmailIdentity);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteEmailIdentity, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.EmailIdentityHasBeenSet())
   {
@@ -312,6 +322,7 @@ DeleteEmailIdentityOutcome PinpointEmailClient::DeleteEmailIdentity(const Delete
 
 GetAccountOutcome PinpointEmailClient::GetAccount(const GetAccountRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetAccount);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAccount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetAccount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -321,6 +332,7 @@ GetAccountOutcome PinpointEmailClient::GetAccount(const GetAccountRequest& reque
 
 GetBlacklistReportsOutcome PinpointEmailClient::GetBlacklistReports(const GetBlacklistReportsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetBlacklistReports);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBlacklistReports, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BlacklistItemNamesHasBeenSet())
   {
@@ -335,6 +347,7 @@ GetBlacklistReportsOutcome PinpointEmailClient::GetBlacklistReports(const GetBla
 
 GetConfigurationSetOutcome PinpointEmailClient::GetConfigurationSet(const GetConfigurationSetRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetConfigurationSet);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetConfigurationSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConfigurationSetNameHasBeenSet())
   {
@@ -350,6 +363,7 @@ GetConfigurationSetOutcome PinpointEmailClient::GetConfigurationSet(const GetCon
 
 GetConfigurationSetEventDestinationsOutcome PinpointEmailClient::GetConfigurationSetEventDestinations(const GetConfigurationSetEventDestinationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetConfigurationSetEventDestinations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetConfigurationSetEventDestinations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConfigurationSetNameHasBeenSet())
   {
@@ -366,6 +380,7 @@ GetConfigurationSetEventDestinationsOutcome PinpointEmailClient::GetConfiguratio
 
 GetDedicatedIpOutcome PinpointEmailClient::GetDedicatedIp(const GetDedicatedIpRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDedicatedIp);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDedicatedIp, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IpHasBeenSet())
   {
@@ -381,6 +396,7 @@ GetDedicatedIpOutcome PinpointEmailClient::GetDedicatedIp(const GetDedicatedIpRe
 
 GetDedicatedIpsOutcome PinpointEmailClient::GetDedicatedIps(const GetDedicatedIpsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDedicatedIps);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDedicatedIps, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetDedicatedIps, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -390,6 +406,7 @@ GetDedicatedIpsOutcome PinpointEmailClient::GetDedicatedIps(const GetDedicatedIp
 
 GetDeliverabilityDashboardOptionsOutcome PinpointEmailClient::GetDeliverabilityDashboardOptions(const GetDeliverabilityDashboardOptionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDeliverabilityDashboardOptions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDeliverabilityDashboardOptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetDeliverabilityDashboardOptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -399,6 +416,7 @@ GetDeliverabilityDashboardOptionsOutcome PinpointEmailClient::GetDeliverabilityD
 
 GetDeliverabilityTestReportOutcome PinpointEmailClient::GetDeliverabilityTestReport(const GetDeliverabilityTestReportRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDeliverabilityTestReport);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDeliverabilityTestReport, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ReportIdHasBeenSet())
   {
@@ -414,6 +432,7 @@ GetDeliverabilityTestReportOutcome PinpointEmailClient::GetDeliverabilityTestRep
 
 GetDomainDeliverabilityCampaignOutcome PinpointEmailClient::GetDomainDeliverabilityCampaign(const GetDomainDeliverabilityCampaignRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDomainDeliverabilityCampaign);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDomainDeliverabilityCampaign, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CampaignIdHasBeenSet())
   {
@@ -429,6 +448,7 @@ GetDomainDeliverabilityCampaignOutcome PinpointEmailClient::GetDomainDeliverabil
 
 GetDomainStatisticsReportOutcome PinpointEmailClient::GetDomainStatisticsReport(const GetDomainStatisticsReportRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDomainStatisticsReport);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDomainStatisticsReport, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainHasBeenSet())
   {
@@ -454,6 +474,7 @@ GetDomainStatisticsReportOutcome PinpointEmailClient::GetDomainStatisticsReport(
 
 GetEmailIdentityOutcome PinpointEmailClient::GetEmailIdentity(const GetEmailIdentityRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetEmailIdentity);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetEmailIdentity, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.EmailIdentityHasBeenSet())
   {
@@ -469,6 +490,7 @@ GetEmailIdentityOutcome PinpointEmailClient::GetEmailIdentity(const GetEmailIden
 
 ListConfigurationSetsOutcome PinpointEmailClient::ListConfigurationSets(const ListConfigurationSetsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListConfigurationSets);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListConfigurationSets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListConfigurationSets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -478,6 +500,7 @@ ListConfigurationSetsOutcome PinpointEmailClient::ListConfigurationSets(const Li
 
 ListDedicatedIpPoolsOutcome PinpointEmailClient::ListDedicatedIpPools(const ListDedicatedIpPoolsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDedicatedIpPools);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDedicatedIpPools, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDedicatedIpPools, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -487,6 +510,7 @@ ListDedicatedIpPoolsOutcome PinpointEmailClient::ListDedicatedIpPools(const List
 
 ListDeliverabilityTestReportsOutcome PinpointEmailClient::ListDeliverabilityTestReports(const ListDeliverabilityTestReportsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDeliverabilityTestReports);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDeliverabilityTestReports, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDeliverabilityTestReports, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -496,6 +520,7 @@ ListDeliverabilityTestReportsOutcome PinpointEmailClient::ListDeliverabilityTest
 
 ListDomainDeliverabilityCampaignsOutcome PinpointEmailClient::ListDomainDeliverabilityCampaigns(const ListDomainDeliverabilityCampaignsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDomainDeliverabilityCampaigns);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDomainDeliverabilityCampaigns, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StartDateHasBeenSet())
   {
@@ -522,6 +547,7 @@ ListDomainDeliverabilityCampaignsOutcome PinpointEmailClient::ListDomainDelivera
 
 ListEmailIdentitiesOutcome PinpointEmailClient::ListEmailIdentities(const ListEmailIdentitiesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListEmailIdentities);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListEmailIdentities, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListEmailIdentities, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -531,6 +557,7 @@ ListEmailIdentitiesOutcome PinpointEmailClient::ListEmailIdentities(const ListEm
 
 ListTagsForResourceOutcome PinpointEmailClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -545,6 +572,7 @@ ListTagsForResourceOutcome PinpointEmailClient::ListTagsForResource(const ListTa
 
 PutAccountDedicatedIpWarmupAttributesOutcome PinpointEmailClient::PutAccountDedicatedIpWarmupAttributes(const PutAccountDedicatedIpWarmupAttributesRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutAccountDedicatedIpWarmupAttributes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutAccountDedicatedIpWarmupAttributes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutAccountDedicatedIpWarmupAttributes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -554,6 +582,7 @@ PutAccountDedicatedIpWarmupAttributesOutcome PinpointEmailClient::PutAccountDedi
 
 PutAccountSendingAttributesOutcome PinpointEmailClient::PutAccountSendingAttributes(const PutAccountSendingAttributesRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutAccountSendingAttributes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutAccountSendingAttributes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutAccountSendingAttributes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -563,6 +592,7 @@ PutAccountSendingAttributesOutcome PinpointEmailClient::PutAccountSendingAttribu
 
 PutConfigurationSetDeliveryOptionsOutcome PinpointEmailClient::PutConfigurationSetDeliveryOptions(const PutConfigurationSetDeliveryOptionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutConfigurationSetDeliveryOptions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutConfigurationSetDeliveryOptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConfigurationSetNameHasBeenSet())
   {
@@ -579,6 +609,7 @@ PutConfigurationSetDeliveryOptionsOutcome PinpointEmailClient::PutConfigurationS
 
 PutConfigurationSetReputationOptionsOutcome PinpointEmailClient::PutConfigurationSetReputationOptions(const PutConfigurationSetReputationOptionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutConfigurationSetReputationOptions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutConfigurationSetReputationOptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConfigurationSetNameHasBeenSet())
   {
@@ -595,6 +626,7 @@ PutConfigurationSetReputationOptionsOutcome PinpointEmailClient::PutConfiguratio
 
 PutConfigurationSetSendingOptionsOutcome PinpointEmailClient::PutConfigurationSetSendingOptions(const PutConfigurationSetSendingOptionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutConfigurationSetSendingOptions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutConfigurationSetSendingOptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConfigurationSetNameHasBeenSet())
   {
@@ -611,6 +643,7 @@ PutConfigurationSetSendingOptionsOutcome PinpointEmailClient::PutConfigurationSe
 
 PutConfigurationSetTrackingOptionsOutcome PinpointEmailClient::PutConfigurationSetTrackingOptions(const PutConfigurationSetTrackingOptionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutConfigurationSetTrackingOptions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutConfigurationSetTrackingOptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConfigurationSetNameHasBeenSet())
   {
@@ -627,6 +660,7 @@ PutConfigurationSetTrackingOptionsOutcome PinpointEmailClient::PutConfigurationS
 
 PutDedicatedIpInPoolOutcome PinpointEmailClient::PutDedicatedIpInPool(const PutDedicatedIpInPoolRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutDedicatedIpInPool);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutDedicatedIpInPool, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IpHasBeenSet())
   {
@@ -643,6 +677,7 @@ PutDedicatedIpInPoolOutcome PinpointEmailClient::PutDedicatedIpInPool(const PutD
 
 PutDedicatedIpWarmupAttributesOutcome PinpointEmailClient::PutDedicatedIpWarmupAttributes(const PutDedicatedIpWarmupAttributesRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutDedicatedIpWarmupAttributes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutDedicatedIpWarmupAttributes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IpHasBeenSet())
   {
@@ -659,6 +694,7 @@ PutDedicatedIpWarmupAttributesOutcome PinpointEmailClient::PutDedicatedIpWarmupA
 
 PutDeliverabilityDashboardOptionOutcome PinpointEmailClient::PutDeliverabilityDashboardOption(const PutDeliverabilityDashboardOptionRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutDeliverabilityDashboardOption);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutDeliverabilityDashboardOption, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutDeliverabilityDashboardOption, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -668,6 +704,7 @@ PutDeliverabilityDashboardOptionOutcome PinpointEmailClient::PutDeliverabilityDa
 
 PutEmailIdentityDkimAttributesOutcome PinpointEmailClient::PutEmailIdentityDkimAttributes(const PutEmailIdentityDkimAttributesRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutEmailIdentityDkimAttributes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutEmailIdentityDkimAttributes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.EmailIdentityHasBeenSet())
   {
@@ -684,6 +721,7 @@ PutEmailIdentityDkimAttributesOutcome PinpointEmailClient::PutEmailIdentityDkimA
 
 PutEmailIdentityFeedbackAttributesOutcome PinpointEmailClient::PutEmailIdentityFeedbackAttributes(const PutEmailIdentityFeedbackAttributesRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutEmailIdentityFeedbackAttributes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutEmailIdentityFeedbackAttributes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.EmailIdentityHasBeenSet())
   {
@@ -700,6 +738,7 @@ PutEmailIdentityFeedbackAttributesOutcome PinpointEmailClient::PutEmailIdentityF
 
 PutEmailIdentityMailFromAttributesOutcome PinpointEmailClient::PutEmailIdentityMailFromAttributes(const PutEmailIdentityMailFromAttributesRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutEmailIdentityMailFromAttributes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutEmailIdentityMailFromAttributes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.EmailIdentityHasBeenSet())
   {
@@ -716,6 +755,7 @@ PutEmailIdentityMailFromAttributesOutcome PinpointEmailClient::PutEmailIdentityM
 
 SendEmailOutcome PinpointEmailClient::SendEmail(const SendEmailRequest& request) const
 {
+  AWS_OPERATION_GUARD(SendEmail);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SendEmail, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SendEmail, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -725,6 +765,7 @@ SendEmailOutcome PinpointEmailClient::SendEmail(const SendEmailRequest& request)
 
 TagResourceOutcome PinpointEmailClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -734,6 +775,7 @@ TagResourceOutcome PinpointEmailClient::TagResource(const TagResourceRequest& re
 
 UntagResourceOutcome PinpointEmailClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -753,6 +795,7 @@ UntagResourceOutcome PinpointEmailClient::UntagResource(const UntagResourceReque
 
 UpdateConfigurationSetEventDestinationOutcome PinpointEmailClient::UpdateConfigurationSetEventDestination(const UpdateConfigurationSetEventDestinationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateConfigurationSetEventDestination);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateConfigurationSetEventDestination, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConfigurationSetNameHasBeenSet())
   {

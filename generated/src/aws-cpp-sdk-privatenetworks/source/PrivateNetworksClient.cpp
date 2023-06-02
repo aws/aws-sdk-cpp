@@ -154,6 +154,7 @@ PrivateNetworksClient::PrivateNetworksClient(const std::shared_ptr<AWSCredential
     /* End of legacy constructors due deprecation */
 PrivateNetworksClient::~PrivateNetworksClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<PrivateNetworksEndpointProviderBase>& PrivateNetworksClient::accessEndpointProvider()
@@ -176,6 +177,7 @@ void PrivateNetworksClient::OverrideEndpoint(const Aws::String& endpoint)
 
 AcknowledgeOrderReceiptOutcome PrivateNetworksClient::AcknowledgeOrderReceipt(const AcknowledgeOrderReceiptRequest& request) const
 {
+  AWS_OPERATION_GUARD(AcknowledgeOrderReceipt);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AcknowledgeOrderReceipt, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AcknowledgeOrderReceipt, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -185,6 +187,7 @@ AcknowledgeOrderReceiptOutcome PrivateNetworksClient::AcknowledgeOrderReceipt(co
 
 ActivateDeviceIdentifierOutcome PrivateNetworksClient::ActivateDeviceIdentifier(const ActivateDeviceIdentifierRequest& request) const
 {
+  AWS_OPERATION_GUARD(ActivateDeviceIdentifier);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ActivateDeviceIdentifier, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ActivateDeviceIdentifier, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -194,6 +197,7 @@ ActivateDeviceIdentifierOutcome PrivateNetworksClient::ActivateDeviceIdentifier(
 
 ActivateNetworkSiteOutcome PrivateNetworksClient::ActivateNetworkSite(const ActivateNetworkSiteRequest& request) const
 {
+  AWS_OPERATION_GUARD(ActivateNetworkSite);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ActivateNetworkSite, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ActivateNetworkSite, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -203,6 +207,7 @@ ActivateNetworkSiteOutcome PrivateNetworksClient::ActivateNetworkSite(const Acti
 
 ConfigureAccessPointOutcome PrivateNetworksClient::ConfigureAccessPoint(const ConfigureAccessPointRequest& request) const
 {
+  AWS_OPERATION_GUARD(ConfigureAccessPoint);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ConfigureAccessPoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ConfigureAccessPoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -212,6 +217,7 @@ ConfigureAccessPointOutcome PrivateNetworksClient::ConfigureAccessPoint(const Co
 
 CreateNetworkOutcome PrivateNetworksClient::CreateNetwork(const CreateNetworkRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateNetwork);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateNetwork, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateNetwork, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -221,6 +227,7 @@ CreateNetworkOutcome PrivateNetworksClient::CreateNetwork(const CreateNetworkReq
 
 CreateNetworkSiteOutcome PrivateNetworksClient::CreateNetworkSite(const CreateNetworkSiteRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateNetworkSite);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateNetworkSite, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateNetworkSite, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -230,6 +237,7 @@ CreateNetworkSiteOutcome PrivateNetworksClient::CreateNetworkSite(const CreateNe
 
 DeactivateDeviceIdentifierOutcome PrivateNetworksClient::DeactivateDeviceIdentifier(const DeactivateDeviceIdentifierRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeactivateDeviceIdentifier);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeactivateDeviceIdentifier, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeactivateDeviceIdentifier, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -239,6 +247,7 @@ DeactivateDeviceIdentifierOutcome PrivateNetworksClient::DeactivateDeviceIdentif
 
 DeleteNetworkOutcome PrivateNetworksClient::DeleteNetwork(const DeleteNetworkRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteNetwork);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteNetwork, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkArnHasBeenSet())
   {
@@ -254,6 +263,7 @@ DeleteNetworkOutcome PrivateNetworksClient::DeleteNetwork(const DeleteNetworkReq
 
 DeleteNetworkSiteOutcome PrivateNetworksClient::DeleteNetworkSite(const DeleteNetworkSiteRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteNetworkSite);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteNetworkSite, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkSiteArnHasBeenSet())
   {
@@ -269,6 +279,7 @@ DeleteNetworkSiteOutcome PrivateNetworksClient::DeleteNetworkSite(const DeleteNe
 
 GetDeviceIdentifierOutcome PrivateNetworksClient::GetDeviceIdentifier(const GetDeviceIdentifierRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDeviceIdentifier);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDeviceIdentifier, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DeviceIdentifierArnHasBeenSet())
   {
@@ -284,6 +295,7 @@ GetDeviceIdentifierOutcome PrivateNetworksClient::GetDeviceIdentifier(const GetD
 
 GetNetworkOutcome PrivateNetworksClient::GetNetwork(const GetNetworkRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetNetwork);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetNetwork, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkArnHasBeenSet())
   {
@@ -299,6 +311,7 @@ GetNetworkOutcome PrivateNetworksClient::GetNetwork(const GetNetworkRequest& req
 
 GetNetworkResourceOutcome PrivateNetworksClient::GetNetworkResource(const GetNetworkResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetNetworkResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetNetworkResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkResourceArnHasBeenSet())
   {
@@ -314,6 +327,7 @@ GetNetworkResourceOutcome PrivateNetworksClient::GetNetworkResource(const GetNet
 
 GetNetworkSiteOutcome PrivateNetworksClient::GetNetworkSite(const GetNetworkSiteRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetNetworkSite);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetNetworkSite, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkSiteArnHasBeenSet())
   {
@@ -329,6 +343,7 @@ GetNetworkSiteOutcome PrivateNetworksClient::GetNetworkSite(const GetNetworkSite
 
 GetOrderOutcome PrivateNetworksClient::GetOrder(const GetOrderRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetOrder);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetOrder, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.OrderArnHasBeenSet())
   {
@@ -344,6 +359,7 @@ GetOrderOutcome PrivateNetworksClient::GetOrder(const GetOrderRequest& request) 
 
 ListDeviceIdentifiersOutcome PrivateNetworksClient::ListDeviceIdentifiers(const ListDeviceIdentifiersRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDeviceIdentifiers);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDeviceIdentifiers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDeviceIdentifiers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -353,6 +369,7 @@ ListDeviceIdentifiersOutcome PrivateNetworksClient::ListDeviceIdentifiers(const 
 
 ListNetworkResourcesOutcome PrivateNetworksClient::ListNetworkResources(const ListNetworkResourcesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListNetworkResources);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListNetworkResources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListNetworkResources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -362,6 +379,7 @@ ListNetworkResourcesOutcome PrivateNetworksClient::ListNetworkResources(const Li
 
 ListNetworkSitesOutcome PrivateNetworksClient::ListNetworkSites(const ListNetworkSitesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListNetworkSites);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListNetworkSites, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListNetworkSites, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -371,6 +389,7 @@ ListNetworkSitesOutcome PrivateNetworksClient::ListNetworkSites(const ListNetwor
 
 ListNetworksOutcome PrivateNetworksClient::ListNetworks(const ListNetworksRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListNetworks);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListNetworks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListNetworks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -380,6 +399,7 @@ ListNetworksOutcome PrivateNetworksClient::ListNetworks(const ListNetworksReques
 
 ListOrdersOutcome PrivateNetworksClient::ListOrders(const ListOrdersRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListOrders);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListOrders, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListOrders, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -389,6 +409,7 @@ ListOrdersOutcome PrivateNetworksClient::ListOrders(const ListOrdersRequest& req
 
 ListTagsForResourceOutcome PrivateNetworksClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -404,6 +425,7 @@ ListTagsForResourceOutcome PrivateNetworksClient::ListTagsForResource(const List
 
 PingOutcome PrivateNetworksClient::Ping() const
 {
+AWS_OPERATION_GUARD(Ping);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, Ping, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   const Aws::Vector<Aws::Endpoint::EndpointParameter> staticEndpointParameters;
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(staticEndpointParameters);
@@ -414,6 +436,7 @@ PingOutcome PrivateNetworksClient::Ping() const
 
 StartNetworkResourceUpdateOutcome PrivateNetworksClient::StartNetworkResourceUpdate(const StartNetworkResourceUpdateRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartNetworkResourceUpdate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartNetworkResourceUpdate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartNetworkResourceUpdate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -423,6 +446,7 @@ StartNetworkResourceUpdateOutcome PrivateNetworksClient::StartNetworkResourceUpd
 
 TagResourceOutcome PrivateNetworksClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -438,6 +462,7 @@ TagResourceOutcome PrivateNetworksClient::TagResource(const TagResourceRequest& 
 
 UntagResourceOutcome PrivateNetworksClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -458,6 +483,7 @@ UntagResourceOutcome PrivateNetworksClient::UntagResource(const UntagResourceReq
 
 UpdateNetworkSiteOutcome PrivateNetworksClient::UpdateNetworkSite(const UpdateNetworkSiteRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateNetworkSite);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateNetworkSite, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateNetworkSite, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -467,6 +493,7 @@ UpdateNetworkSiteOutcome PrivateNetworksClient::UpdateNetworkSite(const UpdateNe
 
 UpdateNetworkSitePlanOutcome PrivateNetworksClient::UpdateNetworkSitePlan(const UpdateNetworkSitePlanRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateNetworkSitePlan);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateNetworkSitePlan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateNetworkSitePlan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

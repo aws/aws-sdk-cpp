@@ -132,6 +132,7 @@ SSOOIDCClient::SSOOIDCClient(const std::shared_ptr<AWSCredentialsProvider>& cred
     /* End of legacy constructors due deprecation */
 SSOOIDCClient::~SSOOIDCClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<SSOOIDCEndpointProviderBase>& SSOOIDCClient::accessEndpointProvider()
@@ -154,6 +155,7 @@ void SSOOIDCClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CreateTokenOutcome SSOOIDCClient::CreateToken(const CreateTokenRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateToken);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateToken, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateToken, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -163,6 +165,7 @@ CreateTokenOutcome SSOOIDCClient::CreateToken(const CreateTokenRequest& request)
 
 RegisterClientOutcome SSOOIDCClient::RegisterClient(const RegisterClientRequest& request) const
 {
+  AWS_OPERATION_GUARD(RegisterClient);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RegisterClient, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RegisterClient, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -172,6 +175,7 @@ RegisterClientOutcome SSOOIDCClient::RegisterClient(const RegisterClientRequest&
 
 StartDeviceAuthorizationOutcome SSOOIDCClient::StartDeviceAuthorization(const StartDeviceAuthorizationRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartDeviceAuthorization);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartDeviceAuthorization, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartDeviceAuthorization, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

@@ -144,6 +144,7 @@ AppIntegrationsServiceClient::AppIntegrationsServiceClient(const std::shared_ptr
     /* End of legacy constructors due deprecation */
 AppIntegrationsServiceClient::~AppIntegrationsServiceClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<AppIntegrationsServiceEndpointProviderBase>& AppIntegrationsServiceClient::accessEndpointProvider()
@@ -166,6 +167,7 @@ void AppIntegrationsServiceClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CreateDataIntegrationOutcome AppIntegrationsServiceClient::CreateDataIntegration(const CreateDataIntegrationRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateDataIntegration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDataIntegration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateDataIntegration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -175,6 +177,7 @@ CreateDataIntegrationOutcome AppIntegrationsServiceClient::CreateDataIntegration
 
 CreateEventIntegrationOutcome AppIntegrationsServiceClient::CreateEventIntegration(const CreateEventIntegrationRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateEventIntegration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateEventIntegration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateEventIntegration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -184,6 +187,7 @@ CreateEventIntegrationOutcome AppIntegrationsServiceClient::CreateEventIntegrati
 
 DeleteDataIntegrationOutcome AppIntegrationsServiceClient::DeleteDataIntegration(const DeleteDataIntegrationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteDataIntegration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDataIntegration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DataIntegrationIdentifierHasBeenSet())
   {
@@ -199,6 +203,7 @@ DeleteDataIntegrationOutcome AppIntegrationsServiceClient::DeleteDataIntegration
 
 DeleteEventIntegrationOutcome AppIntegrationsServiceClient::DeleteEventIntegration(const DeleteEventIntegrationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteEventIntegration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteEventIntegration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -214,6 +219,7 @@ DeleteEventIntegrationOutcome AppIntegrationsServiceClient::DeleteEventIntegrati
 
 GetDataIntegrationOutcome AppIntegrationsServiceClient::GetDataIntegration(const GetDataIntegrationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDataIntegration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDataIntegration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdentifierHasBeenSet())
   {
@@ -229,6 +235,7 @@ GetDataIntegrationOutcome AppIntegrationsServiceClient::GetDataIntegration(const
 
 GetEventIntegrationOutcome AppIntegrationsServiceClient::GetEventIntegration(const GetEventIntegrationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetEventIntegration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetEventIntegration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -244,6 +251,7 @@ GetEventIntegrationOutcome AppIntegrationsServiceClient::GetEventIntegration(con
 
 ListDataIntegrationAssociationsOutcome AppIntegrationsServiceClient::ListDataIntegrationAssociations(const ListDataIntegrationAssociationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDataIntegrationAssociations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDataIntegrationAssociations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DataIntegrationIdentifierHasBeenSet())
   {
@@ -260,6 +268,7 @@ ListDataIntegrationAssociationsOutcome AppIntegrationsServiceClient::ListDataInt
 
 ListDataIntegrationsOutcome AppIntegrationsServiceClient::ListDataIntegrations(const ListDataIntegrationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDataIntegrations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDataIntegrations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDataIntegrations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -269,6 +278,7 @@ ListDataIntegrationsOutcome AppIntegrationsServiceClient::ListDataIntegrations(c
 
 ListEventIntegrationAssociationsOutcome AppIntegrationsServiceClient::ListEventIntegrationAssociations(const ListEventIntegrationAssociationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListEventIntegrationAssociations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListEventIntegrationAssociations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.EventIntegrationNameHasBeenSet())
   {
@@ -285,6 +295,7 @@ ListEventIntegrationAssociationsOutcome AppIntegrationsServiceClient::ListEventI
 
 ListEventIntegrationsOutcome AppIntegrationsServiceClient::ListEventIntegrations(const ListEventIntegrationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListEventIntegrations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListEventIntegrations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListEventIntegrations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -294,6 +305,7 @@ ListEventIntegrationsOutcome AppIntegrationsServiceClient::ListEventIntegrations
 
 ListTagsForResourceOutcome AppIntegrationsServiceClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -309,6 +321,7 @@ ListTagsForResourceOutcome AppIntegrationsServiceClient::ListTagsForResource(con
 
 TagResourceOutcome AppIntegrationsServiceClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -324,6 +337,7 @@ TagResourceOutcome AppIntegrationsServiceClient::TagResource(const TagResourceRe
 
 UntagResourceOutcome AppIntegrationsServiceClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -344,6 +358,7 @@ UntagResourceOutcome AppIntegrationsServiceClient::UntagResource(const UntagReso
 
 UpdateDataIntegrationOutcome AppIntegrationsServiceClient::UpdateDataIntegration(const UpdateDataIntegrationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateDataIntegration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDataIntegration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdentifierHasBeenSet())
   {
@@ -359,6 +374,7 @@ UpdateDataIntegrationOutcome AppIntegrationsServiceClient::UpdateDataIntegration
 
 UpdateEventIntegrationOutcome AppIntegrationsServiceClient::UpdateEventIntegration(const UpdateEventIntegrationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateEventIntegration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateEventIntegration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {

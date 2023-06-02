@@ -129,6 +129,7 @@ IoTThingsGraphClient::IoTThingsGraphClient(const std::shared_ptr<AWSCredentialsP
     /* End of legacy constructors due deprecation */
 IoTThingsGraphClient::~IoTThingsGraphClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<IoTThingsGraphEndpointProviderBase>& IoTThingsGraphClient::accessEndpointProvider()

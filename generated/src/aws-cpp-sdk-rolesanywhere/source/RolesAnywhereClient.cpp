@@ -157,6 +157,7 @@ RolesAnywhereClient::RolesAnywhereClient(const std::shared_ptr<AWSCredentialsPro
     /* End of legacy constructors due deprecation */
 RolesAnywhereClient::~RolesAnywhereClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<RolesAnywhereEndpointProviderBase>& RolesAnywhereClient::accessEndpointProvider()
@@ -179,6 +180,7 @@ void RolesAnywhereClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CreateProfileOutcome RolesAnywhereClient::CreateProfile(const CreateProfileRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateProfile);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -188,6 +190,7 @@ CreateProfileOutcome RolesAnywhereClient::CreateProfile(const CreateProfileReque
 
 CreateTrustAnchorOutcome RolesAnywhereClient::CreateTrustAnchor(const CreateTrustAnchorRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateTrustAnchor);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateTrustAnchor, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateTrustAnchor, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -197,6 +200,7 @@ CreateTrustAnchorOutcome RolesAnywhereClient::CreateTrustAnchor(const CreateTrus
 
 DeleteCrlOutcome RolesAnywhereClient::DeleteCrl(const DeleteCrlRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteCrl);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteCrl, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CrlIdHasBeenSet())
   {
@@ -212,6 +216,7 @@ DeleteCrlOutcome RolesAnywhereClient::DeleteCrl(const DeleteCrlRequest& request)
 
 DeleteProfileOutcome RolesAnywhereClient::DeleteProfile(const DeleteProfileRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteProfile);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProfileIdHasBeenSet())
   {
@@ -227,6 +232,7 @@ DeleteProfileOutcome RolesAnywhereClient::DeleteProfile(const DeleteProfileReque
 
 DeleteTrustAnchorOutcome RolesAnywhereClient::DeleteTrustAnchor(const DeleteTrustAnchorRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteTrustAnchor);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteTrustAnchor, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TrustAnchorIdHasBeenSet())
   {
@@ -242,6 +248,7 @@ DeleteTrustAnchorOutcome RolesAnywhereClient::DeleteTrustAnchor(const DeleteTrus
 
 DisableCrlOutcome RolesAnywhereClient::DisableCrl(const DisableCrlRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisableCrl);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisableCrl, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CrlIdHasBeenSet())
   {
@@ -258,6 +265,7 @@ DisableCrlOutcome RolesAnywhereClient::DisableCrl(const DisableCrlRequest& reque
 
 DisableProfileOutcome RolesAnywhereClient::DisableProfile(const DisableProfileRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisableProfile);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisableProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProfileIdHasBeenSet())
   {
@@ -274,6 +282,7 @@ DisableProfileOutcome RolesAnywhereClient::DisableProfile(const DisableProfileRe
 
 DisableTrustAnchorOutcome RolesAnywhereClient::DisableTrustAnchor(const DisableTrustAnchorRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisableTrustAnchor);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisableTrustAnchor, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TrustAnchorIdHasBeenSet())
   {
@@ -290,6 +299,7 @@ DisableTrustAnchorOutcome RolesAnywhereClient::DisableTrustAnchor(const DisableT
 
 EnableCrlOutcome RolesAnywhereClient::EnableCrl(const EnableCrlRequest& request) const
 {
+  AWS_OPERATION_GUARD(EnableCrl);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, EnableCrl, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CrlIdHasBeenSet())
   {
@@ -306,6 +316,7 @@ EnableCrlOutcome RolesAnywhereClient::EnableCrl(const EnableCrlRequest& request)
 
 EnableProfileOutcome RolesAnywhereClient::EnableProfile(const EnableProfileRequest& request) const
 {
+  AWS_OPERATION_GUARD(EnableProfile);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, EnableProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProfileIdHasBeenSet())
   {
@@ -322,6 +333,7 @@ EnableProfileOutcome RolesAnywhereClient::EnableProfile(const EnableProfileReque
 
 EnableTrustAnchorOutcome RolesAnywhereClient::EnableTrustAnchor(const EnableTrustAnchorRequest& request) const
 {
+  AWS_OPERATION_GUARD(EnableTrustAnchor);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, EnableTrustAnchor, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TrustAnchorIdHasBeenSet())
   {
@@ -338,6 +350,7 @@ EnableTrustAnchorOutcome RolesAnywhereClient::EnableTrustAnchor(const EnableTrus
 
 GetCrlOutcome RolesAnywhereClient::GetCrl(const GetCrlRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetCrl);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCrl, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CrlIdHasBeenSet())
   {
@@ -353,6 +366,7 @@ GetCrlOutcome RolesAnywhereClient::GetCrl(const GetCrlRequest& request) const
 
 GetProfileOutcome RolesAnywhereClient::GetProfile(const GetProfileRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetProfile);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProfileIdHasBeenSet())
   {
@@ -368,6 +382,7 @@ GetProfileOutcome RolesAnywhereClient::GetProfile(const GetProfileRequest& reque
 
 GetSubjectOutcome RolesAnywhereClient::GetSubject(const GetSubjectRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSubject);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSubject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SubjectIdHasBeenSet())
   {
@@ -383,6 +398,7 @@ GetSubjectOutcome RolesAnywhereClient::GetSubject(const GetSubjectRequest& reque
 
 GetTrustAnchorOutcome RolesAnywhereClient::GetTrustAnchor(const GetTrustAnchorRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetTrustAnchor);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetTrustAnchor, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TrustAnchorIdHasBeenSet())
   {
@@ -398,6 +414,7 @@ GetTrustAnchorOutcome RolesAnywhereClient::GetTrustAnchor(const GetTrustAnchorRe
 
 ImportCrlOutcome RolesAnywhereClient::ImportCrl(const ImportCrlRequest& request) const
 {
+  AWS_OPERATION_GUARD(ImportCrl);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ImportCrl, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ImportCrl, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -407,6 +424,7 @@ ImportCrlOutcome RolesAnywhereClient::ImportCrl(const ImportCrlRequest& request)
 
 ListCrlsOutcome RolesAnywhereClient::ListCrls(const ListCrlsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListCrls);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListCrls, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListCrls, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -416,6 +434,7 @@ ListCrlsOutcome RolesAnywhereClient::ListCrls(const ListCrlsRequest& request) co
 
 ListProfilesOutcome RolesAnywhereClient::ListProfiles(const ListProfilesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListProfiles);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListProfiles, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListProfiles, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -425,6 +444,7 @@ ListProfilesOutcome RolesAnywhereClient::ListProfiles(const ListProfilesRequest&
 
 ListSubjectsOutcome RolesAnywhereClient::ListSubjects(const ListSubjectsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListSubjects);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSubjects, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListSubjects, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -434,6 +454,7 @@ ListSubjectsOutcome RolesAnywhereClient::ListSubjects(const ListSubjectsRequest&
 
 ListTagsForResourceOutcome RolesAnywhereClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -448,6 +469,7 @@ ListTagsForResourceOutcome RolesAnywhereClient::ListTagsForResource(const ListTa
 
 ListTrustAnchorsOutcome RolesAnywhereClient::ListTrustAnchors(const ListTrustAnchorsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTrustAnchors);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTrustAnchors, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTrustAnchors, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -457,6 +479,7 @@ ListTrustAnchorsOutcome RolesAnywhereClient::ListTrustAnchors(const ListTrustAnc
 
 PutNotificationSettingsOutcome RolesAnywhereClient::PutNotificationSettings(const PutNotificationSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutNotificationSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutNotificationSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutNotificationSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -466,6 +489,7 @@ PutNotificationSettingsOutcome RolesAnywhereClient::PutNotificationSettings(cons
 
 ResetNotificationSettingsOutcome RolesAnywhereClient::ResetNotificationSettings(const ResetNotificationSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ResetNotificationSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ResetNotificationSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ResetNotificationSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -475,6 +499,7 @@ ResetNotificationSettingsOutcome RolesAnywhereClient::ResetNotificationSettings(
 
 TagResourceOutcome RolesAnywhereClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -484,6 +509,7 @@ TagResourceOutcome RolesAnywhereClient::TagResource(const TagResourceRequest& re
 
 UntagResourceOutcome RolesAnywhereClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -493,6 +519,7 @@ UntagResourceOutcome RolesAnywhereClient::UntagResource(const UntagResourceReque
 
 UpdateCrlOutcome RolesAnywhereClient::UpdateCrl(const UpdateCrlRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateCrl);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateCrl, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CrlIdHasBeenSet())
   {
@@ -508,6 +535,7 @@ UpdateCrlOutcome RolesAnywhereClient::UpdateCrl(const UpdateCrlRequest& request)
 
 UpdateProfileOutcome RolesAnywhereClient::UpdateProfile(const UpdateProfileRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateProfile);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProfileIdHasBeenSet())
   {
@@ -523,6 +551,7 @@ UpdateProfileOutcome RolesAnywhereClient::UpdateProfile(const UpdateProfileReque
 
 UpdateTrustAnchorOutcome RolesAnywhereClient::UpdateTrustAnchor(const UpdateTrustAnchorRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateTrustAnchor);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateTrustAnchor, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TrustAnchorIdHasBeenSet())
   {

@@ -200,6 +200,7 @@ BackupClient::BackupClient(const std::shared_ptr<AWSCredentialsProvider>& creden
     /* End of legacy constructors due deprecation */
 BackupClient::~BackupClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<BackupEndpointProviderBase>& BackupClient::accessEndpointProvider()
@@ -222,6 +223,7 @@ void BackupClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CancelLegalHoldOutcome BackupClient::CancelLegalHold(const CancelLegalHoldRequest& request) const
 {
+  AWS_OPERATION_GUARD(CancelLegalHold);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CancelLegalHold, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LegalHoldIdHasBeenSet())
   {
@@ -242,6 +244,7 @@ CancelLegalHoldOutcome BackupClient::CancelLegalHold(const CancelLegalHoldReques
 
 CreateBackupPlanOutcome BackupClient::CreateBackupPlan(const CreateBackupPlanRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateBackupPlan);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateBackupPlan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateBackupPlan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -251,6 +254,7 @@ CreateBackupPlanOutcome BackupClient::CreateBackupPlan(const CreateBackupPlanReq
 
 CreateBackupSelectionOutcome BackupClient::CreateBackupSelection(const CreateBackupSelectionRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateBackupSelection);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateBackupSelection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BackupPlanIdHasBeenSet())
   {
@@ -267,6 +271,7 @@ CreateBackupSelectionOutcome BackupClient::CreateBackupSelection(const CreateBac
 
 CreateBackupVaultOutcome BackupClient::CreateBackupVault(const CreateBackupVaultRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateBackupVault);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateBackupVault, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BackupVaultNameHasBeenSet())
   {
@@ -282,6 +287,7 @@ CreateBackupVaultOutcome BackupClient::CreateBackupVault(const CreateBackupVault
 
 CreateFrameworkOutcome BackupClient::CreateFramework(const CreateFrameworkRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateFramework);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateFramework, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateFramework, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -291,6 +297,7 @@ CreateFrameworkOutcome BackupClient::CreateFramework(const CreateFrameworkReques
 
 CreateLegalHoldOutcome BackupClient::CreateLegalHold(const CreateLegalHoldRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateLegalHold);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateLegalHold, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateLegalHold, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -300,6 +307,7 @@ CreateLegalHoldOutcome BackupClient::CreateLegalHold(const CreateLegalHoldReques
 
 CreateReportPlanOutcome BackupClient::CreateReportPlan(const CreateReportPlanRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateReportPlan);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateReportPlan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateReportPlan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -309,6 +317,7 @@ CreateReportPlanOutcome BackupClient::CreateReportPlan(const CreateReportPlanReq
 
 DeleteBackupPlanOutcome BackupClient::DeleteBackupPlan(const DeleteBackupPlanRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteBackupPlan);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteBackupPlan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BackupPlanIdHasBeenSet())
   {
@@ -324,6 +333,7 @@ DeleteBackupPlanOutcome BackupClient::DeleteBackupPlan(const DeleteBackupPlanReq
 
 DeleteBackupSelectionOutcome BackupClient::DeleteBackupSelection(const DeleteBackupSelectionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteBackupSelection);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteBackupSelection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BackupPlanIdHasBeenSet())
   {
@@ -346,6 +356,7 @@ DeleteBackupSelectionOutcome BackupClient::DeleteBackupSelection(const DeleteBac
 
 DeleteBackupVaultOutcome BackupClient::DeleteBackupVault(const DeleteBackupVaultRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteBackupVault);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteBackupVault, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BackupVaultNameHasBeenSet())
   {
@@ -361,6 +372,7 @@ DeleteBackupVaultOutcome BackupClient::DeleteBackupVault(const DeleteBackupVault
 
 DeleteBackupVaultAccessPolicyOutcome BackupClient::DeleteBackupVaultAccessPolicy(const DeleteBackupVaultAccessPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteBackupVaultAccessPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteBackupVaultAccessPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BackupVaultNameHasBeenSet())
   {
@@ -377,6 +389,7 @@ DeleteBackupVaultAccessPolicyOutcome BackupClient::DeleteBackupVaultAccessPolicy
 
 DeleteBackupVaultLockConfigurationOutcome BackupClient::DeleteBackupVaultLockConfiguration(const DeleteBackupVaultLockConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteBackupVaultLockConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteBackupVaultLockConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BackupVaultNameHasBeenSet())
   {
@@ -393,6 +406,7 @@ DeleteBackupVaultLockConfigurationOutcome BackupClient::DeleteBackupVaultLockCon
 
 DeleteBackupVaultNotificationsOutcome BackupClient::DeleteBackupVaultNotifications(const DeleteBackupVaultNotificationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteBackupVaultNotifications);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteBackupVaultNotifications, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BackupVaultNameHasBeenSet())
   {
@@ -409,6 +423,7 @@ DeleteBackupVaultNotificationsOutcome BackupClient::DeleteBackupVaultNotificatio
 
 DeleteFrameworkOutcome BackupClient::DeleteFramework(const DeleteFrameworkRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteFramework);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteFramework, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FrameworkNameHasBeenSet())
   {
@@ -424,6 +439,7 @@ DeleteFrameworkOutcome BackupClient::DeleteFramework(const DeleteFrameworkReques
 
 DeleteRecoveryPointOutcome BackupClient::DeleteRecoveryPoint(const DeleteRecoveryPointRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteRecoveryPoint);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteRecoveryPoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BackupVaultNameHasBeenSet())
   {
@@ -446,6 +462,7 @@ DeleteRecoveryPointOutcome BackupClient::DeleteRecoveryPoint(const DeleteRecover
 
 DeleteReportPlanOutcome BackupClient::DeleteReportPlan(const DeleteReportPlanRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteReportPlan);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteReportPlan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ReportPlanNameHasBeenSet())
   {
@@ -461,6 +478,7 @@ DeleteReportPlanOutcome BackupClient::DeleteReportPlan(const DeleteReportPlanReq
 
 DescribeBackupJobOutcome BackupClient::DescribeBackupJob(const DescribeBackupJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeBackupJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeBackupJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BackupJobIdHasBeenSet())
   {
@@ -476,6 +494,7 @@ DescribeBackupJobOutcome BackupClient::DescribeBackupJob(const DescribeBackupJob
 
 DescribeBackupVaultOutcome BackupClient::DescribeBackupVault(const DescribeBackupVaultRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeBackupVault);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeBackupVault, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BackupVaultNameHasBeenSet())
   {
@@ -491,6 +510,7 @@ DescribeBackupVaultOutcome BackupClient::DescribeBackupVault(const DescribeBacku
 
 DescribeCopyJobOutcome BackupClient::DescribeCopyJob(const DescribeCopyJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeCopyJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeCopyJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CopyJobIdHasBeenSet())
   {
@@ -506,6 +526,7 @@ DescribeCopyJobOutcome BackupClient::DescribeCopyJob(const DescribeCopyJobReques
 
 DescribeFrameworkOutcome BackupClient::DescribeFramework(const DescribeFrameworkRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeFramework);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeFramework, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FrameworkNameHasBeenSet())
   {
@@ -521,6 +542,7 @@ DescribeFrameworkOutcome BackupClient::DescribeFramework(const DescribeFramework
 
 DescribeGlobalSettingsOutcome BackupClient::DescribeGlobalSettings(const DescribeGlobalSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeGlobalSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeGlobalSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeGlobalSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -530,6 +552,7 @@ DescribeGlobalSettingsOutcome BackupClient::DescribeGlobalSettings(const Describ
 
 DescribeProtectedResourceOutcome BackupClient::DescribeProtectedResource(const DescribeProtectedResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeProtectedResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeProtectedResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -545,6 +568,7 @@ DescribeProtectedResourceOutcome BackupClient::DescribeProtectedResource(const D
 
 DescribeRecoveryPointOutcome BackupClient::DescribeRecoveryPoint(const DescribeRecoveryPointRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeRecoveryPoint);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeRecoveryPoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BackupVaultNameHasBeenSet())
   {
@@ -567,6 +591,7 @@ DescribeRecoveryPointOutcome BackupClient::DescribeRecoveryPoint(const DescribeR
 
 DescribeRegionSettingsOutcome BackupClient::DescribeRegionSettings(const DescribeRegionSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeRegionSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeRegionSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeRegionSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -576,6 +601,7 @@ DescribeRegionSettingsOutcome BackupClient::DescribeRegionSettings(const Describ
 
 DescribeReportJobOutcome BackupClient::DescribeReportJob(const DescribeReportJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeReportJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeReportJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ReportJobIdHasBeenSet())
   {
@@ -591,6 +617,7 @@ DescribeReportJobOutcome BackupClient::DescribeReportJob(const DescribeReportJob
 
 DescribeReportPlanOutcome BackupClient::DescribeReportPlan(const DescribeReportPlanRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeReportPlan);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeReportPlan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ReportPlanNameHasBeenSet())
   {
@@ -606,6 +633,7 @@ DescribeReportPlanOutcome BackupClient::DescribeReportPlan(const DescribeReportP
 
 DescribeRestoreJobOutcome BackupClient::DescribeRestoreJob(const DescribeRestoreJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeRestoreJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeRestoreJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestoreJobIdHasBeenSet())
   {
@@ -621,6 +649,7 @@ DescribeRestoreJobOutcome BackupClient::DescribeRestoreJob(const DescribeRestore
 
 DisassociateRecoveryPointOutcome BackupClient::DisassociateRecoveryPoint(const DisassociateRecoveryPointRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociateRecoveryPoint);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateRecoveryPoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BackupVaultNameHasBeenSet())
   {
@@ -644,6 +673,7 @@ DisassociateRecoveryPointOutcome BackupClient::DisassociateRecoveryPoint(const D
 
 DisassociateRecoveryPointFromParentOutcome BackupClient::DisassociateRecoveryPointFromParent(const DisassociateRecoveryPointFromParentRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociateRecoveryPointFromParent);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateRecoveryPointFromParent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BackupVaultNameHasBeenSet())
   {
@@ -667,6 +697,7 @@ DisassociateRecoveryPointFromParentOutcome BackupClient::DisassociateRecoveryPoi
 
 ExportBackupPlanTemplateOutcome BackupClient::ExportBackupPlanTemplate(const ExportBackupPlanTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(ExportBackupPlanTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ExportBackupPlanTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BackupPlanIdHasBeenSet())
   {
@@ -683,6 +714,7 @@ ExportBackupPlanTemplateOutcome BackupClient::ExportBackupPlanTemplate(const Exp
 
 GetBackupPlanOutcome BackupClient::GetBackupPlan(const GetBackupPlanRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetBackupPlan);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBackupPlan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BackupPlanIdHasBeenSet())
   {
@@ -698,6 +730,7 @@ GetBackupPlanOutcome BackupClient::GetBackupPlan(const GetBackupPlanRequest& req
 
 GetBackupPlanFromJSONOutcome BackupClient::GetBackupPlanFromJSON(const GetBackupPlanFromJSONRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetBackupPlanFromJSON);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBackupPlanFromJSON, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetBackupPlanFromJSON, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -707,6 +740,7 @@ GetBackupPlanFromJSONOutcome BackupClient::GetBackupPlanFromJSON(const GetBackup
 
 GetBackupPlanFromTemplateOutcome BackupClient::GetBackupPlanFromTemplate(const GetBackupPlanFromTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetBackupPlanFromTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBackupPlanFromTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BackupPlanTemplateIdHasBeenSet())
   {
@@ -723,6 +757,7 @@ GetBackupPlanFromTemplateOutcome BackupClient::GetBackupPlanFromTemplate(const G
 
 GetBackupSelectionOutcome BackupClient::GetBackupSelection(const GetBackupSelectionRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetBackupSelection);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBackupSelection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BackupPlanIdHasBeenSet())
   {
@@ -745,6 +780,7 @@ GetBackupSelectionOutcome BackupClient::GetBackupSelection(const GetBackupSelect
 
 GetBackupVaultAccessPolicyOutcome BackupClient::GetBackupVaultAccessPolicy(const GetBackupVaultAccessPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetBackupVaultAccessPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBackupVaultAccessPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BackupVaultNameHasBeenSet())
   {
@@ -761,6 +797,7 @@ GetBackupVaultAccessPolicyOutcome BackupClient::GetBackupVaultAccessPolicy(const
 
 GetBackupVaultNotificationsOutcome BackupClient::GetBackupVaultNotifications(const GetBackupVaultNotificationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetBackupVaultNotifications);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBackupVaultNotifications, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BackupVaultNameHasBeenSet())
   {
@@ -777,6 +814,7 @@ GetBackupVaultNotificationsOutcome BackupClient::GetBackupVaultNotifications(con
 
 GetLegalHoldOutcome BackupClient::GetLegalHold(const GetLegalHoldRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetLegalHold);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetLegalHold, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LegalHoldIdHasBeenSet())
   {
@@ -792,6 +830,7 @@ GetLegalHoldOutcome BackupClient::GetLegalHold(const GetLegalHoldRequest& reques
 
 GetRecoveryPointRestoreMetadataOutcome BackupClient::GetRecoveryPointRestoreMetadata(const GetRecoveryPointRestoreMetadataRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetRecoveryPointRestoreMetadata);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetRecoveryPointRestoreMetadata, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BackupVaultNameHasBeenSet())
   {
@@ -815,6 +854,7 @@ GetRecoveryPointRestoreMetadataOutcome BackupClient::GetRecoveryPointRestoreMeta
 
 GetSupportedResourceTypesOutcome BackupClient::GetSupportedResourceTypes() const
 {
+AWS_OPERATION_GUARD(GetSupportedResourceTypes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSupportedResourceTypes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   const Aws::Vector<Aws::Endpoint::EndpointParameter> staticEndpointParameters;
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(staticEndpointParameters);
@@ -825,6 +865,7 @@ GetSupportedResourceTypesOutcome BackupClient::GetSupportedResourceTypes() const
 
 ListBackupJobsOutcome BackupClient::ListBackupJobs(const ListBackupJobsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListBackupJobs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListBackupJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListBackupJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -834,6 +875,7 @@ ListBackupJobsOutcome BackupClient::ListBackupJobs(const ListBackupJobsRequest& 
 
 ListBackupPlanTemplatesOutcome BackupClient::ListBackupPlanTemplates(const ListBackupPlanTemplatesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListBackupPlanTemplates);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListBackupPlanTemplates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListBackupPlanTemplates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -843,6 +885,7 @@ ListBackupPlanTemplatesOutcome BackupClient::ListBackupPlanTemplates(const ListB
 
 ListBackupPlanVersionsOutcome BackupClient::ListBackupPlanVersions(const ListBackupPlanVersionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListBackupPlanVersions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListBackupPlanVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BackupPlanIdHasBeenSet())
   {
@@ -859,6 +902,7 @@ ListBackupPlanVersionsOutcome BackupClient::ListBackupPlanVersions(const ListBac
 
 ListBackupPlansOutcome BackupClient::ListBackupPlans(const ListBackupPlansRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListBackupPlans);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListBackupPlans, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListBackupPlans, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -868,6 +912,7 @@ ListBackupPlansOutcome BackupClient::ListBackupPlans(const ListBackupPlansReques
 
 ListBackupSelectionsOutcome BackupClient::ListBackupSelections(const ListBackupSelectionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListBackupSelections);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListBackupSelections, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BackupPlanIdHasBeenSet())
   {
@@ -884,6 +929,7 @@ ListBackupSelectionsOutcome BackupClient::ListBackupSelections(const ListBackupS
 
 ListBackupVaultsOutcome BackupClient::ListBackupVaults(const ListBackupVaultsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListBackupVaults);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListBackupVaults, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListBackupVaults, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -893,6 +939,7 @@ ListBackupVaultsOutcome BackupClient::ListBackupVaults(const ListBackupVaultsReq
 
 ListCopyJobsOutcome BackupClient::ListCopyJobs(const ListCopyJobsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListCopyJobs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListCopyJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListCopyJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -902,6 +949,7 @@ ListCopyJobsOutcome BackupClient::ListCopyJobs(const ListCopyJobsRequest& reques
 
 ListFrameworksOutcome BackupClient::ListFrameworks(const ListFrameworksRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListFrameworks);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListFrameworks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListFrameworks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -911,6 +959,7 @@ ListFrameworksOutcome BackupClient::ListFrameworks(const ListFrameworksRequest& 
 
 ListLegalHoldsOutcome BackupClient::ListLegalHolds(const ListLegalHoldsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListLegalHolds);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListLegalHolds, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListLegalHolds, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -920,6 +969,7 @@ ListLegalHoldsOutcome BackupClient::ListLegalHolds(const ListLegalHoldsRequest& 
 
 ListProtectedResourcesOutcome BackupClient::ListProtectedResources(const ListProtectedResourcesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListProtectedResources);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListProtectedResources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListProtectedResources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -929,6 +979,7 @@ ListProtectedResourcesOutcome BackupClient::ListProtectedResources(const ListPro
 
 ListRecoveryPointsByBackupVaultOutcome BackupClient::ListRecoveryPointsByBackupVault(const ListRecoveryPointsByBackupVaultRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListRecoveryPointsByBackupVault);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRecoveryPointsByBackupVault, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BackupVaultNameHasBeenSet())
   {
@@ -945,6 +996,7 @@ ListRecoveryPointsByBackupVaultOutcome BackupClient::ListRecoveryPointsByBackupV
 
 ListRecoveryPointsByLegalHoldOutcome BackupClient::ListRecoveryPointsByLegalHold(const ListRecoveryPointsByLegalHoldRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListRecoveryPointsByLegalHold);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRecoveryPointsByLegalHold, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LegalHoldIdHasBeenSet())
   {
@@ -961,6 +1013,7 @@ ListRecoveryPointsByLegalHoldOutcome BackupClient::ListRecoveryPointsByLegalHold
 
 ListRecoveryPointsByResourceOutcome BackupClient::ListRecoveryPointsByResource(const ListRecoveryPointsByResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListRecoveryPointsByResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRecoveryPointsByResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -977,6 +1030,7 @@ ListRecoveryPointsByResourceOutcome BackupClient::ListRecoveryPointsByResource(c
 
 ListReportJobsOutcome BackupClient::ListReportJobs(const ListReportJobsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListReportJobs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListReportJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListReportJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -986,6 +1040,7 @@ ListReportJobsOutcome BackupClient::ListReportJobs(const ListReportJobsRequest& 
 
 ListReportPlansOutcome BackupClient::ListReportPlans(const ListReportPlansRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListReportPlans);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListReportPlans, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListReportPlans, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -995,6 +1050,7 @@ ListReportPlansOutcome BackupClient::ListReportPlans(const ListReportPlansReques
 
 ListRestoreJobsOutcome BackupClient::ListRestoreJobs(const ListRestoreJobsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListRestoreJobs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRestoreJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListRestoreJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1004,6 +1060,7 @@ ListRestoreJobsOutcome BackupClient::ListRestoreJobs(const ListRestoreJobsReques
 
 ListTagsOutcome BackupClient::ListTags(const ListTagsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTags);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTags, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -1019,6 +1076,7 @@ ListTagsOutcome BackupClient::ListTags(const ListTagsRequest& request) const
 
 PutBackupVaultAccessPolicyOutcome BackupClient::PutBackupVaultAccessPolicy(const PutBackupVaultAccessPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutBackupVaultAccessPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutBackupVaultAccessPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BackupVaultNameHasBeenSet())
   {
@@ -1035,6 +1093,7 @@ PutBackupVaultAccessPolicyOutcome BackupClient::PutBackupVaultAccessPolicy(const
 
 PutBackupVaultLockConfigurationOutcome BackupClient::PutBackupVaultLockConfiguration(const PutBackupVaultLockConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutBackupVaultLockConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutBackupVaultLockConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BackupVaultNameHasBeenSet())
   {
@@ -1051,6 +1110,7 @@ PutBackupVaultLockConfigurationOutcome BackupClient::PutBackupVaultLockConfigura
 
 PutBackupVaultNotificationsOutcome BackupClient::PutBackupVaultNotifications(const PutBackupVaultNotificationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutBackupVaultNotifications);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutBackupVaultNotifications, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BackupVaultNameHasBeenSet())
   {
@@ -1067,6 +1127,7 @@ PutBackupVaultNotificationsOutcome BackupClient::PutBackupVaultNotifications(con
 
 StartBackupJobOutcome BackupClient::StartBackupJob(const StartBackupJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartBackupJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartBackupJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartBackupJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1076,6 +1137,7 @@ StartBackupJobOutcome BackupClient::StartBackupJob(const StartBackupJobRequest& 
 
 StartCopyJobOutcome BackupClient::StartCopyJob(const StartCopyJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartCopyJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartCopyJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartCopyJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1085,6 +1147,7 @@ StartCopyJobOutcome BackupClient::StartCopyJob(const StartCopyJobRequest& reques
 
 StartReportJobOutcome BackupClient::StartReportJob(const StartReportJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartReportJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartReportJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ReportPlanNameHasBeenSet())
   {
@@ -1100,6 +1163,7 @@ StartReportJobOutcome BackupClient::StartReportJob(const StartReportJobRequest& 
 
 StartRestoreJobOutcome BackupClient::StartRestoreJob(const StartRestoreJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartRestoreJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartRestoreJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartRestoreJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1109,6 +1173,7 @@ StartRestoreJobOutcome BackupClient::StartRestoreJob(const StartRestoreJobReques
 
 StopBackupJobOutcome BackupClient::StopBackupJob(const StopBackupJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(StopBackupJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopBackupJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BackupJobIdHasBeenSet())
   {
@@ -1124,6 +1189,7 @@ StopBackupJobOutcome BackupClient::StopBackupJob(const StopBackupJobRequest& req
 
 TagResourceOutcome BackupClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -1139,6 +1205,7 @@ TagResourceOutcome BackupClient::TagResource(const TagResourceRequest& request) 
 
 UntagResourceOutcome BackupClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -1154,6 +1221,7 @@ UntagResourceOutcome BackupClient::UntagResource(const UntagResourceRequest& req
 
 UpdateBackupPlanOutcome BackupClient::UpdateBackupPlan(const UpdateBackupPlanRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateBackupPlan);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateBackupPlan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BackupPlanIdHasBeenSet())
   {
@@ -1169,6 +1237,7 @@ UpdateBackupPlanOutcome BackupClient::UpdateBackupPlan(const UpdateBackupPlanReq
 
 UpdateFrameworkOutcome BackupClient::UpdateFramework(const UpdateFrameworkRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateFramework);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateFramework, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FrameworkNameHasBeenSet())
   {
@@ -1184,6 +1253,7 @@ UpdateFrameworkOutcome BackupClient::UpdateFramework(const UpdateFrameworkReques
 
 UpdateGlobalSettingsOutcome BackupClient::UpdateGlobalSettings(const UpdateGlobalSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateGlobalSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateGlobalSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateGlobalSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1193,6 +1263,7 @@ UpdateGlobalSettingsOutcome BackupClient::UpdateGlobalSettings(const UpdateGloba
 
 UpdateRecoveryPointLifecycleOutcome BackupClient::UpdateRecoveryPointLifecycle(const UpdateRecoveryPointLifecycleRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateRecoveryPointLifecycle);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateRecoveryPointLifecycle, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BackupVaultNameHasBeenSet())
   {
@@ -1215,6 +1286,7 @@ UpdateRecoveryPointLifecycleOutcome BackupClient::UpdateRecoveryPointLifecycle(c
 
 UpdateRegionSettingsOutcome BackupClient::UpdateRegionSettings(const UpdateRegionSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateRegionSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateRegionSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateRegionSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1224,6 +1296,7 @@ UpdateRegionSettingsOutcome BackupClient::UpdateRegionSettings(const UpdateRegio
 
 UpdateReportPlanOutcome BackupClient::UpdateReportPlan(const UpdateReportPlanRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateReportPlan);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateReportPlan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ReportPlanNameHasBeenSet())
   {

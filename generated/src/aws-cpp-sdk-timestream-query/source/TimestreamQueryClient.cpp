@@ -143,6 +143,7 @@ TimestreamQueryClient::TimestreamQueryClient(const std::shared_ptr<AWSCredential
     /* End of legacy constructors due deprecation */
 TimestreamQueryClient::~TimestreamQueryClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<TimestreamQueryEndpointProviderBase>& TimestreamQueryClient::accessEndpointProvider()
@@ -165,6 +166,7 @@ void TimestreamQueryClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CancelQueryOutcome TimestreamQueryClient::CancelQuery(const CancelQueryRequest& request) const
 {
+  AWS_OPERATION_GUARD(CancelQuery);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CancelQuery, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
   const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
@@ -216,6 +218,7 @@ CancelQueryOutcome TimestreamQueryClient::CancelQuery(const CancelQueryRequest& 
 
 CreateScheduledQueryOutcome TimestreamQueryClient::CreateScheduledQuery(const CreateScheduledQueryRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateScheduledQuery);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateScheduledQuery, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
   const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
@@ -267,6 +270,7 @@ CreateScheduledQueryOutcome TimestreamQueryClient::CreateScheduledQuery(const Cr
 
 DeleteScheduledQueryOutcome TimestreamQueryClient::DeleteScheduledQuery(const DeleteScheduledQueryRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteScheduledQuery);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteScheduledQuery, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
   const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
@@ -318,6 +322,7 @@ DeleteScheduledQueryOutcome TimestreamQueryClient::DeleteScheduledQuery(const De
 
 DescribeEndpointsOutcome TimestreamQueryClient::DescribeEndpoints(const DescribeEndpointsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeEndpoints);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeEndpoints, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeEndpoints, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -326,6 +331,7 @@ DescribeEndpointsOutcome TimestreamQueryClient::DescribeEndpoints(const Describe
 
 DescribeScheduledQueryOutcome TimestreamQueryClient::DescribeScheduledQuery(const DescribeScheduledQueryRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeScheduledQuery);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeScheduledQuery, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
   const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
@@ -377,6 +383,7 @@ DescribeScheduledQueryOutcome TimestreamQueryClient::DescribeScheduledQuery(cons
 
 ExecuteScheduledQueryOutcome TimestreamQueryClient::ExecuteScheduledQuery(const ExecuteScheduledQueryRequest& request) const
 {
+  AWS_OPERATION_GUARD(ExecuteScheduledQuery);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ExecuteScheduledQuery, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
   const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
@@ -428,6 +435,7 @@ ExecuteScheduledQueryOutcome TimestreamQueryClient::ExecuteScheduledQuery(const 
 
 ListScheduledQueriesOutcome TimestreamQueryClient::ListScheduledQueries(const ListScheduledQueriesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListScheduledQueries);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListScheduledQueries, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
   const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
@@ -479,6 +487,7 @@ ListScheduledQueriesOutcome TimestreamQueryClient::ListScheduledQueries(const Li
 
 ListTagsForResourceOutcome TimestreamQueryClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
   const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
@@ -530,6 +539,7 @@ ListTagsForResourceOutcome TimestreamQueryClient::ListTagsForResource(const List
 
 PrepareQueryOutcome TimestreamQueryClient::PrepareQuery(const PrepareQueryRequest& request) const
 {
+  AWS_OPERATION_GUARD(PrepareQuery);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PrepareQuery, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
   const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
@@ -581,6 +591,7 @@ PrepareQueryOutcome TimestreamQueryClient::PrepareQuery(const PrepareQueryReques
 
 QueryOutcome TimestreamQueryClient::Query(const QueryRequest& request) const
 {
+  AWS_OPERATION_GUARD(Query);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, Query, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
   const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
@@ -632,6 +643,7 @@ QueryOutcome TimestreamQueryClient::Query(const QueryRequest& request) const
 
 TagResourceOutcome TimestreamQueryClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
   const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
@@ -683,6 +695,7 @@ TagResourceOutcome TimestreamQueryClient::TagResource(const TagResourceRequest& 
 
 UntagResourceOutcome TimestreamQueryClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
   const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
@@ -734,6 +747,7 @@ UntagResourceOutcome TimestreamQueryClient::UntagResource(const UntagResourceReq
 
 UpdateScheduledQueryOutcome TimestreamQueryClient::UpdateScheduledQuery(const UpdateScheduledQueryRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateScheduledQuery);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateScheduledQuery, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
   const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();

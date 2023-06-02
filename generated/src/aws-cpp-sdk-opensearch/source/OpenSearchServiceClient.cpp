@@ -183,6 +183,7 @@ OpenSearchServiceClient::OpenSearchServiceClient(const std::shared_ptr<AWSCreden
     /* End of legacy constructors due deprecation */
 OpenSearchServiceClient::~OpenSearchServiceClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<OpenSearchServiceEndpointProviderBase>& OpenSearchServiceClient::accessEndpointProvider()
@@ -205,6 +206,7 @@ void OpenSearchServiceClient::OverrideEndpoint(const Aws::String& endpoint)
 
 AcceptInboundConnectionOutcome OpenSearchServiceClient::AcceptInboundConnection(const AcceptInboundConnectionRequest& request) const
 {
+  AWS_OPERATION_GUARD(AcceptInboundConnection);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AcceptInboundConnection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConnectionIdHasBeenSet())
   {
@@ -221,6 +223,7 @@ AcceptInboundConnectionOutcome OpenSearchServiceClient::AcceptInboundConnection(
 
 AddTagsOutcome OpenSearchServiceClient::AddTags(const AddTagsRequest& request) const
 {
+  AWS_OPERATION_GUARD(AddTags);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AddTags, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AddTags, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -230,6 +233,7 @@ AddTagsOutcome OpenSearchServiceClient::AddTags(const AddTagsRequest& request) c
 
 AssociatePackageOutcome OpenSearchServiceClient::AssociatePackage(const AssociatePackageRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociatePackage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociatePackage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PackageIDHasBeenSet())
   {
@@ -251,6 +255,7 @@ AssociatePackageOutcome OpenSearchServiceClient::AssociatePackage(const Associat
 
 AuthorizeVpcEndpointAccessOutcome OpenSearchServiceClient::AuthorizeVpcEndpointAccess(const AuthorizeVpcEndpointAccessRequest& request) const
 {
+  AWS_OPERATION_GUARD(AuthorizeVpcEndpointAccess);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AuthorizeVpcEndpointAccess, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainNameHasBeenSet())
   {
@@ -267,6 +272,7 @@ AuthorizeVpcEndpointAccessOutcome OpenSearchServiceClient::AuthorizeVpcEndpointA
 
 CancelServiceSoftwareUpdateOutcome OpenSearchServiceClient::CancelServiceSoftwareUpdate(const CancelServiceSoftwareUpdateRequest& request) const
 {
+  AWS_OPERATION_GUARD(CancelServiceSoftwareUpdate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CancelServiceSoftwareUpdate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CancelServiceSoftwareUpdate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -276,6 +282,7 @@ CancelServiceSoftwareUpdateOutcome OpenSearchServiceClient::CancelServiceSoftwar
 
 CreateDomainOutcome OpenSearchServiceClient::CreateDomain(const CreateDomainRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateDomain);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDomain, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateDomain, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -285,6 +292,7 @@ CreateDomainOutcome OpenSearchServiceClient::CreateDomain(const CreateDomainRequ
 
 CreateOutboundConnectionOutcome OpenSearchServiceClient::CreateOutboundConnection(const CreateOutboundConnectionRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateOutboundConnection);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateOutboundConnection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateOutboundConnection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -294,6 +302,7 @@ CreateOutboundConnectionOutcome OpenSearchServiceClient::CreateOutboundConnectio
 
 CreatePackageOutcome OpenSearchServiceClient::CreatePackage(const CreatePackageRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreatePackage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreatePackage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreatePackage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -303,6 +312,7 @@ CreatePackageOutcome OpenSearchServiceClient::CreatePackage(const CreatePackageR
 
 CreateVpcEndpointOutcome OpenSearchServiceClient::CreateVpcEndpoint(const CreateVpcEndpointRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateVpcEndpoint);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateVpcEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateVpcEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -312,6 +322,7 @@ CreateVpcEndpointOutcome OpenSearchServiceClient::CreateVpcEndpoint(const Create
 
 DeleteDomainOutcome OpenSearchServiceClient::DeleteDomain(const DeleteDomainRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteDomain);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDomain, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainNameHasBeenSet())
   {
@@ -327,6 +338,7 @@ DeleteDomainOutcome OpenSearchServiceClient::DeleteDomain(const DeleteDomainRequ
 
 DeleteInboundConnectionOutcome OpenSearchServiceClient::DeleteInboundConnection(const DeleteInboundConnectionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteInboundConnection);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteInboundConnection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConnectionIdHasBeenSet())
   {
@@ -342,6 +354,7 @@ DeleteInboundConnectionOutcome OpenSearchServiceClient::DeleteInboundConnection(
 
 DeleteOutboundConnectionOutcome OpenSearchServiceClient::DeleteOutboundConnection(const DeleteOutboundConnectionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteOutboundConnection);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteOutboundConnection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConnectionIdHasBeenSet())
   {
@@ -357,6 +370,7 @@ DeleteOutboundConnectionOutcome OpenSearchServiceClient::DeleteOutboundConnectio
 
 DeletePackageOutcome OpenSearchServiceClient::DeletePackage(const DeletePackageRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeletePackage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeletePackage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PackageIDHasBeenSet())
   {
@@ -372,6 +386,7 @@ DeletePackageOutcome OpenSearchServiceClient::DeletePackage(const DeletePackageR
 
 DeleteVpcEndpointOutcome OpenSearchServiceClient::DeleteVpcEndpoint(const DeleteVpcEndpointRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteVpcEndpoint);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteVpcEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VpcEndpointIdHasBeenSet())
   {
@@ -387,6 +402,7 @@ DeleteVpcEndpointOutcome OpenSearchServiceClient::DeleteVpcEndpoint(const Delete
 
 DescribeDomainOutcome OpenSearchServiceClient::DescribeDomain(const DescribeDomainRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeDomain);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeDomain, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainNameHasBeenSet())
   {
@@ -402,6 +418,7 @@ DescribeDomainOutcome OpenSearchServiceClient::DescribeDomain(const DescribeDoma
 
 DescribeDomainAutoTunesOutcome OpenSearchServiceClient::DescribeDomainAutoTunes(const DescribeDomainAutoTunesRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeDomainAutoTunes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeDomainAutoTunes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainNameHasBeenSet())
   {
@@ -418,6 +435,7 @@ DescribeDomainAutoTunesOutcome OpenSearchServiceClient::DescribeDomainAutoTunes(
 
 DescribeDomainChangeProgressOutcome OpenSearchServiceClient::DescribeDomainChangeProgress(const DescribeDomainChangeProgressRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeDomainChangeProgress);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeDomainChangeProgress, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainNameHasBeenSet())
   {
@@ -434,6 +452,7 @@ DescribeDomainChangeProgressOutcome OpenSearchServiceClient::DescribeDomainChang
 
 DescribeDomainConfigOutcome OpenSearchServiceClient::DescribeDomainConfig(const DescribeDomainConfigRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeDomainConfig);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeDomainConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainNameHasBeenSet())
   {
@@ -450,6 +469,7 @@ DescribeDomainConfigOutcome OpenSearchServiceClient::DescribeDomainConfig(const 
 
 DescribeDomainHealthOutcome OpenSearchServiceClient::DescribeDomainHealth(const DescribeDomainHealthRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeDomainHealth);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeDomainHealth, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainNameHasBeenSet())
   {
@@ -466,6 +486,7 @@ DescribeDomainHealthOutcome OpenSearchServiceClient::DescribeDomainHealth(const 
 
 DescribeDomainNodesOutcome OpenSearchServiceClient::DescribeDomainNodes(const DescribeDomainNodesRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeDomainNodes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeDomainNodes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainNameHasBeenSet())
   {
@@ -482,6 +503,7 @@ DescribeDomainNodesOutcome OpenSearchServiceClient::DescribeDomainNodes(const De
 
 DescribeDomainsOutcome OpenSearchServiceClient::DescribeDomains(const DescribeDomainsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeDomains);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeDomains, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeDomains, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -491,6 +513,7 @@ DescribeDomainsOutcome OpenSearchServiceClient::DescribeDomains(const DescribeDo
 
 DescribeDryRunProgressOutcome OpenSearchServiceClient::DescribeDryRunProgress(const DescribeDryRunProgressRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeDryRunProgress);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeDryRunProgress, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainNameHasBeenSet())
   {
@@ -507,6 +530,7 @@ DescribeDryRunProgressOutcome OpenSearchServiceClient::DescribeDryRunProgress(co
 
 DescribeInboundConnectionsOutcome OpenSearchServiceClient::DescribeInboundConnections(const DescribeInboundConnectionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeInboundConnections);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeInboundConnections, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeInboundConnections, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -516,6 +540,7 @@ DescribeInboundConnectionsOutcome OpenSearchServiceClient::DescribeInboundConnec
 
 DescribeInstanceTypeLimitsOutcome OpenSearchServiceClient::DescribeInstanceTypeLimits(const DescribeInstanceTypeLimitsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeInstanceTypeLimits);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeInstanceTypeLimits, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceTypeHasBeenSet())
   {
@@ -537,6 +562,7 @@ DescribeInstanceTypeLimitsOutcome OpenSearchServiceClient::DescribeInstanceTypeL
 
 DescribeOutboundConnectionsOutcome OpenSearchServiceClient::DescribeOutboundConnections(const DescribeOutboundConnectionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeOutboundConnections);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeOutboundConnections, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeOutboundConnections, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -546,6 +572,7 @@ DescribeOutboundConnectionsOutcome OpenSearchServiceClient::DescribeOutboundConn
 
 DescribePackagesOutcome OpenSearchServiceClient::DescribePackages(const DescribePackagesRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribePackages);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribePackages, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribePackages, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -555,6 +582,7 @@ DescribePackagesOutcome OpenSearchServiceClient::DescribePackages(const Describe
 
 DescribeReservedInstanceOfferingsOutcome OpenSearchServiceClient::DescribeReservedInstanceOfferings(const DescribeReservedInstanceOfferingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeReservedInstanceOfferings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeReservedInstanceOfferings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeReservedInstanceOfferings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -564,6 +592,7 @@ DescribeReservedInstanceOfferingsOutcome OpenSearchServiceClient::DescribeReserv
 
 DescribeReservedInstancesOutcome OpenSearchServiceClient::DescribeReservedInstances(const DescribeReservedInstancesRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeReservedInstances);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeReservedInstances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeReservedInstances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -573,6 +602,7 @@ DescribeReservedInstancesOutcome OpenSearchServiceClient::DescribeReservedInstan
 
 DescribeVpcEndpointsOutcome OpenSearchServiceClient::DescribeVpcEndpoints(const DescribeVpcEndpointsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeVpcEndpoints);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeVpcEndpoints, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeVpcEndpoints, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -582,6 +612,7 @@ DescribeVpcEndpointsOutcome OpenSearchServiceClient::DescribeVpcEndpoints(const 
 
 DissociatePackageOutcome OpenSearchServiceClient::DissociatePackage(const DissociatePackageRequest& request) const
 {
+  AWS_OPERATION_GUARD(DissociatePackage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DissociatePackage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PackageIDHasBeenSet())
   {
@@ -603,6 +634,7 @@ DissociatePackageOutcome OpenSearchServiceClient::DissociatePackage(const Dissoc
 
 GetCompatibleVersionsOutcome OpenSearchServiceClient::GetCompatibleVersions(const GetCompatibleVersionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetCompatibleVersions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCompatibleVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetCompatibleVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -612,6 +644,7 @@ GetCompatibleVersionsOutcome OpenSearchServiceClient::GetCompatibleVersions(cons
 
 GetPackageVersionHistoryOutcome OpenSearchServiceClient::GetPackageVersionHistory(const GetPackageVersionHistoryRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetPackageVersionHistory);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPackageVersionHistory, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PackageIDHasBeenSet())
   {
@@ -628,6 +661,7 @@ GetPackageVersionHistoryOutcome OpenSearchServiceClient::GetPackageVersionHistor
 
 GetUpgradeHistoryOutcome OpenSearchServiceClient::GetUpgradeHistory(const GetUpgradeHistoryRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetUpgradeHistory);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetUpgradeHistory, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainNameHasBeenSet())
   {
@@ -644,6 +678,7 @@ GetUpgradeHistoryOutcome OpenSearchServiceClient::GetUpgradeHistory(const GetUpg
 
 GetUpgradeStatusOutcome OpenSearchServiceClient::GetUpgradeStatus(const GetUpgradeStatusRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetUpgradeStatus);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetUpgradeStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainNameHasBeenSet())
   {
@@ -660,6 +695,7 @@ GetUpgradeStatusOutcome OpenSearchServiceClient::GetUpgradeStatus(const GetUpgra
 
 ListDomainNamesOutcome OpenSearchServiceClient::ListDomainNames(const ListDomainNamesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDomainNames);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDomainNames, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDomainNames, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -669,6 +705,7 @@ ListDomainNamesOutcome OpenSearchServiceClient::ListDomainNames(const ListDomain
 
 ListDomainsForPackageOutcome OpenSearchServiceClient::ListDomainsForPackage(const ListDomainsForPackageRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDomainsForPackage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDomainsForPackage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PackageIDHasBeenSet())
   {
@@ -685,6 +722,7 @@ ListDomainsForPackageOutcome OpenSearchServiceClient::ListDomainsForPackage(cons
 
 ListInstanceTypeDetailsOutcome OpenSearchServiceClient::ListInstanceTypeDetails(const ListInstanceTypeDetailsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListInstanceTypeDetails);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListInstanceTypeDetails, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.EngineVersionHasBeenSet())
   {
@@ -700,6 +738,7 @@ ListInstanceTypeDetailsOutcome OpenSearchServiceClient::ListInstanceTypeDetails(
 
 ListPackagesForDomainOutcome OpenSearchServiceClient::ListPackagesForDomain(const ListPackagesForDomainRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListPackagesForDomain);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPackagesForDomain, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainNameHasBeenSet())
   {
@@ -716,6 +755,7 @@ ListPackagesForDomainOutcome OpenSearchServiceClient::ListPackagesForDomain(cons
 
 ListScheduledActionsOutcome OpenSearchServiceClient::ListScheduledActions(const ListScheduledActionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListScheduledActions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListScheduledActions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainNameHasBeenSet())
   {
@@ -732,6 +772,7 @@ ListScheduledActionsOutcome OpenSearchServiceClient::ListScheduledActions(const 
 
 ListTagsOutcome OpenSearchServiceClient::ListTags(const ListTagsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTags);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTags, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ARNHasBeenSet())
   {
@@ -746,6 +787,7 @@ ListTagsOutcome OpenSearchServiceClient::ListTags(const ListTagsRequest& request
 
 ListVersionsOutcome OpenSearchServiceClient::ListVersions(const ListVersionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListVersions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -755,6 +797,7 @@ ListVersionsOutcome OpenSearchServiceClient::ListVersions(const ListVersionsRequ
 
 ListVpcEndpointAccessOutcome OpenSearchServiceClient::ListVpcEndpointAccess(const ListVpcEndpointAccessRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListVpcEndpointAccess);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListVpcEndpointAccess, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainNameHasBeenSet())
   {
@@ -771,6 +814,7 @@ ListVpcEndpointAccessOutcome OpenSearchServiceClient::ListVpcEndpointAccess(cons
 
 ListVpcEndpointsOutcome OpenSearchServiceClient::ListVpcEndpoints(const ListVpcEndpointsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListVpcEndpoints);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListVpcEndpoints, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListVpcEndpoints, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -780,6 +824,7 @@ ListVpcEndpointsOutcome OpenSearchServiceClient::ListVpcEndpoints(const ListVpcE
 
 ListVpcEndpointsForDomainOutcome OpenSearchServiceClient::ListVpcEndpointsForDomain(const ListVpcEndpointsForDomainRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListVpcEndpointsForDomain);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListVpcEndpointsForDomain, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainNameHasBeenSet())
   {
@@ -796,6 +841,7 @@ ListVpcEndpointsForDomainOutcome OpenSearchServiceClient::ListVpcEndpointsForDom
 
 PurchaseReservedInstanceOfferingOutcome OpenSearchServiceClient::PurchaseReservedInstanceOffering(const PurchaseReservedInstanceOfferingRequest& request) const
 {
+  AWS_OPERATION_GUARD(PurchaseReservedInstanceOffering);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PurchaseReservedInstanceOffering, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PurchaseReservedInstanceOffering, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -805,6 +851,7 @@ PurchaseReservedInstanceOfferingOutcome OpenSearchServiceClient::PurchaseReserve
 
 RejectInboundConnectionOutcome OpenSearchServiceClient::RejectInboundConnection(const RejectInboundConnectionRequest& request) const
 {
+  AWS_OPERATION_GUARD(RejectInboundConnection);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RejectInboundConnection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConnectionIdHasBeenSet())
   {
@@ -821,6 +868,7 @@ RejectInboundConnectionOutcome OpenSearchServiceClient::RejectInboundConnection(
 
 RemoveTagsOutcome OpenSearchServiceClient::RemoveTags(const RemoveTagsRequest& request) const
 {
+  AWS_OPERATION_GUARD(RemoveTags);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RemoveTags, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RemoveTags, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -830,6 +878,7 @@ RemoveTagsOutcome OpenSearchServiceClient::RemoveTags(const RemoveTagsRequest& r
 
 RevokeVpcEndpointAccessOutcome OpenSearchServiceClient::RevokeVpcEndpointAccess(const RevokeVpcEndpointAccessRequest& request) const
 {
+  AWS_OPERATION_GUARD(RevokeVpcEndpointAccess);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RevokeVpcEndpointAccess, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainNameHasBeenSet())
   {
@@ -846,6 +895,7 @@ RevokeVpcEndpointAccessOutcome OpenSearchServiceClient::RevokeVpcEndpointAccess(
 
 StartServiceSoftwareUpdateOutcome OpenSearchServiceClient::StartServiceSoftwareUpdate(const StartServiceSoftwareUpdateRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartServiceSoftwareUpdate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartServiceSoftwareUpdate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartServiceSoftwareUpdate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -855,6 +905,7 @@ StartServiceSoftwareUpdateOutcome OpenSearchServiceClient::StartServiceSoftwareU
 
 UpdateDomainConfigOutcome OpenSearchServiceClient::UpdateDomainConfig(const UpdateDomainConfigRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateDomainConfig);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDomainConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainNameHasBeenSet())
   {
@@ -871,6 +922,7 @@ UpdateDomainConfigOutcome OpenSearchServiceClient::UpdateDomainConfig(const Upda
 
 UpdatePackageOutcome OpenSearchServiceClient::UpdatePackage(const UpdatePackageRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdatePackage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdatePackage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdatePackage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -880,6 +932,7 @@ UpdatePackageOutcome OpenSearchServiceClient::UpdatePackage(const UpdatePackageR
 
 UpdateScheduledActionOutcome OpenSearchServiceClient::UpdateScheduledAction(const UpdateScheduledActionRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateScheduledAction);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateScheduledAction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainNameHasBeenSet())
   {
@@ -896,6 +949,7 @@ UpdateScheduledActionOutcome OpenSearchServiceClient::UpdateScheduledAction(cons
 
 UpdateVpcEndpointOutcome OpenSearchServiceClient::UpdateVpcEndpoint(const UpdateVpcEndpointRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateVpcEndpoint);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateVpcEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateVpcEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -905,6 +959,7 @@ UpdateVpcEndpointOutcome OpenSearchServiceClient::UpdateVpcEndpoint(const Update
 
 UpgradeDomainOutcome OpenSearchServiceClient::UpgradeDomain(const UpgradeDomainRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpgradeDomain);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpgradeDomain, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpgradeDomain, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

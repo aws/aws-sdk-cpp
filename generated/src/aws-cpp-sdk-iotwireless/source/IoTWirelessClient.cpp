@@ -233,6 +233,7 @@ IoTWirelessClient::IoTWirelessClient(const std::shared_ptr<AWSCredentialsProvide
     /* End of legacy constructors due deprecation */
 IoTWirelessClient::~IoTWirelessClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<IoTWirelessEndpointProviderBase>& IoTWirelessClient::accessEndpointProvider()
@@ -255,6 +256,7 @@ void IoTWirelessClient::OverrideEndpoint(const Aws::String& endpoint)
 
 AssociateAwsAccountWithPartnerAccountOutcome IoTWirelessClient::AssociateAwsAccountWithPartnerAccount(const AssociateAwsAccountWithPartnerAccountRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociateAwsAccountWithPartnerAccount);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateAwsAccountWithPartnerAccount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AssociateAwsAccountWithPartnerAccount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -264,6 +266,7 @@ AssociateAwsAccountWithPartnerAccountOutcome IoTWirelessClient::AssociateAwsAcco
 
 AssociateMulticastGroupWithFuotaTaskOutcome IoTWirelessClient::AssociateMulticastGroupWithFuotaTask(const AssociateMulticastGroupWithFuotaTaskRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociateMulticastGroupWithFuotaTask);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateMulticastGroupWithFuotaTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -280,6 +283,7 @@ AssociateMulticastGroupWithFuotaTaskOutcome IoTWirelessClient::AssociateMulticas
 
 AssociateWirelessDeviceWithFuotaTaskOutcome IoTWirelessClient::AssociateWirelessDeviceWithFuotaTask(const AssociateWirelessDeviceWithFuotaTaskRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociateWirelessDeviceWithFuotaTask);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateWirelessDeviceWithFuotaTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -296,6 +300,7 @@ AssociateWirelessDeviceWithFuotaTaskOutcome IoTWirelessClient::AssociateWireless
 
 AssociateWirelessDeviceWithMulticastGroupOutcome IoTWirelessClient::AssociateWirelessDeviceWithMulticastGroup(const AssociateWirelessDeviceWithMulticastGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociateWirelessDeviceWithMulticastGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateWirelessDeviceWithMulticastGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -312,6 +317,7 @@ AssociateWirelessDeviceWithMulticastGroupOutcome IoTWirelessClient::AssociateWir
 
 AssociateWirelessDeviceWithThingOutcome IoTWirelessClient::AssociateWirelessDeviceWithThing(const AssociateWirelessDeviceWithThingRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociateWirelessDeviceWithThing);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateWirelessDeviceWithThing, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -328,6 +334,7 @@ AssociateWirelessDeviceWithThingOutcome IoTWirelessClient::AssociateWirelessDevi
 
 AssociateWirelessGatewayWithCertificateOutcome IoTWirelessClient::AssociateWirelessGatewayWithCertificate(const AssociateWirelessGatewayWithCertificateRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociateWirelessGatewayWithCertificate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateWirelessGatewayWithCertificate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -344,6 +351,7 @@ AssociateWirelessGatewayWithCertificateOutcome IoTWirelessClient::AssociateWirel
 
 AssociateWirelessGatewayWithThingOutcome IoTWirelessClient::AssociateWirelessGatewayWithThing(const AssociateWirelessGatewayWithThingRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociateWirelessGatewayWithThing);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateWirelessGatewayWithThing, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -360,6 +368,7 @@ AssociateWirelessGatewayWithThingOutcome IoTWirelessClient::AssociateWirelessGat
 
 CancelMulticastGroupSessionOutcome IoTWirelessClient::CancelMulticastGroupSession(const CancelMulticastGroupSessionRequest& request) const
 {
+  AWS_OPERATION_GUARD(CancelMulticastGroupSession);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CancelMulticastGroupSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -376,6 +385,7 @@ CancelMulticastGroupSessionOutcome IoTWirelessClient::CancelMulticastGroupSessio
 
 CreateDestinationOutcome IoTWirelessClient::CreateDestination(const CreateDestinationRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateDestination);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDestination, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateDestination, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -385,6 +395,7 @@ CreateDestinationOutcome IoTWirelessClient::CreateDestination(const CreateDestin
 
 CreateDeviceProfileOutcome IoTWirelessClient::CreateDeviceProfile(const CreateDeviceProfileRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateDeviceProfile);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDeviceProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateDeviceProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -394,6 +405,7 @@ CreateDeviceProfileOutcome IoTWirelessClient::CreateDeviceProfile(const CreateDe
 
 CreateFuotaTaskOutcome IoTWirelessClient::CreateFuotaTask(const CreateFuotaTaskRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateFuotaTask);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateFuotaTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateFuotaTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -403,6 +415,7 @@ CreateFuotaTaskOutcome IoTWirelessClient::CreateFuotaTask(const CreateFuotaTaskR
 
 CreateMulticastGroupOutcome IoTWirelessClient::CreateMulticastGroup(const CreateMulticastGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateMulticastGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateMulticastGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateMulticastGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -412,6 +425,7 @@ CreateMulticastGroupOutcome IoTWirelessClient::CreateMulticastGroup(const Create
 
 CreateNetworkAnalyzerConfigurationOutcome IoTWirelessClient::CreateNetworkAnalyzerConfiguration(const CreateNetworkAnalyzerConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateNetworkAnalyzerConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateNetworkAnalyzerConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateNetworkAnalyzerConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -421,6 +435,7 @@ CreateNetworkAnalyzerConfigurationOutcome IoTWirelessClient::CreateNetworkAnalyz
 
 CreateServiceProfileOutcome IoTWirelessClient::CreateServiceProfile(const CreateServiceProfileRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateServiceProfile);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateServiceProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateServiceProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -430,6 +445,7 @@ CreateServiceProfileOutcome IoTWirelessClient::CreateServiceProfile(const Create
 
 CreateWirelessDeviceOutcome IoTWirelessClient::CreateWirelessDevice(const CreateWirelessDeviceRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateWirelessDevice);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateWirelessDevice, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateWirelessDevice, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -439,6 +455,7 @@ CreateWirelessDeviceOutcome IoTWirelessClient::CreateWirelessDevice(const Create
 
 CreateWirelessGatewayOutcome IoTWirelessClient::CreateWirelessGateway(const CreateWirelessGatewayRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateWirelessGateway);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateWirelessGateway, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateWirelessGateway, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -448,6 +465,7 @@ CreateWirelessGatewayOutcome IoTWirelessClient::CreateWirelessGateway(const Crea
 
 CreateWirelessGatewayTaskOutcome IoTWirelessClient::CreateWirelessGatewayTask(const CreateWirelessGatewayTaskRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateWirelessGatewayTask);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateWirelessGatewayTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -464,6 +482,7 @@ CreateWirelessGatewayTaskOutcome IoTWirelessClient::CreateWirelessGatewayTask(co
 
 CreateWirelessGatewayTaskDefinitionOutcome IoTWirelessClient::CreateWirelessGatewayTaskDefinition(const CreateWirelessGatewayTaskDefinitionRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateWirelessGatewayTaskDefinition);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateWirelessGatewayTaskDefinition, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateWirelessGatewayTaskDefinition, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -473,6 +492,7 @@ CreateWirelessGatewayTaskDefinitionOutcome IoTWirelessClient::CreateWirelessGate
 
 DeleteDestinationOutcome IoTWirelessClient::DeleteDestination(const DeleteDestinationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteDestination);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDestination, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -488,6 +508,7 @@ DeleteDestinationOutcome IoTWirelessClient::DeleteDestination(const DeleteDestin
 
 DeleteDeviceProfileOutcome IoTWirelessClient::DeleteDeviceProfile(const DeleteDeviceProfileRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteDeviceProfile);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDeviceProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -503,6 +524,7 @@ DeleteDeviceProfileOutcome IoTWirelessClient::DeleteDeviceProfile(const DeleteDe
 
 DeleteFuotaTaskOutcome IoTWirelessClient::DeleteFuotaTask(const DeleteFuotaTaskRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteFuotaTask);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteFuotaTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -518,6 +540,7 @@ DeleteFuotaTaskOutcome IoTWirelessClient::DeleteFuotaTask(const DeleteFuotaTaskR
 
 DeleteMulticastGroupOutcome IoTWirelessClient::DeleteMulticastGroup(const DeleteMulticastGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteMulticastGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteMulticastGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -533,6 +556,7 @@ DeleteMulticastGroupOutcome IoTWirelessClient::DeleteMulticastGroup(const Delete
 
 DeleteNetworkAnalyzerConfigurationOutcome IoTWirelessClient::DeleteNetworkAnalyzerConfiguration(const DeleteNetworkAnalyzerConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteNetworkAnalyzerConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteNetworkAnalyzerConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConfigurationNameHasBeenSet())
   {
@@ -548,6 +572,7 @@ DeleteNetworkAnalyzerConfigurationOutcome IoTWirelessClient::DeleteNetworkAnalyz
 
 DeleteQueuedMessagesOutcome IoTWirelessClient::DeleteQueuedMessages(const DeleteQueuedMessagesRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteQueuedMessages);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteQueuedMessages, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -569,6 +594,7 @@ DeleteQueuedMessagesOutcome IoTWirelessClient::DeleteQueuedMessages(const Delete
 
 DeleteServiceProfileOutcome IoTWirelessClient::DeleteServiceProfile(const DeleteServiceProfileRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteServiceProfile);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteServiceProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -584,6 +610,7 @@ DeleteServiceProfileOutcome IoTWirelessClient::DeleteServiceProfile(const Delete
 
 DeleteWirelessDeviceOutcome IoTWirelessClient::DeleteWirelessDevice(const DeleteWirelessDeviceRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteWirelessDevice);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteWirelessDevice, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -599,6 +626,7 @@ DeleteWirelessDeviceOutcome IoTWirelessClient::DeleteWirelessDevice(const Delete
 
 DeleteWirelessDeviceImportTaskOutcome IoTWirelessClient::DeleteWirelessDeviceImportTask(const DeleteWirelessDeviceImportTaskRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteWirelessDeviceImportTask);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteWirelessDeviceImportTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -614,6 +642,7 @@ DeleteWirelessDeviceImportTaskOutcome IoTWirelessClient::DeleteWirelessDeviceImp
 
 DeleteWirelessGatewayOutcome IoTWirelessClient::DeleteWirelessGateway(const DeleteWirelessGatewayRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteWirelessGateway);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteWirelessGateway, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -629,6 +658,7 @@ DeleteWirelessGatewayOutcome IoTWirelessClient::DeleteWirelessGateway(const Dele
 
 DeleteWirelessGatewayTaskOutcome IoTWirelessClient::DeleteWirelessGatewayTask(const DeleteWirelessGatewayTaskRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteWirelessGatewayTask);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteWirelessGatewayTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -645,6 +675,7 @@ DeleteWirelessGatewayTaskOutcome IoTWirelessClient::DeleteWirelessGatewayTask(co
 
 DeleteWirelessGatewayTaskDefinitionOutcome IoTWirelessClient::DeleteWirelessGatewayTaskDefinition(const DeleteWirelessGatewayTaskDefinitionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteWirelessGatewayTaskDefinition);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteWirelessGatewayTaskDefinition, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -660,6 +691,7 @@ DeleteWirelessGatewayTaskDefinitionOutcome IoTWirelessClient::DeleteWirelessGate
 
 DeregisterWirelessDeviceOutcome IoTWirelessClient::DeregisterWirelessDevice(const DeregisterWirelessDeviceRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeregisterWirelessDevice);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeregisterWirelessDevice, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdentifierHasBeenSet())
   {
@@ -676,6 +708,7 @@ DeregisterWirelessDeviceOutcome IoTWirelessClient::DeregisterWirelessDevice(cons
 
 DisassociateAwsAccountFromPartnerAccountOutcome IoTWirelessClient::DisassociateAwsAccountFromPartnerAccount(const DisassociateAwsAccountFromPartnerAccountRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociateAwsAccountFromPartnerAccount);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateAwsAccountFromPartnerAccount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PartnerAccountIdHasBeenSet())
   {
@@ -696,6 +729,7 @@ DisassociateAwsAccountFromPartnerAccountOutcome IoTWirelessClient::DisassociateA
 
 DisassociateMulticastGroupFromFuotaTaskOutcome IoTWirelessClient::DisassociateMulticastGroupFromFuotaTask(const DisassociateMulticastGroupFromFuotaTaskRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociateMulticastGroupFromFuotaTask);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateMulticastGroupFromFuotaTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -718,6 +752,7 @@ DisassociateMulticastGroupFromFuotaTaskOutcome IoTWirelessClient::DisassociateMu
 
 DisassociateWirelessDeviceFromFuotaTaskOutcome IoTWirelessClient::DisassociateWirelessDeviceFromFuotaTask(const DisassociateWirelessDeviceFromFuotaTaskRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociateWirelessDeviceFromFuotaTask);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateWirelessDeviceFromFuotaTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -740,6 +775,7 @@ DisassociateWirelessDeviceFromFuotaTaskOutcome IoTWirelessClient::DisassociateWi
 
 DisassociateWirelessDeviceFromMulticastGroupOutcome IoTWirelessClient::DisassociateWirelessDeviceFromMulticastGroup(const DisassociateWirelessDeviceFromMulticastGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociateWirelessDeviceFromMulticastGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateWirelessDeviceFromMulticastGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -762,6 +798,7 @@ DisassociateWirelessDeviceFromMulticastGroupOutcome IoTWirelessClient::Disassoci
 
 DisassociateWirelessDeviceFromThingOutcome IoTWirelessClient::DisassociateWirelessDeviceFromThing(const DisassociateWirelessDeviceFromThingRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociateWirelessDeviceFromThing);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateWirelessDeviceFromThing, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -778,6 +815,7 @@ DisassociateWirelessDeviceFromThingOutcome IoTWirelessClient::DisassociateWirele
 
 DisassociateWirelessGatewayFromCertificateOutcome IoTWirelessClient::DisassociateWirelessGatewayFromCertificate(const DisassociateWirelessGatewayFromCertificateRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociateWirelessGatewayFromCertificate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateWirelessGatewayFromCertificate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -794,6 +832,7 @@ DisassociateWirelessGatewayFromCertificateOutcome IoTWirelessClient::Disassociat
 
 DisassociateWirelessGatewayFromThingOutcome IoTWirelessClient::DisassociateWirelessGatewayFromThing(const DisassociateWirelessGatewayFromThingRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociateWirelessGatewayFromThing);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateWirelessGatewayFromThing, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -810,6 +849,7 @@ DisassociateWirelessGatewayFromThingOutcome IoTWirelessClient::DisassociateWirel
 
 GetDestinationOutcome IoTWirelessClient::GetDestination(const GetDestinationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDestination);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDestination, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -825,6 +865,7 @@ GetDestinationOutcome IoTWirelessClient::GetDestination(const GetDestinationRequ
 
 GetDeviceProfileOutcome IoTWirelessClient::GetDeviceProfile(const GetDeviceProfileRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDeviceProfile);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDeviceProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -840,6 +881,7 @@ GetDeviceProfileOutcome IoTWirelessClient::GetDeviceProfile(const GetDeviceProfi
 
 GetEventConfigurationByResourceTypesOutcome IoTWirelessClient::GetEventConfigurationByResourceTypes(const GetEventConfigurationByResourceTypesRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetEventConfigurationByResourceTypes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetEventConfigurationByResourceTypes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetEventConfigurationByResourceTypes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -849,6 +891,7 @@ GetEventConfigurationByResourceTypesOutcome IoTWirelessClient::GetEventConfigura
 
 GetFuotaTaskOutcome IoTWirelessClient::GetFuotaTask(const GetFuotaTaskRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetFuotaTask);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetFuotaTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -864,6 +907,7 @@ GetFuotaTaskOutcome IoTWirelessClient::GetFuotaTask(const GetFuotaTaskRequest& r
 
 GetLogLevelsByResourceTypesOutcome IoTWirelessClient::GetLogLevelsByResourceTypes(const GetLogLevelsByResourceTypesRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetLogLevelsByResourceTypes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetLogLevelsByResourceTypes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetLogLevelsByResourceTypes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -873,6 +917,7 @@ GetLogLevelsByResourceTypesOutcome IoTWirelessClient::GetLogLevelsByResourceType
 
 GetMulticastGroupOutcome IoTWirelessClient::GetMulticastGroup(const GetMulticastGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetMulticastGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMulticastGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -888,6 +933,7 @@ GetMulticastGroupOutcome IoTWirelessClient::GetMulticastGroup(const GetMulticast
 
 GetMulticastGroupSessionOutcome IoTWirelessClient::GetMulticastGroupSession(const GetMulticastGroupSessionRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetMulticastGroupSession);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMulticastGroupSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -904,6 +950,7 @@ GetMulticastGroupSessionOutcome IoTWirelessClient::GetMulticastGroupSession(cons
 
 GetNetworkAnalyzerConfigurationOutcome IoTWirelessClient::GetNetworkAnalyzerConfiguration(const GetNetworkAnalyzerConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetNetworkAnalyzerConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetNetworkAnalyzerConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConfigurationNameHasBeenSet())
   {
@@ -919,6 +966,7 @@ GetNetworkAnalyzerConfigurationOutcome IoTWirelessClient::GetNetworkAnalyzerConf
 
 GetPartnerAccountOutcome IoTWirelessClient::GetPartnerAccount(const GetPartnerAccountRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetPartnerAccount);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPartnerAccount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PartnerAccountIdHasBeenSet())
   {
@@ -939,6 +987,7 @@ GetPartnerAccountOutcome IoTWirelessClient::GetPartnerAccount(const GetPartnerAc
 
 GetPositionEstimateOutcome IoTWirelessClient::GetPositionEstimate(const GetPositionEstimateRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetPositionEstimate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPositionEstimate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetPositionEstimate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -948,6 +997,7 @@ GetPositionEstimateOutcome IoTWirelessClient::GetPositionEstimate(const GetPosit
 
 GetResourceEventConfigurationOutcome IoTWirelessClient::GetResourceEventConfiguration(const GetResourceEventConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetResourceEventConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetResourceEventConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdentifierHasBeenSet())
   {
@@ -968,6 +1018,7 @@ GetResourceEventConfigurationOutcome IoTWirelessClient::GetResourceEventConfigur
 
 GetResourceLogLevelOutcome IoTWirelessClient::GetResourceLogLevel(const GetResourceLogLevelRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetResourceLogLevel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetResourceLogLevel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceIdentifierHasBeenSet())
   {
@@ -988,6 +1039,7 @@ GetResourceLogLevelOutcome IoTWirelessClient::GetResourceLogLevel(const GetResou
 
 GetResourcePositionOutcome IoTWirelessClient::GetResourcePosition(const GetResourcePositionRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetResourcePosition);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetResourcePosition, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceIdentifierHasBeenSet())
   {
@@ -1008,6 +1060,7 @@ GetResourcePositionOutcome IoTWirelessClient::GetResourcePosition(const GetResou
 
 GetServiceEndpointOutcome IoTWirelessClient::GetServiceEndpoint(const GetServiceEndpointRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetServiceEndpoint);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetServiceEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetServiceEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1017,6 +1070,7 @@ GetServiceEndpointOutcome IoTWirelessClient::GetServiceEndpoint(const GetService
 
 GetServiceProfileOutcome IoTWirelessClient::GetServiceProfile(const GetServiceProfileRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetServiceProfile);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetServiceProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -1032,6 +1086,7 @@ GetServiceProfileOutcome IoTWirelessClient::GetServiceProfile(const GetServicePr
 
 GetWirelessDeviceOutcome IoTWirelessClient::GetWirelessDevice(const GetWirelessDeviceRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetWirelessDevice);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetWirelessDevice, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdentifierHasBeenSet())
   {
@@ -1052,6 +1107,7 @@ GetWirelessDeviceOutcome IoTWirelessClient::GetWirelessDevice(const GetWirelessD
 
 GetWirelessDeviceImportTaskOutcome IoTWirelessClient::GetWirelessDeviceImportTask(const GetWirelessDeviceImportTaskRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetWirelessDeviceImportTask);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetWirelessDeviceImportTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -1067,6 +1123,7 @@ GetWirelessDeviceImportTaskOutcome IoTWirelessClient::GetWirelessDeviceImportTas
 
 GetWirelessDeviceStatisticsOutcome IoTWirelessClient::GetWirelessDeviceStatistics(const GetWirelessDeviceStatisticsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetWirelessDeviceStatistics);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetWirelessDeviceStatistics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WirelessDeviceIdHasBeenSet())
   {
@@ -1083,6 +1140,7 @@ GetWirelessDeviceStatisticsOutcome IoTWirelessClient::GetWirelessDeviceStatistic
 
 GetWirelessGatewayOutcome IoTWirelessClient::GetWirelessGateway(const GetWirelessGatewayRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetWirelessGateway);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetWirelessGateway, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdentifierHasBeenSet())
   {
@@ -1103,6 +1161,7 @@ GetWirelessGatewayOutcome IoTWirelessClient::GetWirelessGateway(const GetWireles
 
 GetWirelessGatewayCertificateOutcome IoTWirelessClient::GetWirelessGatewayCertificate(const GetWirelessGatewayCertificateRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetWirelessGatewayCertificate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetWirelessGatewayCertificate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -1119,6 +1178,7 @@ GetWirelessGatewayCertificateOutcome IoTWirelessClient::GetWirelessGatewayCertif
 
 GetWirelessGatewayFirmwareInformationOutcome IoTWirelessClient::GetWirelessGatewayFirmwareInformation(const GetWirelessGatewayFirmwareInformationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetWirelessGatewayFirmwareInformation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetWirelessGatewayFirmwareInformation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -1135,6 +1195,7 @@ GetWirelessGatewayFirmwareInformationOutcome IoTWirelessClient::GetWirelessGatew
 
 GetWirelessGatewayStatisticsOutcome IoTWirelessClient::GetWirelessGatewayStatistics(const GetWirelessGatewayStatisticsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetWirelessGatewayStatistics);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetWirelessGatewayStatistics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WirelessGatewayIdHasBeenSet())
   {
@@ -1151,6 +1212,7 @@ GetWirelessGatewayStatisticsOutcome IoTWirelessClient::GetWirelessGatewayStatist
 
 GetWirelessGatewayTaskOutcome IoTWirelessClient::GetWirelessGatewayTask(const GetWirelessGatewayTaskRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetWirelessGatewayTask);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetWirelessGatewayTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -1167,6 +1229,7 @@ GetWirelessGatewayTaskOutcome IoTWirelessClient::GetWirelessGatewayTask(const Ge
 
 GetWirelessGatewayTaskDefinitionOutcome IoTWirelessClient::GetWirelessGatewayTaskDefinition(const GetWirelessGatewayTaskDefinitionRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetWirelessGatewayTaskDefinition);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetWirelessGatewayTaskDefinition, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -1182,6 +1245,7 @@ GetWirelessGatewayTaskDefinitionOutcome IoTWirelessClient::GetWirelessGatewayTas
 
 ListDestinationsOutcome IoTWirelessClient::ListDestinations(const ListDestinationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDestinations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDestinations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDestinations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1191,6 +1255,7 @@ ListDestinationsOutcome IoTWirelessClient::ListDestinations(const ListDestinatio
 
 ListDeviceProfilesOutcome IoTWirelessClient::ListDeviceProfiles(const ListDeviceProfilesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDeviceProfiles);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDeviceProfiles, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDeviceProfiles, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1200,6 +1265,7 @@ ListDeviceProfilesOutcome IoTWirelessClient::ListDeviceProfiles(const ListDevice
 
 ListDevicesForWirelessDeviceImportTaskOutcome IoTWirelessClient::ListDevicesForWirelessDeviceImportTask(const ListDevicesForWirelessDeviceImportTaskRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDevicesForWirelessDeviceImportTask);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDevicesForWirelessDeviceImportTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -1214,6 +1280,7 @@ ListDevicesForWirelessDeviceImportTaskOutcome IoTWirelessClient::ListDevicesForW
 
 ListEventConfigurationsOutcome IoTWirelessClient::ListEventConfigurations(const ListEventConfigurationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListEventConfigurations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListEventConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceTypeHasBeenSet())
   {
@@ -1228,6 +1295,7 @@ ListEventConfigurationsOutcome IoTWirelessClient::ListEventConfigurations(const 
 
 ListFuotaTasksOutcome IoTWirelessClient::ListFuotaTasks(const ListFuotaTasksRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListFuotaTasks);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListFuotaTasks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListFuotaTasks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1237,6 +1305,7 @@ ListFuotaTasksOutcome IoTWirelessClient::ListFuotaTasks(const ListFuotaTasksRequ
 
 ListMulticastGroupsOutcome IoTWirelessClient::ListMulticastGroups(const ListMulticastGroupsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListMulticastGroups);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListMulticastGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListMulticastGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1246,6 +1315,7 @@ ListMulticastGroupsOutcome IoTWirelessClient::ListMulticastGroups(const ListMult
 
 ListMulticastGroupsByFuotaTaskOutcome IoTWirelessClient::ListMulticastGroupsByFuotaTask(const ListMulticastGroupsByFuotaTaskRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListMulticastGroupsByFuotaTask);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListMulticastGroupsByFuotaTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -1262,6 +1332,7 @@ ListMulticastGroupsByFuotaTaskOutcome IoTWirelessClient::ListMulticastGroupsByFu
 
 ListNetworkAnalyzerConfigurationsOutcome IoTWirelessClient::ListNetworkAnalyzerConfigurations(const ListNetworkAnalyzerConfigurationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListNetworkAnalyzerConfigurations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListNetworkAnalyzerConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListNetworkAnalyzerConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1271,6 +1342,7 @@ ListNetworkAnalyzerConfigurationsOutcome IoTWirelessClient::ListNetworkAnalyzerC
 
 ListPartnerAccountsOutcome IoTWirelessClient::ListPartnerAccounts(const ListPartnerAccountsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListPartnerAccounts);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPartnerAccounts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListPartnerAccounts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1280,6 +1352,7 @@ ListPartnerAccountsOutcome IoTWirelessClient::ListPartnerAccounts(const ListPart
 
 ListQueuedMessagesOutcome IoTWirelessClient::ListQueuedMessages(const ListQueuedMessagesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListQueuedMessages);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListQueuedMessages, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -1296,6 +1369,7 @@ ListQueuedMessagesOutcome IoTWirelessClient::ListQueuedMessages(const ListQueued
 
 ListServiceProfilesOutcome IoTWirelessClient::ListServiceProfiles(const ListServiceProfilesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListServiceProfiles);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListServiceProfiles, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListServiceProfiles, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1305,6 +1379,7 @@ ListServiceProfilesOutcome IoTWirelessClient::ListServiceProfiles(const ListServ
 
 ListTagsForResourceOutcome IoTWirelessClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -1319,6 +1394,7 @@ ListTagsForResourceOutcome IoTWirelessClient::ListTagsForResource(const ListTags
 
 ListWirelessDeviceImportTasksOutcome IoTWirelessClient::ListWirelessDeviceImportTasks(const ListWirelessDeviceImportTasksRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListWirelessDeviceImportTasks);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListWirelessDeviceImportTasks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListWirelessDeviceImportTasks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1328,6 +1404,7 @@ ListWirelessDeviceImportTasksOutcome IoTWirelessClient::ListWirelessDeviceImport
 
 ListWirelessDevicesOutcome IoTWirelessClient::ListWirelessDevices(const ListWirelessDevicesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListWirelessDevices);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListWirelessDevices, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListWirelessDevices, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1337,6 +1414,7 @@ ListWirelessDevicesOutcome IoTWirelessClient::ListWirelessDevices(const ListWire
 
 ListWirelessGatewayTaskDefinitionsOutcome IoTWirelessClient::ListWirelessGatewayTaskDefinitions(const ListWirelessGatewayTaskDefinitionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListWirelessGatewayTaskDefinitions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListWirelessGatewayTaskDefinitions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListWirelessGatewayTaskDefinitions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1346,6 +1424,7 @@ ListWirelessGatewayTaskDefinitionsOutcome IoTWirelessClient::ListWirelessGateway
 
 ListWirelessGatewaysOutcome IoTWirelessClient::ListWirelessGateways(const ListWirelessGatewaysRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListWirelessGateways);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListWirelessGateways, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListWirelessGateways, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1355,6 +1434,7 @@ ListWirelessGatewaysOutcome IoTWirelessClient::ListWirelessGateways(const ListWi
 
 PutResourceLogLevelOutcome IoTWirelessClient::PutResourceLogLevel(const PutResourceLogLevelRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutResourceLogLevel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutResourceLogLevel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceIdentifierHasBeenSet())
   {
@@ -1375,6 +1455,7 @@ PutResourceLogLevelOutcome IoTWirelessClient::PutResourceLogLevel(const PutResou
 
 ResetAllResourceLogLevelsOutcome IoTWirelessClient::ResetAllResourceLogLevels(const ResetAllResourceLogLevelsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ResetAllResourceLogLevels);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ResetAllResourceLogLevels, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ResetAllResourceLogLevels, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1384,6 +1465,7 @@ ResetAllResourceLogLevelsOutcome IoTWirelessClient::ResetAllResourceLogLevels(co
 
 ResetResourceLogLevelOutcome IoTWirelessClient::ResetResourceLogLevel(const ResetResourceLogLevelRequest& request) const
 {
+  AWS_OPERATION_GUARD(ResetResourceLogLevel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ResetResourceLogLevel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceIdentifierHasBeenSet())
   {
@@ -1404,6 +1486,7 @@ ResetResourceLogLevelOutcome IoTWirelessClient::ResetResourceLogLevel(const Rese
 
 SendDataToMulticastGroupOutcome IoTWirelessClient::SendDataToMulticastGroup(const SendDataToMulticastGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(SendDataToMulticastGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SendDataToMulticastGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -1420,6 +1503,7 @@ SendDataToMulticastGroupOutcome IoTWirelessClient::SendDataToMulticastGroup(cons
 
 SendDataToWirelessDeviceOutcome IoTWirelessClient::SendDataToWirelessDevice(const SendDataToWirelessDeviceRequest& request) const
 {
+  AWS_OPERATION_GUARD(SendDataToWirelessDevice);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SendDataToWirelessDevice, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -1436,6 +1520,7 @@ SendDataToWirelessDeviceOutcome IoTWirelessClient::SendDataToWirelessDevice(cons
 
 StartBulkAssociateWirelessDeviceWithMulticastGroupOutcome IoTWirelessClient::StartBulkAssociateWirelessDeviceWithMulticastGroup(const StartBulkAssociateWirelessDeviceWithMulticastGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartBulkAssociateWirelessDeviceWithMulticastGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartBulkAssociateWirelessDeviceWithMulticastGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -1452,6 +1537,7 @@ StartBulkAssociateWirelessDeviceWithMulticastGroupOutcome IoTWirelessClient::Sta
 
 StartBulkDisassociateWirelessDeviceFromMulticastGroupOutcome IoTWirelessClient::StartBulkDisassociateWirelessDeviceFromMulticastGroup(const StartBulkDisassociateWirelessDeviceFromMulticastGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartBulkDisassociateWirelessDeviceFromMulticastGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartBulkDisassociateWirelessDeviceFromMulticastGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -1468,6 +1554,7 @@ StartBulkDisassociateWirelessDeviceFromMulticastGroupOutcome IoTWirelessClient::
 
 StartFuotaTaskOutcome IoTWirelessClient::StartFuotaTask(const StartFuotaTaskRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartFuotaTask);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartFuotaTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -1483,6 +1570,7 @@ StartFuotaTaskOutcome IoTWirelessClient::StartFuotaTask(const StartFuotaTaskRequ
 
 StartMulticastGroupSessionOutcome IoTWirelessClient::StartMulticastGroupSession(const StartMulticastGroupSessionRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartMulticastGroupSession);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartMulticastGroupSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -1499,6 +1587,7 @@ StartMulticastGroupSessionOutcome IoTWirelessClient::StartMulticastGroupSession(
 
 StartSingleWirelessDeviceImportTaskOutcome IoTWirelessClient::StartSingleWirelessDeviceImportTask(const StartSingleWirelessDeviceImportTaskRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartSingleWirelessDeviceImportTask);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartSingleWirelessDeviceImportTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartSingleWirelessDeviceImportTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1508,6 +1597,7 @@ StartSingleWirelessDeviceImportTaskOutcome IoTWirelessClient::StartSingleWireles
 
 StartWirelessDeviceImportTaskOutcome IoTWirelessClient::StartWirelessDeviceImportTask(const StartWirelessDeviceImportTaskRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartWirelessDeviceImportTask);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartWirelessDeviceImportTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartWirelessDeviceImportTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1517,6 +1607,7 @@ StartWirelessDeviceImportTaskOutcome IoTWirelessClient::StartWirelessDeviceImpor
 
 TagResourceOutcome IoTWirelessClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -1531,6 +1622,7 @@ TagResourceOutcome IoTWirelessClient::TagResource(const TagResourceRequest& requ
 
 TestWirelessDeviceOutcome IoTWirelessClient::TestWirelessDevice(const TestWirelessDeviceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TestWirelessDevice);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TestWirelessDevice, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -1547,6 +1639,7 @@ TestWirelessDeviceOutcome IoTWirelessClient::TestWirelessDevice(const TestWirele
 
 UntagResourceOutcome IoTWirelessClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -1566,6 +1659,7 @@ UntagResourceOutcome IoTWirelessClient::UntagResource(const UntagResourceRequest
 
 UpdateDestinationOutcome IoTWirelessClient::UpdateDestination(const UpdateDestinationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateDestination);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDestination, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -1581,6 +1675,7 @@ UpdateDestinationOutcome IoTWirelessClient::UpdateDestination(const UpdateDestin
 
 UpdateEventConfigurationByResourceTypesOutcome IoTWirelessClient::UpdateEventConfigurationByResourceTypes(const UpdateEventConfigurationByResourceTypesRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateEventConfigurationByResourceTypes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateEventConfigurationByResourceTypes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateEventConfigurationByResourceTypes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1590,6 +1685,7 @@ UpdateEventConfigurationByResourceTypesOutcome IoTWirelessClient::UpdateEventCon
 
 UpdateFuotaTaskOutcome IoTWirelessClient::UpdateFuotaTask(const UpdateFuotaTaskRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateFuotaTask);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateFuotaTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -1605,6 +1701,7 @@ UpdateFuotaTaskOutcome IoTWirelessClient::UpdateFuotaTask(const UpdateFuotaTaskR
 
 UpdateLogLevelsByResourceTypesOutcome IoTWirelessClient::UpdateLogLevelsByResourceTypes(const UpdateLogLevelsByResourceTypesRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateLogLevelsByResourceTypes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateLogLevelsByResourceTypes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateLogLevelsByResourceTypes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1614,6 +1711,7 @@ UpdateLogLevelsByResourceTypesOutcome IoTWirelessClient::UpdateLogLevelsByResour
 
 UpdateMulticastGroupOutcome IoTWirelessClient::UpdateMulticastGroup(const UpdateMulticastGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateMulticastGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateMulticastGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -1629,6 +1727,7 @@ UpdateMulticastGroupOutcome IoTWirelessClient::UpdateMulticastGroup(const Update
 
 UpdateNetworkAnalyzerConfigurationOutcome IoTWirelessClient::UpdateNetworkAnalyzerConfiguration(const UpdateNetworkAnalyzerConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateNetworkAnalyzerConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateNetworkAnalyzerConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConfigurationNameHasBeenSet())
   {
@@ -1644,6 +1743,7 @@ UpdateNetworkAnalyzerConfigurationOutcome IoTWirelessClient::UpdateNetworkAnalyz
 
 UpdatePartnerAccountOutcome IoTWirelessClient::UpdatePartnerAccount(const UpdatePartnerAccountRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdatePartnerAccount);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdatePartnerAccount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PartnerAccountIdHasBeenSet())
   {
@@ -1664,6 +1764,7 @@ UpdatePartnerAccountOutcome IoTWirelessClient::UpdatePartnerAccount(const Update
 
 UpdateResourceEventConfigurationOutcome IoTWirelessClient::UpdateResourceEventConfiguration(const UpdateResourceEventConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateResourceEventConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateResourceEventConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdentifierHasBeenSet())
   {
@@ -1684,6 +1785,7 @@ UpdateResourceEventConfigurationOutcome IoTWirelessClient::UpdateResourceEventCo
 
 UpdateResourcePositionOutcome IoTWirelessClient::UpdateResourcePosition(const UpdateResourcePositionRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateResourcePosition);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateResourcePosition, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceIdentifierHasBeenSet())
   {
@@ -1704,6 +1806,7 @@ UpdateResourcePositionOutcome IoTWirelessClient::UpdateResourcePosition(const Up
 
 UpdateWirelessDeviceOutcome IoTWirelessClient::UpdateWirelessDevice(const UpdateWirelessDeviceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateWirelessDevice);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateWirelessDevice, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -1719,6 +1822,7 @@ UpdateWirelessDeviceOutcome IoTWirelessClient::UpdateWirelessDevice(const Update
 
 UpdateWirelessDeviceImportTaskOutcome IoTWirelessClient::UpdateWirelessDeviceImportTask(const UpdateWirelessDeviceImportTaskRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateWirelessDeviceImportTask);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateWirelessDeviceImportTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -1734,6 +1838,7 @@ UpdateWirelessDeviceImportTaskOutcome IoTWirelessClient::UpdateWirelessDeviceImp
 
 UpdateWirelessGatewayOutcome IoTWirelessClient::UpdateWirelessGateway(const UpdateWirelessGatewayRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateWirelessGateway);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateWirelessGateway, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {

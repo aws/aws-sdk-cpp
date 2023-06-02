@@ -157,6 +157,7 @@ MigrationHubOrchestratorClient::MigrationHubOrchestratorClient(const std::shared
     /* End of legacy constructors due deprecation */
 MigrationHubOrchestratorClient::~MigrationHubOrchestratorClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<MigrationHubOrchestratorEndpointProviderBase>& MigrationHubOrchestratorClient::accessEndpointProvider()
@@ -179,6 +180,7 @@ void MigrationHubOrchestratorClient::OverrideEndpoint(const Aws::String& endpoin
 
 CreateWorkflowOutcome MigrationHubOrchestratorClient::CreateWorkflow(const CreateWorkflowRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateWorkflow);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateWorkflow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateWorkflow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -188,6 +190,7 @@ CreateWorkflowOutcome MigrationHubOrchestratorClient::CreateWorkflow(const Creat
 
 CreateWorkflowStepOutcome MigrationHubOrchestratorClient::CreateWorkflowStep(const CreateWorkflowStepRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateWorkflowStep);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateWorkflowStep, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateWorkflowStep, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -197,6 +200,7 @@ CreateWorkflowStepOutcome MigrationHubOrchestratorClient::CreateWorkflowStep(con
 
 CreateWorkflowStepGroupOutcome MigrationHubOrchestratorClient::CreateWorkflowStepGroup(const CreateWorkflowStepGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateWorkflowStepGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateWorkflowStepGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateWorkflowStepGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -206,6 +210,7 @@ CreateWorkflowStepGroupOutcome MigrationHubOrchestratorClient::CreateWorkflowSte
 
 DeleteWorkflowOutcome MigrationHubOrchestratorClient::DeleteWorkflow(const DeleteWorkflowRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteWorkflow);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteWorkflow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -221,6 +226,7 @@ DeleteWorkflowOutcome MigrationHubOrchestratorClient::DeleteWorkflow(const Delet
 
 DeleteWorkflowStepOutcome MigrationHubOrchestratorClient::DeleteWorkflowStep(const DeleteWorkflowStepRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteWorkflowStep);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteWorkflowStep, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -246,6 +252,7 @@ DeleteWorkflowStepOutcome MigrationHubOrchestratorClient::DeleteWorkflowStep(con
 
 DeleteWorkflowStepGroupOutcome MigrationHubOrchestratorClient::DeleteWorkflowStepGroup(const DeleteWorkflowStepGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteWorkflowStepGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteWorkflowStepGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkflowIdHasBeenSet())
   {
@@ -266,6 +273,7 @@ DeleteWorkflowStepGroupOutcome MigrationHubOrchestratorClient::DeleteWorkflowSte
 
 GetTemplateOutcome MigrationHubOrchestratorClient::GetTemplate(const GetTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -281,6 +289,7 @@ GetTemplateOutcome MigrationHubOrchestratorClient::GetTemplate(const GetTemplate
 
 GetTemplateStepOutcome MigrationHubOrchestratorClient::GetTemplateStep(const GetTemplateStepRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetTemplateStep);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetTemplateStep, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -306,6 +315,7 @@ GetTemplateStepOutcome MigrationHubOrchestratorClient::GetTemplateStep(const Get
 
 GetTemplateStepGroupOutcome MigrationHubOrchestratorClient::GetTemplateStepGroup(const GetTemplateStepGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetTemplateStepGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetTemplateStepGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TemplateIdHasBeenSet())
   {
@@ -328,6 +338,7 @@ GetTemplateStepGroupOutcome MigrationHubOrchestratorClient::GetTemplateStepGroup
 
 GetWorkflowOutcome MigrationHubOrchestratorClient::GetWorkflow(const GetWorkflowRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetWorkflow);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetWorkflow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -343,6 +354,7 @@ GetWorkflowOutcome MigrationHubOrchestratorClient::GetWorkflow(const GetWorkflow
 
 GetWorkflowStepOutcome MigrationHubOrchestratorClient::GetWorkflowStep(const GetWorkflowStepRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetWorkflowStep);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetWorkflowStep, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkflowIdHasBeenSet())
   {
@@ -368,6 +380,7 @@ GetWorkflowStepOutcome MigrationHubOrchestratorClient::GetWorkflowStep(const Get
 
 GetWorkflowStepGroupOutcome MigrationHubOrchestratorClient::GetWorkflowStepGroup(const GetWorkflowStepGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetWorkflowStepGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetWorkflowStepGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -388,6 +401,7 @@ GetWorkflowStepGroupOutcome MigrationHubOrchestratorClient::GetWorkflowStepGroup
 
 ListPluginsOutcome MigrationHubOrchestratorClient::ListPlugins(const ListPluginsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListPlugins);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPlugins, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListPlugins, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -397,6 +411,7 @@ ListPluginsOutcome MigrationHubOrchestratorClient::ListPlugins(const ListPlugins
 
 ListTagsForResourceOutcome MigrationHubOrchestratorClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -412,6 +427,7 @@ ListTagsForResourceOutcome MigrationHubOrchestratorClient::ListTagsForResource(c
 
 ListTemplateStepGroupsOutcome MigrationHubOrchestratorClient::ListTemplateStepGroups(const ListTemplateStepGroupsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTemplateStepGroups);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTemplateStepGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TemplateIdHasBeenSet())
   {
@@ -427,6 +443,7 @@ ListTemplateStepGroupsOutcome MigrationHubOrchestratorClient::ListTemplateStepGr
 
 ListTemplateStepsOutcome MigrationHubOrchestratorClient::ListTemplateSteps(const ListTemplateStepsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTemplateSteps);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTemplateSteps, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TemplateIdHasBeenSet())
   {
@@ -446,6 +463,7 @@ ListTemplateStepsOutcome MigrationHubOrchestratorClient::ListTemplateSteps(const
 
 ListTemplatesOutcome MigrationHubOrchestratorClient::ListTemplates(const ListTemplatesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTemplates);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTemplates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTemplates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -455,6 +473,7 @@ ListTemplatesOutcome MigrationHubOrchestratorClient::ListTemplates(const ListTem
 
 ListWorkflowStepGroupsOutcome MigrationHubOrchestratorClient::ListWorkflowStepGroups(const ListWorkflowStepGroupsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListWorkflowStepGroups);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListWorkflowStepGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkflowIdHasBeenSet())
   {
@@ -469,6 +488,7 @@ ListWorkflowStepGroupsOutcome MigrationHubOrchestratorClient::ListWorkflowStepGr
 
 ListWorkflowStepsOutcome MigrationHubOrchestratorClient::ListWorkflowSteps(const ListWorkflowStepsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListWorkflowSteps);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListWorkflowSteps, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkflowIdHasBeenSet())
   {
@@ -492,6 +512,7 @@ ListWorkflowStepsOutcome MigrationHubOrchestratorClient::ListWorkflowSteps(const
 
 ListWorkflowsOutcome MigrationHubOrchestratorClient::ListWorkflows(const ListWorkflowsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListWorkflows);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListWorkflows, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListWorkflows, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -501,6 +522,7 @@ ListWorkflowsOutcome MigrationHubOrchestratorClient::ListWorkflows(const ListWor
 
 RetryWorkflowStepOutcome MigrationHubOrchestratorClient::RetryWorkflowStep(const RetryWorkflowStepRequest& request) const
 {
+  AWS_OPERATION_GUARD(RetryWorkflowStep);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RetryWorkflowStep, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkflowIdHasBeenSet())
   {
@@ -526,6 +548,7 @@ RetryWorkflowStepOutcome MigrationHubOrchestratorClient::RetryWorkflowStep(const
 
 StartWorkflowOutcome MigrationHubOrchestratorClient::StartWorkflow(const StartWorkflowRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartWorkflow);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartWorkflow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -542,6 +565,7 @@ StartWorkflowOutcome MigrationHubOrchestratorClient::StartWorkflow(const StartWo
 
 StopWorkflowOutcome MigrationHubOrchestratorClient::StopWorkflow(const StopWorkflowRequest& request) const
 {
+  AWS_OPERATION_GUARD(StopWorkflow);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopWorkflow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -558,6 +582,7 @@ StopWorkflowOutcome MigrationHubOrchestratorClient::StopWorkflow(const StopWorkf
 
 TagResourceOutcome MigrationHubOrchestratorClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -573,6 +598,7 @@ TagResourceOutcome MigrationHubOrchestratorClient::TagResource(const TagResource
 
 UntagResourceOutcome MigrationHubOrchestratorClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -593,6 +619,7 @@ UntagResourceOutcome MigrationHubOrchestratorClient::UntagResource(const UntagRe
 
 UpdateWorkflowOutcome MigrationHubOrchestratorClient::UpdateWorkflow(const UpdateWorkflowRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateWorkflow);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateWorkflow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -608,6 +635,7 @@ UpdateWorkflowOutcome MigrationHubOrchestratorClient::UpdateWorkflow(const Updat
 
 UpdateWorkflowStepOutcome MigrationHubOrchestratorClient::UpdateWorkflowStep(const UpdateWorkflowStepRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateWorkflowStep);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateWorkflowStep, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -623,6 +651,7 @@ UpdateWorkflowStepOutcome MigrationHubOrchestratorClient::UpdateWorkflowStep(con
 
 UpdateWorkflowStepGroupOutcome MigrationHubOrchestratorClient::UpdateWorkflowStepGroup(const UpdateWorkflowStepGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateWorkflowStepGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateWorkflowStepGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkflowIdHasBeenSet())
   {

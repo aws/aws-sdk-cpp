@@ -148,6 +148,7 @@ IdentityStoreClient::IdentityStoreClient(const std::shared_ptr<AWSCredentialsPro
     /* End of legacy constructors due deprecation */
 IdentityStoreClient::~IdentityStoreClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<IdentityStoreEndpointProviderBase>& IdentityStoreClient::accessEndpointProvider()
@@ -170,6 +171,7 @@ void IdentityStoreClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CreateGroupOutcome IdentityStoreClient::CreateGroup(const CreateGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -178,6 +180,7 @@ CreateGroupOutcome IdentityStoreClient::CreateGroup(const CreateGroupRequest& re
 
 CreateGroupMembershipOutcome IdentityStoreClient::CreateGroupMembership(const CreateGroupMembershipRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateGroupMembership);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateGroupMembership, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateGroupMembership, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -186,6 +189,7 @@ CreateGroupMembershipOutcome IdentityStoreClient::CreateGroupMembership(const Cr
 
 CreateUserOutcome IdentityStoreClient::CreateUser(const CreateUserRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateUser);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -194,6 +198,7 @@ CreateUserOutcome IdentityStoreClient::CreateUser(const CreateUserRequest& reque
 
 DeleteGroupOutcome IdentityStoreClient::DeleteGroup(const DeleteGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -202,6 +207,7 @@ DeleteGroupOutcome IdentityStoreClient::DeleteGroup(const DeleteGroupRequest& re
 
 DeleteGroupMembershipOutcome IdentityStoreClient::DeleteGroupMembership(const DeleteGroupMembershipRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteGroupMembership);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteGroupMembership, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteGroupMembership, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -210,6 +216,7 @@ DeleteGroupMembershipOutcome IdentityStoreClient::DeleteGroupMembership(const De
 
 DeleteUserOutcome IdentityStoreClient::DeleteUser(const DeleteUserRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteUser);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -218,6 +225,7 @@ DeleteUserOutcome IdentityStoreClient::DeleteUser(const DeleteUserRequest& reque
 
 DescribeGroupOutcome IdentityStoreClient::DescribeGroup(const DescribeGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -226,6 +234,7 @@ DescribeGroupOutcome IdentityStoreClient::DescribeGroup(const DescribeGroupReque
 
 DescribeGroupMembershipOutcome IdentityStoreClient::DescribeGroupMembership(const DescribeGroupMembershipRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeGroupMembership);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeGroupMembership, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeGroupMembership, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -234,6 +243,7 @@ DescribeGroupMembershipOutcome IdentityStoreClient::DescribeGroupMembership(cons
 
 DescribeUserOutcome IdentityStoreClient::DescribeUser(const DescribeUserRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeUser);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -242,6 +252,7 @@ DescribeUserOutcome IdentityStoreClient::DescribeUser(const DescribeUserRequest&
 
 GetGroupIdOutcome IdentityStoreClient::GetGroupId(const GetGroupIdRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetGroupId);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetGroupId, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetGroupId, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -250,6 +261,7 @@ GetGroupIdOutcome IdentityStoreClient::GetGroupId(const GetGroupIdRequest& reque
 
 GetGroupMembershipIdOutcome IdentityStoreClient::GetGroupMembershipId(const GetGroupMembershipIdRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetGroupMembershipId);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetGroupMembershipId, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetGroupMembershipId, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -258,6 +270,7 @@ GetGroupMembershipIdOutcome IdentityStoreClient::GetGroupMembershipId(const GetG
 
 GetUserIdOutcome IdentityStoreClient::GetUserId(const GetUserIdRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetUserId);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetUserId, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetUserId, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -266,6 +279,7 @@ GetUserIdOutcome IdentityStoreClient::GetUserId(const GetUserIdRequest& request)
 
 IsMemberInGroupsOutcome IdentityStoreClient::IsMemberInGroups(const IsMemberInGroupsRequest& request) const
 {
+  AWS_OPERATION_GUARD(IsMemberInGroups);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, IsMemberInGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, IsMemberInGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -274,6 +288,7 @@ IsMemberInGroupsOutcome IdentityStoreClient::IsMemberInGroups(const IsMemberInGr
 
 ListGroupMembershipsOutcome IdentityStoreClient::ListGroupMemberships(const ListGroupMembershipsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListGroupMemberships);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListGroupMemberships, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListGroupMemberships, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -282,6 +297,7 @@ ListGroupMembershipsOutcome IdentityStoreClient::ListGroupMemberships(const List
 
 ListGroupMembershipsForMemberOutcome IdentityStoreClient::ListGroupMembershipsForMember(const ListGroupMembershipsForMemberRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListGroupMembershipsForMember);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListGroupMembershipsForMember, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListGroupMembershipsForMember, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -290,6 +306,7 @@ ListGroupMembershipsForMemberOutcome IdentityStoreClient::ListGroupMembershipsFo
 
 ListGroupsOutcome IdentityStoreClient::ListGroups(const ListGroupsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListGroups);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -298,6 +315,7 @@ ListGroupsOutcome IdentityStoreClient::ListGroups(const ListGroupsRequest& reque
 
 ListUsersOutcome IdentityStoreClient::ListUsers(const ListUsersRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListUsers);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListUsers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListUsers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -306,6 +324,7 @@ ListUsersOutcome IdentityStoreClient::ListUsers(const ListUsersRequest& request)
 
 UpdateGroupOutcome IdentityStoreClient::UpdateGroup(const UpdateGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -314,6 +333,7 @@ UpdateGroupOutcome IdentityStoreClient::UpdateGroup(const UpdateGroupRequest& re
 
 UpdateUserOutcome IdentityStoreClient::UpdateUser(const UpdateUserRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateUser);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

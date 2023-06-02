@@ -132,6 +132,7 @@ ApiGatewayManagementApiClient::ApiGatewayManagementApiClient(const std::shared_p
     /* End of legacy constructors due deprecation */
 ApiGatewayManagementApiClient::~ApiGatewayManagementApiClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<ApiGatewayManagementApiEndpointProviderBase>& ApiGatewayManagementApiClient::accessEndpointProvider()
@@ -154,6 +155,7 @@ void ApiGatewayManagementApiClient::OverrideEndpoint(const Aws::String& endpoint
 
 DeleteConnectionOutcome ApiGatewayManagementApiClient::DeleteConnection(const DeleteConnectionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteConnection);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteConnection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConnectionIdHasBeenSet())
   {
@@ -169,6 +171,7 @@ DeleteConnectionOutcome ApiGatewayManagementApiClient::DeleteConnection(const De
 
 GetConnectionOutcome ApiGatewayManagementApiClient::GetConnection(const GetConnectionRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetConnection);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetConnection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConnectionIdHasBeenSet())
   {
@@ -184,6 +187,7 @@ GetConnectionOutcome ApiGatewayManagementApiClient::GetConnection(const GetConne
 
 PostToConnectionOutcome ApiGatewayManagementApiClient::PostToConnection(const PostToConnectionRequest& request) const
 {
+  AWS_OPERATION_GUARD(PostToConnection);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PostToConnection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConnectionIdHasBeenSet())
   {

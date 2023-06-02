@@ -150,6 +150,7 @@ SyntheticsClient::SyntheticsClient(const std::shared_ptr<AWSCredentialsProvider>
     /* End of legacy constructors due deprecation */
 SyntheticsClient::~SyntheticsClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<SyntheticsEndpointProviderBase>& SyntheticsClient::accessEndpointProvider()
@@ -172,6 +173,7 @@ void SyntheticsClient::OverrideEndpoint(const Aws::String& endpoint)
 
 AssociateResourceOutcome SyntheticsClient::AssociateResource(const AssociateResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociateResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GroupIdentifierHasBeenSet())
   {
@@ -188,6 +190,7 @@ AssociateResourceOutcome SyntheticsClient::AssociateResource(const AssociateReso
 
 CreateCanaryOutcome SyntheticsClient::CreateCanary(const CreateCanaryRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateCanary);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateCanary, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateCanary, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -197,6 +200,7 @@ CreateCanaryOutcome SyntheticsClient::CreateCanary(const CreateCanaryRequest& re
 
 CreateGroupOutcome SyntheticsClient::CreateGroup(const CreateGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -206,6 +210,7 @@ CreateGroupOutcome SyntheticsClient::CreateGroup(const CreateGroupRequest& reque
 
 DeleteCanaryOutcome SyntheticsClient::DeleteCanary(const DeleteCanaryRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteCanary);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteCanary, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -221,6 +226,7 @@ DeleteCanaryOutcome SyntheticsClient::DeleteCanary(const DeleteCanaryRequest& re
 
 DeleteGroupOutcome SyntheticsClient::DeleteGroup(const DeleteGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GroupIdentifierHasBeenSet())
   {
@@ -236,6 +242,7 @@ DeleteGroupOutcome SyntheticsClient::DeleteGroup(const DeleteGroupRequest& reque
 
 DescribeCanariesOutcome SyntheticsClient::DescribeCanaries(const DescribeCanariesRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeCanaries);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeCanaries, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeCanaries, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -245,6 +252,7 @@ DescribeCanariesOutcome SyntheticsClient::DescribeCanaries(const DescribeCanarie
 
 DescribeCanariesLastRunOutcome SyntheticsClient::DescribeCanariesLastRun(const DescribeCanariesLastRunRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeCanariesLastRun);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeCanariesLastRun, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeCanariesLastRun, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -254,6 +262,7 @@ DescribeCanariesLastRunOutcome SyntheticsClient::DescribeCanariesLastRun(const D
 
 DescribeRuntimeVersionsOutcome SyntheticsClient::DescribeRuntimeVersions(const DescribeRuntimeVersionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeRuntimeVersions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeRuntimeVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeRuntimeVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -263,6 +272,7 @@ DescribeRuntimeVersionsOutcome SyntheticsClient::DescribeRuntimeVersions(const D
 
 DisassociateResourceOutcome SyntheticsClient::DisassociateResource(const DisassociateResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociateResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GroupIdentifierHasBeenSet())
   {
@@ -279,6 +289,7 @@ DisassociateResourceOutcome SyntheticsClient::DisassociateResource(const Disasso
 
 GetCanaryOutcome SyntheticsClient::GetCanary(const GetCanaryRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetCanary);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCanary, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -294,6 +305,7 @@ GetCanaryOutcome SyntheticsClient::GetCanary(const GetCanaryRequest& request) co
 
 GetCanaryRunsOutcome SyntheticsClient::GetCanaryRuns(const GetCanaryRunsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetCanaryRuns);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCanaryRuns, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -310,6 +322,7 @@ GetCanaryRunsOutcome SyntheticsClient::GetCanaryRuns(const GetCanaryRunsRequest&
 
 GetGroupOutcome SyntheticsClient::GetGroup(const GetGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GroupIdentifierHasBeenSet())
   {
@@ -325,6 +338,7 @@ GetGroupOutcome SyntheticsClient::GetGroup(const GetGroupRequest& request) const
 
 ListAssociatedGroupsOutcome SyntheticsClient::ListAssociatedGroups(const ListAssociatedGroupsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAssociatedGroups);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAssociatedGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -341,6 +355,7 @@ ListAssociatedGroupsOutcome SyntheticsClient::ListAssociatedGroups(const ListAss
 
 ListGroupResourcesOutcome SyntheticsClient::ListGroupResources(const ListGroupResourcesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListGroupResources);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListGroupResources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GroupIdentifierHasBeenSet())
   {
@@ -357,6 +372,7 @@ ListGroupResourcesOutcome SyntheticsClient::ListGroupResources(const ListGroupRe
 
 ListGroupsOutcome SyntheticsClient::ListGroups(const ListGroupsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListGroups);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -366,6 +382,7 @@ ListGroupsOutcome SyntheticsClient::ListGroups(const ListGroupsRequest& request)
 
 ListTagsForResourceOutcome SyntheticsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -381,6 +398,7 @@ ListTagsForResourceOutcome SyntheticsClient::ListTagsForResource(const ListTagsF
 
 StartCanaryOutcome SyntheticsClient::StartCanary(const StartCanaryRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartCanary);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartCanary, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -397,6 +415,7 @@ StartCanaryOutcome SyntheticsClient::StartCanary(const StartCanaryRequest& reque
 
 StopCanaryOutcome SyntheticsClient::StopCanary(const StopCanaryRequest& request) const
 {
+  AWS_OPERATION_GUARD(StopCanary);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopCanary, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -413,6 +432,7 @@ StopCanaryOutcome SyntheticsClient::StopCanary(const StopCanaryRequest& request)
 
 TagResourceOutcome SyntheticsClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -428,6 +448,7 @@ TagResourceOutcome SyntheticsClient::TagResource(const TagResourceRequest& reque
 
 UntagResourceOutcome SyntheticsClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -448,6 +469,7 @@ UntagResourceOutcome SyntheticsClient::UntagResource(const UntagResourceRequest&
 
 UpdateCanaryOutcome SyntheticsClient::UpdateCanary(const UpdateCanaryRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateCanary);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateCanary, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {

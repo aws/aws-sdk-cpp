@@ -145,6 +145,7 @@ SimSpaceWeaverClient::SimSpaceWeaverClient(const std::shared_ptr<AWSCredentialsP
     /* End of legacy constructors due deprecation */
 SimSpaceWeaverClient::~SimSpaceWeaverClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<SimSpaceWeaverEndpointProviderBase>& SimSpaceWeaverClient::accessEndpointProvider()
@@ -167,6 +168,7 @@ void SimSpaceWeaverClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CreateSnapshotOutcome SimSpaceWeaverClient::CreateSnapshot(const CreateSnapshotRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateSnapshot);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateSnapshot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateSnapshot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -176,6 +178,7 @@ CreateSnapshotOutcome SimSpaceWeaverClient::CreateSnapshot(const CreateSnapshotR
 
 DeleteAppOutcome SimSpaceWeaverClient::DeleteApp(const DeleteAppRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteApp);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteApp, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppHasBeenSet())
   {
@@ -200,6 +203,7 @@ DeleteAppOutcome SimSpaceWeaverClient::DeleteApp(const DeleteAppRequest& request
 
 DeleteSimulationOutcome SimSpaceWeaverClient::DeleteSimulation(const DeleteSimulationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteSimulation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteSimulation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SimulationHasBeenSet())
   {
@@ -214,6 +218,7 @@ DeleteSimulationOutcome SimSpaceWeaverClient::DeleteSimulation(const DeleteSimul
 
 DescribeAppOutcome SimSpaceWeaverClient::DescribeApp(const DescribeAppRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeApp);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeApp, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppHasBeenSet())
   {
@@ -238,6 +243,7 @@ DescribeAppOutcome SimSpaceWeaverClient::DescribeApp(const DescribeAppRequest& r
 
 DescribeSimulationOutcome SimSpaceWeaverClient::DescribeSimulation(const DescribeSimulationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeSimulation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeSimulation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SimulationHasBeenSet())
   {
@@ -252,6 +258,7 @@ DescribeSimulationOutcome SimSpaceWeaverClient::DescribeSimulation(const Describ
 
 ListAppsOutcome SimSpaceWeaverClient::ListApps(const ListAppsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListApps);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListApps, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SimulationHasBeenSet())
   {
@@ -266,6 +273,7 @@ ListAppsOutcome SimSpaceWeaverClient::ListApps(const ListAppsRequest& request) c
 
 ListSimulationsOutcome SimSpaceWeaverClient::ListSimulations(const ListSimulationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListSimulations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSimulations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListSimulations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -275,6 +283,7 @@ ListSimulationsOutcome SimSpaceWeaverClient::ListSimulations(const ListSimulatio
 
 ListTagsForResourceOutcome SimSpaceWeaverClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -290,6 +299,7 @@ ListTagsForResourceOutcome SimSpaceWeaverClient::ListTagsForResource(const ListT
 
 StartAppOutcome SimSpaceWeaverClient::StartApp(const StartAppRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartApp);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartApp, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartApp, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -299,6 +309,7 @@ StartAppOutcome SimSpaceWeaverClient::StartApp(const StartAppRequest& request) c
 
 StartClockOutcome SimSpaceWeaverClient::StartClock(const StartClockRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartClock);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartClock, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartClock, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -308,6 +319,7 @@ StartClockOutcome SimSpaceWeaverClient::StartClock(const StartClockRequest& requ
 
 StartSimulationOutcome SimSpaceWeaverClient::StartSimulation(const StartSimulationRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartSimulation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartSimulation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartSimulation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -317,6 +329,7 @@ StartSimulationOutcome SimSpaceWeaverClient::StartSimulation(const StartSimulati
 
 StopAppOutcome SimSpaceWeaverClient::StopApp(const StopAppRequest& request) const
 {
+  AWS_OPERATION_GUARD(StopApp);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopApp, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StopApp, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -326,6 +339,7 @@ StopAppOutcome SimSpaceWeaverClient::StopApp(const StopAppRequest& request) cons
 
 StopClockOutcome SimSpaceWeaverClient::StopClock(const StopClockRequest& request) const
 {
+  AWS_OPERATION_GUARD(StopClock);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopClock, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StopClock, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -335,6 +349,7 @@ StopClockOutcome SimSpaceWeaverClient::StopClock(const StopClockRequest& request
 
 StopSimulationOutcome SimSpaceWeaverClient::StopSimulation(const StopSimulationRequest& request) const
 {
+  AWS_OPERATION_GUARD(StopSimulation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopSimulation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StopSimulation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -344,6 +359,7 @@ StopSimulationOutcome SimSpaceWeaverClient::StopSimulation(const StopSimulationR
 
 TagResourceOutcome SimSpaceWeaverClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -359,6 +375,7 @@ TagResourceOutcome SimSpaceWeaverClient::TagResource(const TagResourceRequest& r
 
 UntagResourceOutcome SimSpaceWeaverClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {

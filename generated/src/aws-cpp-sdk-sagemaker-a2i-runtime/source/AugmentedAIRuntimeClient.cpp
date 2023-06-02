@@ -134,6 +134,7 @@ AugmentedAIRuntimeClient::AugmentedAIRuntimeClient(const std::shared_ptr<AWSCred
     /* End of legacy constructors due deprecation */
 AugmentedAIRuntimeClient::~AugmentedAIRuntimeClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<AugmentedAIRuntimeEndpointProviderBase>& AugmentedAIRuntimeClient::accessEndpointProvider()
@@ -156,6 +157,7 @@ void AugmentedAIRuntimeClient::OverrideEndpoint(const Aws::String& endpoint)
 
 DeleteHumanLoopOutcome AugmentedAIRuntimeClient::DeleteHumanLoop(const DeleteHumanLoopRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteHumanLoop);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteHumanLoop, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.HumanLoopNameHasBeenSet())
   {
@@ -171,6 +173,7 @@ DeleteHumanLoopOutcome AugmentedAIRuntimeClient::DeleteHumanLoop(const DeleteHum
 
 DescribeHumanLoopOutcome AugmentedAIRuntimeClient::DescribeHumanLoop(const DescribeHumanLoopRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeHumanLoop);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeHumanLoop, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.HumanLoopNameHasBeenSet())
   {
@@ -186,6 +189,7 @@ DescribeHumanLoopOutcome AugmentedAIRuntimeClient::DescribeHumanLoop(const Descr
 
 ListHumanLoopsOutcome AugmentedAIRuntimeClient::ListHumanLoops(const ListHumanLoopsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListHumanLoops);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListHumanLoops, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FlowDefinitionArnHasBeenSet())
   {
@@ -200,6 +204,7 @@ ListHumanLoopsOutcome AugmentedAIRuntimeClient::ListHumanLoops(const ListHumanLo
 
 StartHumanLoopOutcome AugmentedAIRuntimeClient::StartHumanLoop(const StartHumanLoopRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartHumanLoop);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartHumanLoop, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartHumanLoop, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -209,6 +214,7 @@ StartHumanLoopOutcome AugmentedAIRuntimeClient::StartHumanLoop(const StartHumanL
 
 StopHumanLoopOutcome AugmentedAIRuntimeClient::StopHumanLoop(const StopHumanLoopRequest& request) const
 {
+  AWS_OPERATION_GUARD(StopHumanLoop);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopHumanLoop, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StopHumanLoop, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

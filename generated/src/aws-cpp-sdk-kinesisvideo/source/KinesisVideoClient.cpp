@@ -157,6 +157,7 @@ KinesisVideoClient::KinesisVideoClient(const std::shared_ptr<AWSCredentialsProvi
     /* End of legacy constructors due deprecation */
 KinesisVideoClient::~KinesisVideoClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<KinesisVideoEndpointProviderBase>& KinesisVideoClient::accessEndpointProvider()
@@ -179,6 +180,7 @@ void KinesisVideoClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CreateSignalingChannelOutcome KinesisVideoClient::CreateSignalingChannel(const CreateSignalingChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateSignalingChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateSignalingChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateSignalingChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -188,6 +190,7 @@ CreateSignalingChannelOutcome KinesisVideoClient::CreateSignalingChannel(const C
 
 CreateStreamOutcome KinesisVideoClient::CreateStream(const CreateStreamRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateStream);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateStream, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateStream, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -197,6 +200,7 @@ CreateStreamOutcome KinesisVideoClient::CreateStream(const CreateStreamRequest& 
 
 DeleteSignalingChannelOutcome KinesisVideoClient::DeleteSignalingChannel(const DeleteSignalingChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteSignalingChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteSignalingChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteSignalingChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -206,6 +210,7 @@ DeleteSignalingChannelOutcome KinesisVideoClient::DeleteSignalingChannel(const D
 
 DeleteStreamOutcome KinesisVideoClient::DeleteStream(const DeleteStreamRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteStream);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteStream, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteStream, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -215,6 +220,7 @@ DeleteStreamOutcome KinesisVideoClient::DeleteStream(const DeleteStreamRequest& 
 
 DescribeEdgeConfigurationOutcome KinesisVideoClient::DescribeEdgeConfiguration(const DescribeEdgeConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeEdgeConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeEdgeConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeEdgeConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -224,6 +230,7 @@ DescribeEdgeConfigurationOutcome KinesisVideoClient::DescribeEdgeConfiguration(c
 
 DescribeImageGenerationConfigurationOutcome KinesisVideoClient::DescribeImageGenerationConfiguration(const DescribeImageGenerationConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeImageGenerationConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeImageGenerationConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeImageGenerationConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -233,6 +240,7 @@ DescribeImageGenerationConfigurationOutcome KinesisVideoClient::DescribeImageGen
 
 DescribeMappedResourceConfigurationOutcome KinesisVideoClient::DescribeMappedResourceConfiguration(const DescribeMappedResourceConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeMappedResourceConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeMappedResourceConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeMappedResourceConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -242,6 +250,7 @@ DescribeMappedResourceConfigurationOutcome KinesisVideoClient::DescribeMappedRes
 
 DescribeMediaStorageConfigurationOutcome KinesisVideoClient::DescribeMediaStorageConfiguration(const DescribeMediaStorageConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeMediaStorageConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeMediaStorageConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeMediaStorageConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -251,6 +260,7 @@ DescribeMediaStorageConfigurationOutcome KinesisVideoClient::DescribeMediaStorag
 
 DescribeNotificationConfigurationOutcome KinesisVideoClient::DescribeNotificationConfiguration(const DescribeNotificationConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeNotificationConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeNotificationConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeNotificationConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -260,6 +270,7 @@ DescribeNotificationConfigurationOutcome KinesisVideoClient::DescribeNotificatio
 
 DescribeSignalingChannelOutcome KinesisVideoClient::DescribeSignalingChannel(const DescribeSignalingChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeSignalingChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeSignalingChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeSignalingChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -269,6 +280,7 @@ DescribeSignalingChannelOutcome KinesisVideoClient::DescribeSignalingChannel(con
 
 DescribeStreamOutcome KinesisVideoClient::DescribeStream(const DescribeStreamRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeStream);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeStream, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeStream, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -278,6 +290,7 @@ DescribeStreamOutcome KinesisVideoClient::DescribeStream(const DescribeStreamReq
 
 GetDataEndpointOutcome KinesisVideoClient::GetDataEndpoint(const GetDataEndpointRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDataEndpoint);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDataEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetDataEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -287,6 +300,7 @@ GetDataEndpointOutcome KinesisVideoClient::GetDataEndpoint(const GetDataEndpoint
 
 GetSignalingChannelEndpointOutcome KinesisVideoClient::GetSignalingChannelEndpoint(const GetSignalingChannelEndpointRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSignalingChannelEndpoint);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSignalingChannelEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetSignalingChannelEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -296,6 +310,7 @@ GetSignalingChannelEndpointOutcome KinesisVideoClient::GetSignalingChannelEndpoi
 
 ListSignalingChannelsOutcome KinesisVideoClient::ListSignalingChannels(const ListSignalingChannelsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListSignalingChannels);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSignalingChannels, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListSignalingChannels, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -305,6 +320,7 @@ ListSignalingChannelsOutcome KinesisVideoClient::ListSignalingChannels(const Lis
 
 ListStreamsOutcome KinesisVideoClient::ListStreams(const ListStreamsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListStreams);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListStreams, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListStreams, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -314,6 +330,7 @@ ListStreamsOutcome KinesisVideoClient::ListStreams(const ListStreamsRequest& req
 
 ListTagsForResourceOutcome KinesisVideoClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -323,6 +340,7 @@ ListTagsForResourceOutcome KinesisVideoClient::ListTagsForResource(const ListTag
 
 ListTagsForStreamOutcome KinesisVideoClient::ListTagsForStream(const ListTagsForStreamRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForStream);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForStream, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTagsForStream, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -332,6 +350,7 @@ ListTagsForStreamOutcome KinesisVideoClient::ListTagsForStream(const ListTagsFor
 
 StartEdgeConfigurationUpdateOutcome KinesisVideoClient::StartEdgeConfigurationUpdate(const StartEdgeConfigurationUpdateRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartEdgeConfigurationUpdate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartEdgeConfigurationUpdate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartEdgeConfigurationUpdate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -341,6 +360,7 @@ StartEdgeConfigurationUpdateOutcome KinesisVideoClient::StartEdgeConfigurationUp
 
 TagResourceOutcome KinesisVideoClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -350,6 +370,7 @@ TagResourceOutcome KinesisVideoClient::TagResource(const TagResourceRequest& req
 
 TagStreamOutcome KinesisVideoClient::TagStream(const TagStreamRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagStream);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagStream, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TagStream, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -359,6 +380,7 @@ TagStreamOutcome KinesisVideoClient::TagStream(const TagStreamRequest& request) 
 
 UntagResourceOutcome KinesisVideoClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -368,6 +390,7 @@ UntagResourceOutcome KinesisVideoClient::UntagResource(const UntagResourceReques
 
 UntagStreamOutcome KinesisVideoClient::UntagStream(const UntagStreamRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagStream);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagStream, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UntagStream, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -377,6 +400,7 @@ UntagStreamOutcome KinesisVideoClient::UntagStream(const UntagStreamRequest& req
 
 UpdateDataRetentionOutcome KinesisVideoClient::UpdateDataRetention(const UpdateDataRetentionRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateDataRetention);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDataRetention, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateDataRetention, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -386,6 +410,7 @@ UpdateDataRetentionOutcome KinesisVideoClient::UpdateDataRetention(const UpdateD
 
 UpdateImageGenerationConfigurationOutcome KinesisVideoClient::UpdateImageGenerationConfiguration(const UpdateImageGenerationConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateImageGenerationConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateImageGenerationConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateImageGenerationConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -395,6 +420,7 @@ UpdateImageGenerationConfigurationOutcome KinesisVideoClient::UpdateImageGenerat
 
 UpdateMediaStorageConfigurationOutcome KinesisVideoClient::UpdateMediaStorageConfiguration(const UpdateMediaStorageConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateMediaStorageConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateMediaStorageConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateMediaStorageConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -404,6 +430,7 @@ UpdateMediaStorageConfigurationOutcome KinesisVideoClient::UpdateMediaStorageCon
 
 UpdateNotificationConfigurationOutcome KinesisVideoClient::UpdateNotificationConfiguration(const UpdateNotificationConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateNotificationConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateNotificationConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateNotificationConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -413,6 +440,7 @@ UpdateNotificationConfigurationOutcome KinesisVideoClient::UpdateNotificationCon
 
 UpdateSignalingChannelOutcome KinesisVideoClient::UpdateSignalingChannel(const UpdateSignalingChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateSignalingChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateSignalingChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateSignalingChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -422,6 +450,7 @@ UpdateSignalingChannelOutcome KinesisVideoClient::UpdateSignalingChannel(const U
 
 UpdateStreamOutcome KinesisVideoClient::UpdateStream(const UpdateStreamRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateStream);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateStream, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateStream, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

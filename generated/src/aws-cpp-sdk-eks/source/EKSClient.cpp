@@ -164,6 +164,7 @@ EKSClient::EKSClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
     /* End of legacy constructors due deprecation */
 EKSClient::~EKSClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<EKSEndpointProviderBase>& EKSClient::accessEndpointProvider()
@@ -186,6 +187,7 @@ void EKSClient::OverrideEndpoint(const Aws::String& endpoint)
 
 AssociateEncryptionConfigOutcome EKSClient::AssociateEncryptionConfig(const AssociateEncryptionConfigRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociateEncryptionConfig);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateEncryptionConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ClusterNameHasBeenSet())
   {
@@ -202,6 +204,7 @@ AssociateEncryptionConfigOutcome EKSClient::AssociateEncryptionConfig(const Asso
 
 AssociateIdentityProviderConfigOutcome EKSClient::AssociateIdentityProviderConfig(const AssociateIdentityProviderConfigRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociateIdentityProviderConfig);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateIdentityProviderConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ClusterNameHasBeenSet())
   {
@@ -218,6 +221,7 @@ AssociateIdentityProviderConfigOutcome EKSClient::AssociateIdentityProviderConfi
 
 CreateAddonOutcome EKSClient::CreateAddon(const CreateAddonRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateAddon);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAddon, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ClusterNameHasBeenSet())
   {
@@ -234,6 +238,7 @@ CreateAddonOutcome EKSClient::CreateAddon(const CreateAddonRequest& request) con
 
 CreateClusterOutcome EKSClient::CreateCluster(const CreateClusterRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateCluster);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateCluster, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateCluster, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -243,6 +248,7 @@ CreateClusterOutcome EKSClient::CreateCluster(const CreateClusterRequest& reques
 
 CreateFargateProfileOutcome EKSClient::CreateFargateProfile(const CreateFargateProfileRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateFargateProfile);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateFargateProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ClusterNameHasBeenSet())
   {
@@ -259,6 +265,7 @@ CreateFargateProfileOutcome EKSClient::CreateFargateProfile(const CreateFargateP
 
 CreateNodegroupOutcome EKSClient::CreateNodegroup(const CreateNodegroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateNodegroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateNodegroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ClusterNameHasBeenSet())
   {
@@ -275,6 +282,7 @@ CreateNodegroupOutcome EKSClient::CreateNodegroup(const CreateNodegroupRequest& 
 
 DeleteAddonOutcome EKSClient::DeleteAddon(const DeleteAddonRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteAddon);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAddon, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ClusterNameHasBeenSet())
   {
@@ -297,6 +305,7 @@ DeleteAddonOutcome EKSClient::DeleteAddon(const DeleteAddonRequest& request) con
 
 DeleteClusterOutcome EKSClient::DeleteCluster(const DeleteClusterRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteCluster);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteCluster, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -312,6 +321,7 @@ DeleteClusterOutcome EKSClient::DeleteCluster(const DeleteClusterRequest& reques
 
 DeleteFargateProfileOutcome EKSClient::DeleteFargateProfile(const DeleteFargateProfileRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteFargateProfile);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteFargateProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ClusterNameHasBeenSet())
   {
@@ -334,6 +344,7 @@ DeleteFargateProfileOutcome EKSClient::DeleteFargateProfile(const DeleteFargateP
 
 DeleteNodegroupOutcome EKSClient::DeleteNodegroup(const DeleteNodegroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteNodegroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteNodegroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ClusterNameHasBeenSet())
   {
@@ -356,6 +367,7 @@ DeleteNodegroupOutcome EKSClient::DeleteNodegroup(const DeleteNodegroupRequest& 
 
 DeregisterClusterOutcome EKSClient::DeregisterCluster(const DeregisterClusterRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeregisterCluster);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeregisterCluster, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -371,6 +383,7 @@ DeregisterClusterOutcome EKSClient::DeregisterCluster(const DeregisterClusterReq
 
 DescribeAddonOutcome EKSClient::DescribeAddon(const DescribeAddonRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeAddon);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAddon, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ClusterNameHasBeenSet())
   {
@@ -393,6 +406,7 @@ DescribeAddonOutcome EKSClient::DescribeAddon(const DescribeAddonRequest& reques
 
 DescribeAddonConfigurationOutcome EKSClient::DescribeAddonConfiguration(const DescribeAddonConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeAddonConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAddonConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AddonNameHasBeenSet())
   {
@@ -412,6 +426,7 @@ DescribeAddonConfigurationOutcome EKSClient::DescribeAddonConfiguration(const De
 
 DescribeAddonVersionsOutcome EKSClient::DescribeAddonVersions(const DescribeAddonVersionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeAddonVersions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAddonVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeAddonVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -421,6 +436,7 @@ DescribeAddonVersionsOutcome EKSClient::DescribeAddonVersions(const DescribeAddo
 
 DescribeClusterOutcome EKSClient::DescribeCluster(const DescribeClusterRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeCluster);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeCluster, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -436,6 +452,7 @@ DescribeClusterOutcome EKSClient::DescribeCluster(const DescribeClusterRequest& 
 
 DescribeFargateProfileOutcome EKSClient::DescribeFargateProfile(const DescribeFargateProfileRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeFargateProfile);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeFargateProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ClusterNameHasBeenSet())
   {
@@ -458,6 +475,7 @@ DescribeFargateProfileOutcome EKSClient::DescribeFargateProfile(const DescribeFa
 
 DescribeIdentityProviderConfigOutcome EKSClient::DescribeIdentityProviderConfig(const DescribeIdentityProviderConfigRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeIdentityProviderConfig);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeIdentityProviderConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ClusterNameHasBeenSet())
   {
@@ -474,6 +492,7 @@ DescribeIdentityProviderConfigOutcome EKSClient::DescribeIdentityProviderConfig(
 
 DescribeNodegroupOutcome EKSClient::DescribeNodegroup(const DescribeNodegroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeNodegroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeNodegroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ClusterNameHasBeenSet())
   {
@@ -496,6 +515,7 @@ DescribeNodegroupOutcome EKSClient::DescribeNodegroup(const DescribeNodegroupReq
 
 DescribeUpdateOutcome EKSClient::DescribeUpdate(const DescribeUpdateRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeUpdate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeUpdate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -518,6 +538,7 @@ DescribeUpdateOutcome EKSClient::DescribeUpdate(const DescribeUpdateRequest& req
 
 DisassociateIdentityProviderConfigOutcome EKSClient::DisassociateIdentityProviderConfig(const DisassociateIdentityProviderConfigRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociateIdentityProviderConfig);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateIdentityProviderConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ClusterNameHasBeenSet())
   {
@@ -534,6 +555,7 @@ DisassociateIdentityProviderConfigOutcome EKSClient::DisassociateIdentityProvide
 
 ListAddonsOutcome EKSClient::ListAddons(const ListAddonsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAddons);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAddons, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ClusterNameHasBeenSet())
   {
@@ -550,6 +572,7 @@ ListAddonsOutcome EKSClient::ListAddons(const ListAddonsRequest& request) const
 
 ListClustersOutcome EKSClient::ListClusters(const ListClustersRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListClusters);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListClusters, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListClusters, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -559,6 +582,7 @@ ListClustersOutcome EKSClient::ListClusters(const ListClustersRequest& request) 
 
 ListFargateProfilesOutcome EKSClient::ListFargateProfiles(const ListFargateProfilesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListFargateProfiles);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListFargateProfiles, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ClusterNameHasBeenSet())
   {
@@ -575,6 +599,7 @@ ListFargateProfilesOutcome EKSClient::ListFargateProfiles(const ListFargateProfi
 
 ListIdentityProviderConfigsOutcome EKSClient::ListIdentityProviderConfigs(const ListIdentityProviderConfigsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListIdentityProviderConfigs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListIdentityProviderConfigs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ClusterNameHasBeenSet())
   {
@@ -591,6 +616,7 @@ ListIdentityProviderConfigsOutcome EKSClient::ListIdentityProviderConfigs(const 
 
 ListNodegroupsOutcome EKSClient::ListNodegroups(const ListNodegroupsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListNodegroups);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListNodegroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ClusterNameHasBeenSet())
   {
@@ -607,6 +633,7 @@ ListNodegroupsOutcome EKSClient::ListNodegroups(const ListNodegroupsRequest& req
 
 ListTagsForResourceOutcome EKSClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -622,6 +649,7 @@ ListTagsForResourceOutcome EKSClient::ListTagsForResource(const ListTagsForResou
 
 ListUpdatesOutcome EKSClient::ListUpdates(const ListUpdatesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListUpdates);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListUpdates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -638,6 +666,7 @@ ListUpdatesOutcome EKSClient::ListUpdates(const ListUpdatesRequest& request) con
 
 RegisterClusterOutcome EKSClient::RegisterCluster(const RegisterClusterRequest& request) const
 {
+  AWS_OPERATION_GUARD(RegisterCluster);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RegisterCluster, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RegisterCluster, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -647,6 +676,7 @@ RegisterClusterOutcome EKSClient::RegisterCluster(const RegisterClusterRequest& 
 
 TagResourceOutcome EKSClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -662,6 +692,7 @@ TagResourceOutcome EKSClient::TagResource(const TagResourceRequest& request) con
 
 UntagResourceOutcome EKSClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -682,6 +713,7 @@ UntagResourceOutcome EKSClient::UntagResource(const UntagResourceRequest& reques
 
 UpdateAddonOutcome EKSClient::UpdateAddon(const UpdateAddonRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateAddon);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAddon, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ClusterNameHasBeenSet())
   {
@@ -705,6 +737,7 @@ UpdateAddonOutcome EKSClient::UpdateAddon(const UpdateAddonRequest& request) con
 
 UpdateClusterConfigOutcome EKSClient::UpdateClusterConfig(const UpdateClusterConfigRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateClusterConfig);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateClusterConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -721,6 +754,7 @@ UpdateClusterConfigOutcome EKSClient::UpdateClusterConfig(const UpdateClusterCon
 
 UpdateClusterVersionOutcome EKSClient::UpdateClusterVersion(const UpdateClusterVersionRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateClusterVersion);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateClusterVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -737,6 +771,7 @@ UpdateClusterVersionOutcome EKSClient::UpdateClusterVersion(const UpdateClusterV
 
 UpdateNodegroupConfigOutcome EKSClient::UpdateNodegroupConfig(const UpdateNodegroupConfigRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateNodegroupConfig);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateNodegroupConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ClusterNameHasBeenSet())
   {
@@ -760,6 +795,7 @@ UpdateNodegroupConfigOutcome EKSClient::UpdateNodegroupConfig(const UpdateNodegr
 
 UpdateNodegroupVersionOutcome EKSClient::UpdateNodegroupVersion(const UpdateNodegroupVersionRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateNodegroupVersion);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateNodegroupVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ClusterNameHasBeenSet())
   {

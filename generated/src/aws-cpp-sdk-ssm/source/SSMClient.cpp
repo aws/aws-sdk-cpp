@@ -267,6 +267,7 @@ SSMClient::SSMClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
     /* End of legacy constructors due deprecation */
 SSMClient::~SSMClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<SSMEndpointProviderBase>& SSMClient::accessEndpointProvider()
@@ -289,6 +290,7 @@ void SSMClient::OverrideEndpoint(const Aws::String& endpoint)
 
 AddTagsToResourceOutcome SSMClient::AddTagsToResource(const AddTagsToResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(AddTagsToResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AddTagsToResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AddTagsToResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -297,6 +299,7 @@ AddTagsToResourceOutcome SSMClient::AddTagsToResource(const AddTagsToResourceReq
 
 AssociateOpsItemRelatedItemOutcome SSMClient::AssociateOpsItemRelatedItem(const AssociateOpsItemRelatedItemRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociateOpsItemRelatedItem);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateOpsItemRelatedItem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AssociateOpsItemRelatedItem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -305,6 +308,7 @@ AssociateOpsItemRelatedItemOutcome SSMClient::AssociateOpsItemRelatedItem(const 
 
 CancelCommandOutcome SSMClient::CancelCommand(const CancelCommandRequest& request) const
 {
+  AWS_OPERATION_GUARD(CancelCommand);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CancelCommand, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CancelCommand, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -313,6 +317,7 @@ CancelCommandOutcome SSMClient::CancelCommand(const CancelCommandRequest& reques
 
 CancelMaintenanceWindowExecutionOutcome SSMClient::CancelMaintenanceWindowExecution(const CancelMaintenanceWindowExecutionRequest& request) const
 {
+  AWS_OPERATION_GUARD(CancelMaintenanceWindowExecution);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CancelMaintenanceWindowExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CancelMaintenanceWindowExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -321,6 +326,7 @@ CancelMaintenanceWindowExecutionOutcome SSMClient::CancelMaintenanceWindowExecut
 
 CreateActivationOutcome SSMClient::CreateActivation(const CreateActivationRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateActivation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateActivation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateActivation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -329,6 +335,7 @@ CreateActivationOutcome SSMClient::CreateActivation(const CreateActivationReques
 
 CreateAssociationOutcome SSMClient::CreateAssociation(const CreateAssociationRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateAssociation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -337,6 +344,7 @@ CreateAssociationOutcome SSMClient::CreateAssociation(const CreateAssociationReq
 
 CreateAssociationBatchOutcome SSMClient::CreateAssociationBatch(const CreateAssociationBatchRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateAssociationBatch);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAssociationBatch, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateAssociationBatch, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -345,6 +353,7 @@ CreateAssociationBatchOutcome SSMClient::CreateAssociationBatch(const CreateAsso
 
 CreateDocumentOutcome SSMClient::CreateDocument(const CreateDocumentRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateDocument);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDocument, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateDocument, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -353,6 +362,7 @@ CreateDocumentOutcome SSMClient::CreateDocument(const CreateDocumentRequest& req
 
 CreateMaintenanceWindowOutcome SSMClient::CreateMaintenanceWindow(const CreateMaintenanceWindowRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateMaintenanceWindow);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateMaintenanceWindow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateMaintenanceWindow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -361,6 +371,7 @@ CreateMaintenanceWindowOutcome SSMClient::CreateMaintenanceWindow(const CreateMa
 
 CreateOpsItemOutcome SSMClient::CreateOpsItem(const CreateOpsItemRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateOpsItem);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateOpsItem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateOpsItem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -369,6 +380,7 @@ CreateOpsItemOutcome SSMClient::CreateOpsItem(const CreateOpsItemRequest& reques
 
 CreateOpsMetadataOutcome SSMClient::CreateOpsMetadata(const CreateOpsMetadataRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateOpsMetadata);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateOpsMetadata, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateOpsMetadata, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -377,6 +389,7 @@ CreateOpsMetadataOutcome SSMClient::CreateOpsMetadata(const CreateOpsMetadataReq
 
 CreatePatchBaselineOutcome SSMClient::CreatePatchBaseline(const CreatePatchBaselineRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreatePatchBaseline);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreatePatchBaseline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreatePatchBaseline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -385,6 +398,7 @@ CreatePatchBaselineOutcome SSMClient::CreatePatchBaseline(const CreatePatchBasel
 
 CreateResourceDataSyncOutcome SSMClient::CreateResourceDataSync(const CreateResourceDataSyncRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateResourceDataSync);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateResourceDataSync, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateResourceDataSync, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -393,6 +407,7 @@ CreateResourceDataSyncOutcome SSMClient::CreateResourceDataSync(const CreateReso
 
 DeleteActivationOutcome SSMClient::DeleteActivation(const DeleteActivationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteActivation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteActivation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteActivation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -401,6 +416,7 @@ DeleteActivationOutcome SSMClient::DeleteActivation(const DeleteActivationReques
 
 DeleteAssociationOutcome SSMClient::DeleteAssociation(const DeleteAssociationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteAssociation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -409,6 +425,7 @@ DeleteAssociationOutcome SSMClient::DeleteAssociation(const DeleteAssociationReq
 
 DeleteDocumentOutcome SSMClient::DeleteDocument(const DeleteDocumentRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteDocument);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDocument, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteDocument, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -417,6 +434,7 @@ DeleteDocumentOutcome SSMClient::DeleteDocument(const DeleteDocumentRequest& req
 
 DeleteInventoryOutcome SSMClient::DeleteInventory(const DeleteInventoryRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteInventory);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteInventory, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteInventory, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -425,6 +443,7 @@ DeleteInventoryOutcome SSMClient::DeleteInventory(const DeleteInventoryRequest& 
 
 DeleteMaintenanceWindowOutcome SSMClient::DeleteMaintenanceWindow(const DeleteMaintenanceWindowRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteMaintenanceWindow);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteMaintenanceWindow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteMaintenanceWindow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -433,6 +452,7 @@ DeleteMaintenanceWindowOutcome SSMClient::DeleteMaintenanceWindow(const DeleteMa
 
 DeleteOpsMetadataOutcome SSMClient::DeleteOpsMetadata(const DeleteOpsMetadataRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteOpsMetadata);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteOpsMetadata, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteOpsMetadata, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -441,6 +461,7 @@ DeleteOpsMetadataOutcome SSMClient::DeleteOpsMetadata(const DeleteOpsMetadataReq
 
 DeleteParameterOutcome SSMClient::DeleteParameter(const DeleteParameterRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteParameter);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteParameter, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteParameter, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -449,6 +470,7 @@ DeleteParameterOutcome SSMClient::DeleteParameter(const DeleteParameterRequest& 
 
 DeleteParametersOutcome SSMClient::DeleteParameters(const DeleteParametersRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteParameters);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteParameters, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteParameters, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -457,6 +479,7 @@ DeleteParametersOutcome SSMClient::DeleteParameters(const DeleteParametersReques
 
 DeletePatchBaselineOutcome SSMClient::DeletePatchBaseline(const DeletePatchBaselineRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeletePatchBaseline);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeletePatchBaseline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeletePatchBaseline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -465,6 +488,7 @@ DeletePatchBaselineOutcome SSMClient::DeletePatchBaseline(const DeletePatchBasel
 
 DeleteResourceDataSyncOutcome SSMClient::DeleteResourceDataSync(const DeleteResourceDataSyncRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteResourceDataSync);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteResourceDataSync, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteResourceDataSync, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -473,6 +497,7 @@ DeleteResourceDataSyncOutcome SSMClient::DeleteResourceDataSync(const DeleteReso
 
 DeleteResourcePolicyOutcome SSMClient::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteResourcePolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -481,6 +506,7 @@ DeleteResourcePolicyOutcome SSMClient::DeleteResourcePolicy(const DeleteResource
 
 DeregisterManagedInstanceOutcome SSMClient::DeregisterManagedInstance(const DeregisterManagedInstanceRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeregisterManagedInstance);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeregisterManagedInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeregisterManagedInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -489,6 +515,7 @@ DeregisterManagedInstanceOutcome SSMClient::DeregisterManagedInstance(const Dere
 
 DeregisterPatchBaselineForPatchGroupOutcome SSMClient::DeregisterPatchBaselineForPatchGroup(const DeregisterPatchBaselineForPatchGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeregisterPatchBaselineForPatchGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeregisterPatchBaselineForPatchGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeregisterPatchBaselineForPatchGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -497,6 +524,7 @@ DeregisterPatchBaselineForPatchGroupOutcome SSMClient::DeregisterPatchBaselineFo
 
 DeregisterTargetFromMaintenanceWindowOutcome SSMClient::DeregisterTargetFromMaintenanceWindow(const DeregisterTargetFromMaintenanceWindowRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeregisterTargetFromMaintenanceWindow);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeregisterTargetFromMaintenanceWindow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeregisterTargetFromMaintenanceWindow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -505,6 +533,7 @@ DeregisterTargetFromMaintenanceWindowOutcome SSMClient::DeregisterTargetFromMain
 
 DeregisterTaskFromMaintenanceWindowOutcome SSMClient::DeregisterTaskFromMaintenanceWindow(const DeregisterTaskFromMaintenanceWindowRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeregisterTaskFromMaintenanceWindow);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeregisterTaskFromMaintenanceWindow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeregisterTaskFromMaintenanceWindow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -513,6 +542,7 @@ DeregisterTaskFromMaintenanceWindowOutcome SSMClient::DeregisterTaskFromMaintena
 
 DescribeActivationsOutcome SSMClient::DescribeActivations(const DescribeActivationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeActivations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeActivations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeActivations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -521,6 +551,7 @@ DescribeActivationsOutcome SSMClient::DescribeActivations(const DescribeActivati
 
 DescribeAssociationOutcome SSMClient::DescribeAssociation(const DescribeAssociationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeAssociation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -529,6 +560,7 @@ DescribeAssociationOutcome SSMClient::DescribeAssociation(const DescribeAssociat
 
 DescribeAssociationExecutionTargetsOutcome SSMClient::DescribeAssociationExecutionTargets(const DescribeAssociationExecutionTargetsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeAssociationExecutionTargets);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAssociationExecutionTargets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeAssociationExecutionTargets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -537,6 +569,7 @@ DescribeAssociationExecutionTargetsOutcome SSMClient::DescribeAssociationExecuti
 
 DescribeAssociationExecutionsOutcome SSMClient::DescribeAssociationExecutions(const DescribeAssociationExecutionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeAssociationExecutions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAssociationExecutions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeAssociationExecutions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -545,6 +578,7 @@ DescribeAssociationExecutionsOutcome SSMClient::DescribeAssociationExecutions(co
 
 DescribeAutomationExecutionsOutcome SSMClient::DescribeAutomationExecutions(const DescribeAutomationExecutionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeAutomationExecutions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAutomationExecutions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeAutomationExecutions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -553,6 +587,7 @@ DescribeAutomationExecutionsOutcome SSMClient::DescribeAutomationExecutions(cons
 
 DescribeAutomationStepExecutionsOutcome SSMClient::DescribeAutomationStepExecutions(const DescribeAutomationStepExecutionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeAutomationStepExecutions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAutomationStepExecutions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeAutomationStepExecutions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -561,6 +596,7 @@ DescribeAutomationStepExecutionsOutcome SSMClient::DescribeAutomationStepExecuti
 
 DescribeAvailablePatchesOutcome SSMClient::DescribeAvailablePatches(const DescribeAvailablePatchesRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeAvailablePatches);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAvailablePatches, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeAvailablePatches, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -569,6 +605,7 @@ DescribeAvailablePatchesOutcome SSMClient::DescribeAvailablePatches(const Descri
 
 DescribeDocumentOutcome SSMClient::DescribeDocument(const DescribeDocumentRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeDocument);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeDocument, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeDocument, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -577,6 +614,7 @@ DescribeDocumentOutcome SSMClient::DescribeDocument(const DescribeDocumentReques
 
 DescribeDocumentPermissionOutcome SSMClient::DescribeDocumentPermission(const DescribeDocumentPermissionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeDocumentPermission);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeDocumentPermission, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeDocumentPermission, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -585,6 +623,7 @@ DescribeDocumentPermissionOutcome SSMClient::DescribeDocumentPermission(const De
 
 DescribeEffectiveInstanceAssociationsOutcome SSMClient::DescribeEffectiveInstanceAssociations(const DescribeEffectiveInstanceAssociationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeEffectiveInstanceAssociations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeEffectiveInstanceAssociations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeEffectiveInstanceAssociations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -593,6 +632,7 @@ DescribeEffectiveInstanceAssociationsOutcome SSMClient::DescribeEffectiveInstanc
 
 DescribeEffectivePatchesForPatchBaselineOutcome SSMClient::DescribeEffectivePatchesForPatchBaseline(const DescribeEffectivePatchesForPatchBaselineRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeEffectivePatchesForPatchBaseline);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeEffectivePatchesForPatchBaseline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeEffectivePatchesForPatchBaseline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -601,6 +641,7 @@ DescribeEffectivePatchesForPatchBaselineOutcome SSMClient::DescribeEffectivePatc
 
 DescribeInstanceAssociationsStatusOutcome SSMClient::DescribeInstanceAssociationsStatus(const DescribeInstanceAssociationsStatusRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeInstanceAssociationsStatus);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeInstanceAssociationsStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeInstanceAssociationsStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -609,6 +650,7 @@ DescribeInstanceAssociationsStatusOutcome SSMClient::DescribeInstanceAssociation
 
 DescribeInstanceInformationOutcome SSMClient::DescribeInstanceInformation(const DescribeInstanceInformationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeInstanceInformation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeInstanceInformation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeInstanceInformation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -617,6 +659,7 @@ DescribeInstanceInformationOutcome SSMClient::DescribeInstanceInformation(const 
 
 DescribeInstancePatchStatesOutcome SSMClient::DescribeInstancePatchStates(const DescribeInstancePatchStatesRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeInstancePatchStates);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeInstancePatchStates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeInstancePatchStates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -625,6 +668,7 @@ DescribeInstancePatchStatesOutcome SSMClient::DescribeInstancePatchStates(const 
 
 DescribeInstancePatchStatesForPatchGroupOutcome SSMClient::DescribeInstancePatchStatesForPatchGroup(const DescribeInstancePatchStatesForPatchGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeInstancePatchStatesForPatchGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeInstancePatchStatesForPatchGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeInstancePatchStatesForPatchGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -633,6 +677,7 @@ DescribeInstancePatchStatesForPatchGroupOutcome SSMClient::DescribeInstancePatch
 
 DescribeInstancePatchesOutcome SSMClient::DescribeInstancePatches(const DescribeInstancePatchesRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeInstancePatches);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeInstancePatches, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeInstancePatches, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -641,6 +686,7 @@ DescribeInstancePatchesOutcome SSMClient::DescribeInstancePatches(const Describe
 
 DescribeInventoryDeletionsOutcome SSMClient::DescribeInventoryDeletions(const DescribeInventoryDeletionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeInventoryDeletions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeInventoryDeletions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeInventoryDeletions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -649,6 +695,7 @@ DescribeInventoryDeletionsOutcome SSMClient::DescribeInventoryDeletions(const De
 
 DescribeMaintenanceWindowExecutionTaskInvocationsOutcome SSMClient::DescribeMaintenanceWindowExecutionTaskInvocations(const DescribeMaintenanceWindowExecutionTaskInvocationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeMaintenanceWindowExecutionTaskInvocations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeMaintenanceWindowExecutionTaskInvocations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeMaintenanceWindowExecutionTaskInvocations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -657,6 +704,7 @@ DescribeMaintenanceWindowExecutionTaskInvocationsOutcome SSMClient::DescribeMain
 
 DescribeMaintenanceWindowExecutionTasksOutcome SSMClient::DescribeMaintenanceWindowExecutionTasks(const DescribeMaintenanceWindowExecutionTasksRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeMaintenanceWindowExecutionTasks);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeMaintenanceWindowExecutionTasks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeMaintenanceWindowExecutionTasks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -665,6 +713,7 @@ DescribeMaintenanceWindowExecutionTasksOutcome SSMClient::DescribeMaintenanceWin
 
 DescribeMaintenanceWindowExecutionsOutcome SSMClient::DescribeMaintenanceWindowExecutions(const DescribeMaintenanceWindowExecutionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeMaintenanceWindowExecutions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeMaintenanceWindowExecutions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeMaintenanceWindowExecutions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -673,6 +722,7 @@ DescribeMaintenanceWindowExecutionsOutcome SSMClient::DescribeMaintenanceWindowE
 
 DescribeMaintenanceWindowScheduleOutcome SSMClient::DescribeMaintenanceWindowSchedule(const DescribeMaintenanceWindowScheduleRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeMaintenanceWindowSchedule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeMaintenanceWindowSchedule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeMaintenanceWindowSchedule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -681,6 +731,7 @@ DescribeMaintenanceWindowScheduleOutcome SSMClient::DescribeMaintenanceWindowSch
 
 DescribeMaintenanceWindowTargetsOutcome SSMClient::DescribeMaintenanceWindowTargets(const DescribeMaintenanceWindowTargetsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeMaintenanceWindowTargets);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeMaintenanceWindowTargets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeMaintenanceWindowTargets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -689,6 +740,7 @@ DescribeMaintenanceWindowTargetsOutcome SSMClient::DescribeMaintenanceWindowTarg
 
 DescribeMaintenanceWindowTasksOutcome SSMClient::DescribeMaintenanceWindowTasks(const DescribeMaintenanceWindowTasksRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeMaintenanceWindowTasks);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeMaintenanceWindowTasks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeMaintenanceWindowTasks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -697,6 +749,7 @@ DescribeMaintenanceWindowTasksOutcome SSMClient::DescribeMaintenanceWindowTasks(
 
 DescribeMaintenanceWindowsOutcome SSMClient::DescribeMaintenanceWindows(const DescribeMaintenanceWindowsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeMaintenanceWindows);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeMaintenanceWindows, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeMaintenanceWindows, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -705,6 +758,7 @@ DescribeMaintenanceWindowsOutcome SSMClient::DescribeMaintenanceWindows(const De
 
 DescribeMaintenanceWindowsForTargetOutcome SSMClient::DescribeMaintenanceWindowsForTarget(const DescribeMaintenanceWindowsForTargetRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeMaintenanceWindowsForTarget);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeMaintenanceWindowsForTarget, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeMaintenanceWindowsForTarget, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -713,6 +767,7 @@ DescribeMaintenanceWindowsForTargetOutcome SSMClient::DescribeMaintenanceWindows
 
 DescribeOpsItemsOutcome SSMClient::DescribeOpsItems(const DescribeOpsItemsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeOpsItems);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeOpsItems, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeOpsItems, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -721,6 +776,7 @@ DescribeOpsItemsOutcome SSMClient::DescribeOpsItems(const DescribeOpsItemsReques
 
 DescribeParametersOutcome SSMClient::DescribeParameters(const DescribeParametersRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeParameters);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeParameters, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeParameters, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -729,6 +785,7 @@ DescribeParametersOutcome SSMClient::DescribeParameters(const DescribeParameters
 
 DescribePatchBaselinesOutcome SSMClient::DescribePatchBaselines(const DescribePatchBaselinesRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribePatchBaselines);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribePatchBaselines, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribePatchBaselines, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -737,6 +794,7 @@ DescribePatchBaselinesOutcome SSMClient::DescribePatchBaselines(const DescribePa
 
 DescribePatchGroupStateOutcome SSMClient::DescribePatchGroupState(const DescribePatchGroupStateRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribePatchGroupState);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribePatchGroupState, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribePatchGroupState, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -745,6 +803,7 @@ DescribePatchGroupStateOutcome SSMClient::DescribePatchGroupState(const Describe
 
 DescribePatchGroupsOutcome SSMClient::DescribePatchGroups(const DescribePatchGroupsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribePatchGroups);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribePatchGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribePatchGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -753,6 +812,7 @@ DescribePatchGroupsOutcome SSMClient::DescribePatchGroups(const DescribePatchGro
 
 DescribePatchPropertiesOutcome SSMClient::DescribePatchProperties(const DescribePatchPropertiesRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribePatchProperties);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribePatchProperties, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribePatchProperties, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -761,6 +821,7 @@ DescribePatchPropertiesOutcome SSMClient::DescribePatchProperties(const Describe
 
 DescribeSessionsOutcome SSMClient::DescribeSessions(const DescribeSessionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeSessions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeSessions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeSessions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -769,6 +830,7 @@ DescribeSessionsOutcome SSMClient::DescribeSessions(const DescribeSessionsReques
 
 DisassociateOpsItemRelatedItemOutcome SSMClient::DisassociateOpsItemRelatedItem(const DisassociateOpsItemRelatedItemRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociateOpsItemRelatedItem);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateOpsItemRelatedItem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DisassociateOpsItemRelatedItem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -777,6 +839,7 @@ DisassociateOpsItemRelatedItemOutcome SSMClient::DisassociateOpsItemRelatedItem(
 
 GetAutomationExecutionOutcome SSMClient::GetAutomationExecution(const GetAutomationExecutionRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetAutomationExecution);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAutomationExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetAutomationExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -785,6 +848,7 @@ GetAutomationExecutionOutcome SSMClient::GetAutomationExecution(const GetAutomat
 
 GetCalendarStateOutcome SSMClient::GetCalendarState(const GetCalendarStateRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetCalendarState);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCalendarState, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetCalendarState, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -793,6 +857,7 @@ GetCalendarStateOutcome SSMClient::GetCalendarState(const GetCalendarStateReques
 
 GetCommandInvocationOutcome SSMClient::GetCommandInvocation(const GetCommandInvocationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetCommandInvocation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCommandInvocation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetCommandInvocation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -801,6 +866,7 @@ GetCommandInvocationOutcome SSMClient::GetCommandInvocation(const GetCommandInvo
 
 GetConnectionStatusOutcome SSMClient::GetConnectionStatus(const GetConnectionStatusRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetConnectionStatus);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetConnectionStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetConnectionStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -809,6 +875,7 @@ GetConnectionStatusOutcome SSMClient::GetConnectionStatus(const GetConnectionSta
 
 GetDefaultPatchBaselineOutcome SSMClient::GetDefaultPatchBaseline(const GetDefaultPatchBaselineRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDefaultPatchBaseline);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDefaultPatchBaseline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetDefaultPatchBaseline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -817,6 +884,7 @@ GetDefaultPatchBaselineOutcome SSMClient::GetDefaultPatchBaseline(const GetDefau
 
 GetDeployablePatchSnapshotForInstanceOutcome SSMClient::GetDeployablePatchSnapshotForInstance(const GetDeployablePatchSnapshotForInstanceRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDeployablePatchSnapshotForInstance);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDeployablePatchSnapshotForInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetDeployablePatchSnapshotForInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -825,6 +893,7 @@ GetDeployablePatchSnapshotForInstanceOutcome SSMClient::GetDeployablePatchSnapsh
 
 GetDocumentOutcome SSMClient::GetDocument(const GetDocumentRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDocument);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDocument, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetDocument, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -833,6 +902,7 @@ GetDocumentOutcome SSMClient::GetDocument(const GetDocumentRequest& request) con
 
 GetInventoryOutcome SSMClient::GetInventory(const GetInventoryRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetInventory);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetInventory, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetInventory, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -841,6 +911,7 @@ GetInventoryOutcome SSMClient::GetInventory(const GetInventoryRequest& request) 
 
 GetInventorySchemaOutcome SSMClient::GetInventorySchema(const GetInventorySchemaRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetInventorySchema);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetInventorySchema, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetInventorySchema, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -849,6 +920,7 @@ GetInventorySchemaOutcome SSMClient::GetInventorySchema(const GetInventorySchema
 
 GetMaintenanceWindowOutcome SSMClient::GetMaintenanceWindow(const GetMaintenanceWindowRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetMaintenanceWindow);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMaintenanceWindow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetMaintenanceWindow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -857,6 +929,7 @@ GetMaintenanceWindowOutcome SSMClient::GetMaintenanceWindow(const GetMaintenance
 
 GetMaintenanceWindowExecutionOutcome SSMClient::GetMaintenanceWindowExecution(const GetMaintenanceWindowExecutionRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetMaintenanceWindowExecution);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMaintenanceWindowExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetMaintenanceWindowExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -865,6 +938,7 @@ GetMaintenanceWindowExecutionOutcome SSMClient::GetMaintenanceWindowExecution(co
 
 GetMaintenanceWindowExecutionTaskOutcome SSMClient::GetMaintenanceWindowExecutionTask(const GetMaintenanceWindowExecutionTaskRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetMaintenanceWindowExecutionTask);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMaintenanceWindowExecutionTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetMaintenanceWindowExecutionTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -873,6 +947,7 @@ GetMaintenanceWindowExecutionTaskOutcome SSMClient::GetMaintenanceWindowExecutio
 
 GetMaintenanceWindowExecutionTaskInvocationOutcome SSMClient::GetMaintenanceWindowExecutionTaskInvocation(const GetMaintenanceWindowExecutionTaskInvocationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetMaintenanceWindowExecutionTaskInvocation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMaintenanceWindowExecutionTaskInvocation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetMaintenanceWindowExecutionTaskInvocation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -881,6 +956,7 @@ GetMaintenanceWindowExecutionTaskInvocationOutcome SSMClient::GetMaintenanceWind
 
 GetMaintenanceWindowTaskOutcome SSMClient::GetMaintenanceWindowTask(const GetMaintenanceWindowTaskRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetMaintenanceWindowTask);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMaintenanceWindowTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetMaintenanceWindowTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -889,6 +965,7 @@ GetMaintenanceWindowTaskOutcome SSMClient::GetMaintenanceWindowTask(const GetMai
 
 GetOpsItemOutcome SSMClient::GetOpsItem(const GetOpsItemRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetOpsItem);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetOpsItem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetOpsItem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -897,6 +974,7 @@ GetOpsItemOutcome SSMClient::GetOpsItem(const GetOpsItemRequest& request) const
 
 GetOpsMetadataOutcome SSMClient::GetOpsMetadata(const GetOpsMetadataRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetOpsMetadata);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetOpsMetadata, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetOpsMetadata, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -905,6 +983,7 @@ GetOpsMetadataOutcome SSMClient::GetOpsMetadata(const GetOpsMetadataRequest& req
 
 GetOpsSummaryOutcome SSMClient::GetOpsSummary(const GetOpsSummaryRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetOpsSummary);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetOpsSummary, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetOpsSummary, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -913,6 +992,7 @@ GetOpsSummaryOutcome SSMClient::GetOpsSummary(const GetOpsSummaryRequest& reques
 
 GetParameterOutcome SSMClient::GetParameter(const GetParameterRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetParameter);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetParameter, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetParameter, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -921,6 +1001,7 @@ GetParameterOutcome SSMClient::GetParameter(const GetParameterRequest& request) 
 
 GetParameterHistoryOutcome SSMClient::GetParameterHistory(const GetParameterHistoryRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetParameterHistory);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetParameterHistory, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetParameterHistory, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -929,6 +1010,7 @@ GetParameterHistoryOutcome SSMClient::GetParameterHistory(const GetParameterHist
 
 GetParametersOutcome SSMClient::GetParameters(const GetParametersRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetParameters);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetParameters, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetParameters, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -937,6 +1019,7 @@ GetParametersOutcome SSMClient::GetParameters(const GetParametersRequest& reques
 
 GetParametersByPathOutcome SSMClient::GetParametersByPath(const GetParametersByPathRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetParametersByPath);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetParametersByPath, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetParametersByPath, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -945,6 +1028,7 @@ GetParametersByPathOutcome SSMClient::GetParametersByPath(const GetParametersByP
 
 GetPatchBaselineOutcome SSMClient::GetPatchBaseline(const GetPatchBaselineRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetPatchBaseline);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPatchBaseline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetPatchBaseline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -953,6 +1037,7 @@ GetPatchBaselineOutcome SSMClient::GetPatchBaseline(const GetPatchBaselineReques
 
 GetPatchBaselineForPatchGroupOutcome SSMClient::GetPatchBaselineForPatchGroup(const GetPatchBaselineForPatchGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetPatchBaselineForPatchGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPatchBaselineForPatchGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetPatchBaselineForPatchGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -961,6 +1046,7 @@ GetPatchBaselineForPatchGroupOutcome SSMClient::GetPatchBaselineForPatchGroup(co
 
 GetResourcePoliciesOutcome SSMClient::GetResourcePolicies(const GetResourcePoliciesRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetResourcePolicies);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetResourcePolicies, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetResourcePolicies, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -969,6 +1055,7 @@ GetResourcePoliciesOutcome SSMClient::GetResourcePolicies(const GetResourcePolic
 
 GetServiceSettingOutcome SSMClient::GetServiceSetting(const GetServiceSettingRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetServiceSetting);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetServiceSetting, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetServiceSetting, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -977,6 +1064,7 @@ GetServiceSettingOutcome SSMClient::GetServiceSetting(const GetServiceSettingReq
 
 LabelParameterVersionOutcome SSMClient::LabelParameterVersion(const LabelParameterVersionRequest& request) const
 {
+  AWS_OPERATION_GUARD(LabelParameterVersion);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, LabelParameterVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, LabelParameterVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -985,6 +1073,7 @@ LabelParameterVersionOutcome SSMClient::LabelParameterVersion(const LabelParamet
 
 ListAssociationVersionsOutcome SSMClient::ListAssociationVersions(const ListAssociationVersionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAssociationVersions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAssociationVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAssociationVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -993,6 +1082,7 @@ ListAssociationVersionsOutcome SSMClient::ListAssociationVersions(const ListAsso
 
 ListAssociationsOutcome SSMClient::ListAssociations(const ListAssociationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAssociations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAssociations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAssociations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1001,6 +1091,7 @@ ListAssociationsOutcome SSMClient::ListAssociations(const ListAssociationsReques
 
 ListCommandInvocationsOutcome SSMClient::ListCommandInvocations(const ListCommandInvocationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListCommandInvocations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListCommandInvocations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListCommandInvocations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1009,6 +1100,7 @@ ListCommandInvocationsOutcome SSMClient::ListCommandInvocations(const ListComman
 
 ListCommandsOutcome SSMClient::ListCommands(const ListCommandsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListCommands);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListCommands, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListCommands, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1017,6 +1109,7 @@ ListCommandsOutcome SSMClient::ListCommands(const ListCommandsRequest& request) 
 
 ListComplianceItemsOutcome SSMClient::ListComplianceItems(const ListComplianceItemsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListComplianceItems);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListComplianceItems, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListComplianceItems, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1025,6 +1118,7 @@ ListComplianceItemsOutcome SSMClient::ListComplianceItems(const ListComplianceIt
 
 ListComplianceSummariesOutcome SSMClient::ListComplianceSummaries(const ListComplianceSummariesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListComplianceSummaries);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListComplianceSummaries, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListComplianceSummaries, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1033,6 +1127,7 @@ ListComplianceSummariesOutcome SSMClient::ListComplianceSummaries(const ListComp
 
 ListDocumentMetadataHistoryOutcome SSMClient::ListDocumentMetadataHistory(const ListDocumentMetadataHistoryRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDocumentMetadataHistory);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDocumentMetadataHistory, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDocumentMetadataHistory, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1041,6 +1136,7 @@ ListDocumentMetadataHistoryOutcome SSMClient::ListDocumentMetadataHistory(const 
 
 ListDocumentVersionsOutcome SSMClient::ListDocumentVersions(const ListDocumentVersionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDocumentVersions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDocumentVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDocumentVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1049,6 +1145,7 @@ ListDocumentVersionsOutcome SSMClient::ListDocumentVersions(const ListDocumentVe
 
 ListDocumentsOutcome SSMClient::ListDocuments(const ListDocumentsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDocuments);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDocuments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDocuments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1057,6 +1154,7 @@ ListDocumentsOutcome SSMClient::ListDocuments(const ListDocumentsRequest& reques
 
 ListInventoryEntriesOutcome SSMClient::ListInventoryEntries(const ListInventoryEntriesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListInventoryEntries);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListInventoryEntries, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListInventoryEntries, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1065,6 +1163,7 @@ ListInventoryEntriesOutcome SSMClient::ListInventoryEntries(const ListInventoryE
 
 ListOpsItemEventsOutcome SSMClient::ListOpsItemEvents(const ListOpsItemEventsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListOpsItemEvents);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListOpsItemEvents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListOpsItemEvents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1073,6 +1172,7 @@ ListOpsItemEventsOutcome SSMClient::ListOpsItemEvents(const ListOpsItemEventsReq
 
 ListOpsItemRelatedItemsOutcome SSMClient::ListOpsItemRelatedItems(const ListOpsItemRelatedItemsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListOpsItemRelatedItems);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListOpsItemRelatedItems, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListOpsItemRelatedItems, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1081,6 +1181,7 @@ ListOpsItemRelatedItemsOutcome SSMClient::ListOpsItemRelatedItems(const ListOpsI
 
 ListOpsMetadataOutcome SSMClient::ListOpsMetadata(const ListOpsMetadataRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListOpsMetadata);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListOpsMetadata, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListOpsMetadata, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1089,6 +1190,7 @@ ListOpsMetadataOutcome SSMClient::ListOpsMetadata(const ListOpsMetadataRequest& 
 
 ListResourceComplianceSummariesOutcome SSMClient::ListResourceComplianceSummaries(const ListResourceComplianceSummariesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListResourceComplianceSummaries);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListResourceComplianceSummaries, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListResourceComplianceSummaries, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1097,6 +1199,7 @@ ListResourceComplianceSummariesOutcome SSMClient::ListResourceComplianceSummarie
 
 ListResourceDataSyncOutcome SSMClient::ListResourceDataSync(const ListResourceDataSyncRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListResourceDataSync);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListResourceDataSync, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListResourceDataSync, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1105,6 +1208,7 @@ ListResourceDataSyncOutcome SSMClient::ListResourceDataSync(const ListResourceDa
 
 ListTagsForResourceOutcome SSMClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1113,6 +1217,7 @@ ListTagsForResourceOutcome SSMClient::ListTagsForResource(const ListTagsForResou
 
 ModifyDocumentPermissionOutcome SSMClient::ModifyDocumentPermission(const ModifyDocumentPermissionRequest& request) const
 {
+  AWS_OPERATION_GUARD(ModifyDocumentPermission);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ModifyDocumentPermission, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ModifyDocumentPermission, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1121,6 +1226,7 @@ ModifyDocumentPermissionOutcome SSMClient::ModifyDocumentPermission(const Modify
 
 PutComplianceItemsOutcome SSMClient::PutComplianceItems(const PutComplianceItemsRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutComplianceItems);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutComplianceItems, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutComplianceItems, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1129,6 +1235,7 @@ PutComplianceItemsOutcome SSMClient::PutComplianceItems(const PutComplianceItems
 
 PutInventoryOutcome SSMClient::PutInventory(const PutInventoryRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutInventory);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutInventory, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutInventory, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1137,6 +1244,7 @@ PutInventoryOutcome SSMClient::PutInventory(const PutInventoryRequest& request) 
 
 PutParameterOutcome SSMClient::PutParameter(const PutParameterRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutParameter);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutParameter, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutParameter, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1145,6 +1253,7 @@ PutParameterOutcome SSMClient::PutParameter(const PutParameterRequest& request) 
 
 PutResourcePolicyOutcome SSMClient::PutResourcePolicy(const PutResourcePolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutResourcePolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1153,6 +1262,7 @@ PutResourcePolicyOutcome SSMClient::PutResourcePolicy(const PutResourcePolicyReq
 
 RegisterDefaultPatchBaselineOutcome SSMClient::RegisterDefaultPatchBaseline(const RegisterDefaultPatchBaselineRequest& request) const
 {
+  AWS_OPERATION_GUARD(RegisterDefaultPatchBaseline);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RegisterDefaultPatchBaseline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RegisterDefaultPatchBaseline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1161,6 +1271,7 @@ RegisterDefaultPatchBaselineOutcome SSMClient::RegisterDefaultPatchBaseline(cons
 
 RegisterPatchBaselineForPatchGroupOutcome SSMClient::RegisterPatchBaselineForPatchGroup(const RegisterPatchBaselineForPatchGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(RegisterPatchBaselineForPatchGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RegisterPatchBaselineForPatchGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RegisterPatchBaselineForPatchGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1169,6 +1280,7 @@ RegisterPatchBaselineForPatchGroupOutcome SSMClient::RegisterPatchBaselineForPat
 
 RegisterTargetWithMaintenanceWindowOutcome SSMClient::RegisterTargetWithMaintenanceWindow(const RegisterTargetWithMaintenanceWindowRequest& request) const
 {
+  AWS_OPERATION_GUARD(RegisterTargetWithMaintenanceWindow);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RegisterTargetWithMaintenanceWindow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RegisterTargetWithMaintenanceWindow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1177,6 +1289,7 @@ RegisterTargetWithMaintenanceWindowOutcome SSMClient::RegisterTargetWithMaintena
 
 RegisterTaskWithMaintenanceWindowOutcome SSMClient::RegisterTaskWithMaintenanceWindow(const RegisterTaskWithMaintenanceWindowRequest& request) const
 {
+  AWS_OPERATION_GUARD(RegisterTaskWithMaintenanceWindow);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RegisterTaskWithMaintenanceWindow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RegisterTaskWithMaintenanceWindow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1185,6 +1298,7 @@ RegisterTaskWithMaintenanceWindowOutcome SSMClient::RegisterTaskWithMaintenanceW
 
 RemoveTagsFromResourceOutcome SSMClient::RemoveTagsFromResource(const RemoveTagsFromResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(RemoveTagsFromResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RemoveTagsFromResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RemoveTagsFromResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1193,6 +1307,7 @@ RemoveTagsFromResourceOutcome SSMClient::RemoveTagsFromResource(const RemoveTags
 
 ResetServiceSettingOutcome SSMClient::ResetServiceSetting(const ResetServiceSettingRequest& request) const
 {
+  AWS_OPERATION_GUARD(ResetServiceSetting);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ResetServiceSetting, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ResetServiceSetting, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1201,6 +1316,7 @@ ResetServiceSettingOutcome SSMClient::ResetServiceSetting(const ResetServiceSett
 
 ResumeSessionOutcome SSMClient::ResumeSession(const ResumeSessionRequest& request) const
 {
+  AWS_OPERATION_GUARD(ResumeSession);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ResumeSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ResumeSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1209,6 +1325,7 @@ ResumeSessionOutcome SSMClient::ResumeSession(const ResumeSessionRequest& reques
 
 SendAutomationSignalOutcome SSMClient::SendAutomationSignal(const SendAutomationSignalRequest& request) const
 {
+  AWS_OPERATION_GUARD(SendAutomationSignal);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SendAutomationSignal, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SendAutomationSignal, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1217,6 +1334,7 @@ SendAutomationSignalOutcome SSMClient::SendAutomationSignal(const SendAutomation
 
 SendCommandOutcome SSMClient::SendCommand(const SendCommandRequest& request) const
 {
+  AWS_OPERATION_GUARD(SendCommand);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SendCommand, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SendCommand, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1225,6 +1343,7 @@ SendCommandOutcome SSMClient::SendCommand(const SendCommandRequest& request) con
 
 StartAssociationsOnceOutcome SSMClient::StartAssociationsOnce(const StartAssociationsOnceRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartAssociationsOnce);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartAssociationsOnce, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartAssociationsOnce, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1233,6 +1352,7 @@ StartAssociationsOnceOutcome SSMClient::StartAssociationsOnce(const StartAssocia
 
 StartAutomationExecutionOutcome SSMClient::StartAutomationExecution(const StartAutomationExecutionRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartAutomationExecution);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartAutomationExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartAutomationExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1241,6 +1361,7 @@ StartAutomationExecutionOutcome SSMClient::StartAutomationExecution(const StartA
 
 StartChangeRequestExecutionOutcome SSMClient::StartChangeRequestExecution(const StartChangeRequestExecutionRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartChangeRequestExecution);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartChangeRequestExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartChangeRequestExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1249,6 +1370,7 @@ StartChangeRequestExecutionOutcome SSMClient::StartChangeRequestExecution(const 
 
 StartSessionOutcome SSMClient::StartSession(const StartSessionRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartSession);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1257,6 +1379,7 @@ StartSessionOutcome SSMClient::StartSession(const StartSessionRequest& request) 
 
 StopAutomationExecutionOutcome SSMClient::StopAutomationExecution(const StopAutomationExecutionRequest& request) const
 {
+  AWS_OPERATION_GUARD(StopAutomationExecution);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopAutomationExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StopAutomationExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1265,6 +1388,7 @@ StopAutomationExecutionOutcome SSMClient::StopAutomationExecution(const StopAuto
 
 TerminateSessionOutcome SSMClient::TerminateSession(const TerminateSessionRequest& request) const
 {
+  AWS_OPERATION_GUARD(TerminateSession);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TerminateSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TerminateSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1273,6 +1397,7 @@ TerminateSessionOutcome SSMClient::TerminateSession(const TerminateSessionReques
 
 UnlabelParameterVersionOutcome SSMClient::UnlabelParameterVersion(const UnlabelParameterVersionRequest& request) const
 {
+  AWS_OPERATION_GUARD(UnlabelParameterVersion);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UnlabelParameterVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UnlabelParameterVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1281,6 +1406,7 @@ UnlabelParameterVersionOutcome SSMClient::UnlabelParameterVersion(const UnlabelP
 
 UpdateAssociationOutcome SSMClient::UpdateAssociation(const UpdateAssociationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateAssociation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1289,6 +1415,7 @@ UpdateAssociationOutcome SSMClient::UpdateAssociation(const UpdateAssociationReq
 
 UpdateAssociationStatusOutcome SSMClient::UpdateAssociationStatus(const UpdateAssociationStatusRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateAssociationStatus);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAssociationStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateAssociationStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1297,6 +1424,7 @@ UpdateAssociationStatusOutcome SSMClient::UpdateAssociationStatus(const UpdateAs
 
 UpdateDocumentOutcome SSMClient::UpdateDocument(const UpdateDocumentRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateDocument);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDocument, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateDocument, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1305,6 +1433,7 @@ UpdateDocumentOutcome SSMClient::UpdateDocument(const UpdateDocumentRequest& req
 
 UpdateDocumentDefaultVersionOutcome SSMClient::UpdateDocumentDefaultVersion(const UpdateDocumentDefaultVersionRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateDocumentDefaultVersion);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDocumentDefaultVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateDocumentDefaultVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1313,6 +1442,7 @@ UpdateDocumentDefaultVersionOutcome SSMClient::UpdateDocumentDefaultVersion(cons
 
 UpdateDocumentMetadataOutcome SSMClient::UpdateDocumentMetadata(const UpdateDocumentMetadataRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateDocumentMetadata);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDocumentMetadata, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateDocumentMetadata, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1321,6 +1451,7 @@ UpdateDocumentMetadataOutcome SSMClient::UpdateDocumentMetadata(const UpdateDocu
 
 UpdateMaintenanceWindowOutcome SSMClient::UpdateMaintenanceWindow(const UpdateMaintenanceWindowRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateMaintenanceWindow);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateMaintenanceWindow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateMaintenanceWindow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1329,6 +1460,7 @@ UpdateMaintenanceWindowOutcome SSMClient::UpdateMaintenanceWindow(const UpdateMa
 
 UpdateMaintenanceWindowTargetOutcome SSMClient::UpdateMaintenanceWindowTarget(const UpdateMaintenanceWindowTargetRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateMaintenanceWindowTarget);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateMaintenanceWindowTarget, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateMaintenanceWindowTarget, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1337,6 +1469,7 @@ UpdateMaintenanceWindowTargetOutcome SSMClient::UpdateMaintenanceWindowTarget(co
 
 UpdateMaintenanceWindowTaskOutcome SSMClient::UpdateMaintenanceWindowTask(const UpdateMaintenanceWindowTaskRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateMaintenanceWindowTask);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateMaintenanceWindowTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateMaintenanceWindowTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1345,6 +1478,7 @@ UpdateMaintenanceWindowTaskOutcome SSMClient::UpdateMaintenanceWindowTask(const 
 
 UpdateManagedInstanceRoleOutcome SSMClient::UpdateManagedInstanceRole(const UpdateManagedInstanceRoleRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateManagedInstanceRole);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateManagedInstanceRole, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateManagedInstanceRole, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1353,6 +1487,7 @@ UpdateManagedInstanceRoleOutcome SSMClient::UpdateManagedInstanceRole(const Upda
 
 UpdateOpsItemOutcome SSMClient::UpdateOpsItem(const UpdateOpsItemRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateOpsItem);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateOpsItem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateOpsItem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1361,6 +1496,7 @@ UpdateOpsItemOutcome SSMClient::UpdateOpsItem(const UpdateOpsItemRequest& reques
 
 UpdateOpsMetadataOutcome SSMClient::UpdateOpsMetadata(const UpdateOpsMetadataRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateOpsMetadata);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateOpsMetadata, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateOpsMetadata, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1369,6 +1505,7 @@ UpdateOpsMetadataOutcome SSMClient::UpdateOpsMetadata(const UpdateOpsMetadataReq
 
 UpdatePatchBaselineOutcome SSMClient::UpdatePatchBaseline(const UpdatePatchBaselineRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdatePatchBaseline);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdatePatchBaseline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdatePatchBaseline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1377,6 +1514,7 @@ UpdatePatchBaselineOutcome SSMClient::UpdatePatchBaseline(const UpdatePatchBasel
 
 UpdateResourceDataSyncOutcome SSMClient::UpdateResourceDataSync(const UpdateResourceDataSyncRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateResourceDataSync);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateResourceDataSync, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateResourceDataSync, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1385,6 +1523,7 @@ UpdateResourceDataSyncOutcome SSMClient::UpdateResourceDataSync(const UpdateReso
 
 UpdateServiceSettingOutcome SSMClient::UpdateServiceSetting(const UpdateServiceSettingRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateServiceSetting);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateServiceSetting, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateServiceSetting, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

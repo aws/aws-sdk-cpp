@@ -145,6 +145,7 @@ ChimeSDKMeetingsClient::ChimeSDKMeetingsClient(const std::shared_ptr<AWSCredenti
     /* End of legacy constructors due deprecation */
 ChimeSDKMeetingsClient::~ChimeSDKMeetingsClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<ChimeSDKMeetingsEndpointProviderBase>& ChimeSDKMeetingsClient::accessEndpointProvider()
@@ -167,6 +168,7 @@ void ChimeSDKMeetingsClient::OverrideEndpoint(const Aws::String& endpoint)
 
 BatchCreateAttendeeOutcome ChimeSDKMeetingsClient::BatchCreateAttendee(const BatchCreateAttendeeRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchCreateAttendee);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchCreateAttendee, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeetingIdHasBeenSet())
   {
@@ -186,6 +188,7 @@ BatchCreateAttendeeOutcome ChimeSDKMeetingsClient::BatchCreateAttendee(const Bat
 
 BatchUpdateAttendeeCapabilitiesExceptOutcome ChimeSDKMeetingsClient::BatchUpdateAttendeeCapabilitiesExcept(const BatchUpdateAttendeeCapabilitiesExceptRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchUpdateAttendeeCapabilitiesExcept);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchUpdateAttendeeCapabilitiesExcept, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeetingIdHasBeenSet())
   {
@@ -205,6 +208,7 @@ BatchUpdateAttendeeCapabilitiesExceptOutcome ChimeSDKMeetingsClient::BatchUpdate
 
 CreateAttendeeOutcome ChimeSDKMeetingsClient::CreateAttendee(const CreateAttendeeRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateAttendee);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAttendee, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeetingIdHasBeenSet())
   {
@@ -221,6 +225,7 @@ CreateAttendeeOutcome ChimeSDKMeetingsClient::CreateAttendee(const CreateAttende
 
 CreateMeetingOutcome ChimeSDKMeetingsClient::CreateMeeting(const CreateMeetingRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateMeeting);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateMeeting, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateMeeting, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -230,6 +235,7 @@ CreateMeetingOutcome ChimeSDKMeetingsClient::CreateMeeting(const CreateMeetingRe
 
 CreateMeetingWithAttendeesOutcome ChimeSDKMeetingsClient::CreateMeetingWithAttendees(const CreateMeetingWithAttendeesRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateMeetingWithAttendees);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateMeetingWithAttendees, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateMeetingWithAttendees, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -242,6 +248,7 @@ CreateMeetingWithAttendeesOutcome ChimeSDKMeetingsClient::CreateMeetingWithAtten
 
 DeleteAttendeeOutcome ChimeSDKMeetingsClient::DeleteAttendee(const DeleteAttendeeRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteAttendee);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAttendee, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeetingIdHasBeenSet())
   {
@@ -264,6 +271,7 @@ DeleteAttendeeOutcome ChimeSDKMeetingsClient::DeleteAttendee(const DeleteAttende
 
 DeleteMeetingOutcome ChimeSDKMeetingsClient::DeleteMeeting(const DeleteMeetingRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteMeeting);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteMeeting, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeetingIdHasBeenSet())
   {
@@ -279,6 +287,7 @@ DeleteMeetingOutcome ChimeSDKMeetingsClient::DeleteMeeting(const DeleteMeetingRe
 
 GetAttendeeOutcome ChimeSDKMeetingsClient::GetAttendee(const GetAttendeeRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetAttendee);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAttendee, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeetingIdHasBeenSet())
   {
@@ -301,6 +310,7 @@ GetAttendeeOutcome ChimeSDKMeetingsClient::GetAttendee(const GetAttendeeRequest&
 
 GetMeetingOutcome ChimeSDKMeetingsClient::GetMeeting(const GetMeetingRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetMeeting);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMeeting, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeetingIdHasBeenSet())
   {
@@ -316,6 +326,7 @@ GetMeetingOutcome ChimeSDKMeetingsClient::GetMeeting(const GetMeetingRequest& re
 
 ListAttendeesOutcome ChimeSDKMeetingsClient::ListAttendees(const ListAttendeesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAttendees);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAttendees, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeetingIdHasBeenSet())
   {
@@ -332,6 +343,7 @@ ListAttendeesOutcome ChimeSDKMeetingsClient::ListAttendees(const ListAttendeesRe
 
 ListTagsForResourceOutcome ChimeSDKMeetingsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceARNHasBeenSet())
   {
@@ -346,6 +358,7 @@ ListTagsForResourceOutcome ChimeSDKMeetingsClient::ListTagsForResource(const Lis
 
 StartMeetingTranscriptionOutcome ChimeSDKMeetingsClient::StartMeetingTranscription(const StartMeetingTranscriptionRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartMeetingTranscription);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartMeetingTranscription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeetingIdHasBeenSet())
   {
@@ -365,6 +378,7 @@ StartMeetingTranscriptionOutcome ChimeSDKMeetingsClient::StartMeetingTranscripti
 
 StopMeetingTranscriptionOutcome ChimeSDKMeetingsClient::StopMeetingTranscription(const StopMeetingTranscriptionRequest& request) const
 {
+  AWS_OPERATION_GUARD(StopMeetingTranscription);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopMeetingTranscription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeetingIdHasBeenSet())
   {
@@ -384,6 +398,7 @@ StopMeetingTranscriptionOutcome ChimeSDKMeetingsClient::StopMeetingTranscription
 
 TagResourceOutcome ChimeSDKMeetingsClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -396,6 +411,7 @@ TagResourceOutcome ChimeSDKMeetingsClient::TagResource(const TagResourceRequest&
 
 UntagResourceOutcome ChimeSDKMeetingsClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -408,6 +424,7 @@ UntagResourceOutcome ChimeSDKMeetingsClient::UntagResource(const UntagResourceRe
 
 UpdateAttendeeCapabilitiesOutcome ChimeSDKMeetingsClient::UpdateAttendeeCapabilities(const UpdateAttendeeCapabilitiesRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateAttendeeCapabilities);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAttendeeCapabilities, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeetingIdHasBeenSet())
   {

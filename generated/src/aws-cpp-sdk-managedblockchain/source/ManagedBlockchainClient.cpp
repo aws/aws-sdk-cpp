@@ -156,6 +156,7 @@ ManagedBlockchainClient::ManagedBlockchainClient(const std::shared_ptr<AWSCreden
     /* End of legacy constructors due deprecation */
 ManagedBlockchainClient::~ManagedBlockchainClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<ManagedBlockchainEndpointProviderBase>& ManagedBlockchainClient::accessEndpointProvider()
@@ -178,6 +179,7 @@ void ManagedBlockchainClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CreateAccessorOutcome ManagedBlockchainClient::CreateAccessor(const CreateAccessorRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateAccessor);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAccessor, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateAccessor, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -187,6 +189,7 @@ CreateAccessorOutcome ManagedBlockchainClient::CreateAccessor(const CreateAccess
 
 CreateMemberOutcome ManagedBlockchainClient::CreateMember(const CreateMemberRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateMember);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateMember, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkIdHasBeenSet())
   {
@@ -203,6 +206,7 @@ CreateMemberOutcome ManagedBlockchainClient::CreateMember(const CreateMemberRequ
 
 CreateNetworkOutcome ManagedBlockchainClient::CreateNetwork(const CreateNetworkRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateNetwork);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateNetwork, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateNetwork, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -212,6 +216,7 @@ CreateNetworkOutcome ManagedBlockchainClient::CreateNetwork(const CreateNetworkR
 
 CreateNodeOutcome ManagedBlockchainClient::CreateNode(const CreateNodeRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateNode);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateNode, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkIdHasBeenSet())
   {
@@ -228,6 +233,7 @@ CreateNodeOutcome ManagedBlockchainClient::CreateNode(const CreateNodeRequest& r
 
 CreateProposalOutcome ManagedBlockchainClient::CreateProposal(const CreateProposalRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateProposal);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateProposal, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkIdHasBeenSet())
   {
@@ -244,6 +250,7 @@ CreateProposalOutcome ManagedBlockchainClient::CreateProposal(const CreatePropos
 
 DeleteAccessorOutcome ManagedBlockchainClient::DeleteAccessor(const DeleteAccessorRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteAccessor);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAccessor, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccessorIdHasBeenSet())
   {
@@ -259,6 +266,7 @@ DeleteAccessorOutcome ManagedBlockchainClient::DeleteAccessor(const DeleteAccess
 
 DeleteMemberOutcome ManagedBlockchainClient::DeleteMember(const DeleteMemberRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteMember);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteMember, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkIdHasBeenSet())
   {
@@ -281,6 +289,7 @@ DeleteMemberOutcome ManagedBlockchainClient::DeleteMember(const DeleteMemberRequ
 
 DeleteNodeOutcome ManagedBlockchainClient::DeleteNode(const DeleteNodeRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteNode);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteNode, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkIdHasBeenSet())
   {
@@ -303,6 +312,7 @@ DeleteNodeOutcome ManagedBlockchainClient::DeleteNode(const DeleteNodeRequest& r
 
 GetAccessorOutcome ManagedBlockchainClient::GetAccessor(const GetAccessorRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetAccessor);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAccessor, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccessorIdHasBeenSet())
   {
@@ -318,6 +328,7 @@ GetAccessorOutcome ManagedBlockchainClient::GetAccessor(const GetAccessorRequest
 
 GetMemberOutcome ManagedBlockchainClient::GetMember(const GetMemberRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetMember);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMember, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkIdHasBeenSet())
   {
@@ -340,6 +351,7 @@ GetMemberOutcome ManagedBlockchainClient::GetMember(const GetMemberRequest& requ
 
 GetNetworkOutcome ManagedBlockchainClient::GetNetwork(const GetNetworkRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetNetwork);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetNetwork, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkIdHasBeenSet())
   {
@@ -355,6 +367,7 @@ GetNetworkOutcome ManagedBlockchainClient::GetNetwork(const GetNetworkRequest& r
 
 GetNodeOutcome ManagedBlockchainClient::GetNode(const GetNodeRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetNode);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetNode, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkIdHasBeenSet())
   {
@@ -377,6 +390,7 @@ GetNodeOutcome ManagedBlockchainClient::GetNode(const GetNodeRequest& request) c
 
 GetProposalOutcome ManagedBlockchainClient::GetProposal(const GetProposalRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetProposal);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetProposal, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkIdHasBeenSet())
   {
@@ -399,6 +413,7 @@ GetProposalOutcome ManagedBlockchainClient::GetProposal(const GetProposalRequest
 
 ListAccessorsOutcome ManagedBlockchainClient::ListAccessors(const ListAccessorsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAccessors);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAccessors, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAccessors, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -408,6 +423,7 @@ ListAccessorsOutcome ManagedBlockchainClient::ListAccessors(const ListAccessorsR
 
 ListInvitationsOutcome ManagedBlockchainClient::ListInvitations(const ListInvitationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListInvitations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListInvitations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListInvitations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -417,6 +433,7 @@ ListInvitationsOutcome ManagedBlockchainClient::ListInvitations(const ListInvita
 
 ListMembersOutcome ManagedBlockchainClient::ListMembers(const ListMembersRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListMembers);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListMembers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkIdHasBeenSet())
   {
@@ -433,6 +450,7 @@ ListMembersOutcome ManagedBlockchainClient::ListMembers(const ListMembersRequest
 
 ListNetworksOutcome ManagedBlockchainClient::ListNetworks(const ListNetworksRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListNetworks);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListNetworks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListNetworks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -442,6 +460,7 @@ ListNetworksOutcome ManagedBlockchainClient::ListNetworks(const ListNetworksRequ
 
 ListNodesOutcome ManagedBlockchainClient::ListNodes(const ListNodesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListNodes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListNodes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkIdHasBeenSet())
   {
@@ -458,6 +477,7 @@ ListNodesOutcome ManagedBlockchainClient::ListNodes(const ListNodesRequest& requ
 
 ListProposalVotesOutcome ManagedBlockchainClient::ListProposalVotes(const ListProposalVotesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListProposalVotes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListProposalVotes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkIdHasBeenSet())
   {
@@ -481,6 +501,7 @@ ListProposalVotesOutcome ManagedBlockchainClient::ListProposalVotes(const ListPr
 
 ListProposalsOutcome ManagedBlockchainClient::ListProposals(const ListProposalsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListProposals);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListProposals, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkIdHasBeenSet())
   {
@@ -497,6 +518,7 @@ ListProposalsOutcome ManagedBlockchainClient::ListProposals(const ListProposalsR
 
 ListTagsForResourceOutcome ManagedBlockchainClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -512,6 +534,7 @@ ListTagsForResourceOutcome ManagedBlockchainClient::ListTagsForResource(const Li
 
 RejectInvitationOutcome ManagedBlockchainClient::RejectInvitation(const RejectInvitationRequest& request) const
 {
+  AWS_OPERATION_GUARD(RejectInvitation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RejectInvitation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InvitationIdHasBeenSet())
   {
@@ -527,6 +550,7 @@ RejectInvitationOutcome ManagedBlockchainClient::RejectInvitation(const RejectIn
 
 TagResourceOutcome ManagedBlockchainClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -542,6 +566,7 @@ TagResourceOutcome ManagedBlockchainClient::TagResource(const TagResourceRequest
 
 UntagResourceOutcome ManagedBlockchainClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -562,6 +587,7 @@ UntagResourceOutcome ManagedBlockchainClient::UntagResource(const UntagResourceR
 
 UpdateMemberOutcome ManagedBlockchainClient::UpdateMember(const UpdateMemberRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateMember);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateMember, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkIdHasBeenSet())
   {
@@ -584,6 +610,7 @@ UpdateMemberOutcome ManagedBlockchainClient::UpdateMember(const UpdateMemberRequ
 
 UpdateNodeOutcome ManagedBlockchainClient::UpdateNode(const UpdateNodeRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateNode);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateNode, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkIdHasBeenSet())
   {
@@ -606,6 +633,7 @@ UpdateNodeOutcome ManagedBlockchainClient::UpdateNode(const UpdateNodeRequest& r
 
 VoteOnProposalOutcome ManagedBlockchainClient::VoteOnProposal(const VoteOnProposalRequest& request) const
 {
+  AWS_OPERATION_GUARD(VoteOnProposal);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, VoteOnProposal, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NetworkIdHasBeenSet())
   {

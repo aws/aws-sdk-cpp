@@ -131,6 +131,7 @@ WorkMailMessageFlowClient::WorkMailMessageFlowClient(const std::shared_ptr<AWSCr
     /* End of legacy constructors due deprecation */
 WorkMailMessageFlowClient::~WorkMailMessageFlowClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<WorkMailMessageFlowEndpointProviderBase>& WorkMailMessageFlowClient::accessEndpointProvider()
@@ -153,6 +154,7 @@ void WorkMailMessageFlowClient::OverrideEndpoint(const Aws::String& endpoint)
 
 GetRawMessageContentOutcome WorkMailMessageFlowClient::GetRawMessageContent(const GetRawMessageContentRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetRawMessageContent);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetRawMessageContent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MessageIdHasBeenSet())
   {
@@ -168,6 +170,7 @@ GetRawMessageContentOutcome WorkMailMessageFlowClient::GetRawMessageContent(cons
 
 PutRawMessageContentOutcome WorkMailMessageFlowClient::PutRawMessageContent(const PutRawMessageContentRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutRawMessageContent);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutRawMessageContent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MessageIdHasBeenSet())
   {

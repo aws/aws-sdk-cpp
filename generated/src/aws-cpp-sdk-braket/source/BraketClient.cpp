@@ -142,6 +142,7 @@ BraketClient::BraketClient(const std::shared_ptr<AWSCredentialsProvider>& creden
     /* End of legacy constructors due deprecation */
 BraketClient::~BraketClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<BraketEndpointProviderBase>& BraketClient::accessEndpointProvider()
@@ -164,6 +165,7 @@ void BraketClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CancelJobOutcome BraketClient::CancelJob(const CancelJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(CancelJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CancelJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.JobArnHasBeenSet())
   {
@@ -180,6 +182,7 @@ CancelJobOutcome BraketClient::CancelJob(const CancelJobRequest& request) const
 
 CancelQuantumTaskOutcome BraketClient::CancelQuantumTask(const CancelQuantumTaskRequest& request) const
 {
+  AWS_OPERATION_GUARD(CancelQuantumTask);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CancelQuantumTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.QuantumTaskArnHasBeenSet())
   {
@@ -196,6 +199,7 @@ CancelQuantumTaskOutcome BraketClient::CancelQuantumTask(const CancelQuantumTask
 
 CreateJobOutcome BraketClient::CreateJob(const CreateJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -205,6 +209,7 @@ CreateJobOutcome BraketClient::CreateJob(const CreateJobRequest& request) const
 
 CreateQuantumTaskOutcome BraketClient::CreateQuantumTask(const CreateQuantumTaskRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateQuantumTask);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateQuantumTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateQuantumTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -214,6 +219,7 @@ CreateQuantumTaskOutcome BraketClient::CreateQuantumTask(const CreateQuantumTask
 
 GetDeviceOutcome BraketClient::GetDevice(const GetDeviceRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDevice);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDevice, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DeviceArnHasBeenSet())
   {
@@ -229,6 +235,7 @@ GetDeviceOutcome BraketClient::GetDevice(const GetDeviceRequest& request) const
 
 GetJobOutcome BraketClient::GetJob(const GetJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.JobArnHasBeenSet())
   {
@@ -244,6 +251,7 @@ GetJobOutcome BraketClient::GetJob(const GetJobRequest& request) const
 
 GetQuantumTaskOutcome BraketClient::GetQuantumTask(const GetQuantumTaskRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetQuantumTask);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetQuantumTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.QuantumTaskArnHasBeenSet())
   {
@@ -259,6 +267,7 @@ GetQuantumTaskOutcome BraketClient::GetQuantumTask(const GetQuantumTaskRequest& 
 
 ListTagsForResourceOutcome BraketClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -274,6 +283,7 @@ ListTagsForResourceOutcome BraketClient::ListTagsForResource(const ListTagsForRe
 
 SearchDevicesOutcome BraketClient::SearchDevices(const SearchDevicesRequest& request) const
 {
+  AWS_OPERATION_GUARD(SearchDevices);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SearchDevices, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SearchDevices, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -283,6 +293,7 @@ SearchDevicesOutcome BraketClient::SearchDevices(const SearchDevicesRequest& req
 
 SearchJobsOutcome BraketClient::SearchJobs(const SearchJobsRequest& request) const
 {
+  AWS_OPERATION_GUARD(SearchJobs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SearchJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SearchJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -292,6 +303,7 @@ SearchJobsOutcome BraketClient::SearchJobs(const SearchJobsRequest& request) con
 
 SearchQuantumTasksOutcome BraketClient::SearchQuantumTasks(const SearchQuantumTasksRequest& request) const
 {
+  AWS_OPERATION_GUARD(SearchQuantumTasks);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SearchQuantumTasks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SearchQuantumTasks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -301,6 +313,7 @@ SearchQuantumTasksOutcome BraketClient::SearchQuantumTasks(const SearchQuantumTa
 
 TagResourceOutcome BraketClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -316,6 +329,7 @@ TagResourceOutcome BraketClient::TagResource(const TagResourceRequest& request) 
 
 UntagResourceOutcome BraketClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {

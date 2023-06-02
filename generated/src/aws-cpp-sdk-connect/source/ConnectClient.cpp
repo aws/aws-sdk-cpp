@@ -319,6 +319,7 @@ ConnectClient::ConnectClient(const std::shared_ptr<AWSCredentialsProvider>& cred
     /* End of legacy constructors due deprecation */
 ConnectClient::~ConnectClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<ConnectEndpointProviderBase>& ConnectClient::accessEndpointProvider()
@@ -341,6 +342,7 @@ void ConnectClient::OverrideEndpoint(const Aws::String& endpoint)
 
 ActivateEvaluationFormOutcome ConnectClient::ActivateEvaluationForm(const ActivateEvaluationFormRequest& request) const
 {
+  AWS_OPERATION_GUARD(ActivateEvaluationForm);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ActivateEvaluationForm, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -363,6 +365,7 @@ ActivateEvaluationFormOutcome ConnectClient::ActivateEvaluationForm(const Activa
 
 AssociateApprovedOriginOutcome ConnectClient::AssociateApprovedOrigin(const AssociateApprovedOriginRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociateApprovedOrigin);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateApprovedOrigin, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -379,6 +382,7 @@ AssociateApprovedOriginOutcome ConnectClient::AssociateApprovedOrigin(const Asso
 
 AssociateBotOutcome ConnectClient::AssociateBot(const AssociateBotRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociateBot);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateBot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -395,6 +399,7 @@ AssociateBotOutcome ConnectClient::AssociateBot(const AssociateBotRequest& reque
 
 AssociateDefaultVocabularyOutcome ConnectClient::AssociateDefaultVocabulary(const AssociateDefaultVocabularyRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociateDefaultVocabulary);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateDefaultVocabulary, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -416,6 +421,7 @@ AssociateDefaultVocabularyOutcome ConnectClient::AssociateDefaultVocabulary(cons
 
 AssociateInstanceStorageConfigOutcome ConnectClient::AssociateInstanceStorageConfig(const AssociateInstanceStorageConfigRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociateInstanceStorageConfig);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateInstanceStorageConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -432,6 +438,7 @@ AssociateInstanceStorageConfigOutcome ConnectClient::AssociateInstanceStorageCon
 
 AssociateLambdaFunctionOutcome ConnectClient::AssociateLambdaFunction(const AssociateLambdaFunctionRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociateLambdaFunction);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateLambdaFunction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -448,6 +455,7 @@ AssociateLambdaFunctionOutcome ConnectClient::AssociateLambdaFunction(const Asso
 
 AssociateLexBotOutcome ConnectClient::AssociateLexBot(const AssociateLexBotRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociateLexBot);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateLexBot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -464,6 +472,7 @@ AssociateLexBotOutcome ConnectClient::AssociateLexBot(const AssociateLexBotReque
 
 AssociatePhoneNumberContactFlowOutcome ConnectClient::AssociatePhoneNumberContactFlow(const AssociatePhoneNumberContactFlowRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociatePhoneNumberContactFlow);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociatePhoneNumberContactFlow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PhoneNumberIdHasBeenSet())
   {
@@ -480,6 +489,7 @@ AssociatePhoneNumberContactFlowOutcome ConnectClient::AssociatePhoneNumberContac
 
 AssociateQueueQuickConnectsOutcome ConnectClient::AssociateQueueQuickConnects(const AssociateQueueQuickConnectsRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociateQueueQuickConnects);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateQueueQuickConnects, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -502,6 +512,7 @@ AssociateQueueQuickConnectsOutcome ConnectClient::AssociateQueueQuickConnects(co
 
 AssociateRoutingProfileQueuesOutcome ConnectClient::AssociateRoutingProfileQueues(const AssociateRoutingProfileQueuesRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociateRoutingProfileQueues);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateRoutingProfileQueues, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -524,6 +535,7 @@ AssociateRoutingProfileQueuesOutcome ConnectClient::AssociateRoutingProfileQueue
 
 AssociateSecurityKeyOutcome ConnectClient::AssociateSecurityKey(const AssociateSecurityKeyRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociateSecurityKey);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateSecurityKey, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -540,6 +552,7 @@ AssociateSecurityKeyOutcome ConnectClient::AssociateSecurityKey(const AssociateS
 
 ClaimPhoneNumberOutcome ConnectClient::ClaimPhoneNumber(const ClaimPhoneNumberRequest& request) const
 {
+  AWS_OPERATION_GUARD(ClaimPhoneNumber);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ClaimPhoneNumber, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ClaimPhoneNumber, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -549,6 +562,7 @@ ClaimPhoneNumberOutcome ConnectClient::ClaimPhoneNumber(const ClaimPhoneNumberRe
 
 CreateAgentStatusOutcome ConnectClient::CreateAgentStatus(const CreateAgentStatusRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateAgentStatus);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAgentStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -564,6 +578,7 @@ CreateAgentStatusOutcome ConnectClient::CreateAgentStatus(const CreateAgentStatu
 
 CreateContactFlowOutcome ConnectClient::CreateContactFlow(const CreateContactFlowRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateContactFlow);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateContactFlow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -579,6 +594,7 @@ CreateContactFlowOutcome ConnectClient::CreateContactFlow(const CreateContactFlo
 
 CreateContactFlowModuleOutcome ConnectClient::CreateContactFlowModule(const CreateContactFlowModuleRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateContactFlowModule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateContactFlowModule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -594,6 +610,7 @@ CreateContactFlowModuleOutcome ConnectClient::CreateContactFlowModule(const Crea
 
 CreateEvaluationFormOutcome ConnectClient::CreateEvaluationForm(const CreateEvaluationFormRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateEvaluationForm);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateEvaluationForm, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -609,6 +626,7 @@ CreateEvaluationFormOutcome ConnectClient::CreateEvaluationForm(const CreateEval
 
 CreateHoursOfOperationOutcome ConnectClient::CreateHoursOfOperation(const CreateHoursOfOperationRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateHoursOfOperation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateHoursOfOperation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -624,6 +642,7 @@ CreateHoursOfOperationOutcome ConnectClient::CreateHoursOfOperation(const Create
 
 CreateInstanceOutcome ConnectClient::CreateInstance(const CreateInstanceRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateInstance);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -633,6 +652,7 @@ CreateInstanceOutcome ConnectClient::CreateInstance(const CreateInstanceRequest&
 
 CreateIntegrationAssociationOutcome ConnectClient::CreateIntegrationAssociation(const CreateIntegrationAssociationRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateIntegrationAssociation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateIntegrationAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -649,6 +669,7 @@ CreateIntegrationAssociationOutcome ConnectClient::CreateIntegrationAssociation(
 
 CreateParticipantOutcome ConnectClient::CreateParticipant(const CreateParticipantRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateParticipant);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateParticipant, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateParticipant, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -658,6 +679,7 @@ CreateParticipantOutcome ConnectClient::CreateParticipant(const CreateParticipan
 
 CreatePromptOutcome ConnectClient::CreatePrompt(const CreatePromptRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreatePrompt);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreatePrompt, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -673,6 +695,7 @@ CreatePromptOutcome ConnectClient::CreatePrompt(const CreatePromptRequest& reque
 
 CreateQueueOutcome ConnectClient::CreateQueue(const CreateQueueRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateQueue);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateQueue, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -688,6 +711,7 @@ CreateQueueOutcome ConnectClient::CreateQueue(const CreateQueueRequest& request)
 
 CreateQuickConnectOutcome ConnectClient::CreateQuickConnect(const CreateQuickConnectRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateQuickConnect);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateQuickConnect, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -703,6 +727,7 @@ CreateQuickConnectOutcome ConnectClient::CreateQuickConnect(const CreateQuickCon
 
 CreateRoutingProfileOutcome ConnectClient::CreateRoutingProfile(const CreateRoutingProfileRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateRoutingProfile);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateRoutingProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -718,6 +743,7 @@ CreateRoutingProfileOutcome ConnectClient::CreateRoutingProfile(const CreateRout
 
 CreateRuleOutcome ConnectClient::CreateRule(const CreateRuleRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateRule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -733,6 +759,7 @@ CreateRuleOutcome ConnectClient::CreateRule(const CreateRuleRequest& request) co
 
 CreateSecurityProfileOutcome ConnectClient::CreateSecurityProfile(const CreateSecurityProfileRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateSecurityProfile);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateSecurityProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -748,6 +775,7 @@ CreateSecurityProfileOutcome ConnectClient::CreateSecurityProfile(const CreateSe
 
 CreateTaskTemplateOutcome ConnectClient::CreateTaskTemplate(const CreateTaskTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateTaskTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateTaskTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -764,6 +792,7 @@ CreateTaskTemplateOutcome ConnectClient::CreateTaskTemplate(const CreateTaskTemp
 
 CreateTrafficDistributionGroupOutcome ConnectClient::CreateTrafficDistributionGroup(const CreateTrafficDistributionGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateTrafficDistributionGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateTrafficDistributionGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateTrafficDistributionGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -773,6 +802,7 @@ CreateTrafficDistributionGroupOutcome ConnectClient::CreateTrafficDistributionGr
 
 CreateUseCaseOutcome ConnectClient::CreateUseCase(const CreateUseCaseRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateUseCase);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateUseCase, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -796,6 +826,7 @@ CreateUseCaseOutcome ConnectClient::CreateUseCase(const CreateUseCaseRequest& re
 
 CreateUserOutcome ConnectClient::CreateUser(const CreateUserRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateUser);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -811,6 +842,7 @@ CreateUserOutcome ConnectClient::CreateUser(const CreateUserRequest& request) co
 
 CreateUserHierarchyGroupOutcome ConnectClient::CreateUserHierarchyGroup(const CreateUserHierarchyGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateUserHierarchyGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateUserHierarchyGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -826,6 +858,7 @@ CreateUserHierarchyGroupOutcome ConnectClient::CreateUserHierarchyGroup(const Cr
 
 CreateVocabularyOutcome ConnectClient::CreateVocabulary(const CreateVocabularyRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateVocabulary);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateVocabulary, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -841,6 +874,7 @@ CreateVocabularyOutcome ConnectClient::CreateVocabulary(const CreateVocabularyRe
 
 DeactivateEvaluationFormOutcome ConnectClient::DeactivateEvaluationForm(const DeactivateEvaluationFormRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeactivateEvaluationForm);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeactivateEvaluationForm, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -863,6 +897,7 @@ DeactivateEvaluationFormOutcome ConnectClient::DeactivateEvaluationForm(const De
 
 DeleteContactEvaluationOutcome ConnectClient::DeleteContactEvaluation(const DeleteContactEvaluationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteContactEvaluation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteContactEvaluation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -884,6 +919,7 @@ DeleteContactEvaluationOutcome ConnectClient::DeleteContactEvaluation(const Dele
 
 DeleteContactFlowOutcome ConnectClient::DeleteContactFlow(const DeleteContactFlowRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteContactFlow);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteContactFlow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -905,6 +941,7 @@ DeleteContactFlowOutcome ConnectClient::DeleteContactFlow(const DeleteContactFlo
 
 DeleteContactFlowModuleOutcome ConnectClient::DeleteContactFlowModule(const DeleteContactFlowModuleRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteContactFlowModule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteContactFlowModule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -926,6 +963,7 @@ DeleteContactFlowModuleOutcome ConnectClient::DeleteContactFlowModule(const Dele
 
 DeleteEvaluationFormOutcome ConnectClient::DeleteEvaluationForm(const DeleteEvaluationFormRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteEvaluationForm);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteEvaluationForm, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -947,6 +985,7 @@ DeleteEvaluationFormOutcome ConnectClient::DeleteEvaluationForm(const DeleteEval
 
 DeleteHoursOfOperationOutcome ConnectClient::DeleteHoursOfOperation(const DeleteHoursOfOperationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteHoursOfOperation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteHoursOfOperation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -968,6 +1007,7 @@ DeleteHoursOfOperationOutcome ConnectClient::DeleteHoursOfOperation(const Delete
 
 DeleteInstanceOutcome ConnectClient::DeleteInstance(const DeleteInstanceRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteInstance);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -983,6 +1023,7 @@ DeleteInstanceOutcome ConnectClient::DeleteInstance(const DeleteInstanceRequest&
 
 DeleteIntegrationAssociationOutcome ConnectClient::DeleteIntegrationAssociation(const DeleteIntegrationAssociationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteIntegrationAssociation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteIntegrationAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -1005,6 +1046,7 @@ DeleteIntegrationAssociationOutcome ConnectClient::DeleteIntegrationAssociation(
 
 DeletePromptOutcome ConnectClient::DeletePrompt(const DeletePromptRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeletePrompt);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeletePrompt, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -1026,6 +1068,7 @@ DeletePromptOutcome ConnectClient::DeletePrompt(const DeletePromptRequest& reque
 
 DeleteQuickConnectOutcome ConnectClient::DeleteQuickConnect(const DeleteQuickConnectRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteQuickConnect);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteQuickConnect, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -1047,6 +1090,7 @@ DeleteQuickConnectOutcome ConnectClient::DeleteQuickConnect(const DeleteQuickCon
 
 DeleteRuleOutcome ConnectClient::DeleteRule(const DeleteRuleRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteRule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -1068,6 +1112,7 @@ DeleteRuleOutcome ConnectClient::DeleteRule(const DeleteRuleRequest& request) co
 
 DeleteSecurityProfileOutcome ConnectClient::DeleteSecurityProfile(const DeleteSecurityProfileRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteSecurityProfile);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteSecurityProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -1089,6 +1134,7 @@ DeleteSecurityProfileOutcome ConnectClient::DeleteSecurityProfile(const DeleteSe
 
 DeleteTaskTemplateOutcome ConnectClient::DeleteTaskTemplate(const DeleteTaskTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteTaskTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteTaskTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -1111,6 +1157,7 @@ DeleteTaskTemplateOutcome ConnectClient::DeleteTaskTemplate(const DeleteTaskTemp
 
 DeleteTrafficDistributionGroupOutcome ConnectClient::DeleteTrafficDistributionGroup(const DeleteTrafficDistributionGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteTrafficDistributionGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteTrafficDistributionGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TrafficDistributionGroupIdHasBeenSet())
   {
@@ -1126,6 +1173,7 @@ DeleteTrafficDistributionGroupOutcome ConnectClient::DeleteTrafficDistributionGr
 
 DeleteUseCaseOutcome ConnectClient::DeleteUseCase(const DeleteUseCaseRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteUseCase);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteUseCase, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -1155,6 +1203,7 @@ DeleteUseCaseOutcome ConnectClient::DeleteUseCase(const DeleteUseCaseRequest& re
 
 DeleteUserOutcome ConnectClient::DeleteUser(const DeleteUserRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteUser);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -1176,6 +1225,7 @@ DeleteUserOutcome ConnectClient::DeleteUser(const DeleteUserRequest& request) co
 
 DeleteUserHierarchyGroupOutcome ConnectClient::DeleteUserHierarchyGroup(const DeleteUserHierarchyGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteUserHierarchyGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteUserHierarchyGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.HierarchyGroupIdHasBeenSet())
   {
@@ -1197,6 +1247,7 @@ DeleteUserHierarchyGroupOutcome ConnectClient::DeleteUserHierarchyGroup(const De
 
 DeleteVocabularyOutcome ConnectClient::DeleteVocabulary(const DeleteVocabularyRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteVocabulary);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteVocabulary, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -1218,6 +1269,7 @@ DeleteVocabularyOutcome ConnectClient::DeleteVocabulary(const DeleteVocabularyRe
 
 DescribeAgentStatusOutcome ConnectClient::DescribeAgentStatus(const DescribeAgentStatusRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeAgentStatus);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAgentStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -1239,6 +1291,7 @@ DescribeAgentStatusOutcome ConnectClient::DescribeAgentStatus(const DescribeAgen
 
 DescribeContactOutcome ConnectClient::DescribeContact(const DescribeContactRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeContact);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeContact, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -1260,6 +1313,7 @@ DescribeContactOutcome ConnectClient::DescribeContact(const DescribeContactReque
 
 DescribeContactEvaluationOutcome ConnectClient::DescribeContactEvaluation(const DescribeContactEvaluationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeContactEvaluation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeContactEvaluation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -1281,6 +1335,7 @@ DescribeContactEvaluationOutcome ConnectClient::DescribeContactEvaluation(const 
 
 DescribeContactFlowOutcome ConnectClient::DescribeContactFlow(const DescribeContactFlowRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeContactFlow);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeContactFlow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -1302,6 +1357,7 @@ DescribeContactFlowOutcome ConnectClient::DescribeContactFlow(const DescribeCont
 
 DescribeContactFlowModuleOutcome ConnectClient::DescribeContactFlowModule(const DescribeContactFlowModuleRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeContactFlowModule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeContactFlowModule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -1323,6 +1379,7 @@ DescribeContactFlowModuleOutcome ConnectClient::DescribeContactFlowModule(const 
 
 DescribeEvaluationFormOutcome ConnectClient::DescribeEvaluationForm(const DescribeEvaluationFormRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeEvaluationForm);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeEvaluationForm, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -1344,6 +1401,7 @@ DescribeEvaluationFormOutcome ConnectClient::DescribeEvaluationForm(const Descri
 
 DescribeHoursOfOperationOutcome ConnectClient::DescribeHoursOfOperation(const DescribeHoursOfOperationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeHoursOfOperation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeHoursOfOperation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -1365,6 +1423,7 @@ DescribeHoursOfOperationOutcome ConnectClient::DescribeHoursOfOperation(const De
 
 DescribeInstanceOutcome ConnectClient::DescribeInstance(const DescribeInstanceRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeInstance);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -1380,6 +1439,7 @@ DescribeInstanceOutcome ConnectClient::DescribeInstance(const DescribeInstanceRe
 
 DescribeInstanceAttributeOutcome ConnectClient::DescribeInstanceAttribute(const DescribeInstanceAttributeRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeInstanceAttribute);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeInstanceAttribute, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -1402,6 +1462,7 @@ DescribeInstanceAttributeOutcome ConnectClient::DescribeInstanceAttribute(const 
 
 DescribeInstanceStorageConfigOutcome ConnectClient::DescribeInstanceStorageConfig(const DescribeInstanceStorageConfigRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeInstanceStorageConfig);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeInstanceStorageConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -1429,6 +1490,7 @@ DescribeInstanceStorageConfigOutcome ConnectClient::DescribeInstanceStorageConfi
 
 DescribePhoneNumberOutcome ConnectClient::DescribePhoneNumber(const DescribePhoneNumberRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribePhoneNumber);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribePhoneNumber, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PhoneNumberIdHasBeenSet())
   {
@@ -1444,6 +1506,7 @@ DescribePhoneNumberOutcome ConnectClient::DescribePhoneNumber(const DescribePhon
 
 DescribePromptOutcome ConnectClient::DescribePrompt(const DescribePromptRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribePrompt);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribePrompt, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -1465,6 +1528,7 @@ DescribePromptOutcome ConnectClient::DescribePrompt(const DescribePromptRequest&
 
 DescribeQueueOutcome ConnectClient::DescribeQueue(const DescribeQueueRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeQueue);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeQueue, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -1486,6 +1550,7 @@ DescribeQueueOutcome ConnectClient::DescribeQueue(const DescribeQueueRequest& re
 
 DescribeQuickConnectOutcome ConnectClient::DescribeQuickConnect(const DescribeQuickConnectRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeQuickConnect);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeQuickConnect, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -1507,6 +1572,7 @@ DescribeQuickConnectOutcome ConnectClient::DescribeQuickConnect(const DescribeQu
 
 DescribeRoutingProfileOutcome ConnectClient::DescribeRoutingProfile(const DescribeRoutingProfileRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeRoutingProfile);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeRoutingProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -1528,6 +1594,7 @@ DescribeRoutingProfileOutcome ConnectClient::DescribeRoutingProfile(const Descri
 
 DescribeRuleOutcome ConnectClient::DescribeRule(const DescribeRuleRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeRule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -1549,6 +1616,7 @@ DescribeRuleOutcome ConnectClient::DescribeRule(const DescribeRuleRequest& reque
 
 DescribeSecurityProfileOutcome ConnectClient::DescribeSecurityProfile(const DescribeSecurityProfileRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeSecurityProfile);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeSecurityProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SecurityProfileIdHasBeenSet())
   {
@@ -1570,6 +1638,7 @@ DescribeSecurityProfileOutcome ConnectClient::DescribeSecurityProfile(const Desc
 
 DescribeTrafficDistributionGroupOutcome ConnectClient::DescribeTrafficDistributionGroup(const DescribeTrafficDistributionGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeTrafficDistributionGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeTrafficDistributionGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TrafficDistributionGroupIdHasBeenSet())
   {
@@ -1585,6 +1654,7 @@ DescribeTrafficDistributionGroupOutcome ConnectClient::DescribeTrafficDistributi
 
 DescribeUserOutcome ConnectClient::DescribeUser(const DescribeUserRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeUser);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.UserIdHasBeenSet())
   {
@@ -1606,6 +1676,7 @@ DescribeUserOutcome ConnectClient::DescribeUser(const DescribeUserRequest& reque
 
 DescribeUserHierarchyGroupOutcome ConnectClient::DescribeUserHierarchyGroup(const DescribeUserHierarchyGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeUserHierarchyGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeUserHierarchyGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.HierarchyGroupIdHasBeenSet())
   {
@@ -1627,6 +1698,7 @@ DescribeUserHierarchyGroupOutcome ConnectClient::DescribeUserHierarchyGroup(cons
 
 DescribeUserHierarchyStructureOutcome ConnectClient::DescribeUserHierarchyStructure(const DescribeUserHierarchyStructureRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeUserHierarchyStructure);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeUserHierarchyStructure, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -1642,6 +1714,7 @@ DescribeUserHierarchyStructureOutcome ConnectClient::DescribeUserHierarchyStruct
 
 DescribeVocabularyOutcome ConnectClient::DescribeVocabulary(const DescribeVocabularyRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeVocabulary);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeVocabulary, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -1663,6 +1736,7 @@ DescribeVocabularyOutcome ConnectClient::DescribeVocabulary(const DescribeVocabu
 
 DisassociateApprovedOriginOutcome ConnectClient::DisassociateApprovedOrigin(const DisassociateApprovedOriginRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociateApprovedOrigin);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateApprovedOrigin, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -1684,6 +1758,7 @@ DisassociateApprovedOriginOutcome ConnectClient::DisassociateApprovedOrigin(cons
 
 DisassociateBotOutcome ConnectClient::DisassociateBot(const DisassociateBotRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociateBot);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateBot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -1700,6 +1775,7 @@ DisassociateBotOutcome ConnectClient::DisassociateBot(const DisassociateBotReque
 
 DisassociateInstanceStorageConfigOutcome ConnectClient::DisassociateInstanceStorageConfig(const DisassociateInstanceStorageConfigRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociateInstanceStorageConfig);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateInstanceStorageConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -1727,6 +1803,7 @@ DisassociateInstanceStorageConfigOutcome ConnectClient::DisassociateInstanceStor
 
 DisassociateLambdaFunctionOutcome ConnectClient::DisassociateLambdaFunction(const DisassociateLambdaFunctionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociateLambdaFunction);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateLambdaFunction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -1748,6 +1825,7 @@ DisassociateLambdaFunctionOutcome ConnectClient::DisassociateLambdaFunction(cons
 
 DisassociateLexBotOutcome ConnectClient::DisassociateLexBot(const DisassociateLexBotRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociateLexBot);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateLexBot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -1774,6 +1852,7 @@ DisassociateLexBotOutcome ConnectClient::DisassociateLexBot(const DisassociateLe
 
 DisassociatePhoneNumberContactFlowOutcome ConnectClient::DisassociatePhoneNumberContactFlow(const DisassociatePhoneNumberContactFlowRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociatePhoneNumberContactFlow);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociatePhoneNumberContactFlow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PhoneNumberIdHasBeenSet())
   {
@@ -1795,6 +1874,7 @@ DisassociatePhoneNumberContactFlowOutcome ConnectClient::DisassociatePhoneNumber
 
 DisassociateQueueQuickConnectsOutcome ConnectClient::DisassociateQueueQuickConnects(const DisassociateQueueQuickConnectsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociateQueueQuickConnects);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateQueueQuickConnects, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -1817,6 +1897,7 @@ DisassociateQueueQuickConnectsOutcome ConnectClient::DisassociateQueueQuickConne
 
 DisassociateRoutingProfileQueuesOutcome ConnectClient::DisassociateRoutingProfileQueues(const DisassociateRoutingProfileQueuesRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociateRoutingProfileQueues);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateRoutingProfileQueues, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -1839,6 +1920,7 @@ DisassociateRoutingProfileQueuesOutcome ConnectClient::DisassociateRoutingProfil
 
 DisassociateSecurityKeyOutcome ConnectClient::DisassociateSecurityKey(const DisassociateSecurityKeyRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociateSecurityKey);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateSecurityKey, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -1861,6 +1943,7 @@ DisassociateSecurityKeyOutcome ConnectClient::DisassociateSecurityKey(const Disa
 
 DismissUserContactOutcome ConnectClient::DismissUserContact(const DismissUserContactRequest& request) const
 {
+  AWS_OPERATION_GUARD(DismissUserContact);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DismissUserContact, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.UserIdHasBeenSet())
   {
@@ -1883,6 +1966,7 @@ DismissUserContactOutcome ConnectClient::DismissUserContact(const DismissUserCon
 
 GetContactAttributesOutcome ConnectClient::GetContactAttributes(const GetContactAttributesRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetContactAttributes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetContactAttributes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -1904,6 +1988,7 @@ GetContactAttributesOutcome ConnectClient::GetContactAttributes(const GetContact
 
 GetCurrentMetricDataOutcome ConnectClient::GetCurrentMetricData(const GetCurrentMetricDataRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetCurrentMetricData);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCurrentMetricData, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -1919,6 +2004,7 @@ GetCurrentMetricDataOutcome ConnectClient::GetCurrentMetricData(const GetCurrent
 
 GetCurrentUserDataOutcome ConnectClient::GetCurrentUserData(const GetCurrentUserDataRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetCurrentUserData);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCurrentUserData, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -1934,6 +2020,7 @@ GetCurrentUserDataOutcome ConnectClient::GetCurrentUserData(const GetCurrentUser
 
 GetFederationTokenOutcome ConnectClient::GetFederationToken(const GetFederationTokenRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetFederationToken);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetFederationToken, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -1949,6 +2036,7 @@ GetFederationTokenOutcome ConnectClient::GetFederationToken(const GetFederationT
 
 GetMetricDataOutcome ConnectClient::GetMetricData(const GetMetricDataRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetMetricData);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMetricData, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -1964,6 +2052,7 @@ GetMetricDataOutcome ConnectClient::GetMetricData(const GetMetricDataRequest& re
 
 GetMetricDataV2Outcome ConnectClient::GetMetricDataV2(const GetMetricDataV2Request& request) const
 {
+  AWS_OPERATION_GUARD(GetMetricDataV2);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMetricDataV2, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetMetricDataV2, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1973,6 +2062,7 @@ GetMetricDataV2Outcome ConnectClient::GetMetricDataV2(const GetMetricDataV2Reque
 
 GetPromptFileOutcome ConnectClient::GetPromptFile(const GetPromptFileRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetPromptFile);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPromptFile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -1995,6 +2085,7 @@ GetPromptFileOutcome ConnectClient::GetPromptFile(const GetPromptFileRequest& re
 
 GetTaskTemplateOutcome ConnectClient::GetTaskTemplate(const GetTaskTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetTaskTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetTaskTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -2017,6 +2108,7 @@ GetTaskTemplateOutcome ConnectClient::GetTaskTemplate(const GetTaskTemplateReque
 
 GetTrafficDistributionOutcome ConnectClient::GetTrafficDistribution(const GetTrafficDistributionRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetTrafficDistribution);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetTrafficDistribution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -2032,6 +2124,7 @@ GetTrafficDistributionOutcome ConnectClient::GetTrafficDistribution(const GetTra
 
 ListAgentStatusesOutcome ConnectClient::ListAgentStatuses(const ListAgentStatusesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAgentStatuses);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAgentStatuses, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -2047,6 +2140,7 @@ ListAgentStatusesOutcome ConnectClient::ListAgentStatuses(const ListAgentStatuse
 
 ListApprovedOriginsOutcome ConnectClient::ListApprovedOrigins(const ListApprovedOriginsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListApprovedOrigins);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListApprovedOrigins, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -2063,6 +2157,7 @@ ListApprovedOriginsOutcome ConnectClient::ListApprovedOrigins(const ListApproved
 
 ListBotsOutcome ConnectClient::ListBots(const ListBotsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListBots);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListBots, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -2084,6 +2179,7 @@ ListBotsOutcome ConnectClient::ListBots(const ListBotsRequest& request) const
 
 ListContactEvaluationsOutcome ConnectClient::ListContactEvaluations(const ListContactEvaluationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListContactEvaluations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListContactEvaluations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -2104,6 +2200,7 @@ ListContactEvaluationsOutcome ConnectClient::ListContactEvaluations(const ListCo
 
 ListContactFlowModulesOutcome ConnectClient::ListContactFlowModules(const ListContactFlowModulesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListContactFlowModules);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListContactFlowModules, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -2119,6 +2216,7 @@ ListContactFlowModulesOutcome ConnectClient::ListContactFlowModules(const ListCo
 
 ListContactFlowsOutcome ConnectClient::ListContactFlows(const ListContactFlowsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListContactFlows);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListContactFlows, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -2134,6 +2232,7 @@ ListContactFlowsOutcome ConnectClient::ListContactFlows(const ListContactFlowsRe
 
 ListContactReferencesOutcome ConnectClient::ListContactReferences(const ListContactReferencesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListContactReferences);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListContactReferences, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -2160,6 +2259,7 @@ ListContactReferencesOutcome ConnectClient::ListContactReferences(const ListCont
 
 ListDefaultVocabulariesOutcome ConnectClient::ListDefaultVocabularies(const ListDefaultVocabulariesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDefaultVocabularies);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDefaultVocabularies, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -2175,6 +2275,7 @@ ListDefaultVocabulariesOutcome ConnectClient::ListDefaultVocabularies(const List
 
 ListEvaluationFormVersionsOutcome ConnectClient::ListEvaluationFormVersions(const ListEvaluationFormVersionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListEvaluationFormVersions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListEvaluationFormVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -2197,6 +2298,7 @@ ListEvaluationFormVersionsOutcome ConnectClient::ListEvaluationFormVersions(cons
 
 ListEvaluationFormsOutcome ConnectClient::ListEvaluationForms(const ListEvaluationFormsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListEvaluationForms);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListEvaluationForms, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -2212,6 +2314,7 @@ ListEvaluationFormsOutcome ConnectClient::ListEvaluationForms(const ListEvaluati
 
 ListHoursOfOperationsOutcome ConnectClient::ListHoursOfOperations(const ListHoursOfOperationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListHoursOfOperations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListHoursOfOperations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -2227,6 +2330,7 @@ ListHoursOfOperationsOutcome ConnectClient::ListHoursOfOperations(const ListHour
 
 ListInstanceAttributesOutcome ConnectClient::ListInstanceAttributes(const ListInstanceAttributesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListInstanceAttributes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListInstanceAttributes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -2243,6 +2347,7 @@ ListInstanceAttributesOutcome ConnectClient::ListInstanceAttributes(const ListIn
 
 ListInstanceStorageConfigsOutcome ConnectClient::ListInstanceStorageConfigs(const ListInstanceStorageConfigsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListInstanceStorageConfigs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListInstanceStorageConfigs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -2264,6 +2369,7 @@ ListInstanceStorageConfigsOutcome ConnectClient::ListInstanceStorageConfigs(cons
 
 ListInstancesOutcome ConnectClient::ListInstances(const ListInstancesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListInstances);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListInstances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListInstances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2273,6 +2379,7 @@ ListInstancesOutcome ConnectClient::ListInstances(const ListInstancesRequest& re
 
 ListIntegrationAssociationsOutcome ConnectClient::ListIntegrationAssociations(const ListIntegrationAssociationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListIntegrationAssociations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListIntegrationAssociations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -2289,6 +2396,7 @@ ListIntegrationAssociationsOutcome ConnectClient::ListIntegrationAssociations(co
 
 ListLambdaFunctionsOutcome ConnectClient::ListLambdaFunctions(const ListLambdaFunctionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListLambdaFunctions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListLambdaFunctions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -2305,6 +2413,7 @@ ListLambdaFunctionsOutcome ConnectClient::ListLambdaFunctions(const ListLambdaFu
 
 ListLexBotsOutcome ConnectClient::ListLexBots(const ListLexBotsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListLexBots);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListLexBots, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -2321,6 +2430,7 @@ ListLexBotsOutcome ConnectClient::ListLexBots(const ListLexBotsRequest& request)
 
 ListPhoneNumbersOutcome ConnectClient::ListPhoneNumbers(const ListPhoneNumbersRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListPhoneNumbers);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPhoneNumbers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -2336,6 +2446,7 @@ ListPhoneNumbersOutcome ConnectClient::ListPhoneNumbers(const ListPhoneNumbersRe
 
 ListPhoneNumbersV2Outcome ConnectClient::ListPhoneNumbersV2(const ListPhoneNumbersV2Request& request) const
 {
+  AWS_OPERATION_GUARD(ListPhoneNumbersV2);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPhoneNumbersV2, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListPhoneNumbersV2, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2345,6 +2456,7 @@ ListPhoneNumbersV2Outcome ConnectClient::ListPhoneNumbersV2(const ListPhoneNumbe
 
 ListPromptsOutcome ConnectClient::ListPrompts(const ListPromptsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListPrompts);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPrompts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -2360,6 +2472,7 @@ ListPromptsOutcome ConnectClient::ListPrompts(const ListPromptsRequest& request)
 
 ListQueueQuickConnectsOutcome ConnectClient::ListQueueQuickConnects(const ListQueueQuickConnectsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListQueueQuickConnects);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListQueueQuickConnects, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -2382,6 +2495,7 @@ ListQueueQuickConnectsOutcome ConnectClient::ListQueueQuickConnects(const ListQu
 
 ListQueuesOutcome ConnectClient::ListQueues(const ListQueuesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListQueues);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListQueues, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -2397,6 +2511,7 @@ ListQueuesOutcome ConnectClient::ListQueues(const ListQueuesRequest& request) co
 
 ListQuickConnectsOutcome ConnectClient::ListQuickConnects(const ListQuickConnectsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListQuickConnects);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListQuickConnects, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -2412,6 +2527,7 @@ ListQuickConnectsOutcome ConnectClient::ListQuickConnects(const ListQuickConnect
 
 ListRoutingProfileQueuesOutcome ConnectClient::ListRoutingProfileQueues(const ListRoutingProfileQueuesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListRoutingProfileQueues);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRoutingProfileQueues, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -2434,6 +2550,7 @@ ListRoutingProfileQueuesOutcome ConnectClient::ListRoutingProfileQueues(const Li
 
 ListRoutingProfilesOutcome ConnectClient::ListRoutingProfiles(const ListRoutingProfilesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListRoutingProfiles);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRoutingProfiles, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -2449,6 +2566,7 @@ ListRoutingProfilesOutcome ConnectClient::ListRoutingProfiles(const ListRoutingP
 
 ListRulesOutcome ConnectClient::ListRules(const ListRulesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListRules);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRules, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -2464,6 +2582,7 @@ ListRulesOutcome ConnectClient::ListRules(const ListRulesRequest& request) const
 
 ListSecurityKeysOutcome ConnectClient::ListSecurityKeys(const ListSecurityKeysRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListSecurityKeys);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSecurityKeys, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -2480,6 +2599,7 @@ ListSecurityKeysOutcome ConnectClient::ListSecurityKeys(const ListSecurityKeysRe
 
 ListSecurityProfilePermissionsOutcome ConnectClient::ListSecurityProfilePermissions(const ListSecurityProfilePermissionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListSecurityProfilePermissions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSecurityProfilePermissions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SecurityProfileIdHasBeenSet())
   {
@@ -2501,6 +2621,7 @@ ListSecurityProfilePermissionsOutcome ConnectClient::ListSecurityProfilePermissi
 
 ListSecurityProfilesOutcome ConnectClient::ListSecurityProfiles(const ListSecurityProfilesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListSecurityProfiles);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSecurityProfiles, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -2516,6 +2637,7 @@ ListSecurityProfilesOutcome ConnectClient::ListSecurityProfiles(const ListSecuri
 
 ListTagsForResourceOutcome ConnectClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -2531,6 +2653,7 @@ ListTagsForResourceOutcome ConnectClient::ListTagsForResource(const ListTagsForR
 
 ListTaskTemplatesOutcome ConnectClient::ListTaskTemplates(const ListTaskTemplatesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTaskTemplates);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTaskTemplates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -2547,6 +2670,7 @@ ListTaskTemplatesOutcome ConnectClient::ListTaskTemplates(const ListTaskTemplate
 
 ListTrafficDistributionGroupsOutcome ConnectClient::ListTrafficDistributionGroups(const ListTrafficDistributionGroupsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTrafficDistributionGroups);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTrafficDistributionGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTrafficDistributionGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2556,6 +2680,7 @@ ListTrafficDistributionGroupsOutcome ConnectClient::ListTrafficDistributionGroup
 
 ListUseCasesOutcome ConnectClient::ListUseCases(const ListUseCasesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListUseCases);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListUseCases, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -2579,6 +2704,7 @@ ListUseCasesOutcome ConnectClient::ListUseCases(const ListUseCasesRequest& reque
 
 ListUserHierarchyGroupsOutcome ConnectClient::ListUserHierarchyGroups(const ListUserHierarchyGroupsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListUserHierarchyGroups);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListUserHierarchyGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -2594,6 +2720,7 @@ ListUserHierarchyGroupsOutcome ConnectClient::ListUserHierarchyGroups(const List
 
 ListUsersOutcome ConnectClient::ListUsers(const ListUsersRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListUsers);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListUsers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -2609,6 +2736,7 @@ ListUsersOutcome ConnectClient::ListUsers(const ListUsersRequest& request) const
 
 MonitorContactOutcome ConnectClient::MonitorContact(const MonitorContactRequest& request) const
 {
+  AWS_OPERATION_GUARD(MonitorContact);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, MonitorContact, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, MonitorContact, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2618,6 +2746,7 @@ MonitorContactOutcome ConnectClient::MonitorContact(const MonitorContactRequest&
 
 PutUserStatusOutcome ConnectClient::PutUserStatus(const PutUserStatusRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutUserStatus);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutUserStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.UserIdHasBeenSet())
   {
@@ -2640,6 +2769,7 @@ PutUserStatusOutcome ConnectClient::PutUserStatus(const PutUserStatusRequest& re
 
 ReleasePhoneNumberOutcome ConnectClient::ReleasePhoneNumber(const ReleasePhoneNumberRequest& request) const
 {
+  AWS_OPERATION_GUARD(ReleasePhoneNumber);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ReleasePhoneNumber, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PhoneNumberIdHasBeenSet())
   {
@@ -2655,6 +2785,7 @@ ReleasePhoneNumberOutcome ConnectClient::ReleasePhoneNumber(const ReleasePhoneNu
 
 ReplicateInstanceOutcome ConnectClient::ReplicateInstance(const ReplicateInstanceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ReplicateInstance);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ReplicateInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -2671,6 +2802,7 @@ ReplicateInstanceOutcome ConnectClient::ReplicateInstance(const ReplicateInstanc
 
 ResumeContactRecordingOutcome ConnectClient::ResumeContactRecording(const ResumeContactRecordingRequest& request) const
 {
+  AWS_OPERATION_GUARD(ResumeContactRecording);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ResumeContactRecording, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ResumeContactRecording, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2680,6 +2812,7 @@ ResumeContactRecordingOutcome ConnectClient::ResumeContactRecording(const Resume
 
 SearchAvailablePhoneNumbersOutcome ConnectClient::SearchAvailablePhoneNumbers(const SearchAvailablePhoneNumbersRequest& request) const
 {
+  AWS_OPERATION_GUARD(SearchAvailablePhoneNumbers);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SearchAvailablePhoneNumbers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SearchAvailablePhoneNumbers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2689,6 +2822,7 @@ SearchAvailablePhoneNumbersOutcome ConnectClient::SearchAvailablePhoneNumbers(co
 
 SearchQueuesOutcome ConnectClient::SearchQueues(const SearchQueuesRequest& request) const
 {
+  AWS_OPERATION_GUARD(SearchQueues);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SearchQueues, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SearchQueues, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2698,6 +2832,7 @@ SearchQueuesOutcome ConnectClient::SearchQueues(const SearchQueuesRequest& reque
 
 SearchRoutingProfilesOutcome ConnectClient::SearchRoutingProfiles(const SearchRoutingProfilesRequest& request) const
 {
+  AWS_OPERATION_GUARD(SearchRoutingProfiles);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SearchRoutingProfiles, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SearchRoutingProfiles, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2707,6 +2842,7 @@ SearchRoutingProfilesOutcome ConnectClient::SearchRoutingProfiles(const SearchRo
 
 SearchSecurityProfilesOutcome ConnectClient::SearchSecurityProfiles(const SearchSecurityProfilesRequest& request) const
 {
+  AWS_OPERATION_GUARD(SearchSecurityProfiles);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SearchSecurityProfiles, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SearchSecurityProfiles, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2716,6 +2852,7 @@ SearchSecurityProfilesOutcome ConnectClient::SearchSecurityProfiles(const Search
 
 SearchUsersOutcome ConnectClient::SearchUsers(const SearchUsersRequest& request) const
 {
+  AWS_OPERATION_GUARD(SearchUsers);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SearchUsers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SearchUsers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2725,6 +2862,7 @@ SearchUsersOutcome ConnectClient::SearchUsers(const SearchUsersRequest& request)
 
 SearchVocabulariesOutcome ConnectClient::SearchVocabularies(const SearchVocabulariesRequest& request) const
 {
+  AWS_OPERATION_GUARD(SearchVocabularies);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SearchVocabularies, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -2740,6 +2878,7 @@ SearchVocabulariesOutcome ConnectClient::SearchVocabularies(const SearchVocabula
 
 StartChatContactOutcome ConnectClient::StartChatContact(const StartChatContactRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartChatContact);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartChatContact, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartChatContact, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2749,6 +2888,7 @@ StartChatContactOutcome ConnectClient::StartChatContact(const StartChatContactRe
 
 StartContactEvaluationOutcome ConnectClient::StartContactEvaluation(const StartContactEvaluationRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartContactEvaluation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartContactEvaluation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -2764,6 +2904,7 @@ StartContactEvaluationOutcome ConnectClient::StartContactEvaluation(const StartC
 
 StartContactRecordingOutcome ConnectClient::StartContactRecording(const StartContactRecordingRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartContactRecording);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartContactRecording, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartContactRecording, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2773,6 +2914,7 @@ StartContactRecordingOutcome ConnectClient::StartContactRecording(const StartCon
 
 StartContactStreamingOutcome ConnectClient::StartContactStreaming(const StartContactStreamingRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartContactStreaming);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartContactStreaming, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartContactStreaming, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2782,6 +2924,7 @@ StartContactStreamingOutcome ConnectClient::StartContactStreaming(const StartCon
 
 StartOutboundVoiceContactOutcome ConnectClient::StartOutboundVoiceContact(const StartOutboundVoiceContactRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartOutboundVoiceContact);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartOutboundVoiceContact, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartOutboundVoiceContact, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2791,6 +2934,7 @@ StartOutboundVoiceContactOutcome ConnectClient::StartOutboundVoiceContact(const 
 
 StartTaskContactOutcome ConnectClient::StartTaskContact(const StartTaskContactRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartTaskContact);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartTaskContact, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartTaskContact, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2800,6 +2944,7 @@ StartTaskContactOutcome ConnectClient::StartTaskContact(const StartTaskContactRe
 
 StopContactOutcome ConnectClient::StopContact(const StopContactRequest& request) const
 {
+  AWS_OPERATION_GUARD(StopContact);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopContact, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StopContact, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2809,6 +2954,7 @@ StopContactOutcome ConnectClient::StopContact(const StopContactRequest& request)
 
 StopContactRecordingOutcome ConnectClient::StopContactRecording(const StopContactRecordingRequest& request) const
 {
+  AWS_OPERATION_GUARD(StopContactRecording);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopContactRecording, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StopContactRecording, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2818,6 +2964,7 @@ StopContactRecordingOutcome ConnectClient::StopContactRecording(const StopContac
 
 StopContactStreamingOutcome ConnectClient::StopContactStreaming(const StopContactStreamingRequest& request) const
 {
+  AWS_OPERATION_GUARD(StopContactStreaming);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopContactStreaming, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StopContactStreaming, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2827,6 +2974,7 @@ StopContactStreamingOutcome ConnectClient::StopContactStreaming(const StopContac
 
 SubmitContactEvaluationOutcome ConnectClient::SubmitContactEvaluation(const SubmitContactEvaluationRequest& request) const
 {
+  AWS_OPERATION_GUARD(SubmitContactEvaluation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SubmitContactEvaluation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -2849,6 +2997,7 @@ SubmitContactEvaluationOutcome ConnectClient::SubmitContactEvaluation(const Subm
 
 SuspendContactRecordingOutcome ConnectClient::SuspendContactRecording(const SuspendContactRecordingRequest& request) const
 {
+  AWS_OPERATION_GUARD(SuspendContactRecording);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SuspendContactRecording, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SuspendContactRecording, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2858,6 +3007,7 @@ SuspendContactRecordingOutcome ConnectClient::SuspendContactRecording(const Susp
 
 TagResourceOutcome ConnectClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -2873,6 +3023,7 @@ TagResourceOutcome ConnectClient::TagResource(const TagResourceRequest& request)
 
 TransferContactOutcome ConnectClient::TransferContact(const TransferContactRequest& request) const
 {
+  AWS_OPERATION_GUARD(TransferContact);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TransferContact, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TransferContact, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2882,6 +3033,7 @@ TransferContactOutcome ConnectClient::TransferContact(const TransferContactReque
 
 UntagResourceOutcome ConnectClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -2902,6 +3054,7 @@ UntagResourceOutcome ConnectClient::UntagResource(const UntagResourceRequest& re
 
 UpdateAgentStatusOutcome ConnectClient::UpdateAgentStatus(const UpdateAgentStatusRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateAgentStatus);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAgentStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -2923,6 +3076,7 @@ UpdateAgentStatusOutcome ConnectClient::UpdateAgentStatus(const UpdateAgentStatu
 
 UpdateContactOutcome ConnectClient::UpdateContact(const UpdateContactRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateContact);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateContact, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -2944,6 +3098,7 @@ UpdateContactOutcome ConnectClient::UpdateContact(const UpdateContactRequest& re
 
 UpdateContactAttributesOutcome ConnectClient::UpdateContactAttributes(const UpdateContactAttributesRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateContactAttributes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateContactAttributes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateContactAttributes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2953,6 +3108,7 @@ UpdateContactAttributesOutcome ConnectClient::UpdateContactAttributes(const Upda
 
 UpdateContactEvaluationOutcome ConnectClient::UpdateContactEvaluation(const UpdateContactEvaluationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateContactEvaluation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateContactEvaluation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -2974,6 +3130,7 @@ UpdateContactEvaluationOutcome ConnectClient::UpdateContactEvaluation(const Upda
 
 UpdateContactFlowContentOutcome ConnectClient::UpdateContactFlowContent(const UpdateContactFlowContentRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateContactFlowContent);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateContactFlowContent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -2996,6 +3153,7 @@ UpdateContactFlowContentOutcome ConnectClient::UpdateContactFlowContent(const Up
 
 UpdateContactFlowMetadataOutcome ConnectClient::UpdateContactFlowMetadata(const UpdateContactFlowMetadataRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateContactFlowMetadata);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateContactFlowMetadata, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -3018,6 +3176,7 @@ UpdateContactFlowMetadataOutcome ConnectClient::UpdateContactFlowMetadata(const 
 
 UpdateContactFlowModuleContentOutcome ConnectClient::UpdateContactFlowModuleContent(const UpdateContactFlowModuleContentRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateContactFlowModuleContent);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateContactFlowModuleContent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -3040,6 +3199,7 @@ UpdateContactFlowModuleContentOutcome ConnectClient::UpdateContactFlowModuleCont
 
 UpdateContactFlowModuleMetadataOutcome ConnectClient::UpdateContactFlowModuleMetadata(const UpdateContactFlowModuleMetadataRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateContactFlowModuleMetadata);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateContactFlowModuleMetadata, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -3062,6 +3222,7 @@ UpdateContactFlowModuleMetadataOutcome ConnectClient::UpdateContactFlowModuleMet
 
 UpdateContactFlowNameOutcome ConnectClient::UpdateContactFlowName(const UpdateContactFlowNameRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateContactFlowName);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateContactFlowName, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -3084,6 +3245,7 @@ UpdateContactFlowNameOutcome ConnectClient::UpdateContactFlowName(const UpdateCo
 
 UpdateContactScheduleOutcome ConnectClient::UpdateContactSchedule(const UpdateContactScheduleRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateContactSchedule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateContactSchedule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateContactSchedule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -3093,6 +3255,7 @@ UpdateContactScheduleOutcome ConnectClient::UpdateContactSchedule(const UpdateCo
 
 UpdateEvaluationFormOutcome ConnectClient::UpdateEvaluationForm(const UpdateEvaluationFormRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateEvaluationForm);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateEvaluationForm, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -3114,6 +3277,7 @@ UpdateEvaluationFormOutcome ConnectClient::UpdateEvaluationForm(const UpdateEval
 
 UpdateHoursOfOperationOutcome ConnectClient::UpdateHoursOfOperation(const UpdateHoursOfOperationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateHoursOfOperation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateHoursOfOperation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -3135,6 +3299,7 @@ UpdateHoursOfOperationOutcome ConnectClient::UpdateHoursOfOperation(const Update
 
 UpdateInstanceAttributeOutcome ConnectClient::UpdateInstanceAttribute(const UpdateInstanceAttributeRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateInstanceAttribute);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateInstanceAttribute, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -3157,6 +3322,7 @@ UpdateInstanceAttributeOutcome ConnectClient::UpdateInstanceAttribute(const Upda
 
 UpdateInstanceStorageConfigOutcome ConnectClient::UpdateInstanceStorageConfig(const UpdateInstanceStorageConfigRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateInstanceStorageConfig);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateInstanceStorageConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -3184,6 +3350,7 @@ UpdateInstanceStorageConfigOutcome ConnectClient::UpdateInstanceStorageConfig(co
 
 UpdateParticipantRoleConfigOutcome ConnectClient::UpdateParticipantRoleConfig(const UpdateParticipantRoleConfigRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateParticipantRoleConfig);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateParticipantRoleConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -3205,6 +3372,7 @@ UpdateParticipantRoleConfigOutcome ConnectClient::UpdateParticipantRoleConfig(co
 
 UpdatePhoneNumberOutcome ConnectClient::UpdatePhoneNumber(const UpdatePhoneNumberRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdatePhoneNumber);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdatePhoneNumber, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PhoneNumberIdHasBeenSet())
   {
@@ -3220,6 +3388,7 @@ UpdatePhoneNumberOutcome ConnectClient::UpdatePhoneNumber(const UpdatePhoneNumbe
 
 UpdatePromptOutcome ConnectClient::UpdatePrompt(const UpdatePromptRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdatePrompt);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdatePrompt, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -3241,6 +3410,7 @@ UpdatePromptOutcome ConnectClient::UpdatePrompt(const UpdatePromptRequest& reque
 
 UpdateQueueHoursOfOperationOutcome ConnectClient::UpdateQueueHoursOfOperation(const UpdateQueueHoursOfOperationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateQueueHoursOfOperation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateQueueHoursOfOperation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -3263,6 +3433,7 @@ UpdateQueueHoursOfOperationOutcome ConnectClient::UpdateQueueHoursOfOperation(co
 
 UpdateQueueMaxContactsOutcome ConnectClient::UpdateQueueMaxContacts(const UpdateQueueMaxContactsRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateQueueMaxContacts);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateQueueMaxContacts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -3285,6 +3456,7 @@ UpdateQueueMaxContactsOutcome ConnectClient::UpdateQueueMaxContacts(const Update
 
 UpdateQueueNameOutcome ConnectClient::UpdateQueueName(const UpdateQueueNameRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateQueueName);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateQueueName, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -3307,6 +3479,7 @@ UpdateQueueNameOutcome ConnectClient::UpdateQueueName(const UpdateQueueNameReque
 
 UpdateQueueOutboundCallerConfigOutcome ConnectClient::UpdateQueueOutboundCallerConfig(const UpdateQueueOutboundCallerConfigRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateQueueOutboundCallerConfig);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateQueueOutboundCallerConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -3329,6 +3502,7 @@ UpdateQueueOutboundCallerConfigOutcome ConnectClient::UpdateQueueOutboundCallerC
 
 UpdateQueueStatusOutcome ConnectClient::UpdateQueueStatus(const UpdateQueueStatusRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateQueueStatus);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateQueueStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -3351,6 +3525,7 @@ UpdateQueueStatusOutcome ConnectClient::UpdateQueueStatus(const UpdateQueueStatu
 
 UpdateQuickConnectConfigOutcome ConnectClient::UpdateQuickConnectConfig(const UpdateQuickConnectConfigRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateQuickConnectConfig);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateQuickConnectConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -3373,6 +3548,7 @@ UpdateQuickConnectConfigOutcome ConnectClient::UpdateQuickConnectConfig(const Up
 
 UpdateQuickConnectNameOutcome ConnectClient::UpdateQuickConnectName(const UpdateQuickConnectNameRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateQuickConnectName);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateQuickConnectName, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -3395,6 +3571,7 @@ UpdateQuickConnectNameOutcome ConnectClient::UpdateQuickConnectName(const Update
 
 UpdateRoutingProfileConcurrencyOutcome ConnectClient::UpdateRoutingProfileConcurrency(const UpdateRoutingProfileConcurrencyRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateRoutingProfileConcurrency);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateRoutingProfileConcurrency, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -3417,6 +3594,7 @@ UpdateRoutingProfileConcurrencyOutcome ConnectClient::UpdateRoutingProfileConcur
 
 UpdateRoutingProfileDefaultOutboundQueueOutcome ConnectClient::UpdateRoutingProfileDefaultOutboundQueue(const UpdateRoutingProfileDefaultOutboundQueueRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateRoutingProfileDefaultOutboundQueue);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateRoutingProfileDefaultOutboundQueue, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -3439,6 +3617,7 @@ UpdateRoutingProfileDefaultOutboundQueueOutcome ConnectClient::UpdateRoutingProf
 
 UpdateRoutingProfileNameOutcome ConnectClient::UpdateRoutingProfileName(const UpdateRoutingProfileNameRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateRoutingProfileName);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateRoutingProfileName, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -3461,6 +3640,7 @@ UpdateRoutingProfileNameOutcome ConnectClient::UpdateRoutingProfileName(const Up
 
 UpdateRoutingProfileQueuesOutcome ConnectClient::UpdateRoutingProfileQueues(const UpdateRoutingProfileQueuesRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateRoutingProfileQueues);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateRoutingProfileQueues, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -3483,6 +3663,7 @@ UpdateRoutingProfileQueuesOutcome ConnectClient::UpdateRoutingProfileQueues(cons
 
 UpdateRuleOutcome ConnectClient::UpdateRule(const UpdateRuleRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateRule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RuleIdHasBeenSet())
   {
@@ -3504,6 +3685,7 @@ UpdateRuleOutcome ConnectClient::UpdateRule(const UpdateRuleRequest& request) co
 
 UpdateSecurityProfileOutcome ConnectClient::UpdateSecurityProfile(const UpdateSecurityProfileRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateSecurityProfile);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateSecurityProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SecurityProfileIdHasBeenSet())
   {
@@ -3525,6 +3707,7 @@ UpdateSecurityProfileOutcome ConnectClient::UpdateSecurityProfile(const UpdateSe
 
 UpdateTaskTemplateOutcome ConnectClient::UpdateTaskTemplate(const UpdateTaskTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateTaskTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateTaskTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TaskTemplateIdHasBeenSet())
   {
@@ -3547,6 +3730,7 @@ UpdateTaskTemplateOutcome ConnectClient::UpdateTaskTemplate(const UpdateTaskTemp
 
 UpdateTrafficDistributionOutcome ConnectClient::UpdateTrafficDistribution(const UpdateTrafficDistributionRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateTrafficDistribution);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateTrafficDistribution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -3562,6 +3746,7 @@ UpdateTrafficDistributionOutcome ConnectClient::UpdateTrafficDistribution(const 
 
 UpdateUserHierarchyOutcome ConnectClient::UpdateUserHierarchy(const UpdateUserHierarchyRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateUserHierarchy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateUserHierarchy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.UserIdHasBeenSet())
   {
@@ -3584,6 +3769,7 @@ UpdateUserHierarchyOutcome ConnectClient::UpdateUserHierarchy(const UpdateUserHi
 
 UpdateUserHierarchyGroupNameOutcome ConnectClient::UpdateUserHierarchyGroupName(const UpdateUserHierarchyGroupNameRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateUserHierarchyGroupName);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateUserHierarchyGroupName, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.HierarchyGroupIdHasBeenSet())
   {
@@ -3606,6 +3792,7 @@ UpdateUserHierarchyGroupNameOutcome ConnectClient::UpdateUserHierarchyGroupName(
 
 UpdateUserHierarchyStructureOutcome ConnectClient::UpdateUserHierarchyStructure(const UpdateUserHierarchyStructureRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateUserHierarchyStructure);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateUserHierarchyStructure, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceIdHasBeenSet())
   {
@@ -3621,6 +3808,7 @@ UpdateUserHierarchyStructureOutcome ConnectClient::UpdateUserHierarchyStructure(
 
 UpdateUserIdentityInfoOutcome ConnectClient::UpdateUserIdentityInfo(const UpdateUserIdentityInfoRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateUserIdentityInfo);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateUserIdentityInfo, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.UserIdHasBeenSet())
   {
@@ -3643,6 +3831,7 @@ UpdateUserIdentityInfoOutcome ConnectClient::UpdateUserIdentityInfo(const Update
 
 UpdateUserPhoneConfigOutcome ConnectClient::UpdateUserPhoneConfig(const UpdateUserPhoneConfigRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateUserPhoneConfig);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateUserPhoneConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.UserIdHasBeenSet())
   {
@@ -3665,6 +3854,7 @@ UpdateUserPhoneConfigOutcome ConnectClient::UpdateUserPhoneConfig(const UpdateUs
 
 UpdateUserRoutingProfileOutcome ConnectClient::UpdateUserRoutingProfile(const UpdateUserRoutingProfileRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateUserRoutingProfile);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateUserRoutingProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.UserIdHasBeenSet())
   {
@@ -3687,6 +3877,7 @@ UpdateUserRoutingProfileOutcome ConnectClient::UpdateUserRoutingProfile(const Up
 
 UpdateUserSecurityProfilesOutcome ConnectClient::UpdateUserSecurityProfiles(const UpdateUserSecurityProfilesRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateUserSecurityProfiles);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateUserSecurityProfiles, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.UserIdHasBeenSet())
   {

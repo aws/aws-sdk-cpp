@@ -144,6 +144,7 @@ EMRServerlessClient::EMRServerlessClient(const std::shared_ptr<AWSCredentialsPro
     /* End of legacy constructors due deprecation */
 EMRServerlessClient::~EMRServerlessClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<EMRServerlessEndpointProviderBase>& EMRServerlessClient::accessEndpointProvider()
@@ -166,6 +167,7 @@ void EMRServerlessClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CancelJobRunOutcome EMRServerlessClient::CancelJobRun(const CancelJobRunRequest& request) const
 {
+  AWS_OPERATION_GUARD(CancelJobRun);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CancelJobRun, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -188,6 +190,7 @@ CancelJobRunOutcome EMRServerlessClient::CancelJobRun(const CancelJobRunRequest&
 
 CreateApplicationOutcome EMRServerlessClient::CreateApplication(const CreateApplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateApplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -197,6 +200,7 @@ CreateApplicationOutcome EMRServerlessClient::CreateApplication(const CreateAppl
 
 DeleteApplicationOutcome EMRServerlessClient::DeleteApplication(const DeleteApplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteApplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -212,6 +216,7 @@ DeleteApplicationOutcome EMRServerlessClient::DeleteApplication(const DeleteAppl
 
 GetApplicationOutcome EMRServerlessClient::GetApplication(const GetApplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetApplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -227,6 +232,7 @@ GetApplicationOutcome EMRServerlessClient::GetApplication(const GetApplicationRe
 
 GetDashboardForJobRunOutcome EMRServerlessClient::GetDashboardForJobRun(const GetDashboardForJobRunRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDashboardForJobRun);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDashboardForJobRun, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -250,6 +256,7 @@ GetDashboardForJobRunOutcome EMRServerlessClient::GetDashboardForJobRun(const Ge
 
 GetJobRunOutcome EMRServerlessClient::GetJobRun(const GetJobRunRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetJobRun);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetJobRun, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -272,6 +279,7 @@ GetJobRunOutcome EMRServerlessClient::GetJobRun(const GetJobRunRequest& request)
 
 ListApplicationsOutcome EMRServerlessClient::ListApplications(const ListApplicationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListApplications);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListApplications, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListApplications, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -281,6 +289,7 @@ ListApplicationsOutcome EMRServerlessClient::ListApplications(const ListApplicat
 
 ListJobRunsOutcome EMRServerlessClient::ListJobRuns(const ListJobRunsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListJobRuns);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListJobRuns, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -297,6 +306,7 @@ ListJobRunsOutcome EMRServerlessClient::ListJobRuns(const ListJobRunsRequest& re
 
 ListTagsForResourceOutcome EMRServerlessClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -312,6 +322,7 @@ ListTagsForResourceOutcome EMRServerlessClient::ListTagsForResource(const ListTa
 
 StartApplicationOutcome EMRServerlessClient::StartApplication(const StartApplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartApplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -328,6 +339,7 @@ StartApplicationOutcome EMRServerlessClient::StartApplication(const StartApplica
 
 StartJobRunOutcome EMRServerlessClient::StartJobRun(const StartJobRunRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartJobRun);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartJobRun, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -344,6 +356,7 @@ StartJobRunOutcome EMRServerlessClient::StartJobRun(const StartJobRunRequest& re
 
 StopApplicationOutcome EMRServerlessClient::StopApplication(const StopApplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(StopApplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -360,6 +373,7 @@ StopApplicationOutcome EMRServerlessClient::StopApplication(const StopApplicatio
 
 TagResourceOutcome EMRServerlessClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -375,6 +389,7 @@ TagResourceOutcome EMRServerlessClient::TagResource(const TagResourceRequest& re
 
 UntagResourceOutcome EMRServerlessClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -395,6 +410,7 @@ UntagResourceOutcome EMRServerlessClient::UntagResource(const UntagResourceReque
 
 UpdateApplicationOutcome EMRServerlessClient::UpdateApplication(const UpdateApplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateApplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {

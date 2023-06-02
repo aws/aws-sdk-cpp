@@ -151,6 +151,7 @@ AmplifyUIBuilderClient::AmplifyUIBuilderClient(const std::shared_ptr<AWSCredenti
     /* End of legacy constructors due deprecation */
 AmplifyUIBuilderClient::~AmplifyUIBuilderClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<AmplifyUIBuilderEndpointProviderBase>& AmplifyUIBuilderClient::accessEndpointProvider()
@@ -173,6 +174,7 @@ void AmplifyUIBuilderClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CreateComponentOutcome AmplifyUIBuilderClient::CreateComponent(const CreateComponentRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateComponent);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateComponent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -196,6 +198,7 @@ CreateComponentOutcome AmplifyUIBuilderClient::CreateComponent(const CreateCompo
 
 CreateFormOutcome AmplifyUIBuilderClient::CreateForm(const CreateFormRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateForm);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateForm, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -219,6 +222,7 @@ CreateFormOutcome AmplifyUIBuilderClient::CreateForm(const CreateFormRequest& re
 
 CreateThemeOutcome AmplifyUIBuilderClient::CreateTheme(const CreateThemeRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateTheme);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateTheme, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -242,6 +246,7 @@ CreateThemeOutcome AmplifyUIBuilderClient::CreateTheme(const CreateThemeRequest&
 
 DeleteComponentOutcome AmplifyUIBuilderClient::DeleteComponent(const DeleteComponentRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteComponent);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteComponent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -271,6 +276,7 @@ DeleteComponentOutcome AmplifyUIBuilderClient::DeleteComponent(const DeleteCompo
 
 DeleteFormOutcome AmplifyUIBuilderClient::DeleteForm(const DeleteFormRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteForm);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteForm, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -300,6 +306,7 @@ DeleteFormOutcome AmplifyUIBuilderClient::DeleteForm(const DeleteFormRequest& re
 
 DeleteThemeOutcome AmplifyUIBuilderClient::DeleteTheme(const DeleteThemeRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteTheme);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteTheme, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -329,6 +336,7 @@ DeleteThemeOutcome AmplifyUIBuilderClient::DeleteTheme(const DeleteThemeRequest&
 
 ExchangeCodeForTokenOutcome AmplifyUIBuilderClient::ExchangeCodeForToken(const ExchangeCodeForTokenRequest& request) const
 {
+  AWS_OPERATION_GUARD(ExchangeCodeForToken);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ExchangeCodeForToken, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProviderHasBeenSet())
   {
@@ -344,6 +352,7 @@ ExchangeCodeForTokenOutcome AmplifyUIBuilderClient::ExchangeCodeForToken(const E
 
 ExportComponentsOutcome AmplifyUIBuilderClient::ExportComponents(const ExportComponentsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ExportComponents);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ExportComponents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -367,6 +376,7 @@ ExportComponentsOutcome AmplifyUIBuilderClient::ExportComponents(const ExportCom
 
 ExportFormsOutcome AmplifyUIBuilderClient::ExportForms(const ExportFormsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ExportForms);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ExportForms, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -390,6 +400,7 @@ ExportFormsOutcome AmplifyUIBuilderClient::ExportForms(const ExportFormsRequest&
 
 ExportThemesOutcome AmplifyUIBuilderClient::ExportThemes(const ExportThemesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ExportThemes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ExportThemes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -413,6 +424,7 @@ ExportThemesOutcome AmplifyUIBuilderClient::ExportThemes(const ExportThemesReque
 
 GetComponentOutcome AmplifyUIBuilderClient::GetComponent(const GetComponentRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetComponent);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetComponent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -442,6 +454,7 @@ GetComponentOutcome AmplifyUIBuilderClient::GetComponent(const GetComponentReque
 
 GetFormOutcome AmplifyUIBuilderClient::GetForm(const GetFormRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetForm);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetForm, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -471,6 +484,7 @@ GetFormOutcome AmplifyUIBuilderClient::GetForm(const GetFormRequest& request) co
 
 GetMetadataOutcome AmplifyUIBuilderClient::GetMetadata(const GetMetadataRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetMetadata);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMetadata, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -494,6 +508,7 @@ GetMetadataOutcome AmplifyUIBuilderClient::GetMetadata(const GetMetadataRequest&
 
 GetThemeOutcome AmplifyUIBuilderClient::GetTheme(const GetThemeRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetTheme);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetTheme, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -523,6 +538,7 @@ GetThemeOutcome AmplifyUIBuilderClient::GetTheme(const GetThemeRequest& request)
 
 ListComponentsOutcome AmplifyUIBuilderClient::ListComponents(const ListComponentsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListComponents);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListComponents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -546,6 +562,7 @@ ListComponentsOutcome AmplifyUIBuilderClient::ListComponents(const ListComponent
 
 ListFormsOutcome AmplifyUIBuilderClient::ListForms(const ListFormsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListForms);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListForms, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -569,6 +586,7 @@ ListFormsOutcome AmplifyUIBuilderClient::ListForms(const ListFormsRequest& reque
 
 ListThemesOutcome AmplifyUIBuilderClient::ListThemes(const ListThemesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListThemes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListThemes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -592,6 +610,7 @@ ListThemesOutcome AmplifyUIBuilderClient::ListThemes(const ListThemesRequest& re
 
 PutMetadataFlagOutcome AmplifyUIBuilderClient::PutMetadataFlag(const PutMetadataFlagRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutMetadataFlag);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutMetadataFlag, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -621,6 +640,7 @@ PutMetadataFlagOutcome AmplifyUIBuilderClient::PutMetadataFlag(const PutMetadata
 
 RefreshTokenOutcome AmplifyUIBuilderClient::RefreshToken(const RefreshTokenRequest& request) const
 {
+  AWS_OPERATION_GUARD(RefreshToken);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RefreshToken, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProviderHasBeenSet())
   {
@@ -637,6 +657,7 @@ RefreshTokenOutcome AmplifyUIBuilderClient::RefreshToken(const RefreshTokenReque
 
 UpdateComponentOutcome AmplifyUIBuilderClient::UpdateComponent(const UpdateComponentRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateComponent);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateComponent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -666,6 +687,7 @@ UpdateComponentOutcome AmplifyUIBuilderClient::UpdateComponent(const UpdateCompo
 
 UpdateFormOutcome AmplifyUIBuilderClient::UpdateForm(const UpdateFormRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateForm);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateForm, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -695,6 +717,7 @@ UpdateFormOutcome AmplifyUIBuilderClient::UpdateForm(const UpdateFormRequest& re
 
 UpdateThemeOutcome AmplifyUIBuilderClient::UpdateTheme(const UpdateThemeRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateTheme);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateTheme, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {

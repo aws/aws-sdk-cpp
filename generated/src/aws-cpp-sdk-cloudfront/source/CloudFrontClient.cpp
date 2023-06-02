@@ -236,6 +236,7 @@ CloudFrontClient::CloudFrontClient(const std::shared_ptr<AWSCredentialsProvider>
     /* End of legacy constructors due deprecation */
 CloudFrontClient::~CloudFrontClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<CloudFrontEndpointProviderBase>& CloudFrontClient::accessEndpointProvider()
@@ -258,6 +259,7 @@ void CloudFrontClient::OverrideEndpoint(const Aws::String& endpoint)
 
 AssociateAlias2020_05_31Outcome CloudFrontClient::AssociateAlias2020_05_31(const AssociateAlias2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(AssociateAlias2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateAlias2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TargetDistributionIdHasBeenSet())
   {
@@ -279,6 +281,7 @@ AssociateAlias2020_05_31Outcome CloudFrontClient::AssociateAlias2020_05_31(const
 
 CopyDistribution2020_05_31Outcome CloudFrontClient::CopyDistribution2020_05_31(const CopyDistribution2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(CopyDistribution2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CopyDistribution2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PrimaryDistributionIdHasBeenSet())
   {
@@ -295,6 +298,7 @@ CopyDistribution2020_05_31Outcome CloudFrontClient::CopyDistribution2020_05_31(c
 
 CreateCachePolicy2020_05_31Outcome CloudFrontClient::CreateCachePolicy2020_05_31(const CreateCachePolicy2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(CreateCachePolicy2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateCachePolicy2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateCachePolicy2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -304,6 +308,7 @@ CreateCachePolicy2020_05_31Outcome CloudFrontClient::CreateCachePolicy2020_05_31
 
 CreateCloudFrontOriginAccessIdentity2020_05_31Outcome CloudFrontClient::CreateCloudFrontOriginAccessIdentity2020_05_31(const CreateCloudFrontOriginAccessIdentity2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(CreateCloudFrontOriginAccessIdentity2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateCloudFrontOriginAccessIdentity2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateCloudFrontOriginAccessIdentity2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -313,6 +318,7 @@ CreateCloudFrontOriginAccessIdentity2020_05_31Outcome CloudFrontClient::CreateCl
 
 CreateContinuousDeploymentPolicy2020_05_31Outcome CloudFrontClient::CreateContinuousDeploymentPolicy2020_05_31(const CreateContinuousDeploymentPolicy2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(CreateContinuousDeploymentPolicy2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateContinuousDeploymentPolicy2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateContinuousDeploymentPolicy2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -322,6 +328,7 @@ CreateContinuousDeploymentPolicy2020_05_31Outcome CloudFrontClient::CreateContin
 
 CreateDistribution2020_05_31Outcome CloudFrontClient::CreateDistribution2020_05_31(const CreateDistribution2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(CreateDistribution2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDistribution2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateDistribution2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -331,6 +338,7 @@ CreateDistribution2020_05_31Outcome CloudFrontClient::CreateDistribution2020_05_
 
 CreateDistributionWithTags2020_05_31Outcome CloudFrontClient::CreateDistributionWithTags2020_05_31(const CreateDistributionWithTags2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(CreateDistributionWithTags2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDistributionWithTags2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateDistributionWithTags2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -343,6 +351,7 @@ CreateDistributionWithTags2020_05_31Outcome CloudFrontClient::CreateDistribution
 
 CreateFieldLevelEncryptionConfig2020_05_31Outcome CloudFrontClient::CreateFieldLevelEncryptionConfig2020_05_31(const CreateFieldLevelEncryptionConfig2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(CreateFieldLevelEncryptionConfig2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateFieldLevelEncryptionConfig2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateFieldLevelEncryptionConfig2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -352,6 +361,7 @@ CreateFieldLevelEncryptionConfig2020_05_31Outcome CloudFrontClient::CreateFieldL
 
 CreateFieldLevelEncryptionProfile2020_05_31Outcome CloudFrontClient::CreateFieldLevelEncryptionProfile2020_05_31(const CreateFieldLevelEncryptionProfile2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(CreateFieldLevelEncryptionProfile2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateFieldLevelEncryptionProfile2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateFieldLevelEncryptionProfile2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -361,6 +371,7 @@ CreateFieldLevelEncryptionProfile2020_05_31Outcome CloudFrontClient::CreateField
 
 CreateFunction2020_05_31Outcome CloudFrontClient::CreateFunction2020_05_31(const CreateFunction2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(CreateFunction2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateFunction2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateFunction2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -370,6 +381,7 @@ CreateFunction2020_05_31Outcome CloudFrontClient::CreateFunction2020_05_31(const
 
 CreateInvalidation2020_05_31Outcome CloudFrontClient::CreateInvalidation2020_05_31(const CreateInvalidation2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(CreateInvalidation2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateInvalidation2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DistributionIdHasBeenSet())
   {
@@ -386,6 +398,7 @@ CreateInvalidation2020_05_31Outcome CloudFrontClient::CreateInvalidation2020_05_
 
 CreateKeyGroup2020_05_31Outcome CloudFrontClient::CreateKeyGroup2020_05_31(const CreateKeyGroup2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(CreateKeyGroup2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateKeyGroup2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateKeyGroup2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -395,6 +408,7 @@ CreateKeyGroup2020_05_31Outcome CloudFrontClient::CreateKeyGroup2020_05_31(const
 
 CreateMonitoringSubscription2020_05_31Outcome CloudFrontClient::CreateMonitoringSubscription2020_05_31(const CreateMonitoringSubscription2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(CreateMonitoringSubscription2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateMonitoringSubscription2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DistributionIdHasBeenSet())
   {
@@ -411,6 +425,7 @@ CreateMonitoringSubscription2020_05_31Outcome CloudFrontClient::CreateMonitoring
 
 CreateOriginAccessControl2020_05_31Outcome CloudFrontClient::CreateOriginAccessControl2020_05_31(const CreateOriginAccessControl2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(CreateOriginAccessControl2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateOriginAccessControl2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateOriginAccessControl2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -420,6 +435,7 @@ CreateOriginAccessControl2020_05_31Outcome CloudFrontClient::CreateOriginAccessC
 
 CreateOriginRequestPolicy2020_05_31Outcome CloudFrontClient::CreateOriginRequestPolicy2020_05_31(const CreateOriginRequestPolicy2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(CreateOriginRequestPolicy2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateOriginRequestPolicy2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateOriginRequestPolicy2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -429,6 +445,7 @@ CreateOriginRequestPolicy2020_05_31Outcome CloudFrontClient::CreateOriginRequest
 
 CreatePublicKey2020_05_31Outcome CloudFrontClient::CreatePublicKey2020_05_31(const CreatePublicKey2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(CreatePublicKey2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreatePublicKey2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreatePublicKey2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -438,6 +455,7 @@ CreatePublicKey2020_05_31Outcome CloudFrontClient::CreatePublicKey2020_05_31(con
 
 CreateRealtimeLogConfig2020_05_31Outcome CloudFrontClient::CreateRealtimeLogConfig2020_05_31(const CreateRealtimeLogConfig2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(CreateRealtimeLogConfig2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateRealtimeLogConfig2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateRealtimeLogConfig2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -447,6 +465,7 @@ CreateRealtimeLogConfig2020_05_31Outcome CloudFrontClient::CreateRealtimeLogConf
 
 CreateResponseHeadersPolicy2020_05_31Outcome CloudFrontClient::CreateResponseHeadersPolicy2020_05_31(const CreateResponseHeadersPolicy2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(CreateResponseHeadersPolicy2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateResponseHeadersPolicy2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateResponseHeadersPolicy2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -456,6 +475,7 @@ CreateResponseHeadersPolicy2020_05_31Outcome CloudFrontClient::CreateResponseHea
 
 CreateStreamingDistribution2020_05_31Outcome CloudFrontClient::CreateStreamingDistribution2020_05_31(const CreateStreamingDistribution2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(CreateStreamingDistribution2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateStreamingDistribution2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateStreamingDistribution2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -465,6 +485,7 @@ CreateStreamingDistribution2020_05_31Outcome CloudFrontClient::CreateStreamingDi
 
 CreateStreamingDistributionWithTags2020_05_31Outcome CloudFrontClient::CreateStreamingDistributionWithTags2020_05_31(const CreateStreamingDistributionWithTags2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(CreateStreamingDistributionWithTags2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateStreamingDistributionWithTags2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateStreamingDistributionWithTags2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -477,6 +498,7 @@ CreateStreamingDistributionWithTags2020_05_31Outcome CloudFrontClient::CreateStr
 
 DeleteCachePolicy2020_05_31Outcome CloudFrontClient::DeleteCachePolicy2020_05_31(const DeleteCachePolicy2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(DeleteCachePolicy2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteCachePolicy2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -492,6 +514,7 @@ DeleteCachePolicy2020_05_31Outcome CloudFrontClient::DeleteCachePolicy2020_05_31
 
 DeleteCloudFrontOriginAccessIdentity2020_05_31Outcome CloudFrontClient::DeleteCloudFrontOriginAccessIdentity2020_05_31(const DeleteCloudFrontOriginAccessIdentity2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(DeleteCloudFrontOriginAccessIdentity2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteCloudFrontOriginAccessIdentity2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -507,6 +530,7 @@ DeleteCloudFrontOriginAccessIdentity2020_05_31Outcome CloudFrontClient::DeleteCl
 
 DeleteContinuousDeploymentPolicy2020_05_31Outcome CloudFrontClient::DeleteContinuousDeploymentPolicy2020_05_31(const DeleteContinuousDeploymentPolicy2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(DeleteContinuousDeploymentPolicy2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteContinuousDeploymentPolicy2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -522,6 +546,7 @@ DeleteContinuousDeploymentPolicy2020_05_31Outcome CloudFrontClient::DeleteContin
 
 DeleteDistribution2020_05_31Outcome CloudFrontClient::DeleteDistribution2020_05_31(const DeleteDistribution2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(DeleteDistribution2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDistribution2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -537,6 +562,7 @@ DeleteDistribution2020_05_31Outcome CloudFrontClient::DeleteDistribution2020_05_
 
 DeleteFieldLevelEncryptionConfig2020_05_31Outcome CloudFrontClient::DeleteFieldLevelEncryptionConfig2020_05_31(const DeleteFieldLevelEncryptionConfig2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(DeleteFieldLevelEncryptionConfig2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteFieldLevelEncryptionConfig2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -552,6 +578,7 @@ DeleteFieldLevelEncryptionConfig2020_05_31Outcome CloudFrontClient::DeleteFieldL
 
 DeleteFieldLevelEncryptionProfile2020_05_31Outcome CloudFrontClient::DeleteFieldLevelEncryptionProfile2020_05_31(const DeleteFieldLevelEncryptionProfile2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(DeleteFieldLevelEncryptionProfile2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteFieldLevelEncryptionProfile2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -567,6 +594,7 @@ DeleteFieldLevelEncryptionProfile2020_05_31Outcome CloudFrontClient::DeleteField
 
 DeleteFunction2020_05_31Outcome CloudFrontClient::DeleteFunction2020_05_31(const DeleteFunction2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(DeleteFunction2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteFunction2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -587,6 +615,7 @@ DeleteFunction2020_05_31Outcome CloudFrontClient::DeleteFunction2020_05_31(const
 
 DeleteKeyGroup2020_05_31Outcome CloudFrontClient::DeleteKeyGroup2020_05_31(const DeleteKeyGroup2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(DeleteKeyGroup2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteKeyGroup2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -602,6 +631,7 @@ DeleteKeyGroup2020_05_31Outcome CloudFrontClient::DeleteKeyGroup2020_05_31(const
 
 DeleteMonitoringSubscription2020_05_31Outcome CloudFrontClient::DeleteMonitoringSubscription2020_05_31(const DeleteMonitoringSubscription2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(DeleteMonitoringSubscription2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteMonitoringSubscription2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DistributionIdHasBeenSet())
   {
@@ -618,6 +648,7 @@ DeleteMonitoringSubscription2020_05_31Outcome CloudFrontClient::DeleteMonitoring
 
 DeleteOriginAccessControl2020_05_31Outcome CloudFrontClient::DeleteOriginAccessControl2020_05_31(const DeleteOriginAccessControl2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(DeleteOriginAccessControl2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteOriginAccessControl2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -633,6 +664,7 @@ DeleteOriginAccessControl2020_05_31Outcome CloudFrontClient::DeleteOriginAccessC
 
 DeleteOriginRequestPolicy2020_05_31Outcome CloudFrontClient::DeleteOriginRequestPolicy2020_05_31(const DeleteOriginRequestPolicy2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(DeleteOriginRequestPolicy2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteOriginRequestPolicy2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -648,6 +680,7 @@ DeleteOriginRequestPolicy2020_05_31Outcome CloudFrontClient::DeleteOriginRequest
 
 DeletePublicKey2020_05_31Outcome CloudFrontClient::DeletePublicKey2020_05_31(const DeletePublicKey2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(DeletePublicKey2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeletePublicKey2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -663,6 +696,7 @@ DeletePublicKey2020_05_31Outcome CloudFrontClient::DeletePublicKey2020_05_31(con
 
 DeleteRealtimeLogConfig2020_05_31Outcome CloudFrontClient::DeleteRealtimeLogConfig2020_05_31(const DeleteRealtimeLogConfig2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(DeleteRealtimeLogConfig2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteRealtimeLogConfig2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteRealtimeLogConfig2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -672,6 +706,7 @@ DeleteRealtimeLogConfig2020_05_31Outcome CloudFrontClient::DeleteRealtimeLogConf
 
 DeleteResponseHeadersPolicy2020_05_31Outcome CloudFrontClient::DeleteResponseHeadersPolicy2020_05_31(const DeleteResponseHeadersPolicy2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(DeleteResponseHeadersPolicy2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteResponseHeadersPolicy2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -687,6 +722,7 @@ DeleteResponseHeadersPolicy2020_05_31Outcome CloudFrontClient::DeleteResponseHea
 
 DeleteStreamingDistribution2020_05_31Outcome CloudFrontClient::DeleteStreamingDistribution2020_05_31(const DeleteStreamingDistribution2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(DeleteStreamingDistribution2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteStreamingDistribution2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -702,6 +738,7 @@ DeleteStreamingDistribution2020_05_31Outcome CloudFrontClient::DeleteStreamingDi
 
 DescribeFunction2020_05_31Outcome CloudFrontClient::DescribeFunction2020_05_31(const DescribeFunction2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(DescribeFunction2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeFunction2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -718,6 +755,7 @@ DescribeFunction2020_05_31Outcome CloudFrontClient::DescribeFunction2020_05_31(c
 
 GetCachePolicy2020_05_31Outcome CloudFrontClient::GetCachePolicy2020_05_31(const GetCachePolicy2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(GetCachePolicy2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCachePolicy2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -733,6 +771,7 @@ GetCachePolicy2020_05_31Outcome CloudFrontClient::GetCachePolicy2020_05_31(const
 
 GetCachePolicyConfig2020_05_31Outcome CloudFrontClient::GetCachePolicyConfig2020_05_31(const GetCachePolicyConfig2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(GetCachePolicyConfig2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCachePolicyConfig2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -749,6 +788,7 @@ GetCachePolicyConfig2020_05_31Outcome CloudFrontClient::GetCachePolicyConfig2020
 
 GetCloudFrontOriginAccessIdentity2020_05_31Outcome CloudFrontClient::GetCloudFrontOriginAccessIdentity2020_05_31(const GetCloudFrontOriginAccessIdentity2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(GetCloudFrontOriginAccessIdentity2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCloudFrontOriginAccessIdentity2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -764,6 +804,7 @@ GetCloudFrontOriginAccessIdentity2020_05_31Outcome CloudFrontClient::GetCloudFro
 
 GetCloudFrontOriginAccessIdentityConfig2020_05_31Outcome CloudFrontClient::GetCloudFrontOriginAccessIdentityConfig2020_05_31(const GetCloudFrontOriginAccessIdentityConfig2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(GetCloudFrontOriginAccessIdentityConfig2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCloudFrontOriginAccessIdentityConfig2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -780,6 +821,7 @@ GetCloudFrontOriginAccessIdentityConfig2020_05_31Outcome CloudFrontClient::GetCl
 
 GetContinuousDeploymentPolicy2020_05_31Outcome CloudFrontClient::GetContinuousDeploymentPolicy2020_05_31(const GetContinuousDeploymentPolicy2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(GetContinuousDeploymentPolicy2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetContinuousDeploymentPolicy2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -795,6 +837,7 @@ GetContinuousDeploymentPolicy2020_05_31Outcome CloudFrontClient::GetContinuousDe
 
 GetContinuousDeploymentPolicyConfig2020_05_31Outcome CloudFrontClient::GetContinuousDeploymentPolicyConfig2020_05_31(const GetContinuousDeploymentPolicyConfig2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(GetContinuousDeploymentPolicyConfig2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetContinuousDeploymentPolicyConfig2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -811,6 +854,7 @@ GetContinuousDeploymentPolicyConfig2020_05_31Outcome CloudFrontClient::GetContin
 
 GetDistribution2020_05_31Outcome CloudFrontClient::GetDistribution2020_05_31(const GetDistribution2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(GetDistribution2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDistribution2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -826,6 +870,7 @@ GetDistribution2020_05_31Outcome CloudFrontClient::GetDistribution2020_05_31(con
 
 GetDistributionConfig2020_05_31Outcome CloudFrontClient::GetDistributionConfig2020_05_31(const GetDistributionConfig2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(GetDistributionConfig2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDistributionConfig2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -842,6 +887,7 @@ GetDistributionConfig2020_05_31Outcome CloudFrontClient::GetDistributionConfig20
 
 GetFieldLevelEncryption2020_05_31Outcome CloudFrontClient::GetFieldLevelEncryption2020_05_31(const GetFieldLevelEncryption2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(GetFieldLevelEncryption2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetFieldLevelEncryption2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -857,6 +903,7 @@ GetFieldLevelEncryption2020_05_31Outcome CloudFrontClient::GetFieldLevelEncrypti
 
 GetFieldLevelEncryptionConfig2020_05_31Outcome CloudFrontClient::GetFieldLevelEncryptionConfig2020_05_31(const GetFieldLevelEncryptionConfig2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(GetFieldLevelEncryptionConfig2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetFieldLevelEncryptionConfig2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -873,6 +920,7 @@ GetFieldLevelEncryptionConfig2020_05_31Outcome CloudFrontClient::GetFieldLevelEn
 
 GetFieldLevelEncryptionProfile2020_05_31Outcome CloudFrontClient::GetFieldLevelEncryptionProfile2020_05_31(const GetFieldLevelEncryptionProfile2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(GetFieldLevelEncryptionProfile2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetFieldLevelEncryptionProfile2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -888,6 +936,7 @@ GetFieldLevelEncryptionProfile2020_05_31Outcome CloudFrontClient::GetFieldLevelE
 
 GetFieldLevelEncryptionProfileConfig2020_05_31Outcome CloudFrontClient::GetFieldLevelEncryptionProfileConfig2020_05_31(const GetFieldLevelEncryptionProfileConfig2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(GetFieldLevelEncryptionProfileConfig2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetFieldLevelEncryptionProfileConfig2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -904,6 +953,7 @@ GetFieldLevelEncryptionProfileConfig2020_05_31Outcome CloudFrontClient::GetField
 
 GetFunction2020_05_31Outcome CloudFrontClient::GetFunction2020_05_31(const GetFunction2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(GetFunction2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetFunction2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -919,6 +969,7 @@ GetFunction2020_05_31Outcome CloudFrontClient::GetFunction2020_05_31(const GetFu
 
 GetInvalidation2020_05_31Outcome CloudFrontClient::GetInvalidation2020_05_31(const GetInvalidation2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(GetInvalidation2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetInvalidation2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DistributionIdHasBeenSet())
   {
@@ -941,6 +992,7 @@ GetInvalidation2020_05_31Outcome CloudFrontClient::GetInvalidation2020_05_31(con
 
 GetKeyGroup2020_05_31Outcome CloudFrontClient::GetKeyGroup2020_05_31(const GetKeyGroup2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(GetKeyGroup2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetKeyGroup2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -956,6 +1008,7 @@ GetKeyGroup2020_05_31Outcome CloudFrontClient::GetKeyGroup2020_05_31(const GetKe
 
 GetKeyGroupConfig2020_05_31Outcome CloudFrontClient::GetKeyGroupConfig2020_05_31(const GetKeyGroupConfig2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(GetKeyGroupConfig2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetKeyGroupConfig2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -972,6 +1025,7 @@ GetKeyGroupConfig2020_05_31Outcome CloudFrontClient::GetKeyGroupConfig2020_05_31
 
 GetMonitoringSubscription2020_05_31Outcome CloudFrontClient::GetMonitoringSubscription2020_05_31(const GetMonitoringSubscription2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(GetMonitoringSubscription2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMonitoringSubscription2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DistributionIdHasBeenSet())
   {
@@ -988,6 +1042,7 @@ GetMonitoringSubscription2020_05_31Outcome CloudFrontClient::GetMonitoringSubscr
 
 GetOriginAccessControl2020_05_31Outcome CloudFrontClient::GetOriginAccessControl2020_05_31(const GetOriginAccessControl2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(GetOriginAccessControl2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetOriginAccessControl2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -1003,6 +1058,7 @@ GetOriginAccessControl2020_05_31Outcome CloudFrontClient::GetOriginAccessControl
 
 GetOriginAccessControlConfig2020_05_31Outcome CloudFrontClient::GetOriginAccessControlConfig2020_05_31(const GetOriginAccessControlConfig2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(GetOriginAccessControlConfig2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetOriginAccessControlConfig2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -1019,6 +1075,7 @@ GetOriginAccessControlConfig2020_05_31Outcome CloudFrontClient::GetOriginAccessC
 
 GetOriginRequestPolicy2020_05_31Outcome CloudFrontClient::GetOriginRequestPolicy2020_05_31(const GetOriginRequestPolicy2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(GetOriginRequestPolicy2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetOriginRequestPolicy2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -1034,6 +1091,7 @@ GetOriginRequestPolicy2020_05_31Outcome CloudFrontClient::GetOriginRequestPolicy
 
 GetOriginRequestPolicyConfig2020_05_31Outcome CloudFrontClient::GetOriginRequestPolicyConfig2020_05_31(const GetOriginRequestPolicyConfig2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(GetOriginRequestPolicyConfig2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetOriginRequestPolicyConfig2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -1050,6 +1108,7 @@ GetOriginRequestPolicyConfig2020_05_31Outcome CloudFrontClient::GetOriginRequest
 
 GetPublicKey2020_05_31Outcome CloudFrontClient::GetPublicKey2020_05_31(const GetPublicKey2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(GetPublicKey2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPublicKey2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -1065,6 +1124,7 @@ GetPublicKey2020_05_31Outcome CloudFrontClient::GetPublicKey2020_05_31(const Get
 
 GetPublicKeyConfig2020_05_31Outcome CloudFrontClient::GetPublicKeyConfig2020_05_31(const GetPublicKeyConfig2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(GetPublicKeyConfig2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPublicKeyConfig2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -1081,6 +1141,7 @@ GetPublicKeyConfig2020_05_31Outcome CloudFrontClient::GetPublicKeyConfig2020_05_
 
 GetRealtimeLogConfig2020_05_31Outcome CloudFrontClient::GetRealtimeLogConfig2020_05_31(const GetRealtimeLogConfig2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(GetRealtimeLogConfig2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetRealtimeLogConfig2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetRealtimeLogConfig2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1090,6 +1151,7 @@ GetRealtimeLogConfig2020_05_31Outcome CloudFrontClient::GetRealtimeLogConfig2020
 
 GetResponseHeadersPolicy2020_05_31Outcome CloudFrontClient::GetResponseHeadersPolicy2020_05_31(const GetResponseHeadersPolicy2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(GetResponseHeadersPolicy2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetResponseHeadersPolicy2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -1105,6 +1167,7 @@ GetResponseHeadersPolicy2020_05_31Outcome CloudFrontClient::GetResponseHeadersPo
 
 GetResponseHeadersPolicyConfig2020_05_31Outcome CloudFrontClient::GetResponseHeadersPolicyConfig2020_05_31(const GetResponseHeadersPolicyConfig2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(GetResponseHeadersPolicyConfig2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetResponseHeadersPolicyConfig2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -1121,6 +1184,7 @@ GetResponseHeadersPolicyConfig2020_05_31Outcome CloudFrontClient::GetResponseHea
 
 GetStreamingDistribution2020_05_31Outcome CloudFrontClient::GetStreamingDistribution2020_05_31(const GetStreamingDistribution2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(GetStreamingDistribution2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetStreamingDistribution2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -1136,6 +1200,7 @@ GetStreamingDistribution2020_05_31Outcome CloudFrontClient::GetStreamingDistribu
 
 GetStreamingDistributionConfig2020_05_31Outcome CloudFrontClient::GetStreamingDistributionConfig2020_05_31(const GetStreamingDistributionConfig2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(GetStreamingDistributionConfig2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetStreamingDistributionConfig2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -1152,6 +1217,7 @@ GetStreamingDistributionConfig2020_05_31Outcome CloudFrontClient::GetStreamingDi
 
 ListCachePolicies2020_05_31Outcome CloudFrontClient::ListCachePolicies2020_05_31(const ListCachePolicies2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(ListCachePolicies2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListCachePolicies2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListCachePolicies2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1161,6 +1227,7 @@ ListCachePolicies2020_05_31Outcome CloudFrontClient::ListCachePolicies2020_05_31
 
 ListCloudFrontOriginAccessIdentities2020_05_31Outcome CloudFrontClient::ListCloudFrontOriginAccessIdentities2020_05_31(const ListCloudFrontOriginAccessIdentities2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(ListCloudFrontOriginAccessIdentities2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListCloudFrontOriginAccessIdentities2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListCloudFrontOriginAccessIdentities2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1170,6 +1237,7 @@ ListCloudFrontOriginAccessIdentities2020_05_31Outcome CloudFrontClient::ListClou
 
 ListConflictingAliases2020_05_31Outcome CloudFrontClient::ListConflictingAliases2020_05_31(const ListConflictingAliases2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(ListConflictingAliases2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListConflictingAliases2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DistributionIdHasBeenSet())
   {
@@ -1189,6 +1257,7 @@ ListConflictingAliases2020_05_31Outcome CloudFrontClient::ListConflictingAliases
 
 ListContinuousDeploymentPolicies2020_05_31Outcome CloudFrontClient::ListContinuousDeploymentPolicies2020_05_31(const ListContinuousDeploymentPolicies2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(ListContinuousDeploymentPolicies2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListContinuousDeploymentPolicies2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListContinuousDeploymentPolicies2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1198,6 +1267,7 @@ ListContinuousDeploymentPolicies2020_05_31Outcome CloudFrontClient::ListContinuo
 
 ListDistributions2020_05_31Outcome CloudFrontClient::ListDistributions2020_05_31(const ListDistributions2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(ListDistributions2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDistributions2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDistributions2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1207,6 +1277,7 @@ ListDistributions2020_05_31Outcome CloudFrontClient::ListDistributions2020_05_31
 
 ListDistributionsByCachePolicyId2020_05_31Outcome CloudFrontClient::ListDistributionsByCachePolicyId2020_05_31(const ListDistributionsByCachePolicyId2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(ListDistributionsByCachePolicyId2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDistributionsByCachePolicyId2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CachePolicyIdHasBeenSet())
   {
@@ -1222,6 +1293,7 @@ ListDistributionsByCachePolicyId2020_05_31Outcome CloudFrontClient::ListDistribu
 
 ListDistributionsByKeyGroup2020_05_31Outcome CloudFrontClient::ListDistributionsByKeyGroup2020_05_31(const ListDistributionsByKeyGroup2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(ListDistributionsByKeyGroup2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDistributionsByKeyGroup2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.KeyGroupIdHasBeenSet())
   {
@@ -1237,6 +1309,7 @@ ListDistributionsByKeyGroup2020_05_31Outcome CloudFrontClient::ListDistributions
 
 ListDistributionsByOriginRequestPolicyId2020_05_31Outcome CloudFrontClient::ListDistributionsByOriginRequestPolicyId2020_05_31(const ListDistributionsByOriginRequestPolicyId2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(ListDistributionsByOriginRequestPolicyId2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDistributionsByOriginRequestPolicyId2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.OriginRequestPolicyIdHasBeenSet())
   {
@@ -1252,6 +1325,7 @@ ListDistributionsByOriginRequestPolicyId2020_05_31Outcome CloudFrontClient::List
 
 ListDistributionsByRealtimeLogConfig2020_05_31Outcome CloudFrontClient::ListDistributionsByRealtimeLogConfig2020_05_31(const ListDistributionsByRealtimeLogConfig2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(ListDistributionsByRealtimeLogConfig2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDistributionsByRealtimeLogConfig2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDistributionsByRealtimeLogConfig2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1261,6 +1335,7 @@ ListDistributionsByRealtimeLogConfig2020_05_31Outcome CloudFrontClient::ListDist
 
 ListDistributionsByResponseHeadersPolicyId2020_05_31Outcome CloudFrontClient::ListDistributionsByResponseHeadersPolicyId2020_05_31(const ListDistributionsByResponseHeadersPolicyId2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(ListDistributionsByResponseHeadersPolicyId2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDistributionsByResponseHeadersPolicyId2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResponseHeadersPolicyIdHasBeenSet())
   {
@@ -1276,6 +1351,7 @@ ListDistributionsByResponseHeadersPolicyId2020_05_31Outcome CloudFrontClient::Li
 
 ListDistributionsByWebACLId2020_05_31Outcome CloudFrontClient::ListDistributionsByWebACLId2020_05_31(const ListDistributionsByWebACLId2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(ListDistributionsByWebACLId2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDistributionsByWebACLId2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WebACLIdHasBeenSet())
   {
@@ -1291,6 +1367,7 @@ ListDistributionsByWebACLId2020_05_31Outcome CloudFrontClient::ListDistributions
 
 ListFieldLevelEncryptionConfigs2020_05_31Outcome CloudFrontClient::ListFieldLevelEncryptionConfigs2020_05_31(const ListFieldLevelEncryptionConfigs2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(ListFieldLevelEncryptionConfigs2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListFieldLevelEncryptionConfigs2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListFieldLevelEncryptionConfigs2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1300,6 +1377,7 @@ ListFieldLevelEncryptionConfigs2020_05_31Outcome CloudFrontClient::ListFieldLeve
 
 ListFieldLevelEncryptionProfiles2020_05_31Outcome CloudFrontClient::ListFieldLevelEncryptionProfiles2020_05_31(const ListFieldLevelEncryptionProfiles2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(ListFieldLevelEncryptionProfiles2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListFieldLevelEncryptionProfiles2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListFieldLevelEncryptionProfiles2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1309,6 +1387,7 @@ ListFieldLevelEncryptionProfiles2020_05_31Outcome CloudFrontClient::ListFieldLev
 
 ListFunctions2020_05_31Outcome CloudFrontClient::ListFunctions2020_05_31(const ListFunctions2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(ListFunctions2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListFunctions2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListFunctions2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1318,6 +1397,7 @@ ListFunctions2020_05_31Outcome CloudFrontClient::ListFunctions2020_05_31(const L
 
 ListInvalidations2020_05_31Outcome CloudFrontClient::ListInvalidations2020_05_31(const ListInvalidations2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(ListInvalidations2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListInvalidations2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DistributionIdHasBeenSet())
   {
@@ -1334,6 +1414,7 @@ ListInvalidations2020_05_31Outcome CloudFrontClient::ListInvalidations2020_05_31
 
 ListKeyGroups2020_05_31Outcome CloudFrontClient::ListKeyGroups2020_05_31(const ListKeyGroups2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(ListKeyGroups2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListKeyGroups2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListKeyGroups2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1343,6 +1424,7 @@ ListKeyGroups2020_05_31Outcome CloudFrontClient::ListKeyGroups2020_05_31(const L
 
 ListOriginAccessControls2020_05_31Outcome CloudFrontClient::ListOriginAccessControls2020_05_31(const ListOriginAccessControls2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(ListOriginAccessControls2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListOriginAccessControls2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListOriginAccessControls2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1352,6 +1434,7 @@ ListOriginAccessControls2020_05_31Outcome CloudFrontClient::ListOriginAccessCont
 
 ListOriginRequestPolicies2020_05_31Outcome CloudFrontClient::ListOriginRequestPolicies2020_05_31(const ListOriginRequestPolicies2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(ListOriginRequestPolicies2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListOriginRequestPolicies2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListOriginRequestPolicies2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1361,6 +1444,7 @@ ListOriginRequestPolicies2020_05_31Outcome CloudFrontClient::ListOriginRequestPo
 
 ListPublicKeys2020_05_31Outcome CloudFrontClient::ListPublicKeys2020_05_31(const ListPublicKeys2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(ListPublicKeys2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPublicKeys2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListPublicKeys2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1370,6 +1454,7 @@ ListPublicKeys2020_05_31Outcome CloudFrontClient::ListPublicKeys2020_05_31(const
 
 ListRealtimeLogConfigs2020_05_31Outcome CloudFrontClient::ListRealtimeLogConfigs2020_05_31(const ListRealtimeLogConfigs2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(ListRealtimeLogConfigs2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRealtimeLogConfigs2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListRealtimeLogConfigs2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1379,6 +1464,7 @@ ListRealtimeLogConfigs2020_05_31Outcome CloudFrontClient::ListRealtimeLogConfigs
 
 ListResponseHeadersPolicies2020_05_31Outcome CloudFrontClient::ListResponseHeadersPolicies2020_05_31(const ListResponseHeadersPolicies2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(ListResponseHeadersPolicies2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListResponseHeadersPolicies2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListResponseHeadersPolicies2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1388,6 +1474,7 @@ ListResponseHeadersPolicies2020_05_31Outcome CloudFrontClient::ListResponseHeade
 
 ListStreamingDistributions2020_05_31Outcome CloudFrontClient::ListStreamingDistributions2020_05_31(const ListStreamingDistributions2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(ListStreamingDistributions2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListStreamingDistributions2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListStreamingDistributions2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1397,6 +1484,7 @@ ListStreamingDistributions2020_05_31Outcome CloudFrontClient::ListStreamingDistr
 
 ListTagsForResource2020_05_31Outcome CloudFrontClient::ListTagsForResource2020_05_31(const ListTagsForResource2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceHasBeenSet())
   {
@@ -1411,6 +1499,7 @@ ListTagsForResource2020_05_31Outcome CloudFrontClient::ListTagsForResource2020_0
 
 PublishFunction2020_05_31Outcome CloudFrontClient::PublishFunction2020_05_31(const PublishFunction2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(PublishFunction2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PublishFunction2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -1432,6 +1521,7 @@ PublishFunction2020_05_31Outcome CloudFrontClient::PublishFunction2020_05_31(con
 
 TagResource2020_05_31Outcome CloudFrontClient::TagResource2020_05_31(const TagResource2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(TagResource2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceHasBeenSet())
   {
@@ -1449,6 +1539,7 @@ TagResource2020_05_31Outcome CloudFrontClient::TagResource2020_05_31(const TagRe
 
 TestFunction2020_05_31Outcome CloudFrontClient::TestFunction2020_05_31(const TestFunction2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(TestFunction2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TestFunction2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -1470,6 +1561,7 @@ TestFunction2020_05_31Outcome CloudFrontClient::TestFunction2020_05_31(const Tes
 
 UntagResource2020_05_31Outcome CloudFrontClient::UntagResource2020_05_31(const UntagResource2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceHasBeenSet())
   {
@@ -1487,6 +1579,7 @@ UntagResource2020_05_31Outcome CloudFrontClient::UntagResource2020_05_31(const U
 
 UpdateCachePolicy2020_05_31Outcome CloudFrontClient::UpdateCachePolicy2020_05_31(const UpdateCachePolicy2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(UpdateCachePolicy2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateCachePolicy2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -1502,6 +1595,7 @@ UpdateCachePolicy2020_05_31Outcome CloudFrontClient::UpdateCachePolicy2020_05_31
 
 UpdateCloudFrontOriginAccessIdentity2020_05_31Outcome CloudFrontClient::UpdateCloudFrontOriginAccessIdentity2020_05_31(const UpdateCloudFrontOriginAccessIdentity2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(UpdateCloudFrontOriginAccessIdentity2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateCloudFrontOriginAccessIdentity2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -1518,6 +1612,7 @@ UpdateCloudFrontOriginAccessIdentity2020_05_31Outcome CloudFrontClient::UpdateCl
 
 UpdateContinuousDeploymentPolicy2020_05_31Outcome CloudFrontClient::UpdateContinuousDeploymentPolicy2020_05_31(const UpdateContinuousDeploymentPolicy2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(UpdateContinuousDeploymentPolicy2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateContinuousDeploymentPolicy2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -1533,6 +1628,7 @@ UpdateContinuousDeploymentPolicy2020_05_31Outcome CloudFrontClient::UpdateContin
 
 UpdateDistribution2020_05_31Outcome CloudFrontClient::UpdateDistribution2020_05_31(const UpdateDistribution2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(UpdateDistribution2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDistribution2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -1549,6 +1645,7 @@ UpdateDistribution2020_05_31Outcome CloudFrontClient::UpdateDistribution2020_05_
 
 UpdateDistributionWithStagingConfig2020_05_31Outcome CloudFrontClient::UpdateDistributionWithStagingConfig2020_05_31(const UpdateDistributionWithStagingConfig2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(UpdateDistributionWithStagingConfig2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDistributionWithStagingConfig2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -1565,6 +1662,7 @@ UpdateDistributionWithStagingConfig2020_05_31Outcome CloudFrontClient::UpdateDis
 
 UpdateFieldLevelEncryptionConfig2020_05_31Outcome CloudFrontClient::UpdateFieldLevelEncryptionConfig2020_05_31(const UpdateFieldLevelEncryptionConfig2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(UpdateFieldLevelEncryptionConfig2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateFieldLevelEncryptionConfig2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -1581,6 +1679,7 @@ UpdateFieldLevelEncryptionConfig2020_05_31Outcome CloudFrontClient::UpdateFieldL
 
 UpdateFieldLevelEncryptionProfile2020_05_31Outcome CloudFrontClient::UpdateFieldLevelEncryptionProfile2020_05_31(const UpdateFieldLevelEncryptionProfile2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(UpdateFieldLevelEncryptionProfile2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateFieldLevelEncryptionProfile2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -1597,6 +1696,7 @@ UpdateFieldLevelEncryptionProfile2020_05_31Outcome CloudFrontClient::UpdateField
 
 UpdateFunction2020_05_31Outcome CloudFrontClient::UpdateFunction2020_05_31(const UpdateFunction2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(UpdateFunction2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateFunction2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -1617,6 +1717,7 @@ UpdateFunction2020_05_31Outcome CloudFrontClient::UpdateFunction2020_05_31(const
 
 UpdateKeyGroup2020_05_31Outcome CloudFrontClient::UpdateKeyGroup2020_05_31(const UpdateKeyGroup2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(UpdateKeyGroup2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateKeyGroup2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -1632,6 +1733,7 @@ UpdateKeyGroup2020_05_31Outcome CloudFrontClient::UpdateKeyGroup2020_05_31(const
 
 UpdateOriginAccessControl2020_05_31Outcome CloudFrontClient::UpdateOriginAccessControl2020_05_31(const UpdateOriginAccessControl2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(UpdateOriginAccessControl2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateOriginAccessControl2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -1648,6 +1750,7 @@ UpdateOriginAccessControl2020_05_31Outcome CloudFrontClient::UpdateOriginAccessC
 
 UpdateOriginRequestPolicy2020_05_31Outcome CloudFrontClient::UpdateOriginRequestPolicy2020_05_31(const UpdateOriginRequestPolicy2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(UpdateOriginRequestPolicy2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateOriginRequestPolicy2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -1663,6 +1766,7 @@ UpdateOriginRequestPolicy2020_05_31Outcome CloudFrontClient::UpdateOriginRequest
 
 UpdatePublicKey2020_05_31Outcome CloudFrontClient::UpdatePublicKey2020_05_31(const UpdatePublicKey2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(UpdatePublicKey2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdatePublicKey2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -1679,6 +1783,7 @@ UpdatePublicKey2020_05_31Outcome CloudFrontClient::UpdatePublicKey2020_05_31(con
 
 UpdateRealtimeLogConfig2020_05_31Outcome CloudFrontClient::UpdateRealtimeLogConfig2020_05_31(const UpdateRealtimeLogConfig2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(UpdateRealtimeLogConfig2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateRealtimeLogConfig2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateRealtimeLogConfig2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1688,6 +1793,7 @@ UpdateRealtimeLogConfig2020_05_31Outcome CloudFrontClient::UpdateRealtimeLogConf
 
 UpdateResponseHeadersPolicy2020_05_31Outcome CloudFrontClient::UpdateResponseHeadersPolicy2020_05_31(const UpdateResponseHeadersPolicy2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(UpdateResponseHeadersPolicy2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateResponseHeadersPolicy2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -1703,6 +1809,7 @@ UpdateResponseHeadersPolicy2020_05_31Outcome CloudFrontClient::UpdateResponseHea
 
 UpdateStreamingDistribution2020_05_31Outcome CloudFrontClient::UpdateStreamingDistribution2020_05_31(const UpdateStreamingDistribution2020_05_31Request& request) const
 {
+  AWS_OPERATION_GUARD(UpdateStreamingDistribution2020_05_31);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateStreamingDistribution2020_05_31, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {

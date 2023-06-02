@@ -200,6 +200,7 @@ Route53Client::Route53Client(const std::shared_ptr<AWSCredentialsProvider>& cred
     /* End of legacy constructors due deprecation */
 Route53Client::~Route53Client()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<Route53EndpointProviderBase>& Route53Client::accessEndpointProvider()
@@ -222,6 +223,7 @@ void Route53Client::OverrideEndpoint(const Aws::String& endpoint)
 
 ActivateKeySigningKeyOutcome Route53Client::ActivateKeySigningKey(const ActivateKeySigningKeyRequest& request) const
 {
+  AWS_OPERATION_GUARD(ActivateKeySigningKey);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ActivateKeySigningKey, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.HostedZoneIdHasBeenSet())
   {
@@ -244,6 +246,7 @@ ActivateKeySigningKeyOutcome Route53Client::ActivateKeySigningKey(const Activate
 
 AssociateVPCWithHostedZoneOutcome Route53Client::AssociateVPCWithHostedZone(const AssociateVPCWithHostedZoneRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociateVPCWithHostedZone);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateVPCWithHostedZone, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.HostedZoneIdHasBeenSet())
   {
@@ -260,6 +263,7 @@ AssociateVPCWithHostedZoneOutcome Route53Client::AssociateVPCWithHostedZone(cons
 
 ChangeCidrCollectionOutcome Route53Client::ChangeCidrCollection(const ChangeCidrCollectionRequest& request) const
 {
+  AWS_OPERATION_GUARD(ChangeCidrCollection);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ChangeCidrCollection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -275,6 +279,7 @@ ChangeCidrCollectionOutcome Route53Client::ChangeCidrCollection(const ChangeCidr
 
 ChangeResourceRecordSetsOutcome Route53Client::ChangeResourceRecordSets(const ChangeResourceRecordSetsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ChangeResourceRecordSets);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ChangeResourceRecordSets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.HostedZoneIdHasBeenSet())
   {
@@ -291,6 +296,7 @@ ChangeResourceRecordSetsOutcome Route53Client::ChangeResourceRecordSets(const Ch
 
 ChangeTagsForResourceOutcome Route53Client::ChangeTagsForResource(const ChangeTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ChangeTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ChangeTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceTypeHasBeenSet())
   {
@@ -312,6 +318,7 @@ ChangeTagsForResourceOutcome Route53Client::ChangeTagsForResource(const ChangeTa
 
 CreateCidrCollectionOutcome Route53Client::CreateCidrCollection(const CreateCidrCollectionRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateCidrCollection);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateCidrCollection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateCidrCollection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -321,6 +328,7 @@ CreateCidrCollectionOutcome Route53Client::CreateCidrCollection(const CreateCidr
 
 CreateHealthCheckOutcome Route53Client::CreateHealthCheck(const CreateHealthCheckRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateHealthCheck);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateHealthCheck, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateHealthCheck, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -330,6 +338,7 @@ CreateHealthCheckOutcome Route53Client::CreateHealthCheck(const CreateHealthChec
 
 CreateHostedZoneOutcome Route53Client::CreateHostedZone(const CreateHostedZoneRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateHostedZone);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateHostedZone, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateHostedZone, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -339,6 +348,7 @@ CreateHostedZoneOutcome Route53Client::CreateHostedZone(const CreateHostedZoneRe
 
 CreateKeySigningKeyOutcome Route53Client::CreateKeySigningKey(const CreateKeySigningKeyRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateKeySigningKey);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateKeySigningKey, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateKeySigningKey, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -348,6 +358,7 @@ CreateKeySigningKeyOutcome Route53Client::CreateKeySigningKey(const CreateKeySig
 
 CreateQueryLoggingConfigOutcome Route53Client::CreateQueryLoggingConfig(const CreateQueryLoggingConfigRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateQueryLoggingConfig);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateQueryLoggingConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateQueryLoggingConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -357,6 +368,7 @@ CreateQueryLoggingConfigOutcome Route53Client::CreateQueryLoggingConfig(const Cr
 
 CreateReusableDelegationSetOutcome Route53Client::CreateReusableDelegationSet(const CreateReusableDelegationSetRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateReusableDelegationSet);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateReusableDelegationSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateReusableDelegationSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -366,6 +378,7 @@ CreateReusableDelegationSetOutcome Route53Client::CreateReusableDelegationSet(co
 
 CreateTrafficPolicyOutcome Route53Client::CreateTrafficPolicy(const CreateTrafficPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateTrafficPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateTrafficPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateTrafficPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -375,6 +388,7 @@ CreateTrafficPolicyOutcome Route53Client::CreateTrafficPolicy(const CreateTraffi
 
 CreateTrafficPolicyInstanceOutcome Route53Client::CreateTrafficPolicyInstance(const CreateTrafficPolicyInstanceRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateTrafficPolicyInstance);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateTrafficPolicyInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateTrafficPolicyInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -384,6 +398,7 @@ CreateTrafficPolicyInstanceOutcome Route53Client::CreateTrafficPolicyInstance(co
 
 CreateTrafficPolicyVersionOutcome Route53Client::CreateTrafficPolicyVersion(const CreateTrafficPolicyVersionRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateTrafficPolicyVersion);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateTrafficPolicyVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -399,6 +414,7 @@ CreateTrafficPolicyVersionOutcome Route53Client::CreateTrafficPolicyVersion(cons
 
 CreateVPCAssociationAuthorizationOutcome Route53Client::CreateVPCAssociationAuthorization(const CreateVPCAssociationAuthorizationRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateVPCAssociationAuthorization);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateVPCAssociationAuthorization, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.HostedZoneIdHasBeenSet())
   {
@@ -415,6 +431,7 @@ CreateVPCAssociationAuthorizationOutcome Route53Client::CreateVPCAssociationAuth
 
 DeactivateKeySigningKeyOutcome Route53Client::DeactivateKeySigningKey(const DeactivateKeySigningKeyRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeactivateKeySigningKey);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeactivateKeySigningKey, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.HostedZoneIdHasBeenSet())
   {
@@ -437,6 +454,7 @@ DeactivateKeySigningKeyOutcome Route53Client::DeactivateKeySigningKey(const Deac
 
 DeleteCidrCollectionOutcome Route53Client::DeleteCidrCollection(const DeleteCidrCollectionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteCidrCollection);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteCidrCollection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -452,6 +470,7 @@ DeleteCidrCollectionOutcome Route53Client::DeleteCidrCollection(const DeleteCidr
 
 DeleteHealthCheckOutcome Route53Client::DeleteHealthCheck(const DeleteHealthCheckRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteHealthCheck);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteHealthCheck, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.HealthCheckIdHasBeenSet())
   {
@@ -467,6 +486,7 @@ DeleteHealthCheckOutcome Route53Client::DeleteHealthCheck(const DeleteHealthChec
 
 DeleteHostedZoneOutcome Route53Client::DeleteHostedZone(const DeleteHostedZoneRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteHostedZone);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteHostedZone, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -482,6 +502,7 @@ DeleteHostedZoneOutcome Route53Client::DeleteHostedZone(const DeleteHostedZoneRe
 
 DeleteKeySigningKeyOutcome Route53Client::DeleteKeySigningKey(const DeleteKeySigningKeyRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteKeySigningKey);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteKeySigningKey, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.HostedZoneIdHasBeenSet())
   {
@@ -503,6 +524,7 @@ DeleteKeySigningKeyOutcome Route53Client::DeleteKeySigningKey(const DeleteKeySig
 
 DeleteQueryLoggingConfigOutcome Route53Client::DeleteQueryLoggingConfig(const DeleteQueryLoggingConfigRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteQueryLoggingConfig);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteQueryLoggingConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -518,6 +540,7 @@ DeleteQueryLoggingConfigOutcome Route53Client::DeleteQueryLoggingConfig(const De
 
 DeleteReusableDelegationSetOutcome Route53Client::DeleteReusableDelegationSet(const DeleteReusableDelegationSetRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteReusableDelegationSet);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteReusableDelegationSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -533,6 +556,7 @@ DeleteReusableDelegationSetOutcome Route53Client::DeleteReusableDelegationSet(co
 
 DeleteTrafficPolicyOutcome Route53Client::DeleteTrafficPolicy(const DeleteTrafficPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteTrafficPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteTrafficPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -554,6 +578,7 @@ DeleteTrafficPolicyOutcome Route53Client::DeleteTrafficPolicy(const DeleteTraffi
 
 DeleteTrafficPolicyInstanceOutcome Route53Client::DeleteTrafficPolicyInstance(const DeleteTrafficPolicyInstanceRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteTrafficPolicyInstance);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteTrafficPolicyInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -569,6 +594,7 @@ DeleteTrafficPolicyInstanceOutcome Route53Client::DeleteTrafficPolicyInstance(co
 
 DeleteVPCAssociationAuthorizationOutcome Route53Client::DeleteVPCAssociationAuthorization(const DeleteVPCAssociationAuthorizationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteVPCAssociationAuthorization);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteVPCAssociationAuthorization, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.HostedZoneIdHasBeenSet())
   {
@@ -585,6 +611,7 @@ DeleteVPCAssociationAuthorizationOutcome Route53Client::DeleteVPCAssociationAuth
 
 DisableHostedZoneDNSSECOutcome Route53Client::DisableHostedZoneDNSSEC(const DisableHostedZoneDNSSECRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisableHostedZoneDNSSEC);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisableHostedZoneDNSSEC, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.HostedZoneIdHasBeenSet())
   {
@@ -601,6 +628,7 @@ DisableHostedZoneDNSSECOutcome Route53Client::DisableHostedZoneDNSSEC(const Disa
 
 DisassociateVPCFromHostedZoneOutcome Route53Client::DisassociateVPCFromHostedZone(const DisassociateVPCFromHostedZoneRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociateVPCFromHostedZone);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateVPCFromHostedZone, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.HostedZoneIdHasBeenSet())
   {
@@ -617,6 +645,7 @@ DisassociateVPCFromHostedZoneOutcome Route53Client::DisassociateVPCFromHostedZon
 
 EnableHostedZoneDNSSECOutcome Route53Client::EnableHostedZoneDNSSEC(const EnableHostedZoneDNSSECRequest& request) const
 {
+  AWS_OPERATION_GUARD(EnableHostedZoneDNSSEC);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, EnableHostedZoneDNSSEC, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.HostedZoneIdHasBeenSet())
   {
@@ -633,6 +662,7 @@ EnableHostedZoneDNSSECOutcome Route53Client::EnableHostedZoneDNSSEC(const Enable
 
 GetAccountLimitOutcome Route53Client::GetAccountLimit(const GetAccountLimitRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetAccountLimit);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAccountLimit, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TypeHasBeenSet())
   {
@@ -648,6 +678,7 @@ GetAccountLimitOutcome Route53Client::GetAccountLimit(const GetAccountLimitReque
 
 GetChangeOutcome Route53Client::GetChange(const GetChangeRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetChange);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetChange, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -663,6 +694,7 @@ GetChangeOutcome Route53Client::GetChange(const GetChangeRequest& request) const
 
 GetCheckerIpRangesOutcome Route53Client::GetCheckerIpRanges(const GetCheckerIpRangesRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetCheckerIpRanges);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCheckerIpRanges, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetCheckerIpRanges, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -672,6 +704,7 @@ GetCheckerIpRangesOutcome Route53Client::GetCheckerIpRanges(const GetCheckerIpRa
 
 GetDNSSECOutcome Route53Client::GetDNSSEC(const GetDNSSECRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDNSSEC);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDNSSEC, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.HostedZoneIdHasBeenSet())
   {
@@ -688,6 +721,7 @@ GetDNSSECOutcome Route53Client::GetDNSSEC(const GetDNSSECRequest& request) const
 
 GetGeoLocationOutcome Route53Client::GetGeoLocation(const GetGeoLocationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetGeoLocation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetGeoLocation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetGeoLocation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -697,6 +731,7 @@ GetGeoLocationOutcome Route53Client::GetGeoLocation(const GetGeoLocationRequest&
 
 GetHealthCheckOutcome Route53Client::GetHealthCheck(const GetHealthCheckRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetHealthCheck);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetHealthCheck, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.HealthCheckIdHasBeenSet())
   {
@@ -712,6 +747,7 @@ GetHealthCheckOutcome Route53Client::GetHealthCheck(const GetHealthCheckRequest&
 
 GetHealthCheckCountOutcome Route53Client::GetHealthCheckCount(const GetHealthCheckCountRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetHealthCheckCount);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetHealthCheckCount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetHealthCheckCount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -721,6 +757,7 @@ GetHealthCheckCountOutcome Route53Client::GetHealthCheckCount(const GetHealthChe
 
 GetHealthCheckLastFailureReasonOutcome Route53Client::GetHealthCheckLastFailureReason(const GetHealthCheckLastFailureReasonRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetHealthCheckLastFailureReason);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetHealthCheckLastFailureReason, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.HealthCheckIdHasBeenSet())
   {
@@ -737,6 +774,7 @@ GetHealthCheckLastFailureReasonOutcome Route53Client::GetHealthCheckLastFailureR
 
 GetHealthCheckStatusOutcome Route53Client::GetHealthCheckStatus(const GetHealthCheckStatusRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetHealthCheckStatus);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetHealthCheckStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.HealthCheckIdHasBeenSet())
   {
@@ -753,6 +791,7 @@ GetHealthCheckStatusOutcome Route53Client::GetHealthCheckStatus(const GetHealthC
 
 GetHostedZoneOutcome Route53Client::GetHostedZone(const GetHostedZoneRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetHostedZone);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetHostedZone, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -768,6 +807,7 @@ GetHostedZoneOutcome Route53Client::GetHostedZone(const GetHostedZoneRequest& re
 
 GetHostedZoneCountOutcome Route53Client::GetHostedZoneCount(const GetHostedZoneCountRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetHostedZoneCount);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetHostedZoneCount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetHostedZoneCount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -777,6 +817,7 @@ GetHostedZoneCountOutcome Route53Client::GetHostedZoneCount(const GetHostedZoneC
 
 GetHostedZoneLimitOutcome Route53Client::GetHostedZoneLimit(const GetHostedZoneLimitRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetHostedZoneLimit);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetHostedZoneLimit, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TypeHasBeenSet())
   {
@@ -798,6 +839,7 @@ GetHostedZoneLimitOutcome Route53Client::GetHostedZoneLimit(const GetHostedZoneL
 
 GetQueryLoggingConfigOutcome Route53Client::GetQueryLoggingConfig(const GetQueryLoggingConfigRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetQueryLoggingConfig);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetQueryLoggingConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -813,6 +855,7 @@ GetQueryLoggingConfigOutcome Route53Client::GetQueryLoggingConfig(const GetQuery
 
 GetReusableDelegationSetOutcome Route53Client::GetReusableDelegationSet(const GetReusableDelegationSetRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetReusableDelegationSet);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetReusableDelegationSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -828,6 +871,7 @@ GetReusableDelegationSetOutcome Route53Client::GetReusableDelegationSet(const Ge
 
 GetReusableDelegationSetLimitOutcome Route53Client::GetReusableDelegationSetLimit(const GetReusableDelegationSetLimitRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetReusableDelegationSetLimit);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetReusableDelegationSetLimit, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TypeHasBeenSet())
   {
@@ -849,6 +893,7 @@ GetReusableDelegationSetLimitOutcome Route53Client::GetReusableDelegationSetLimi
 
 GetTrafficPolicyOutcome Route53Client::GetTrafficPolicy(const GetTrafficPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetTrafficPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetTrafficPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -870,6 +915,7 @@ GetTrafficPolicyOutcome Route53Client::GetTrafficPolicy(const GetTrafficPolicyRe
 
 GetTrafficPolicyInstanceOutcome Route53Client::GetTrafficPolicyInstance(const GetTrafficPolicyInstanceRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetTrafficPolicyInstance);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetTrafficPolicyInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -885,6 +931,7 @@ GetTrafficPolicyInstanceOutcome Route53Client::GetTrafficPolicyInstance(const Ge
 
 GetTrafficPolicyInstanceCountOutcome Route53Client::GetTrafficPolicyInstanceCount(const GetTrafficPolicyInstanceCountRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetTrafficPolicyInstanceCount);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetTrafficPolicyInstanceCount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetTrafficPolicyInstanceCount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -894,6 +941,7 @@ GetTrafficPolicyInstanceCountOutcome Route53Client::GetTrafficPolicyInstanceCoun
 
 ListCidrBlocksOutcome Route53Client::ListCidrBlocks(const ListCidrBlocksRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListCidrBlocks);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListCidrBlocks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CollectionIdHasBeenSet())
   {
@@ -910,6 +958,7 @@ ListCidrBlocksOutcome Route53Client::ListCidrBlocks(const ListCidrBlocksRequest&
 
 ListCidrCollectionsOutcome Route53Client::ListCidrCollections(const ListCidrCollectionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListCidrCollections);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListCidrCollections, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListCidrCollections, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -919,6 +968,7 @@ ListCidrCollectionsOutcome Route53Client::ListCidrCollections(const ListCidrColl
 
 ListCidrLocationsOutcome Route53Client::ListCidrLocations(const ListCidrLocationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListCidrLocations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListCidrLocations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CollectionIdHasBeenSet())
   {
@@ -934,6 +984,7 @@ ListCidrLocationsOutcome Route53Client::ListCidrLocations(const ListCidrLocation
 
 ListGeoLocationsOutcome Route53Client::ListGeoLocations(const ListGeoLocationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListGeoLocations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListGeoLocations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListGeoLocations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -943,6 +994,7 @@ ListGeoLocationsOutcome Route53Client::ListGeoLocations(const ListGeoLocationsRe
 
 ListHealthChecksOutcome Route53Client::ListHealthChecks(const ListHealthChecksRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListHealthChecks);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListHealthChecks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListHealthChecks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -952,6 +1004,7 @@ ListHealthChecksOutcome Route53Client::ListHealthChecks(const ListHealthChecksRe
 
 ListHostedZonesOutcome Route53Client::ListHostedZones(const ListHostedZonesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListHostedZones);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListHostedZones, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListHostedZones, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -961,6 +1014,7 @@ ListHostedZonesOutcome Route53Client::ListHostedZones(const ListHostedZonesReque
 
 ListHostedZonesByNameOutcome Route53Client::ListHostedZonesByName(const ListHostedZonesByNameRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListHostedZonesByName);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListHostedZonesByName, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListHostedZonesByName, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -970,6 +1024,7 @@ ListHostedZonesByNameOutcome Route53Client::ListHostedZonesByName(const ListHost
 
 ListHostedZonesByVPCOutcome Route53Client::ListHostedZonesByVPC(const ListHostedZonesByVPCRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListHostedZonesByVPC);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListHostedZonesByVPC, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VPCIdHasBeenSet())
   {
@@ -989,6 +1044,7 @@ ListHostedZonesByVPCOutcome Route53Client::ListHostedZonesByVPC(const ListHosted
 
 ListQueryLoggingConfigsOutcome Route53Client::ListQueryLoggingConfigs(const ListQueryLoggingConfigsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListQueryLoggingConfigs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListQueryLoggingConfigs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListQueryLoggingConfigs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -998,6 +1054,7 @@ ListQueryLoggingConfigsOutcome Route53Client::ListQueryLoggingConfigs(const List
 
 ListResourceRecordSetsOutcome Route53Client::ListResourceRecordSets(const ListResourceRecordSetsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListResourceRecordSets);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListResourceRecordSets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.HostedZoneIdHasBeenSet())
   {
@@ -1014,6 +1071,7 @@ ListResourceRecordSetsOutcome Route53Client::ListResourceRecordSets(const ListRe
 
 ListReusableDelegationSetsOutcome Route53Client::ListReusableDelegationSets(const ListReusableDelegationSetsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListReusableDelegationSets);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListReusableDelegationSets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListReusableDelegationSets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1023,6 +1081,7 @@ ListReusableDelegationSetsOutcome Route53Client::ListReusableDelegationSets(cons
 
 ListTagsForResourceOutcome Route53Client::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceTypeHasBeenSet())
   {
@@ -1044,6 +1103,7 @@ ListTagsForResourceOutcome Route53Client::ListTagsForResource(const ListTagsForR
 
 ListTagsForResourcesOutcome Route53Client::ListTagsForResources(const ListTagsForResourcesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResources);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceTypeHasBeenSet())
   {
@@ -1059,6 +1119,7 @@ ListTagsForResourcesOutcome Route53Client::ListTagsForResources(const ListTagsFo
 
 ListTrafficPoliciesOutcome Route53Client::ListTrafficPolicies(const ListTrafficPoliciesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTrafficPolicies);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTrafficPolicies, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTrafficPolicies, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1068,6 +1129,7 @@ ListTrafficPoliciesOutcome Route53Client::ListTrafficPolicies(const ListTrafficP
 
 ListTrafficPolicyInstancesOutcome Route53Client::ListTrafficPolicyInstances(const ListTrafficPolicyInstancesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTrafficPolicyInstances);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTrafficPolicyInstances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTrafficPolicyInstances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1077,6 +1139,7 @@ ListTrafficPolicyInstancesOutcome Route53Client::ListTrafficPolicyInstances(cons
 
 ListTrafficPolicyInstancesByHostedZoneOutcome Route53Client::ListTrafficPolicyInstancesByHostedZone(const ListTrafficPolicyInstancesByHostedZoneRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTrafficPolicyInstancesByHostedZone);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTrafficPolicyInstancesByHostedZone, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.HostedZoneIdHasBeenSet())
   {
@@ -1091,6 +1154,7 @@ ListTrafficPolicyInstancesByHostedZoneOutcome Route53Client::ListTrafficPolicyIn
 
 ListTrafficPolicyInstancesByPolicyOutcome Route53Client::ListTrafficPolicyInstancesByPolicy(const ListTrafficPolicyInstancesByPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTrafficPolicyInstancesByPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTrafficPolicyInstancesByPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TrafficPolicyIdHasBeenSet())
   {
@@ -1110,6 +1174,7 @@ ListTrafficPolicyInstancesByPolicyOutcome Route53Client::ListTrafficPolicyInstan
 
 ListTrafficPolicyVersionsOutcome Route53Client::ListTrafficPolicyVersions(const ListTrafficPolicyVersionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTrafficPolicyVersions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTrafficPolicyVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -1126,6 +1191,7 @@ ListTrafficPolicyVersionsOutcome Route53Client::ListTrafficPolicyVersions(const 
 
 ListVPCAssociationAuthorizationsOutcome Route53Client::ListVPCAssociationAuthorizations(const ListVPCAssociationAuthorizationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListVPCAssociationAuthorizations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListVPCAssociationAuthorizations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.HostedZoneIdHasBeenSet())
   {
@@ -1142,6 +1208,7 @@ ListVPCAssociationAuthorizationsOutcome Route53Client::ListVPCAssociationAuthori
 
 TestDNSAnswerOutcome Route53Client::TestDNSAnswer(const TestDNSAnswerRequest& request) const
 {
+  AWS_OPERATION_GUARD(TestDNSAnswer);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TestDNSAnswer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.HostedZoneIdHasBeenSet())
   {
@@ -1166,6 +1233,7 @@ TestDNSAnswerOutcome Route53Client::TestDNSAnswer(const TestDNSAnswerRequest& re
 
 UpdateHealthCheckOutcome Route53Client::UpdateHealthCheck(const UpdateHealthCheckRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateHealthCheck);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateHealthCheck, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.HealthCheckIdHasBeenSet())
   {
@@ -1181,6 +1249,7 @@ UpdateHealthCheckOutcome Route53Client::UpdateHealthCheck(const UpdateHealthChec
 
 UpdateHostedZoneCommentOutcome Route53Client::UpdateHostedZoneComment(const UpdateHostedZoneCommentRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateHostedZoneComment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateHostedZoneComment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -1196,6 +1265,7 @@ UpdateHostedZoneCommentOutcome Route53Client::UpdateHostedZoneComment(const Upda
 
 UpdateTrafficPolicyCommentOutcome Route53Client::UpdateTrafficPolicyComment(const UpdateTrafficPolicyCommentRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateTrafficPolicyComment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateTrafficPolicyComment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -1217,6 +1287,7 @@ UpdateTrafficPolicyCommentOutcome Route53Client::UpdateTrafficPolicyComment(cons
 
 UpdateTrafficPolicyInstanceOutcome Route53Client::UpdateTrafficPolicyInstance(const UpdateTrafficPolicyInstanceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateTrafficPolicyInstance);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateTrafficPolicyInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {

@@ -131,6 +131,7 @@ EC2InstanceConnectClient::EC2InstanceConnectClient(const std::shared_ptr<AWSCred
     /* End of legacy constructors due deprecation */
 EC2InstanceConnectClient::~EC2InstanceConnectClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<EC2InstanceConnectEndpointProviderBase>& EC2InstanceConnectClient::accessEndpointProvider()
@@ -153,6 +154,7 @@ void EC2InstanceConnectClient::OverrideEndpoint(const Aws::String& endpoint)
 
 SendSSHPublicKeyOutcome EC2InstanceConnectClient::SendSSHPublicKey(const SendSSHPublicKeyRequest& request) const
 {
+  AWS_OPERATION_GUARD(SendSSHPublicKey);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SendSSHPublicKey, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SendSSHPublicKey, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -161,6 +163,7 @@ SendSSHPublicKeyOutcome EC2InstanceConnectClient::SendSSHPublicKey(const SendSSH
 
 SendSerialConsoleSSHPublicKeyOutcome EC2InstanceConnectClient::SendSerialConsoleSSHPublicKey(const SendSerialConsoleSSHPublicKeyRequest& request) const
 {
+  AWS_OPERATION_GUARD(SendSerialConsoleSSHPublicKey);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SendSerialConsoleSSHPublicKey, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SendSerialConsoleSSHPublicKey, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

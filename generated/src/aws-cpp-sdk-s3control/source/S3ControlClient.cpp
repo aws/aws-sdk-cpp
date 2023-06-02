@@ -207,6 +207,7 @@ S3ControlClient::S3ControlClient(const std::shared_ptr<AWSCredentialsProvider>& 
     /* End of legacy constructors due deprecation */
 S3ControlClient::~S3ControlClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<S3ControlEndpointProviderBase>& S3ControlClient::accessEndpointProvider()
@@ -229,6 +230,7 @@ void S3ControlClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CreateAccessPointOutcome S3ControlClient::CreateAccessPoint(const CreateAccessPointRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateAccessPoint);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAccessPoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -251,6 +253,7 @@ CreateAccessPointOutcome S3ControlClient::CreateAccessPoint(const CreateAccessPo
 
 CreateAccessPointForObjectLambdaOutcome S3ControlClient::CreateAccessPointForObjectLambda(const CreateAccessPointForObjectLambdaRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateAccessPointForObjectLambda);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAccessPointForObjectLambda, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -273,6 +276,7 @@ CreateAccessPointForObjectLambdaOutcome S3ControlClient::CreateAccessPointForObj
 
 CreateBucketOutcome S3ControlClient::CreateBucket(const CreateBucketRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateBucket);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateBucket, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -288,6 +292,7 @@ CreateBucketOutcome S3ControlClient::CreateBucket(const CreateBucketRequest& req
 
 CreateJobOutcome S3ControlClient::CreateJob(const CreateJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -309,6 +314,7 @@ CreateJobOutcome S3ControlClient::CreateJob(const CreateJobRequest& request) con
 
 CreateMultiRegionAccessPointOutcome S3ControlClient::CreateMultiRegionAccessPoint(const CreateMultiRegionAccessPointRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateMultiRegionAccessPoint);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateMultiRegionAccessPoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -330,6 +336,7 @@ CreateMultiRegionAccessPointOutcome S3ControlClient::CreateMultiRegionAccessPoin
 
 DeleteAccessPointOutcome S3ControlClient::DeleteAccessPoint(const DeleteAccessPointRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteAccessPoint);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAccessPoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -352,6 +359,7 @@ DeleteAccessPointOutcome S3ControlClient::DeleteAccessPoint(const DeleteAccessPo
 
 DeleteAccessPointForObjectLambdaOutcome S3ControlClient::DeleteAccessPointForObjectLambda(const DeleteAccessPointForObjectLambdaRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteAccessPointForObjectLambda);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAccessPointForObjectLambda, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -374,6 +382,7 @@ DeleteAccessPointForObjectLambdaOutcome S3ControlClient::DeleteAccessPointForObj
 
 DeleteAccessPointPolicyOutcome S3ControlClient::DeleteAccessPointPolicy(const DeleteAccessPointPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteAccessPointPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAccessPointPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -397,6 +406,7 @@ DeleteAccessPointPolicyOutcome S3ControlClient::DeleteAccessPointPolicy(const De
 
 DeleteAccessPointPolicyForObjectLambdaOutcome S3ControlClient::DeleteAccessPointPolicyForObjectLambda(const DeleteAccessPointPolicyForObjectLambdaRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteAccessPointPolicyForObjectLambda);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAccessPointPolicyForObjectLambda, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -420,6 +430,7 @@ DeleteAccessPointPolicyForObjectLambdaOutcome S3ControlClient::DeleteAccessPoint
 
 DeleteBucketOutcome S3ControlClient::DeleteBucket(const DeleteBucketRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteBucket);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteBucket, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -442,6 +453,7 @@ DeleteBucketOutcome S3ControlClient::DeleteBucket(const DeleteBucketRequest& req
 
 DeleteBucketLifecycleConfigurationOutcome S3ControlClient::DeleteBucketLifecycleConfiguration(const DeleteBucketLifecycleConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteBucketLifecycleConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteBucketLifecycleConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -465,6 +477,7 @@ DeleteBucketLifecycleConfigurationOutcome S3ControlClient::DeleteBucketLifecycle
 
 DeleteBucketPolicyOutcome S3ControlClient::DeleteBucketPolicy(const DeleteBucketPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteBucketPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteBucketPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -488,6 +501,7 @@ DeleteBucketPolicyOutcome S3ControlClient::DeleteBucketPolicy(const DeleteBucket
 
 DeleteBucketReplicationOutcome S3ControlClient::DeleteBucketReplication(const DeleteBucketReplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteBucketReplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteBucketReplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -511,6 +525,7 @@ DeleteBucketReplicationOutcome S3ControlClient::DeleteBucketReplication(const De
 
 DeleteBucketTaggingOutcome S3ControlClient::DeleteBucketTagging(const DeleteBucketTaggingRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteBucketTagging);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteBucketTagging, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -534,6 +549,7 @@ DeleteBucketTaggingOutcome S3ControlClient::DeleteBucketTagging(const DeleteBuck
 
 DeleteJobTaggingOutcome S3ControlClient::DeleteJobTagging(const DeleteJobTaggingRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteJobTagging);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteJobTagging, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -562,6 +578,7 @@ DeleteJobTaggingOutcome S3ControlClient::DeleteJobTagging(const DeleteJobTagging
 
 DeleteMultiRegionAccessPointOutcome S3ControlClient::DeleteMultiRegionAccessPoint(const DeleteMultiRegionAccessPointRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteMultiRegionAccessPoint);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteMultiRegionAccessPoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -583,6 +600,7 @@ DeleteMultiRegionAccessPointOutcome S3ControlClient::DeleteMultiRegionAccessPoin
 
 DeletePublicAccessBlockOutcome S3ControlClient::DeletePublicAccessBlock(const DeletePublicAccessBlockRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeletePublicAccessBlock);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeletePublicAccessBlock, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -604,6 +622,7 @@ DeletePublicAccessBlockOutcome S3ControlClient::DeletePublicAccessBlock(const De
 
 DeleteStorageLensConfigurationOutcome S3ControlClient::DeleteStorageLensConfiguration(const DeleteStorageLensConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteStorageLensConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteStorageLensConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConfigIdHasBeenSet())
   {
@@ -631,6 +650,7 @@ DeleteStorageLensConfigurationOutcome S3ControlClient::DeleteStorageLensConfigur
 
 DeleteStorageLensConfigurationTaggingOutcome S3ControlClient::DeleteStorageLensConfigurationTagging(const DeleteStorageLensConfigurationTaggingRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteStorageLensConfigurationTagging);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteStorageLensConfigurationTagging, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConfigIdHasBeenSet())
   {
@@ -659,6 +679,7 @@ DeleteStorageLensConfigurationTaggingOutcome S3ControlClient::DeleteStorageLensC
 
 DescribeJobOutcome S3ControlClient::DescribeJob(const DescribeJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -686,6 +707,7 @@ DescribeJobOutcome S3ControlClient::DescribeJob(const DescribeJobRequest& reques
 
 DescribeMultiRegionAccessPointOperationOutcome S3ControlClient::DescribeMultiRegionAccessPointOperation(const DescribeMultiRegionAccessPointOperationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeMultiRegionAccessPointOperation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeMultiRegionAccessPointOperation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -713,6 +735,7 @@ DescribeMultiRegionAccessPointOperationOutcome S3ControlClient::DescribeMultiReg
 
 GetAccessPointOutcome S3ControlClient::GetAccessPoint(const GetAccessPointRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetAccessPoint);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAccessPoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -735,6 +758,7 @@ GetAccessPointOutcome S3ControlClient::GetAccessPoint(const GetAccessPointReques
 
 GetAccessPointConfigurationForObjectLambdaOutcome S3ControlClient::GetAccessPointConfigurationForObjectLambda(const GetAccessPointConfigurationForObjectLambdaRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetAccessPointConfigurationForObjectLambda);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAccessPointConfigurationForObjectLambda, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -758,6 +782,7 @@ GetAccessPointConfigurationForObjectLambdaOutcome S3ControlClient::GetAccessPoin
 
 GetAccessPointForObjectLambdaOutcome S3ControlClient::GetAccessPointForObjectLambda(const GetAccessPointForObjectLambdaRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetAccessPointForObjectLambda);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAccessPointForObjectLambda, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -780,6 +805,7 @@ GetAccessPointForObjectLambdaOutcome S3ControlClient::GetAccessPointForObjectLam
 
 GetAccessPointPolicyOutcome S3ControlClient::GetAccessPointPolicy(const GetAccessPointPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetAccessPointPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAccessPointPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -803,6 +829,7 @@ GetAccessPointPolicyOutcome S3ControlClient::GetAccessPointPolicy(const GetAcces
 
 GetAccessPointPolicyForObjectLambdaOutcome S3ControlClient::GetAccessPointPolicyForObjectLambda(const GetAccessPointPolicyForObjectLambdaRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetAccessPointPolicyForObjectLambda);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAccessPointPolicyForObjectLambda, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -826,6 +853,7 @@ GetAccessPointPolicyForObjectLambdaOutcome S3ControlClient::GetAccessPointPolicy
 
 GetAccessPointPolicyStatusOutcome S3ControlClient::GetAccessPointPolicyStatus(const GetAccessPointPolicyStatusRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetAccessPointPolicyStatus);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAccessPointPolicyStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -849,6 +877,7 @@ GetAccessPointPolicyStatusOutcome S3ControlClient::GetAccessPointPolicyStatus(co
 
 GetAccessPointPolicyStatusForObjectLambdaOutcome S3ControlClient::GetAccessPointPolicyStatusForObjectLambda(const GetAccessPointPolicyStatusForObjectLambdaRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetAccessPointPolicyStatusForObjectLambda);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAccessPointPolicyStatusForObjectLambda, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -872,6 +901,7 @@ GetAccessPointPolicyStatusForObjectLambdaOutcome S3ControlClient::GetAccessPoint
 
 GetBucketOutcome S3ControlClient::GetBucket(const GetBucketRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetBucket);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBucket, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -894,6 +924,7 @@ GetBucketOutcome S3ControlClient::GetBucket(const GetBucketRequest& request) con
 
 GetBucketLifecycleConfigurationOutcome S3ControlClient::GetBucketLifecycleConfiguration(const GetBucketLifecycleConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetBucketLifecycleConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBucketLifecycleConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -917,6 +948,7 @@ GetBucketLifecycleConfigurationOutcome S3ControlClient::GetBucketLifecycleConfig
 
 GetBucketPolicyOutcome S3ControlClient::GetBucketPolicy(const GetBucketPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetBucketPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBucketPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -940,6 +972,7 @@ GetBucketPolicyOutcome S3ControlClient::GetBucketPolicy(const GetBucketPolicyReq
 
 GetBucketReplicationOutcome S3ControlClient::GetBucketReplication(const GetBucketReplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetBucketReplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBucketReplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -963,6 +996,7 @@ GetBucketReplicationOutcome S3ControlClient::GetBucketReplication(const GetBucke
 
 GetBucketTaggingOutcome S3ControlClient::GetBucketTagging(const GetBucketTaggingRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetBucketTagging);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBucketTagging, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -986,6 +1020,7 @@ GetBucketTaggingOutcome S3ControlClient::GetBucketTagging(const GetBucketTagging
 
 GetBucketVersioningOutcome S3ControlClient::GetBucketVersioning(const GetBucketVersioningRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetBucketVersioning);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBucketVersioning, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -1009,6 +1044,7 @@ GetBucketVersioningOutcome S3ControlClient::GetBucketVersioning(const GetBucketV
 
 GetJobTaggingOutcome S3ControlClient::GetJobTagging(const GetJobTaggingRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetJobTagging);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetJobTagging, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -1037,6 +1073,7 @@ GetJobTaggingOutcome S3ControlClient::GetJobTagging(const GetJobTaggingRequest& 
 
 GetMultiRegionAccessPointOutcome S3ControlClient::GetMultiRegionAccessPoint(const GetMultiRegionAccessPointRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetMultiRegionAccessPoint);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMultiRegionAccessPoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -1059,6 +1096,7 @@ GetMultiRegionAccessPointOutcome S3ControlClient::GetMultiRegionAccessPoint(cons
 
 GetMultiRegionAccessPointPolicyOutcome S3ControlClient::GetMultiRegionAccessPointPolicy(const GetMultiRegionAccessPointPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetMultiRegionAccessPointPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMultiRegionAccessPointPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -1082,6 +1120,7 @@ GetMultiRegionAccessPointPolicyOutcome S3ControlClient::GetMultiRegionAccessPoin
 
 GetMultiRegionAccessPointPolicyStatusOutcome S3ControlClient::GetMultiRegionAccessPointPolicyStatus(const GetMultiRegionAccessPointPolicyStatusRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetMultiRegionAccessPointPolicyStatus);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMultiRegionAccessPointPolicyStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -1105,6 +1144,7 @@ GetMultiRegionAccessPointPolicyStatusOutcome S3ControlClient::GetMultiRegionAcce
 
 GetMultiRegionAccessPointRoutesOutcome S3ControlClient::GetMultiRegionAccessPointRoutes(const GetMultiRegionAccessPointRoutesRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetMultiRegionAccessPointRoutes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMultiRegionAccessPointRoutes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -1133,6 +1173,7 @@ GetMultiRegionAccessPointRoutesOutcome S3ControlClient::GetMultiRegionAccessPoin
 
 GetPublicAccessBlockOutcome S3ControlClient::GetPublicAccessBlock(const GetPublicAccessBlockRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetPublicAccessBlock);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPublicAccessBlock, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -1154,6 +1195,7 @@ GetPublicAccessBlockOutcome S3ControlClient::GetPublicAccessBlock(const GetPubli
 
 GetStorageLensConfigurationOutcome S3ControlClient::GetStorageLensConfiguration(const GetStorageLensConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetStorageLensConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetStorageLensConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConfigIdHasBeenSet())
   {
@@ -1181,6 +1223,7 @@ GetStorageLensConfigurationOutcome S3ControlClient::GetStorageLensConfiguration(
 
 GetStorageLensConfigurationTaggingOutcome S3ControlClient::GetStorageLensConfigurationTagging(const GetStorageLensConfigurationTaggingRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetStorageLensConfigurationTagging);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetStorageLensConfigurationTagging, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConfigIdHasBeenSet())
   {
@@ -1209,6 +1252,7 @@ GetStorageLensConfigurationTaggingOutcome S3ControlClient::GetStorageLensConfigu
 
 ListAccessPointsOutcome S3ControlClient::ListAccessPoints(const ListAccessPointsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAccessPoints);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAccessPoints, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (request.GetAccountId().size() != 12 || request.GetAccountId().find_first_not_of("0123456789") != Aws::String::npos)
   {
@@ -1225,6 +1269,7 @@ ListAccessPointsOutcome S3ControlClient::ListAccessPoints(const ListAccessPoints
 
 ListAccessPointsForObjectLambdaOutcome S3ControlClient::ListAccessPointsForObjectLambda(const ListAccessPointsForObjectLambdaRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAccessPointsForObjectLambda);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAccessPointsForObjectLambda, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -1246,6 +1291,7 @@ ListAccessPointsForObjectLambdaOutcome S3ControlClient::ListAccessPointsForObjec
 
 ListJobsOutcome S3ControlClient::ListJobs(const ListJobsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListJobs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -1267,6 +1313,7 @@ ListJobsOutcome S3ControlClient::ListJobs(const ListJobsRequest& request) const
 
 ListMultiRegionAccessPointsOutcome S3ControlClient::ListMultiRegionAccessPoints(const ListMultiRegionAccessPointsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListMultiRegionAccessPoints);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListMultiRegionAccessPoints, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -1288,6 +1335,7 @@ ListMultiRegionAccessPointsOutcome S3ControlClient::ListMultiRegionAccessPoints(
 
 ListRegionalBucketsOutcome S3ControlClient::ListRegionalBuckets(const ListRegionalBucketsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListRegionalBuckets);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRegionalBuckets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -1309,6 +1357,7 @@ ListRegionalBucketsOutcome S3ControlClient::ListRegionalBuckets(const ListRegion
 
 ListStorageLensConfigurationsOutcome S3ControlClient::ListStorageLensConfigurations(const ListStorageLensConfigurationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListStorageLensConfigurations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListStorageLensConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -1330,6 +1379,7 @@ ListStorageLensConfigurationsOutcome S3ControlClient::ListStorageLensConfigurati
 
 PutAccessPointConfigurationForObjectLambdaOutcome S3ControlClient::PutAccessPointConfigurationForObjectLambda(const PutAccessPointConfigurationForObjectLambdaRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutAccessPointConfigurationForObjectLambda);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutAccessPointConfigurationForObjectLambda, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -1353,6 +1403,7 @@ PutAccessPointConfigurationForObjectLambdaOutcome S3ControlClient::PutAccessPoin
 
 PutAccessPointPolicyOutcome S3ControlClient::PutAccessPointPolicy(const PutAccessPointPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutAccessPointPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutAccessPointPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -1376,6 +1427,7 @@ PutAccessPointPolicyOutcome S3ControlClient::PutAccessPointPolicy(const PutAcces
 
 PutAccessPointPolicyForObjectLambdaOutcome S3ControlClient::PutAccessPointPolicyForObjectLambda(const PutAccessPointPolicyForObjectLambdaRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutAccessPointPolicyForObjectLambda);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutAccessPointPolicyForObjectLambda, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -1399,6 +1451,7 @@ PutAccessPointPolicyForObjectLambdaOutcome S3ControlClient::PutAccessPointPolicy
 
 PutBucketLifecycleConfigurationOutcome S3ControlClient::PutBucketLifecycleConfiguration(const PutBucketLifecycleConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutBucketLifecycleConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutBucketLifecycleConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -1422,6 +1475,7 @@ PutBucketLifecycleConfigurationOutcome S3ControlClient::PutBucketLifecycleConfig
 
 PutBucketPolicyOutcome S3ControlClient::PutBucketPolicy(const PutBucketPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutBucketPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutBucketPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -1445,6 +1499,7 @@ PutBucketPolicyOutcome S3ControlClient::PutBucketPolicy(const PutBucketPolicyReq
 
 PutBucketReplicationOutcome S3ControlClient::PutBucketReplication(const PutBucketReplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutBucketReplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutBucketReplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -1468,6 +1523,7 @@ PutBucketReplicationOutcome S3ControlClient::PutBucketReplication(const PutBucke
 
 PutBucketTaggingOutcome S3ControlClient::PutBucketTagging(const PutBucketTaggingRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutBucketTagging);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutBucketTagging, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -1491,6 +1547,7 @@ PutBucketTaggingOutcome S3ControlClient::PutBucketTagging(const PutBucketTagging
 
 PutBucketVersioningOutcome S3ControlClient::PutBucketVersioning(const PutBucketVersioningRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutBucketVersioning);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutBucketVersioning, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -1514,6 +1571,7 @@ PutBucketVersioningOutcome S3ControlClient::PutBucketVersioning(const PutBucketV
 
 PutJobTaggingOutcome S3ControlClient::PutJobTagging(const PutJobTaggingRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutJobTagging);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutJobTagging, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -1542,6 +1600,7 @@ PutJobTaggingOutcome S3ControlClient::PutJobTagging(const PutJobTaggingRequest& 
 
 PutMultiRegionAccessPointPolicyOutcome S3ControlClient::PutMultiRegionAccessPointPolicy(const PutMultiRegionAccessPointPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutMultiRegionAccessPointPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutMultiRegionAccessPointPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -1563,6 +1622,7 @@ PutMultiRegionAccessPointPolicyOutcome S3ControlClient::PutMultiRegionAccessPoin
 
 PutPublicAccessBlockOutcome S3ControlClient::PutPublicAccessBlock(const PutPublicAccessBlockRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutPublicAccessBlock);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutPublicAccessBlock, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -1584,6 +1644,7 @@ PutPublicAccessBlockOutcome S3ControlClient::PutPublicAccessBlock(const PutPubli
 
 PutStorageLensConfigurationOutcome S3ControlClient::PutStorageLensConfiguration(const PutStorageLensConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutStorageLensConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutStorageLensConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConfigIdHasBeenSet())
   {
@@ -1611,6 +1672,7 @@ PutStorageLensConfigurationOutcome S3ControlClient::PutStorageLensConfiguration(
 
 PutStorageLensConfigurationTaggingOutcome S3ControlClient::PutStorageLensConfigurationTagging(const PutStorageLensConfigurationTaggingRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutStorageLensConfigurationTagging);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutStorageLensConfigurationTagging, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConfigIdHasBeenSet())
   {
@@ -1639,6 +1701,7 @@ PutStorageLensConfigurationTaggingOutcome S3ControlClient::PutStorageLensConfigu
 
 SubmitMultiRegionAccessPointRoutesOutcome S3ControlClient::SubmitMultiRegionAccessPointRoutes(const SubmitMultiRegionAccessPointRoutesRequest& request) const
 {
+  AWS_OPERATION_GUARD(SubmitMultiRegionAccessPointRoutes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SubmitMultiRegionAccessPointRoutes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -1667,6 +1730,7 @@ SubmitMultiRegionAccessPointRoutesOutcome S3ControlClient::SubmitMultiRegionAcce
 
 UpdateJobPriorityOutcome S3ControlClient::UpdateJobPriority(const UpdateJobPriorityRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateJobPriority);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateJobPriority, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -1700,6 +1764,7 @@ UpdateJobPriorityOutcome S3ControlClient::UpdateJobPriority(const UpdateJobPrior
 
 UpdateJobStatusOutcome S3ControlClient::UpdateJobStatus(const UpdateJobStatusRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateJobStatus);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateJobStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {

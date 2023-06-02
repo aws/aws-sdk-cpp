@@ -138,6 +138,7 @@ SavingsPlansClient::SavingsPlansClient(const std::shared_ptr<AWSCredentialsProvi
     /* End of legacy constructors due deprecation */
 SavingsPlansClient::~SavingsPlansClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<SavingsPlansEndpointProviderBase>& SavingsPlansClient::accessEndpointProvider()
@@ -160,6 +161,7 @@ void SavingsPlansClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CreateSavingsPlanOutcome SavingsPlansClient::CreateSavingsPlan(const CreateSavingsPlanRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateSavingsPlan);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateSavingsPlan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateSavingsPlan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -169,6 +171,7 @@ CreateSavingsPlanOutcome SavingsPlansClient::CreateSavingsPlan(const CreateSavin
 
 DeleteQueuedSavingsPlanOutcome SavingsPlansClient::DeleteQueuedSavingsPlan(const DeleteQueuedSavingsPlanRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteQueuedSavingsPlan);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteQueuedSavingsPlan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteQueuedSavingsPlan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -178,6 +181,7 @@ DeleteQueuedSavingsPlanOutcome SavingsPlansClient::DeleteQueuedSavingsPlan(const
 
 DescribeSavingsPlanRatesOutcome SavingsPlansClient::DescribeSavingsPlanRates(const DescribeSavingsPlanRatesRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeSavingsPlanRates);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeSavingsPlanRates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeSavingsPlanRates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -187,6 +191,7 @@ DescribeSavingsPlanRatesOutcome SavingsPlansClient::DescribeSavingsPlanRates(con
 
 DescribeSavingsPlansOutcome SavingsPlansClient::DescribeSavingsPlans(const DescribeSavingsPlansRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeSavingsPlans);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeSavingsPlans, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeSavingsPlans, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -196,6 +201,7 @@ DescribeSavingsPlansOutcome SavingsPlansClient::DescribeSavingsPlans(const Descr
 
 DescribeSavingsPlansOfferingRatesOutcome SavingsPlansClient::DescribeSavingsPlansOfferingRates(const DescribeSavingsPlansOfferingRatesRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeSavingsPlansOfferingRates);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeSavingsPlansOfferingRates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeSavingsPlansOfferingRates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -205,6 +211,7 @@ DescribeSavingsPlansOfferingRatesOutcome SavingsPlansClient::DescribeSavingsPlan
 
 DescribeSavingsPlansOfferingsOutcome SavingsPlansClient::DescribeSavingsPlansOfferings(const DescribeSavingsPlansOfferingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeSavingsPlansOfferings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeSavingsPlansOfferings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeSavingsPlansOfferings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -214,6 +221,7 @@ DescribeSavingsPlansOfferingsOutcome SavingsPlansClient::DescribeSavingsPlansOff
 
 ListTagsForResourceOutcome SavingsPlansClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -223,6 +231,7 @@ ListTagsForResourceOutcome SavingsPlansClient::ListTagsForResource(const ListTag
 
 TagResourceOutcome SavingsPlansClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -232,6 +241,7 @@ TagResourceOutcome SavingsPlansClient::TagResource(const TagResourceRequest& req
 
 UntagResourceOutcome SavingsPlansClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

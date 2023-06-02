@@ -219,6 +219,7 @@ ChimeSDKVoiceClient::ChimeSDKVoiceClient(const std::shared_ptr<AWSCredentialsPro
     /* End of legacy constructors due deprecation */
 ChimeSDKVoiceClient::~ChimeSDKVoiceClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<ChimeSDKVoiceEndpointProviderBase>& ChimeSDKVoiceClient::accessEndpointProvider()
@@ -241,6 +242,7 @@ void ChimeSDKVoiceClient::OverrideEndpoint(const Aws::String& endpoint)
 
 AssociatePhoneNumbersWithVoiceConnectorOutcome ChimeSDKVoiceClient::AssociatePhoneNumbersWithVoiceConnector(const AssociatePhoneNumbersWithVoiceConnectorRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociatePhoneNumbersWithVoiceConnector);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociatePhoneNumbersWithVoiceConnector, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -259,6 +261,7 @@ AssociatePhoneNumbersWithVoiceConnectorOutcome ChimeSDKVoiceClient::AssociatePho
 
 AssociatePhoneNumbersWithVoiceConnectorGroupOutcome ChimeSDKVoiceClient::AssociatePhoneNumbersWithVoiceConnectorGroup(const AssociatePhoneNumbersWithVoiceConnectorGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociatePhoneNumbersWithVoiceConnectorGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociatePhoneNumbersWithVoiceConnectorGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorGroupIdHasBeenSet())
   {
@@ -277,6 +280,7 @@ AssociatePhoneNumbersWithVoiceConnectorGroupOutcome ChimeSDKVoiceClient::Associa
 
 BatchDeletePhoneNumberOutcome ChimeSDKVoiceClient::BatchDeletePhoneNumber(const BatchDeletePhoneNumberRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchDeletePhoneNumber);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchDeletePhoneNumber, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchDeletePhoneNumber, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -289,6 +293,7 @@ BatchDeletePhoneNumberOutcome ChimeSDKVoiceClient::BatchDeletePhoneNumber(const 
 
 BatchUpdatePhoneNumberOutcome ChimeSDKVoiceClient::BatchUpdatePhoneNumber(const BatchUpdatePhoneNumberRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchUpdatePhoneNumber);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchUpdatePhoneNumber, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchUpdatePhoneNumber, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -301,6 +306,7 @@ BatchUpdatePhoneNumberOutcome ChimeSDKVoiceClient::BatchUpdatePhoneNumber(const 
 
 CreatePhoneNumberOrderOutcome ChimeSDKVoiceClient::CreatePhoneNumberOrder(const CreatePhoneNumberOrderRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreatePhoneNumberOrder);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreatePhoneNumberOrder, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreatePhoneNumberOrder, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -310,6 +316,7 @@ CreatePhoneNumberOrderOutcome ChimeSDKVoiceClient::CreatePhoneNumberOrder(const 
 
 CreateProxySessionOutcome ChimeSDKVoiceClient::CreateProxySession(const CreateProxySessionRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateProxySession);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateProxySession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -326,6 +333,7 @@ CreateProxySessionOutcome ChimeSDKVoiceClient::CreateProxySession(const CreatePr
 
 CreateSipMediaApplicationOutcome ChimeSDKVoiceClient::CreateSipMediaApplication(const CreateSipMediaApplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateSipMediaApplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateSipMediaApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateSipMediaApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -335,6 +343,7 @@ CreateSipMediaApplicationOutcome ChimeSDKVoiceClient::CreateSipMediaApplication(
 
 CreateSipMediaApplicationCallOutcome ChimeSDKVoiceClient::CreateSipMediaApplicationCall(const CreateSipMediaApplicationCallRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateSipMediaApplicationCall);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateSipMediaApplicationCall, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SipMediaApplicationIdHasBeenSet())
   {
@@ -351,6 +360,7 @@ CreateSipMediaApplicationCallOutcome ChimeSDKVoiceClient::CreateSipMediaApplicat
 
 CreateSipRuleOutcome ChimeSDKVoiceClient::CreateSipRule(const CreateSipRuleRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateSipRule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateSipRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateSipRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -360,6 +370,7 @@ CreateSipRuleOutcome ChimeSDKVoiceClient::CreateSipRule(const CreateSipRuleReque
 
 CreateVoiceConnectorOutcome ChimeSDKVoiceClient::CreateVoiceConnector(const CreateVoiceConnectorRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateVoiceConnector);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateVoiceConnector, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateVoiceConnector, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -369,6 +380,7 @@ CreateVoiceConnectorOutcome ChimeSDKVoiceClient::CreateVoiceConnector(const Crea
 
 CreateVoiceConnectorGroupOutcome ChimeSDKVoiceClient::CreateVoiceConnectorGroup(const CreateVoiceConnectorGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateVoiceConnectorGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateVoiceConnectorGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateVoiceConnectorGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -378,6 +390,7 @@ CreateVoiceConnectorGroupOutcome ChimeSDKVoiceClient::CreateVoiceConnectorGroup(
 
 CreateVoiceProfileOutcome ChimeSDKVoiceClient::CreateVoiceProfile(const CreateVoiceProfileRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateVoiceProfile);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateVoiceProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateVoiceProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -387,6 +400,7 @@ CreateVoiceProfileOutcome ChimeSDKVoiceClient::CreateVoiceProfile(const CreateVo
 
 CreateVoiceProfileDomainOutcome ChimeSDKVoiceClient::CreateVoiceProfileDomain(const CreateVoiceProfileDomainRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateVoiceProfileDomain);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateVoiceProfileDomain, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateVoiceProfileDomain, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -396,6 +410,7 @@ CreateVoiceProfileDomainOutcome ChimeSDKVoiceClient::CreateVoiceProfileDomain(co
 
 DeletePhoneNumberOutcome ChimeSDKVoiceClient::DeletePhoneNumber(const DeletePhoneNumberRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeletePhoneNumber);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeletePhoneNumber, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PhoneNumberIdHasBeenSet())
   {
@@ -411,6 +426,7 @@ DeletePhoneNumberOutcome ChimeSDKVoiceClient::DeletePhoneNumber(const DeletePhon
 
 DeleteProxySessionOutcome ChimeSDKVoiceClient::DeleteProxySession(const DeleteProxySessionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteProxySession);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteProxySession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -433,6 +449,7 @@ DeleteProxySessionOutcome ChimeSDKVoiceClient::DeleteProxySession(const DeletePr
 
 DeleteSipMediaApplicationOutcome ChimeSDKVoiceClient::DeleteSipMediaApplication(const DeleteSipMediaApplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteSipMediaApplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteSipMediaApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SipMediaApplicationIdHasBeenSet())
   {
@@ -448,6 +465,7 @@ DeleteSipMediaApplicationOutcome ChimeSDKVoiceClient::DeleteSipMediaApplication(
 
 DeleteSipRuleOutcome ChimeSDKVoiceClient::DeleteSipRule(const DeleteSipRuleRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteSipRule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteSipRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SipRuleIdHasBeenSet())
   {
@@ -463,6 +481,7 @@ DeleteSipRuleOutcome ChimeSDKVoiceClient::DeleteSipRule(const DeleteSipRuleReque
 
 DeleteVoiceConnectorOutcome ChimeSDKVoiceClient::DeleteVoiceConnector(const DeleteVoiceConnectorRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteVoiceConnector);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteVoiceConnector, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -478,6 +497,7 @@ DeleteVoiceConnectorOutcome ChimeSDKVoiceClient::DeleteVoiceConnector(const Dele
 
 DeleteVoiceConnectorEmergencyCallingConfigurationOutcome ChimeSDKVoiceClient::DeleteVoiceConnectorEmergencyCallingConfiguration(const DeleteVoiceConnectorEmergencyCallingConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteVoiceConnectorEmergencyCallingConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteVoiceConnectorEmergencyCallingConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -494,6 +514,7 @@ DeleteVoiceConnectorEmergencyCallingConfigurationOutcome ChimeSDKVoiceClient::De
 
 DeleteVoiceConnectorGroupOutcome ChimeSDKVoiceClient::DeleteVoiceConnectorGroup(const DeleteVoiceConnectorGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteVoiceConnectorGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteVoiceConnectorGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorGroupIdHasBeenSet())
   {
@@ -509,6 +530,7 @@ DeleteVoiceConnectorGroupOutcome ChimeSDKVoiceClient::DeleteVoiceConnectorGroup(
 
 DeleteVoiceConnectorOriginationOutcome ChimeSDKVoiceClient::DeleteVoiceConnectorOrigination(const DeleteVoiceConnectorOriginationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteVoiceConnectorOrigination);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteVoiceConnectorOrigination, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -525,6 +547,7 @@ DeleteVoiceConnectorOriginationOutcome ChimeSDKVoiceClient::DeleteVoiceConnector
 
 DeleteVoiceConnectorProxyOutcome ChimeSDKVoiceClient::DeleteVoiceConnectorProxy(const DeleteVoiceConnectorProxyRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteVoiceConnectorProxy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteVoiceConnectorProxy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -541,6 +564,7 @@ DeleteVoiceConnectorProxyOutcome ChimeSDKVoiceClient::DeleteVoiceConnectorProxy(
 
 DeleteVoiceConnectorStreamingConfigurationOutcome ChimeSDKVoiceClient::DeleteVoiceConnectorStreamingConfiguration(const DeleteVoiceConnectorStreamingConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteVoiceConnectorStreamingConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteVoiceConnectorStreamingConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -557,6 +581,7 @@ DeleteVoiceConnectorStreamingConfigurationOutcome ChimeSDKVoiceClient::DeleteVoi
 
 DeleteVoiceConnectorTerminationOutcome ChimeSDKVoiceClient::DeleteVoiceConnectorTermination(const DeleteVoiceConnectorTerminationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteVoiceConnectorTermination);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteVoiceConnectorTermination, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -573,6 +598,7 @@ DeleteVoiceConnectorTerminationOutcome ChimeSDKVoiceClient::DeleteVoiceConnector
 
 DeleteVoiceConnectorTerminationCredentialsOutcome ChimeSDKVoiceClient::DeleteVoiceConnectorTerminationCredentials(const DeleteVoiceConnectorTerminationCredentialsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteVoiceConnectorTerminationCredentials);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteVoiceConnectorTerminationCredentials, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -592,6 +618,7 @@ DeleteVoiceConnectorTerminationCredentialsOutcome ChimeSDKVoiceClient::DeleteVoi
 
 DeleteVoiceProfileOutcome ChimeSDKVoiceClient::DeleteVoiceProfile(const DeleteVoiceProfileRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteVoiceProfile);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteVoiceProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceProfileIdHasBeenSet())
   {
@@ -607,6 +634,7 @@ DeleteVoiceProfileOutcome ChimeSDKVoiceClient::DeleteVoiceProfile(const DeleteVo
 
 DeleteVoiceProfileDomainOutcome ChimeSDKVoiceClient::DeleteVoiceProfileDomain(const DeleteVoiceProfileDomainRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteVoiceProfileDomain);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteVoiceProfileDomain, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceProfileDomainIdHasBeenSet())
   {
@@ -622,6 +650,7 @@ DeleteVoiceProfileDomainOutcome ChimeSDKVoiceClient::DeleteVoiceProfileDomain(co
 
 DisassociatePhoneNumbersFromVoiceConnectorOutcome ChimeSDKVoiceClient::DisassociatePhoneNumbersFromVoiceConnector(const DisassociatePhoneNumbersFromVoiceConnectorRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociatePhoneNumbersFromVoiceConnector);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociatePhoneNumbersFromVoiceConnector, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -640,6 +669,7 @@ DisassociatePhoneNumbersFromVoiceConnectorOutcome ChimeSDKVoiceClient::Disassoci
 
 DisassociatePhoneNumbersFromVoiceConnectorGroupOutcome ChimeSDKVoiceClient::DisassociatePhoneNumbersFromVoiceConnectorGroup(const DisassociatePhoneNumbersFromVoiceConnectorGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociatePhoneNumbersFromVoiceConnectorGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociatePhoneNumbersFromVoiceConnectorGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorGroupIdHasBeenSet())
   {
@@ -658,6 +688,7 @@ DisassociatePhoneNumbersFromVoiceConnectorGroupOutcome ChimeSDKVoiceClient::Disa
 
 GetGlobalSettingsOutcome ChimeSDKVoiceClient::GetGlobalSettings() const
 {
+AWS_OPERATION_GUARD(GetGlobalSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetGlobalSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   const Aws::Vector<Aws::Endpoint::EndpointParameter> staticEndpointParameters;
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(staticEndpointParameters);
@@ -668,6 +699,7 @@ GetGlobalSettingsOutcome ChimeSDKVoiceClient::GetGlobalSettings() const
 
 GetPhoneNumberOutcome ChimeSDKVoiceClient::GetPhoneNumber(const GetPhoneNumberRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetPhoneNumber);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPhoneNumber, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PhoneNumberIdHasBeenSet())
   {
@@ -683,6 +715,7 @@ GetPhoneNumberOutcome ChimeSDKVoiceClient::GetPhoneNumber(const GetPhoneNumberRe
 
 GetPhoneNumberOrderOutcome ChimeSDKVoiceClient::GetPhoneNumberOrder(const GetPhoneNumberOrderRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetPhoneNumberOrder);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPhoneNumberOrder, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PhoneNumberOrderIdHasBeenSet())
   {
@@ -698,6 +731,7 @@ GetPhoneNumberOrderOutcome ChimeSDKVoiceClient::GetPhoneNumberOrder(const GetPho
 
 GetPhoneNumberSettingsOutcome ChimeSDKVoiceClient::GetPhoneNumberSettings() const
 {
+AWS_OPERATION_GUARD(GetPhoneNumberSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPhoneNumberSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   const Aws::Vector<Aws::Endpoint::EndpointParameter> staticEndpointParameters;
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(staticEndpointParameters);
@@ -708,6 +742,7 @@ GetPhoneNumberSettingsOutcome ChimeSDKVoiceClient::GetPhoneNumberSettings() cons
 
 GetProxySessionOutcome ChimeSDKVoiceClient::GetProxySession(const GetProxySessionRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetProxySession);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetProxySession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -730,6 +765,7 @@ GetProxySessionOutcome ChimeSDKVoiceClient::GetProxySession(const GetProxySessio
 
 GetSipMediaApplicationOutcome ChimeSDKVoiceClient::GetSipMediaApplication(const GetSipMediaApplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSipMediaApplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSipMediaApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SipMediaApplicationIdHasBeenSet())
   {
@@ -745,6 +781,7 @@ GetSipMediaApplicationOutcome ChimeSDKVoiceClient::GetSipMediaApplication(const 
 
 GetSipMediaApplicationAlexaSkillConfigurationOutcome ChimeSDKVoiceClient::GetSipMediaApplicationAlexaSkillConfiguration(const GetSipMediaApplicationAlexaSkillConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSipMediaApplicationAlexaSkillConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSipMediaApplicationAlexaSkillConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SipMediaApplicationIdHasBeenSet())
   {
@@ -761,6 +798,7 @@ GetSipMediaApplicationAlexaSkillConfigurationOutcome ChimeSDKVoiceClient::GetSip
 
 GetSipMediaApplicationLoggingConfigurationOutcome ChimeSDKVoiceClient::GetSipMediaApplicationLoggingConfiguration(const GetSipMediaApplicationLoggingConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSipMediaApplicationLoggingConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSipMediaApplicationLoggingConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SipMediaApplicationIdHasBeenSet())
   {
@@ -777,6 +815,7 @@ GetSipMediaApplicationLoggingConfigurationOutcome ChimeSDKVoiceClient::GetSipMed
 
 GetSipRuleOutcome ChimeSDKVoiceClient::GetSipRule(const GetSipRuleRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSipRule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSipRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SipRuleIdHasBeenSet())
   {
@@ -792,6 +831,7 @@ GetSipRuleOutcome ChimeSDKVoiceClient::GetSipRule(const GetSipRuleRequest& reque
 
 GetSpeakerSearchTaskOutcome ChimeSDKVoiceClient::GetSpeakerSearchTask(const GetSpeakerSearchTaskRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSpeakerSearchTask);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSpeakerSearchTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -814,6 +854,7 @@ GetSpeakerSearchTaskOutcome ChimeSDKVoiceClient::GetSpeakerSearchTask(const GetS
 
 GetVoiceConnectorOutcome ChimeSDKVoiceClient::GetVoiceConnector(const GetVoiceConnectorRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetVoiceConnector);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetVoiceConnector, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -829,6 +870,7 @@ GetVoiceConnectorOutcome ChimeSDKVoiceClient::GetVoiceConnector(const GetVoiceCo
 
 GetVoiceConnectorEmergencyCallingConfigurationOutcome ChimeSDKVoiceClient::GetVoiceConnectorEmergencyCallingConfiguration(const GetVoiceConnectorEmergencyCallingConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetVoiceConnectorEmergencyCallingConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetVoiceConnectorEmergencyCallingConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -845,6 +887,7 @@ GetVoiceConnectorEmergencyCallingConfigurationOutcome ChimeSDKVoiceClient::GetVo
 
 GetVoiceConnectorGroupOutcome ChimeSDKVoiceClient::GetVoiceConnectorGroup(const GetVoiceConnectorGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetVoiceConnectorGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetVoiceConnectorGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorGroupIdHasBeenSet())
   {
@@ -860,6 +903,7 @@ GetVoiceConnectorGroupOutcome ChimeSDKVoiceClient::GetVoiceConnectorGroup(const 
 
 GetVoiceConnectorLoggingConfigurationOutcome ChimeSDKVoiceClient::GetVoiceConnectorLoggingConfiguration(const GetVoiceConnectorLoggingConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetVoiceConnectorLoggingConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetVoiceConnectorLoggingConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -876,6 +920,7 @@ GetVoiceConnectorLoggingConfigurationOutcome ChimeSDKVoiceClient::GetVoiceConnec
 
 GetVoiceConnectorOriginationOutcome ChimeSDKVoiceClient::GetVoiceConnectorOrigination(const GetVoiceConnectorOriginationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetVoiceConnectorOrigination);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetVoiceConnectorOrigination, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -892,6 +937,7 @@ GetVoiceConnectorOriginationOutcome ChimeSDKVoiceClient::GetVoiceConnectorOrigin
 
 GetVoiceConnectorProxyOutcome ChimeSDKVoiceClient::GetVoiceConnectorProxy(const GetVoiceConnectorProxyRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetVoiceConnectorProxy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetVoiceConnectorProxy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -908,6 +954,7 @@ GetVoiceConnectorProxyOutcome ChimeSDKVoiceClient::GetVoiceConnectorProxy(const 
 
 GetVoiceConnectorStreamingConfigurationOutcome ChimeSDKVoiceClient::GetVoiceConnectorStreamingConfiguration(const GetVoiceConnectorStreamingConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetVoiceConnectorStreamingConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetVoiceConnectorStreamingConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -924,6 +971,7 @@ GetVoiceConnectorStreamingConfigurationOutcome ChimeSDKVoiceClient::GetVoiceConn
 
 GetVoiceConnectorTerminationOutcome ChimeSDKVoiceClient::GetVoiceConnectorTermination(const GetVoiceConnectorTerminationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetVoiceConnectorTermination);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetVoiceConnectorTermination, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -940,6 +988,7 @@ GetVoiceConnectorTerminationOutcome ChimeSDKVoiceClient::GetVoiceConnectorTermin
 
 GetVoiceConnectorTerminationHealthOutcome ChimeSDKVoiceClient::GetVoiceConnectorTerminationHealth(const GetVoiceConnectorTerminationHealthRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetVoiceConnectorTerminationHealth);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetVoiceConnectorTerminationHealth, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -956,6 +1005,7 @@ GetVoiceConnectorTerminationHealthOutcome ChimeSDKVoiceClient::GetVoiceConnector
 
 GetVoiceProfileOutcome ChimeSDKVoiceClient::GetVoiceProfile(const GetVoiceProfileRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetVoiceProfile);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetVoiceProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceProfileIdHasBeenSet())
   {
@@ -971,6 +1021,7 @@ GetVoiceProfileOutcome ChimeSDKVoiceClient::GetVoiceProfile(const GetVoiceProfil
 
 GetVoiceProfileDomainOutcome ChimeSDKVoiceClient::GetVoiceProfileDomain(const GetVoiceProfileDomainRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetVoiceProfileDomain);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetVoiceProfileDomain, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceProfileDomainIdHasBeenSet())
   {
@@ -986,6 +1037,7 @@ GetVoiceProfileDomainOutcome ChimeSDKVoiceClient::GetVoiceProfileDomain(const Ge
 
 GetVoiceToneAnalysisTaskOutcome ChimeSDKVoiceClient::GetVoiceToneAnalysisTask(const GetVoiceToneAnalysisTaskRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetVoiceToneAnalysisTask);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetVoiceToneAnalysisTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -1013,6 +1065,7 @@ GetVoiceToneAnalysisTaskOutcome ChimeSDKVoiceClient::GetVoiceToneAnalysisTask(co
 
 ListAvailableVoiceConnectorRegionsOutcome ChimeSDKVoiceClient::ListAvailableVoiceConnectorRegions() const
 {
+AWS_OPERATION_GUARD(ListAvailableVoiceConnectorRegions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAvailableVoiceConnectorRegions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   const Aws::Vector<Aws::Endpoint::EndpointParameter> staticEndpointParameters;
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(staticEndpointParameters);
@@ -1023,6 +1076,7 @@ ListAvailableVoiceConnectorRegionsOutcome ChimeSDKVoiceClient::ListAvailableVoic
 
 ListPhoneNumberOrdersOutcome ChimeSDKVoiceClient::ListPhoneNumberOrders(const ListPhoneNumberOrdersRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListPhoneNumberOrders);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPhoneNumberOrders, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListPhoneNumberOrders, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1032,6 +1086,7 @@ ListPhoneNumberOrdersOutcome ChimeSDKVoiceClient::ListPhoneNumberOrders(const Li
 
 ListPhoneNumbersOutcome ChimeSDKVoiceClient::ListPhoneNumbers(const ListPhoneNumbersRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListPhoneNumbers);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPhoneNumbers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListPhoneNumbers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1041,6 +1096,7 @@ ListPhoneNumbersOutcome ChimeSDKVoiceClient::ListPhoneNumbers(const ListPhoneNum
 
 ListProxySessionsOutcome ChimeSDKVoiceClient::ListProxySessions(const ListProxySessionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListProxySessions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListProxySessions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -1057,6 +1113,7 @@ ListProxySessionsOutcome ChimeSDKVoiceClient::ListProxySessions(const ListProxyS
 
 ListSipMediaApplicationsOutcome ChimeSDKVoiceClient::ListSipMediaApplications(const ListSipMediaApplicationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListSipMediaApplications);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSipMediaApplications, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListSipMediaApplications, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1066,6 +1123,7 @@ ListSipMediaApplicationsOutcome ChimeSDKVoiceClient::ListSipMediaApplications(co
 
 ListSipRulesOutcome ChimeSDKVoiceClient::ListSipRules(const ListSipRulesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListSipRules);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSipRules, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListSipRules, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1075,6 +1133,7 @@ ListSipRulesOutcome ChimeSDKVoiceClient::ListSipRules(const ListSipRulesRequest&
 
 ListSupportedPhoneNumberCountriesOutcome ChimeSDKVoiceClient::ListSupportedPhoneNumberCountries(const ListSupportedPhoneNumberCountriesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListSupportedPhoneNumberCountries);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSupportedPhoneNumberCountries, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProductTypeHasBeenSet())
   {
@@ -1089,6 +1148,7 @@ ListSupportedPhoneNumberCountriesOutcome ChimeSDKVoiceClient::ListSupportedPhone
 
 ListTagsForResourceOutcome ChimeSDKVoiceClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceARNHasBeenSet())
   {
@@ -1103,6 +1163,7 @@ ListTagsForResourceOutcome ChimeSDKVoiceClient::ListTagsForResource(const ListTa
 
 ListVoiceConnectorGroupsOutcome ChimeSDKVoiceClient::ListVoiceConnectorGroups(const ListVoiceConnectorGroupsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListVoiceConnectorGroups);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListVoiceConnectorGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListVoiceConnectorGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1112,6 +1173,7 @@ ListVoiceConnectorGroupsOutcome ChimeSDKVoiceClient::ListVoiceConnectorGroups(co
 
 ListVoiceConnectorTerminationCredentialsOutcome ChimeSDKVoiceClient::ListVoiceConnectorTerminationCredentials(const ListVoiceConnectorTerminationCredentialsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListVoiceConnectorTerminationCredentials);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListVoiceConnectorTerminationCredentials, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -1128,6 +1190,7 @@ ListVoiceConnectorTerminationCredentialsOutcome ChimeSDKVoiceClient::ListVoiceCo
 
 ListVoiceConnectorsOutcome ChimeSDKVoiceClient::ListVoiceConnectors(const ListVoiceConnectorsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListVoiceConnectors);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListVoiceConnectors, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListVoiceConnectors, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1137,6 +1200,7 @@ ListVoiceConnectorsOutcome ChimeSDKVoiceClient::ListVoiceConnectors(const ListVo
 
 ListVoiceProfileDomainsOutcome ChimeSDKVoiceClient::ListVoiceProfileDomains(const ListVoiceProfileDomainsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListVoiceProfileDomains);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListVoiceProfileDomains, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListVoiceProfileDomains, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1146,6 +1210,7 @@ ListVoiceProfileDomainsOutcome ChimeSDKVoiceClient::ListVoiceProfileDomains(cons
 
 ListVoiceProfilesOutcome ChimeSDKVoiceClient::ListVoiceProfiles(const ListVoiceProfilesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListVoiceProfiles);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListVoiceProfiles, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceProfileDomainIdHasBeenSet())
   {
@@ -1160,6 +1225,7 @@ ListVoiceProfilesOutcome ChimeSDKVoiceClient::ListVoiceProfiles(const ListVoiceP
 
 PutSipMediaApplicationAlexaSkillConfigurationOutcome ChimeSDKVoiceClient::PutSipMediaApplicationAlexaSkillConfiguration(const PutSipMediaApplicationAlexaSkillConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutSipMediaApplicationAlexaSkillConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutSipMediaApplicationAlexaSkillConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SipMediaApplicationIdHasBeenSet())
   {
@@ -1176,6 +1242,7 @@ PutSipMediaApplicationAlexaSkillConfigurationOutcome ChimeSDKVoiceClient::PutSip
 
 PutSipMediaApplicationLoggingConfigurationOutcome ChimeSDKVoiceClient::PutSipMediaApplicationLoggingConfiguration(const PutSipMediaApplicationLoggingConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutSipMediaApplicationLoggingConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutSipMediaApplicationLoggingConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SipMediaApplicationIdHasBeenSet())
   {
@@ -1192,6 +1259,7 @@ PutSipMediaApplicationLoggingConfigurationOutcome ChimeSDKVoiceClient::PutSipMed
 
 PutVoiceConnectorEmergencyCallingConfigurationOutcome ChimeSDKVoiceClient::PutVoiceConnectorEmergencyCallingConfiguration(const PutVoiceConnectorEmergencyCallingConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutVoiceConnectorEmergencyCallingConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutVoiceConnectorEmergencyCallingConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -1208,6 +1276,7 @@ PutVoiceConnectorEmergencyCallingConfigurationOutcome ChimeSDKVoiceClient::PutVo
 
 PutVoiceConnectorLoggingConfigurationOutcome ChimeSDKVoiceClient::PutVoiceConnectorLoggingConfiguration(const PutVoiceConnectorLoggingConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutVoiceConnectorLoggingConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutVoiceConnectorLoggingConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -1224,6 +1293,7 @@ PutVoiceConnectorLoggingConfigurationOutcome ChimeSDKVoiceClient::PutVoiceConnec
 
 PutVoiceConnectorOriginationOutcome ChimeSDKVoiceClient::PutVoiceConnectorOrigination(const PutVoiceConnectorOriginationRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutVoiceConnectorOrigination);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutVoiceConnectorOrigination, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -1240,6 +1310,7 @@ PutVoiceConnectorOriginationOutcome ChimeSDKVoiceClient::PutVoiceConnectorOrigin
 
 PutVoiceConnectorProxyOutcome ChimeSDKVoiceClient::PutVoiceConnectorProxy(const PutVoiceConnectorProxyRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutVoiceConnectorProxy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutVoiceConnectorProxy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -1256,6 +1327,7 @@ PutVoiceConnectorProxyOutcome ChimeSDKVoiceClient::PutVoiceConnectorProxy(const 
 
 PutVoiceConnectorStreamingConfigurationOutcome ChimeSDKVoiceClient::PutVoiceConnectorStreamingConfiguration(const PutVoiceConnectorStreamingConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutVoiceConnectorStreamingConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutVoiceConnectorStreamingConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -1272,6 +1344,7 @@ PutVoiceConnectorStreamingConfigurationOutcome ChimeSDKVoiceClient::PutVoiceConn
 
 PutVoiceConnectorTerminationOutcome ChimeSDKVoiceClient::PutVoiceConnectorTermination(const PutVoiceConnectorTerminationRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutVoiceConnectorTermination);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutVoiceConnectorTermination, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -1288,6 +1361,7 @@ PutVoiceConnectorTerminationOutcome ChimeSDKVoiceClient::PutVoiceConnectorTermin
 
 PutVoiceConnectorTerminationCredentialsOutcome ChimeSDKVoiceClient::PutVoiceConnectorTerminationCredentials(const PutVoiceConnectorTerminationCredentialsRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutVoiceConnectorTerminationCredentials);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutVoiceConnectorTerminationCredentials, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -1307,6 +1381,7 @@ PutVoiceConnectorTerminationCredentialsOutcome ChimeSDKVoiceClient::PutVoiceConn
 
 RestorePhoneNumberOutcome ChimeSDKVoiceClient::RestorePhoneNumber(const RestorePhoneNumberRequest& request) const
 {
+  AWS_OPERATION_GUARD(RestorePhoneNumber);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RestorePhoneNumber, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PhoneNumberIdHasBeenSet())
   {
@@ -1325,6 +1400,7 @@ RestorePhoneNumberOutcome ChimeSDKVoiceClient::RestorePhoneNumber(const RestoreP
 
 SearchAvailablePhoneNumbersOutcome ChimeSDKVoiceClient::SearchAvailablePhoneNumbers(const SearchAvailablePhoneNumbersRequest& request) const
 {
+  AWS_OPERATION_GUARD(SearchAvailablePhoneNumbers);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SearchAvailablePhoneNumbers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SearchAvailablePhoneNumbers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1337,6 +1413,7 @@ SearchAvailablePhoneNumbersOutcome ChimeSDKVoiceClient::SearchAvailablePhoneNumb
 
 StartSpeakerSearchTaskOutcome ChimeSDKVoiceClient::StartSpeakerSearchTask(const StartSpeakerSearchTaskRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartSpeakerSearchTask);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartSpeakerSearchTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -1353,6 +1430,7 @@ StartSpeakerSearchTaskOutcome ChimeSDKVoiceClient::StartSpeakerSearchTask(const 
 
 StartVoiceToneAnalysisTaskOutcome ChimeSDKVoiceClient::StartVoiceToneAnalysisTask(const StartVoiceToneAnalysisTaskRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartVoiceToneAnalysisTask);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartVoiceToneAnalysisTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -1369,6 +1447,7 @@ StartVoiceToneAnalysisTaskOutcome ChimeSDKVoiceClient::StartVoiceToneAnalysisTas
 
 StopSpeakerSearchTaskOutcome ChimeSDKVoiceClient::StopSpeakerSearchTask(const StopSpeakerSearchTaskRequest& request) const
 {
+  AWS_OPERATION_GUARD(StopSpeakerSearchTask);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopSpeakerSearchTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -1394,6 +1473,7 @@ StopSpeakerSearchTaskOutcome ChimeSDKVoiceClient::StopSpeakerSearchTask(const St
 
 StopVoiceToneAnalysisTaskOutcome ChimeSDKVoiceClient::StopVoiceToneAnalysisTask(const StopVoiceToneAnalysisTaskRequest& request) const
 {
+  AWS_OPERATION_GUARD(StopVoiceToneAnalysisTask);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopVoiceToneAnalysisTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -1419,6 +1499,7 @@ StopVoiceToneAnalysisTaskOutcome ChimeSDKVoiceClient::StopVoiceToneAnalysisTask(
 
 TagResourceOutcome ChimeSDKVoiceClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1431,6 +1512,7 @@ TagResourceOutcome ChimeSDKVoiceClient::TagResource(const TagResourceRequest& re
 
 UntagResourceOutcome ChimeSDKVoiceClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1443,6 +1525,7 @@ UntagResourceOutcome ChimeSDKVoiceClient::UntagResource(const UntagResourceReque
 
 UpdateGlobalSettingsOutcome ChimeSDKVoiceClient::UpdateGlobalSettings(const UpdateGlobalSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateGlobalSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateGlobalSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateGlobalSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1452,6 +1535,7 @@ UpdateGlobalSettingsOutcome ChimeSDKVoiceClient::UpdateGlobalSettings(const Upda
 
 UpdatePhoneNumberOutcome ChimeSDKVoiceClient::UpdatePhoneNumber(const UpdatePhoneNumberRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdatePhoneNumber);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdatePhoneNumber, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PhoneNumberIdHasBeenSet())
   {
@@ -1467,6 +1551,7 @@ UpdatePhoneNumberOutcome ChimeSDKVoiceClient::UpdatePhoneNumber(const UpdatePhon
 
 UpdatePhoneNumberSettingsOutcome ChimeSDKVoiceClient::UpdatePhoneNumberSettings(const UpdatePhoneNumberSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdatePhoneNumberSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdatePhoneNumberSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdatePhoneNumberSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1476,6 +1561,7 @@ UpdatePhoneNumberSettingsOutcome ChimeSDKVoiceClient::UpdatePhoneNumberSettings(
 
 UpdateProxySessionOutcome ChimeSDKVoiceClient::UpdateProxySession(const UpdateProxySessionRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateProxySession);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateProxySession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -1498,6 +1584,7 @@ UpdateProxySessionOutcome ChimeSDKVoiceClient::UpdateProxySession(const UpdatePr
 
 UpdateSipMediaApplicationOutcome ChimeSDKVoiceClient::UpdateSipMediaApplication(const UpdateSipMediaApplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateSipMediaApplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateSipMediaApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SipMediaApplicationIdHasBeenSet())
   {
@@ -1513,6 +1600,7 @@ UpdateSipMediaApplicationOutcome ChimeSDKVoiceClient::UpdateSipMediaApplication(
 
 UpdateSipMediaApplicationCallOutcome ChimeSDKVoiceClient::UpdateSipMediaApplicationCall(const UpdateSipMediaApplicationCallRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateSipMediaApplicationCall);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateSipMediaApplicationCall, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SipMediaApplicationIdHasBeenSet())
   {
@@ -1535,6 +1623,7 @@ UpdateSipMediaApplicationCallOutcome ChimeSDKVoiceClient::UpdateSipMediaApplicat
 
 UpdateSipRuleOutcome ChimeSDKVoiceClient::UpdateSipRule(const UpdateSipRuleRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateSipRule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateSipRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SipRuleIdHasBeenSet())
   {
@@ -1550,6 +1639,7 @@ UpdateSipRuleOutcome ChimeSDKVoiceClient::UpdateSipRule(const UpdateSipRuleReque
 
 UpdateVoiceConnectorOutcome ChimeSDKVoiceClient::UpdateVoiceConnector(const UpdateVoiceConnectorRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateVoiceConnector);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateVoiceConnector, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorIdHasBeenSet())
   {
@@ -1565,6 +1655,7 @@ UpdateVoiceConnectorOutcome ChimeSDKVoiceClient::UpdateVoiceConnector(const Upda
 
 UpdateVoiceConnectorGroupOutcome ChimeSDKVoiceClient::UpdateVoiceConnectorGroup(const UpdateVoiceConnectorGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateVoiceConnectorGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateVoiceConnectorGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceConnectorGroupIdHasBeenSet())
   {
@@ -1580,6 +1671,7 @@ UpdateVoiceConnectorGroupOutcome ChimeSDKVoiceClient::UpdateVoiceConnectorGroup(
 
 UpdateVoiceProfileOutcome ChimeSDKVoiceClient::UpdateVoiceProfile(const UpdateVoiceProfileRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateVoiceProfile);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateVoiceProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceProfileIdHasBeenSet())
   {
@@ -1595,6 +1687,7 @@ UpdateVoiceProfileOutcome ChimeSDKVoiceClient::UpdateVoiceProfile(const UpdateVo
 
 UpdateVoiceProfileDomainOutcome ChimeSDKVoiceClient::UpdateVoiceProfileDomain(const UpdateVoiceProfileDomainRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateVoiceProfileDomain);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateVoiceProfileDomain, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VoiceProfileDomainIdHasBeenSet())
   {
@@ -1610,6 +1703,7 @@ UpdateVoiceProfileDomainOutcome ChimeSDKVoiceClient::UpdateVoiceProfileDomain(co
 
 ValidateE911AddressOutcome ChimeSDKVoiceClient::ValidateE911Address(const ValidateE911AddressRequest& request) const
 {
+  AWS_OPERATION_GUARD(ValidateE911Address);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ValidateE911Address, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ValidateE911Address, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

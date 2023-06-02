@@ -180,6 +180,7 @@ ChimeSDKMessagingClient::ChimeSDKMessagingClient(const std::shared_ptr<AWSCreden
     /* End of legacy constructors due deprecation */
 ChimeSDKMessagingClient::~ChimeSDKMessagingClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<ChimeSDKMessagingEndpointProviderBase>& ChimeSDKMessagingClient::accessEndpointProvider()
@@ -202,6 +203,7 @@ void ChimeSDKMessagingClient::OverrideEndpoint(const Aws::String& endpoint)
 
 AssociateChannelFlowOutcome ChimeSDKMessagingClient::AssociateChannelFlow(const AssociateChannelFlowRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociateChannelFlow);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateChannelFlow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
@@ -223,6 +225,7 @@ AssociateChannelFlowOutcome ChimeSDKMessagingClient::AssociateChannelFlow(const 
 
 BatchCreateChannelMembershipOutcome ChimeSDKMessagingClient::BatchCreateChannelMembership(const BatchCreateChannelMembershipRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchCreateChannelMembership);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchCreateChannelMembership, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
@@ -247,6 +250,7 @@ BatchCreateChannelMembershipOutcome ChimeSDKMessagingClient::BatchCreateChannelM
 
 ChannelFlowCallbackOutcome ChimeSDKMessagingClient::ChannelFlowCallback(const ChannelFlowCallbackRequest& request) const
 {
+  AWS_OPERATION_GUARD(ChannelFlowCallback);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ChannelFlowCallback, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
@@ -265,6 +269,7 @@ ChannelFlowCallbackOutcome ChimeSDKMessagingClient::ChannelFlowCallback(const Ch
 
 CreateChannelOutcome ChimeSDKMessagingClient::CreateChannel(const CreateChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChimeBearerHasBeenSet())
   {
@@ -279,6 +284,7 @@ CreateChannelOutcome ChimeSDKMessagingClient::CreateChannel(const CreateChannelR
 
 CreateChannelBanOutcome ChimeSDKMessagingClient::CreateChannelBan(const CreateChannelBanRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateChannelBan);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateChannelBan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
@@ -300,6 +306,7 @@ CreateChannelBanOutcome ChimeSDKMessagingClient::CreateChannelBan(const CreateCh
 
 CreateChannelFlowOutcome ChimeSDKMessagingClient::CreateChannelFlow(const CreateChannelFlowRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateChannelFlow);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateChannelFlow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateChannelFlow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -309,6 +316,7 @@ CreateChannelFlowOutcome ChimeSDKMessagingClient::CreateChannelFlow(const Create
 
 CreateChannelMembershipOutcome ChimeSDKMessagingClient::CreateChannelMembership(const CreateChannelMembershipRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateChannelMembership);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateChannelMembership, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
@@ -330,6 +338,7 @@ CreateChannelMembershipOutcome ChimeSDKMessagingClient::CreateChannelMembership(
 
 CreateChannelModeratorOutcome ChimeSDKMessagingClient::CreateChannelModerator(const CreateChannelModeratorRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateChannelModerator);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateChannelModerator, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
@@ -351,6 +360,7 @@ CreateChannelModeratorOutcome ChimeSDKMessagingClient::CreateChannelModerator(co
 
 DeleteChannelOutcome ChimeSDKMessagingClient::DeleteChannel(const DeleteChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
@@ -371,6 +381,7 @@ DeleteChannelOutcome ChimeSDKMessagingClient::DeleteChannel(const DeleteChannelR
 
 DeleteChannelBanOutcome ChimeSDKMessagingClient::DeleteChannelBan(const DeleteChannelBanRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteChannelBan);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteChannelBan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
@@ -398,6 +409,7 @@ DeleteChannelBanOutcome ChimeSDKMessagingClient::DeleteChannelBan(const DeleteCh
 
 DeleteChannelFlowOutcome ChimeSDKMessagingClient::DeleteChannelFlow(const DeleteChannelFlowRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteChannelFlow);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteChannelFlow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelFlowArnHasBeenSet())
   {
@@ -413,6 +425,7 @@ DeleteChannelFlowOutcome ChimeSDKMessagingClient::DeleteChannelFlow(const Delete
 
 DeleteChannelMembershipOutcome ChimeSDKMessagingClient::DeleteChannelMembership(const DeleteChannelMembershipRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteChannelMembership);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteChannelMembership, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
@@ -440,6 +453,7 @@ DeleteChannelMembershipOutcome ChimeSDKMessagingClient::DeleteChannelMembership(
 
 DeleteChannelMessageOutcome ChimeSDKMessagingClient::DeleteChannelMessage(const DeleteChannelMessageRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteChannelMessage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteChannelMessage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
@@ -467,6 +481,7 @@ DeleteChannelMessageOutcome ChimeSDKMessagingClient::DeleteChannelMessage(const 
 
 DeleteChannelModeratorOutcome ChimeSDKMessagingClient::DeleteChannelModerator(const DeleteChannelModeratorRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteChannelModerator);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteChannelModerator, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
@@ -494,6 +509,7 @@ DeleteChannelModeratorOutcome ChimeSDKMessagingClient::DeleteChannelModerator(co
 
 DeleteMessagingStreamingConfigurationsOutcome ChimeSDKMessagingClient::DeleteMessagingStreamingConfigurations(const DeleteMessagingStreamingConfigurationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteMessagingStreamingConfigurations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteMessagingStreamingConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppInstanceArnHasBeenSet())
   {
@@ -510,6 +526,7 @@ DeleteMessagingStreamingConfigurationsOutcome ChimeSDKMessagingClient::DeleteMes
 
 DescribeChannelOutcome ChimeSDKMessagingClient::DescribeChannel(const DescribeChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
@@ -530,6 +547,7 @@ DescribeChannelOutcome ChimeSDKMessagingClient::DescribeChannel(const DescribeCh
 
 DescribeChannelBanOutcome ChimeSDKMessagingClient::DescribeChannelBan(const DescribeChannelBanRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeChannelBan);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeChannelBan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
@@ -557,6 +575,7 @@ DescribeChannelBanOutcome ChimeSDKMessagingClient::DescribeChannelBan(const Desc
 
 DescribeChannelFlowOutcome ChimeSDKMessagingClient::DescribeChannelFlow(const DescribeChannelFlowRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeChannelFlow);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeChannelFlow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelFlowArnHasBeenSet())
   {
@@ -572,6 +591,7 @@ DescribeChannelFlowOutcome ChimeSDKMessagingClient::DescribeChannelFlow(const De
 
 DescribeChannelMembershipOutcome ChimeSDKMessagingClient::DescribeChannelMembership(const DescribeChannelMembershipRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeChannelMembership);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeChannelMembership, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
@@ -599,6 +619,7 @@ DescribeChannelMembershipOutcome ChimeSDKMessagingClient::DescribeChannelMembers
 
 DescribeChannelMembershipForAppInstanceUserOutcome ChimeSDKMessagingClient::DescribeChannelMembershipForAppInstanceUser(const DescribeChannelMembershipForAppInstanceUserRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeChannelMembershipForAppInstanceUser);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeChannelMembershipForAppInstanceUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
@@ -627,6 +648,7 @@ DescribeChannelMembershipForAppInstanceUserOutcome ChimeSDKMessagingClient::Desc
 
 DescribeChannelModeratedByAppInstanceUserOutcome ChimeSDKMessagingClient::DescribeChannelModeratedByAppInstanceUser(const DescribeChannelModeratedByAppInstanceUserRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeChannelModeratedByAppInstanceUser);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeChannelModeratedByAppInstanceUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
@@ -655,6 +677,7 @@ DescribeChannelModeratedByAppInstanceUserOutcome ChimeSDKMessagingClient::Descri
 
 DescribeChannelModeratorOutcome ChimeSDKMessagingClient::DescribeChannelModerator(const DescribeChannelModeratorRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeChannelModerator);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeChannelModerator, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
@@ -682,6 +705,7 @@ DescribeChannelModeratorOutcome ChimeSDKMessagingClient::DescribeChannelModerato
 
 DisassociateChannelFlowOutcome ChimeSDKMessagingClient::DisassociateChannelFlow(const DisassociateChannelFlowRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociateChannelFlow);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateChannelFlow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
@@ -709,6 +733,7 @@ DisassociateChannelFlowOutcome ChimeSDKMessagingClient::DisassociateChannelFlow(
 
 GetChannelMembershipPreferencesOutcome ChimeSDKMessagingClient::GetChannelMembershipPreferences(const GetChannelMembershipPreferencesRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetChannelMembershipPreferences);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetChannelMembershipPreferences, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
@@ -737,6 +762,7 @@ GetChannelMembershipPreferencesOutcome ChimeSDKMessagingClient::GetChannelMember
 
 GetChannelMessageOutcome ChimeSDKMessagingClient::GetChannelMessage(const GetChannelMessageRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetChannelMessage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetChannelMessage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
@@ -764,6 +790,7 @@ GetChannelMessageOutcome ChimeSDKMessagingClient::GetChannelMessage(const GetCha
 
 GetChannelMessageStatusOutcome ChimeSDKMessagingClient::GetChannelMessageStatus(const GetChannelMessageStatusRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetChannelMessageStatus);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetChannelMessageStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
@@ -794,6 +821,7 @@ GetChannelMessageStatusOutcome ChimeSDKMessagingClient::GetChannelMessageStatus(
 
 GetMessagingSessionEndpointOutcome ChimeSDKMessagingClient::GetMessagingSessionEndpoint(const GetMessagingSessionEndpointRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetMessagingSessionEndpoint);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMessagingSessionEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetMessagingSessionEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -803,6 +831,7 @@ GetMessagingSessionEndpointOutcome ChimeSDKMessagingClient::GetMessagingSessionE
 
 GetMessagingStreamingConfigurationsOutcome ChimeSDKMessagingClient::GetMessagingStreamingConfigurations(const GetMessagingStreamingConfigurationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetMessagingStreamingConfigurations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMessagingStreamingConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppInstanceArnHasBeenSet())
   {
@@ -819,6 +848,7 @@ GetMessagingStreamingConfigurationsOutcome ChimeSDKMessagingClient::GetMessaging
 
 ListChannelBansOutcome ChimeSDKMessagingClient::ListChannelBans(const ListChannelBansRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListChannelBans);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListChannelBans, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
@@ -840,6 +870,7 @@ ListChannelBansOutcome ChimeSDKMessagingClient::ListChannelBans(const ListChanne
 
 ListChannelFlowsOutcome ChimeSDKMessagingClient::ListChannelFlows(const ListChannelFlowsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListChannelFlows);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListChannelFlows, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppInstanceArnHasBeenSet())
   {
@@ -854,6 +885,7 @@ ListChannelFlowsOutcome ChimeSDKMessagingClient::ListChannelFlows(const ListChan
 
 ListChannelMembershipsOutcome ChimeSDKMessagingClient::ListChannelMemberships(const ListChannelMembershipsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListChannelMemberships);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListChannelMemberships, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
@@ -875,6 +907,7 @@ ListChannelMembershipsOutcome ChimeSDKMessagingClient::ListChannelMemberships(co
 
 ListChannelMembershipsForAppInstanceUserOutcome ChimeSDKMessagingClient::ListChannelMembershipsForAppInstanceUser(const ListChannelMembershipsForAppInstanceUserRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListChannelMembershipsForAppInstanceUser);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListChannelMembershipsForAppInstanceUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChimeBearerHasBeenSet())
   {
@@ -892,6 +925,7 @@ ListChannelMembershipsForAppInstanceUserOutcome ChimeSDKMessagingClient::ListCha
 
 ListChannelMessagesOutcome ChimeSDKMessagingClient::ListChannelMessages(const ListChannelMessagesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListChannelMessages);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListChannelMessages, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
@@ -913,6 +947,7 @@ ListChannelMessagesOutcome ChimeSDKMessagingClient::ListChannelMessages(const Li
 
 ListChannelModeratorsOutcome ChimeSDKMessagingClient::ListChannelModerators(const ListChannelModeratorsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListChannelModerators);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListChannelModerators, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
@@ -934,6 +969,7 @@ ListChannelModeratorsOutcome ChimeSDKMessagingClient::ListChannelModerators(cons
 
 ListChannelsOutcome ChimeSDKMessagingClient::ListChannels(const ListChannelsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListChannels);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListChannels, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppInstanceArnHasBeenSet())
   {
@@ -953,6 +989,7 @@ ListChannelsOutcome ChimeSDKMessagingClient::ListChannels(const ListChannelsRequ
 
 ListChannelsAssociatedWithChannelFlowOutcome ChimeSDKMessagingClient::ListChannelsAssociatedWithChannelFlow(const ListChannelsAssociatedWithChannelFlowRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListChannelsAssociatedWithChannelFlow);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListChannelsAssociatedWithChannelFlow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelFlowArnHasBeenSet())
   {
@@ -970,6 +1007,7 @@ ListChannelsAssociatedWithChannelFlowOutcome ChimeSDKMessagingClient::ListChanne
 
 ListChannelsModeratedByAppInstanceUserOutcome ChimeSDKMessagingClient::ListChannelsModeratedByAppInstanceUser(const ListChannelsModeratedByAppInstanceUserRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListChannelsModeratedByAppInstanceUser);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListChannelsModeratedByAppInstanceUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChimeBearerHasBeenSet())
   {
@@ -987,6 +1025,7 @@ ListChannelsModeratedByAppInstanceUserOutcome ChimeSDKMessagingClient::ListChann
 
 ListSubChannelsOutcome ChimeSDKMessagingClient::ListSubChannels(const ListSubChannelsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListSubChannels);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSubChannels, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
@@ -1008,6 +1047,7 @@ ListSubChannelsOutcome ChimeSDKMessagingClient::ListSubChannels(const ListSubCha
 
 ListTagsForResourceOutcome ChimeSDKMessagingClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceARNHasBeenSet())
   {
@@ -1022,6 +1062,7 @@ ListTagsForResourceOutcome ChimeSDKMessagingClient::ListTagsForResource(const Li
 
 PutChannelExpirationSettingsOutcome ChimeSDKMessagingClient::PutChannelExpirationSettings(const PutChannelExpirationSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutChannelExpirationSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutChannelExpirationSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
@@ -1038,6 +1079,7 @@ PutChannelExpirationSettingsOutcome ChimeSDKMessagingClient::PutChannelExpiratio
 
 PutChannelMembershipPreferencesOutcome ChimeSDKMessagingClient::PutChannelMembershipPreferences(const PutChannelMembershipPreferencesRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutChannelMembershipPreferences);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutChannelMembershipPreferences, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
@@ -1066,6 +1108,7 @@ PutChannelMembershipPreferencesOutcome ChimeSDKMessagingClient::PutChannelMember
 
 PutMessagingStreamingConfigurationsOutcome ChimeSDKMessagingClient::PutMessagingStreamingConfigurations(const PutMessagingStreamingConfigurationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutMessagingStreamingConfigurations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutMessagingStreamingConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppInstanceArnHasBeenSet())
   {
@@ -1082,6 +1125,7 @@ PutMessagingStreamingConfigurationsOutcome ChimeSDKMessagingClient::PutMessaging
 
 RedactChannelMessageOutcome ChimeSDKMessagingClient::RedactChannelMessage(const RedactChannelMessageRequest& request) const
 {
+  AWS_OPERATION_GUARD(RedactChannelMessage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RedactChannelMessage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
@@ -1112,6 +1156,7 @@ RedactChannelMessageOutcome ChimeSDKMessagingClient::RedactChannelMessage(const 
 
 SearchChannelsOutcome ChimeSDKMessagingClient::SearchChannels(const SearchChannelsRequest& request) const
 {
+  AWS_OPERATION_GUARD(SearchChannels);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SearchChannels, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SearchChannels, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1124,6 +1169,7 @@ SearchChannelsOutcome ChimeSDKMessagingClient::SearchChannels(const SearchChanne
 
 SendChannelMessageOutcome ChimeSDKMessagingClient::SendChannelMessage(const SendChannelMessageRequest& request) const
 {
+  AWS_OPERATION_GUARD(SendChannelMessage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SendChannelMessage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
@@ -1145,6 +1191,7 @@ SendChannelMessageOutcome ChimeSDKMessagingClient::SendChannelMessage(const Send
 
 TagResourceOutcome ChimeSDKMessagingClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1157,6 +1204,7 @@ TagResourceOutcome ChimeSDKMessagingClient::TagResource(const TagResourceRequest
 
 UntagResourceOutcome ChimeSDKMessagingClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1169,6 +1217,7 @@ UntagResourceOutcome ChimeSDKMessagingClient::UntagResource(const UntagResourceR
 
 UpdateChannelOutcome ChimeSDKMessagingClient::UpdateChannel(const UpdateChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
@@ -1189,6 +1238,7 @@ UpdateChannelOutcome ChimeSDKMessagingClient::UpdateChannel(const UpdateChannelR
 
 UpdateChannelFlowOutcome ChimeSDKMessagingClient::UpdateChannelFlow(const UpdateChannelFlowRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateChannelFlow);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateChannelFlow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelFlowArnHasBeenSet())
   {
@@ -1204,6 +1254,7 @@ UpdateChannelFlowOutcome ChimeSDKMessagingClient::UpdateChannelFlow(const Update
 
 UpdateChannelMessageOutcome ChimeSDKMessagingClient::UpdateChannelMessage(const UpdateChannelMessageRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateChannelMessage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateChannelMessage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {
@@ -1231,6 +1282,7 @@ UpdateChannelMessageOutcome ChimeSDKMessagingClient::UpdateChannelMessage(const 
 
 UpdateChannelReadMarkerOutcome ChimeSDKMessagingClient::UpdateChannelReadMarker(const UpdateChannelReadMarkerRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateChannelReadMarker);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateChannelReadMarker, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {

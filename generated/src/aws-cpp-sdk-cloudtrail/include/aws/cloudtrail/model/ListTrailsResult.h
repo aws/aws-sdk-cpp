@@ -35,37 +35,37 @@ namespace Model
 
 
     /**
-     * <p>Returns the name, ARN, and home region of trails in the current account.</p>
+     * <p>Returns the name, ARN, and home Region of trails in the current account.</p>
      */
     inline const Aws::Vector<TrailInfo>& GetTrails() const{ return m_trails; }
 
     /**
-     * <p>Returns the name, ARN, and home region of trails in the current account.</p>
+     * <p>Returns the name, ARN, and home Region of trails in the current account.</p>
      */
     inline void SetTrails(const Aws::Vector<TrailInfo>& value) { m_trails = value; }
 
     /**
-     * <p>Returns the name, ARN, and home region of trails in the current account.</p>
+     * <p>Returns the name, ARN, and home Region of trails in the current account.</p>
      */
     inline void SetTrails(Aws::Vector<TrailInfo>&& value) { m_trails = std::move(value); }
 
     /**
-     * <p>Returns the name, ARN, and home region of trails in the current account.</p>
+     * <p>Returns the name, ARN, and home Region of trails in the current account.</p>
      */
     inline ListTrailsResult& WithTrails(const Aws::Vector<TrailInfo>& value) { SetTrails(value); return *this;}
 
     /**
-     * <p>Returns the name, ARN, and home region of trails in the current account.</p>
+     * <p>Returns the name, ARN, and home Region of trails in the current account.</p>
      */
     inline ListTrailsResult& WithTrails(Aws::Vector<TrailInfo>&& value) { SetTrails(std::move(value)); return *this;}
 
     /**
-     * <p>Returns the name, ARN, and home region of trails in the current account.</p>
+     * <p>Returns the name, ARN, and home Region of trails in the current account.</p>
      */
     inline ListTrailsResult& AddTrails(const TrailInfo& value) { m_trails.push_back(value); return *this; }
 
     /**
-     * <p>Returns the name, ARN, and home region of trails in the current account.</p>
+     * <p>Returns the name, ARN, and home Region of trails in the current account.</p>
      */
     inline ListTrailsResult& AddTrails(TrailInfo&& value) { m_trails.push_back(std::move(value)); return *this; }
 

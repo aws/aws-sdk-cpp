@@ -144,6 +144,7 @@ CloudHSMV2Client::CloudHSMV2Client(const std::shared_ptr<AWSCredentialsProvider>
     /* End of legacy constructors due deprecation */
 CloudHSMV2Client::~CloudHSMV2Client()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<CloudHSMV2EndpointProviderBase>& CloudHSMV2Client::accessEndpointProvider()
@@ -166,6 +167,7 @@ void CloudHSMV2Client::OverrideEndpoint(const Aws::String& endpoint)
 
 CopyBackupToRegionOutcome CloudHSMV2Client::CopyBackupToRegion(const CopyBackupToRegionRequest& request) const
 {
+  AWS_OPERATION_GUARD(CopyBackupToRegion);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CopyBackupToRegion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CopyBackupToRegion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -174,6 +176,7 @@ CopyBackupToRegionOutcome CloudHSMV2Client::CopyBackupToRegion(const CopyBackupT
 
 CreateClusterOutcome CloudHSMV2Client::CreateCluster(const CreateClusterRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateCluster);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateCluster, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateCluster, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -182,6 +185,7 @@ CreateClusterOutcome CloudHSMV2Client::CreateCluster(const CreateClusterRequest&
 
 CreateHsmOutcome CloudHSMV2Client::CreateHsm(const CreateHsmRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateHsm);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateHsm, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateHsm, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -190,6 +194,7 @@ CreateHsmOutcome CloudHSMV2Client::CreateHsm(const CreateHsmRequest& request) co
 
 DeleteBackupOutcome CloudHSMV2Client::DeleteBackup(const DeleteBackupRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteBackup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteBackup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteBackup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -198,6 +203,7 @@ DeleteBackupOutcome CloudHSMV2Client::DeleteBackup(const DeleteBackupRequest& re
 
 DeleteClusterOutcome CloudHSMV2Client::DeleteCluster(const DeleteClusterRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteCluster);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteCluster, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteCluster, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -206,6 +212,7 @@ DeleteClusterOutcome CloudHSMV2Client::DeleteCluster(const DeleteClusterRequest&
 
 DeleteHsmOutcome CloudHSMV2Client::DeleteHsm(const DeleteHsmRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteHsm);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteHsm, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteHsm, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -214,6 +221,7 @@ DeleteHsmOutcome CloudHSMV2Client::DeleteHsm(const DeleteHsmRequest& request) co
 
 DescribeBackupsOutcome CloudHSMV2Client::DescribeBackups(const DescribeBackupsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeBackups);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeBackups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeBackups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -222,6 +230,7 @@ DescribeBackupsOutcome CloudHSMV2Client::DescribeBackups(const DescribeBackupsRe
 
 DescribeClustersOutcome CloudHSMV2Client::DescribeClusters(const DescribeClustersRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeClusters);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeClusters, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeClusters, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -230,6 +239,7 @@ DescribeClustersOutcome CloudHSMV2Client::DescribeClusters(const DescribeCluster
 
 InitializeClusterOutcome CloudHSMV2Client::InitializeCluster(const InitializeClusterRequest& request) const
 {
+  AWS_OPERATION_GUARD(InitializeCluster);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, InitializeCluster, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, InitializeCluster, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -238,6 +248,7 @@ InitializeClusterOutcome CloudHSMV2Client::InitializeCluster(const InitializeClu
 
 ListTagsOutcome CloudHSMV2Client::ListTags(const ListTagsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTags);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTags, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTags, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -246,6 +257,7 @@ ListTagsOutcome CloudHSMV2Client::ListTags(const ListTagsRequest& request) const
 
 ModifyBackupAttributesOutcome CloudHSMV2Client::ModifyBackupAttributes(const ModifyBackupAttributesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ModifyBackupAttributes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ModifyBackupAttributes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ModifyBackupAttributes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -254,6 +266,7 @@ ModifyBackupAttributesOutcome CloudHSMV2Client::ModifyBackupAttributes(const Mod
 
 ModifyClusterOutcome CloudHSMV2Client::ModifyCluster(const ModifyClusterRequest& request) const
 {
+  AWS_OPERATION_GUARD(ModifyCluster);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ModifyCluster, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ModifyCluster, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -262,6 +275,7 @@ ModifyClusterOutcome CloudHSMV2Client::ModifyCluster(const ModifyClusterRequest&
 
 RestoreBackupOutcome CloudHSMV2Client::RestoreBackup(const RestoreBackupRequest& request) const
 {
+  AWS_OPERATION_GUARD(RestoreBackup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RestoreBackup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RestoreBackup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -270,6 +284,7 @@ RestoreBackupOutcome CloudHSMV2Client::RestoreBackup(const RestoreBackupRequest&
 
 TagResourceOutcome CloudHSMV2Client::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -278,6 +293,7 @@ TagResourceOutcome CloudHSMV2Client::TagResource(const TagResourceRequest& reque
 
 UntagResourceOutcome CloudHSMV2Client::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

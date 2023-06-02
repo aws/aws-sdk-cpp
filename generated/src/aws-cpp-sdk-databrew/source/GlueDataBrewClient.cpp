@@ -173,6 +173,7 @@ GlueDataBrewClient::GlueDataBrewClient(const std::shared_ptr<AWSCredentialsProvi
     /* End of legacy constructors due deprecation */
 GlueDataBrewClient::~GlueDataBrewClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<GlueDataBrewEndpointProviderBase>& GlueDataBrewClient::accessEndpointProvider()
@@ -195,6 +196,7 @@ void GlueDataBrewClient::OverrideEndpoint(const Aws::String& endpoint)
 
 BatchDeleteRecipeVersionOutcome GlueDataBrewClient::BatchDeleteRecipeVersion(const BatchDeleteRecipeVersionRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchDeleteRecipeVersion);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchDeleteRecipeVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -211,6 +213,7 @@ BatchDeleteRecipeVersionOutcome GlueDataBrewClient::BatchDeleteRecipeVersion(con
 
 CreateDatasetOutcome GlueDataBrewClient::CreateDataset(const CreateDatasetRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateDataset);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDataset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateDataset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -220,6 +223,7 @@ CreateDatasetOutcome GlueDataBrewClient::CreateDataset(const CreateDatasetReques
 
 CreateProfileJobOutcome GlueDataBrewClient::CreateProfileJob(const CreateProfileJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateProfileJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateProfileJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateProfileJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -229,6 +233,7 @@ CreateProfileJobOutcome GlueDataBrewClient::CreateProfileJob(const CreateProfile
 
 CreateProjectOutcome GlueDataBrewClient::CreateProject(const CreateProjectRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateProject);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateProject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateProject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -238,6 +243,7 @@ CreateProjectOutcome GlueDataBrewClient::CreateProject(const CreateProjectReques
 
 CreateRecipeOutcome GlueDataBrewClient::CreateRecipe(const CreateRecipeRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateRecipe);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateRecipe, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateRecipe, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -247,6 +253,7 @@ CreateRecipeOutcome GlueDataBrewClient::CreateRecipe(const CreateRecipeRequest& 
 
 CreateRecipeJobOutcome GlueDataBrewClient::CreateRecipeJob(const CreateRecipeJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateRecipeJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateRecipeJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateRecipeJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -256,6 +263,7 @@ CreateRecipeJobOutcome GlueDataBrewClient::CreateRecipeJob(const CreateRecipeJob
 
 CreateRulesetOutcome GlueDataBrewClient::CreateRuleset(const CreateRulesetRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateRuleset);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateRuleset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateRuleset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -265,6 +273,7 @@ CreateRulesetOutcome GlueDataBrewClient::CreateRuleset(const CreateRulesetReques
 
 CreateScheduleOutcome GlueDataBrewClient::CreateSchedule(const CreateScheduleRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateSchedule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateSchedule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateSchedule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -274,6 +283,7 @@ CreateScheduleOutcome GlueDataBrewClient::CreateSchedule(const CreateScheduleReq
 
 DeleteDatasetOutcome GlueDataBrewClient::DeleteDataset(const DeleteDatasetRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteDataset);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDataset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -289,6 +299,7 @@ DeleteDatasetOutcome GlueDataBrewClient::DeleteDataset(const DeleteDatasetReques
 
 DeleteJobOutcome GlueDataBrewClient::DeleteJob(const DeleteJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -304,6 +315,7 @@ DeleteJobOutcome GlueDataBrewClient::DeleteJob(const DeleteJobRequest& request) 
 
 DeleteProjectOutcome GlueDataBrewClient::DeleteProject(const DeleteProjectRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteProject);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteProject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -319,6 +331,7 @@ DeleteProjectOutcome GlueDataBrewClient::DeleteProject(const DeleteProjectReques
 
 DeleteRecipeVersionOutcome GlueDataBrewClient::DeleteRecipeVersion(const DeleteRecipeVersionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteRecipeVersion);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteRecipeVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -341,6 +354,7 @@ DeleteRecipeVersionOutcome GlueDataBrewClient::DeleteRecipeVersion(const DeleteR
 
 DeleteRulesetOutcome GlueDataBrewClient::DeleteRuleset(const DeleteRulesetRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteRuleset);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteRuleset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -356,6 +370,7 @@ DeleteRulesetOutcome GlueDataBrewClient::DeleteRuleset(const DeleteRulesetReques
 
 DeleteScheduleOutcome GlueDataBrewClient::DeleteSchedule(const DeleteScheduleRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteSchedule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteSchedule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -371,6 +386,7 @@ DeleteScheduleOutcome GlueDataBrewClient::DeleteSchedule(const DeleteScheduleReq
 
 DescribeDatasetOutcome GlueDataBrewClient::DescribeDataset(const DescribeDatasetRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeDataset);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeDataset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -386,6 +402,7 @@ DescribeDatasetOutcome GlueDataBrewClient::DescribeDataset(const DescribeDataset
 
 DescribeJobOutcome GlueDataBrewClient::DescribeJob(const DescribeJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -401,6 +418,7 @@ DescribeJobOutcome GlueDataBrewClient::DescribeJob(const DescribeJobRequest& req
 
 DescribeJobRunOutcome GlueDataBrewClient::DescribeJobRun(const DescribeJobRunRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeJobRun);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeJobRun, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -423,6 +441,7 @@ DescribeJobRunOutcome GlueDataBrewClient::DescribeJobRun(const DescribeJobRunReq
 
 DescribeProjectOutcome GlueDataBrewClient::DescribeProject(const DescribeProjectRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeProject);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeProject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -438,6 +457,7 @@ DescribeProjectOutcome GlueDataBrewClient::DescribeProject(const DescribeProject
 
 DescribeRecipeOutcome GlueDataBrewClient::DescribeRecipe(const DescribeRecipeRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeRecipe);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeRecipe, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -453,6 +473,7 @@ DescribeRecipeOutcome GlueDataBrewClient::DescribeRecipe(const DescribeRecipeReq
 
 DescribeRulesetOutcome GlueDataBrewClient::DescribeRuleset(const DescribeRulesetRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeRuleset);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeRuleset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -468,6 +489,7 @@ DescribeRulesetOutcome GlueDataBrewClient::DescribeRuleset(const DescribeRuleset
 
 DescribeScheduleOutcome GlueDataBrewClient::DescribeSchedule(const DescribeScheduleRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeSchedule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeSchedule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -483,6 +505,7 @@ DescribeScheduleOutcome GlueDataBrewClient::DescribeSchedule(const DescribeSched
 
 ListDatasetsOutcome GlueDataBrewClient::ListDatasets(const ListDatasetsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDatasets);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDatasets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDatasets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -492,6 +515,7 @@ ListDatasetsOutcome GlueDataBrewClient::ListDatasets(const ListDatasetsRequest& 
 
 ListJobRunsOutcome GlueDataBrewClient::ListJobRuns(const ListJobRunsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListJobRuns);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListJobRuns, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -508,6 +532,7 @@ ListJobRunsOutcome GlueDataBrewClient::ListJobRuns(const ListJobRunsRequest& req
 
 ListJobsOutcome GlueDataBrewClient::ListJobs(const ListJobsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListJobs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -517,6 +542,7 @@ ListJobsOutcome GlueDataBrewClient::ListJobs(const ListJobsRequest& request) con
 
 ListProjectsOutcome GlueDataBrewClient::ListProjects(const ListProjectsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListProjects);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListProjects, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListProjects, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -526,6 +552,7 @@ ListProjectsOutcome GlueDataBrewClient::ListProjects(const ListProjectsRequest& 
 
 ListRecipeVersionsOutcome GlueDataBrewClient::ListRecipeVersions(const ListRecipeVersionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListRecipeVersions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRecipeVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -540,6 +567,7 @@ ListRecipeVersionsOutcome GlueDataBrewClient::ListRecipeVersions(const ListRecip
 
 ListRecipesOutcome GlueDataBrewClient::ListRecipes(const ListRecipesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListRecipes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRecipes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListRecipes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -549,6 +577,7 @@ ListRecipesOutcome GlueDataBrewClient::ListRecipes(const ListRecipesRequest& req
 
 ListRulesetsOutcome GlueDataBrewClient::ListRulesets(const ListRulesetsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListRulesets);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRulesets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListRulesets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -558,6 +587,7 @@ ListRulesetsOutcome GlueDataBrewClient::ListRulesets(const ListRulesetsRequest& 
 
 ListSchedulesOutcome GlueDataBrewClient::ListSchedules(const ListSchedulesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListSchedules);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSchedules, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListSchedules, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -567,6 +597,7 @@ ListSchedulesOutcome GlueDataBrewClient::ListSchedules(const ListSchedulesReques
 
 ListTagsForResourceOutcome GlueDataBrewClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -582,6 +613,7 @@ ListTagsForResourceOutcome GlueDataBrewClient::ListTagsForResource(const ListTag
 
 PublishRecipeOutcome GlueDataBrewClient::PublishRecipe(const PublishRecipeRequest& request) const
 {
+  AWS_OPERATION_GUARD(PublishRecipe);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PublishRecipe, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -598,6 +630,7 @@ PublishRecipeOutcome GlueDataBrewClient::PublishRecipe(const PublishRecipeReques
 
 SendProjectSessionActionOutcome GlueDataBrewClient::SendProjectSessionAction(const SendProjectSessionActionRequest& request) const
 {
+  AWS_OPERATION_GUARD(SendProjectSessionAction);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SendProjectSessionAction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -614,6 +647,7 @@ SendProjectSessionActionOutcome GlueDataBrewClient::SendProjectSessionAction(con
 
 StartJobRunOutcome GlueDataBrewClient::StartJobRun(const StartJobRunRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartJobRun);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartJobRun, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -630,6 +664,7 @@ StartJobRunOutcome GlueDataBrewClient::StartJobRun(const StartJobRunRequest& req
 
 StartProjectSessionOutcome GlueDataBrewClient::StartProjectSession(const StartProjectSessionRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartProjectSession);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartProjectSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -646,6 +681,7 @@ StartProjectSessionOutcome GlueDataBrewClient::StartProjectSession(const StartPr
 
 StopJobRunOutcome GlueDataBrewClient::StopJobRun(const StopJobRunRequest& request) const
 {
+  AWS_OPERATION_GUARD(StopJobRun);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopJobRun, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -669,6 +705,7 @@ StopJobRunOutcome GlueDataBrewClient::StopJobRun(const StopJobRunRequest& reques
 
 TagResourceOutcome GlueDataBrewClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -684,6 +721,7 @@ TagResourceOutcome GlueDataBrewClient::TagResource(const TagResourceRequest& req
 
 UntagResourceOutcome GlueDataBrewClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -704,6 +742,7 @@ UntagResourceOutcome GlueDataBrewClient::UntagResource(const UntagResourceReques
 
 UpdateDatasetOutcome GlueDataBrewClient::UpdateDataset(const UpdateDatasetRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateDataset);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDataset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -719,6 +758,7 @@ UpdateDatasetOutcome GlueDataBrewClient::UpdateDataset(const UpdateDatasetReques
 
 UpdateProfileJobOutcome GlueDataBrewClient::UpdateProfileJob(const UpdateProfileJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateProfileJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateProfileJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -734,6 +774,7 @@ UpdateProfileJobOutcome GlueDataBrewClient::UpdateProfileJob(const UpdateProfile
 
 UpdateProjectOutcome GlueDataBrewClient::UpdateProject(const UpdateProjectRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateProject);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateProject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -749,6 +790,7 @@ UpdateProjectOutcome GlueDataBrewClient::UpdateProject(const UpdateProjectReques
 
 UpdateRecipeOutcome GlueDataBrewClient::UpdateRecipe(const UpdateRecipeRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateRecipe);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateRecipe, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -764,6 +806,7 @@ UpdateRecipeOutcome GlueDataBrewClient::UpdateRecipe(const UpdateRecipeRequest& 
 
 UpdateRecipeJobOutcome GlueDataBrewClient::UpdateRecipeJob(const UpdateRecipeJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateRecipeJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateRecipeJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -779,6 +822,7 @@ UpdateRecipeJobOutcome GlueDataBrewClient::UpdateRecipeJob(const UpdateRecipeJob
 
 UpdateRulesetOutcome GlueDataBrewClient::UpdateRuleset(const UpdateRulesetRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateRuleset);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateRuleset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -794,6 +838,7 @@ UpdateRulesetOutcome GlueDataBrewClient::UpdateRuleset(const UpdateRulesetReques
 
 UpdateScheduleOutcome GlueDataBrewClient::UpdateSchedule(const UpdateScheduleRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateSchedule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateSchedule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {

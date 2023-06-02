@@ -171,6 +171,7 @@ RoboMakerClient::RoboMakerClient(const std::shared_ptr<AWSCredentialsProvider>& 
     /* End of legacy constructors due deprecation */
 RoboMakerClient::~RoboMakerClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<RoboMakerEndpointProviderBase>& RoboMakerClient::accessEndpointProvider()
@@ -193,6 +194,7 @@ void RoboMakerClient::OverrideEndpoint(const Aws::String& endpoint)
 
 BatchDeleteWorldsOutcome RoboMakerClient::BatchDeleteWorlds(const BatchDeleteWorldsRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchDeleteWorlds);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchDeleteWorlds, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchDeleteWorlds, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -202,6 +204,7 @@ BatchDeleteWorldsOutcome RoboMakerClient::BatchDeleteWorlds(const BatchDeleteWor
 
 BatchDescribeSimulationJobOutcome RoboMakerClient::BatchDescribeSimulationJob(const BatchDescribeSimulationJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchDescribeSimulationJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchDescribeSimulationJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchDescribeSimulationJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -211,6 +214,7 @@ BatchDescribeSimulationJobOutcome RoboMakerClient::BatchDescribeSimulationJob(co
 
 CancelSimulationJobOutcome RoboMakerClient::CancelSimulationJob(const CancelSimulationJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(CancelSimulationJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CancelSimulationJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CancelSimulationJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -220,6 +224,7 @@ CancelSimulationJobOutcome RoboMakerClient::CancelSimulationJob(const CancelSimu
 
 CancelSimulationJobBatchOutcome RoboMakerClient::CancelSimulationJobBatch(const CancelSimulationJobBatchRequest& request) const
 {
+  AWS_OPERATION_GUARD(CancelSimulationJobBatch);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CancelSimulationJobBatch, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CancelSimulationJobBatch, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -229,6 +234,7 @@ CancelSimulationJobBatchOutcome RoboMakerClient::CancelSimulationJobBatch(const 
 
 CancelWorldExportJobOutcome RoboMakerClient::CancelWorldExportJob(const CancelWorldExportJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(CancelWorldExportJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CancelWorldExportJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CancelWorldExportJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -238,6 +244,7 @@ CancelWorldExportJobOutcome RoboMakerClient::CancelWorldExportJob(const CancelWo
 
 CancelWorldGenerationJobOutcome RoboMakerClient::CancelWorldGenerationJob(const CancelWorldGenerationJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(CancelWorldGenerationJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CancelWorldGenerationJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CancelWorldGenerationJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -247,6 +254,7 @@ CancelWorldGenerationJobOutcome RoboMakerClient::CancelWorldGenerationJob(const 
 
 CreateRobotApplicationOutcome RoboMakerClient::CreateRobotApplication(const CreateRobotApplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateRobotApplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateRobotApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateRobotApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -256,6 +264,7 @@ CreateRobotApplicationOutcome RoboMakerClient::CreateRobotApplication(const Crea
 
 CreateRobotApplicationVersionOutcome RoboMakerClient::CreateRobotApplicationVersion(const CreateRobotApplicationVersionRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateRobotApplicationVersion);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateRobotApplicationVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateRobotApplicationVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -265,6 +274,7 @@ CreateRobotApplicationVersionOutcome RoboMakerClient::CreateRobotApplicationVers
 
 CreateSimulationApplicationOutcome RoboMakerClient::CreateSimulationApplication(const CreateSimulationApplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateSimulationApplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateSimulationApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateSimulationApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -274,6 +284,7 @@ CreateSimulationApplicationOutcome RoboMakerClient::CreateSimulationApplication(
 
 CreateSimulationApplicationVersionOutcome RoboMakerClient::CreateSimulationApplicationVersion(const CreateSimulationApplicationVersionRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateSimulationApplicationVersion);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateSimulationApplicationVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateSimulationApplicationVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -283,6 +294,7 @@ CreateSimulationApplicationVersionOutcome RoboMakerClient::CreateSimulationAppli
 
 CreateSimulationJobOutcome RoboMakerClient::CreateSimulationJob(const CreateSimulationJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateSimulationJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateSimulationJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateSimulationJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -292,6 +304,7 @@ CreateSimulationJobOutcome RoboMakerClient::CreateSimulationJob(const CreateSimu
 
 CreateWorldExportJobOutcome RoboMakerClient::CreateWorldExportJob(const CreateWorldExportJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateWorldExportJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateWorldExportJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateWorldExportJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -301,6 +314,7 @@ CreateWorldExportJobOutcome RoboMakerClient::CreateWorldExportJob(const CreateWo
 
 CreateWorldGenerationJobOutcome RoboMakerClient::CreateWorldGenerationJob(const CreateWorldGenerationJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateWorldGenerationJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateWorldGenerationJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateWorldGenerationJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -310,6 +324,7 @@ CreateWorldGenerationJobOutcome RoboMakerClient::CreateWorldGenerationJob(const 
 
 CreateWorldTemplateOutcome RoboMakerClient::CreateWorldTemplate(const CreateWorldTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateWorldTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateWorldTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateWorldTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -319,6 +334,7 @@ CreateWorldTemplateOutcome RoboMakerClient::CreateWorldTemplate(const CreateWorl
 
 DeleteRobotApplicationOutcome RoboMakerClient::DeleteRobotApplication(const DeleteRobotApplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteRobotApplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteRobotApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteRobotApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -328,6 +344,7 @@ DeleteRobotApplicationOutcome RoboMakerClient::DeleteRobotApplication(const Dele
 
 DeleteSimulationApplicationOutcome RoboMakerClient::DeleteSimulationApplication(const DeleteSimulationApplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteSimulationApplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteSimulationApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteSimulationApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -337,6 +354,7 @@ DeleteSimulationApplicationOutcome RoboMakerClient::DeleteSimulationApplication(
 
 DeleteWorldTemplateOutcome RoboMakerClient::DeleteWorldTemplate(const DeleteWorldTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteWorldTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteWorldTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteWorldTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -346,6 +364,7 @@ DeleteWorldTemplateOutcome RoboMakerClient::DeleteWorldTemplate(const DeleteWorl
 
 DescribeRobotApplicationOutcome RoboMakerClient::DescribeRobotApplication(const DescribeRobotApplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeRobotApplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeRobotApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeRobotApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -355,6 +374,7 @@ DescribeRobotApplicationOutcome RoboMakerClient::DescribeRobotApplication(const 
 
 DescribeSimulationApplicationOutcome RoboMakerClient::DescribeSimulationApplication(const DescribeSimulationApplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeSimulationApplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeSimulationApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeSimulationApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -364,6 +384,7 @@ DescribeSimulationApplicationOutcome RoboMakerClient::DescribeSimulationApplicat
 
 DescribeSimulationJobOutcome RoboMakerClient::DescribeSimulationJob(const DescribeSimulationJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeSimulationJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeSimulationJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeSimulationJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -373,6 +394,7 @@ DescribeSimulationJobOutcome RoboMakerClient::DescribeSimulationJob(const Descri
 
 DescribeSimulationJobBatchOutcome RoboMakerClient::DescribeSimulationJobBatch(const DescribeSimulationJobBatchRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeSimulationJobBatch);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeSimulationJobBatch, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeSimulationJobBatch, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -382,6 +404,7 @@ DescribeSimulationJobBatchOutcome RoboMakerClient::DescribeSimulationJobBatch(co
 
 DescribeWorldOutcome RoboMakerClient::DescribeWorld(const DescribeWorldRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeWorld);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeWorld, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeWorld, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -391,6 +414,7 @@ DescribeWorldOutcome RoboMakerClient::DescribeWorld(const DescribeWorldRequest& 
 
 DescribeWorldExportJobOutcome RoboMakerClient::DescribeWorldExportJob(const DescribeWorldExportJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeWorldExportJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeWorldExportJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeWorldExportJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -400,6 +424,7 @@ DescribeWorldExportJobOutcome RoboMakerClient::DescribeWorldExportJob(const Desc
 
 DescribeWorldGenerationJobOutcome RoboMakerClient::DescribeWorldGenerationJob(const DescribeWorldGenerationJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeWorldGenerationJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeWorldGenerationJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeWorldGenerationJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -409,6 +434,7 @@ DescribeWorldGenerationJobOutcome RoboMakerClient::DescribeWorldGenerationJob(co
 
 DescribeWorldTemplateOutcome RoboMakerClient::DescribeWorldTemplate(const DescribeWorldTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeWorldTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeWorldTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeWorldTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -418,6 +444,7 @@ DescribeWorldTemplateOutcome RoboMakerClient::DescribeWorldTemplate(const Descri
 
 GetWorldTemplateBodyOutcome RoboMakerClient::GetWorldTemplateBody(const GetWorldTemplateBodyRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetWorldTemplateBody);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetWorldTemplateBody, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetWorldTemplateBody, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -427,6 +454,7 @@ GetWorldTemplateBodyOutcome RoboMakerClient::GetWorldTemplateBody(const GetWorld
 
 ListRobotApplicationsOutcome RoboMakerClient::ListRobotApplications(const ListRobotApplicationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListRobotApplications);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRobotApplications, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListRobotApplications, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -436,6 +464,7 @@ ListRobotApplicationsOutcome RoboMakerClient::ListRobotApplications(const ListRo
 
 ListSimulationApplicationsOutcome RoboMakerClient::ListSimulationApplications(const ListSimulationApplicationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListSimulationApplications);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSimulationApplications, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListSimulationApplications, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -445,6 +474,7 @@ ListSimulationApplicationsOutcome RoboMakerClient::ListSimulationApplications(co
 
 ListSimulationJobBatchesOutcome RoboMakerClient::ListSimulationJobBatches(const ListSimulationJobBatchesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListSimulationJobBatches);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSimulationJobBatches, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListSimulationJobBatches, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -454,6 +484,7 @@ ListSimulationJobBatchesOutcome RoboMakerClient::ListSimulationJobBatches(const 
 
 ListSimulationJobsOutcome RoboMakerClient::ListSimulationJobs(const ListSimulationJobsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListSimulationJobs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSimulationJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListSimulationJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -463,6 +494,7 @@ ListSimulationJobsOutcome RoboMakerClient::ListSimulationJobs(const ListSimulati
 
 ListTagsForResourceOutcome RoboMakerClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -478,6 +510,7 @@ ListTagsForResourceOutcome RoboMakerClient::ListTagsForResource(const ListTagsFo
 
 ListWorldExportJobsOutcome RoboMakerClient::ListWorldExportJobs(const ListWorldExportJobsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListWorldExportJobs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListWorldExportJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListWorldExportJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -487,6 +520,7 @@ ListWorldExportJobsOutcome RoboMakerClient::ListWorldExportJobs(const ListWorldE
 
 ListWorldGenerationJobsOutcome RoboMakerClient::ListWorldGenerationJobs(const ListWorldGenerationJobsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListWorldGenerationJobs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListWorldGenerationJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListWorldGenerationJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -496,6 +530,7 @@ ListWorldGenerationJobsOutcome RoboMakerClient::ListWorldGenerationJobs(const Li
 
 ListWorldTemplatesOutcome RoboMakerClient::ListWorldTemplates(const ListWorldTemplatesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListWorldTemplates);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListWorldTemplates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListWorldTemplates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -505,6 +540,7 @@ ListWorldTemplatesOutcome RoboMakerClient::ListWorldTemplates(const ListWorldTem
 
 ListWorldsOutcome RoboMakerClient::ListWorlds(const ListWorldsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListWorlds);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListWorlds, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListWorlds, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -514,6 +550,7 @@ ListWorldsOutcome RoboMakerClient::ListWorlds(const ListWorldsRequest& request) 
 
 RestartSimulationJobOutcome RoboMakerClient::RestartSimulationJob(const RestartSimulationJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(RestartSimulationJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RestartSimulationJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RestartSimulationJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -523,6 +560,7 @@ RestartSimulationJobOutcome RoboMakerClient::RestartSimulationJob(const RestartS
 
 StartSimulationJobBatchOutcome RoboMakerClient::StartSimulationJobBatch(const StartSimulationJobBatchRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartSimulationJobBatch);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartSimulationJobBatch, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartSimulationJobBatch, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -532,6 +570,7 @@ StartSimulationJobBatchOutcome RoboMakerClient::StartSimulationJobBatch(const St
 
 TagResourceOutcome RoboMakerClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -547,6 +586,7 @@ TagResourceOutcome RoboMakerClient::TagResource(const TagResourceRequest& reques
 
 UntagResourceOutcome RoboMakerClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -567,6 +607,7 @@ UntagResourceOutcome RoboMakerClient::UntagResource(const UntagResourceRequest& 
 
 UpdateRobotApplicationOutcome RoboMakerClient::UpdateRobotApplication(const UpdateRobotApplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateRobotApplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateRobotApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateRobotApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -576,6 +617,7 @@ UpdateRobotApplicationOutcome RoboMakerClient::UpdateRobotApplication(const Upda
 
 UpdateSimulationApplicationOutcome RoboMakerClient::UpdateSimulationApplication(const UpdateSimulationApplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateSimulationApplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateSimulationApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateSimulationApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -585,6 +627,7 @@ UpdateSimulationApplicationOutcome RoboMakerClient::UpdateSimulationApplication(
 
 UpdateWorldTemplateOutcome RoboMakerClient::UpdateWorldTemplate(const UpdateWorldTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateWorldTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateWorldTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateWorldTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

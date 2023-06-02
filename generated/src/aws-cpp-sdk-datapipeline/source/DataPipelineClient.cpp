@@ -148,6 +148,7 @@ DataPipelineClient::DataPipelineClient(const std::shared_ptr<AWSCredentialsProvi
     /* End of legacy constructors due deprecation */
 DataPipelineClient::~DataPipelineClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<DataPipelineEndpointProviderBase>& DataPipelineClient::accessEndpointProvider()
@@ -170,6 +171,7 @@ void DataPipelineClient::OverrideEndpoint(const Aws::String& endpoint)
 
 ActivatePipelineOutcome DataPipelineClient::ActivatePipeline(const ActivatePipelineRequest& request) const
 {
+  AWS_OPERATION_GUARD(ActivatePipeline);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ActivatePipeline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ActivatePipeline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -178,6 +180,7 @@ ActivatePipelineOutcome DataPipelineClient::ActivatePipeline(const ActivatePipel
 
 AddTagsOutcome DataPipelineClient::AddTags(const AddTagsRequest& request) const
 {
+  AWS_OPERATION_GUARD(AddTags);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AddTags, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AddTags, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -186,6 +189,7 @@ AddTagsOutcome DataPipelineClient::AddTags(const AddTagsRequest& request) const
 
 CreatePipelineOutcome DataPipelineClient::CreatePipeline(const CreatePipelineRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreatePipeline);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreatePipeline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreatePipeline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -194,6 +198,7 @@ CreatePipelineOutcome DataPipelineClient::CreatePipeline(const CreatePipelineReq
 
 DeactivatePipelineOutcome DataPipelineClient::DeactivatePipeline(const DeactivatePipelineRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeactivatePipeline);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeactivatePipeline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeactivatePipeline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -202,6 +207,7 @@ DeactivatePipelineOutcome DataPipelineClient::DeactivatePipeline(const Deactivat
 
 DeletePipelineOutcome DataPipelineClient::DeletePipeline(const DeletePipelineRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeletePipeline);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeletePipeline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeletePipeline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -210,6 +216,7 @@ DeletePipelineOutcome DataPipelineClient::DeletePipeline(const DeletePipelineReq
 
 DescribeObjectsOutcome DataPipelineClient::DescribeObjects(const DescribeObjectsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeObjects);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeObjects, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeObjects, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -218,6 +225,7 @@ DescribeObjectsOutcome DataPipelineClient::DescribeObjects(const DescribeObjects
 
 DescribePipelinesOutcome DataPipelineClient::DescribePipelines(const DescribePipelinesRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribePipelines);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribePipelines, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribePipelines, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -226,6 +234,7 @@ DescribePipelinesOutcome DataPipelineClient::DescribePipelines(const DescribePip
 
 EvaluateExpressionOutcome DataPipelineClient::EvaluateExpression(const EvaluateExpressionRequest& request) const
 {
+  AWS_OPERATION_GUARD(EvaluateExpression);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, EvaluateExpression, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, EvaluateExpression, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -234,6 +243,7 @@ EvaluateExpressionOutcome DataPipelineClient::EvaluateExpression(const EvaluateE
 
 GetPipelineDefinitionOutcome DataPipelineClient::GetPipelineDefinition(const GetPipelineDefinitionRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetPipelineDefinition);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPipelineDefinition, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetPipelineDefinition, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -242,6 +252,7 @@ GetPipelineDefinitionOutcome DataPipelineClient::GetPipelineDefinition(const Get
 
 ListPipelinesOutcome DataPipelineClient::ListPipelines(const ListPipelinesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListPipelines);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPipelines, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListPipelines, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -250,6 +261,7 @@ ListPipelinesOutcome DataPipelineClient::ListPipelines(const ListPipelinesReques
 
 PollForTaskOutcome DataPipelineClient::PollForTask(const PollForTaskRequest& request) const
 {
+  AWS_OPERATION_GUARD(PollForTask);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PollForTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PollForTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -258,6 +270,7 @@ PollForTaskOutcome DataPipelineClient::PollForTask(const PollForTaskRequest& req
 
 PutPipelineDefinitionOutcome DataPipelineClient::PutPipelineDefinition(const PutPipelineDefinitionRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutPipelineDefinition);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutPipelineDefinition, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutPipelineDefinition, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -266,6 +279,7 @@ PutPipelineDefinitionOutcome DataPipelineClient::PutPipelineDefinition(const Put
 
 QueryObjectsOutcome DataPipelineClient::QueryObjects(const QueryObjectsRequest& request) const
 {
+  AWS_OPERATION_GUARD(QueryObjects);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, QueryObjects, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, QueryObjects, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -274,6 +288,7 @@ QueryObjectsOutcome DataPipelineClient::QueryObjects(const QueryObjectsRequest& 
 
 RemoveTagsOutcome DataPipelineClient::RemoveTags(const RemoveTagsRequest& request) const
 {
+  AWS_OPERATION_GUARD(RemoveTags);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RemoveTags, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RemoveTags, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -282,6 +297,7 @@ RemoveTagsOutcome DataPipelineClient::RemoveTags(const RemoveTagsRequest& reques
 
 ReportTaskProgressOutcome DataPipelineClient::ReportTaskProgress(const ReportTaskProgressRequest& request) const
 {
+  AWS_OPERATION_GUARD(ReportTaskProgress);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ReportTaskProgress, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ReportTaskProgress, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -290,6 +306,7 @@ ReportTaskProgressOutcome DataPipelineClient::ReportTaskProgress(const ReportTas
 
 ReportTaskRunnerHeartbeatOutcome DataPipelineClient::ReportTaskRunnerHeartbeat(const ReportTaskRunnerHeartbeatRequest& request) const
 {
+  AWS_OPERATION_GUARD(ReportTaskRunnerHeartbeat);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ReportTaskRunnerHeartbeat, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ReportTaskRunnerHeartbeat, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -298,6 +315,7 @@ ReportTaskRunnerHeartbeatOutcome DataPipelineClient::ReportTaskRunnerHeartbeat(c
 
 SetStatusOutcome DataPipelineClient::SetStatus(const SetStatusRequest& request) const
 {
+  AWS_OPERATION_GUARD(SetStatus);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SetStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SetStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -306,6 +324,7 @@ SetStatusOutcome DataPipelineClient::SetStatus(const SetStatusRequest& request) 
 
 SetTaskStatusOutcome DataPipelineClient::SetTaskStatus(const SetTaskStatusRequest& request) const
 {
+  AWS_OPERATION_GUARD(SetTaskStatus);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SetTaskStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SetTaskStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -314,6 +333,7 @@ SetTaskStatusOutcome DataPipelineClient::SetTaskStatus(const SetTaskStatusReques
 
 ValidatePipelineDefinitionOutcome DataPipelineClient::ValidatePipelineDefinition(const ValidatePipelineDefinitionRequest& request) const
 {
+  AWS_OPERATION_GUARD(ValidatePipelineDefinition);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ValidatePipelineDefinition, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ValidatePipelineDefinition, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

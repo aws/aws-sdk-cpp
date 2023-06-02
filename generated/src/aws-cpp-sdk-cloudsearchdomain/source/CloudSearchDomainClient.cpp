@@ -132,6 +132,7 @@ CloudSearchDomainClient::CloudSearchDomainClient(const std::shared_ptr<AWSCreden
     /* End of legacy constructors due deprecation */
 CloudSearchDomainClient::~CloudSearchDomainClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<CloudSearchDomainEndpointProviderBase>& CloudSearchDomainClient::accessEndpointProvider()
@@ -154,6 +155,7 @@ void CloudSearchDomainClient::OverrideEndpoint(const Aws::String& endpoint)
 
 SearchOutcome CloudSearchDomainClient::Search(const SearchRequest& request) const
 {
+  AWS_OPERATION_GUARD(Search);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, Search, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.QueryHasBeenSet())
   {
@@ -171,6 +173,7 @@ SearchOutcome CloudSearchDomainClient::Search(const SearchRequest& request) cons
 
 SuggestOutcome CloudSearchDomainClient::Suggest(const SuggestRequest& request) const
 {
+  AWS_OPERATION_GUARD(Suggest);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, Suggest, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.QueryHasBeenSet())
   {
@@ -193,6 +196,7 @@ SuggestOutcome CloudSearchDomainClient::Suggest(const SuggestRequest& request) c
 
 UploadDocumentsOutcome CloudSearchDomainClient::UploadDocuments(const UploadDocumentsRequest& request) const
 {
+  AWS_OPERATION_GUARD(UploadDocuments);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UploadDocuments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UploadDocuments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

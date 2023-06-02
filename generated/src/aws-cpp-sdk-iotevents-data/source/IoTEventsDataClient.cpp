@@ -141,6 +141,7 @@ IoTEventsDataClient::IoTEventsDataClient(const std::shared_ptr<AWSCredentialsPro
     /* End of legacy constructors due deprecation */
 IoTEventsDataClient::~IoTEventsDataClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<IoTEventsDataEndpointProviderBase>& IoTEventsDataClient::accessEndpointProvider()
@@ -163,6 +164,7 @@ void IoTEventsDataClient::OverrideEndpoint(const Aws::String& endpoint)
 
 BatchAcknowledgeAlarmOutcome IoTEventsDataClient::BatchAcknowledgeAlarm(const BatchAcknowledgeAlarmRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchAcknowledgeAlarm);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchAcknowledgeAlarm, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchAcknowledgeAlarm, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -172,6 +174,7 @@ BatchAcknowledgeAlarmOutcome IoTEventsDataClient::BatchAcknowledgeAlarm(const Ba
 
 BatchDeleteDetectorOutcome IoTEventsDataClient::BatchDeleteDetector(const BatchDeleteDetectorRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchDeleteDetector);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchDeleteDetector, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchDeleteDetector, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -181,6 +184,7 @@ BatchDeleteDetectorOutcome IoTEventsDataClient::BatchDeleteDetector(const BatchD
 
 BatchDisableAlarmOutcome IoTEventsDataClient::BatchDisableAlarm(const BatchDisableAlarmRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchDisableAlarm);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchDisableAlarm, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchDisableAlarm, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -190,6 +194,7 @@ BatchDisableAlarmOutcome IoTEventsDataClient::BatchDisableAlarm(const BatchDisab
 
 BatchEnableAlarmOutcome IoTEventsDataClient::BatchEnableAlarm(const BatchEnableAlarmRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchEnableAlarm);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchEnableAlarm, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchEnableAlarm, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -199,6 +204,7 @@ BatchEnableAlarmOutcome IoTEventsDataClient::BatchEnableAlarm(const BatchEnableA
 
 BatchPutMessageOutcome IoTEventsDataClient::BatchPutMessage(const BatchPutMessageRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchPutMessage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchPutMessage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchPutMessage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -208,6 +214,7 @@ BatchPutMessageOutcome IoTEventsDataClient::BatchPutMessage(const BatchPutMessag
 
 BatchResetAlarmOutcome IoTEventsDataClient::BatchResetAlarm(const BatchResetAlarmRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchResetAlarm);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchResetAlarm, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchResetAlarm, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -217,6 +224,7 @@ BatchResetAlarmOutcome IoTEventsDataClient::BatchResetAlarm(const BatchResetAlar
 
 BatchSnoozeAlarmOutcome IoTEventsDataClient::BatchSnoozeAlarm(const BatchSnoozeAlarmRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchSnoozeAlarm);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchSnoozeAlarm, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchSnoozeAlarm, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -226,6 +234,7 @@ BatchSnoozeAlarmOutcome IoTEventsDataClient::BatchSnoozeAlarm(const BatchSnoozeA
 
 BatchUpdateDetectorOutcome IoTEventsDataClient::BatchUpdateDetector(const BatchUpdateDetectorRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchUpdateDetector);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchUpdateDetector, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchUpdateDetector, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -235,6 +244,7 @@ BatchUpdateDetectorOutcome IoTEventsDataClient::BatchUpdateDetector(const BatchU
 
 DescribeAlarmOutcome IoTEventsDataClient::DescribeAlarm(const DescribeAlarmRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeAlarm);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAlarm, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AlarmModelNameHasBeenSet())
   {
@@ -251,6 +261,7 @@ DescribeAlarmOutcome IoTEventsDataClient::DescribeAlarm(const DescribeAlarmReque
 
 DescribeDetectorOutcome IoTEventsDataClient::DescribeDetector(const DescribeDetectorRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeDetector);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeDetector, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DetectorModelNameHasBeenSet())
   {
@@ -267,6 +278,7 @@ DescribeDetectorOutcome IoTEventsDataClient::DescribeDetector(const DescribeDete
 
 ListAlarmsOutcome IoTEventsDataClient::ListAlarms(const ListAlarmsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAlarms);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAlarms, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AlarmModelNameHasBeenSet())
   {
@@ -282,6 +294,7 @@ ListAlarmsOutcome IoTEventsDataClient::ListAlarms(const ListAlarmsRequest& reque
 
 ListDetectorsOutcome IoTEventsDataClient::ListDetectors(const ListDetectorsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDetectors);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDetectors, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DetectorModelNameHasBeenSet())
   {

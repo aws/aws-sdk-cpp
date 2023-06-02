@@ -131,6 +131,7 @@ KinesisVideoSignalingChannelsClient::KinesisVideoSignalingChannelsClient(const s
     /* End of legacy constructors due deprecation */
 KinesisVideoSignalingChannelsClient::~KinesisVideoSignalingChannelsClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<KinesisVideoSignalingChannelsEndpointProviderBase>& KinesisVideoSignalingChannelsClient::accessEndpointProvider()
@@ -153,6 +154,7 @@ void KinesisVideoSignalingChannelsClient::OverrideEndpoint(const Aws::String& en
 
 GetIceServerConfigOutcome KinesisVideoSignalingChannelsClient::GetIceServerConfig(const GetIceServerConfigRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetIceServerConfig);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetIceServerConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetIceServerConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -162,6 +164,7 @@ GetIceServerConfigOutcome KinesisVideoSignalingChannelsClient::GetIceServerConfi
 
 SendAlexaOfferToMasterOutcome KinesisVideoSignalingChannelsClient::SendAlexaOfferToMaster(const SendAlexaOfferToMasterRequest& request) const
 {
+  AWS_OPERATION_GUARD(SendAlexaOfferToMaster);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SendAlexaOfferToMaster, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SendAlexaOfferToMaster, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

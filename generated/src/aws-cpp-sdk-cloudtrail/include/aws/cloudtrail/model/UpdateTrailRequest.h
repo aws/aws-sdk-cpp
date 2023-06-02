@@ -363,46 +363,46 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the trail applies only to the current region or to all
-     * regions. The default is false. If the trail exists only in the current region
+     * <p>Specifies whether the trail applies only to the current Region or to all
+     * Regions. The default is false. If the trail exists only in the current Region
      * and this value is set to true, shadow trails (replications of the trail) will be
-     * created in the other regions. If the trail exists in all regions and this value
-     * is set to false, the trail will remain in the region where it was created, and
-     * its shadow trails in other regions will be deleted. As a best practice, consider
-     * using trails that log events in all regions.</p>
+     * created in the other Regions. If the trail exists in all Regions and this value
+     * is set to false, the trail will remain in the Region where it was created, and
+     * its shadow trails in other Regions will be deleted. As a best practice, consider
+     * using trails that log events in all Regions.</p>
      */
     inline bool GetIsMultiRegionTrail() const{ return m_isMultiRegionTrail; }
 
     /**
-     * <p>Specifies whether the trail applies only to the current region or to all
-     * regions. The default is false. If the trail exists only in the current region
+     * <p>Specifies whether the trail applies only to the current Region or to all
+     * Regions. The default is false. If the trail exists only in the current Region
      * and this value is set to true, shadow trails (replications of the trail) will be
-     * created in the other regions. If the trail exists in all regions and this value
-     * is set to false, the trail will remain in the region where it was created, and
-     * its shadow trails in other regions will be deleted. As a best practice, consider
-     * using trails that log events in all regions.</p>
+     * created in the other Regions. If the trail exists in all Regions and this value
+     * is set to false, the trail will remain in the Region where it was created, and
+     * its shadow trails in other Regions will be deleted. As a best practice, consider
+     * using trails that log events in all Regions.</p>
      */
     inline bool IsMultiRegionTrailHasBeenSet() const { return m_isMultiRegionTrailHasBeenSet; }
 
     /**
-     * <p>Specifies whether the trail applies only to the current region or to all
-     * regions. The default is false. If the trail exists only in the current region
+     * <p>Specifies whether the trail applies only to the current Region or to all
+     * Regions. The default is false. If the trail exists only in the current Region
      * and this value is set to true, shadow trails (replications of the trail) will be
-     * created in the other regions. If the trail exists in all regions and this value
-     * is set to false, the trail will remain in the region where it was created, and
-     * its shadow trails in other regions will be deleted. As a best practice, consider
-     * using trails that log events in all regions.</p>
+     * created in the other Regions. If the trail exists in all Regions and this value
+     * is set to false, the trail will remain in the Region where it was created, and
+     * its shadow trails in other Regions will be deleted. As a best practice, consider
+     * using trails that log events in all Regions.</p>
      */
     inline void SetIsMultiRegionTrail(bool value) { m_isMultiRegionTrailHasBeenSet = true; m_isMultiRegionTrail = value; }
 
     /**
-     * <p>Specifies whether the trail applies only to the current region or to all
-     * regions. The default is false. If the trail exists only in the current region
+     * <p>Specifies whether the trail applies only to the current Region or to all
+     * Regions. The default is false. If the trail exists only in the current Region
      * and this value is set to true, shadow trails (replications of the trail) will be
-     * created in the other regions. If the trail exists in all regions and this value
-     * is set to false, the trail will remain in the region where it was created, and
-     * its shadow trails in other regions will be deleted. As a best practice, consider
-     * using trails that log events in all regions.</p>
+     * created in the other Regions. If the trail exists in all Regions and this value
+     * is set to false, the trail will remain in the Region where it was created, and
+     * its shadow trails in other Regions will be deleted. As a best practice, consider
+     * using trails that log events in all Regions.</p>
      */
     inline UpdateTrailRequest& WithIsMultiRegionTrail(bool value) { SetIsMultiRegionTrail(value); return *this;}
 

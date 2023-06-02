@@ -133,6 +133,7 @@ ControlTowerClient::ControlTowerClient(const std::shared_ptr<AWSCredentialsProvi
     /* End of legacy constructors due deprecation */
 ControlTowerClient::~ControlTowerClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<ControlTowerEndpointProviderBase>& ControlTowerClient::accessEndpointProvider()
@@ -155,6 +156,7 @@ void ControlTowerClient::OverrideEndpoint(const Aws::String& endpoint)
 
 DisableControlOutcome ControlTowerClient::DisableControl(const DisableControlRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisableControl);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisableControl, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DisableControl, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -164,6 +166,7 @@ DisableControlOutcome ControlTowerClient::DisableControl(const DisableControlReq
 
 EnableControlOutcome ControlTowerClient::EnableControl(const EnableControlRequest& request) const
 {
+  AWS_OPERATION_GUARD(EnableControl);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, EnableControl, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, EnableControl, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -173,6 +176,7 @@ EnableControlOutcome ControlTowerClient::EnableControl(const EnableControlReques
 
 GetControlOperationOutcome ControlTowerClient::GetControlOperation(const GetControlOperationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetControlOperation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetControlOperation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetControlOperation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -182,6 +186,7 @@ GetControlOperationOutcome ControlTowerClient::GetControlOperation(const GetCont
 
 ListEnabledControlsOutcome ControlTowerClient::ListEnabledControls(const ListEnabledControlsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListEnabledControls);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListEnabledControls, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListEnabledControls, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

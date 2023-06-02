@@ -363,6 +363,7 @@ IoTClient::IoTClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
     /* End of legacy constructors due deprecation */
 IoTClient::~IoTClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<IoTEndpointProviderBase>& IoTClient::accessEndpointProvider()
@@ -385,6 +386,7 @@ void IoTClient::OverrideEndpoint(const Aws::String& endpoint)
 
 AcceptCertificateTransferOutcome IoTClient::AcceptCertificateTransfer(const AcceptCertificateTransferRequest& request) const
 {
+  AWS_OPERATION_GUARD(AcceptCertificateTransfer);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AcceptCertificateTransfer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CertificateIdHasBeenSet())
   {
@@ -400,6 +402,7 @@ AcceptCertificateTransferOutcome IoTClient::AcceptCertificateTransfer(const Acce
 
 AddThingToBillingGroupOutcome IoTClient::AddThingToBillingGroup(const AddThingToBillingGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(AddThingToBillingGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AddThingToBillingGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AddThingToBillingGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -409,6 +412,7 @@ AddThingToBillingGroupOutcome IoTClient::AddThingToBillingGroup(const AddThingTo
 
 AddThingToThingGroupOutcome IoTClient::AddThingToThingGroup(const AddThingToThingGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(AddThingToThingGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AddThingToThingGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AddThingToThingGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -418,6 +422,7 @@ AddThingToThingGroupOutcome IoTClient::AddThingToThingGroup(const AddThingToThin
 
 AssociateTargetsWithJobOutcome IoTClient::AssociateTargetsWithJob(const AssociateTargetsWithJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociateTargetsWithJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateTargetsWithJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.JobIdHasBeenSet())
   {
@@ -434,6 +439,7 @@ AssociateTargetsWithJobOutcome IoTClient::AssociateTargetsWithJob(const Associat
 
 AttachPolicyOutcome IoTClient::AttachPolicy(const AttachPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(AttachPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AttachPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PolicyNameHasBeenSet())
   {
@@ -449,6 +455,7 @@ AttachPolicyOutcome IoTClient::AttachPolicy(const AttachPolicyRequest& request) 
 
 AttachSecurityProfileOutcome IoTClient::AttachSecurityProfile(const AttachSecurityProfileRequest& request) const
 {
+  AWS_OPERATION_GUARD(AttachSecurityProfile);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AttachSecurityProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SecurityProfileNameHasBeenSet())
   {
@@ -470,6 +477,7 @@ AttachSecurityProfileOutcome IoTClient::AttachSecurityProfile(const AttachSecuri
 
 AttachThingPrincipalOutcome IoTClient::AttachThingPrincipal(const AttachThingPrincipalRequest& request) const
 {
+  AWS_OPERATION_GUARD(AttachThingPrincipal);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AttachThingPrincipal, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ThingNameHasBeenSet())
   {
@@ -491,6 +499,7 @@ AttachThingPrincipalOutcome IoTClient::AttachThingPrincipal(const AttachThingPri
 
 CancelAuditMitigationActionsTaskOutcome IoTClient::CancelAuditMitigationActionsTask(const CancelAuditMitigationActionsTaskRequest& request) const
 {
+  AWS_OPERATION_GUARD(CancelAuditMitigationActionsTask);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CancelAuditMitigationActionsTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TaskIdHasBeenSet())
   {
@@ -507,6 +516,7 @@ CancelAuditMitigationActionsTaskOutcome IoTClient::CancelAuditMitigationActionsT
 
 CancelAuditTaskOutcome IoTClient::CancelAuditTask(const CancelAuditTaskRequest& request) const
 {
+  AWS_OPERATION_GUARD(CancelAuditTask);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CancelAuditTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TaskIdHasBeenSet())
   {
@@ -523,6 +533,7 @@ CancelAuditTaskOutcome IoTClient::CancelAuditTask(const CancelAuditTaskRequest& 
 
 CancelCertificateTransferOutcome IoTClient::CancelCertificateTransfer(const CancelCertificateTransferRequest& request) const
 {
+  AWS_OPERATION_GUARD(CancelCertificateTransfer);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CancelCertificateTransfer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CertificateIdHasBeenSet())
   {
@@ -538,6 +549,7 @@ CancelCertificateTransferOutcome IoTClient::CancelCertificateTransfer(const Canc
 
 CancelDetectMitigationActionsTaskOutcome IoTClient::CancelDetectMitigationActionsTask(const CancelDetectMitigationActionsTaskRequest& request) const
 {
+  AWS_OPERATION_GUARD(CancelDetectMitigationActionsTask);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CancelDetectMitigationActionsTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TaskIdHasBeenSet())
   {
@@ -554,6 +566,7 @@ CancelDetectMitigationActionsTaskOutcome IoTClient::CancelDetectMitigationAction
 
 CancelJobOutcome IoTClient::CancelJob(const CancelJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(CancelJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CancelJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.JobIdHasBeenSet())
   {
@@ -570,6 +583,7 @@ CancelJobOutcome IoTClient::CancelJob(const CancelJobRequest& request) const
 
 CancelJobExecutionOutcome IoTClient::CancelJobExecution(const CancelJobExecutionRequest& request) const
 {
+  AWS_OPERATION_GUARD(CancelJobExecution);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CancelJobExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.JobIdHasBeenSet())
   {
@@ -593,6 +607,7 @@ CancelJobExecutionOutcome IoTClient::CancelJobExecution(const CancelJobExecution
 
 ClearDefaultAuthorizerOutcome IoTClient::ClearDefaultAuthorizer(const ClearDefaultAuthorizerRequest& request) const
 {
+  AWS_OPERATION_GUARD(ClearDefaultAuthorizer);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ClearDefaultAuthorizer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ClearDefaultAuthorizer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -602,6 +617,7 @@ ClearDefaultAuthorizerOutcome IoTClient::ClearDefaultAuthorizer(const ClearDefau
 
 ConfirmTopicRuleDestinationOutcome IoTClient::ConfirmTopicRuleDestination(const ConfirmTopicRuleDestinationRequest& request) const
 {
+  AWS_OPERATION_GUARD(ConfirmTopicRuleDestination);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ConfirmTopicRuleDestination, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConfirmationTokenHasBeenSet())
   {
@@ -617,6 +633,7 @@ ConfirmTopicRuleDestinationOutcome IoTClient::ConfirmTopicRuleDestination(const 
 
 CreateAuditSuppressionOutcome IoTClient::CreateAuditSuppression(const CreateAuditSuppressionRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateAuditSuppression);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAuditSuppression, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateAuditSuppression, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -626,6 +643,7 @@ CreateAuditSuppressionOutcome IoTClient::CreateAuditSuppression(const CreateAudi
 
 CreateAuthorizerOutcome IoTClient::CreateAuthorizer(const CreateAuthorizerRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateAuthorizer);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAuthorizer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AuthorizerNameHasBeenSet())
   {
@@ -641,6 +659,7 @@ CreateAuthorizerOutcome IoTClient::CreateAuthorizer(const CreateAuthorizerReques
 
 CreateBillingGroupOutcome IoTClient::CreateBillingGroup(const CreateBillingGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateBillingGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateBillingGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BillingGroupNameHasBeenSet())
   {
@@ -656,6 +675,7 @@ CreateBillingGroupOutcome IoTClient::CreateBillingGroup(const CreateBillingGroup
 
 CreateCertificateFromCsrOutcome IoTClient::CreateCertificateFromCsr(const CreateCertificateFromCsrRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateCertificateFromCsr);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateCertificateFromCsr, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateCertificateFromCsr, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -665,6 +685,7 @@ CreateCertificateFromCsrOutcome IoTClient::CreateCertificateFromCsr(const Create
 
 CreateCustomMetricOutcome IoTClient::CreateCustomMetric(const CreateCustomMetricRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateCustomMetric);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateCustomMetric, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MetricNameHasBeenSet())
   {
@@ -680,6 +701,7 @@ CreateCustomMetricOutcome IoTClient::CreateCustomMetric(const CreateCustomMetric
 
 CreateDimensionOutcome IoTClient::CreateDimension(const CreateDimensionRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateDimension);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDimension, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -695,6 +717,7 @@ CreateDimensionOutcome IoTClient::CreateDimension(const CreateDimensionRequest& 
 
 CreateDomainConfigurationOutcome IoTClient::CreateDomainConfiguration(const CreateDomainConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateDomainConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDomainConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainConfigurationNameHasBeenSet())
   {
@@ -710,6 +733,7 @@ CreateDomainConfigurationOutcome IoTClient::CreateDomainConfiguration(const Crea
 
 CreateDynamicThingGroupOutcome IoTClient::CreateDynamicThingGroup(const CreateDynamicThingGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateDynamicThingGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDynamicThingGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ThingGroupNameHasBeenSet())
   {
@@ -725,6 +749,7 @@ CreateDynamicThingGroupOutcome IoTClient::CreateDynamicThingGroup(const CreateDy
 
 CreateFleetMetricOutcome IoTClient::CreateFleetMetric(const CreateFleetMetricRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateFleetMetric);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateFleetMetric, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MetricNameHasBeenSet())
   {
@@ -740,6 +765,7 @@ CreateFleetMetricOutcome IoTClient::CreateFleetMetric(const CreateFleetMetricReq
 
 CreateJobOutcome IoTClient::CreateJob(const CreateJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.JobIdHasBeenSet())
   {
@@ -755,6 +781,7 @@ CreateJobOutcome IoTClient::CreateJob(const CreateJobRequest& request) const
 
 CreateJobTemplateOutcome IoTClient::CreateJobTemplate(const CreateJobTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateJobTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateJobTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.JobTemplateIdHasBeenSet())
   {
@@ -770,6 +797,7 @@ CreateJobTemplateOutcome IoTClient::CreateJobTemplate(const CreateJobTemplateReq
 
 CreateKeysAndCertificateOutcome IoTClient::CreateKeysAndCertificate(const CreateKeysAndCertificateRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateKeysAndCertificate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateKeysAndCertificate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateKeysAndCertificate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -779,6 +807,7 @@ CreateKeysAndCertificateOutcome IoTClient::CreateKeysAndCertificate(const Create
 
 CreateMitigationActionOutcome IoTClient::CreateMitigationAction(const CreateMitigationActionRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateMitigationAction);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateMitigationAction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ActionNameHasBeenSet())
   {
@@ -794,6 +823,7 @@ CreateMitigationActionOutcome IoTClient::CreateMitigationAction(const CreateMiti
 
 CreateOTAUpdateOutcome IoTClient::CreateOTAUpdate(const CreateOTAUpdateRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateOTAUpdate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateOTAUpdate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.OtaUpdateIdHasBeenSet())
   {
@@ -809,6 +839,7 @@ CreateOTAUpdateOutcome IoTClient::CreateOTAUpdate(const CreateOTAUpdateRequest& 
 
 CreatePolicyOutcome IoTClient::CreatePolicy(const CreatePolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreatePolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreatePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PolicyNameHasBeenSet())
   {
@@ -824,6 +855,7 @@ CreatePolicyOutcome IoTClient::CreatePolicy(const CreatePolicyRequest& request) 
 
 CreatePolicyVersionOutcome IoTClient::CreatePolicyVersion(const CreatePolicyVersionRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreatePolicyVersion);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreatePolicyVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PolicyNameHasBeenSet())
   {
@@ -840,6 +872,7 @@ CreatePolicyVersionOutcome IoTClient::CreatePolicyVersion(const CreatePolicyVers
 
 CreateProvisioningClaimOutcome IoTClient::CreateProvisioningClaim(const CreateProvisioningClaimRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateProvisioningClaim);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateProvisioningClaim, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TemplateNameHasBeenSet())
   {
@@ -856,6 +889,7 @@ CreateProvisioningClaimOutcome IoTClient::CreateProvisioningClaim(const CreatePr
 
 CreateProvisioningTemplateOutcome IoTClient::CreateProvisioningTemplate(const CreateProvisioningTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateProvisioningTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateProvisioningTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateProvisioningTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -865,6 +899,7 @@ CreateProvisioningTemplateOutcome IoTClient::CreateProvisioningTemplate(const Cr
 
 CreateProvisioningTemplateVersionOutcome IoTClient::CreateProvisioningTemplateVersion(const CreateProvisioningTemplateVersionRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateProvisioningTemplateVersion);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateProvisioningTemplateVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TemplateNameHasBeenSet())
   {
@@ -881,6 +916,7 @@ CreateProvisioningTemplateVersionOutcome IoTClient::CreateProvisioningTemplateVe
 
 CreateRoleAliasOutcome IoTClient::CreateRoleAlias(const CreateRoleAliasRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateRoleAlias);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateRoleAlias, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RoleAliasHasBeenSet())
   {
@@ -896,6 +932,7 @@ CreateRoleAliasOutcome IoTClient::CreateRoleAlias(const CreateRoleAliasRequest& 
 
 CreateScheduledAuditOutcome IoTClient::CreateScheduledAudit(const CreateScheduledAuditRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateScheduledAudit);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateScheduledAudit, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ScheduledAuditNameHasBeenSet())
   {
@@ -911,6 +948,7 @@ CreateScheduledAuditOutcome IoTClient::CreateScheduledAudit(const CreateSchedule
 
 CreateSecurityProfileOutcome IoTClient::CreateSecurityProfile(const CreateSecurityProfileRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateSecurityProfile);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateSecurityProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SecurityProfileNameHasBeenSet())
   {
@@ -926,6 +964,7 @@ CreateSecurityProfileOutcome IoTClient::CreateSecurityProfile(const CreateSecuri
 
 CreateStreamOutcome IoTClient::CreateStream(const CreateStreamRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateStream);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateStream, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StreamIdHasBeenSet())
   {
@@ -941,6 +980,7 @@ CreateStreamOutcome IoTClient::CreateStream(const CreateStreamRequest& request) 
 
 CreateThingOutcome IoTClient::CreateThing(const CreateThingRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateThing);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateThing, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ThingNameHasBeenSet())
   {
@@ -956,6 +996,7 @@ CreateThingOutcome IoTClient::CreateThing(const CreateThingRequest& request) con
 
 CreateThingGroupOutcome IoTClient::CreateThingGroup(const CreateThingGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateThingGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateThingGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ThingGroupNameHasBeenSet())
   {
@@ -971,6 +1012,7 @@ CreateThingGroupOutcome IoTClient::CreateThingGroup(const CreateThingGroupReques
 
 CreateThingTypeOutcome IoTClient::CreateThingType(const CreateThingTypeRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateThingType);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateThingType, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ThingTypeNameHasBeenSet())
   {
@@ -986,6 +1028,7 @@ CreateThingTypeOutcome IoTClient::CreateThingType(const CreateThingTypeRequest& 
 
 CreateTopicRuleOutcome IoTClient::CreateTopicRule(const CreateTopicRuleRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateTopicRule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateTopicRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RuleNameHasBeenSet())
   {
@@ -1001,6 +1044,7 @@ CreateTopicRuleOutcome IoTClient::CreateTopicRule(const CreateTopicRuleRequest& 
 
 CreateTopicRuleDestinationOutcome IoTClient::CreateTopicRuleDestination(const CreateTopicRuleDestinationRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateTopicRuleDestination);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateTopicRuleDestination, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateTopicRuleDestination, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1010,6 +1054,7 @@ CreateTopicRuleDestinationOutcome IoTClient::CreateTopicRuleDestination(const Cr
 
 DeleteAccountAuditConfigurationOutcome IoTClient::DeleteAccountAuditConfiguration(const DeleteAccountAuditConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteAccountAuditConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAccountAuditConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteAccountAuditConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1019,6 +1064,7 @@ DeleteAccountAuditConfigurationOutcome IoTClient::DeleteAccountAuditConfiguratio
 
 DeleteAuditSuppressionOutcome IoTClient::DeleteAuditSuppression(const DeleteAuditSuppressionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteAuditSuppression);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAuditSuppression, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteAuditSuppression, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1028,6 +1074,7 @@ DeleteAuditSuppressionOutcome IoTClient::DeleteAuditSuppression(const DeleteAudi
 
 DeleteAuthorizerOutcome IoTClient::DeleteAuthorizer(const DeleteAuthorizerRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteAuthorizer);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAuthorizer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AuthorizerNameHasBeenSet())
   {
@@ -1043,6 +1090,7 @@ DeleteAuthorizerOutcome IoTClient::DeleteAuthorizer(const DeleteAuthorizerReques
 
 DeleteBillingGroupOutcome IoTClient::DeleteBillingGroup(const DeleteBillingGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteBillingGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteBillingGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BillingGroupNameHasBeenSet())
   {
@@ -1058,6 +1106,7 @@ DeleteBillingGroupOutcome IoTClient::DeleteBillingGroup(const DeleteBillingGroup
 
 DeleteCACertificateOutcome IoTClient::DeleteCACertificate(const DeleteCACertificateRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteCACertificate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteCACertificate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CertificateIdHasBeenSet())
   {
@@ -1073,6 +1122,7 @@ DeleteCACertificateOutcome IoTClient::DeleteCACertificate(const DeleteCACertific
 
 DeleteCertificateOutcome IoTClient::DeleteCertificate(const DeleteCertificateRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteCertificate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteCertificate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CertificateIdHasBeenSet())
   {
@@ -1088,6 +1138,7 @@ DeleteCertificateOutcome IoTClient::DeleteCertificate(const DeleteCertificateReq
 
 DeleteCustomMetricOutcome IoTClient::DeleteCustomMetric(const DeleteCustomMetricRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteCustomMetric);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteCustomMetric, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MetricNameHasBeenSet())
   {
@@ -1103,6 +1154,7 @@ DeleteCustomMetricOutcome IoTClient::DeleteCustomMetric(const DeleteCustomMetric
 
 DeleteDimensionOutcome IoTClient::DeleteDimension(const DeleteDimensionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteDimension);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDimension, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -1118,6 +1170,7 @@ DeleteDimensionOutcome IoTClient::DeleteDimension(const DeleteDimensionRequest& 
 
 DeleteDomainConfigurationOutcome IoTClient::DeleteDomainConfiguration(const DeleteDomainConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteDomainConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDomainConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainConfigurationNameHasBeenSet())
   {
@@ -1133,6 +1186,7 @@ DeleteDomainConfigurationOutcome IoTClient::DeleteDomainConfiguration(const Dele
 
 DeleteDynamicThingGroupOutcome IoTClient::DeleteDynamicThingGroup(const DeleteDynamicThingGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteDynamicThingGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDynamicThingGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ThingGroupNameHasBeenSet())
   {
@@ -1148,6 +1202,7 @@ DeleteDynamicThingGroupOutcome IoTClient::DeleteDynamicThingGroup(const DeleteDy
 
 DeleteFleetMetricOutcome IoTClient::DeleteFleetMetric(const DeleteFleetMetricRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteFleetMetric);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteFleetMetric, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MetricNameHasBeenSet())
   {
@@ -1163,6 +1218,7 @@ DeleteFleetMetricOutcome IoTClient::DeleteFleetMetric(const DeleteFleetMetricReq
 
 DeleteJobOutcome IoTClient::DeleteJob(const DeleteJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.JobIdHasBeenSet())
   {
@@ -1178,6 +1234,7 @@ DeleteJobOutcome IoTClient::DeleteJob(const DeleteJobRequest& request) const
 
 DeleteJobExecutionOutcome IoTClient::DeleteJobExecution(const DeleteJobExecutionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteJobExecution);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteJobExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.JobIdHasBeenSet())
   {
@@ -1207,6 +1264,7 @@ DeleteJobExecutionOutcome IoTClient::DeleteJobExecution(const DeleteJobExecution
 
 DeleteJobTemplateOutcome IoTClient::DeleteJobTemplate(const DeleteJobTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteJobTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteJobTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.JobTemplateIdHasBeenSet())
   {
@@ -1222,6 +1280,7 @@ DeleteJobTemplateOutcome IoTClient::DeleteJobTemplate(const DeleteJobTemplateReq
 
 DeleteMitigationActionOutcome IoTClient::DeleteMitigationAction(const DeleteMitigationActionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteMitigationAction);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteMitigationAction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ActionNameHasBeenSet())
   {
@@ -1237,6 +1296,7 @@ DeleteMitigationActionOutcome IoTClient::DeleteMitigationAction(const DeleteMiti
 
 DeleteOTAUpdateOutcome IoTClient::DeleteOTAUpdate(const DeleteOTAUpdateRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteOTAUpdate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteOTAUpdate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.OtaUpdateIdHasBeenSet())
   {
@@ -1252,6 +1312,7 @@ DeleteOTAUpdateOutcome IoTClient::DeleteOTAUpdate(const DeleteOTAUpdateRequest& 
 
 DeletePolicyOutcome IoTClient::DeletePolicy(const DeletePolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeletePolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeletePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PolicyNameHasBeenSet())
   {
@@ -1267,6 +1328,7 @@ DeletePolicyOutcome IoTClient::DeletePolicy(const DeletePolicyRequest& request) 
 
 DeletePolicyVersionOutcome IoTClient::DeletePolicyVersion(const DeletePolicyVersionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeletePolicyVersion);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeletePolicyVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PolicyNameHasBeenSet())
   {
@@ -1289,6 +1351,7 @@ DeletePolicyVersionOutcome IoTClient::DeletePolicyVersion(const DeletePolicyVers
 
 DeleteProvisioningTemplateOutcome IoTClient::DeleteProvisioningTemplate(const DeleteProvisioningTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteProvisioningTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteProvisioningTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TemplateNameHasBeenSet())
   {
@@ -1304,6 +1367,7 @@ DeleteProvisioningTemplateOutcome IoTClient::DeleteProvisioningTemplate(const De
 
 DeleteProvisioningTemplateVersionOutcome IoTClient::DeleteProvisioningTemplateVersion(const DeleteProvisioningTemplateVersionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteProvisioningTemplateVersion);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteProvisioningTemplateVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TemplateNameHasBeenSet())
   {
@@ -1326,6 +1390,7 @@ DeleteProvisioningTemplateVersionOutcome IoTClient::DeleteProvisioningTemplateVe
 
 DeleteRegistrationCodeOutcome IoTClient::DeleteRegistrationCode(const DeleteRegistrationCodeRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteRegistrationCode);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteRegistrationCode, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteRegistrationCode, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1335,6 +1400,7 @@ DeleteRegistrationCodeOutcome IoTClient::DeleteRegistrationCode(const DeleteRegi
 
 DeleteRoleAliasOutcome IoTClient::DeleteRoleAlias(const DeleteRoleAliasRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteRoleAlias);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteRoleAlias, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RoleAliasHasBeenSet())
   {
@@ -1350,6 +1416,7 @@ DeleteRoleAliasOutcome IoTClient::DeleteRoleAlias(const DeleteRoleAliasRequest& 
 
 DeleteScheduledAuditOutcome IoTClient::DeleteScheduledAudit(const DeleteScheduledAuditRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteScheduledAudit);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteScheduledAudit, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ScheduledAuditNameHasBeenSet())
   {
@@ -1365,6 +1432,7 @@ DeleteScheduledAuditOutcome IoTClient::DeleteScheduledAudit(const DeleteSchedule
 
 DeleteSecurityProfileOutcome IoTClient::DeleteSecurityProfile(const DeleteSecurityProfileRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteSecurityProfile);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteSecurityProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SecurityProfileNameHasBeenSet())
   {
@@ -1380,6 +1448,7 @@ DeleteSecurityProfileOutcome IoTClient::DeleteSecurityProfile(const DeleteSecuri
 
 DeleteStreamOutcome IoTClient::DeleteStream(const DeleteStreamRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteStream);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteStream, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StreamIdHasBeenSet())
   {
@@ -1395,6 +1464,7 @@ DeleteStreamOutcome IoTClient::DeleteStream(const DeleteStreamRequest& request) 
 
 DeleteThingOutcome IoTClient::DeleteThing(const DeleteThingRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteThing);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteThing, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ThingNameHasBeenSet())
   {
@@ -1410,6 +1480,7 @@ DeleteThingOutcome IoTClient::DeleteThing(const DeleteThingRequest& request) con
 
 DeleteThingGroupOutcome IoTClient::DeleteThingGroup(const DeleteThingGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteThingGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteThingGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ThingGroupNameHasBeenSet())
   {
@@ -1425,6 +1496,7 @@ DeleteThingGroupOutcome IoTClient::DeleteThingGroup(const DeleteThingGroupReques
 
 DeleteThingTypeOutcome IoTClient::DeleteThingType(const DeleteThingTypeRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteThingType);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteThingType, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ThingTypeNameHasBeenSet())
   {
@@ -1440,6 +1512,7 @@ DeleteThingTypeOutcome IoTClient::DeleteThingType(const DeleteThingTypeRequest& 
 
 DeleteTopicRuleOutcome IoTClient::DeleteTopicRule(const DeleteTopicRuleRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteTopicRule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteTopicRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RuleNameHasBeenSet())
   {
@@ -1455,6 +1528,7 @@ DeleteTopicRuleOutcome IoTClient::DeleteTopicRule(const DeleteTopicRuleRequest& 
 
 DeleteTopicRuleDestinationOutcome IoTClient::DeleteTopicRuleDestination(const DeleteTopicRuleDestinationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteTopicRuleDestination);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteTopicRuleDestination, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ArnHasBeenSet())
   {
@@ -1470,6 +1544,7 @@ DeleteTopicRuleDestinationOutcome IoTClient::DeleteTopicRuleDestination(const De
 
 DeleteV2LoggingLevelOutcome IoTClient::DeleteV2LoggingLevel(const DeleteV2LoggingLevelRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteV2LoggingLevel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteV2LoggingLevel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TargetTypeHasBeenSet())
   {
@@ -1489,6 +1564,7 @@ DeleteV2LoggingLevelOutcome IoTClient::DeleteV2LoggingLevel(const DeleteV2Loggin
 
 DeprecateThingTypeOutcome IoTClient::DeprecateThingType(const DeprecateThingTypeRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeprecateThingType);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeprecateThingType, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ThingTypeNameHasBeenSet())
   {
@@ -1505,6 +1581,7 @@ DeprecateThingTypeOutcome IoTClient::DeprecateThingType(const DeprecateThingType
 
 DescribeAccountAuditConfigurationOutcome IoTClient::DescribeAccountAuditConfiguration(const DescribeAccountAuditConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeAccountAuditConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAccountAuditConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeAccountAuditConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1514,6 +1591,7 @@ DescribeAccountAuditConfigurationOutcome IoTClient::DescribeAccountAuditConfigur
 
 DescribeAuditFindingOutcome IoTClient::DescribeAuditFinding(const DescribeAuditFindingRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeAuditFinding);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAuditFinding, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FindingIdHasBeenSet())
   {
@@ -1529,6 +1607,7 @@ DescribeAuditFindingOutcome IoTClient::DescribeAuditFinding(const DescribeAuditF
 
 DescribeAuditMitigationActionsTaskOutcome IoTClient::DescribeAuditMitigationActionsTask(const DescribeAuditMitigationActionsTaskRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeAuditMitigationActionsTask);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAuditMitigationActionsTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TaskIdHasBeenSet())
   {
@@ -1544,6 +1623,7 @@ DescribeAuditMitigationActionsTaskOutcome IoTClient::DescribeAuditMitigationActi
 
 DescribeAuditSuppressionOutcome IoTClient::DescribeAuditSuppression(const DescribeAuditSuppressionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeAuditSuppression);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAuditSuppression, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeAuditSuppression, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1553,6 +1633,7 @@ DescribeAuditSuppressionOutcome IoTClient::DescribeAuditSuppression(const Descri
 
 DescribeAuditTaskOutcome IoTClient::DescribeAuditTask(const DescribeAuditTaskRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeAuditTask);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAuditTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TaskIdHasBeenSet())
   {
@@ -1568,6 +1649,7 @@ DescribeAuditTaskOutcome IoTClient::DescribeAuditTask(const DescribeAuditTaskReq
 
 DescribeAuthorizerOutcome IoTClient::DescribeAuthorizer(const DescribeAuthorizerRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeAuthorizer);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAuthorizer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AuthorizerNameHasBeenSet())
   {
@@ -1583,6 +1665,7 @@ DescribeAuthorizerOutcome IoTClient::DescribeAuthorizer(const DescribeAuthorizer
 
 DescribeBillingGroupOutcome IoTClient::DescribeBillingGroup(const DescribeBillingGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeBillingGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeBillingGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BillingGroupNameHasBeenSet())
   {
@@ -1598,6 +1681,7 @@ DescribeBillingGroupOutcome IoTClient::DescribeBillingGroup(const DescribeBillin
 
 DescribeCACertificateOutcome IoTClient::DescribeCACertificate(const DescribeCACertificateRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeCACertificate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeCACertificate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CertificateIdHasBeenSet())
   {
@@ -1613,6 +1697,7 @@ DescribeCACertificateOutcome IoTClient::DescribeCACertificate(const DescribeCACe
 
 DescribeCertificateOutcome IoTClient::DescribeCertificate(const DescribeCertificateRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeCertificate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeCertificate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CertificateIdHasBeenSet())
   {
@@ -1628,6 +1713,7 @@ DescribeCertificateOutcome IoTClient::DescribeCertificate(const DescribeCertific
 
 DescribeCustomMetricOutcome IoTClient::DescribeCustomMetric(const DescribeCustomMetricRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeCustomMetric);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeCustomMetric, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MetricNameHasBeenSet())
   {
@@ -1643,6 +1729,7 @@ DescribeCustomMetricOutcome IoTClient::DescribeCustomMetric(const DescribeCustom
 
 DescribeDefaultAuthorizerOutcome IoTClient::DescribeDefaultAuthorizer(const DescribeDefaultAuthorizerRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeDefaultAuthorizer);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeDefaultAuthorizer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeDefaultAuthorizer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1652,6 +1739,7 @@ DescribeDefaultAuthorizerOutcome IoTClient::DescribeDefaultAuthorizer(const Desc
 
 DescribeDetectMitigationActionsTaskOutcome IoTClient::DescribeDetectMitigationActionsTask(const DescribeDetectMitigationActionsTaskRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeDetectMitigationActionsTask);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeDetectMitigationActionsTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TaskIdHasBeenSet())
   {
@@ -1667,6 +1755,7 @@ DescribeDetectMitigationActionsTaskOutcome IoTClient::DescribeDetectMitigationAc
 
 DescribeDimensionOutcome IoTClient::DescribeDimension(const DescribeDimensionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeDimension);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeDimension, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -1682,6 +1771,7 @@ DescribeDimensionOutcome IoTClient::DescribeDimension(const DescribeDimensionReq
 
 DescribeDomainConfigurationOutcome IoTClient::DescribeDomainConfiguration(const DescribeDomainConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeDomainConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeDomainConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainConfigurationNameHasBeenSet())
   {
@@ -1697,6 +1787,7 @@ DescribeDomainConfigurationOutcome IoTClient::DescribeDomainConfiguration(const 
 
 DescribeEndpointOutcome IoTClient::DescribeEndpoint(const DescribeEndpointRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeEndpoint);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1706,6 +1797,7 @@ DescribeEndpointOutcome IoTClient::DescribeEndpoint(const DescribeEndpointReques
 
 DescribeEventConfigurationsOutcome IoTClient::DescribeEventConfigurations(const DescribeEventConfigurationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeEventConfigurations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeEventConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeEventConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1715,6 +1807,7 @@ DescribeEventConfigurationsOutcome IoTClient::DescribeEventConfigurations(const 
 
 DescribeFleetMetricOutcome IoTClient::DescribeFleetMetric(const DescribeFleetMetricRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeFleetMetric);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeFleetMetric, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MetricNameHasBeenSet())
   {
@@ -1730,6 +1823,7 @@ DescribeFleetMetricOutcome IoTClient::DescribeFleetMetric(const DescribeFleetMet
 
 DescribeIndexOutcome IoTClient::DescribeIndex(const DescribeIndexRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeIndex);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeIndex, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IndexNameHasBeenSet())
   {
@@ -1745,6 +1839,7 @@ DescribeIndexOutcome IoTClient::DescribeIndex(const DescribeIndexRequest& reques
 
 DescribeJobOutcome IoTClient::DescribeJob(const DescribeJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.JobIdHasBeenSet())
   {
@@ -1760,6 +1855,7 @@ DescribeJobOutcome IoTClient::DescribeJob(const DescribeJobRequest& request) con
 
 DescribeJobExecutionOutcome IoTClient::DescribeJobExecution(const DescribeJobExecutionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeJobExecution);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeJobExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.JobIdHasBeenSet())
   {
@@ -1782,6 +1878,7 @@ DescribeJobExecutionOutcome IoTClient::DescribeJobExecution(const DescribeJobExe
 
 DescribeJobTemplateOutcome IoTClient::DescribeJobTemplate(const DescribeJobTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeJobTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeJobTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.JobTemplateIdHasBeenSet())
   {
@@ -1797,6 +1894,7 @@ DescribeJobTemplateOutcome IoTClient::DescribeJobTemplate(const DescribeJobTempl
 
 DescribeManagedJobTemplateOutcome IoTClient::DescribeManagedJobTemplate(const DescribeManagedJobTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeManagedJobTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeManagedJobTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TemplateNameHasBeenSet())
   {
@@ -1812,6 +1910,7 @@ DescribeManagedJobTemplateOutcome IoTClient::DescribeManagedJobTemplate(const De
 
 DescribeMitigationActionOutcome IoTClient::DescribeMitigationAction(const DescribeMitigationActionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeMitigationAction);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeMitigationAction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ActionNameHasBeenSet())
   {
@@ -1827,6 +1926,7 @@ DescribeMitigationActionOutcome IoTClient::DescribeMitigationAction(const Descri
 
 DescribeProvisioningTemplateOutcome IoTClient::DescribeProvisioningTemplate(const DescribeProvisioningTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeProvisioningTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeProvisioningTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TemplateNameHasBeenSet())
   {
@@ -1842,6 +1942,7 @@ DescribeProvisioningTemplateOutcome IoTClient::DescribeProvisioningTemplate(cons
 
 DescribeProvisioningTemplateVersionOutcome IoTClient::DescribeProvisioningTemplateVersion(const DescribeProvisioningTemplateVersionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeProvisioningTemplateVersion);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeProvisioningTemplateVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TemplateNameHasBeenSet())
   {
@@ -1864,6 +1965,7 @@ DescribeProvisioningTemplateVersionOutcome IoTClient::DescribeProvisioningTempla
 
 DescribeRoleAliasOutcome IoTClient::DescribeRoleAlias(const DescribeRoleAliasRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeRoleAlias);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeRoleAlias, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RoleAliasHasBeenSet())
   {
@@ -1879,6 +1981,7 @@ DescribeRoleAliasOutcome IoTClient::DescribeRoleAlias(const DescribeRoleAliasReq
 
 DescribeScheduledAuditOutcome IoTClient::DescribeScheduledAudit(const DescribeScheduledAuditRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeScheduledAudit);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeScheduledAudit, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ScheduledAuditNameHasBeenSet())
   {
@@ -1894,6 +1997,7 @@ DescribeScheduledAuditOutcome IoTClient::DescribeScheduledAudit(const DescribeSc
 
 DescribeSecurityProfileOutcome IoTClient::DescribeSecurityProfile(const DescribeSecurityProfileRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeSecurityProfile);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeSecurityProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SecurityProfileNameHasBeenSet())
   {
@@ -1909,6 +2013,7 @@ DescribeSecurityProfileOutcome IoTClient::DescribeSecurityProfile(const Describe
 
 DescribeStreamOutcome IoTClient::DescribeStream(const DescribeStreamRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeStream);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeStream, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StreamIdHasBeenSet())
   {
@@ -1924,6 +2029,7 @@ DescribeStreamOutcome IoTClient::DescribeStream(const DescribeStreamRequest& req
 
 DescribeThingOutcome IoTClient::DescribeThing(const DescribeThingRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeThing);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeThing, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ThingNameHasBeenSet())
   {
@@ -1939,6 +2045,7 @@ DescribeThingOutcome IoTClient::DescribeThing(const DescribeThingRequest& reques
 
 DescribeThingGroupOutcome IoTClient::DescribeThingGroup(const DescribeThingGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeThingGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeThingGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ThingGroupNameHasBeenSet())
   {
@@ -1954,6 +2061,7 @@ DescribeThingGroupOutcome IoTClient::DescribeThingGroup(const DescribeThingGroup
 
 DescribeThingRegistrationTaskOutcome IoTClient::DescribeThingRegistrationTask(const DescribeThingRegistrationTaskRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeThingRegistrationTask);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeThingRegistrationTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TaskIdHasBeenSet())
   {
@@ -1969,6 +2077,7 @@ DescribeThingRegistrationTaskOutcome IoTClient::DescribeThingRegistrationTask(co
 
 DescribeThingTypeOutcome IoTClient::DescribeThingType(const DescribeThingTypeRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeThingType);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeThingType, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ThingTypeNameHasBeenSet())
   {
@@ -1984,6 +2093,7 @@ DescribeThingTypeOutcome IoTClient::DescribeThingType(const DescribeThingTypeReq
 
 DetachPolicyOutcome IoTClient::DetachPolicy(const DetachPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(DetachPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DetachPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PolicyNameHasBeenSet())
   {
@@ -1999,6 +2109,7 @@ DetachPolicyOutcome IoTClient::DetachPolicy(const DetachPolicyRequest& request) 
 
 DetachSecurityProfileOutcome IoTClient::DetachSecurityProfile(const DetachSecurityProfileRequest& request) const
 {
+  AWS_OPERATION_GUARD(DetachSecurityProfile);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DetachSecurityProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SecurityProfileNameHasBeenSet())
   {
@@ -2020,6 +2131,7 @@ DetachSecurityProfileOutcome IoTClient::DetachSecurityProfile(const DetachSecuri
 
 DetachThingPrincipalOutcome IoTClient::DetachThingPrincipal(const DetachThingPrincipalRequest& request) const
 {
+  AWS_OPERATION_GUARD(DetachThingPrincipal);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DetachThingPrincipal, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ThingNameHasBeenSet())
   {
@@ -2041,6 +2153,7 @@ DetachThingPrincipalOutcome IoTClient::DetachThingPrincipal(const DetachThingPri
 
 DisableTopicRuleOutcome IoTClient::DisableTopicRule(const DisableTopicRuleRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisableTopicRule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisableTopicRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RuleNameHasBeenSet())
   {
@@ -2057,6 +2170,7 @@ DisableTopicRuleOutcome IoTClient::DisableTopicRule(const DisableTopicRuleReques
 
 EnableTopicRuleOutcome IoTClient::EnableTopicRule(const EnableTopicRuleRequest& request) const
 {
+  AWS_OPERATION_GUARD(EnableTopicRule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, EnableTopicRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RuleNameHasBeenSet())
   {
@@ -2073,6 +2187,7 @@ EnableTopicRuleOutcome IoTClient::EnableTopicRule(const EnableTopicRuleRequest& 
 
 GetBehaviorModelTrainingSummariesOutcome IoTClient::GetBehaviorModelTrainingSummaries(const GetBehaviorModelTrainingSummariesRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetBehaviorModelTrainingSummaries);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBehaviorModelTrainingSummaries, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetBehaviorModelTrainingSummaries, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2082,6 +2197,7 @@ GetBehaviorModelTrainingSummariesOutcome IoTClient::GetBehaviorModelTrainingSumm
 
 GetBucketsAggregationOutcome IoTClient::GetBucketsAggregation(const GetBucketsAggregationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetBucketsAggregation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBucketsAggregation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetBucketsAggregation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2091,6 +2207,7 @@ GetBucketsAggregationOutcome IoTClient::GetBucketsAggregation(const GetBucketsAg
 
 GetCardinalityOutcome IoTClient::GetCardinality(const GetCardinalityRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetCardinality);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCardinality, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetCardinality, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2100,6 +2217,7 @@ GetCardinalityOutcome IoTClient::GetCardinality(const GetCardinalityRequest& req
 
 GetEffectivePoliciesOutcome IoTClient::GetEffectivePolicies(const GetEffectivePoliciesRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetEffectivePolicies);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetEffectivePolicies, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetEffectivePolicies, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2109,6 +2227,7 @@ GetEffectivePoliciesOutcome IoTClient::GetEffectivePolicies(const GetEffectivePo
 
 GetIndexingConfigurationOutcome IoTClient::GetIndexingConfiguration(const GetIndexingConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetIndexingConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetIndexingConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetIndexingConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2118,6 +2237,7 @@ GetIndexingConfigurationOutcome IoTClient::GetIndexingConfiguration(const GetInd
 
 GetJobDocumentOutcome IoTClient::GetJobDocument(const GetJobDocumentRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetJobDocument);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetJobDocument, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.JobIdHasBeenSet())
   {
@@ -2134,6 +2254,7 @@ GetJobDocumentOutcome IoTClient::GetJobDocument(const GetJobDocumentRequest& req
 
 GetLoggingOptionsOutcome IoTClient::GetLoggingOptions(const GetLoggingOptionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetLoggingOptions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetLoggingOptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetLoggingOptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2143,6 +2264,7 @@ GetLoggingOptionsOutcome IoTClient::GetLoggingOptions(const GetLoggingOptionsReq
 
 GetOTAUpdateOutcome IoTClient::GetOTAUpdate(const GetOTAUpdateRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetOTAUpdate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetOTAUpdate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.OtaUpdateIdHasBeenSet())
   {
@@ -2158,6 +2280,7 @@ GetOTAUpdateOutcome IoTClient::GetOTAUpdate(const GetOTAUpdateRequest& request) 
 
 GetPercentilesOutcome IoTClient::GetPercentiles(const GetPercentilesRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetPercentiles);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPercentiles, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetPercentiles, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2167,6 +2290,7 @@ GetPercentilesOutcome IoTClient::GetPercentiles(const GetPercentilesRequest& req
 
 GetPolicyOutcome IoTClient::GetPolicy(const GetPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PolicyNameHasBeenSet())
   {
@@ -2182,6 +2306,7 @@ GetPolicyOutcome IoTClient::GetPolicy(const GetPolicyRequest& request) const
 
 GetPolicyVersionOutcome IoTClient::GetPolicyVersion(const GetPolicyVersionRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetPolicyVersion);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPolicyVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PolicyNameHasBeenSet())
   {
@@ -2204,6 +2329,7 @@ GetPolicyVersionOutcome IoTClient::GetPolicyVersion(const GetPolicyVersionReques
 
 GetRegistrationCodeOutcome IoTClient::GetRegistrationCode(const GetRegistrationCodeRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetRegistrationCode);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetRegistrationCode, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetRegistrationCode, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2213,6 +2339,7 @@ GetRegistrationCodeOutcome IoTClient::GetRegistrationCode(const GetRegistrationC
 
 GetStatisticsOutcome IoTClient::GetStatistics(const GetStatisticsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetStatistics);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetStatistics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetStatistics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2222,6 +2349,7 @@ GetStatisticsOutcome IoTClient::GetStatistics(const GetStatisticsRequest& reques
 
 GetTopicRuleOutcome IoTClient::GetTopicRule(const GetTopicRuleRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetTopicRule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetTopicRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RuleNameHasBeenSet())
   {
@@ -2237,6 +2365,7 @@ GetTopicRuleOutcome IoTClient::GetTopicRule(const GetTopicRuleRequest& request) 
 
 GetTopicRuleDestinationOutcome IoTClient::GetTopicRuleDestination(const GetTopicRuleDestinationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetTopicRuleDestination);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetTopicRuleDestination, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ArnHasBeenSet())
   {
@@ -2252,6 +2381,7 @@ GetTopicRuleDestinationOutcome IoTClient::GetTopicRuleDestination(const GetTopic
 
 GetV2LoggingOptionsOutcome IoTClient::GetV2LoggingOptions(const GetV2LoggingOptionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetV2LoggingOptions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetV2LoggingOptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetV2LoggingOptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2261,6 +2391,7 @@ GetV2LoggingOptionsOutcome IoTClient::GetV2LoggingOptions(const GetV2LoggingOpti
 
 ListActiveViolationsOutcome IoTClient::ListActiveViolations(const ListActiveViolationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListActiveViolations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListActiveViolations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListActiveViolations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2270,6 +2401,7 @@ ListActiveViolationsOutcome IoTClient::ListActiveViolations(const ListActiveViol
 
 ListAttachedPoliciesOutcome IoTClient::ListAttachedPolicies(const ListAttachedPoliciesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAttachedPolicies);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAttachedPolicies, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TargetHasBeenSet())
   {
@@ -2285,6 +2417,7 @@ ListAttachedPoliciesOutcome IoTClient::ListAttachedPolicies(const ListAttachedPo
 
 ListAuditFindingsOutcome IoTClient::ListAuditFindings(const ListAuditFindingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAuditFindings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAuditFindings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAuditFindings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2294,6 +2427,7 @@ ListAuditFindingsOutcome IoTClient::ListAuditFindings(const ListAuditFindingsReq
 
 ListAuditMitigationActionsExecutionsOutcome IoTClient::ListAuditMitigationActionsExecutions(const ListAuditMitigationActionsExecutionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAuditMitigationActionsExecutions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAuditMitigationActionsExecutions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TaskIdHasBeenSet())
   {
@@ -2313,6 +2447,7 @@ ListAuditMitigationActionsExecutionsOutcome IoTClient::ListAuditMitigationAction
 
 ListAuditMitigationActionsTasksOutcome IoTClient::ListAuditMitigationActionsTasks(const ListAuditMitigationActionsTasksRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAuditMitigationActionsTasks);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAuditMitigationActionsTasks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StartTimeHasBeenSet())
   {
@@ -2332,6 +2467,7 @@ ListAuditMitigationActionsTasksOutcome IoTClient::ListAuditMitigationActionsTask
 
 ListAuditSuppressionsOutcome IoTClient::ListAuditSuppressions(const ListAuditSuppressionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAuditSuppressions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAuditSuppressions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAuditSuppressions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2341,6 +2477,7 @@ ListAuditSuppressionsOutcome IoTClient::ListAuditSuppressions(const ListAuditSup
 
 ListAuditTasksOutcome IoTClient::ListAuditTasks(const ListAuditTasksRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAuditTasks);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAuditTasks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StartTimeHasBeenSet())
   {
@@ -2360,6 +2497,7 @@ ListAuditTasksOutcome IoTClient::ListAuditTasks(const ListAuditTasksRequest& req
 
 ListAuthorizersOutcome IoTClient::ListAuthorizers(const ListAuthorizersRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAuthorizers);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAuthorizers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAuthorizers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2369,6 +2507,7 @@ ListAuthorizersOutcome IoTClient::ListAuthorizers(const ListAuthorizersRequest& 
 
 ListBillingGroupsOutcome IoTClient::ListBillingGroups(const ListBillingGroupsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListBillingGroups);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListBillingGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListBillingGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2378,6 +2517,7 @@ ListBillingGroupsOutcome IoTClient::ListBillingGroups(const ListBillingGroupsReq
 
 ListCACertificatesOutcome IoTClient::ListCACertificates(const ListCACertificatesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListCACertificates);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListCACertificates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListCACertificates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2387,6 +2527,7 @@ ListCACertificatesOutcome IoTClient::ListCACertificates(const ListCACertificates
 
 ListCertificatesOutcome IoTClient::ListCertificates(const ListCertificatesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListCertificates);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListCertificates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListCertificates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2396,6 +2537,7 @@ ListCertificatesOutcome IoTClient::ListCertificates(const ListCertificatesReques
 
 ListCertificatesByCAOutcome IoTClient::ListCertificatesByCA(const ListCertificatesByCARequest& request) const
 {
+  AWS_OPERATION_GUARD(ListCertificatesByCA);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListCertificatesByCA, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CaCertificateIdHasBeenSet())
   {
@@ -2411,6 +2553,7 @@ ListCertificatesByCAOutcome IoTClient::ListCertificatesByCA(const ListCertificat
 
 ListCustomMetricsOutcome IoTClient::ListCustomMetrics(const ListCustomMetricsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListCustomMetrics);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListCustomMetrics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListCustomMetrics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2420,6 +2563,7 @@ ListCustomMetricsOutcome IoTClient::ListCustomMetrics(const ListCustomMetricsReq
 
 ListDetectMitigationActionsExecutionsOutcome IoTClient::ListDetectMitigationActionsExecutions(const ListDetectMitigationActionsExecutionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDetectMitigationActionsExecutions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDetectMitigationActionsExecutions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDetectMitigationActionsExecutions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2429,6 +2573,7 @@ ListDetectMitigationActionsExecutionsOutcome IoTClient::ListDetectMitigationActi
 
 ListDetectMitigationActionsTasksOutcome IoTClient::ListDetectMitigationActionsTasks(const ListDetectMitigationActionsTasksRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDetectMitigationActionsTasks);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDetectMitigationActionsTasks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StartTimeHasBeenSet())
   {
@@ -2448,6 +2593,7 @@ ListDetectMitigationActionsTasksOutcome IoTClient::ListDetectMitigationActionsTa
 
 ListDimensionsOutcome IoTClient::ListDimensions(const ListDimensionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDimensions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDimensions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDimensions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2457,6 +2603,7 @@ ListDimensionsOutcome IoTClient::ListDimensions(const ListDimensionsRequest& req
 
 ListDomainConfigurationsOutcome IoTClient::ListDomainConfigurations(const ListDomainConfigurationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDomainConfigurations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDomainConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDomainConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2466,6 +2613,7 @@ ListDomainConfigurationsOutcome IoTClient::ListDomainConfigurations(const ListDo
 
 ListFleetMetricsOutcome IoTClient::ListFleetMetrics(const ListFleetMetricsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListFleetMetrics);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListFleetMetrics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListFleetMetrics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2475,6 +2623,7 @@ ListFleetMetricsOutcome IoTClient::ListFleetMetrics(const ListFleetMetricsReques
 
 ListIndicesOutcome IoTClient::ListIndices(const ListIndicesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListIndices);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListIndices, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListIndices, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2484,6 +2633,7 @@ ListIndicesOutcome IoTClient::ListIndices(const ListIndicesRequest& request) con
 
 ListJobExecutionsForJobOutcome IoTClient::ListJobExecutionsForJob(const ListJobExecutionsForJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListJobExecutionsForJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListJobExecutionsForJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.JobIdHasBeenSet())
   {
@@ -2500,6 +2650,7 @@ ListJobExecutionsForJobOutcome IoTClient::ListJobExecutionsForJob(const ListJobE
 
 ListJobExecutionsForThingOutcome IoTClient::ListJobExecutionsForThing(const ListJobExecutionsForThingRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListJobExecutionsForThing);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListJobExecutionsForThing, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ThingNameHasBeenSet())
   {
@@ -2516,6 +2667,7 @@ ListJobExecutionsForThingOutcome IoTClient::ListJobExecutionsForThing(const List
 
 ListJobTemplatesOutcome IoTClient::ListJobTemplates(const ListJobTemplatesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListJobTemplates);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListJobTemplates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListJobTemplates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2525,6 +2677,7 @@ ListJobTemplatesOutcome IoTClient::ListJobTemplates(const ListJobTemplatesReques
 
 ListJobsOutcome IoTClient::ListJobs(const ListJobsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListJobs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2534,6 +2687,7 @@ ListJobsOutcome IoTClient::ListJobs(const ListJobsRequest& request) const
 
 ListManagedJobTemplatesOutcome IoTClient::ListManagedJobTemplates(const ListManagedJobTemplatesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListManagedJobTemplates);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListManagedJobTemplates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListManagedJobTemplates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2543,6 +2697,7 @@ ListManagedJobTemplatesOutcome IoTClient::ListManagedJobTemplates(const ListMana
 
 ListMetricValuesOutcome IoTClient::ListMetricValues(const ListMetricValuesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListMetricValues);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListMetricValues, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ThingNameHasBeenSet())
   {
@@ -2572,6 +2727,7 @@ ListMetricValuesOutcome IoTClient::ListMetricValues(const ListMetricValuesReques
 
 ListMitigationActionsOutcome IoTClient::ListMitigationActions(const ListMitigationActionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListMitigationActions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListMitigationActions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListMitigationActions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2581,6 +2737,7 @@ ListMitigationActionsOutcome IoTClient::ListMitigationActions(const ListMitigati
 
 ListOTAUpdatesOutcome IoTClient::ListOTAUpdates(const ListOTAUpdatesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListOTAUpdates);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListOTAUpdates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListOTAUpdates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2590,6 +2747,7 @@ ListOTAUpdatesOutcome IoTClient::ListOTAUpdates(const ListOTAUpdatesRequest& req
 
 ListOutgoingCertificatesOutcome IoTClient::ListOutgoingCertificates(const ListOutgoingCertificatesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListOutgoingCertificates);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListOutgoingCertificates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListOutgoingCertificates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2599,6 +2757,7 @@ ListOutgoingCertificatesOutcome IoTClient::ListOutgoingCertificates(const ListOu
 
 ListPoliciesOutcome IoTClient::ListPolicies(const ListPoliciesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListPolicies);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPolicies, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListPolicies, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2608,6 +2767,7 @@ ListPoliciesOutcome IoTClient::ListPolicies(const ListPoliciesRequest& request) 
 
 ListPolicyVersionsOutcome IoTClient::ListPolicyVersions(const ListPolicyVersionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListPolicyVersions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPolicyVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PolicyNameHasBeenSet())
   {
@@ -2624,6 +2784,7 @@ ListPolicyVersionsOutcome IoTClient::ListPolicyVersions(const ListPolicyVersions
 
 ListPrincipalThingsOutcome IoTClient::ListPrincipalThings(const ListPrincipalThingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListPrincipalThings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPrincipalThings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PrincipalHasBeenSet())
   {
@@ -2638,6 +2799,7 @@ ListPrincipalThingsOutcome IoTClient::ListPrincipalThings(const ListPrincipalThi
 
 ListProvisioningTemplateVersionsOutcome IoTClient::ListProvisioningTemplateVersions(const ListProvisioningTemplateVersionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListProvisioningTemplateVersions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListProvisioningTemplateVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TemplateNameHasBeenSet())
   {
@@ -2654,6 +2816,7 @@ ListProvisioningTemplateVersionsOutcome IoTClient::ListProvisioningTemplateVersi
 
 ListProvisioningTemplatesOutcome IoTClient::ListProvisioningTemplates(const ListProvisioningTemplatesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListProvisioningTemplates);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListProvisioningTemplates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListProvisioningTemplates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2663,6 +2826,7 @@ ListProvisioningTemplatesOutcome IoTClient::ListProvisioningTemplates(const List
 
 ListRelatedResourcesForAuditFindingOutcome IoTClient::ListRelatedResourcesForAuditFinding(const ListRelatedResourcesForAuditFindingRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListRelatedResourcesForAuditFinding);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRelatedResourcesForAuditFinding, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FindingIdHasBeenSet())
   {
@@ -2677,6 +2841,7 @@ ListRelatedResourcesForAuditFindingOutcome IoTClient::ListRelatedResourcesForAud
 
 ListRoleAliasesOutcome IoTClient::ListRoleAliases(const ListRoleAliasesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListRoleAliases);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRoleAliases, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListRoleAliases, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2686,6 +2851,7 @@ ListRoleAliasesOutcome IoTClient::ListRoleAliases(const ListRoleAliasesRequest& 
 
 ListScheduledAuditsOutcome IoTClient::ListScheduledAudits(const ListScheduledAuditsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListScheduledAudits);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListScheduledAudits, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListScheduledAudits, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2695,6 +2861,7 @@ ListScheduledAuditsOutcome IoTClient::ListScheduledAudits(const ListScheduledAud
 
 ListSecurityProfilesOutcome IoTClient::ListSecurityProfiles(const ListSecurityProfilesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListSecurityProfiles);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSecurityProfiles, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListSecurityProfiles, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2704,6 +2871,7 @@ ListSecurityProfilesOutcome IoTClient::ListSecurityProfiles(const ListSecurityPr
 
 ListSecurityProfilesForTargetOutcome IoTClient::ListSecurityProfilesForTarget(const ListSecurityProfilesForTargetRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListSecurityProfilesForTarget);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSecurityProfilesForTarget, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SecurityProfileTargetArnHasBeenSet())
   {
@@ -2718,6 +2886,7 @@ ListSecurityProfilesForTargetOutcome IoTClient::ListSecurityProfilesForTarget(co
 
 ListStreamsOutcome IoTClient::ListStreams(const ListStreamsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListStreams);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListStreams, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListStreams, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2727,6 +2896,7 @@ ListStreamsOutcome IoTClient::ListStreams(const ListStreamsRequest& request) con
 
 ListTagsForResourceOutcome IoTClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -2741,6 +2911,7 @@ ListTagsForResourceOutcome IoTClient::ListTagsForResource(const ListTagsForResou
 
 ListTargetsForPolicyOutcome IoTClient::ListTargetsForPolicy(const ListTargetsForPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTargetsForPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTargetsForPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PolicyNameHasBeenSet())
   {
@@ -2756,6 +2927,7 @@ ListTargetsForPolicyOutcome IoTClient::ListTargetsForPolicy(const ListTargetsFor
 
 ListTargetsForSecurityProfileOutcome IoTClient::ListTargetsForSecurityProfile(const ListTargetsForSecurityProfileRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTargetsForSecurityProfile);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTargetsForSecurityProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SecurityProfileNameHasBeenSet())
   {
@@ -2772,6 +2944,7 @@ ListTargetsForSecurityProfileOutcome IoTClient::ListTargetsForSecurityProfile(co
 
 ListThingGroupsOutcome IoTClient::ListThingGroups(const ListThingGroupsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListThingGroups);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListThingGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListThingGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2781,6 +2954,7 @@ ListThingGroupsOutcome IoTClient::ListThingGroups(const ListThingGroupsRequest& 
 
 ListThingGroupsForThingOutcome IoTClient::ListThingGroupsForThing(const ListThingGroupsForThingRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListThingGroupsForThing);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListThingGroupsForThing, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ThingNameHasBeenSet())
   {
@@ -2797,6 +2971,7 @@ ListThingGroupsForThingOutcome IoTClient::ListThingGroupsForThing(const ListThin
 
 ListThingPrincipalsOutcome IoTClient::ListThingPrincipals(const ListThingPrincipalsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListThingPrincipals);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListThingPrincipals, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ThingNameHasBeenSet())
   {
@@ -2813,6 +2988,7 @@ ListThingPrincipalsOutcome IoTClient::ListThingPrincipals(const ListThingPrincip
 
 ListThingRegistrationTaskReportsOutcome IoTClient::ListThingRegistrationTaskReports(const ListThingRegistrationTaskReportsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListThingRegistrationTaskReports);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListThingRegistrationTaskReports, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TaskIdHasBeenSet())
   {
@@ -2834,6 +3010,7 @@ ListThingRegistrationTaskReportsOutcome IoTClient::ListThingRegistrationTaskRepo
 
 ListThingRegistrationTasksOutcome IoTClient::ListThingRegistrationTasks(const ListThingRegistrationTasksRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListThingRegistrationTasks);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListThingRegistrationTasks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListThingRegistrationTasks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2843,6 +3020,7 @@ ListThingRegistrationTasksOutcome IoTClient::ListThingRegistrationTasks(const Li
 
 ListThingTypesOutcome IoTClient::ListThingTypes(const ListThingTypesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListThingTypes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListThingTypes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListThingTypes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2852,6 +3030,7 @@ ListThingTypesOutcome IoTClient::ListThingTypes(const ListThingTypesRequest& req
 
 ListThingsOutcome IoTClient::ListThings(const ListThingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListThings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListThings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListThings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2861,6 +3040,7 @@ ListThingsOutcome IoTClient::ListThings(const ListThingsRequest& request) const
 
 ListThingsInBillingGroupOutcome IoTClient::ListThingsInBillingGroup(const ListThingsInBillingGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListThingsInBillingGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListThingsInBillingGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BillingGroupNameHasBeenSet())
   {
@@ -2877,6 +3057,7 @@ ListThingsInBillingGroupOutcome IoTClient::ListThingsInBillingGroup(const ListTh
 
 ListThingsInThingGroupOutcome IoTClient::ListThingsInThingGroup(const ListThingsInThingGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListThingsInThingGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListThingsInThingGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ThingGroupNameHasBeenSet())
   {
@@ -2893,6 +3074,7 @@ ListThingsInThingGroupOutcome IoTClient::ListThingsInThingGroup(const ListThings
 
 ListTopicRuleDestinationsOutcome IoTClient::ListTopicRuleDestinations(const ListTopicRuleDestinationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTopicRuleDestinations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTopicRuleDestinations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTopicRuleDestinations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2902,6 +3084,7 @@ ListTopicRuleDestinationsOutcome IoTClient::ListTopicRuleDestinations(const List
 
 ListTopicRulesOutcome IoTClient::ListTopicRules(const ListTopicRulesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTopicRules);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTopicRules, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTopicRules, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2911,6 +3094,7 @@ ListTopicRulesOutcome IoTClient::ListTopicRules(const ListTopicRulesRequest& req
 
 ListV2LoggingLevelsOutcome IoTClient::ListV2LoggingLevels(const ListV2LoggingLevelsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListV2LoggingLevels);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListV2LoggingLevels, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListV2LoggingLevels, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2920,6 +3104,7 @@ ListV2LoggingLevelsOutcome IoTClient::ListV2LoggingLevels(const ListV2LoggingLev
 
 ListViolationEventsOutcome IoTClient::ListViolationEvents(const ListViolationEventsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListViolationEvents);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListViolationEvents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StartTimeHasBeenSet())
   {
@@ -2939,6 +3124,7 @@ ListViolationEventsOutcome IoTClient::ListViolationEvents(const ListViolationEve
 
 PutVerificationStateOnViolationOutcome IoTClient::PutVerificationStateOnViolation(const PutVerificationStateOnViolationRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutVerificationStateOnViolation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutVerificationStateOnViolation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ViolationIdHasBeenSet())
   {
@@ -2954,6 +3140,7 @@ PutVerificationStateOnViolationOutcome IoTClient::PutVerificationStateOnViolatio
 
 RegisterCACertificateOutcome IoTClient::RegisterCACertificate(const RegisterCACertificateRequest& request) const
 {
+  AWS_OPERATION_GUARD(RegisterCACertificate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RegisterCACertificate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RegisterCACertificate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2963,6 +3150,7 @@ RegisterCACertificateOutcome IoTClient::RegisterCACertificate(const RegisterCACe
 
 RegisterCertificateOutcome IoTClient::RegisterCertificate(const RegisterCertificateRequest& request) const
 {
+  AWS_OPERATION_GUARD(RegisterCertificate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RegisterCertificate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RegisterCertificate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2972,6 +3160,7 @@ RegisterCertificateOutcome IoTClient::RegisterCertificate(const RegisterCertific
 
 RegisterCertificateWithoutCAOutcome IoTClient::RegisterCertificateWithoutCA(const RegisterCertificateWithoutCARequest& request) const
 {
+  AWS_OPERATION_GUARD(RegisterCertificateWithoutCA);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RegisterCertificateWithoutCA, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RegisterCertificateWithoutCA, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2981,6 +3170,7 @@ RegisterCertificateWithoutCAOutcome IoTClient::RegisterCertificateWithoutCA(cons
 
 RegisterThingOutcome IoTClient::RegisterThing(const RegisterThingRequest& request) const
 {
+  AWS_OPERATION_GUARD(RegisterThing);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RegisterThing, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RegisterThing, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -2990,6 +3180,7 @@ RegisterThingOutcome IoTClient::RegisterThing(const RegisterThingRequest& reques
 
 RejectCertificateTransferOutcome IoTClient::RejectCertificateTransfer(const RejectCertificateTransferRequest& request) const
 {
+  AWS_OPERATION_GUARD(RejectCertificateTransfer);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RejectCertificateTransfer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CertificateIdHasBeenSet())
   {
@@ -3005,6 +3196,7 @@ RejectCertificateTransferOutcome IoTClient::RejectCertificateTransfer(const Reje
 
 RemoveThingFromBillingGroupOutcome IoTClient::RemoveThingFromBillingGroup(const RemoveThingFromBillingGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(RemoveThingFromBillingGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RemoveThingFromBillingGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RemoveThingFromBillingGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -3014,6 +3206,7 @@ RemoveThingFromBillingGroupOutcome IoTClient::RemoveThingFromBillingGroup(const 
 
 RemoveThingFromThingGroupOutcome IoTClient::RemoveThingFromThingGroup(const RemoveThingFromThingGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(RemoveThingFromThingGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RemoveThingFromThingGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RemoveThingFromThingGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -3023,6 +3216,7 @@ RemoveThingFromThingGroupOutcome IoTClient::RemoveThingFromThingGroup(const Remo
 
 ReplaceTopicRuleOutcome IoTClient::ReplaceTopicRule(const ReplaceTopicRuleRequest& request) const
 {
+  AWS_OPERATION_GUARD(ReplaceTopicRule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ReplaceTopicRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RuleNameHasBeenSet())
   {
@@ -3038,6 +3232,7 @@ ReplaceTopicRuleOutcome IoTClient::ReplaceTopicRule(const ReplaceTopicRuleReques
 
 SearchIndexOutcome IoTClient::SearchIndex(const SearchIndexRequest& request) const
 {
+  AWS_OPERATION_GUARD(SearchIndex);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SearchIndex, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SearchIndex, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -3047,6 +3242,7 @@ SearchIndexOutcome IoTClient::SearchIndex(const SearchIndexRequest& request) con
 
 SetDefaultAuthorizerOutcome IoTClient::SetDefaultAuthorizer(const SetDefaultAuthorizerRequest& request) const
 {
+  AWS_OPERATION_GUARD(SetDefaultAuthorizer);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SetDefaultAuthorizer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SetDefaultAuthorizer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -3056,6 +3252,7 @@ SetDefaultAuthorizerOutcome IoTClient::SetDefaultAuthorizer(const SetDefaultAuth
 
 SetDefaultPolicyVersionOutcome IoTClient::SetDefaultPolicyVersion(const SetDefaultPolicyVersionRequest& request) const
 {
+  AWS_OPERATION_GUARD(SetDefaultPolicyVersion);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SetDefaultPolicyVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PolicyNameHasBeenSet())
   {
@@ -3078,6 +3275,7 @@ SetDefaultPolicyVersionOutcome IoTClient::SetDefaultPolicyVersion(const SetDefau
 
 SetLoggingOptionsOutcome IoTClient::SetLoggingOptions(const SetLoggingOptionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(SetLoggingOptions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SetLoggingOptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SetLoggingOptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -3087,6 +3285,7 @@ SetLoggingOptionsOutcome IoTClient::SetLoggingOptions(const SetLoggingOptionsReq
 
 SetV2LoggingLevelOutcome IoTClient::SetV2LoggingLevel(const SetV2LoggingLevelRequest& request) const
 {
+  AWS_OPERATION_GUARD(SetV2LoggingLevel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SetV2LoggingLevel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SetV2LoggingLevel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -3096,6 +3295,7 @@ SetV2LoggingLevelOutcome IoTClient::SetV2LoggingLevel(const SetV2LoggingLevelReq
 
 SetV2LoggingOptionsOutcome IoTClient::SetV2LoggingOptions(const SetV2LoggingOptionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(SetV2LoggingOptions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SetV2LoggingOptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SetV2LoggingOptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -3105,6 +3305,7 @@ SetV2LoggingOptionsOutcome IoTClient::SetV2LoggingOptions(const SetV2LoggingOpti
 
 StartAuditMitigationActionsTaskOutcome IoTClient::StartAuditMitigationActionsTask(const StartAuditMitigationActionsTaskRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartAuditMitigationActionsTask);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartAuditMitigationActionsTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TaskIdHasBeenSet())
   {
@@ -3120,6 +3321,7 @@ StartAuditMitigationActionsTaskOutcome IoTClient::StartAuditMitigationActionsTas
 
 StartDetectMitigationActionsTaskOutcome IoTClient::StartDetectMitigationActionsTask(const StartDetectMitigationActionsTaskRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartDetectMitigationActionsTask);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartDetectMitigationActionsTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TaskIdHasBeenSet())
   {
@@ -3135,6 +3337,7 @@ StartDetectMitigationActionsTaskOutcome IoTClient::StartDetectMitigationActionsT
 
 StartOnDemandAuditTaskOutcome IoTClient::StartOnDemandAuditTask(const StartOnDemandAuditTaskRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartOnDemandAuditTask);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartOnDemandAuditTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartOnDemandAuditTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -3144,6 +3347,7 @@ StartOnDemandAuditTaskOutcome IoTClient::StartOnDemandAuditTask(const StartOnDem
 
 StartThingRegistrationTaskOutcome IoTClient::StartThingRegistrationTask(const StartThingRegistrationTaskRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartThingRegistrationTask);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartThingRegistrationTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartThingRegistrationTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -3153,6 +3357,7 @@ StartThingRegistrationTaskOutcome IoTClient::StartThingRegistrationTask(const St
 
 StopThingRegistrationTaskOutcome IoTClient::StopThingRegistrationTask(const StopThingRegistrationTaskRequest& request) const
 {
+  AWS_OPERATION_GUARD(StopThingRegistrationTask);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopThingRegistrationTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TaskIdHasBeenSet())
   {
@@ -3169,6 +3374,7 @@ StopThingRegistrationTaskOutcome IoTClient::StopThingRegistrationTask(const Stop
 
 TagResourceOutcome IoTClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -3178,6 +3384,7 @@ TagResourceOutcome IoTClient::TagResource(const TagResourceRequest& request) con
 
 TestAuthorizationOutcome IoTClient::TestAuthorization(const TestAuthorizationRequest& request) const
 {
+  AWS_OPERATION_GUARD(TestAuthorization);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TestAuthorization, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TestAuthorization, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -3187,6 +3394,7 @@ TestAuthorizationOutcome IoTClient::TestAuthorization(const TestAuthorizationReq
 
 TestInvokeAuthorizerOutcome IoTClient::TestInvokeAuthorizer(const TestInvokeAuthorizerRequest& request) const
 {
+  AWS_OPERATION_GUARD(TestInvokeAuthorizer);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TestInvokeAuthorizer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AuthorizerNameHasBeenSet())
   {
@@ -3203,6 +3411,7 @@ TestInvokeAuthorizerOutcome IoTClient::TestInvokeAuthorizer(const TestInvokeAuth
 
 TransferCertificateOutcome IoTClient::TransferCertificate(const TransferCertificateRequest& request) const
 {
+  AWS_OPERATION_GUARD(TransferCertificate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TransferCertificate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CertificateIdHasBeenSet())
   {
@@ -3223,6 +3432,7 @@ TransferCertificateOutcome IoTClient::TransferCertificate(const TransferCertific
 
 UntagResourceOutcome IoTClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -3232,6 +3442,7 @@ UntagResourceOutcome IoTClient::UntagResource(const UntagResourceRequest& reques
 
 UpdateAccountAuditConfigurationOutcome IoTClient::UpdateAccountAuditConfiguration(const UpdateAccountAuditConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateAccountAuditConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAccountAuditConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateAccountAuditConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -3241,6 +3452,7 @@ UpdateAccountAuditConfigurationOutcome IoTClient::UpdateAccountAuditConfiguratio
 
 UpdateAuditSuppressionOutcome IoTClient::UpdateAuditSuppression(const UpdateAuditSuppressionRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateAuditSuppression);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAuditSuppression, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateAuditSuppression, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -3250,6 +3462,7 @@ UpdateAuditSuppressionOutcome IoTClient::UpdateAuditSuppression(const UpdateAudi
 
 UpdateAuthorizerOutcome IoTClient::UpdateAuthorizer(const UpdateAuthorizerRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateAuthorizer);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAuthorizer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AuthorizerNameHasBeenSet())
   {
@@ -3265,6 +3478,7 @@ UpdateAuthorizerOutcome IoTClient::UpdateAuthorizer(const UpdateAuthorizerReques
 
 UpdateBillingGroupOutcome IoTClient::UpdateBillingGroup(const UpdateBillingGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateBillingGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateBillingGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BillingGroupNameHasBeenSet())
   {
@@ -3280,6 +3494,7 @@ UpdateBillingGroupOutcome IoTClient::UpdateBillingGroup(const UpdateBillingGroup
 
 UpdateCACertificateOutcome IoTClient::UpdateCACertificate(const UpdateCACertificateRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateCACertificate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateCACertificate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CertificateIdHasBeenSet())
   {
@@ -3295,6 +3510,7 @@ UpdateCACertificateOutcome IoTClient::UpdateCACertificate(const UpdateCACertific
 
 UpdateCertificateOutcome IoTClient::UpdateCertificate(const UpdateCertificateRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateCertificate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateCertificate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CertificateIdHasBeenSet())
   {
@@ -3315,6 +3531,7 @@ UpdateCertificateOutcome IoTClient::UpdateCertificate(const UpdateCertificateReq
 
 UpdateCustomMetricOutcome IoTClient::UpdateCustomMetric(const UpdateCustomMetricRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateCustomMetric);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateCustomMetric, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MetricNameHasBeenSet())
   {
@@ -3330,6 +3547,7 @@ UpdateCustomMetricOutcome IoTClient::UpdateCustomMetric(const UpdateCustomMetric
 
 UpdateDimensionOutcome IoTClient::UpdateDimension(const UpdateDimensionRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateDimension);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDimension, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -3345,6 +3563,7 @@ UpdateDimensionOutcome IoTClient::UpdateDimension(const UpdateDimensionRequest& 
 
 UpdateDomainConfigurationOutcome IoTClient::UpdateDomainConfiguration(const UpdateDomainConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateDomainConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDomainConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainConfigurationNameHasBeenSet())
   {
@@ -3360,6 +3579,7 @@ UpdateDomainConfigurationOutcome IoTClient::UpdateDomainConfiguration(const Upda
 
 UpdateDynamicThingGroupOutcome IoTClient::UpdateDynamicThingGroup(const UpdateDynamicThingGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateDynamicThingGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDynamicThingGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ThingGroupNameHasBeenSet())
   {
@@ -3375,6 +3595,7 @@ UpdateDynamicThingGroupOutcome IoTClient::UpdateDynamicThingGroup(const UpdateDy
 
 UpdateEventConfigurationsOutcome IoTClient::UpdateEventConfigurations(const UpdateEventConfigurationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateEventConfigurations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateEventConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateEventConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -3384,6 +3605,7 @@ UpdateEventConfigurationsOutcome IoTClient::UpdateEventConfigurations(const Upda
 
 UpdateFleetMetricOutcome IoTClient::UpdateFleetMetric(const UpdateFleetMetricRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateFleetMetric);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateFleetMetric, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MetricNameHasBeenSet())
   {
@@ -3399,6 +3621,7 @@ UpdateFleetMetricOutcome IoTClient::UpdateFleetMetric(const UpdateFleetMetricReq
 
 UpdateIndexingConfigurationOutcome IoTClient::UpdateIndexingConfiguration(const UpdateIndexingConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateIndexingConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateIndexingConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateIndexingConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -3408,6 +3631,7 @@ UpdateIndexingConfigurationOutcome IoTClient::UpdateIndexingConfiguration(const 
 
 UpdateJobOutcome IoTClient::UpdateJob(const UpdateJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.JobIdHasBeenSet())
   {
@@ -3423,6 +3647,7 @@ UpdateJobOutcome IoTClient::UpdateJob(const UpdateJobRequest& request) const
 
 UpdateMitigationActionOutcome IoTClient::UpdateMitigationAction(const UpdateMitigationActionRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateMitigationAction);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateMitigationAction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ActionNameHasBeenSet())
   {
@@ -3438,6 +3663,7 @@ UpdateMitigationActionOutcome IoTClient::UpdateMitigationAction(const UpdateMiti
 
 UpdateProvisioningTemplateOutcome IoTClient::UpdateProvisioningTemplate(const UpdateProvisioningTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateProvisioningTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateProvisioningTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TemplateNameHasBeenSet())
   {
@@ -3453,6 +3679,7 @@ UpdateProvisioningTemplateOutcome IoTClient::UpdateProvisioningTemplate(const Up
 
 UpdateRoleAliasOutcome IoTClient::UpdateRoleAlias(const UpdateRoleAliasRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateRoleAlias);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateRoleAlias, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RoleAliasHasBeenSet())
   {
@@ -3468,6 +3695,7 @@ UpdateRoleAliasOutcome IoTClient::UpdateRoleAlias(const UpdateRoleAliasRequest& 
 
 UpdateScheduledAuditOutcome IoTClient::UpdateScheduledAudit(const UpdateScheduledAuditRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateScheduledAudit);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateScheduledAudit, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ScheduledAuditNameHasBeenSet())
   {
@@ -3483,6 +3711,7 @@ UpdateScheduledAuditOutcome IoTClient::UpdateScheduledAudit(const UpdateSchedule
 
 UpdateSecurityProfileOutcome IoTClient::UpdateSecurityProfile(const UpdateSecurityProfileRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateSecurityProfile);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateSecurityProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SecurityProfileNameHasBeenSet())
   {
@@ -3498,6 +3727,7 @@ UpdateSecurityProfileOutcome IoTClient::UpdateSecurityProfile(const UpdateSecuri
 
 UpdateStreamOutcome IoTClient::UpdateStream(const UpdateStreamRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateStream);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateStream, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StreamIdHasBeenSet())
   {
@@ -3513,6 +3743,7 @@ UpdateStreamOutcome IoTClient::UpdateStream(const UpdateStreamRequest& request) 
 
 UpdateThingOutcome IoTClient::UpdateThing(const UpdateThingRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateThing);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateThing, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ThingNameHasBeenSet())
   {
@@ -3528,6 +3759,7 @@ UpdateThingOutcome IoTClient::UpdateThing(const UpdateThingRequest& request) con
 
 UpdateThingGroupOutcome IoTClient::UpdateThingGroup(const UpdateThingGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateThingGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateThingGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ThingGroupNameHasBeenSet())
   {
@@ -3543,6 +3775,7 @@ UpdateThingGroupOutcome IoTClient::UpdateThingGroup(const UpdateThingGroupReques
 
 UpdateThingGroupsForThingOutcome IoTClient::UpdateThingGroupsForThing(const UpdateThingGroupsForThingRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateThingGroupsForThing);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateThingGroupsForThing, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateThingGroupsForThing, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -3552,6 +3785,7 @@ UpdateThingGroupsForThingOutcome IoTClient::UpdateThingGroupsForThing(const Upda
 
 UpdateTopicRuleDestinationOutcome IoTClient::UpdateTopicRuleDestination(const UpdateTopicRuleDestinationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateTopicRuleDestination);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateTopicRuleDestination, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateTopicRuleDestination, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -3561,6 +3795,7 @@ UpdateTopicRuleDestinationOutcome IoTClient::UpdateTopicRuleDestination(const Up
 
 ValidateSecurityProfileBehaviorsOutcome IoTClient::ValidateSecurityProfileBehaviors(const ValidateSecurityProfileBehaviorsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ValidateSecurityProfileBehaviors);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ValidateSecurityProfileBehaviors, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ValidateSecurityProfileBehaviors, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

@@ -130,6 +130,7 @@ QLDBSessionClient::QLDBSessionClient(const std::shared_ptr<AWSCredentialsProvide
     /* End of legacy constructors due deprecation */
 QLDBSessionClient::~QLDBSessionClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<QLDBSessionEndpointProviderBase>& QLDBSessionClient::accessEndpointProvider()
@@ -152,6 +153,7 @@ void QLDBSessionClient::OverrideEndpoint(const Aws::String& endpoint)
 
 SendCommandOutcome QLDBSessionClient::SendCommand(const SendCommandRequest& request) const
 {
+  AWS_OPERATION_GUARD(SendCommand);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SendCommand, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SendCommand, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

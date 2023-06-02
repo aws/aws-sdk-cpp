@@ -40,26 +40,26 @@ namespace Model
 
 
     /**
-     * <p> Specifies whether the channel applies to a single region or to all
-     * regions.</p>
+     * <p> Specifies whether the channel applies to a single Region or to all
+     * Regions.</p>
      */
     inline bool GetApplyToAllRegions() const{ return m_applyToAllRegions; }
 
     /**
-     * <p> Specifies whether the channel applies to a single region or to all
-     * regions.</p>
+     * <p> Specifies whether the channel applies to a single Region or to all
+     * Regions.</p>
      */
     inline bool ApplyToAllRegionsHasBeenSet() const { return m_applyToAllRegionsHasBeenSet; }
 
     /**
-     * <p> Specifies whether the channel applies to a single region or to all
-     * regions.</p>
+     * <p> Specifies whether the channel applies to a single Region or to all
+     * Regions.</p>
      */
     inline void SetApplyToAllRegions(bool value) { m_applyToAllRegionsHasBeenSet = true; m_applyToAllRegions = value; }
 
     /**
-     * <p> Specifies whether the channel applies to a single region or to all
-     * regions.</p>
+     * <p> Specifies whether the channel applies to a single Region or to all
+     * Regions.</p>
      */
     inline SourceConfig& WithApplyToAllRegions(bool value) { SetApplyToAllRegions(value); return *this;}
 

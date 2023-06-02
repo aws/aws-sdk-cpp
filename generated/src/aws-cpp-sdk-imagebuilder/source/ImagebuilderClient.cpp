@@ -185,6 +185,7 @@ ImagebuilderClient::ImagebuilderClient(const std::shared_ptr<AWSCredentialsProvi
     /* End of legacy constructors due deprecation */
 ImagebuilderClient::~ImagebuilderClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<ImagebuilderEndpointProviderBase>& ImagebuilderClient::accessEndpointProvider()
@@ -207,6 +208,7 @@ void ImagebuilderClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CancelImageCreationOutcome ImagebuilderClient::CancelImageCreation(const CancelImageCreationRequest& request) const
 {
+  AWS_OPERATION_GUARD(CancelImageCreation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CancelImageCreation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CancelImageCreation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -216,6 +218,7 @@ CancelImageCreationOutcome ImagebuilderClient::CancelImageCreation(const CancelI
 
 CreateComponentOutcome ImagebuilderClient::CreateComponent(const CreateComponentRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateComponent);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateComponent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateComponent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -225,6 +228,7 @@ CreateComponentOutcome ImagebuilderClient::CreateComponent(const CreateComponent
 
 CreateContainerRecipeOutcome ImagebuilderClient::CreateContainerRecipe(const CreateContainerRecipeRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateContainerRecipe);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateContainerRecipe, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateContainerRecipe, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -234,6 +238,7 @@ CreateContainerRecipeOutcome ImagebuilderClient::CreateContainerRecipe(const Cre
 
 CreateDistributionConfigurationOutcome ImagebuilderClient::CreateDistributionConfiguration(const CreateDistributionConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateDistributionConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDistributionConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateDistributionConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -243,6 +248,7 @@ CreateDistributionConfigurationOutcome ImagebuilderClient::CreateDistributionCon
 
 CreateImageOutcome ImagebuilderClient::CreateImage(const CreateImageRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateImage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateImage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateImage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -252,6 +258,7 @@ CreateImageOutcome ImagebuilderClient::CreateImage(const CreateImageRequest& req
 
 CreateImagePipelineOutcome ImagebuilderClient::CreateImagePipeline(const CreateImagePipelineRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateImagePipeline);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateImagePipeline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateImagePipeline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -261,6 +268,7 @@ CreateImagePipelineOutcome ImagebuilderClient::CreateImagePipeline(const CreateI
 
 CreateImageRecipeOutcome ImagebuilderClient::CreateImageRecipe(const CreateImageRecipeRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateImageRecipe);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateImageRecipe, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateImageRecipe, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -270,6 +278,7 @@ CreateImageRecipeOutcome ImagebuilderClient::CreateImageRecipe(const CreateImage
 
 CreateInfrastructureConfigurationOutcome ImagebuilderClient::CreateInfrastructureConfiguration(const CreateInfrastructureConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateInfrastructureConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateInfrastructureConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateInfrastructureConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -279,6 +288,7 @@ CreateInfrastructureConfigurationOutcome ImagebuilderClient::CreateInfrastructur
 
 DeleteComponentOutcome ImagebuilderClient::DeleteComponent(const DeleteComponentRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteComponent);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteComponent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ComponentBuildVersionArnHasBeenSet())
   {
@@ -293,6 +303,7 @@ DeleteComponentOutcome ImagebuilderClient::DeleteComponent(const DeleteComponent
 
 DeleteContainerRecipeOutcome ImagebuilderClient::DeleteContainerRecipe(const DeleteContainerRecipeRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteContainerRecipe);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteContainerRecipe, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ContainerRecipeArnHasBeenSet())
   {
@@ -307,6 +318,7 @@ DeleteContainerRecipeOutcome ImagebuilderClient::DeleteContainerRecipe(const Del
 
 DeleteDistributionConfigurationOutcome ImagebuilderClient::DeleteDistributionConfiguration(const DeleteDistributionConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteDistributionConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDistributionConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DistributionConfigurationArnHasBeenSet())
   {
@@ -321,6 +333,7 @@ DeleteDistributionConfigurationOutcome ImagebuilderClient::DeleteDistributionCon
 
 DeleteImageOutcome ImagebuilderClient::DeleteImage(const DeleteImageRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteImage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteImage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ImageBuildVersionArnHasBeenSet())
   {
@@ -335,6 +348,7 @@ DeleteImageOutcome ImagebuilderClient::DeleteImage(const DeleteImageRequest& req
 
 DeleteImagePipelineOutcome ImagebuilderClient::DeleteImagePipeline(const DeleteImagePipelineRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteImagePipeline);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteImagePipeline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ImagePipelineArnHasBeenSet())
   {
@@ -349,6 +363,7 @@ DeleteImagePipelineOutcome ImagebuilderClient::DeleteImagePipeline(const DeleteI
 
 DeleteImageRecipeOutcome ImagebuilderClient::DeleteImageRecipe(const DeleteImageRecipeRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteImageRecipe);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteImageRecipe, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ImageRecipeArnHasBeenSet())
   {
@@ -363,6 +378,7 @@ DeleteImageRecipeOutcome ImagebuilderClient::DeleteImageRecipe(const DeleteImage
 
 DeleteInfrastructureConfigurationOutcome ImagebuilderClient::DeleteInfrastructureConfiguration(const DeleteInfrastructureConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteInfrastructureConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteInfrastructureConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InfrastructureConfigurationArnHasBeenSet())
   {
@@ -377,6 +393,7 @@ DeleteInfrastructureConfigurationOutcome ImagebuilderClient::DeleteInfrastructur
 
 GetComponentOutcome ImagebuilderClient::GetComponent(const GetComponentRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetComponent);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetComponent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ComponentBuildVersionArnHasBeenSet())
   {
@@ -391,6 +408,7 @@ GetComponentOutcome ImagebuilderClient::GetComponent(const GetComponentRequest& 
 
 GetComponentPolicyOutcome ImagebuilderClient::GetComponentPolicy(const GetComponentPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetComponentPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetComponentPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ComponentArnHasBeenSet())
   {
@@ -405,6 +423,7 @@ GetComponentPolicyOutcome ImagebuilderClient::GetComponentPolicy(const GetCompon
 
 GetContainerRecipeOutcome ImagebuilderClient::GetContainerRecipe(const GetContainerRecipeRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetContainerRecipe);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetContainerRecipe, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ContainerRecipeArnHasBeenSet())
   {
@@ -419,6 +438,7 @@ GetContainerRecipeOutcome ImagebuilderClient::GetContainerRecipe(const GetContai
 
 GetContainerRecipePolicyOutcome ImagebuilderClient::GetContainerRecipePolicy(const GetContainerRecipePolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetContainerRecipePolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetContainerRecipePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ContainerRecipeArnHasBeenSet())
   {
@@ -433,6 +453,7 @@ GetContainerRecipePolicyOutcome ImagebuilderClient::GetContainerRecipePolicy(con
 
 GetDistributionConfigurationOutcome ImagebuilderClient::GetDistributionConfiguration(const GetDistributionConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDistributionConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDistributionConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DistributionConfigurationArnHasBeenSet())
   {
@@ -447,6 +468,7 @@ GetDistributionConfigurationOutcome ImagebuilderClient::GetDistributionConfigura
 
 GetImageOutcome ImagebuilderClient::GetImage(const GetImageRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetImage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetImage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ImageBuildVersionArnHasBeenSet())
   {
@@ -461,6 +483,7 @@ GetImageOutcome ImagebuilderClient::GetImage(const GetImageRequest& request) con
 
 GetImagePipelineOutcome ImagebuilderClient::GetImagePipeline(const GetImagePipelineRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetImagePipeline);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetImagePipeline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ImagePipelineArnHasBeenSet())
   {
@@ -475,6 +498,7 @@ GetImagePipelineOutcome ImagebuilderClient::GetImagePipeline(const GetImagePipel
 
 GetImagePolicyOutcome ImagebuilderClient::GetImagePolicy(const GetImagePolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetImagePolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetImagePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ImageArnHasBeenSet())
   {
@@ -489,6 +513,7 @@ GetImagePolicyOutcome ImagebuilderClient::GetImagePolicy(const GetImagePolicyReq
 
 GetImageRecipeOutcome ImagebuilderClient::GetImageRecipe(const GetImageRecipeRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetImageRecipe);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetImageRecipe, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ImageRecipeArnHasBeenSet())
   {
@@ -503,6 +528,7 @@ GetImageRecipeOutcome ImagebuilderClient::GetImageRecipe(const GetImageRecipeReq
 
 GetImageRecipePolicyOutcome ImagebuilderClient::GetImageRecipePolicy(const GetImageRecipePolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetImageRecipePolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetImageRecipePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ImageRecipeArnHasBeenSet())
   {
@@ -517,6 +543,7 @@ GetImageRecipePolicyOutcome ImagebuilderClient::GetImageRecipePolicy(const GetIm
 
 GetInfrastructureConfigurationOutcome ImagebuilderClient::GetInfrastructureConfiguration(const GetInfrastructureConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetInfrastructureConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetInfrastructureConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InfrastructureConfigurationArnHasBeenSet())
   {
@@ -531,6 +558,7 @@ GetInfrastructureConfigurationOutcome ImagebuilderClient::GetInfrastructureConfi
 
 GetWorkflowExecutionOutcome ImagebuilderClient::GetWorkflowExecution(const GetWorkflowExecutionRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetWorkflowExecution);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetWorkflowExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkflowExecutionIdHasBeenSet())
   {
@@ -545,6 +573,7 @@ GetWorkflowExecutionOutcome ImagebuilderClient::GetWorkflowExecution(const GetWo
 
 GetWorkflowStepExecutionOutcome ImagebuilderClient::GetWorkflowStepExecution(const GetWorkflowStepExecutionRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetWorkflowStepExecution);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetWorkflowStepExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StepExecutionIdHasBeenSet())
   {
@@ -559,6 +588,7 @@ GetWorkflowStepExecutionOutcome ImagebuilderClient::GetWorkflowStepExecution(con
 
 ImportComponentOutcome ImagebuilderClient::ImportComponent(const ImportComponentRequest& request) const
 {
+  AWS_OPERATION_GUARD(ImportComponent);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ImportComponent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ImportComponent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -568,6 +598,7 @@ ImportComponentOutcome ImagebuilderClient::ImportComponent(const ImportComponent
 
 ImportVmImageOutcome ImagebuilderClient::ImportVmImage(const ImportVmImageRequest& request) const
 {
+  AWS_OPERATION_GUARD(ImportVmImage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ImportVmImage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ImportVmImage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -577,6 +608,7 @@ ImportVmImageOutcome ImagebuilderClient::ImportVmImage(const ImportVmImageReques
 
 ListComponentBuildVersionsOutcome ImagebuilderClient::ListComponentBuildVersions(const ListComponentBuildVersionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListComponentBuildVersions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListComponentBuildVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListComponentBuildVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -586,6 +618,7 @@ ListComponentBuildVersionsOutcome ImagebuilderClient::ListComponentBuildVersions
 
 ListComponentsOutcome ImagebuilderClient::ListComponents(const ListComponentsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListComponents);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListComponents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListComponents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -595,6 +628,7 @@ ListComponentsOutcome ImagebuilderClient::ListComponents(const ListComponentsReq
 
 ListContainerRecipesOutcome ImagebuilderClient::ListContainerRecipes(const ListContainerRecipesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListContainerRecipes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListContainerRecipes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListContainerRecipes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -604,6 +638,7 @@ ListContainerRecipesOutcome ImagebuilderClient::ListContainerRecipes(const ListC
 
 ListDistributionConfigurationsOutcome ImagebuilderClient::ListDistributionConfigurations(const ListDistributionConfigurationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDistributionConfigurations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDistributionConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDistributionConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -613,6 +648,7 @@ ListDistributionConfigurationsOutcome ImagebuilderClient::ListDistributionConfig
 
 ListImageBuildVersionsOutcome ImagebuilderClient::ListImageBuildVersions(const ListImageBuildVersionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListImageBuildVersions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListImageBuildVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListImageBuildVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -622,6 +658,7 @@ ListImageBuildVersionsOutcome ImagebuilderClient::ListImageBuildVersions(const L
 
 ListImagePackagesOutcome ImagebuilderClient::ListImagePackages(const ListImagePackagesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListImagePackages);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListImagePackages, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListImagePackages, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -631,6 +668,7 @@ ListImagePackagesOutcome ImagebuilderClient::ListImagePackages(const ListImagePa
 
 ListImagePipelineImagesOutcome ImagebuilderClient::ListImagePipelineImages(const ListImagePipelineImagesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListImagePipelineImages);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListImagePipelineImages, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListImagePipelineImages, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -640,6 +678,7 @@ ListImagePipelineImagesOutcome ImagebuilderClient::ListImagePipelineImages(const
 
 ListImagePipelinesOutcome ImagebuilderClient::ListImagePipelines(const ListImagePipelinesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListImagePipelines);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListImagePipelines, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListImagePipelines, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -649,6 +688,7 @@ ListImagePipelinesOutcome ImagebuilderClient::ListImagePipelines(const ListImage
 
 ListImageRecipesOutcome ImagebuilderClient::ListImageRecipes(const ListImageRecipesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListImageRecipes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListImageRecipes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListImageRecipes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -658,6 +698,7 @@ ListImageRecipesOutcome ImagebuilderClient::ListImageRecipes(const ListImageReci
 
 ListImageScanFindingAggregationsOutcome ImagebuilderClient::ListImageScanFindingAggregations(const ListImageScanFindingAggregationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListImageScanFindingAggregations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListImageScanFindingAggregations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListImageScanFindingAggregations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -667,6 +708,7 @@ ListImageScanFindingAggregationsOutcome ImagebuilderClient::ListImageScanFinding
 
 ListImageScanFindingsOutcome ImagebuilderClient::ListImageScanFindings(const ListImageScanFindingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListImageScanFindings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListImageScanFindings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListImageScanFindings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -676,6 +718,7 @@ ListImageScanFindingsOutcome ImagebuilderClient::ListImageScanFindings(const Lis
 
 ListImagesOutcome ImagebuilderClient::ListImages(const ListImagesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListImages);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListImages, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListImages, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -685,6 +728,7 @@ ListImagesOutcome ImagebuilderClient::ListImages(const ListImagesRequest& reques
 
 ListInfrastructureConfigurationsOutcome ImagebuilderClient::ListInfrastructureConfigurations(const ListInfrastructureConfigurationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListInfrastructureConfigurations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListInfrastructureConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListInfrastructureConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -694,6 +738,7 @@ ListInfrastructureConfigurationsOutcome ImagebuilderClient::ListInfrastructureCo
 
 ListTagsForResourceOutcome ImagebuilderClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -709,6 +754,7 @@ ListTagsForResourceOutcome ImagebuilderClient::ListTagsForResource(const ListTag
 
 ListWorkflowExecutionsOutcome ImagebuilderClient::ListWorkflowExecutions(const ListWorkflowExecutionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListWorkflowExecutions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListWorkflowExecutions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListWorkflowExecutions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -718,6 +764,7 @@ ListWorkflowExecutionsOutcome ImagebuilderClient::ListWorkflowExecutions(const L
 
 ListWorkflowStepExecutionsOutcome ImagebuilderClient::ListWorkflowStepExecutions(const ListWorkflowStepExecutionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListWorkflowStepExecutions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListWorkflowStepExecutions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListWorkflowStepExecutions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -727,6 +774,7 @@ ListWorkflowStepExecutionsOutcome ImagebuilderClient::ListWorkflowStepExecutions
 
 PutComponentPolicyOutcome ImagebuilderClient::PutComponentPolicy(const PutComponentPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutComponentPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutComponentPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutComponentPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -736,6 +784,7 @@ PutComponentPolicyOutcome ImagebuilderClient::PutComponentPolicy(const PutCompon
 
 PutContainerRecipePolicyOutcome ImagebuilderClient::PutContainerRecipePolicy(const PutContainerRecipePolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutContainerRecipePolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutContainerRecipePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutContainerRecipePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -745,6 +794,7 @@ PutContainerRecipePolicyOutcome ImagebuilderClient::PutContainerRecipePolicy(con
 
 PutImagePolicyOutcome ImagebuilderClient::PutImagePolicy(const PutImagePolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutImagePolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutImagePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutImagePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -754,6 +804,7 @@ PutImagePolicyOutcome ImagebuilderClient::PutImagePolicy(const PutImagePolicyReq
 
 PutImageRecipePolicyOutcome ImagebuilderClient::PutImageRecipePolicy(const PutImageRecipePolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutImageRecipePolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutImageRecipePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutImageRecipePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -763,6 +814,7 @@ PutImageRecipePolicyOutcome ImagebuilderClient::PutImageRecipePolicy(const PutIm
 
 StartImagePipelineExecutionOutcome ImagebuilderClient::StartImagePipelineExecution(const StartImagePipelineExecutionRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartImagePipelineExecution);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartImagePipelineExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartImagePipelineExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -772,6 +824,7 @@ StartImagePipelineExecutionOutcome ImagebuilderClient::StartImagePipelineExecuti
 
 TagResourceOutcome ImagebuilderClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -787,6 +840,7 @@ TagResourceOutcome ImagebuilderClient::TagResource(const TagResourceRequest& req
 
 UntagResourceOutcome ImagebuilderClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -807,6 +861,7 @@ UntagResourceOutcome ImagebuilderClient::UntagResource(const UntagResourceReques
 
 UpdateDistributionConfigurationOutcome ImagebuilderClient::UpdateDistributionConfiguration(const UpdateDistributionConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateDistributionConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDistributionConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateDistributionConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -816,6 +871,7 @@ UpdateDistributionConfigurationOutcome ImagebuilderClient::UpdateDistributionCon
 
 UpdateImagePipelineOutcome ImagebuilderClient::UpdateImagePipeline(const UpdateImagePipelineRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateImagePipeline);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateImagePipeline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateImagePipeline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -825,6 +881,7 @@ UpdateImagePipelineOutcome ImagebuilderClient::UpdateImagePipeline(const UpdateI
 
 UpdateInfrastructureConfigurationOutcome ImagebuilderClient::UpdateInfrastructureConfiguration(const UpdateInfrastructureConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateInfrastructureConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateInfrastructureConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateInfrastructureConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

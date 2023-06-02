@@ -135,6 +135,7 @@ KinesisVideoArchivedMediaClient::KinesisVideoArchivedMediaClient(const std::shar
     /* End of legacy constructors due deprecation */
 KinesisVideoArchivedMediaClient::~KinesisVideoArchivedMediaClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<KinesisVideoArchivedMediaEndpointProviderBase>& KinesisVideoArchivedMediaClient::accessEndpointProvider()
@@ -157,6 +158,7 @@ void KinesisVideoArchivedMediaClient::OverrideEndpoint(const Aws::String& endpoi
 
 GetClipOutcome KinesisVideoArchivedMediaClient::GetClip(const GetClipRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetClip);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetClip, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetClip, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -166,6 +168,7 @@ GetClipOutcome KinesisVideoArchivedMediaClient::GetClip(const GetClipRequest& re
 
 GetDASHStreamingSessionURLOutcome KinesisVideoArchivedMediaClient::GetDASHStreamingSessionURL(const GetDASHStreamingSessionURLRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDASHStreamingSessionURL);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDASHStreamingSessionURL, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetDASHStreamingSessionURL, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -175,6 +178,7 @@ GetDASHStreamingSessionURLOutcome KinesisVideoArchivedMediaClient::GetDASHStream
 
 GetHLSStreamingSessionURLOutcome KinesisVideoArchivedMediaClient::GetHLSStreamingSessionURL(const GetHLSStreamingSessionURLRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetHLSStreamingSessionURL);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetHLSStreamingSessionURL, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetHLSStreamingSessionURL, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -184,6 +188,7 @@ GetHLSStreamingSessionURLOutcome KinesisVideoArchivedMediaClient::GetHLSStreamin
 
 GetImagesOutcome KinesisVideoArchivedMediaClient::GetImages(const GetImagesRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetImages);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetImages, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetImages, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -193,6 +198,7 @@ GetImagesOutcome KinesisVideoArchivedMediaClient::GetImages(const GetImagesReque
 
 GetMediaForFragmentListOutcome KinesisVideoArchivedMediaClient::GetMediaForFragmentList(const GetMediaForFragmentListRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetMediaForFragmentList);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMediaForFragmentList, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetMediaForFragmentList, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -202,6 +208,7 @@ GetMediaForFragmentListOutcome KinesisVideoArchivedMediaClient::GetMediaForFragm
 
 ListFragmentsOutcome KinesisVideoArchivedMediaClient::ListFragments(const ListFragmentsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListFragments);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListFragments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListFragments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

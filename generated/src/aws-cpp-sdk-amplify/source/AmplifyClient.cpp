@@ -166,6 +166,7 @@ AmplifyClient::AmplifyClient(const std::shared_ptr<AWSCredentialsProvider>& cred
     /* End of legacy constructors due deprecation */
 AmplifyClient::~AmplifyClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<AmplifyEndpointProviderBase>& AmplifyClient::accessEndpointProvider()
@@ -188,6 +189,7 @@ void AmplifyClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CreateAppOutcome AmplifyClient::CreateApp(const CreateAppRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateApp);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateApp, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateApp, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -197,6 +199,7 @@ CreateAppOutcome AmplifyClient::CreateApp(const CreateAppRequest& request) const
 
 CreateBackendEnvironmentOutcome AmplifyClient::CreateBackendEnvironment(const CreateBackendEnvironmentRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateBackendEnvironment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateBackendEnvironment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -213,6 +216,7 @@ CreateBackendEnvironmentOutcome AmplifyClient::CreateBackendEnvironment(const Cr
 
 CreateBranchOutcome AmplifyClient::CreateBranch(const CreateBranchRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateBranch);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateBranch, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -229,6 +233,7 @@ CreateBranchOutcome AmplifyClient::CreateBranch(const CreateBranchRequest& reque
 
 CreateDeploymentOutcome AmplifyClient::CreateDeployment(const CreateDeploymentRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateDeployment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDeployment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -252,6 +257,7 @@ CreateDeploymentOutcome AmplifyClient::CreateDeployment(const CreateDeploymentRe
 
 CreateDomainAssociationOutcome AmplifyClient::CreateDomainAssociation(const CreateDomainAssociationRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateDomainAssociation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDomainAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -268,6 +274,7 @@ CreateDomainAssociationOutcome AmplifyClient::CreateDomainAssociation(const Crea
 
 CreateWebhookOutcome AmplifyClient::CreateWebhook(const CreateWebhookRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateWebhook);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateWebhook, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -284,6 +291,7 @@ CreateWebhookOutcome AmplifyClient::CreateWebhook(const CreateWebhookRequest& re
 
 DeleteAppOutcome AmplifyClient::DeleteApp(const DeleteAppRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteApp);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteApp, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -299,6 +307,7 @@ DeleteAppOutcome AmplifyClient::DeleteApp(const DeleteAppRequest& request) const
 
 DeleteBackendEnvironmentOutcome AmplifyClient::DeleteBackendEnvironment(const DeleteBackendEnvironmentRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteBackendEnvironment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteBackendEnvironment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -321,6 +330,7 @@ DeleteBackendEnvironmentOutcome AmplifyClient::DeleteBackendEnvironment(const De
 
 DeleteBranchOutcome AmplifyClient::DeleteBranch(const DeleteBranchRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteBranch);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteBranch, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -343,6 +353,7 @@ DeleteBranchOutcome AmplifyClient::DeleteBranch(const DeleteBranchRequest& reque
 
 DeleteDomainAssociationOutcome AmplifyClient::DeleteDomainAssociation(const DeleteDomainAssociationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteDomainAssociation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDomainAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -365,6 +376,7 @@ DeleteDomainAssociationOutcome AmplifyClient::DeleteDomainAssociation(const Dele
 
 DeleteJobOutcome AmplifyClient::DeleteJob(const DeleteJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -394,6 +406,7 @@ DeleteJobOutcome AmplifyClient::DeleteJob(const DeleteJobRequest& request) const
 
 DeleteWebhookOutcome AmplifyClient::DeleteWebhook(const DeleteWebhookRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteWebhook);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteWebhook, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WebhookIdHasBeenSet())
   {
@@ -409,6 +422,7 @@ DeleteWebhookOutcome AmplifyClient::DeleteWebhook(const DeleteWebhookRequest& re
 
 GenerateAccessLogsOutcome AmplifyClient::GenerateAccessLogs(const GenerateAccessLogsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GenerateAccessLogs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GenerateAccessLogs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -425,6 +439,7 @@ GenerateAccessLogsOutcome AmplifyClient::GenerateAccessLogs(const GenerateAccess
 
 GetAppOutcome AmplifyClient::GetApp(const GetAppRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetApp);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetApp, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -440,6 +455,7 @@ GetAppOutcome AmplifyClient::GetApp(const GetAppRequest& request) const
 
 GetArtifactUrlOutcome AmplifyClient::GetArtifactUrl(const GetArtifactUrlRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetArtifactUrl);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetArtifactUrl, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ArtifactIdHasBeenSet())
   {
@@ -455,6 +471,7 @@ GetArtifactUrlOutcome AmplifyClient::GetArtifactUrl(const GetArtifactUrlRequest&
 
 GetBackendEnvironmentOutcome AmplifyClient::GetBackendEnvironment(const GetBackendEnvironmentRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetBackendEnvironment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBackendEnvironment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -477,6 +494,7 @@ GetBackendEnvironmentOutcome AmplifyClient::GetBackendEnvironment(const GetBacke
 
 GetBranchOutcome AmplifyClient::GetBranch(const GetBranchRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetBranch);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBranch, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -499,6 +517,7 @@ GetBranchOutcome AmplifyClient::GetBranch(const GetBranchRequest& request) const
 
 GetDomainAssociationOutcome AmplifyClient::GetDomainAssociation(const GetDomainAssociationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDomainAssociation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDomainAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -521,6 +540,7 @@ GetDomainAssociationOutcome AmplifyClient::GetDomainAssociation(const GetDomainA
 
 GetJobOutcome AmplifyClient::GetJob(const GetJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -550,6 +570,7 @@ GetJobOutcome AmplifyClient::GetJob(const GetJobRequest& request) const
 
 GetWebhookOutcome AmplifyClient::GetWebhook(const GetWebhookRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetWebhook);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetWebhook, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WebhookIdHasBeenSet())
   {
@@ -565,6 +586,7 @@ GetWebhookOutcome AmplifyClient::GetWebhook(const GetWebhookRequest& request) co
 
 ListAppsOutcome AmplifyClient::ListApps(const ListAppsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListApps);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListApps, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListApps, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -574,6 +596,7 @@ ListAppsOutcome AmplifyClient::ListApps(const ListAppsRequest& request) const
 
 ListArtifactsOutcome AmplifyClient::ListArtifacts(const ListArtifactsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListArtifacts);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListArtifacts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -604,6 +627,7 @@ ListArtifactsOutcome AmplifyClient::ListArtifacts(const ListArtifactsRequest& re
 
 ListBackendEnvironmentsOutcome AmplifyClient::ListBackendEnvironments(const ListBackendEnvironmentsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListBackendEnvironments);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListBackendEnvironments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -620,6 +644,7 @@ ListBackendEnvironmentsOutcome AmplifyClient::ListBackendEnvironments(const List
 
 ListBranchesOutcome AmplifyClient::ListBranches(const ListBranchesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListBranches);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListBranches, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -636,6 +661,7 @@ ListBranchesOutcome AmplifyClient::ListBranches(const ListBranchesRequest& reque
 
 ListDomainAssociationsOutcome AmplifyClient::ListDomainAssociations(const ListDomainAssociationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDomainAssociations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDomainAssociations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -652,6 +678,7 @@ ListDomainAssociationsOutcome AmplifyClient::ListDomainAssociations(const ListDo
 
 ListJobsOutcome AmplifyClient::ListJobs(const ListJobsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListJobs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -675,6 +702,7 @@ ListJobsOutcome AmplifyClient::ListJobs(const ListJobsRequest& request) const
 
 ListTagsForResourceOutcome AmplifyClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -690,6 +718,7 @@ ListTagsForResourceOutcome AmplifyClient::ListTagsForResource(const ListTagsForR
 
 ListWebhooksOutcome AmplifyClient::ListWebhooks(const ListWebhooksRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListWebhooks);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListWebhooks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -706,6 +735,7 @@ ListWebhooksOutcome AmplifyClient::ListWebhooks(const ListWebhooksRequest& reque
 
 StartDeploymentOutcome AmplifyClient::StartDeployment(const StartDeploymentRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartDeployment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartDeployment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -729,6 +759,7 @@ StartDeploymentOutcome AmplifyClient::StartDeployment(const StartDeploymentReque
 
 StartJobOutcome AmplifyClient::StartJob(const StartJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -752,6 +783,7 @@ StartJobOutcome AmplifyClient::StartJob(const StartJobRequest& request) const
 
 StopJobOutcome AmplifyClient::StopJob(const StopJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(StopJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -782,6 +814,7 @@ StopJobOutcome AmplifyClient::StopJob(const StopJobRequest& request) const
 
 TagResourceOutcome AmplifyClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -797,6 +830,7 @@ TagResourceOutcome AmplifyClient::TagResource(const TagResourceRequest& request)
 
 UntagResourceOutcome AmplifyClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -817,6 +851,7 @@ UntagResourceOutcome AmplifyClient::UntagResource(const UntagResourceRequest& re
 
 UpdateAppOutcome AmplifyClient::UpdateApp(const UpdateAppRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateApp);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateApp, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -832,6 +867,7 @@ UpdateAppOutcome AmplifyClient::UpdateApp(const UpdateAppRequest& request) const
 
 UpdateBranchOutcome AmplifyClient::UpdateBranch(const UpdateBranchRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateBranch);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateBranch, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -854,6 +890,7 @@ UpdateBranchOutcome AmplifyClient::UpdateBranch(const UpdateBranchRequest& reque
 
 UpdateDomainAssociationOutcome AmplifyClient::UpdateDomainAssociation(const UpdateDomainAssociationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateDomainAssociation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDomainAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -876,6 +913,7 @@ UpdateDomainAssociationOutcome AmplifyClient::UpdateDomainAssociation(const Upda
 
 UpdateWebhookOutcome AmplifyClient::UpdateWebhook(const UpdateWebhookRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateWebhook);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateWebhook, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WebhookIdHasBeenSet())
   {

@@ -167,6 +167,7 @@ AppMeshClient::AppMeshClient(const std::shared_ptr<AWSCredentialsProvider>& cred
     /* End of legacy constructors due deprecation */
 AppMeshClient::~AppMeshClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<AppMeshEndpointProviderBase>& AppMeshClient::accessEndpointProvider()
@@ -189,6 +190,7 @@ void AppMeshClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CreateGatewayRouteOutcome AppMeshClient::CreateGatewayRoute(const CreateGatewayRouteRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateGatewayRoute);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateGatewayRoute, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeshNameHasBeenSet())
   {
@@ -212,6 +214,7 @@ CreateGatewayRouteOutcome AppMeshClient::CreateGatewayRoute(const CreateGatewayR
 
 CreateMeshOutcome AppMeshClient::CreateMesh(const CreateMeshRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateMesh);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateMesh, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateMesh, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -221,6 +224,7 @@ CreateMeshOutcome AppMeshClient::CreateMesh(const CreateMeshRequest& request) co
 
 CreateRouteOutcome AppMeshClient::CreateRoute(const CreateRouteRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateRoute);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateRoute, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeshNameHasBeenSet())
   {
@@ -244,6 +248,7 @@ CreateRouteOutcome AppMeshClient::CreateRoute(const CreateRouteRequest& request)
 
 CreateVirtualGatewayOutcome AppMeshClient::CreateVirtualGateway(const CreateVirtualGatewayRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateVirtualGateway);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateVirtualGateway, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeshNameHasBeenSet())
   {
@@ -260,6 +265,7 @@ CreateVirtualGatewayOutcome AppMeshClient::CreateVirtualGateway(const CreateVirt
 
 CreateVirtualNodeOutcome AppMeshClient::CreateVirtualNode(const CreateVirtualNodeRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateVirtualNode);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateVirtualNode, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeshNameHasBeenSet())
   {
@@ -276,6 +282,7 @@ CreateVirtualNodeOutcome AppMeshClient::CreateVirtualNode(const CreateVirtualNod
 
 CreateVirtualRouterOutcome AppMeshClient::CreateVirtualRouter(const CreateVirtualRouterRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateVirtualRouter);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateVirtualRouter, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeshNameHasBeenSet())
   {
@@ -292,6 +299,7 @@ CreateVirtualRouterOutcome AppMeshClient::CreateVirtualRouter(const CreateVirtua
 
 CreateVirtualServiceOutcome AppMeshClient::CreateVirtualService(const CreateVirtualServiceRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateVirtualService);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateVirtualService, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeshNameHasBeenSet())
   {
@@ -308,6 +316,7 @@ CreateVirtualServiceOutcome AppMeshClient::CreateVirtualService(const CreateVirt
 
 DeleteGatewayRouteOutcome AppMeshClient::DeleteGatewayRoute(const DeleteGatewayRouteRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteGatewayRoute);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteGatewayRoute, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GatewayRouteNameHasBeenSet())
   {
@@ -337,6 +346,7 @@ DeleteGatewayRouteOutcome AppMeshClient::DeleteGatewayRoute(const DeleteGatewayR
 
 DeleteMeshOutcome AppMeshClient::DeleteMesh(const DeleteMeshRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteMesh);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteMesh, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeshNameHasBeenSet())
   {
@@ -352,6 +362,7 @@ DeleteMeshOutcome AppMeshClient::DeleteMesh(const DeleteMeshRequest& request) co
 
 DeleteRouteOutcome AppMeshClient::DeleteRoute(const DeleteRouteRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteRoute);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteRoute, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeshNameHasBeenSet())
   {
@@ -381,6 +392,7 @@ DeleteRouteOutcome AppMeshClient::DeleteRoute(const DeleteRouteRequest& request)
 
 DeleteVirtualGatewayOutcome AppMeshClient::DeleteVirtualGateway(const DeleteVirtualGatewayRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteVirtualGateway);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteVirtualGateway, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeshNameHasBeenSet())
   {
@@ -403,6 +415,7 @@ DeleteVirtualGatewayOutcome AppMeshClient::DeleteVirtualGateway(const DeleteVirt
 
 DeleteVirtualNodeOutcome AppMeshClient::DeleteVirtualNode(const DeleteVirtualNodeRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteVirtualNode);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteVirtualNode, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeshNameHasBeenSet())
   {
@@ -425,6 +438,7 @@ DeleteVirtualNodeOutcome AppMeshClient::DeleteVirtualNode(const DeleteVirtualNod
 
 DeleteVirtualRouterOutcome AppMeshClient::DeleteVirtualRouter(const DeleteVirtualRouterRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteVirtualRouter);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteVirtualRouter, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeshNameHasBeenSet())
   {
@@ -447,6 +461,7 @@ DeleteVirtualRouterOutcome AppMeshClient::DeleteVirtualRouter(const DeleteVirtua
 
 DeleteVirtualServiceOutcome AppMeshClient::DeleteVirtualService(const DeleteVirtualServiceRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteVirtualService);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteVirtualService, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeshNameHasBeenSet())
   {
@@ -469,6 +484,7 @@ DeleteVirtualServiceOutcome AppMeshClient::DeleteVirtualService(const DeleteVirt
 
 DescribeGatewayRouteOutcome AppMeshClient::DescribeGatewayRoute(const DescribeGatewayRouteRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeGatewayRoute);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeGatewayRoute, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GatewayRouteNameHasBeenSet())
   {
@@ -498,6 +514,7 @@ DescribeGatewayRouteOutcome AppMeshClient::DescribeGatewayRoute(const DescribeGa
 
 DescribeMeshOutcome AppMeshClient::DescribeMesh(const DescribeMeshRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeMesh);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeMesh, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeshNameHasBeenSet())
   {
@@ -513,6 +530,7 @@ DescribeMeshOutcome AppMeshClient::DescribeMesh(const DescribeMeshRequest& reque
 
 DescribeRouteOutcome AppMeshClient::DescribeRoute(const DescribeRouteRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeRoute);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeRoute, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeshNameHasBeenSet())
   {
@@ -542,6 +560,7 @@ DescribeRouteOutcome AppMeshClient::DescribeRoute(const DescribeRouteRequest& re
 
 DescribeVirtualGatewayOutcome AppMeshClient::DescribeVirtualGateway(const DescribeVirtualGatewayRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeVirtualGateway);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeVirtualGateway, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeshNameHasBeenSet())
   {
@@ -564,6 +583,7 @@ DescribeVirtualGatewayOutcome AppMeshClient::DescribeVirtualGateway(const Descri
 
 DescribeVirtualNodeOutcome AppMeshClient::DescribeVirtualNode(const DescribeVirtualNodeRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeVirtualNode);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeVirtualNode, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeshNameHasBeenSet())
   {
@@ -586,6 +606,7 @@ DescribeVirtualNodeOutcome AppMeshClient::DescribeVirtualNode(const DescribeVirt
 
 DescribeVirtualRouterOutcome AppMeshClient::DescribeVirtualRouter(const DescribeVirtualRouterRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeVirtualRouter);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeVirtualRouter, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeshNameHasBeenSet())
   {
@@ -608,6 +629,7 @@ DescribeVirtualRouterOutcome AppMeshClient::DescribeVirtualRouter(const Describe
 
 DescribeVirtualServiceOutcome AppMeshClient::DescribeVirtualService(const DescribeVirtualServiceRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeVirtualService);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeVirtualService, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeshNameHasBeenSet())
   {
@@ -630,6 +652,7 @@ DescribeVirtualServiceOutcome AppMeshClient::DescribeVirtualService(const Descri
 
 ListGatewayRoutesOutcome AppMeshClient::ListGatewayRoutes(const ListGatewayRoutesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListGatewayRoutes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListGatewayRoutes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeshNameHasBeenSet())
   {
@@ -653,6 +676,7 @@ ListGatewayRoutesOutcome AppMeshClient::ListGatewayRoutes(const ListGatewayRoute
 
 ListMeshesOutcome AppMeshClient::ListMeshes(const ListMeshesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListMeshes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListMeshes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListMeshes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -662,6 +686,7 @@ ListMeshesOutcome AppMeshClient::ListMeshes(const ListMeshesRequest& request) co
 
 ListRoutesOutcome AppMeshClient::ListRoutes(const ListRoutesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListRoutes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRoutes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeshNameHasBeenSet())
   {
@@ -685,6 +710,7 @@ ListRoutesOutcome AppMeshClient::ListRoutes(const ListRoutesRequest& request) co
 
 ListTagsForResourceOutcome AppMeshClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -699,6 +725,7 @@ ListTagsForResourceOutcome AppMeshClient::ListTagsForResource(const ListTagsForR
 
 ListVirtualGatewaysOutcome AppMeshClient::ListVirtualGateways(const ListVirtualGatewaysRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListVirtualGateways);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListVirtualGateways, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeshNameHasBeenSet())
   {
@@ -715,6 +742,7 @@ ListVirtualGatewaysOutcome AppMeshClient::ListVirtualGateways(const ListVirtualG
 
 ListVirtualNodesOutcome AppMeshClient::ListVirtualNodes(const ListVirtualNodesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListVirtualNodes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListVirtualNodes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeshNameHasBeenSet())
   {
@@ -731,6 +759,7 @@ ListVirtualNodesOutcome AppMeshClient::ListVirtualNodes(const ListVirtualNodesRe
 
 ListVirtualRoutersOutcome AppMeshClient::ListVirtualRouters(const ListVirtualRoutersRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListVirtualRouters);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListVirtualRouters, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeshNameHasBeenSet())
   {
@@ -747,6 +776,7 @@ ListVirtualRoutersOutcome AppMeshClient::ListVirtualRouters(const ListVirtualRou
 
 ListVirtualServicesOutcome AppMeshClient::ListVirtualServices(const ListVirtualServicesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListVirtualServices);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListVirtualServices, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeshNameHasBeenSet())
   {
@@ -763,6 +793,7 @@ ListVirtualServicesOutcome AppMeshClient::ListVirtualServices(const ListVirtualS
 
 TagResourceOutcome AppMeshClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -777,6 +808,7 @@ TagResourceOutcome AppMeshClient::TagResource(const TagResourceRequest& request)
 
 UntagResourceOutcome AppMeshClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -791,6 +823,7 @@ UntagResourceOutcome AppMeshClient::UntagResource(const UntagResourceRequest& re
 
 UpdateGatewayRouteOutcome AppMeshClient::UpdateGatewayRoute(const UpdateGatewayRouteRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateGatewayRoute);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateGatewayRoute, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GatewayRouteNameHasBeenSet())
   {
@@ -820,6 +853,7 @@ UpdateGatewayRouteOutcome AppMeshClient::UpdateGatewayRoute(const UpdateGatewayR
 
 UpdateMeshOutcome AppMeshClient::UpdateMesh(const UpdateMeshRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateMesh);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateMesh, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeshNameHasBeenSet())
   {
@@ -835,6 +869,7 @@ UpdateMeshOutcome AppMeshClient::UpdateMesh(const UpdateMeshRequest& request) co
 
 UpdateRouteOutcome AppMeshClient::UpdateRoute(const UpdateRouteRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateRoute);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateRoute, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeshNameHasBeenSet())
   {
@@ -864,6 +899,7 @@ UpdateRouteOutcome AppMeshClient::UpdateRoute(const UpdateRouteRequest& request)
 
 UpdateVirtualGatewayOutcome AppMeshClient::UpdateVirtualGateway(const UpdateVirtualGatewayRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateVirtualGateway);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateVirtualGateway, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeshNameHasBeenSet())
   {
@@ -886,6 +922,7 @@ UpdateVirtualGatewayOutcome AppMeshClient::UpdateVirtualGateway(const UpdateVirt
 
 UpdateVirtualNodeOutcome AppMeshClient::UpdateVirtualNode(const UpdateVirtualNodeRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateVirtualNode);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateVirtualNode, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeshNameHasBeenSet())
   {
@@ -908,6 +945,7 @@ UpdateVirtualNodeOutcome AppMeshClient::UpdateVirtualNode(const UpdateVirtualNod
 
 UpdateVirtualRouterOutcome AppMeshClient::UpdateVirtualRouter(const UpdateVirtualRouterRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateVirtualRouter);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateVirtualRouter, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeshNameHasBeenSet())
   {
@@ -930,6 +968,7 @@ UpdateVirtualRouterOutcome AppMeshClient::UpdateVirtualRouter(const UpdateVirtua
 
 UpdateVirtualServiceOutcome AppMeshClient::UpdateVirtualService(const UpdateVirtualServiceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateVirtualService);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateVirtualService, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MeshNameHasBeenSet())
   {

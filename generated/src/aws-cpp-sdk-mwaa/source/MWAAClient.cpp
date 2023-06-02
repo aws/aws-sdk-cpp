@@ -140,6 +140,7 @@ MWAAClient::MWAAClient(const std::shared_ptr<AWSCredentialsProvider>& credential
     /* End of legacy constructors due deprecation */
 MWAAClient::~MWAAClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<MWAAEndpointProviderBase>& MWAAClient::accessEndpointProvider()
@@ -162,6 +163,7 @@ void MWAAClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CreateCliTokenOutcome MWAAClient::CreateCliToken(const CreateCliTokenRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateCliToken);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateCliToken, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -179,6 +181,7 @@ CreateCliTokenOutcome MWAAClient::CreateCliToken(const CreateCliTokenRequest& re
 
 CreateEnvironmentOutcome MWAAClient::CreateEnvironment(const CreateEnvironmentRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateEnvironment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateEnvironment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -196,6 +199,7 @@ CreateEnvironmentOutcome MWAAClient::CreateEnvironment(const CreateEnvironmentRe
 
 CreateWebLoginTokenOutcome MWAAClient::CreateWebLoginToken(const CreateWebLoginTokenRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateWebLoginToken);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateWebLoginToken, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -213,6 +217,7 @@ CreateWebLoginTokenOutcome MWAAClient::CreateWebLoginToken(const CreateWebLoginT
 
 DeleteEnvironmentOutcome MWAAClient::DeleteEnvironment(const DeleteEnvironmentRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteEnvironment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteEnvironment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -230,6 +235,7 @@ DeleteEnvironmentOutcome MWAAClient::DeleteEnvironment(const DeleteEnvironmentRe
 
 GetEnvironmentOutcome MWAAClient::GetEnvironment(const GetEnvironmentRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetEnvironment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetEnvironment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -247,6 +253,7 @@ GetEnvironmentOutcome MWAAClient::GetEnvironment(const GetEnvironmentRequest& re
 
 ListEnvironmentsOutcome MWAAClient::ListEnvironments(const ListEnvironmentsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListEnvironments);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListEnvironments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListEnvironments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -258,6 +265,7 @@ ListEnvironmentsOutcome MWAAClient::ListEnvironments(const ListEnvironmentsReque
 
 ListTagsForResourceOutcome MWAAClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -275,6 +283,7 @@ ListTagsForResourceOutcome MWAAClient::ListTagsForResource(const ListTagsForReso
 
 PublishMetricsOutcome MWAAClient::PublishMetrics(const PublishMetricsRequest& request) const
 {
+  AWS_OPERATION_GUARD(PublishMetrics);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PublishMetrics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.EnvironmentNameHasBeenSet())
   {
@@ -292,6 +301,7 @@ PublishMetricsOutcome MWAAClient::PublishMetrics(const PublishMetricsRequest& re
 
 TagResourceOutcome MWAAClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -309,6 +319,7 @@ TagResourceOutcome MWAAClient::TagResource(const TagResourceRequest& request) co
 
 UntagResourceOutcome MWAAClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -331,6 +342,7 @@ UntagResourceOutcome MWAAClient::UntagResource(const UntagResourceRequest& reque
 
 UpdateEnvironmentOutcome MWAAClient::UpdateEnvironment(const UpdateEnvironmentRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateEnvironment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateEnvironment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {

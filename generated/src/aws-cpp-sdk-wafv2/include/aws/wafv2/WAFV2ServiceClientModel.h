@@ -32,6 +32,8 @@
 #include <aws/wafv2/model/DeleteRegexPatternSetResult.h>
 #include <aws/wafv2/model/DeleteRuleGroupResult.h>
 #include <aws/wafv2/model/DeleteWebACLResult.h>
+#include <aws/wafv2/model/DescribeAllManagedProductsResult.h>
+#include <aws/wafv2/model/DescribeManagedProductsByVendorResult.h>
 #include <aws/wafv2/model/DescribeManagedRuleGroupResult.h>
 #include <aws/wafv2/model/DisassociateWebACLResult.h>
 #include <aws/wafv2/model/GenerateMobileSdkReleaseUrlResult.h>
@@ -123,6 +125,8 @@ namespace Aws
       class DeleteRegexPatternSetRequest;
       class DeleteRuleGroupRequest;
       class DeleteWebACLRequest;
+      class DescribeAllManagedProductsRequest;
+      class DescribeManagedProductsByVendorRequest;
       class DescribeManagedRuleGroupRequest;
       class DisassociateWebACLRequest;
       class GenerateMobileSdkReleaseUrlRequest;
@@ -177,6 +181,8 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeleteRegexPatternSetResult, WAFV2Error> DeleteRegexPatternSetOutcome;
       typedef Aws::Utils::Outcome<DeleteRuleGroupResult, WAFV2Error> DeleteRuleGroupOutcome;
       typedef Aws::Utils::Outcome<DeleteWebACLResult, WAFV2Error> DeleteWebACLOutcome;
+      typedef Aws::Utils::Outcome<DescribeAllManagedProductsResult, WAFV2Error> DescribeAllManagedProductsOutcome;
+      typedef Aws::Utils::Outcome<DescribeManagedProductsByVendorResult, WAFV2Error> DescribeManagedProductsByVendorOutcome;
       typedef Aws::Utils::Outcome<DescribeManagedRuleGroupResult, WAFV2Error> DescribeManagedRuleGroupOutcome;
       typedef Aws::Utils::Outcome<DisassociateWebACLResult, WAFV2Error> DisassociateWebACLOutcome;
       typedef Aws::Utils::Outcome<GenerateMobileSdkReleaseUrlResult, WAFV2Error> GenerateMobileSdkReleaseUrlOutcome;
@@ -231,6 +237,8 @@ namespace Aws
       typedef std::future<DeleteRegexPatternSetOutcome> DeleteRegexPatternSetOutcomeCallable;
       typedef std::future<DeleteRuleGroupOutcome> DeleteRuleGroupOutcomeCallable;
       typedef std::future<DeleteWebACLOutcome> DeleteWebACLOutcomeCallable;
+      typedef std::future<DescribeAllManagedProductsOutcome> DescribeAllManagedProductsOutcomeCallable;
+      typedef std::future<DescribeManagedProductsByVendorOutcome> DescribeManagedProductsByVendorOutcomeCallable;
       typedef std::future<DescribeManagedRuleGroupOutcome> DescribeManagedRuleGroupOutcomeCallable;
       typedef std::future<DisassociateWebACLOutcome> DisassociateWebACLOutcomeCallable;
       typedef std::future<GenerateMobileSdkReleaseUrlOutcome> GenerateMobileSdkReleaseUrlOutcomeCallable;
@@ -288,6 +296,8 @@ namespace Aws
     typedef std::function<void(const WAFV2Client*, const Model::DeleteRegexPatternSetRequest&, const Model::DeleteRegexPatternSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRegexPatternSetResponseReceivedHandler;
     typedef std::function<void(const WAFV2Client*, const Model::DeleteRuleGroupRequest&, const Model::DeleteRuleGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRuleGroupResponseReceivedHandler;
     typedef std::function<void(const WAFV2Client*, const Model::DeleteWebACLRequest&, const Model::DeleteWebACLOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteWebACLResponseReceivedHandler;
+    typedef std::function<void(const WAFV2Client*, const Model::DescribeAllManagedProductsRequest&, const Model::DescribeAllManagedProductsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAllManagedProductsResponseReceivedHandler;
+    typedef std::function<void(const WAFV2Client*, const Model::DescribeManagedProductsByVendorRequest&, const Model::DescribeManagedProductsByVendorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeManagedProductsByVendorResponseReceivedHandler;
     typedef std::function<void(const WAFV2Client*, const Model::DescribeManagedRuleGroupRequest&, const Model::DescribeManagedRuleGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeManagedRuleGroupResponseReceivedHandler;
     typedef std::function<void(const WAFV2Client*, const Model::DisassociateWebACLRequest&, const Model::DisassociateWebACLOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateWebACLResponseReceivedHandler;
     typedef std::function<void(const WAFV2Client*, const Model::GenerateMobileSdkReleaseUrlRequest&, const Model::GenerateMobileSdkReleaseUrlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GenerateMobileSdkReleaseUrlResponseReceivedHandler;

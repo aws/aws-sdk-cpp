@@ -156,6 +156,7 @@ EFSClient::EFSClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
     /* End of legacy constructors due deprecation */
 EFSClient::~EFSClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<EFSEndpointProviderBase>& EFSClient::accessEndpointProvider()
@@ -178,6 +179,7 @@ void EFSClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CreateAccessPointOutcome EFSClient::CreateAccessPoint(const CreateAccessPointRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateAccessPoint);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAccessPoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateAccessPoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -187,6 +189,7 @@ CreateAccessPointOutcome EFSClient::CreateAccessPoint(const CreateAccessPointReq
 
 CreateFileSystemOutcome EFSClient::CreateFileSystem(const CreateFileSystemRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateFileSystem);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateFileSystem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateFileSystem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -196,6 +199,7 @@ CreateFileSystemOutcome EFSClient::CreateFileSystem(const CreateFileSystemReques
 
 CreateMountTargetOutcome EFSClient::CreateMountTarget(const CreateMountTargetRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateMountTarget);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateMountTarget, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateMountTarget, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -205,6 +209,7 @@ CreateMountTargetOutcome EFSClient::CreateMountTarget(const CreateMountTargetReq
 
 CreateReplicationConfigurationOutcome EFSClient::CreateReplicationConfiguration(const CreateReplicationConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateReplicationConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateReplicationConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SourceFileSystemIdHasBeenSet())
   {
@@ -221,6 +226,7 @@ CreateReplicationConfigurationOutcome EFSClient::CreateReplicationConfiguration(
 
 DeleteAccessPointOutcome EFSClient::DeleteAccessPoint(const DeleteAccessPointRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteAccessPoint);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAccessPoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccessPointIdHasBeenSet())
   {
@@ -236,6 +242,7 @@ DeleteAccessPointOutcome EFSClient::DeleteAccessPoint(const DeleteAccessPointReq
 
 DeleteFileSystemOutcome EFSClient::DeleteFileSystem(const DeleteFileSystemRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteFileSystem);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteFileSystem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FileSystemIdHasBeenSet())
   {
@@ -251,6 +258,7 @@ DeleteFileSystemOutcome EFSClient::DeleteFileSystem(const DeleteFileSystemReques
 
 DeleteFileSystemPolicyOutcome EFSClient::DeleteFileSystemPolicy(const DeleteFileSystemPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteFileSystemPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteFileSystemPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FileSystemIdHasBeenSet())
   {
@@ -267,6 +275,7 @@ DeleteFileSystemPolicyOutcome EFSClient::DeleteFileSystemPolicy(const DeleteFile
 
 DeleteMountTargetOutcome EFSClient::DeleteMountTarget(const DeleteMountTargetRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteMountTarget);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteMountTarget, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MountTargetIdHasBeenSet())
   {
@@ -282,6 +291,7 @@ DeleteMountTargetOutcome EFSClient::DeleteMountTarget(const DeleteMountTargetReq
 
 DeleteReplicationConfigurationOutcome EFSClient::DeleteReplicationConfiguration(const DeleteReplicationConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteReplicationConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteReplicationConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SourceFileSystemIdHasBeenSet())
   {
@@ -298,6 +308,7 @@ DeleteReplicationConfigurationOutcome EFSClient::DeleteReplicationConfiguration(
 
 DescribeAccessPointsOutcome EFSClient::DescribeAccessPoints(const DescribeAccessPointsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeAccessPoints);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAccessPoints, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeAccessPoints, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -307,6 +318,7 @@ DescribeAccessPointsOutcome EFSClient::DescribeAccessPoints(const DescribeAccess
 
 DescribeAccountPreferencesOutcome EFSClient::DescribeAccountPreferences(const DescribeAccountPreferencesRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeAccountPreferences);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAccountPreferences, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeAccountPreferences, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -316,6 +328,7 @@ DescribeAccountPreferencesOutcome EFSClient::DescribeAccountPreferences(const De
 
 DescribeBackupPolicyOutcome EFSClient::DescribeBackupPolicy(const DescribeBackupPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeBackupPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeBackupPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FileSystemIdHasBeenSet())
   {
@@ -332,6 +345,7 @@ DescribeBackupPolicyOutcome EFSClient::DescribeBackupPolicy(const DescribeBackup
 
 DescribeFileSystemPolicyOutcome EFSClient::DescribeFileSystemPolicy(const DescribeFileSystemPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeFileSystemPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeFileSystemPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FileSystemIdHasBeenSet())
   {
@@ -348,6 +362,7 @@ DescribeFileSystemPolicyOutcome EFSClient::DescribeFileSystemPolicy(const Descri
 
 DescribeFileSystemsOutcome EFSClient::DescribeFileSystems(const DescribeFileSystemsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeFileSystems);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeFileSystems, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeFileSystems, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -357,6 +372,7 @@ DescribeFileSystemsOutcome EFSClient::DescribeFileSystems(const DescribeFileSyst
 
 DescribeLifecycleConfigurationOutcome EFSClient::DescribeLifecycleConfiguration(const DescribeLifecycleConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeLifecycleConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeLifecycleConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FileSystemIdHasBeenSet())
   {
@@ -373,6 +389,7 @@ DescribeLifecycleConfigurationOutcome EFSClient::DescribeLifecycleConfiguration(
 
 DescribeMountTargetSecurityGroupsOutcome EFSClient::DescribeMountTargetSecurityGroups(const DescribeMountTargetSecurityGroupsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeMountTargetSecurityGroups);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeMountTargetSecurityGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MountTargetIdHasBeenSet())
   {
@@ -389,6 +406,7 @@ DescribeMountTargetSecurityGroupsOutcome EFSClient::DescribeMountTargetSecurityG
 
 DescribeMountTargetsOutcome EFSClient::DescribeMountTargets(const DescribeMountTargetsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeMountTargets);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeMountTargets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeMountTargets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -398,6 +416,7 @@ DescribeMountTargetsOutcome EFSClient::DescribeMountTargets(const DescribeMountT
 
 DescribeReplicationConfigurationsOutcome EFSClient::DescribeReplicationConfigurations(const DescribeReplicationConfigurationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeReplicationConfigurations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeReplicationConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeReplicationConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -407,6 +426,7 @@ DescribeReplicationConfigurationsOutcome EFSClient::DescribeReplicationConfigura
 
 ListTagsForResourceOutcome EFSClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceIdHasBeenSet())
   {
@@ -422,6 +442,7 @@ ListTagsForResourceOutcome EFSClient::ListTagsForResource(const ListTagsForResou
 
 ModifyMountTargetSecurityGroupsOutcome EFSClient::ModifyMountTargetSecurityGroups(const ModifyMountTargetSecurityGroupsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ModifyMountTargetSecurityGroups);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ModifyMountTargetSecurityGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MountTargetIdHasBeenSet())
   {
@@ -438,6 +459,7 @@ ModifyMountTargetSecurityGroupsOutcome EFSClient::ModifyMountTargetSecurityGroup
 
 PutAccountPreferencesOutcome EFSClient::PutAccountPreferences(const PutAccountPreferencesRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutAccountPreferences);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutAccountPreferences, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutAccountPreferences, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -447,6 +469,7 @@ PutAccountPreferencesOutcome EFSClient::PutAccountPreferences(const PutAccountPr
 
 PutBackupPolicyOutcome EFSClient::PutBackupPolicy(const PutBackupPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutBackupPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutBackupPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FileSystemIdHasBeenSet())
   {
@@ -463,6 +486,7 @@ PutBackupPolicyOutcome EFSClient::PutBackupPolicy(const PutBackupPolicyRequest& 
 
 PutFileSystemPolicyOutcome EFSClient::PutFileSystemPolicy(const PutFileSystemPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutFileSystemPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutFileSystemPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FileSystemIdHasBeenSet())
   {
@@ -479,6 +503,7 @@ PutFileSystemPolicyOutcome EFSClient::PutFileSystemPolicy(const PutFileSystemPol
 
 PutLifecycleConfigurationOutcome EFSClient::PutLifecycleConfiguration(const PutLifecycleConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutLifecycleConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutLifecycleConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FileSystemIdHasBeenSet())
   {
@@ -495,6 +520,7 @@ PutLifecycleConfigurationOutcome EFSClient::PutLifecycleConfiguration(const PutL
 
 TagResourceOutcome EFSClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceIdHasBeenSet())
   {
@@ -510,6 +536,7 @@ TagResourceOutcome EFSClient::TagResource(const TagResourceRequest& request) con
 
 UntagResourceOutcome EFSClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceIdHasBeenSet())
   {
@@ -530,6 +557,7 @@ UntagResourceOutcome EFSClient::UntagResource(const UntagResourceRequest& reques
 
 UpdateFileSystemOutcome EFSClient::UpdateFileSystem(const UpdateFileSystemRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateFileSystem);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateFileSystem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FileSystemIdHasBeenSet())
   {

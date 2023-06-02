@@ -36,43 +36,43 @@ namespace Model
 
     /**
      * <p>Contains information about event data stores in the account, in the current
-     * region.</p>
+     * Region.</p>
      */
     inline const Aws::Vector<EventDataStore>& GetEventDataStores() const{ return m_eventDataStores; }
 
     /**
      * <p>Contains information about event data stores in the account, in the current
-     * region.</p>
+     * Region.</p>
      */
     inline void SetEventDataStores(const Aws::Vector<EventDataStore>& value) { m_eventDataStores = value; }
 
     /**
      * <p>Contains information about event data stores in the account, in the current
-     * region.</p>
+     * Region.</p>
      */
     inline void SetEventDataStores(Aws::Vector<EventDataStore>&& value) { m_eventDataStores = std::move(value); }
 
     /**
      * <p>Contains information about event data stores in the account, in the current
-     * region.</p>
+     * Region.</p>
      */
     inline ListEventDataStoresResult& WithEventDataStores(const Aws::Vector<EventDataStore>& value) { SetEventDataStores(value); return *this;}
 
     /**
      * <p>Contains information about event data stores in the account, in the current
-     * region.</p>
+     * Region.</p>
      */
     inline ListEventDataStoresResult& WithEventDataStores(Aws::Vector<EventDataStore>&& value) { SetEventDataStores(std::move(value)); return *this;}
 
     /**
      * <p>Contains information about event data stores in the account, in the current
-     * region.</p>
+     * Region.</p>
      */
     inline ListEventDataStoresResult& AddEventDataStores(const EventDataStore& value) { m_eventDataStores.push_back(value); return *this; }
 
     /**
      * <p>Contains information about event data stores in the account, in the current
-     * region.</p>
+     * Region.</p>
      */
     inline ListEventDataStoresResult& AddEventDataStores(EventDataStore&& value) { m_eventDataStores.push_back(std::move(value)); return *this; }
 

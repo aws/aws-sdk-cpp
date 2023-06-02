@@ -163,6 +163,7 @@ IoTAnalyticsClient::IoTAnalyticsClient(const std::shared_ptr<AWSCredentialsProvi
     /* End of legacy constructors due deprecation */
 IoTAnalyticsClient::~IoTAnalyticsClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<IoTAnalyticsEndpointProviderBase>& IoTAnalyticsClient::accessEndpointProvider()
@@ -185,6 +186,7 @@ void IoTAnalyticsClient::OverrideEndpoint(const Aws::String& endpoint)
 
 BatchPutMessageOutcome IoTAnalyticsClient::BatchPutMessage(const BatchPutMessageRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchPutMessage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchPutMessage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchPutMessage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -194,6 +196,7 @@ BatchPutMessageOutcome IoTAnalyticsClient::BatchPutMessage(const BatchPutMessage
 
 CancelPipelineReprocessingOutcome IoTAnalyticsClient::CancelPipelineReprocessing(const CancelPipelineReprocessingRequest& request) const
 {
+  AWS_OPERATION_GUARD(CancelPipelineReprocessing);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CancelPipelineReprocessing, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PipelineNameHasBeenSet())
   {
@@ -216,6 +219,7 @@ CancelPipelineReprocessingOutcome IoTAnalyticsClient::CancelPipelineReprocessing
 
 CreateChannelOutcome IoTAnalyticsClient::CreateChannel(const CreateChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -225,6 +229,7 @@ CreateChannelOutcome IoTAnalyticsClient::CreateChannel(const CreateChannelReques
 
 CreateDatasetOutcome IoTAnalyticsClient::CreateDataset(const CreateDatasetRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateDataset);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDataset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateDataset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -234,6 +239,7 @@ CreateDatasetOutcome IoTAnalyticsClient::CreateDataset(const CreateDatasetReques
 
 CreateDatasetContentOutcome IoTAnalyticsClient::CreateDatasetContent(const CreateDatasetContentRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateDatasetContent);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDatasetContent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DatasetNameHasBeenSet())
   {
@@ -250,6 +256,7 @@ CreateDatasetContentOutcome IoTAnalyticsClient::CreateDatasetContent(const Creat
 
 CreateDatastoreOutcome IoTAnalyticsClient::CreateDatastore(const CreateDatastoreRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateDatastore);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDatastore, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateDatastore, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -259,6 +266,7 @@ CreateDatastoreOutcome IoTAnalyticsClient::CreateDatastore(const CreateDatastore
 
 CreatePipelineOutcome IoTAnalyticsClient::CreatePipeline(const CreatePipelineRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreatePipeline);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreatePipeline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreatePipeline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -268,6 +276,7 @@ CreatePipelineOutcome IoTAnalyticsClient::CreatePipeline(const CreatePipelineReq
 
 DeleteChannelOutcome IoTAnalyticsClient::DeleteChannel(const DeleteChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelNameHasBeenSet())
   {
@@ -283,6 +292,7 @@ DeleteChannelOutcome IoTAnalyticsClient::DeleteChannel(const DeleteChannelReques
 
 DeleteDatasetOutcome IoTAnalyticsClient::DeleteDataset(const DeleteDatasetRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteDataset);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDataset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DatasetNameHasBeenSet())
   {
@@ -298,6 +308,7 @@ DeleteDatasetOutcome IoTAnalyticsClient::DeleteDataset(const DeleteDatasetReques
 
 DeleteDatasetContentOutcome IoTAnalyticsClient::DeleteDatasetContent(const DeleteDatasetContentRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteDatasetContent);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDatasetContent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DatasetNameHasBeenSet())
   {
@@ -314,6 +325,7 @@ DeleteDatasetContentOutcome IoTAnalyticsClient::DeleteDatasetContent(const Delet
 
 DeleteDatastoreOutcome IoTAnalyticsClient::DeleteDatastore(const DeleteDatastoreRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteDatastore);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDatastore, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DatastoreNameHasBeenSet())
   {
@@ -329,6 +341,7 @@ DeleteDatastoreOutcome IoTAnalyticsClient::DeleteDatastore(const DeleteDatastore
 
 DeletePipelineOutcome IoTAnalyticsClient::DeletePipeline(const DeletePipelineRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeletePipeline);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeletePipeline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PipelineNameHasBeenSet())
   {
@@ -344,6 +357,7 @@ DeletePipelineOutcome IoTAnalyticsClient::DeletePipeline(const DeletePipelineReq
 
 DescribeChannelOutcome IoTAnalyticsClient::DescribeChannel(const DescribeChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelNameHasBeenSet())
   {
@@ -359,6 +373,7 @@ DescribeChannelOutcome IoTAnalyticsClient::DescribeChannel(const DescribeChannel
 
 DescribeDatasetOutcome IoTAnalyticsClient::DescribeDataset(const DescribeDatasetRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeDataset);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeDataset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DatasetNameHasBeenSet())
   {
@@ -374,6 +389,7 @@ DescribeDatasetOutcome IoTAnalyticsClient::DescribeDataset(const DescribeDataset
 
 DescribeDatastoreOutcome IoTAnalyticsClient::DescribeDatastore(const DescribeDatastoreRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeDatastore);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeDatastore, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DatastoreNameHasBeenSet())
   {
@@ -389,6 +405,7 @@ DescribeDatastoreOutcome IoTAnalyticsClient::DescribeDatastore(const DescribeDat
 
 DescribeLoggingOptionsOutcome IoTAnalyticsClient::DescribeLoggingOptions(const DescribeLoggingOptionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeLoggingOptions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeLoggingOptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeLoggingOptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -398,6 +415,7 @@ DescribeLoggingOptionsOutcome IoTAnalyticsClient::DescribeLoggingOptions(const D
 
 DescribePipelineOutcome IoTAnalyticsClient::DescribePipeline(const DescribePipelineRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribePipeline);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribePipeline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PipelineNameHasBeenSet())
   {
@@ -413,6 +431,7 @@ DescribePipelineOutcome IoTAnalyticsClient::DescribePipeline(const DescribePipel
 
 GetDatasetContentOutcome IoTAnalyticsClient::GetDatasetContent(const GetDatasetContentRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDatasetContent);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDatasetContent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DatasetNameHasBeenSet())
   {
@@ -429,6 +448,7 @@ GetDatasetContentOutcome IoTAnalyticsClient::GetDatasetContent(const GetDatasetC
 
 ListChannelsOutcome IoTAnalyticsClient::ListChannels(const ListChannelsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListChannels);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListChannels, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListChannels, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -438,6 +458,7 @@ ListChannelsOutcome IoTAnalyticsClient::ListChannels(const ListChannelsRequest& 
 
 ListDatasetContentsOutcome IoTAnalyticsClient::ListDatasetContents(const ListDatasetContentsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDatasetContents);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDatasetContents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DatasetNameHasBeenSet())
   {
@@ -454,6 +475,7 @@ ListDatasetContentsOutcome IoTAnalyticsClient::ListDatasetContents(const ListDat
 
 ListDatasetsOutcome IoTAnalyticsClient::ListDatasets(const ListDatasetsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDatasets);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDatasets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDatasets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -463,6 +485,7 @@ ListDatasetsOutcome IoTAnalyticsClient::ListDatasets(const ListDatasetsRequest& 
 
 ListDatastoresOutcome IoTAnalyticsClient::ListDatastores(const ListDatastoresRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDatastores);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDatastores, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDatastores, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -472,6 +495,7 @@ ListDatastoresOutcome IoTAnalyticsClient::ListDatastores(const ListDatastoresReq
 
 ListPipelinesOutcome IoTAnalyticsClient::ListPipelines(const ListPipelinesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListPipelines);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPipelines, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListPipelines, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -481,6 +505,7 @@ ListPipelinesOutcome IoTAnalyticsClient::ListPipelines(const ListPipelinesReques
 
 ListTagsForResourceOutcome IoTAnalyticsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -495,6 +520,7 @@ ListTagsForResourceOutcome IoTAnalyticsClient::ListTagsForResource(const ListTag
 
 PutLoggingOptionsOutcome IoTAnalyticsClient::PutLoggingOptions(const PutLoggingOptionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutLoggingOptions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutLoggingOptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutLoggingOptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -504,6 +530,7 @@ PutLoggingOptionsOutcome IoTAnalyticsClient::PutLoggingOptions(const PutLoggingO
 
 RunPipelineActivityOutcome IoTAnalyticsClient::RunPipelineActivity(const RunPipelineActivityRequest& request) const
 {
+  AWS_OPERATION_GUARD(RunPipelineActivity);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RunPipelineActivity, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RunPipelineActivity, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -513,6 +540,7 @@ RunPipelineActivityOutcome IoTAnalyticsClient::RunPipelineActivity(const RunPipe
 
 SampleChannelDataOutcome IoTAnalyticsClient::SampleChannelData(const SampleChannelDataRequest& request) const
 {
+  AWS_OPERATION_GUARD(SampleChannelData);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SampleChannelData, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelNameHasBeenSet())
   {
@@ -529,6 +557,7 @@ SampleChannelDataOutcome IoTAnalyticsClient::SampleChannelData(const SampleChann
 
 StartPipelineReprocessingOutcome IoTAnalyticsClient::StartPipelineReprocessing(const StartPipelineReprocessingRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartPipelineReprocessing);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartPipelineReprocessing, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PipelineNameHasBeenSet())
   {
@@ -545,6 +574,7 @@ StartPipelineReprocessingOutcome IoTAnalyticsClient::StartPipelineReprocessing(c
 
 TagResourceOutcome IoTAnalyticsClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -559,6 +589,7 @@ TagResourceOutcome IoTAnalyticsClient::TagResource(const TagResourceRequest& req
 
 UntagResourceOutcome IoTAnalyticsClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -578,6 +609,7 @@ UntagResourceOutcome IoTAnalyticsClient::UntagResource(const UntagResourceReques
 
 UpdateChannelOutcome IoTAnalyticsClient::UpdateChannel(const UpdateChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelNameHasBeenSet())
   {
@@ -593,6 +625,7 @@ UpdateChannelOutcome IoTAnalyticsClient::UpdateChannel(const UpdateChannelReques
 
 UpdateDatasetOutcome IoTAnalyticsClient::UpdateDataset(const UpdateDatasetRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateDataset);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDataset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DatasetNameHasBeenSet())
   {
@@ -608,6 +641,7 @@ UpdateDatasetOutcome IoTAnalyticsClient::UpdateDataset(const UpdateDatasetReques
 
 UpdateDatastoreOutcome IoTAnalyticsClient::UpdateDatastore(const UpdateDatastoreRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateDatastore);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDatastore, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DatastoreNameHasBeenSet())
   {
@@ -623,6 +657,7 @@ UpdateDatastoreOutcome IoTAnalyticsClient::UpdateDatastore(const UpdateDatastore
 
 UpdatePipelineOutcome IoTAnalyticsClient::UpdatePipeline(const UpdatePipelineRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdatePipeline);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdatePipeline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PipelineNameHasBeenSet())
   {

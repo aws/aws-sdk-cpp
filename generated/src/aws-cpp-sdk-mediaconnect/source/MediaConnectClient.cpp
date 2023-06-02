@@ -179,6 +179,7 @@ MediaConnectClient::MediaConnectClient(const std::shared_ptr<AWSCredentialsProvi
     /* End of legacy constructors due deprecation */
 MediaConnectClient::~MediaConnectClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<MediaConnectEndpointProviderBase>& MediaConnectClient::accessEndpointProvider()
@@ -201,6 +202,7 @@ void MediaConnectClient::OverrideEndpoint(const Aws::String& endpoint)
 
 AddBridgeOutputsOutcome MediaConnectClient::AddBridgeOutputs(const AddBridgeOutputsRequest& request) const
 {
+  AWS_OPERATION_GUARD(AddBridgeOutputs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AddBridgeOutputs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BridgeArnHasBeenSet())
   {
@@ -217,6 +219,7 @@ AddBridgeOutputsOutcome MediaConnectClient::AddBridgeOutputs(const AddBridgeOutp
 
 AddBridgeSourcesOutcome MediaConnectClient::AddBridgeSources(const AddBridgeSourcesRequest& request) const
 {
+  AWS_OPERATION_GUARD(AddBridgeSources);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AddBridgeSources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BridgeArnHasBeenSet())
   {
@@ -233,6 +236,7 @@ AddBridgeSourcesOutcome MediaConnectClient::AddBridgeSources(const AddBridgeSour
 
 AddFlowMediaStreamsOutcome MediaConnectClient::AddFlowMediaStreams(const AddFlowMediaStreamsRequest& request) const
 {
+  AWS_OPERATION_GUARD(AddFlowMediaStreams);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AddFlowMediaStreams, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FlowArnHasBeenSet())
   {
@@ -249,6 +253,7 @@ AddFlowMediaStreamsOutcome MediaConnectClient::AddFlowMediaStreams(const AddFlow
 
 AddFlowOutputsOutcome MediaConnectClient::AddFlowOutputs(const AddFlowOutputsRequest& request) const
 {
+  AWS_OPERATION_GUARD(AddFlowOutputs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AddFlowOutputs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FlowArnHasBeenSet())
   {
@@ -265,6 +270,7 @@ AddFlowOutputsOutcome MediaConnectClient::AddFlowOutputs(const AddFlowOutputsReq
 
 AddFlowSourcesOutcome MediaConnectClient::AddFlowSources(const AddFlowSourcesRequest& request) const
 {
+  AWS_OPERATION_GUARD(AddFlowSources);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AddFlowSources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FlowArnHasBeenSet())
   {
@@ -281,6 +287,7 @@ AddFlowSourcesOutcome MediaConnectClient::AddFlowSources(const AddFlowSourcesReq
 
 AddFlowVpcInterfacesOutcome MediaConnectClient::AddFlowVpcInterfaces(const AddFlowVpcInterfacesRequest& request) const
 {
+  AWS_OPERATION_GUARD(AddFlowVpcInterfaces);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AddFlowVpcInterfaces, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FlowArnHasBeenSet())
   {
@@ -297,6 +304,7 @@ AddFlowVpcInterfacesOutcome MediaConnectClient::AddFlowVpcInterfaces(const AddFl
 
 CreateBridgeOutcome MediaConnectClient::CreateBridge(const CreateBridgeRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateBridge);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateBridge, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateBridge, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -306,6 +314,7 @@ CreateBridgeOutcome MediaConnectClient::CreateBridge(const CreateBridgeRequest& 
 
 CreateFlowOutcome MediaConnectClient::CreateFlow(const CreateFlowRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateFlow);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateFlow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateFlow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -315,6 +324,7 @@ CreateFlowOutcome MediaConnectClient::CreateFlow(const CreateFlowRequest& reques
 
 CreateGatewayOutcome MediaConnectClient::CreateGateway(const CreateGatewayRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateGateway);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateGateway, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateGateway, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -324,6 +334,7 @@ CreateGatewayOutcome MediaConnectClient::CreateGateway(const CreateGatewayReques
 
 DeleteBridgeOutcome MediaConnectClient::DeleteBridge(const DeleteBridgeRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteBridge);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteBridge, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BridgeArnHasBeenSet())
   {
@@ -339,6 +350,7 @@ DeleteBridgeOutcome MediaConnectClient::DeleteBridge(const DeleteBridgeRequest& 
 
 DeleteFlowOutcome MediaConnectClient::DeleteFlow(const DeleteFlowRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteFlow);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteFlow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FlowArnHasBeenSet())
   {
@@ -354,6 +366,7 @@ DeleteFlowOutcome MediaConnectClient::DeleteFlow(const DeleteFlowRequest& reques
 
 DeleteGatewayOutcome MediaConnectClient::DeleteGateway(const DeleteGatewayRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteGateway);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteGateway, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GatewayArnHasBeenSet())
   {
@@ -369,6 +382,7 @@ DeleteGatewayOutcome MediaConnectClient::DeleteGateway(const DeleteGatewayReques
 
 DeregisterGatewayInstanceOutcome MediaConnectClient::DeregisterGatewayInstance(const DeregisterGatewayInstanceRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeregisterGatewayInstance);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeregisterGatewayInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GatewayInstanceArnHasBeenSet())
   {
@@ -384,6 +398,7 @@ DeregisterGatewayInstanceOutcome MediaConnectClient::DeregisterGatewayInstance(c
 
 DescribeBridgeOutcome MediaConnectClient::DescribeBridge(const DescribeBridgeRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeBridge);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeBridge, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BridgeArnHasBeenSet())
   {
@@ -399,6 +414,7 @@ DescribeBridgeOutcome MediaConnectClient::DescribeBridge(const DescribeBridgeReq
 
 DescribeFlowOutcome MediaConnectClient::DescribeFlow(const DescribeFlowRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeFlow);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeFlow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FlowArnHasBeenSet())
   {
@@ -414,6 +430,7 @@ DescribeFlowOutcome MediaConnectClient::DescribeFlow(const DescribeFlowRequest& 
 
 DescribeGatewayOutcome MediaConnectClient::DescribeGateway(const DescribeGatewayRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeGateway);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeGateway, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GatewayArnHasBeenSet())
   {
@@ -429,6 +446,7 @@ DescribeGatewayOutcome MediaConnectClient::DescribeGateway(const DescribeGateway
 
 DescribeGatewayInstanceOutcome MediaConnectClient::DescribeGatewayInstance(const DescribeGatewayInstanceRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeGatewayInstance);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeGatewayInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GatewayInstanceArnHasBeenSet())
   {
@@ -444,6 +462,7 @@ DescribeGatewayInstanceOutcome MediaConnectClient::DescribeGatewayInstance(const
 
 DescribeOfferingOutcome MediaConnectClient::DescribeOffering(const DescribeOfferingRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeOffering);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeOffering, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.OfferingArnHasBeenSet())
   {
@@ -459,6 +478,7 @@ DescribeOfferingOutcome MediaConnectClient::DescribeOffering(const DescribeOffer
 
 DescribeReservationOutcome MediaConnectClient::DescribeReservation(const DescribeReservationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeReservation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeReservation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ReservationArnHasBeenSet())
   {
@@ -474,6 +494,7 @@ DescribeReservationOutcome MediaConnectClient::DescribeReservation(const Describ
 
 GrantFlowEntitlementsOutcome MediaConnectClient::GrantFlowEntitlements(const GrantFlowEntitlementsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GrantFlowEntitlements);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GrantFlowEntitlements, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FlowArnHasBeenSet())
   {
@@ -490,6 +511,7 @@ GrantFlowEntitlementsOutcome MediaConnectClient::GrantFlowEntitlements(const Gra
 
 ListBridgesOutcome MediaConnectClient::ListBridges(const ListBridgesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListBridges);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListBridges, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListBridges, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -499,6 +521,7 @@ ListBridgesOutcome MediaConnectClient::ListBridges(const ListBridgesRequest& req
 
 ListEntitlementsOutcome MediaConnectClient::ListEntitlements(const ListEntitlementsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListEntitlements);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListEntitlements, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListEntitlements, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -508,6 +531,7 @@ ListEntitlementsOutcome MediaConnectClient::ListEntitlements(const ListEntitleme
 
 ListFlowsOutcome MediaConnectClient::ListFlows(const ListFlowsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListFlows);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListFlows, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListFlows, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -517,6 +541,7 @@ ListFlowsOutcome MediaConnectClient::ListFlows(const ListFlowsRequest& request) 
 
 ListGatewayInstancesOutcome MediaConnectClient::ListGatewayInstances(const ListGatewayInstancesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListGatewayInstances);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListGatewayInstances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListGatewayInstances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -526,6 +551,7 @@ ListGatewayInstancesOutcome MediaConnectClient::ListGatewayInstances(const ListG
 
 ListGatewaysOutcome MediaConnectClient::ListGateways(const ListGatewaysRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListGateways);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListGateways, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListGateways, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -535,6 +561,7 @@ ListGatewaysOutcome MediaConnectClient::ListGateways(const ListGatewaysRequest& 
 
 ListOfferingsOutcome MediaConnectClient::ListOfferings(const ListOfferingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListOfferings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListOfferings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListOfferings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -544,6 +571,7 @@ ListOfferingsOutcome MediaConnectClient::ListOfferings(const ListOfferingsReques
 
 ListReservationsOutcome MediaConnectClient::ListReservations(const ListReservationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListReservations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListReservations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListReservations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -553,6 +581,7 @@ ListReservationsOutcome MediaConnectClient::ListReservations(const ListReservati
 
 ListTagsForResourceOutcome MediaConnectClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -568,6 +597,7 @@ ListTagsForResourceOutcome MediaConnectClient::ListTagsForResource(const ListTag
 
 PurchaseOfferingOutcome MediaConnectClient::PurchaseOffering(const PurchaseOfferingRequest& request) const
 {
+  AWS_OPERATION_GUARD(PurchaseOffering);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PurchaseOffering, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.OfferingArnHasBeenSet())
   {
@@ -583,6 +613,7 @@ PurchaseOfferingOutcome MediaConnectClient::PurchaseOffering(const PurchaseOffer
 
 RemoveBridgeOutputOutcome MediaConnectClient::RemoveBridgeOutput(const RemoveBridgeOutputRequest& request) const
 {
+  AWS_OPERATION_GUARD(RemoveBridgeOutput);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RemoveBridgeOutput, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BridgeArnHasBeenSet())
   {
@@ -605,6 +636,7 @@ RemoveBridgeOutputOutcome MediaConnectClient::RemoveBridgeOutput(const RemoveBri
 
 RemoveBridgeSourceOutcome MediaConnectClient::RemoveBridgeSource(const RemoveBridgeSourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(RemoveBridgeSource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RemoveBridgeSource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BridgeArnHasBeenSet())
   {
@@ -627,6 +659,7 @@ RemoveBridgeSourceOutcome MediaConnectClient::RemoveBridgeSource(const RemoveBri
 
 RemoveFlowMediaStreamOutcome MediaConnectClient::RemoveFlowMediaStream(const RemoveFlowMediaStreamRequest& request) const
 {
+  AWS_OPERATION_GUARD(RemoveFlowMediaStream);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RemoveFlowMediaStream, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FlowArnHasBeenSet())
   {
@@ -649,6 +682,7 @@ RemoveFlowMediaStreamOutcome MediaConnectClient::RemoveFlowMediaStream(const Rem
 
 RemoveFlowOutputOutcome MediaConnectClient::RemoveFlowOutput(const RemoveFlowOutputRequest& request) const
 {
+  AWS_OPERATION_GUARD(RemoveFlowOutput);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RemoveFlowOutput, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FlowArnHasBeenSet())
   {
@@ -671,6 +705,7 @@ RemoveFlowOutputOutcome MediaConnectClient::RemoveFlowOutput(const RemoveFlowOut
 
 RemoveFlowSourceOutcome MediaConnectClient::RemoveFlowSource(const RemoveFlowSourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(RemoveFlowSource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RemoveFlowSource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FlowArnHasBeenSet())
   {
@@ -693,6 +728,7 @@ RemoveFlowSourceOutcome MediaConnectClient::RemoveFlowSource(const RemoveFlowSou
 
 RemoveFlowVpcInterfaceOutcome MediaConnectClient::RemoveFlowVpcInterface(const RemoveFlowVpcInterfaceRequest& request) const
 {
+  AWS_OPERATION_GUARD(RemoveFlowVpcInterface);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RemoveFlowVpcInterface, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FlowArnHasBeenSet())
   {
@@ -715,6 +751,7 @@ RemoveFlowVpcInterfaceOutcome MediaConnectClient::RemoveFlowVpcInterface(const R
 
 RevokeFlowEntitlementOutcome MediaConnectClient::RevokeFlowEntitlement(const RevokeFlowEntitlementRequest& request) const
 {
+  AWS_OPERATION_GUARD(RevokeFlowEntitlement);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RevokeFlowEntitlement, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.EntitlementArnHasBeenSet())
   {
@@ -737,6 +774,7 @@ RevokeFlowEntitlementOutcome MediaConnectClient::RevokeFlowEntitlement(const Rev
 
 StartFlowOutcome MediaConnectClient::StartFlow(const StartFlowRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartFlow);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartFlow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FlowArnHasBeenSet())
   {
@@ -752,6 +790,7 @@ StartFlowOutcome MediaConnectClient::StartFlow(const StartFlowRequest& request) 
 
 StopFlowOutcome MediaConnectClient::StopFlow(const StopFlowRequest& request) const
 {
+  AWS_OPERATION_GUARD(StopFlow);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopFlow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FlowArnHasBeenSet())
   {
@@ -767,6 +806,7 @@ StopFlowOutcome MediaConnectClient::StopFlow(const StopFlowRequest& request) con
 
 TagResourceOutcome MediaConnectClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -782,6 +822,7 @@ TagResourceOutcome MediaConnectClient::TagResource(const TagResourceRequest& req
 
 UntagResourceOutcome MediaConnectClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -802,6 +843,7 @@ UntagResourceOutcome MediaConnectClient::UntagResource(const UntagResourceReques
 
 UpdateBridgeOutcome MediaConnectClient::UpdateBridge(const UpdateBridgeRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateBridge);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateBridge, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BridgeArnHasBeenSet())
   {
@@ -817,6 +859,7 @@ UpdateBridgeOutcome MediaConnectClient::UpdateBridge(const UpdateBridgeRequest& 
 
 UpdateBridgeOutputOutcome MediaConnectClient::UpdateBridgeOutput(const UpdateBridgeOutputRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateBridgeOutput);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateBridgeOutput, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BridgeArnHasBeenSet())
   {
@@ -839,6 +882,7 @@ UpdateBridgeOutputOutcome MediaConnectClient::UpdateBridgeOutput(const UpdateBri
 
 UpdateBridgeSourceOutcome MediaConnectClient::UpdateBridgeSource(const UpdateBridgeSourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateBridgeSource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateBridgeSource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BridgeArnHasBeenSet())
   {
@@ -861,6 +905,7 @@ UpdateBridgeSourceOutcome MediaConnectClient::UpdateBridgeSource(const UpdateBri
 
 UpdateBridgeStateOutcome MediaConnectClient::UpdateBridgeState(const UpdateBridgeStateRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateBridgeState);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateBridgeState, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BridgeArnHasBeenSet())
   {
@@ -877,6 +922,7 @@ UpdateBridgeStateOutcome MediaConnectClient::UpdateBridgeState(const UpdateBridg
 
 UpdateFlowOutcome MediaConnectClient::UpdateFlow(const UpdateFlowRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateFlow);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateFlow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FlowArnHasBeenSet())
   {
@@ -892,6 +938,7 @@ UpdateFlowOutcome MediaConnectClient::UpdateFlow(const UpdateFlowRequest& reques
 
 UpdateFlowEntitlementOutcome MediaConnectClient::UpdateFlowEntitlement(const UpdateFlowEntitlementRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateFlowEntitlement);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateFlowEntitlement, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.EntitlementArnHasBeenSet())
   {
@@ -914,6 +961,7 @@ UpdateFlowEntitlementOutcome MediaConnectClient::UpdateFlowEntitlement(const Upd
 
 UpdateFlowMediaStreamOutcome MediaConnectClient::UpdateFlowMediaStream(const UpdateFlowMediaStreamRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateFlowMediaStream);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateFlowMediaStream, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FlowArnHasBeenSet())
   {
@@ -936,6 +984,7 @@ UpdateFlowMediaStreamOutcome MediaConnectClient::UpdateFlowMediaStream(const Upd
 
 UpdateFlowOutputOutcome MediaConnectClient::UpdateFlowOutput(const UpdateFlowOutputRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateFlowOutput);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateFlowOutput, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FlowArnHasBeenSet())
   {
@@ -958,6 +1007,7 @@ UpdateFlowOutputOutcome MediaConnectClient::UpdateFlowOutput(const UpdateFlowOut
 
 UpdateFlowSourceOutcome MediaConnectClient::UpdateFlowSource(const UpdateFlowSourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateFlowSource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateFlowSource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FlowArnHasBeenSet())
   {
@@ -980,6 +1030,7 @@ UpdateFlowSourceOutcome MediaConnectClient::UpdateFlowSource(const UpdateFlowSou
 
 UpdateGatewayInstanceOutcome MediaConnectClient::UpdateGatewayInstance(const UpdateGatewayInstanceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateGatewayInstance);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateGatewayInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GatewayInstanceArnHasBeenSet())
   {

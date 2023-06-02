@@ -251,6 +251,7 @@ PinpointClient::PinpointClient(const std::shared_ptr<AWSCredentialsProvider>& cr
     /* End of legacy constructors due deprecation */
 PinpointClient::~PinpointClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<PinpointEndpointProviderBase>& PinpointClient::accessEndpointProvider()
@@ -273,6 +274,7 @@ void PinpointClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CreateAppOutcome PinpointClient::CreateApp(const CreateAppRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateApp);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateApp, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateApp, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -282,6 +284,7 @@ CreateAppOutcome PinpointClient::CreateApp(const CreateAppRequest& request) cons
 
 CreateCampaignOutcome PinpointClient::CreateCampaign(const CreateCampaignRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateCampaign);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateCampaign, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -298,6 +301,7 @@ CreateCampaignOutcome PinpointClient::CreateCampaign(const CreateCampaignRequest
 
 CreateEmailTemplateOutcome PinpointClient::CreateEmailTemplate(const CreateEmailTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateEmailTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateEmailTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TemplateNameHasBeenSet())
   {
@@ -314,6 +318,7 @@ CreateEmailTemplateOutcome PinpointClient::CreateEmailTemplate(const CreateEmail
 
 CreateExportJobOutcome PinpointClient::CreateExportJob(const CreateExportJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateExportJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateExportJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -330,6 +335,7 @@ CreateExportJobOutcome PinpointClient::CreateExportJob(const CreateExportJobRequ
 
 CreateImportJobOutcome PinpointClient::CreateImportJob(const CreateImportJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateImportJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateImportJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -346,6 +352,7 @@ CreateImportJobOutcome PinpointClient::CreateImportJob(const CreateImportJobRequ
 
 CreateInAppTemplateOutcome PinpointClient::CreateInAppTemplate(const CreateInAppTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateInAppTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateInAppTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TemplateNameHasBeenSet())
   {
@@ -362,6 +369,7 @@ CreateInAppTemplateOutcome PinpointClient::CreateInAppTemplate(const CreateInApp
 
 CreateJourneyOutcome PinpointClient::CreateJourney(const CreateJourneyRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateJourney);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateJourney, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -378,6 +386,7 @@ CreateJourneyOutcome PinpointClient::CreateJourney(const CreateJourneyRequest& r
 
 CreatePushTemplateOutcome PinpointClient::CreatePushTemplate(const CreatePushTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreatePushTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreatePushTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TemplateNameHasBeenSet())
   {
@@ -394,6 +403,7 @@ CreatePushTemplateOutcome PinpointClient::CreatePushTemplate(const CreatePushTem
 
 CreateRecommenderConfigurationOutcome PinpointClient::CreateRecommenderConfiguration(const CreateRecommenderConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateRecommenderConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateRecommenderConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateRecommenderConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -403,6 +413,7 @@ CreateRecommenderConfigurationOutcome PinpointClient::CreateRecommenderConfigura
 
 CreateSegmentOutcome PinpointClient::CreateSegment(const CreateSegmentRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateSegment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateSegment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -419,6 +430,7 @@ CreateSegmentOutcome PinpointClient::CreateSegment(const CreateSegmentRequest& r
 
 CreateSmsTemplateOutcome PinpointClient::CreateSmsTemplate(const CreateSmsTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateSmsTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateSmsTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TemplateNameHasBeenSet())
   {
@@ -435,6 +447,7 @@ CreateSmsTemplateOutcome PinpointClient::CreateSmsTemplate(const CreateSmsTempla
 
 CreateVoiceTemplateOutcome PinpointClient::CreateVoiceTemplate(const CreateVoiceTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateVoiceTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateVoiceTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TemplateNameHasBeenSet())
   {
@@ -451,6 +464,7 @@ CreateVoiceTemplateOutcome PinpointClient::CreateVoiceTemplate(const CreateVoice
 
 DeleteAdmChannelOutcome PinpointClient::DeleteAdmChannel(const DeleteAdmChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteAdmChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAdmChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -467,6 +481,7 @@ DeleteAdmChannelOutcome PinpointClient::DeleteAdmChannel(const DeleteAdmChannelR
 
 DeleteApnsChannelOutcome PinpointClient::DeleteApnsChannel(const DeleteApnsChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteApnsChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteApnsChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -483,6 +498,7 @@ DeleteApnsChannelOutcome PinpointClient::DeleteApnsChannel(const DeleteApnsChann
 
 DeleteApnsSandboxChannelOutcome PinpointClient::DeleteApnsSandboxChannel(const DeleteApnsSandboxChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteApnsSandboxChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteApnsSandboxChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -499,6 +515,7 @@ DeleteApnsSandboxChannelOutcome PinpointClient::DeleteApnsSandboxChannel(const D
 
 DeleteApnsVoipChannelOutcome PinpointClient::DeleteApnsVoipChannel(const DeleteApnsVoipChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteApnsVoipChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteApnsVoipChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -515,6 +532,7 @@ DeleteApnsVoipChannelOutcome PinpointClient::DeleteApnsVoipChannel(const DeleteA
 
 DeleteApnsVoipSandboxChannelOutcome PinpointClient::DeleteApnsVoipSandboxChannel(const DeleteApnsVoipSandboxChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteApnsVoipSandboxChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteApnsVoipSandboxChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -531,6 +549,7 @@ DeleteApnsVoipSandboxChannelOutcome PinpointClient::DeleteApnsVoipSandboxChannel
 
 DeleteAppOutcome PinpointClient::DeleteApp(const DeleteAppRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteApp);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteApp, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -546,6 +565,7 @@ DeleteAppOutcome PinpointClient::DeleteApp(const DeleteAppRequest& request) cons
 
 DeleteBaiduChannelOutcome PinpointClient::DeleteBaiduChannel(const DeleteBaiduChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteBaiduChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteBaiduChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -562,6 +582,7 @@ DeleteBaiduChannelOutcome PinpointClient::DeleteBaiduChannel(const DeleteBaiduCh
 
 DeleteCampaignOutcome PinpointClient::DeleteCampaign(const DeleteCampaignRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteCampaign);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteCampaign, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -584,6 +605,7 @@ DeleteCampaignOutcome PinpointClient::DeleteCampaign(const DeleteCampaignRequest
 
 DeleteEmailChannelOutcome PinpointClient::DeleteEmailChannel(const DeleteEmailChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteEmailChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteEmailChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -600,6 +622,7 @@ DeleteEmailChannelOutcome PinpointClient::DeleteEmailChannel(const DeleteEmailCh
 
 DeleteEmailTemplateOutcome PinpointClient::DeleteEmailTemplate(const DeleteEmailTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteEmailTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteEmailTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TemplateNameHasBeenSet())
   {
@@ -616,6 +639,7 @@ DeleteEmailTemplateOutcome PinpointClient::DeleteEmailTemplate(const DeleteEmail
 
 DeleteEndpointOutcome PinpointClient::DeleteEndpoint(const DeleteEndpointRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteEndpoint);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -638,6 +662,7 @@ DeleteEndpointOutcome PinpointClient::DeleteEndpoint(const DeleteEndpointRequest
 
 DeleteEventStreamOutcome PinpointClient::DeleteEventStream(const DeleteEventStreamRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteEventStream);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteEventStream, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -654,6 +679,7 @@ DeleteEventStreamOutcome PinpointClient::DeleteEventStream(const DeleteEventStre
 
 DeleteGcmChannelOutcome PinpointClient::DeleteGcmChannel(const DeleteGcmChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteGcmChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteGcmChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -670,6 +696,7 @@ DeleteGcmChannelOutcome PinpointClient::DeleteGcmChannel(const DeleteGcmChannelR
 
 DeleteInAppTemplateOutcome PinpointClient::DeleteInAppTemplate(const DeleteInAppTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteInAppTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteInAppTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TemplateNameHasBeenSet())
   {
@@ -686,6 +713,7 @@ DeleteInAppTemplateOutcome PinpointClient::DeleteInAppTemplate(const DeleteInApp
 
 DeleteJourneyOutcome PinpointClient::DeleteJourney(const DeleteJourneyRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteJourney);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteJourney, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -708,6 +736,7 @@ DeleteJourneyOutcome PinpointClient::DeleteJourney(const DeleteJourneyRequest& r
 
 DeletePushTemplateOutcome PinpointClient::DeletePushTemplate(const DeletePushTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeletePushTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeletePushTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TemplateNameHasBeenSet())
   {
@@ -724,6 +753,7 @@ DeletePushTemplateOutcome PinpointClient::DeletePushTemplate(const DeletePushTem
 
 DeleteRecommenderConfigurationOutcome PinpointClient::DeleteRecommenderConfiguration(const DeleteRecommenderConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteRecommenderConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteRecommenderConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RecommenderIdHasBeenSet())
   {
@@ -739,6 +769,7 @@ DeleteRecommenderConfigurationOutcome PinpointClient::DeleteRecommenderConfigura
 
 DeleteSegmentOutcome PinpointClient::DeleteSegment(const DeleteSegmentRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteSegment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteSegment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -761,6 +792,7 @@ DeleteSegmentOutcome PinpointClient::DeleteSegment(const DeleteSegmentRequest& r
 
 DeleteSmsChannelOutcome PinpointClient::DeleteSmsChannel(const DeleteSmsChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteSmsChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteSmsChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -777,6 +809,7 @@ DeleteSmsChannelOutcome PinpointClient::DeleteSmsChannel(const DeleteSmsChannelR
 
 DeleteSmsTemplateOutcome PinpointClient::DeleteSmsTemplate(const DeleteSmsTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteSmsTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteSmsTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TemplateNameHasBeenSet())
   {
@@ -793,6 +826,7 @@ DeleteSmsTemplateOutcome PinpointClient::DeleteSmsTemplate(const DeleteSmsTempla
 
 DeleteUserEndpointsOutcome PinpointClient::DeleteUserEndpoints(const DeleteUserEndpointsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteUserEndpoints);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteUserEndpoints, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -815,6 +849,7 @@ DeleteUserEndpointsOutcome PinpointClient::DeleteUserEndpoints(const DeleteUserE
 
 DeleteVoiceChannelOutcome PinpointClient::DeleteVoiceChannel(const DeleteVoiceChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteVoiceChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteVoiceChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -831,6 +866,7 @@ DeleteVoiceChannelOutcome PinpointClient::DeleteVoiceChannel(const DeleteVoiceCh
 
 DeleteVoiceTemplateOutcome PinpointClient::DeleteVoiceTemplate(const DeleteVoiceTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteVoiceTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteVoiceTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TemplateNameHasBeenSet())
   {
@@ -847,6 +883,7 @@ DeleteVoiceTemplateOutcome PinpointClient::DeleteVoiceTemplate(const DeleteVoice
 
 GetAdmChannelOutcome PinpointClient::GetAdmChannel(const GetAdmChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetAdmChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAdmChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -863,6 +900,7 @@ GetAdmChannelOutcome PinpointClient::GetAdmChannel(const GetAdmChannelRequest& r
 
 GetApnsChannelOutcome PinpointClient::GetApnsChannel(const GetApnsChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetApnsChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetApnsChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -879,6 +917,7 @@ GetApnsChannelOutcome PinpointClient::GetApnsChannel(const GetApnsChannelRequest
 
 GetApnsSandboxChannelOutcome PinpointClient::GetApnsSandboxChannel(const GetApnsSandboxChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetApnsSandboxChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetApnsSandboxChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -895,6 +934,7 @@ GetApnsSandboxChannelOutcome PinpointClient::GetApnsSandboxChannel(const GetApns
 
 GetApnsVoipChannelOutcome PinpointClient::GetApnsVoipChannel(const GetApnsVoipChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetApnsVoipChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetApnsVoipChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -911,6 +951,7 @@ GetApnsVoipChannelOutcome PinpointClient::GetApnsVoipChannel(const GetApnsVoipCh
 
 GetApnsVoipSandboxChannelOutcome PinpointClient::GetApnsVoipSandboxChannel(const GetApnsVoipSandboxChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetApnsVoipSandboxChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetApnsVoipSandboxChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -927,6 +968,7 @@ GetApnsVoipSandboxChannelOutcome PinpointClient::GetApnsVoipSandboxChannel(const
 
 GetAppOutcome PinpointClient::GetApp(const GetAppRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetApp);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetApp, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -942,6 +984,7 @@ GetAppOutcome PinpointClient::GetApp(const GetAppRequest& request) const
 
 GetApplicationDateRangeKpiOutcome PinpointClient::GetApplicationDateRangeKpi(const GetApplicationDateRangeKpiRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetApplicationDateRangeKpi);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetApplicationDateRangeKpi, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -964,6 +1007,7 @@ GetApplicationDateRangeKpiOutcome PinpointClient::GetApplicationDateRangeKpi(con
 
 GetApplicationSettingsOutcome PinpointClient::GetApplicationSettings(const GetApplicationSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetApplicationSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetApplicationSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -980,6 +1024,7 @@ GetApplicationSettingsOutcome PinpointClient::GetApplicationSettings(const GetAp
 
 GetAppsOutcome PinpointClient::GetApps(const GetAppsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetApps);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetApps, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetApps, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -989,6 +1034,7 @@ GetAppsOutcome PinpointClient::GetApps(const GetAppsRequest& request) const
 
 GetBaiduChannelOutcome PinpointClient::GetBaiduChannel(const GetBaiduChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetBaiduChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBaiduChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -1005,6 +1051,7 @@ GetBaiduChannelOutcome PinpointClient::GetBaiduChannel(const GetBaiduChannelRequ
 
 GetCampaignOutcome PinpointClient::GetCampaign(const GetCampaignRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetCampaign);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCampaign, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -1027,6 +1074,7 @@ GetCampaignOutcome PinpointClient::GetCampaign(const GetCampaignRequest& request
 
 GetCampaignActivitiesOutcome PinpointClient::GetCampaignActivities(const GetCampaignActivitiesRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetCampaignActivities);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCampaignActivities, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -1050,6 +1098,7 @@ GetCampaignActivitiesOutcome PinpointClient::GetCampaignActivities(const GetCamp
 
 GetCampaignDateRangeKpiOutcome PinpointClient::GetCampaignDateRangeKpi(const GetCampaignDateRangeKpiRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetCampaignDateRangeKpi);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCampaignDateRangeKpi, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -1079,6 +1128,7 @@ GetCampaignDateRangeKpiOutcome PinpointClient::GetCampaignDateRangeKpi(const Get
 
 GetCampaignVersionOutcome PinpointClient::GetCampaignVersion(const GetCampaignVersionRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetCampaignVersion);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCampaignVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -1108,6 +1158,7 @@ GetCampaignVersionOutcome PinpointClient::GetCampaignVersion(const GetCampaignVe
 
 GetCampaignVersionsOutcome PinpointClient::GetCampaignVersions(const GetCampaignVersionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetCampaignVersions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCampaignVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -1131,6 +1182,7 @@ GetCampaignVersionsOutcome PinpointClient::GetCampaignVersions(const GetCampaign
 
 GetCampaignsOutcome PinpointClient::GetCampaigns(const GetCampaignsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetCampaigns);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCampaigns, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -1147,6 +1199,7 @@ GetCampaignsOutcome PinpointClient::GetCampaigns(const GetCampaignsRequest& requ
 
 GetChannelsOutcome PinpointClient::GetChannels(const GetChannelsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetChannels);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetChannels, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -1163,6 +1216,7 @@ GetChannelsOutcome PinpointClient::GetChannels(const GetChannelsRequest& request
 
 GetEmailChannelOutcome PinpointClient::GetEmailChannel(const GetEmailChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetEmailChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetEmailChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -1179,6 +1233,7 @@ GetEmailChannelOutcome PinpointClient::GetEmailChannel(const GetEmailChannelRequ
 
 GetEmailTemplateOutcome PinpointClient::GetEmailTemplate(const GetEmailTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetEmailTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetEmailTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TemplateNameHasBeenSet())
   {
@@ -1195,6 +1250,7 @@ GetEmailTemplateOutcome PinpointClient::GetEmailTemplate(const GetEmailTemplateR
 
 GetEndpointOutcome PinpointClient::GetEndpoint(const GetEndpointRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetEndpoint);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -1217,6 +1273,7 @@ GetEndpointOutcome PinpointClient::GetEndpoint(const GetEndpointRequest& request
 
 GetEventStreamOutcome PinpointClient::GetEventStream(const GetEventStreamRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetEventStream);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetEventStream, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -1233,6 +1290,7 @@ GetEventStreamOutcome PinpointClient::GetEventStream(const GetEventStreamRequest
 
 GetExportJobOutcome PinpointClient::GetExportJob(const GetExportJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetExportJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetExportJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -1255,6 +1313,7 @@ GetExportJobOutcome PinpointClient::GetExportJob(const GetExportJobRequest& requ
 
 GetExportJobsOutcome PinpointClient::GetExportJobs(const GetExportJobsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetExportJobs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetExportJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -1271,6 +1330,7 @@ GetExportJobsOutcome PinpointClient::GetExportJobs(const GetExportJobsRequest& r
 
 GetGcmChannelOutcome PinpointClient::GetGcmChannel(const GetGcmChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetGcmChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetGcmChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -1287,6 +1347,7 @@ GetGcmChannelOutcome PinpointClient::GetGcmChannel(const GetGcmChannelRequest& r
 
 GetImportJobOutcome PinpointClient::GetImportJob(const GetImportJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetImportJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetImportJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -1309,6 +1370,7 @@ GetImportJobOutcome PinpointClient::GetImportJob(const GetImportJobRequest& requ
 
 GetImportJobsOutcome PinpointClient::GetImportJobs(const GetImportJobsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetImportJobs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetImportJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -1325,6 +1387,7 @@ GetImportJobsOutcome PinpointClient::GetImportJobs(const GetImportJobsRequest& r
 
 GetInAppMessagesOutcome PinpointClient::GetInAppMessages(const GetInAppMessagesRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetInAppMessages);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetInAppMessages, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -1348,6 +1411,7 @@ GetInAppMessagesOutcome PinpointClient::GetInAppMessages(const GetInAppMessagesR
 
 GetInAppTemplateOutcome PinpointClient::GetInAppTemplate(const GetInAppTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetInAppTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetInAppTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TemplateNameHasBeenSet())
   {
@@ -1364,6 +1428,7 @@ GetInAppTemplateOutcome PinpointClient::GetInAppTemplate(const GetInAppTemplateR
 
 GetJourneyOutcome PinpointClient::GetJourney(const GetJourneyRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetJourney);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetJourney, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -1386,6 +1451,7 @@ GetJourneyOutcome PinpointClient::GetJourney(const GetJourneyRequest& request) c
 
 GetJourneyDateRangeKpiOutcome PinpointClient::GetJourneyDateRangeKpi(const GetJourneyDateRangeKpiRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetJourneyDateRangeKpi);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetJourneyDateRangeKpi, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -1415,6 +1481,7 @@ GetJourneyDateRangeKpiOutcome PinpointClient::GetJourneyDateRangeKpi(const GetJo
 
 GetJourneyExecutionActivityMetricsOutcome PinpointClient::GetJourneyExecutionActivityMetrics(const GetJourneyExecutionActivityMetricsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetJourneyExecutionActivityMetrics);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetJourneyExecutionActivityMetrics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -1445,6 +1512,7 @@ GetJourneyExecutionActivityMetricsOutcome PinpointClient::GetJourneyExecutionAct
 
 GetJourneyExecutionMetricsOutcome PinpointClient::GetJourneyExecutionMetrics(const GetJourneyExecutionMetricsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetJourneyExecutionMetrics);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetJourneyExecutionMetrics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -1468,6 +1536,7 @@ GetJourneyExecutionMetricsOutcome PinpointClient::GetJourneyExecutionMetrics(con
 
 GetJourneyRunExecutionActivityMetricsOutcome PinpointClient::GetJourneyRunExecutionActivityMetrics(const GetJourneyRunExecutionActivityMetricsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetJourneyRunExecutionActivityMetrics);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetJourneyRunExecutionActivityMetrics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -1505,6 +1574,7 @@ GetJourneyRunExecutionActivityMetricsOutcome PinpointClient::GetJourneyRunExecut
 
 GetJourneyRunExecutionMetricsOutcome PinpointClient::GetJourneyRunExecutionMetrics(const GetJourneyRunExecutionMetricsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetJourneyRunExecutionMetrics);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetJourneyRunExecutionMetrics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -1535,6 +1605,7 @@ GetJourneyRunExecutionMetricsOutcome PinpointClient::GetJourneyRunExecutionMetri
 
 GetJourneyRunsOutcome PinpointClient::GetJourneyRuns(const GetJourneyRunsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetJourneyRuns);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetJourneyRuns, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -1558,6 +1629,7 @@ GetJourneyRunsOutcome PinpointClient::GetJourneyRuns(const GetJourneyRunsRequest
 
 GetPushTemplateOutcome PinpointClient::GetPushTemplate(const GetPushTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetPushTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPushTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TemplateNameHasBeenSet())
   {
@@ -1574,6 +1646,7 @@ GetPushTemplateOutcome PinpointClient::GetPushTemplate(const GetPushTemplateRequ
 
 GetRecommenderConfigurationOutcome PinpointClient::GetRecommenderConfiguration(const GetRecommenderConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetRecommenderConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetRecommenderConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RecommenderIdHasBeenSet())
   {
@@ -1589,6 +1662,7 @@ GetRecommenderConfigurationOutcome PinpointClient::GetRecommenderConfiguration(c
 
 GetRecommenderConfigurationsOutcome PinpointClient::GetRecommenderConfigurations(const GetRecommenderConfigurationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetRecommenderConfigurations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetRecommenderConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetRecommenderConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1598,6 +1672,7 @@ GetRecommenderConfigurationsOutcome PinpointClient::GetRecommenderConfigurations
 
 GetSegmentOutcome PinpointClient::GetSegment(const GetSegmentRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSegment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSegment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -1620,6 +1695,7 @@ GetSegmentOutcome PinpointClient::GetSegment(const GetSegmentRequest& request) c
 
 GetSegmentExportJobsOutcome PinpointClient::GetSegmentExportJobs(const GetSegmentExportJobsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSegmentExportJobs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSegmentExportJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -1643,6 +1719,7 @@ GetSegmentExportJobsOutcome PinpointClient::GetSegmentExportJobs(const GetSegmen
 
 GetSegmentImportJobsOutcome PinpointClient::GetSegmentImportJobs(const GetSegmentImportJobsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSegmentImportJobs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSegmentImportJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -1666,6 +1743,7 @@ GetSegmentImportJobsOutcome PinpointClient::GetSegmentImportJobs(const GetSegmen
 
 GetSegmentVersionOutcome PinpointClient::GetSegmentVersion(const GetSegmentVersionRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSegmentVersion);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSegmentVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -1695,6 +1773,7 @@ GetSegmentVersionOutcome PinpointClient::GetSegmentVersion(const GetSegmentVersi
 
 GetSegmentVersionsOutcome PinpointClient::GetSegmentVersions(const GetSegmentVersionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSegmentVersions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSegmentVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -1718,6 +1797,7 @@ GetSegmentVersionsOutcome PinpointClient::GetSegmentVersions(const GetSegmentVer
 
 GetSegmentsOutcome PinpointClient::GetSegments(const GetSegmentsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSegments);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSegments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -1734,6 +1814,7 @@ GetSegmentsOutcome PinpointClient::GetSegments(const GetSegmentsRequest& request
 
 GetSmsChannelOutcome PinpointClient::GetSmsChannel(const GetSmsChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSmsChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSmsChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -1750,6 +1831,7 @@ GetSmsChannelOutcome PinpointClient::GetSmsChannel(const GetSmsChannelRequest& r
 
 GetSmsTemplateOutcome PinpointClient::GetSmsTemplate(const GetSmsTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSmsTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSmsTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TemplateNameHasBeenSet())
   {
@@ -1766,6 +1848,7 @@ GetSmsTemplateOutcome PinpointClient::GetSmsTemplate(const GetSmsTemplateRequest
 
 GetUserEndpointsOutcome PinpointClient::GetUserEndpoints(const GetUserEndpointsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetUserEndpoints);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetUserEndpoints, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -1788,6 +1871,7 @@ GetUserEndpointsOutcome PinpointClient::GetUserEndpoints(const GetUserEndpointsR
 
 GetVoiceChannelOutcome PinpointClient::GetVoiceChannel(const GetVoiceChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetVoiceChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetVoiceChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -1804,6 +1888,7 @@ GetVoiceChannelOutcome PinpointClient::GetVoiceChannel(const GetVoiceChannelRequ
 
 GetVoiceTemplateOutcome PinpointClient::GetVoiceTemplate(const GetVoiceTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetVoiceTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetVoiceTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TemplateNameHasBeenSet())
   {
@@ -1820,6 +1905,7 @@ GetVoiceTemplateOutcome PinpointClient::GetVoiceTemplate(const GetVoiceTemplateR
 
 ListJourneysOutcome PinpointClient::ListJourneys(const ListJourneysRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListJourneys);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListJourneys, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -1836,6 +1922,7 @@ ListJourneysOutcome PinpointClient::ListJourneys(const ListJourneysRequest& requ
 
 ListTagsForResourceOutcome PinpointClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -1851,6 +1938,7 @@ ListTagsForResourceOutcome PinpointClient::ListTagsForResource(const ListTagsFor
 
 ListTemplateVersionsOutcome PinpointClient::ListTemplateVersions(const ListTemplateVersionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTemplateVersions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTemplateVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TemplateNameHasBeenSet())
   {
@@ -1873,6 +1961,7 @@ ListTemplateVersionsOutcome PinpointClient::ListTemplateVersions(const ListTempl
 
 ListTemplatesOutcome PinpointClient::ListTemplates(const ListTemplatesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTemplates);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTemplates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTemplates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1882,6 +1971,7 @@ ListTemplatesOutcome PinpointClient::ListTemplates(const ListTemplatesRequest& r
 
 PhoneNumberValidateOutcome PinpointClient::PhoneNumberValidate(const PhoneNumberValidateRequest& request) const
 {
+  AWS_OPERATION_GUARD(PhoneNumberValidate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PhoneNumberValidate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PhoneNumberValidate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1891,6 +1981,7 @@ PhoneNumberValidateOutcome PinpointClient::PhoneNumberValidate(const PhoneNumber
 
 PutEventStreamOutcome PinpointClient::PutEventStream(const PutEventStreamRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutEventStream);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutEventStream, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -1907,6 +1998,7 @@ PutEventStreamOutcome PinpointClient::PutEventStream(const PutEventStreamRequest
 
 PutEventsOutcome PinpointClient::PutEvents(const PutEventsRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutEvents);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutEvents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -1923,6 +2015,7 @@ PutEventsOutcome PinpointClient::PutEvents(const PutEventsRequest& request) cons
 
 RemoveAttributesOutcome PinpointClient::RemoveAttributes(const RemoveAttributesRequest& request) const
 {
+  AWS_OPERATION_GUARD(RemoveAttributes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RemoveAttributes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -1945,6 +2038,7 @@ RemoveAttributesOutcome PinpointClient::RemoveAttributes(const RemoveAttributesR
 
 SendMessagesOutcome PinpointClient::SendMessages(const SendMessagesRequest& request) const
 {
+  AWS_OPERATION_GUARD(SendMessages);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SendMessages, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -1961,6 +2055,7 @@ SendMessagesOutcome PinpointClient::SendMessages(const SendMessagesRequest& requ
 
 SendOTPMessageOutcome PinpointClient::SendOTPMessage(const SendOTPMessageRequest& request) const
 {
+  AWS_OPERATION_GUARD(SendOTPMessage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SendOTPMessage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -1977,6 +2072,7 @@ SendOTPMessageOutcome PinpointClient::SendOTPMessage(const SendOTPMessageRequest
 
 SendUsersMessagesOutcome PinpointClient::SendUsersMessages(const SendUsersMessagesRequest& request) const
 {
+  AWS_OPERATION_GUARD(SendUsersMessages);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SendUsersMessages, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -1993,6 +2089,7 @@ SendUsersMessagesOutcome PinpointClient::SendUsersMessages(const SendUsersMessag
 
 TagResourceOutcome PinpointClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -2008,6 +2105,7 @@ TagResourceOutcome PinpointClient::TagResource(const TagResourceRequest& request
 
 UntagResourceOutcome PinpointClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -2028,6 +2126,7 @@ UntagResourceOutcome PinpointClient::UntagResource(const UntagResourceRequest& r
 
 UpdateAdmChannelOutcome PinpointClient::UpdateAdmChannel(const UpdateAdmChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateAdmChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAdmChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -2044,6 +2143,7 @@ UpdateAdmChannelOutcome PinpointClient::UpdateAdmChannel(const UpdateAdmChannelR
 
 UpdateApnsChannelOutcome PinpointClient::UpdateApnsChannel(const UpdateApnsChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateApnsChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateApnsChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -2060,6 +2160,7 @@ UpdateApnsChannelOutcome PinpointClient::UpdateApnsChannel(const UpdateApnsChann
 
 UpdateApnsSandboxChannelOutcome PinpointClient::UpdateApnsSandboxChannel(const UpdateApnsSandboxChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateApnsSandboxChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateApnsSandboxChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -2076,6 +2177,7 @@ UpdateApnsSandboxChannelOutcome PinpointClient::UpdateApnsSandboxChannel(const U
 
 UpdateApnsVoipChannelOutcome PinpointClient::UpdateApnsVoipChannel(const UpdateApnsVoipChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateApnsVoipChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateApnsVoipChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -2092,6 +2194,7 @@ UpdateApnsVoipChannelOutcome PinpointClient::UpdateApnsVoipChannel(const UpdateA
 
 UpdateApnsVoipSandboxChannelOutcome PinpointClient::UpdateApnsVoipSandboxChannel(const UpdateApnsVoipSandboxChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateApnsVoipSandboxChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateApnsVoipSandboxChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -2108,6 +2211,7 @@ UpdateApnsVoipSandboxChannelOutcome PinpointClient::UpdateApnsVoipSandboxChannel
 
 UpdateApplicationSettingsOutcome PinpointClient::UpdateApplicationSettings(const UpdateApplicationSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateApplicationSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateApplicationSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -2124,6 +2228,7 @@ UpdateApplicationSettingsOutcome PinpointClient::UpdateApplicationSettings(const
 
 UpdateBaiduChannelOutcome PinpointClient::UpdateBaiduChannel(const UpdateBaiduChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateBaiduChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateBaiduChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -2140,6 +2245,7 @@ UpdateBaiduChannelOutcome PinpointClient::UpdateBaiduChannel(const UpdateBaiduCh
 
 UpdateCampaignOutcome PinpointClient::UpdateCampaign(const UpdateCampaignRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateCampaign);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateCampaign, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -2162,6 +2268,7 @@ UpdateCampaignOutcome PinpointClient::UpdateCampaign(const UpdateCampaignRequest
 
 UpdateEmailChannelOutcome PinpointClient::UpdateEmailChannel(const UpdateEmailChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateEmailChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateEmailChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -2178,6 +2285,7 @@ UpdateEmailChannelOutcome PinpointClient::UpdateEmailChannel(const UpdateEmailCh
 
 UpdateEmailTemplateOutcome PinpointClient::UpdateEmailTemplate(const UpdateEmailTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateEmailTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateEmailTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TemplateNameHasBeenSet())
   {
@@ -2194,6 +2302,7 @@ UpdateEmailTemplateOutcome PinpointClient::UpdateEmailTemplate(const UpdateEmail
 
 UpdateEndpointOutcome PinpointClient::UpdateEndpoint(const UpdateEndpointRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateEndpoint);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -2216,6 +2325,7 @@ UpdateEndpointOutcome PinpointClient::UpdateEndpoint(const UpdateEndpointRequest
 
 UpdateEndpointsBatchOutcome PinpointClient::UpdateEndpointsBatch(const UpdateEndpointsBatchRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateEndpointsBatch);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateEndpointsBatch, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -2232,6 +2342,7 @@ UpdateEndpointsBatchOutcome PinpointClient::UpdateEndpointsBatch(const UpdateEnd
 
 UpdateGcmChannelOutcome PinpointClient::UpdateGcmChannel(const UpdateGcmChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateGcmChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateGcmChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -2248,6 +2359,7 @@ UpdateGcmChannelOutcome PinpointClient::UpdateGcmChannel(const UpdateGcmChannelR
 
 UpdateInAppTemplateOutcome PinpointClient::UpdateInAppTemplate(const UpdateInAppTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateInAppTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateInAppTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TemplateNameHasBeenSet())
   {
@@ -2264,6 +2376,7 @@ UpdateInAppTemplateOutcome PinpointClient::UpdateInAppTemplate(const UpdateInApp
 
 UpdateJourneyOutcome PinpointClient::UpdateJourney(const UpdateJourneyRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateJourney);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateJourney, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -2286,6 +2399,7 @@ UpdateJourneyOutcome PinpointClient::UpdateJourney(const UpdateJourneyRequest& r
 
 UpdateJourneyStateOutcome PinpointClient::UpdateJourneyState(const UpdateJourneyStateRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateJourneyState);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateJourneyState, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -2309,6 +2423,7 @@ UpdateJourneyStateOutcome PinpointClient::UpdateJourneyState(const UpdateJourney
 
 UpdatePushTemplateOutcome PinpointClient::UpdatePushTemplate(const UpdatePushTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdatePushTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdatePushTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TemplateNameHasBeenSet())
   {
@@ -2325,6 +2440,7 @@ UpdatePushTemplateOutcome PinpointClient::UpdatePushTemplate(const UpdatePushTem
 
 UpdateRecommenderConfigurationOutcome PinpointClient::UpdateRecommenderConfiguration(const UpdateRecommenderConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateRecommenderConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateRecommenderConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RecommenderIdHasBeenSet())
   {
@@ -2340,6 +2456,7 @@ UpdateRecommenderConfigurationOutcome PinpointClient::UpdateRecommenderConfigura
 
 UpdateSegmentOutcome PinpointClient::UpdateSegment(const UpdateSegmentRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateSegment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateSegment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -2362,6 +2479,7 @@ UpdateSegmentOutcome PinpointClient::UpdateSegment(const UpdateSegmentRequest& r
 
 UpdateSmsChannelOutcome PinpointClient::UpdateSmsChannel(const UpdateSmsChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateSmsChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateSmsChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -2378,6 +2496,7 @@ UpdateSmsChannelOutcome PinpointClient::UpdateSmsChannel(const UpdateSmsChannelR
 
 UpdateSmsTemplateOutcome PinpointClient::UpdateSmsTemplate(const UpdateSmsTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateSmsTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateSmsTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TemplateNameHasBeenSet())
   {
@@ -2394,6 +2513,7 @@ UpdateSmsTemplateOutcome PinpointClient::UpdateSmsTemplate(const UpdateSmsTempla
 
 UpdateTemplateActiveVersionOutcome PinpointClient::UpdateTemplateActiveVersion(const UpdateTemplateActiveVersionRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateTemplateActiveVersion);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateTemplateActiveVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TemplateNameHasBeenSet())
   {
@@ -2416,6 +2536,7 @@ UpdateTemplateActiveVersionOutcome PinpointClient::UpdateTemplateActiveVersion(c
 
 UpdateVoiceChannelOutcome PinpointClient::UpdateVoiceChannel(const UpdateVoiceChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateVoiceChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateVoiceChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -2432,6 +2553,7 @@ UpdateVoiceChannelOutcome PinpointClient::UpdateVoiceChannel(const UpdateVoiceCh
 
 UpdateVoiceTemplateOutcome PinpointClient::UpdateVoiceTemplate(const UpdateVoiceTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateVoiceTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateVoiceTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TemplateNameHasBeenSet())
   {
@@ -2448,6 +2570,7 @@ UpdateVoiceTemplateOutcome PinpointClient::UpdateVoiceTemplate(const UpdateVoice
 
 VerifyOTPMessageOutcome PinpointClient::VerifyOTPMessage(const VerifyOTPMessageRequest& request) const
 {
+  AWS_OPERATION_GUARD(VerifyOTPMessage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, VerifyOTPMessage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {

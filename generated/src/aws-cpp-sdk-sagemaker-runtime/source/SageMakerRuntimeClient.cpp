@@ -131,6 +131,7 @@ SageMakerRuntimeClient::SageMakerRuntimeClient(const std::shared_ptr<AWSCredenti
     /* End of legacy constructors due deprecation */
 SageMakerRuntimeClient::~SageMakerRuntimeClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<SageMakerRuntimeEndpointProviderBase>& SageMakerRuntimeClient::accessEndpointProvider()
@@ -153,6 +154,7 @@ void SageMakerRuntimeClient::OverrideEndpoint(const Aws::String& endpoint)
 
 InvokeEndpointOutcome SageMakerRuntimeClient::InvokeEndpoint(const InvokeEndpointRequest& request) const
 {
+  AWS_OPERATION_GUARD(InvokeEndpoint);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, InvokeEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.EndpointNameHasBeenSet())
   {
@@ -169,6 +171,7 @@ InvokeEndpointOutcome SageMakerRuntimeClient::InvokeEndpoint(const InvokeEndpoin
 
 InvokeEndpointAsyncOutcome SageMakerRuntimeClient::InvokeEndpointAsync(const InvokeEndpointAsyncRequest& request) const
 {
+  AWS_OPERATION_GUARD(InvokeEndpointAsync);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, InvokeEndpointAsync, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.EndpointNameHasBeenSet())
   {

@@ -151,6 +151,7 @@ MQClient::MQClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsPro
     /* End of legacy constructors due deprecation */
 MQClient::~MQClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<MQEndpointProviderBase>& MQClient::accessEndpointProvider()
@@ -173,6 +174,7 @@ void MQClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CreateBrokerOutcome MQClient::CreateBroker(const CreateBrokerRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateBroker);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateBroker, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateBroker, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -182,6 +184,7 @@ CreateBrokerOutcome MQClient::CreateBroker(const CreateBrokerRequest& request) c
 
 CreateConfigurationOutcome MQClient::CreateConfiguration(const CreateConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -191,6 +194,7 @@ CreateConfigurationOutcome MQClient::CreateConfiguration(const CreateConfigurati
 
 CreateTagsOutcome MQClient::CreateTags(const CreateTagsRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateTags);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateTags, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -206,6 +210,7 @@ CreateTagsOutcome MQClient::CreateTags(const CreateTagsRequest& request) const
 
 CreateUserOutcome MQClient::CreateUser(const CreateUserRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateUser);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BrokerIdHasBeenSet())
   {
@@ -228,6 +233,7 @@ CreateUserOutcome MQClient::CreateUser(const CreateUserRequest& request) const
 
 DeleteBrokerOutcome MQClient::DeleteBroker(const DeleteBrokerRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteBroker);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteBroker, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BrokerIdHasBeenSet())
   {
@@ -243,6 +249,7 @@ DeleteBrokerOutcome MQClient::DeleteBroker(const DeleteBrokerRequest& request) c
 
 DeleteTagsOutcome MQClient::DeleteTags(const DeleteTagsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteTags);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteTags, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -263,6 +270,7 @@ DeleteTagsOutcome MQClient::DeleteTags(const DeleteTagsRequest& request) const
 
 DeleteUserOutcome MQClient::DeleteUser(const DeleteUserRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteUser);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BrokerIdHasBeenSet())
   {
@@ -285,6 +293,7 @@ DeleteUserOutcome MQClient::DeleteUser(const DeleteUserRequest& request) const
 
 DescribeBrokerOutcome MQClient::DescribeBroker(const DescribeBrokerRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeBroker);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeBroker, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BrokerIdHasBeenSet())
   {
@@ -300,6 +309,7 @@ DescribeBrokerOutcome MQClient::DescribeBroker(const DescribeBrokerRequest& requ
 
 DescribeBrokerEngineTypesOutcome MQClient::DescribeBrokerEngineTypes(const DescribeBrokerEngineTypesRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeBrokerEngineTypes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeBrokerEngineTypes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeBrokerEngineTypes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -309,6 +319,7 @@ DescribeBrokerEngineTypesOutcome MQClient::DescribeBrokerEngineTypes(const Descr
 
 DescribeBrokerInstanceOptionsOutcome MQClient::DescribeBrokerInstanceOptions(const DescribeBrokerInstanceOptionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeBrokerInstanceOptions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeBrokerInstanceOptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeBrokerInstanceOptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -318,6 +329,7 @@ DescribeBrokerInstanceOptionsOutcome MQClient::DescribeBrokerInstanceOptions(con
 
 DescribeConfigurationOutcome MQClient::DescribeConfiguration(const DescribeConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConfigurationIdHasBeenSet())
   {
@@ -333,6 +345,7 @@ DescribeConfigurationOutcome MQClient::DescribeConfiguration(const DescribeConfi
 
 DescribeConfigurationRevisionOutcome MQClient::DescribeConfigurationRevision(const DescribeConfigurationRevisionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeConfigurationRevision);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeConfigurationRevision, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConfigurationIdHasBeenSet())
   {
@@ -355,6 +368,7 @@ DescribeConfigurationRevisionOutcome MQClient::DescribeConfigurationRevision(con
 
 DescribeUserOutcome MQClient::DescribeUser(const DescribeUserRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeUser);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BrokerIdHasBeenSet())
   {
@@ -377,6 +391,7 @@ DescribeUserOutcome MQClient::DescribeUser(const DescribeUserRequest& request) c
 
 ListBrokersOutcome MQClient::ListBrokers(const ListBrokersRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListBrokers);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListBrokers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListBrokers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -386,6 +401,7 @@ ListBrokersOutcome MQClient::ListBrokers(const ListBrokersRequest& request) cons
 
 ListConfigurationRevisionsOutcome MQClient::ListConfigurationRevisions(const ListConfigurationRevisionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListConfigurationRevisions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListConfigurationRevisions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConfigurationIdHasBeenSet())
   {
@@ -402,6 +418,7 @@ ListConfigurationRevisionsOutcome MQClient::ListConfigurationRevisions(const Lis
 
 ListConfigurationsOutcome MQClient::ListConfigurations(const ListConfigurationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListConfigurations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -411,6 +428,7 @@ ListConfigurationsOutcome MQClient::ListConfigurations(const ListConfigurationsR
 
 ListTagsOutcome MQClient::ListTags(const ListTagsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTags);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTags, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -426,6 +444,7 @@ ListTagsOutcome MQClient::ListTags(const ListTagsRequest& request) const
 
 ListUsersOutcome MQClient::ListUsers(const ListUsersRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListUsers);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListUsers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BrokerIdHasBeenSet())
   {
@@ -442,6 +461,7 @@ ListUsersOutcome MQClient::ListUsers(const ListUsersRequest& request) const
 
 RebootBrokerOutcome MQClient::RebootBroker(const RebootBrokerRequest& request) const
 {
+  AWS_OPERATION_GUARD(RebootBroker);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RebootBroker, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BrokerIdHasBeenSet())
   {
@@ -458,6 +478,7 @@ RebootBrokerOutcome MQClient::RebootBroker(const RebootBrokerRequest& request) c
 
 UpdateBrokerOutcome MQClient::UpdateBroker(const UpdateBrokerRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateBroker);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateBroker, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BrokerIdHasBeenSet())
   {
@@ -473,6 +494,7 @@ UpdateBrokerOutcome MQClient::UpdateBroker(const UpdateBrokerRequest& request) c
 
 UpdateConfigurationOutcome MQClient::UpdateConfiguration(const UpdateConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConfigurationIdHasBeenSet())
   {
@@ -488,6 +510,7 @@ UpdateConfigurationOutcome MQClient::UpdateConfiguration(const UpdateConfigurati
 
 UpdateUserOutcome MQClient::UpdateUser(const UpdateUserRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateUser);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BrokerIdHasBeenSet())
   {

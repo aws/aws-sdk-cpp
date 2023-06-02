@@ -136,6 +136,7 @@ LexRuntimeV2Client::LexRuntimeV2Client(const std::shared_ptr<AWSCredentialsProvi
     /* End of legacy constructors due deprecation */
 LexRuntimeV2Client::~LexRuntimeV2Client()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<LexRuntimeV2EndpointProviderBase>& LexRuntimeV2Client::accessEndpointProvider()
@@ -158,6 +159,7 @@ void LexRuntimeV2Client::OverrideEndpoint(const Aws::String& endpoint)
 
 DeleteSessionOutcome LexRuntimeV2Client::DeleteSession(const DeleteSessionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteSession);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BotIdHasBeenSet())
   {
@@ -194,6 +196,7 @@ DeleteSessionOutcome LexRuntimeV2Client::DeleteSession(const DeleteSessionReques
 
 GetSessionOutcome LexRuntimeV2Client::GetSession(const GetSessionRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSession);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BotIdHasBeenSet())
   {
@@ -230,6 +233,7 @@ GetSessionOutcome LexRuntimeV2Client::GetSession(const GetSessionRequest& reques
 
 PutSessionOutcome LexRuntimeV2Client::PutSession(const PutSessionRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutSession);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BotIdHasBeenSet())
   {
@@ -266,6 +270,7 @@ PutSessionOutcome LexRuntimeV2Client::PutSession(const PutSessionRequest& reques
 
 RecognizeTextOutcome LexRuntimeV2Client::RecognizeText(const RecognizeTextRequest& request) const
 {
+  AWS_OPERATION_GUARD(RecognizeText);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RecognizeText, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BotIdHasBeenSet())
   {
@@ -303,6 +308,7 @@ RecognizeTextOutcome LexRuntimeV2Client::RecognizeText(const RecognizeTextReques
 
 RecognizeUtteranceOutcome LexRuntimeV2Client::RecognizeUtterance(const RecognizeUtteranceRequest& request) const
 {
+  AWS_OPERATION_GUARD(RecognizeUtterance);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RecognizeUtterance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BotIdHasBeenSet())
   {

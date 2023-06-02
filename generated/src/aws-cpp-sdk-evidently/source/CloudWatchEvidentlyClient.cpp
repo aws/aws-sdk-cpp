@@ -167,6 +167,7 @@ CloudWatchEvidentlyClient::CloudWatchEvidentlyClient(const std::shared_ptr<AWSCr
     /* End of legacy constructors due deprecation */
 CloudWatchEvidentlyClient::~CloudWatchEvidentlyClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<CloudWatchEvidentlyEndpointProviderBase>& CloudWatchEvidentlyClient::accessEndpointProvider()
@@ -189,6 +190,7 @@ void CloudWatchEvidentlyClient::OverrideEndpoint(const Aws::String& endpoint)
 
 BatchEvaluateFeatureOutcome CloudWatchEvidentlyClient::BatchEvaluateFeature(const BatchEvaluateFeatureRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchEvaluateFeature);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchEvaluateFeature, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectHasBeenSet())
   {
@@ -207,6 +209,7 @@ BatchEvaluateFeatureOutcome CloudWatchEvidentlyClient::BatchEvaluateFeature(cons
 
 CreateExperimentOutcome CloudWatchEvidentlyClient::CreateExperiment(const CreateExperimentRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateExperiment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateExperiment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectHasBeenSet())
   {
@@ -223,6 +226,7 @@ CreateExperimentOutcome CloudWatchEvidentlyClient::CreateExperiment(const Create
 
 CreateFeatureOutcome CloudWatchEvidentlyClient::CreateFeature(const CreateFeatureRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateFeature);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateFeature, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectHasBeenSet())
   {
@@ -239,6 +243,7 @@ CreateFeatureOutcome CloudWatchEvidentlyClient::CreateFeature(const CreateFeatur
 
 CreateLaunchOutcome CloudWatchEvidentlyClient::CreateLaunch(const CreateLaunchRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateLaunch);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateLaunch, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectHasBeenSet())
   {
@@ -255,6 +260,7 @@ CreateLaunchOutcome CloudWatchEvidentlyClient::CreateLaunch(const CreateLaunchRe
 
 CreateProjectOutcome CloudWatchEvidentlyClient::CreateProject(const CreateProjectRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateProject);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateProject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateProject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -264,6 +270,7 @@ CreateProjectOutcome CloudWatchEvidentlyClient::CreateProject(const CreateProjec
 
 CreateSegmentOutcome CloudWatchEvidentlyClient::CreateSegment(const CreateSegmentRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateSegment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateSegment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateSegment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -273,6 +280,7 @@ CreateSegmentOutcome CloudWatchEvidentlyClient::CreateSegment(const CreateSegmen
 
 DeleteExperimentOutcome CloudWatchEvidentlyClient::DeleteExperiment(const DeleteExperimentRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteExperiment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteExperiment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ExperimentHasBeenSet())
   {
@@ -295,6 +303,7 @@ DeleteExperimentOutcome CloudWatchEvidentlyClient::DeleteExperiment(const Delete
 
 DeleteFeatureOutcome CloudWatchEvidentlyClient::DeleteFeature(const DeleteFeatureRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteFeature);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteFeature, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FeatureHasBeenSet())
   {
@@ -317,6 +326,7 @@ DeleteFeatureOutcome CloudWatchEvidentlyClient::DeleteFeature(const DeleteFeatur
 
 DeleteLaunchOutcome CloudWatchEvidentlyClient::DeleteLaunch(const DeleteLaunchRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteLaunch);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteLaunch, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LaunchHasBeenSet())
   {
@@ -339,6 +349,7 @@ DeleteLaunchOutcome CloudWatchEvidentlyClient::DeleteLaunch(const DeleteLaunchRe
 
 DeleteProjectOutcome CloudWatchEvidentlyClient::DeleteProject(const DeleteProjectRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteProject);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteProject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectHasBeenSet())
   {
@@ -354,6 +365,7 @@ DeleteProjectOutcome CloudWatchEvidentlyClient::DeleteProject(const DeleteProjec
 
 DeleteSegmentOutcome CloudWatchEvidentlyClient::DeleteSegment(const DeleteSegmentRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteSegment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteSegment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SegmentHasBeenSet())
   {
@@ -369,6 +381,7 @@ DeleteSegmentOutcome CloudWatchEvidentlyClient::DeleteSegment(const DeleteSegmen
 
 EvaluateFeatureOutcome CloudWatchEvidentlyClient::EvaluateFeature(const EvaluateFeatureRequest& request) const
 {
+  AWS_OPERATION_GUARD(EvaluateFeature);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, EvaluateFeature, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FeatureHasBeenSet())
   {
@@ -393,6 +406,7 @@ EvaluateFeatureOutcome CloudWatchEvidentlyClient::EvaluateFeature(const Evaluate
 
 GetExperimentOutcome CloudWatchEvidentlyClient::GetExperiment(const GetExperimentRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetExperiment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetExperiment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ExperimentHasBeenSet())
   {
@@ -415,6 +429,7 @@ GetExperimentOutcome CloudWatchEvidentlyClient::GetExperiment(const GetExperimen
 
 GetExperimentResultsOutcome CloudWatchEvidentlyClient::GetExperimentResults(const GetExperimentResultsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetExperimentResults);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetExperimentResults, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ExperimentHasBeenSet())
   {
@@ -438,6 +453,7 @@ GetExperimentResultsOutcome CloudWatchEvidentlyClient::GetExperimentResults(cons
 
 GetFeatureOutcome CloudWatchEvidentlyClient::GetFeature(const GetFeatureRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetFeature);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetFeature, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FeatureHasBeenSet())
   {
@@ -460,6 +476,7 @@ GetFeatureOutcome CloudWatchEvidentlyClient::GetFeature(const GetFeatureRequest&
 
 GetLaunchOutcome CloudWatchEvidentlyClient::GetLaunch(const GetLaunchRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetLaunch);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetLaunch, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LaunchHasBeenSet())
   {
@@ -482,6 +499,7 @@ GetLaunchOutcome CloudWatchEvidentlyClient::GetLaunch(const GetLaunchRequest& re
 
 GetProjectOutcome CloudWatchEvidentlyClient::GetProject(const GetProjectRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetProject);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetProject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectHasBeenSet())
   {
@@ -497,6 +515,7 @@ GetProjectOutcome CloudWatchEvidentlyClient::GetProject(const GetProjectRequest&
 
 GetSegmentOutcome CloudWatchEvidentlyClient::GetSegment(const GetSegmentRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSegment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSegment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SegmentHasBeenSet())
   {
@@ -512,6 +531,7 @@ GetSegmentOutcome CloudWatchEvidentlyClient::GetSegment(const GetSegmentRequest&
 
 ListExperimentsOutcome CloudWatchEvidentlyClient::ListExperiments(const ListExperimentsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListExperiments);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListExperiments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectHasBeenSet())
   {
@@ -528,6 +548,7 @@ ListExperimentsOutcome CloudWatchEvidentlyClient::ListExperiments(const ListExpe
 
 ListFeaturesOutcome CloudWatchEvidentlyClient::ListFeatures(const ListFeaturesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListFeatures);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListFeatures, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectHasBeenSet())
   {
@@ -544,6 +565,7 @@ ListFeaturesOutcome CloudWatchEvidentlyClient::ListFeatures(const ListFeaturesRe
 
 ListLaunchesOutcome CloudWatchEvidentlyClient::ListLaunches(const ListLaunchesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListLaunches);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListLaunches, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectHasBeenSet())
   {
@@ -560,6 +582,7 @@ ListLaunchesOutcome CloudWatchEvidentlyClient::ListLaunches(const ListLaunchesRe
 
 ListProjectsOutcome CloudWatchEvidentlyClient::ListProjects(const ListProjectsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListProjects);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListProjects, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListProjects, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -569,6 +592,7 @@ ListProjectsOutcome CloudWatchEvidentlyClient::ListProjects(const ListProjectsRe
 
 ListSegmentReferencesOutcome CloudWatchEvidentlyClient::ListSegmentReferences(const ListSegmentReferencesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListSegmentReferences);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSegmentReferences, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SegmentHasBeenSet())
   {
@@ -590,6 +614,7 @@ ListSegmentReferencesOutcome CloudWatchEvidentlyClient::ListSegmentReferences(co
 
 ListSegmentsOutcome CloudWatchEvidentlyClient::ListSegments(const ListSegmentsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListSegments);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSegments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListSegments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -599,6 +624,7 @@ ListSegmentsOutcome CloudWatchEvidentlyClient::ListSegments(const ListSegmentsRe
 
 ListTagsForResourceOutcome CloudWatchEvidentlyClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -614,6 +640,7 @@ ListTagsForResourceOutcome CloudWatchEvidentlyClient::ListTagsForResource(const 
 
 PutProjectEventsOutcome CloudWatchEvidentlyClient::PutProjectEvents(const PutProjectEventsRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutProjectEvents);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutProjectEvents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectHasBeenSet())
   {
@@ -631,6 +658,7 @@ PutProjectEventsOutcome CloudWatchEvidentlyClient::PutProjectEvents(const PutPro
 
 StartExperimentOutcome CloudWatchEvidentlyClient::StartExperiment(const StartExperimentRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartExperiment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartExperiment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ExperimentHasBeenSet())
   {
@@ -654,6 +682,7 @@ StartExperimentOutcome CloudWatchEvidentlyClient::StartExperiment(const StartExp
 
 StartLaunchOutcome CloudWatchEvidentlyClient::StartLaunch(const StartLaunchRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartLaunch);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartLaunch, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LaunchHasBeenSet())
   {
@@ -677,6 +706,7 @@ StartLaunchOutcome CloudWatchEvidentlyClient::StartLaunch(const StartLaunchReque
 
 StopExperimentOutcome CloudWatchEvidentlyClient::StopExperiment(const StopExperimentRequest& request) const
 {
+  AWS_OPERATION_GUARD(StopExperiment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopExperiment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ExperimentHasBeenSet())
   {
@@ -700,6 +730,7 @@ StopExperimentOutcome CloudWatchEvidentlyClient::StopExperiment(const StopExperi
 
 StopLaunchOutcome CloudWatchEvidentlyClient::StopLaunch(const StopLaunchRequest& request) const
 {
+  AWS_OPERATION_GUARD(StopLaunch);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopLaunch, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LaunchHasBeenSet())
   {
@@ -723,6 +754,7 @@ StopLaunchOutcome CloudWatchEvidentlyClient::StopLaunch(const StopLaunchRequest&
 
 TagResourceOutcome CloudWatchEvidentlyClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -738,6 +770,7 @@ TagResourceOutcome CloudWatchEvidentlyClient::TagResource(const TagResourceReque
 
 TestSegmentPatternOutcome CloudWatchEvidentlyClient::TestSegmentPattern(const TestSegmentPatternRequest& request) const
 {
+  AWS_OPERATION_GUARD(TestSegmentPattern);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TestSegmentPattern, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TestSegmentPattern, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -747,6 +780,7 @@ TestSegmentPatternOutcome CloudWatchEvidentlyClient::TestSegmentPattern(const Te
 
 UntagResourceOutcome CloudWatchEvidentlyClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -767,6 +801,7 @@ UntagResourceOutcome CloudWatchEvidentlyClient::UntagResource(const UntagResourc
 
 UpdateExperimentOutcome CloudWatchEvidentlyClient::UpdateExperiment(const UpdateExperimentRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateExperiment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateExperiment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ExperimentHasBeenSet())
   {
@@ -789,6 +824,7 @@ UpdateExperimentOutcome CloudWatchEvidentlyClient::UpdateExperiment(const Update
 
 UpdateFeatureOutcome CloudWatchEvidentlyClient::UpdateFeature(const UpdateFeatureRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateFeature);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateFeature, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FeatureHasBeenSet())
   {
@@ -811,6 +847,7 @@ UpdateFeatureOutcome CloudWatchEvidentlyClient::UpdateFeature(const UpdateFeatur
 
 UpdateLaunchOutcome CloudWatchEvidentlyClient::UpdateLaunch(const UpdateLaunchRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateLaunch);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateLaunch, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LaunchHasBeenSet())
   {
@@ -833,6 +870,7 @@ UpdateLaunchOutcome CloudWatchEvidentlyClient::UpdateLaunch(const UpdateLaunchRe
 
 UpdateProjectOutcome CloudWatchEvidentlyClient::UpdateProject(const UpdateProjectRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateProject);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateProject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectHasBeenSet())
   {
@@ -848,6 +886,7 @@ UpdateProjectOutcome CloudWatchEvidentlyClient::UpdateProject(const UpdateProjec
 
 UpdateProjectDataDeliveryOutcome CloudWatchEvidentlyClient::UpdateProjectDataDelivery(const UpdateProjectDataDeliveryRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateProjectDataDelivery);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateProjectDataDelivery, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectHasBeenSet())
   {

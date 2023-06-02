@@ -174,31 +174,31 @@ namespace Model
 
     /**
      * <p> Provides information about the advanced event selectors configured for the
-     * channel, and whether the channel applies to all regions or a single region. </p>
+     * channel, and whether the channel applies to all Regions or a single Region. </p>
      */
     inline const SourceConfig& GetSourceConfig() const{ return m_sourceConfig; }
 
     /**
      * <p> Provides information about the advanced event selectors configured for the
-     * channel, and whether the channel applies to all regions or a single region. </p>
+     * channel, and whether the channel applies to all Regions or a single Region. </p>
      */
     inline void SetSourceConfig(const SourceConfig& value) { m_sourceConfig = value; }
 
     /**
      * <p> Provides information about the advanced event selectors configured for the
-     * channel, and whether the channel applies to all regions or a single region. </p>
+     * channel, and whether the channel applies to all Regions or a single Region. </p>
      */
     inline void SetSourceConfig(SourceConfig&& value) { m_sourceConfig = std::move(value); }
 
     /**
      * <p> Provides information about the advanced event selectors configured for the
-     * channel, and whether the channel applies to all regions or a single region. </p>
+     * channel, and whether the channel applies to all Regions or a single Region. </p>
      */
     inline GetChannelResult& WithSourceConfig(const SourceConfig& value) { SetSourceConfig(value); return *this;}
 
     /**
      * <p> Provides information about the advanced event selectors configured for the
-     * channel, and whether the channel applies to all regions or a single region. </p>
+     * channel, and whether the channel applies to all Regions or a single Region. </p>
      */
     inline GetChannelResult& WithSourceConfig(SourceConfig&& value) { SetSourceConfig(std::move(value)); return *this;}
 

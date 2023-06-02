@@ -159,6 +159,7 @@ XRayClient::XRayClient(const std::shared_ptr<AWSCredentialsProvider>& credential
     /* End of legacy constructors due deprecation */
 XRayClient::~XRayClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<XRayEndpointProviderBase>& XRayClient::accessEndpointProvider()
@@ -181,6 +182,7 @@ void XRayClient::OverrideEndpoint(const Aws::String& endpoint)
 
 BatchGetTracesOutcome XRayClient::BatchGetTraces(const BatchGetTracesRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchGetTraces);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchGetTraces, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchGetTraces, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -190,6 +192,7 @@ BatchGetTracesOutcome XRayClient::BatchGetTraces(const BatchGetTracesRequest& re
 
 CreateGroupOutcome XRayClient::CreateGroup(const CreateGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -199,6 +202,7 @@ CreateGroupOutcome XRayClient::CreateGroup(const CreateGroupRequest& request) co
 
 CreateSamplingRuleOutcome XRayClient::CreateSamplingRule(const CreateSamplingRuleRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateSamplingRule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateSamplingRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateSamplingRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -208,6 +212,7 @@ CreateSamplingRuleOutcome XRayClient::CreateSamplingRule(const CreateSamplingRul
 
 DeleteGroupOutcome XRayClient::DeleteGroup(const DeleteGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -217,6 +222,7 @@ DeleteGroupOutcome XRayClient::DeleteGroup(const DeleteGroupRequest& request) co
 
 DeleteResourcePolicyOutcome XRayClient::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteResourcePolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -226,6 +232,7 @@ DeleteResourcePolicyOutcome XRayClient::DeleteResourcePolicy(const DeleteResourc
 
 DeleteSamplingRuleOutcome XRayClient::DeleteSamplingRule(const DeleteSamplingRuleRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteSamplingRule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteSamplingRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteSamplingRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -235,6 +242,7 @@ DeleteSamplingRuleOutcome XRayClient::DeleteSamplingRule(const DeleteSamplingRul
 
 GetEncryptionConfigOutcome XRayClient::GetEncryptionConfig(const GetEncryptionConfigRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetEncryptionConfig);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetEncryptionConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetEncryptionConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -244,6 +252,7 @@ GetEncryptionConfigOutcome XRayClient::GetEncryptionConfig(const GetEncryptionCo
 
 GetGroupOutcome XRayClient::GetGroup(const GetGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -253,6 +262,7 @@ GetGroupOutcome XRayClient::GetGroup(const GetGroupRequest& request) const
 
 GetGroupsOutcome XRayClient::GetGroups(const GetGroupsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetGroups);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -262,6 +272,7 @@ GetGroupsOutcome XRayClient::GetGroups(const GetGroupsRequest& request) const
 
 GetInsightOutcome XRayClient::GetInsight(const GetInsightRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetInsight);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetInsight, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetInsight, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -271,6 +282,7 @@ GetInsightOutcome XRayClient::GetInsight(const GetInsightRequest& request) const
 
 GetInsightEventsOutcome XRayClient::GetInsightEvents(const GetInsightEventsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetInsightEvents);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetInsightEvents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetInsightEvents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -280,6 +292,7 @@ GetInsightEventsOutcome XRayClient::GetInsightEvents(const GetInsightEventsReque
 
 GetInsightImpactGraphOutcome XRayClient::GetInsightImpactGraph(const GetInsightImpactGraphRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetInsightImpactGraph);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetInsightImpactGraph, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetInsightImpactGraph, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -289,6 +302,7 @@ GetInsightImpactGraphOutcome XRayClient::GetInsightImpactGraph(const GetInsightI
 
 GetInsightSummariesOutcome XRayClient::GetInsightSummaries(const GetInsightSummariesRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetInsightSummaries);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetInsightSummaries, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetInsightSummaries, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -298,6 +312,7 @@ GetInsightSummariesOutcome XRayClient::GetInsightSummaries(const GetInsightSumma
 
 GetSamplingRulesOutcome XRayClient::GetSamplingRules(const GetSamplingRulesRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSamplingRules);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSamplingRules, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetSamplingRules, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -307,6 +322,7 @@ GetSamplingRulesOutcome XRayClient::GetSamplingRules(const GetSamplingRulesReque
 
 GetSamplingStatisticSummariesOutcome XRayClient::GetSamplingStatisticSummaries(const GetSamplingStatisticSummariesRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSamplingStatisticSummaries);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSamplingStatisticSummaries, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetSamplingStatisticSummaries, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -316,6 +332,7 @@ GetSamplingStatisticSummariesOutcome XRayClient::GetSamplingStatisticSummaries(c
 
 GetSamplingTargetsOutcome XRayClient::GetSamplingTargets(const GetSamplingTargetsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSamplingTargets);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSamplingTargets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetSamplingTargets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -325,6 +342,7 @@ GetSamplingTargetsOutcome XRayClient::GetSamplingTargets(const GetSamplingTarget
 
 GetServiceGraphOutcome XRayClient::GetServiceGraph(const GetServiceGraphRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetServiceGraph);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetServiceGraph, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetServiceGraph, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -334,6 +352,7 @@ GetServiceGraphOutcome XRayClient::GetServiceGraph(const GetServiceGraphRequest&
 
 GetTimeSeriesServiceStatisticsOutcome XRayClient::GetTimeSeriesServiceStatistics(const GetTimeSeriesServiceStatisticsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetTimeSeriesServiceStatistics);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetTimeSeriesServiceStatistics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetTimeSeriesServiceStatistics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -343,6 +362,7 @@ GetTimeSeriesServiceStatisticsOutcome XRayClient::GetTimeSeriesServiceStatistics
 
 GetTraceGraphOutcome XRayClient::GetTraceGraph(const GetTraceGraphRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetTraceGraph);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetTraceGraph, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetTraceGraph, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -352,6 +372,7 @@ GetTraceGraphOutcome XRayClient::GetTraceGraph(const GetTraceGraphRequest& reque
 
 GetTraceSummariesOutcome XRayClient::GetTraceSummaries(const GetTraceSummariesRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetTraceSummaries);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetTraceSummaries, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetTraceSummaries, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -361,6 +382,7 @@ GetTraceSummariesOutcome XRayClient::GetTraceSummaries(const GetTraceSummariesRe
 
 ListResourcePoliciesOutcome XRayClient::ListResourcePolicies(const ListResourcePoliciesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListResourcePolicies);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListResourcePolicies, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListResourcePolicies, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -370,6 +392,7 @@ ListResourcePoliciesOutcome XRayClient::ListResourcePolicies(const ListResourceP
 
 ListTagsForResourceOutcome XRayClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -379,6 +402,7 @@ ListTagsForResourceOutcome XRayClient::ListTagsForResource(const ListTagsForReso
 
 PutEncryptionConfigOutcome XRayClient::PutEncryptionConfig(const PutEncryptionConfigRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutEncryptionConfig);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutEncryptionConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutEncryptionConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -388,6 +412,7 @@ PutEncryptionConfigOutcome XRayClient::PutEncryptionConfig(const PutEncryptionCo
 
 PutResourcePolicyOutcome XRayClient::PutResourcePolicy(const PutResourcePolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutResourcePolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -397,6 +422,7 @@ PutResourcePolicyOutcome XRayClient::PutResourcePolicy(const PutResourcePolicyRe
 
 PutTelemetryRecordsOutcome XRayClient::PutTelemetryRecords(const PutTelemetryRecordsRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutTelemetryRecords);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutTelemetryRecords, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutTelemetryRecords, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -406,6 +432,7 @@ PutTelemetryRecordsOutcome XRayClient::PutTelemetryRecords(const PutTelemetryRec
 
 PutTraceSegmentsOutcome XRayClient::PutTraceSegments(const PutTraceSegmentsRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutTraceSegments);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutTraceSegments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutTraceSegments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -415,6 +442,7 @@ PutTraceSegmentsOutcome XRayClient::PutTraceSegments(const PutTraceSegmentsReque
 
 TagResourceOutcome XRayClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -424,6 +452,7 @@ TagResourceOutcome XRayClient::TagResource(const TagResourceRequest& request) co
 
 UntagResourceOutcome XRayClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -433,6 +462,7 @@ UntagResourceOutcome XRayClient::UntagResource(const UntagResourceRequest& reque
 
 UpdateGroupOutcome XRayClient::UpdateGroup(const UpdateGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -442,6 +472,7 @@ UpdateGroupOutcome XRayClient::UpdateGroup(const UpdateGroupRequest& request) co
 
 UpdateSamplingRuleOutcome XRayClient::UpdateSamplingRule(const UpdateSamplingRuleRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateSamplingRule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateSamplingRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateSamplingRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

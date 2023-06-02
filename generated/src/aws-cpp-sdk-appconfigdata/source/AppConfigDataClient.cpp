@@ -131,6 +131,7 @@ AppConfigDataClient::AppConfigDataClient(const std::shared_ptr<AWSCredentialsPro
     /* End of legacy constructors due deprecation */
 AppConfigDataClient::~AppConfigDataClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<AppConfigDataEndpointProviderBase>& AppConfigDataClient::accessEndpointProvider()
@@ -153,6 +154,7 @@ void AppConfigDataClient::OverrideEndpoint(const Aws::String& endpoint)
 
 GetLatestConfigurationOutcome AppConfigDataClient::GetLatestConfiguration(const GetLatestConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetLatestConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetLatestConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConfigurationTokenHasBeenSet())
   {
@@ -167,6 +169,7 @@ GetLatestConfigurationOutcome AppConfigDataClient::GetLatestConfiguration(const 
 
 StartConfigurationSessionOutcome AppConfigDataClient::StartConfigurationSession(const StartConfigurationSessionRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartConfigurationSession);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartConfigurationSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartConfigurationSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

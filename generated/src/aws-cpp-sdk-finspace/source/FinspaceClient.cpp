@@ -137,6 +137,7 @@ FinspaceClient::FinspaceClient(const std::shared_ptr<AWSCredentialsProvider>& cr
     /* End of legacy constructors due deprecation */
 FinspaceClient::~FinspaceClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<FinspaceEndpointProviderBase>& FinspaceClient::accessEndpointProvider()
@@ -159,6 +160,7 @@ void FinspaceClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CreateEnvironmentOutcome FinspaceClient::CreateEnvironment(const CreateEnvironmentRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateEnvironment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateEnvironment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateEnvironment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -168,6 +170,7 @@ CreateEnvironmentOutcome FinspaceClient::CreateEnvironment(const CreateEnvironme
 
 DeleteEnvironmentOutcome FinspaceClient::DeleteEnvironment(const DeleteEnvironmentRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteEnvironment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteEnvironment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.EnvironmentIdHasBeenSet())
   {
@@ -183,6 +186,7 @@ DeleteEnvironmentOutcome FinspaceClient::DeleteEnvironment(const DeleteEnvironme
 
 GetEnvironmentOutcome FinspaceClient::GetEnvironment(const GetEnvironmentRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetEnvironment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetEnvironment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.EnvironmentIdHasBeenSet())
   {
@@ -198,6 +202,7 @@ GetEnvironmentOutcome FinspaceClient::GetEnvironment(const GetEnvironmentRequest
 
 ListEnvironmentsOutcome FinspaceClient::ListEnvironments(const ListEnvironmentsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListEnvironments);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListEnvironments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListEnvironments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -207,6 +212,7 @@ ListEnvironmentsOutcome FinspaceClient::ListEnvironments(const ListEnvironmentsR
 
 ListTagsForResourceOutcome FinspaceClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -222,6 +228,7 @@ ListTagsForResourceOutcome FinspaceClient::ListTagsForResource(const ListTagsFor
 
 TagResourceOutcome FinspaceClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -237,6 +244,7 @@ TagResourceOutcome FinspaceClient::TagResource(const TagResourceRequest& request
 
 UntagResourceOutcome FinspaceClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -257,6 +265,7 @@ UntagResourceOutcome FinspaceClient::UntagResource(const UntagResourceRequest& r
 
 UpdateEnvironmentOutcome FinspaceClient::UpdateEnvironment(const UpdateEnvironmentRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateEnvironment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateEnvironment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.EnvironmentIdHasBeenSet())
   {

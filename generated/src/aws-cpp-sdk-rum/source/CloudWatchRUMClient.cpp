@@ -146,6 +146,7 @@ CloudWatchRUMClient::CloudWatchRUMClient(const std::shared_ptr<AWSCredentialsPro
     /* End of legacy constructors due deprecation */
 CloudWatchRUMClient::~CloudWatchRUMClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<CloudWatchRUMEndpointProviderBase>& CloudWatchRUMClient::accessEndpointProvider()
@@ -168,6 +169,7 @@ void CloudWatchRUMClient::OverrideEndpoint(const Aws::String& endpoint)
 
 BatchCreateRumMetricDefinitionsOutcome CloudWatchRUMClient::BatchCreateRumMetricDefinitions(const BatchCreateRumMetricDefinitionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchCreateRumMetricDefinitions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchCreateRumMetricDefinitions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppMonitorNameHasBeenSet())
   {
@@ -184,6 +186,7 @@ BatchCreateRumMetricDefinitionsOutcome CloudWatchRUMClient::BatchCreateRumMetric
 
 BatchDeleteRumMetricDefinitionsOutcome CloudWatchRUMClient::BatchDeleteRumMetricDefinitions(const BatchDeleteRumMetricDefinitionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchDeleteRumMetricDefinitions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchDeleteRumMetricDefinitions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppMonitorNameHasBeenSet())
   {
@@ -210,6 +213,7 @@ BatchDeleteRumMetricDefinitionsOutcome CloudWatchRUMClient::BatchDeleteRumMetric
 
 BatchGetRumMetricDefinitionsOutcome CloudWatchRUMClient::BatchGetRumMetricDefinitions(const BatchGetRumMetricDefinitionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchGetRumMetricDefinitions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchGetRumMetricDefinitions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppMonitorNameHasBeenSet())
   {
@@ -231,6 +235,7 @@ BatchGetRumMetricDefinitionsOutcome CloudWatchRUMClient::BatchGetRumMetricDefini
 
 CreateAppMonitorOutcome CloudWatchRUMClient::CreateAppMonitor(const CreateAppMonitorRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateAppMonitor);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAppMonitor, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateAppMonitor, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -240,6 +245,7 @@ CreateAppMonitorOutcome CloudWatchRUMClient::CreateAppMonitor(const CreateAppMon
 
 DeleteAppMonitorOutcome CloudWatchRUMClient::DeleteAppMonitor(const DeleteAppMonitorRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteAppMonitor);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAppMonitor, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -255,6 +261,7 @@ DeleteAppMonitorOutcome CloudWatchRUMClient::DeleteAppMonitor(const DeleteAppMon
 
 DeleteRumMetricsDestinationOutcome CloudWatchRUMClient::DeleteRumMetricsDestination(const DeleteRumMetricsDestinationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteRumMetricsDestination);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteRumMetricsDestination, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppMonitorNameHasBeenSet())
   {
@@ -276,6 +283,7 @@ DeleteRumMetricsDestinationOutcome CloudWatchRUMClient::DeleteRumMetricsDestinat
 
 GetAppMonitorOutcome CloudWatchRUMClient::GetAppMonitor(const GetAppMonitorRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetAppMonitor);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAppMonitor, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -291,6 +299,7 @@ GetAppMonitorOutcome CloudWatchRUMClient::GetAppMonitor(const GetAppMonitorReque
 
 GetAppMonitorDataOutcome CloudWatchRUMClient::GetAppMonitorData(const GetAppMonitorDataRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetAppMonitorData);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAppMonitorData, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -307,6 +316,7 @@ GetAppMonitorDataOutcome CloudWatchRUMClient::GetAppMonitorData(const GetAppMoni
 
 ListAppMonitorsOutcome CloudWatchRUMClient::ListAppMonitors(const ListAppMonitorsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAppMonitors);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAppMonitors, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAppMonitors, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -316,6 +326,7 @@ ListAppMonitorsOutcome CloudWatchRUMClient::ListAppMonitors(const ListAppMonitor
 
 ListRumMetricsDestinationsOutcome CloudWatchRUMClient::ListRumMetricsDestinations(const ListRumMetricsDestinationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListRumMetricsDestinations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRumMetricsDestinations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppMonitorNameHasBeenSet())
   {
@@ -332,6 +343,7 @@ ListRumMetricsDestinationsOutcome CloudWatchRUMClient::ListRumMetricsDestination
 
 ListTagsForResourceOutcome CloudWatchRUMClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -347,6 +359,7 @@ ListTagsForResourceOutcome CloudWatchRUMClient::ListTagsForResource(const ListTa
 
 PutRumEventsOutcome CloudWatchRUMClient::PutRumEvents(const PutRumEventsRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutRumEvents);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutRumEvents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -364,6 +377,7 @@ PutRumEventsOutcome CloudWatchRUMClient::PutRumEvents(const PutRumEventsRequest&
 
 PutRumMetricsDestinationOutcome CloudWatchRUMClient::PutRumMetricsDestination(const PutRumMetricsDestinationRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutRumMetricsDestination);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutRumMetricsDestination, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppMonitorNameHasBeenSet())
   {
@@ -380,6 +394,7 @@ PutRumMetricsDestinationOutcome CloudWatchRUMClient::PutRumMetricsDestination(co
 
 TagResourceOutcome CloudWatchRUMClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -395,6 +410,7 @@ TagResourceOutcome CloudWatchRUMClient::TagResource(const TagResourceRequest& re
 
 UntagResourceOutcome CloudWatchRUMClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -415,6 +431,7 @@ UntagResourceOutcome CloudWatchRUMClient::UntagResource(const UntagResourceReque
 
 UpdateAppMonitorOutcome CloudWatchRUMClient::UpdateAppMonitor(const UpdateAppMonitorRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateAppMonitor);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAppMonitor, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -430,6 +447,7 @@ UpdateAppMonitorOutcome CloudWatchRUMClient::UpdateAppMonitor(const UpdateAppMon
 
 UpdateRumMetricDefinitionOutcome CloudWatchRUMClient::UpdateRumMetricDefinition(const UpdateRumMetricDefinitionRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateRumMetricDefinition);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateRumMetricDefinition, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppMonitorNameHasBeenSet())
   {

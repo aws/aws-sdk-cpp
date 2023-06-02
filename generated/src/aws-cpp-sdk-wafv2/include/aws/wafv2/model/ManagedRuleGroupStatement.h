@@ -57,49 +57,49 @@ namespace Model
 
     /**
      * <p>The name of the managed rule group vendor. You use this, along with the rule
-     * group name, to identify the rule group.</p>
+     * group name, to identify a rule group.</p>
      */
     inline const Aws::String& GetVendorName() const{ return m_vendorName; }
 
     /**
      * <p>The name of the managed rule group vendor. You use this, along with the rule
-     * group name, to identify the rule group.</p>
+     * group name, to identify a rule group.</p>
      */
     inline bool VendorNameHasBeenSet() const { return m_vendorNameHasBeenSet; }
 
     /**
      * <p>The name of the managed rule group vendor. You use this, along with the rule
-     * group name, to identify the rule group.</p>
+     * group name, to identify a rule group.</p>
      */
     inline void SetVendorName(const Aws::String& value) { m_vendorNameHasBeenSet = true; m_vendorName = value; }
 
     /**
      * <p>The name of the managed rule group vendor. You use this, along with the rule
-     * group name, to identify the rule group.</p>
+     * group name, to identify a rule group.</p>
      */
     inline void SetVendorName(Aws::String&& value) { m_vendorNameHasBeenSet = true; m_vendorName = std::move(value); }
 
     /**
      * <p>The name of the managed rule group vendor. You use this, along with the rule
-     * group name, to identify the rule group.</p>
+     * group name, to identify a rule group.</p>
      */
     inline void SetVendorName(const char* value) { m_vendorNameHasBeenSet = true; m_vendorName.assign(value); }
 
     /**
      * <p>The name of the managed rule group vendor. You use this, along with the rule
-     * group name, to identify the rule group.</p>
+     * group name, to identify a rule group.</p>
      */
     inline ManagedRuleGroupStatement& WithVendorName(const Aws::String& value) { SetVendorName(value); return *this;}
 
     /**
      * <p>The name of the managed rule group vendor. You use this, along with the rule
-     * group name, to identify the rule group.</p>
+     * group name, to identify a rule group.</p>
      */
     inline ManagedRuleGroupStatement& WithVendorName(Aws::String&& value) { SetVendorName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the managed rule group vendor. You use this, along with the rule
-     * group name, to identify the rule group.</p>
+     * group name, to identify a rule group.</p>
      */
     inline ManagedRuleGroupStatement& WithVendorName(const char* value) { SetVendorName(value); return *this;}
 

@@ -143,6 +143,7 @@ OSISClient::OSISClient(const std::shared_ptr<AWSCredentialsProvider>& credential
     /* End of legacy constructors due deprecation */
 OSISClient::~OSISClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<OSISEndpointProviderBase>& OSISClient::accessEndpointProvider()
@@ -165,6 +166,7 @@ void OSISClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CreatePipelineOutcome OSISClient::CreatePipeline(const CreatePipelineRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreatePipeline);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreatePipeline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreatePipeline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -174,6 +176,7 @@ CreatePipelineOutcome OSISClient::CreatePipeline(const CreatePipelineRequest& re
 
 DeletePipelineOutcome OSISClient::DeletePipeline(const DeletePipelineRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeletePipeline);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeletePipeline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PipelineNameHasBeenSet())
   {
@@ -189,6 +192,7 @@ DeletePipelineOutcome OSISClient::DeletePipeline(const DeletePipelineRequest& re
 
 GetPipelineOutcome OSISClient::GetPipeline(const GetPipelineRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetPipeline);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPipeline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PipelineNameHasBeenSet())
   {
@@ -204,6 +208,7 @@ GetPipelineOutcome OSISClient::GetPipeline(const GetPipelineRequest& request) co
 
 GetPipelineBlueprintOutcome OSISClient::GetPipelineBlueprint(const GetPipelineBlueprintRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetPipelineBlueprint);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPipelineBlueprint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BlueprintNameHasBeenSet())
   {
@@ -219,6 +224,7 @@ GetPipelineBlueprintOutcome OSISClient::GetPipelineBlueprint(const GetPipelineBl
 
 GetPipelineChangeProgressOutcome OSISClient::GetPipelineChangeProgress(const GetPipelineChangeProgressRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetPipelineChangeProgress);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPipelineChangeProgress, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PipelineNameHasBeenSet())
   {
@@ -234,6 +240,7 @@ GetPipelineChangeProgressOutcome OSISClient::GetPipelineChangeProgress(const Get
 
 ListPipelineBlueprintsOutcome OSISClient::ListPipelineBlueprints(const ListPipelineBlueprintsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListPipelineBlueprints);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPipelineBlueprints, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListPipelineBlueprints, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -243,6 +250,7 @@ ListPipelineBlueprintsOutcome OSISClient::ListPipelineBlueprints(const ListPipel
 
 ListPipelinesOutcome OSISClient::ListPipelines(const ListPipelinesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListPipelines);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPipelines, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListPipelines, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -252,6 +260,7 @@ ListPipelinesOutcome OSISClient::ListPipelines(const ListPipelinesRequest& reque
 
 ListTagsForResourceOutcome OSISClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ArnHasBeenSet())
   {
@@ -266,6 +275,7 @@ ListTagsForResourceOutcome OSISClient::ListTagsForResource(const ListTagsForReso
 
 StartPipelineOutcome OSISClient::StartPipeline(const StartPipelineRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartPipeline);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartPipeline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PipelineNameHasBeenSet())
   {
@@ -281,6 +291,7 @@ StartPipelineOutcome OSISClient::StartPipeline(const StartPipelineRequest& reque
 
 StopPipelineOutcome OSISClient::StopPipeline(const StopPipelineRequest& request) const
 {
+  AWS_OPERATION_GUARD(StopPipeline);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopPipeline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PipelineNameHasBeenSet())
   {
@@ -296,6 +307,7 @@ StopPipelineOutcome OSISClient::StopPipeline(const StopPipelineRequest& request)
 
 TagResourceOutcome OSISClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ArnHasBeenSet())
   {
@@ -310,6 +322,7 @@ TagResourceOutcome OSISClient::TagResource(const TagResourceRequest& request) co
 
 UntagResourceOutcome OSISClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ArnHasBeenSet())
   {
@@ -324,6 +337,7 @@ UntagResourceOutcome OSISClient::UntagResource(const UntagResourceRequest& reque
 
 UpdatePipelineOutcome OSISClient::UpdatePipeline(const UpdatePipelineRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdatePipeline);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdatePipeline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PipelineNameHasBeenSet())
   {
@@ -339,6 +353,7 @@ UpdatePipelineOutcome OSISClient::UpdatePipeline(const UpdatePipelineRequest& re
 
 ValidatePipelineOutcome OSISClient::ValidatePipeline(const ValidatePipelineRequest& request) const
 {
+  AWS_OPERATION_GUARD(ValidatePipeline);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ValidatePipeline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ValidatePipeline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

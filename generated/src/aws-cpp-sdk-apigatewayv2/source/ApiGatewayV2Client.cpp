@@ -201,6 +201,7 @@ ApiGatewayV2Client::ApiGatewayV2Client(const std::shared_ptr<AWSCredentialsProvi
     /* End of legacy constructors due deprecation */
 ApiGatewayV2Client::~ApiGatewayV2Client()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<ApiGatewayV2EndpointProviderBase>& ApiGatewayV2Client::accessEndpointProvider()
@@ -223,6 +224,7 @@ void ApiGatewayV2Client::OverrideEndpoint(const Aws::String& endpoint)
 
 CreateApiOutcome ApiGatewayV2Client::CreateApi(const CreateApiRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateApi);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateApi, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateApi, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -232,6 +234,7 @@ CreateApiOutcome ApiGatewayV2Client::CreateApi(const CreateApiRequest& request) 
 
 CreateApiMappingOutcome ApiGatewayV2Client::CreateApiMapping(const CreateApiMappingRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateApiMapping);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateApiMapping, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainNameHasBeenSet())
   {
@@ -248,6 +251,7 @@ CreateApiMappingOutcome ApiGatewayV2Client::CreateApiMapping(const CreateApiMapp
 
 CreateAuthorizerOutcome ApiGatewayV2Client::CreateAuthorizer(const CreateAuthorizerRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateAuthorizer);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAuthorizer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -264,6 +268,7 @@ CreateAuthorizerOutcome ApiGatewayV2Client::CreateAuthorizer(const CreateAuthori
 
 CreateDeploymentOutcome ApiGatewayV2Client::CreateDeployment(const CreateDeploymentRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateDeployment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDeployment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -280,6 +285,7 @@ CreateDeploymentOutcome ApiGatewayV2Client::CreateDeployment(const CreateDeploym
 
 CreateDomainNameOutcome ApiGatewayV2Client::CreateDomainName(const CreateDomainNameRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateDomainName);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDomainName, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateDomainName, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -289,6 +295,7 @@ CreateDomainNameOutcome ApiGatewayV2Client::CreateDomainName(const CreateDomainN
 
 CreateIntegrationOutcome ApiGatewayV2Client::CreateIntegration(const CreateIntegrationRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateIntegration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateIntegration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -305,6 +312,7 @@ CreateIntegrationOutcome ApiGatewayV2Client::CreateIntegration(const CreateInteg
 
 CreateIntegrationResponseOutcome ApiGatewayV2Client::CreateIntegrationResponse(const CreateIntegrationResponseRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateIntegrationResponse);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateIntegrationResponse, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -328,6 +336,7 @@ CreateIntegrationResponseOutcome ApiGatewayV2Client::CreateIntegrationResponse(c
 
 CreateModelOutcome ApiGatewayV2Client::CreateModel(const CreateModelRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateModel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateModel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -344,6 +353,7 @@ CreateModelOutcome ApiGatewayV2Client::CreateModel(const CreateModelRequest& req
 
 CreateRouteOutcome ApiGatewayV2Client::CreateRoute(const CreateRouteRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateRoute);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateRoute, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -360,6 +370,7 @@ CreateRouteOutcome ApiGatewayV2Client::CreateRoute(const CreateRouteRequest& req
 
 CreateRouteResponseOutcome ApiGatewayV2Client::CreateRouteResponse(const CreateRouteResponseRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateRouteResponse);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateRouteResponse, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -383,6 +394,7 @@ CreateRouteResponseOutcome ApiGatewayV2Client::CreateRouteResponse(const CreateR
 
 CreateStageOutcome ApiGatewayV2Client::CreateStage(const CreateStageRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateStage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateStage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -399,6 +411,7 @@ CreateStageOutcome ApiGatewayV2Client::CreateStage(const CreateStageRequest& req
 
 CreateVpcLinkOutcome ApiGatewayV2Client::CreateVpcLink(const CreateVpcLinkRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateVpcLink);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateVpcLink, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateVpcLink, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -408,6 +421,7 @@ CreateVpcLinkOutcome ApiGatewayV2Client::CreateVpcLink(const CreateVpcLinkReques
 
 DeleteAccessLogSettingsOutcome ApiGatewayV2Client::DeleteAccessLogSettings(const DeleteAccessLogSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteAccessLogSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAccessLogSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -431,6 +445,7 @@ DeleteAccessLogSettingsOutcome ApiGatewayV2Client::DeleteAccessLogSettings(const
 
 DeleteApiOutcome ApiGatewayV2Client::DeleteApi(const DeleteApiRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteApi);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteApi, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -446,6 +461,7 @@ DeleteApiOutcome ApiGatewayV2Client::DeleteApi(const DeleteApiRequest& request) 
 
 DeleteApiMappingOutcome ApiGatewayV2Client::DeleteApiMapping(const DeleteApiMappingRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteApiMapping);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteApiMapping, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiMappingIdHasBeenSet())
   {
@@ -468,6 +484,7 @@ DeleteApiMappingOutcome ApiGatewayV2Client::DeleteApiMapping(const DeleteApiMapp
 
 DeleteAuthorizerOutcome ApiGatewayV2Client::DeleteAuthorizer(const DeleteAuthorizerRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteAuthorizer);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAuthorizer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -490,6 +507,7 @@ DeleteAuthorizerOutcome ApiGatewayV2Client::DeleteAuthorizer(const DeleteAuthori
 
 DeleteCorsConfigurationOutcome ApiGatewayV2Client::DeleteCorsConfiguration(const DeleteCorsConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteCorsConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteCorsConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -506,6 +524,7 @@ DeleteCorsConfigurationOutcome ApiGatewayV2Client::DeleteCorsConfiguration(const
 
 DeleteDeploymentOutcome ApiGatewayV2Client::DeleteDeployment(const DeleteDeploymentRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteDeployment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDeployment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -528,6 +547,7 @@ DeleteDeploymentOutcome ApiGatewayV2Client::DeleteDeployment(const DeleteDeploym
 
 DeleteDomainNameOutcome ApiGatewayV2Client::DeleteDomainName(const DeleteDomainNameRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteDomainName);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDomainName, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainNameHasBeenSet())
   {
@@ -543,6 +563,7 @@ DeleteDomainNameOutcome ApiGatewayV2Client::DeleteDomainName(const DeleteDomainN
 
 DeleteIntegrationOutcome ApiGatewayV2Client::DeleteIntegration(const DeleteIntegrationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteIntegration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteIntegration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -565,6 +586,7 @@ DeleteIntegrationOutcome ApiGatewayV2Client::DeleteIntegration(const DeleteInteg
 
 DeleteIntegrationResponseOutcome ApiGatewayV2Client::DeleteIntegrationResponse(const DeleteIntegrationResponseRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteIntegrationResponse);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteIntegrationResponse, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -594,6 +616,7 @@ DeleteIntegrationResponseOutcome ApiGatewayV2Client::DeleteIntegrationResponse(c
 
 DeleteModelOutcome ApiGatewayV2Client::DeleteModel(const DeleteModelRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteModel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteModel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -616,6 +639,7 @@ DeleteModelOutcome ApiGatewayV2Client::DeleteModel(const DeleteModelRequest& req
 
 DeleteRouteOutcome ApiGatewayV2Client::DeleteRoute(const DeleteRouteRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteRoute);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteRoute, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -638,6 +662,7 @@ DeleteRouteOutcome ApiGatewayV2Client::DeleteRoute(const DeleteRouteRequest& req
 
 DeleteRouteRequestParameterOutcome ApiGatewayV2Client::DeleteRouteRequestParameter(const DeleteRouteRequestParameterRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteRouteRequestParameter);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteRouteRequestParameter, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -667,6 +692,7 @@ DeleteRouteRequestParameterOutcome ApiGatewayV2Client::DeleteRouteRequestParamet
 
 DeleteRouteResponseOutcome ApiGatewayV2Client::DeleteRouteResponse(const DeleteRouteResponseRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteRouteResponse);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteRouteResponse, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -696,6 +722,7 @@ DeleteRouteResponseOutcome ApiGatewayV2Client::DeleteRouteResponse(const DeleteR
 
 DeleteRouteSettingsOutcome ApiGatewayV2Client::DeleteRouteSettings(const DeleteRouteSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteRouteSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteRouteSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -725,6 +752,7 @@ DeleteRouteSettingsOutcome ApiGatewayV2Client::DeleteRouteSettings(const DeleteR
 
 DeleteStageOutcome ApiGatewayV2Client::DeleteStage(const DeleteStageRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteStage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteStage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -747,6 +775,7 @@ DeleteStageOutcome ApiGatewayV2Client::DeleteStage(const DeleteStageRequest& req
 
 DeleteVpcLinkOutcome ApiGatewayV2Client::DeleteVpcLink(const DeleteVpcLinkRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteVpcLink);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteVpcLink, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VpcLinkIdHasBeenSet())
   {
@@ -762,6 +791,7 @@ DeleteVpcLinkOutcome ApiGatewayV2Client::DeleteVpcLink(const DeleteVpcLinkReques
 
 ExportApiOutcome ApiGatewayV2Client::ExportApi(const ExportApiRequest& request) const
 {
+  AWS_OPERATION_GUARD(ExportApi);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ExportApi, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -789,6 +819,7 @@ ExportApiOutcome ApiGatewayV2Client::ExportApi(const ExportApiRequest& request) 
 
 ResetAuthorizersCacheOutcome ApiGatewayV2Client::ResetAuthorizersCache(const ResetAuthorizersCacheRequest& request) const
 {
+  AWS_OPERATION_GUARD(ResetAuthorizersCache);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ResetAuthorizersCache, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -812,6 +843,7 @@ ResetAuthorizersCacheOutcome ApiGatewayV2Client::ResetAuthorizersCache(const Res
 
 GetApiOutcome ApiGatewayV2Client::GetApi(const GetApiRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetApi);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetApi, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -827,6 +859,7 @@ GetApiOutcome ApiGatewayV2Client::GetApi(const GetApiRequest& request) const
 
 GetApiMappingOutcome ApiGatewayV2Client::GetApiMapping(const GetApiMappingRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetApiMapping);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetApiMapping, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiMappingIdHasBeenSet())
   {
@@ -849,6 +882,7 @@ GetApiMappingOutcome ApiGatewayV2Client::GetApiMapping(const GetApiMappingReques
 
 GetApiMappingsOutcome ApiGatewayV2Client::GetApiMappings(const GetApiMappingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetApiMappings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetApiMappings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainNameHasBeenSet())
   {
@@ -865,6 +899,7 @@ GetApiMappingsOutcome ApiGatewayV2Client::GetApiMappings(const GetApiMappingsReq
 
 GetApisOutcome ApiGatewayV2Client::GetApis(const GetApisRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetApis);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetApis, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetApis, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -874,6 +909,7 @@ GetApisOutcome ApiGatewayV2Client::GetApis(const GetApisRequest& request) const
 
 GetAuthorizerOutcome ApiGatewayV2Client::GetAuthorizer(const GetAuthorizerRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetAuthorizer);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAuthorizer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -896,6 +932,7 @@ GetAuthorizerOutcome ApiGatewayV2Client::GetAuthorizer(const GetAuthorizerReques
 
 GetAuthorizersOutcome ApiGatewayV2Client::GetAuthorizers(const GetAuthorizersRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetAuthorizers);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAuthorizers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -912,6 +949,7 @@ GetAuthorizersOutcome ApiGatewayV2Client::GetAuthorizers(const GetAuthorizersReq
 
 GetDeploymentOutcome ApiGatewayV2Client::GetDeployment(const GetDeploymentRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDeployment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDeployment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -934,6 +972,7 @@ GetDeploymentOutcome ApiGatewayV2Client::GetDeployment(const GetDeploymentReques
 
 GetDeploymentsOutcome ApiGatewayV2Client::GetDeployments(const GetDeploymentsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDeployments);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDeployments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -950,6 +989,7 @@ GetDeploymentsOutcome ApiGatewayV2Client::GetDeployments(const GetDeploymentsReq
 
 GetDomainNameOutcome ApiGatewayV2Client::GetDomainName(const GetDomainNameRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDomainName);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDomainName, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainNameHasBeenSet())
   {
@@ -965,6 +1005,7 @@ GetDomainNameOutcome ApiGatewayV2Client::GetDomainName(const GetDomainNameReques
 
 GetDomainNamesOutcome ApiGatewayV2Client::GetDomainNames(const GetDomainNamesRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDomainNames);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDomainNames, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetDomainNames, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -974,6 +1015,7 @@ GetDomainNamesOutcome ApiGatewayV2Client::GetDomainNames(const GetDomainNamesReq
 
 GetIntegrationOutcome ApiGatewayV2Client::GetIntegration(const GetIntegrationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetIntegration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetIntegration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -996,6 +1038,7 @@ GetIntegrationOutcome ApiGatewayV2Client::GetIntegration(const GetIntegrationReq
 
 GetIntegrationResponseOutcome ApiGatewayV2Client::GetIntegrationResponse(const GetIntegrationResponseRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetIntegrationResponse);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetIntegrationResponse, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -1025,6 +1068,7 @@ GetIntegrationResponseOutcome ApiGatewayV2Client::GetIntegrationResponse(const G
 
 GetIntegrationResponsesOutcome ApiGatewayV2Client::GetIntegrationResponses(const GetIntegrationResponsesRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetIntegrationResponses);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetIntegrationResponses, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -1048,6 +1092,7 @@ GetIntegrationResponsesOutcome ApiGatewayV2Client::GetIntegrationResponses(const
 
 GetIntegrationsOutcome ApiGatewayV2Client::GetIntegrations(const GetIntegrationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetIntegrations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetIntegrations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -1064,6 +1109,7 @@ GetIntegrationsOutcome ApiGatewayV2Client::GetIntegrations(const GetIntegrations
 
 GetModelOutcome ApiGatewayV2Client::GetModel(const GetModelRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetModel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetModel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -1086,6 +1132,7 @@ GetModelOutcome ApiGatewayV2Client::GetModel(const GetModelRequest& request) con
 
 GetModelTemplateOutcome ApiGatewayV2Client::GetModelTemplate(const GetModelTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetModelTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetModelTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -1109,6 +1156,7 @@ GetModelTemplateOutcome ApiGatewayV2Client::GetModelTemplate(const GetModelTempl
 
 GetModelsOutcome ApiGatewayV2Client::GetModels(const GetModelsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetModels);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetModels, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -1125,6 +1173,7 @@ GetModelsOutcome ApiGatewayV2Client::GetModels(const GetModelsRequest& request) 
 
 GetRouteOutcome ApiGatewayV2Client::GetRoute(const GetRouteRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetRoute);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetRoute, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -1147,6 +1196,7 @@ GetRouteOutcome ApiGatewayV2Client::GetRoute(const GetRouteRequest& request) con
 
 GetRouteResponseOutcome ApiGatewayV2Client::GetRouteResponse(const GetRouteResponseRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetRouteResponse);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetRouteResponse, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -1176,6 +1226,7 @@ GetRouteResponseOutcome ApiGatewayV2Client::GetRouteResponse(const GetRouteRespo
 
 GetRouteResponsesOutcome ApiGatewayV2Client::GetRouteResponses(const GetRouteResponsesRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetRouteResponses);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetRouteResponses, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -1199,6 +1250,7 @@ GetRouteResponsesOutcome ApiGatewayV2Client::GetRouteResponses(const GetRouteRes
 
 GetRoutesOutcome ApiGatewayV2Client::GetRoutes(const GetRoutesRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetRoutes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetRoutes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -1215,6 +1267,7 @@ GetRoutesOutcome ApiGatewayV2Client::GetRoutes(const GetRoutesRequest& request) 
 
 GetStageOutcome ApiGatewayV2Client::GetStage(const GetStageRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetStage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetStage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -1237,6 +1290,7 @@ GetStageOutcome ApiGatewayV2Client::GetStage(const GetStageRequest& request) con
 
 GetStagesOutcome ApiGatewayV2Client::GetStages(const GetStagesRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetStages);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetStages, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -1253,6 +1307,7 @@ GetStagesOutcome ApiGatewayV2Client::GetStages(const GetStagesRequest& request) 
 
 GetTagsOutcome ApiGatewayV2Client::GetTags(const GetTagsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetTags);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetTags, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -1268,6 +1323,7 @@ GetTagsOutcome ApiGatewayV2Client::GetTags(const GetTagsRequest& request) const
 
 GetVpcLinkOutcome ApiGatewayV2Client::GetVpcLink(const GetVpcLinkRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetVpcLink);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetVpcLink, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VpcLinkIdHasBeenSet())
   {
@@ -1283,6 +1339,7 @@ GetVpcLinkOutcome ApiGatewayV2Client::GetVpcLink(const GetVpcLinkRequest& reques
 
 GetVpcLinksOutcome ApiGatewayV2Client::GetVpcLinks(const GetVpcLinksRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetVpcLinks);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetVpcLinks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetVpcLinks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1292,6 +1349,7 @@ GetVpcLinksOutcome ApiGatewayV2Client::GetVpcLinks(const GetVpcLinksRequest& req
 
 ImportApiOutcome ApiGatewayV2Client::ImportApi(const ImportApiRequest& request) const
 {
+  AWS_OPERATION_GUARD(ImportApi);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ImportApi, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ImportApi, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1301,6 +1359,7 @@ ImportApiOutcome ApiGatewayV2Client::ImportApi(const ImportApiRequest& request) 
 
 ReimportApiOutcome ApiGatewayV2Client::ReimportApi(const ReimportApiRequest& request) const
 {
+  AWS_OPERATION_GUARD(ReimportApi);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ReimportApi, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -1316,6 +1375,7 @@ ReimportApiOutcome ApiGatewayV2Client::ReimportApi(const ReimportApiRequest& req
 
 TagResourceOutcome ApiGatewayV2Client::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -1331,6 +1391,7 @@ TagResourceOutcome ApiGatewayV2Client::TagResource(const TagResourceRequest& req
 
 UntagResourceOutcome ApiGatewayV2Client::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -1351,6 +1412,7 @@ UntagResourceOutcome ApiGatewayV2Client::UntagResource(const UntagResourceReques
 
 UpdateApiOutcome ApiGatewayV2Client::UpdateApi(const UpdateApiRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateApi);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateApi, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -1366,6 +1428,7 @@ UpdateApiOutcome ApiGatewayV2Client::UpdateApi(const UpdateApiRequest& request) 
 
 UpdateApiMappingOutcome ApiGatewayV2Client::UpdateApiMapping(const UpdateApiMappingRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateApiMapping);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateApiMapping, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiMappingIdHasBeenSet())
   {
@@ -1388,6 +1451,7 @@ UpdateApiMappingOutcome ApiGatewayV2Client::UpdateApiMapping(const UpdateApiMapp
 
 UpdateAuthorizerOutcome ApiGatewayV2Client::UpdateAuthorizer(const UpdateAuthorizerRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateAuthorizer);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAuthorizer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -1410,6 +1474,7 @@ UpdateAuthorizerOutcome ApiGatewayV2Client::UpdateAuthorizer(const UpdateAuthori
 
 UpdateDeploymentOutcome ApiGatewayV2Client::UpdateDeployment(const UpdateDeploymentRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateDeployment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDeployment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -1432,6 +1497,7 @@ UpdateDeploymentOutcome ApiGatewayV2Client::UpdateDeployment(const UpdateDeploym
 
 UpdateDomainNameOutcome ApiGatewayV2Client::UpdateDomainName(const UpdateDomainNameRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateDomainName);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDomainName, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainNameHasBeenSet())
   {
@@ -1447,6 +1513,7 @@ UpdateDomainNameOutcome ApiGatewayV2Client::UpdateDomainName(const UpdateDomainN
 
 UpdateIntegrationOutcome ApiGatewayV2Client::UpdateIntegration(const UpdateIntegrationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateIntegration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateIntegration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -1469,6 +1536,7 @@ UpdateIntegrationOutcome ApiGatewayV2Client::UpdateIntegration(const UpdateInteg
 
 UpdateIntegrationResponseOutcome ApiGatewayV2Client::UpdateIntegrationResponse(const UpdateIntegrationResponseRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateIntegrationResponse);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateIntegrationResponse, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -1498,6 +1566,7 @@ UpdateIntegrationResponseOutcome ApiGatewayV2Client::UpdateIntegrationResponse(c
 
 UpdateModelOutcome ApiGatewayV2Client::UpdateModel(const UpdateModelRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateModel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateModel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -1520,6 +1589,7 @@ UpdateModelOutcome ApiGatewayV2Client::UpdateModel(const UpdateModelRequest& req
 
 UpdateRouteOutcome ApiGatewayV2Client::UpdateRoute(const UpdateRouteRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateRoute);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateRoute, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -1542,6 +1612,7 @@ UpdateRouteOutcome ApiGatewayV2Client::UpdateRoute(const UpdateRouteRequest& req
 
 UpdateRouteResponseOutcome ApiGatewayV2Client::UpdateRouteResponse(const UpdateRouteResponseRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateRouteResponse);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateRouteResponse, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -1571,6 +1642,7 @@ UpdateRouteResponseOutcome ApiGatewayV2Client::UpdateRouteResponse(const UpdateR
 
 UpdateStageOutcome ApiGatewayV2Client::UpdateStage(const UpdateStageRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateStage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateStage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -1593,6 +1665,7 @@ UpdateStageOutcome ApiGatewayV2Client::UpdateStage(const UpdateStageRequest& req
 
 UpdateVpcLinkOutcome ApiGatewayV2Client::UpdateVpcLink(const UpdateVpcLinkRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateVpcLink);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateVpcLink, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VpcLinkIdHasBeenSet())
   {

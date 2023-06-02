@@ -195,6 +195,7 @@ CloudDirectoryClient::CloudDirectoryClient(const std::shared_ptr<AWSCredentialsP
     /* End of legacy constructors due deprecation */
 CloudDirectoryClient::~CloudDirectoryClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<CloudDirectoryEndpointProviderBase>& CloudDirectoryClient::accessEndpointProvider()
@@ -217,6 +218,7 @@ void CloudDirectoryClient::OverrideEndpoint(const Aws::String& endpoint)
 
 AddFacetToObjectOutcome CloudDirectoryClient::AddFacetToObject(const AddFacetToObjectRequest& request) const
 {
+  AWS_OPERATION_GUARD(AddFacetToObject);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AddFacetToObject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DirectoryArnHasBeenSet())
   {
@@ -231,6 +233,7 @@ AddFacetToObjectOutcome CloudDirectoryClient::AddFacetToObject(const AddFacetToO
 
 ApplySchemaOutcome CloudDirectoryClient::ApplySchema(const ApplySchemaRequest& request) const
 {
+  AWS_OPERATION_GUARD(ApplySchema);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ApplySchema, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DirectoryArnHasBeenSet())
   {
@@ -245,6 +248,7 @@ ApplySchemaOutcome CloudDirectoryClient::ApplySchema(const ApplySchemaRequest& r
 
 AttachObjectOutcome CloudDirectoryClient::AttachObject(const AttachObjectRequest& request) const
 {
+  AWS_OPERATION_GUARD(AttachObject);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AttachObject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DirectoryArnHasBeenSet())
   {
@@ -259,6 +263,7 @@ AttachObjectOutcome CloudDirectoryClient::AttachObject(const AttachObjectRequest
 
 AttachPolicyOutcome CloudDirectoryClient::AttachPolicy(const AttachPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(AttachPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AttachPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DirectoryArnHasBeenSet())
   {
@@ -273,6 +278,7 @@ AttachPolicyOutcome CloudDirectoryClient::AttachPolicy(const AttachPolicyRequest
 
 AttachToIndexOutcome CloudDirectoryClient::AttachToIndex(const AttachToIndexRequest& request) const
 {
+  AWS_OPERATION_GUARD(AttachToIndex);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AttachToIndex, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DirectoryArnHasBeenSet())
   {
@@ -287,6 +293,7 @@ AttachToIndexOutcome CloudDirectoryClient::AttachToIndex(const AttachToIndexRequ
 
 AttachTypedLinkOutcome CloudDirectoryClient::AttachTypedLink(const AttachTypedLinkRequest& request) const
 {
+  AWS_OPERATION_GUARD(AttachTypedLink);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AttachTypedLink, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DirectoryArnHasBeenSet())
   {
@@ -301,6 +308,7 @@ AttachTypedLinkOutcome CloudDirectoryClient::AttachTypedLink(const AttachTypedLi
 
 BatchReadOutcome CloudDirectoryClient::BatchRead(const BatchReadRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchRead);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchRead, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DirectoryArnHasBeenSet())
   {
@@ -315,6 +323,7 @@ BatchReadOutcome CloudDirectoryClient::BatchRead(const BatchReadRequest& request
 
 BatchWriteOutcome CloudDirectoryClient::BatchWrite(const BatchWriteRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchWrite);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchWrite, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DirectoryArnHasBeenSet())
   {
@@ -329,6 +338,7 @@ BatchWriteOutcome CloudDirectoryClient::BatchWrite(const BatchWriteRequest& requ
 
 CreateDirectoryOutcome CloudDirectoryClient::CreateDirectory(const CreateDirectoryRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateDirectory);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDirectory, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SchemaArnHasBeenSet())
   {
@@ -343,6 +353,7 @@ CreateDirectoryOutcome CloudDirectoryClient::CreateDirectory(const CreateDirecto
 
 CreateFacetOutcome CloudDirectoryClient::CreateFacet(const CreateFacetRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateFacet);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateFacet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SchemaArnHasBeenSet())
   {
@@ -357,6 +368,7 @@ CreateFacetOutcome CloudDirectoryClient::CreateFacet(const CreateFacetRequest& r
 
 CreateIndexOutcome CloudDirectoryClient::CreateIndex(const CreateIndexRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateIndex);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateIndex, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DirectoryArnHasBeenSet())
   {
@@ -371,6 +383,7 @@ CreateIndexOutcome CloudDirectoryClient::CreateIndex(const CreateIndexRequest& r
 
 CreateObjectOutcome CloudDirectoryClient::CreateObject(const CreateObjectRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateObject);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateObject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DirectoryArnHasBeenSet())
   {
@@ -385,6 +398,7 @@ CreateObjectOutcome CloudDirectoryClient::CreateObject(const CreateObjectRequest
 
 CreateSchemaOutcome CloudDirectoryClient::CreateSchema(const CreateSchemaRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateSchema);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateSchema, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateSchema, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -394,6 +408,7 @@ CreateSchemaOutcome CloudDirectoryClient::CreateSchema(const CreateSchemaRequest
 
 CreateTypedLinkFacetOutcome CloudDirectoryClient::CreateTypedLinkFacet(const CreateTypedLinkFacetRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateTypedLinkFacet);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateTypedLinkFacet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SchemaArnHasBeenSet())
   {
@@ -408,6 +423,7 @@ CreateTypedLinkFacetOutcome CloudDirectoryClient::CreateTypedLinkFacet(const Cre
 
 DeleteDirectoryOutcome CloudDirectoryClient::DeleteDirectory(const DeleteDirectoryRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteDirectory);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDirectory, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DirectoryArnHasBeenSet())
   {
@@ -422,6 +438,7 @@ DeleteDirectoryOutcome CloudDirectoryClient::DeleteDirectory(const DeleteDirecto
 
 DeleteFacetOutcome CloudDirectoryClient::DeleteFacet(const DeleteFacetRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteFacet);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteFacet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SchemaArnHasBeenSet())
   {
@@ -436,6 +453,7 @@ DeleteFacetOutcome CloudDirectoryClient::DeleteFacet(const DeleteFacetRequest& r
 
 DeleteObjectOutcome CloudDirectoryClient::DeleteObject(const DeleteObjectRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteObject);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteObject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DirectoryArnHasBeenSet())
   {
@@ -450,6 +468,7 @@ DeleteObjectOutcome CloudDirectoryClient::DeleteObject(const DeleteObjectRequest
 
 DeleteSchemaOutcome CloudDirectoryClient::DeleteSchema(const DeleteSchemaRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteSchema);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteSchema, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SchemaArnHasBeenSet())
   {
@@ -464,6 +483,7 @@ DeleteSchemaOutcome CloudDirectoryClient::DeleteSchema(const DeleteSchemaRequest
 
 DeleteTypedLinkFacetOutcome CloudDirectoryClient::DeleteTypedLinkFacet(const DeleteTypedLinkFacetRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteTypedLinkFacet);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteTypedLinkFacet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SchemaArnHasBeenSet())
   {
@@ -478,6 +498,7 @@ DeleteTypedLinkFacetOutcome CloudDirectoryClient::DeleteTypedLinkFacet(const Del
 
 DetachFromIndexOutcome CloudDirectoryClient::DetachFromIndex(const DetachFromIndexRequest& request) const
 {
+  AWS_OPERATION_GUARD(DetachFromIndex);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DetachFromIndex, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DirectoryArnHasBeenSet())
   {
@@ -492,6 +513,7 @@ DetachFromIndexOutcome CloudDirectoryClient::DetachFromIndex(const DetachFromInd
 
 DetachObjectOutcome CloudDirectoryClient::DetachObject(const DetachObjectRequest& request) const
 {
+  AWS_OPERATION_GUARD(DetachObject);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DetachObject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DirectoryArnHasBeenSet())
   {
@@ -506,6 +528,7 @@ DetachObjectOutcome CloudDirectoryClient::DetachObject(const DetachObjectRequest
 
 DetachPolicyOutcome CloudDirectoryClient::DetachPolicy(const DetachPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(DetachPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DetachPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DirectoryArnHasBeenSet())
   {
@@ -520,6 +543,7 @@ DetachPolicyOutcome CloudDirectoryClient::DetachPolicy(const DetachPolicyRequest
 
 DetachTypedLinkOutcome CloudDirectoryClient::DetachTypedLink(const DetachTypedLinkRequest& request) const
 {
+  AWS_OPERATION_GUARD(DetachTypedLink);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DetachTypedLink, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DirectoryArnHasBeenSet())
   {
@@ -534,6 +558,7 @@ DetachTypedLinkOutcome CloudDirectoryClient::DetachTypedLink(const DetachTypedLi
 
 DisableDirectoryOutcome CloudDirectoryClient::DisableDirectory(const DisableDirectoryRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisableDirectory);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisableDirectory, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DirectoryArnHasBeenSet())
   {
@@ -548,6 +573,7 @@ DisableDirectoryOutcome CloudDirectoryClient::DisableDirectory(const DisableDire
 
 EnableDirectoryOutcome CloudDirectoryClient::EnableDirectory(const EnableDirectoryRequest& request) const
 {
+  AWS_OPERATION_GUARD(EnableDirectory);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, EnableDirectory, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DirectoryArnHasBeenSet())
   {
@@ -562,6 +588,7 @@ EnableDirectoryOutcome CloudDirectoryClient::EnableDirectory(const EnableDirecto
 
 GetAppliedSchemaVersionOutcome CloudDirectoryClient::GetAppliedSchemaVersion(const GetAppliedSchemaVersionRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetAppliedSchemaVersion);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAppliedSchemaVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetAppliedSchemaVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -571,6 +598,7 @@ GetAppliedSchemaVersionOutcome CloudDirectoryClient::GetAppliedSchemaVersion(con
 
 GetDirectoryOutcome CloudDirectoryClient::GetDirectory(const GetDirectoryRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDirectory);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDirectory, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DirectoryArnHasBeenSet())
   {
@@ -585,6 +613,7 @@ GetDirectoryOutcome CloudDirectoryClient::GetDirectory(const GetDirectoryRequest
 
 GetFacetOutcome CloudDirectoryClient::GetFacet(const GetFacetRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetFacet);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetFacet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SchemaArnHasBeenSet())
   {
@@ -599,6 +628,7 @@ GetFacetOutcome CloudDirectoryClient::GetFacet(const GetFacetRequest& request) c
 
 GetLinkAttributesOutcome CloudDirectoryClient::GetLinkAttributes(const GetLinkAttributesRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetLinkAttributes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetLinkAttributes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DirectoryArnHasBeenSet())
   {
@@ -613,6 +643,7 @@ GetLinkAttributesOutcome CloudDirectoryClient::GetLinkAttributes(const GetLinkAt
 
 GetObjectAttributesOutcome CloudDirectoryClient::GetObjectAttributes(const GetObjectAttributesRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetObjectAttributes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetObjectAttributes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DirectoryArnHasBeenSet())
   {
@@ -627,6 +658,7 @@ GetObjectAttributesOutcome CloudDirectoryClient::GetObjectAttributes(const GetOb
 
 GetObjectInformationOutcome CloudDirectoryClient::GetObjectInformation(const GetObjectInformationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetObjectInformation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetObjectInformation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DirectoryArnHasBeenSet())
   {
@@ -641,6 +673,7 @@ GetObjectInformationOutcome CloudDirectoryClient::GetObjectInformation(const Get
 
 GetSchemaAsJsonOutcome CloudDirectoryClient::GetSchemaAsJson(const GetSchemaAsJsonRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSchemaAsJson);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSchemaAsJson, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SchemaArnHasBeenSet())
   {
@@ -655,6 +688,7 @@ GetSchemaAsJsonOutcome CloudDirectoryClient::GetSchemaAsJson(const GetSchemaAsJs
 
 GetTypedLinkFacetInformationOutcome CloudDirectoryClient::GetTypedLinkFacetInformation(const GetTypedLinkFacetInformationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetTypedLinkFacetInformation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetTypedLinkFacetInformation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SchemaArnHasBeenSet())
   {
@@ -669,6 +703,7 @@ GetTypedLinkFacetInformationOutcome CloudDirectoryClient::GetTypedLinkFacetInfor
 
 ListAppliedSchemaArnsOutcome CloudDirectoryClient::ListAppliedSchemaArns(const ListAppliedSchemaArnsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAppliedSchemaArns);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAppliedSchemaArns, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAppliedSchemaArns, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -678,6 +713,7 @@ ListAppliedSchemaArnsOutcome CloudDirectoryClient::ListAppliedSchemaArns(const L
 
 ListAttachedIndicesOutcome CloudDirectoryClient::ListAttachedIndices(const ListAttachedIndicesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAttachedIndices);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAttachedIndices, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DirectoryArnHasBeenSet())
   {
@@ -692,6 +728,7 @@ ListAttachedIndicesOutcome CloudDirectoryClient::ListAttachedIndices(const ListA
 
 ListDevelopmentSchemaArnsOutcome CloudDirectoryClient::ListDevelopmentSchemaArns(const ListDevelopmentSchemaArnsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDevelopmentSchemaArns);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDevelopmentSchemaArns, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDevelopmentSchemaArns, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -701,6 +738,7 @@ ListDevelopmentSchemaArnsOutcome CloudDirectoryClient::ListDevelopmentSchemaArns
 
 ListDirectoriesOutcome CloudDirectoryClient::ListDirectories(const ListDirectoriesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDirectories);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDirectories, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDirectories, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -710,6 +748,7 @@ ListDirectoriesOutcome CloudDirectoryClient::ListDirectories(const ListDirectori
 
 ListFacetAttributesOutcome CloudDirectoryClient::ListFacetAttributes(const ListFacetAttributesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListFacetAttributes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListFacetAttributes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SchemaArnHasBeenSet())
   {
@@ -724,6 +763,7 @@ ListFacetAttributesOutcome CloudDirectoryClient::ListFacetAttributes(const ListF
 
 ListFacetNamesOutcome CloudDirectoryClient::ListFacetNames(const ListFacetNamesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListFacetNames);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListFacetNames, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SchemaArnHasBeenSet())
   {
@@ -738,6 +778,7 @@ ListFacetNamesOutcome CloudDirectoryClient::ListFacetNames(const ListFacetNamesR
 
 ListIncomingTypedLinksOutcome CloudDirectoryClient::ListIncomingTypedLinks(const ListIncomingTypedLinksRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListIncomingTypedLinks);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListIncomingTypedLinks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DirectoryArnHasBeenSet())
   {
@@ -752,6 +793,7 @@ ListIncomingTypedLinksOutcome CloudDirectoryClient::ListIncomingTypedLinks(const
 
 ListIndexOutcome CloudDirectoryClient::ListIndex(const ListIndexRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListIndex);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListIndex, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DirectoryArnHasBeenSet())
   {
@@ -766,6 +808,7 @@ ListIndexOutcome CloudDirectoryClient::ListIndex(const ListIndexRequest& request
 
 ListManagedSchemaArnsOutcome CloudDirectoryClient::ListManagedSchemaArns(const ListManagedSchemaArnsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListManagedSchemaArns);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListManagedSchemaArns, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListManagedSchemaArns, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -775,6 +818,7 @@ ListManagedSchemaArnsOutcome CloudDirectoryClient::ListManagedSchemaArns(const L
 
 ListObjectAttributesOutcome CloudDirectoryClient::ListObjectAttributes(const ListObjectAttributesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListObjectAttributes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListObjectAttributes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DirectoryArnHasBeenSet())
   {
@@ -789,6 +833,7 @@ ListObjectAttributesOutcome CloudDirectoryClient::ListObjectAttributes(const Lis
 
 ListObjectChildrenOutcome CloudDirectoryClient::ListObjectChildren(const ListObjectChildrenRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListObjectChildren);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListObjectChildren, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DirectoryArnHasBeenSet())
   {
@@ -803,6 +848,7 @@ ListObjectChildrenOutcome CloudDirectoryClient::ListObjectChildren(const ListObj
 
 ListObjectParentPathsOutcome CloudDirectoryClient::ListObjectParentPaths(const ListObjectParentPathsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListObjectParentPaths);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListObjectParentPaths, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DirectoryArnHasBeenSet())
   {
@@ -817,6 +863,7 @@ ListObjectParentPathsOutcome CloudDirectoryClient::ListObjectParentPaths(const L
 
 ListObjectParentsOutcome CloudDirectoryClient::ListObjectParents(const ListObjectParentsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListObjectParents);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListObjectParents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DirectoryArnHasBeenSet())
   {
@@ -831,6 +878,7 @@ ListObjectParentsOutcome CloudDirectoryClient::ListObjectParents(const ListObjec
 
 ListObjectPoliciesOutcome CloudDirectoryClient::ListObjectPolicies(const ListObjectPoliciesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListObjectPolicies);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListObjectPolicies, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DirectoryArnHasBeenSet())
   {
@@ -845,6 +893,7 @@ ListObjectPoliciesOutcome CloudDirectoryClient::ListObjectPolicies(const ListObj
 
 ListOutgoingTypedLinksOutcome CloudDirectoryClient::ListOutgoingTypedLinks(const ListOutgoingTypedLinksRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListOutgoingTypedLinks);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListOutgoingTypedLinks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DirectoryArnHasBeenSet())
   {
@@ -859,6 +908,7 @@ ListOutgoingTypedLinksOutcome CloudDirectoryClient::ListOutgoingTypedLinks(const
 
 ListPolicyAttachmentsOutcome CloudDirectoryClient::ListPolicyAttachments(const ListPolicyAttachmentsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListPolicyAttachments);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPolicyAttachments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DirectoryArnHasBeenSet())
   {
@@ -873,6 +923,7 @@ ListPolicyAttachmentsOutcome CloudDirectoryClient::ListPolicyAttachments(const L
 
 ListPublishedSchemaArnsOutcome CloudDirectoryClient::ListPublishedSchemaArns(const ListPublishedSchemaArnsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListPublishedSchemaArns);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPublishedSchemaArns, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListPublishedSchemaArns, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -882,6 +933,7 @@ ListPublishedSchemaArnsOutcome CloudDirectoryClient::ListPublishedSchemaArns(con
 
 ListTagsForResourceOutcome CloudDirectoryClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -891,6 +943,7 @@ ListTagsForResourceOutcome CloudDirectoryClient::ListTagsForResource(const ListT
 
 ListTypedLinkFacetAttributesOutcome CloudDirectoryClient::ListTypedLinkFacetAttributes(const ListTypedLinkFacetAttributesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTypedLinkFacetAttributes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTypedLinkFacetAttributes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SchemaArnHasBeenSet())
   {
@@ -905,6 +958,7 @@ ListTypedLinkFacetAttributesOutcome CloudDirectoryClient::ListTypedLinkFacetAttr
 
 ListTypedLinkFacetNamesOutcome CloudDirectoryClient::ListTypedLinkFacetNames(const ListTypedLinkFacetNamesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTypedLinkFacetNames);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTypedLinkFacetNames, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SchemaArnHasBeenSet())
   {
@@ -919,6 +973,7 @@ ListTypedLinkFacetNamesOutcome CloudDirectoryClient::ListTypedLinkFacetNames(con
 
 LookupPolicyOutcome CloudDirectoryClient::LookupPolicy(const LookupPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(LookupPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, LookupPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DirectoryArnHasBeenSet())
   {
@@ -933,6 +988,7 @@ LookupPolicyOutcome CloudDirectoryClient::LookupPolicy(const LookupPolicyRequest
 
 PublishSchemaOutcome CloudDirectoryClient::PublishSchema(const PublishSchemaRequest& request) const
 {
+  AWS_OPERATION_GUARD(PublishSchema);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PublishSchema, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DevelopmentSchemaArnHasBeenSet())
   {
@@ -947,6 +1003,7 @@ PublishSchemaOutcome CloudDirectoryClient::PublishSchema(const PublishSchemaRequ
 
 PutSchemaFromJsonOutcome CloudDirectoryClient::PutSchemaFromJson(const PutSchemaFromJsonRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutSchemaFromJson);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutSchemaFromJson, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SchemaArnHasBeenSet())
   {
@@ -961,6 +1018,7 @@ PutSchemaFromJsonOutcome CloudDirectoryClient::PutSchemaFromJson(const PutSchema
 
 RemoveFacetFromObjectOutcome CloudDirectoryClient::RemoveFacetFromObject(const RemoveFacetFromObjectRequest& request) const
 {
+  AWS_OPERATION_GUARD(RemoveFacetFromObject);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RemoveFacetFromObject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DirectoryArnHasBeenSet())
   {
@@ -975,6 +1033,7 @@ RemoveFacetFromObjectOutcome CloudDirectoryClient::RemoveFacetFromObject(const R
 
 TagResourceOutcome CloudDirectoryClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -984,6 +1043,7 @@ TagResourceOutcome CloudDirectoryClient::TagResource(const TagResourceRequest& r
 
 UntagResourceOutcome CloudDirectoryClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -993,6 +1053,7 @@ UntagResourceOutcome CloudDirectoryClient::UntagResource(const UntagResourceRequ
 
 UpdateFacetOutcome CloudDirectoryClient::UpdateFacet(const UpdateFacetRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateFacet);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateFacet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SchemaArnHasBeenSet())
   {
@@ -1007,6 +1068,7 @@ UpdateFacetOutcome CloudDirectoryClient::UpdateFacet(const UpdateFacetRequest& r
 
 UpdateLinkAttributesOutcome CloudDirectoryClient::UpdateLinkAttributes(const UpdateLinkAttributesRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateLinkAttributes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateLinkAttributes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DirectoryArnHasBeenSet())
   {
@@ -1021,6 +1083,7 @@ UpdateLinkAttributesOutcome CloudDirectoryClient::UpdateLinkAttributes(const Upd
 
 UpdateObjectAttributesOutcome CloudDirectoryClient::UpdateObjectAttributes(const UpdateObjectAttributesRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateObjectAttributes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateObjectAttributes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DirectoryArnHasBeenSet())
   {
@@ -1035,6 +1098,7 @@ UpdateObjectAttributesOutcome CloudDirectoryClient::UpdateObjectAttributes(const
 
 UpdateSchemaOutcome CloudDirectoryClient::UpdateSchema(const UpdateSchemaRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateSchema);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateSchema, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SchemaArnHasBeenSet())
   {
@@ -1049,6 +1113,7 @@ UpdateSchemaOutcome CloudDirectoryClient::UpdateSchema(const UpdateSchemaRequest
 
 UpdateTypedLinkFacetOutcome CloudDirectoryClient::UpdateTypedLinkFacet(const UpdateTypedLinkFacetRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateTypedLinkFacet);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateTypedLinkFacet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SchemaArnHasBeenSet())
   {
@@ -1063,6 +1128,7 @@ UpdateTypedLinkFacetOutcome CloudDirectoryClient::UpdateTypedLinkFacet(const Upd
 
 UpgradeAppliedSchemaOutcome CloudDirectoryClient::UpgradeAppliedSchema(const UpgradeAppliedSchemaRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpgradeAppliedSchema);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpgradeAppliedSchema, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpgradeAppliedSchema, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1072,6 +1138,7 @@ UpgradeAppliedSchemaOutcome CloudDirectoryClient::UpgradeAppliedSchema(const Upg
 
 UpgradePublishedSchemaOutcome CloudDirectoryClient::UpgradePublishedSchema(const UpgradePublishedSchemaRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpgradePublishedSchema);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpgradePublishedSchema, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpgradePublishedSchema, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

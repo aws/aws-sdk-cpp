@@ -163,6 +163,7 @@ RAMClient::RAMClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
     /* End of legacy constructors due deprecation */
 RAMClient::~RAMClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<RAMEndpointProviderBase>& RAMClient::accessEndpointProvider()
@@ -185,6 +186,7 @@ void RAMClient::OverrideEndpoint(const Aws::String& endpoint)
 
 AcceptResourceShareInvitationOutcome RAMClient::AcceptResourceShareInvitation(const AcceptResourceShareInvitationRequest& request) const
 {
+  AWS_OPERATION_GUARD(AcceptResourceShareInvitation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AcceptResourceShareInvitation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AcceptResourceShareInvitation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -194,6 +196,7 @@ AcceptResourceShareInvitationOutcome RAMClient::AcceptResourceShareInvitation(co
 
 AssociateResourceShareOutcome RAMClient::AssociateResourceShare(const AssociateResourceShareRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociateResourceShare);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateResourceShare, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AssociateResourceShare, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -203,6 +206,7 @@ AssociateResourceShareOutcome RAMClient::AssociateResourceShare(const AssociateR
 
 AssociateResourceSharePermissionOutcome RAMClient::AssociateResourceSharePermission(const AssociateResourceSharePermissionRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociateResourceSharePermission);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateResourceSharePermission, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AssociateResourceSharePermission, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -212,6 +216,7 @@ AssociateResourceSharePermissionOutcome RAMClient::AssociateResourceSharePermiss
 
 CreatePermissionOutcome RAMClient::CreatePermission(const CreatePermissionRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreatePermission);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreatePermission, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreatePermission, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -221,6 +226,7 @@ CreatePermissionOutcome RAMClient::CreatePermission(const CreatePermissionReques
 
 CreatePermissionVersionOutcome RAMClient::CreatePermissionVersion(const CreatePermissionVersionRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreatePermissionVersion);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreatePermissionVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreatePermissionVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -230,6 +236,7 @@ CreatePermissionVersionOutcome RAMClient::CreatePermissionVersion(const CreatePe
 
 CreateResourceShareOutcome RAMClient::CreateResourceShare(const CreateResourceShareRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateResourceShare);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateResourceShare, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateResourceShare, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -239,6 +246,7 @@ CreateResourceShareOutcome RAMClient::CreateResourceShare(const CreateResourceSh
 
 DeletePermissionOutcome RAMClient::DeletePermission(const DeletePermissionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeletePermission);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeletePermission, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PermissionArnHasBeenSet())
   {
@@ -253,6 +261,7 @@ DeletePermissionOutcome RAMClient::DeletePermission(const DeletePermissionReques
 
 DeletePermissionVersionOutcome RAMClient::DeletePermissionVersion(const DeletePermissionVersionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeletePermissionVersion);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeletePermissionVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PermissionArnHasBeenSet())
   {
@@ -272,6 +281,7 @@ DeletePermissionVersionOutcome RAMClient::DeletePermissionVersion(const DeletePe
 
 DeleteResourceShareOutcome RAMClient::DeleteResourceShare(const DeleteResourceShareRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteResourceShare);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteResourceShare, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceShareArnHasBeenSet())
   {
@@ -286,6 +296,7 @@ DeleteResourceShareOutcome RAMClient::DeleteResourceShare(const DeleteResourceSh
 
 DisassociateResourceShareOutcome RAMClient::DisassociateResourceShare(const DisassociateResourceShareRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociateResourceShare);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateResourceShare, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DisassociateResourceShare, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -295,6 +306,7 @@ DisassociateResourceShareOutcome RAMClient::DisassociateResourceShare(const Disa
 
 DisassociateResourceSharePermissionOutcome RAMClient::DisassociateResourceSharePermission(const DisassociateResourceSharePermissionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociateResourceSharePermission);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateResourceSharePermission, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DisassociateResourceSharePermission, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -304,6 +316,7 @@ DisassociateResourceSharePermissionOutcome RAMClient::DisassociateResourceShareP
 
 EnableSharingWithAwsOrganizationOutcome RAMClient::EnableSharingWithAwsOrganization(const EnableSharingWithAwsOrganizationRequest& request) const
 {
+  AWS_OPERATION_GUARD(EnableSharingWithAwsOrganization);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, EnableSharingWithAwsOrganization, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, EnableSharingWithAwsOrganization, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -313,6 +326,7 @@ EnableSharingWithAwsOrganizationOutcome RAMClient::EnableSharingWithAwsOrganizat
 
 GetPermissionOutcome RAMClient::GetPermission(const GetPermissionRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetPermission);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPermission, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetPermission, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -322,6 +336,7 @@ GetPermissionOutcome RAMClient::GetPermission(const GetPermissionRequest& reques
 
 GetResourcePoliciesOutcome RAMClient::GetResourcePolicies(const GetResourcePoliciesRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetResourcePolicies);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetResourcePolicies, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetResourcePolicies, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -331,6 +346,7 @@ GetResourcePoliciesOutcome RAMClient::GetResourcePolicies(const GetResourcePolic
 
 GetResourceShareAssociationsOutcome RAMClient::GetResourceShareAssociations(const GetResourceShareAssociationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetResourceShareAssociations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetResourceShareAssociations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetResourceShareAssociations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -340,6 +356,7 @@ GetResourceShareAssociationsOutcome RAMClient::GetResourceShareAssociations(cons
 
 GetResourceShareInvitationsOutcome RAMClient::GetResourceShareInvitations(const GetResourceShareInvitationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetResourceShareInvitations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetResourceShareInvitations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetResourceShareInvitations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -349,6 +366,7 @@ GetResourceShareInvitationsOutcome RAMClient::GetResourceShareInvitations(const 
 
 GetResourceSharesOutcome RAMClient::GetResourceShares(const GetResourceSharesRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetResourceShares);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetResourceShares, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetResourceShares, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -358,6 +376,7 @@ GetResourceSharesOutcome RAMClient::GetResourceShares(const GetResourceSharesReq
 
 ListPendingInvitationResourcesOutcome RAMClient::ListPendingInvitationResources(const ListPendingInvitationResourcesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListPendingInvitationResources);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPendingInvitationResources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListPendingInvitationResources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -367,6 +386,7 @@ ListPendingInvitationResourcesOutcome RAMClient::ListPendingInvitationResources(
 
 ListPermissionAssociationsOutcome RAMClient::ListPermissionAssociations(const ListPermissionAssociationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListPermissionAssociations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPermissionAssociations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListPermissionAssociations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -376,6 +396,7 @@ ListPermissionAssociationsOutcome RAMClient::ListPermissionAssociations(const Li
 
 ListPermissionVersionsOutcome RAMClient::ListPermissionVersions(const ListPermissionVersionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListPermissionVersions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPermissionVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListPermissionVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -385,6 +406,7 @@ ListPermissionVersionsOutcome RAMClient::ListPermissionVersions(const ListPermis
 
 ListPermissionsOutcome RAMClient::ListPermissions(const ListPermissionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListPermissions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPermissions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListPermissions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -394,6 +416,7 @@ ListPermissionsOutcome RAMClient::ListPermissions(const ListPermissionsRequest& 
 
 ListPrincipalsOutcome RAMClient::ListPrincipals(const ListPrincipalsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListPrincipals);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPrincipals, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListPrincipals, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -403,6 +426,7 @@ ListPrincipalsOutcome RAMClient::ListPrincipals(const ListPrincipalsRequest& req
 
 ListReplacePermissionAssociationsWorkOutcome RAMClient::ListReplacePermissionAssociationsWork(const ListReplacePermissionAssociationsWorkRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListReplacePermissionAssociationsWork);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListReplacePermissionAssociationsWork, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListReplacePermissionAssociationsWork, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -412,6 +436,7 @@ ListReplacePermissionAssociationsWorkOutcome RAMClient::ListReplacePermissionAss
 
 ListResourceSharePermissionsOutcome RAMClient::ListResourceSharePermissions(const ListResourceSharePermissionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListResourceSharePermissions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListResourceSharePermissions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListResourceSharePermissions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -421,6 +446,7 @@ ListResourceSharePermissionsOutcome RAMClient::ListResourceSharePermissions(cons
 
 ListResourceTypesOutcome RAMClient::ListResourceTypes(const ListResourceTypesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListResourceTypes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListResourceTypes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListResourceTypes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -430,6 +456,7 @@ ListResourceTypesOutcome RAMClient::ListResourceTypes(const ListResourceTypesReq
 
 ListResourcesOutcome RAMClient::ListResources(const ListResourcesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListResources);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListResources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListResources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -439,6 +466,7 @@ ListResourcesOutcome RAMClient::ListResources(const ListResourcesRequest& reques
 
 PromotePermissionCreatedFromPolicyOutcome RAMClient::PromotePermissionCreatedFromPolicy(const PromotePermissionCreatedFromPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(PromotePermissionCreatedFromPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PromotePermissionCreatedFromPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PromotePermissionCreatedFromPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -448,6 +476,7 @@ PromotePermissionCreatedFromPolicyOutcome RAMClient::PromotePermissionCreatedFro
 
 PromoteResourceShareCreatedFromPolicyOutcome RAMClient::PromoteResourceShareCreatedFromPolicy(const PromoteResourceShareCreatedFromPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(PromoteResourceShareCreatedFromPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PromoteResourceShareCreatedFromPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceShareArnHasBeenSet())
   {
@@ -462,6 +491,7 @@ PromoteResourceShareCreatedFromPolicyOutcome RAMClient::PromoteResourceShareCrea
 
 RejectResourceShareInvitationOutcome RAMClient::RejectResourceShareInvitation(const RejectResourceShareInvitationRequest& request) const
 {
+  AWS_OPERATION_GUARD(RejectResourceShareInvitation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RejectResourceShareInvitation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RejectResourceShareInvitation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -471,6 +501,7 @@ RejectResourceShareInvitationOutcome RAMClient::RejectResourceShareInvitation(co
 
 ReplacePermissionAssociationsOutcome RAMClient::ReplacePermissionAssociations(const ReplacePermissionAssociationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ReplacePermissionAssociations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ReplacePermissionAssociations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ReplacePermissionAssociations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -480,6 +511,7 @@ ReplacePermissionAssociationsOutcome RAMClient::ReplacePermissionAssociations(co
 
 SetDefaultPermissionVersionOutcome RAMClient::SetDefaultPermissionVersion(const SetDefaultPermissionVersionRequest& request) const
 {
+  AWS_OPERATION_GUARD(SetDefaultPermissionVersion);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SetDefaultPermissionVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SetDefaultPermissionVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -489,6 +521,7 @@ SetDefaultPermissionVersionOutcome RAMClient::SetDefaultPermissionVersion(const 
 
 TagResourceOutcome RAMClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -498,6 +531,7 @@ TagResourceOutcome RAMClient::TagResource(const TagResourceRequest& request) con
 
 UntagResourceOutcome RAMClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -507,6 +541,7 @@ UntagResourceOutcome RAMClient::UntagResource(const UntagResourceRequest& reques
 
 UpdateResourceShareOutcome RAMClient::UpdateResourceShare(const UpdateResourceShareRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateResourceShare);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateResourceShare, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateResourceShare, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

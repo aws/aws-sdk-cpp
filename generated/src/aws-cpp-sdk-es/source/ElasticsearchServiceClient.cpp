@@ -178,6 +178,7 @@ ElasticsearchServiceClient::ElasticsearchServiceClient(const std::shared_ptr<AWS
     /* End of legacy constructors due deprecation */
 ElasticsearchServiceClient::~ElasticsearchServiceClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<ElasticsearchServiceEndpointProviderBase>& ElasticsearchServiceClient::accessEndpointProvider()
@@ -200,6 +201,7 @@ void ElasticsearchServiceClient::OverrideEndpoint(const Aws::String& endpoint)
 
 AcceptInboundCrossClusterSearchConnectionOutcome ElasticsearchServiceClient::AcceptInboundCrossClusterSearchConnection(const AcceptInboundCrossClusterSearchConnectionRequest& request) const
 {
+  AWS_OPERATION_GUARD(AcceptInboundCrossClusterSearchConnection);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AcceptInboundCrossClusterSearchConnection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CrossClusterSearchConnectionIdHasBeenSet())
   {
@@ -216,6 +218,7 @@ AcceptInboundCrossClusterSearchConnectionOutcome ElasticsearchServiceClient::Acc
 
 AddTagsOutcome ElasticsearchServiceClient::AddTags(const AddTagsRequest& request) const
 {
+  AWS_OPERATION_GUARD(AddTags);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AddTags, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AddTags, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -225,6 +228,7 @@ AddTagsOutcome ElasticsearchServiceClient::AddTags(const AddTagsRequest& request
 
 AssociatePackageOutcome ElasticsearchServiceClient::AssociatePackage(const AssociatePackageRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociatePackage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociatePackage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PackageIDHasBeenSet())
   {
@@ -246,6 +250,7 @@ AssociatePackageOutcome ElasticsearchServiceClient::AssociatePackage(const Assoc
 
 AuthorizeVpcEndpointAccessOutcome ElasticsearchServiceClient::AuthorizeVpcEndpointAccess(const AuthorizeVpcEndpointAccessRequest& request) const
 {
+  AWS_OPERATION_GUARD(AuthorizeVpcEndpointAccess);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AuthorizeVpcEndpointAccess, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainNameHasBeenSet())
   {
@@ -262,6 +267,7 @@ AuthorizeVpcEndpointAccessOutcome ElasticsearchServiceClient::AuthorizeVpcEndpoi
 
 CancelElasticsearchServiceSoftwareUpdateOutcome ElasticsearchServiceClient::CancelElasticsearchServiceSoftwareUpdate(const CancelElasticsearchServiceSoftwareUpdateRequest& request) const
 {
+  AWS_OPERATION_GUARD(CancelElasticsearchServiceSoftwareUpdate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CancelElasticsearchServiceSoftwareUpdate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CancelElasticsearchServiceSoftwareUpdate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -271,6 +277,7 @@ CancelElasticsearchServiceSoftwareUpdateOutcome ElasticsearchServiceClient::Canc
 
 CreateElasticsearchDomainOutcome ElasticsearchServiceClient::CreateElasticsearchDomain(const CreateElasticsearchDomainRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateElasticsearchDomain);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateElasticsearchDomain, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateElasticsearchDomain, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -280,6 +287,7 @@ CreateElasticsearchDomainOutcome ElasticsearchServiceClient::CreateElasticsearch
 
 CreateOutboundCrossClusterSearchConnectionOutcome ElasticsearchServiceClient::CreateOutboundCrossClusterSearchConnection(const CreateOutboundCrossClusterSearchConnectionRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateOutboundCrossClusterSearchConnection);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateOutboundCrossClusterSearchConnection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateOutboundCrossClusterSearchConnection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -289,6 +297,7 @@ CreateOutboundCrossClusterSearchConnectionOutcome ElasticsearchServiceClient::Cr
 
 CreatePackageOutcome ElasticsearchServiceClient::CreatePackage(const CreatePackageRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreatePackage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreatePackage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreatePackage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -298,6 +307,7 @@ CreatePackageOutcome ElasticsearchServiceClient::CreatePackage(const CreatePacka
 
 CreateVpcEndpointOutcome ElasticsearchServiceClient::CreateVpcEndpoint(const CreateVpcEndpointRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateVpcEndpoint);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateVpcEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateVpcEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -307,6 +317,7 @@ CreateVpcEndpointOutcome ElasticsearchServiceClient::CreateVpcEndpoint(const Cre
 
 DeleteElasticsearchDomainOutcome ElasticsearchServiceClient::DeleteElasticsearchDomain(const DeleteElasticsearchDomainRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteElasticsearchDomain);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteElasticsearchDomain, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainNameHasBeenSet())
   {
@@ -322,6 +333,7 @@ DeleteElasticsearchDomainOutcome ElasticsearchServiceClient::DeleteElasticsearch
 
 DeleteElasticsearchServiceRoleOutcome ElasticsearchServiceClient::DeleteElasticsearchServiceRole() const
 {
+AWS_OPERATION_GUARD(DeleteElasticsearchServiceRole);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteElasticsearchServiceRole, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   const Aws::Vector<Aws::Endpoint::EndpointParameter> staticEndpointParameters;
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(staticEndpointParameters);
@@ -332,6 +344,7 @@ DeleteElasticsearchServiceRoleOutcome ElasticsearchServiceClient::DeleteElastics
 
 DeleteInboundCrossClusterSearchConnectionOutcome ElasticsearchServiceClient::DeleteInboundCrossClusterSearchConnection(const DeleteInboundCrossClusterSearchConnectionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteInboundCrossClusterSearchConnection);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteInboundCrossClusterSearchConnection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CrossClusterSearchConnectionIdHasBeenSet())
   {
@@ -347,6 +360,7 @@ DeleteInboundCrossClusterSearchConnectionOutcome ElasticsearchServiceClient::Del
 
 DeleteOutboundCrossClusterSearchConnectionOutcome ElasticsearchServiceClient::DeleteOutboundCrossClusterSearchConnection(const DeleteOutboundCrossClusterSearchConnectionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteOutboundCrossClusterSearchConnection);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteOutboundCrossClusterSearchConnection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CrossClusterSearchConnectionIdHasBeenSet())
   {
@@ -362,6 +376,7 @@ DeleteOutboundCrossClusterSearchConnectionOutcome ElasticsearchServiceClient::De
 
 DeletePackageOutcome ElasticsearchServiceClient::DeletePackage(const DeletePackageRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeletePackage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeletePackage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PackageIDHasBeenSet())
   {
@@ -377,6 +392,7 @@ DeletePackageOutcome ElasticsearchServiceClient::DeletePackage(const DeletePacka
 
 DeleteVpcEndpointOutcome ElasticsearchServiceClient::DeleteVpcEndpoint(const DeleteVpcEndpointRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteVpcEndpoint);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteVpcEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VpcEndpointIdHasBeenSet())
   {
@@ -392,6 +408,7 @@ DeleteVpcEndpointOutcome ElasticsearchServiceClient::DeleteVpcEndpoint(const Del
 
 DescribeDomainAutoTunesOutcome ElasticsearchServiceClient::DescribeDomainAutoTunes(const DescribeDomainAutoTunesRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeDomainAutoTunes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeDomainAutoTunes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainNameHasBeenSet())
   {
@@ -408,6 +425,7 @@ DescribeDomainAutoTunesOutcome ElasticsearchServiceClient::DescribeDomainAutoTun
 
 DescribeDomainChangeProgressOutcome ElasticsearchServiceClient::DescribeDomainChangeProgress(const DescribeDomainChangeProgressRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeDomainChangeProgress);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeDomainChangeProgress, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainNameHasBeenSet())
   {
@@ -424,6 +442,7 @@ DescribeDomainChangeProgressOutcome ElasticsearchServiceClient::DescribeDomainCh
 
 DescribeElasticsearchDomainOutcome ElasticsearchServiceClient::DescribeElasticsearchDomain(const DescribeElasticsearchDomainRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeElasticsearchDomain);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeElasticsearchDomain, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainNameHasBeenSet())
   {
@@ -439,6 +458,7 @@ DescribeElasticsearchDomainOutcome ElasticsearchServiceClient::DescribeElasticse
 
 DescribeElasticsearchDomainConfigOutcome ElasticsearchServiceClient::DescribeElasticsearchDomainConfig(const DescribeElasticsearchDomainConfigRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeElasticsearchDomainConfig);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeElasticsearchDomainConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainNameHasBeenSet())
   {
@@ -455,6 +475,7 @@ DescribeElasticsearchDomainConfigOutcome ElasticsearchServiceClient::DescribeEla
 
 DescribeElasticsearchDomainsOutcome ElasticsearchServiceClient::DescribeElasticsearchDomains(const DescribeElasticsearchDomainsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeElasticsearchDomains);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeElasticsearchDomains, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeElasticsearchDomains, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -464,6 +485,7 @@ DescribeElasticsearchDomainsOutcome ElasticsearchServiceClient::DescribeElastics
 
 DescribeElasticsearchInstanceTypeLimitsOutcome ElasticsearchServiceClient::DescribeElasticsearchInstanceTypeLimits(const DescribeElasticsearchInstanceTypeLimitsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeElasticsearchInstanceTypeLimits);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeElasticsearchInstanceTypeLimits, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InstanceTypeHasBeenSet())
   {
@@ -485,6 +507,7 @@ DescribeElasticsearchInstanceTypeLimitsOutcome ElasticsearchServiceClient::Descr
 
 DescribeInboundCrossClusterSearchConnectionsOutcome ElasticsearchServiceClient::DescribeInboundCrossClusterSearchConnections(const DescribeInboundCrossClusterSearchConnectionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeInboundCrossClusterSearchConnections);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeInboundCrossClusterSearchConnections, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeInboundCrossClusterSearchConnections, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -494,6 +517,7 @@ DescribeInboundCrossClusterSearchConnectionsOutcome ElasticsearchServiceClient::
 
 DescribeOutboundCrossClusterSearchConnectionsOutcome ElasticsearchServiceClient::DescribeOutboundCrossClusterSearchConnections(const DescribeOutboundCrossClusterSearchConnectionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeOutboundCrossClusterSearchConnections);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeOutboundCrossClusterSearchConnections, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeOutboundCrossClusterSearchConnections, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -503,6 +527,7 @@ DescribeOutboundCrossClusterSearchConnectionsOutcome ElasticsearchServiceClient:
 
 DescribePackagesOutcome ElasticsearchServiceClient::DescribePackages(const DescribePackagesRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribePackages);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribePackages, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribePackages, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -512,6 +537,7 @@ DescribePackagesOutcome ElasticsearchServiceClient::DescribePackages(const Descr
 
 DescribeReservedElasticsearchInstanceOfferingsOutcome ElasticsearchServiceClient::DescribeReservedElasticsearchInstanceOfferings(const DescribeReservedElasticsearchInstanceOfferingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeReservedElasticsearchInstanceOfferings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeReservedElasticsearchInstanceOfferings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeReservedElasticsearchInstanceOfferings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -521,6 +547,7 @@ DescribeReservedElasticsearchInstanceOfferingsOutcome ElasticsearchServiceClient
 
 DescribeReservedElasticsearchInstancesOutcome ElasticsearchServiceClient::DescribeReservedElasticsearchInstances(const DescribeReservedElasticsearchInstancesRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeReservedElasticsearchInstances);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeReservedElasticsearchInstances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeReservedElasticsearchInstances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -530,6 +557,7 @@ DescribeReservedElasticsearchInstancesOutcome ElasticsearchServiceClient::Descri
 
 DescribeVpcEndpointsOutcome ElasticsearchServiceClient::DescribeVpcEndpoints(const DescribeVpcEndpointsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeVpcEndpoints);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeVpcEndpoints, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeVpcEndpoints, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -539,6 +567,7 @@ DescribeVpcEndpointsOutcome ElasticsearchServiceClient::DescribeVpcEndpoints(con
 
 DissociatePackageOutcome ElasticsearchServiceClient::DissociatePackage(const DissociatePackageRequest& request) const
 {
+  AWS_OPERATION_GUARD(DissociatePackage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DissociatePackage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PackageIDHasBeenSet())
   {
@@ -560,6 +589,7 @@ DissociatePackageOutcome ElasticsearchServiceClient::DissociatePackage(const Dis
 
 GetCompatibleElasticsearchVersionsOutcome ElasticsearchServiceClient::GetCompatibleElasticsearchVersions(const GetCompatibleElasticsearchVersionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetCompatibleElasticsearchVersions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCompatibleElasticsearchVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetCompatibleElasticsearchVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -569,6 +599,7 @@ GetCompatibleElasticsearchVersionsOutcome ElasticsearchServiceClient::GetCompati
 
 GetPackageVersionHistoryOutcome ElasticsearchServiceClient::GetPackageVersionHistory(const GetPackageVersionHistoryRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetPackageVersionHistory);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPackageVersionHistory, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PackageIDHasBeenSet())
   {
@@ -585,6 +616,7 @@ GetPackageVersionHistoryOutcome ElasticsearchServiceClient::GetPackageVersionHis
 
 GetUpgradeHistoryOutcome ElasticsearchServiceClient::GetUpgradeHistory(const GetUpgradeHistoryRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetUpgradeHistory);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetUpgradeHistory, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainNameHasBeenSet())
   {
@@ -601,6 +633,7 @@ GetUpgradeHistoryOutcome ElasticsearchServiceClient::GetUpgradeHistory(const Get
 
 GetUpgradeStatusOutcome ElasticsearchServiceClient::GetUpgradeStatus(const GetUpgradeStatusRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetUpgradeStatus);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetUpgradeStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainNameHasBeenSet())
   {
@@ -617,6 +650,7 @@ GetUpgradeStatusOutcome ElasticsearchServiceClient::GetUpgradeStatus(const GetUp
 
 ListDomainNamesOutcome ElasticsearchServiceClient::ListDomainNames(const ListDomainNamesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDomainNames);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDomainNames, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDomainNames, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -626,6 +660,7 @@ ListDomainNamesOutcome ElasticsearchServiceClient::ListDomainNames(const ListDom
 
 ListDomainsForPackageOutcome ElasticsearchServiceClient::ListDomainsForPackage(const ListDomainsForPackageRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDomainsForPackage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDomainsForPackage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PackageIDHasBeenSet())
   {
@@ -642,6 +677,7 @@ ListDomainsForPackageOutcome ElasticsearchServiceClient::ListDomainsForPackage(c
 
 ListElasticsearchInstanceTypesOutcome ElasticsearchServiceClient::ListElasticsearchInstanceTypes(const ListElasticsearchInstanceTypesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListElasticsearchInstanceTypes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListElasticsearchInstanceTypes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ElasticsearchVersionHasBeenSet())
   {
@@ -657,6 +693,7 @@ ListElasticsearchInstanceTypesOutcome ElasticsearchServiceClient::ListElasticsea
 
 ListElasticsearchVersionsOutcome ElasticsearchServiceClient::ListElasticsearchVersions(const ListElasticsearchVersionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListElasticsearchVersions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListElasticsearchVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListElasticsearchVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -666,6 +703,7 @@ ListElasticsearchVersionsOutcome ElasticsearchServiceClient::ListElasticsearchVe
 
 ListPackagesForDomainOutcome ElasticsearchServiceClient::ListPackagesForDomain(const ListPackagesForDomainRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListPackagesForDomain);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPackagesForDomain, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainNameHasBeenSet())
   {
@@ -682,6 +720,7 @@ ListPackagesForDomainOutcome ElasticsearchServiceClient::ListPackagesForDomain(c
 
 ListTagsOutcome ElasticsearchServiceClient::ListTags(const ListTagsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTags);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTags, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ARNHasBeenSet())
   {
@@ -696,6 +735,7 @@ ListTagsOutcome ElasticsearchServiceClient::ListTags(const ListTagsRequest& requ
 
 ListVpcEndpointAccessOutcome ElasticsearchServiceClient::ListVpcEndpointAccess(const ListVpcEndpointAccessRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListVpcEndpointAccess);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListVpcEndpointAccess, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainNameHasBeenSet())
   {
@@ -712,6 +752,7 @@ ListVpcEndpointAccessOutcome ElasticsearchServiceClient::ListVpcEndpointAccess(c
 
 ListVpcEndpointsOutcome ElasticsearchServiceClient::ListVpcEndpoints(const ListVpcEndpointsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListVpcEndpoints);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListVpcEndpoints, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListVpcEndpoints, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -721,6 +762,7 @@ ListVpcEndpointsOutcome ElasticsearchServiceClient::ListVpcEndpoints(const ListV
 
 ListVpcEndpointsForDomainOutcome ElasticsearchServiceClient::ListVpcEndpointsForDomain(const ListVpcEndpointsForDomainRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListVpcEndpointsForDomain);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListVpcEndpointsForDomain, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainNameHasBeenSet())
   {
@@ -737,6 +779,7 @@ ListVpcEndpointsForDomainOutcome ElasticsearchServiceClient::ListVpcEndpointsFor
 
 PurchaseReservedElasticsearchInstanceOfferingOutcome ElasticsearchServiceClient::PurchaseReservedElasticsearchInstanceOffering(const PurchaseReservedElasticsearchInstanceOfferingRequest& request) const
 {
+  AWS_OPERATION_GUARD(PurchaseReservedElasticsearchInstanceOffering);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PurchaseReservedElasticsearchInstanceOffering, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PurchaseReservedElasticsearchInstanceOffering, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -746,6 +789,7 @@ PurchaseReservedElasticsearchInstanceOfferingOutcome ElasticsearchServiceClient:
 
 RejectInboundCrossClusterSearchConnectionOutcome ElasticsearchServiceClient::RejectInboundCrossClusterSearchConnection(const RejectInboundCrossClusterSearchConnectionRequest& request) const
 {
+  AWS_OPERATION_GUARD(RejectInboundCrossClusterSearchConnection);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RejectInboundCrossClusterSearchConnection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CrossClusterSearchConnectionIdHasBeenSet())
   {
@@ -762,6 +806,7 @@ RejectInboundCrossClusterSearchConnectionOutcome ElasticsearchServiceClient::Rej
 
 RemoveTagsOutcome ElasticsearchServiceClient::RemoveTags(const RemoveTagsRequest& request) const
 {
+  AWS_OPERATION_GUARD(RemoveTags);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RemoveTags, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RemoveTags, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -771,6 +816,7 @@ RemoveTagsOutcome ElasticsearchServiceClient::RemoveTags(const RemoveTagsRequest
 
 RevokeVpcEndpointAccessOutcome ElasticsearchServiceClient::RevokeVpcEndpointAccess(const RevokeVpcEndpointAccessRequest& request) const
 {
+  AWS_OPERATION_GUARD(RevokeVpcEndpointAccess);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RevokeVpcEndpointAccess, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainNameHasBeenSet())
   {
@@ -787,6 +833,7 @@ RevokeVpcEndpointAccessOutcome ElasticsearchServiceClient::RevokeVpcEndpointAcce
 
 StartElasticsearchServiceSoftwareUpdateOutcome ElasticsearchServiceClient::StartElasticsearchServiceSoftwareUpdate(const StartElasticsearchServiceSoftwareUpdateRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartElasticsearchServiceSoftwareUpdate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartElasticsearchServiceSoftwareUpdate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartElasticsearchServiceSoftwareUpdate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -796,6 +843,7 @@ StartElasticsearchServiceSoftwareUpdateOutcome ElasticsearchServiceClient::Start
 
 UpdateElasticsearchDomainConfigOutcome ElasticsearchServiceClient::UpdateElasticsearchDomainConfig(const UpdateElasticsearchDomainConfigRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateElasticsearchDomainConfig);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateElasticsearchDomainConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainNameHasBeenSet())
   {
@@ -812,6 +860,7 @@ UpdateElasticsearchDomainConfigOutcome ElasticsearchServiceClient::UpdateElastic
 
 UpdatePackageOutcome ElasticsearchServiceClient::UpdatePackage(const UpdatePackageRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdatePackage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdatePackage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdatePackage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -821,6 +870,7 @@ UpdatePackageOutcome ElasticsearchServiceClient::UpdatePackage(const UpdatePacka
 
 UpdateVpcEndpointOutcome ElasticsearchServiceClient::UpdateVpcEndpoint(const UpdateVpcEndpointRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateVpcEndpoint);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateVpcEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateVpcEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -830,6 +880,7 @@ UpdateVpcEndpointOutcome ElasticsearchServiceClient::UpdateVpcEndpoint(const Upd
 
 UpgradeElasticsearchDomainOutcome ElasticsearchServiceClient::UpgradeElasticsearchDomain(const UpgradeElasticsearchDomainRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpgradeElasticsearchDomain);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpgradeElasticsearchDomain, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpgradeElasticsearchDomain, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

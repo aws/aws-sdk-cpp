@@ -159,6 +159,7 @@ ChimeSDKIdentityClient::ChimeSDKIdentityClient(const std::shared_ptr<AWSCredenti
     /* End of legacy constructors due deprecation */
 ChimeSDKIdentityClient::~ChimeSDKIdentityClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<ChimeSDKIdentityEndpointProviderBase>& ChimeSDKIdentityClient::accessEndpointProvider()
@@ -181,6 +182,7 @@ void ChimeSDKIdentityClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CreateAppInstanceOutcome ChimeSDKIdentityClient::CreateAppInstance(const CreateAppInstanceRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateAppInstance);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAppInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateAppInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -190,6 +192,7 @@ CreateAppInstanceOutcome ChimeSDKIdentityClient::CreateAppInstance(const CreateA
 
 CreateAppInstanceAdminOutcome ChimeSDKIdentityClient::CreateAppInstanceAdmin(const CreateAppInstanceAdminRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateAppInstanceAdmin);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAppInstanceAdmin, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppInstanceArnHasBeenSet())
   {
@@ -206,6 +209,7 @@ CreateAppInstanceAdminOutcome ChimeSDKIdentityClient::CreateAppInstanceAdmin(con
 
 CreateAppInstanceBotOutcome ChimeSDKIdentityClient::CreateAppInstanceBot(const CreateAppInstanceBotRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateAppInstanceBot);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAppInstanceBot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateAppInstanceBot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -215,6 +219,7 @@ CreateAppInstanceBotOutcome ChimeSDKIdentityClient::CreateAppInstanceBot(const C
 
 CreateAppInstanceUserOutcome ChimeSDKIdentityClient::CreateAppInstanceUser(const CreateAppInstanceUserRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateAppInstanceUser);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAppInstanceUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateAppInstanceUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -224,6 +229,7 @@ CreateAppInstanceUserOutcome ChimeSDKIdentityClient::CreateAppInstanceUser(const
 
 DeleteAppInstanceOutcome ChimeSDKIdentityClient::DeleteAppInstance(const DeleteAppInstanceRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteAppInstance);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAppInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppInstanceArnHasBeenSet())
   {
@@ -239,6 +245,7 @@ DeleteAppInstanceOutcome ChimeSDKIdentityClient::DeleteAppInstance(const DeleteA
 
 DeleteAppInstanceAdminOutcome ChimeSDKIdentityClient::DeleteAppInstanceAdmin(const DeleteAppInstanceAdminRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteAppInstanceAdmin);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAppInstanceAdmin, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppInstanceAdminArnHasBeenSet())
   {
@@ -261,6 +268,7 @@ DeleteAppInstanceAdminOutcome ChimeSDKIdentityClient::DeleteAppInstanceAdmin(con
 
 DeleteAppInstanceBotOutcome ChimeSDKIdentityClient::DeleteAppInstanceBot(const DeleteAppInstanceBotRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteAppInstanceBot);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAppInstanceBot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppInstanceBotArnHasBeenSet())
   {
@@ -276,6 +284,7 @@ DeleteAppInstanceBotOutcome ChimeSDKIdentityClient::DeleteAppInstanceBot(const D
 
 DeleteAppInstanceUserOutcome ChimeSDKIdentityClient::DeleteAppInstanceUser(const DeleteAppInstanceUserRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteAppInstanceUser);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAppInstanceUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppInstanceUserArnHasBeenSet())
   {
@@ -291,6 +300,7 @@ DeleteAppInstanceUserOutcome ChimeSDKIdentityClient::DeleteAppInstanceUser(const
 
 DeregisterAppInstanceUserEndpointOutcome ChimeSDKIdentityClient::DeregisterAppInstanceUserEndpoint(const DeregisterAppInstanceUserEndpointRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeregisterAppInstanceUserEndpoint);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeregisterAppInstanceUserEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppInstanceUserArnHasBeenSet())
   {
@@ -313,6 +323,7 @@ DeregisterAppInstanceUserEndpointOutcome ChimeSDKIdentityClient::DeregisterAppIn
 
 DescribeAppInstanceOutcome ChimeSDKIdentityClient::DescribeAppInstance(const DescribeAppInstanceRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeAppInstance);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAppInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppInstanceArnHasBeenSet())
   {
@@ -328,6 +339,7 @@ DescribeAppInstanceOutcome ChimeSDKIdentityClient::DescribeAppInstance(const Des
 
 DescribeAppInstanceAdminOutcome ChimeSDKIdentityClient::DescribeAppInstanceAdmin(const DescribeAppInstanceAdminRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeAppInstanceAdmin);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAppInstanceAdmin, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppInstanceAdminArnHasBeenSet())
   {
@@ -350,6 +362,7 @@ DescribeAppInstanceAdminOutcome ChimeSDKIdentityClient::DescribeAppInstanceAdmin
 
 DescribeAppInstanceBotOutcome ChimeSDKIdentityClient::DescribeAppInstanceBot(const DescribeAppInstanceBotRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeAppInstanceBot);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAppInstanceBot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppInstanceBotArnHasBeenSet())
   {
@@ -365,6 +378,7 @@ DescribeAppInstanceBotOutcome ChimeSDKIdentityClient::DescribeAppInstanceBot(con
 
 DescribeAppInstanceUserOutcome ChimeSDKIdentityClient::DescribeAppInstanceUser(const DescribeAppInstanceUserRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeAppInstanceUser);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAppInstanceUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppInstanceUserArnHasBeenSet())
   {
@@ -380,6 +394,7 @@ DescribeAppInstanceUserOutcome ChimeSDKIdentityClient::DescribeAppInstanceUser(c
 
 DescribeAppInstanceUserEndpointOutcome ChimeSDKIdentityClient::DescribeAppInstanceUserEndpoint(const DescribeAppInstanceUserEndpointRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeAppInstanceUserEndpoint);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAppInstanceUserEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppInstanceUserArnHasBeenSet())
   {
@@ -402,6 +417,7 @@ DescribeAppInstanceUserEndpointOutcome ChimeSDKIdentityClient::DescribeAppInstan
 
 GetAppInstanceRetentionSettingsOutcome ChimeSDKIdentityClient::GetAppInstanceRetentionSettings(const GetAppInstanceRetentionSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetAppInstanceRetentionSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAppInstanceRetentionSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppInstanceArnHasBeenSet())
   {
@@ -418,6 +434,7 @@ GetAppInstanceRetentionSettingsOutcome ChimeSDKIdentityClient::GetAppInstanceRet
 
 ListAppInstanceAdminsOutcome ChimeSDKIdentityClient::ListAppInstanceAdmins(const ListAppInstanceAdminsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAppInstanceAdmins);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAppInstanceAdmins, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppInstanceArnHasBeenSet())
   {
@@ -434,6 +451,7 @@ ListAppInstanceAdminsOutcome ChimeSDKIdentityClient::ListAppInstanceAdmins(const
 
 ListAppInstanceBotsOutcome ChimeSDKIdentityClient::ListAppInstanceBots(const ListAppInstanceBotsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAppInstanceBots);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAppInstanceBots, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppInstanceArnHasBeenSet())
   {
@@ -448,6 +466,7 @@ ListAppInstanceBotsOutcome ChimeSDKIdentityClient::ListAppInstanceBots(const Lis
 
 ListAppInstanceUserEndpointsOutcome ChimeSDKIdentityClient::ListAppInstanceUserEndpoints(const ListAppInstanceUserEndpointsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAppInstanceUserEndpoints);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAppInstanceUserEndpoints, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppInstanceUserArnHasBeenSet())
   {
@@ -464,6 +483,7 @@ ListAppInstanceUserEndpointsOutcome ChimeSDKIdentityClient::ListAppInstanceUserE
 
 ListAppInstanceUsersOutcome ChimeSDKIdentityClient::ListAppInstanceUsers(const ListAppInstanceUsersRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAppInstanceUsers);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAppInstanceUsers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppInstanceArnHasBeenSet())
   {
@@ -478,6 +498,7 @@ ListAppInstanceUsersOutcome ChimeSDKIdentityClient::ListAppInstanceUsers(const L
 
 ListAppInstancesOutcome ChimeSDKIdentityClient::ListAppInstances(const ListAppInstancesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAppInstances);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAppInstances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAppInstances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -487,6 +508,7 @@ ListAppInstancesOutcome ChimeSDKIdentityClient::ListAppInstances(const ListAppIn
 
 ListTagsForResourceOutcome ChimeSDKIdentityClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceARNHasBeenSet())
   {
@@ -501,6 +523,7 @@ ListTagsForResourceOutcome ChimeSDKIdentityClient::ListTagsForResource(const Lis
 
 PutAppInstanceRetentionSettingsOutcome ChimeSDKIdentityClient::PutAppInstanceRetentionSettings(const PutAppInstanceRetentionSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutAppInstanceRetentionSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutAppInstanceRetentionSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppInstanceArnHasBeenSet())
   {
@@ -517,6 +540,7 @@ PutAppInstanceRetentionSettingsOutcome ChimeSDKIdentityClient::PutAppInstanceRet
 
 PutAppInstanceUserExpirationSettingsOutcome ChimeSDKIdentityClient::PutAppInstanceUserExpirationSettings(const PutAppInstanceUserExpirationSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutAppInstanceUserExpirationSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutAppInstanceUserExpirationSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppInstanceUserArnHasBeenSet())
   {
@@ -533,6 +557,7 @@ PutAppInstanceUserExpirationSettingsOutcome ChimeSDKIdentityClient::PutAppInstan
 
 RegisterAppInstanceUserEndpointOutcome ChimeSDKIdentityClient::RegisterAppInstanceUserEndpoint(const RegisterAppInstanceUserEndpointRequest& request) const
 {
+  AWS_OPERATION_GUARD(RegisterAppInstanceUserEndpoint);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RegisterAppInstanceUserEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppInstanceUserArnHasBeenSet())
   {
@@ -549,6 +574,7 @@ RegisterAppInstanceUserEndpointOutcome ChimeSDKIdentityClient::RegisterAppInstan
 
 TagResourceOutcome ChimeSDKIdentityClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -561,6 +587,7 @@ TagResourceOutcome ChimeSDKIdentityClient::TagResource(const TagResourceRequest&
 
 UntagResourceOutcome ChimeSDKIdentityClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -573,6 +600,7 @@ UntagResourceOutcome ChimeSDKIdentityClient::UntagResource(const UntagResourceRe
 
 UpdateAppInstanceOutcome ChimeSDKIdentityClient::UpdateAppInstance(const UpdateAppInstanceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateAppInstance);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAppInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppInstanceArnHasBeenSet())
   {
@@ -588,6 +616,7 @@ UpdateAppInstanceOutcome ChimeSDKIdentityClient::UpdateAppInstance(const UpdateA
 
 UpdateAppInstanceBotOutcome ChimeSDKIdentityClient::UpdateAppInstanceBot(const UpdateAppInstanceBotRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateAppInstanceBot);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAppInstanceBot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppInstanceBotArnHasBeenSet())
   {
@@ -603,6 +632,7 @@ UpdateAppInstanceBotOutcome ChimeSDKIdentityClient::UpdateAppInstanceBot(const U
 
 UpdateAppInstanceUserOutcome ChimeSDKIdentityClient::UpdateAppInstanceUser(const UpdateAppInstanceUserRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateAppInstanceUser);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAppInstanceUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppInstanceUserArnHasBeenSet())
   {
@@ -618,6 +648,7 @@ UpdateAppInstanceUserOutcome ChimeSDKIdentityClient::UpdateAppInstanceUser(const
 
 UpdateAppInstanceUserEndpointOutcome ChimeSDKIdentityClient::UpdateAppInstanceUserEndpoint(const UpdateAppInstanceUserEndpointRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateAppInstanceUserEndpoint);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAppInstanceUserEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppInstanceUserArnHasBeenSet())
   {

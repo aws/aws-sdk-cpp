@@ -155,6 +155,7 @@ ServiceDiscoveryClient::ServiceDiscoveryClient(const std::shared_ptr<AWSCredenti
     /* End of legacy constructors due deprecation */
 ServiceDiscoveryClient::~ServiceDiscoveryClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<ServiceDiscoveryEndpointProviderBase>& ServiceDiscoveryClient::accessEndpointProvider()
@@ -177,6 +178,7 @@ void ServiceDiscoveryClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CreateHttpNamespaceOutcome ServiceDiscoveryClient::CreateHttpNamespace(const CreateHttpNamespaceRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateHttpNamespace);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateHttpNamespace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateHttpNamespace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -185,6 +187,7 @@ CreateHttpNamespaceOutcome ServiceDiscoveryClient::CreateHttpNamespace(const Cre
 
 CreatePrivateDnsNamespaceOutcome ServiceDiscoveryClient::CreatePrivateDnsNamespace(const CreatePrivateDnsNamespaceRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreatePrivateDnsNamespace);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreatePrivateDnsNamespace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreatePrivateDnsNamespace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -193,6 +196,7 @@ CreatePrivateDnsNamespaceOutcome ServiceDiscoveryClient::CreatePrivateDnsNamespa
 
 CreatePublicDnsNamespaceOutcome ServiceDiscoveryClient::CreatePublicDnsNamespace(const CreatePublicDnsNamespaceRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreatePublicDnsNamespace);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreatePublicDnsNamespace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreatePublicDnsNamespace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -201,6 +205,7 @@ CreatePublicDnsNamespaceOutcome ServiceDiscoveryClient::CreatePublicDnsNamespace
 
 CreateServiceOutcome ServiceDiscoveryClient::CreateService(const CreateServiceRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateService);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateService, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateService, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -209,6 +214,7 @@ CreateServiceOutcome ServiceDiscoveryClient::CreateService(const CreateServiceRe
 
 DeleteNamespaceOutcome ServiceDiscoveryClient::DeleteNamespace(const DeleteNamespaceRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteNamespace);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteNamespace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteNamespace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -217,6 +223,7 @@ DeleteNamespaceOutcome ServiceDiscoveryClient::DeleteNamespace(const DeleteNames
 
 DeleteServiceOutcome ServiceDiscoveryClient::DeleteService(const DeleteServiceRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteService);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteService, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteService, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -225,6 +232,7 @@ DeleteServiceOutcome ServiceDiscoveryClient::DeleteService(const DeleteServiceRe
 
 DeregisterInstanceOutcome ServiceDiscoveryClient::DeregisterInstance(const DeregisterInstanceRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeregisterInstance);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeregisterInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeregisterInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -233,6 +241,7 @@ DeregisterInstanceOutcome ServiceDiscoveryClient::DeregisterInstance(const Dereg
 
 DiscoverInstancesOutcome ServiceDiscoveryClient::DiscoverInstances(const DiscoverInstancesRequest& request) const
 {
+  AWS_OPERATION_GUARD(DiscoverInstances);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DiscoverInstances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DiscoverInstances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -243,6 +252,7 @@ DiscoverInstancesOutcome ServiceDiscoveryClient::DiscoverInstances(const Discove
 
 GetInstanceOutcome ServiceDiscoveryClient::GetInstance(const GetInstanceRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetInstance);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -251,6 +261,7 @@ GetInstanceOutcome ServiceDiscoveryClient::GetInstance(const GetInstanceRequest&
 
 GetInstancesHealthStatusOutcome ServiceDiscoveryClient::GetInstancesHealthStatus(const GetInstancesHealthStatusRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetInstancesHealthStatus);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetInstancesHealthStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetInstancesHealthStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -259,6 +270,7 @@ GetInstancesHealthStatusOutcome ServiceDiscoveryClient::GetInstancesHealthStatus
 
 GetNamespaceOutcome ServiceDiscoveryClient::GetNamespace(const GetNamespaceRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetNamespace);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetNamespace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetNamespace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -267,6 +279,7 @@ GetNamespaceOutcome ServiceDiscoveryClient::GetNamespace(const GetNamespaceReque
 
 GetOperationOutcome ServiceDiscoveryClient::GetOperation(const GetOperationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetOperation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetOperation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetOperation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -275,6 +288,7 @@ GetOperationOutcome ServiceDiscoveryClient::GetOperation(const GetOperationReque
 
 GetServiceOutcome ServiceDiscoveryClient::GetService(const GetServiceRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetService);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetService, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetService, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -283,6 +297,7 @@ GetServiceOutcome ServiceDiscoveryClient::GetService(const GetServiceRequest& re
 
 ListInstancesOutcome ServiceDiscoveryClient::ListInstances(const ListInstancesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListInstances);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListInstances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListInstances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -291,6 +306,7 @@ ListInstancesOutcome ServiceDiscoveryClient::ListInstances(const ListInstancesRe
 
 ListNamespacesOutcome ServiceDiscoveryClient::ListNamespaces(const ListNamespacesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListNamespaces);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListNamespaces, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListNamespaces, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -299,6 +315,7 @@ ListNamespacesOutcome ServiceDiscoveryClient::ListNamespaces(const ListNamespace
 
 ListOperationsOutcome ServiceDiscoveryClient::ListOperations(const ListOperationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListOperations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListOperations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListOperations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -307,6 +324,7 @@ ListOperationsOutcome ServiceDiscoveryClient::ListOperations(const ListOperation
 
 ListServicesOutcome ServiceDiscoveryClient::ListServices(const ListServicesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListServices);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListServices, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListServices, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -315,6 +333,7 @@ ListServicesOutcome ServiceDiscoveryClient::ListServices(const ListServicesReque
 
 ListTagsForResourceOutcome ServiceDiscoveryClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -323,6 +342,7 @@ ListTagsForResourceOutcome ServiceDiscoveryClient::ListTagsForResource(const Lis
 
 RegisterInstanceOutcome ServiceDiscoveryClient::RegisterInstance(const RegisterInstanceRequest& request) const
 {
+  AWS_OPERATION_GUARD(RegisterInstance);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RegisterInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RegisterInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -331,6 +351,7 @@ RegisterInstanceOutcome ServiceDiscoveryClient::RegisterInstance(const RegisterI
 
 TagResourceOutcome ServiceDiscoveryClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -339,6 +360,7 @@ TagResourceOutcome ServiceDiscoveryClient::TagResource(const TagResourceRequest&
 
 UntagResourceOutcome ServiceDiscoveryClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -347,6 +369,7 @@ UntagResourceOutcome ServiceDiscoveryClient::UntagResource(const UntagResourceRe
 
 UpdateHttpNamespaceOutcome ServiceDiscoveryClient::UpdateHttpNamespace(const UpdateHttpNamespaceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateHttpNamespace);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateHttpNamespace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateHttpNamespace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -355,6 +378,7 @@ UpdateHttpNamespaceOutcome ServiceDiscoveryClient::UpdateHttpNamespace(const Upd
 
 UpdateInstanceCustomHealthStatusOutcome ServiceDiscoveryClient::UpdateInstanceCustomHealthStatus(const UpdateInstanceCustomHealthStatusRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateInstanceCustomHealthStatus);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateInstanceCustomHealthStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateInstanceCustomHealthStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -363,6 +387,7 @@ UpdateInstanceCustomHealthStatusOutcome ServiceDiscoveryClient::UpdateInstanceCu
 
 UpdatePrivateDnsNamespaceOutcome ServiceDiscoveryClient::UpdatePrivateDnsNamespace(const UpdatePrivateDnsNamespaceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdatePrivateDnsNamespace);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdatePrivateDnsNamespace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdatePrivateDnsNamespace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -371,6 +396,7 @@ UpdatePrivateDnsNamespaceOutcome ServiceDiscoveryClient::UpdatePrivateDnsNamespa
 
 UpdatePublicDnsNamespaceOutcome ServiceDiscoveryClient::UpdatePublicDnsNamespace(const UpdatePublicDnsNamespaceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdatePublicDnsNamespace);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdatePublicDnsNamespace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdatePublicDnsNamespace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -379,6 +405,7 @@ UpdatePublicDnsNamespaceOutcome ServiceDiscoveryClient::UpdatePublicDnsNamespace
 
 UpdateServiceOutcome ServiceDiscoveryClient::UpdateService(const UpdateServiceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateService);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateService, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateService, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

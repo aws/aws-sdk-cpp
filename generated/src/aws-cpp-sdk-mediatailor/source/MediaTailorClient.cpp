@@ -173,6 +173,7 @@ MediaTailorClient::MediaTailorClient(const std::shared_ptr<AWSCredentialsProvide
     /* End of legacy constructors due deprecation */
 MediaTailorClient::~MediaTailorClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<MediaTailorEndpointProviderBase>& MediaTailorClient::accessEndpointProvider()
@@ -195,6 +196,7 @@ void MediaTailorClient::OverrideEndpoint(const Aws::String& endpoint)
 
 ConfigureLogsForChannelOutcome MediaTailorClient::ConfigureLogsForChannel(const ConfigureLogsForChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(ConfigureLogsForChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ConfigureLogsForChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ConfigureLogsForChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -204,6 +206,7 @@ ConfigureLogsForChannelOutcome MediaTailorClient::ConfigureLogsForChannel(const 
 
 ConfigureLogsForPlaybackConfigurationOutcome MediaTailorClient::ConfigureLogsForPlaybackConfiguration(const ConfigureLogsForPlaybackConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(ConfigureLogsForPlaybackConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ConfigureLogsForPlaybackConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ConfigureLogsForPlaybackConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -213,6 +216,7 @@ ConfigureLogsForPlaybackConfigurationOutcome MediaTailorClient::ConfigureLogsFor
 
 CreateChannelOutcome MediaTailorClient::CreateChannel(const CreateChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelNameHasBeenSet())
   {
@@ -228,6 +232,7 @@ CreateChannelOutcome MediaTailorClient::CreateChannel(const CreateChannelRequest
 
 CreateLiveSourceOutcome MediaTailorClient::CreateLiveSource(const CreateLiveSourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateLiveSource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateLiveSource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LiveSourceNameHasBeenSet())
   {
@@ -250,6 +255,7 @@ CreateLiveSourceOutcome MediaTailorClient::CreateLiveSource(const CreateLiveSour
 
 CreatePrefetchScheduleOutcome MediaTailorClient::CreatePrefetchSchedule(const CreatePrefetchScheduleRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreatePrefetchSchedule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreatePrefetchSchedule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -271,6 +277,7 @@ CreatePrefetchScheduleOutcome MediaTailorClient::CreatePrefetchSchedule(const Cr
 
 CreateProgramOutcome MediaTailorClient::CreateProgram(const CreateProgramRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateProgram);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateProgram, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelNameHasBeenSet())
   {
@@ -293,6 +300,7 @@ CreateProgramOutcome MediaTailorClient::CreateProgram(const CreateProgramRequest
 
 CreateSourceLocationOutcome MediaTailorClient::CreateSourceLocation(const CreateSourceLocationRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateSourceLocation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateSourceLocation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SourceLocationNameHasBeenSet())
   {
@@ -308,6 +316,7 @@ CreateSourceLocationOutcome MediaTailorClient::CreateSourceLocation(const Create
 
 CreateVodSourceOutcome MediaTailorClient::CreateVodSource(const CreateVodSourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateVodSource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateVodSource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SourceLocationNameHasBeenSet())
   {
@@ -330,6 +339,7 @@ CreateVodSourceOutcome MediaTailorClient::CreateVodSource(const CreateVodSourceR
 
 DeleteChannelOutcome MediaTailorClient::DeleteChannel(const DeleteChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelNameHasBeenSet())
   {
@@ -345,6 +355,7 @@ DeleteChannelOutcome MediaTailorClient::DeleteChannel(const DeleteChannelRequest
 
 DeleteChannelPolicyOutcome MediaTailorClient::DeleteChannelPolicy(const DeleteChannelPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteChannelPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteChannelPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelNameHasBeenSet())
   {
@@ -361,6 +372,7 @@ DeleteChannelPolicyOutcome MediaTailorClient::DeleteChannelPolicy(const DeleteCh
 
 DeleteLiveSourceOutcome MediaTailorClient::DeleteLiveSource(const DeleteLiveSourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteLiveSource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteLiveSource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LiveSourceNameHasBeenSet())
   {
@@ -383,6 +395,7 @@ DeleteLiveSourceOutcome MediaTailorClient::DeleteLiveSource(const DeleteLiveSour
 
 DeletePlaybackConfigurationOutcome MediaTailorClient::DeletePlaybackConfiguration(const DeletePlaybackConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeletePlaybackConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeletePlaybackConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -398,6 +411,7 @@ DeletePlaybackConfigurationOutcome MediaTailorClient::DeletePlaybackConfiguratio
 
 DeletePrefetchScheduleOutcome MediaTailorClient::DeletePrefetchSchedule(const DeletePrefetchScheduleRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeletePrefetchSchedule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeletePrefetchSchedule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -419,6 +433,7 @@ DeletePrefetchScheduleOutcome MediaTailorClient::DeletePrefetchSchedule(const De
 
 DeleteProgramOutcome MediaTailorClient::DeleteProgram(const DeleteProgramRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteProgram);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteProgram, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelNameHasBeenSet())
   {
@@ -441,6 +456,7 @@ DeleteProgramOutcome MediaTailorClient::DeleteProgram(const DeleteProgramRequest
 
 DeleteSourceLocationOutcome MediaTailorClient::DeleteSourceLocation(const DeleteSourceLocationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteSourceLocation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteSourceLocation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SourceLocationNameHasBeenSet())
   {
@@ -456,6 +472,7 @@ DeleteSourceLocationOutcome MediaTailorClient::DeleteSourceLocation(const Delete
 
 DeleteVodSourceOutcome MediaTailorClient::DeleteVodSource(const DeleteVodSourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteVodSource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteVodSource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SourceLocationNameHasBeenSet())
   {
@@ -478,6 +495,7 @@ DeleteVodSourceOutcome MediaTailorClient::DeleteVodSource(const DeleteVodSourceR
 
 DescribeChannelOutcome MediaTailorClient::DescribeChannel(const DescribeChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelNameHasBeenSet())
   {
@@ -493,6 +511,7 @@ DescribeChannelOutcome MediaTailorClient::DescribeChannel(const DescribeChannelR
 
 DescribeLiveSourceOutcome MediaTailorClient::DescribeLiveSource(const DescribeLiveSourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeLiveSource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeLiveSource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LiveSourceNameHasBeenSet())
   {
@@ -515,6 +534,7 @@ DescribeLiveSourceOutcome MediaTailorClient::DescribeLiveSource(const DescribeLi
 
 DescribeProgramOutcome MediaTailorClient::DescribeProgram(const DescribeProgramRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeProgram);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeProgram, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelNameHasBeenSet())
   {
@@ -537,6 +557,7 @@ DescribeProgramOutcome MediaTailorClient::DescribeProgram(const DescribeProgramR
 
 DescribeSourceLocationOutcome MediaTailorClient::DescribeSourceLocation(const DescribeSourceLocationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeSourceLocation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeSourceLocation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SourceLocationNameHasBeenSet())
   {
@@ -552,6 +573,7 @@ DescribeSourceLocationOutcome MediaTailorClient::DescribeSourceLocation(const De
 
 DescribeVodSourceOutcome MediaTailorClient::DescribeVodSource(const DescribeVodSourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeVodSource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeVodSource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SourceLocationNameHasBeenSet())
   {
@@ -574,6 +596,7 @@ DescribeVodSourceOutcome MediaTailorClient::DescribeVodSource(const DescribeVodS
 
 GetChannelPolicyOutcome MediaTailorClient::GetChannelPolicy(const GetChannelPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetChannelPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetChannelPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelNameHasBeenSet())
   {
@@ -590,6 +613,7 @@ GetChannelPolicyOutcome MediaTailorClient::GetChannelPolicy(const GetChannelPoli
 
 GetChannelScheduleOutcome MediaTailorClient::GetChannelSchedule(const GetChannelScheduleRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetChannelSchedule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetChannelSchedule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelNameHasBeenSet())
   {
@@ -606,6 +630,7 @@ GetChannelScheduleOutcome MediaTailorClient::GetChannelSchedule(const GetChannel
 
 GetPlaybackConfigurationOutcome MediaTailorClient::GetPlaybackConfiguration(const GetPlaybackConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetPlaybackConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPlaybackConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -621,6 +646,7 @@ GetPlaybackConfigurationOutcome MediaTailorClient::GetPlaybackConfiguration(cons
 
 GetPrefetchScheduleOutcome MediaTailorClient::GetPrefetchSchedule(const GetPrefetchScheduleRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetPrefetchSchedule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPrefetchSchedule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -642,6 +668,7 @@ GetPrefetchScheduleOutcome MediaTailorClient::GetPrefetchSchedule(const GetPrefe
 
 ListAlertsOutcome MediaTailorClient::ListAlerts(const ListAlertsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAlerts);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAlerts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -656,6 +683,7 @@ ListAlertsOutcome MediaTailorClient::ListAlerts(const ListAlertsRequest& request
 
 ListChannelsOutcome MediaTailorClient::ListChannels(const ListChannelsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListChannels);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListChannels, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListChannels, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -665,6 +693,7 @@ ListChannelsOutcome MediaTailorClient::ListChannels(const ListChannelsRequest& r
 
 ListLiveSourcesOutcome MediaTailorClient::ListLiveSources(const ListLiveSourcesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListLiveSources);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListLiveSources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SourceLocationNameHasBeenSet())
   {
@@ -681,6 +710,7 @@ ListLiveSourcesOutcome MediaTailorClient::ListLiveSources(const ListLiveSourcesR
 
 ListPlaybackConfigurationsOutcome MediaTailorClient::ListPlaybackConfigurations(const ListPlaybackConfigurationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListPlaybackConfigurations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPlaybackConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListPlaybackConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -690,6 +720,7 @@ ListPlaybackConfigurationsOutcome MediaTailorClient::ListPlaybackConfigurations(
 
 ListPrefetchSchedulesOutcome MediaTailorClient::ListPrefetchSchedules(const ListPrefetchSchedulesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListPrefetchSchedules);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPrefetchSchedules, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PlaybackConfigurationNameHasBeenSet())
   {
@@ -705,6 +736,7 @@ ListPrefetchSchedulesOutcome MediaTailorClient::ListPrefetchSchedules(const List
 
 ListSourceLocationsOutcome MediaTailorClient::ListSourceLocations(const ListSourceLocationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListSourceLocations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSourceLocations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListSourceLocations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -714,6 +746,7 @@ ListSourceLocationsOutcome MediaTailorClient::ListSourceLocations(const ListSour
 
 ListTagsForResourceOutcome MediaTailorClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -729,6 +762,7 @@ ListTagsForResourceOutcome MediaTailorClient::ListTagsForResource(const ListTags
 
 ListVodSourcesOutcome MediaTailorClient::ListVodSources(const ListVodSourcesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListVodSources);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListVodSources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SourceLocationNameHasBeenSet())
   {
@@ -745,6 +779,7 @@ ListVodSourcesOutcome MediaTailorClient::ListVodSources(const ListVodSourcesRequ
 
 PutChannelPolicyOutcome MediaTailorClient::PutChannelPolicy(const PutChannelPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutChannelPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutChannelPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelNameHasBeenSet())
   {
@@ -761,6 +796,7 @@ PutChannelPolicyOutcome MediaTailorClient::PutChannelPolicy(const PutChannelPoli
 
 PutPlaybackConfigurationOutcome MediaTailorClient::PutPlaybackConfiguration(const PutPlaybackConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutPlaybackConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutPlaybackConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutPlaybackConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -770,6 +806,7 @@ PutPlaybackConfigurationOutcome MediaTailorClient::PutPlaybackConfiguration(cons
 
 StartChannelOutcome MediaTailorClient::StartChannel(const StartChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelNameHasBeenSet())
   {
@@ -786,6 +823,7 @@ StartChannelOutcome MediaTailorClient::StartChannel(const StartChannelRequest& r
 
 StopChannelOutcome MediaTailorClient::StopChannel(const StopChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(StopChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelNameHasBeenSet())
   {
@@ -802,6 +840,7 @@ StopChannelOutcome MediaTailorClient::StopChannel(const StopChannelRequest& requ
 
 TagResourceOutcome MediaTailorClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -817,6 +856,7 @@ TagResourceOutcome MediaTailorClient::TagResource(const TagResourceRequest& requ
 
 UntagResourceOutcome MediaTailorClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -837,6 +877,7 @@ UntagResourceOutcome MediaTailorClient::UntagResource(const UntagResourceRequest
 
 UpdateChannelOutcome MediaTailorClient::UpdateChannel(const UpdateChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelNameHasBeenSet())
   {
@@ -852,6 +893,7 @@ UpdateChannelOutcome MediaTailorClient::UpdateChannel(const UpdateChannelRequest
 
 UpdateLiveSourceOutcome MediaTailorClient::UpdateLiveSource(const UpdateLiveSourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateLiveSource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateLiveSource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LiveSourceNameHasBeenSet())
   {
@@ -874,6 +916,7 @@ UpdateLiveSourceOutcome MediaTailorClient::UpdateLiveSource(const UpdateLiveSour
 
 UpdateProgramOutcome MediaTailorClient::UpdateProgram(const UpdateProgramRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateProgram);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateProgram, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelNameHasBeenSet())
   {
@@ -896,6 +939,7 @@ UpdateProgramOutcome MediaTailorClient::UpdateProgram(const UpdateProgramRequest
 
 UpdateSourceLocationOutcome MediaTailorClient::UpdateSourceLocation(const UpdateSourceLocationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateSourceLocation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateSourceLocation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SourceLocationNameHasBeenSet())
   {
@@ -911,6 +955,7 @@ UpdateSourceLocationOutcome MediaTailorClient::UpdateSourceLocation(const Update
 
 UpdateVodSourceOutcome MediaTailorClient::UpdateVodSource(const UpdateVodSourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateVodSource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateVodSource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SourceLocationNameHasBeenSet())
   {

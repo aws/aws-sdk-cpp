@@ -202,6 +202,7 @@ IoTSiteWiseClient::IoTSiteWiseClient(const std::shared_ptr<AWSCredentialsProvide
     /* End of legacy constructors due deprecation */
 IoTSiteWiseClient::~IoTSiteWiseClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<IoTSiteWiseEndpointProviderBase>& IoTSiteWiseClient::accessEndpointProvider()
@@ -224,6 +225,7 @@ void IoTSiteWiseClient::OverrideEndpoint(const Aws::String& endpoint)
 
 AssociateAssetsOutcome IoTSiteWiseClient::AssociateAssets(const AssociateAssetsRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociateAssets);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateAssets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssetIdHasBeenSet())
   {
@@ -242,6 +244,7 @@ AssociateAssetsOutcome IoTSiteWiseClient::AssociateAssets(const AssociateAssetsR
 
 AssociateTimeSeriesToAssetPropertyOutcome IoTSiteWiseClient::AssociateTimeSeriesToAssetProperty(const AssociateTimeSeriesToAssetPropertyRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociateTimeSeriesToAssetProperty);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateTimeSeriesToAssetProperty, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AliasHasBeenSet())
   {
@@ -268,6 +271,7 @@ AssociateTimeSeriesToAssetPropertyOutcome IoTSiteWiseClient::AssociateTimeSeries
 
 BatchAssociateProjectAssetsOutcome IoTSiteWiseClient::BatchAssociateProjectAssets(const BatchAssociateProjectAssetsRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchAssociateProjectAssets);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchAssociateProjectAssets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectIdHasBeenSet())
   {
@@ -286,6 +290,7 @@ BatchAssociateProjectAssetsOutcome IoTSiteWiseClient::BatchAssociateProjectAsset
 
 BatchDisassociateProjectAssetsOutcome IoTSiteWiseClient::BatchDisassociateProjectAssets(const BatchDisassociateProjectAssetsRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchDisassociateProjectAssets);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchDisassociateProjectAssets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectIdHasBeenSet())
   {
@@ -304,6 +309,7 @@ BatchDisassociateProjectAssetsOutcome IoTSiteWiseClient::BatchDisassociateProjec
 
 BatchGetAssetPropertyAggregatesOutcome IoTSiteWiseClient::BatchGetAssetPropertyAggregates(const BatchGetAssetPropertyAggregatesRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchGetAssetPropertyAggregates);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchGetAssetPropertyAggregates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchGetAssetPropertyAggregates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -315,6 +321,7 @@ BatchGetAssetPropertyAggregatesOutcome IoTSiteWiseClient::BatchGetAssetPropertyA
 
 BatchGetAssetPropertyValueOutcome IoTSiteWiseClient::BatchGetAssetPropertyValue(const BatchGetAssetPropertyValueRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchGetAssetPropertyValue);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchGetAssetPropertyValue, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchGetAssetPropertyValue, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -326,6 +333,7 @@ BatchGetAssetPropertyValueOutcome IoTSiteWiseClient::BatchGetAssetPropertyValue(
 
 BatchGetAssetPropertyValueHistoryOutcome IoTSiteWiseClient::BatchGetAssetPropertyValueHistory(const BatchGetAssetPropertyValueHistoryRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchGetAssetPropertyValueHistory);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchGetAssetPropertyValueHistory, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchGetAssetPropertyValueHistory, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -337,6 +345,7 @@ BatchGetAssetPropertyValueHistoryOutcome IoTSiteWiseClient::BatchGetAssetPropert
 
 BatchPutAssetPropertyValueOutcome IoTSiteWiseClient::BatchPutAssetPropertyValue(const BatchPutAssetPropertyValueRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchPutAssetPropertyValue);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchPutAssetPropertyValue, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchPutAssetPropertyValue, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -348,6 +357,7 @@ BatchPutAssetPropertyValueOutcome IoTSiteWiseClient::BatchPutAssetPropertyValue(
 
 CreateAccessPolicyOutcome IoTSiteWiseClient::CreateAccessPolicy(const CreateAccessPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateAccessPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAccessPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateAccessPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -359,6 +369,7 @@ CreateAccessPolicyOutcome IoTSiteWiseClient::CreateAccessPolicy(const CreateAcce
 
 CreateAssetOutcome IoTSiteWiseClient::CreateAsset(const CreateAssetRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateAsset);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAsset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateAsset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -370,6 +381,7 @@ CreateAssetOutcome IoTSiteWiseClient::CreateAsset(const CreateAssetRequest& requ
 
 CreateAssetModelOutcome IoTSiteWiseClient::CreateAssetModel(const CreateAssetModelRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateAssetModel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAssetModel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateAssetModel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -381,6 +393,7 @@ CreateAssetModelOutcome IoTSiteWiseClient::CreateAssetModel(const CreateAssetMod
 
 CreateBulkImportJobOutcome IoTSiteWiseClient::CreateBulkImportJob(const CreateBulkImportJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateBulkImportJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateBulkImportJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateBulkImportJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -392,6 +405,7 @@ CreateBulkImportJobOutcome IoTSiteWiseClient::CreateBulkImportJob(const CreateBu
 
 CreateDashboardOutcome IoTSiteWiseClient::CreateDashboard(const CreateDashboardRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateDashboard);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDashboard, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateDashboard, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -403,6 +417,7 @@ CreateDashboardOutcome IoTSiteWiseClient::CreateDashboard(const CreateDashboardR
 
 CreateGatewayOutcome IoTSiteWiseClient::CreateGateway(const CreateGatewayRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateGateway);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateGateway, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateGateway, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -414,6 +429,7 @@ CreateGatewayOutcome IoTSiteWiseClient::CreateGateway(const CreateGatewayRequest
 
 CreatePortalOutcome IoTSiteWiseClient::CreatePortal(const CreatePortalRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreatePortal);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreatePortal, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreatePortal, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -425,6 +441,7 @@ CreatePortalOutcome IoTSiteWiseClient::CreatePortal(const CreatePortalRequest& r
 
 CreateProjectOutcome IoTSiteWiseClient::CreateProject(const CreateProjectRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateProject);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateProject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateProject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -436,6 +453,7 @@ CreateProjectOutcome IoTSiteWiseClient::CreateProject(const CreateProjectRequest
 
 DeleteAccessPolicyOutcome IoTSiteWiseClient::DeleteAccessPolicy(const DeleteAccessPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteAccessPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAccessPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccessPolicyIdHasBeenSet())
   {
@@ -453,6 +471,7 @@ DeleteAccessPolicyOutcome IoTSiteWiseClient::DeleteAccessPolicy(const DeleteAcce
 
 DeleteAssetOutcome IoTSiteWiseClient::DeleteAsset(const DeleteAssetRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteAsset);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAsset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssetIdHasBeenSet())
   {
@@ -470,6 +489,7 @@ DeleteAssetOutcome IoTSiteWiseClient::DeleteAsset(const DeleteAssetRequest& requ
 
 DeleteAssetModelOutcome IoTSiteWiseClient::DeleteAssetModel(const DeleteAssetModelRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteAssetModel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAssetModel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssetModelIdHasBeenSet())
   {
@@ -487,6 +507,7 @@ DeleteAssetModelOutcome IoTSiteWiseClient::DeleteAssetModel(const DeleteAssetMod
 
 DeleteDashboardOutcome IoTSiteWiseClient::DeleteDashboard(const DeleteDashboardRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteDashboard);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDashboard, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DashboardIdHasBeenSet())
   {
@@ -504,6 +525,7 @@ DeleteDashboardOutcome IoTSiteWiseClient::DeleteDashboard(const DeleteDashboardR
 
 DeleteGatewayOutcome IoTSiteWiseClient::DeleteGateway(const DeleteGatewayRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteGateway);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteGateway, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GatewayIdHasBeenSet())
   {
@@ -521,6 +543,7 @@ DeleteGatewayOutcome IoTSiteWiseClient::DeleteGateway(const DeleteGatewayRequest
 
 DeletePortalOutcome IoTSiteWiseClient::DeletePortal(const DeletePortalRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeletePortal);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeletePortal, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PortalIdHasBeenSet())
   {
@@ -538,6 +561,7 @@ DeletePortalOutcome IoTSiteWiseClient::DeletePortal(const DeletePortalRequest& r
 
 DeleteProjectOutcome IoTSiteWiseClient::DeleteProject(const DeleteProjectRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteProject);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteProject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectIdHasBeenSet())
   {
@@ -555,6 +579,7 @@ DeleteProjectOutcome IoTSiteWiseClient::DeleteProject(const DeleteProjectRequest
 
 DeleteTimeSeriesOutcome IoTSiteWiseClient::DeleteTimeSeries(const DeleteTimeSeriesRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteTimeSeries);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteTimeSeries, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteTimeSeries, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -566,6 +591,7 @@ DeleteTimeSeriesOutcome IoTSiteWiseClient::DeleteTimeSeries(const DeleteTimeSeri
 
 DescribeAccessPolicyOutcome IoTSiteWiseClient::DescribeAccessPolicy(const DescribeAccessPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeAccessPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAccessPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccessPolicyIdHasBeenSet())
   {
@@ -583,6 +609,7 @@ DescribeAccessPolicyOutcome IoTSiteWiseClient::DescribeAccessPolicy(const Descri
 
 DescribeAssetOutcome IoTSiteWiseClient::DescribeAsset(const DescribeAssetRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeAsset);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAsset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssetIdHasBeenSet())
   {
@@ -600,6 +627,7 @@ DescribeAssetOutcome IoTSiteWiseClient::DescribeAsset(const DescribeAssetRequest
 
 DescribeAssetModelOutcome IoTSiteWiseClient::DescribeAssetModel(const DescribeAssetModelRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeAssetModel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAssetModel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssetModelIdHasBeenSet())
   {
@@ -617,6 +645,7 @@ DescribeAssetModelOutcome IoTSiteWiseClient::DescribeAssetModel(const DescribeAs
 
 DescribeAssetPropertyOutcome IoTSiteWiseClient::DescribeAssetProperty(const DescribeAssetPropertyRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeAssetProperty);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAssetProperty, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssetIdHasBeenSet())
   {
@@ -641,6 +670,7 @@ DescribeAssetPropertyOutcome IoTSiteWiseClient::DescribeAssetProperty(const Desc
 
 DescribeBulkImportJobOutcome IoTSiteWiseClient::DescribeBulkImportJob(const DescribeBulkImportJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeBulkImportJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeBulkImportJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.JobIdHasBeenSet())
   {
@@ -658,6 +688,7 @@ DescribeBulkImportJobOutcome IoTSiteWiseClient::DescribeBulkImportJob(const Desc
 
 DescribeDashboardOutcome IoTSiteWiseClient::DescribeDashboard(const DescribeDashboardRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeDashboard);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeDashboard, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DashboardIdHasBeenSet())
   {
@@ -675,6 +706,7 @@ DescribeDashboardOutcome IoTSiteWiseClient::DescribeDashboard(const DescribeDash
 
 DescribeDefaultEncryptionConfigurationOutcome IoTSiteWiseClient::DescribeDefaultEncryptionConfiguration(const DescribeDefaultEncryptionConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeDefaultEncryptionConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeDefaultEncryptionConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeDefaultEncryptionConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -686,6 +718,7 @@ DescribeDefaultEncryptionConfigurationOutcome IoTSiteWiseClient::DescribeDefault
 
 DescribeGatewayOutcome IoTSiteWiseClient::DescribeGateway(const DescribeGatewayRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeGateway);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeGateway, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GatewayIdHasBeenSet())
   {
@@ -703,6 +736,7 @@ DescribeGatewayOutcome IoTSiteWiseClient::DescribeGateway(const DescribeGatewayR
 
 DescribeGatewayCapabilityConfigurationOutcome IoTSiteWiseClient::DescribeGatewayCapabilityConfiguration(const DescribeGatewayCapabilityConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeGatewayCapabilityConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeGatewayCapabilityConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GatewayIdHasBeenSet())
   {
@@ -727,6 +761,7 @@ DescribeGatewayCapabilityConfigurationOutcome IoTSiteWiseClient::DescribeGateway
 
 DescribeLoggingOptionsOutcome IoTSiteWiseClient::DescribeLoggingOptions(const DescribeLoggingOptionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeLoggingOptions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeLoggingOptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeLoggingOptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -738,6 +773,7 @@ DescribeLoggingOptionsOutcome IoTSiteWiseClient::DescribeLoggingOptions(const De
 
 DescribePortalOutcome IoTSiteWiseClient::DescribePortal(const DescribePortalRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribePortal);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribePortal, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PortalIdHasBeenSet())
   {
@@ -755,6 +791,7 @@ DescribePortalOutcome IoTSiteWiseClient::DescribePortal(const DescribePortalRequ
 
 DescribeProjectOutcome IoTSiteWiseClient::DescribeProject(const DescribeProjectRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeProject);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeProject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectIdHasBeenSet())
   {
@@ -772,6 +809,7 @@ DescribeProjectOutcome IoTSiteWiseClient::DescribeProject(const DescribeProjectR
 
 DescribeStorageConfigurationOutcome IoTSiteWiseClient::DescribeStorageConfiguration(const DescribeStorageConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeStorageConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeStorageConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeStorageConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -783,6 +821,7 @@ DescribeStorageConfigurationOutcome IoTSiteWiseClient::DescribeStorageConfigurat
 
 DescribeTimeSeriesOutcome IoTSiteWiseClient::DescribeTimeSeries(const DescribeTimeSeriesRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeTimeSeries);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeTimeSeries, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeTimeSeries, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -794,6 +833,7 @@ DescribeTimeSeriesOutcome IoTSiteWiseClient::DescribeTimeSeries(const DescribeTi
 
 DisassociateAssetsOutcome IoTSiteWiseClient::DisassociateAssets(const DisassociateAssetsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociateAssets);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateAssets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssetIdHasBeenSet())
   {
@@ -812,6 +852,7 @@ DisassociateAssetsOutcome IoTSiteWiseClient::DisassociateAssets(const Disassocia
 
 DisassociateTimeSeriesFromAssetPropertyOutcome IoTSiteWiseClient::DisassociateTimeSeriesFromAssetProperty(const DisassociateTimeSeriesFromAssetPropertyRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociateTimeSeriesFromAssetProperty);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateTimeSeriesFromAssetProperty, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AliasHasBeenSet())
   {
@@ -838,6 +879,7 @@ DisassociateTimeSeriesFromAssetPropertyOutcome IoTSiteWiseClient::DisassociateTi
 
 GetAssetPropertyAggregatesOutcome IoTSiteWiseClient::GetAssetPropertyAggregates(const GetAssetPropertyAggregatesRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetAssetPropertyAggregates);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAssetPropertyAggregates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AggregateTypesHasBeenSet())
   {
@@ -869,6 +911,7 @@ GetAssetPropertyAggregatesOutcome IoTSiteWiseClient::GetAssetPropertyAggregates(
 
 GetAssetPropertyValueOutcome IoTSiteWiseClient::GetAssetPropertyValue(const GetAssetPropertyValueRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetAssetPropertyValue);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAssetPropertyValue, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetAssetPropertyValue, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -880,6 +923,7 @@ GetAssetPropertyValueOutcome IoTSiteWiseClient::GetAssetPropertyValue(const GetA
 
 GetAssetPropertyValueHistoryOutcome IoTSiteWiseClient::GetAssetPropertyValueHistory(const GetAssetPropertyValueHistoryRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetAssetPropertyValueHistory);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAssetPropertyValueHistory, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetAssetPropertyValueHistory, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -891,6 +935,7 @@ GetAssetPropertyValueHistoryOutcome IoTSiteWiseClient::GetAssetPropertyValueHist
 
 GetInterpolatedAssetPropertyValuesOutcome IoTSiteWiseClient::GetInterpolatedAssetPropertyValues(const GetInterpolatedAssetPropertyValuesRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetInterpolatedAssetPropertyValues);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetInterpolatedAssetPropertyValues, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StartTimeInSecondsHasBeenSet())
   {
@@ -927,6 +972,7 @@ GetInterpolatedAssetPropertyValuesOutcome IoTSiteWiseClient::GetInterpolatedAsse
 
 ListAccessPoliciesOutcome IoTSiteWiseClient::ListAccessPolicies(const ListAccessPoliciesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAccessPolicies);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAccessPolicies, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAccessPolicies, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -938,6 +984,7 @@ ListAccessPoliciesOutcome IoTSiteWiseClient::ListAccessPolicies(const ListAccess
 
 ListAssetModelPropertiesOutcome IoTSiteWiseClient::ListAssetModelProperties(const ListAssetModelPropertiesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAssetModelProperties);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAssetModelProperties, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssetModelIdHasBeenSet())
   {
@@ -956,6 +1003,7 @@ ListAssetModelPropertiesOutcome IoTSiteWiseClient::ListAssetModelProperties(cons
 
 ListAssetModelsOutcome IoTSiteWiseClient::ListAssetModels(const ListAssetModelsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAssetModels);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAssetModels, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAssetModels, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -967,6 +1015,7 @@ ListAssetModelsOutcome IoTSiteWiseClient::ListAssetModels(const ListAssetModelsR
 
 ListAssetPropertiesOutcome IoTSiteWiseClient::ListAssetProperties(const ListAssetPropertiesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAssetProperties);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAssetProperties, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssetIdHasBeenSet())
   {
@@ -985,6 +1034,7 @@ ListAssetPropertiesOutcome IoTSiteWiseClient::ListAssetProperties(const ListAsse
 
 ListAssetRelationshipsOutcome IoTSiteWiseClient::ListAssetRelationships(const ListAssetRelationshipsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAssetRelationships);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAssetRelationships, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssetIdHasBeenSet())
   {
@@ -1008,6 +1058,7 @@ ListAssetRelationshipsOutcome IoTSiteWiseClient::ListAssetRelationships(const Li
 
 ListAssetsOutcome IoTSiteWiseClient::ListAssets(const ListAssetsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAssets);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAssets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAssets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1019,6 +1070,7 @@ ListAssetsOutcome IoTSiteWiseClient::ListAssets(const ListAssetsRequest& request
 
 ListAssociatedAssetsOutcome IoTSiteWiseClient::ListAssociatedAssets(const ListAssociatedAssetsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAssociatedAssets);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAssociatedAssets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssetIdHasBeenSet())
   {
@@ -1037,6 +1089,7 @@ ListAssociatedAssetsOutcome IoTSiteWiseClient::ListAssociatedAssets(const ListAs
 
 ListBulkImportJobsOutcome IoTSiteWiseClient::ListBulkImportJobs(const ListBulkImportJobsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListBulkImportJobs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListBulkImportJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListBulkImportJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1048,6 +1101,7 @@ ListBulkImportJobsOutcome IoTSiteWiseClient::ListBulkImportJobs(const ListBulkIm
 
 ListDashboardsOutcome IoTSiteWiseClient::ListDashboards(const ListDashboardsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDashboards);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDashboards, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectIdHasBeenSet())
   {
@@ -1064,6 +1118,7 @@ ListDashboardsOutcome IoTSiteWiseClient::ListDashboards(const ListDashboardsRequ
 
 ListGatewaysOutcome IoTSiteWiseClient::ListGateways(const ListGatewaysRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListGateways);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListGateways, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListGateways, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1075,6 +1130,7 @@ ListGatewaysOutcome IoTSiteWiseClient::ListGateways(const ListGatewaysRequest& r
 
 ListPortalsOutcome IoTSiteWiseClient::ListPortals(const ListPortalsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListPortals);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPortals, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListPortals, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1086,6 +1142,7 @@ ListPortalsOutcome IoTSiteWiseClient::ListPortals(const ListPortalsRequest& requ
 
 ListProjectAssetsOutcome IoTSiteWiseClient::ListProjectAssets(const ListProjectAssetsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListProjectAssets);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListProjectAssets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectIdHasBeenSet())
   {
@@ -1104,6 +1161,7 @@ ListProjectAssetsOutcome IoTSiteWiseClient::ListProjectAssets(const ListProjectA
 
 ListProjectsOutcome IoTSiteWiseClient::ListProjects(const ListProjectsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListProjects);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListProjects, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PortalIdHasBeenSet())
   {
@@ -1120,6 +1178,7 @@ ListProjectsOutcome IoTSiteWiseClient::ListProjects(const ListProjectsRequest& r
 
 ListTagsForResourceOutcome IoTSiteWiseClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -1136,6 +1195,7 @@ ListTagsForResourceOutcome IoTSiteWiseClient::ListTagsForResource(const ListTags
 
 ListTimeSeriesOutcome IoTSiteWiseClient::ListTimeSeries(const ListTimeSeriesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTimeSeries);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTimeSeries, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTimeSeries, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1147,6 +1207,7 @@ ListTimeSeriesOutcome IoTSiteWiseClient::ListTimeSeries(const ListTimeSeriesRequ
 
 PutDefaultEncryptionConfigurationOutcome IoTSiteWiseClient::PutDefaultEncryptionConfiguration(const PutDefaultEncryptionConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutDefaultEncryptionConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutDefaultEncryptionConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutDefaultEncryptionConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1158,6 +1219,7 @@ PutDefaultEncryptionConfigurationOutcome IoTSiteWiseClient::PutDefaultEncryption
 
 PutLoggingOptionsOutcome IoTSiteWiseClient::PutLoggingOptions(const PutLoggingOptionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutLoggingOptions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutLoggingOptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutLoggingOptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1169,6 +1231,7 @@ PutLoggingOptionsOutcome IoTSiteWiseClient::PutLoggingOptions(const PutLoggingOp
 
 PutStorageConfigurationOutcome IoTSiteWiseClient::PutStorageConfiguration(const PutStorageConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutStorageConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutStorageConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutStorageConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1180,6 +1243,7 @@ PutStorageConfigurationOutcome IoTSiteWiseClient::PutStorageConfiguration(const 
 
 TagResourceOutcome IoTSiteWiseClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -1196,6 +1260,7 @@ TagResourceOutcome IoTSiteWiseClient::TagResource(const TagResourceRequest& requ
 
 UntagResourceOutcome IoTSiteWiseClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -1217,6 +1282,7 @@ UntagResourceOutcome IoTSiteWiseClient::UntagResource(const UntagResourceRequest
 
 UpdateAccessPolicyOutcome IoTSiteWiseClient::UpdateAccessPolicy(const UpdateAccessPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateAccessPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAccessPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccessPolicyIdHasBeenSet())
   {
@@ -1234,6 +1300,7 @@ UpdateAccessPolicyOutcome IoTSiteWiseClient::UpdateAccessPolicy(const UpdateAcce
 
 UpdateAssetOutcome IoTSiteWiseClient::UpdateAsset(const UpdateAssetRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateAsset);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAsset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssetIdHasBeenSet())
   {
@@ -1251,6 +1318,7 @@ UpdateAssetOutcome IoTSiteWiseClient::UpdateAsset(const UpdateAssetRequest& requ
 
 UpdateAssetModelOutcome IoTSiteWiseClient::UpdateAssetModel(const UpdateAssetModelRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateAssetModel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAssetModel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssetModelIdHasBeenSet())
   {
@@ -1268,6 +1336,7 @@ UpdateAssetModelOutcome IoTSiteWiseClient::UpdateAssetModel(const UpdateAssetMod
 
 UpdateAssetPropertyOutcome IoTSiteWiseClient::UpdateAssetProperty(const UpdateAssetPropertyRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateAssetProperty);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAssetProperty, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssetIdHasBeenSet())
   {
@@ -1292,6 +1361,7 @@ UpdateAssetPropertyOutcome IoTSiteWiseClient::UpdateAssetProperty(const UpdateAs
 
 UpdateDashboardOutcome IoTSiteWiseClient::UpdateDashboard(const UpdateDashboardRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateDashboard);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDashboard, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DashboardIdHasBeenSet())
   {
@@ -1309,6 +1379,7 @@ UpdateDashboardOutcome IoTSiteWiseClient::UpdateDashboard(const UpdateDashboardR
 
 UpdateGatewayOutcome IoTSiteWiseClient::UpdateGateway(const UpdateGatewayRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateGateway);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateGateway, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GatewayIdHasBeenSet())
   {
@@ -1326,6 +1397,7 @@ UpdateGatewayOutcome IoTSiteWiseClient::UpdateGateway(const UpdateGatewayRequest
 
 UpdateGatewayCapabilityConfigurationOutcome IoTSiteWiseClient::UpdateGatewayCapabilityConfiguration(const UpdateGatewayCapabilityConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateGatewayCapabilityConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateGatewayCapabilityConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GatewayIdHasBeenSet())
   {
@@ -1344,6 +1416,7 @@ UpdateGatewayCapabilityConfigurationOutcome IoTSiteWiseClient::UpdateGatewayCapa
 
 UpdatePortalOutcome IoTSiteWiseClient::UpdatePortal(const UpdatePortalRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdatePortal);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdatePortal, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PortalIdHasBeenSet())
   {
@@ -1361,6 +1434,7 @@ UpdatePortalOutcome IoTSiteWiseClient::UpdatePortal(const UpdatePortalRequest& r
 
 UpdateProjectOutcome IoTSiteWiseClient::UpdateProject(const UpdateProjectRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateProject);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateProject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectIdHasBeenSet())
   {

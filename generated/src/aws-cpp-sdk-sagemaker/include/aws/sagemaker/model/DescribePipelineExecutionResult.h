@@ -11,6 +11,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/sagemaker/model/UserContext.h>
 #include <aws/sagemaker/model/ParallelismConfiguration.h>
+#include <aws/sagemaker/model/SelectiveExecutionConfig.h>
 #include <utility>
 
 namespace Aws
@@ -369,6 +370,32 @@ namespace Model
     inline DescribePipelineExecutionResult& WithParallelismConfiguration(ParallelismConfiguration&& value) { SetParallelismConfiguration(std::move(value)); return *this;}
 
 
+    /**
+     * <p>The selective execution configuration applied to the pipeline run.</p>
+     */
+    inline const SelectiveExecutionConfig& GetSelectiveExecutionConfig() const{ return m_selectiveExecutionConfig; }
+
+    /**
+     * <p>The selective execution configuration applied to the pipeline run.</p>
+     */
+    inline void SetSelectiveExecutionConfig(const SelectiveExecutionConfig& value) { m_selectiveExecutionConfig = value; }
+
+    /**
+     * <p>The selective execution configuration applied to the pipeline run.</p>
+     */
+    inline void SetSelectiveExecutionConfig(SelectiveExecutionConfig&& value) { m_selectiveExecutionConfig = std::move(value); }
+
+    /**
+     * <p>The selective execution configuration applied to the pipeline run.</p>
+     */
+    inline DescribePipelineExecutionResult& WithSelectiveExecutionConfig(const SelectiveExecutionConfig& value) { SetSelectiveExecutionConfig(value); return *this;}
+
+    /**
+     * <p>The selective execution configuration applied to the pipeline run.</p>
+     */
+    inline DescribePipelineExecutionResult& WithSelectiveExecutionConfig(SelectiveExecutionConfig&& value) { SetSelectiveExecutionConfig(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -415,6 +442,8 @@ namespace Model
     UserContext m_lastModifiedBy;
 
     ParallelismConfiguration m_parallelismConfiguration;
+
+    SelectiveExecutionConfig m_selectiveExecutionConfig;
 
     Aws::String m_requestId;
   };

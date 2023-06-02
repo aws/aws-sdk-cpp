@@ -149,6 +149,7 @@ QLDBClient::QLDBClient(const std::shared_ptr<AWSCredentialsProvider>& credential
     /* End of legacy constructors due deprecation */
 QLDBClient::~QLDBClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<QLDBEndpointProviderBase>& QLDBClient::accessEndpointProvider()
@@ -171,6 +172,7 @@ void QLDBClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CancelJournalKinesisStreamOutcome QLDBClient::CancelJournalKinesisStream(const CancelJournalKinesisStreamRequest& request) const
 {
+  AWS_OPERATION_GUARD(CancelJournalKinesisStream);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CancelJournalKinesisStream, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LedgerNameHasBeenSet())
   {
@@ -193,6 +195,7 @@ CancelJournalKinesisStreamOutcome QLDBClient::CancelJournalKinesisStream(const C
 
 CreateLedgerOutcome QLDBClient::CreateLedger(const CreateLedgerRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateLedger);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateLedger, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateLedger, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -202,6 +205,7 @@ CreateLedgerOutcome QLDBClient::CreateLedger(const CreateLedgerRequest& request)
 
 DeleteLedgerOutcome QLDBClient::DeleteLedger(const DeleteLedgerRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteLedger);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteLedger, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -217,6 +221,7 @@ DeleteLedgerOutcome QLDBClient::DeleteLedger(const DeleteLedgerRequest& request)
 
 DescribeJournalKinesisStreamOutcome QLDBClient::DescribeJournalKinesisStream(const DescribeJournalKinesisStreamRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeJournalKinesisStream);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeJournalKinesisStream, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LedgerNameHasBeenSet())
   {
@@ -239,6 +244,7 @@ DescribeJournalKinesisStreamOutcome QLDBClient::DescribeJournalKinesisStream(con
 
 DescribeJournalS3ExportOutcome QLDBClient::DescribeJournalS3Export(const DescribeJournalS3ExportRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeJournalS3Export);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeJournalS3Export, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -261,6 +267,7 @@ DescribeJournalS3ExportOutcome QLDBClient::DescribeJournalS3Export(const Describ
 
 DescribeLedgerOutcome QLDBClient::DescribeLedger(const DescribeLedgerRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeLedger);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeLedger, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -276,6 +283,7 @@ DescribeLedgerOutcome QLDBClient::DescribeLedger(const DescribeLedgerRequest& re
 
 ExportJournalToS3Outcome QLDBClient::ExportJournalToS3(const ExportJournalToS3Request& request) const
 {
+  AWS_OPERATION_GUARD(ExportJournalToS3);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ExportJournalToS3, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -292,6 +300,7 @@ ExportJournalToS3Outcome QLDBClient::ExportJournalToS3(const ExportJournalToS3Re
 
 GetBlockOutcome QLDBClient::GetBlock(const GetBlockRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetBlock);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBlock, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -308,6 +317,7 @@ GetBlockOutcome QLDBClient::GetBlock(const GetBlockRequest& request) const
 
 GetDigestOutcome QLDBClient::GetDigest(const GetDigestRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDigest);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDigest, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -324,6 +334,7 @@ GetDigestOutcome QLDBClient::GetDigest(const GetDigestRequest& request) const
 
 GetRevisionOutcome QLDBClient::GetRevision(const GetRevisionRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetRevision);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetRevision, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -340,6 +351,7 @@ GetRevisionOutcome QLDBClient::GetRevision(const GetRevisionRequest& request) co
 
 ListJournalKinesisStreamsForLedgerOutcome QLDBClient::ListJournalKinesisStreamsForLedger(const ListJournalKinesisStreamsForLedgerRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListJournalKinesisStreamsForLedger);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListJournalKinesisStreamsForLedger, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LedgerNameHasBeenSet())
   {
@@ -356,6 +368,7 @@ ListJournalKinesisStreamsForLedgerOutcome QLDBClient::ListJournalKinesisStreamsF
 
 ListJournalS3ExportsOutcome QLDBClient::ListJournalS3Exports(const ListJournalS3ExportsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListJournalS3Exports);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListJournalS3Exports, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListJournalS3Exports, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -365,6 +378,7 @@ ListJournalS3ExportsOutcome QLDBClient::ListJournalS3Exports(const ListJournalS3
 
 ListJournalS3ExportsForLedgerOutcome QLDBClient::ListJournalS3ExportsForLedger(const ListJournalS3ExportsForLedgerRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListJournalS3ExportsForLedger);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListJournalS3ExportsForLedger, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -381,6 +395,7 @@ ListJournalS3ExportsForLedgerOutcome QLDBClient::ListJournalS3ExportsForLedger(c
 
 ListLedgersOutcome QLDBClient::ListLedgers(const ListLedgersRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListLedgers);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListLedgers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListLedgers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -390,6 +405,7 @@ ListLedgersOutcome QLDBClient::ListLedgers(const ListLedgersRequest& request) co
 
 ListTagsForResourceOutcome QLDBClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -405,6 +421,7 @@ ListTagsForResourceOutcome QLDBClient::ListTagsForResource(const ListTagsForReso
 
 StreamJournalToKinesisOutcome QLDBClient::StreamJournalToKinesis(const StreamJournalToKinesisRequest& request) const
 {
+  AWS_OPERATION_GUARD(StreamJournalToKinesis);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StreamJournalToKinesis, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LedgerNameHasBeenSet())
   {
@@ -421,6 +438,7 @@ StreamJournalToKinesisOutcome QLDBClient::StreamJournalToKinesis(const StreamJou
 
 TagResourceOutcome QLDBClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -436,6 +454,7 @@ TagResourceOutcome QLDBClient::TagResource(const TagResourceRequest& request) co
 
 UntagResourceOutcome QLDBClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -456,6 +475,7 @@ UntagResourceOutcome QLDBClient::UntagResource(const UntagResourceRequest& reque
 
 UpdateLedgerOutcome QLDBClient::UpdateLedger(const UpdateLedgerRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateLedger);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateLedger, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -471,6 +491,7 @@ UpdateLedgerOutcome QLDBClient::UpdateLedger(const UpdateLedgerRequest& request)
 
 UpdateLedgerPermissionsModeOutcome QLDBClient::UpdateLedgerPermissionsMode(const UpdateLedgerPermissionsModeRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateLedgerPermissionsMode);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateLedgerPermissionsMode, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {

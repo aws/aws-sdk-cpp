@@ -130,6 +130,7 @@ SageMakerMetricsClient::SageMakerMetricsClient(const std::shared_ptr<AWSCredenti
     /* End of legacy constructors due deprecation */
 SageMakerMetricsClient::~SageMakerMetricsClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<SageMakerMetricsEndpointProviderBase>& SageMakerMetricsClient::accessEndpointProvider()
@@ -152,6 +153,7 @@ void SageMakerMetricsClient::OverrideEndpoint(const Aws::String& endpoint)
 
 BatchPutMetricsOutcome SageMakerMetricsClient::BatchPutMetrics(const BatchPutMetricsRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchPutMetrics);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchPutMetrics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchPutMetrics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

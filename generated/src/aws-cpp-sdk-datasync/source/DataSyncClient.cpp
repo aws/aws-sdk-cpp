@@ -186,6 +186,7 @@ DataSyncClient::DataSyncClient(const std::shared_ptr<AWSCredentialsProvider>& cr
     /* End of legacy constructors due deprecation */
 DataSyncClient::~DataSyncClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<DataSyncEndpointProviderBase>& DataSyncClient::accessEndpointProvider()
@@ -208,6 +209,7 @@ void DataSyncClient::OverrideEndpoint(const Aws::String& endpoint)
 
 AddStorageSystemOutcome DataSyncClient::AddStorageSystem(const AddStorageSystemRequest& request) const
 {
+  AWS_OPERATION_GUARD(AddStorageSystem);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AddStorageSystem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AddStorageSystem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -218,6 +220,7 @@ AddStorageSystemOutcome DataSyncClient::AddStorageSystem(const AddStorageSystemR
 
 CancelTaskExecutionOutcome DataSyncClient::CancelTaskExecution(const CancelTaskExecutionRequest& request) const
 {
+  AWS_OPERATION_GUARD(CancelTaskExecution);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CancelTaskExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CancelTaskExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -226,6 +229,7 @@ CancelTaskExecutionOutcome DataSyncClient::CancelTaskExecution(const CancelTaskE
 
 CreateAgentOutcome DataSyncClient::CreateAgent(const CreateAgentRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateAgent);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAgent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateAgent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -234,6 +238,7 @@ CreateAgentOutcome DataSyncClient::CreateAgent(const CreateAgentRequest& request
 
 CreateLocationEfsOutcome DataSyncClient::CreateLocationEfs(const CreateLocationEfsRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateLocationEfs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateLocationEfs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateLocationEfs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -242,6 +247,7 @@ CreateLocationEfsOutcome DataSyncClient::CreateLocationEfs(const CreateLocationE
 
 CreateLocationFsxLustreOutcome DataSyncClient::CreateLocationFsxLustre(const CreateLocationFsxLustreRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateLocationFsxLustre);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateLocationFsxLustre, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateLocationFsxLustre, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -250,6 +256,7 @@ CreateLocationFsxLustreOutcome DataSyncClient::CreateLocationFsxLustre(const Cre
 
 CreateLocationFsxOntapOutcome DataSyncClient::CreateLocationFsxOntap(const CreateLocationFsxOntapRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateLocationFsxOntap);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateLocationFsxOntap, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateLocationFsxOntap, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -258,6 +265,7 @@ CreateLocationFsxOntapOutcome DataSyncClient::CreateLocationFsxOntap(const Creat
 
 CreateLocationFsxOpenZfsOutcome DataSyncClient::CreateLocationFsxOpenZfs(const CreateLocationFsxOpenZfsRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateLocationFsxOpenZfs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateLocationFsxOpenZfs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateLocationFsxOpenZfs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -266,6 +274,7 @@ CreateLocationFsxOpenZfsOutcome DataSyncClient::CreateLocationFsxOpenZfs(const C
 
 CreateLocationFsxWindowsOutcome DataSyncClient::CreateLocationFsxWindows(const CreateLocationFsxWindowsRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateLocationFsxWindows);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateLocationFsxWindows, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateLocationFsxWindows, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -274,6 +283,7 @@ CreateLocationFsxWindowsOutcome DataSyncClient::CreateLocationFsxWindows(const C
 
 CreateLocationHdfsOutcome DataSyncClient::CreateLocationHdfs(const CreateLocationHdfsRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateLocationHdfs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateLocationHdfs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateLocationHdfs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -282,6 +292,7 @@ CreateLocationHdfsOutcome DataSyncClient::CreateLocationHdfs(const CreateLocatio
 
 CreateLocationNfsOutcome DataSyncClient::CreateLocationNfs(const CreateLocationNfsRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateLocationNfs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateLocationNfs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateLocationNfs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -290,6 +301,7 @@ CreateLocationNfsOutcome DataSyncClient::CreateLocationNfs(const CreateLocationN
 
 CreateLocationObjectStorageOutcome DataSyncClient::CreateLocationObjectStorage(const CreateLocationObjectStorageRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateLocationObjectStorage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateLocationObjectStorage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateLocationObjectStorage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -298,6 +310,7 @@ CreateLocationObjectStorageOutcome DataSyncClient::CreateLocationObjectStorage(c
 
 CreateLocationS3Outcome DataSyncClient::CreateLocationS3(const CreateLocationS3Request& request) const
 {
+  AWS_OPERATION_GUARD(CreateLocationS3);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateLocationS3, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateLocationS3, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -306,6 +319,7 @@ CreateLocationS3Outcome DataSyncClient::CreateLocationS3(const CreateLocationS3R
 
 CreateLocationSmbOutcome DataSyncClient::CreateLocationSmb(const CreateLocationSmbRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateLocationSmb);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateLocationSmb, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateLocationSmb, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -314,6 +328,7 @@ CreateLocationSmbOutcome DataSyncClient::CreateLocationSmb(const CreateLocationS
 
 CreateTaskOutcome DataSyncClient::CreateTask(const CreateTaskRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateTask);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -322,6 +337,7 @@ CreateTaskOutcome DataSyncClient::CreateTask(const CreateTaskRequest& request) c
 
 DeleteAgentOutcome DataSyncClient::DeleteAgent(const DeleteAgentRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteAgent);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAgent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteAgent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -330,6 +346,7 @@ DeleteAgentOutcome DataSyncClient::DeleteAgent(const DeleteAgentRequest& request
 
 DeleteLocationOutcome DataSyncClient::DeleteLocation(const DeleteLocationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteLocation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteLocation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteLocation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -338,6 +355,7 @@ DeleteLocationOutcome DataSyncClient::DeleteLocation(const DeleteLocationRequest
 
 DeleteTaskOutcome DataSyncClient::DeleteTask(const DeleteTaskRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteTask);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -346,6 +364,7 @@ DeleteTaskOutcome DataSyncClient::DeleteTask(const DeleteTaskRequest& request) c
 
 DescribeAgentOutcome DataSyncClient::DescribeAgent(const DescribeAgentRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeAgent);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAgent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeAgent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -354,6 +373,7 @@ DescribeAgentOutcome DataSyncClient::DescribeAgent(const DescribeAgentRequest& r
 
 DescribeDiscoveryJobOutcome DataSyncClient::DescribeDiscoveryJob(const DescribeDiscoveryJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeDiscoveryJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeDiscoveryJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeDiscoveryJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -364,6 +384,7 @@ DescribeDiscoveryJobOutcome DataSyncClient::DescribeDiscoveryJob(const DescribeD
 
 DescribeLocationEfsOutcome DataSyncClient::DescribeLocationEfs(const DescribeLocationEfsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeLocationEfs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeLocationEfs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeLocationEfs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -372,6 +393,7 @@ DescribeLocationEfsOutcome DataSyncClient::DescribeLocationEfs(const DescribeLoc
 
 DescribeLocationFsxLustreOutcome DataSyncClient::DescribeLocationFsxLustre(const DescribeLocationFsxLustreRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeLocationFsxLustre);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeLocationFsxLustre, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeLocationFsxLustre, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -380,6 +402,7 @@ DescribeLocationFsxLustreOutcome DataSyncClient::DescribeLocationFsxLustre(const
 
 DescribeLocationFsxOntapOutcome DataSyncClient::DescribeLocationFsxOntap(const DescribeLocationFsxOntapRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeLocationFsxOntap);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeLocationFsxOntap, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeLocationFsxOntap, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -388,6 +411,7 @@ DescribeLocationFsxOntapOutcome DataSyncClient::DescribeLocationFsxOntap(const D
 
 DescribeLocationFsxOpenZfsOutcome DataSyncClient::DescribeLocationFsxOpenZfs(const DescribeLocationFsxOpenZfsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeLocationFsxOpenZfs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeLocationFsxOpenZfs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeLocationFsxOpenZfs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -396,6 +420,7 @@ DescribeLocationFsxOpenZfsOutcome DataSyncClient::DescribeLocationFsxOpenZfs(con
 
 DescribeLocationFsxWindowsOutcome DataSyncClient::DescribeLocationFsxWindows(const DescribeLocationFsxWindowsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeLocationFsxWindows);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeLocationFsxWindows, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeLocationFsxWindows, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -404,6 +429,7 @@ DescribeLocationFsxWindowsOutcome DataSyncClient::DescribeLocationFsxWindows(con
 
 DescribeLocationHdfsOutcome DataSyncClient::DescribeLocationHdfs(const DescribeLocationHdfsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeLocationHdfs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeLocationHdfs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeLocationHdfs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -412,6 +438,7 @@ DescribeLocationHdfsOutcome DataSyncClient::DescribeLocationHdfs(const DescribeL
 
 DescribeLocationNfsOutcome DataSyncClient::DescribeLocationNfs(const DescribeLocationNfsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeLocationNfs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeLocationNfs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeLocationNfs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -420,6 +447,7 @@ DescribeLocationNfsOutcome DataSyncClient::DescribeLocationNfs(const DescribeLoc
 
 DescribeLocationObjectStorageOutcome DataSyncClient::DescribeLocationObjectStorage(const DescribeLocationObjectStorageRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeLocationObjectStorage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeLocationObjectStorage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeLocationObjectStorage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -428,6 +456,7 @@ DescribeLocationObjectStorageOutcome DataSyncClient::DescribeLocationObjectStora
 
 DescribeLocationS3Outcome DataSyncClient::DescribeLocationS3(const DescribeLocationS3Request& request) const
 {
+  AWS_OPERATION_GUARD(DescribeLocationS3);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeLocationS3, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeLocationS3, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -436,6 +465,7 @@ DescribeLocationS3Outcome DataSyncClient::DescribeLocationS3(const DescribeLocat
 
 DescribeLocationSmbOutcome DataSyncClient::DescribeLocationSmb(const DescribeLocationSmbRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeLocationSmb);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeLocationSmb, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeLocationSmb, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -444,6 +474,7 @@ DescribeLocationSmbOutcome DataSyncClient::DescribeLocationSmb(const DescribeLoc
 
 DescribeStorageSystemOutcome DataSyncClient::DescribeStorageSystem(const DescribeStorageSystemRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeStorageSystem);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeStorageSystem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeStorageSystem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -454,6 +485,7 @@ DescribeStorageSystemOutcome DataSyncClient::DescribeStorageSystem(const Describ
 
 DescribeStorageSystemResourceMetricsOutcome DataSyncClient::DescribeStorageSystemResourceMetrics(const DescribeStorageSystemResourceMetricsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeStorageSystemResourceMetrics);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeStorageSystemResourceMetrics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeStorageSystemResourceMetrics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -464,6 +496,7 @@ DescribeStorageSystemResourceMetricsOutcome DataSyncClient::DescribeStorageSyste
 
 DescribeStorageSystemResourcesOutcome DataSyncClient::DescribeStorageSystemResources(const DescribeStorageSystemResourcesRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeStorageSystemResources);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeStorageSystemResources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeStorageSystemResources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -474,6 +507,7 @@ DescribeStorageSystemResourcesOutcome DataSyncClient::DescribeStorageSystemResou
 
 DescribeTaskOutcome DataSyncClient::DescribeTask(const DescribeTaskRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeTask);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -482,6 +516,7 @@ DescribeTaskOutcome DataSyncClient::DescribeTask(const DescribeTaskRequest& requ
 
 DescribeTaskExecutionOutcome DataSyncClient::DescribeTaskExecution(const DescribeTaskExecutionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeTaskExecution);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeTaskExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeTaskExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -490,6 +525,7 @@ DescribeTaskExecutionOutcome DataSyncClient::DescribeTaskExecution(const Describ
 
 GenerateRecommendationsOutcome DataSyncClient::GenerateRecommendations(const GenerateRecommendationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GenerateRecommendations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GenerateRecommendations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GenerateRecommendations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -500,6 +536,7 @@ GenerateRecommendationsOutcome DataSyncClient::GenerateRecommendations(const Gen
 
 ListAgentsOutcome DataSyncClient::ListAgents(const ListAgentsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAgents);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAgents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAgents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -508,6 +545,7 @@ ListAgentsOutcome DataSyncClient::ListAgents(const ListAgentsRequest& request) c
 
 ListDiscoveryJobsOutcome DataSyncClient::ListDiscoveryJobs(const ListDiscoveryJobsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDiscoveryJobs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDiscoveryJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDiscoveryJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -518,6 +556,7 @@ ListDiscoveryJobsOutcome DataSyncClient::ListDiscoveryJobs(const ListDiscoveryJo
 
 ListLocationsOutcome DataSyncClient::ListLocations(const ListLocationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListLocations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListLocations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListLocations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -526,6 +565,7 @@ ListLocationsOutcome DataSyncClient::ListLocations(const ListLocationsRequest& r
 
 ListStorageSystemsOutcome DataSyncClient::ListStorageSystems(const ListStorageSystemsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListStorageSystems);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListStorageSystems, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListStorageSystems, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -536,6 +576,7 @@ ListStorageSystemsOutcome DataSyncClient::ListStorageSystems(const ListStorageSy
 
 ListTagsForResourceOutcome DataSyncClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -544,6 +585,7 @@ ListTagsForResourceOutcome DataSyncClient::ListTagsForResource(const ListTagsFor
 
 ListTaskExecutionsOutcome DataSyncClient::ListTaskExecutions(const ListTaskExecutionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTaskExecutions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTaskExecutions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTaskExecutions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -552,6 +594,7 @@ ListTaskExecutionsOutcome DataSyncClient::ListTaskExecutions(const ListTaskExecu
 
 ListTasksOutcome DataSyncClient::ListTasks(const ListTasksRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTasks);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTasks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTasks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -560,6 +603,7 @@ ListTasksOutcome DataSyncClient::ListTasks(const ListTasksRequest& request) cons
 
 RemoveStorageSystemOutcome DataSyncClient::RemoveStorageSystem(const RemoveStorageSystemRequest& request) const
 {
+  AWS_OPERATION_GUARD(RemoveStorageSystem);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RemoveStorageSystem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RemoveStorageSystem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -570,6 +614,7 @@ RemoveStorageSystemOutcome DataSyncClient::RemoveStorageSystem(const RemoveStora
 
 StartDiscoveryJobOutcome DataSyncClient::StartDiscoveryJob(const StartDiscoveryJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartDiscoveryJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartDiscoveryJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartDiscoveryJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -580,6 +625,7 @@ StartDiscoveryJobOutcome DataSyncClient::StartDiscoveryJob(const StartDiscoveryJ
 
 StartTaskExecutionOutcome DataSyncClient::StartTaskExecution(const StartTaskExecutionRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartTaskExecution);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartTaskExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartTaskExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -588,6 +634,7 @@ StartTaskExecutionOutcome DataSyncClient::StartTaskExecution(const StartTaskExec
 
 StopDiscoveryJobOutcome DataSyncClient::StopDiscoveryJob(const StopDiscoveryJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(StopDiscoveryJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopDiscoveryJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StopDiscoveryJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -598,6 +645,7 @@ StopDiscoveryJobOutcome DataSyncClient::StopDiscoveryJob(const StopDiscoveryJobR
 
 TagResourceOutcome DataSyncClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -606,6 +654,7 @@ TagResourceOutcome DataSyncClient::TagResource(const TagResourceRequest& request
 
 UntagResourceOutcome DataSyncClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -614,6 +663,7 @@ UntagResourceOutcome DataSyncClient::UntagResource(const UntagResourceRequest& r
 
 UpdateAgentOutcome DataSyncClient::UpdateAgent(const UpdateAgentRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateAgent);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAgent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateAgent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -622,6 +672,7 @@ UpdateAgentOutcome DataSyncClient::UpdateAgent(const UpdateAgentRequest& request
 
 UpdateDiscoveryJobOutcome DataSyncClient::UpdateDiscoveryJob(const UpdateDiscoveryJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateDiscoveryJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDiscoveryJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateDiscoveryJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -632,6 +683,7 @@ UpdateDiscoveryJobOutcome DataSyncClient::UpdateDiscoveryJob(const UpdateDiscove
 
 UpdateLocationHdfsOutcome DataSyncClient::UpdateLocationHdfs(const UpdateLocationHdfsRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateLocationHdfs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateLocationHdfs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateLocationHdfs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -640,6 +692,7 @@ UpdateLocationHdfsOutcome DataSyncClient::UpdateLocationHdfs(const UpdateLocatio
 
 UpdateLocationNfsOutcome DataSyncClient::UpdateLocationNfs(const UpdateLocationNfsRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateLocationNfs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateLocationNfs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateLocationNfs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -648,6 +701,7 @@ UpdateLocationNfsOutcome DataSyncClient::UpdateLocationNfs(const UpdateLocationN
 
 UpdateLocationObjectStorageOutcome DataSyncClient::UpdateLocationObjectStorage(const UpdateLocationObjectStorageRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateLocationObjectStorage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateLocationObjectStorage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateLocationObjectStorage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -656,6 +710,7 @@ UpdateLocationObjectStorageOutcome DataSyncClient::UpdateLocationObjectStorage(c
 
 UpdateLocationSmbOutcome DataSyncClient::UpdateLocationSmb(const UpdateLocationSmbRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateLocationSmb);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateLocationSmb, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateLocationSmb, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -664,6 +719,7 @@ UpdateLocationSmbOutcome DataSyncClient::UpdateLocationSmb(const UpdateLocationS
 
 UpdateStorageSystemOutcome DataSyncClient::UpdateStorageSystem(const UpdateStorageSystemRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateStorageSystem);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateStorageSystem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateStorageSystem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -674,6 +730,7 @@ UpdateStorageSystemOutcome DataSyncClient::UpdateStorageSystem(const UpdateStora
 
 UpdateTaskOutcome DataSyncClient::UpdateTask(const UpdateTaskRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateTask);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -682,6 +739,7 @@ UpdateTaskOutcome DataSyncClient::UpdateTask(const UpdateTaskRequest& request) c
 
 UpdateTaskExecutionOutcome DataSyncClient::UpdateTaskExecution(const UpdateTaskExecutionRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateTaskExecution);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateTaskExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateTaskExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

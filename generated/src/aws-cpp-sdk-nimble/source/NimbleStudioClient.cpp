@@ -178,6 +178,7 @@ NimbleStudioClient::NimbleStudioClient(const std::shared_ptr<AWSCredentialsProvi
     /* End of legacy constructors due deprecation */
 NimbleStudioClient::~NimbleStudioClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<NimbleStudioEndpointProviderBase>& NimbleStudioClient::accessEndpointProvider()
@@ -200,6 +201,7 @@ void NimbleStudioClient::OverrideEndpoint(const Aws::String& endpoint)
 
 AcceptEulasOutcome NimbleStudioClient::AcceptEulas(const AcceptEulasRequest& request) const
 {
+  AWS_OPERATION_GUARD(AcceptEulas);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AcceptEulas, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StudioIdHasBeenSet())
   {
@@ -216,6 +218,7 @@ AcceptEulasOutcome NimbleStudioClient::AcceptEulas(const AcceptEulasRequest& req
 
 CreateLaunchProfileOutcome NimbleStudioClient::CreateLaunchProfile(const CreateLaunchProfileRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateLaunchProfile);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateLaunchProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StudioIdHasBeenSet())
   {
@@ -232,6 +235,7 @@ CreateLaunchProfileOutcome NimbleStudioClient::CreateLaunchProfile(const CreateL
 
 CreateStreamingImageOutcome NimbleStudioClient::CreateStreamingImage(const CreateStreamingImageRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateStreamingImage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateStreamingImage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StudioIdHasBeenSet())
   {
@@ -248,6 +252,7 @@ CreateStreamingImageOutcome NimbleStudioClient::CreateStreamingImage(const Creat
 
 CreateStreamingSessionOutcome NimbleStudioClient::CreateStreamingSession(const CreateStreamingSessionRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateStreamingSession);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateStreamingSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StudioIdHasBeenSet())
   {
@@ -264,6 +269,7 @@ CreateStreamingSessionOutcome NimbleStudioClient::CreateStreamingSession(const C
 
 CreateStreamingSessionStreamOutcome NimbleStudioClient::CreateStreamingSessionStream(const CreateStreamingSessionStreamRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateStreamingSessionStream);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateStreamingSessionStream, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SessionIdHasBeenSet())
   {
@@ -287,6 +293,7 @@ CreateStreamingSessionStreamOutcome NimbleStudioClient::CreateStreamingSessionSt
 
 CreateStudioOutcome NimbleStudioClient::CreateStudio(const CreateStudioRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateStudio);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateStudio, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateStudio, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -296,6 +303,7 @@ CreateStudioOutcome NimbleStudioClient::CreateStudio(const CreateStudioRequest& 
 
 CreateStudioComponentOutcome NimbleStudioClient::CreateStudioComponent(const CreateStudioComponentRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateStudioComponent);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateStudioComponent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StudioIdHasBeenSet())
   {
@@ -312,6 +320,7 @@ CreateStudioComponentOutcome NimbleStudioClient::CreateStudioComponent(const Cre
 
 DeleteLaunchProfileOutcome NimbleStudioClient::DeleteLaunchProfile(const DeleteLaunchProfileRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteLaunchProfile);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteLaunchProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LaunchProfileIdHasBeenSet())
   {
@@ -334,6 +343,7 @@ DeleteLaunchProfileOutcome NimbleStudioClient::DeleteLaunchProfile(const DeleteL
 
 DeleteLaunchProfileMemberOutcome NimbleStudioClient::DeleteLaunchProfileMember(const DeleteLaunchProfileMemberRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteLaunchProfileMember);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteLaunchProfileMember, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LaunchProfileIdHasBeenSet())
   {
@@ -363,6 +373,7 @@ DeleteLaunchProfileMemberOutcome NimbleStudioClient::DeleteLaunchProfileMember(c
 
 DeleteStreamingImageOutcome NimbleStudioClient::DeleteStreamingImage(const DeleteStreamingImageRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteStreamingImage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteStreamingImage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StreamingImageIdHasBeenSet())
   {
@@ -385,6 +396,7 @@ DeleteStreamingImageOutcome NimbleStudioClient::DeleteStreamingImage(const Delet
 
 DeleteStreamingSessionOutcome NimbleStudioClient::DeleteStreamingSession(const DeleteStreamingSessionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteStreamingSession);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteStreamingSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SessionIdHasBeenSet())
   {
@@ -407,6 +419,7 @@ DeleteStreamingSessionOutcome NimbleStudioClient::DeleteStreamingSession(const D
 
 DeleteStudioOutcome NimbleStudioClient::DeleteStudio(const DeleteStudioRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteStudio);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteStudio, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StudioIdHasBeenSet())
   {
@@ -422,6 +435,7 @@ DeleteStudioOutcome NimbleStudioClient::DeleteStudio(const DeleteStudioRequest& 
 
 DeleteStudioComponentOutcome NimbleStudioClient::DeleteStudioComponent(const DeleteStudioComponentRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteStudioComponent);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteStudioComponent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StudioComponentIdHasBeenSet())
   {
@@ -444,6 +458,7 @@ DeleteStudioComponentOutcome NimbleStudioClient::DeleteStudioComponent(const Del
 
 DeleteStudioMemberOutcome NimbleStudioClient::DeleteStudioMember(const DeleteStudioMemberRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteStudioMember);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteStudioMember, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PrincipalIdHasBeenSet())
   {
@@ -466,6 +481,7 @@ DeleteStudioMemberOutcome NimbleStudioClient::DeleteStudioMember(const DeleteStu
 
 GetEulaOutcome NimbleStudioClient::GetEula(const GetEulaRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetEula);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetEula, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.EulaIdHasBeenSet())
   {
@@ -481,6 +497,7 @@ GetEulaOutcome NimbleStudioClient::GetEula(const GetEulaRequest& request) const
 
 GetLaunchProfileOutcome NimbleStudioClient::GetLaunchProfile(const GetLaunchProfileRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetLaunchProfile);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetLaunchProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LaunchProfileIdHasBeenSet())
   {
@@ -503,6 +520,7 @@ GetLaunchProfileOutcome NimbleStudioClient::GetLaunchProfile(const GetLaunchProf
 
 GetLaunchProfileDetailsOutcome NimbleStudioClient::GetLaunchProfileDetails(const GetLaunchProfileDetailsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetLaunchProfileDetails);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetLaunchProfileDetails, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LaunchProfileIdHasBeenSet())
   {
@@ -526,6 +544,7 @@ GetLaunchProfileDetailsOutcome NimbleStudioClient::GetLaunchProfileDetails(const
 
 GetLaunchProfileInitializationOutcome NimbleStudioClient::GetLaunchProfileInitialization(const GetLaunchProfileInitializationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetLaunchProfileInitialization);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetLaunchProfileInitialization, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LaunchProfileIdHasBeenSet())
   {
@@ -564,6 +583,7 @@ GetLaunchProfileInitializationOutcome NimbleStudioClient::GetLaunchProfileInitia
 
 GetLaunchProfileMemberOutcome NimbleStudioClient::GetLaunchProfileMember(const GetLaunchProfileMemberRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetLaunchProfileMember);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetLaunchProfileMember, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LaunchProfileIdHasBeenSet())
   {
@@ -593,6 +613,7 @@ GetLaunchProfileMemberOutcome NimbleStudioClient::GetLaunchProfileMember(const G
 
 GetStreamingImageOutcome NimbleStudioClient::GetStreamingImage(const GetStreamingImageRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetStreamingImage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetStreamingImage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StreamingImageIdHasBeenSet())
   {
@@ -615,6 +636,7 @@ GetStreamingImageOutcome NimbleStudioClient::GetStreamingImage(const GetStreamin
 
 GetStreamingSessionOutcome NimbleStudioClient::GetStreamingSession(const GetStreamingSessionRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetStreamingSession);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetStreamingSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SessionIdHasBeenSet())
   {
@@ -637,6 +659,7 @@ GetStreamingSessionOutcome NimbleStudioClient::GetStreamingSession(const GetStre
 
 GetStreamingSessionBackupOutcome NimbleStudioClient::GetStreamingSessionBackup(const GetStreamingSessionBackupRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetStreamingSessionBackup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetStreamingSessionBackup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BackupIdHasBeenSet())
   {
@@ -659,6 +682,7 @@ GetStreamingSessionBackupOutcome NimbleStudioClient::GetStreamingSessionBackup(c
 
 GetStreamingSessionStreamOutcome NimbleStudioClient::GetStreamingSessionStream(const GetStreamingSessionStreamRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetStreamingSessionStream);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetStreamingSessionStream, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SessionIdHasBeenSet())
   {
@@ -688,6 +712,7 @@ GetStreamingSessionStreamOutcome NimbleStudioClient::GetStreamingSessionStream(c
 
 GetStudioOutcome NimbleStudioClient::GetStudio(const GetStudioRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetStudio);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetStudio, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StudioIdHasBeenSet())
   {
@@ -703,6 +728,7 @@ GetStudioOutcome NimbleStudioClient::GetStudio(const GetStudioRequest& request) 
 
 GetStudioComponentOutcome NimbleStudioClient::GetStudioComponent(const GetStudioComponentRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetStudioComponent);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetStudioComponent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StudioComponentIdHasBeenSet())
   {
@@ -725,6 +751,7 @@ GetStudioComponentOutcome NimbleStudioClient::GetStudioComponent(const GetStudio
 
 GetStudioMemberOutcome NimbleStudioClient::GetStudioMember(const GetStudioMemberRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetStudioMember);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetStudioMember, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PrincipalIdHasBeenSet())
   {
@@ -747,6 +774,7 @@ GetStudioMemberOutcome NimbleStudioClient::GetStudioMember(const GetStudioMember
 
 ListEulaAcceptancesOutcome NimbleStudioClient::ListEulaAcceptances(const ListEulaAcceptancesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListEulaAcceptances);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListEulaAcceptances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StudioIdHasBeenSet())
   {
@@ -763,6 +791,7 @@ ListEulaAcceptancesOutcome NimbleStudioClient::ListEulaAcceptances(const ListEul
 
 ListEulasOutcome NimbleStudioClient::ListEulas(const ListEulasRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListEulas);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListEulas, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListEulas, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -772,6 +801,7 @@ ListEulasOutcome NimbleStudioClient::ListEulas(const ListEulasRequest& request) 
 
 ListLaunchProfileMembersOutcome NimbleStudioClient::ListLaunchProfileMembers(const ListLaunchProfileMembersRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListLaunchProfileMembers);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListLaunchProfileMembers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LaunchProfileIdHasBeenSet())
   {
@@ -795,6 +825,7 @@ ListLaunchProfileMembersOutcome NimbleStudioClient::ListLaunchProfileMembers(con
 
 ListLaunchProfilesOutcome NimbleStudioClient::ListLaunchProfiles(const ListLaunchProfilesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListLaunchProfiles);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListLaunchProfiles, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StudioIdHasBeenSet())
   {
@@ -811,6 +842,7 @@ ListLaunchProfilesOutcome NimbleStudioClient::ListLaunchProfiles(const ListLaunc
 
 ListStreamingImagesOutcome NimbleStudioClient::ListStreamingImages(const ListStreamingImagesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListStreamingImages);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListStreamingImages, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StudioIdHasBeenSet())
   {
@@ -827,6 +859,7 @@ ListStreamingImagesOutcome NimbleStudioClient::ListStreamingImages(const ListStr
 
 ListStreamingSessionBackupsOutcome NimbleStudioClient::ListStreamingSessionBackups(const ListStreamingSessionBackupsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListStreamingSessionBackups);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListStreamingSessionBackups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StudioIdHasBeenSet())
   {
@@ -843,6 +876,7 @@ ListStreamingSessionBackupsOutcome NimbleStudioClient::ListStreamingSessionBacku
 
 ListStreamingSessionsOutcome NimbleStudioClient::ListStreamingSessions(const ListStreamingSessionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListStreamingSessions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListStreamingSessions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StudioIdHasBeenSet())
   {
@@ -859,6 +893,7 @@ ListStreamingSessionsOutcome NimbleStudioClient::ListStreamingSessions(const Lis
 
 ListStudioComponentsOutcome NimbleStudioClient::ListStudioComponents(const ListStudioComponentsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListStudioComponents);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListStudioComponents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StudioIdHasBeenSet())
   {
@@ -875,6 +910,7 @@ ListStudioComponentsOutcome NimbleStudioClient::ListStudioComponents(const ListS
 
 ListStudioMembersOutcome NimbleStudioClient::ListStudioMembers(const ListStudioMembersRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListStudioMembers);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListStudioMembers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StudioIdHasBeenSet())
   {
@@ -891,6 +927,7 @@ ListStudioMembersOutcome NimbleStudioClient::ListStudioMembers(const ListStudioM
 
 ListStudiosOutcome NimbleStudioClient::ListStudios(const ListStudiosRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListStudios);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListStudios, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListStudios, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -900,6 +937,7 @@ ListStudiosOutcome NimbleStudioClient::ListStudios(const ListStudiosRequest& req
 
 ListTagsForResourceOutcome NimbleStudioClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -915,6 +953,7 @@ ListTagsForResourceOutcome NimbleStudioClient::ListTagsForResource(const ListTag
 
 PutLaunchProfileMembersOutcome NimbleStudioClient::PutLaunchProfileMembers(const PutLaunchProfileMembersRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutLaunchProfileMembers);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutLaunchProfileMembers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LaunchProfileIdHasBeenSet())
   {
@@ -938,6 +977,7 @@ PutLaunchProfileMembersOutcome NimbleStudioClient::PutLaunchProfileMembers(const
 
 PutStudioMembersOutcome NimbleStudioClient::PutStudioMembers(const PutStudioMembersRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutStudioMembers);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutStudioMembers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StudioIdHasBeenSet())
   {
@@ -954,6 +994,7 @@ PutStudioMembersOutcome NimbleStudioClient::PutStudioMembers(const PutStudioMemb
 
 StartStreamingSessionOutcome NimbleStudioClient::StartStreamingSession(const StartStreamingSessionRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartStreamingSession);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartStreamingSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SessionIdHasBeenSet())
   {
@@ -977,6 +1018,7 @@ StartStreamingSessionOutcome NimbleStudioClient::StartStreamingSession(const Sta
 
 StartStudioSSOConfigurationRepairOutcome NimbleStudioClient::StartStudioSSOConfigurationRepair(const StartStudioSSOConfigurationRepairRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartStudioSSOConfigurationRepair);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartStudioSSOConfigurationRepair, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StudioIdHasBeenSet())
   {
@@ -993,6 +1035,7 @@ StartStudioSSOConfigurationRepairOutcome NimbleStudioClient::StartStudioSSOConfi
 
 StopStreamingSessionOutcome NimbleStudioClient::StopStreamingSession(const StopStreamingSessionRequest& request) const
 {
+  AWS_OPERATION_GUARD(StopStreamingSession);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopStreamingSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SessionIdHasBeenSet())
   {
@@ -1016,6 +1059,7 @@ StopStreamingSessionOutcome NimbleStudioClient::StopStreamingSession(const StopS
 
 TagResourceOutcome NimbleStudioClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -1031,6 +1075,7 @@ TagResourceOutcome NimbleStudioClient::TagResource(const TagResourceRequest& req
 
 UntagResourceOutcome NimbleStudioClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -1051,6 +1096,7 @@ UntagResourceOutcome NimbleStudioClient::UntagResource(const UntagResourceReques
 
 UpdateLaunchProfileOutcome NimbleStudioClient::UpdateLaunchProfile(const UpdateLaunchProfileRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateLaunchProfile);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateLaunchProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LaunchProfileIdHasBeenSet())
   {
@@ -1073,6 +1119,7 @@ UpdateLaunchProfileOutcome NimbleStudioClient::UpdateLaunchProfile(const UpdateL
 
 UpdateLaunchProfileMemberOutcome NimbleStudioClient::UpdateLaunchProfileMember(const UpdateLaunchProfileMemberRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateLaunchProfileMember);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateLaunchProfileMember, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LaunchProfileIdHasBeenSet())
   {
@@ -1102,6 +1149,7 @@ UpdateLaunchProfileMemberOutcome NimbleStudioClient::UpdateLaunchProfileMember(c
 
 UpdateStreamingImageOutcome NimbleStudioClient::UpdateStreamingImage(const UpdateStreamingImageRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateStreamingImage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateStreamingImage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StreamingImageIdHasBeenSet())
   {
@@ -1124,6 +1172,7 @@ UpdateStreamingImageOutcome NimbleStudioClient::UpdateStreamingImage(const Updat
 
 UpdateStudioOutcome NimbleStudioClient::UpdateStudio(const UpdateStudioRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateStudio);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateStudio, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StudioIdHasBeenSet())
   {
@@ -1139,6 +1188,7 @@ UpdateStudioOutcome NimbleStudioClient::UpdateStudio(const UpdateStudioRequest& 
 
 UpdateStudioComponentOutcome NimbleStudioClient::UpdateStudioComponent(const UpdateStudioComponentRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateStudioComponent);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateStudioComponent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StudioComponentIdHasBeenSet())
   {

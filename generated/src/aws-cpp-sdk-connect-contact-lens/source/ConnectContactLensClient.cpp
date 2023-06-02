@@ -130,6 +130,7 @@ ConnectContactLensClient::ConnectContactLensClient(const std::shared_ptr<AWSCred
     /* End of legacy constructors due deprecation */
 ConnectContactLensClient::~ConnectContactLensClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<ConnectContactLensEndpointProviderBase>& ConnectContactLensClient::accessEndpointProvider()
@@ -152,6 +153,7 @@ void ConnectContactLensClient::OverrideEndpoint(const Aws::String& endpoint)
 
 ListRealtimeContactAnalysisSegmentsOutcome ConnectContactLensClient::ListRealtimeContactAnalysisSegments(const ListRealtimeContactAnalysisSegmentsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListRealtimeContactAnalysisSegments);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRealtimeContactAnalysisSegments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListRealtimeContactAnalysisSegments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

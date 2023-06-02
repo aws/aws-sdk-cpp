@@ -172,6 +172,7 @@ CodeDeployClient::CodeDeployClient(const std::shared_ptr<AWSCredentialsProvider>
     /* End of legacy constructors due deprecation */
 CodeDeployClient::~CodeDeployClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<CodeDeployEndpointProviderBase>& CodeDeployClient::accessEndpointProvider()
@@ -194,6 +195,7 @@ void CodeDeployClient::OverrideEndpoint(const Aws::String& endpoint)
 
 AddTagsToOnPremisesInstancesOutcome CodeDeployClient::AddTagsToOnPremisesInstances(const AddTagsToOnPremisesInstancesRequest& request) const
 {
+  AWS_OPERATION_GUARD(AddTagsToOnPremisesInstances);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AddTagsToOnPremisesInstances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AddTagsToOnPremisesInstances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -202,6 +204,7 @@ AddTagsToOnPremisesInstancesOutcome CodeDeployClient::AddTagsToOnPremisesInstanc
 
 BatchGetApplicationRevisionsOutcome CodeDeployClient::BatchGetApplicationRevisions(const BatchGetApplicationRevisionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchGetApplicationRevisions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchGetApplicationRevisions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchGetApplicationRevisions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -210,6 +213,7 @@ BatchGetApplicationRevisionsOutcome CodeDeployClient::BatchGetApplicationRevisio
 
 BatchGetApplicationsOutcome CodeDeployClient::BatchGetApplications(const BatchGetApplicationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchGetApplications);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchGetApplications, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchGetApplications, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -218,6 +222,7 @@ BatchGetApplicationsOutcome CodeDeployClient::BatchGetApplications(const BatchGe
 
 BatchGetDeploymentGroupsOutcome CodeDeployClient::BatchGetDeploymentGroups(const BatchGetDeploymentGroupsRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchGetDeploymentGroups);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchGetDeploymentGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchGetDeploymentGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -226,6 +231,7 @@ BatchGetDeploymentGroupsOutcome CodeDeployClient::BatchGetDeploymentGroups(const
 
 BatchGetDeploymentTargetsOutcome CodeDeployClient::BatchGetDeploymentTargets(const BatchGetDeploymentTargetsRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchGetDeploymentTargets);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchGetDeploymentTargets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchGetDeploymentTargets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -234,6 +240,7 @@ BatchGetDeploymentTargetsOutcome CodeDeployClient::BatchGetDeploymentTargets(con
 
 BatchGetDeploymentsOutcome CodeDeployClient::BatchGetDeployments(const BatchGetDeploymentsRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchGetDeployments);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchGetDeployments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchGetDeployments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -242,6 +249,7 @@ BatchGetDeploymentsOutcome CodeDeployClient::BatchGetDeployments(const BatchGetD
 
 BatchGetOnPremisesInstancesOutcome CodeDeployClient::BatchGetOnPremisesInstances(const BatchGetOnPremisesInstancesRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchGetOnPremisesInstances);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchGetOnPremisesInstances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchGetOnPremisesInstances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -250,6 +258,7 @@ BatchGetOnPremisesInstancesOutcome CodeDeployClient::BatchGetOnPremisesInstances
 
 ContinueDeploymentOutcome CodeDeployClient::ContinueDeployment(const ContinueDeploymentRequest& request) const
 {
+  AWS_OPERATION_GUARD(ContinueDeployment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ContinueDeployment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ContinueDeployment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -258,6 +267,7 @@ ContinueDeploymentOutcome CodeDeployClient::ContinueDeployment(const ContinueDep
 
 CreateApplicationOutcome CodeDeployClient::CreateApplication(const CreateApplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateApplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -266,6 +276,7 @@ CreateApplicationOutcome CodeDeployClient::CreateApplication(const CreateApplica
 
 CreateDeploymentOutcome CodeDeployClient::CreateDeployment(const CreateDeploymentRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateDeployment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDeployment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateDeployment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -274,6 +285,7 @@ CreateDeploymentOutcome CodeDeployClient::CreateDeployment(const CreateDeploymen
 
 CreateDeploymentConfigOutcome CodeDeployClient::CreateDeploymentConfig(const CreateDeploymentConfigRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateDeploymentConfig);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDeploymentConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateDeploymentConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -282,6 +294,7 @@ CreateDeploymentConfigOutcome CodeDeployClient::CreateDeploymentConfig(const Cre
 
 CreateDeploymentGroupOutcome CodeDeployClient::CreateDeploymentGroup(const CreateDeploymentGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateDeploymentGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDeploymentGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateDeploymentGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -290,6 +303,7 @@ CreateDeploymentGroupOutcome CodeDeployClient::CreateDeploymentGroup(const Creat
 
 DeleteApplicationOutcome CodeDeployClient::DeleteApplication(const DeleteApplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteApplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -298,6 +312,7 @@ DeleteApplicationOutcome CodeDeployClient::DeleteApplication(const DeleteApplica
 
 DeleteDeploymentConfigOutcome CodeDeployClient::DeleteDeploymentConfig(const DeleteDeploymentConfigRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteDeploymentConfig);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDeploymentConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteDeploymentConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -306,6 +321,7 @@ DeleteDeploymentConfigOutcome CodeDeployClient::DeleteDeploymentConfig(const Del
 
 DeleteDeploymentGroupOutcome CodeDeployClient::DeleteDeploymentGroup(const DeleteDeploymentGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteDeploymentGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDeploymentGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteDeploymentGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -314,6 +330,7 @@ DeleteDeploymentGroupOutcome CodeDeployClient::DeleteDeploymentGroup(const Delet
 
 DeleteGitHubAccountTokenOutcome CodeDeployClient::DeleteGitHubAccountToken(const DeleteGitHubAccountTokenRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteGitHubAccountToken);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteGitHubAccountToken, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteGitHubAccountToken, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -322,6 +339,7 @@ DeleteGitHubAccountTokenOutcome CodeDeployClient::DeleteGitHubAccountToken(const
 
 DeleteResourcesByExternalIdOutcome CodeDeployClient::DeleteResourcesByExternalId(const DeleteResourcesByExternalIdRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteResourcesByExternalId);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteResourcesByExternalId, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteResourcesByExternalId, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -330,6 +348,7 @@ DeleteResourcesByExternalIdOutcome CodeDeployClient::DeleteResourcesByExternalId
 
 DeregisterOnPremisesInstanceOutcome CodeDeployClient::DeregisterOnPremisesInstance(const DeregisterOnPremisesInstanceRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeregisterOnPremisesInstance);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeregisterOnPremisesInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeregisterOnPremisesInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -338,6 +357,7 @@ DeregisterOnPremisesInstanceOutcome CodeDeployClient::DeregisterOnPremisesInstan
 
 GetApplicationOutcome CodeDeployClient::GetApplication(const GetApplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetApplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -346,6 +366,7 @@ GetApplicationOutcome CodeDeployClient::GetApplication(const GetApplicationReque
 
 GetApplicationRevisionOutcome CodeDeployClient::GetApplicationRevision(const GetApplicationRevisionRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetApplicationRevision);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetApplicationRevision, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetApplicationRevision, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -354,6 +375,7 @@ GetApplicationRevisionOutcome CodeDeployClient::GetApplicationRevision(const Get
 
 GetDeploymentOutcome CodeDeployClient::GetDeployment(const GetDeploymentRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDeployment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDeployment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetDeployment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -362,6 +384,7 @@ GetDeploymentOutcome CodeDeployClient::GetDeployment(const GetDeploymentRequest&
 
 GetDeploymentConfigOutcome CodeDeployClient::GetDeploymentConfig(const GetDeploymentConfigRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDeploymentConfig);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDeploymentConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetDeploymentConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -370,6 +393,7 @@ GetDeploymentConfigOutcome CodeDeployClient::GetDeploymentConfig(const GetDeploy
 
 GetDeploymentGroupOutcome CodeDeployClient::GetDeploymentGroup(const GetDeploymentGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDeploymentGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDeploymentGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetDeploymentGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -378,6 +402,7 @@ GetDeploymentGroupOutcome CodeDeployClient::GetDeploymentGroup(const GetDeployme
 
 GetDeploymentTargetOutcome CodeDeployClient::GetDeploymentTarget(const GetDeploymentTargetRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDeploymentTarget);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDeploymentTarget, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetDeploymentTarget, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -386,6 +411,7 @@ GetDeploymentTargetOutcome CodeDeployClient::GetDeploymentTarget(const GetDeploy
 
 GetOnPremisesInstanceOutcome CodeDeployClient::GetOnPremisesInstance(const GetOnPremisesInstanceRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetOnPremisesInstance);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetOnPremisesInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetOnPremisesInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -394,6 +420,7 @@ GetOnPremisesInstanceOutcome CodeDeployClient::GetOnPremisesInstance(const GetOn
 
 ListApplicationRevisionsOutcome CodeDeployClient::ListApplicationRevisions(const ListApplicationRevisionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListApplicationRevisions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListApplicationRevisions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListApplicationRevisions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -402,6 +429,7 @@ ListApplicationRevisionsOutcome CodeDeployClient::ListApplicationRevisions(const
 
 ListApplicationsOutcome CodeDeployClient::ListApplications(const ListApplicationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListApplications);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListApplications, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListApplications, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -410,6 +438,7 @@ ListApplicationsOutcome CodeDeployClient::ListApplications(const ListApplication
 
 ListDeploymentConfigsOutcome CodeDeployClient::ListDeploymentConfigs(const ListDeploymentConfigsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDeploymentConfigs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDeploymentConfigs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDeploymentConfigs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -418,6 +447,7 @@ ListDeploymentConfigsOutcome CodeDeployClient::ListDeploymentConfigs(const ListD
 
 ListDeploymentGroupsOutcome CodeDeployClient::ListDeploymentGroups(const ListDeploymentGroupsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDeploymentGroups);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDeploymentGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDeploymentGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -426,6 +456,7 @@ ListDeploymentGroupsOutcome CodeDeployClient::ListDeploymentGroups(const ListDep
 
 ListDeploymentTargetsOutcome CodeDeployClient::ListDeploymentTargets(const ListDeploymentTargetsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDeploymentTargets);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDeploymentTargets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDeploymentTargets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -434,6 +465,7 @@ ListDeploymentTargetsOutcome CodeDeployClient::ListDeploymentTargets(const ListD
 
 ListDeploymentsOutcome CodeDeployClient::ListDeployments(const ListDeploymentsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDeployments);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDeployments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDeployments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -442,6 +474,7 @@ ListDeploymentsOutcome CodeDeployClient::ListDeployments(const ListDeploymentsRe
 
 ListGitHubAccountTokenNamesOutcome CodeDeployClient::ListGitHubAccountTokenNames(const ListGitHubAccountTokenNamesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListGitHubAccountTokenNames);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListGitHubAccountTokenNames, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListGitHubAccountTokenNames, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -450,6 +483,7 @@ ListGitHubAccountTokenNamesOutcome CodeDeployClient::ListGitHubAccountTokenNames
 
 ListOnPremisesInstancesOutcome CodeDeployClient::ListOnPremisesInstances(const ListOnPremisesInstancesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListOnPremisesInstances);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListOnPremisesInstances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListOnPremisesInstances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -458,6 +492,7 @@ ListOnPremisesInstancesOutcome CodeDeployClient::ListOnPremisesInstances(const L
 
 ListTagsForResourceOutcome CodeDeployClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -466,6 +501,7 @@ ListTagsForResourceOutcome CodeDeployClient::ListTagsForResource(const ListTagsF
 
 PutLifecycleEventHookExecutionStatusOutcome CodeDeployClient::PutLifecycleEventHookExecutionStatus(const PutLifecycleEventHookExecutionStatusRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutLifecycleEventHookExecutionStatus);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutLifecycleEventHookExecutionStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutLifecycleEventHookExecutionStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -474,6 +510,7 @@ PutLifecycleEventHookExecutionStatusOutcome CodeDeployClient::PutLifecycleEventH
 
 RegisterApplicationRevisionOutcome CodeDeployClient::RegisterApplicationRevision(const RegisterApplicationRevisionRequest& request) const
 {
+  AWS_OPERATION_GUARD(RegisterApplicationRevision);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RegisterApplicationRevision, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RegisterApplicationRevision, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -482,6 +519,7 @@ RegisterApplicationRevisionOutcome CodeDeployClient::RegisterApplicationRevision
 
 RegisterOnPremisesInstanceOutcome CodeDeployClient::RegisterOnPremisesInstance(const RegisterOnPremisesInstanceRequest& request) const
 {
+  AWS_OPERATION_GUARD(RegisterOnPremisesInstance);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RegisterOnPremisesInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RegisterOnPremisesInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -490,6 +528,7 @@ RegisterOnPremisesInstanceOutcome CodeDeployClient::RegisterOnPremisesInstance(c
 
 RemoveTagsFromOnPremisesInstancesOutcome CodeDeployClient::RemoveTagsFromOnPremisesInstances(const RemoveTagsFromOnPremisesInstancesRequest& request) const
 {
+  AWS_OPERATION_GUARD(RemoveTagsFromOnPremisesInstances);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RemoveTagsFromOnPremisesInstances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RemoveTagsFromOnPremisesInstances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -498,6 +537,7 @@ RemoveTagsFromOnPremisesInstancesOutcome CodeDeployClient::RemoveTagsFromOnPremi
 
 StopDeploymentOutcome CodeDeployClient::StopDeployment(const StopDeploymentRequest& request) const
 {
+  AWS_OPERATION_GUARD(StopDeployment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopDeployment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StopDeployment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -506,6 +546,7 @@ StopDeploymentOutcome CodeDeployClient::StopDeployment(const StopDeploymentReque
 
 TagResourceOutcome CodeDeployClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -514,6 +555,7 @@ TagResourceOutcome CodeDeployClient::TagResource(const TagResourceRequest& reque
 
 UntagResourceOutcome CodeDeployClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -522,6 +564,7 @@ UntagResourceOutcome CodeDeployClient::UntagResource(const UntagResourceRequest&
 
 UpdateApplicationOutcome CodeDeployClient::UpdateApplication(const UpdateApplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateApplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -530,6 +573,7 @@ UpdateApplicationOutcome CodeDeployClient::UpdateApplication(const UpdateApplica
 
 UpdateDeploymentGroupOutcome CodeDeployClient::UpdateDeploymentGroup(const UpdateDeploymentGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateDeploymentGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDeploymentGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateDeploymentGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

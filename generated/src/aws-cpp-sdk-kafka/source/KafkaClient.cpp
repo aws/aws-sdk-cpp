@@ -174,6 +174,7 @@ KafkaClient::KafkaClient(const std::shared_ptr<AWSCredentialsProvider>& credenti
     /* End of legacy constructors due deprecation */
 KafkaClient::~KafkaClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<KafkaEndpointProviderBase>& KafkaClient::accessEndpointProvider()
@@ -196,6 +197,7 @@ void KafkaClient::OverrideEndpoint(const Aws::String& endpoint)
 
 BatchAssociateScramSecretOutcome KafkaClient::BatchAssociateScramSecret(const BatchAssociateScramSecretRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchAssociateScramSecret);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchAssociateScramSecret, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ClusterArnHasBeenSet())
   {
@@ -212,6 +214,7 @@ BatchAssociateScramSecretOutcome KafkaClient::BatchAssociateScramSecret(const Ba
 
 CreateClusterOutcome KafkaClient::CreateCluster(const CreateClusterRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateCluster);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateCluster, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateCluster, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -221,6 +224,7 @@ CreateClusterOutcome KafkaClient::CreateCluster(const CreateClusterRequest& requ
 
 CreateClusterV2Outcome KafkaClient::CreateClusterV2(const CreateClusterV2Request& request) const
 {
+  AWS_OPERATION_GUARD(CreateClusterV2);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateClusterV2, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateClusterV2, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -230,6 +234,7 @@ CreateClusterV2Outcome KafkaClient::CreateClusterV2(const CreateClusterV2Request
 
 CreateConfigurationOutcome KafkaClient::CreateConfiguration(const CreateConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -239,6 +244,7 @@ CreateConfigurationOutcome KafkaClient::CreateConfiguration(const CreateConfigur
 
 CreateVpcConnectionOutcome KafkaClient::CreateVpcConnection(const CreateVpcConnectionRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateVpcConnection);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateVpcConnection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateVpcConnection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -248,6 +254,7 @@ CreateVpcConnectionOutcome KafkaClient::CreateVpcConnection(const CreateVpcConne
 
 DeleteClusterOutcome KafkaClient::DeleteCluster(const DeleteClusterRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteCluster);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteCluster, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ClusterArnHasBeenSet())
   {
@@ -263,6 +270,7 @@ DeleteClusterOutcome KafkaClient::DeleteCluster(const DeleteClusterRequest& requ
 
 DeleteClusterPolicyOutcome KafkaClient::DeleteClusterPolicy(const DeleteClusterPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteClusterPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteClusterPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ClusterArnHasBeenSet())
   {
@@ -279,6 +287,7 @@ DeleteClusterPolicyOutcome KafkaClient::DeleteClusterPolicy(const DeleteClusterP
 
 DeleteConfigurationOutcome KafkaClient::DeleteConfiguration(const DeleteConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ArnHasBeenSet())
   {
@@ -294,6 +303,7 @@ DeleteConfigurationOutcome KafkaClient::DeleteConfiguration(const DeleteConfigur
 
 DeleteVpcConnectionOutcome KafkaClient::DeleteVpcConnection(const DeleteVpcConnectionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteVpcConnection);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteVpcConnection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ArnHasBeenSet())
   {
@@ -309,6 +319,7 @@ DeleteVpcConnectionOutcome KafkaClient::DeleteVpcConnection(const DeleteVpcConne
 
 DescribeClusterOutcome KafkaClient::DescribeCluster(const DescribeClusterRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeCluster);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeCluster, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ClusterArnHasBeenSet())
   {
@@ -324,6 +335,7 @@ DescribeClusterOutcome KafkaClient::DescribeCluster(const DescribeClusterRequest
 
 DescribeClusterV2Outcome KafkaClient::DescribeClusterV2(const DescribeClusterV2Request& request) const
 {
+  AWS_OPERATION_GUARD(DescribeClusterV2);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeClusterV2, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ClusterArnHasBeenSet())
   {
@@ -339,6 +351,7 @@ DescribeClusterV2Outcome KafkaClient::DescribeClusterV2(const DescribeClusterV2R
 
 DescribeClusterOperationOutcome KafkaClient::DescribeClusterOperation(const DescribeClusterOperationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeClusterOperation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeClusterOperation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ClusterOperationArnHasBeenSet())
   {
@@ -354,6 +367,7 @@ DescribeClusterOperationOutcome KafkaClient::DescribeClusterOperation(const Desc
 
 DescribeConfigurationOutcome KafkaClient::DescribeConfiguration(const DescribeConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ArnHasBeenSet())
   {
@@ -369,6 +383,7 @@ DescribeConfigurationOutcome KafkaClient::DescribeConfiguration(const DescribeCo
 
 DescribeConfigurationRevisionOutcome KafkaClient::DescribeConfigurationRevision(const DescribeConfigurationRevisionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeConfigurationRevision);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeConfigurationRevision, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ArnHasBeenSet())
   {
@@ -391,6 +406,7 @@ DescribeConfigurationRevisionOutcome KafkaClient::DescribeConfigurationRevision(
 
 DescribeVpcConnectionOutcome KafkaClient::DescribeVpcConnection(const DescribeVpcConnectionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeVpcConnection);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeVpcConnection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ArnHasBeenSet())
   {
@@ -406,6 +422,7 @@ DescribeVpcConnectionOutcome KafkaClient::DescribeVpcConnection(const DescribeVp
 
 BatchDisassociateScramSecretOutcome KafkaClient::BatchDisassociateScramSecret(const BatchDisassociateScramSecretRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchDisassociateScramSecret);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchDisassociateScramSecret, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ClusterArnHasBeenSet())
   {
@@ -422,6 +439,7 @@ BatchDisassociateScramSecretOutcome KafkaClient::BatchDisassociateScramSecret(co
 
 GetBootstrapBrokersOutcome KafkaClient::GetBootstrapBrokers(const GetBootstrapBrokersRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetBootstrapBrokers);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBootstrapBrokers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ClusterArnHasBeenSet())
   {
@@ -438,6 +456,7 @@ GetBootstrapBrokersOutcome KafkaClient::GetBootstrapBrokers(const GetBootstrapBr
 
 GetCompatibleKafkaVersionsOutcome KafkaClient::GetCompatibleKafkaVersions(const GetCompatibleKafkaVersionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetCompatibleKafkaVersions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCompatibleKafkaVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetCompatibleKafkaVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -447,6 +466,7 @@ GetCompatibleKafkaVersionsOutcome KafkaClient::GetCompatibleKafkaVersions(const 
 
 GetClusterPolicyOutcome KafkaClient::GetClusterPolicy(const GetClusterPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetClusterPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetClusterPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ClusterArnHasBeenSet())
   {
@@ -463,6 +483,7 @@ GetClusterPolicyOutcome KafkaClient::GetClusterPolicy(const GetClusterPolicyRequ
 
 ListClusterOperationsOutcome KafkaClient::ListClusterOperations(const ListClusterOperationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListClusterOperations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListClusterOperations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ClusterArnHasBeenSet())
   {
@@ -479,6 +500,7 @@ ListClusterOperationsOutcome KafkaClient::ListClusterOperations(const ListCluste
 
 ListClustersOutcome KafkaClient::ListClusters(const ListClustersRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListClusters);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListClusters, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListClusters, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -488,6 +510,7 @@ ListClustersOutcome KafkaClient::ListClusters(const ListClustersRequest& request
 
 ListClustersV2Outcome KafkaClient::ListClustersV2(const ListClustersV2Request& request) const
 {
+  AWS_OPERATION_GUARD(ListClustersV2);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListClustersV2, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListClustersV2, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -497,6 +520,7 @@ ListClustersV2Outcome KafkaClient::ListClustersV2(const ListClustersV2Request& r
 
 ListConfigurationRevisionsOutcome KafkaClient::ListConfigurationRevisions(const ListConfigurationRevisionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListConfigurationRevisions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListConfigurationRevisions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ArnHasBeenSet())
   {
@@ -513,6 +537,7 @@ ListConfigurationRevisionsOutcome KafkaClient::ListConfigurationRevisions(const 
 
 ListConfigurationsOutcome KafkaClient::ListConfigurations(const ListConfigurationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListConfigurations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -522,6 +547,7 @@ ListConfigurationsOutcome KafkaClient::ListConfigurations(const ListConfiguratio
 
 ListKafkaVersionsOutcome KafkaClient::ListKafkaVersions(const ListKafkaVersionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListKafkaVersions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListKafkaVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListKafkaVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -531,6 +557,7 @@ ListKafkaVersionsOutcome KafkaClient::ListKafkaVersions(const ListKafkaVersionsR
 
 ListNodesOutcome KafkaClient::ListNodes(const ListNodesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListNodes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListNodes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ClusterArnHasBeenSet())
   {
@@ -547,6 +574,7 @@ ListNodesOutcome KafkaClient::ListNodes(const ListNodesRequest& request) const
 
 ListScramSecretsOutcome KafkaClient::ListScramSecrets(const ListScramSecretsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListScramSecrets);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListScramSecrets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ClusterArnHasBeenSet())
   {
@@ -563,6 +591,7 @@ ListScramSecretsOutcome KafkaClient::ListScramSecrets(const ListScramSecretsRequ
 
 ListTagsForResourceOutcome KafkaClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -578,6 +607,7 @@ ListTagsForResourceOutcome KafkaClient::ListTagsForResource(const ListTagsForRes
 
 ListClientVpcConnectionsOutcome KafkaClient::ListClientVpcConnections(const ListClientVpcConnectionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListClientVpcConnections);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListClientVpcConnections, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ClusterArnHasBeenSet())
   {
@@ -594,6 +624,7 @@ ListClientVpcConnectionsOutcome KafkaClient::ListClientVpcConnections(const List
 
 ListVpcConnectionsOutcome KafkaClient::ListVpcConnections(const ListVpcConnectionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListVpcConnections);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListVpcConnections, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListVpcConnections, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -603,6 +634,7 @@ ListVpcConnectionsOutcome KafkaClient::ListVpcConnections(const ListVpcConnectio
 
 RejectClientVpcConnectionOutcome KafkaClient::RejectClientVpcConnection(const RejectClientVpcConnectionRequest& request) const
 {
+  AWS_OPERATION_GUARD(RejectClientVpcConnection);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RejectClientVpcConnection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ClusterArnHasBeenSet())
   {
@@ -619,6 +651,7 @@ RejectClientVpcConnectionOutcome KafkaClient::RejectClientVpcConnection(const Re
 
 PutClusterPolicyOutcome KafkaClient::PutClusterPolicy(const PutClusterPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutClusterPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutClusterPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ClusterArnHasBeenSet())
   {
@@ -635,6 +668,7 @@ PutClusterPolicyOutcome KafkaClient::PutClusterPolicy(const PutClusterPolicyRequ
 
 RebootBrokerOutcome KafkaClient::RebootBroker(const RebootBrokerRequest& request) const
 {
+  AWS_OPERATION_GUARD(RebootBroker);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RebootBroker, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ClusterArnHasBeenSet())
   {
@@ -651,6 +685,7 @@ RebootBrokerOutcome KafkaClient::RebootBroker(const RebootBrokerRequest& request
 
 TagResourceOutcome KafkaClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -666,6 +701,7 @@ TagResourceOutcome KafkaClient::TagResource(const TagResourceRequest& request) c
 
 UntagResourceOutcome KafkaClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -686,6 +722,7 @@ UntagResourceOutcome KafkaClient::UntagResource(const UntagResourceRequest& requ
 
 UpdateBrokerCountOutcome KafkaClient::UpdateBrokerCount(const UpdateBrokerCountRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateBrokerCount);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateBrokerCount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ClusterArnHasBeenSet())
   {
@@ -702,6 +739,7 @@ UpdateBrokerCountOutcome KafkaClient::UpdateBrokerCount(const UpdateBrokerCountR
 
 UpdateBrokerTypeOutcome KafkaClient::UpdateBrokerType(const UpdateBrokerTypeRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateBrokerType);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateBrokerType, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ClusterArnHasBeenSet())
   {
@@ -718,6 +756,7 @@ UpdateBrokerTypeOutcome KafkaClient::UpdateBrokerType(const UpdateBrokerTypeRequ
 
 UpdateBrokerStorageOutcome KafkaClient::UpdateBrokerStorage(const UpdateBrokerStorageRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateBrokerStorage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateBrokerStorage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ClusterArnHasBeenSet())
   {
@@ -734,6 +773,7 @@ UpdateBrokerStorageOutcome KafkaClient::UpdateBrokerStorage(const UpdateBrokerSt
 
 UpdateConfigurationOutcome KafkaClient::UpdateConfiguration(const UpdateConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ArnHasBeenSet())
   {
@@ -749,6 +789,7 @@ UpdateConfigurationOutcome KafkaClient::UpdateConfiguration(const UpdateConfigur
 
 UpdateConnectivityOutcome KafkaClient::UpdateConnectivity(const UpdateConnectivityRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateConnectivity);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateConnectivity, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ClusterArnHasBeenSet())
   {
@@ -765,6 +806,7 @@ UpdateConnectivityOutcome KafkaClient::UpdateConnectivity(const UpdateConnectivi
 
 UpdateClusterConfigurationOutcome KafkaClient::UpdateClusterConfiguration(const UpdateClusterConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateClusterConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateClusterConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ClusterArnHasBeenSet())
   {
@@ -781,6 +823,7 @@ UpdateClusterConfigurationOutcome KafkaClient::UpdateClusterConfiguration(const 
 
 UpdateClusterKafkaVersionOutcome KafkaClient::UpdateClusterKafkaVersion(const UpdateClusterKafkaVersionRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateClusterKafkaVersion);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateClusterKafkaVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ClusterArnHasBeenSet())
   {
@@ -797,6 +840,7 @@ UpdateClusterKafkaVersionOutcome KafkaClient::UpdateClusterKafkaVersion(const Up
 
 UpdateMonitoringOutcome KafkaClient::UpdateMonitoring(const UpdateMonitoringRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateMonitoring);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateMonitoring, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ClusterArnHasBeenSet())
   {
@@ -813,6 +857,7 @@ UpdateMonitoringOutcome KafkaClient::UpdateMonitoring(const UpdateMonitoringRequ
 
 UpdateSecurityOutcome KafkaClient::UpdateSecurity(const UpdateSecurityRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateSecurity);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateSecurity, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ClusterArnHasBeenSet())
   {
@@ -829,6 +874,7 @@ UpdateSecurityOutcome KafkaClient::UpdateSecurity(const UpdateSecurityRequest& r
 
 UpdateStorageOutcome KafkaClient::UpdateStorage(const UpdateStorageRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateStorage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateStorage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ClusterArnHasBeenSet())
   {

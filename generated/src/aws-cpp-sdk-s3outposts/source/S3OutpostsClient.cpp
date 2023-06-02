@@ -134,6 +134,7 @@ S3OutpostsClient::S3OutpostsClient(const std::shared_ptr<AWSCredentialsProvider>
     /* End of legacy constructors due deprecation */
 S3OutpostsClient::~S3OutpostsClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<S3OutpostsEndpointProviderBase>& S3OutpostsClient::accessEndpointProvider()
@@ -156,6 +157,7 @@ void S3OutpostsClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CreateEndpointOutcome S3OutpostsClient::CreateEndpoint(const CreateEndpointRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateEndpoint);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -165,6 +167,7 @@ CreateEndpointOutcome S3OutpostsClient::CreateEndpoint(const CreateEndpointReque
 
 DeleteEndpointOutcome S3OutpostsClient::DeleteEndpoint(const DeleteEndpointRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteEndpoint);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.EndpointIdHasBeenSet())
   {
@@ -184,6 +187,7 @@ DeleteEndpointOutcome S3OutpostsClient::DeleteEndpoint(const DeleteEndpointReque
 
 ListEndpointsOutcome S3OutpostsClient::ListEndpoints(const ListEndpointsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListEndpoints);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListEndpoints, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListEndpoints, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -193,6 +197,7 @@ ListEndpointsOutcome S3OutpostsClient::ListEndpoints(const ListEndpointsRequest&
 
 ListOutpostsWithS3Outcome S3OutpostsClient::ListOutpostsWithS3(const ListOutpostsWithS3Request& request) const
 {
+  AWS_OPERATION_GUARD(ListOutpostsWithS3);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListOutpostsWithS3, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListOutpostsWithS3, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -202,6 +207,7 @@ ListOutpostsWithS3Outcome S3OutpostsClient::ListOutpostsWithS3(const ListOutpost
 
 ListSharedEndpointsOutcome S3OutpostsClient::ListSharedEndpoints(const ListSharedEndpointsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListSharedEndpoints);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSharedEndpoints, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.OutpostIdHasBeenSet())
   {

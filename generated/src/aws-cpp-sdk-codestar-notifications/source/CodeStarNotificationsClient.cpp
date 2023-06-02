@@ -142,6 +142,7 @@ CodeStarNotificationsClient::CodeStarNotificationsClient(const std::shared_ptr<A
     /* End of legacy constructors due deprecation */
 CodeStarNotificationsClient::~CodeStarNotificationsClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<CodeStarNotificationsEndpointProviderBase>& CodeStarNotificationsClient::accessEndpointProvider()
@@ -164,6 +165,7 @@ void CodeStarNotificationsClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CreateNotificationRuleOutcome CodeStarNotificationsClient::CreateNotificationRule(const CreateNotificationRuleRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateNotificationRule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateNotificationRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateNotificationRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -173,6 +175,7 @@ CreateNotificationRuleOutcome CodeStarNotificationsClient::CreateNotificationRul
 
 DeleteNotificationRuleOutcome CodeStarNotificationsClient::DeleteNotificationRule(const DeleteNotificationRuleRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteNotificationRule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteNotificationRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteNotificationRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -182,6 +185,7 @@ DeleteNotificationRuleOutcome CodeStarNotificationsClient::DeleteNotificationRul
 
 DeleteTargetOutcome CodeStarNotificationsClient::DeleteTarget(const DeleteTargetRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteTarget);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteTarget, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteTarget, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -191,6 +195,7 @@ DeleteTargetOutcome CodeStarNotificationsClient::DeleteTarget(const DeleteTarget
 
 DescribeNotificationRuleOutcome CodeStarNotificationsClient::DescribeNotificationRule(const DescribeNotificationRuleRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeNotificationRule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeNotificationRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeNotificationRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -200,6 +205,7 @@ DescribeNotificationRuleOutcome CodeStarNotificationsClient::DescribeNotificatio
 
 ListEventTypesOutcome CodeStarNotificationsClient::ListEventTypes(const ListEventTypesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListEventTypes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListEventTypes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListEventTypes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -209,6 +215,7 @@ ListEventTypesOutcome CodeStarNotificationsClient::ListEventTypes(const ListEven
 
 ListNotificationRulesOutcome CodeStarNotificationsClient::ListNotificationRules(const ListNotificationRulesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListNotificationRules);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListNotificationRules, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListNotificationRules, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -218,6 +225,7 @@ ListNotificationRulesOutcome CodeStarNotificationsClient::ListNotificationRules(
 
 ListTagsForResourceOutcome CodeStarNotificationsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -227,6 +235,7 @@ ListTagsForResourceOutcome CodeStarNotificationsClient::ListTagsForResource(cons
 
 ListTargetsOutcome CodeStarNotificationsClient::ListTargets(const ListTargetsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTargets);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTargets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTargets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -236,6 +245,7 @@ ListTargetsOutcome CodeStarNotificationsClient::ListTargets(const ListTargetsReq
 
 SubscribeOutcome CodeStarNotificationsClient::Subscribe(const SubscribeRequest& request) const
 {
+  AWS_OPERATION_GUARD(Subscribe);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, Subscribe, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, Subscribe, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -245,6 +255,7 @@ SubscribeOutcome CodeStarNotificationsClient::Subscribe(const SubscribeRequest& 
 
 TagResourceOutcome CodeStarNotificationsClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -254,6 +265,7 @@ TagResourceOutcome CodeStarNotificationsClient::TagResource(const TagResourceReq
 
 UnsubscribeOutcome CodeStarNotificationsClient::Unsubscribe(const UnsubscribeRequest& request) const
 {
+  AWS_OPERATION_GUARD(Unsubscribe);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, Unsubscribe, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, Unsubscribe, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -263,6 +275,7 @@ UnsubscribeOutcome CodeStarNotificationsClient::Unsubscribe(const UnsubscribeReq
 
 UntagResourceOutcome CodeStarNotificationsClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ArnHasBeenSet())
   {
@@ -283,6 +296,7 @@ UntagResourceOutcome CodeStarNotificationsClient::UntagResource(const UntagResou
 
 UpdateNotificationRuleOutcome CodeStarNotificationsClient::UpdateNotificationRule(const UpdateNotificationRuleRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateNotificationRule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateNotificationRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateNotificationRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

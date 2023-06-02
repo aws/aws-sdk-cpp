@@ -161,6 +161,7 @@ MainframeModernizationClient::MainframeModernizationClient(const std::shared_ptr
     /* End of legacy constructors due deprecation */
 MainframeModernizationClient::~MainframeModernizationClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<MainframeModernizationEndpointProviderBase>& MainframeModernizationClient::accessEndpointProvider()
@@ -183,6 +184,7 @@ void MainframeModernizationClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CancelBatchJobExecutionOutcome MainframeModernizationClient::CancelBatchJobExecution(const CancelBatchJobExecutionRequest& request) const
 {
+  AWS_OPERATION_GUARD(CancelBatchJobExecution);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CancelBatchJobExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -206,6 +208,7 @@ CancelBatchJobExecutionOutcome MainframeModernizationClient::CancelBatchJobExecu
 
 CreateApplicationOutcome MainframeModernizationClient::CreateApplication(const CreateApplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateApplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -215,6 +218,7 @@ CreateApplicationOutcome MainframeModernizationClient::CreateApplication(const C
 
 CreateDataSetImportTaskOutcome MainframeModernizationClient::CreateDataSetImportTask(const CreateDataSetImportTaskRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateDataSetImportTask);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDataSetImportTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -231,6 +235,7 @@ CreateDataSetImportTaskOutcome MainframeModernizationClient::CreateDataSetImport
 
 CreateDeploymentOutcome MainframeModernizationClient::CreateDeployment(const CreateDeploymentRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateDeployment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDeployment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -247,6 +252,7 @@ CreateDeploymentOutcome MainframeModernizationClient::CreateDeployment(const Cre
 
 CreateEnvironmentOutcome MainframeModernizationClient::CreateEnvironment(const CreateEnvironmentRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateEnvironment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateEnvironment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateEnvironment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -256,6 +262,7 @@ CreateEnvironmentOutcome MainframeModernizationClient::CreateEnvironment(const C
 
 DeleteApplicationOutcome MainframeModernizationClient::DeleteApplication(const DeleteApplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteApplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -271,6 +278,7 @@ DeleteApplicationOutcome MainframeModernizationClient::DeleteApplication(const D
 
 DeleteApplicationFromEnvironmentOutcome MainframeModernizationClient::DeleteApplicationFromEnvironment(const DeleteApplicationFromEnvironmentRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteApplicationFromEnvironment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteApplicationFromEnvironment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -293,6 +301,7 @@ DeleteApplicationFromEnvironmentOutcome MainframeModernizationClient::DeleteAppl
 
 DeleteEnvironmentOutcome MainframeModernizationClient::DeleteEnvironment(const DeleteEnvironmentRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteEnvironment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteEnvironment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.EnvironmentIdHasBeenSet())
   {
@@ -308,6 +317,7 @@ DeleteEnvironmentOutcome MainframeModernizationClient::DeleteEnvironment(const D
 
 GetApplicationOutcome MainframeModernizationClient::GetApplication(const GetApplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetApplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -323,6 +333,7 @@ GetApplicationOutcome MainframeModernizationClient::GetApplication(const GetAppl
 
 GetApplicationVersionOutcome MainframeModernizationClient::GetApplicationVersion(const GetApplicationVersionRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetApplicationVersion);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetApplicationVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -345,6 +356,7 @@ GetApplicationVersionOutcome MainframeModernizationClient::GetApplicationVersion
 
 GetBatchJobExecutionOutcome MainframeModernizationClient::GetBatchJobExecution(const GetBatchJobExecutionRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetBatchJobExecution);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBatchJobExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -367,6 +379,7 @@ GetBatchJobExecutionOutcome MainframeModernizationClient::GetBatchJobExecution(c
 
 GetDataSetDetailsOutcome MainframeModernizationClient::GetDataSetDetails(const GetDataSetDetailsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDataSetDetails);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDataSetDetails, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -389,6 +402,7 @@ GetDataSetDetailsOutcome MainframeModernizationClient::GetDataSetDetails(const G
 
 GetDataSetImportTaskOutcome MainframeModernizationClient::GetDataSetImportTask(const GetDataSetImportTaskRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDataSetImportTask);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDataSetImportTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -411,6 +425,7 @@ GetDataSetImportTaskOutcome MainframeModernizationClient::GetDataSetImportTask(c
 
 GetDeploymentOutcome MainframeModernizationClient::GetDeployment(const GetDeploymentRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDeployment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDeployment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -433,6 +448,7 @@ GetDeploymentOutcome MainframeModernizationClient::GetDeployment(const GetDeploy
 
 GetEnvironmentOutcome MainframeModernizationClient::GetEnvironment(const GetEnvironmentRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetEnvironment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetEnvironment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.EnvironmentIdHasBeenSet())
   {
@@ -448,6 +464,7 @@ GetEnvironmentOutcome MainframeModernizationClient::GetEnvironment(const GetEnvi
 
 ListApplicationVersionsOutcome MainframeModernizationClient::ListApplicationVersions(const ListApplicationVersionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListApplicationVersions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListApplicationVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -464,6 +481,7 @@ ListApplicationVersionsOutcome MainframeModernizationClient::ListApplicationVers
 
 ListApplicationsOutcome MainframeModernizationClient::ListApplications(const ListApplicationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListApplications);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListApplications, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListApplications, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -473,6 +491,7 @@ ListApplicationsOutcome MainframeModernizationClient::ListApplications(const Lis
 
 ListBatchJobDefinitionsOutcome MainframeModernizationClient::ListBatchJobDefinitions(const ListBatchJobDefinitionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListBatchJobDefinitions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListBatchJobDefinitions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -489,6 +508,7 @@ ListBatchJobDefinitionsOutcome MainframeModernizationClient::ListBatchJobDefinit
 
 ListBatchJobExecutionsOutcome MainframeModernizationClient::ListBatchJobExecutions(const ListBatchJobExecutionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListBatchJobExecutions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListBatchJobExecutions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -505,6 +525,7 @@ ListBatchJobExecutionsOutcome MainframeModernizationClient::ListBatchJobExecutio
 
 ListDataSetImportHistoryOutcome MainframeModernizationClient::ListDataSetImportHistory(const ListDataSetImportHistoryRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDataSetImportHistory);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDataSetImportHistory, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -521,6 +542,7 @@ ListDataSetImportHistoryOutcome MainframeModernizationClient::ListDataSetImportH
 
 ListDataSetsOutcome MainframeModernizationClient::ListDataSets(const ListDataSetsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDataSets);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDataSets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -537,6 +559,7 @@ ListDataSetsOutcome MainframeModernizationClient::ListDataSets(const ListDataSet
 
 ListDeploymentsOutcome MainframeModernizationClient::ListDeployments(const ListDeploymentsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDeployments);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDeployments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -553,6 +576,7 @@ ListDeploymentsOutcome MainframeModernizationClient::ListDeployments(const ListD
 
 ListEngineVersionsOutcome MainframeModernizationClient::ListEngineVersions(const ListEngineVersionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListEngineVersions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListEngineVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListEngineVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -562,6 +586,7 @@ ListEngineVersionsOutcome MainframeModernizationClient::ListEngineVersions(const
 
 ListEnvironmentsOutcome MainframeModernizationClient::ListEnvironments(const ListEnvironmentsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListEnvironments);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListEnvironments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListEnvironments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -571,6 +596,7 @@ ListEnvironmentsOutcome MainframeModernizationClient::ListEnvironments(const Lis
 
 ListTagsForResourceOutcome MainframeModernizationClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -586,6 +612,7 @@ ListTagsForResourceOutcome MainframeModernizationClient::ListTagsForResource(con
 
 StartApplicationOutcome MainframeModernizationClient::StartApplication(const StartApplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartApplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -602,6 +629,7 @@ StartApplicationOutcome MainframeModernizationClient::StartApplication(const Sta
 
 StartBatchJobOutcome MainframeModernizationClient::StartBatchJob(const StartBatchJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartBatchJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartBatchJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -618,6 +646,7 @@ StartBatchJobOutcome MainframeModernizationClient::StartBatchJob(const StartBatc
 
 StopApplicationOutcome MainframeModernizationClient::StopApplication(const StopApplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(StopApplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -634,6 +663,7 @@ StopApplicationOutcome MainframeModernizationClient::StopApplication(const StopA
 
 TagResourceOutcome MainframeModernizationClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -649,6 +679,7 @@ TagResourceOutcome MainframeModernizationClient::TagResource(const TagResourceRe
 
 UntagResourceOutcome MainframeModernizationClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -669,6 +700,7 @@ UntagResourceOutcome MainframeModernizationClient::UntagResource(const UntagReso
 
 UpdateApplicationOutcome MainframeModernizationClient::UpdateApplication(const UpdateApplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateApplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -684,6 +716,7 @@ UpdateApplicationOutcome MainframeModernizationClient::UpdateApplication(const U
 
 UpdateEnvironmentOutcome MainframeModernizationClient::UpdateEnvironment(const UpdateEnvironmentRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateEnvironment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateEnvironment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.EnvironmentIdHasBeenSet())
   {

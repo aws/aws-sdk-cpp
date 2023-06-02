@@ -135,6 +135,7 @@ ApplicationCostProfilerClient::ApplicationCostProfilerClient(const std::shared_p
     /* End of legacy constructors due deprecation */
 ApplicationCostProfilerClient::~ApplicationCostProfilerClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<ApplicationCostProfilerEndpointProviderBase>& ApplicationCostProfilerClient::accessEndpointProvider()
@@ -157,6 +158,7 @@ void ApplicationCostProfilerClient::OverrideEndpoint(const Aws::String& endpoint
 
 DeleteReportDefinitionOutcome ApplicationCostProfilerClient::DeleteReportDefinition(const DeleteReportDefinitionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteReportDefinition);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteReportDefinition, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ReportIdHasBeenSet())
   {
@@ -172,6 +174,7 @@ DeleteReportDefinitionOutcome ApplicationCostProfilerClient::DeleteReportDefinit
 
 GetReportDefinitionOutcome ApplicationCostProfilerClient::GetReportDefinition(const GetReportDefinitionRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetReportDefinition);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetReportDefinition, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ReportIdHasBeenSet())
   {
@@ -187,6 +190,7 @@ GetReportDefinitionOutcome ApplicationCostProfilerClient::GetReportDefinition(co
 
 ImportApplicationUsageOutcome ApplicationCostProfilerClient::ImportApplicationUsage(const ImportApplicationUsageRequest& request) const
 {
+  AWS_OPERATION_GUARD(ImportApplicationUsage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ImportApplicationUsage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ImportApplicationUsage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -196,6 +200,7 @@ ImportApplicationUsageOutcome ApplicationCostProfilerClient::ImportApplicationUs
 
 ListReportDefinitionsOutcome ApplicationCostProfilerClient::ListReportDefinitions(const ListReportDefinitionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListReportDefinitions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListReportDefinitions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListReportDefinitions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -205,6 +210,7 @@ ListReportDefinitionsOutcome ApplicationCostProfilerClient::ListReportDefinition
 
 PutReportDefinitionOutcome ApplicationCostProfilerClient::PutReportDefinition(const PutReportDefinitionRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutReportDefinition);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutReportDefinition, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutReportDefinition, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -214,6 +220,7 @@ PutReportDefinitionOutcome ApplicationCostProfilerClient::PutReportDefinition(co
 
 UpdateReportDefinitionOutcome ApplicationCostProfilerClient::UpdateReportDefinition(const UpdateReportDefinitionRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateReportDefinition);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateReportDefinition, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ReportIdHasBeenSet())
   {

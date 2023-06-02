@@ -137,6 +137,7 @@ ResourceGroupsTaggingAPIClient::ResourceGroupsTaggingAPIClient(const std::shared
     /* End of legacy constructors due deprecation */
 ResourceGroupsTaggingAPIClient::~ResourceGroupsTaggingAPIClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<ResourceGroupsTaggingAPIEndpointProviderBase>& ResourceGroupsTaggingAPIClient::accessEndpointProvider()
@@ -159,6 +160,7 @@ void ResourceGroupsTaggingAPIClient::OverrideEndpoint(const Aws::String& endpoin
 
 DescribeReportCreationOutcome ResourceGroupsTaggingAPIClient::DescribeReportCreation(const DescribeReportCreationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeReportCreation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeReportCreation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeReportCreation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -167,6 +169,7 @@ DescribeReportCreationOutcome ResourceGroupsTaggingAPIClient::DescribeReportCrea
 
 GetComplianceSummaryOutcome ResourceGroupsTaggingAPIClient::GetComplianceSummary(const GetComplianceSummaryRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetComplianceSummary);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetComplianceSummary, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetComplianceSummary, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -175,6 +178,7 @@ GetComplianceSummaryOutcome ResourceGroupsTaggingAPIClient::GetComplianceSummary
 
 GetResourcesOutcome ResourceGroupsTaggingAPIClient::GetResources(const GetResourcesRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetResources);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetResources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetResources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -183,6 +187,7 @@ GetResourcesOutcome ResourceGroupsTaggingAPIClient::GetResources(const GetResour
 
 GetTagKeysOutcome ResourceGroupsTaggingAPIClient::GetTagKeys(const GetTagKeysRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetTagKeys);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetTagKeys, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetTagKeys, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -191,6 +196,7 @@ GetTagKeysOutcome ResourceGroupsTaggingAPIClient::GetTagKeys(const GetTagKeysReq
 
 GetTagValuesOutcome ResourceGroupsTaggingAPIClient::GetTagValues(const GetTagValuesRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetTagValues);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetTagValues, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetTagValues, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -199,6 +205,7 @@ GetTagValuesOutcome ResourceGroupsTaggingAPIClient::GetTagValues(const GetTagVal
 
 StartReportCreationOutcome ResourceGroupsTaggingAPIClient::StartReportCreation(const StartReportCreationRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartReportCreation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartReportCreation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartReportCreation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -207,6 +214,7 @@ StartReportCreationOutcome ResourceGroupsTaggingAPIClient::StartReportCreation(c
 
 TagResourcesOutcome ResourceGroupsTaggingAPIClient::TagResources(const TagResourcesRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResources);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TagResources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -215,6 +223,7 @@ TagResourcesOutcome ResourceGroupsTaggingAPIClient::TagResources(const TagResour
 
 UntagResourcesOutcome ResourceGroupsTaggingAPIClient::UntagResources(const UntagResourcesRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResources);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UntagResources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

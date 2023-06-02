@@ -216,6 +216,7 @@ SESV2Client::SESV2Client(const std::shared_ptr<AWSCredentialsProvider>& credenti
     /* End of legacy constructors due deprecation */
 SESV2Client::~SESV2Client()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<SESV2EndpointProviderBase>& SESV2Client::accessEndpointProvider()
@@ -238,6 +239,7 @@ void SESV2Client::OverrideEndpoint(const Aws::String& endpoint)
 
 BatchGetMetricDataOutcome SESV2Client::BatchGetMetricData(const BatchGetMetricDataRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchGetMetricData);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchGetMetricData, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchGetMetricData, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -247,6 +249,7 @@ BatchGetMetricDataOutcome SESV2Client::BatchGetMetricData(const BatchGetMetricDa
 
 CreateConfigurationSetOutcome SESV2Client::CreateConfigurationSet(const CreateConfigurationSetRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateConfigurationSet);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateConfigurationSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateConfigurationSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -256,6 +259,7 @@ CreateConfigurationSetOutcome SESV2Client::CreateConfigurationSet(const CreateCo
 
 CreateConfigurationSetEventDestinationOutcome SESV2Client::CreateConfigurationSetEventDestination(const CreateConfigurationSetEventDestinationRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateConfigurationSetEventDestination);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateConfigurationSetEventDestination, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConfigurationSetNameHasBeenSet())
   {
@@ -272,6 +276,7 @@ CreateConfigurationSetEventDestinationOutcome SESV2Client::CreateConfigurationSe
 
 CreateContactOutcome SESV2Client::CreateContact(const CreateContactRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateContact);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateContact, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ContactListNameHasBeenSet())
   {
@@ -288,6 +293,7 @@ CreateContactOutcome SESV2Client::CreateContact(const CreateContactRequest& requ
 
 CreateContactListOutcome SESV2Client::CreateContactList(const CreateContactListRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateContactList);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateContactList, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateContactList, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -297,6 +303,7 @@ CreateContactListOutcome SESV2Client::CreateContactList(const CreateContactListR
 
 CreateCustomVerificationEmailTemplateOutcome SESV2Client::CreateCustomVerificationEmailTemplate(const CreateCustomVerificationEmailTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateCustomVerificationEmailTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateCustomVerificationEmailTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateCustomVerificationEmailTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -306,6 +313,7 @@ CreateCustomVerificationEmailTemplateOutcome SESV2Client::CreateCustomVerificati
 
 CreateDedicatedIpPoolOutcome SESV2Client::CreateDedicatedIpPool(const CreateDedicatedIpPoolRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateDedicatedIpPool);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDedicatedIpPool, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateDedicatedIpPool, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -315,6 +323,7 @@ CreateDedicatedIpPoolOutcome SESV2Client::CreateDedicatedIpPool(const CreateDedi
 
 CreateDeliverabilityTestReportOutcome SESV2Client::CreateDeliverabilityTestReport(const CreateDeliverabilityTestReportRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateDeliverabilityTestReport);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDeliverabilityTestReport, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateDeliverabilityTestReport, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -324,6 +333,7 @@ CreateDeliverabilityTestReportOutcome SESV2Client::CreateDeliverabilityTestRepor
 
 CreateEmailIdentityOutcome SESV2Client::CreateEmailIdentity(const CreateEmailIdentityRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateEmailIdentity);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateEmailIdentity, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateEmailIdentity, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -333,6 +343,7 @@ CreateEmailIdentityOutcome SESV2Client::CreateEmailIdentity(const CreateEmailIde
 
 CreateEmailIdentityPolicyOutcome SESV2Client::CreateEmailIdentityPolicy(const CreateEmailIdentityPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateEmailIdentityPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateEmailIdentityPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.EmailIdentityHasBeenSet())
   {
@@ -355,6 +366,7 @@ CreateEmailIdentityPolicyOutcome SESV2Client::CreateEmailIdentityPolicy(const Cr
 
 CreateEmailTemplateOutcome SESV2Client::CreateEmailTemplate(const CreateEmailTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateEmailTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateEmailTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateEmailTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -364,6 +376,7 @@ CreateEmailTemplateOutcome SESV2Client::CreateEmailTemplate(const CreateEmailTem
 
 CreateImportJobOutcome SESV2Client::CreateImportJob(const CreateImportJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateImportJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateImportJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateImportJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -373,6 +386,7 @@ CreateImportJobOutcome SESV2Client::CreateImportJob(const CreateImportJobRequest
 
 DeleteConfigurationSetOutcome SESV2Client::DeleteConfigurationSet(const DeleteConfigurationSetRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteConfigurationSet);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteConfigurationSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConfigurationSetNameHasBeenSet())
   {
@@ -388,6 +402,7 @@ DeleteConfigurationSetOutcome SESV2Client::DeleteConfigurationSet(const DeleteCo
 
 DeleteConfigurationSetEventDestinationOutcome SESV2Client::DeleteConfigurationSetEventDestination(const DeleteConfigurationSetEventDestinationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteConfigurationSetEventDestination);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteConfigurationSetEventDestination, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConfigurationSetNameHasBeenSet())
   {
@@ -410,6 +425,7 @@ DeleteConfigurationSetEventDestinationOutcome SESV2Client::DeleteConfigurationSe
 
 DeleteContactOutcome SESV2Client::DeleteContact(const DeleteContactRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteContact);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteContact, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ContactListNameHasBeenSet())
   {
@@ -432,6 +448,7 @@ DeleteContactOutcome SESV2Client::DeleteContact(const DeleteContactRequest& requ
 
 DeleteContactListOutcome SESV2Client::DeleteContactList(const DeleteContactListRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteContactList);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteContactList, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ContactListNameHasBeenSet())
   {
@@ -447,6 +464,7 @@ DeleteContactListOutcome SESV2Client::DeleteContactList(const DeleteContactListR
 
 DeleteCustomVerificationEmailTemplateOutcome SESV2Client::DeleteCustomVerificationEmailTemplate(const DeleteCustomVerificationEmailTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteCustomVerificationEmailTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteCustomVerificationEmailTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TemplateNameHasBeenSet())
   {
@@ -462,6 +480,7 @@ DeleteCustomVerificationEmailTemplateOutcome SESV2Client::DeleteCustomVerificati
 
 DeleteDedicatedIpPoolOutcome SESV2Client::DeleteDedicatedIpPool(const DeleteDedicatedIpPoolRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteDedicatedIpPool);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDedicatedIpPool, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PoolNameHasBeenSet())
   {
@@ -477,6 +496,7 @@ DeleteDedicatedIpPoolOutcome SESV2Client::DeleteDedicatedIpPool(const DeleteDedi
 
 DeleteEmailIdentityOutcome SESV2Client::DeleteEmailIdentity(const DeleteEmailIdentityRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteEmailIdentity);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteEmailIdentity, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.EmailIdentityHasBeenSet())
   {
@@ -492,6 +512,7 @@ DeleteEmailIdentityOutcome SESV2Client::DeleteEmailIdentity(const DeleteEmailIde
 
 DeleteEmailIdentityPolicyOutcome SESV2Client::DeleteEmailIdentityPolicy(const DeleteEmailIdentityPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteEmailIdentityPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteEmailIdentityPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.EmailIdentityHasBeenSet())
   {
@@ -514,6 +535,7 @@ DeleteEmailIdentityPolicyOutcome SESV2Client::DeleteEmailIdentityPolicy(const De
 
 DeleteEmailTemplateOutcome SESV2Client::DeleteEmailTemplate(const DeleteEmailTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteEmailTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteEmailTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TemplateNameHasBeenSet())
   {
@@ -529,6 +551,7 @@ DeleteEmailTemplateOutcome SESV2Client::DeleteEmailTemplate(const DeleteEmailTem
 
 DeleteSuppressedDestinationOutcome SESV2Client::DeleteSuppressedDestination(const DeleteSuppressedDestinationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteSuppressedDestination);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteSuppressedDestination, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.EmailAddressHasBeenSet())
   {
@@ -544,6 +567,7 @@ DeleteSuppressedDestinationOutcome SESV2Client::DeleteSuppressedDestination(cons
 
 GetAccountOutcome SESV2Client::GetAccount(const GetAccountRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetAccount);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAccount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetAccount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -553,6 +577,7 @@ GetAccountOutcome SESV2Client::GetAccount(const GetAccountRequest& request) cons
 
 GetBlacklistReportsOutcome SESV2Client::GetBlacklistReports(const GetBlacklistReportsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetBlacklistReports);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBlacklistReports, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BlacklistItemNamesHasBeenSet())
   {
@@ -567,6 +592,7 @@ GetBlacklistReportsOutcome SESV2Client::GetBlacklistReports(const GetBlacklistRe
 
 GetConfigurationSetOutcome SESV2Client::GetConfigurationSet(const GetConfigurationSetRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetConfigurationSet);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetConfigurationSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConfigurationSetNameHasBeenSet())
   {
@@ -582,6 +608,7 @@ GetConfigurationSetOutcome SESV2Client::GetConfigurationSet(const GetConfigurati
 
 GetConfigurationSetEventDestinationsOutcome SESV2Client::GetConfigurationSetEventDestinations(const GetConfigurationSetEventDestinationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetConfigurationSetEventDestinations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetConfigurationSetEventDestinations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConfigurationSetNameHasBeenSet())
   {
@@ -598,6 +625,7 @@ GetConfigurationSetEventDestinationsOutcome SESV2Client::GetConfigurationSetEven
 
 GetContactOutcome SESV2Client::GetContact(const GetContactRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetContact);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetContact, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ContactListNameHasBeenSet())
   {
@@ -620,6 +648,7 @@ GetContactOutcome SESV2Client::GetContact(const GetContactRequest& request) cons
 
 GetContactListOutcome SESV2Client::GetContactList(const GetContactListRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetContactList);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetContactList, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ContactListNameHasBeenSet())
   {
@@ -635,6 +664,7 @@ GetContactListOutcome SESV2Client::GetContactList(const GetContactListRequest& r
 
 GetCustomVerificationEmailTemplateOutcome SESV2Client::GetCustomVerificationEmailTemplate(const GetCustomVerificationEmailTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetCustomVerificationEmailTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCustomVerificationEmailTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TemplateNameHasBeenSet())
   {
@@ -650,6 +680,7 @@ GetCustomVerificationEmailTemplateOutcome SESV2Client::GetCustomVerificationEmai
 
 GetDedicatedIpOutcome SESV2Client::GetDedicatedIp(const GetDedicatedIpRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDedicatedIp);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDedicatedIp, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IpHasBeenSet())
   {
@@ -665,6 +696,7 @@ GetDedicatedIpOutcome SESV2Client::GetDedicatedIp(const GetDedicatedIpRequest& r
 
 GetDedicatedIpPoolOutcome SESV2Client::GetDedicatedIpPool(const GetDedicatedIpPoolRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDedicatedIpPool);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDedicatedIpPool, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PoolNameHasBeenSet())
   {
@@ -680,6 +712,7 @@ GetDedicatedIpPoolOutcome SESV2Client::GetDedicatedIpPool(const GetDedicatedIpPo
 
 GetDedicatedIpsOutcome SESV2Client::GetDedicatedIps(const GetDedicatedIpsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDedicatedIps);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDedicatedIps, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetDedicatedIps, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -689,6 +722,7 @@ GetDedicatedIpsOutcome SESV2Client::GetDedicatedIps(const GetDedicatedIpsRequest
 
 GetDeliverabilityDashboardOptionsOutcome SESV2Client::GetDeliverabilityDashboardOptions(const GetDeliverabilityDashboardOptionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDeliverabilityDashboardOptions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDeliverabilityDashboardOptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetDeliverabilityDashboardOptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -698,6 +732,7 @@ GetDeliverabilityDashboardOptionsOutcome SESV2Client::GetDeliverabilityDashboard
 
 GetDeliverabilityTestReportOutcome SESV2Client::GetDeliverabilityTestReport(const GetDeliverabilityTestReportRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDeliverabilityTestReport);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDeliverabilityTestReport, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ReportIdHasBeenSet())
   {
@@ -713,6 +748,7 @@ GetDeliverabilityTestReportOutcome SESV2Client::GetDeliverabilityTestReport(cons
 
 GetDomainDeliverabilityCampaignOutcome SESV2Client::GetDomainDeliverabilityCampaign(const GetDomainDeliverabilityCampaignRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDomainDeliverabilityCampaign);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDomainDeliverabilityCampaign, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CampaignIdHasBeenSet())
   {
@@ -728,6 +764,7 @@ GetDomainDeliverabilityCampaignOutcome SESV2Client::GetDomainDeliverabilityCampa
 
 GetDomainStatisticsReportOutcome SESV2Client::GetDomainStatisticsReport(const GetDomainStatisticsReportRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDomainStatisticsReport);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDomainStatisticsReport, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainHasBeenSet())
   {
@@ -753,6 +790,7 @@ GetDomainStatisticsReportOutcome SESV2Client::GetDomainStatisticsReport(const Ge
 
 GetEmailIdentityOutcome SESV2Client::GetEmailIdentity(const GetEmailIdentityRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetEmailIdentity);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetEmailIdentity, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.EmailIdentityHasBeenSet())
   {
@@ -768,6 +806,7 @@ GetEmailIdentityOutcome SESV2Client::GetEmailIdentity(const GetEmailIdentityRequ
 
 GetEmailIdentityPoliciesOutcome SESV2Client::GetEmailIdentityPolicies(const GetEmailIdentityPoliciesRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetEmailIdentityPolicies);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetEmailIdentityPolicies, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.EmailIdentityHasBeenSet())
   {
@@ -784,6 +823,7 @@ GetEmailIdentityPoliciesOutcome SESV2Client::GetEmailIdentityPolicies(const GetE
 
 GetEmailTemplateOutcome SESV2Client::GetEmailTemplate(const GetEmailTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetEmailTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetEmailTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TemplateNameHasBeenSet())
   {
@@ -799,6 +839,7 @@ GetEmailTemplateOutcome SESV2Client::GetEmailTemplate(const GetEmailTemplateRequ
 
 GetImportJobOutcome SESV2Client::GetImportJob(const GetImportJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetImportJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetImportJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.JobIdHasBeenSet())
   {
@@ -814,6 +855,7 @@ GetImportJobOutcome SESV2Client::GetImportJob(const GetImportJobRequest& request
 
 GetSuppressedDestinationOutcome SESV2Client::GetSuppressedDestination(const GetSuppressedDestinationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSuppressedDestination);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSuppressedDestination, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.EmailAddressHasBeenSet())
   {
@@ -829,6 +871,7 @@ GetSuppressedDestinationOutcome SESV2Client::GetSuppressedDestination(const GetS
 
 ListConfigurationSetsOutcome SESV2Client::ListConfigurationSets(const ListConfigurationSetsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListConfigurationSets);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListConfigurationSets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListConfigurationSets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -838,6 +881,7 @@ ListConfigurationSetsOutcome SESV2Client::ListConfigurationSets(const ListConfig
 
 ListContactListsOutcome SESV2Client::ListContactLists(const ListContactListsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListContactLists);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListContactLists, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListContactLists, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -847,6 +891,7 @@ ListContactListsOutcome SESV2Client::ListContactLists(const ListContactListsRequ
 
 ListContactsOutcome SESV2Client::ListContacts(const ListContactsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListContacts);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListContacts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ContactListNameHasBeenSet())
   {
@@ -863,6 +908,7 @@ ListContactsOutcome SESV2Client::ListContacts(const ListContactsRequest& request
 
 ListCustomVerificationEmailTemplatesOutcome SESV2Client::ListCustomVerificationEmailTemplates(const ListCustomVerificationEmailTemplatesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListCustomVerificationEmailTemplates);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListCustomVerificationEmailTemplates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListCustomVerificationEmailTemplates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -872,6 +918,7 @@ ListCustomVerificationEmailTemplatesOutcome SESV2Client::ListCustomVerificationE
 
 ListDedicatedIpPoolsOutcome SESV2Client::ListDedicatedIpPools(const ListDedicatedIpPoolsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDedicatedIpPools);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDedicatedIpPools, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDedicatedIpPools, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -881,6 +928,7 @@ ListDedicatedIpPoolsOutcome SESV2Client::ListDedicatedIpPools(const ListDedicate
 
 ListDeliverabilityTestReportsOutcome SESV2Client::ListDeliverabilityTestReports(const ListDeliverabilityTestReportsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDeliverabilityTestReports);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDeliverabilityTestReports, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDeliverabilityTestReports, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -890,6 +938,7 @@ ListDeliverabilityTestReportsOutcome SESV2Client::ListDeliverabilityTestReports(
 
 ListDomainDeliverabilityCampaignsOutcome SESV2Client::ListDomainDeliverabilityCampaigns(const ListDomainDeliverabilityCampaignsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDomainDeliverabilityCampaigns);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDomainDeliverabilityCampaigns, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StartDateHasBeenSet())
   {
@@ -916,6 +965,7 @@ ListDomainDeliverabilityCampaignsOutcome SESV2Client::ListDomainDeliverabilityCa
 
 ListEmailIdentitiesOutcome SESV2Client::ListEmailIdentities(const ListEmailIdentitiesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListEmailIdentities);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListEmailIdentities, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListEmailIdentities, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -925,6 +975,7 @@ ListEmailIdentitiesOutcome SESV2Client::ListEmailIdentities(const ListEmailIdent
 
 ListEmailTemplatesOutcome SESV2Client::ListEmailTemplates(const ListEmailTemplatesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListEmailTemplates);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListEmailTemplates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListEmailTemplates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -934,6 +985,7 @@ ListEmailTemplatesOutcome SESV2Client::ListEmailTemplates(const ListEmailTemplat
 
 ListImportJobsOutcome SESV2Client::ListImportJobs(const ListImportJobsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListImportJobs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListImportJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListImportJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -943,6 +995,7 @@ ListImportJobsOutcome SESV2Client::ListImportJobs(const ListImportJobsRequest& r
 
 ListRecommendationsOutcome SESV2Client::ListRecommendations(const ListRecommendationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListRecommendations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRecommendations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListRecommendations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -952,6 +1005,7 @@ ListRecommendationsOutcome SESV2Client::ListRecommendations(const ListRecommenda
 
 ListSuppressedDestinationsOutcome SESV2Client::ListSuppressedDestinations(const ListSuppressedDestinationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListSuppressedDestinations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSuppressedDestinations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListSuppressedDestinations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -961,6 +1015,7 @@ ListSuppressedDestinationsOutcome SESV2Client::ListSuppressedDestinations(const 
 
 ListTagsForResourceOutcome SESV2Client::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -975,6 +1030,7 @@ ListTagsForResourceOutcome SESV2Client::ListTagsForResource(const ListTagsForRes
 
 PutAccountDedicatedIpWarmupAttributesOutcome SESV2Client::PutAccountDedicatedIpWarmupAttributes(const PutAccountDedicatedIpWarmupAttributesRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutAccountDedicatedIpWarmupAttributes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutAccountDedicatedIpWarmupAttributes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutAccountDedicatedIpWarmupAttributes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -984,6 +1040,7 @@ PutAccountDedicatedIpWarmupAttributesOutcome SESV2Client::PutAccountDedicatedIpW
 
 PutAccountDetailsOutcome SESV2Client::PutAccountDetails(const PutAccountDetailsRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutAccountDetails);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutAccountDetails, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutAccountDetails, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -993,6 +1050,7 @@ PutAccountDetailsOutcome SESV2Client::PutAccountDetails(const PutAccountDetailsR
 
 PutAccountSendingAttributesOutcome SESV2Client::PutAccountSendingAttributes(const PutAccountSendingAttributesRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutAccountSendingAttributes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutAccountSendingAttributes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutAccountSendingAttributes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1002,6 +1060,7 @@ PutAccountSendingAttributesOutcome SESV2Client::PutAccountSendingAttributes(cons
 
 PutAccountSuppressionAttributesOutcome SESV2Client::PutAccountSuppressionAttributes(const PutAccountSuppressionAttributesRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutAccountSuppressionAttributes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutAccountSuppressionAttributes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutAccountSuppressionAttributes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1011,6 +1070,7 @@ PutAccountSuppressionAttributesOutcome SESV2Client::PutAccountSuppressionAttribu
 
 PutAccountVdmAttributesOutcome SESV2Client::PutAccountVdmAttributes(const PutAccountVdmAttributesRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutAccountVdmAttributes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutAccountVdmAttributes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutAccountVdmAttributes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1020,6 +1080,7 @@ PutAccountVdmAttributesOutcome SESV2Client::PutAccountVdmAttributes(const PutAcc
 
 PutConfigurationSetDeliveryOptionsOutcome SESV2Client::PutConfigurationSetDeliveryOptions(const PutConfigurationSetDeliveryOptionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutConfigurationSetDeliveryOptions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutConfigurationSetDeliveryOptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConfigurationSetNameHasBeenSet())
   {
@@ -1036,6 +1097,7 @@ PutConfigurationSetDeliveryOptionsOutcome SESV2Client::PutConfigurationSetDelive
 
 PutConfigurationSetReputationOptionsOutcome SESV2Client::PutConfigurationSetReputationOptions(const PutConfigurationSetReputationOptionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutConfigurationSetReputationOptions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutConfigurationSetReputationOptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConfigurationSetNameHasBeenSet())
   {
@@ -1052,6 +1114,7 @@ PutConfigurationSetReputationOptionsOutcome SESV2Client::PutConfigurationSetRepu
 
 PutConfigurationSetSendingOptionsOutcome SESV2Client::PutConfigurationSetSendingOptions(const PutConfigurationSetSendingOptionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutConfigurationSetSendingOptions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutConfigurationSetSendingOptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConfigurationSetNameHasBeenSet())
   {
@@ -1068,6 +1131,7 @@ PutConfigurationSetSendingOptionsOutcome SESV2Client::PutConfigurationSetSending
 
 PutConfigurationSetSuppressionOptionsOutcome SESV2Client::PutConfigurationSetSuppressionOptions(const PutConfigurationSetSuppressionOptionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutConfigurationSetSuppressionOptions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutConfigurationSetSuppressionOptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConfigurationSetNameHasBeenSet())
   {
@@ -1084,6 +1148,7 @@ PutConfigurationSetSuppressionOptionsOutcome SESV2Client::PutConfigurationSetSup
 
 PutConfigurationSetTrackingOptionsOutcome SESV2Client::PutConfigurationSetTrackingOptions(const PutConfigurationSetTrackingOptionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutConfigurationSetTrackingOptions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutConfigurationSetTrackingOptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConfigurationSetNameHasBeenSet())
   {
@@ -1100,6 +1165,7 @@ PutConfigurationSetTrackingOptionsOutcome SESV2Client::PutConfigurationSetTracki
 
 PutConfigurationSetVdmOptionsOutcome SESV2Client::PutConfigurationSetVdmOptions(const PutConfigurationSetVdmOptionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutConfigurationSetVdmOptions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutConfigurationSetVdmOptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConfigurationSetNameHasBeenSet())
   {
@@ -1116,6 +1182,7 @@ PutConfigurationSetVdmOptionsOutcome SESV2Client::PutConfigurationSetVdmOptions(
 
 PutDedicatedIpInPoolOutcome SESV2Client::PutDedicatedIpInPool(const PutDedicatedIpInPoolRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutDedicatedIpInPool);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutDedicatedIpInPool, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IpHasBeenSet())
   {
@@ -1132,6 +1199,7 @@ PutDedicatedIpInPoolOutcome SESV2Client::PutDedicatedIpInPool(const PutDedicated
 
 PutDedicatedIpPoolScalingAttributesOutcome SESV2Client::PutDedicatedIpPoolScalingAttributes(const PutDedicatedIpPoolScalingAttributesRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutDedicatedIpPoolScalingAttributes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutDedicatedIpPoolScalingAttributes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PoolNameHasBeenSet())
   {
@@ -1148,6 +1216,7 @@ PutDedicatedIpPoolScalingAttributesOutcome SESV2Client::PutDedicatedIpPoolScalin
 
 PutDedicatedIpWarmupAttributesOutcome SESV2Client::PutDedicatedIpWarmupAttributes(const PutDedicatedIpWarmupAttributesRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutDedicatedIpWarmupAttributes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutDedicatedIpWarmupAttributes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IpHasBeenSet())
   {
@@ -1164,6 +1233,7 @@ PutDedicatedIpWarmupAttributesOutcome SESV2Client::PutDedicatedIpWarmupAttribute
 
 PutDeliverabilityDashboardOptionOutcome SESV2Client::PutDeliverabilityDashboardOption(const PutDeliverabilityDashboardOptionRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutDeliverabilityDashboardOption);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutDeliverabilityDashboardOption, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutDeliverabilityDashboardOption, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1173,6 +1243,7 @@ PutDeliverabilityDashboardOptionOutcome SESV2Client::PutDeliverabilityDashboardO
 
 PutEmailIdentityConfigurationSetAttributesOutcome SESV2Client::PutEmailIdentityConfigurationSetAttributes(const PutEmailIdentityConfigurationSetAttributesRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutEmailIdentityConfigurationSetAttributes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutEmailIdentityConfigurationSetAttributes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.EmailIdentityHasBeenSet())
   {
@@ -1189,6 +1260,7 @@ PutEmailIdentityConfigurationSetAttributesOutcome SESV2Client::PutEmailIdentityC
 
 PutEmailIdentityDkimAttributesOutcome SESV2Client::PutEmailIdentityDkimAttributes(const PutEmailIdentityDkimAttributesRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutEmailIdentityDkimAttributes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutEmailIdentityDkimAttributes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.EmailIdentityHasBeenSet())
   {
@@ -1205,6 +1277,7 @@ PutEmailIdentityDkimAttributesOutcome SESV2Client::PutEmailIdentityDkimAttribute
 
 PutEmailIdentityDkimSigningAttributesOutcome SESV2Client::PutEmailIdentityDkimSigningAttributes(const PutEmailIdentityDkimSigningAttributesRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutEmailIdentityDkimSigningAttributes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutEmailIdentityDkimSigningAttributes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.EmailIdentityHasBeenSet())
   {
@@ -1221,6 +1294,7 @@ PutEmailIdentityDkimSigningAttributesOutcome SESV2Client::PutEmailIdentityDkimSi
 
 PutEmailIdentityFeedbackAttributesOutcome SESV2Client::PutEmailIdentityFeedbackAttributes(const PutEmailIdentityFeedbackAttributesRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutEmailIdentityFeedbackAttributes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutEmailIdentityFeedbackAttributes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.EmailIdentityHasBeenSet())
   {
@@ -1237,6 +1311,7 @@ PutEmailIdentityFeedbackAttributesOutcome SESV2Client::PutEmailIdentityFeedbackA
 
 PutEmailIdentityMailFromAttributesOutcome SESV2Client::PutEmailIdentityMailFromAttributes(const PutEmailIdentityMailFromAttributesRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutEmailIdentityMailFromAttributes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutEmailIdentityMailFromAttributes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.EmailIdentityHasBeenSet())
   {
@@ -1253,6 +1328,7 @@ PutEmailIdentityMailFromAttributesOutcome SESV2Client::PutEmailIdentityMailFromA
 
 PutSuppressedDestinationOutcome SESV2Client::PutSuppressedDestination(const PutSuppressedDestinationRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutSuppressedDestination);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutSuppressedDestination, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutSuppressedDestination, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1262,6 +1338,7 @@ PutSuppressedDestinationOutcome SESV2Client::PutSuppressedDestination(const PutS
 
 SendBulkEmailOutcome SESV2Client::SendBulkEmail(const SendBulkEmailRequest& request) const
 {
+  AWS_OPERATION_GUARD(SendBulkEmail);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SendBulkEmail, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SendBulkEmail, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1271,6 +1348,7 @@ SendBulkEmailOutcome SESV2Client::SendBulkEmail(const SendBulkEmailRequest& requ
 
 SendCustomVerificationEmailOutcome SESV2Client::SendCustomVerificationEmail(const SendCustomVerificationEmailRequest& request) const
 {
+  AWS_OPERATION_GUARD(SendCustomVerificationEmail);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SendCustomVerificationEmail, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SendCustomVerificationEmail, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1280,6 +1358,7 @@ SendCustomVerificationEmailOutcome SESV2Client::SendCustomVerificationEmail(cons
 
 SendEmailOutcome SESV2Client::SendEmail(const SendEmailRequest& request) const
 {
+  AWS_OPERATION_GUARD(SendEmail);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SendEmail, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SendEmail, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1289,6 +1368,7 @@ SendEmailOutcome SESV2Client::SendEmail(const SendEmailRequest& request) const
 
 TagResourceOutcome SESV2Client::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1298,6 +1378,7 @@ TagResourceOutcome SESV2Client::TagResource(const TagResourceRequest& request) c
 
 TestRenderEmailTemplateOutcome SESV2Client::TestRenderEmailTemplate(const TestRenderEmailTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(TestRenderEmailTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TestRenderEmailTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TemplateNameHasBeenSet())
   {
@@ -1314,6 +1395,7 @@ TestRenderEmailTemplateOutcome SESV2Client::TestRenderEmailTemplate(const TestRe
 
 UntagResourceOutcome SESV2Client::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -1333,6 +1415,7 @@ UntagResourceOutcome SESV2Client::UntagResource(const UntagResourceRequest& requ
 
 UpdateConfigurationSetEventDestinationOutcome SESV2Client::UpdateConfigurationSetEventDestination(const UpdateConfigurationSetEventDestinationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateConfigurationSetEventDestination);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateConfigurationSetEventDestination, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConfigurationSetNameHasBeenSet())
   {
@@ -1355,6 +1438,7 @@ UpdateConfigurationSetEventDestinationOutcome SESV2Client::UpdateConfigurationSe
 
 UpdateContactOutcome SESV2Client::UpdateContact(const UpdateContactRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateContact);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateContact, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ContactListNameHasBeenSet())
   {
@@ -1377,6 +1461,7 @@ UpdateContactOutcome SESV2Client::UpdateContact(const UpdateContactRequest& requ
 
 UpdateContactListOutcome SESV2Client::UpdateContactList(const UpdateContactListRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateContactList);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateContactList, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ContactListNameHasBeenSet())
   {
@@ -1392,6 +1477,7 @@ UpdateContactListOutcome SESV2Client::UpdateContactList(const UpdateContactListR
 
 UpdateCustomVerificationEmailTemplateOutcome SESV2Client::UpdateCustomVerificationEmailTemplate(const UpdateCustomVerificationEmailTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateCustomVerificationEmailTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateCustomVerificationEmailTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TemplateNameHasBeenSet())
   {
@@ -1407,6 +1493,7 @@ UpdateCustomVerificationEmailTemplateOutcome SESV2Client::UpdateCustomVerificati
 
 UpdateEmailIdentityPolicyOutcome SESV2Client::UpdateEmailIdentityPolicy(const UpdateEmailIdentityPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateEmailIdentityPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateEmailIdentityPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.EmailIdentityHasBeenSet())
   {
@@ -1429,6 +1516,7 @@ UpdateEmailIdentityPolicyOutcome SESV2Client::UpdateEmailIdentityPolicy(const Up
 
 UpdateEmailTemplateOutcome SESV2Client::UpdateEmailTemplate(const UpdateEmailTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateEmailTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateEmailTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TemplateNameHasBeenSet())
   {

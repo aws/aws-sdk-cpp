@@ -244,17 +244,17 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the trail exists in one region or in all regions.</p>
+     * <p>Specifies whether the trail exists in one Region or in all Regions.</p>
      */
     inline bool GetIsMultiRegionTrail() const{ return m_isMultiRegionTrail; }
 
     /**
-     * <p>Specifies whether the trail exists in one region or in all regions.</p>
+     * <p>Specifies whether the trail exists in one Region or in all Regions.</p>
      */
     inline void SetIsMultiRegionTrail(bool value) { m_isMultiRegionTrail = value; }
 
     /**
-     * <p>Specifies whether the trail exists in one region or in all regions.</p>
+     * <p>Specifies whether the trail exists in one Region or in all Regions.</p>
      */
     inline CreateTrailResult& WithIsMultiRegionTrail(bool value) { SetIsMultiRegionTrail(value); return *this;}
 

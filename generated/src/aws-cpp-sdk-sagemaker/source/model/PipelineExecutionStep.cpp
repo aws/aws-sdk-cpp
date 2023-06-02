@@ -30,7 +30,8 @@ PipelineExecutionStep::PipelineExecutionStep() :
     m_attemptCount(0),
     m_attemptCountHasBeenSet(false),
     m_failureReasonHasBeenSet(false),
-    m_metadataHasBeenSet(false)
+    m_metadataHasBeenSet(false),
+    m_selectiveExecutionResultHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,8 @@ PipelineExecutionStep::PipelineExecutionStep(JsonView jsonValue) :
     m_attemptCount(0),
     m_attemptCountHasBeenSet(false),
     m_failureReasonHasBeenSet(false),
-    m_metadataHasBeenSet(false)
+    m_metadataHasBeenSet(false),
+    m_selectiveExecutionResultHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -123,6 +125,13 @@ PipelineExecutionStep& PipelineExecutionStep::operator =(JsonView jsonValue)
     m_metadataHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SelectiveExecutionResult"))
+  {
+    m_selectiveExecutionResult = jsonValue.GetObject("SelectiveExecutionResult");
+
+    m_selectiveExecutionResultHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -184,6 +193,12 @@ JsonValue PipelineExecutionStep::Jsonize() const
   if(m_metadataHasBeenSet)
   {
    payload.WithObject("Metadata", m_metadata.Jsonize());
+
+  }
+
+  if(m_selectiveExecutionResultHasBeenSet)
+  {
+   payload.WithObject("SelectiveExecutionResult", m_selectiveExecutionResult.Jsonize());
 
   }
 

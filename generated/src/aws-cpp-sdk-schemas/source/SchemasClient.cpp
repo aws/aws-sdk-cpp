@@ -160,6 +160,7 @@ SchemasClient::SchemasClient(const std::shared_ptr<AWSCredentialsProvider>& cred
     /* End of legacy constructors due deprecation */
 SchemasClient::~SchemasClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<SchemasEndpointProviderBase>& SchemasClient::accessEndpointProvider()
@@ -182,6 +183,7 @@ void SchemasClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CreateDiscovererOutcome SchemasClient::CreateDiscoverer(const CreateDiscovererRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateDiscoverer);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDiscoverer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateDiscoverer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -191,6 +193,7 @@ CreateDiscovererOutcome SchemasClient::CreateDiscoverer(const CreateDiscovererRe
 
 CreateRegistryOutcome SchemasClient::CreateRegistry(const CreateRegistryRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateRegistry);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateRegistry, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RegistryNameHasBeenSet())
   {
@@ -206,6 +209,7 @@ CreateRegistryOutcome SchemasClient::CreateRegistry(const CreateRegistryRequest&
 
 CreateSchemaOutcome SchemasClient::CreateSchema(const CreateSchemaRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateSchema);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateSchema, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RegistryNameHasBeenSet())
   {
@@ -228,6 +232,7 @@ CreateSchemaOutcome SchemasClient::CreateSchema(const CreateSchemaRequest& reque
 
 DeleteDiscovererOutcome SchemasClient::DeleteDiscoverer(const DeleteDiscovererRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteDiscoverer);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDiscoverer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DiscovererIdHasBeenSet())
   {
@@ -243,6 +248,7 @@ DeleteDiscovererOutcome SchemasClient::DeleteDiscoverer(const DeleteDiscovererRe
 
 DeleteRegistryOutcome SchemasClient::DeleteRegistry(const DeleteRegistryRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteRegistry);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteRegistry, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RegistryNameHasBeenSet())
   {
@@ -258,6 +264,7 @@ DeleteRegistryOutcome SchemasClient::DeleteRegistry(const DeleteRegistryRequest&
 
 DeleteResourcePolicyOutcome SchemasClient::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteResourcePolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -267,6 +274,7 @@ DeleteResourcePolicyOutcome SchemasClient::DeleteResourcePolicy(const DeleteReso
 
 DeleteSchemaOutcome SchemasClient::DeleteSchema(const DeleteSchemaRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteSchema);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteSchema, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RegistryNameHasBeenSet())
   {
@@ -289,6 +297,7 @@ DeleteSchemaOutcome SchemasClient::DeleteSchema(const DeleteSchemaRequest& reque
 
 DeleteSchemaVersionOutcome SchemasClient::DeleteSchemaVersion(const DeleteSchemaVersionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteSchemaVersion);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteSchemaVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RegistryNameHasBeenSet())
   {
@@ -318,6 +327,7 @@ DeleteSchemaVersionOutcome SchemasClient::DeleteSchemaVersion(const DeleteSchema
 
 DescribeCodeBindingOutcome SchemasClient::DescribeCodeBinding(const DescribeCodeBindingRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeCodeBinding);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeCodeBinding, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LanguageHasBeenSet())
   {
@@ -347,6 +357,7 @@ DescribeCodeBindingOutcome SchemasClient::DescribeCodeBinding(const DescribeCode
 
 DescribeDiscovererOutcome SchemasClient::DescribeDiscoverer(const DescribeDiscovererRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeDiscoverer);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeDiscoverer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DiscovererIdHasBeenSet())
   {
@@ -362,6 +373,7 @@ DescribeDiscovererOutcome SchemasClient::DescribeDiscoverer(const DescribeDiscov
 
 DescribeRegistryOutcome SchemasClient::DescribeRegistry(const DescribeRegistryRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeRegistry);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeRegistry, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RegistryNameHasBeenSet())
   {
@@ -377,6 +389,7 @@ DescribeRegistryOutcome SchemasClient::DescribeRegistry(const DescribeRegistryRe
 
 DescribeSchemaOutcome SchemasClient::DescribeSchema(const DescribeSchemaRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeSchema);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeSchema, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RegistryNameHasBeenSet())
   {
@@ -399,6 +412,7 @@ DescribeSchemaOutcome SchemasClient::DescribeSchema(const DescribeSchemaRequest&
 
 ExportSchemaOutcome SchemasClient::ExportSchema(const ExportSchemaRequest& request) const
 {
+  AWS_OPERATION_GUARD(ExportSchema);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ExportSchema, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RegistryNameHasBeenSet())
   {
@@ -427,6 +441,7 @@ ExportSchemaOutcome SchemasClient::ExportSchema(const ExportSchemaRequest& reque
 
 GetCodeBindingSourceOutcome SchemasClient::GetCodeBindingSource(const GetCodeBindingSourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetCodeBindingSource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCodeBindingSource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LanguageHasBeenSet())
   {
@@ -457,6 +472,7 @@ GetCodeBindingSourceOutcome SchemasClient::GetCodeBindingSource(const GetCodeBin
 
 GetDiscoveredSchemaOutcome SchemasClient::GetDiscoveredSchema(const GetDiscoveredSchemaRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDiscoveredSchema);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDiscoveredSchema, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetDiscoveredSchema, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -466,6 +482,7 @@ GetDiscoveredSchemaOutcome SchemasClient::GetDiscoveredSchema(const GetDiscovere
 
 GetResourcePolicyOutcome SchemasClient::GetResourcePolicy(const GetResourcePolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetResourcePolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -475,6 +492,7 @@ GetResourcePolicyOutcome SchemasClient::GetResourcePolicy(const GetResourcePolic
 
 ListDiscoverersOutcome SchemasClient::ListDiscoverers(const ListDiscoverersRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDiscoverers);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDiscoverers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDiscoverers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -484,6 +502,7 @@ ListDiscoverersOutcome SchemasClient::ListDiscoverers(const ListDiscoverersReque
 
 ListRegistriesOutcome SchemasClient::ListRegistries(const ListRegistriesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListRegistries);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRegistries, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListRegistries, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -493,6 +512,7 @@ ListRegistriesOutcome SchemasClient::ListRegistries(const ListRegistriesRequest&
 
 ListSchemaVersionsOutcome SchemasClient::ListSchemaVersions(const ListSchemaVersionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListSchemaVersions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSchemaVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RegistryNameHasBeenSet())
   {
@@ -516,6 +536,7 @@ ListSchemaVersionsOutcome SchemasClient::ListSchemaVersions(const ListSchemaVers
 
 ListSchemasOutcome SchemasClient::ListSchemas(const ListSchemasRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListSchemas);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSchemas, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RegistryNameHasBeenSet())
   {
@@ -532,6 +553,7 @@ ListSchemasOutcome SchemasClient::ListSchemas(const ListSchemasRequest& request)
 
 ListTagsForResourceOutcome SchemasClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -547,6 +569,7 @@ ListTagsForResourceOutcome SchemasClient::ListTagsForResource(const ListTagsForR
 
 PutCodeBindingOutcome SchemasClient::PutCodeBinding(const PutCodeBindingRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutCodeBinding);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutCodeBinding, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LanguageHasBeenSet())
   {
@@ -576,6 +599,7 @@ PutCodeBindingOutcome SchemasClient::PutCodeBinding(const PutCodeBindingRequest&
 
 PutResourcePolicyOutcome SchemasClient::PutResourcePolicy(const PutResourcePolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutResourcePolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -585,6 +609,7 @@ PutResourcePolicyOutcome SchemasClient::PutResourcePolicy(const PutResourcePolic
 
 SearchSchemasOutcome SchemasClient::SearchSchemas(const SearchSchemasRequest& request) const
 {
+  AWS_OPERATION_GUARD(SearchSchemas);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SearchSchemas, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.KeywordsHasBeenSet())
   {
@@ -606,6 +631,7 @@ SearchSchemasOutcome SchemasClient::SearchSchemas(const SearchSchemasRequest& re
 
 StartDiscovererOutcome SchemasClient::StartDiscoverer(const StartDiscovererRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartDiscoverer);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartDiscoverer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DiscovererIdHasBeenSet())
   {
@@ -622,6 +648,7 @@ StartDiscovererOutcome SchemasClient::StartDiscoverer(const StartDiscovererReque
 
 StopDiscovererOutcome SchemasClient::StopDiscoverer(const StopDiscovererRequest& request) const
 {
+  AWS_OPERATION_GUARD(StopDiscoverer);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopDiscoverer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DiscovererIdHasBeenSet())
   {
@@ -638,6 +665,7 @@ StopDiscovererOutcome SchemasClient::StopDiscoverer(const StopDiscovererRequest&
 
 TagResourceOutcome SchemasClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -653,6 +681,7 @@ TagResourceOutcome SchemasClient::TagResource(const TagResourceRequest& request)
 
 UntagResourceOutcome SchemasClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -673,6 +702,7 @@ UntagResourceOutcome SchemasClient::UntagResource(const UntagResourceRequest& re
 
 UpdateDiscovererOutcome SchemasClient::UpdateDiscoverer(const UpdateDiscovererRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateDiscoverer);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDiscoverer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DiscovererIdHasBeenSet())
   {
@@ -688,6 +718,7 @@ UpdateDiscovererOutcome SchemasClient::UpdateDiscoverer(const UpdateDiscovererRe
 
 UpdateRegistryOutcome SchemasClient::UpdateRegistry(const UpdateRegistryRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateRegistry);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateRegistry, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RegistryNameHasBeenSet())
   {
@@ -703,6 +734,7 @@ UpdateRegistryOutcome SchemasClient::UpdateRegistry(const UpdateRegistryRequest&
 
 UpdateSchemaOutcome SchemasClient::UpdateSchema(const UpdateSchemaRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateSchema);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateSchema, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RegistryNameHasBeenSet())
   {

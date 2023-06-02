@@ -189,6 +189,7 @@ AppSyncClient::AppSyncClient(const std::shared_ptr<AWSCredentialsProvider>& cred
     /* End of legacy constructors due deprecation */
 AppSyncClient::~AppSyncClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<AppSyncEndpointProviderBase>& AppSyncClient::accessEndpointProvider()
@@ -211,6 +212,7 @@ void AppSyncClient::OverrideEndpoint(const Aws::String& endpoint)
 
 AssociateApiOutcome AppSyncClient::AssociateApi(const AssociateApiRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociateApi);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateApi, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainNameHasBeenSet())
   {
@@ -227,6 +229,7 @@ AssociateApiOutcome AppSyncClient::AssociateApi(const AssociateApiRequest& reque
 
 AssociateMergedGraphqlApiOutcome AppSyncClient::AssociateMergedGraphqlApi(const AssociateMergedGraphqlApiRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociateMergedGraphqlApi);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateMergedGraphqlApi, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SourceApiIdentifierHasBeenSet())
   {
@@ -243,6 +246,7 @@ AssociateMergedGraphqlApiOutcome AppSyncClient::AssociateMergedGraphqlApi(const 
 
 AssociateSourceGraphqlApiOutcome AppSyncClient::AssociateSourceGraphqlApi(const AssociateSourceGraphqlApiRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociateSourceGraphqlApi);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateSourceGraphqlApi, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MergedApiIdentifierHasBeenSet())
   {
@@ -259,6 +263,7 @@ AssociateSourceGraphqlApiOutcome AppSyncClient::AssociateSourceGraphqlApi(const 
 
 CreateApiCacheOutcome AppSyncClient::CreateApiCache(const CreateApiCacheRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateApiCache);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateApiCache, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -275,6 +280,7 @@ CreateApiCacheOutcome AppSyncClient::CreateApiCache(const CreateApiCacheRequest&
 
 CreateApiKeyOutcome AppSyncClient::CreateApiKey(const CreateApiKeyRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateApiKey);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateApiKey, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -291,6 +297,7 @@ CreateApiKeyOutcome AppSyncClient::CreateApiKey(const CreateApiKeyRequest& reque
 
 CreateDataSourceOutcome AppSyncClient::CreateDataSource(const CreateDataSourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateDataSource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDataSource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -307,6 +314,7 @@ CreateDataSourceOutcome AppSyncClient::CreateDataSource(const CreateDataSourceRe
 
 CreateDomainNameOutcome AppSyncClient::CreateDomainName(const CreateDomainNameRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateDomainName);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDomainName, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateDomainName, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -316,6 +324,7 @@ CreateDomainNameOutcome AppSyncClient::CreateDomainName(const CreateDomainNameRe
 
 CreateFunctionOutcome AppSyncClient::CreateFunction(const CreateFunctionRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateFunction);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateFunction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -332,6 +341,7 @@ CreateFunctionOutcome AppSyncClient::CreateFunction(const CreateFunctionRequest&
 
 CreateGraphqlApiOutcome AppSyncClient::CreateGraphqlApi(const CreateGraphqlApiRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateGraphqlApi);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateGraphqlApi, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateGraphqlApi, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -341,6 +351,7 @@ CreateGraphqlApiOutcome AppSyncClient::CreateGraphqlApi(const CreateGraphqlApiRe
 
 CreateResolverOutcome AppSyncClient::CreateResolver(const CreateResolverRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateResolver);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateResolver, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -364,6 +375,7 @@ CreateResolverOutcome AppSyncClient::CreateResolver(const CreateResolverRequest&
 
 CreateTypeOutcome AppSyncClient::CreateType(const CreateTypeRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateType);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateType, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -380,6 +392,7 @@ CreateTypeOutcome AppSyncClient::CreateType(const CreateTypeRequest& request) co
 
 DeleteApiCacheOutcome AppSyncClient::DeleteApiCache(const DeleteApiCacheRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteApiCache);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteApiCache, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -396,6 +409,7 @@ DeleteApiCacheOutcome AppSyncClient::DeleteApiCache(const DeleteApiCacheRequest&
 
 DeleteApiKeyOutcome AppSyncClient::DeleteApiKey(const DeleteApiKeyRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteApiKey);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteApiKey, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -418,6 +432,7 @@ DeleteApiKeyOutcome AppSyncClient::DeleteApiKey(const DeleteApiKeyRequest& reque
 
 DeleteDataSourceOutcome AppSyncClient::DeleteDataSource(const DeleteDataSourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteDataSource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDataSource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -440,6 +455,7 @@ DeleteDataSourceOutcome AppSyncClient::DeleteDataSource(const DeleteDataSourceRe
 
 DeleteDomainNameOutcome AppSyncClient::DeleteDomainName(const DeleteDomainNameRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteDomainName);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDomainName, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainNameHasBeenSet())
   {
@@ -455,6 +471,7 @@ DeleteDomainNameOutcome AppSyncClient::DeleteDomainName(const DeleteDomainNameRe
 
 DeleteFunctionOutcome AppSyncClient::DeleteFunction(const DeleteFunctionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteFunction);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteFunction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -477,6 +494,7 @@ DeleteFunctionOutcome AppSyncClient::DeleteFunction(const DeleteFunctionRequest&
 
 DeleteGraphqlApiOutcome AppSyncClient::DeleteGraphqlApi(const DeleteGraphqlApiRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteGraphqlApi);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteGraphqlApi, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -492,6 +510,7 @@ DeleteGraphqlApiOutcome AppSyncClient::DeleteGraphqlApi(const DeleteGraphqlApiRe
 
 DeleteResolverOutcome AppSyncClient::DeleteResolver(const DeleteResolverRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteResolver);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteResolver, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -521,6 +540,7 @@ DeleteResolverOutcome AppSyncClient::DeleteResolver(const DeleteResolverRequest&
 
 DeleteTypeOutcome AppSyncClient::DeleteType(const DeleteTypeRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteType);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteType, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -543,6 +563,7 @@ DeleteTypeOutcome AppSyncClient::DeleteType(const DeleteTypeRequest& request) co
 
 DisassociateApiOutcome AppSyncClient::DisassociateApi(const DisassociateApiRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociateApi);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateApi, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainNameHasBeenSet())
   {
@@ -559,6 +580,7 @@ DisassociateApiOutcome AppSyncClient::DisassociateApi(const DisassociateApiReque
 
 DisassociateMergedGraphqlApiOutcome AppSyncClient::DisassociateMergedGraphqlApi(const DisassociateMergedGraphqlApiRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociateMergedGraphqlApi);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateMergedGraphqlApi, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SourceApiIdentifierHasBeenSet())
   {
@@ -581,6 +603,7 @@ DisassociateMergedGraphqlApiOutcome AppSyncClient::DisassociateMergedGraphqlApi(
 
 DisassociateSourceGraphqlApiOutcome AppSyncClient::DisassociateSourceGraphqlApi(const DisassociateSourceGraphqlApiRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociateSourceGraphqlApi);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateSourceGraphqlApi, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MergedApiIdentifierHasBeenSet())
   {
@@ -603,6 +626,7 @@ DisassociateSourceGraphqlApiOutcome AppSyncClient::DisassociateSourceGraphqlApi(
 
 EvaluateCodeOutcome AppSyncClient::EvaluateCode(const EvaluateCodeRequest& request) const
 {
+  AWS_OPERATION_GUARD(EvaluateCode);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, EvaluateCode, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, EvaluateCode, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -612,6 +636,7 @@ EvaluateCodeOutcome AppSyncClient::EvaluateCode(const EvaluateCodeRequest& reque
 
 EvaluateMappingTemplateOutcome AppSyncClient::EvaluateMappingTemplate(const EvaluateMappingTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(EvaluateMappingTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, EvaluateMappingTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, EvaluateMappingTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -621,6 +646,7 @@ EvaluateMappingTemplateOutcome AppSyncClient::EvaluateMappingTemplate(const Eval
 
 FlushApiCacheOutcome AppSyncClient::FlushApiCache(const FlushApiCacheRequest& request) const
 {
+  AWS_OPERATION_GUARD(FlushApiCache);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, FlushApiCache, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -637,6 +663,7 @@ FlushApiCacheOutcome AppSyncClient::FlushApiCache(const FlushApiCacheRequest& re
 
 GetApiAssociationOutcome AppSyncClient::GetApiAssociation(const GetApiAssociationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetApiAssociation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetApiAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainNameHasBeenSet())
   {
@@ -653,6 +680,7 @@ GetApiAssociationOutcome AppSyncClient::GetApiAssociation(const GetApiAssociatio
 
 GetApiCacheOutcome AppSyncClient::GetApiCache(const GetApiCacheRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetApiCache);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetApiCache, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -669,6 +697,7 @@ GetApiCacheOutcome AppSyncClient::GetApiCache(const GetApiCacheRequest& request)
 
 GetDataSourceOutcome AppSyncClient::GetDataSource(const GetDataSourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDataSource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDataSource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -691,6 +720,7 @@ GetDataSourceOutcome AppSyncClient::GetDataSource(const GetDataSourceRequest& re
 
 GetDomainNameOutcome AppSyncClient::GetDomainName(const GetDomainNameRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDomainName);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDomainName, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainNameHasBeenSet())
   {
@@ -706,6 +736,7 @@ GetDomainNameOutcome AppSyncClient::GetDomainName(const GetDomainNameRequest& re
 
 GetFunctionOutcome AppSyncClient::GetFunction(const GetFunctionRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetFunction);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetFunction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -728,6 +759,7 @@ GetFunctionOutcome AppSyncClient::GetFunction(const GetFunctionRequest& request)
 
 GetGraphqlApiOutcome AppSyncClient::GetGraphqlApi(const GetGraphqlApiRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetGraphqlApi);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetGraphqlApi, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -743,6 +775,7 @@ GetGraphqlApiOutcome AppSyncClient::GetGraphqlApi(const GetGraphqlApiRequest& re
 
 GetIntrospectionSchemaOutcome AppSyncClient::GetIntrospectionSchema(const GetIntrospectionSchemaRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetIntrospectionSchema);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetIntrospectionSchema, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -764,6 +797,7 @@ GetIntrospectionSchemaOutcome AppSyncClient::GetIntrospectionSchema(const GetInt
 
 GetResolverOutcome AppSyncClient::GetResolver(const GetResolverRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetResolver);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetResolver, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -793,6 +827,7 @@ GetResolverOutcome AppSyncClient::GetResolver(const GetResolverRequest& request)
 
 GetSchemaCreationStatusOutcome AppSyncClient::GetSchemaCreationStatus(const GetSchemaCreationStatusRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSchemaCreationStatus);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSchemaCreationStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -809,6 +844,7 @@ GetSchemaCreationStatusOutcome AppSyncClient::GetSchemaCreationStatus(const GetS
 
 GetSourceApiAssociationOutcome AppSyncClient::GetSourceApiAssociation(const GetSourceApiAssociationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSourceApiAssociation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSourceApiAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MergedApiIdentifierHasBeenSet())
   {
@@ -831,6 +867,7 @@ GetSourceApiAssociationOutcome AppSyncClient::GetSourceApiAssociation(const GetS
 
 GetTypeOutcome AppSyncClient::GetType(const GetTypeRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetType);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetType, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -858,6 +895,7 @@ GetTypeOutcome AppSyncClient::GetType(const GetTypeRequest& request) const
 
 ListApiKeysOutcome AppSyncClient::ListApiKeys(const ListApiKeysRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListApiKeys);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListApiKeys, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -874,6 +912,7 @@ ListApiKeysOutcome AppSyncClient::ListApiKeys(const ListApiKeysRequest& request)
 
 ListDataSourcesOutcome AppSyncClient::ListDataSources(const ListDataSourcesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDataSources);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDataSources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -890,6 +929,7 @@ ListDataSourcesOutcome AppSyncClient::ListDataSources(const ListDataSourcesReque
 
 ListDomainNamesOutcome AppSyncClient::ListDomainNames(const ListDomainNamesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDomainNames);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDomainNames, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDomainNames, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -899,6 +939,7 @@ ListDomainNamesOutcome AppSyncClient::ListDomainNames(const ListDomainNamesReque
 
 ListFunctionsOutcome AppSyncClient::ListFunctions(const ListFunctionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListFunctions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListFunctions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -915,6 +956,7 @@ ListFunctionsOutcome AppSyncClient::ListFunctions(const ListFunctionsRequest& re
 
 ListGraphqlApisOutcome AppSyncClient::ListGraphqlApis(const ListGraphqlApisRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListGraphqlApis);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListGraphqlApis, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListGraphqlApis, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -924,6 +966,7 @@ ListGraphqlApisOutcome AppSyncClient::ListGraphqlApis(const ListGraphqlApisReque
 
 ListResolversOutcome AppSyncClient::ListResolvers(const ListResolversRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListResolvers);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListResolvers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -947,6 +990,7 @@ ListResolversOutcome AppSyncClient::ListResolvers(const ListResolversRequest& re
 
 ListResolversByFunctionOutcome AppSyncClient::ListResolversByFunction(const ListResolversByFunctionRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListResolversByFunction);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListResolversByFunction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -970,6 +1014,7 @@ ListResolversByFunctionOutcome AppSyncClient::ListResolversByFunction(const List
 
 ListSourceApiAssociationsOutcome AppSyncClient::ListSourceApiAssociations(const ListSourceApiAssociationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListSourceApiAssociations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSourceApiAssociations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -986,6 +1031,7 @@ ListSourceApiAssociationsOutcome AppSyncClient::ListSourceApiAssociations(const 
 
 ListTagsForResourceOutcome AppSyncClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -1001,6 +1047,7 @@ ListTagsForResourceOutcome AppSyncClient::ListTagsForResource(const ListTagsForR
 
 ListTypesOutcome AppSyncClient::ListTypes(const ListTypesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTypes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTypes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -1022,6 +1069,7 @@ ListTypesOutcome AppSyncClient::ListTypes(const ListTypesRequest& request) const
 
 ListTypesByAssociationOutcome AppSyncClient::ListTypesByAssociation(const ListTypesByAssociationRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTypesByAssociation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTypesByAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MergedApiIdentifierHasBeenSet())
   {
@@ -1050,6 +1098,7 @@ ListTypesByAssociationOutcome AppSyncClient::ListTypesByAssociation(const ListTy
 
 StartSchemaCreationOutcome AppSyncClient::StartSchemaCreation(const StartSchemaCreationRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartSchemaCreation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartSchemaCreation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -1066,6 +1115,7 @@ StartSchemaCreationOutcome AppSyncClient::StartSchemaCreation(const StartSchemaC
 
 StartSchemaMergeOutcome AppSyncClient::StartSchemaMerge(const StartSchemaMergeRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartSchemaMerge);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartSchemaMerge, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssociationIdHasBeenSet())
   {
@@ -1089,6 +1139,7 @@ StartSchemaMergeOutcome AppSyncClient::StartSchemaMerge(const StartSchemaMergeRe
 
 TagResourceOutcome AppSyncClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -1104,6 +1155,7 @@ TagResourceOutcome AppSyncClient::TagResource(const TagResourceRequest& request)
 
 UntagResourceOutcome AppSyncClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -1124,6 +1176,7 @@ UntagResourceOutcome AppSyncClient::UntagResource(const UntagResourceRequest& re
 
 UpdateApiCacheOutcome AppSyncClient::UpdateApiCache(const UpdateApiCacheRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateApiCache);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateApiCache, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -1140,6 +1193,7 @@ UpdateApiCacheOutcome AppSyncClient::UpdateApiCache(const UpdateApiCacheRequest&
 
 UpdateApiKeyOutcome AppSyncClient::UpdateApiKey(const UpdateApiKeyRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateApiKey);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateApiKey, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -1162,6 +1216,7 @@ UpdateApiKeyOutcome AppSyncClient::UpdateApiKey(const UpdateApiKeyRequest& reque
 
 UpdateDataSourceOutcome AppSyncClient::UpdateDataSource(const UpdateDataSourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateDataSource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDataSource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -1184,6 +1239,7 @@ UpdateDataSourceOutcome AppSyncClient::UpdateDataSource(const UpdateDataSourceRe
 
 UpdateDomainNameOutcome AppSyncClient::UpdateDomainName(const UpdateDomainNameRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateDomainName);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDomainName, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainNameHasBeenSet())
   {
@@ -1199,6 +1255,7 @@ UpdateDomainNameOutcome AppSyncClient::UpdateDomainName(const UpdateDomainNameRe
 
 UpdateFunctionOutcome AppSyncClient::UpdateFunction(const UpdateFunctionRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateFunction);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateFunction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -1221,6 +1278,7 @@ UpdateFunctionOutcome AppSyncClient::UpdateFunction(const UpdateFunctionRequest&
 
 UpdateGraphqlApiOutcome AppSyncClient::UpdateGraphqlApi(const UpdateGraphqlApiRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateGraphqlApi);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateGraphqlApi, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -1236,6 +1294,7 @@ UpdateGraphqlApiOutcome AppSyncClient::UpdateGraphqlApi(const UpdateGraphqlApiRe
 
 UpdateResolverOutcome AppSyncClient::UpdateResolver(const UpdateResolverRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateResolver);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateResolver, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {
@@ -1265,6 +1324,7 @@ UpdateResolverOutcome AppSyncClient::UpdateResolver(const UpdateResolverRequest&
 
 UpdateSourceApiAssociationOutcome AppSyncClient::UpdateSourceApiAssociation(const UpdateSourceApiAssociationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateSourceApiAssociation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateSourceApiAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssociationIdHasBeenSet())
   {
@@ -1287,6 +1347,7 @@ UpdateSourceApiAssociationOutcome AppSyncClient::UpdateSourceApiAssociation(cons
 
 UpdateTypeOutcome AppSyncClient::UpdateType(const UpdateTypeRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateType);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateType, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiIdHasBeenSet())
   {

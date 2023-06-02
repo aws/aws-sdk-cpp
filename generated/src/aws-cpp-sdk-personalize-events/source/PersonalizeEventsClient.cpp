@@ -132,6 +132,7 @@ PersonalizeEventsClient::PersonalizeEventsClient(const std::shared_ptr<AWSCreden
     /* End of legacy constructors due deprecation */
 PersonalizeEventsClient::~PersonalizeEventsClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<PersonalizeEventsEndpointProviderBase>& PersonalizeEventsClient::accessEndpointProvider()
@@ -154,6 +155,7 @@ void PersonalizeEventsClient::OverrideEndpoint(const Aws::String& endpoint)
 
 PutEventsOutcome PersonalizeEventsClient::PutEvents(const PutEventsRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutEvents);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutEvents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutEvents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -163,6 +165,7 @@ PutEventsOutcome PersonalizeEventsClient::PutEvents(const PutEventsRequest& requ
 
 PutItemsOutcome PersonalizeEventsClient::PutItems(const PutItemsRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutItems);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutItems, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutItems, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -172,6 +175,7 @@ PutItemsOutcome PersonalizeEventsClient::PutItems(const PutItemsRequest& request
 
 PutUsersOutcome PersonalizeEventsClient::PutUsers(const PutUsersRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutUsers);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutUsers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutUsers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

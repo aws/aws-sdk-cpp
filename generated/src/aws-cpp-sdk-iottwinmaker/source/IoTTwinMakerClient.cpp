@@ -163,6 +163,7 @@ IoTTwinMakerClient::IoTTwinMakerClient(const std::shared_ptr<AWSCredentialsProvi
     /* End of legacy constructors due deprecation */
 IoTTwinMakerClient::~IoTTwinMakerClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<IoTTwinMakerEndpointProviderBase>& IoTTwinMakerClient::accessEndpointProvider()
@@ -185,6 +186,7 @@ void IoTTwinMakerClient::OverrideEndpoint(const Aws::String& endpoint)
 
 BatchPutPropertyValuesOutcome IoTTwinMakerClient::BatchPutPropertyValues(const BatchPutPropertyValuesRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchPutPropertyValues);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchPutPropertyValues, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkspaceIdHasBeenSet())
   {
@@ -203,6 +205,7 @@ BatchPutPropertyValuesOutcome IoTTwinMakerClient::BatchPutPropertyValues(const B
 
 CreateComponentTypeOutcome IoTTwinMakerClient::CreateComponentType(const CreateComponentTypeRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateComponentType);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateComponentType, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkspaceIdHasBeenSet())
   {
@@ -227,6 +230,7 @@ CreateComponentTypeOutcome IoTTwinMakerClient::CreateComponentType(const CreateC
 
 CreateEntityOutcome IoTTwinMakerClient::CreateEntity(const CreateEntityRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateEntity);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateEntity, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkspaceIdHasBeenSet())
   {
@@ -245,6 +249,7 @@ CreateEntityOutcome IoTTwinMakerClient::CreateEntity(const CreateEntityRequest& 
 
 CreateSceneOutcome IoTTwinMakerClient::CreateScene(const CreateSceneRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateScene);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateScene, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkspaceIdHasBeenSet())
   {
@@ -263,6 +268,7 @@ CreateSceneOutcome IoTTwinMakerClient::CreateScene(const CreateSceneRequest& req
 
 CreateSyncJobOutcome IoTTwinMakerClient::CreateSyncJob(const CreateSyncJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateSyncJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateSyncJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkspaceIdHasBeenSet())
   {
@@ -287,6 +293,7 @@ CreateSyncJobOutcome IoTTwinMakerClient::CreateSyncJob(const CreateSyncJobReques
 
 CreateWorkspaceOutcome IoTTwinMakerClient::CreateWorkspace(const CreateWorkspaceRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateWorkspace);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateWorkspace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkspaceIdHasBeenSet())
   {
@@ -304,6 +311,7 @@ CreateWorkspaceOutcome IoTTwinMakerClient::CreateWorkspace(const CreateWorkspace
 
 DeleteComponentTypeOutcome IoTTwinMakerClient::DeleteComponentType(const DeleteComponentTypeRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteComponentType);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteComponentType, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkspaceIdHasBeenSet())
   {
@@ -328,6 +336,7 @@ DeleteComponentTypeOutcome IoTTwinMakerClient::DeleteComponentType(const DeleteC
 
 DeleteEntityOutcome IoTTwinMakerClient::DeleteEntity(const DeleteEntityRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteEntity);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteEntity, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkspaceIdHasBeenSet())
   {
@@ -352,6 +361,7 @@ DeleteEntityOutcome IoTTwinMakerClient::DeleteEntity(const DeleteEntityRequest& 
 
 DeleteSceneOutcome IoTTwinMakerClient::DeleteScene(const DeleteSceneRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteScene);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteScene, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkspaceIdHasBeenSet())
   {
@@ -376,6 +386,7 @@ DeleteSceneOutcome IoTTwinMakerClient::DeleteScene(const DeleteSceneRequest& req
 
 DeleteSyncJobOutcome IoTTwinMakerClient::DeleteSyncJob(const DeleteSyncJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteSyncJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteSyncJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkspaceIdHasBeenSet())
   {
@@ -400,6 +411,7 @@ DeleteSyncJobOutcome IoTTwinMakerClient::DeleteSyncJob(const DeleteSyncJobReques
 
 DeleteWorkspaceOutcome IoTTwinMakerClient::DeleteWorkspace(const DeleteWorkspaceRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteWorkspace);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteWorkspace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkspaceIdHasBeenSet())
   {
@@ -417,6 +429,7 @@ DeleteWorkspaceOutcome IoTTwinMakerClient::DeleteWorkspace(const DeleteWorkspace
 
 ExecuteQueryOutcome IoTTwinMakerClient::ExecuteQuery(const ExecuteQueryRequest& request) const
 {
+  AWS_OPERATION_GUARD(ExecuteQuery);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ExecuteQuery, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ExecuteQuery, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -428,6 +441,7 @@ ExecuteQueryOutcome IoTTwinMakerClient::ExecuteQuery(const ExecuteQueryRequest& 
 
 GetComponentTypeOutcome IoTTwinMakerClient::GetComponentType(const GetComponentTypeRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetComponentType);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetComponentType, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkspaceIdHasBeenSet())
   {
@@ -452,6 +466,7 @@ GetComponentTypeOutcome IoTTwinMakerClient::GetComponentType(const GetComponentT
 
 GetEntityOutcome IoTTwinMakerClient::GetEntity(const GetEntityRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetEntity);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetEntity, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkspaceIdHasBeenSet())
   {
@@ -476,6 +491,7 @@ GetEntityOutcome IoTTwinMakerClient::GetEntity(const GetEntityRequest& request) 
 
 GetPricingPlanOutcome IoTTwinMakerClient::GetPricingPlan(const GetPricingPlanRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetPricingPlan);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPricingPlan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetPricingPlan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -487,6 +503,7 @@ GetPricingPlanOutcome IoTTwinMakerClient::GetPricingPlan(const GetPricingPlanReq
 
 GetPropertyValueOutcome IoTTwinMakerClient::GetPropertyValue(const GetPropertyValueRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetPropertyValue);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPropertyValue, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkspaceIdHasBeenSet())
   {
@@ -505,6 +522,7 @@ GetPropertyValueOutcome IoTTwinMakerClient::GetPropertyValue(const GetPropertyVa
 
 GetPropertyValueHistoryOutcome IoTTwinMakerClient::GetPropertyValueHistory(const GetPropertyValueHistoryRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetPropertyValueHistory);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPropertyValueHistory, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkspaceIdHasBeenSet())
   {
@@ -523,6 +541,7 @@ GetPropertyValueHistoryOutcome IoTTwinMakerClient::GetPropertyValueHistory(const
 
 GetSceneOutcome IoTTwinMakerClient::GetScene(const GetSceneRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetScene);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetScene, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkspaceIdHasBeenSet())
   {
@@ -547,6 +566,7 @@ GetSceneOutcome IoTTwinMakerClient::GetScene(const GetSceneRequest& request) con
 
 GetSyncJobOutcome IoTTwinMakerClient::GetSyncJob(const GetSyncJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSyncJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSyncJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SyncSourceHasBeenSet())
   {
@@ -564,6 +584,7 @@ GetSyncJobOutcome IoTTwinMakerClient::GetSyncJob(const GetSyncJobRequest& reques
 
 GetWorkspaceOutcome IoTTwinMakerClient::GetWorkspace(const GetWorkspaceRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetWorkspace);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetWorkspace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkspaceIdHasBeenSet())
   {
@@ -581,6 +602,7 @@ GetWorkspaceOutcome IoTTwinMakerClient::GetWorkspace(const GetWorkspaceRequest& 
 
 ListComponentTypesOutcome IoTTwinMakerClient::ListComponentTypes(const ListComponentTypesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListComponentTypes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListComponentTypes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkspaceIdHasBeenSet())
   {
@@ -599,6 +621,7 @@ ListComponentTypesOutcome IoTTwinMakerClient::ListComponentTypes(const ListCompo
 
 ListEntitiesOutcome IoTTwinMakerClient::ListEntities(const ListEntitiesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListEntities);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListEntities, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkspaceIdHasBeenSet())
   {
@@ -617,6 +640,7 @@ ListEntitiesOutcome IoTTwinMakerClient::ListEntities(const ListEntitiesRequest& 
 
 ListScenesOutcome IoTTwinMakerClient::ListScenes(const ListScenesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListScenes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListScenes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkspaceIdHasBeenSet())
   {
@@ -635,6 +659,7 @@ ListScenesOutcome IoTTwinMakerClient::ListScenes(const ListScenesRequest& reques
 
 ListSyncJobsOutcome IoTTwinMakerClient::ListSyncJobs(const ListSyncJobsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListSyncJobs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSyncJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkspaceIdHasBeenSet())
   {
@@ -653,6 +678,7 @@ ListSyncJobsOutcome IoTTwinMakerClient::ListSyncJobs(const ListSyncJobsRequest& 
 
 ListSyncResourcesOutcome IoTTwinMakerClient::ListSyncResources(const ListSyncResourcesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListSyncResources);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSyncResources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkspaceIdHasBeenSet())
   {
@@ -678,6 +704,7 @@ ListSyncResourcesOutcome IoTTwinMakerClient::ListSyncResources(const ListSyncRes
 
 ListTagsForResourceOutcome IoTTwinMakerClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -689,6 +716,7 @@ ListTagsForResourceOutcome IoTTwinMakerClient::ListTagsForResource(const ListTag
 
 ListWorkspacesOutcome IoTTwinMakerClient::ListWorkspaces(const ListWorkspacesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListWorkspaces);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListWorkspaces, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListWorkspaces, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -700,6 +728,7 @@ ListWorkspacesOutcome IoTTwinMakerClient::ListWorkspaces(const ListWorkspacesReq
 
 TagResourceOutcome IoTTwinMakerClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -711,6 +740,7 @@ TagResourceOutcome IoTTwinMakerClient::TagResource(const TagResourceRequest& req
 
 UntagResourceOutcome IoTTwinMakerClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceARNHasBeenSet())
   {
@@ -732,6 +762,7 @@ UntagResourceOutcome IoTTwinMakerClient::UntagResource(const UntagResourceReques
 
 UpdateComponentTypeOutcome IoTTwinMakerClient::UpdateComponentType(const UpdateComponentTypeRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateComponentType);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateComponentType, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkspaceIdHasBeenSet())
   {
@@ -756,6 +787,7 @@ UpdateComponentTypeOutcome IoTTwinMakerClient::UpdateComponentType(const UpdateC
 
 UpdateEntityOutcome IoTTwinMakerClient::UpdateEntity(const UpdateEntityRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateEntity);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateEntity, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkspaceIdHasBeenSet())
   {
@@ -780,6 +812,7 @@ UpdateEntityOutcome IoTTwinMakerClient::UpdateEntity(const UpdateEntityRequest& 
 
 UpdatePricingPlanOutcome IoTTwinMakerClient::UpdatePricingPlan(const UpdatePricingPlanRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdatePricingPlan);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdatePricingPlan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdatePricingPlan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -791,6 +824,7 @@ UpdatePricingPlanOutcome IoTTwinMakerClient::UpdatePricingPlan(const UpdatePrici
 
 UpdateSceneOutcome IoTTwinMakerClient::UpdateScene(const UpdateSceneRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateScene);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateScene, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkspaceIdHasBeenSet())
   {
@@ -815,6 +849,7 @@ UpdateSceneOutcome IoTTwinMakerClient::UpdateScene(const UpdateSceneRequest& req
 
 UpdateWorkspaceOutcome IoTTwinMakerClient::UpdateWorkspace(const UpdateWorkspaceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateWorkspace);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateWorkspace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkspaceIdHasBeenSet())
   {

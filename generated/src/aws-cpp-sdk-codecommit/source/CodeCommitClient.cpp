@@ -206,6 +206,7 @@ CodeCommitClient::CodeCommitClient(const std::shared_ptr<AWSCredentialsProvider>
     /* End of legacy constructors due deprecation */
 CodeCommitClient::~CodeCommitClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<CodeCommitEndpointProviderBase>& CodeCommitClient::accessEndpointProvider()
@@ -228,6 +229,7 @@ void CodeCommitClient::OverrideEndpoint(const Aws::String& endpoint)
 
 AssociateApprovalRuleTemplateWithRepositoryOutcome CodeCommitClient::AssociateApprovalRuleTemplateWithRepository(const AssociateApprovalRuleTemplateWithRepositoryRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociateApprovalRuleTemplateWithRepository);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateApprovalRuleTemplateWithRepository, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AssociateApprovalRuleTemplateWithRepository, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -236,6 +238,7 @@ AssociateApprovalRuleTemplateWithRepositoryOutcome CodeCommitClient::AssociateAp
 
 BatchAssociateApprovalRuleTemplateWithRepositoriesOutcome CodeCommitClient::BatchAssociateApprovalRuleTemplateWithRepositories(const BatchAssociateApprovalRuleTemplateWithRepositoriesRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchAssociateApprovalRuleTemplateWithRepositories);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchAssociateApprovalRuleTemplateWithRepositories, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchAssociateApprovalRuleTemplateWithRepositories, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -244,6 +247,7 @@ BatchAssociateApprovalRuleTemplateWithRepositoriesOutcome CodeCommitClient::Batc
 
 BatchDescribeMergeConflictsOutcome CodeCommitClient::BatchDescribeMergeConflicts(const BatchDescribeMergeConflictsRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchDescribeMergeConflicts);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchDescribeMergeConflicts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchDescribeMergeConflicts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -252,6 +256,7 @@ BatchDescribeMergeConflictsOutcome CodeCommitClient::BatchDescribeMergeConflicts
 
 BatchDisassociateApprovalRuleTemplateFromRepositoriesOutcome CodeCommitClient::BatchDisassociateApprovalRuleTemplateFromRepositories(const BatchDisassociateApprovalRuleTemplateFromRepositoriesRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchDisassociateApprovalRuleTemplateFromRepositories);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchDisassociateApprovalRuleTemplateFromRepositories, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchDisassociateApprovalRuleTemplateFromRepositories, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -260,6 +265,7 @@ BatchDisassociateApprovalRuleTemplateFromRepositoriesOutcome CodeCommitClient::B
 
 BatchGetCommitsOutcome CodeCommitClient::BatchGetCommits(const BatchGetCommitsRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchGetCommits);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchGetCommits, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchGetCommits, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -268,6 +274,7 @@ BatchGetCommitsOutcome CodeCommitClient::BatchGetCommits(const BatchGetCommitsRe
 
 BatchGetRepositoriesOutcome CodeCommitClient::BatchGetRepositories(const BatchGetRepositoriesRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchGetRepositories);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchGetRepositories, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchGetRepositories, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -276,6 +283,7 @@ BatchGetRepositoriesOutcome CodeCommitClient::BatchGetRepositories(const BatchGe
 
 CreateApprovalRuleTemplateOutcome CodeCommitClient::CreateApprovalRuleTemplate(const CreateApprovalRuleTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateApprovalRuleTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateApprovalRuleTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateApprovalRuleTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -284,6 +292,7 @@ CreateApprovalRuleTemplateOutcome CodeCommitClient::CreateApprovalRuleTemplate(c
 
 CreateBranchOutcome CodeCommitClient::CreateBranch(const CreateBranchRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateBranch);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateBranch, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateBranch, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -292,6 +301,7 @@ CreateBranchOutcome CodeCommitClient::CreateBranch(const CreateBranchRequest& re
 
 CreateCommitOutcome CodeCommitClient::CreateCommit(const CreateCommitRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateCommit);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateCommit, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateCommit, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -300,6 +310,7 @@ CreateCommitOutcome CodeCommitClient::CreateCommit(const CreateCommitRequest& re
 
 CreatePullRequestOutcome CodeCommitClient::CreatePullRequest(const CreatePullRequestRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreatePullRequest);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreatePullRequest, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreatePullRequest, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -308,6 +319,7 @@ CreatePullRequestOutcome CodeCommitClient::CreatePullRequest(const CreatePullReq
 
 CreatePullRequestApprovalRuleOutcome CodeCommitClient::CreatePullRequestApprovalRule(const CreatePullRequestApprovalRuleRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreatePullRequestApprovalRule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreatePullRequestApprovalRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreatePullRequestApprovalRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -316,6 +328,7 @@ CreatePullRequestApprovalRuleOutcome CodeCommitClient::CreatePullRequestApproval
 
 CreateRepositoryOutcome CodeCommitClient::CreateRepository(const CreateRepositoryRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateRepository);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateRepository, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateRepository, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -324,6 +337,7 @@ CreateRepositoryOutcome CodeCommitClient::CreateRepository(const CreateRepositor
 
 CreateUnreferencedMergeCommitOutcome CodeCommitClient::CreateUnreferencedMergeCommit(const CreateUnreferencedMergeCommitRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateUnreferencedMergeCommit);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateUnreferencedMergeCommit, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateUnreferencedMergeCommit, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -332,6 +346,7 @@ CreateUnreferencedMergeCommitOutcome CodeCommitClient::CreateUnreferencedMergeCo
 
 DeleteApprovalRuleTemplateOutcome CodeCommitClient::DeleteApprovalRuleTemplate(const DeleteApprovalRuleTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteApprovalRuleTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteApprovalRuleTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteApprovalRuleTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -340,6 +355,7 @@ DeleteApprovalRuleTemplateOutcome CodeCommitClient::DeleteApprovalRuleTemplate(c
 
 DeleteBranchOutcome CodeCommitClient::DeleteBranch(const DeleteBranchRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteBranch);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteBranch, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteBranch, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -348,6 +364,7 @@ DeleteBranchOutcome CodeCommitClient::DeleteBranch(const DeleteBranchRequest& re
 
 DeleteCommentContentOutcome CodeCommitClient::DeleteCommentContent(const DeleteCommentContentRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteCommentContent);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteCommentContent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteCommentContent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -356,6 +373,7 @@ DeleteCommentContentOutcome CodeCommitClient::DeleteCommentContent(const DeleteC
 
 DeleteFileOutcome CodeCommitClient::DeleteFile(const DeleteFileRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteFile);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteFile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteFile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -364,6 +382,7 @@ DeleteFileOutcome CodeCommitClient::DeleteFile(const DeleteFileRequest& request)
 
 DeletePullRequestApprovalRuleOutcome CodeCommitClient::DeletePullRequestApprovalRule(const DeletePullRequestApprovalRuleRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeletePullRequestApprovalRule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeletePullRequestApprovalRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeletePullRequestApprovalRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -372,6 +391,7 @@ DeletePullRequestApprovalRuleOutcome CodeCommitClient::DeletePullRequestApproval
 
 DeleteRepositoryOutcome CodeCommitClient::DeleteRepository(const DeleteRepositoryRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteRepository);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteRepository, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteRepository, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -380,6 +400,7 @@ DeleteRepositoryOutcome CodeCommitClient::DeleteRepository(const DeleteRepositor
 
 DescribeMergeConflictsOutcome CodeCommitClient::DescribeMergeConflicts(const DescribeMergeConflictsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeMergeConflicts);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeMergeConflicts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeMergeConflicts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -388,6 +409,7 @@ DescribeMergeConflictsOutcome CodeCommitClient::DescribeMergeConflicts(const Des
 
 DescribePullRequestEventsOutcome CodeCommitClient::DescribePullRequestEvents(const DescribePullRequestEventsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribePullRequestEvents);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribePullRequestEvents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribePullRequestEvents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -396,6 +418,7 @@ DescribePullRequestEventsOutcome CodeCommitClient::DescribePullRequestEvents(con
 
 DisassociateApprovalRuleTemplateFromRepositoryOutcome CodeCommitClient::DisassociateApprovalRuleTemplateFromRepository(const DisassociateApprovalRuleTemplateFromRepositoryRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociateApprovalRuleTemplateFromRepository);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateApprovalRuleTemplateFromRepository, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DisassociateApprovalRuleTemplateFromRepository, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -404,6 +427,7 @@ DisassociateApprovalRuleTemplateFromRepositoryOutcome CodeCommitClient::Disassoc
 
 EvaluatePullRequestApprovalRulesOutcome CodeCommitClient::EvaluatePullRequestApprovalRules(const EvaluatePullRequestApprovalRulesRequest& request) const
 {
+  AWS_OPERATION_GUARD(EvaluatePullRequestApprovalRules);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, EvaluatePullRequestApprovalRules, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, EvaluatePullRequestApprovalRules, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -412,6 +436,7 @@ EvaluatePullRequestApprovalRulesOutcome CodeCommitClient::EvaluatePullRequestApp
 
 GetApprovalRuleTemplateOutcome CodeCommitClient::GetApprovalRuleTemplate(const GetApprovalRuleTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetApprovalRuleTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetApprovalRuleTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetApprovalRuleTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -420,6 +445,7 @@ GetApprovalRuleTemplateOutcome CodeCommitClient::GetApprovalRuleTemplate(const G
 
 GetBlobOutcome CodeCommitClient::GetBlob(const GetBlobRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetBlob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBlob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetBlob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -428,6 +454,7 @@ GetBlobOutcome CodeCommitClient::GetBlob(const GetBlobRequest& request) const
 
 GetBranchOutcome CodeCommitClient::GetBranch(const GetBranchRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetBranch);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBranch, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetBranch, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -436,6 +463,7 @@ GetBranchOutcome CodeCommitClient::GetBranch(const GetBranchRequest& request) co
 
 GetCommentOutcome CodeCommitClient::GetComment(const GetCommentRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetComment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetComment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetComment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -444,6 +472,7 @@ GetCommentOutcome CodeCommitClient::GetComment(const GetCommentRequest& request)
 
 GetCommentReactionsOutcome CodeCommitClient::GetCommentReactions(const GetCommentReactionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetCommentReactions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCommentReactions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetCommentReactions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -452,6 +481,7 @@ GetCommentReactionsOutcome CodeCommitClient::GetCommentReactions(const GetCommen
 
 GetCommentsForComparedCommitOutcome CodeCommitClient::GetCommentsForComparedCommit(const GetCommentsForComparedCommitRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetCommentsForComparedCommit);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCommentsForComparedCommit, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetCommentsForComparedCommit, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -460,6 +490,7 @@ GetCommentsForComparedCommitOutcome CodeCommitClient::GetCommentsForComparedComm
 
 GetCommentsForPullRequestOutcome CodeCommitClient::GetCommentsForPullRequest(const GetCommentsForPullRequestRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetCommentsForPullRequest);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCommentsForPullRequest, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetCommentsForPullRequest, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -468,6 +499,7 @@ GetCommentsForPullRequestOutcome CodeCommitClient::GetCommentsForPullRequest(con
 
 GetCommitOutcome CodeCommitClient::GetCommit(const GetCommitRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetCommit);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCommit, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetCommit, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -476,6 +508,7 @@ GetCommitOutcome CodeCommitClient::GetCommit(const GetCommitRequest& request) co
 
 GetDifferencesOutcome CodeCommitClient::GetDifferences(const GetDifferencesRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDifferences);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDifferences, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetDifferences, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -484,6 +517,7 @@ GetDifferencesOutcome CodeCommitClient::GetDifferences(const GetDifferencesReque
 
 GetFileOutcome CodeCommitClient::GetFile(const GetFileRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetFile);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetFile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetFile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -492,6 +526,7 @@ GetFileOutcome CodeCommitClient::GetFile(const GetFileRequest& request) const
 
 GetFolderOutcome CodeCommitClient::GetFolder(const GetFolderRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetFolder);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetFolder, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetFolder, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -500,6 +535,7 @@ GetFolderOutcome CodeCommitClient::GetFolder(const GetFolderRequest& request) co
 
 GetMergeCommitOutcome CodeCommitClient::GetMergeCommit(const GetMergeCommitRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetMergeCommit);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMergeCommit, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetMergeCommit, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -508,6 +544,7 @@ GetMergeCommitOutcome CodeCommitClient::GetMergeCommit(const GetMergeCommitReque
 
 GetMergeConflictsOutcome CodeCommitClient::GetMergeConflicts(const GetMergeConflictsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetMergeConflicts);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMergeConflicts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetMergeConflicts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -516,6 +553,7 @@ GetMergeConflictsOutcome CodeCommitClient::GetMergeConflicts(const GetMergeConfl
 
 GetMergeOptionsOutcome CodeCommitClient::GetMergeOptions(const GetMergeOptionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetMergeOptions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMergeOptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetMergeOptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -524,6 +562,7 @@ GetMergeOptionsOutcome CodeCommitClient::GetMergeOptions(const GetMergeOptionsRe
 
 GetPullRequestOutcome CodeCommitClient::GetPullRequest(const GetPullRequestRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetPullRequest);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPullRequest, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetPullRequest, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -532,6 +571,7 @@ GetPullRequestOutcome CodeCommitClient::GetPullRequest(const GetPullRequestReque
 
 GetPullRequestApprovalStatesOutcome CodeCommitClient::GetPullRequestApprovalStates(const GetPullRequestApprovalStatesRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetPullRequestApprovalStates);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPullRequestApprovalStates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetPullRequestApprovalStates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -540,6 +580,7 @@ GetPullRequestApprovalStatesOutcome CodeCommitClient::GetPullRequestApprovalStat
 
 GetPullRequestOverrideStateOutcome CodeCommitClient::GetPullRequestOverrideState(const GetPullRequestOverrideStateRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetPullRequestOverrideState);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPullRequestOverrideState, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetPullRequestOverrideState, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -548,6 +589,7 @@ GetPullRequestOverrideStateOutcome CodeCommitClient::GetPullRequestOverrideState
 
 GetRepositoryOutcome CodeCommitClient::GetRepository(const GetRepositoryRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetRepository);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetRepository, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetRepository, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -556,6 +598,7 @@ GetRepositoryOutcome CodeCommitClient::GetRepository(const GetRepositoryRequest&
 
 GetRepositoryTriggersOutcome CodeCommitClient::GetRepositoryTriggers(const GetRepositoryTriggersRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetRepositoryTriggers);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetRepositoryTriggers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetRepositoryTriggers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -564,6 +607,7 @@ GetRepositoryTriggersOutcome CodeCommitClient::GetRepositoryTriggers(const GetRe
 
 ListApprovalRuleTemplatesOutcome CodeCommitClient::ListApprovalRuleTemplates(const ListApprovalRuleTemplatesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListApprovalRuleTemplates);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListApprovalRuleTemplates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListApprovalRuleTemplates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -572,6 +616,7 @@ ListApprovalRuleTemplatesOutcome CodeCommitClient::ListApprovalRuleTemplates(con
 
 ListAssociatedApprovalRuleTemplatesForRepositoryOutcome CodeCommitClient::ListAssociatedApprovalRuleTemplatesForRepository(const ListAssociatedApprovalRuleTemplatesForRepositoryRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAssociatedApprovalRuleTemplatesForRepository);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAssociatedApprovalRuleTemplatesForRepository, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAssociatedApprovalRuleTemplatesForRepository, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -580,6 +625,7 @@ ListAssociatedApprovalRuleTemplatesForRepositoryOutcome CodeCommitClient::ListAs
 
 ListBranchesOutcome CodeCommitClient::ListBranches(const ListBranchesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListBranches);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListBranches, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListBranches, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -588,6 +634,7 @@ ListBranchesOutcome CodeCommitClient::ListBranches(const ListBranchesRequest& re
 
 ListPullRequestsOutcome CodeCommitClient::ListPullRequests(const ListPullRequestsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListPullRequests);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPullRequests, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListPullRequests, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -596,6 +643,7 @@ ListPullRequestsOutcome CodeCommitClient::ListPullRequests(const ListPullRequest
 
 ListRepositoriesOutcome CodeCommitClient::ListRepositories(const ListRepositoriesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListRepositories);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRepositories, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListRepositories, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -604,6 +652,7 @@ ListRepositoriesOutcome CodeCommitClient::ListRepositories(const ListRepositorie
 
 ListRepositoriesForApprovalRuleTemplateOutcome CodeCommitClient::ListRepositoriesForApprovalRuleTemplate(const ListRepositoriesForApprovalRuleTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListRepositoriesForApprovalRuleTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRepositoriesForApprovalRuleTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListRepositoriesForApprovalRuleTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -612,6 +661,7 @@ ListRepositoriesForApprovalRuleTemplateOutcome CodeCommitClient::ListRepositorie
 
 ListTagsForResourceOutcome CodeCommitClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -620,6 +670,7 @@ ListTagsForResourceOutcome CodeCommitClient::ListTagsForResource(const ListTagsF
 
 MergeBranchesByFastForwardOutcome CodeCommitClient::MergeBranchesByFastForward(const MergeBranchesByFastForwardRequest& request) const
 {
+  AWS_OPERATION_GUARD(MergeBranchesByFastForward);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, MergeBranchesByFastForward, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, MergeBranchesByFastForward, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -628,6 +679,7 @@ MergeBranchesByFastForwardOutcome CodeCommitClient::MergeBranchesByFastForward(c
 
 MergeBranchesBySquashOutcome CodeCommitClient::MergeBranchesBySquash(const MergeBranchesBySquashRequest& request) const
 {
+  AWS_OPERATION_GUARD(MergeBranchesBySquash);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, MergeBranchesBySquash, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, MergeBranchesBySquash, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -636,6 +688,7 @@ MergeBranchesBySquashOutcome CodeCommitClient::MergeBranchesBySquash(const Merge
 
 MergeBranchesByThreeWayOutcome CodeCommitClient::MergeBranchesByThreeWay(const MergeBranchesByThreeWayRequest& request) const
 {
+  AWS_OPERATION_GUARD(MergeBranchesByThreeWay);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, MergeBranchesByThreeWay, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, MergeBranchesByThreeWay, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -644,6 +697,7 @@ MergeBranchesByThreeWayOutcome CodeCommitClient::MergeBranchesByThreeWay(const M
 
 MergePullRequestByFastForwardOutcome CodeCommitClient::MergePullRequestByFastForward(const MergePullRequestByFastForwardRequest& request) const
 {
+  AWS_OPERATION_GUARD(MergePullRequestByFastForward);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, MergePullRequestByFastForward, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, MergePullRequestByFastForward, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -652,6 +706,7 @@ MergePullRequestByFastForwardOutcome CodeCommitClient::MergePullRequestByFastFor
 
 MergePullRequestBySquashOutcome CodeCommitClient::MergePullRequestBySquash(const MergePullRequestBySquashRequest& request) const
 {
+  AWS_OPERATION_GUARD(MergePullRequestBySquash);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, MergePullRequestBySquash, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, MergePullRequestBySquash, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -660,6 +715,7 @@ MergePullRequestBySquashOutcome CodeCommitClient::MergePullRequestBySquash(const
 
 MergePullRequestByThreeWayOutcome CodeCommitClient::MergePullRequestByThreeWay(const MergePullRequestByThreeWayRequest& request) const
 {
+  AWS_OPERATION_GUARD(MergePullRequestByThreeWay);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, MergePullRequestByThreeWay, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, MergePullRequestByThreeWay, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -668,6 +724,7 @@ MergePullRequestByThreeWayOutcome CodeCommitClient::MergePullRequestByThreeWay(c
 
 OverridePullRequestApprovalRulesOutcome CodeCommitClient::OverridePullRequestApprovalRules(const OverridePullRequestApprovalRulesRequest& request) const
 {
+  AWS_OPERATION_GUARD(OverridePullRequestApprovalRules);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, OverridePullRequestApprovalRules, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, OverridePullRequestApprovalRules, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -676,6 +733,7 @@ OverridePullRequestApprovalRulesOutcome CodeCommitClient::OverridePullRequestApp
 
 PostCommentForComparedCommitOutcome CodeCommitClient::PostCommentForComparedCommit(const PostCommentForComparedCommitRequest& request) const
 {
+  AWS_OPERATION_GUARD(PostCommentForComparedCommit);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PostCommentForComparedCommit, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PostCommentForComparedCommit, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -684,6 +742,7 @@ PostCommentForComparedCommitOutcome CodeCommitClient::PostCommentForComparedComm
 
 PostCommentForPullRequestOutcome CodeCommitClient::PostCommentForPullRequest(const PostCommentForPullRequestRequest& request) const
 {
+  AWS_OPERATION_GUARD(PostCommentForPullRequest);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PostCommentForPullRequest, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PostCommentForPullRequest, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -692,6 +751,7 @@ PostCommentForPullRequestOutcome CodeCommitClient::PostCommentForPullRequest(con
 
 PostCommentReplyOutcome CodeCommitClient::PostCommentReply(const PostCommentReplyRequest& request) const
 {
+  AWS_OPERATION_GUARD(PostCommentReply);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PostCommentReply, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PostCommentReply, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -700,6 +760,7 @@ PostCommentReplyOutcome CodeCommitClient::PostCommentReply(const PostCommentRepl
 
 PutCommentReactionOutcome CodeCommitClient::PutCommentReaction(const PutCommentReactionRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutCommentReaction);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutCommentReaction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutCommentReaction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -708,6 +769,7 @@ PutCommentReactionOutcome CodeCommitClient::PutCommentReaction(const PutCommentR
 
 PutFileOutcome CodeCommitClient::PutFile(const PutFileRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutFile);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutFile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutFile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -716,6 +778,7 @@ PutFileOutcome CodeCommitClient::PutFile(const PutFileRequest& request) const
 
 PutRepositoryTriggersOutcome CodeCommitClient::PutRepositoryTriggers(const PutRepositoryTriggersRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutRepositoryTriggers);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutRepositoryTriggers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutRepositoryTriggers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -724,6 +787,7 @@ PutRepositoryTriggersOutcome CodeCommitClient::PutRepositoryTriggers(const PutRe
 
 TagResourceOutcome CodeCommitClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -732,6 +796,7 @@ TagResourceOutcome CodeCommitClient::TagResource(const TagResourceRequest& reque
 
 TestRepositoryTriggersOutcome CodeCommitClient::TestRepositoryTriggers(const TestRepositoryTriggersRequest& request) const
 {
+  AWS_OPERATION_GUARD(TestRepositoryTriggers);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TestRepositoryTriggers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TestRepositoryTriggers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -740,6 +805,7 @@ TestRepositoryTriggersOutcome CodeCommitClient::TestRepositoryTriggers(const Tes
 
 UntagResourceOutcome CodeCommitClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -748,6 +814,7 @@ UntagResourceOutcome CodeCommitClient::UntagResource(const UntagResourceRequest&
 
 UpdateApprovalRuleTemplateContentOutcome CodeCommitClient::UpdateApprovalRuleTemplateContent(const UpdateApprovalRuleTemplateContentRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateApprovalRuleTemplateContent);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateApprovalRuleTemplateContent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateApprovalRuleTemplateContent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -756,6 +823,7 @@ UpdateApprovalRuleTemplateContentOutcome CodeCommitClient::UpdateApprovalRuleTem
 
 UpdateApprovalRuleTemplateDescriptionOutcome CodeCommitClient::UpdateApprovalRuleTemplateDescription(const UpdateApprovalRuleTemplateDescriptionRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateApprovalRuleTemplateDescription);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateApprovalRuleTemplateDescription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateApprovalRuleTemplateDescription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -764,6 +832,7 @@ UpdateApprovalRuleTemplateDescriptionOutcome CodeCommitClient::UpdateApprovalRul
 
 UpdateApprovalRuleTemplateNameOutcome CodeCommitClient::UpdateApprovalRuleTemplateName(const UpdateApprovalRuleTemplateNameRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateApprovalRuleTemplateName);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateApprovalRuleTemplateName, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateApprovalRuleTemplateName, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -772,6 +841,7 @@ UpdateApprovalRuleTemplateNameOutcome CodeCommitClient::UpdateApprovalRuleTempla
 
 UpdateCommentOutcome CodeCommitClient::UpdateComment(const UpdateCommentRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateComment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateComment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateComment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -780,6 +850,7 @@ UpdateCommentOutcome CodeCommitClient::UpdateComment(const UpdateCommentRequest&
 
 UpdateDefaultBranchOutcome CodeCommitClient::UpdateDefaultBranch(const UpdateDefaultBranchRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateDefaultBranch);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDefaultBranch, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateDefaultBranch, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -788,6 +859,7 @@ UpdateDefaultBranchOutcome CodeCommitClient::UpdateDefaultBranch(const UpdateDef
 
 UpdatePullRequestApprovalRuleContentOutcome CodeCommitClient::UpdatePullRequestApprovalRuleContent(const UpdatePullRequestApprovalRuleContentRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdatePullRequestApprovalRuleContent);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdatePullRequestApprovalRuleContent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdatePullRequestApprovalRuleContent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -796,6 +868,7 @@ UpdatePullRequestApprovalRuleContentOutcome CodeCommitClient::UpdatePullRequestA
 
 UpdatePullRequestApprovalStateOutcome CodeCommitClient::UpdatePullRequestApprovalState(const UpdatePullRequestApprovalStateRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdatePullRequestApprovalState);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdatePullRequestApprovalState, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdatePullRequestApprovalState, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -804,6 +877,7 @@ UpdatePullRequestApprovalStateOutcome CodeCommitClient::UpdatePullRequestApprova
 
 UpdatePullRequestDescriptionOutcome CodeCommitClient::UpdatePullRequestDescription(const UpdatePullRequestDescriptionRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdatePullRequestDescription);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdatePullRequestDescription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdatePullRequestDescription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -812,6 +886,7 @@ UpdatePullRequestDescriptionOutcome CodeCommitClient::UpdatePullRequestDescripti
 
 UpdatePullRequestStatusOutcome CodeCommitClient::UpdatePullRequestStatus(const UpdatePullRequestStatusRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdatePullRequestStatus);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdatePullRequestStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdatePullRequestStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -820,6 +895,7 @@ UpdatePullRequestStatusOutcome CodeCommitClient::UpdatePullRequestStatus(const U
 
 UpdatePullRequestTitleOutcome CodeCommitClient::UpdatePullRequestTitle(const UpdatePullRequestTitleRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdatePullRequestTitle);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdatePullRequestTitle, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdatePullRequestTitle, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -828,6 +904,7 @@ UpdatePullRequestTitleOutcome CodeCommitClient::UpdatePullRequestTitle(const Upd
 
 UpdateRepositoryDescriptionOutcome CodeCommitClient::UpdateRepositoryDescription(const UpdateRepositoryDescriptionRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateRepositoryDescription);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateRepositoryDescription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateRepositoryDescription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -836,6 +913,7 @@ UpdateRepositoryDescriptionOutcome CodeCommitClient::UpdateRepositoryDescription
 
 UpdateRepositoryNameOutcome CodeCommitClient::UpdateRepositoryName(const UpdateRepositoryNameRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateRepositoryName);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateRepositoryName, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateRepositoryName, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

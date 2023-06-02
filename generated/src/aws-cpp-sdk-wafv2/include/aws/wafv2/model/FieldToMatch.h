@@ -622,10 +622,9 @@ namespace Model
      * <p>Inspect a string containing the list of the request's header names, ordered
      * as they appear in the web request that WAF receives for inspection. WAF
      * generates the string and then uses that as the field to match component in its
-     * inspection. WAF separates the header names in the string using colons and no
-     * added spaces, for example
-     * <code>Host:User-Agent:Accept:Authorization:Referer</code>.</p> <p>Matches
-     * against the header order string are case insensitive.</p>
+     * inspection. WAF separates the header names in the string using commas and no
+     * added spaces.</p> <p>Matches against the header order string are case
+     * insensitive.</p>
      */
     inline const HeaderOrder& GetHeaderOrder() const{ return m_headerOrder; }
 
@@ -633,10 +632,9 @@ namespace Model
      * <p>Inspect a string containing the list of the request's header names, ordered
      * as they appear in the web request that WAF receives for inspection. WAF
      * generates the string and then uses that as the field to match component in its
-     * inspection. WAF separates the header names in the string using colons and no
-     * added spaces, for example
-     * <code>Host:User-Agent:Accept:Authorization:Referer</code>.</p> <p>Matches
-     * against the header order string are case insensitive.</p>
+     * inspection. WAF separates the header names in the string using commas and no
+     * added spaces.</p> <p>Matches against the header order string are case
+     * insensitive.</p>
      */
     inline bool HeaderOrderHasBeenSet() const { return m_headerOrderHasBeenSet; }
 
@@ -644,10 +642,9 @@ namespace Model
      * <p>Inspect a string containing the list of the request's header names, ordered
      * as they appear in the web request that WAF receives for inspection. WAF
      * generates the string and then uses that as the field to match component in its
-     * inspection. WAF separates the header names in the string using colons and no
-     * added spaces, for example
-     * <code>Host:User-Agent:Accept:Authorization:Referer</code>.</p> <p>Matches
-     * against the header order string are case insensitive.</p>
+     * inspection. WAF separates the header names in the string using commas and no
+     * added spaces.</p> <p>Matches against the header order string are case
+     * insensitive.</p>
      */
     inline void SetHeaderOrder(const HeaderOrder& value) { m_headerOrderHasBeenSet = true; m_headerOrder = value; }
 
@@ -655,10 +652,9 @@ namespace Model
      * <p>Inspect a string containing the list of the request's header names, ordered
      * as they appear in the web request that WAF receives for inspection. WAF
      * generates the string and then uses that as the field to match component in its
-     * inspection. WAF separates the header names in the string using colons and no
-     * added spaces, for example
-     * <code>Host:User-Agent:Accept:Authorization:Referer</code>.</p> <p>Matches
-     * against the header order string are case insensitive.</p>
+     * inspection. WAF separates the header names in the string using commas and no
+     * added spaces.</p> <p>Matches against the header order string are case
+     * insensitive.</p>
      */
     inline void SetHeaderOrder(HeaderOrder&& value) { m_headerOrderHasBeenSet = true; m_headerOrder = std::move(value); }
 
@@ -666,10 +662,9 @@ namespace Model
      * <p>Inspect a string containing the list of the request's header names, ordered
      * as they appear in the web request that WAF receives for inspection. WAF
      * generates the string and then uses that as the field to match component in its
-     * inspection. WAF separates the header names in the string using colons and no
-     * added spaces, for example
-     * <code>Host:User-Agent:Accept:Authorization:Referer</code>.</p> <p>Matches
-     * against the header order string are case insensitive.</p>
+     * inspection. WAF separates the header names in the string using commas and no
+     * added spaces.</p> <p>Matches against the header order string are case
+     * insensitive.</p>
      */
     inline FieldToMatch& WithHeaderOrder(const HeaderOrder& value) { SetHeaderOrder(value); return *this;}
 
@@ -677,10 +672,9 @@ namespace Model
      * <p>Inspect a string containing the list of the request's header names, ordered
      * as they appear in the web request that WAF receives for inspection. WAF
      * generates the string and then uses that as the field to match component in its
-     * inspection. WAF separates the header names in the string using colons and no
-     * added spaces, for example
-     * <code>Host:User-Agent:Accept:Authorization:Referer</code>.</p> <p>Matches
-     * against the header order string are case insensitive.</p>
+     * inspection. WAF separates the header names in the string using commas and no
+     * added spaces.</p> <p>Matches against the header order string are case
+     * insensitive.</p>
      */
     inline FieldToMatch& WithHeaderOrder(HeaderOrder&& value) { SetHeaderOrder(std::move(value)); return *this;}
 

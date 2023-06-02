@@ -187,6 +187,7 @@ LocationServiceClient::LocationServiceClient(const std::shared_ptr<AWSCredential
     /* End of legacy constructors due deprecation */
 LocationServiceClient::~LocationServiceClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<LocationServiceEndpointProviderBase>& LocationServiceClient::accessEndpointProvider()
@@ -209,6 +210,7 @@ void LocationServiceClient::OverrideEndpoint(const Aws::String& endpoint)
 
 AssociateTrackerConsumerOutcome LocationServiceClient::AssociateTrackerConsumer(const AssociateTrackerConsumerRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociateTrackerConsumer);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateTrackerConsumer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TrackerNameHasBeenSet())
   {
@@ -227,6 +229,7 @@ AssociateTrackerConsumerOutcome LocationServiceClient::AssociateTrackerConsumer(
 
 BatchDeleteDevicePositionHistoryOutcome LocationServiceClient::BatchDeleteDevicePositionHistory(const BatchDeleteDevicePositionHistoryRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchDeleteDevicePositionHistory);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchDeleteDevicePositionHistory, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TrackerNameHasBeenSet())
   {
@@ -245,6 +248,7 @@ BatchDeleteDevicePositionHistoryOutcome LocationServiceClient::BatchDeleteDevice
 
 BatchDeleteGeofenceOutcome LocationServiceClient::BatchDeleteGeofence(const BatchDeleteGeofenceRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchDeleteGeofence);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchDeleteGeofence, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CollectionNameHasBeenSet())
   {
@@ -263,6 +267,7 @@ BatchDeleteGeofenceOutcome LocationServiceClient::BatchDeleteGeofence(const Batc
 
 BatchEvaluateGeofencesOutcome LocationServiceClient::BatchEvaluateGeofences(const BatchEvaluateGeofencesRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchEvaluateGeofences);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchEvaluateGeofences, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CollectionNameHasBeenSet())
   {
@@ -281,6 +286,7 @@ BatchEvaluateGeofencesOutcome LocationServiceClient::BatchEvaluateGeofences(cons
 
 BatchGetDevicePositionOutcome LocationServiceClient::BatchGetDevicePosition(const BatchGetDevicePositionRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchGetDevicePosition);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchGetDevicePosition, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TrackerNameHasBeenSet())
   {
@@ -299,6 +305,7 @@ BatchGetDevicePositionOutcome LocationServiceClient::BatchGetDevicePosition(cons
 
 BatchPutGeofenceOutcome LocationServiceClient::BatchPutGeofence(const BatchPutGeofenceRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchPutGeofence);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchPutGeofence, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CollectionNameHasBeenSet())
   {
@@ -317,6 +324,7 @@ BatchPutGeofenceOutcome LocationServiceClient::BatchPutGeofence(const BatchPutGe
 
 BatchUpdateDevicePositionOutcome LocationServiceClient::BatchUpdateDevicePosition(const BatchUpdateDevicePositionRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchUpdateDevicePosition);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchUpdateDevicePosition, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TrackerNameHasBeenSet())
   {
@@ -335,6 +343,7 @@ BatchUpdateDevicePositionOutcome LocationServiceClient::BatchUpdateDevicePositio
 
 CalculateRouteOutcome LocationServiceClient::CalculateRoute(const CalculateRouteRequest& request) const
 {
+  AWS_OPERATION_GUARD(CalculateRoute);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CalculateRoute, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CalculatorNameHasBeenSet())
   {
@@ -353,6 +362,7 @@ CalculateRouteOutcome LocationServiceClient::CalculateRoute(const CalculateRoute
 
 CalculateRouteMatrixOutcome LocationServiceClient::CalculateRouteMatrix(const CalculateRouteMatrixRequest& request) const
 {
+  AWS_OPERATION_GUARD(CalculateRouteMatrix);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CalculateRouteMatrix, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CalculatorNameHasBeenSet())
   {
@@ -371,6 +381,7 @@ CalculateRouteMatrixOutcome LocationServiceClient::CalculateRouteMatrix(const Ca
 
 CreateGeofenceCollectionOutcome LocationServiceClient::CreateGeofenceCollection(const CreateGeofenceCollectionRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateGeofenceCollection);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateGeofenceCollection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateGeofenceCollection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -382,6 +393,7 @@ CreateGeofenceCollectionOutcome LocationServiceClient::CreateGeofenceCollection(
 
 CreateKeyOutcome LocationServiceClient::CreateKey(const CreateKeyRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateKey);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateKey, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateKey, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -393,6 +405,7 @@ CreateKeyOutcome LocationServiceClient::CreateKey(const CreateKeyRequest& reques
 
 CreateMapOutcome LocationServiceClient::CreateMap(const CreateMapRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateMap);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateMap, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateMap, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -404,6 +417,7 @@ CreateMapOutcome LocationServiceClient::CreateMap(const CreateMapRequest& reques
 
 CreatePlaceIndexOutcome LocationServiceClient::CreatePlaceIndex(const CreatePlaceIndexRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreatePlaceIndex);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreatePlaceIndex, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreatePlaceIndex, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -415,6 +429,7 @@ CreatePlaceIndexOutcome LocationServiceClient::CreatePlaceIndex(const CreatePlac
 
 CreateRouteCalculatorOutcome LocationServiceClient::CreateRouteCalculator(const CreateRouteCalculatorRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateRouteCalculator);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateRouteCalculator, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateRouteCalculator, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -426,6 +441,7 @@ CreateRouteCalculatorOutcome LocationServiceClient::CreateRouteCalculator(const 
 
 CreateTrackerOutcome LocationServiceClient::CreateTracker(const CreateTrackerRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateTracker);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateTracker, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateTracker, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -437,6 +453,7 @@ CreateTrackerOutcome LocationServiceClient::CreateTracker(const CreateTrackerReq
 
 DeleteGeofenceCollectionOutcome LocationServiceClient::DeleteGeofenceCollection(const DeleteGeofenceCollectionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteGeofenceCollection);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteGeofenceCollection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CollectionNameHasBeenSet())
   {
@@ -454,6 +471,7 @@ DeleteGeofenceCollectionOutcome LocationServiceClient::DeleteGeofenceCollection(
 
 DeleteKeyOutcome LocationServiceClient::DeleteKey(const DeleteKeyRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteKey);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteKey, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.KeyNameHasBeenSet())
   {
@@ -471,6 +489,7 @@ DeleteKeyOutcome LocationServiceClient::DeleteKey(const DeleteKeyRequest& reques
 
 DeleteMapOutcome LocationServiceClient::DeleteMap(const DeleteMapRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteMap);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteMap, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MapNameHasBeenSet())
   {
@@ -488,6 +507,7 @@ DeleteMapOutcome LocationServiceClient::DeleteMap(const DeleteMapRequest& reques
 
 DeletePlaceIndexOutcome LocationServiceClient::DeletePlaceIndex(const DeletePlaceIndexRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeletePlaceIndex);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeletePlaceIndex, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IndexNameHasBeenSet())
   {
@@ -505,6 +525,7 @@ DeletePlaceIndexOutcome LocationServiceClient::DeletePlaceIndex(const DeletePlac
 
 DeleteRouteCalculatorOutcome LocationServiceClient::DeleteRouteCalculator(const DeleteRouteCalculatorRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteRouteCalculator);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteRouteCalculator, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CalculatorNameHasBeenSet())
   {
@@ -522,6 +543,7 @@ DeleteRouteCalculatorOutcome LocationServiceClient::DeleteRouteCalculator(const 
 
 DeleteTrackerOutcome LocationServiceClient::DeleteTracker(const DeleteTrackerRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteTracker);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteTracker, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TrackerNameHasBeenSet())
   {
@@ -539,6 +561,7 @@ DeleteTrackerOutcome LocationServiceClient::DeleteTracker(const DeleteTrackerReq
 
 DescribeGeofenceCollectionOutcome LocationServiceClient::DescribeGeofenceCollection(const DescribeGeofenceCollectionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeGeofenceCollection);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeGeofenceCollection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CollectionNameHasBeenSet())
   {
@@ -556,6 +579,7 @@ DescribeGeofenceCollectionOutcome LocationServiceClient::DescribeGeofenceCollect
 
 DescribeKeyOutcome LocationServiceClient::DescribeKey(const DescribeKeyRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeKey);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeKey, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.KeyNameHasBeenSet())
   {
@@ -573,6 +597,7 @@ DescribeKeyOutcome LocationServiceClient::DescribeKey(const DescribeKeyRequest& 
 
 DescribeMapOutcome LocationServiceClient::DescribeMap(const DescribeMapRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeMap);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeMap, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MapNameHasBeenSet())
   {
@@ -590,6 +615,7 @@ DescribeMapOutcome LocationServiceClient::DescribeMap(const DescribeMapRequest& 
 
 DescribePlaceIndexOutcome LocationServiceClient::DescribePlaceIndex(const DescribePlaceIndexRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribePlaceIndex);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribePlaceIndex, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IndexNameHasBeenSet())
   {
@@ -607,6 +633,7 @@ DescribePlaceIndexOutcome LocationServiceClient::DescribePlaceIndex(const Descri
 
 DescribeRouteCalculatorOutcome LocationServiceClient::DescribeRouteCalculator(const DescribeRouteCalculatorRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeRouteCalculator);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeRouteCalculator, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CalculatorNameHasBeenSet())
   {
@@ -624,6 +651,7 @@ DescribeRouteCalculatorOutcome LocationServiceClient::DescribeRouteCalculator(co
 
 DescribeTrackerOutcome LocationServiceClient::DescribeTracker(const DescribeTrackerRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeTracker);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeTracker, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TrackerNameHasBeenSet())
   {
@@ -641,6 +669,7 @@ DescribeTrackerOutcome LocationServiceClient::DescribeTracker(const DescribeTrac
 
 DisassociateTrackerConsumerOutcome LocationServiceClient::DisassociateTrackerConsumer(const DisassociateTrackerConsumerRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociateTrackerConsumer);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateTrackerConsumer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConsumerArnHasBeenSet())
   {
@@ -665,6 +694,7 @@ DisassociateTrackerConsumerOutcome LocationServiceClient::DisassociateTrackerCon
 
 GetDevicePositionOutcome LocationServiceClient::GetDevicePosition(const GetDevicePositionRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDevicePosition);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDevicePosition, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DeviceIdHasBeenSet())
   {
@@ -690,6 +720,7 @@ GetDevicePositionOutcome LocationServiceClient::GetDevicePosition(const GetDevic
 
 GetDevicePositionHistoryOutcome LocationServiceClient::GetDevicePositionHistory(const GetDevicePositionHistoryRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDevicePositionHistory);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDevicePositionHistory, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DeviceIdHasBeenSet())
   {
@@ -715,6 +746,7 @@ GetDevicePositionHistoryOutcome LocationServiceClient::GetDevicePositionHistory(
 
 GetGeofenceOutcome LocationServiceClient::GetGeofence(const GetGeofenceRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetGeofence);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetGeofence, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CollectionNameHasBeenSet())
   {
@@ -739,6 +771,7 @@ GetGeofenceOutcome LocationServiceClient::GetGeofence(const GetGeofenceRequest& 
 
 GetMapGlyphsOutcome LocationServiceClient::GetMapGlyphs(const GetMapGlyphsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetMapGlyphs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMapGlyphs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FontStackHasBeenSet())
   {
@@ -769,6 +802,7 @@ GetMapGlyphsOutcome LocationServiceClient::GetMapGlyphs(const GetMapGlyphsReques
 
 GetMapSpritesOutcome LocationServiceClient::GetMapSprites(const GetMapSpritesRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetMapSprites);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMapSprites, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FileNameHasBeenSet())
   {
@@ -793,6 +827,7 @@ GetMapSpritesOutcome LocationServiceClient::GetMapSprites(const GetMapSpritesReq
 
 GetMapStyleDescriptorOutcome LocationServiceClient::GetMapStyleDescriptor(const GetMapStyleDescriptorRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetMapStyleDescriptor);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMapStyleDescriptor, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MapNameHasBeenSet())
   {
@@ -811,6 +846,7 @@ GetMapStyleDescriptorOutcome LocationServiceClient::GetMapStyleDescriptor(const 
 
 GetMapTileOutcome LocationServiceClient::GetMapTile(const GetMapTileRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetMapTile);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMapTile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MapNameHasBeenSet())
   {
@@ -847,6 +883,7 @@ GetMapTileOutcome LocationServiceClient::GetMapTile(const GetMapTileRequest& req
 
 GetPlaceOutcome LocationServiceClient::GetPlace(const GetPlaceRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetPlace);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPlace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IndexNameHasBeenSet())
   {
@@ -871,6 +908,7 @@ GetPlaceOutcome LocationServiceClient::GetPlace(const GetPlaceRequest& request) 
 
 ListDevicePositionsOutcome LocationServiceClient::ListDevicePositions(const ListDevicePositionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDevicePositions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDevicePositions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TrackerNameHasBeenSet())
   {
@@ -889,6 +927,7 @@ ListDevicePositionsOutcome LocationServiceClient::ListDevicePositions(const List
 
 ListGeofenceCollectionsOutcome LocationServiceClient::ListGeofenceCollections(const ListGeofenceCollectionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListGeofenceCollections);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListGeofenceCollections, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListGeofenceCollections, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -900,6 +939,7 @@ ListGeofenceCollectionsOutcome LocationServiceClient::ListGeofenceCollections(co
 
 ListGeofencesOutcome LocationServiceClient::ListGeofences(const ListGeofencesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListGeofences);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListGeofences, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CollectionNameHasBeenSet())
   {
@@ -918,6 +958,7 @@ ListGeofencesOutcome LocationServiceClient::ListGeofences(const ListGeofencesReq
 
 ListKeysOutcome LocationServiceClient::ListKeys(const ListKeysRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListKeys);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListKeys, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListKeys, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -929,6 +970,7 @@ ListKeysOutcome LocationServiceClient::ListKeys(const ListKeysRequest& request) 
 
 ListMapsOutcome LocationServiceClient::ListMaps(const ListMapsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListMaps);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListMaps, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListMaps, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -940,6 +982,7 @@ ListMapsOutcome LocationServiceClient::ListMaps(const ListMapsRequest& request) 
 
 ListPlaceIndexesOutcome LocationServiceClient::ListPlaceIndexes(const ListPlaceIndexesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListPlaceIndexes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPlaceIndexes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListPlaceIndexes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -951,6 +994,7 @@ ListPlaceIndexesOutcome LocationServiceClient::ListPlaceIndexes(const ListPlaceI
 
 ListRouteCalculatorsOutcome LocationServiceClient::ListRouteCalculators(const ListRouteCalculatorsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListRouteCalculators);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRouteCalculators, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListRouteCalculators, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -962,6 +1006,7 @@ ListRouteCalculatorsOutcome LocationServiceClient::ListRouteCalculators(const Li
 
 ListTagsForResourceOutcome LocationServiceClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -979,6 +1024,7 @@ ListTagsForResourceOutcome LocationServiceClient::ListTagsForResource(const List
 
 ListTrackerConsumersOutcome LocationServiceClient::ListTrackerConsumers(const ListTrackerConsumersRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTrackerConsumers);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTrackerConsumers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TrackerNameHasBeenSet())
   {
@@ -997,6 +1043,7 @@ ListTrackerConsumersOutcome LocationServiceClient::ListTrackerConsumers(const Li
 
 ListTrackersOutcome LocationServiceClient::ListTrackers(const ListTrackersRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTrackers);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTrackers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTrackers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1008,6 +1055,7 @@ ListTrackersOutcome LocationServiceClient::ListTrackers(const ListTrackersReques
 
 PutGeofenceOutcome LocationServiceClient::PutGeofence(const PutGeofenceRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutGeofence);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutGeofence, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CollectionNameHasBeenSet())
   {
@@ -1032,6 +1080,7 @@ PutGeofenceOutcome LocationServiceClient::PutGeofence(const PutGeofenceRequest& 
 
 SearchPlaceIndexForPositionOutcome LocationServiceClient::SearchPlaceIndexForPosition(const SearchPlaceIndexForPositionRequest& request) const
 {
+  AWS_OPERATION_GUARD(SearchPlaceIndexForPosition);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SearchPlaceIndexForPosition, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IndexNameHasBeenSet())
   {
@@ -1050,6 +1099,7 @@ SearchPlaceIndexForPositionOutcome LocationServiceClient::SearchPlaceIndexForPos
 
 SearchPlaceIndexForSuggestionsOutcome LocationServiceClient::SearchPlaceIndexForSuggestions(const SearchPlaceIndexForSuggestionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(SearchPlaceIndexForSuggestions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SearchPlaceIndexForSuggestions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IndexNameHasBeenSet())
   {
@@ -1068,6 +1118,7 @@ SearchPlaceIndexForSuggestionsOutcome LocationServiceClient::SearchPlaceIndexFor
 
 SearchPlaceIndexForTextOutcome LocationServiceClient::SearchPlaceIndexForText(const SearchPlaceIndexForTextRequest& request) const
 {
+  AWS_OPERATION_GUARD(SearchPlaceIndexForText);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SearchPlaceIndexForText, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IndexNameHasBeenSet())
   {
@@ -1086,6 +1137,7 @@ SearchPlaceIndexForTextOutcome LocationServiceClient::SearchPlaceIndexForText(co
 
 TagResourceOutcome LocationServiceClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -1103,6 +1155,7 @@ TagResourceOutcome LocationServiceClient::TagResource(const TagResourceRequest& 
 
 UntagResourceOutcome LocationServiceClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -1125,6 +1178,7 @@ UntagResourceOutcome LocationServiceClient::UntagResource(const UntagResourceReq
 
 UpdateGeofenceCollectionOutcome LocationServiceClient::UpdateGeofenceCollection(const UpdateGeofenceCollectionRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateGeofenceCollection);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateGeofenceCollection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CollectionNameHasBeenSet())
   {
@@ -1142,6 +1196,7 @@ UpdateGeofenceCollectionOutcome LocationServiceClient::UpdateGeofenceCollection(
 
 UpdateKeyOutcome LocationServiceClient::UpdateKey(const UpdateKeyRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateKey);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateKey, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.KeyNameHasBeenSet())
   {
@@ -1159,6 +1214,7 @@ UpdateKeyOutcome LocationServiceClient::UpdateKey(const UpdateKeyRequest& reques
 
 UpdateMapOutcome LocationServiceClient::UpdateMap(const UpdateMapRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateMap);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateMap, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MapNameHasBeenSet())
   {
@@ -1176,6 +1232,7 @@ UpdateMapOutcome LocationServiceClient::UpdateMap(const UpdateMapRequest& reques
 
 UpdatePlaceIndexOutcome LocationServiceClient::UpdatePlaceIndex(const UpdatePlaceIndexRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdatePlaceIndex);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdatePlaceIndex, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IndexNameHasBeenSet())
   {
@@ -1193,6 +1250,7 @@ UpdatePlaceIndexOutcome LocationServiceClient::UpdatePlaceIndex(const UpdatePlac
 
 UpdateRouteCalculatorOutcome LocationServiceClient::UpdateRouteCalculator(const UpdateRouteCalculatorRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateRouteCalculator);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateRouteCalculator, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CalculatorNameHasBeenSet())
   {
@@ -1210,6 +1268,7 @@ UpdateRouteCalculatorOutcome LocationServiceClient::UpdateRouteCalculator(const 
 
 UpdateTrackerOutcome LocationServiceClient::UpdateTracker(const UpdateTrackerRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateTracker);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateTracker, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TrackerNameHasBeenSet())
   {

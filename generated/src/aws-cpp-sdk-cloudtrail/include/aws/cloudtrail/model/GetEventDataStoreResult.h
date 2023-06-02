@@ -109,32 +109,27 @@ namespace Model
 
 
     /**
-     * <p>The status of an event data store. Values can be <code>ENABLED</code> and
-     * <code>PENDING_DELETION</code>.</p>
+     * <p>The status of an event data store.</p>
      */
     inline const EventDataStoreStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of an event data store. Values can be <code>ENABLED</code> and
-     * <code>PENDING_DELETION</code>.</p>
+     * <p>The status of an event data store.</p>
      */
     inline void SetStatus(const EventDataStoreStatus& value) { m_status = value; }
 
     /**
-     * <p>The status of an event data store. Values can be <code>ENABLED</code> and
-     * <code>PENDING_DELETION</code>.</p>
+     * <p>The status of an event data store.</p>
      */
     inline void SetStatus(EventDataStoreStatus&& value) { m_status = std::move(value); }
 
     /**
-     * <p>The status of an event data store. Values can be <code>ENABLED</code> and
-     * <code>PENDING_DELETION</code>.</p>
+     * <p>The status of an event data store.</p>
      */
     inline GetEventDataStoreResult& WithStatus(const EventDataStoreStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of an event data store. Values can be <code>ENABLED</code> and
-     * <code>PENDING_DELETION</code>.</p>
+     * <p>The status of an event data store.</p>
      */
     inline GetEventDataStoreResult& WithStatus(EventDataStoreStatus&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -176,20 +171,20 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the event data store includes events from all regions, or
-     * only from the region in which it was created.</p>
+     * <p>Indicates whether the event data store includes events from all Regions, or
+     * only from the Region in which it was created.</p>
      */
     inline bool GetMultiRegionEnabled() const{ return m_multiRegionEnabled; }
 
     /**
-     * <p>Indicates whether the event data store includes events from all regions, or
-     * only from the region in which it was created.</p>
+     * <p>Indicates whether the event data store includes events from all Regions, or
+     * only from the Region in which it was created.</p>
      */
     inline void SetMultiRegionEnabled(bool value) { m_multiRegionEnabled = value; }
 
     /**
-     * <p>Indicates whether the event data store includes events from all regions, or
-     * only from the region in which it was created.</p>
+     * <p>Indicates whether the event data store includes events from all Regions, or
+     * only from the Region in which it was created.</p>
      */
     inline GetEventDataStoreResult& WithMultiRegionEnabled(bool value) { SetMultiRegionEnabled(value); return *this;}
 

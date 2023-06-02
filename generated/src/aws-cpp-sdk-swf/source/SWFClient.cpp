@@ -166,6 +166,7 @@ SWFClient::SWFClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
     /* End of legacy constructors due deprecation */
 SWFClient::~SWFClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<SWFEndpointProviderBase>& SWFClient::accessEndpointProvider()
@@ -188,6 +189,7 @@ void SWFClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CountClosedWorkflowExecutionsOutcome SWFClient::CountClosedWorkflowExecutions(const CountClosedWorkflowExecutionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(CountClosedWorkflowExecutions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CountClosedWorkflowExecutions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CountClosedWorkflowExecutions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -196,6 +198,7 @@ CountClosedWorkflowExecutionsOutcome SWFClient::CountClosedWorkflowExecutions(co
 
 CountOpenWorkflowExecutionsOutcome SWFClient::CountOpenWorkflowExecutions(const CountOpenWorkflowExecutionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(CountOpenWorkflowExecutions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CountOpenWorkflowExecutions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CountOpenWorkflowExecutions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -204,6 +207,7 @@ CountOpenWorkflowExecutionsOutcome SWFClient::CountOpenWorkflowExecutions(const 
 
 CountPendingActivityTasksOutcome SWFClient::CountPendingActivityTasks(const CountPendingActivityTasksRequest& request) const
 {
+  AWS_OPERATION_GUARD(CountPendingActivityTasks);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CountPendingActivityTasks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CountPendingActivityTasks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -212,6 +216,7 @@ CountPendingActivityTasksOutcome SWFClient::CountPendingActivityTasks(const Coun
 
 CountPendingDecisionTasksOutcome SWFClient::CountPendingDecisionTasks(const CountPendingDecisionTasksRequest& request) const
 {
+  AWS_OPERATION_GUARD(CountPendingDecisionTasks);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CountPendingDecisionTasks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CountPendingDecisionTasks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -220,6 +225,7 @@ CountPendingDecisionTasksOutcome SWFClient::CountPendingDecisionTasks(const Coun
 
 DeprecateActivityTypeOutcome SWFClient::DeprecateActivityType(const DeprecateActivityTypeRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeprecateActivityType);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeprecateActivityType, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeprecateActivityType, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -228,6 +234,7 @@ DeprecateActivityTypeOutcome SWFClient::DeprecateActivityType(const DeprecateAct
 
 DeprecateDomainOutcome SWFClient::DeprecateDomain(const DeprecateDomainRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeprecateDomain);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeprecateDomain, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeprecateDomain, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -236,6 +243,7 @@ DeprecateDomainOutcome SWFClient::DeprecateDomain(const DeprecateDomainRequest& 
 
 DeprecateWorkflowTypeOutcome SWFClient::DeprecateWorkflowType(const DeprecateWorkflowTypeRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeprecateWorkflowType);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeprecateWorkflowType, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeprecateWorkflowType, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -244,6 +252,7 @@ DeprecateWorkflowTypeOutcome SWFClient::DeprecateWorkflowType(const DeprecateWor
 
 DescribeActivityTypeOutcome SWFClient::DescribeActivityType(const DescribeActivityTypeRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeActivityType);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeActivityType, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeActivityType, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -252,6 +261,7 @@ DescribeActivityTypeOutcome SWFClient::DescribeActivityType(const DescribeActivi
 
 DescribeDomainOutcome SWFClient::DescribeDomain(const DescribeDomainRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeDomain);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeDomain, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeDomain, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -260,6 +270,7 @@ DescribeDomainOutcome SWFClient::DescribeDomain(const DescribeDomainRequest& req
 
 DescribeWorkflowExecutionOutcome SWFClient::DescribeWorkflowExecution(const DescribeWorkflowExecutionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeWorkflowExecution);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeWorkflowExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeWorkflowExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -268,6 +279,7 @@ DescribeWorkflowExecutionOutcome SWFClient::DescribeWorkflowExecution(const Desc
 
 DescribeWorkflowTypeOutcome SWFClient::DescribeWorkflowType(const DescribeWorkflowTypeRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeWorkflowType);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeWorkflowType, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeWorkflowType, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -276,6 +288,7 @@ DescribeWorkflowTypeOutcome SWFClient::DescribeWorkflowType(const DescribeWorkfl
 
 GetWorkflowExecutionHistoryOutcome SWFClient::GetWorkflowExecutionHistory(const GetWorkflowExecutionHistoryRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetWorkflowExecutionHistory);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetWorkflowExecutionHistory, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetWorkflowExecutionHistory, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -284,6 +297,7 @@ GetWorkflowExecutionHistoryOutcome SWFClient::GetWorkflowExecutionHistory(const 
 
 ListActivityTypesOutcome SWFClient::ListActivityTypes(const ListActivityTypesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListActivityTypes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListActivityTypes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListActivityTypes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -292,6 +306,7 @@ ListActivityTypesOutcome SWFClient::ListActivityTypes(const ListActivityTypesReq
 
 ListClosedWorkflowExecutionsOutcome SWFClient::ListClosedWorkflowExecutions(const ListClosedWorkflowExecutionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListClosedWorkflowExecutions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListClosedWorkflowExecutions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListClosedWorkflowExecutions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -300,6 +315,7 @@ ListClosedWorkflowExecutionsOutcome SWFClient::ListClosedWorkflowExecutions(cons
 
 ListDomainsOutcome SWFClient::ListDomains(const ListDomainsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDomains);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDomains, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDomains, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -308,6 +324,7 @@ ListDomainsOutcome SWFClient::ListDomains(const ListDomainsRequest& request) con
 
 ListOpenWorkflowExecutionsOutcome SWFClient::ListOpenWorkflowExecutions(const ListOpenWorkflowExecutionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListOpenWorkflowExecutions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListOpenWorkflowExecutions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListOpenWorkflowExecutions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -316,6 +333,7 @@ ListOpenWorkflowExecutionsOutcome SWFClient::ListOpenWorkflowExecutions(const Li
 
 ListTagsForResourceOutcome SWFClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -324,6 +342,7 @@ ListTagsForResourceOutcome SWFClient::ListTagsForResource(const ListTagsForResou
 
 ListWorkflowTypesOutcome SWFClient::ListWorkflowTypes(const ListWorkflowTypesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListWorkflowTypes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListWorkflowTypes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListWorkflowTypes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -332,6 +351,7 @@ ListWorkflowTypesOutcome SWFClient::ListWorkflowTypes(const ListWorkflowTypesReq
 
 PollForActivityTaskOutcome SWFClient::PollForActivityTask(const PollForActivityTaskRequest& request) const
 {
+  AWS_OPERATION_GUARD(PollForActivityTask);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PollForActivityTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PollForActivityTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -340,6 +360,7 @@ PollForActivityTaskOutcome SWFClient::PollForActivityTask(const PollForActivityT
 
 PollForDecisionTaskOutcome SWFClient::PollForDecisionTask(const PollForDecisionTaskRequest& request) const
 {
+  AWS_OPERATION_GUARD(PollForDecisionTask);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PollForDecisionTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PollForDecisionTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -348,6 +369,7 @@ PollForDecisionTaskOutcome SWFClient::PollForDecisionTask(const PollForDecisionT
 
 RecordActivityTaskHeartbeatOutcome SWFClient::RecordActivityTaskHeartbeat(const RecordActivityTaskHeartbeatRequest& request) const
 {
+  AWS_OPERATION_GUARD(RecordActivityTaskHeartbeat);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RecordActivityTaskHeartbeat, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RecordActivityTaskHeartbeat, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -356,6 +378,7 @@ RecordActivityTaskHeartbeatOutcome SWFClient::RecordActivityTaskHeartbeat(const 
 
 RegisterActivityTypeOutcome SWFClient::RegisterActivityType(const RegisterActivityTypeRequest& request) const
 {
+  AWS_OPERATION_GUARD(RegisterActivityType);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RegisterActivityType, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RegisterActivityType, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -364,6 +387,7 @@ RegisterActivityTypeOutcome SWFClient::RegisterActivityType(const RegisterActivi
 
 RegisterDomainOutcome SWFClient::RegisterDomain(const RegisterDomainRequest& request) const
 {
+  AWS_OPERATION_GUARD(RegisterDomain);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RegisterDomain, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RegisterDomain, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -372,6 +396,7 @@ RegisterDomainOutcome SWFClient::RegisterDomain(const RegisterDomainRequest& req
 
 RegisterWorkflowTypeOutcome SWFClient::RegisterWorkflowType(const RegisterWorkflowTypeRequest& request) const
 {
+  AWS_OPERATION_GUARD(RegisterWorkflowType);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RegisterWorkflowType, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RegisterWorkflowType, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -380,6 +405,7 @@ RegisterWorkflowTypeOutcome SWFClient::RegisterWorkflowType(const RegisterWorkfl
 
 RequestCancelWorkflowExecutionOutcome SWFClient::RequestCancelWorkflowExecution(const RequestCancelWorkflowExecutionRequest& request) const
 {
+  AWS_OPERATION_GUARD(RequestCancelWorkflowExecution);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RequestCancelWorkflowExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RequestCancelWorkflowExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -388,6 +414,7 @@ RequestCancelWorkflowExecutionOutcome SWFClient::RequestCancelWorkflowExecution(
 
 RespondActivityTaskCanceledOutcome SWFClient::RespondActivityTaskCanceled(const RespondActivityTaskCanceledRequest& request) const
 {
+  AWS_OPERATION_GUARD(RespondActivityTaskCanceled);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RespondActivityTaskCanceled, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RespondActivityTaskCanceled, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -396,6 +423,7 @@ RespondActivityTaskCanceledOutcome SWFClient::RespondActivityTaskCanceled(const 
 
 RespondActivityTaskCompletedOutcome SWFClient::RespondActivityTaskCompleted(const RespondActivityTaskCompletedRequest& request) const
 {
+  AWS_OPERATION_GUARD(RespondActivityTaskCompleted);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RespondActivityTaskCompleted, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RespondActivityTaskCompleted, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -404,6 +432,7 @@ RespondActivityTaskCompletedOutcome SWFClient::RespondActivityTaskCompleted(cons
 
 RespondActivityTaskFailedOutcome SWFClient::RespondActivityTaskFailed(const RespondActivityTaskFailedRequest& request) const
 {
+  AWS_OPERATION_GUARD(RespondActivityTaskFailed);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RespondActivityTaskFailed, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RespondActivityTaskFailed, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -412,6 +441,7 @@ RespondActivityTaskFailedOutcome SWFClient::RespondActivityTaskFailed(const Resp
 
 RespondDecisionTaskCompletedOutcome SWFClient::RespondDecisionTaskCompleted(const RespondDecisionTaskCompletedRequest& request) const
 {
+  AWS_OPERATION_GUARD(RespondDecisionTaskCompleted);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RespondDecisionTaskCompleted, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RespondDecisionTaskCompleted, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -420,6 +450,7 @@ RespondDecisionTaskCompletedOutcome SWFClient::RespondDecisionTaskCompleted(cons
 
 SignalWorkflowExecutionOutcome SWFClient::SignalWorkflowExecution(const SignalWorkflowExecutionRequest& request) const
 {
+  AWS_OPERATION_GUARD(SignalWorkflowExecution);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SignalWorkflowExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SignalWorkflowExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -428,6 +459,7 @@ SignalWorkflowExecutionOutcome SWFClient::SignalWorkflowExecution(const SignalWo
 
 StartWorkflowExecutionOutcome SWFClient::StartWorkflowExecution(const StartWorkflowExecutionRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartWorkflowExecution);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartWorkflowExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartWorkflowExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -436,6 +468,7 @@ StartWorkflowExecutionOutcome SWFClient::StartWorkflowExecution(const StartWorkf
 
 TagResourceOutcome SWFClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -444,6 +477,7 @@ TagResourceOutcome SWFClient::TagResource(const TagResourceRequest& request) con
 
 TerminateWorkflowExecutionOutcome SWFClient::TerminateWorkflowExecution(const TerminateWorkflowExecutionRequest& request) const
 {
+  AWS_OPERATION_GUARD(TerminateWorkflowExecution);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TerminateWorkflowExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TerminateWorkflowExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -452,6 +486,7 @@ TerminateWorkflowExecutionOutcome SWFClient::TerminateWorkflowExecution(const Te
 
 UndeprecateActivityTypeOutcome SWFClient::UndeprecateActivityType(const UndeprecateActivityTypeRequest& request) const
 {
+  AWS_OPERATION_GUARD(UndeprecateActivityType);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UndeprecateActivityType, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UndeprecateActivityType, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -460,6 +495,7 @@ UndeprecateActivityTypeOutcome SWFClient::UndeprecateActivityType(const Undeprec
 
 UndeprecateDomainOutcome SWFClient::UndeprecateDomain(const UndeprecateDomainRequest& request) const
 {
+  AWS_OPERATION_GUARD(UndeprecateDomain);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UndeprecateDomain, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UndeprecateDomain, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -468,6 +504,7 @@ UndeprecateDomainOutcome SWFClient::UndeprecateDomain(const UndeprecateDomainReq
 
 UndeprecateWorkflowTypeOutcome SWFClient::UndeprecateWorkflowType(const UndeprecateWorkflowTypeRequest& request) const
 {
+  AWS_OPERATION_GUARD(UndeprecateWorkflowType);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UndeprecateWorkflowType, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UndeprecateWorkflowType, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -476,6 +513,7 @@ UndeprecateWorkflowTypeOutcome SWFClient::UndeprecateWorkflowType(const Undeprec
 
 UntagResourceOutcome SWFClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
