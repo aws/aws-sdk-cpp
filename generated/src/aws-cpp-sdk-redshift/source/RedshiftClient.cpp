@@ -249,6 +249,7 @@ RedshiftClient::RedshiftClient(const std::shared_ptr<AWSCredentialsProvider>& cr
     /* End of legacy constructors due deprecation */
 RedshiftClient::~RedshiftClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<RedshiftEndpointProviderBase>& RedshiftClient::accessEndpointProvider()
@@ -293,6 +294,7 @@ Aws::String RedshiftClient::ConvertRequestToPresignedUrl(const AmazonSerializabl
 
 AcceptReservedNodeExchangeOutcome RedshiftClient::AcceptReservedNodeExchange(const AcceptReservedNodeExchangeRequest& request) const
 {
+  AWS_OPERATION_GUARD(AcceptReservedNodeExchange);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AcceptReservedNodeExchange, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AcceptReservedNodeExchange, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -301,6 +303,7 @@ AcceptReservedNodeExchangeOutcome RedshiftClient::AcceptReservedNodeExchange(con
 
 AddPartnerOutcome RedshiftClient::AddPartner(const AddPartnerRequest& request) const
 {
+  AWS_OPERATION_GUARD(AddPartner);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AddPartner, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AddPartner, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -309,6 +312,7 @@ AddPartnerOutcome RedshiftClient::AddPartner(const AddPartnerRequest& request) c
 
 AssociateDataShareConsumerOutcome RedshiftClient::AssociateDataShareConsumer(const AssociateDataShareConsumerRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociateDataShareConsumer);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateDataShareConsumer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AssociateDataShareConsumer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -317,6 +321,7 @@ AssociateDataShareConsumerOutcome RedshiftClient::AssociateDataShareConsumer(con
 
 AuthorizeClusterSecurityGroupIngressOutcome RedshiftClient::AuthorizeClusterSecurityGroupIngress(const AuthorizeClusterSecurityGroupIngressRequest& request) const
 {
+  AWS_OPERATION_GUARD(AuthorizeClusterSecurityGroupIngress);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AuthorizeClusterSecurityGroupIngress, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AuthorizeClusterSecurityGroupIngress, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -325,6 +330,7 @@ AuthorizeClusterSecurityGroupIngressOutcome RedshiftClient::AuthorizeClusterSecu
 
 AuthorizeDataShareOutcome RedshiftClient::AuthorizeDataShare(const AuthorizeDataShareRequest& request) const
 {
+  AWS_OPERATION_GUARD(AuthorizeDataShare);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AuthorizeDataShare, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AuthorizeDataShare, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -333,6 +339,7 @@ AuthorizeDataShareOutcome RedshiftClient::AuthorizeDataShare(const AuthorizeData
 
 AuthorizeEndpointAccessOutcome RedshiftClient::AuthorizeEndpointAccess(const AuthorizeEndpointAccessRequest& request) const
 {
+  AWS_OPERATION_GUARD(AuthorizeEndpointAccess);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AuthorizeEndpointAccess, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AuthorizeEndpointAccess, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -341,6 +348,7 @@ AuthorizeEndpointAccessOutcome RedshiftClient::AuthorizeEndpointAccess(const Aut
 
 AuthorizeSnapshotAccessOutcome RedshiftClient::AuthorizeSnapshotAccess(const AuthorizeSnapshotAccessRequest& request) const
 {
+  AWS_OPERATION_GUARD(AuthorizeSnapshotAccess);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AuthorizeSnapshotAccess, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AuthorizeSnapshotAccess, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -349,6 +357,7 @@ AuthorizeSnapshotAccessOutcome RedshiftClient::AuthorizeSnapshotAccess(const Aut
 
 BatchDeleteClusterSnapshotsOutcome RedshiftClient::BatchDeleteClusterSnapshots(const BatchDeleteClusterSnapshotsRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchDeleteClusterSnapshots);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchDeleteClusterSnapshots, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchDeleteClusterSnapshots, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -357,6 +366,7 @@ BatchDeleteClusterSnapshotsOutcome RedshiftClient::BatchDeleteClusterSnapshots(c
 
 BatchModifyClusterSnapshotsOutcome RedshiftClient::BatchModifyClusterSnapshots(const BatchModifyClusterSnapshotsRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchModifyClusterSnapshots);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchModifyClusterSnapshots, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchModifyClusterSnapshots, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -365,6 +375,7 @@ BatchModifyClusterSnapshotsOutcome RedshiftClient::BatchModifyClusterSnapshots(c
 
 CancelResizeOutcome RedshiftClient::CancelResize(const CancelResizeRequest& request) const
 {
+  AWS_OPERATION_GUARD(CancelResize);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CancelResize, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CancelResize, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -373,6 +384,7 @@ CancelResizeOutcome RedshiftClient::CancelResize(const CancelResizeRequest& requ
 
 CopyClusterSnapshotOutcome RedshiftClient::CopyClusterSnapshot(const CopyClusterSnapshotRequest& request) const
 {
+  AWS_OPERATION_GUARD(CopyClusterSnapshot);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CopyClusterSnapshot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CopyClusterSnapshot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -381,6 +393,7 @@ CopyClusterSnapshotOutcome RedshiftClient::CopyClusterSnapshot(const CopyCluster
 
 CreateAuthenticationProfileOutcome RedshiftClient::CreateAuthenticationProfile(const CreateAuthenticationProfileRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateAuthenticationProfile);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAuthenticationProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateAuthenticationProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -389,6 +402,7 @@ CreateAuthenticationProfileOutcome RedshiftClient::CreateAuthenticationProfile(c
 
 CreateClusterOutcome RedshiftClient::CreateCluster(const CreateClusterRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateCluster);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateCluster, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateCluster, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -397,6 +411,7 @@ CreateClusterOutcome RedshiftClient::CreateCluster(const CreateClusterRequest& r
 
 CreateClusterParameterGroupOutcome RedshiftClient::CreateClusterParameterGroup(const CreateClusterParameterGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateClusterParameterGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateClusterParameterGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateClusterParameterGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -405,6 +420,7 @@ CreateClusterParameterGroupOutcome RedshiftClient::CreateClusterParameterGroup(c
 
 CreateClusterSecurityGroupOutcome RedshiftClient::CreateClusterSecurityGroup(const CreateClusterSecurityGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateClusterSecurityGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateClusterSecurityGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateClusterSecurityGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -413,6 +429,7 @@ CreateClusterSecurityGroupOutcome RedshiftClient::CreateClusterSecurityGroup(con
 
 CreateClusterSnapshotOutcome RedshiftClient::CreateClusterSnapshot(const CreateClusterSnapshotRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateClusterSnapshot);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateClusterSnapshot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateClusterSnapshot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -421,6 +438,7 @@ CreateClusterSnapshotOutcome RedshiftClient::CreateClusterSnapshot(const CreateC
 
 CreateClusterSubnetGroupOutcome RedshiftClient::CreateClusterSubnetGroup(const CreateClusterSubnetGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateClusterSubnetGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateClusterSubnetGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateClusterSubnetGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -429,6 +447,7 @@ CreateClusterSubnetGroupOutcome RedshiftClient::CreateClusterSubnetGroup(const C
 
 CreateEndpointAccessOutcome RedshiftClient::CreateEndpointAccess(const CreateEndpointAccessRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateEndpointAccess);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateEndpointAccess, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateEndpointAccess, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -437,6 +456,7 @@ CreateEndpointAccessOutcome RedshiftClient::CreateEndpointAccess(const CreateEnd
 
 CreateEventSubscriptionOutcome RedshiftClient::CreateEventSubscription(const CreateEventSubscriptionRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateEventSubscription);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateEventSubscription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateEventSubscription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -445,6 +465,7 @@ CreateEventSubscriptionOutcome RedshiftClient::CreateEventSubscription(const Cre
 
 CreateHsmClientCertificateOutcome RedshiftClient::CreateHsmClientCertificate(const CreateHsmClientCertificateRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateHsmClientCertificate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateHsmClientCertificate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateHsmClientCertificate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -453,6 +474,7 @@ CreateHsmClientCertificateOutcome RedshiftClient::CreateHsmClientCertificate(con
 
 CreateHsmConfigurationOutcome RedshiftClient::CreateHsmConfiguration(const CreateHsmConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateHsmConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateHsmConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateHsmConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -461,6 +483,7 @@ CreateHsmConfigurationOutcome RedshiftClient::CreateHsmConfiguration(const Creat
 
 CreateScheduledActionOutcome RedshiftClient::CreateScheduledAction(const CreateScheduledActionRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateScheduledAction);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateScheduledAction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateScheduledAction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -469,6 +492,7 @@ CreateScheduledActionOutcome RedshiftClient::CreateScheduledAction(const CreateS
 
 CreateSnapshotCopyGrantOutcome RedshiftClient::CreateSnapshotCopyGrant(const CreateSnapshotCopyGrantRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateSnapshotCopyGrant);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateSnapshotCopyGrant, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateSnapshotCopyGrant, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -477,6 +501,7 @@ CreateSnapshotCopyGrantOutcome RedshiftClient::CreateSnapshotCopyGrant(const Cre
 
 CreateSnapshotScheduleOutcome RedshiftClient::CreateSnapshotSchedule(const CreateSnapshotScheduleRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateSnapshotSchedule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateSnapshotSchedule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateSnapshotSchedule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -485,6 +510,7 @@ CreateSnapshotScheduleOutcome RedshiftClient::CreateSnapshotSchedule(const Creat
 
 CreateTagsOutcome RedshiftClient::CreateTags(const CreateTagsRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateTags);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateTags, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateTags, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -493,6 +519,7 @@ CreateTagsOutcome RedshiftClient::CreateTags(const CreateTagsRequest& request) c
 
 CreateUsageLimitOutcome RedshiftClient::CreateUsageLimit(const CreateUsageLimitRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateUsageLimit);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateUsageLimit, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateUsageLimit, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -501,6 +528,7 @@ CreateUsageLimitOutcome RedshiftClient::CreateUsageLimit(const CreateUsageLimitR
 
 DeauthorizeDataShareOutcome RedshiftClient::DeauthorizeDataShare(const DeauthorizeDataShareRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeauthorizeDataShare);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeauthorizeDataShare, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeauthorizeDataShare, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -509,6 +537,7 @@ DeauthorizeDataShareOutcome RedshiftClient::DeauthorizeDataShare(const Deauthori
 
 DeleteAuthenticationProfileOutcome RedshiftClient::DeleteAuthenticationProfile(const DeleteAuthenticationProfileRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteAuthenticationProfile);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAuthenticationProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteAuthenticationProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -517,6 +546,7 @@ DeleteAuthenticationProfileOutcome RedshiftClient::DeleteAuthenticationProfile(c
 
 DeleteClusterOutcome RedshiftClient::DeleteCluster(const DeleteClusterRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteCluster);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteCluster, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteCluster, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -525,6 +555,7 @@ DeleteClusterOutcome RedshiftClient::DeleteCluster(const DeleteClusterRequest& r
 
 DeleteClusterParameterGroupOutcome RedshiftClient::DeleteClusterParameterGroup(const DeleteClusterParameterGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteClusterParameterGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteClusterParameterGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteClusterParameterGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -533,6 +564,7 @@ DeleteClusterParameterGroupOutcome RedshiftClient::DeleteClusterParameterGroup(c
 
 DeleteClusterSecurityGroupOutcome RedshiftClient::DeleteClusterSecurityGroup(const DeleteClusterSecurityGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteClusterSecurityGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteClusterSecurityGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteClusterSecurityGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -541,6 +573,7 @@ DeleteClusterSecurityGroupOutcome RedshiftClient::DeleteClusterSecurityGroup(con
 
 DeleteClusterSnapshotOutcome RedshiftClient::DeleteClusterSnapshot(const DeleteClusterSnapshotRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteClusterSnapshot);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteClusterSnapshot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteClusterSnapshot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -549,6 +582,7 @@ DeleteClusterSnapshotOutcome RedshiftClient::DeleteClusterSnapshot(const DeleteC
 
 DeleteClusterSubnetGroupOutcome RedshiftClient::DeleteClusterSubnetGroup(const DeleteClusterSubnetGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteClusterSubnetGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteClusterSubnetGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteClusterSubnetGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -557,6 +591,7 @@ DeleteClusterSubnetGroupOutcome RedshiftClient::DeleteClusterSubnetGroup(const D
 
 DeleteEndpointAccessOutcome RedshiftClient::DeleteEndpointAccess(const DeleteEndpointAccessRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteEndpointAccess);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteEndpointAccess, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteEndpointAccess, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -565,6 +600,7 @@ DeleteEndpointAccessOutcome RedshiftClient::DeleteEndpointAccess(const DeleteEnd
 
 DeleteEventSubscriptionOutcome RedshiftClient::DeleteEventSubscription(const DeleteEventSubscriptionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteEventSubscription);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteEventSubscription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteEventSubscription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -573,6 +609,7 @@ DeleteEventSubscriptionOutcome RedshiftClient::DeleteEventSubscription(const Del
 
 DeleteHsmClientCertificateOutcome RedshiftClient::DeleteHsmClientCertificate(const DeleteHsmClientCertificateRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteHsmClientCertificate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteHsmClientCertificate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteHsmClientCertificate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -581,6 +618,7 @@ DeleteHsmClientCertificateOutcome RedshiftClient::DeleteHsmClientCertificate(con
 
 DeleteHsmConfigurationOutcome RedshiftClient::DeleteHsmConfiguration(const DeleteHsmConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteHsmConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteHsmConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteHsmConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -589,6 +627,7 @@ DeleteHsmConfigurationOutcome RedshiftClient::DeleteHsmConfiguration(const Delet
 
 DeletePartnerOutcome RedshiftClient::DeletePartner(const DeletePartnerRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeletePartner);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeletePartner, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeletePartner, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -597,6 +636,7 @@ DeletePartnerOutcome RedshiftClient::DeletePartner(const DeletePartnerRequest& r
 
 DeleteScheduledActionOutcome RedshiftClient::DeleteScheduledAction(const DeleteScheduledActionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteScheduledAction);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteScheduledAction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteScheduledAction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -605,6 +645,7 @@ DeleteScheduledActionOutcome RedshiftClient::DeleteScheduledAction(const DeleteS
 
 DeleteSnapshotCopyGrantOutcome RedshiftClient::DeleteSnapshotCopyGrant(const DeleteSnapshotCopyGrantRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteSnapshotCopyGrant);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteSnapshotCopyGrant, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteSnapshotCopyGrant, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -613,6 +654,7 @@ DeleteSnapshotCopyGrantOutcome RedshiftClient::DeleteSnapshotCopyGrant(const Del
 
 DeleteSnapshotScheduleOutcome RedshiftClient::DeleteSnapshotSchedule(const DeleteSnapshotScheduleRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteSnapshotSchedule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteSnapshotSchedule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteSnapshotSchedule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -621,6 +663,7 @@ DeleteSnapshotScheduleOutcome RedshiftClient::DeleteSnapshotSchedule(const Delet
 
 DeleteTagsOutcome RedshiftClient::DeleteTags(const DeleteTagsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteTags);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteTags, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteTags, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -629,6 +672,7 @@ DeleteTagsOutcome RedshiftClient::DeleteTags(const DeleteTagsRequest& request) c
 
 DeleteUsageLimitOutcome RedshiftClient::DeleteUsageLimit(const DeleteUsageLimitRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteUsageLimit);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteUsageLimit, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteUsageLimit, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -637,6 +681,7 @@ DeleteUsageLimitOutcome RedshiftClient::DeleteUsageLimit(const DeleteUsageLimitR
 
 DescribeAccountAttributesOutcome RedshiftClient::DescribeAccountAttributes(const DescribeAccountAttributesRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeAccountAttributes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAccountAttributes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeAccountAttributes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -645,6 +690,7 @@ DescribeAccountAttributesOutcome RedshiftClient::DescribeAccountAttributes(const
 
 DescribeAuthenticationProfilesOutcome RedshiftClient::DescribeAuthenticationProfiles(const DescribeAuthenticationProfilesRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeAuthenticationProfiles);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAuthenticationProfiles, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeAuthenticationProfiles, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -653,6 +699,7 @@ DescribeAuthenticationProfilesOutcome RedshiftClient::DescribeAuthenticationProf
 
 DescribeClusterDbRevisionsOutcome RedshiftClient::DescribeClusterDbRevisions(const DescribeClusterDbRevisionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeClusterDbRevisions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeClusterDbRevisions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeClusterDbRevisions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -661,6 +708,7 @@ DescribeClusterDbRevisionsOutcome RedshiftClient::DescribeClusterDbRevisions(con
 
 DescribeClusterParameterGroupsOutcome RedshiftClient::DescribeClusterParameterGroups(const DescribeClusterParameterGroupsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeClusterParameterGroups);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeClusterParameterGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeClusterParameterGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -669,6 +717,7 @@ DescribeClusterParameterGroupsOutcome RedshiftClient::DescribeClusterParameterGr
 
 DescribeClusterParametersOutcome RedshiftClient::DescribeClusterParameters(const DescribeClusterParametersRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeClusterParameters);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeClusterParameters, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeClusterParameters, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -677,6 +726,7 @@ DescribeClusterParametersOutcome RedshiftClient::DescribeClusterParameters(const
 
 DescribeClusterSecurityGroupsOutcome RedshiftClient::DescribeClusterSecurityGroups(const DescribeClusterSecurityGroupsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeClusterSecurityGroups);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeClusterSecurityGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeClusterSecurityGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -685,6 +735,7 @@ DescribeClusterSecurityGroupsOutcome RedshiftClient::DescribeClusterSecurityGrou
 
 DescribeClusterSnapshotsOutcome RedshiftClient::DescribeClusterSnapshots(const DescribeClusterSnapshotsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeClusterSnapshots);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeClusterSnapshots, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeClusterSnapshots, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -693,6 +744,7 @@ DescribeClusterSnapshotsOutcome RedshiftClient::DescribeClusterSnapshots(const D
 
 DescribeClusterSubnetGroupsOutcome RedshiftClient::DescribeClusterSubnetGroups(const DescribeClusterSubnetGroupsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeClusterSubnetGroups);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeClusterSubnetGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeClusterSubnetGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -701,6 +753,7 @@ DescribeClusterSubnetGroupsOutcome RedshiftClient::DescribeClusterSubnetGroups(c
 
 DescribeClusterTracksOutcome RedshiftClient::DescribeClusterTracks(const DescribeClusterTracksRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeClusterTracks);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeClusterTracks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeClusterTracks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -709,6 +762,7 @@ DescribeClusterTracksOutcome RedshiftClient::DescribeClusterTracks(const Describ
 
 DescribeClusterVersionsOutcome RedshiftClient::DescribeClusterVersions(const DescribeClusterVersionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeClusterVersions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeClusterVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeClusterVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -717,6 +771,7 @@ DescribeClusterVersionsOutcome RedshiftClient::DescribeClusterVersions(const Des
 
 DescribeClustersOutcome RedshiftClient::DescribeClusters(const DescribeClustersRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeClusters);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeClusters, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeClusters, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -725,6 +780,7 @@ DescribeClustersOutcome RedshiftClient::DescribeClusters(const DescribeClustersR
 
 DescribeDataSharesOutcome RedshiftClient::DescribeDataShares(const DescribeDataSharesRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeDataShares);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeDataShares, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeDataShares, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -733,6 +789,7 @@ DescribeDataSharesOutcome RedshiftClient::DescribeDataShares(const DescribeDataS
 
 DescribeDataSharesForConsumerOutcome RedshiftClient::DescribeDataSharesForConsumer(const DescribeDataSharesForConsumerRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeDataSharesForConsumer);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeDataSharesForConsumer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeDataSharesForConsumer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -741,6 +798,7 @@ DescribeDataSharesForConsumerOutcome RedshiftClient::DescribeDataSharesForConsum
 
 DescribeDataSharesForProducerOutcome RedshiftClient::DescribeDataSharesForProducer(const DescribeDataSharesForProducerRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeDataSharesForProducer);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeDataSharesForProducer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeDataSharesForProducer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -749,6 +807,7 @@ DescribeDataSharesForProducerOutcome RedshiftClient::DescribeDataSharesForProduc
 
 DescribeDefaultClusterParametersOutcome RedshiftClient::DescribeDefaultClusterParameters(const DescribeDefaultClusterParametersRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeDefaultClusterParameters);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeDefaultClusterParameters, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeDefaultClusterParameters, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -757,6 +816,7 @@ DescribeDefaultClusterParametersOutcome RedshiftClient::DescribeDefaultClusterPa
 
 DescribeEndpointAccessOutcome RedshiftClient::DescribeEndpointAccess(const DescribeEndpointAccessRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeEndpointAccess);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeEndpointAccess, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeEndpointAccess, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -765,6 +825,7 @@ DescribeEndpointAccessOutcome RedshiftClient::DescribeEndpointAccess(const Descr
 
 DescribeEndpointAuthorizationOutcome RedshiftClient::DescribeEndpointAuthorization(const DescribeEndpointAuthorizationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeEndpointAuthorization);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeEndpointAuthorization, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeEndpointAuthorization, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -773,6 +834,7 @@ DescribeEndpointAuthorizationOutcome RedshiftClient::DescribeEndpointAuthorizati
 
 DescribeEventCategoriesOutcome RedshiftClient::DescribeEventCategories(const DescribeEventCategoriesRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeEventCategories);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeEventCategories, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeEventCategories, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -781,6 +843,7 @@ DescribeEventCategoriesOutcome RedshiftClient::DescribeEventCategories(const Des
 
 DescribeEventSubscriptionsOutcome RedshiftClient::DescribeEventSubscriptions(const DescribeEventSubscriptionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeEventSubscriptions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeEventSubscriptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeEventSubscriptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -789,6 +852,7 @@ DescribeEventSubscriptionsOutcome RedshiftClient::DescribeEventSubscriptions(con
 
 DescribeEventsOutcome RedshiftClient::DescribeEvents(const DescribeEventsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeEvents);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeEvents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeEvents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -797,6 +861,7 @@ DescribeEventsOutcome RedshiftClient::DescribeEvents(const DescribeEventsRequest
 
 DescribeHsmClientCertificatesOutcome RedshiftClient::DescribeHsmClientCertificates(const DescribeHsmClientCertificatesRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeHsmClientCertificates);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeHsmClientCertificates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeHsmClientCertificates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -805,6 +870,7 @@ DescribeHsmClientCertificatesOutcome RedshiftClient::DescribeHsmClientCertificat
 
 DescribeHsmConfigurationsOutcome RedshiftClient::DescribeHsmConfigurations(const DescribeHsmConfigurationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeHsmConfigurations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeHsmConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeHsmConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -813,6 +879,7 @@ DescribeHsmConfigurationsOutcome RedshiftClient::DescribeHsmConfigurations(const
 
 DescribeLoggingStatusOutcome RedshiftClient::DescribeLoggingStatus(const DescribeLoggingStatusRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeLoggingStatus);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeLoggingStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeLoggingStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -821,6 +888,7 @@ DescribeLoggingStatusOutcome RedshiftClient::DescribeLoggingStatus(const Describ
 
 DescribeNodeConfigurationOptionsOutcome RedshiftClient::DescribeNodeConfigurationOptions(const DescribeNodeConfigurationOptionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeNodeConfigurationOptions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeNodeConfigurationOptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeNodeConfigurationOptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -829,6 +897,7 @@ DescribeNodeConfigurationOptionsOutcome RedshiftClient::DescribeNodeConfiguratio
 
 DescribeOrderableClusterOptionsOutcome RedshiftClient::DescribeOrderableClusterOptions(const DescribeOrderableClusterOptionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeOrderableClusterOptions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeOrderableClusterOptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeOrderableClusterOptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -837,6 +906,7 @@ DescribeOrderableClusterOptionsOutcome RedshiftClient::DescribeOrderableClusterO
 
 DescribePartnersOutcome RedshiftClient::DescribePartners(const DescribePartnersRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribePartners);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribePartners, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribePartners, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -845,6 +915,7 @@ DescribePartnersOutcome RedshiftClient::DescribePartners(const DescribePartnersR
 
 DescribeReservedNodeExchangeStatusOutcome RedshiftClient::DescribeReservedNodeExchangeStatus(const DescribeReservedNodeExchangeStatusRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeReservedNodeExchangeStatus);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeReservedNodeExchangeStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeReservedNodeExchangeStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -853,6 +924,7 @@ DescribeReservedNodeExchangeStatusOutcome RedshiftClient::DescribeReservedNodeEx
 
 DescribeReservedNodeOfferingsOutcome RedshiftClient::DescribeReservedNodeOfferings(const DescribeReservedNodeOfferingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeReservedNodeOfferings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeReservedNodeOfferings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeReservedNodeOfferings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -861,6 +933,7 @@ DescribeReservedNodeOfferingsOutcome RedshiftClient::DescribeReservedNodeOfferin
 
 DescribeReservedNodesOutcome RedshiftClient::DescribeReservedNodes(const DescribeReservedNodesRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeReservedNodes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeReservedNodes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeReservedNodes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -869,6 +942,7 @@ DescribeReservedNodesOutcome RedshiftClient::DescribeReservedNodes(const Describ
 
 DescribeResizeOutcome RedshiftClient::DescribeResize(const DescribeResizeRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeResize);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeResize, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeResize, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -877,6 +951,7 @@ DescribeResizeOutcome RedshiftClient::DescribeResize(const DescribeResizeRequest
 
 DescribeScheduledActionsOutcome RedshiftClient::DescribeScheduledActions(const DescribeScheduledActionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeScheduledActions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeScheduledActions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeScheduledActions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -885,6 +960,7 @@ DescribeScheduledActionsOutcome RedshiftClient::DescribeScheduledActions(const D
 
 DescribeSnapshotCopyGrantsOutcome RedshiftClient::DescribeSnapshotCopyGrants(const DescribeSnapshotCopyGrantsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeSnapshotCopyGrants);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeSnapshotCopyGrants, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeSnapshotCopyGrants, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -893,6 +969,7 @@ DescribeSnapshotCopyGrantsOutcome RedshiftClient::DescribeSnapshotCopyGrants(con
 
 DescribeSnapshotSchedulesOutcome RedshiftClient::DescribeSnapshotSchedules(const DescribeSnapshotSchedulesRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeSnapshotSchedules);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeSnapshotSchedules, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeSnapshotSchedules, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -901,6 +978,7 @@ DescribeSnapshotSchedulesOutcome RedshiftClient::DescribeSnapshotSchedules(const
 
 DescribeStorageOutcome RedshiftClient::DescribeStorage(const DescribeStorageRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeStorage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeStorage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeStorage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -909,6 +987,7 @@ DescribeStorageOutcome RedshiftClient::DescribeStorage(const DescribeStorageRequ
 
 DescribeTableRestoreStatusOutcome RedshiftClient::DescribeTableRestoreStatus(const DescribeTableRestoreStatusRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeTableRestoreStatus);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeTableRestoreStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeTableRestoreStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -917,6 +996,7 @@ DescribeTableRestoreStatusOutcome RedshiftClient::DescribeTableRestoreStatus(con
 
 DescribeTagsOutcome RedshiftClient::DescribeTags(const DescribeTagsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeTags);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeTags, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeTags, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -925,6 +1005,7 @@ DescribeTagsOutcome RedshiftClient::DescribeTags(const DescribeTagsRequest& requ
 
 DescribeUsageLimitsOutcome RedshiftClient::DescribeUsageLimits(const DescribeUsageLimitsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeUsageLimits);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeUsageLimits, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeUsageLimits, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -933,6 +1014,7 @@ DescribeUsageLimitsOutcome RedshiftClient::DescribeUsageLimits(const DescribeUsa
 
 DisableLoggingOutcome RedshiftClient::DisableLogging(const DisableLoggingRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisableLogging);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisableLogging, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DisableLogging, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -941,6 +1023,7 @@ DisableLoggingOutcome RedshiftClient::DisableLogging(const DisableLoggingRequest
 
 DisableSnapshotCopyOutcome RedshiftClient::DisableSnapshotCopy(const DisableSnapshotCopyRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisableSnapshotCopy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisableSnapshotCopy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DisableSnapshotCopy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -949,6 +1032,7 @@ DisableSnapshotCopyOutcome RedshiftClient::DisableSnapshotCopy(const DisableSnap
 
 DisassociateDataShareConsumerOutcome RedshiftClient::DisassociateDataShareConsumer(const DisassociateDataShareConsumerRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociateDataShareConsumer);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateDataShareConsumer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DisassociateDataShareConsumer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -957,6 +1041,7 @@ DisassociateDataShareConsumerOutcome RedshiftClient::DisassociateDataShareConsum
 
 EnableLoggingOutcome RedshiftClient::EnableLogging(const EnableLoggingRequest& request) const
 {
+  AWS_OPERATION_GUARD(EnableLogging);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, EnableLogging, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, EnableLogging, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -965,6 +1050,7 @@ EnableLoggingOutcome RedshiftClient::EnableLogging(const EnableLoggingRequest& r
 
 EnableSnapshotCopyOutcome RedshiftClient::EnableSnapshotCopy(const EnableSnapshotCopyRequest& request) const
 {
+  AWS_OPERATION_GUARD(EnableSnapshotCopy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, EnableSnapshotCopy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, EnableSnapshotCopy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -973,6 +1059,7 @@ EnableSnapshotCopyOutcome RedshiftClient::EnableSnapshotCopy(const EnableSnapsho
 
 GetClusterCredentialsOutcome RedshiftClient::GetClusterCredentials(const GetClusterCredentialsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetClusterCredentials);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetClusterCredentials, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetClusterCredentials, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -981,6 +1068,7 @@ GetClusterCredentialsOutcome RedshiftClient::GetClusterCredentials(const GetClus
 
 GetClusterCredentialsWithIAMOutcome RedshiftClient::GetClusterCredentialsWithIAM(const GetClusterCredentialsWithIAMRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetClusterCredentialsWithIAM);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetClusterCredentialsWithIAM, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetClusterCredentialsWithIAM, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -989,6 +1077,7 @@ GetClusterCredentialsWithIAMOutcome RedshiftClient::GetClusterCredentialsWithIAM
 
 GetReservedNodeExchangeConfigurationOptionsOutcome RedshiftClient::GetReservedNodeExchangeConfigurationOptions(const GetReservedNodeExchangeConfigurationOptionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetReservedNodeExchangeConfigurationOptions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetReservedNodeExchangeConfigurationOptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetReservedNodeExchangeConfigurationOptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -997,6 +1086,7 @@ GetReservedNodeExchangeConfigurationOptionsOutcome RedshiftClient::GetReservedNo
 
 GetReservedNodeExchangeOfferingsOutcome RedshiftClient::GetReservedNodeExchangeOfferings(const GetReservedNodeExchangeOfferingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetReservedNodeExchangeOfferings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetReservedNodeExchangeOfferings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetReservedNodeExchangeOfferings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1005,6 +1095,7 @@ GetReservedNodeExchangeOfferingsOutcome RedshiftClient::GetReservedNodeExchangeO
 
 ModifyAquaConfigurationOutcome RedshiftClient::ModifyAquaConfiguration(const ModifyAquaConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(ModifyAquaConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ModifyAquaConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ModifyAquaConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1013,6 +1104,7 @@ ModifyAquaConfigurationOutcome RedshiftClient::ModifyAquaConfiguration(const Mod
 
 ModifyAuthenticationProfileOutcome RedshiftClient::ModifyAuthenticationProfile(const ModifyAuthenticationProfileRequest& request) const
 {
+  AWS_OPERATION_GUARD(ModifyAuthenticationProfile);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ModifyAuthenticationProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ModifyAuthenticationProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1021,6 +1113,7 @@ ModifyAuthenticationProfileOutcome RedshiftClient::ModifyAuthenticationProfile(c
 
 ModifyClusterOutcome RedshiftClient::ModifyCluster(const ModifyClusterRequest& request) const
 {
+  AWS_OPERATION_GUARD(ModifyCluster);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ModifyCluster, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ModifyCluster, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1029,6 +1122,7 @@ ModifyClusterOutcome RedshiftClient::ModifyCluster(const ModifyClusterRequest& r
 
 ModifyClusterDbRevisionOutcome RedshiftClient::ModifyClusterDbRevision(const ModifyClusterDbRevisionRequest& request) const
 {
+  AWS_OPERATION_GUARD(ModifyClusterDbRevision);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ModifyClusterDbRevision, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ModifyClusterDbRevision, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1037,6 +1131,7 @@ ModifyClusterDbRevisionOutcome RedshiftClient::ModifyClusterDbRevision(const Mod
 
 ModifyClusterIamRolesOutcome RedshiftClient::ModifyClusterIamRoles(const ModifyClusterIamRolesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ModifyClusterIamRoles);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ModifyClusterIamRoles, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ModifyClusterIamRoles, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1045,6 +1140,7 @@ ModifyClusterIamRolesOutcome RedshiftClient::ModifyClusterIamRoles(const ModifyC
 
 ModifyClusterMaintenanceOutcome RedshiftClient::ModifyClusterMaintenance(const ModifyClusterMaintenanceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ModifyClusterMaintenance);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ModifyClusterMaintenance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ModifyClusterMaintenance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1053,6 +1149,7 @@ ModifyClusterMaintenanceOutcome RedshiftClient::ModifyClusterMaintenance(const M
 
 ModifyClusterParameterGroupOutcome RedshiftClient::ModifyClusterParameterGroup(const ModifyClusterParameterGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(ModifyClusterParameterGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ModifyClusterParameterGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ModifyClusterParameterGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1061,6 +1158,7 @@ ModifyClusterParameterGroupOutcome RedshiftClient::ModifyClusterParameterGroup(c
 
 ModifyClusterSnapshotOutcome RedshiftClient::ModifyClusterSnapshot(const ModifyClusterSnapshotRequest& request) const
 {
+  AWS_OPERATION_GUARD(ModifyClusterSnapshot);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ModifyClusterSnapshot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ModifyClusterSnapshot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1069,6 +1167,7 @@ ModifyClusterSnapshotOutcome RedshiftClient::ModifyClusterSnapshot(const ModifyC
 
 ModifyClusterSnapshotScheduleOutcome RedshiftClient::ModifyClusterSnapshotSchedule(const ModifyClusterSnapshotScheduleRequest& request) const
 {
+  AWS_OPERATION_GUARD(ModifyClusterSnapshotSchedule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ModifyClusterSnapshotSchedule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ModifyClusterSnapshotSchedule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1077,6 +1176,7 @@ ModifyClusterSnapshotScheduleOutcome RedshiftClient::ModifyClusterSnapshotSchedu
 
 ModifyClusterSubnetGroupOutcome RedshiftClient::ModifyClusterSubnetGroup(const ModifyClusterSubnetGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(ModifyClusterSubnetGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ModifyClusterSubnetGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ModifyClusterSubnetGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1085,6 +1185,7 @@ ModifyClusterSubnetGroupOutcome RedshiftClient::ModifyClusterSubnetGroup(const M
 
 ModifyEndpointAccessOutcome RedshiftClient::ModifyEndpointAccess(const ModifyEndpointAccessRequest& request) const
 {
+  AWS_OPERATION_GUARD(ModifyEndpointAccess);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ModifyEndpointAccess, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ModifyEndpointAccess, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1093,6 +1194,7 @@ ModifyEndpointAccessOutcome RedshiftClient::ModifyEndpointAccess(const ModifyEnd
 
 ModifyEventSubscriptionOutcome RedshiftClient::ModifyEventSubscription(const ModifyEventSubscriptionRequest& request) const
 {
+  AWS_OPERATION_GUARD(ModifyEventSubscription);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ModifyEventSubscription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ModifyEventSubscription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1101,6 +1203,7 @@ ModifyEventSubscriptionOutcome RedshiftClient::ModifyEventSubscription(const Mod
 
 ModifyScheduledActionOutcome RedshiftClient::ModifyScheduledAction(const ModifyScheduledActionRequest& request) const
 {
+  AWS_OPERATION_GUARD(ModifyScheduledAction);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ModifyScheduledAction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ModifyScheduledAction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1109,6 +1212,7 @@ ModifyScheduledActionOutcome RedshiftClient::ModifyScheduledAction(const ModifyS
 
 ModifySnapshotCopyRetentionPeriodOutcome RedshiftClient::ModifySnapshotCopyRetentionPeriod(const ModifySnapshotCopyRetentionPeriodRequest& request) const
 {
+  AWS_OPERATION_GUARD(ModifySnapshotCopyRetentionPeriod);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ModifySnapshotCopyRetentionPeriod, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ModifySnapshotCopyRetentionPeriod, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1117,6 +1221,7 @@ ModifySnapshotCopyRetentionPeriodOutcome RedshiftClient::ModifySnapshotCopyReten
 
 ModifySnapshotScheduleOutcome RedshiftClient::ModifySnapshotSchedule(const ModifySnapshotScheduleRequest& request) const
 {
+  AWS_OPERATION_GUARD(ModifySnapshotSchedule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ModifySnapshotSchedule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ModifySnapshotSchedule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1125,6 +1230,7 @@ ModifySnapshotScheduleOutcome RedshiftClient::ModifySnapshotSchedule(const Modif
 
 ModifyUsageLimitOutcome RedshiftClient::ModifyUsageLimit(const ModifyUsageLimitRequest& request) const
 {
+  AWS_OPERATION_GUARD(ModifyUsageLimit);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ModifyUsageLimit, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ModifyUsageLimit, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1133,6 +1239,7 @@ ModifyUsageLimitOutcome RedshiftClient::ModifyUsageLimit(const ModifyUsageLimitR
 
 PauseClusterOutcome RedshiftClient::PauseCluster(const PauseClusterRequest& request) const
 {
+  AWS_OPERATION_GUARD(PauseCluster);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PauseCluster, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PauseCluster, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1141,6 +1248,7 @@ PauseClusterOutcome RedshiftClient::PauseCluster(const PauseClusterRequest& requ
 
 PurchaseReservedNodeOfferingOutcome RedshiftClient::PurchaseReservedNodeOffering(const PurchaseReservedNodeOfferingRequest& request) const
 {
+  AWS_OPERATION_GUARD(PurchaseReservedNodeOffering);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PurchaseReservedNodeOffering, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PurchaseReservedNodeOffering, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1149,6 +1257,7 @@ PurchaseReservedNodeOfferingOutcome RedshiftClient::PurchaseReservedNodeOffering
 
 RebootClusterOutcome RedshiftClient::RebootCluster(const RebootClusterRequest& request) const
 {
+  AWS_OPERATION_GUARD(RebootCluster);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RebootCluster, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RebootCluster, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1157,6 +1266,7 @@ RebootClusterOutcome RedshiftClient::RebootCluster(const RebootClusterRequest& r
 
 RejectDataShareOutcome RedshiftClient::RejectDataShare(const RejectDataShareRequest& request) const
 {
+  AWS_OPERATION_GUARD(RejectDataShare);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RejectDataShare, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RejectDataShare, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1165,6 +1275,7 @@ RejectDataShareOutcome RedshiftClient::RejectDataShare(const RejectDataShareRequ
 
 ResetClusterParameterGroupOutcome RedshiftClient::ResetClusterParameterGroup(const ResetClusterParameterGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(ResetClusterParameterGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ResetClusterParameterGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ResetClusterParameterGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1173,6 +1284,7 @@ ResetClusterParameterGroupOutcome RedshiftClient::ResetClusterParameterGroup(con
 
 ResizeClusterOutcome RedshiftClient::ResizeCluster(const ResizeClusterRequest& request) const
 {
+  AWS_OPERATION_GUARD(ResizeCluster);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ResizeCluster, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ResizeCluster, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1181,6 +1293,7 @@ ResizeClusterOutcome RedshiftClient::ResizeCluster(const ResizeClusterRequest& r
 
 RestoreFromClusterSnapshotOutcome RedshiftClient::RestoreFromClusterSnapshot(const RestoreFromClusterSnapshotRequest& request) const
 {
+  AWS_OPERATION_GUARD(RestoreFromClusterSnapshot);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RestoreFromClusterSnapshot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RestoreFromClusterSnapshot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1189,6 +1302,7 @@ RestoreFromClusterSnapshotOutcome RedshiftClient::RestoreFromClusterSnapshot(con
 
 RestoreTableFromClusterSnapshotOutcome RedshiftClient::RestoreTableFromClusterSnapshot(const RestoreTableFromClusterSnapshotRequest& request) const
 {
+  AWS_OPERATION_GUARD(RestoreTableFromClusterSnapshot);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RestoreTableFromClusterSnapshot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RestoreTableFromClusterSnapshot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1197,6 +1311,7 @@ RestoreTableFromClusterSnapshotOutcome RedshiftClient::RestoreTableFromClusterSn
 
 ResumeClusterOutcome RedshiftClient::ResumeCluster(const ResumeClusterRequest& request) const
 {
+  AWS_OPERATION_GUARD(ResumeCluster);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ResumeCluster, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ResumeCluster, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1205,6 +1320,7 @@ ResumeClusterOutcome RedshiftClient::ResumeCluster(const ResumeClusterRequest& r
 
 RevokeClusterSecurityGroupIngressOutcome RedshiftClient::RevokeClusterSecurityGroupIngress(const RevokeClusterSecurityGroupIngressRequest& request) const
 {
+  AWS_OPERATION_GUARD(RevokeClusterSecurityGroupIngress);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RevokeClusterSecurityGroupIngress, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RevokeClusterSecurityGroupIngress, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1213,6 +1329,7 @@ RevokeClusterSecurityGroupIngressOutcome RedshiftClient::RevokeClusterSecurityGr
 
 RevokeEndpointAccessOutcome RedshiftClient::RevokeEndpointAccess(const RevokeEndpointAccessRequest& request) const
 {
+  AWS_OPERATION_GUARD(RevokeEndpointAccess);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RevokeEndpointAccess, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RevokeEndpointAccess, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1221,6 +1338,7 @@ RevokeEndpointAccessOutcome RedshiftClient::RevokeEndpointAccess(const RevokeEnd
 
 RevokeSnapshotAccessOutcome RedshiftClient::RevokeSnapshotAccess(const RevokeSnapshotAccessRequest& request) const
 {
+  AWS_OPERATION_GUARD(RevokeSnapshotAccess);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RevokeSnapshotAccess, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RevokeSnapshotAccess, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1229,6 +1347,7 @@ RevokeSnapshotAccessOutcome RedshiftClient::RevokeSnapshotAccess(const RevokeSna
 
 RotateEncryptionKeyOutcome RedshiftClient::RotateEncryptionKey(const RotateEncryptionKeyRequest& request) const
 {
+  AWS_OPERATION_GUARD(RotateEncryptionKey);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RotateEncryptionKey, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RotateEncryptionKey, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1237,6 +1356,7 @@ RotateEncryptionKeyOutcome RedshiftClient::RotateEncryptionKey(const RotateEncry
 
 UpdatePartnerStatusOutcome RedshiftClient::UpdatePartnerStatus(const UpdatePartnerStatusRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdatePartnerStatus);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdatePartnerStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdatePartnerStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

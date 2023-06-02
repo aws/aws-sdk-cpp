@@ -146,6 +146,7 @@ SsmSapClient::SsmSapClient(const std::shared_ptr<AWSCredentialsProvider>& creden
     /* End of legacy constructors due deprecation */
 SsmSapClient::~SsmSapClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<SsmSapEndpointProviderBase>& SsmSapClient::accessEndpointProvider()
@@ -168,6 +169,7 @@ void SsmSapClient::OverrideEndpoint(const Aws::String& endpoint)
 
 DeleteResourcePermissionOutcome SsmSapClient::DeleteResourcePermission(const DeleteResourcePermissionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteResourcePermission);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteResourcePermission, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteResourcePermission, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -177,6 +179,7 @@ DeleteResourcePermissionOutcome SsmSapClient::DeleteResourcePermission(const Del
 
 DeregisterApplicationOutcome SsmSapClient::DeregisterApplication(const DeregisterApplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeregisterApplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeregisterApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeregisterApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -186,6 +189,7 @@ DeregisterApplicationOutcome SsmSapClient::DeregisterApplication(const Deregiste
 
 GetApplicationOutcome SsmSapClient::GetApplication(const GetApplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetApplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -195,6 +199,7 @@ GetApplicationOutcome SsmSapClient::GetApplication(const GetApplicationRequest& 
 
 GetComponentOutcome SsmSapClient::GetComponent(const GetComponentRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetComponent);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetComponent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetComponent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -204,6 +209,7 @@ GetComponentOutcome SsmSapClient::GetComponent(const GetComponentRequest& reques
 
 GetDatabaseOutcome SsmSapClient::GetDatabase(const GetDatabaseRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDatabase);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDatabase, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetDatabase, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -213,6 +219,7 @@ GetDatabaseOutcome SsmSapClient::GetDatabase(const GetDatabaseRequest& request) 
 
 GetOperationOutcome SsmSapClient::GetOperation(const GetOperationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetOperation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetOperation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetOperation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -222,6 +229,7 @@ GetOperationOutcome SsmSapClient::GetOperation(const GetOperationRequest& reques
 
 GetResourcePermissionOutcome SsmSapClient::GetResourcePermission(const GetResourcePermissionRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetResourcePermission);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetResourcePermission, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetResourcePermission, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -231,6 +239,7 @@ GetResourcePermissionOutcome SsmSapClient::GetResourcePermission(const GetResour
 
 ListApplicationsOutcome SsmSapClient::ListApplications(const ListApplicationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListApplications);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListApplications, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListApplications, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -240,6 +249,7 @@ ListApplicationsOutcome SsmSapClient::ListApplications(const ListApplicationsReq
 
 ListComponentsOutcome SsmSapClient::ListComponents(const ListComponentsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListComponents);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListComponents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListComponents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -249,6 +259,7 @@ ListComponentsOutcome SsmSapClient::ListComponents(const ListComponentsRequest& 
 
 ListDatabasesOutcome SsmSapClient::ListDatabases(const ListDatabasesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDatabases);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDatabases, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDatabases, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -258,6 +269,7 @@ ListDatabasesOutcome SsmSapClient::ListDatabases(const ListDatabasesRequest& req
 
 ListOperationsOutcome SsmSapClient::ListOperations(const ListOperationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListOperations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListOperations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListOperations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -267,6 +279,7 @@ ListOperationsOutcome SsmSapClient::ListOperations(const ListOperationsRequest& 
 
 ListTagsForResourceOutcome SsmSapClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -282,6 +295,7 @@ ListTagsForResourceOutcome SsmSapClient::ListTagsForResource(const ListTagsForRe
 
 PutResourcePermissionOutcome SsmSapClient::PutResourcePermission(const PutResourcePermissionRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutResourcePermission);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutResourcePermission, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutResourcePermission, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -291,6 +305,7 @@ PutResourcePermissionOutcome SsmSapClient::PutResourcePermission(const PutResour
 
 RegisterApplicationOutcome SsmSapClient::RegisterApplication(const RegisterApplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(RegisterApplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RegisterApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RegisterApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -300,6 +315,7 @@ RegisterApplicationOutcome SsmSapClient::RegisterApplication(const RegisterAppli
 
 TagResourceOutcome SsmSapClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -315,6 +331,7 @@ TagResourceOutcome SsmSapClient::TagResource(const TagResourceRequest& request) 
 
 UntagResourceOutcome SsmSapClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -335,6 +352,7 @@ UntagResourceOutcome SsmSapClient::UntagResource(const UntagResourceRequest& req
 
 UpdateApplicationSettingsOutcome SsmSapClient::UpdateApplicationSettings(const UpdateApplicationSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateApplicationSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateApplicationSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateApplicationSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

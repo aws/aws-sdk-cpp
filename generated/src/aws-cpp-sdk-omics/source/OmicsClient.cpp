@@ -201,6 +201,7 @@ OmicsClient::OmicsClient(const std::shared_ptr<AWSCredentialsProvider>& credenti
     /* End of legacy constructors due deprecation */
 OmicsClient::~OmicsClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<OmicsEndpointProviderBase>& OmicsClient::accessEndpointProvider()
@@ -223,6 +224,7 @@ void OmicsClient::OverrideEndpoint(const Aws::String& endpoint)
 
 AbortMultipartReadSetUploadOutcome OmicsClient::AbortMultipartReadSetUpload(const AbortMultipartReadSetUploadRequest& request) const
 {
+  AWS_OPERATION_GUARD(AbortMultipartReadSetUpload);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AbortMultipartReadSetUpload, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SequenceStoreIdHasBeenSet())
   {
@@ -248,6 +250,7 @@ AbortMultipartReadSetUploadOutcome OmicsClient::AbortMultipartReadSetUpload(cons
 
 BatchDeleteReadSetOutcome OmicsClient::BatchDeleteReadSet(const BatchDeleteReadSetRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchDeleteReadSet);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchDeleteReadSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SequenceStoreIdHasBeenSet())
   {
@@ -266,6 +269,7 @@ BatchDeleteReadSetOutcome OmicsClient::BatchDeleteReadSet(const BatchDeleteReadS
 
 CancelAnnotationImportJobOutcome OmicsClient::CancelAnnotationImportJob(const CancelAnnotationImportJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(CancelAnnotationImportJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CancelAnnotationImportJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.JobIdHasBeenSet())
   {
@@ -283,6 +287,7 @@ CancelAnnotationImportJobOutcome OmicsClient::CancelAnnotationImportJob(const Ca
 
 CancelRunOutcome OmicsClient::CancelRun(const CancelRunRequest& request) const
 {
+  AWS_OPERATION_GUARD(CancelRun);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CancelRun, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -301,6 +306,7 @@ CancelRunOutcome OmicsClient::CancelRun(const CancelRunRequest& request) const
 
 CancelVariantImportJobOutcome OmicsClient::CancelVariantImportJob(const CancelVariantImportJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(CancelVariantImportJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CancelVariantImportJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.JobIdHasBeenSet())
   {
@@ -318,6 +324,7 @@ CancelVariantImportJobOutcome OmicsClient::CancelVariantImportJob(const CancelVa
 
 CompleteMultipartReadSetUploadOutcome OmicsClient::CompleteMultipartReadSetUpload(const CompleteMultipartReadSetUploadRequest& request) const
 {
+  AWS_OPERATION_GUARD(CompleteMultipartReadSetUpload);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CompleteMultipartReadSetUpload, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SequenceStoreIdHasBeenSet())
   {
@@ -343,6 +350,7 @@ CompleteMultipartReadSetUploadOutcome OmicsClient::CompleteMultipartReadSetUploa
 
 CreateAnnotationStoreOutcome OmicsClient::CreateAnnotationStore(const CreateAnnotationStoreRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateAnnotationStore);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAnnotationStore, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateAnnotationStore, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -354,6 +362,7 @@ CreateAnnotationStoreOutcome OmicsClient::CreateAnnotationStore(const CreateAnno
 
 CreateMultipartReadSetUploadOutcome OmicsClient::CreateMultipartReadSetUpload(const CreateMultipartReadSetUploadRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateMultipartReadSetUpload);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateMultipartReadSetUpload, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SequenceStoreIdHasBeenSet())
   {
@@ -372,6 +381,7 @@ CreateMultipartReadSetUploadOutcome OmicsClient::CreateMultipartReadSetUpload(co
 
 CreateReferenceStoreOutcome OmicsClient::CreateReferenceStore(const CreateReferenceStoreRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateReferenceStore);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateReferenceStore, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateReferenceStore, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -383,6 +393,7 @@ CreateReferenceStoreOutcome OmicsClient::CreateReferenceStore(const CreateRefere
 
 CreateRunGroupOutcome OmicsClient::CreateRunGroup(const CreateRunGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateRunGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateRunGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateRunGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -394,6 +405,7 @@ CreateRunGroupOutcome OmicsClient::CreateRunGroup(const CreateRunGroupRequest& r
 
 CreateSequenceStoreOutcome OmicsClient::CreateSequenceStore(const CreateSequenceStoreRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateSequenceStore);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateSequenceStore, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateSequenceStore, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -405,6 +417,7 @@ CreateSequenceStoreOutcome OmicsClient::CreateSequenceStore(const CreateSequence
 
 CreateVariantStoreOutcome OmicsClient::CreateVariantStore(const CreateVariantStoreRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateVariantStore);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateVariantStore, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateVariantStore, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -416,6 +429,7 @@ CreateVariantStoreOutcome OmicsClient::CreateVariantStore(const CreateVariantSto
 
 CreateWorkflowOutcome OmicsClient::CreateWorkflow(const CreateWorkflowRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateWorkflow);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateWorkflow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateWorkflow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -427,6 +441,7 @@ CreateWorkflowOutcome OmicsClient::CreateWorkflow(const CreateWorkflowRequest& r
 
 DeleteAnnotationStoreOutcome OmicsClient::DeleteAnnotationStore(const DeleteAnnotationStoreRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteAnnotationStore);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAnnotationStore, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -444,6 +459,7 @@ DeleteAnnotationStoreOutcome OmicsClient::DeleteAnnotationStore(const DeleteAnno
 
 DeleteReferenceOutcome OmicsClient::DeleteReference(const DeleteReferenceRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteReference);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteReference, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -468,6 +484,7 @@ DeleteReferenceOutcome OmicsClient::DeleteReference(const DeleteReferenceRequest
 
 DeleteReferenceStoreOutcome OmicsClient::DeleteReferenceStore(const DeleteReferenceStoreRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteReferenceStore);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteReferenceStore, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -485,6 +502,7 @@ DeleteReferenceStoreOutcome OmicsClient::DeleteReferenceStore(const DeleteRefere
 
 DeleteRunOutcome OmicsClient::DeleteRun(const DeleteRunRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteRun);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteRun, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -502,6 +520,7 @@ DeleteRunOutcome OmicsClient::DeleteRun(const DeleteRunRequest& request) const
 
 DeleteRunGroupOutcome OmicsClient::DeleteRunGroup(const DeleteRunGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteRunGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteRunGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -519,6 +538,7 @@ DeleteRunGroupOutcome OmicsClient::DeleteRunGroup(const DeleteRunGroupRequest& r
 
 DeleteSequenceStoreOutcome OmicsClient::DeleteSequenceStore(const DeleteSequenceStoreRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteSequenceStore);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteSequenceStore, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -536,6 +556,7 @@ DeleteSequenceStoreOutcome OmicsClient::DeleteSequenceStore(const DeleteSequence
 
 DeleteVariantStoreOutcome OmicsClient::DeleteVariantStore(const DeleteVariantStoreRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteVariantStore);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteVariantStore, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -553,6 +574,7 @@ DeleteVariantStoreOutcome OmicsClient::DeleteVariantStore(const DeleteVariantSto
 
 DeleteWorkflowOutcome OmicsClient::DeleteWorkflow(const DeleteWorkflowRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteWorkflow);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteWorkflow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -570,6 +592,7 @@ DeleteWorkflowOutcome OmicsClient::DeleteWorkflow(const DeleteWorkflowRequest& r
 
 GetAnnotationImportJobOutcome OmicsClient::GetAnnotationImportJob(const GetAnnotationImportJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetAnnotationImportJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAnnotationImportJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.JobIdHasBeenSet())
   {
@@ -587,6 +610,7 @@ GetAnnotationImportJobOutcome OmicsClient::GetAnnotationImportJob(const GetAnnot
 
 GetAnnotationStoreOutcome OmicsClient::GetAnnotationStore(const GetAnnotationStoreRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetAnnotationStore);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAnnotationStore, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -604,6 +628,7 @@ GetAnnotationStoreOutcome OmicsClient::GetAnnotationStore(const GetAnnotationSto
 
 GetReadSetOutcome OmicsClient::GetReadSet(const GetReadSetRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetReadSet);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetReadSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -633,6 +658,7 @@ GetReadSetOutcome OmicsClient::GetReadSet(const GetReadSetRequest& request) cons
 
 GetReadSetActivationJobOutcome OmicsClient::GetReadSetActivationJob(const GetReadSetActivationJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetReadSetActivationJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetReadSetActivationJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -657,6 +683,7 @@ GetReadSetActivationJobOutcome OmicsClient::GetReadSetActivationJob(const GetRea
 
 GetReadSetExportJobOutcome OmicsClient::GetReadSetExportJob(const GetReadSetExportJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetReadSetExportJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetReadSetExportJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SequenceStoreIdHasBeenSet())
   {
@@ -681,6 +708,7 @@ GetReadSetExportJobOutcome OmicsClient::GetReadSetExportJob(const GetReadSetExpo
 
 GetReadSetImportJobOutcome OmicsClient::GetReadSetImportJob(const GetReadSetImportJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetReadSetImportJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetReadSetImportJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -705,6 +733,7 @@ GetReadSetImportJobOutcome OmicsClient::GetReadSetImportJob(const GetReadSetImpo
 
 GetReadSetMetadataOutcome OmicsClient::GetReadSetMetadata(const GetReadSetMetadataRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetReadSetMetadata);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetReadSetMetadata, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -730,6 +759,7 @@ GetReadSetMetadataOutcome OmicsClient::GetReadSetMetadata(const GetReadSetMetada
 
 GetReferenceOutcome OmicsClient::GetReference(const GetReferenceRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetReference);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetReference, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -759,6 +789,7 @@ GetReferenceOutcome OmicsClient::GetReference(const GetReferenceRequest& request
 
 GetReferenceImportJobOutcome OmicsClient::GetReferenceImportJob(const GetReferenceImportJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetReferenceImportJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetReferenceImportJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -783,6 +814,7 @@ GetReferenceImportJobOutcome OmicsClient::GetReferenceImportJob(const GetReferen
 
 GetReferenceMetadataOutcome OmicsClient::GetReferenceMetadata(const GetReferenceMetadataRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetReferenceMetadata);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetReferenceMetadata, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -808,6 +840,7 @@ GetReferenceMetadataOutcome OmicsClient::GetReferenceMetadata(const GetReference
 
 GetReferenceStoreOutcome OmicsClient::GetReferenceStore(const GetReferenceStoreRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetReferenceStore);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetReferenceStore, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -825,6 +858,7 @@ GetReferenceStoreOutcome OmicsClient::GetReferenceStore(const GetReferenceStoreR
 
 GetRunOutcome OmicsClient::GetRun(const GetRunRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetRun);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetRun, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -842,6 +876,7 @@ GetRunOutcome OmicsClient::GetRun(const GetRunRequest& request) const
 
 GetRunGroupOutcome OmicsClient::GetRunGroup(const GetRunGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetRunGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetRunGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -859,6 +894,7 @@ GetRunGroupOutcome OmicsClient::GetRunGroup(const GetRunGroupRequest& request) c
 
 GetRunTaskOutcome OmicsClient::GetRunTask(const GetRunTaskRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetRunTask);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetRunTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -883,6 +919,7 @@ GetRunTaskOutcome OmicsClient::GetRunTask(const GetRunTaskRequest& request) cons
 
 GetSequenceStoreOutcome OmicsClient::GetSequenceStore(const GetSequenceStoreRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSequenceStore);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSequenceStore, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -900,6 +937,7 @@ GetSequenceStoreOutcome OmicsClient::GetSequenceStore(const GetSequenceStoreRequ
 
 GetVariantImportJobOutcome OmicsClient::GetVariantImportJob(const GetVariantImportJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetVariantImportJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetVariantImportJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.JobIdHasBeenSet())
   {
@@ -917,6 +955,7 @@ GetVariantImportJobOutcome OmicsClient::GetVariantImportJob(const GetVariantImpo
 
 GetVariantStoreOutcome OmicsClient::GetVariantStore(const GetVariantStoreRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetVariantStore);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetVariantStore, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -934,6 +973,7 @@ GetVariantStoreOutcome OmicsClient::GetVariantStore(const GetVariantStoreRequest
 
 GetWorkflowOutcome OmicsClient::GetWorkflow(const GetWorkflowRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetWorkflow);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetWorkflow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -951,6 +991,7 @@ GetWorkflowOutcome OmicsClient::GetWorkflow(const GetWorkflowRequest& request) c
 
 ListAnnotationImportJobsOutcome OmicsClient::ListAnnotationImportJobs(const ListAnnotationImportJobsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAnnotationImportJobs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAnnotationImportJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAnnotationImportJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -962,6 +1003,7 @@ ListAnnotationImportJobsOutcome OmicsClient::ListAnnotationImportJobs(const List
 
 ListAnnotationStoresOutcome OmicsClient::ListAnnotationStores(const ListAnnotationStoresRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAnnotationStores);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAnnotationStores, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAnnotationStores, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -973,6 +1015,7 @@ ListAnnotationStoresOutcome OmicsClient::ListAnnotationStores(const ListAnnotati
 
 ListMultipartReadSetUploadsOutcome OmicsClient::ListMultipartReadSetUploads(const ListMultipartReadSetUploadsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListMultipartReadSetUploads);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListMultipartReadSetUploads, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SequenceStoreIdHasBeenSet())
   {
@@ -991,6 +1034,7 @@ ListMultipartReadSetUploadsOutcome OmicsClient::ListMultipartReadSetUploads(cons
 
 ListReadSetActivationJobsOutcome OmicsClient::ListReadSetActivationJobs(const ListReadSetActivationJobsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListReadSetActivationJobs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListReadSetActivationJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SequenceStoreIdHasBeenSet())
   {
@@ -1009,6 +1053,7 @@ ListReadSetActivationJobsOutcome OmicsClient::ListReadSetActivationJobs(const Li
 
 ListReadSetExportJobsOutcome OmicsClient::ListReadSetExportJobs(const ListReadSetExportJobsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListReadSetExportJobs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListReadSetExportJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SequenceStoreIdHasBeenSet())
   {
@@ -1027,6 +1072,7 @@ ListReadSetExportJobsOutcome OmicsClient::ListReadSetExportJobs(const ListReadSe
 
 ListReadSetImportJobsOutcome OmicsClient::ListReadSetImportJobs(const ListReadSetImportJobsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListReadSetImportJobs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListReadSetImportJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SequenceStoreIdHasBeenSet())
   {
@@ -1045,6 +1091,7 @@ ListReadSetImportJobsOutcome OmicsClient::ListReadSetImportJobs(const ListReadSe
 
 ListReadSetUploadPartsOutcome OmicsClient::ListReadSetUploadParts(const ListReadSetUploadPartsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListReadSetUploadParts);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListReadSetUploadParts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SequenceStoreIdHasBeenSet())
   {
@@ -1070,6 +1117,7 @@ ListReadSetUploadPartsOutcome OmicsClient::ListReadSetUploadParts(const ListRead
 
 ListReadSetsOutcome OmicsClient::ListReadSets(const ListReadSetsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListReadSets);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListReadSets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SequenceStoreIdHasBeenSet())
   {
@@ -1088,6 +1136,7 @@ ListReadSetsOutcome OmicsClient::ListReadSets(const ListReadSetsRequest& request
 
 ListReferenceImportJobsOutcome OmicsClient::ListReferenceImportJobs(const ListReferenceImportJobsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListReferenceImportJobs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListReferenceImportJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ReferenceStoreIdHasBeenSet())
   {
@@ -1106,6 +1155,7 @@ ListReferenceImportJobsOutcome OmicsClient::ListReferenceImportJobs(const ListRe
 
 ListReferenceStoresOutcome OmicsClient::ListReferenceStores(const ListReferenceStoresRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListReferenceStores);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListReferenceStores, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListReferenceStores, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1117,6 +1167,7 @@ ListReferenceStoresOutcome OmicsClient::ListReferenceStores(const ListReferenceS
 
 ListReferencesOutcome OmicsClient::ListReferences(const ListReferencesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListReferences);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListReferences, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ReferenceStoreIdHasBeenSet())
   {
@@ -1135,6 +1186,7 @@ ListReferencesOutcome OmicsClient::ListReferences(const ListReferencesRequest& r
 
 ListRunGroupsOutcome OmicsClient::ListRunGroups(const ListRunGroupsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListRunGroups);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRunGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListRunGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1146,6 +1198,7 @@ ListRunGroupsOutcome OmicsClient::ListRunGroups(const ListRunGroupsRequest& requ
 
 ListRunTasksOutcome OmicsClient::ListRunTasks(const ListRunTasksRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListRunTasks);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRunTasks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -1164,6 +1217,7 @@ ListRunTasksOutcome OmicsClient::ListRunTasks(const ListRunTasksRequest& request
 
 ListRunsOutcome OmicsClient::ListRuns(const ListRunsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListRuns);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRuns, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListRuns, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1175,6 +1229,7 @@ ListRunsOutcome OmicsClient::ListRuns(const ListRunsRequest& request) const
 
 ListSequenceStoresOutcome OmicsClient::ListSequenceStores(const ListSequenceStoresRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListSequenceStores);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSequenceStores, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListSequenceStores, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1186,6 +1241,7 @@ ListSequenceStoresOutcome OmicsClient::ListSequenceStores(const ListSequenceStor
 
 ListTagsForResourceOutcome OmicsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -1203,6 +1259,7 @@ ListTagsForResourceOutcome OmicsClient::ListTagsForResource(const ListTagsForRes
 
 ListVariantImportJobsOutcome OmicsClient::ListVariantImportJobs(const ListVariantImportJobsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListVariantImportJobs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListVariantImportJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListVariantImportJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1214,6 +1271,7 @@ ListVariantImportJobsOutcome OmicsClient::ListVariantImportJobs(const ListVarian
 
 ListVariantStoresOutcome OmicsClient::ListVariantStores(const ListVariantStoresRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListVariantStores);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListVariantStores, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListVariantStores, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1225,6 +1283,7 @@ ListVariantStoresOutcome OmicsClient::ListVariantStores(const ListVariantStoresR
 
 ListWorkflowsOutcome OmicsClient::ListWorkflows(const ListWorkflowsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListWorkflows);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListWorkflows, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListWorkflows, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1236,6 +1295,7 @@ ListWorkflowsOutcome OmicsClient::ListWorkflows(const ListWorkflowsRequest& requ
 
 StartAnnotationImportJobOutcome OmicsClient::StartAnnotationImportJob(const StartAnnotationImportJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartAnnotationImportJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartAnnotationImportJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartAnnotationImportJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1247,6 +1307,7 @@ StartAnnotationImportJobOutcome OmicsClient::StartAnnotationImportJob(const Star
 
 StartReadSetActivationJobOutcome OmicsClient::StartReadSetActivationJob(const StartReadSetActivationJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartReadSetActivationJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartReadSetActivationJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SequenceStoreIdHasBeenSet())
   {
@@ -1265,6 +1326,7 @@ StartReadSetActivationJobOutcome OmicsClient::StartReadSetActivationJob(const St
 
 StartReadSetExportJobOutcome OmicsClient::StartReadSetExportJob(const StartReadSetExportJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartReadSetExportJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartReadSetExportJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SequenceStoreIdHasBeenSet())
   {
@@ -1283,6 +1345,7 @@ StartReadSetExportJobOutcome OmicsClient::StartReadSetExportJob(const StartReadS
 
 StartReadSetImportJobOutcome OmicsClient::StartReadSetImportJob(const StartReadSetImportJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartReadSetImportJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartReadSetImportJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SequenceStoreIdHasBeenSet())
   {
@@ -1301,6 +1364,7 @@ StartReadSetImportJobOutcome OmicsClient::StartReadSetImportJob(const StartReadS
 
 StartReferenceImportJobOutcome OmicsClient::StartReferenceImportJob(const StartReferenceImportJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartReferenceImportJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartReferenceImportJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ReferenceStoreIdHasBeenSet())
   {
@@ -1319,6 +1383,7 @@ StartReferenceImportJobOutcome OmicsClient::StartReferenceImportJob(const StartR
 
 StartRunOutcome OmicsClient::StartRun(const StartRunRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartRun);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartRun, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartRun, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1330,6 +1395,7 @@ StartRunOutcome OmicsClient::StartRun(const StartRunRequest& request) const
 
 StartVariantImportJobOutcome OmicsClient::StartVariantImportJob(const StartVariantImportJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartVariantImportJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartVariantImportJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartVariantImportJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1341,6 +1407,7 @@ StartVariantImportJobOutcome OmicsClient::StartVariantImportJob(const StartVaria
 
 TagResourceOutcome OmicsClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -1358,6 +1425,7 @@ TagResourceOutcome OmicsClient::TagResource(const TagResourceRequest& request) c
 
 UntagResourceOutcome OmicsClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -1380,6 +1448,7 @@ UntagResourceOutcome OmicsClient::UntagResource(const UntagResourceRequest& requ
 
 UpdateAnnotationStoreOutcome OmicsClient::UpdateAnnotationStore(const UpdateAnnotationStoreRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateAnnotationStore);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAnnotationStore, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -1397,6 +1466,7 @@ UpdateAnnotationStoreOutcome OmicsClient::UpdateAnnotationStore(const UpdateAnno
 
 UpdateRunGroupOutcome OmicsClient::UpdateRunGroup(const UpdateRunGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateRunGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateRunGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -1414,6 +1484,7 @@ UpdateRunGroupOutcome OmicsClient::UpdateRunGroup(const UpdateRunGroupRequest& r
 
 UpdateVariantStoreOutcome OmicsClient::UpdateVariantStore(const UpdateVariantStoreRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateVariantStore);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateVariantStore, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -1431,6 +1502,7 @@ UpdateVariantStoreOutcome OmicsClient::UpdateVariantStore(const UpdateVariantSto
 
 UpdateWorkflowOutcome OmicsClient::UpdateWorkflow(const UpdateWorkflowRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateWorkflow);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateWorkflow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -1448,6 +1520,7 @@ UpdateWorkflowOutcome OmicsClient::UpdateWorkflow(const UpdateWorkflowRequest& r
 
 UploadReadSetPartOutcome OmicsClient::UploadReadSetPart(const UploadReadSetPartRequest& request) const
 {
+  AWS_OPERATION_GUARD(UploadReadSetPart);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UploadReadSetPart, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SequenceStoreIdHasBeenSet())
   {

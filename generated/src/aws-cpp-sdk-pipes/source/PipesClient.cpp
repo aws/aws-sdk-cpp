@@ -139,6 +139,7 @@ PipesClient::PipesClient(const std::shared_ptr<AWSCredentialsProvider>& credenti
     /* End of legacy constructors due deprecation */
 PipesClient::~PipesClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<PipesEndpointProviderBase>& PipesClient::accessEndpointProvider()
@@ -161,6 +162,7 @@ void PipesClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CreatePipeOutcome PipesClient::CreatePipe(const CreatePipeRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreatePipe);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreatePipe, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -176,6 +178,7 @@ CreatePipeOutcome PipesClient::CreatePipe(const CreatePipeRequest& request) cons
 
 DeletePipeOutcome PipesClient::DeletePipe(const DeletePipeRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeletePipe);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeletePipe, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -191,6 +194,7 @@ DeletePipeOutcome PipesClient::DeletePipe(const DeletePipeRequest& request) cons
 
 DescribePipeOutcome PipesClient::DescribePipe(const DescribePipeRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribePipe);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribePipe, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -206,6 +210,7 @@ DescribePipeOutcome PipesClient::DescribePipe(const DescribePipeRequest& request
 
 ListPipesOutcome PipesClient::ListPipes(const ListPipesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListPipes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPipes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListPipes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -215,6 +220,7 @@ ListPipesOutcome PipesClient::ListPipes(const ListPipesRequest& request) const
 
 ListTagsForResourceOutcome PipesClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -230,6 +236,7 @@ ListTagsForResourceOutcome PipesClient::ListTagsForResource(const ListTagsForRes
 
 StartPipeOutcome PipesClient::StartPipe(const StartPipeRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartPipe);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartPipe, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -246,6 +253,7 @@ StartPipeOutcome PipesClient::StartPipe(const StartPipeRequest& request) const
 
 StopPipeOutcome PipesClient::StopPipe(const StopPipeRequest& request) const
 {
+  AWS_OPERATION_GUARD(StopPipe);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopPipe, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -262,6 +270,7 @@ StopPipeOutcome PipesClient::StopPipe(const StopPipeRequest& request) const
 
 TagResourceOutcome PipesClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -277,6 +286,7 @@ TagResourceOutcome PipesClient::TagResource(const TagResourceRequest& request) c
 
 UntagResourceOutcome PipesClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -297,6 +307,7 @@ UntagResourceOutcome PipesClient::UntagResource(const UntagResourceRequest& requ
 
 UpdatePipeOutcome PipesClient::UpdatePipe(const UpdatePipeRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdatePipe);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdatePipe, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {

@@ -157,6 +157,7 @@ AccessAnalyzerClient::AccessAnalyzerClient(const std::shared_ptr<AWSCredentialsP
     /* End of legacy constructors due deprecation */
 AccessAnalyzerClient::~AccessAnalyzerClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<AccessAnalyzerEndpointProviderBase>& AccessAnalyzerClient::accessEndpointProvider()
@@ -179,6 +180,7 @@ void AccessAnalyzerClient::OverrideEndpoint(const Aws::String& endpoint)
 
 ApplyArchiveRuleOutcome AccessAnalyzerClient::ApplyArchiveRule(const ApplyArchiveRuleRequest& request) const
 {
+  AWS_OPERATION_GUARD(ApplyArchiveRule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ApplyArchiveRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ApplyArchiveRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -188,6 +190,7 @@ ApplyArchiveRuleOutcome AccessAnalyzerClient::ApplyArchiveRule(const ApplyArchiv
 
 CancelPolicyGenerationOutcome AccessAnalyzerClient::CancelPolicyGeneration(const CancelPolicyGenerationRequest& request) const
 {
+  AWS_OPERATION_GUARD(CancelPolicyGeneration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CancelPolicyGeneration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.JobIdHasBeenSet())
   {
@@ -203,6 +206,7 @@ CancelPolicyGenerationOutcome AccessAnalyzerClient::CancelPolicyGeneration(const
 
 CreateAccessPreviewOutcome AccessAnalyzerClient::CreateAccessPreview(const CreateAccessPreviewRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateAccessPreview);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAccessPreview, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateAccessPreview, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -212,6 +216,7 @@ CreateAccessPreviewOutcome AccessAnalyzerClient::CreateAccessPreview(const Creat
 
 CreateAnalyzerOutcome AccessAnalyzerClient::CreateAnalyzer(const CreateAnalyzerRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateAnalyzer);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAnalyzer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateAnalyzer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -221,6 +226,7 @@ CreateAnalyzerOutcome AccessAnalyzerClient::CreateAnalyzer(const CreateAnalyzerR
 
 CreateArchiveRuleOutcome AccessAnalyzerClient::CreateArchiveRule(const CreateArchiveRuleRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateArchiveRule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateArchiveRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AnalyzerNameHasBeenSet())
   {
@@ -237,6 +243,7 @@ CreateArchiveRuleOutcome AccessAnalyzerClient::CreateArchiveRule(const CreateArc
 
 DeleteAnalyzerOutcome AccessAnalyzerClient::DeleteAnalyzer(const DeleteAnalyzerRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteAnalyzer);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAnalyzer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AnalyzerNameHasBeenSet())
   {
@@ -252,6 +259,7 @@ DeleteAnalyzerOutcome AccessAnalyzerClient::DeleteAnalyzer(const DeleteAnalyzerR
 
 DeleteArchiveRuleOutcome AccessAnalyzerClient::DeleteArchiveRule(const DeleteArchiveRuleRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteArchiveRule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteArchiveRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AnalyzerNameHasBeenSet())
   {
@@ -274,6 +282,7 @@ DeleteArchiveRuleOutcome AccessAnalyzerClient::DeleteArchiveRule(const DeleteArc
 
 GetAccessPreviewOutcome AccessAnalyzerClient::GetAccessPreview(const GetAccessPreviewRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetAccessPreview);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAccessPreview, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccessPreviewIdHasBeenSet())
   {
@@ -294,6 +303,7 @@ GetAccessPreviewOutcome AccessAnalyzerClient::GetAccessPreview(const GetAccessPr
 
 GetAnalyzedResourceOutcome AccessAnalyzerClient::GetAnalyzedResource(const GetAnalyzedResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetAnalyzedResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAnalyzedResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AnalyzerArnHasBeenSet())
   {
@@ -313,6 +323,7 @@ GetAnalyzedResourceOutcome AccessAnalyzerClient::GetAnalyzedResource(const GetAn
 
 GetAnalyzerOutcome AccessAnalyzerClient::GetAnalyzer(const GetAnalyzerRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetAnalyzer);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAnalyzer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AnalyzerNameHasBeenSet())
   {
@@ -328,6 +339,7 @@ GetAnalyzerOutcome AccessAnalyzerClient::GetAnalyzer(const GetAnalyzerRequest& r
 
 GetArchiveRuleOutcome AccessAnalyzerClient::GetArchiveRule(const GetArchiveRuleRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetArchiveRule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetArchiveRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AnalyzerNameHasBeenSet())
   {
@@ -350,6 +362,7 @@ GetArchiveRuleOutcome AccessAnalyzerClient::GetArchiveRule(const GetArchiveRuleR
 
 GetFindingOutcome AccessAnalyzerClient::GetFinding(const GetFindingRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetFinding);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetFinding, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AnalyzerArnHasBeenSet())
   {
@@ -370,6 +383,7 @@ GetFindingOutcome AccessAnalyzerClient::GetFinding(const GetFindingRequest& requ
 
 GetGeneratedPolicyOutcome AccessAnalyzerClient::GetGeneratedPolicy(const GetGeneratedPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetGeneratedPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetGeneratedPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.JobIdHasBeenSet())
   {
@@ -385,6 +399,7 @@ GetGeneratedPolicyOutcome AccessAnalyzerClient::GetGeneratedPolicy(const GetGene
 
 ListAccessPreviewFindingsOutcome AccessAnalyzerClient::ListAccessPreviewFindings(const ListAccessPreviewFindingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAccessPreviewFindings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAccessPreviewFindings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccessPreviewIdHasBeenSet())
   {
@@ -400,6 +415,7 @@ ListAccessPreviewFindingsOutcome AccessAnalyzerClient::ListAccessPreviewFindings
 
 ListAccessPreviewsOutcome AccessAnalyzerClient::ListAccessPreviews(const ListAccessPreviewsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAccessPreviews);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAccessPreviews, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AnalyzerArnHasBeenSet())
   {
@@ -414,6 +430,7 @@ ListAccessPreviewsOutcome AccessAnalyzerClient::ListAccessPreviews(const ListAcc
 
 ListAnalyzedResourcesOutcome AccessAnalyzerClient::ListAnalyzedResources(const ListAnalyzedResourcesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAnalyzedResources);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAnalyzedResources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAnalyzedResources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -423,6 +440,7 @@ ListAnalyzedResourcesOutcome AccessAnalyzerClient::ListAnalyzedResources(const L
 
 ListAnalyzersOutcome AccessAnalyzerClient::ListAnalyzers(const ListAnalyzersRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAnalyzers);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAnalyzers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAnalyzers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -432,6 +450,7 @@ ListAnalyzersOutcome AccessAnalyzerClient::ListAnalyzers(const ListAnalyzersRequ
 
 ListArchiveRulesOutcome AccessAnalyzerClient::ListArchiveRules(const ListArchiveRulesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListArchiveRules);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListArchiveRules, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AnalyzerNameHasBeenSet())
   {
@@ -448,6 +467,7 @@ ListArchiveRulesOutcome AccessAnalyzerClient::ListArchiveRules(const ListArchive
 
 ListFindingsOutcome AccessAnalyzerClient::ListFindings(const ListFindingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListFindings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListFindings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListFindings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -457,6 +477,7 @@ ListFindingsOutcome AccessAnalyzerClient::ListFindings(const ListFindingsRequest
 
 ListPolicyGenerationsOutcome AccessAnalyzerClient::ListPolicyGenerations(const ListPolicyGenerationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListPolicyGenerations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPolicyGenerations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListPolicyGenerations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -466,6 +487,7 @@ ListPolicyGenerationsOutcome AccessAnalyzerClient::ListPolicyGenerations(const L
 
 ListTagsForResourceOutcome AccessAnalyzerClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -481,6 +503,7 @@ ListTagsForResourceOutcome AccessAnalyzerClient::ListTagsForResource(const ListT
 
 StartPolicyGenerationOutcome AccessAnalyzerClient::StartPolicyGeneration(const StartPolicyGenerationRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartPolicyGeneration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartPolicyGeneration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartPolicyGeneration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -490,6 +513,7 @@ StartPolicyGenerationOutcome AccessAnalyzerClient::StartPolicyGeneration(const S
 
 StartResourceScanOutcome AccessAnalyzerClient::StartResourceScan(const StartResourceScanRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartResourceScan);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartResourceScan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartResourceScan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -499,6 +523,7 @@ StartResourceScanOutcome AccessAnalyzerClient::StartResourceScan(const StartReso
 
 TagResourceOutcome AccessAnalyzerClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -514,6 +539,7 @@ TagResourceOutcome AccessAnalyzerClient::TagResource(const TagResourceRequest& r
 
 UntagResourceOutcome AccessAnalyzerClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -534,6 +560,7 @@ UntagResourceOutcome AccessAnalyzerClient::UntagResource(const UntagResourceRequ
 
 UpdateArchiveRuleOutcome AccessAnalyzerClient::UpdateArchiveRule(const UpdateArchiveRuleRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateArchiveRule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateArchiveRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AnalyzerNameHasBeenSet())
   {
@@ -556,6 +583,7 @@ UpdateArchiveRuleOutcome AccessAnalyzerClient::UpdateArchiveRule(const UpdateArc
 
 UpdateFindingsOutcome AccessAnalyzerClient::UpdateFindings(const UpdateFindingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateFindings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateFindings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateFindings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -565,6 +593,7 @@ UpdateFindingsOutcome AccessAnalyzerClient::UpdateFindings(const UpdateFindingsR
 
 ValidatePolicyOutcome AccessAnalyzerClient::ValidatePolicy(const ValidatePolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(ValidatePolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ValidatePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ValidatePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

@@ -133,6 +133,7 @@ LicenseManagerLinuxSubscriptionsClient::LicenseManagerLinuxSubscriptionsClient(c
     /* End of legacy constructors due deprecation */
 LicenseManagerLinuxSubscriptionsClient::~LicenseManagerLinuxSubscriptionsClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<LicenseManagerLinuxSubscriptionsEndpointProviderBase>& LicenseManagerLinuxSubscriptionsClient::accessEndpointProvider()
@@ -155,6 +156,7 @@ void LicenseManagerLinuxSubscriptionsClient::OverrideEndpoint(const Aws::String&
 
 GetServiceSettingsOutcome LicenseManagerLinuxSubscriptionsClient::GetServiceSettings(const GetServiceSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetServiceSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetServiceSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetServiceSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -164,6 +166,7 @@ GetServiceSettingsOutcome LicenseManagerLinuxSubscriptionsClient::GetServiceSett
 
 ListLinuxSubscriptionInstancesOutcome LicenseManagerLinuxSubscriptionsClient::ListLinuxSubscriptionInstances(const ListLinuxSubscriptionInstancesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListLinuxSubscriptionInstances);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListLinuxSubscriptionInstances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListLinuxSubscriptionInstances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -173,6 +176,7 @@ ListLinuxSubscriptionInstancesOutcome LicenseManagerLinuxSubscriptionsClient::Li
 
 ListLinuxSubscriptionsOutcome LicenseManagerLinuxSubscriptionsClient::ListLinuxSubscriptions(const ListLinuxSubscriptionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListLinuxSubscriptions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListLinuxSubscriptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListLinuxSubscriptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -182,6 +186,7 @@ ListLinuxSubscriptionsOutcome LicenseManagerLinuxSubscriptionsClient::ListLinuxS
 
 UpdateServiceSettingsOutcome LicenseManagerLinuxSubscriptionsClient::UpdateServiceSettings(const UpdateServiceSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateServiceSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateServiceSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateServiceSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

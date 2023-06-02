@@ -134,6 +134,7 @@ PricingClient::PricingClient(const std::shared_ptr<AWSCredentialsProvider>& cred
     /* End of legacy constructors due deprecation */
 PricingClient::~PricingClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<PricingEndpointProviderBase>& PricingClient::accessEndpointProvider()
@@ -156,6 +157,7 @@ void PricingClient::OverrideEndpoint(const Aws::String& endpoint)
 
 DescribeServicesOutcome PricingClient::DescribeServices(const DescribeServicesRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeServices);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeServices, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeServices, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -164,6 +166,7 @@ DescribeServicesOutcome PricingClient::DescribeServices(const DescribeServicesRe
 
 GetAttributeValuesOutcome PricingClient::GetAttributeValues(const GetAttributeValuesRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetAttributeValues);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAttributeValues, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetAttributeValues, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -172,6 +175,7 @@ GetAttributeValuesOutcome PricingClient::GetAttributeValues(const GetAttributeVa
 
 GetPriceListFileUrlOutcome PricingClient::GetPriceListFileUrl(const GetPriceListFileUrlRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetPriceListFileUrl);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPriceListFileUrl, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetPriceListFileUrl, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -180,6 +184,7 @@ GetPriceListFileUrlOutcome PricingClient::GetPriceListFileUrl(const GetPriceList
 
 GetProductsOutcome PricingClient::GetProducts(const GetProductsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetProducts);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetProducts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetProducts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -188,6 +193,7 @@ GetProductsOutcome PricingClient::GetProducts(const GetProductsRequest& request)
 
 ListPriceListsOutcome PricingClient::ListPriceLists(const ListPriceListsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListPriceLists);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPriceLists, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListPriceLists, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

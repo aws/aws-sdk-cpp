@@ -131,6 +131,7 @@ PersonalizeRuntimeClient::PersonalizeRuntimeClient(const std::shared_ptr<AWSCred
     /* End of legacy constructors due deprecation */
 PersonalizeRuntimeClient::~PersonalizeRuntimeClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<PersonalizeRuntimeEndpointProviderBase>& PersonalizeRuntimeClient::accessEndpointProvider()
@@ -153,6 +154,7 @@ void PersonalizeRuntimeClient::OverrideEndpoint(const Aws::String& endpoint)
 
 GetPersonalizedRankingOutcome PersonalizeRuntimeClient::GetPersonalizedRanking(const GetPersonalizedRankingRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetPersonalizedRanking);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPersonalizedRanking, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetPersonalizedRanking, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -162,6 +164,7 @@ GetPersonalizedRankingOutcome PersonalizeRuntimeClient::GetPersonalizedRanking(c
 
 GetRecommendationsOutcome PersonalizeRuntimeClient::GetRecommendations(const GetRecommendationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetRecommendations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetRecommendations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetRecommendations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

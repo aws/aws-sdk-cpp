@@ -132,6 +132,7 @@ MigrationHubConfigClient::MigrationHubConfigClient(const std::shared_ptr<AWSCred
     /* End of legacy constructors due deprecation */
 MigrationHubConfigClient::~MigrationHubConfigClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<MigrationHubConfigEndpointProviderBase>& MigrationHubConfigClient::accessEndpointProvider()
@@ -154,6 +155,7 @@ void MigrationHubConfigClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CreateHomeRegionControlOutcome MigrationHubConfigClient::CreateHomeRegionControl(const CreateHomeRegionControlRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateHomeRegionControl);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateHomeRegionControl, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateHomeRegionControl, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -162,6 +164,7 @@ CreateHomeRegionControlOutcome MigrationHubConfigClient::CreateHomeRegionControl
 
 DescribeHomeRegionControlsOutcome MigrationHubConfigClient::DescribeHomeRegionControls(const DescribeHomeRegionControlsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeHomeRegionControls);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeHomeRegionControls, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeHomeRegionControls, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -170,6 +173,7 @@ DescribeHomeRegionControlsOutcome MigrationHubConfigClient::DescribeHomeRegionCo
 
 GetHomeRegionOutcome MigrationHubConfigClient::GetHomeRegion(const GetHomeRegionRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetHomeRegion);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetHomeRegion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetHomeRegion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

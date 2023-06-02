@@ -45,7 +45,7 @@ namespace Model
      * should be removed.</p> <p> Example trail ARN format:
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      * <p>Example event data store ARN format:
-     * <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
      * </p> <p>Example channel ARN format:
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
      */
@@ -56,7 +56,7 @@ namespace Model
      * should be removed.</p> <p> Example trail ARN format:
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      * <p>Example event data store ARN format:
-     * <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
      * </p> <p>Example channel ARN format:
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
      */
@@ -67,7 +67,7 @@ namespace Model
      * should be removed.</p> <p> Example trail ARN format:
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      * <p>Example event data store ARN format:
-     * <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
      * </p> <p>Example channel ARN format:
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
      */
@@ -78,7 +78,7 @@ namespace Model
      * should be removed.</p> <p> Example trail ARN format:
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      * <p>Example event data store ARN format:
-     * <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
      * </p> <p>Example channel ARN format:
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
      */
@@ -89,7 +89,7 @@ namespace Model
      * should be removed.</p> <p> Example trail ARN format:
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      * <p>Example event data store ARN format:
-     * <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
      * </p> <p>Example channel ARN format:
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
      */
@@ -100,7 +100,7 @@ namespace Model
      * should be removed.</p> <p> Example trail ARN format:
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      * <p>Example event data store ARN format:
-     * <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
      * </p> <p>Example channel ARN format:
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
      */
@@ -111,7 +111,7 @@ namespace Model
      * should be removed.</p> <p> Example trail ARN format:
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      * <p>Example event data store ARN format:
-     * <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
      * </p> <p>Example channel ARN format:
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
      */
@@ -122,7 +122,7 @@ namespace Model
      * should be removed.</p> <p> Example trail ARN format:
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      * <p>Example event data store ARN format:
-     * <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
      * </p> <p>Example channel ARN format:
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
      */

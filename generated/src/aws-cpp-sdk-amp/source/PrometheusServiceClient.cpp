@@ -150,6 +150,7 @@ PrometheusServiceClient::PrometheusServiceClient(const std::shared_ptr<AWSCreden
     /* End of legacy constructors due deprecation */
 PrometheusServiceClient::~PrometheusServiceClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<PrometheusServiceEndpointProviderBase>& PrometheusServiceClient::accessEndpointProvider()
@@ -172,6 +173,7 @@ void PrometheusServiceClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CreateAlertManagerDefinitionOutcome PrometheusServiceClient::CreateAlertManagerDefinition(const CreateAlertManagerDefinitionRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateAlertManagerDefinition);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAlertManagerDefinition, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkspaceIdHasBeenSet())
   {
@@ -188,6 +190,7 @@ CreateAlertManagerDefinitionOutcome PrometheusServiceClient::CreateAlertManagerD
 
 CreateLoggingConfigurationOutcome PrometheusServiceClient::CreateLoggingConfiguration(const CreateLoggingConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateLoggingConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateLoggingConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkspaceIdHasBeenSet())
   {
@@ -204,6 +207,7 @@ CreateLoggingConfigurationOutcome PrometheusServiceClient::CreateLoggingConfigur
 
 CreateRuleGroupsNamespaceOutcome PrometheusServiceClient::CreateRuleGroupsNamespace(const CreateRuleGroupsNamespaceRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateRuleGroupsNamespace);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateRuleGroupsNamespace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkspaceIdHasBeenSet())
   {
@@ -220,6 +224,7 @@ CreateRuleGroupsNamespaceOutcome PrometheusServiceClient::CreateRuleGroupsNamesp
 
 CreateWorkspaceOutcome PrometheusServiceClient::CreateWorkspace(const CreateWorkspaceRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateWorkspace);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateWorkspace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateWorkspace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -229,6 +234,7 @@ CreateWorkspaceOutcome PrometheusServiceClient::CreateWorkspace(const CreateWork
 
 DeleteAlertManagerDefinitionOutcome PrometheusServiceClient::DeleteAlertManagerDefinition(const DeleteAlertManagerDefinitionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteAlertManagerDefinition);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAlertManagerDefinition, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkspaceIdHasBeenSet())
   {
@@ -245,6 +251,7 @@ DeleteAlertManagerDefinitionOutcome PrometheusServiceClient::DeleteAlertManagerD
 
 DeleteLoggingConfigurationOutcome PrometheusServiceClient::DeleteLoggingConfiguration(const DeleteLoggingConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteLoggingConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteLoggingConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkspaceIdHasBeenSet())
   {
@@ -261,6 +268,7 @@ DeleteLoggingConfigurationOutcome PrometheusServiceClient::DeleteLoggingConfigur
 
 DeleteRuleGroupsNamespaceOutcome PrometheusServiceClient::DeleteRuleGroupsNamespace(const DeleteRuleGroupsNamespaceRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteRuleGroupsNamespace);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteRuleGroupsNamespace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -283,6 +291,7 @@ DeleteRuleGroupsNamespaceOutcome PrometheusServiceClient::DeleteRuleGroupsNamesp
 
 DeleteWorkspaceOutcome PrometheusServiceClient::DeleteWorkspace(const DeleteWorkspaceRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteWorkspace);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteWorkspace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkspaceIdHasBeenSet())
   {
@@ -298,6 +307,7 @@ DeleteWorkspaceOutcome PrometheusServiceClient::DeleteWorkspace(const DeleteWork
 
 DescribeAlertManagerDefinitionOutcome PrometheusServiceClient::DescribeAlertManagerDefinition(const DescribeAlertManagerDefinitionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeAlertManagerDefinition);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAlertManagerDefinition, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkspaceIdHasBeenSet())
   {
@@ -314,6 +324,7 @@ DescribeAlertManagerDefinitionOutcome PrometheusServiceClient::DescribeAlertMana
 
 DescribeLoggingConfigurationOutcome PrometheusServiceClient::DescribeLoggingConfiguration(const DescribeLoggingConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeLoggingConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeLoggingConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkspaceIdHasBeenSet())
   {
@@ -330,6 +341,7 @@ DescribeLoggingConfigurationOutcome PrometheusServiceClient::DescribeLoggingConf
 
 DescribeRuleGroupsNamespaceOutcome PrometheusServiceClient::DescribeRuleGroupsNamespace(const DescribeRuleGroupsNamespaceRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeRuleGroupsNamespace);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeRuleGroupsNamespace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -352,6 +364,7 @@ DescribeRuleGroupsNamespaceOutcome PrometheusServiceClient::DescribeRuleGroupsNa
 
 DescribeWorkspaceOutcome PrometheusServiceClient::DescribeWorkspace(const DescribeWorkspaceRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeWorkspace);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeWorkspace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkspaceIdHasBeenSet())
   {
@@ -367,6 +380,7 @@ DescribeWorkspaceOutcome PrometheusServiceClient::DescribeWorkspace(const Descri
 
 ListRuleGroupsNamespacesOutcome PrometheusServiceClient::ListRuleGroupsNamespaces(const ListRuleGroupsNamespacesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListRuleGroupsNamespaces);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRuleGroupsNamespaces, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkspaceIdHasBeenSet())
   {
@@ -383,6 +397,7 @@ ListRuleGroupsNamespacesOutcome PrometheusServiceClient::ListRuleGroupsNamespace
 
 ListTagsForResourceOutcome PrometheusServiceClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -398,6 +413,7 @@ ListTagsForResourceOutcome PrometheusServiceClient::ListTagsForResource(const Li
 
 ListWorkspacesOutcome PrometheusServiceClient::ListWorkspaces(const ListWorkspacesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListWorkspaces);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListWorkspaces, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListWorkspaces, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -407,6 +423,7 @@ ListWorkspacesOutcome PrometheusServiceClient::ListWorkspaces(const ListWorkspac
 
 PutAlertManagerDefinitionOutcome PrometheusServiceClient::PutAlertManagerDefinition(const PutAlertManagerDefinitionRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutAlertManagerDefinition);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutAlertManagerDefinition, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkspaceIdHasBeenSet())
   {
@@ -423,6 +440,7 @@ PutAlertManagerDefinitionOutcome PrometheusServiceClient::PutAlertManagerDefinit
 
 PutRuleGroupsNamespaceOutcome PrometheusServiceClient::PutRuleGroupsNamespace(const PutRuleGroupsNamespaceRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutRuleGroupsNamespace);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutRuleGroupsNamespace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -445,6 +463,7 @@ PutRuleGroupsNamespaceOutcome PrometheusServiceClient::PutRuleGroupsNamespace(co
 
 TagResourceOutcome PrometheusServiceClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -460,6 +479,7 @@ TagResourceOutcome PrometheusServiceClient::TagResource(const TagResourceRequest
 
 UntagResourceOutcome PrometheusServiceClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -480,6 +500,7 @@ UntagResourceOutcome PrometheusServiceClient::UntagResource(const UntagResourceR
 
 UpdateLoggingConfigurationOutcome PrometheusServiceClient::UpdateLoggingConfiguration(const UpdateLoggingConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateLoggingConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateLoggingConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkspaceIdHasBeenSet())
   {
@@ -496,6 +517,7 @@ UpdateLoggingConfigurationOutcome PrometheusServiceClient::UpdateLoggingConfigur
 
 UpdateWorkspaceAliasOutcome PrometheusServiceClient::UpdateWorkspaceAlias(const UpdateWorkspaceAliasRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateWorkspaceAlias);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateWorkspaceAlias, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkspaceIdHasBeenSet())
   {

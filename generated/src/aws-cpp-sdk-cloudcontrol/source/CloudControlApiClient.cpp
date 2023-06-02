@@ -137,6 +137,7 @@ CloudControlApiClient::CloudControlApiClient(const std::shared_ptr<AWSCredential
     /* End of legacy constructors due deprecation */
 CloudControlApiClient::~CloudControlApiClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<CloudControlApiEndpointProviderBase>& CloudControlApiClient::accessEndpointProvider()
@@ -159,6 +160,7 @@ void CloudControlApiClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CancelResourceRequestOutcome CloudControlApiClient::CancelResourceRequest(const CancelResourceRequestRequest& request) const
 {
+  AWS_OPERATION_GUARD(CancelResourceRequest);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CancelResourceRequest, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CancelResourceRequest, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -167,6 +169,7 @@ CancelResourceRequestOutcome CloudControlApiClient::CancelResourceRequest(const 
 
 CreateResourceOutcome CloudControlApiClient::CreateResource(const CreateResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -175,6 +178,7 @@ CreateResourceOutcome CloudControlApiClient::CreateResource(const CreateResource
 
 DeleteResourceOutcome CloudControlApiClient::DeleteResource(const DeleteResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -183,6 +187,7 @@ DeleteResourceOutcome CloudControlApiClient::DeleteResource(const DeleteResource
 
 GetResourceOutcome CloudControlApiClient::GetResource(const GetResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -191,6 +196,7 @@ GetResourceOutcome CloudControlApiClient::GetResource(const GetResourceRequest& 
 
 GetResourceRequestStatusOutcome CloudControlApiClient::GetResourceRequestStatus(const GetResourceRequestStatusRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetResourceRequestStatus);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetResourceRequestStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetResourceRequestStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -199,6 +205,7 @@ GetResourceRequestStatusOutcome CloudControlApiClient::GetResourceRequestStatus(
 
 ListResourceRequestsOutcome CloudControlApiClient::ListResourceRequests(const ListResourceRequestsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListResourceRequests);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListResourceRequests, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListResourceRequests, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -207,6 +214,7 @@ ListResourceRequestsOutcome CloudControlApiClient::ListResourceRequests(const Li
 
 ListResourcesOutcome CloudControlApiClient::ListResources(const ListResourcesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListResources);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListResources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListResources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -215,6 +223,7 @@ ListResourcesOutcome CloudControlApiClient::ListResources(const ListResourcesReq
 
 UpdateResourceOutcome CloudControlApiClient::UpdateResource(const UpdateResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

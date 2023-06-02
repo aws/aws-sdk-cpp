@@ -449,63 +449,63 @@ namespace Model
     /**
      * <p>A list of values for the parameters in a query. The values are applied
      * sequentially to the parameters in the query in the order in which the parameters
-     * occur.</p>
+     * occur. The list of parameters is not returned in the response.</p>
      */
     inline const Aws::Vector<Aws::String>& GetExecutionParameters() const{ return m_executionParameters; }
 
     /**
      * <p>A list of values for the parameters in a query. The values are applied
      * sequentially to the parameters in the query in the order in which the parameters
-     * occur.</p>
+     * occur. The list of parameters is not returned in the response.</p>
      */
     inline bool ExecutionParametersHasBeenSet() const { return m_executionParametersHasBeenSet; }
 
     /**
      * <p>A list of values for the parameters in a query. The values are applied
      * sequentially to the parameters in the query in the order in which the parameters
-     * occur.</p>
+     * occur. The list of parameters is not returned in the response.</p>
      */
     inline void SetExecutionParameters(const Aws::Vector<Aws::String>& value) { m_executionParametersHasBeenSet = true; m_executionParameters = value; }
 
     /**
      * <p>A list of values for the parameters in a query. The values are applied
      * sequentially to the parameters in the query in the order in which the parameters
-     * occur.</p>
+     * occur. The list of parameters is not returned in the response.</p>
      */
     inline void SetExecutionParameters(Aws::Vector<Aws::String>&& value) { m_executionParametersHasBeenSet = true; m_executionParameters = std::move(value); }
 
     /**
      * <p>A list of values for the parameters in a query. The values are applied
      * sequentially to the parameters in the query in the order in which the parameters
-     * occur.</p>
+     * occur. The list of parameters is not returned in the response.</p>
      */
     inline QueryExecution& WithExecutionParameters(const Aws::Vector<Aws::String>& value) { SetExecutionParameters(value); return *this;}
 
     /**
      * <p>A list of values for the parameters in a query. The values are applied
      * sequentially to the parameters in the query in the order in which the parameters
-     * occur.</p>
+     * occur. The list of parameters is not returned in the response.</p>
      */
     inline QueryExecution& WithExecutionParameters(Aws::Vector<Aws::String>&& value) { SetExecutionParameters(std::move(value)); return *this;}
 
     /**
      * <p>A list of values for the parameters in a query. The values are applied
      * sequentially to the parameters in the query in the order in which the parameters
-     * occur.</p>
+     * occur. The list of parameters is not returned in the response.</p>
      */
     inline QueryExecution& AddExecutionParameters(const Aws::String& value) { m_executionParametersHasBeenSet = true; m_executionParameters.push_back(value); return *this; }
 
     /**
      * <p>A list of values for the parameters in a query. The values are applied
      * sequentially to the parameters in the query in the order in which the parameters
-     * occur.</p>
+     * occur. The list of parameters is not returned in the response.</p>
      */
     inline QueryExecution& AddExecutionParameters(Aws::String&& value) { m_executionParametersHasBeenSet = true; m_executionParameters.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of values for the parameters in a query. The values are applied
      * sequentially to the parameters in the query in the order in which the parameters
-     * occur.</p>
+     * occur. The list of parameters is not returned in the response.</p>
      */
     inline QueryExecution& AddExecutionParameters(const char* value) { m_executionParametersHasBeenSet = true; m_executionParameters.push_back(value); return *this; }
 

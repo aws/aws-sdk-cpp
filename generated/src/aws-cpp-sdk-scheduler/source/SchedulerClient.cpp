@@ -141,6 +141,7 @@ SchedulerClient::SchedulerClient(const std::shared_ptr<AWSCredentialsProvider>& 
     /* End of legacy constructors due deprecation */
 SchedulerClient::~SchedulerClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<SchedulerEndpointProviderBase>& SchedulerClient::accessEndpointProvider()
@@ -163,6 +164,7 @@ void SchedulerClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CreateScheduleOutcome SchedulerClient::CreateSchedule(const CreateScheduleRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateSchedule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateSchedule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -178,6 +180,7 @@ CreateScheduleOutcome SchedulerClient::CreateSchedule(const CreateScheduleReques
 
 CreateScheduleGroupOutcome SchedulerClient::CreateScheduleGroup(const CreateScheduleGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateScheduleGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateScheduleGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -193,6 +196,7 @@ CreateScheduleGroupOutcome SchedulerClient::CreateScheduleGroup(const CreateSche
 
 DeleteScheduleOutcome SchedulerClient::DeleteSchedule(const DeleteScheduleRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteSchedule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteSchedule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -208,6 +212,7 @@ DeleteScheduleOutcome SchedulerClient::DeleteSchedule(const DeleteScheduleReques
 
 DeleteScheduleGroupOutcome SchedulerClient::DeleteScheduleGroup(const DeleteScheduleGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteScheduleGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteScheduleGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -223,6 +228,7 @@ DeleteScheduleGroupOutcome SchedulerClient::DeleteScheduleGroup(const DeleteSche
 
 GetScheduleOutcome SchedulerClient::GetSchedule(const GetScheduleRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSchedule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSchedule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -238,6 +244,7 @@ GetScheduleOutcome SchedulerClient::GetSchedule(const GetScheduleRequest& reques
 
 GetScheduleGroupOutcome SchedulerClient::GetScheduleGroup(const GetScheduleGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetScheduleGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetScheduleGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -253,6 +260,7 @@ GetScheduleGroupOutcome SchedulerClient::GetScheduleGroup(const GetScheduleGroup
 
 ListScheduleGroupsOutcome SchedulerClient::ListScheduleGroups(const ListScheduleGroupsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListScheduleGroups);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListScheduleGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListScheduleGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -262,6 +270,7 @@ ListScheduleGroupsOutcome SchedulerClient::ListScheduleGroups(const ListSchedule
 
 ListSchedulesOutcome SchedulerClient::ListSchedules(const ListSchedulesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListSchedules);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSchedules, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListSchedules, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -271,6 +280,7 @@ ListSchedulesOutcome SchedulerClient::ListSchedules(const ListSchedulesRequest& 
 
 ListTagsForResourceOutcome SchedulerClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -286,6 +296,7 @@ ListTagsForResourceOutcome SchedulerClient::ListTagsForResource(const ListTagsFo
 
 TagResourceOutcome SchedulerClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -301,6 +312,7 @@ TagResourceOutcome SchedulerClient::TagResource(const TagResourceRequest& reques
 
 UntagResourceOutcome SchedulerClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -321,6 +333,7 @@ UntagResourceOutcome SchedulerClient::UntagResource(const UntagResourceRequest& 
 
 UpdateScheduleOutcome SchedulerClient::UpdateSchedule(const UpdateScheduleRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateSchedule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateSchedule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {

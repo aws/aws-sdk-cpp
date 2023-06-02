@@ -152,6 +152,7 @@ CodeGuruProfilerClient::CodeGuruProfilerClient(const std::shared_ptr<AWSCredenti
     /* End of legacy constructors due deprecation */
 CodeGuruProfilerClient::~CodeGuruProfilerClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<CodeGuruProfilerEndpointProviderBase>& CodeGuruProfilerClient::accessEndpointProvider()
@@ -174,6 +175,7 @@ void CodeGuruProfilerClient::OverrideEndpoint(const Aws::String& endpoint)
 
 AddNotificationChannelsOutcome CodeGuruProfilerClient::AddNotificationChannels(const AddNotificationChannelsRequest& request) const
 {
+  AWS_OPERATION_GUARD(AddNotificationChannels);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AddNotificationChannels, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProfilingGroupNameHasBeenSet())
   {
@@ -190,6 +192,7 @@ AddNotificationChannelsOutcome CodeGuruProfilerClient::AddNotificationChannels(c
 
 BatchGetFrameMetricDataOutcome CodeGuruProfilerClient::BatchGetFrameMetricData(const BatchGetFrameMetricDataRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchGetFrameMetricData);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchGetFrameMetricData, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProfilingGroupNameHasBeenSet())
   {
@@ -206,6 +209,7 @@ BatchGetFrameMetricDataOutcome CodeGuruProfilerClient::BatchGetFrameMetricData(c
 
 ConfigureAgentOutcome CodeGuruProfilerClient::ConfigureAgent(const ConfigureAgentRequest& request) const
 {
+  AWS_OPERATION_GUARD(ConfigureAgent);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ConfigureAgent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProfilingGroupNameHasBeenSet())
   {
@@ -222,6 +226,7 @@ ConfigureAgentOutcome CodeGuruProfilerClient::ConfigureAgent(const ConfigureAgen
 
 CreateProfilingGroupOutcome CodeGuruProfilerClient::CreateProfilingGroup(const CreateProfilingGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateProfilingGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateProfilingGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ClientTokenHasBeenSet())
   {
@@ -236,6 +241,7 @@ CreateProfilingGroupOutcome CodeGuruProfilerClient::CreateProfilingGroup(const C
 
 DeleteProfilingGroupOutcome CodeGuruProfilerClient::DeleteProfilingGroup(const DeleteProfilingGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteProfilingGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteProfilingGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProfilingGroupNameHasBeenSet())
   {
@@ -251,6 +257,7 @@ DeleteProfilingGroupOutcome CodeGuruProfilerClient::DeleteProfilingGroup(const D
 
 DescribeProfilingGroupOutcome CodeGuruProfilerClient::DescribeProfilingGroup(const DescribeProfilingGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeProfilingGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeProfilingGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProfilingGroupNameHasBeenSet())
   {
@@ -266,6 +273,7 @@ DescribeProfilingGroupOutcome CodeGuruProfilerClient::DescribeProfilingGroup(con
 
 GetFindingsReportAccountSummaryOutcome CodeGuruProfilerClient::GetFindingsReportAccountSummary(const GetFindingsReportAccountSummaryRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetFindingsReportAccountSummary);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetFindingsReportAccountSummary, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetFindingsReportAccountSummary, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -275,6 +283,7 @@ GetFindingsReportAccountSummaryOutcome CodeGuruProfilerClient::GetFindingsReport
 
 GetNotificationConfigurationOutcome CodeGuruProfilerClient::GetNotificationConfiguration(const GetNotificationConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetNotificationConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetNotificationConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProfilingGroupNameHasBeenSet())
   {
@@ -291,6 +300,7 @@ GetNotificationConfigurationOutcome CodeGuruProfilerClient::GetNotificationConfi
 
 GetPolicyOutcome CodeGuruProfilerClient::GetPolicy(const GetPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProfilingGroupNameHasBeenSet())
   {
@@ -307,6 +317,7 @@ GetPolicyOutcome CodeGuruProfilerClient::GetPolicy(const GetPolicyRequest& reque
 
 GetProfileOutcome CodeGuruProfilerClient::GetProfile(const GetProfileRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetProfile);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProfilingGroupNameHasBeenSet())
   {
@@ -323,6 +334,7 @@ GetProfileOutcome CodeGuruProfilerClient::GetProfile(const GetProfileRequest& re
 
 GetRecommendationsOutcome CodeGuruProfilerClient::GetRecommendations(const GetRecommendationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetRecommendations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetRecommendations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.EndTimeHasBeenSet())
   {
@@ -349,6 +361,7 @@ GetRecommendationsOutcome CodeGuruProfilerClient::GetRecommendations(const GetRe
 
 ListFindingsReportsOutcome CodeGuruProfilerClient::ListFindingsReports(const ListFindingsReportsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListFindingsReports);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListFindingsReports, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.EndTimeHasBeenSet())
   {
@@ -375,6 +388,7 @@ ListFindingsReportsOutcome CodeGuruProfilerClient::ListFindingsReports(const Lis
 
 ListProfileTimesOutcome CodeGuruProfilerClient::ListProfileTimes(const ListProfileTimesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListProfileTimes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListProfileTimes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.EndTimeHasBeenSet())
   {
@@ -406,6 +420,7 @@ ListProfileTimesOutcome CodeGuruProfilerClient::ListProfileTimes(const ListProfi
 
 ListProfilingGroupsOutcome CodeGuruProfilerClient::ListProfilingGroups(const ListProfilingGroupsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListProfilingGroups);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListProfilingGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListProfilingGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -415,6 +430,7 @@ ListProfilingGroupsOutcome CodeGuruProfilerClient::ListProfilingGroups(const Lis
 
 ListTagsForResourceOutcome CodeGuruProfilerClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -430,6 +446,7 @@ ListTagsForResourceOutcome CodeGuruProfilerClient::ListTagsForResource(const Lis
 
 PostAgentProfileOutcome CodeGuruProfilerClient::PostAgentProfile(const PostAgentProfileRequest& request) const
 {
+  AWS_OPERATION_GUARD(PostAgentProfile);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PostAgentProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProfilingGroupNameHasBeenSet())
   {
@@ -446,6 +463,7 @@ PostAgentProfileOutcome CodeGuruProfilerClient::PostAgentProfile(const PostAgent
 
 PutPermissionOutcome CodeGuruProfilerClient::PutPermission(const PutPermissionRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutPermission);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutPermission, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ActionGroupHasBeenSet())
   {
@@ -468,6 +486,7 @@ PutPermissionOutcome CodeGuruProfilerClient::PutPermission(const PutPermissionRe
 
 RemoveNotificationChannelOutcome CodeGuruProfilerClient::RemoveNotificationChannel(const RemoveNotificationChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(RemoveNotificationChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RemoveNotificationChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelIdHasBeenSet())
   {
@@ -490,6 +509,7 @@ RemoveNotificationChannelOutcome CodeGuruProfilerClient::RemoveNotificationChann
 
 RemovePermissionOutcome CodeGuruProfilerClient::RemovePermission(const RemovePermissionRequest& request) const
 {
+  AWS_OPERATION_GUARD(RemovePermission);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RemovePermission, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ActionGroupHasBeenSet())
   {
@@ -517,6 +537,7 @@ RemovePermissionOutcome CodeGuruProfilerClient::RemovePermission(const RemovePer
 
 SubmitFeedbackOutcome CodeGuruProfilerClient::SubmitFeedback(const SubmitFeedbackRequest& request) const
 {
+  AWS_OPERATION_GUARD(SubmitFeedback);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SubmitFeedback, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AnomalyInstanceIdHasBeenSet())
   {
@@ -540,6 +561,7 @@ SubmitFeedbackOutcome CodeGuruProfilerClient::SubmitFeedback(const SubmitFeedbac
 
 TagResourceOutcome CodeGuruProfilerClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -555,6 +577,7 @@ TagResourceOutcome CodeGuruProfilerClient::TagResource(const TagResourceRequest&
 
 UntagResourceOutcome CodeGuruProfilerClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -575,6 +598,7 @@ UntagResourceOutcome CodeGuruProfilerClient::UntagResource(const UntagResourceRe
 
 UpdateProfilingGroupOutcome CodeGuruProfilerClient::UpdateProfilingGroup(const UpdateProfilingGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateProfilingGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateProfilingGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProfilingGroupNameHasBeenSet())
   {

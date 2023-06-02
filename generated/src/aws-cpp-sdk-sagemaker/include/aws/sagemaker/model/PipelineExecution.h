@@ -12,6 +12,7 @@
 #include <aws/sagemaker/model/UserContext.h>
 #include <aws/sagemaker/model/ParallelismConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker/model/SelectiveExecutionConfig.h>
 #include <aws/sagemaker/model/Parameter.h>
 #include <utility>
 
@@ -470,6 +471,37 @@ namespace Model
      */
     inline PipelineExecution& AddPipelineParameters(Parameter&& value) { m_pipelineParametersHasBeenSet = true; m_pipelineParameters.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The selective execution configuration applied to the pipeline run.</p>
+     */
+    inline const SelectiveExecutionConfig& GetSelectiveExecutionConfig() const{ return m_selectiveExecutionConfig; }
+
+    /**
+     * <p>The selective execution configuration applied to the pipeline run.</p>
+     */
+    inline bool SelectiveExecutionConfigHasBeenSet() const { return m_selectiveExecutionConfigHasBeenSet; }
+
+    /**
+     * <p>The selective execution configuration applied to the pipeline run.</p>
+     */
+    inline void SetSelectiveExecutionConfig(const SelectiveExecutionConfig& value) { m_selectiveExecutionConfigHasBeenSet = true; m_selectiveExecutionConfig = value; }
+
+    /**
+     * <p>The selective execution configuration applied to the pipeline run.</p>
+     */
+    inline void SetSelectiveExecutionConfig(SelectiveExecutionConfig&& value) { m_selectiveExecutionConfigHasBeenSet = true; m_selectiveExecutionConfig = std::move(value); }
+
+    /**
+     * <p>The selective execution configuration applied to the pipeline run.</p>
+     */
+    inline PipelineExecution& WithSelectiveExecutionConfig(const SelectiveExecutionConfig& value) { SetSelectiveExecutionConfig(value); return *this;}
+
+    /**
+     * <p>The selective execution configuration applied to the pipeline run.</p>
+     */
+    inline PipelineExecution& WithSelectiveExecutionConfig(SelectiveExecutionConfig&& value) { SetSelectiveExecutionConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_pipelineArn;
@@ -510,6 +542,9 @@ namespace Model
 
     Aws::Vector<Parameter> m_pipelineParameters;
     bool m_pipelineParametersHasBeenSet = false;
+
+    SelectiveExecutionConfig m_selectiveExecutionConfig;
+    bool m_selectiveExecutionConfigHasBeenSet = false;
   };
 
 } // namespace Model

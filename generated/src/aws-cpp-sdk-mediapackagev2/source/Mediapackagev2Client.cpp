@@ -153,6 +153,7 @@ Mediapackagev2Client::Mediapackagev2Client(const std::shared_ptr<AWSCredentialsP
     /* End of legacy constructors due deprecation */
 Mediapackagev2Client::~Mediapackagev2Client()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<Mediapackagev2EndpointProviderBase>& Mediapackagev2Client::accessEndpointProvider()
@@ -175,6 +176,7 @@ void Mediapackagev2Client::OverrideEndpoint(const Aws::String& endpoint)
 
 CreateChannelOutcome Mediapackagev2Client::CreateChannel(const CreateChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelGroupNameHasBeenSet())
   {
@@ -191,6 +193,7 @@ CreateChannelOutcome Mediapackagev2Client::CreateChannel(const CreateChannelRequ
 
 CreateChannelGroupOutcome Mediapackagev2Client::CreateChannelGroup(const CreateChannelGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateChannelGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateChannelGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateChannelGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -200,6 +203,7 @@ CreateChannelGroupOutcome Mediapackagev2Client::CreateChannelGroup(const CreateC
 
 CreateOriginEndpointOutcome Mediapackagev2Client::CreateOriginEndpoint(const CreateOriginEndpointRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateOriginEndpoint);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateOriginEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelGroupNameHasBeenSet())
   {
@@ -223,6 +227,7 @@ CreateOriginEndpointOutcome Mediapackagev2Client::CreateOriginEndpoint(const Cre
 
 DeleteChannelOutcome Mediapackagev2Client::DeleteChannel(const DeleteChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelGroupNameHasBeenSet())
   {
@@ -245,6 +250,7 @@ DeleteChannelOutcome Mediapackagev2Client::DeleteChannel(const DeleteChannelRequ
 
 DeleteChannelGroupOutcome Mediapackagev2Client::DeleteChannelGroup(const DeleteChannelGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteChannelGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteChannelGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelGroupNameHasBeenSet())
   {
@@ -260,6 +266,7 @@ DeleteChannelGroupOutcome Mediapackagev2Client::DeleteChannelGroup(const DeleteC
 
 DeleteChannelPolicyOutcome Mediapackagev2Client::DeleteChannelPolicy(const DeleteChannelPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteChannelPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteChannelPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelGroupNameHasBeenSet())
   {
@@ -283,6 +290,7 @@ DeleteChannelPolicyOutcome Mediapackagev2Client::DeleteChannelPolicy(const Delet
 
 DeleteOriginEndpointOutcome Mediapackagev2Client::DeleteOriginEndpoint(const DeleteOriginEndpointRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteOriginEndpoint);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteOriginEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelGroupNameHasBeenSet())
   {
@@ -312,6 +320,7 @@ DeleteOriginEndpointOutcome Mediapackagev2Client::DeleteOriginEndpoint(const Del
 
 DeleteOriginEndpointPolicyOutcome Mediapackagev2Client::DeleteOriginEndpointPolicy(const DeleteOriginEndpointPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteOriginEndpointPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteOriginEndpointPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelGroupNameHasBeenSet())
   {
@@ -342,6 +351,7 @@ DeleteOriginEndpointPolicyOutcome Mediapackagev2Client::DeleteOriginEndpointPoli
 
 GetChannelOutcome Mediapackagev2Client::GetChannel(const GetChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelGroupNameHasBeenSet())
   {
@@ -364,6 +374,7 @@ GetChannelOutcome Mediapackagev2Client::GetChannel(const GetChannelRequest& requ
 
 GetChannelGroupOutcome Mediapackagev2Client::GetChannelGroup(const GetChannelGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetChannelGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetChannelGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelGroupNameHasBeenSet())
   {
@@ -379,6 +390,7 @@ GetChannelGroupOutcome Mediapackagev2Client::GetChannelGroup(const GetChannelGro
 
 GetChannelPolicyOutcome Mediapackagev2Client::GetChannelPolicy(const GetChannelPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetChannelPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetChannelPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelGroupNameHasBeenSet())
   {
@@ -402,6 +414,7 @@ GetChannelPolicyOutcome Mediapackagev2Client::GetChannelPolicy(const GetChannelP
 
 GetOriginEndpointOutcome Mediapackagev2Client::GetOriginEndpoint(const GetOriginEndpointRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetOriginEndpoint);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetOriginEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelGroupNameHasBeenSet())
   {
@@ -431,6 +444,7 @@ GetOriginEndpointOutcome Mediapackagev2Client::GetOriginEndpoint(const GetOrigin
 
 GetOriginEndpointPolicyOutcome Mediapackagev2Client::GetOriginEndpointPolicy(const GetOriginEndpointPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetOriginEndpointPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetOriginEndpointPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelGroupNameHasBeenSet())
   {
@@ -461,6 +475,7 @@ GetOriginEndpointPolicyOutcome Mediapackagev2Client::GetOriginEndpointPolicy(con
 
 ListChannelGroupsOutcome Mediapackagev2Client::ListChannelGroups(const ListChannelGroupsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListChannelGroups);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListChannelGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListChannelGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -470,6 +485,7 @@ ListChannelGroupsOutcome Mediapackagev2Client::ListChannelGroups(const ListChann
 
 ListChannelsOutcome Mediapackagev2Client::ListChannels(const ListChannelsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListChannels);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListChannels, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelGroupNameHasBeenSet())
   {
@@ -486,6 +502,7 @@ ListChannelsOutcome Mediapackagev2Client::ListChannels(const ListChannelsRequest
 
 ListOriginEndpointsOutcome Mediapackagev2Client::ListOriginEndpoints(const ListOriginEndpointsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListOriginEndpoints);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListOriginEndpoints, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelGroupNameHasBeenSet())
   {
@@ -509,6 +526,7 @@ ListOriginEndpointsOutcome Mediapackagev2Client::ListOriginEndpoints(const ListO
 
 ListTagsForResourceOutcome Mediapackagev2Client::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -524,6 +542,7 @@ ListTagsForResourceOutcome Mediapackagev2Client::ListTagsForResource(const ListT
 
 PutChannelPolicyOutcome Mediapackagev2Client::PutChannelPolicy(const PutChannelPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutChannelPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutChannelPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelGroupNameHasBeenSet())
   {
@@ -547,6 +566,7 @@ PutChannelPolicyOutcome Mediapackagev2Client::PutChannelPolicy(const PutChannelP
 
 PutOriginEndpointPolicyOutcome Mediapackagev2Client::PutOriginEndpointPolicy(const PutOriginEndpointPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutOriginEndpointPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutOriginEndpointPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelGroupNameHasBeenSet())
   {
@@ -577,6 +597,7 @@ PutOriginEndpointPolicyOutcome Mediapackagev2Client::PutOriginEndpointPolicy(con
 
 TagResourceOutcome Mediapackagev2Client::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -592,6 +613,7 @@ TagResourceOutcome Mediapackagev2Client::TagResource(const TagResourceRequest& r
 
 UntagResourceOutcome Mediapackagev2Client::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -612,6 +634,7 @@ UntagResourceOutcome Mediapackagev2Client::UntagResource(const UntagResourceRequ
 
 UpdateChannelOutcome Mediapackagev2Client::UpdateChannel(const UpdateChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelGroupNameHasBeenSet())
   {
@@ -634,6 +657,7 @@ UpdateChannelOutcome Mediapackagev2Client::UpdateChannel(const UpdateChannelRequ
 
 UpdateChannelGroupOutcome Mediapackagev2Client::UpdateChannelGroup(const UpdateChannelGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateChannelGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateChannelGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelGroupNameHasBeenSet())
   {
@@ -649,6 +673,7 @@ UpdateChannelGroupOutcome Mediapackagev2Client::UpdateChannelGroup(const UpdateC
 
 UpdateOriginEndpointOutcome Mediapackagev2Client::UpdateOriginEndpoint(const UpdateOriginEndpointRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateOriginEndpoint);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateOriginEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelGroupNameHasBeenSet())
   {

@@ -146,6 +146,7 @@ CognitoSyncClient::CognitoSyncClient(const std::shared_ptr<AWSCredentialsProvide
     /* End of legacy constructors due deprecation */
 CognitoSyncClient::~CognitoSyncClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<CognitoSyncEndpointProviderBase>& CognitoSyncClient::accessEndpointProvider()
@@ -168,6 +169,7 @@ void CognitoSyncClient::OverrideEndpoint(const Aws::String& endpoint)
 
 BulkPublishOutcome CognitoSyncClient::BulkPublish(const BulkPublishRequest& request) const
 {
+  AWS_OPERATION_GUARD(BulkPublish);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BulkPublish, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdentityPoolIdHasBeenSet())
   {
@@ -184,6 +186,7 @@ BulkPublishOutcome CognitoSyncClient::BulkPublish(const BulkPublishRequest& requ
 
 DeleteDatasetOutcome CognitoSyncClient::DeleteDataset(const DeleteDatasetRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteDataset);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDataset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdentityPoolIdHasBeenSet())
   {
@@ -213,6 +216,7 @@ DeleteDatasetOutcome CognitoSyncClient::DeleteDataset(const DeleteDatasetRequest
 
 DescribeDatasetOutcome CognitoSyncClient::DescribeDataset(const DescribeDatasetRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeDataset);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeDataset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdentityPoolIdHasBeenSet())
   {
@@ -242,6 +246,7 @@ DescribeDatasetOutcome CognitoSyncClient::DescribeDataset(const DescribeDatasetR
 
 DescribeIdentityPoolUsageOutcome CognitoSyncClient::DescribeIdentityPoolUsage(const DescribeIdentityPoolUsageRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeIdentityPoolUsage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeIdentityPoolUsage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdentityPoolIdHasBeenSet())
   {
@@ -257,6 +262,7 @@ DescribeIdentityPoolUsageOutcome CognitoSyncClient::DescribeIdentityPoolUsage(co
 
 DescribeIdentityUsageOutcome CognitoSyncClient::DescribeIdentityUsage(const DescribeIdentityUsageRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeIdentityUsage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeIdentityUsage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdentityPoolIdHasBeenSet())
   {
@@ -279,6 +285,7 @@ DescribeIdentityUsageOutcome CognitoSyncClient::DescribeIdentityUsage(const Desc
 
 GetBulkPublishDetailsOutcome CognitoSyncClient::GetBulkPublishDetails(const GetBulkPublishDetailsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetBulkPublishDetails);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBulkPublishDetails, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdentityPoolIdHasBeenSet())
   {
@@ -295,6 +302,7 @@ GetBulkPublishDetailsOutcome CognitoSyncClient::GetBulkPublishDetails(const GetB
 
 GetCognitoEventsOutcome CognitoSyncClient::GetCognitoEvents(const GetCognitoEventsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetCognitoEvents);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCognitoEvents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdentityPoolIdHasBeenSet())
   {
@@ -311,6 +319,7 @@ GetCognitoEventsOutcome CognitoSyncClient::GetCognitoEvents(const GetCognitoEven
 
 GetIdentityPoolConfigurationOutcome CognitoSyncClient::GetIdentityPoolConfiguration(const GetIdentityPoolConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetIdentityPoolConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetIdentityPoolConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdentityPoolIdHasBeenSet())
   {
@@ -327,6 +336,7 @@ GetIdentityPoolConfigurationOutcome CognitoSyncClient::GetIdentityPoolConfigurat
 
 ListDatasetsOutcome CognitoSyncClient::ListDatasets(const ListDatasetsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDatasets);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDatasets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdentityPoolIdHasBeenSet())
   {
@@ -350,6 +360,7 @@ ListDatasetsOutcome CognitoSyncClient::ListDatasets(const ListDatasetsRequest& r
 
 ListIdentityPoolUsageOutcome CognitoSyncClient::ListIdentityPoolUsage(const ListIdentityPoolUsageRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListIdentityPoolUsage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListIdentityPoolUsage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListIdentityPoolUsage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -359,6 +370,7 @@ ListIdentityPoolUsageOutcome CognitoSyncClient::ListIdentityPoolUsage(const List
 
 ListRecordsOutcome CognitoSyncClient::ListRecords(const ListRecordsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListRecords);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRecords, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdentityPoolIdHasBeenSet())
   {
@@ -389,6 +401,7 @@ ListRecordsOutcome CognitoSyncClient::ListRecords(const ListRecordsRequest& requ
 
 RegisterDeviceOutcome CognitoSyncClient::RegisterDevice(const RegisterDeviceRequest& request) const
 {
+  AWS_OPERATION_GUARD(RegisterDevice);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RegisterDevice, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdentityPoolIdHasBeenSet())
   {
@@ -412,6 +425,7 @@ RegisterDeviceOutcome CognitoSyncClient::RegisterDevice(const RegisterDeviceRequ
 
 SetCognitoEventsOutcome CognitoSyncClient::SetCognitoEvents(const SetCognitoEventsRequest& request) const
 {
+  AWS_OPERATION_GUARD(SetCognitoEvents);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SetCognitoEvents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdentityPoolIdHasBeenSet())
   {
@@ -428,6 +442,7 @@ SetCognitoEventsOutcome CognitoSyncClient::SetCognitoEvents(const SetCognitoEven
 
 SetIdentityPoolConfigurationOutcome CognitoSyncClient::SetIdentityPoolConfiguration(const SetIdentityPoolConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(SetIdentityPoolConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SetIdentityPoolConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdentityPoolIdHasBeenSet())
   {
@@ -444,6 +459,7 @@ SetIdentityPoolConfigurationOutcome CognitoSyncClient::SetIdentityPoolConfigurat
 
 SubscribeToDatasetOutcome CognitoSyncClient::SubscribeToDataset(const SubscribeToDatasetRequest& request) const
 {
+  AWS_OPERATION_GUARD(SubscribeToDataset);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SubscribeToDataset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdentityPoolIdHasBeenSet())
   {
@@ -480,6 +496,7 @@ SubscribeToDatasetOutcome CognitoSyncClient::SubscribeToDataset(const SubscribeT
 
 UnsubscribeFromDatasetOutcome CognitoSyncClient::UnsubscribeFromDataset(const UnsubscribeFromDatasetRequest& request) const
 {
+  AWS_OPERATION_GUARD(UnsubscribeFromDataset);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UnsubscribeFromDataset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdentityPoolIdHasBeenSet())
   {
@@ -516,6 +533,7 @@ UnsubscribeFromDatasetOutcome CognitoSyncClient::UnsubscribeFromDataset(const Un
 
 UpdateRecordsOutcome CognitoSyncClient::UpdateRecords(const UpdateRecordsRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateRecords);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateRecords, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdentityPoolIdHasBeenSet())
   {

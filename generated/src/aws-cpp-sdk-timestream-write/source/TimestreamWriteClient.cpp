@@ -149,6 +149,7 @@ TimestreamWriteClient::TimestreamWriteClient(const std::shared_ptr<AWSCredential
     /* End of legacy constructors due deprecation */
 TimestreamWriteClient::~TimestreamWriteClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<TimestreamWriteEndpointProviderBase>& TimestreamWriteClient::accessEndpointProvider()
@@ -171,6 +172,7 @@ void TimestreamWriteClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CreateBatchLoadTaskOutcome TimestreamWriteClient::CreateBatchLoadTask(const CreateBatchLoadTaskRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateBatchLoadTask);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateBatchLoadTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
   const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
@@ -222,6 +224,7 @@ CreateBatchLoadTaskOutcome TimestreamWriteClient::CreateBatchLoadTask(const Crea
 
 CreateDatabaseOutcome TimestreamWriteClient::CreateDatabase(const CreateDatabaseRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateDatabase);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDatabase, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
   const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
@@ -273,6 +276,7 @@ CreateDatabaseOutcome TimestreamWriteClient::CreateDatabase(const CreateDatabase
 
 CreateTableOutcome TimestreamWriteClient::CreateTable(const CreateTableRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateTable);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateTable, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
   const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
@@ -324,6 +328,7 @@ CreateTableOutcome TimestreamWriteClient::CreateTable(const CreateTableRequest& 
 
 DeleteDatabaseOutcome TimestreamWriteClient::DeleteDatabase(const DeleteDatabaseRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteDatabase);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDatabase, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
   const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
@@ -375,6 +380,7 @@ DeleteDatabaseOutcome TimestreamWriteClient::DeleteDatabase(const DeleteDatabase
 
 DeleteTableOutcome TimestreamWriteClient::DeleteTable(const DeleteTableRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteTable);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteTable, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
   const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
@@ -426,6 +432,7 @@ DeleteTableOutcome TimestreamWriteClient::DeleteTable(const DeleteTableRequest& 
 
 DescribeBatchLoadTaskOutcome TimestreamWriteClient::DescribeBatchLoadTask(const DescribeBatchLoadTaskRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeBatchLoadTask);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeBatchLoadTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
   const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
@@ -477,6 +484,7 @@ DescribeBatchLoadTaskOutcome TimestreamWriteClient::DescribeBatchLoadTask(const 
 
 DescribeDatabaseOutcome TimestreamWriteClient::DescribeDatabase(const DescribeDatabaseRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeDatabase);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeDatabase, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
   const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
@@ -528,6 +536,7 @@ DescribeDatabaseOutcome TimestreamWriteClient::DescribeDatabase(const DescribeDa
 
 DescribeEndpointsOutcome TimestreamWriteClient::DescribeEndpoints(const DescribeEndpointsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeEndpoints);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeEndpoints, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeEndpoints, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -536,6 +545,7 @@ DescribeEndpointsOutcome TimestreamWriteClient::DescribeEndpoints(const Describe
 
 DescribeTableOutcome TimestreamWriteClient::DescribeTable(const DescribeTableRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeTable);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeTable, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
   const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
@@ -587,6 +597,7 @@ DescribeTableOutcome TimestreamWriteClient::DescribeTable(const DescribeTableReq
 
 ListBatchLoadTasksOutcome TimestreamWriteClient::ListBatchLoadTasks(const ListBatchLoadTasksRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListBatchLoadTasks);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListBatchLoadTasks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
   const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
@@ -638,6 +649,7 @@ ListBatchLoadTasksOutcome TimestreamWriteClient::ListBatchLoadTasks(const ListBa
 
 ListDatabasesOutcome TimestreamWriteClient::ListDatabases(const ListDatabasesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDatabases);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDatabases, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
   const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
@@ -689,6 +701,7 @@ ListDatabasesOutcome TimestreamWriteClient::ListDatabases(const ListDatabasesReq
 
 ListTablesOutcome TimestreamWriteClient::ListTables(const ListTablesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTables);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTables, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
   const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
@@ -740,6 +753,7 @@ ListTablesOutcome TimestreamWriteClient::ListTables(const ListTablesRequest& req
 
 ListTagsForResourceOutcome TimestreamWriteClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
   const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
@@ -791,6 +805,7 @@ ListTagsForResourceOutcome TimestreamWriteClient::ListTagsForResource(const List
 
 ResumeBatchLoadTaskOutcome TimestreamWriteClient::ResumeBatchLoadTask(const ResumeBatchLoadTaskRequest& request) const
 {
+  AWS_OPERATION_GUARD(ResumeBatchLoadTask);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ResumeBatchLoadTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
   const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
@@ -842,6 +857,7 @@ ResumeBatchLoadTaskOutcome TimestreamWriteClient::ResumeBatchLoadTask(const Resu
 
 TagResourceOutcome TimestreamWriteClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
   const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
@@ -893,6 +909,7 @@ TagResourceOutcome TimestreamWriteClient::TagResource(const TagResourceRequest& 
 
 UntagResourceOutcome TimestreamWriteClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
   const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
@@ -944,6 +961,7 @@ UntagResourceOutcome TimestreamWriteClient::UntagResource(const UntagResourceReq
 
 UpdateDatabaseOutcome TimestreamWriteClient::UpdateDatabase(const UpdateDatabaseRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateDatabase);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDatabase, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
   const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
@@ -995,6 +1013,7 @@ UpdateDatabaseOutcome TimestreamWriteClient::UpdateDatabase(const UpdateDatabase
 
 UpdateTableOutcome TimestreamWriteClient::UpdateTable(const UpdateTableRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateTable);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateTable, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
   const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();
@@ -1046,6 +1065,7 @@ UpdateTableOutcome TimestreamWriteClient::UpdateTable(const UpdateTableRequest& 
 
 WriteRecordsOutcome TimestreamWriteClient::WriteRecords(const WriteRecordsRequest& request) const
 {
+  AWS_OPERATION_GUARD(WriteRecords);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, WriteRecords, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
   const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value();

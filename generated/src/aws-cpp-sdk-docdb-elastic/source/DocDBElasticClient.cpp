@@ -142,6 +142,7 @@ DocDBElasticClient::DocDBElasticClient(const std::shared_ptr<AWSCredentialsProvi
     /* End of legacy constructors due deprecation */
 DocDBElasticClient::~DocDBElasticClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<DocDBElasticEndpointProviderBase>& DocDBElasticClient::accessEndpointProvider()
@@ -164,6 +165,7 @@ void DocDBElasticClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CreateClusterOutcome DocDBElasticClient::CreateCluster(const CreateClusterRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateCluster);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateCluster, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateCluster, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -173,6 +175,7 @@ CreateClusterOutcome DocDBElasticClient::CreateCluster(const CreateClusterReques
 
 CreateClusterSnapshotOutcome DocDBElasticClient::CreateClusterSnapshot(const CreateClusterSnapshotRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateClusterSnapshot);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateClusterSnapshot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateClusterSnapshot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -182,6 +185,7 @@ CreateClusterSnapshotOutcome DocDBElasticClient::CreateClusterSnapshot(const Cre
 
 DeleteClusterOutcome DocDBElasticClient::DeleteCluster(const DeleteClusterRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteCluster);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteCluster, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ClusterArnHasBeenSet())
   {
@@ -197,6 +201,7 @@ DeleteClusterOutcome DocDBElasticClient::DeleteCluster(const DeleteClusterReques
 
 DeleteClusterSnapshotOutcome DocDBElasticClient::DeleteClusterSnapshot(const DeleteClusterSnapshotRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteClusterSnapshot);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteClusterSnapshot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SnapshotArnHasBeenSet())
   {
@@ -212,6 +217,7 @@ DeleteClusterSnapshotOutcome DocDBElasticClient::DeleteClusterSnapshot(const Del
 
 GetClusterOutcome DocDBElasticClient::GetCluster(const GetClusterRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetCluster);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCluster, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ClusterArnHasBeenSet())
   {
@@ -227,6 +233,7 @@ GetClusterOutcome DocDBElasticClient::GetCluster(const GetClusterRequest& reques
 
 GetClusterSnapshotOutcome DocDBElasticClient::GetClusterSnapshot(const GetClusterSnapshotRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetClusterSnapshot);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetClusterSnapshot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SnapshotArnHasBeenSet())
   {
@@ -242,6 +249,7 @@ GetClusterSnapshotOutcome DocDBElasticClient::GetClusterSnapshot(const GetCluste
 
 ListClusterSnapshotsOutcome DocDBElasticClient::ListClusterSnapshots(const ListClusterSnapshotsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListClusterSnapshots);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListClusterSnapshots, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListClusterSnapshots, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -251,6 +259,7 @@ ListClusterSnapshotsOutcome DocDBElasticClient::ListClusterSnapshots(const ListC
 
 ListClustersOutcome DocDBElasticClient::ListClusters(const ListClustersRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListClusters);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListClusters, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListClusters, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -260,6 +269,7 @@ ListClustersOutcome DocDBElasticClient::ListClusters(const ListClustersRequest& 
 
 ListTagsForResourceOutcome DocDBElasticClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -275,6 +285,7 @@ ListTagsForResourceOutcome DocDBElasticClient::ListTagsForResource(const ListTag
 
 RestoreClusterFromSnapshotOutcome DocDBElasticClient::RestoreClusterFromSnapshot(const RestoreClusterFromSnapshotRequest& request) const
 {
+  AWS_OPERATION_GUARD(RestoreClusterFromSnapshot);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RestoreClusterFromSnapshot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SnapshotArnHasBeenSet())
   {
@@ -291,6 +302,7 @@ RestoreClusterFromSnapshotOutcome DocDBElasticClient::RestoreClusterFromSnapshot
 
 TagResourceOutcome DocDBElasticClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -306,6 +318,7 @@ TagResourceOutcome DocDBElasticClient::TagResource(const TagResourceRequest& req
 
 UntagResourceOutcome DocDBElasticClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -326,6 +339,7 @@ UntagResourceOutcome DocDBElasticClient::UntagResource(const UntagResourceReques
 
 UpdateClusterOutcome DocDBElasticClient::UpdateCluster(const UpdateClusterRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateCluster);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateCluster, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ClusterArnHasBeenSet())
   {

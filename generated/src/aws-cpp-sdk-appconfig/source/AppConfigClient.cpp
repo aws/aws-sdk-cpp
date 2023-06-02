@@ -171,6 +171,7 @@ AppConfigClient::AppConfigClient(const std::shared_ptr<AWSCredentialsProvider>& 
     /* End of legacy constructors due deprecation */
 AppConfigClient::~AppConfigClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<AppConfigEndpointProviderBase>& AppConfigClient::accessEndpointProvider()
@@ -193,6 +194,7 @@ void AppConfigClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CreateApplicationOutcome AppConfigClient::CreateApplication(const CreateApplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateApplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -202,6 +204,7 @@ CreateApplicationOutcome AppConfigClient::CreateApplication(const CreateApplicat
 
 CreateConfigurationProfileOutcome AppConfigClient::CreateConfigurationProfile(const CreateConfigurationProfileRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateConfigurationProfile);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateConfigurationProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -218,6 +221,7 @@ CreateConfigurationProfileOutcome AppConfigClient::CreateConfigurationProfile(co
 
 CreateDeploymentStrategyOutcome AppConfigClient::CreateDeploymentStrategy(const CreateDeploymentStrategyRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateDeploymentStrategy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDeploymentStrategy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateDeploymentStrategy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -227,6 +231,7 @@ CreateDeploymentStrategyOutcome AppConfigClient::CreateDeploymentStrategy(const 
 
 CreateEnvironmentOutcome AppConfigClient::CreateEnvironment(const CreateEnvironmentRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateEnvironment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateEnvironment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -243,6 +248,7 @@ CreateEnvironmentOutcome AppConfigClient::CreateEnvironment(const CreateEnvironm
 
 CreateExtensionOutcome AppConfigClient::CreateExtension(const CreateExtensionRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateExtension);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateExtension, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateExtension, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -252,6 +258,7 @@ CreateExtensionOutcome AppConfigClient::CreateExtension(const CreateExtensionReq
 
 CreateExtensionAssociationOutcome AppConfigClient::CreateExtensionAssociation(const CreateExtensionAssociationRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateExtensionAssociation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateExtensionAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateExtensionAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -261,6 +268,7 @@ CreateExtensionAssociationOutcome AppConfigClient::CreateExtensionAssociation(co
 
 CreateHostedConfigurationVersionOutcome AppConfigClient::CreateHostedConfigurationVersion(const CreateHostedConfigurationVersionRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateHostedConfigurationVersion);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateHostedConfigurationVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -284,6 +292,7 @@ CreateHostedConfigurationVersionOutcome AppConfigClient::CreateHostedConfigurati
 
 DeleteApplicationOutcome AppConfigClient::DeleteApplication(const DeleteApplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteApplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -299,6 +308,7 @@ DeleteApplicationOutcome AppConfigClient::DeleteApplication(const DeleteApplicat
 
 DeleteConfigurationProfileOutcome AppConfigClient::DeleteConfigurationProfile(const DeleteConfigurationProfileRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteConfigurationProfile);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteConfigurationProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -321,6 +331,7 @@ DeleteConfigurationProfileOutcome AppConfigClient::DeleteConfigurationProfile(co
 
 DeleteDeploymentStrategyOutcome AppConfigClient::DeleteDeploymentStrategy(const DeleteDeploymentStrategyRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteDeploymentStrategy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDeploymentStrategy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DeploymentStrategyIdHasBeenSet())
   {
@@ -336,6 +347,7 @@ DeleteDeploymentStrategyOutcome AppConfigClient::DeleteDeploymentStrategy(const 
 
 DeleteEnvironmentOutcome AppConfigClient::DeleteEnvironment(const DeleteEnvironmentRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteEnvironment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteEnvironment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -358,6 +370,7 @@ DeleteEnvironmentOutcome AppConfigClient::DeleteEnvironment(const DeleteEnvironm
 
 DeleteExtensionOutcome AppConfigClient::DeleteExtension(const DeleteExtensionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteExtension);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteExtension, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ExtensionIdentifierHasBeenSet())
   {
@@ -373,6 +386,7 @@ DeleteExtensionOutcome AppConfigClient::DeleteExtension(const DeleteExtensionReq
 
 DeleteExtensionAssociationOutcome AppConfigClient::DeleteExtensionAssociation(const DeleteExtensionAssociationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteExtensionAssociation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteExtensionAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ExtensionAssociationIdHasBeenSet())
   {
@@ -388,6 +402,7 @@ DeleteExtensionAssociationOutcome AppConfigClient::DeleteExtensionAssociation(co
 
 DeleteHostedConfigurationVersionOutcome AppConfigClient::DeleteHostedConfigurationVersion(const DeleteHostedConfigurationVersionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteHostedConfigurationVersion);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteHostedConfigurationVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -417,6 +432,7 @@ DeleteHostedConfigurationVersionOutcome AppConfigClient::DeleteHostedConfigurati
 
 GetApplicationOutcome AppConfigClient::GetApplication(const GetApplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetApplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -432,6 +448,7 @@ GetApplicationOutcome AppConfigClient::GetApplication(const GetApplicationReques
 
 GetConfigurationProfileOutcome AppConfigClient::GetConfigurationProfile(const GetConfigurationProfileRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetConfigurationProfile);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetConfigurationProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -454,6 +471,7 @@ GetConfigurationProfileOutcome AppConfigClient::GetConfigurationProfile(const Ge
 
 GetDeploymentOutcome AppConfigClient::GetDeployment(const GetDeploymentRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDeployment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDeployment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -483,6 +501,7 @@ GetDeploymentOutcome AppConfigClient::GetDeployment(const GetDeploymentRequest& 
 
 GetDeploymentStrategyOutcome AppConfigClient::GetDeploymentStrategy(const GetDeploymentStrategyRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDeploymentStrategy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDeploymentStrategy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DeploymentStrategyIdHasBeenSet())
   {
@@ -498,6 +517,7 @@ GetDeploymentStrategyOutcome AppConfigClient::GetDeploymentStrategy(const GetDep
 
 GetEnvironmentOutcome AppConfigClient::GetEnvironment(const GetEnvironmentRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetEnvironment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetEnvironment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -520,6 +540,7 @@ GetEnvironmentOutcome AppConfigClient::GetEnvironment(const GetEnvironmentReques
 
 GetExtensionOutcome AppConfigClient::GetExtension(const GetExtensionRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetExtension);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetExtension, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ExtensionIdentifierHasBeenSet())
   {
@@ -535,6 +556,7 @@ GetExtensionOutcome AppConfigClient::GetExtension(const GetExtensionRequest& req
 
 GetExtensionAssociationOutcome AppConfigClient::GetExtensionAssociation(const GetExtensionAssociationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetExtensionAssociation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetExtensionAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ExtensionAssociationIdHasBeenSet())
   {
@@ -550,6 +572,7 @@ GetExtensionAssociationOutcome AppConfigClient::GetExtensionAssociation(const Ge
 
 GetHostedConfigurationVersionOutcome AppConfigClient::GetHostedConfigurationVersion(const GetHostedConfigurationVersionRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetHostedConfigurationVersion);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetHostedConfigurationVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -579,6 +602,7 @@ GetHostedConfigurationVersionOutcome AppConfigClient::GetHostedConfigurationVers
 
 ListApplicationsOutcome AppConfigClient::ListApplications(const ListApplicationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListApplications);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListApplications, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListApplications, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -588,6 +612,7 @@ ListApplicationsOutcome AppConfigClient::ListApplications(const ListApplications
 
 ListConfigurationProfilesOutcome AppConfigClient::ListConfigurationProfiles(const ListConfigurationProfilesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListConfigurationProfiles);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListConfigurationProfiles, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -604,6 +629,7 @@ ListConfigurationProfilesOutcome AppConfigClient::ListConfigurationProfiles(cons
 
 ListDeploymentStrategiesOutcome AppConfigClient::ListDeploymentStrategies(const ListDeploymentStrategiesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDeploymentStrategies);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDeploymentStrategies, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDeploymentStrategies, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -613,6 +639,7 @@ ListDeploymentStrategiesOutcome AppConfigClient::ListDeploymentStrategies(const 
 
 ListDeploymentsOutcome AppConfigClient::ListDeployments(const ListDeploymentsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDeployments);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDeployments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -636,6 +663,7 @@ ListDeploymentsOutcome AppConfigClient::ListDeployments(const ListDeploymentsReq
 
 ListEnvironmentsOutcome AppConfigClient::ListEnvironments(const ListEnvironmentsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListEnvironments);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListEnvironments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -652,6 +680,7 @@ ListEnvironmentsOutcome AppConfigClient::ListEnvironments(const ListEnvironments
 
 ListExtensionAssociationsOutcome AppConfigClient::ListExtensionAssociations(const ListExtensionAssociationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListExtensionAssociations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListExtensionAssociations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListExtensionAssociations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -661,6 +690,7 @@ ListExtensionAssociationsOutcome AppConfigClient::ListExtensionAssociations(cons
 
 ListExtensionsOutcome AppConfigClient::ListExtensions(const ListExtensionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListExtensions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListExtensions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListExtensions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -670,6 +700,7 @@ ListExtensionsOutcome AppConfigClient::ListExtensions(const ListExtensionsReques
 
 ListHostedConfigurationVersionsOutcome AppConfigClient::ListHostedConfigurationVersions(const ListHostedConfigurationVersionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListHostedConfigurationVersions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListHostedConfigurationVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -693,6 +724,7 @@ ListHostedConfigurationVersionsOutcome AppConfigClient::ListHostedConfigurationV
 
 ListTagsForResourceOutcome AppConfigClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -708,6 +740,7 @@ ListTagsForResourceOutcome AppConfigClient::ListTagsForResource(const ListTagsFo
 
 StartDeploymentOutcome AppConfigClient::StartDeployment(const StartDeploymentRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartDeployment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartDeployment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -731,6 +764,7 @@ StartDeploymentOutcome AppConfigClient::StartDeployment(const StartDeploymentReq
 
 StopDeploymentOutcome AppConfigClient::StopDeployment(const StopDeploymentRequest& request) const
 {
+  AWS_OPERATION_GUARD(StopDeployment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopDeployment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -760,6 +794,7 @@ StopDeploymentOutcome AppConfigClient::StopDeployment(const StopDeploymentReques
 
 TagResourceOutcome AppConfigClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -775,6 +810,7 @@ TagResourceOutcome AppConfigClient::TagResource(const TagResourceRequest& reques
 
 UntagResourceOutcome AppConfigClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -795,6 +831,7 @@ UntagResourceOutcome AppConfigClient::UntagResource(const UntagResourceRequest& 
 
 UpdateApplicationOutcome AppConfigClient::UpdateApplication(const UpdateApplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateApplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -810,6 +847,7 @@ UpdateApplicationOutcome AppConfigClient::UpdateApplication(const UpdateApplicat
 
 UpdateConfigurationProfileOutcome AppConfigClient::UpdateConfigurationProfile(const UpdateConfigurationProfileRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateConfigurationProfile);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateConfigurationProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -832,6 +870,7 @@ UpdateConfigurationProfileOutcome AppConfigClient::UpdateConfigurationProfile(co
 
 UpdateDeploymentStrategyOutcome AppConfigClient::UpdateDeploymentStrategy(const UpdateDeploymentStrategyRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateDeploymentStrategy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDeploymentStrategy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DeploymentStrategyIdHasBeenSet())
   {
@@ -847,6 +886,7 @@ UpdateDeploymentStrategyOutcome AppConfigClient::UpdateDeploymentStrategy(const 
 
 UpdateEnvironmentOutcome AppConfigClient::UpdateEnvironment(const UpdateEnvironmentRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateEnvironment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateEnvironment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -869,6 +909,7 @@ UpdateEnvironmentOutcome AppConfigClient::UpdateEnvironment(const UpdateEnvironm
 
 UpdateExtensionOutcome AppConfigClient::UpdateExtension(const UpdateExtensionRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateExtension);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateExtension, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ExtensionIdentifierHasBeenSet())
   {
@@ -884,6 +925,7 @@ UpdateExtensionOutcome AppConfigClient::UpdateExtension(const UpdateExtensionReq
 
 UpdateExtensionAssociationOutcome AppConfigClient::UpdateExtensionAssociation(const UpdateExtensionAssociationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateExtensionAssociation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateExtensionAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ExtensionAssociationIdHasBeenSet())
   {
@@ -899,6 +941,7 @@ UpdateExtensionAssociationOutcome AppConfigClient::UpdateExtensionAssociation(co
 
 ValidateConfigurationOutcome AppConfigClient::ValidateConfiguration(const ValidateConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(ValidateConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ValidateConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {

@@ -145,6 +145,7 @@ FISClient::FISClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
     /* End of legacy constructors due deprecation */
 FISClient::~FISClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<FISEndpointProviderBase>& FISClient::accessEndpointProvider()
@@ -167,6 +168,7 @@ void FISClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CreateExperimentTemplateOutcome FISClient::CreateExperimentTemplate(const CreateExperimentTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateExperimentTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateExperimentTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateExperimentTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -176,6 +178,7 @@ CreateExperimentTemplateOutcome FISClient::CreateExperimentTemplate(const Create
 
 DeleteExperimentTemplateOutcome FISClient::DeleteExperimentTemplate(const DeleteExperimentTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteExperimentTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteExperimentTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -191,6 +194,7 @@ DeleteExperimentTemplateOutcome FISClient::DeleteExperimentTemplate(const Delete
 
 GetActionOutcome FISClient::GetAction(const GetActionRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetAction);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -206,6 +210,7 @@ GetActionOutcome FISClient::GetAction(const GetActionRequest& request) const
 
 GetExperimentOutcome FISClient::GetExperiment(const GetExperimentRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetExperiment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetExperiment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -221,6 +226,7 @@ GetExperimentOutcome FISClient::GetExperiment(const GetExperimentRequest& reques
 
 GetExperimentTemplateOutcome FISClient::GetExperimentTemplate(const GetExperimentTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetExperimentTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetExperimentTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -236,6 +242,7 @@ GetExperimentTemplateOutcome FISClient::GetExperimentTemplate(const GetExperimen
 
 GetTargetResourceTypeOutcome FISClient::GetTargetResourceType(const GetTargetResourceTypeRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetTargetResourceType);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetTargetResourceType, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceTypeHasBeenSet())
   {
@@ -251,6 +258,7 @@ GetTargetResourceTypeOutcome FISClient::GetTargetResourceType(const GetTargetRes
 
 ListActionsOutcome FISClient::ListActions(const ListActionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListActions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListActions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListActions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -260,6 +268,7 @@ ListActionsOutcome FISClient::ListActions(const ListActionsRequest& request) con
 
 ListExperimentTemplatesOutcome FISClient::ListExperimentTemplates(const ListExperimentTemplatesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListExperimentTemplates);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListExperimentTemplates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListExperimentTemplates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -269,6 +278,7 @@ ListExperimentTemplatesOutcome FISClient::ListExperimentTemplates(const ListExpe
 
 ListExperimentsOutcome FISClient::ListExperiments(const ListExperimentsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListExperiments);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListExperiments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListExperiments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -278,6 +288,7 @@ ListExperimentsOutcome FISClient::ListExperiments(const ListExperimentsRequest& 
 
 ListTagsForResourceOutcome FISClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -293,6 +304,7 @@ ListTagsForResourceOutcome FISClient::ListTagsForResource(const ListTagsForResou
 
 ListTargetResourceTypesOutcome FISClient::ListTargetResourceTypes(const ListTargetResourceTypesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTargetResourceTypes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTargetResourceTypes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTargetResourceTypes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -302,6 +314,7 @@ ListTargetResourceTypesOutcome FISClient::ListTargetResourceTypes(const ListTarg
 
 StartExperimentOutcome FISClient::StartExperiment(const StartExperimentRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartExperiment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartExperiment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartExperiment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -311,6 +324,7 @@ StartExperimentOutcome FISClient::StartExperiment(const StartExperimentRequest& 
 
 StopExperimentOutcome FISClient::StopExperiment(const StopExperimentRequest& request) const
 {
+  AWS_OPERATION_GUARD(StopExperiment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopExperiment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -326,6 +340,7 @@ StopExperimentOutcome FISClient::StopExperiment(const StopExperimentRequest& req
 
 TagResourceOutcome FISClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -341,6 +356,7 @@ TagResourceOutcome FISClient::TagResource(const TagResourceRequest& request) con
 
 UntagResourceOutcome FISClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -356,6 +372,7 @@ UntagResourceOutcome FISClient::UntagResource(const UntagResourceRequest& reques
 
 UpdateExperimentTemplateOutcome FISClient::UpdateExperimentTemplate(const UpdateExperimentTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateExperimentTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateExperimentTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {

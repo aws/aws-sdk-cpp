@@ -162,6 +162,7 @@ TnbClient::TnbClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
     /* End of legacy constructors due deprecation */
 TnbClient::~TnbClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<TnbEndpointProviderBase>& TnbClient::accessEndpointProvider()
@@ -184,6 +185,7 @@ void TnbClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CancelSolNetworkOperationOutcome TnbClient::CancelSolNetworkOperation(const CancelSolNetworkOperationRequest& request) const
 {
+  AWS_OPERATION_GUARD(CancelSolNetworkOperation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CancelSolNetworkOperation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NsLcmOpOccIdHasBeenSet())
   {
@@ -200,6 +202,7 @@ CancelSolNetworkOperationOutcome TnbClient::CancelSolNetworkOperation(const Canc
 
 CreateSolFunctionPackageOutcome TnbClient::CreateSolFunctionPackage(const CreateSolFunctionPackageRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateSolFunctionPackage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateSolFunctionPackage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateSolFunctionPackage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -209,6 +212,7 @@ CreateSolFunctionPackageOutcome TnbClient::CreateSolFunctionPackage(const Create
 
 CreateSolNetworkInstanceOutcome TnbClient::CreateSolNetworkInstance(const CreateSolNetworkInstanceRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateSolNetworkInstance);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateSolNetworkInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateSolNetworkInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -218,6 +222,7 @@ CreateSolNetworkInstanceOutcome TnbClient::CreateSolNetworkInstance(const Create
 
 CreateSolNetworkPackageOutcome TnbClient::CreateSolNetworkPackage(const CreateSolNetworkPackageRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateSolNetworkPackage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateSolNetworkPackage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateSolNetworkPackage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -227,6 +232,7 @@ CreateSolNetworkPackageOutcome TnbClient::CreateSolNetworkPackage(const CreateSo
 
 DeleteSolFunctionPackageOutcome TnbClient::DeleteSolFunctionPackage(const DeleteSolFunctionPackageRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteSolFunctionPackage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteSolFunctionPackage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VnfPkgIdHasBeenSet())
   {
@@ -242,6 +248,7 @@ DeleteSolFunctionPackageOutcome TnbClient::DeleteSolFunctionPackage(const Delete
 
 DeleteSolNetworkInstanceOutcome TnbClient::DeleteSolNetworkInstance(const DeleteSolNetworkInstanceRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteSolNetworkInstance);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteSolNetworkInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NsInstanceIdHasBeenSet())
   {
@@ -257,6 +264,7 @@ DeleteSolNetworkInstanceOutcome TnbClient::DeleteSolNetworkInstance(const Delete
 
 DeleteSolNetworkPackageOutcome TnbClient::DeleteSolNetworkPackage(const DeleteSolNetworkPackageRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteSolNetworkPackage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteSolNetworkPackage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NsdInfoIdHasBeenSet())
   {
@@ -272,6 +280,7 @@ DeleteSolNetworkPackageOutcome TnbClient::DeleteSolNetworkPackage(const DeleteSo
 
 GetSolFunctionInstanceOutcome TnbClient::GetSolFunctionInstance(const GetSolFunctionInstanceRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSolFunctionInstance);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSolFunctionInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VnfInstanceIdHasBeenSet())
   {
@@ -287,6 +296,7 @@ GetSolFunctionInstanceOutcome TnbClient::GetSolFunctionInstance(const GetSolFunc
 
 GetSolFunctionPackageOutcome TnbClient::GetSolFunctionPackage(const GetSolFunctionPackageRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSolFunctionPackage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSolFunctionPackage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VnfPkgIdHasBeenSet())
   {
@@ -302,6 +312,7 @@ GetSolFunctionPackageOutcome TnbClient::GetSolFunctionPackage(const GetSolFuncti
 
 GetSolFunctionPackageContentOutcome TnbClient::GetSolFunctionPackageContent(const GetSolFunctionPackageContentRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSolFunctionPackageContent);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSolFunctionPackageContent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AcceptHasBeenSet())
   {
@@ -323,6 +334,7 @@ GetSolFunctionPackageContentOutcome TnbClient::GetSolFunctionPackageContent(cons
 
 GetSolFunctionPackageDescriptorOutcome TnbClient::GetSolFunctionPackageDescriptor(const GetSolFunctionPackageDescriptorRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSolFunctionPackageDescriptor);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSolFunctionPackageDescriptor, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AcceptHasBeenSet())
   {
@@ -344,6 +356,7 @@ GetSolFunctionPackageDescriptorOutcome TnbClient::GetSolFunctionPackageDescripto
 
 GetSolNetworkInstanceOutcome TnbClient::GetSolNetworkInstance(const GetSolNetworkInstanceRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSolNetworkInstance);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSolNetworkInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NsInstanceIdHasBeenSet())
   {
@@ -359,6 +372,7 @@ GetSolNetworkInstanceOutcome TnbClient::GetSolNetworkInstance(const GetSolNetwor
 
 GetSolNetworkOperationOutcome TnbClient::GetSolNetworkOperation(const GetSolNetworkOperationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSolNetworkOperation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSolNetworkOperation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NsLcmOpOccIdHasBeenSet())
   {
@@ -374,6 +388,7 @@ GetSolNetworkOperationOutcome TnbClient::GetSolNetworkOperation(const GetSolNetw
 
 GetSolNetworkPackageOutcome TnbClient::GetSolNetworkPackage(const GetSolNetworkPackageRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSolNetworkPackage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSolNetworkPackage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NsdInfoIdHasBeenSet())
   {
@@ -389,6 +404,7 @@ GetSolNetworkPackageOutcome TnbClient::GetSolNetworkPackage(const GetSolNetworkP
 
 GetSolNetworkPackageContentOutcome TnbClient::GetSolNetworkPackageContent(const GetSolNetworkPackageContentRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSolNetworkPackageContent);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSolNetworkPackageContent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AcceptHasBeenSet())
   {
@@ -410,6 +426,7 @@ GetSolNetworkPackageContentOutcome TnbClient::GetSolNetworkPackageContent(const 
 
 GetSolNetworkPackageDescriptorOutcome TnbClient::GetSolNetworkPackageDescriptor(const GetSolNetworkPackageDescriptorRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSolNetworkPackageDescriptor);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSolNetworkPackageDescriptor, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NsdInfoIdHasBeenSet())
   {
@@ -426,6 +443,7 @@ GetSolNetworkPackageDescriptorOutcome TnbClient::GetSolNetworkPackageDescriptor(
 
 InstantiateSolNetworkInstanceOutcome TnbClient::InstantiateSolNetworkInstance(const InstantiateSolNetworkInstanceRequest& request) const
 {
+  AWS_OPERATION_GUARD(InstantiateSolNetworkInstance);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, InstantiateSolNetworkInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NsInstanceIdHasBeenSet())
   {
@@ -442,6 +460,7 @@ InstantiateSolNetworkInstanceOutcome TnbClient::InstantiateSolNetworkInstance(co
 
 ListSolFunctionInstancesOutcome TnbClient::ListSolFunctionInstances(const ListSolFunctionInstancesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListSolFunctionInstances);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSolFunctionInstances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListSolFunctionInstances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -451,6 +470,7 @@ ListSolFunctionInstancesOutcome TnbClient::ListSolFunctionInstances(const ListSo
 
 ListSolFunctionPackagesOutcome TnbClient::ListSolFunctionPackages(const ListSolFunctionPackagesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListSolFunctionPackages);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSolFunctionPackages, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListSolFunctionPackages, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -460,6 +480,7 @@ ListSolFunctionPackagesOutcome TnbClient::ListSolFunctionPackages(const ListSolF
 
 ListSolNetworkInstancesOutcome TnbClient::ListSolNetworkInstances(const ListSolNetworkInstancesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListSolNetworkInstances);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSolNetworkInstances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListSolNetworkInstances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -469,6 +490,7 @@ ListSolNetworkInstancesOutcome TnbClient::ListSolNetworkInstances(const ListSolN
 
 ListSolNetworkOperationsOutcome TnbClient::ListSolNetworkOperations(const ListSolNetworkOperationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListSolNetworkOperations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSolNetworkOperations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListSolNetworkOperations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -478,6 +500,7 @@ ListSolNetworkOperationsOutcome TnbClient::ListSolNetworkOperations(const ListSo
 
 ListSolNetworkPackagesOutcome TnbClient::ListSolNetworkPackages(const ListSolNetworkPackagesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListSolNetworkPackages);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSolNetworkPackages, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListSolNetworkPackages, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -487,6 +510,7 @@ ListSolNetworkPackagesOutcome TnbClient::ListSolNetworkPackages(const ListSolNet
 
 ListTagsForResourceOutcome TnbClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -502,6 +526,7 @@ ListTagsForResourceOutcome TnbClient::ListTagsForResource(const ListTagsForResou
 
 PutSolFunctionPackageContentOutcome TnbClient::PutSolFunctionPackageContent(const PutSolFunctionPackageContentRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutSolFunctionPackageContent);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutSolFunctionPackageContent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VnfPkgIdHasBeenSet())
   {
@@ -518,6 +543,7 @@ PutSolFunctionPackageContentOutcome TnbClient::PutSolFunctionPackageContent(cons
 
 PutSolNetworkPackageContentOutcome TnbClient::PutSolNetworkPackageContent(const PutSolNetworkPackageContentRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutSolNetworkPackageContent);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutSolNetworkPackageContent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NsdInfoIdHasBeenSet())
   {
@@ -534,6 +560,7 @@ PutSolNetworkPackageContentOutcome TnbClient::PutSolNetworkPackageContent(const 
 
 TagResourceOutcome TnbClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -549,6 +576,7 @@ TagResourceOutcome TnbClient::TagResource(const TagResourceRequest& request) con
 
 TerminateSolNetworkInstanceOutcome TnbClient::TerminateSolNetworkInstance(const TerminateSolNetworkInstanceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TerminateSolNetworkInstance);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TerminateSolNetworkInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NsInstanceIdHasBeenSet())
   {
@@ -565,6 +593,7 @@ TerminateSolNetworkInstanceOutcome TnbClient::TerminateSolNetworkInstance(const 
 
 UntagResourceOutcome TnbClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -585,6 +614,7 @@ UntagResourceOutcome TnbClient::UntagResource(const UntagResourceRequest& reques
 
 UpdateSolFunctionPackageOutcome TnbClient::UpdateSolFunctionPackage(const UpdateSolFunctionPackageRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateSolFunctionPackage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateSolFunctionPackage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VnfPkgIdHasBeenSet())
   {
@@ -600,6 +630,7 @@ UpdateSolFunctionPackageOutcome TnbClient::UpdateSolFunctionPackage(const Update
 
 UpdateSolNetworkInstanceOutcome TnbClient::UpdateSolNetworkInstance(const UpdateSolNetworkInstanceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateSolNetworkInstance);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateSolNetworkInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NsInstanceIdHasBeenSet())
   {
@@ -616,6 +647,7 @@ UpdateSolNetworkInstanceOutcome TnbClient::UpdateSolNetworkInstance(const Update
 
 UpdateSolNetworkPackageOutcome TnbClient::UpdateSolNetworkPackage(const UpdateSolNetworkPackageRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateSolNetworkPackage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateSolNetworkPackage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NsdInfoIdHasBeenSet())
   {
@@ -631,6 +663,7 @@ UpdateSolNetworkPackageOutcome TnbClient::UpdateSolNetworkPackage(const UpdateSo
 
 ValidateSolFunctionPackageContentOutcome TnbClient::ValidateSolFunctionPackageContent(const ValidateSolFunctionPackageContentRequest& request) const
 {
+  AWS_OPERATION_GUARD(ValidateSolFunctionPackageContent);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ValidateSolFunctionPackageContent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VnfPkgIdHasBeenSet())
   {
@@ -647,6 +680,7 @@ ValidateSolFunctionPackageContentOutcome TnbClient::ValidateSolFunctionPackageCo
 
 ValidateSolNetworkPackageContentOutcome TnbClient::ValidateSolNetworkPackageContent(const ValidateSolNetworkPackageContentRequest& request) const
 {
+  AWS_OPERATION_GUARD(ValidateSolNetworkPackageContent);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ValidateSolNetworkPackageContent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NsdInfoIdHasBeenSet())
   {

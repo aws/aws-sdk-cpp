@@ -158,6 +158,7 @@ GreengrassV2Client::GreengrassV2Client(const std::shared_ptr<AWSCredentialsProvi
     /* End of legacy constructors due deprecation */
 GreengrassV2Client::~GreengrassV2Client()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<GreengrassV2EndpointProviderBase>& GreengrassV2Client::accessEndpointProvider()
@@ -180,6 +181,7 @@ void GreengrassV2Client::OverrideEndpoint(const Aws::String& endpoint)
 
 AssociateServiceRoleToAccountOutcome GreengrassV2Client::AssociateServiceRoleToAccount(const AssociateServiceRoleToAccountRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociateServiceRoleToAccount);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateServiceRoleToAccount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AssociateServiceRoleToAccount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -189,6 +191,7 @@ AssociateServiceRoleToAccountOutcome GreengrassV2Client::AssociateServiceRoleToA
 
 BatchAssociateClientDeviceWithCoreDeviceOutcome GreengrassV2Client::BatchAssociateClientDeviceWithCoreDevice(const BatchAssociateClientDeviceWithCoreDeviceRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchAssociateClientDeviceWithCoreDevice);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchAssociateClientDeviceWithCoreDevice, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CoreDeviceThingNameHasBeenSet())
   {
@@ -205,6 +208,7 @@ BatchAssociateClientDeviceWithCoreDeviceOutcome GreengrassV2Client::BatchAssocia
 
 BatchDisassociateClientDeviceFromCoreDeviceOutcome GreengrassV2Client::BatchDisassociateClientDeviceFromCoreDevice(const BatchDisassociateClientDeviceFromCoreDeviceRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchDisassociateClientDeviceFromCoreDevice);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchDisassociateClientDeviceFromCoreDevice, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CoreDeviceThingNameHasBeenSet())
   {
@@ -221,6 +225,7 @@ BatchDisassociateClientDeviceFromCoreDeviceOutcome GreengrassV2Client::BatchDisa
 
 CancelDeploymentOutcome GreengrassV2Client::CancelDeployment(const CancelDeploymentRequest& request) const
 {
+  AWS_OPERATION_GUARD(CancelDeployment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CancelDeployment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DeploymentIdHasBeenSet())
   {
@@ -237,6 +242,7 @@ CancelDeploymentOutcome GreengrassV2Client::CancelDeployment(const CancelDeploym
 
 CreateComponentVersionOutcome GreengrassV2Client::CreateComponentVersion(const CreateComponentVersionRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateComponentVersion);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateComponentVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateComponentVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -246,6 +252,7 @@ CreateComponentVersionOutcome GreengrassV2Client::CreateComponentVersion(const C
 
 CreateDeploymentOutcome GreengrassV2Client::CreateDeployment(const CreateDeploymentRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateDeployment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDeployment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateDeployment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -255,6 +262,7 @@ CreateDeploymentOutcome GreengrassV2Client::CreateDeployment(const CreateDeploym
 
 DeleteComponentOutcome GreengrassV2Client::DeleteComponent(const DeleteComponentRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteComponent);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteComponent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ArnHasBeenSet())
   {
@@ -270,6 +278,7 @@ DeleteComponentOutcome GreengrassV2Client::DeleteComponent(const DeleteComponent
 
 DeleteCoreDeviceOutcome GreengrassV2Client::DeleteCoreDevice(const DeleteCoreDeviceRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteCoreDevice);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteCoreDevice, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CoreDeviceThingNameHasBeenSet())
   {
@@ -285,6 +294,7 @@ DeleteCoreDeviceOutcome GreengrassV2Client::DeleteCoreDevice(const DeleteCoreDev
 
 DeleteDeploymentOutcome GreengrassV2Client::DeleteDeployment(const DeleteDeploymentRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteDeployment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDeployment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DeploymentIdHasBeenSet())
   {
@@ -300,6 +310,7 @@ DeleteDeploymentOutcome GreengrassV2Client::DeleteDeployment(const DeleteDeploym
 
 DescribeComponentOutcome GreengrassV2Client::DescribeComponent(const DescribeComponentRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeComponent);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeComponent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ArnHasBeenSet())
   {
@@ -316,6 +327,7 @@ DescribeComponentOutcome GreengrassV2Client::DescribeComponent(const DescribeCom
 
 DisassociateServiceRoleFromAccountOutcome GreengrassV2Client::DisassociateServiceRoleFromAccount(const DisassociateServiceRoleFromAccountRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociateServiceRoleFromAccount);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateServiceRoleFromAccount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DisassociateServiceRoleFromAccount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -325,6 +337,7 @@ DisassociateServiceRoleFromAccountOutcome GreengrassV2Client::DisassociateServic
 
 GetComponentOutcome GreengrassV2Client::GetComponent(const GetComponentRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetComponent);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetComponent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ArnHasBeenSet())
   {
@@ -340,6 +353,7 @@ GetComponentOutcome GreengrassV2Client::GetComponent(const GetComponentRequest& 
 
 GetComponentVersionArtifactOutcome GreengrassV2Client::GetComponentVersionArtifact(const GetComponentVersionArtifactRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetComponentVersionArtifact);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetComponentVersionArtifact, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ArnHasBeenSet())
   {
@@ -362,6 +376,7 @@ GetComponentVersionArtifactOutcome GreengrassV2Client::GetComponentVersionArtifa
 
 GetConnectivityInfoOutcome GreengrassV2Client::GetConnectivityInfo(const GetConnectivityInfoRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetConnectivityInfo);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetConnectivityInfo, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ThingNameHasBeenSet())
   {
@@ -378,6 +393,7 @@ GetConnectivityInfoOutcome GreengrassV2Client::GetConnectivityInfo(const GetConn
 
 GetCoreDeviceOutcome GreengrassV2Client::GetCoreDevice(const GetCoreDeviceRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetCoreDevice);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCoreDevice, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CoreDeviceThingNameHasBeenSet())
   {
@@ -393,6 +409,7 @@ GetCoreDeviceOutcome GreengrassV2Client::GetCoreDevice(const GetCoreDeviceReques
 
 GetDeploymentOutcome GreengrassV2Client::GetDeployment(const GetDeploymentRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDeployment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDeployment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DeploymentIdHasBeenSet())
   {
@@ -408,6 +425,7 @@ GetDeploymentOutcome GreengrassV2Client::GetDeployment(const GetDeploymentReques
 
 GetServiceRoleForAccountOutcome GreengrassV2Client::GetServiceRoleForAccount(const GetServiceRoleForAccountRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetServiceRoleForAccount);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetServiceRoleForAccount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetServiceRoleForAccount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -417,6 +435,7 @@ GetServiceRoleForAccountOutcome GreengrassV2Client::GetServiceRoleForAccount(con
 
 ListClientDevicesAssociatedWithCoreDeviceOutcome GreengrassV2Client::ListClientDevicesAssociatedWithCoreDevice(const ListClientDevicesAssociatedWithCoreDeviceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListClientDevicesAssociatedWithCoreDevice);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListClientDevicesAssociatedWithCoreDevice, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CoreDeviceThingNameHasBeenSet())
   {
@@ -433,6 +452,7 @@ ListClientDevicesAssociatedWithCoreDeviceOutcome GreengrassV2Client::ListClientD
 
 ListComponentVersionsOutcome GreengrassV2Client::ListComponentVersions(const ListComponentVersionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListComponentVersions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListComponentVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ArnHasBeenSet())
   {
@@ -449,6 +469,7 @@ ListComponentVersionsOutcome GreengrassV2Client::ListComponentVersions(const Lis
 
 ListComponentsOutcome GreengrassV2Client::ListComponents(const ListComponentsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListComponents);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListComponents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListComponents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -458,6 +479,7 @@ ListComponentsOutcome GreengrassV2Client::ListComponents(const ListComponentsReq
 
 ListCoreDevicesOutcome GreengrassV2Client::ListCoreDevices(const ListCoreDevicesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListCoreDevices);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListCoreDevices, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListCoreDevices, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -467,6 +489,7 @@ ListCoreDevicesOutcome GreengrassV2Client::ListCoreDevices(const ListCoreDevices
 
 ListDeploymentsOutcome GreengrassV2Client::ListDeployments(const ListDeploymentsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDeployments);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDeployments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDeployments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -476,6 +499,7 @@ ListDeploymentsOutcome GreengrassV2Client::ListDeployments(const ListDeployments
 
 ListEffectiveDeploymentsOutcome GreengrassV2Client::ListEffectiveDeployments(const ListEffectiveDeploymentsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListEffectiveDeployments);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListEffectiveDeployments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CoreDeviceThingNameHasBeenSet())
   {
@@ -492,6 +516,7 @@ ListEffectiveDeploymentsOutcome GreengrassV2Client::ListEffectiveDeployments(con
 
 ListInstalledComponentsOutcome GreengrassV2Client::ListInstalledComponents(const ListInstalledComponentsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListInstalledComponents);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListInstalledComponents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CoreDeviceThingNameHasBeenSet())
   {
@@ -508,6 +533,7 @@ ListInstalledComponentsOutcome GreengrassV2Client::ListInstalledComponents(const
 
 ListTagsForResourceOutcome GreengrassV2Client::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -523,6 +549,7 @@ ListTagsForResourceOutcome GreengrassV2Client::ListTagsForResource(const ListTag
 
 ResolveComponentCandidatesOutcome GreengrassV2Client::ResolveComponentCandidates(const ResolveComponentCandidatesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ResolveComponentCandidates);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ResolveComponentCandidates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ResolveComponentCandidates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -532,6 +559,7 @@ ResolveComponentCandidatesOutcome GreengrassV2Client::ResolveComponentCandidates
 
 TagResourceOutcome GreengrassV2Client::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -547,6 +575,7 @@ TagResourceOutcome GreengrassV2Client::TagResource(const TagResourceRequest& req
 
 UntagResourceOutcome GreengrassV2Client::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -567,6 +596,7 @@ UntagResourceOutcome GreengrassV2Client::UntagResource(const UntagResourceReques
 
 UpdateConnectivityInfoOutcome GreengrassV2Client::UpdateConnectivityInfo(const UpdateConnectivityInfoRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateConnectivityInfo);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateConnectivityInfo, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ThingNameHasBeenSet())
   {

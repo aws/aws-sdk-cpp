@@ -194,6 +194,7 @@ GuardDutyClient::GuardDutyClient(const std::shared_ptr<AWSCredentialsProvider>& 
     /* End of legacy constructors due deprecation */
 GuardDutyClient::~GuardDutyClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<GuardDutyEndpointProviderBase>& GuardDutyClient::accessEndpointProvider()
@@ -216,6 +217,7 @@ void GuardDutyClient::OverrideEndpoint(const Aws::String& endpoint)
 
 AcceptAdministratorInvitationOutcome GuardDutyClient::AcceptAdministratorInvitation(const AcceptAdministratorInvitationRequest& request) const
 {
+  AWS_OPERATION_GUARD(AcceptAdministratorInvitation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AcceptAdministratorInvitation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DetectorIdHasBeenSet())
   {
@@ -232,6 +234,7 @@ AcceptAdministratorInvitationOutcome GuardDutyClient::AcceptAdministratorInvitat
 
 ArchiveFindingsOutcome GuardDutyClient::ArchiveFindings(const ArchiveFindingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ArchiveFindings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ArchiveFindings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DetectorIdHasBeenSet())
   {
@@ -248,6 +251,7 @@ ArchiveFindingsOutcome GuardDutyClient::ArchiveFindings(const ArchiveFindingsReq
 
 CreateDetectorOutcome GuardDutyClient::CreateDetector(const CreateDetectorRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateDetector);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDetector, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateDetector, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -257,6 +261,7 @@ CreateDetectorOutcome GuardDutyClient::CreateDetector(const CreateDetectorReques
 
 CreateFilterOutcome GuardDutyClient::CreateFilter(const CreateFilterRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateFilter);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateFilter, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DetectorIdHasBeenSet())
   {
@@ -273,6 +278,7 @@ CreateFilterOutcome GuardDutyClient::CreateFilter(const CreateFilterRequest& req
 
 CreateIPSetOutcome GuardDutyClient::CreateIPSet(const CreateIPSetRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateIPSet);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateIPSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DetectorIdHasBeenSet())
   {
@@ -289,6 +295,7 @@ CreateIPSetOutcome GuardDutyClient::CreateIPSet(const CreateIPSetRequest& reques
 
 CreateMembersOutcome GuardDutyClient::CreateMembers(const CreateMembersRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateMembers);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateMembers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DetectorIdHasBeenSet())
   {
@@ -305,6 +312,7 @@ CreateMembersOutcome GuardDutyClient::CreateMembers(const CreateMembersRequest& 
 
 CreatePublishingDestinationOutcome GuardDutyClient::CreatePublishingDestination(const CreatePublishingDestinationRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreatePublishingDestination);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreatePublishingDestination, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DetectorIdHasBeenSet())
   {
@@ -321,6 +329,7 @@ CreatePublishingDestinationOutcome GuardDutyClient::CreatePublishingDestination(
 
 CreateSampleFindingsOutcome GuardDutyClient::CreateSampleFindings(const CreateSampleFindingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateSampleFindings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateSampleFindings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DetectorIdHasBeenSet())
   {
@@ -337,6 +346,7 @@ CreateSampleFindingsOutcome GuardDutyClient::CreateSampleFindings(const CreateSa
 
 CreateThreatIntelSetOutcome GuardDutyClient::CreateThreatIntelSet(const CreateThreatIntelSetRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateThreatIntelSet);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateThreatIntelSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DetectorIdHasBeenSet())
   {
@@ -353,6 +363,7 @@ CreateThreatIntelSetOutcome GuardDutyClient::CreateThreatIntelSet(const CreateTh
 
 DeclineInvitationsOutcome GuardDutyClient::DeclineInvitations(const DeclineInvitationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeclineInvitations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeclineInvitations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeclineInvitations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -362,6 +373,7 @@ DeclineInvitationsOutcome GuardDutyClient::DeclineInvitations(const DeclineInvit
 
 DeleteDetectorOutcome GuardDutyClient::DeleteDetector(const DeleteDetectorRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteDetector);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDetector, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DetectorIdHasBeenSet())
   {
@@ -377,6 +389,7 @@ DeleteDetectorOutcome GuardDutyClient::DeleteDetector(const DeleteDetectorReques
 
 DeleteFilterOutcome GuardDutyClient::DeleteFilter(const DeleteFilterRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteFilter);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteFilter, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DetectorIdHasBeenSet())
   {
@@ -399,6 +412,7 @@ DeleteFilterOutcome GuardDutyClient::DeleteFilter(const DeleteFilterRequest& req
 
 DeleteIPSetOutcome GuardDutyClient::DeleteIPSet(const DeleteIPSetRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteIPSet);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteIPSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DetectorIdHasBeenSet())
   {
@@ -421,6 +435,7 @@ DeleteIPSetOutcome GuardDutyClient::DeleteIPSet(const DeleteIPSetRequest& reques
 
 DeleteInvitationsOutcome GuardDutyClient::DeleteInvitations(const DeleteInvitationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteInvitations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteInvitations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteInvitations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -430,6 +445,7 @@ DeleteInvitationsOutcome GuardDutyClient::DeleteInvitations(const DeleteInvitati
 
 DeleteMembersOutcome GuardDutyClient::DeleteMembers(const DeleteMembersRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteMembers);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteMembers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DetectorIdHasBeenSet())
   {
@@ -446,6 +462,7 @@ DeleteMembersOutcome GuardDutyClient::DeleteMembers(const DeleteMembersRequest& 
 
 DeletePublishingDestinationOutcome GuardDutyClient::DeletePublishingDestination(const DeletePublishingDestinationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeletePublishingDestination);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeletePublishingDestination, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DetectorIdHasBeenSet())
   {
@@ -468,6 +485,7 @@ DeletePublishingDestinationOutcome GuardDutyClient::DeletePublishingDestination(
 
 DeleteThreatIntelSetOutcome GuardDutyClient::DeleteThreatIntelSet(const DeleteThreatIntelSetRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteThreatIntelSet);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteThreatIntelSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DetectorIdHasBeenSet())
   {
@@ -490,6 +508,7 @@ DeleteThreatIntelSetOutcome GuardDutyClient::DeleteThreatIntelSet(const DeleteTh
 
 DescribeMalwareScansOutcome GuardDutyClient::DescribeMalwareScans(const DescribeMalwareScansRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeMalwareScans);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeMalwareScans, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DetectorIdHasBeenSet())
   {
@@ -506,6 +525,7 @@ DescribeMalwareScansOutcome GuardDutyClient::DescribeMalwareScans(const Describe
 
 DescribeOrganizationConfigurationOutcome GuardDutyClient::DescribeOrganizationConfiguration(const DescribeOrganizationConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeOrganizationConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeOrganizationConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DetectorIdHasBeenSet())
   {
@@ -522,6 +542,7 @@ DescribeOrganizationConfigurationOutcome GuardDutyClient::DescribeOrganizationCo
 
 DescribePublishingDestinationOutcome GuardDutyClient::DescribePublishingDestination(const DescribePublishingDestinationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribePublishingDestination);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribePublishingDestination, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DetectorIdHasBeenSet())
   {
@@ -544,6 +565,7 @@ DescribePublishingDestinationOutcome GuardDutyClient::DescribePublishingDestinat
 
 DisableOrganizationAdminAccountOutcome GuardDutyClient::DisableOrganizationAdminAccount(const DisableOrganizationAdminAccountRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisableOrganizationAdminAccount);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisableOrganizationAdminAccount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DisableOrganizationAdminAccount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -553,6 +575,7 @@ DisableOrganizationAdminAccountOutcome GuardDutyClient::DisableOrganizationAdmin
 
 DisassociateFromAdministratorAccountOutcome GuardDutyClient::DisassociateFromAdministratorAccount(const DisassociateFromAdministratorAccountRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociateFromAdministratorAccount);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateFromAdministratorAccount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DetectorIdHasBeenSet())
   {
@@ -569,6 +592,7 @@ DisassociateFromAdministratorAccountOutcome GuardDutyClient::DisassociateFromAdm
 
 DisassociateMembersOutcome GuardDutyClient::DisassociateMembers(const DisassociateMembersRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociateMembers);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateMembers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DetectorIdHasBeenSet())
   {
@@ -585,6 +609,7 @@ DisassociateMembersOutcome GuardDutyClient::DisassociateMembers(const Disassocia
 
 EnableOrganizationAdminAccountOutcome GuardDutyClient::EnableOrganizationAdminAccount(const EnableOrganizationAdminAccountRequest& request) const
 {
+  AWS_OPERATION_GUARD(EnableOrganizationAdminAccount);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, EnableOrganizationAdminAccount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, EnableOrganizationAdminAccount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -594,6 +619,7 @@ EnableOrganizationAdminAccountOutcome GuardDutyClient::EnableOrganizationAdminAc
 
 GetAdministratorAccountOutcome GuardDutyClient::GetAdministratorAccount(const GetAdministratorAccountRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetAdministratorAccount);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAdministratorAccount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DetectorIdHasBeenSet())
   {
@@ -610,6 +636,7 @@ GetAdministratorAccountOutcome GuardDutyClient::GetAdministratorAccount(const Ge
 
 GetCoverageStatisticsOutcome GuardDutyClient::GetCoverageStatistics(const GetCoverageStatisticsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetCoverageStatistics);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCoverageStatistics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DetectorIdHasBeenSet())
   {
@@ -626,6 +653,7 @@ GetCoverageStatisticsOutcome GuardDutyClient::GetCoverageStatistics(const GetCov
 
 GetDetectorOutcome GuardDutyClient::GetDetector(const GetDetectorRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDetector);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDetector, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DetectorIdHasBeenSet())
   {
@@ -641,6 +669,7 @@ GetDetectorOutcome GuardDutyClient::GetDetector(const GetDetectorRequest& reques
 
 GetFilterOutcome GuardDutyClient::GetFilter(const GetFilterRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetFilter);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetFilter, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DetectorIdHasBeenSet())
   {
@@ -663,6 +692,7 @@ GetFilterOutcome GuardDutyClient::GetFilter(const GetFilterRequest& request) con
 
 GetFindingsOutcome GuardDutyClient::GetFindings(const GetFindingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetFindings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetFindings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DetectorIdHasBeenSet())
   {
@@ -679,6 +709,7 @@ GetFindingsOutcome GuardDutyClient::GetFindings(const GetFindingsRequest& reques
 
 GetFindingsStatisticsOutcome GuardDutyClient::GetFindingsStatistics(const GetFindingsStatisticsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetFindingsStatistics);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetFindingsStatistics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DetectorIdHasBeenSet())
   {
@@ -695,6 +726,7 @@ GetFindingsStatisticsOutcome GuardDutyClient::GetFindingsStatistics(const GetFin
 
 GetIPSetOutcome GuardDutyClient::GetIPSet(const GetIPSetRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetIPSet);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetIPSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DetectorIdHasBeenSet())
   {
@@ -717,6 +749,7 @@ GetIPSetOutcome GuardDutyClient::GetIPSet(const GetIPSetRequest& request) const
 
 GetInvitationsCountOutcome GuardDutyClient::GetInvitationsCount(const GetInvitationsCountRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetInvitationsCount);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetInvitationsCount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetInvitationsCount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -726,6 +759,7 @@ GetInvitationsCountOutcome GuardDutyClient::GetInvitationsCount(const GetInvitat
 
 GetMalwareScanSettingsOutcome GuardDutyClient::GetMalwareScanSettings(const GetMalwareScanSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetMalwareScanSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMalwareScanSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DetectorIdHasBeenSet())
   {
@@ -742,6 +776,7 @@ GetMalwareScanSettingsOutcome GuardDutyClient::GetMalwareScanSettings(const GetM
 
 GetMemberDetectorsOutcome GuardDutyClient::GetMemberDetectors(const GetMemberDetectorsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetMemberDetectors);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMemberDetectors, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DetectorIdHasBeenSet())
   {
@@ -758,6 +793,7 @@ GetMemberDetectorsOutcome GuardDutyClient::GetMemberDetectors(const GetMemberDet
 
 GetMembersOutcome GuardDutyClient::GetMembers(const GetMembersRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetMembers);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMembers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DetectorIdHasBeenSet())
   {
@@ -774,6 +810,7 @@ GetMembersOutcome GuardDutyClient::GetMembers(const GetMembersRequest& request) 
 
 GetRemainingFreeTrialDaysOutcome GuardDutyClient::GetRemainingFreeTrialDays(const GetRemainingFreeTrialDaysRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetRemainingFreeTrialDays);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetRemainingFreeTrialDays, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DetectorIdHasBeenSet())
   {
@@ -790,6 +827,7 @@ GetRemainingFreeTrialDaysOutcome GuardDutyClient::GetRemainingFreeTrialDays(cons
 
 GetThreatIntelSetOutcome GuardDutyClient::GetThreatIntelSet(const GetThreatIntelSetRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetThreatIntelSet);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetThreatIntelSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DetectorIdHasBeenSet())
   {
@@ -812,6 +850,7 @@ GetThreatIntelSetOutcome GuardDutyClient::GetThreatIntelSet(const GetThreatIntel
 
 GetUsageStatisticsOutcome GuardDutyClient::GetUsageStatistics(const GetUsageStatisticsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetUsageStatistics);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetUsageStatistics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DetectorIdHasBeenSet())
   {
@@ -828,6 +867,7 @@ GetUsageStatisticsOutcome GuardDutyClient::GetUsageStatistics(const GetUsageStat
 
 InviteMembersOutcome GuardDutyClient::InviteMembers(const InviteMembersRequest& request) const
 {
+  AWS_OPERATION_GUARD(InviteMembers);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, InviteMembers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DetectorIdHasBeenSet())
   {
@@ -844,6 +884,7 @@ InviteMembersOutcome GuardDutyClient::InviteMembers(const InviteMembersRequest& 
 
 ListCoverageOutcome GuardDutyClient::ListCoverage(const ListCoverageRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListCoverage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListCoverage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DetectorIdHasBeenSet())
   {
@@ -860,6 +901,7 @@ ListCoverageOutcome GuardDutyClient::ListCoverage(const ListCoverageRequest& req
 
 ListDetectorsOutcome GuardDutyClient::ListDetectors(const ListDetectorsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDetectors);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDetectors, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDetectors, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -869,6 +911,7 @@ ListDetectorsOutcome GuardDutyClient::ListDetectors(const ListDetectorsRequest& 
 
 ListFiltersOutcome GuardDutyClient::ListFilters(const ListFiltersRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListFilters);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListFilters, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DetectorIdHasBeenSet())
   {
@@ -885,6 +928,7 @@ ListFiltersOutcome GuardDutyClient::ListFilters(const ListFiltersRequest& reques
 
 ListFindingsOutcome GuardDutyClient::ListFindings(const ListFindingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListFindings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListFindings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DetectorIdHasBeenSet())
   {
@@ -901,6 +945,7 @@ ListFindingsOutcome GuardDutyClient::ListFindings(const ListFindingsRequest& req
 
 ListIPSetsOutcome GuardDutyClient::ListIPSets(const ListIPSetsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListIPSets);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListIPSets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DetectorIdHasBeenSet())
   {
@@ -917,6 +962,7 @@ ListIPSetsOutcome GuardDutyClient::ListIPSets(const ListIPSetsRequest& request) 
 
 ListInvitationsOutcome GuardDutyClient::ListInvitations(const ListInvitationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListInvitations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListInvitations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListInvitations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -926,6 +972,7 @@ ListInvitationsOutcome GuardDutyClient::ListInvitations(const ListInvitationsReq
 
 ListMembersOutcome GuardDutyClient::ListMembers(const ListMembersRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListMembers);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListMembers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DetectorIdHasBeenSet())
   {
@@ -942,6 +989,7 @@ ListMembersOutcome GuardDutyClient::ListMembers(const ListMembersRequest& reques
 
 ListOrganizationAdminAccountsOutcome GuardDutyClient::ListOrganizationAdminAccounts(const ListOrganizationAdminAccountsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListOrganizationAdminAccounts);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListOrganizationAdminAccounts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListOrganizationAdminAccounts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -951,6 +999,7 @@ ListOrganizationAdminAccountsOutcome GuardDutyClient::ListOrganizationAdminAccou
 
 ListPublishingDestinationsOutcome GuardDutyClient::ListPublishingDestinations(const ListPublishingDestinationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListPublishingDestinations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPublishingDestinations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DetectorIdHasBeenSet())
   {
@@ -967,6 +1016,7 @@ ListPublishingDestinationsOutcome GuardDutyClient::ListPublishingDestinations(co
 
 ListTagsForResourceOutcome GuardDutyClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -982,6 +1032,7 @@ ListTagsForResourceOutcome GuardDutyClient::ListTagsForResource(const ListTagsFo
 
 ListThreatIntelSetsOutcome GuardDutyClient::ListThreatIntelSets(const ListThreatIntelSetsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListThreatIntelSets);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListThreatIntelSets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DetectorIdHasBeenSet())
   {
@@ -998,6 +1049,7 @@ ListThreatIntelSetsOutcome GuardDutyClient::ListThreatIntelSets(const ListThreat
 
 StartMalwareScanOutcome GuardDutyClient::StartMalwareScan(const StartMalwareScanRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartMalwareScan);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartMalwareScan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartMalwareScan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1007,6 +1059,7 @@ StartMalwareScanOutcome GuardDutyClient::StartMalwareScan(const StartMalwareScan
 
 StartMonitoringMembersOutcome GuardDutyClient::StartMonitoringMembers(const StartMonitoringMembersRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartMonitoringMembers);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartMonitoringMembers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DetectorIdHasBeenSet())
   {
@@ -1023,6 +1076,7 @@ StartMonitoringMembersOutcome GuardDutyClient::StartMonitoringMembers(const Star
 
 StopMonitoringMembersOutcome GuardDutyClient::StopMonitoringMembers(const StopMonitoringMembersRequest& request) const
 {
+  AWS_OPERATION_GUARD(StopMonitoringMembers);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopMonitoringMembers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DetectorIdHasBeenSet())
   {
@@ -1039,6 +1093,7 @@ StopMonitoringMembersOutcome GuardDutyClient::StopMonitoringMembers(const StopMo
 
 TagResourceOutcome GuardDutyClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -1054,6 +1109,7 @@ TagResourceOutcome GuardDutyClient::TagResource(const TagResourceRequest& reques
 
 UnarchiveFindingsOutcome GuardDutyClient::UnarchiveFindings(const UnarchiveFindingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(UnarchiveFindings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UnarchiveFindings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DetectorIdHasBeenSet())
   {
@@ -1070,6 +1126,7 @@ UnarchiveFindingsOutcome GuardDutyClient::UnarchiveFindings(const UnarchiveFindi
 
 UntagResourceOutcome GuardDutyClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -1090,6 +1147,7 @@ UntagResourceOutcome GuardDutyClient::UntagResource(const UntagResourceRequest& 
 
 UpdateDetectorOutcome GuardDutyClient::UpdateDetector(const UpdateDetectorRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateDetector);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDetector, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DetectorIdHasBeenSet())
   {
@@ -1105,6 +1163,7 @@ UpdateDetectorOutcome GuardDutyClient::UpdateDetector(const UpdateDetectorReques
 
 UpdateFilterOutcome GuardDutyClient::UpdateFilter(const UpdateFilterRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateFilter);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateFilter, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DetectorIdHasBeenSet())
   {
@@ -1127,6 +1186,7 @@ UpdateFilterOutcome GuardDutyClient::UpdateFilter(const UpdateFilterRequest& req
 
 UpdateFindingsFeedbackOutcome GuardDutyClient::UpdateFindingsFeedback(const UpdateFindingsFeedbackRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateFindingsFeedback);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateFindingsFeedback, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DetectorIdHasBeenSet())
   {
@@ -1143,6 +1203,7 @@ UpdateFindingsFeedbackOutcome GuardDutyClient::UpdateFindingsFeedback(const Upda
 
 UpdateIPSetOutcome GuardDutyClient::UpdateIPSet(const UpdateIPSetRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateIPSet);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateIPSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DetectorIdHasBeenSet())
   {
@@ -1165,6 +1226,7 @@ UpdateIPSetOutcome GuardDutyClient::UpdateIPSet(const UpdateIPSetRequest& reques
 
 UpdateMalwareScanSettingsOutcome GuardDutyClient::UpdateMalwareScanSettings(const UpdateMalwareScanSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateMalwareScanSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateMalwareScanSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DetectorIdHasBeenSet())
   {
@@ -1181,6 +1243,7 @@ UpdateMalwareScanSettingsOutcome GuardDutyClient::UpdateMalwareScanSettings(cons
 
 UpdateMemberDetectorsOutcome GuardDutyClient::UpdateMemberDetectors(const UpdateMemberDetectorsRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateMemberDetectors);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateMemberDetectors, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DetectorIdHasBeenSet())
   {
@@ -1197,6 +1260,7 @@ UpdateMemberDetectorsOutcome GuardDutyClient::UpdateMemberDetectors(const Update
 
 UpdateOrganizationConfigurationOutcome GuardDutyClient::UpdateOrganizationConfiguration(const UpdateOrganizationConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateOrganizationConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateOrganizationConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DetectorIdHasBeenSet())
   {
@@ -1213,6 +1277,7 @@ UpdateOrganizationConfigurationOutcome GuardDutyClient::UpdateOrganizationConfig
 
 UpdatePublishingDestinationOutcome GuardDutyClient::UpdatePublishingDestination(const UpdatePublishingDestinationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdatePublishingDestination);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdatePublishingDestination, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DetectorIdHasBeenSet())
   {
@@ -1235,6 +1300,7 @@ UpdatePublishingDestinationOutcome GuardDutyClient::UpdatePublishingDestination(
 
 UpdateThreatIntelSetOutcome GuardDutyClient::UpdateThreatIntelSet(const UpdateThreatIntelSetRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateThreatIntelSet);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateThreatIntelSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DetectorIdHasBeenSet())
   {

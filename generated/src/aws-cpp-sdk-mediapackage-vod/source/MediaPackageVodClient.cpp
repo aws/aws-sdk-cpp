@@ -146,6 +146,7 @@ MediaPackageVodClient::MediaPackageVodClient(const std::shared_ptr<AWSCredential
     /* End of legacy constructors due deprecation */
 MediaPackageVodClient::~MediaPackageVodClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<MediaPackageVodEndpointProviderBase>& MediaPackageVodClient::accessEndpointProvider()
@@ -168,6 +169,7 @@ void MediaPackageVodClient::OverrideEndpoint(const Aws::String& endpoint)
 
 ConfigureLogsOutcome MediaPackageVodClient::ConfigureLogs(const ConfigureLogsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ConfigureLogs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ConfigureLogs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -184,6 +186,7 @@ ConfigureLogsOutcome MediaPackageVodClient::ConfigureLogs(const ConfigureLogsReq
 
 CreateAssetOutcome MediaPackageVodClient::CreateAsset(const CreateAssetRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateAsset);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAsset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateAsset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -193,6 +196,7 @@ CreateAssetOutcome MediaPackageVodClient::CreateAsset(const CreateAssetRequest& 
 
 CreatePackagingConfigurationOutcome MediaPackageVodClient::CreatePackagingConfiguration(const CreatePackagingConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreatePackagingConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreatePackagingConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreatePackagingConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -202,6 +206,7 @@ CreatePackagingConfigurationOutcome MediaPackageVodClient::CreatePackagingConfig
 
 CreatePackagingGroupOutcome MediaPackageVodClient::CreatePackagingGroup(const CreatePackagingGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreatePackagingGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreatePackagingGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreatePackagingGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -211,6 +216,7 @@ CreatePackagingGroupOutcome MediaPackageVodClient::CreatePackagingGroup(const Cr
 
 DeleteAssetOutcome MediaPackageVodClient::DeleteAsset(const DeleteAssetRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteAsset);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAsset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -226,6 +232,7 @@ DeleteAssetOutcome MediaPackageVodClient::DeleteAsset(const DeleteAssetRequest& 
 
 DeletePackagingConfigurationOutcome MediaPackageVodClient::DeletePackagingConfiguration(const DeletePackagingConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeletePackagingConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeletePackagingConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -241,6 +248,7 @@ DeletePackagingConfigurationOutcome MediaPackageVodClient::DeletePackagingConfig
 
 DeletePackagingGroupOutcome MediaPackageVodClient::DeletePackagingGroup(const DeletePackagingGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeletePackagingGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeletePackagingGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -256,6 +264,7 @@ DeletePackagingGroupOutcome MediaPackageVodClient::DeletePackagingGroup(const De
 
 DescribeAssetOutcome MediaPackageVodClient::DescribeAsset(const DescribeAssetRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeAsset);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAsset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -271,6 +280,7 @@ DescribeAssetOutcome MediaPackageVodClient::DescribeAsset(const DescribeAssetReq
 
 DescribePackagingConfigurationOutcome MediaPackageVodClient::DescribePackagingConfiguration(const DescribePackagingConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribePackagingConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribePackagingConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -286,6 +296,7 @@ DescribePackagingConfigurationOutcome MediaPackageVodClient::DescribePackagingCo
 
 DescribePackagingGroupOutcome MediaPackageVodClient::DescribePackagingGroup(const DescribePackagingGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribePackagingGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribePackagingGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -301,6 +312,7 @@ DescribePackagingGroupOutcome MediaPackageVodClient::DescribePackagingGroup(cons
 
 ListAssetsOutcome MediaPackageVodClient::ListAssets(const ListAssetsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAssets);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAssets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAssets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -310,6 +322,7 @@ ListAssetsOutcome MediaPackageVodClient::ListAssets(const ListAssetsRequest& req
 
 ListPackagingConfigurationsOutcome MediaPackageVodClient::ListPackagingConfigurations(const ListPackagingConfigurationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListPackagingConfigurations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPackagingConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListPackagingConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -319,6 +332,7 @@ ListPackagingConfigurationsOutcome MediaPackageVodClient::ListPackagingConfigura
 
 ListPackagingGroupsOutcome MediaPackageVodClient::ListPackagingGroups(const ListPackagingGroupsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListPackagingGroups);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPackagingGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListPackagingGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -328,6 +342,7 @@ ListPackagingGroupsOutcome MediaPackageVodClient::ListPackagingGroups(const List
 
 ListTagsForResourceOutcome MediaPackageVodClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -343,6 +358,7 @@ ListTagsForResourceOutcome MediaPackageVodClient::ListTagsForResource(const List
 
 TagResourceOutcome MediaPackageVodClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -358,6 +374,7 @@ TagResourceOutcome MediaPackageVodClient::TagResource(const TagResourceRequest& 
 
 UntagResourceOutcome MediaPackageVodClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -378,6 +395,7 @@ UntagResourceOutcome MediaPackageVodClient::UntagResource(const UntagResourceReq
 
 UpdatePackagingGroupOutcome MediaPackageVodClient::UpdatePackagingGroup(const UpdatePackagingGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdatePackagingGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdatePackagingGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {

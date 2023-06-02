@@ -167,6 +167,7 @@ DrsClient::DrsClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
     /* End of legacy constructors due deprecation */
 DrsClient::~DrsClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<DrsEndpointProviderBase>& DrsClient::accessEndpointProvider()
@@ -189,6 +190,7 @@ void DrsClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CreateExtendedSourceServerOutcome DrsClient::CreateExtendedSourceServer(const CreateExtendedSourceServerRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateExtendedSourceServer);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateExtendedSourceServer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateExtendedSourceServer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -198,6 +200,7 @@ CreateExtendedSourceServerOutcome DrsClient::CreateExtendedSourceServer(const Cr
 
 CreateLaunchConfigurationTemplateOutcome DrsClient::CreateLaunchConfigurationTemplate(const CreateLaunchConfigurationTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateLaunchConfigurationTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateLaunchConfigurationTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateLaunchConfigurationTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -207,6 +210,7 @@ CreateLaunchConfigurationTemplateOutcome DrsClient::CreateLaunchConfigurationTem
 
 CreateReplicationConfigurationTemplateOutcome DrsClient::CreateReplicationConfigurationTemplate(const CreateReplicationConfigurationTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateReplicationConfigurationTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateReplicationConfigurationTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateReplicationConfigurationTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -216,6 +220,7 @@ CreateReplicationConfigurationTemplateOutcome DrsClient::CreateReplicationConfig
 
 DeleteJobOutcome DrsClient::DeleteJob(const DeleteJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -225,6 +230,7 @@ DeleteJobOutcome DrsClient::DeleteJob(const DeleteJobRequest& request) const
 
 DeleteLaunchConfigurationTemplateOutcome DrsClient::DeleteLaunchConfigurationTemplate(const DeleteLaunchConfigurationTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteLaunchConfigurationTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteLaunchConfigurationTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteLaunchConfigurationTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -234,6 +240,7 @@ DeleteLaunchConfigurationTemplateOutcome DrsClient::DeleteLaunchConfigurationTem
 
 DeleteRecoveryInstanceOutcome DrsClient::DeleteRecoveryInstance(const DeleteRecoveryInstanceRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteRecoveryInstance);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteRecoveryInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteRecoveryInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -243,6 +250,7 @@ DeleteRecoveryInstanceOutcome DrsClient::DeleteRecoveryInstance(const DeleteReco
 
 DeleteReplicationConfigurationTemplateOutcome DrsClient::DeleteReplicationConfigurationTemplate(const DeleteReplicationConfigurationTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteReplicationConfigurationTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteReplicationConfigurationTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteReplicationConfigurationTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -252,6 +260,7 @@ DeleteReplicationConfigurationTemplateOutcome DrsClient::DeleteReplicationConfig
 
 DeleteSourceServerOutcome DrsClient::DeleteSourceServer(const DeleteSourceServerRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteSourceServer);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteSourceServer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteSourceServer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -261,6 +270,7 @@ DeleteSourceServerOutcome DrsClient::DeleteSourceServer(const DeleteSourceServer
 
 DescribeJobLogItemsOutcome DrsClient::DescribeJobLogItems(const DescribeJobLogItemsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeJobLogItems);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeJobLogItems, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeJobLogItems, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -270,6 +280,7 @@ DescribeJobLogItemsOutcome DrsClient::DescribeJobLogItems(const DescribeJobLogIt
 
 DescribeJobsOutcome DrsClient::DescribeJobs(const DescribeJobsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeJobs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -279,6 +290,7 @@ DescribeJobsOutcome DrsClient::DescribeJobs(const DescribeJobsRequest& request) 
 
 DescribeLaunchConfigurationTemplatesOutcome DrsClient::DescribeLaunchConfigurationTemplates(const DescribeLaunchConfigurationTemplatesRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeLaunchConfigurationTemplates);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeLaunchConfigurationTemplates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeLaunchConfigurationTemplates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -288,6 +300,7 @@ DescribeLaunchConfigurationTemplatesOutcome DrsClient::DescribeLaunchConfigurati
 
 DescribeRecoveryInstancesOutcome DrsClient::DescribeRecoveryInstances(const DescribeRecoveryInstancesRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeRecoveryInstances);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeRecoveryInstances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeRecoveryInstances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -297,6 +310,7 @@ DescribeRecoveryInstancesOutcome DrsClient::DescribeRecoveryInstances(const Desc
 
 DescribeRecoverySnapshotsOutcome DrsClient::DescribeRecoverySnapshots(const DescribeRecoverySnapshotsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeRecoverySnapshots);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeRecoverySnapshots, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeRecoverySnapshots, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -306,6 +320,7 @@ DescribeRecoverySnapshotsOutcome DrsClient::DescribeRecoverySnapshots(const Desc
 
 DescribeReplicationConfigurationTemplatesOutcome DrsClient::DescribeReplicationConfigurationTemplates(const DescribeReplicationConfigurationTemplatesRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeReplicationConfigurationTemplates);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeReplicationConfigurationTemplates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeReplicationConfigurationTemplates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -315,6 +330,7 @@ DescribeReplicationConfigurationTemplatesOutcome DrsClient::DescribeReplicationC
 
 DescribeSourceServersOutcome DrsClient::DescribeSourceServers(const DescribeSourceServersRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeSourceServers);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeSourceServers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeSourceServers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -324,6 +340,7 @@ DescribeSourceServersOutcome DrsClient::DescribeSourceServers(const DescribeSour
 
 DisconnectRecoveryInstanceOutcome DrsClient::DisconnectRecoveryInstance(const DisconnectRecoveryInstanceRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisconnectRecoveryInstance);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisconnectRecoveryInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DisconnectRecoveryInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -333,6 +350,7 @@ DisconnectRecoveryInstanceOutcome DrsClient::DisconnectRecoveryInstance(const Di
 
 DisconnectSourceServerOutcome DrsClient::DisconnectSourceServer(const DisconnectSourceServerRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisconnectSourceServer);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisconnectSourceServer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DisconnectSourceServer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -342,6 +360,7 @@ DisconnectSourceServerOutcome DrsClient::DisconnectSourceServer(const Disconnect
 
 GetFailbackReplicationConfigurationOutcome DrsClient::GetFailbackReplicationConfiguration(const GetFailbackReplicationConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetFailbackReplicationConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetFailbackReplicationConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetFailbackReplicationConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -351,6 +370,7 @@ GetFailbackReplicationConfigurationOutcome DrsClient::GetFailbackReplicationConf
 
 GetLaunchConfigurationOutcome DrsClient::GetLaunchConfiguration(const GetLaunchConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetLaunchConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetLaunchConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetLaunchConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -360,6 +380,7 @@ GetLaunchConfigurationOutcome DrsClient::GetLaunchConfiguration(const GetLaunchC
 
 GetReplicationConfigurationOutcome DrsClient::GetReplicationConfiguration(const GetReplicationConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetReplicationConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetReplicationConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetReplicationConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -369,6 +390,7 @@ GetReplicationConfigurationOutcome DrsClient::GetReplicationConfiguration(const 
 
 InitializeServiceOutcome DrsClient::InitializeService(const InitializeServiceRequest& request) const
 {
+  AWS_OPERATION_GUARD(InitializeService);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, InitializeService, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, InitializeService, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -378,6 +400,7 @@ InitializeServiceOutcome DrsClient::InitializeService(const InitializeServiceReq
 
 ListExtensibleSourceServersOutcome DrsClient::ListExtensibleSourceServers(const ListExtensibleSourceServersRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListExtensibleSourceServers);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListExtensibleSourceServers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListExtensibleSourceServers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -387,6 +410,7 @@ ListExtensibleSourceServersOutcome DrsClient::ListExtensibleSourceServers(const 
 
 ListStagingAccountsOutcome DrsClient::ListStagingAccounts(const ListStagingAccountsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListStagingAccounts);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListStagingAccounts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListStagingAccounts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -396,6 +420,7 @@ ListStagingAccountsOutcome DrsClient::ListStagingAccounts(const ListStagingAccou
 
 ListTagsForResourceOutcome DrsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -411,6 +436,7 @@ ListTagsForResourceOutcome DrsClient::ListTagsForResource(const ListTagsForResou
 
 ReverseReplicationOutcome DrsClient::ReverseReplication(const ReverseReplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(ReverseReplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ReverseReplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ReverseReplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -420,6 +446,7 @@ ReverseReplicationOutcome DrsClient::ReverseReplication(const ReverseReplication
 
 StartFailbackLaunchOutcome DrsClient::StartFailbackLaunch(const StartFailbackLaunchRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartFailbackLaunch);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartFailbackLaunch, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartFailbackLaunch, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -429,6 +456,7 @@ StartFailbackLaunchOutcome DrsClient::StartFailbackLaunch(const StartFailbackLau
 
 StartRecoveryOutcome DrsClient::StartRecovery(const StartRecoveryRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartRecovery);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartRecovery, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartRecovery, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -438,6 +466,7 @@ StartRecoveryOutcome DrsClient::StartRecovery(const StartRecoveryRequest& reques
 
 StartReplicationOutcome DrsClient::StartReplication(const StartReplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartReplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartReplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartReplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -447,6 +476,7 @@ StartReplicationOutcome DrsClient::StartReplication(const StartReplicationReques
 
 StopFailbackOutcome DrsClient::StopFailback(const StopFailbackRequest& request) const
 {
+  AWS_OPERATION_GUARD(StopFailback);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopFailback, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StopFailback, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -456,6 +486,7 @@ StopFailbackOutcome DrsClient::StopFailback(const StopFailbackRequest& request) 
 
 StopReplicationOutcome DrsClient::StopReplication(const StopReplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(StopReplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopReplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StopReplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -465,6 +496,7 @@ StopReplicationOutcome DrsClient::StopReplication(const StopReplicationRequest& 
 
 TagResourceOutcome DrsClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -480,6 +512,7 @@ TagResourceOutcome DrsClient::TagResource(const TagResourceRequest& request) con
 
 TerminateRecoveryInstancesOutcome DrsClient::TerminateRecoveryInstances(const TerminateRecoveryInstancesRequest& request) const
 {
+  AWS_OPERATION_GUARD(TerminateRecoveryInstances);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TerminateRecoveryInstances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TerminateRecoveryInstances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -489,6 +522,7 @@ TerminateRecoveryInstancesOutcome DrsClient::TerminateRecoveryInstances(const Te
 
 UntagResourceOutcome DrsClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -509,6 +543,7 @@ UntagResourceOutcome DrsClient::UntagResource(const UntagResourceRequest& reques
 
 UpdateFailbackReplicationConfigurationOutcome DrsClient::UpdateFailbackReplicationConfiguration(const UpdateFailbackReplicationConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateFailbackReplicationConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateFailbackReplicationConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateFailbackReplicationConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -518,6 +553,7 @@ UpdateFailbackReplicationConfigurationOutcome DrsClient::UpdateFailbackReplicati
 
 UpdateLaunchConfigurationOutcome DrsClient::UpdateLaunchConfiguration(const UpdateLaunchConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateLaunchConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateLaunchConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateLaunchConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -527,6 +563,7 @@ UpdateLaunchConfigurationOutcome DrsClient::UpdateLaunchConfiguration(const Upda
 
 UpdateLaunchConfigurationTemplateOutcome DrsClient::UpdateLaunchConfigurationTemplate(const UpdateLaunchConfigurationTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateLaunchConfigurationTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateLaunchConfigurationTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateLaunchConfigurationTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -536,6 +573,7 @@ UpdateLaunchConfigurationTemplateOutcome DrsClient::UpdateLaunchConfigurationTem
 
 UpdateReplicationConfigurationOutcome DrsClient::UpdateReplicationConfiguration(const UpdateReplicationConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateReplicationConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateReplicationConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateReplicationConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -545,6 +583,7 @@ UpdateReplicationConfigurationOutcome DrsClient::UpdateReplicationConfiguration(
 
 UpdateReplicationConfigurationTemplateOutcome DrsClient::UpdateReplicationConfigurationTemplate(const UpdateReplicationConfigurationTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateReplicationConfigurationTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateReplicationConfigurationTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateReplicationConfigurationTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

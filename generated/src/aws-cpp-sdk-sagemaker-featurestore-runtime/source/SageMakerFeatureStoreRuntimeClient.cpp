@@ -133,6 +133,7 @@ SageMakerFeatureStoreRuntimeClient::SageMakerFeatureStoreRuntimeClient(const std
     /* End of legacy constructors due deprecation */
 SageMakerFeatureStoreRuntimeClient::~SageMakerFeatureStoreRuntimeClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<SageMakerFeatureStoreRuntimeEndpointProviderBase>& SageMakerFeatureStoreRuntimeClient::accessEndpointProvider()
@@ -155,6 +156,7 @@ void SageMakerFeatureStoreRuntimeClient::OverrideEndpoint(const Aws::String& end
 
 BatchGetRecordOutcome SageMakerFeatureStoreRuntimeClient::BatchGetRecord(const BatchGetRecordRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchGetRecord);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchGetRecord, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchGetRecord, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -164,6 +166,7 @@ BatchGetRecordOutcome SageMakerFeatureStoreRuntimeClient::BatchGetRecord(const B
 
 DeleteRecordOutcome SageMakerFeatureStoreRuntimeClient::DeleteRecord(const DeleteRecordRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteRecord);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteRecord, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FeatureGroupNameHasBeenSet())
   {
@@ -189,6 +192,7 @@ DeleteRecordOutcome SageMakerFeatureStoreRuntimeClient::DeleteRecord(const Delet
 
 GetRecordOutcome SageMakerFeatureStoreRuntimeClient::GetRecord(const GetRecordRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetRecord);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetRecord, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FeatureGroupNameHasBeenSet())
   {
@@ -209,6 +213,7 @@ GetRecordOutcome SageMakerFeatureStoreRuntimeClient::GetRecord(const GetRecordRe
 
 PutRecordOutcome SageMakerFeatureStoreRuntimeClient::PutRecord(const PutRecordRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutRecord);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutRecord, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FeatureGroupNameHasBeenSet())
   {

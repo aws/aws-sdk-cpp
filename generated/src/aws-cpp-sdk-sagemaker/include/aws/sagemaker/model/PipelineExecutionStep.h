@@ -10,6 +10,7 @@
 #include <aws/sagemaker/model/StepStatus.h>
 #include <aws/sagemaker/model/CacheHitResult.h>
 #include <aws/sagemaker/model/PipelineExecutionStepMetadata.h>
+#include <aws/sagemaker/model/SelectiveExecutionResult.h>
 #include <utility>
 
 namespace Aws
@@ -396,6 +397,43 @@ namespace Model
      */
     inline PipelineExecutionStep& WithMetadata(PipelineExecutionStepMetadata&& value) { SetMetadata(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The ARN from an execution of the current pipeline from which results are
+     * reused for this step.</p>
+     */
+    inline const SelectiveExecutionResult& GetSelectiveExecutionResult() const{ return m_selectiveExecutionResult; }
+
+    /**
+     * <p>The ARN from an execution of the current pipeline from which results are
+     * reused for this step.</p>
+     */
+    inline bool SelectiveExecutionResultHasBeenSet() const { return m_selectiveExecutionResultHasBeenSet; }
+
+    /**
+     * <p>The ARN from an execution of the current pipeline from which results are
+     * reused for this step.</p>
+     */
+    inline void SetSelectiveExecutionResult(const SelectiveExecutionResult& value) { m_selectiveExecutionResultHasBeenSet = true; m_selectiveExecutionResult = value; }
+
+    /**
+     * <p>The ARN from an execution of the current pipeline from which results are
+     * reused for this step.</p>
+     */
+    inline void SetSelectiveExecutionResult(SelectiveExecutionResult&& value) { m_selectiveExecutionResultHasBeenSet = true; m_selectiveExecutionResult = std::move(value); }
+
+    /**
+     * <p>The ARN from an execution of the current pipeline from which results are
+     * reused for this step.</p>
+     */
+    inline PipelineExecutionStep& WithSelectiveExecutionResult(const SelectiveExecutionResult& value) { SetSelectiveExecutionResult(value); return *this;}
+
+    /**
+     * <p>The ARN from an execution of the current pipeline from which results are
+     * reused for this step.</p>
+     */
+    inline PipelineExecutionStep& WithSelectiveExecutionResult(SelectiveExecutionResult&& value) { SetSelectiveExecutionResult(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_stepName;
@@ -427,6 +465,9 @@ namespace Model
 
     PipelineExecutionStepMetadata m_metadata;
     bool m_metadataHasBeenSet = false;
+
+    SelectiveExecutionResult m_selectiveExecutionResult;
+    bool m_selectiveExecutionResultHasBeenSet = false;
   };
 
 } // namespace Model

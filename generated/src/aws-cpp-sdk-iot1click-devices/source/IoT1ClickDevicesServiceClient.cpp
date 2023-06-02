@@ -142,6 +142,7 @@ IoT1ClickDevicesServiceClient::IoT1ClickDevicesServiceClient(const std::shared_p
     /* End of legacy constructors due deprecation */
 IoT1ClickDevicesServiceClient::~IoT1ClickDevicesServiceClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<IoT1ClickDevicesServiceEndpointProviderBase>& IoT1ClickDevicesServiceClient::accessEndpointProvider()
@@ -164,6 +165,7 @@ void IoT1ClickDevicesServiceClient::OverrideEndpoint(const Aws::String& endpoint
 
 ClaimDevicesByClaimCodeOutcome IoT1ClickDevicesServiceClient::ClaimDevicesByClaimCode(const ClaimDevicesByClaimCodeRequest& request) const
 {
+  AWS_OPERATION_GUARD(ClaimDevicesByClaimCode);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ClaimDevicesByClaimCode, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ClaimCodeHasBeenSet())
   {
@@ -179,6 +181,7 @@ ClaimDevicesByClaimCodeOutcome IoT1ClickDevicesServiceClient::ClaimDevicesByClai
 
 DescribeDeviceOutcome IoT1ClickDevicesServiceClient::DescribeDevice(const DescribeDeviceRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeDevice);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeDevice, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DeviceIdHasBeenSet())
   {
@@ -194,6 +197,7 @@ DescribeDeviceOutcome IoT1ClickDevicesServiceClient::DescribeDevice(const Descri
 
 FinalizeDeviceClaimOutcome IoT1ClickDevicesServiceClient::FinalizeDeviceClaim(const FinalizeDeviceClaimRequest& request) const
 {
+  AWS_OPERATION_GUARD(FinalizeDeviceClaim);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, FinalizeDeviceClaim, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DeviceIdHasBeenSet())
   {
@@ -210,6 +214,7 @@ FinalizeDeviceClaimOutcome IoT1ClickDevicesServiceClient::FinalizeDeviceClaim(co
 
 GetDeviceMethodsOutcome IoT1ClickDevicesServiceClient::GetDeviceMethods(const GetDeviceMethodsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDeviceMethods);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDeviceMethods, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DeviceIdHasBeenSet())
   {
@@ -226,6 +231,7 @@ GetDeviceMethodsOutcome IoT1ClickDevicesServiceClient::GetDeviceMethods(const Ge
 
 InitiateDeviceClaimOutcome IoT1ClickDevicesServiceClient::InitiateDeviceClaim(const InitiateDeviceClaimRequest& request) const
 {
+  AWS_OPERATION_GUARD(InitiateDeviceClaim);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, InitiateDeviceClaim, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DeviceIdHasBeenSet())
   {
@@ -242,6 +248,7 @@ InitiateDeviceClaimOutcome IoT1ClickDevicesServiceClient::InitiateDeviceClaim(co
 
 InvokeDeviceMethodOutcome IoT1ClickDevicesServiceClient::InvokeDeviceMethod(const InvokeDeviceMethodRequest& request) const
 {
+  AWS_OPERATION_GUARD(InvokeDeviceMethod);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, InvokeDeviceMethod, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DeviceIdHasBeenSet())
   {
@@ -258,6 +265,7 @@ InvokeDeviceMethodOutcome IoT1ClickDevicesServiceClient::InvokeDeviceMethod(cons
 
 ListDeviceEventsOutcome IoT1ClickDevicesServiceClient::ListDeviceEvents(const ListDeviceEventsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDeviceEvents);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDeviceEvents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DeviceIdHasBeenSet())
   {
@@ -284,6 +292,7 @@ ListDeviceEventsOutcome IoT1ClickDevicesServiceClient::ListDeviceEvents(const Li
 
 ListDevicesOutcome IoT1ClickDevicesServiceClient::ListDevices(const ListDevicesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDevices);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDevices, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDevices, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -293,6 +302,7 @@ ListDevicesOutcome IoT1ClickDevicesServiceClient::ListDevices(const ListDevicesR
 
 ListTagsForResourceOutcome IoT1ClickDevicesServiceClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -308,6 +318,7 @@ ListTagsForResourceOutcome IoT1ClickDevicesServiceClient::ListTagsForResource(co
 
 TagResourceOutcome IoT1ClickDevicesServiceClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -323,6 +334,7 @@ TagResourceOutcome IoT1ClickDevicesServiceClient::TagResource(const TagResourceR
 
 UnclaimDeviceOutcome IoT1ClickDevicesServiceClient::UnclaimDevice(const UnclaimDeviceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UnclaimDevice);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UnclaimDevice, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DeviceIdHasBeenSet())
   {
@@ -339,6 +351,7 @@ UnclaimDeviceOutcome IoT1ClickDevicesServiceClient::UnclaimDevice(const UnclaimD
 
 UntagResourceOutcome IoT1ClickDevicesServiceClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -359,6 +372,7 @@ UntagResourceOutcome IoT1ClickDevicesServiceClient::UntagResource(const UntagRes
 
 UpdateDeviceStateOutcome IoT1ClickDevicesServiceClient::UpdateDeviceState(const UpdateDeviceStateRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateDeviceState);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDeviceState, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DeviceIdHasBeenSet())
   {

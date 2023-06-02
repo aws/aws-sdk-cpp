@@ -163,6 +163,7 @@ PanoramaClient::PanoramaClient(const std::shared_ptr<AWSCredentialsProvider>& cr
     /* End of legacy constructors due deprecation */
 PanoramaClient::~PanoramaClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<PanoramaEndpointProviderBase>& PanoramaClient::accessEndpointProvider()
@@ -185,6 +186,7 @@ void PanoramaClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CreateApplicationInstanceOutcome PanoramaClient::CreateApplicationInstance(const CreateApplicationInstanceRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateApplicationInstance);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateApplicationInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateApplicationInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -194,6 +196,7 @@ CreateApplicationInstanceOutcome PanoramaClient::CreateApplicationInstance(const
 
 CreateJobForDevicesOutcome PanoramaClient::CreateJobForDevices(const CreateJobForDevicesRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateJobForDevices);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateJobForDevices, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateJobForDevices, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -203,6 +206,7 @@ CreateJobForDevicesOutcome PanoramaClient::CreateJobForDevices(const CreateJobFo
 
 CreateNodeFromTemplateJobOutcome PanoramaClient::CreateNodeFromTemplateJob(const CreateNodeFromTemplateJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateNodeFromTemplateJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateNodeFromTemplateJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateNodeFromTemplateJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -212,6 +216,7 @@ CreateNodeFromTemplateJobOutcome PanoramaClient::CreateNodeFromTemplateJob(const
 
 CreatePackageOutcome PanoramaClient::CreatePackage(const CreatePackageRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreatePackage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreatePackage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreatePackage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -221,6 +226,7 @@ CreatePackageOutcome PanoramaClient::CreatePackage(const CreatePackageRequest& r
 
 CreatePackageImportJobOutcome PanoramaClient::CreatePackageImportJob(const CreatePackageImportJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreatePackageImportJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreatePackageImportJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreatePackageImportJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -230,6 +236,7 @@ CreatePackageImportJobOutcome PanoramaClient::CreatePackageImportJob(const Creat
 
 DeleteDeviceOutcome PanoramaClient::DeleteDevice(const DeleteDeviceRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteDevice);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDevice, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DeviceIdHasBeenSet())
   {
@@ -245,6 +252,7 @@ DeleteDeviceOutcome PanoramaClient::DeleteDevice(const DeleteDeviceRequest& requ
 
 DeletePackageOutcome PanoramaClient::DeletePackage(const DeletePackageRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeletePackage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeletePackage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PackageIdHasBeenSet())
   {
@@ -260,6 +268,7 @@ DeletePackageOutcome PanoramaClient::DeletePackage(const DeletePackageRequest& r
 
 DeregisterPackageVersionOutcome PanoramaClient::DeregisterPackageVersion(const DeregisterPackageVersionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeregisterPackageVersion);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeregisterPackageVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PackageIdHasBeenSet())
   {
@@ -289,6 +298,7 @@ DeregisterPackageVersionOutcome PanoramaClient::DeregisterPackageVersion(const D
 
 DescribeApplicationInstanceOutcome PanoramaClient::DescribeApplicationInstance(const DescribeApplicationInstanceRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeApplicationInstance);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeApplicationInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationInstanceIdHasBeenSet())
   {
@@ -304,6 +314,7 @@ DescribeApplicationInstanceOutcome PanoramaClient::DescribeApplicationInstance(c
 
 DescribeApplicationInstanceDetailsOutcome PanoramaClient::DescribeApplicationInstanceDetails(const DescribeApplicationInstanceDetailsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeApplicationInstanceDetails);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeApplicationInstanceDetails, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationInstanceIdHasBeenSet())
   {
@@ -320,6 +331,7 @@ DescribeApplicationInstanceDetailsOutcome PanoramaClient::DescribeApplicationIns
 
 DescribeDeviceOutcome PanoramaClient::DescribeDevice(const DescribeDeviceRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeDevice);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeDevice, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DeviceIdHasBeenSet())
   {
@@ -335,6 +347,7 @@ DescribeDeviceOutcome PanoramaClient::DescribeDevice(const DescribeDeviceRequest
 
 DescribeDeviceJobOutcome PanoramaClient::DescribeDeviceJob(const DescribeDeviceJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeDeviceJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeDeviceJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.JobIdHasBeenSet())
   {
@@ -350,6 +363,7 @@ DescribeDeviceJobOutcome PanoramaClient::DescribeDeviceJob(const DescribeDeviceJ
 
 DescribeNodeOutcome PanoramaClient::DescribeNode(const DescribeNodeRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeNode);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeNode, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NodeIdHasBeenSet())
   {
@@ -365,6 +379,7 @@ DescribeNodeOutcome PanoramaClient::DescribeNode(const DescribeNodeRequest& requ
 
 DescribeNodeFromTemplateJobOutcome PanoramaClient::DescribeNodeFromTemplateJob(const DescribeNodeFromTemplateJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeNodeFromTemplateJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeNodeFromTemplateJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.JobIdHasBeenSet())
   {
@@ -380,6 +395,7 @@ DescribeNodeFromTemplateJobOutcome PanoramaClient::DescribeNodeFromTemplateJob(c
 
 DescribePackageOutcome PanoramaClient::DescribePackage(const DescribePackageRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribePackage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribePackage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PackageIdHasBeenSet())
   {
@@ -395,6 +411,7 @@ DescribePackageOutcome PanoramaClient::DescribePackage(const DescribePackageRequ
 
 DescribePackageImportJobOutcome PanoramaClient::DescribePackageImportJob(const DescribePackageImportJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribePackageImportJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribePackageImportJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.JobIdHasBeenSet())
   {
@@ -410,6 +427,7 @@ DescribePackageImportJobOutcome PanoramaClient::DescribePackageImportJob(const D
 
 DescribePackageVersionOutcome PanoramaClient::DescribePackageVersion(const DescribePackageVersionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribePackageVersion);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribePackageVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PackageIdHasBeenSet())
   {
@@ -432,6 +450,7 @@ DescribePackageVersionOutcome PanoramaClient::DescribePackageVersion(const Descr
 
 ListApplicationInstanceDependenciesOutcome PanoramaClient::ListApplicationInstanceDependencies(const ListApplicationInstanceDependenciesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListApplicationInstanceDependencies);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListApplicationInstanceDependencies, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationInstanceIdHasBeenSet())
   {
@@ -448,6 +467,7 @@ ListApplicationInstanceDependenciesOutcome PanoramaClient::ListApplicationInstan
 
 ListApplicationInstanceNodeInstancesOutcome PanoramaClient::ListApplicationInstanceNodeInstances(const ListApplicationInstanceNodeInstancesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListApplicationInstanceNodeInstances);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListApplicationInstanceNodeInstances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationInstanceIdHasBeenSet())
   {
@@ -464,6 +484,7 @@ ListApplicationInstanceNodeInstancesOutcome PanoramaClient::ListApplicationInsta
 
 ListApplicationInstancesOutcome PanoramaClient::ListApplicationInstances(const ListApplicationInstancesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListApplicationInstances);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListApplicationInstances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListApplicationInstances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -473,6 +494,7 @@ ListApplicationInstancesOutcome PanoramaClient::ListApplicationInstances(const L
 
 ListDevicesOutcome PanoramaClient::ListDevices(const ListDevicesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDevices);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDevices, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDevices, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -482,6 +504,7 @@ ListDevicesOutcome PanoramaClient::ListDevices(const ListDevicesRequest& request
 
 ListDevicesJobsOutcome PanoramaClient::ListDevicesJobs(const ListDevicesJobsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDevicesJobs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDevicesJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDevicesJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -491,6 +514,7 @@ ListDevicesJobsOutcome PanoramaClient::ListDevicesJobs(const ListDevicesJobsRequ
 
 ListNodeFromTemplateJobsOutcome PanoramaClient::ListNodeFromTemplateJobs(const ListNodeFromTemplateJobsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListNodeFromTemplateJobs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListNodeFromTemplateJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListNodeFromTemplateJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -500,6 +524,7 @@ ListNodeFromTemplateJobsOutcome PanoramaClient::ListNodeFromTemplateJobs(const L
 
 ListNodesOutcome PanoramaClient::ListNodes(const ListNodesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListNodes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListNodes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListNodes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -509,6 +534,7 @@ ListNodesOutcome PanoramaClient::ListNodes(const ListNodesRequest& request) cons
 
 ListPackageImportJobsOutcome PanoramaClient::ListPackageImportJobs(const ListPackageImportJobsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListPackageImportJobs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPackageImportJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListPackageImportJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -518,6 +544,7 @@ ListPackageImportJobsOutcome PanoramaClient::ListPackageImportJobs(const ListPac
 
 ListPackagesOutcome PanoramaClient::ListPackages(const ListPackagesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListPackages);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPackages, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListPackages, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -527,6 +554,7 @@ ListPackagesOutcome PanoramaClient::ListPackages(const ListPackagesRequest& requ
 
 ListTagsForResourceOutcome PanoramaClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -542,6 +570,7 @@ ListTagsForResourceOutcome PanoramaClient::ListTagsForResource(const ListTagsFor
 
 ProvisionDeviceOutcome PanoramaClient::ProvisionDevice(const ProvisionDeviceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ProvisionDevice);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ProvisionDevice, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ProvisionDevice, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -551,6 +580,7 @@ ProvisionDeviceOutcome PanoramaClient::ProvisionDevice(const ProvisionDeviceRequ
 
 RegisterPackageVersionOutcome PanoramaClient::RegisterPackageVersion(const RegisterPackageVersionRequest& request) const
 {
+  AWS_OPERATION_GUARD(RegisterPackageVersion);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RegisterPackageVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PackageIdHasBeenSet())
   {
@@ -580,6 +610,7 @@ RegisterPackageVersionOutcome PanoramaClient::RegisterPackageVersion(const Regis
 
 RemoveApplicationInstanceOutcome PanoramaClient::RemoveApplicationInstance(const RemoveApplicationInstanceRequest& request) const
 {
+  AWS_OPERATION_GUARD(RemoveApplicationInstance);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RemoveApplicationInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationInstanceIdHasBeenSet())
   {
@@ -595,6 +626,7 @@ RemoveApplicationInstanceOutcome PanoramaClient::RemoveApplicationInstance(const
 
 SignalApplicationInstanceNodeInstancesOutcome PanoramaClient::SignalApplicationInstanceNodeInstances(const SignalApplicationInstanceNodeInstancesRequest& request) const
 {
+  AWS_OPERATION_GUARD(SignalApplicationInstanceNodeInstances);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SignalApplicationInstanceNodeInstances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationInstanceIdHasBeenSet())
   {
@@ -611,6 +643,7 @@ SignalApplicationInstanceNodeInstancesOutcome PanoramaClient::SignalApplicationI
 
 TagResourceOutcome PanoramaClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -626,6 +659,7 @@ TagResourceOutcome PanoramaClient::TagResource(const TagResourceRequest& request
 
 UntagResourceOutcome PanoramaClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -646,6 +680,7 @@ UntagResourceOutcome PanoramaClient::UntagResource(const UntagResourceRequest& r
 
 UpdateDeviceMetadataOutcome PanoramaClient::UpdateDeviceMetadata(const UpdateDeviceMetadataRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateDeviceMetadata);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDeviceMetadata, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DeviceIdHasBeenSet())
   {

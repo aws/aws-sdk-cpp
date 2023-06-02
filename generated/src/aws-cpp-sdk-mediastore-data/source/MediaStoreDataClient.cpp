@@ -134,6 +134,7 @@ MediaStoreDataClient::MediaStoreDataClient(const std::shared_ptr<AWSCredentialsP
     /* End of legacy constructors due deprecation */
 MediaStoreDataClient::~MediaStoreDataClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<MediaStoreDataEndpointProviderBase>& MediaStoreDataClient::accessEndpointProvider()
@@ -156,6 +157,7 @@ void MediaStoreDataClient::OverrideEndpoint(const Aws::String& endpoint)
 
 DeleteObjectOutcome MediaStoreDataClient::DeleteObject(const DeleteObjectRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteObject);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteObject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PathHasBeenSet())
   {
@@ -170,6 +172,7 @@ DeleteObjectOutcome MediaStoreDataClient::DeleteObject(const DeleteObjectRequest
 
 DescribeObjectOutcome MediaStoreDataClient::DescribeObject(const DescribeObjectRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeObject);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeObject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PathHasBeenSet())
   {
@@ -184,6 +187,7 @@ DescribeObjectOutcome MediaStoreDataClient::DescribeObject(const DescribeObjectR
 
 GetObjectOutcome MediaStoreDataClient::GetObject(const GetObjectRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetObject);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetObject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PathHasBeenSet())
   {
@@ -198,6 +202,7 @@ GetObjectOutcome MediaStoreDataClient::GetObject(const GetObjectRequest& request
 
 ListItemsOutcome MediaStoreDataClient::ListItems(const ListItemsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListItems);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListItems, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListItems, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -206,6 +211,7 @@ ListItemsOutcome MediaStoreDataClient::ListItems(const ListItemsRequest& request
 
 PutObjectOutcome MediaStoreDataClient::PutObject(const PutObjectRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutObject);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutObject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PathHasBeenSet())
   {

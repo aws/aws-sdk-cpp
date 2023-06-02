@@ -232,26 +232,26 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the event data store includes events from all regions, or
-     * only from the region in which the event data store is created.</p>
+     * <p>Specifies whether the event data store includes events from all Regions, or
+     * only from the Region in which the event data store is created.</p>
      */
     inline bool GetMultiRegionEnabled() const{ return m_multiRegionEnabled; }
 
     /**
-     * <p>Specifies whether the event data store includes events from all regions, or
-     * only from the region in which the event data store is created.</p>
+     * <p>Specifies whether the event data store includes events from all Regions, or
+     * only from the Region in which the event data store is created.</p>
      */
     inline bool MultiRegionEnabledHasBeenSet() const { return m_multiRegionEnabledHasBeenSet; }
 
     /**
-     * <p>Specifies whether the event data store includes events from all regions, or
-     * only from the region in which the event data store is created.</p>
+     * <p>Specifies whether the event data store includes events from all Regions, or
+     * only from the Region in which the event data store is created.</p>
      */
     inline void SetMultiRegionEnabled(bool value) { m_multiRegionEnabledHasBeenSet = true; m_multiRegionEnabled = value; }
 
     /**
-     * <p>Specifies whether the event data store includes events from all regions, or
-     * only from the region in which the event data store is created.</p>
+     * <p>Specifies whether the event data store includes events from all Regions, or
+     * only from the Region in which the event data store is created.</p>
      */
     inline CreateEventDataStoreRequest& WithMultiRegionEnabled(bool value) { SetMultiRegionEnabled(value); return *this;}
 
@@ -544,6 +544,31 @@ namespace Model
      */
     inline CreateEventDataStoreRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
+
+    /**
+     * <p>Specifies whether the event data store should start ingesting live events.
+     * The default is true.</p>
+     */
+    inline bool GetStartIngestion() const{ return m_startIngestion; }
+
+    /**
+     * <p>Specifies whether the event data store should start ingesting live events.
+     * The default is true.</p>
+     */
+    inline bool StartIngestionHasBeenSet() const { return m_startIngestionHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the event data store should start ingesting live events.
+     * The default is true.</p>
+     */
+    inline void SetStartIngestion(bool value) { m_startIngestionHasBeenSet = true; m_startIngestion = value; }
+
+    /**
+     * <p>Specifies whether the event data store should start ingesting live events.
+     * The default is true.</p>
+     */
+    inline CreateEventDataStoreRequest& WithStartIngestion(bool value) { SetStartIngestion(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -569,6 +594,9 @@ namespace Model
 
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet = false;
+
+    bool m_startIngestion;
+    bool m_startIngestionHasBeenSet = false;
   };
 
 } // namespace Model

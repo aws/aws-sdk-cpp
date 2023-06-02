@@ -208,6 +208,7 @@ Macie2Client::Macie2Client(const std::shared_ptr<AWSCredentialsProvider>& creden
     /* End of legacy constructors due deprecation */
 Macie2Client::~Macie2Client()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<Macie2EndpointProviderBase>& Macie2Client::accessEndpointProvider()
@@ -230,6 +231,7 @@ void Macie2Client::OverrideEndpoint(const Aws::String& endpoint)
 
 AcceptInvitationOutcome Macie2Client::AcceptInvitation(const AcceptInvitationRequest& request) const
 {
+  AWS_OPERATION_GUARD(AcceptInvitation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AcceptInvitation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AcceptInvitation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -239,6 +241,7 @@ AcceptInvitationOutcome Macie2Client::AcceptInvitation(const AcceptInvitationReq
 
 BatchGetCustomDataIdentifiersOutcome Macie2Client::BatchGetCustomDataIdentifiers(const BatchGetCustomDataIdentifiersRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchGetCustomDataIdentifiers);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchGetCustomDataIdentifiers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchGetCustomDataIdentifiers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -248,6 +251,7 @@ BatchGetCustomDataIdentifiersOutcome Macie2Client::BatchGetCustomDataIdentifiers
 
 CreateAllowListOutcome Macie2Client::CreateAllowList(const CreateAllowListRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateAllowList);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAllowList, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateAllowList, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -257,6 +261,7 @@ CreateAllowListOutcome Macie2Client::CreateAllowList(const CreateAllowListReques
 
 CreateClassificationJobOutcome Macie2Client::CreateClassificationJob(const CreateClassificationJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateClassificationJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateClassificationJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateClassificationJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -266,6 +271,7 @@ CreateClassificationJobOutcome Macie2Client::CreateClassificationJob(const Creat
 
 CreateCustomDataIdentifierOutcome Macie2Client::CreateCustomDataIdentifier(const CreateCustomDataIdentifierRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateCustomDataIdentifier);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateCustomDataIdentifier, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateCustomDataIdentifier, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -275,6 +281,7 @@ CreateCustomDataIdentifierOutcome Macie2Client::CreateCustomDataIdentifier(const
 
 CreateFindingsFilterOutcome Macie2Client::CreateFindingsFilter(const CreateFindingsFilterRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateFindingsFilter);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateFindingsFilter, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateFindingsFilter, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -284,6 +291,7 @@ CreateFindingsFilterOutcome Macie2Client::CreateFindingsFilter(const CreateFindi
 
 CreateInvitationsOutcome Macie2Client::CreateInvitations(const CreateInvitationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateInvitations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateInvitations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateInvitations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -293,6 +301,7 @@ CreateInvitationsOutcome Macie2Client::CreateInvitations(const CreateInvitations
 
 CreateMemberOutcome Macie2Client::CreateMember(const CreateMemberRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateMember);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateMember, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateMember, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -302,6 +311,7 @@ CreateMemberOutcome Macie2Client::CreateMember(const CreateMemberRequest& reques
 
 CreateSampleFindingsOutcome Macie2Client::CreateSampleFindings(const CreateSampleFindingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateSampleFindings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateSampleFindings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateSampleFindings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -311,6 +321,7 @@ CreateSampleFindingsOutcome Macie2Client::CreateSampleFindings(const CreateSampl
 
 DeclineInvitationsOutcome Macie2Client::DeclineInvitations(const DeclineInvitationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeclineInvitations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeclineInvitations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeclineInvitations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -320,6 +331,7 @@ DeclineInvitationsOutcome Macie2Client::DeclineInvitations(const DeclineInvitati
 
 DeleteAllowListOutcome Macie2Client::DeleteAllowList(const DeleteAllowListRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteAllowList);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAllowList, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -335,6 +347,7 @@ DeleteAllowListOutcome Macie2Client::DeleteAllowList(const DeleteAllowListReques
 
 DeleteCustomDataIdentifierOutcome Macie2Client::DeleteCustomDataIdentifier(const DeleteCustomDataIdentifierRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteCustomDataIdentifier);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteCustomDataIdentifier, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -350,6 +363,7 @@ DeleteCustomDataIdentifierOutcome Macie2Client::DeleteCustomDataIdentifier(const
 
 DeleteFindingsFilterOutcome Macie2Client::DeleteFindingsFilter(const DeleteFindingsFilterRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteFindingsFilter);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteFindingsFilter, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -365,6 +379,7 @@ DeleteFindingsFilterOutcome Macie2Client::DeleteFindingsFilter(const DeleteFindi
 
 DeleteInvitationsOutcome Macie2Client::DeleteInvitations(const DeleteInvitationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteInvitations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteInvitations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteInvitations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -374,6 +389,7 @@ DeleteInvitationsOutcome Macie2Client::DeleteInvitations(const DeleteInvitations
 
 DeleteMemberOutcome Macie2Client::DeleteMember(const DeleteMemberRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteMember);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteMember, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -389,6 +405,7 @@ DeleteMemberOutcome Macie2Client::DeleteMember(const DeleteMemberRequest& reques
 
 DescribeBucketsOutcome Macie2Client::DescribeBuckets(const DescribeBucketsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeBuckets);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeBuckets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeBuckets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -398,6 +415,7 @@ DescribeBucketsOutcome Macie2Client::DescribeBuckets(const DescribeBucketsReques
 
 DescribeClassificationJobOutcome Macie2Client::DescribeClassificationJob(const DescribeClassificationJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeClassificationJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeClassificationJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.JobIdHasBeenSet())
   {
@@ -413,6 +431,7 @@ DescribeClassificationJobOutcome Macie2Client::DescribeClassificationJob(const D
 
 DescribeOrganizationConfigurationOutcome Macie2Client::DescribeOrganizationConfiguration(const DescribeOrganizationConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeOrganizationConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeOrganizationConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeOrganizationConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -422,6 +441,7 @@ DescribeOrganizationConfigurationOutcome Macie2Client::DescribeOrganizationConfi
 
 DisableMacieOutcome Macie2Client::DisableMacie(const DisableMacieRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisableMacie);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisableMacie, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DisableMacie, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -431,6 +451,7 @@ DisableMacieOutcome Macie2Client::DisableMacie(const DisableMacieRequest& reques
 
 DisableOrganizationAdminAccountOutcome Macie2Client::DisableOrganizationAdminAccount(const DisableOrganizationAdminAccountRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisableOrganizationAdminAccount);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisableOrganizationAdminAccount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AdminAccountIdHasBeenSet())
   {
@@ -445,6 +466,7 @@ DisableOrganizationAdminAccountOutcome Macie2Client::DisableOrganizationAdminAcc
 
 DisassociateFromAdministratorAccountOutcome Macie2Client::DisassociateFromAdministratorAccount(const DisassociateFromAdministratorAccountRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociateFromAdministratorAccount);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateFromAdministratorAccount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DisassociateFromAdministratorAccount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -454,6 +476,7 @@ DisassociateFromAdministratorAccountOutcome Macie2Client::DisassociateFromAdmini
 
 DisassociateFromMasterAccountOutcome Macie2Client::DisassociateFromMasterAccount(const DisassociateFromMasterAccountRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociateFromMasterAccount);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateFromMasterAccount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DisassociateFromMasterAccount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -463,6 +486,7 @@ DisassociateFromMasterAccountOutcome Macie2Client::DisassociateFromMasterAccount
 
 DisassociateMemberOutcome Macie2Client::DisassociateMember(const DisassociateMemberRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociateMember);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateMember, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -478,6 +502,7 @@ DisassociateMemberOutcome Macie2Client::DisassociateMember(const DisassociateMem
 
 EnableMacieOutcome Macie2Client::EnableMacie(const EnableMacieRequest& request) const
 {
+  AWS_OPERATION_GUARD(EnableMacie);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, EnableMacie, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, EnableMacie, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -487,6 +512,7 @@ EnableMacieOutcome Macie2Client::EnableMacie(const EnableMacieRequest& request) 
 
 EnableOrganizationAdminAccountOutcome Macie2Client::EnableOrganizationAdminAccount(const EnableOrganizationAdminAccountRequest& request) const
 {
+  AWS_OPERATION_GUARD(EnableOrganizationAdminAccount);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, EnableOrganizationAdminAccount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, EnableOrganizationAdminAccount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -496,6 +522,7 @@ EnableOrganizationAdminAccountOutcome Macie2Client::EnableOrganizationAdminAccou
 
 GetAdministratorAccountOutcome Macie2Client::GetAdministratorAccount(const GetAdministratorAccountRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetAdministratorAccount);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAdministratorAccount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetAdministratorAccount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -505,6 +532,7 @@ GetAdministratorAccountOutcome Macie2Client::GetAdministratorAccount(const GetAd
 
 GetAllowListOutcome Macie2Client::GetAllowList(const GetAllowListRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetAllowList);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAllowList, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -520,6 +548,7 @@ GetAllowListOutcome Macie2Client::GetAllowList(const GetAllowListRequest& reques
 
 GetAutomatedDiscoveryConfigurationOutcome Macie2Client::GetAutomatedDiscoveryConfiguration(const GetAutomatedDiscoveryConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetAutomatedDiscoveryConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAutomatedDiscoveryConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetAutomatedDiscoveryConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -529,6 +558,7 @@ GetAutomatedDiscoveryConfigurationOutcome Macie2Client::GetAutomatedDiscoveryCon
 
 GetBucketStatisticsOutcome Macie2Client::GetBucketStatistics(const GetBucketStatisticsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetBucketStatistics);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBucketStatistics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetBucketStatistics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -538,6 +568,7 @@ GetBucketStatisticsOutcome Macie2Client::GetBucketStatistics(const GetBucketStat
 
 GetClassificationExportConfigurationOutcome Macie2Client::GetClassificationExportConfiguration(const GetClassificationExportConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetClassificationExportConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetClassificationExportConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetClassificationExportConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -547,6 +578,7 @@ GetClassificationExportConfigurationOutcome Macie2Client::GetClassificationExpor
 
 GetClassificationScopeOutcome Macie2Client::GetClassificationScope(const GetClassificationScopeRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetClassificationScope);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetClassificationScope, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -562,6 +594,7 @@ GetClassificationScopeOutcome Macie2Client::GetClassificationScope(const GetClas
 
 GetCustomDataIdentifierOutcome Macie2Client::GetCustomDataIdentifier(const GetCustomDataIdentifierRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetCustomDataIdentifier);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCustomDataIdentifier, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -577,6 +610,7 @@ GetCustomDataIdentifierOutcome Macie2Client::GetCustomDataIdentifier(const GetCu
 
 GetFindingStatisticsOutcome Macie2Client::GetFindingStatistics(const GetFindingStatisticsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetFindingStatistics);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetFindingStatistics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetFindingStatistics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -586,6 +620,7 @@ GetFindingStatisticsOutcome Macie2Client::GetFindingStatistics(const GetFindingS
 
 GetFindingsOutcome Macie2Client::GetFindings(const GetFindingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetFindings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetFindings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetFindings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -595,6 +630,7 @@ GetFindingsOutcome Macie2Client::GetFindings(const GetFindingsRequest& request) 
 
 GetFindingsFilterOutcome Macie2Client::GetFindingsFilter(const GetFindingsFilterRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetFindingsFilter);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetFindingsFilter, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -610,6 +646,7 @@ GetFindingsFilterOutcome Macie2Client::GetFindingsFilter(const GetFindingsFilter
 
 GetFindingsPublicationConfigurationOutcome Macie2Client::GetFindingsPublicationConfiguration(const GetFindingsPublicationConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetFindingsPublicationConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetFindingsPublicationConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetFindingsPublicationConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -619,6 +656,7 @@ GetFindingsPublicationConfigurationOutcome Macie2Client::GetFindingsPublicationC
 
 GetInvitationsCountOutcome Macie2Client::GetInvitationsCount(const GetInvitationsCountRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetInvitationsCount);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetInvitationsCount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetInvitationsCount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -628,6 +666,7 @@ GetInvitationsCountOutcome Macie2Client::GetInvitationsCount(const GetInvitation
 
 GetMacieSessionOutcome Macie2Client::GetMacieSession(const GetMacieSessionRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetMacieSession);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMacieSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetMacieSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -637,6 +676,7 @@ GetMacieSessionOutcome Macie2Client::GetMacieSession(const GetMacieSessionReques
 
 GetMasterAccountOutcome Macie2Client::GetMasterAccount(const GetMasterAccountRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetMasterAccount);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMasterAccount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetMasterAccount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -646,6 +686,7 @@ GetMasterAccountOutcome Macie2Client::GetMasterAccount(const GetMasterAccountReq
 
 GetMemberOutcome Macie2Client::GetMember(const GetMemberRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetMember);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMember, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -661,6 +702,7 @@ GetMemberOutcome Macie2Client::GetMember(const GetMemberRequest& request) const
 
 GetResourceProfileOutcome Macie2Client::GetResourceProfile(const GetResourceProfileRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetResourceProfile);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetResourceProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -675,6 +717,7 @@ GetResourceProfileOutcome Macie2Client::GetResourceProfile(const GetResourceProf
 
 GetRevealConfigurationOutcome Macie2Client::GetRevealConfiguration(const GetRevealConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetRevealConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetRevealConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetRevealConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -684,6 +727,7 @@ GetRevealConfigurationOutcome Macie2Client::GetRevealConfiguration(const GetReve
 
 GetSensitiveDataOccurrencesOutcome Macie2Client::GetSensitiveDataOccurrences(const GetSensitiveDataOccurrencesRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSensitiveDataOccurrences);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSensitiveDataOccurrences, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FindingIdHasBeenSet())
   {
@@ -700,6 +744,7 @@ GetSensitiveDataOccurrencesOutcome Macie2Client::GetSensitiveDataOccurrences(con
 
 GetSensitiveDataOccurrencesAvailabilityOutcome Macie2Client::GetSensitiveDataOccurrencesAvailability(const GetSensitiveDataOccurrencesAvailabilityRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSensitiveDataOccurrencesAvailability);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSensitiveDataOccurrencesAvailability, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FindingIdHasBeenSet())
   {
@@ -716,6 +761,7 @@ GetSensitiveDataOccurrencesAvailabilityOutcome Macie2Client::GetSensitiveDataOcc
 
 GetSensitivityInspectionTemplateOutcome Macie2Client::GetSensitivityInspectionTemplate(const GetSensitivityInspectionTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSensitivityInspectionTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSensitivityInspectionTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -731,6 +777,7 @@ GetSensitivityInspectionTemplateOutcome Macie2Client::GetSensitivityInspectionTe
 
 GetUsageStatisticsOutcome Macie2Client::GetUsageStatistics(const GetUsageStatisticsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetUsageStatistics);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetUsageStatistics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetUsageStatistics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -740,6 +787,7 @@ GetUsageStatisticsOutcome Macie2Client::GetUsageStatistics(const GetUsageStatist
 
 GetUsageTotalsOutcome Macie2Client::GetUsageTotals(const GetUsageTotalsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetUsageTotals);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetUsageTotals, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetUsageTotals, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -749,6 +797,7 @@ GetUsageTotalsOutcome Macie2Client::GetUsageTotals(const GetUsageTotalsRequest& 
 
 ListAllowListsOutcome Macie2Client::ListAllowLists(const ListAllowListsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAllowLists);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAllowLists, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAllowLists, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -758,6 +807,7 @@ ListAllowListsOutcome Macie2Client::ListAllowLists(const ListAllowListsRequest& 
 
 ListClassificationJobsOutcome Macie2Client::ListClassificationJobs(const ListClassificationJobsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListClassificationJobs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListClassificationJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListClassificationJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -767,6 +817,7 @@ ListClassificationJobsOutcome Macie2Client::ListClassificationJobs(const ListCla
 
 ListClassificationScopesOutcome Macie2Client::ListClassificationScopes(const ListClassificationScopesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListClassificationScopes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListClassificationScopes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListClassificationScopes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -776,6 +827,7 @@ ListClassificationScopesOutcome Macie2Client::ListClassificationScopes(const Lis
 
 ListCustomDataIdentifiersOutcome Macie2Client::ListCustomDataIdentifiers(const ListCustomDataIdentifiersRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListCustomDataIdentifiers);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListCustomDataIdentifiers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListCustomDataIdentifiers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -785,6 +837,7 @@ ListCustomDataIdentifiersOutcome Macie2Client::ListCustomDataIdentifiers(const L
 
 ListFindingsOutcome Macie2Client::ListFindings(const ListFindingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListFindings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListFindings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListFindings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -794,6 +847,7 @@ ListFindingsOutcome Macie2Client::ListFindings(const ListFindingsRequest& reques
 
 ListFindingsFiltersOutcome Macie2Client::ListFindingsFilters(const ListFindingsFiltersRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListFindingsFilters);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListFindingsFilters, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListFindingsFilters, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -803,6 +857,7 @@ ListFindingsFiltersOutcome Macie2Client::ListFindingsFilters(const ListFindingsF
 
 ListInvitationsOutcome Macie2Client::ListInvitations(const ListInvitationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListInvitations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListInvitations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListInvitations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -812,6 +867,7 @@ ListInvitationsOutcome Macie2Client::ListInvitations(const ListInvitationsReques
 
 ListManagedDataIdentifiersOutcome Macie2Client::ListManagedDataIdentifiers(const ListManagedDataIdentifiersRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListManagedDataIdentifiers);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListManagedDataIdentifiers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListManagedDataIdentifiers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -821,6 +877,7 @@ ListManagedDataIdentifiersOutcome Macie2Client::ListManagedDataIdentifiers(const
 
 ListMembersOutcome Macie2Client::ListMembers(const ListMembersRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListMembers);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListMembers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListMembers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -830,6 +887,7 @@ ListMembersOutcome Macie2Client::ListMembers(const ListMembersRequest& request) 
 
 ListOrganizationAdminAccountsOutcome Macie2Client::ListOrganizationAdminAccounts(const ListOrganizationAdminAccountsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListOrganizationAdminAccounts);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListOrganizationAdminAccounts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListOrganizationAdminAccounts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -839,6 +897,7 @@ ListOrganizationAdminAccountsOutcome Macie2Client::ListOrganizationAdminAccounts
 
 ListResourceProfileArtifactsOutcome Macie2Client::ListResourceProfileArtifacts(const ListResourceProfileArtifactsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListResourceProfileArtifacts);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListResourceProfileArtifacts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -853,6 +912,7 @@ ListResourceProfileArtifactsOutcome Macie2Client::ListResourceProfileArtifacts(c
 
 ListResourceProfileDetectionsOutcome Macie2Client::ListResourceProfileDetections(const ListResourceProfileDetectionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListResourceProfileDetections);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListResourceProfileDetections, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -867,6 +927,7 @@ ListResourceProfileDetectionsOutcome Macie2Client::ListResourceProfileDetections
 
 ListSensitivityInspectionTemplatesOutcome Macie2Client::ListSensitivityInspectionTemplates(const ListSensitivityInspectionTemplatesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListSensitivityInspectionTemplates);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSensitivityInspectionTemplates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListSensitivityInspectionTemplates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -876,6 +937,7 @@ ListSensitivityInspectionTemplatesOutcome Macie2Client::ListSensitivityInspectio
 
 ListTagsForResourceOutcome Macie2Client::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -891,6 +953,7 @@ ListTagsForResourceOutcome Macie2Client::ListTagsForResource(const ListTagsForRe
 
 PutClassificationExportConfigurationOutcome Macie2Client::PutClassificationExportConfiguration(const PutClassificationExportConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutClassificationExportConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutClassificationExportConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutClassificationExportConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -900,6 +963,7 @@ PutClassificationExportConfigurationOutcome Macie2Client::PutClassificationExpor
 
 PutFindingsPublicationConfigurationOutcome Macie2Client::PutFindingsPublicationConfiguration(const PutFindingsPublicationConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutFindingsPublicationConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutFindingsPublicationConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutFindingsPublicationConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -909,6 +973,7 @@ PutFindingsPublicationConfigurationOutcome Macie2Client::PutFindingsPublicationC
 
 SearchResourcesOutcome Macie2Client::SearchResources(const SearchResourcesRequest& request) const
 {
+  AWS_OPERATION_GUARD(SearchResources);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SearchResources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SearchResources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -918,6 +983,7 @@ SearchResourcesOutcome Macie2Client::SearchResources(const SearchResourcesReques
 
 TagResourceOutcome Macie2Client::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -933,6 +999,7 @@ TagResourceOutcome Macie2Client::TagResource(const TagResourceRequest& request) 
 
 TestCustomDataIdentifierOutcome Macie2Client::TestCustomDataIdentifier(const TestCustomDataIdentifierRequest& request) const
 {
+  AWS_OPERATION_GUARD(TestCustomDataIdentifier);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TestCustomDataIdentifier, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TestCustomDataIdentifier, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -942,6 +1009,7 @@ TestCustomDataIdentifierOutcome Macie2Client::TestCustomDataIdentifier(const Tes
 
 UntagResourceOutcome Macie2Client::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -962,6 +1030,7 @@ UntagResourceOutcome Macie2Client::UntagResource(const UntagResourceRequest& req
 
 UpdateAllowListOutcome Macie2Client::UpdateAllowList(const UpdateAllowListRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateAllowList);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAllowList, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -977,6 +1046,7 @@ UpdateAllowListOutcome Macie2Client::UpdateAllowList(const UpdateAllowListReques
 
 UpdateAutomatedDiscoveryConfigurationOutcome Macie2Client::UpdateAutomatedDiscoveryConfiguration(const UpdateAutomatedDiscoveryConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateAutomatedDiscoveryConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAutomatedDiscoveryConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateAutomatedDiscoveryConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -986,6 +1056,7 @@ UpdateAutomatedDiscoveryConfigurationOutcome Macie2Client::UpdateAutomatedDiscov
 
 UpdateClassificationJobOutcome Macie2Client::UpdateClassificationJob(const UpdateClassificationJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateClassificationJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateClassificationJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.JobIdHasBeenSet())
   {
@@ -1001,6 +1072,7 @@ UpdateClassificationJobOutcome Macie2Client::UpdateClassificationJob(const Updat
 
 UpdateClassificationScopeOutcome Macie2Client::UpdateClassificationScope(const UpdateClassificationScopeRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateClassificationScope);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateClassificationScope, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -1016,6 +1088,7 @@ UpdateClassificationScopeOutcome Macie2Client::UpdateClassificationScope(const U
 
 UpdateFindingsFilterOutcome Macie2Client::UpdateFindingsFilter(const UpdateFindingsFilterRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateFindingsFilter);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateFindingsFilter, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -1031,6 +1104,7 @@ UpdateFindingsFilterOutcome Macie2Client::UpdateFindingsFilter(const UpdateFindi
 
 UpdateMacieSessionOutcome Macie2Client::UpdateMacieSession(const UpdateMacieSessionRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateMacieSession);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateMacieSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateMacieSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1040,6 +1114,7 @@ UpdateMacieSessionOutcome Macie2Client::UpdateMacieSession(const UpdateMacieSess
 
 UpdateMemberSessionOutcome Macie2Client::UpdateMemberSession(const UpdateMemberSessionRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateMemberSession);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateMemberSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -1055,6 +1130,7 @@ UpdateMemberSessionOutcome Macie2Client::UpdateMemberSession(const UpdateMemberS
 
 UpdateOrganizationConfigurationOutcome Macie2Client::UpdateOrganizationConfiguration(const UpdateOrganizationConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateOrganizationConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateOrganizationConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateOrganizationConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1064,6 +1140,7 @@ UpdateOrganizationConfigurationOutcome Macie2Client::UpdateOrganizationConfigura
 
 UpdateResourceProfileOutcome Macie2Client::UpdateResourceProfile(const UpdateResourceProfileRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateResourceProfile);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateResourceProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -1078,6 +1155,7 @@ UpdateResourceProfileOutcome Macie2Client::UpdateResourceProfile(const UpdateRes
 
 UpdateResourceProfileDetectionsOutcome Macie2Client::UpdateResourceProfileDetections(const UpdateResourceProfileDetectionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateResourceProfileDetections);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateResourceProfileDetections, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -1092,6 +1170,7 @@ UpdateResourceProfileDetectionsOutcome Macie2Client::UpdateResourceProfileDetect
 
 UpdateRevealConfigurationOutcome Macie2Client::UpdateRevealConfiguration(const UpdateRevealConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateRevealConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateRevealConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateRevealConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1101,6 +1180,7 @@ UpdateRevealConfigurationOutcome Macie2Client::UpdateRevealConfiguration(const U
 
 UpdateSensitivityInspectionTemplateOutcome Macie2Client::UpdateSensitivityInspectionTemplate(const UpdateSensitivityInspectionTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateSensitivityInspectionTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateSensitivityInspectionTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {

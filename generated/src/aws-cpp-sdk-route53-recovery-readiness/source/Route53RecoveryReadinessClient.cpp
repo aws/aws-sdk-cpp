@@ -161,6 +161,7 @@ Route53RecoveryReadinessClient::Route53RecoveryReadinessClient(const std::shared
     /* End of legacy constructors due deprecation */
 Route53RecoveryReadinessClient::~Route53RecoveryReadinessClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<Route53RecoveryReadinessEndpointProviderBase>& Route53RecoveryReadinessClient::accessEndpointProvider()
@@ -183,6 +184,7 @@ void Route53RecoveryReadinessClient::OverrideEndpoint(const Aws::String& endpoin
 
 CreateCellOutcome Route53RecoveryReadinessClient::CreateCell(const CreateCellRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateCell);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateCell, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateCell, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -192,6 +194,7 @@ CreateCellOutcome Route53RecoveryReadinessClient::CreateCell(const CreateCellReq
 
 CreateCrossAccountAuthorizationOutcome Route53RecoveryReadinessClient::CreateCrossAccountAuthorization(const CreateCrossAccountAuthorizationRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateCrossAccountAuthorization);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateCrossAccountAuthorization, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateCrossAccountAuthorization, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -201,6 +204,7 @@ CreateCrossAccountAuthorizationOutcome Route53RecoveryReadinessClient::CreateCro
 
 CreateReadinessCheckOutcome Route53RecoveryReadinessClient::CreateReadinessCheck(const CreateReadinessCheckRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateReadinessCheck);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateReadinessCheck, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateReadinessCheck, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -210,6 +214,7 @@ CreateReadinessCheckOutcome Route53RecoveryReadinessClient::CreateReadinessCheck
 
 CreateRecoveryGroupOutcome Route53RecoveryReadinessClient::CreateRecoveryGroup(const CreateRecoveryGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateRecoveryGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateRecoveryGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateRecoveryGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -219,6 +224,7 @@ CreateRecoveryGroupOutcome Route53RecoveryReadinessClient::CreateRecoveryGroup(c
 
 CreateResourceSetOutcome Route53RecoveryReadinessClient::CreateResourceSet(const CreateResourceSetRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateResourceSet);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateResourceSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateResourceSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -228,6 +234,7 @@ CreateResourceSetOutcome Route53RecoveryReadinessClient::CreateResourceSet(const
 
 DeleteCellOutcome Route53RecoveryReadinessClient::DeleteCell(const DeleteCellRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteCell);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteCell, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CellNameHasBeenSet())
   {
@@ -243,6 +250,7 @@ DeleteCellOutcome Route53RecoveryReadinessClient::DeleteCell(const DeleteCellReq
 
 DeleteCrossAccountAuthorizationOutcome Route53RecoveryReadinessClient::DeleteCrossAccountAuthorization(const DeleteCrossAccountAuthorizationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteCrossAccountAuthorization);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteCrossAccountAuthorization, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CrossAccountAuthorizationHasBeenSet())
   {
@@ -258,6 +266,7 @@ DeleteCrossAccountAuthorizationOutcome Route53RecoveryReadinessClient::DeleteCro
 
 DeleteReadinessCheckOutcome Route53RecoveryReadinessClient::DeleteReadinessCheck(const DeleteReadinessCheckRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteReadinessCheck);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteReadinessCheck, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ReadinessCheckNameHasBeenSet())
   {
@@ -273,6 +282,7 @@ DeleteReadinessCheckOutcome Route53RecoveryReadinessClient::DeleteReadinessCheck
 
 DeleteRecoveryGroupOutcome Route53RecoveryReadinessClient::DeleteRecoveryGroup(const DeleteRecoveryGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteRecoveryGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteRecoveryGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RecoveryGroupNameHasBeenSet())
   {
@@ -288,6 +298,7 @@ DeleteRecoveryGroupOutcome Route53RecoveryReadinessClient::DeleteRecoveryGroup(c
 
 DeleteResourceSetOutcome Route53RecoveryReadinessClient::DeleteResourceSet(const DeleteResourceSetRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteResourceSet);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteResourceSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceSetNameHasBeenSet())
   {
@@ -303,6 +314,7 @@ DeleteResourceSetOutcome Route53RecoveryReadinessClient::DeleteResourceSet(const
 
 GetArchitectureRecommendationsOutcome Route53RecoveryReadinessClient::GetArchitectureRecommendations(const GetArchitectureRecommendationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetArchitectureRecommendations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetArchitectureRecommendations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RecoveryGroupNameHasBeenSet())
   {
@@ -319,6 +331,7 @@ GetArchitectureRecommendationsOutcome Route53RecoveryReadinessClient::GetArchite
 
 GetCellOutcome Route53RecoveryReadinessClient::GetCell(const GetCellRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetCell);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCell, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CellNameHasBeenSet())
   {
@@ -334,6 +347,7 @@ GetCellOutcome Route53RecoveryReadinessClient::GetCell(const GetCellRequest& req
 
 GetCellReadinessSummaryOutcome Route53RecoveryReadinessClient::GetCellReadinessSummary(const GetCellReadinessSummaryRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetCellReadinessSummary);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCellReadinessSummary, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CellNameHasBeenSet())
   {
@@ -349,6 +363,7 @@ GetCellReadinessSummaryOutcome Route53RecoveryReadinessClient::GetCellReadinessS
 
 GetReadinessCheckOutcome Route53RecoveryReadinessClient::GetReadinessCheck(const GetReadinessCheckRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetReadinessCheck);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetReadinessCheck, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ReadinessCheckNameHasBeenSet())
   {
@@ -364,6 +379,7 @@ GetReadinessCheckOutcome Route53RecoveryReadinessClient::GetReadinessCheck(const
 
 GetReadinessCheckResourceStatusOutcome Route53RecoveryReadinessClient::GetReadinessCheckResourceStatus(const GetReadinessCheckResourceStatusRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetReadinessCheckResourceStatus);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetReadinessCheckResourceStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ReadinessCheckNameHasBeenSet())
   {
@@ -387,6 +403,7 @@ GetReadinessCheckResourceStatusOutcome Route53RecoveryReadinessClient::GetReadin
 
 GetReadinessCheckStatusOutcome Route53RecoveryReadinessClient::GetReadinessCheckStatus(const GetReadinessCheckStatusRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetReadinessCheckStatus);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetReadinessCheckStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ReadinessCheckNameHasBeenSet())
   {
@@ -403,6 +420,7 @@ GetReadinessCheckStatusOutcome Route53RecoveryReadinessClient::GetReadinessCheck
 
 GetRecoveryGroupOutcome Route53RecoveryReadinessClient::GetRecoveryGroup(const GetRecoveryGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetRecoveryGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetRecoveryGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RecoveryGroupNameHasBeenSet())
   {
@@ -418,6 +436,7 @@ GetRecoveryGroupOutcome Route53RecoveryReadinessClient::GetRecoveryGroup(const G
 
 GetRecoveryGroupReadinessSummaryOutcome Route53RecoveryReadinessClient::GetRecoveryGroupReadinessSummary(const GetRecoveryGroupReadinessSummaryRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetRecoveryGroupReadinessSummary);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetRecoveryGroupReadinessSummary, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RecoveryGroupNameHasBeenSet())
   {
@@ -433,6 +452,7 @@ GetRecoveryGroupReadinessSummaryOutcome Route53RecoveryReadinessClient::GetRecov
 
 GetResourceSetOutcome Route53RecoveryReadinessClient::GetResourceSet(const GetResourceSetRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetResourceSet);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetResourceSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceSetNameHasBeenSet())
   {
@@ -448,6 +468,7 @@ GetResourceSetOutcome Route53RecoveryReadinessClient::GetResourceSet(const GetRe
 
 ListCellsOutcome Route53RecoveryReadinessClient::ListCells(const ListCellsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListCells);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListCells, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListCells, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -457,6 +478,7 @@ ListCellsOutcome Route53RecoveryReadinessClient::ListCells(const ListCellsReques
 
 ListCrossAccountAuthorizationsOutcome Route53RecoveryReadinessClient::ListCrossAccountAuthorizations(const ListCrossAccountAuthorizationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListCrossAccountAuthorizations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListCrossAccountAuthorizations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListCrossAccountAuthorizations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -466,6 +488,7 @@ ListCrossAccountAuthorizationsOutcome Route53RecoveryReadinessClient::ListCrossA
 
 ListReadinessChecksOutcome Route53RecoveryReadinessClient::ListReadinessChecks(const ListReadinessChecksRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListReadinessChecks);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListReadinessChecks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListReadinessChecks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -475,6 +498,7 @@ ListReadinessChecksOutcome Route53RecoveryReadinessClient::ListReadinessChecks(c
 
 ListRecoveryGroupsOutcome Route53RecoveryReadinessClient::ListRecoveryGroups(const ListRecoveryGroupsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListRecoveryGroups);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRecoveryGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListRecoveryGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -484,6 +508,7 @@ ListRecoveryGroupsOutcome Route53RecoveryReadinessClient::ListRecoveryGroups(con
 
 ListResourceSetsOutcome Route53RecoveryReadinessClient::ListResourceSets(const ListResourceSetsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListResourceSets);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListResourceSets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListResourceSets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -493,6 +518,7 @@ ListResourceSetsOutcome Route53RecoveryReadinessClient::ListResourceSets(const L
 
 ListRulesOutcome Route53RecoveryReadinessClient::ListRules(const ListRulesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListRules);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRules, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListRules, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -502,6 +528,7 @@ ListRulesOutcome Route53RecoveryReadinessClient::ListRules(const ListRulesReques
 
 ListTagsForResourcesOutcome Route53RecoveryReadinessClient::ListTagsForResources(const ListTagsForResourcesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResources);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -517,6 +544,7 @@ ListTagsForResourcesOutcome Route53RecoveryReadinessClient::ListTagsForResources
 
 TagResourceOutcome Route53RecoveryReadinessClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -532,6 +560,7 @@ TagResourceOutcome Route53RecoveryReadinessClient::TagResource(const TagResource
 
 UntagResourceOutcome Route53RecoveryReadinessClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -552,6 +581,7 @@ UntagResourceOutcome Route53RecoveryReadinessClient::UntagResource(const UntagRe
 
 UpdateCellOutcome Route53RecoveryReadinessClient::UpdateCell(const UpdateCellRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateCell);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateCell, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CellNameHasBeenSet())
   {
@@ -567,6 +597,7 @@ UpdateCellOutcome Route53RecoveryReadinessClient::UpdateCell(const UpdateCellReq
 
 UpdateReadinessCheckOutcome Route53RecoveryReadinessClient::UpdateReadinessCheck(const UpdateReadinessCheckRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateReadinessCheck);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateReadinessCheck, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ReadinessCheckNameHasBeenSet())
   {
@@ -582,6 +613,7 @@ UpdateReadinessCheckOutcome Route53RecoveryReadinessClient::UpdateReadinessCheck
 
 UpdateRecoveryGroupOutcome Route53RecoveryReadinessClient::UpdateRecoveryGroup(const UpdateRecoveryGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateRecoveryGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateRecoveryGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RecoveryGroupNameHasBeenSet())
   {
@@ -597,6 +629,7 @@ UpdateRecoveryGroupOutcome Route53RecoveryReadinessClient::UpdateRecoveryGroup(c
 
 UpdateResourceSetOutcome Route53RecoveryReadinessClient::UpdateResourceSet(const UpdateResourceSetRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateResourceSet);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateResourceSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceSetNameHasBeenSet())
   {

@@ -299,67 +299,67 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the trail exists only in one region or exists in all
-     * regions.</p>
+     * <p>Specifies whether the trail exists only in one Region or exists in all
+     * Regions.</p>
      */
     inline bool GetIsMultiRegionTrail() const{ return m_isMultiRegionTrail; }
 
     /**
-     * <p>Specifies whether the trail exists only in one region or exists in all
-     * regions.</p>
+     * <p>Specifies whether the trail exists only in one Region or exists in all
+     * Regions.</p>
      */
     inline bool IsMultiRegionTrailHasBeenSet() const { return m_isMultiRegionTrailHasBeenSet; }
 
     /**
-     * <p>Specifies whether the trail exists only in one region or exists in all
-     * regions.</p>
+     * <p>Specifies whether the trail exists only in one Region or exists in all
+     * Regions.</p>
      */
     inline void SetIsMultiRegionTrail(bool value) { m_isMultiRegionTrailHasBeenSet = true; m_isMultiRegionTrail = value; }
 
     /**
-     * <p>Specifies whether the trail exists only in one region or exists in all
-     * regions.</p>
+     * <p>Specifies whether the trail exists only in one Region or exists in all
+     * Regions.</p>
      */
     inline Trail& WithIsMultiRegionTrail(bool value) { SetIsMultiRegionTrail(value); return *this;}
 
 
     /**
-     * <p>The region in which the trail was created.</p>
+     * <p>The Region in which the trail was created.</p>
      */
     inline const Aws::String& GetHomeRegion() const{ return m_homeRegion; }
 
     /**
-     * <p>The region in which the trail was created.</p>
+     * <p>The Region in which the trail was created.</p>
      */
     inline bool HomeRegionHasBeenSet() const { return m_homeRegionHasBeenSet; }
 
     /**
-     * <p>The region in which the trail was created.</p>
+     * <p>The Region in which the trail was created.</p>
      */
     inline void SetHomeRegion(const Aws::String& value) { m_homeRegionHasBeenSet = true; m_homeRegion = value; }
 
     /**
-     * <p>The region in which the trail was created.</p>
+     * <p>The Region in which the trail was created.</p>
      */
     inline void SetHomeRegion(Aws::String&& value) { m_homeRegionHasBeenSet = true; m_homeRegion = std::move(value); }
 
     /**
-     * <p>The region in which the trail was created.</p>
+     * <p>The Region in which the trail was created.</p>
      */
     inline void SetHomeRegion(const char* value) { m_homeRegionHasBeenSet = true; m_homeRegion.assign(value); }
 
     /**
-     * <p>The region in which the trail was created.</p>
+     * <p>The Region in which the trail was created.</p>
      */
     inline Trail& WithHomeRegion(const Aws::String& value) { SetHomeRegion(value); return *this;}
 
     /**
-     * <p>The region in which the trail was created.</p>
+     * <p>The Region in which the trail was created.</p>
      */
     inline Trail& WithHomeRegion(Aws::String&& value) { SetHomeRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The region in which the trail was created.</p>
+     * <p>The Region in which the trail was created.</p>
      */
     inline Trail& WithHomeRegion(const char* value) { SetHomeRegion(value); return *this;}
 

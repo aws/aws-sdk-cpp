@@ -130,6 +130,7 @@ AlexaForBusinessClient::AlexaForBusinessClient(const std::shared_ptr<AWSCredenti
     /* End of legacy constructors due deprecation */
 AlexaForBusinessClient::~AlexaForBusinessClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<AlexaForBusinessEndpointProviderBase>& AlexaForBusinessClient::accessEndpointProvider()
@@ -152,6 +153,7 @@ void AlexaForBusinessClient::OverrideEndpoint(const Aws::String& endpoint)
 
 SendAnnouncementOutcome AlexaForBusinessClient::SendAnnouncement(const SendAnnouncementRequest& request) const
 {
+  AWS_OPERATION_GUARD(SendAnnouncement);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SendAnnouncement, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SendAnnouncement, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

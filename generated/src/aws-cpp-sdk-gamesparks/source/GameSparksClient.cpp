@@ -162,6 +162,7 @@ GameSparksClient::GameSparksClient(const std::shared_ptr<AWSCredentialsProvider>
     /* End of legacy constructors due deprecation */
 GameSparksClient::~GameSparksClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<GameSparksEndpointProviderBase>& GameSparksClient::accessEndpointProvider()
@@ -184,6 +185,7 @@ void GameSparksClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CreateGameOutcome GameSparksClient::CreateGame(const CreateGameRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateGame);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateGame, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateGame, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -193,6 +195,7 @@ CreateGameOutcome GameSparksClient::CreateGame(const CreateGameRequest& request)
 
 CreateSnapshotOutcome GameSparksClient::CreateSnapshot(const CreateSnapshotRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateSnapshot);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateSnapshot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GameNameHasBeenSet())
   {
@@ -209,6 +212,7 @@ CreateSnapshotOutcome GameSparksClient::CreateSnapshot(const CreateSnapshotReque
 
 CreateStageOutcome GameSparksClient::CreateStage(const CreateStageRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateStage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateStage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GameNameHasBeenSet())
   {
@@ -225,6 +229,7 @@ CreateStageOutcome GameSparksClient::CreateStage(const CreateStageRequest& reque
 
 DeleteGameOutcome GameSparksClient::DeleteGame(const DeleteGameRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteGame);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteGame, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GameNameHasBeenSet())
   {
@@ -240,6 +245,7 @@ DeleteGameOutcome GameSparksClient::DeleteGame(const DeleteGameRequest& request)
 
 DeleteStageOutcome GameSparksClient::DeleteStage(const DeleteStageRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteStage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteStage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GameNameHasBeenSet())
   {
@@ -262,6 +268,7 @@ DeleteStageOutcome GameSparksClient::DeleteStage(const DeleteStageRequest& reque
 
 DisconnectPlayerOutcome GameSparksClient::DisconnectPlayer(const DisconnectPlayerRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisconnectPlayer);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisconnectPlayer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GameNameHasBeenSet())
   {
@@ -292,6 +299,7 @@ DisconnectPlayerOutcome GameSparksClient::DisconnectPlayer(const DisconnectPlaye
 
 ExportSnapshotOutcome GameSparksClient::ExportSnapshot(const ExportSnapshotRequest& request) const
 {
+  AWS_OPERATION_GUARD(ExportSnapshot);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ExportSnapshot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GameNameHasBeenSet())
   {
@@ -315,6 +323,7 @@ ExportSnapshotOutcome GameSparksClient::ExportSnapshot(const ExportSnapshotReque
 
 GetExtensionOutcome GameSparksClient::GetExtension(const GetExtensionRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetExtension);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetExtension, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -336,6 +345,7 @@ GetExtensionOutcome GameSparksClient::GetExtension(const GetExtensionRequest& re
 
 GetExtensionVersionOutcome GameSparksClient::GetExtensionVersion(const GetExtensionVersionRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetExtensionVersion);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetExtensionVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ExtensionVersionHasBeenSet())
   {
@@ -364,6 +374,7 @@ GetExtensionVersionOutcome GameSparksClient::GetExtensionVersion(const GetExtens
 
 GetGameOutcome GameSparksClient::GetGame(const GetGameRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetGame);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetGame, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GameNameHasBeenSet())
   {
@@ -379,6 +390,7 @@ GetGameOutcome GameSparksClient::GetGame(const GetGameRequest& request) const
 
 GetGameConfigurationOutcome GameSparksClient::GetGameConfiguration(const GetGameConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetGameConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetGameConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GameNameHasBeenSet())
   {
@@ -395,6 +407,7 @@ GetGameConfigurationOutcome GameSparksClient::GetGameConfiguration(const GetGame
 
 GetGeneratedCodeJobOutcome GameSparksClient::GetGeneratedCodeJob(const GetGeneratedCodeJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetGeneratedCodeJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetGeneratedCodeJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GameNameHasBeenSet())
   {
@@ -424,6 +437,7 @@ GetGeneratedCodeJobOutcome GameSparksClient::GetGeneratedCodeJob(const GetGenera
 
 GetPlayerConnectionStatusOutcome GameSparksClient::GetPlayerConnectionStatus(const GetPlayerConnectionStatusRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetPlayerConnectionStatus);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPlayerConnectionStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GameNameHasBeenSet())
   {
@@ -454,6 +468,7 @@ GetPlayerConnectionStatusOutcome GameSparksClient::GetPlayerConnectionStatus(con
 
 GetSnapshotOutcome GameSparksClient::GetSnapshot(const GetSnapshotRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSnapshot);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSnapshot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GameNameHasBeenSet())
   {
@@ -476,6 +491,7 @@ GetSnapshotOutcome GameSparksClient::GetSnapshot(const GetSnapshotRequest& reque
 
 GetStageOutcome GameSparksClient::GetStage(const GetStageRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetStage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetStage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GameNameHasBeenSet())
   {
@@ -498,6 +514,7 @@ GetStageOutcome GameSparksClient::GetStage(const GetStageRequest& request) const
 
 GetStageDeploymentOutcome GameSparksClient::GetStageDeployment(const GetStageDeploymentRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetStageDeployment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetStageDeployment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GameNameHasBeenSet())
   {
@@ -521,6 +538,7 @@ GetStageDeploymentOutcome GameSparksClient::GetStageDeployment(const GetStageDep
 
 ImportGameConfigurationOutcome GameSparksClient::ImportGameConfiguration(const ImportGameConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(ImportGameConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ImportGameConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GameNameHasBeenSet())
   {
@@ -537,6 +555,7 @@ ImportGameConfigurationOutcome GameSparksClient::ImportGameConfiguration(const I
 
 ListExtensionVersionsOutcome GameSparksClient::ListExtensionVersions(const ListExtensionVersionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListExtensionVersions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListExtensionVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -559,6 +578,7 @@ ListExtensionVersionsOutcome GameSparksClient::ListExtensionVersions(const ListE
 
 ListExtensionsOutcome GameSparksClient::ListExtensions(const ListExtensionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListExtensions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListExtensions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListExtensions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -568,6 +588,7 @@ ListExtensionsOutcome GameSparksClient::ListExtensions(const ListExtensionsReque
 
 ListGamesOutcome GameSparksClient::ListGames(const ListGamesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListGames);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListGames, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListGames, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -577,6 +598,7 @@ ListGamesOutcome GameSparksClient::ListGames(const ListGamesRequest& request) co
 
 ListGeneratedCodeJobsOutcome GameSparksClient::ListGeneratedCodeJobs(const ListGeneratedCodeJobsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListGeneratedCodeJobs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListGeneratedCodeJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GameNameHasBeenSet())
   {
@@ -600,6 +622,7 @@ ListGeneratedCodeJobsOutcome GameSparksClient::ListGeneratedCodeJobs(const ListG
 
 ListSnapshotsOutcome GameSparksClient::ListSnapshots(const ListSnapshotsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListSnapshots);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSnapshots, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GameNameHasBeenSet())
   {
@@ -616,6 +639,7 @@ ListSnapshotsOutcome GameSparksClient::ListSnapshots(const ListSnapshotsRequest&
 
 ListStageDeploymentsOutcome GameSparksClient::ListStageDeployments(const ListStageDeploymentsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListStageDeployments);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListStageDeployments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GameNameHasBeenSet())
   {
@@ -639,6 +663,7 @@ ListStageDeploymentsOutcome GameSparksClient::ListStageDeployments(const ListSta
 
 ListStagesOutcome GameSparksClient::ListStages(const ListStagesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListStages);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListStages, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GameNameHasBeenSet())
   {
@@ -655,6 +680,7 @@ ListStagesOutcome GameSparksClient::ListStages(const ListStagesRequest& request)
 
 ListTagsForResourceOutcome GameSparksClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -670,6 +696,7 @@ ListTagsForResourceOutcome GameSparksClient::ListTagsForResource(const ListTagsF
 
 StartGeneratedCodeJobOutcome GameSparksClient::StartGeneratedCodeJob(const StartGeneratedCodeJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartGeneratedCodeJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartGeneratedCodeJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GameNameHasBeenSet())
   {
@@ -693,6 +720,7 @@ StartGeneratedCodeJobOutcome GameSparksClient::StartGeneratedCodeJob(const Start
 
 StartStageDeploymentOutcome GameSparksClient::StartStageDeployment(const StartStageDeploymentRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartStageDeployment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartStageDeployment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GameNameHasBeenSet())
   {
@@ -716,6 +744,7 @@ StartStageDeploymentOutcome GameSparksClient::StartStageDeployment(const StartSt
 
 TagResourceOutcome GameSparksClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -731,6 +760,7 @@ TagResourceOutcome GameSparksClient::TagResource(const TagResourceRequest& reque
 
 UntagResourceOutcome GameSparksClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -751,6 +781,7 @@ UntagResourceOutcome GameSparksClient::UntagResource(const UntagResourceRequest&
 
 UpdateGameOutcome GameSparksClient::UpdateGame(const UpdateGameRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateGame);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateGame, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GameNameHasBeenSet())
   {
@@ -766,6 +797,7 @@ UpdateGameOutcome GameSparksClient::UpdateGame(const UpdateGameRequest& request)
 
 UpdateGameConfigurationOutcome GameSparksClient::UpdateGameConfiguration(const UpdateGameConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateGameConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateGameConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GameNameHasBeenSet())
   {
@@ -782,6 +814,7 @@ UpdateGameConfigurationOutcome GameSparksClient::UpdateGameConfiguration(const U
 
 UpdateSnapshotOutcome GameSparksClient::UpdateSnapshot(const UpdateSnapshotRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateSnapshot);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateSnapshot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GameNameHasBeenSet())
   {
@@ -804,6 +837,7 @@ UpdateSnapshotOutcome GameSparksClient::UpdateSnapshot(const UpdateSnapshotReque
 
 UpdateStageOutcome GameSparksClient::UpdateStage(const UpdateStageRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateStage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateStage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GameNameHasBeenSet())
   {

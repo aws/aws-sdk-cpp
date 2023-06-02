@@ -152,6 +152,7 @@ Route53RecoveryControlConfigClient::Route53RecoveryControlConfigClient(const std
     /* End of legacy constructors due deprecation */
 Route53RecoveryControlConfigClient::~Route53RecoveryControlConfigClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<Route53RecoveryControlConfigEndpointProviderBase>& Route53RecoveryControlConfigClient::accessEndpointProvider()
@@ -174,6 +175,7 @@ void Route53RecoveryControlConfigClient::OverrideEndpoint(const Aws::String& end
 
 CreateClusterOutcome Route53RecoveryControlConfigClient::CreateCluster(const CreateClusterRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateCluster);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateCluster, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateCluster, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -183,6 +185,7 @@ CreateClusterOutcome Route53RecoveryControlConfigClient::CreateCluster(const Cre
 
 CreateControlPanelOutcome Route53RecoveryControlConfigClient::CreateControlPanel(const CreateControlPanelRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateControlPanel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateControlPanel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateControlPanel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -192,6 +195,7 @@ CreateControlPanelOutcome Route53RecoveryControlConfigClient::CreateControlPanel
 
 CreateRoutingControlOutcome Route53RecoveryControlConfigClient::CreateRoutingControl(const CreateRoutingControlRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateRoutingControl);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateRoutingControl, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateRoutingControl, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -201,6 +205,7 @@ CreateRoutingControlOutcome Route53RecoveryControlConfigClient::CreateRoutingCon
 
 CreateSafetyRuleOutcome Route53RecoveryControlConfigClient::CreateSafetyRule(const CreateSafetyRuleRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateSafetyRule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateSafetyRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateSafetyRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -210,6 +215,7 @@ CreateSafetyRuleOutcome Route53RecoveryControlConfigClient::CreateSafetyRule(con
 
 DeleteClusterOutcome Route53RecoveryControlConfigClient::DeleteCluster(const DeleteClusterRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteCluster);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteCluster, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ClusterArnHasBeenSet())
   {
@@ -225,6 +231,7 @@ DeleteClusterOutcome Route53RecoveryControlConfigClient::DeleteCluster(const Del
 
 DeleteControlPanelOutcome Route53RecoveryControlConfigClient::DeleteControlPanel(const DeleteControlPanelRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteControlPanel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteControlPanel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ControlPanelArnHasBeenSet())
   {
@@ -240,6 +247,7 @@ DeleteControlPanelOutcome Route53RecoveryControlConfigClient::DeleteControlPanel
 
 DeleteRoutingControlOutcome Route53RecoveryControlConfigClient::DeleteRoutingControl(const DeleteRoutingControlRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteRoutingControl);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteRoutingControl, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RoutingControlArnHasBeenSet())
   {
@@ -255,6 +263,7 @@ DeleteRoutingControlOutcome Route53RecoveryControlConfigClient::DeleteRoutingCon
 
 DeleteSafetyRuleOutcome Route53RecoveryControlConfigClient::DeleteSafetyRule(const DeleteSafetyRuleRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteSafetyRule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteSafetyRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SafetyRuleArnHasBeenSet())
   {
@@ -270,6 +279,7 @@ DeleteSafetyRuleOutcome Route53RecoveryControlConfigClient::DeleteSafetyRule(con
 
 DescribeClusterOutcome Route53RecoveryControlConfigClient::DescribeCluster(const DescribeClusterRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeCluster);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeCluster, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ClusterArnHasBeenSet())
   {
@@ -285,6 +295,7 @@ DescribeClusterOutcome Route53RecoveryControlConfigClient::DescribeCluster(const
 
 DescribeControlPanelOutcome Route53RecoveryControlConfigClient::DescribeControlPanel(const DescribeControlPanelRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeControlPanel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeControlPanel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ControlPanelArnHasBeenSet())
   {
@@ -300,6 +311,7 @@ DescribeControlPanelOutcome Route53RecoveryControlConfigClient::DescribeControlP
 
 DescribeRoutingControlOutcome Route53RecoveryControlConfigClient::DescribeRoutingControl(const DescribeRoutingControlRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeRoutingControl);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeRoutingControl, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RoutingControlArnHasBeenSet())
   {
@@ -315,6 +327,7 @@ DescribeRoutingControlOutcome Route53RecoveryControlConfigClient::DescribeRoutin
 
 DescribeSafetyRuleOutcome Route53RecoveryControlConfigClient::DescribeSafetyRule(const DescribeSafetyRuleRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeSafetyRule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeSafetyRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SafetyRuleArnHasBeenSet())
   {
@@ -330,6 +343,7 @@ DescribeSafetyRuleOutcome Route53RecoveryControlConfigClient::DescribeSafetyRule
 
 ListAssociatedRoute53HealthChecksOutcome Route53RecoveryControlConfigClient::ListAssociatedRoute53HealthChecks(const ListAssociatedRoute53HealthChecksRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAssociatedRoute53HealthChecks);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAssociatedRoute53HealthChecks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RoutingControlArnHasBeenSet())
   {
@@ -346,6 +360,7 @@ ListAssociatedRoute53HealthChecksOutcome Route53RecoveryControlConfigClient::Lis
 
 ListClustersOutcome Route53RecoveryControlConfigClient::ListClusters(const ListClustersRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListClusters);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListClusters, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListClusters, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -355,6 +370,7 @@ ListClustersOutcome Route53RecoveryControlConfigClient::ListClusters(const ListC
 
 ListControlPanelsOutcome Route53RecoveryControlConfigClient::ListControlPanels(const ListControlPanelsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListControlPanels);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListControlPanels, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListControlPanels, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -364,6 +380,7 @@ ListControlPanelsOutcome Route53RecoveryControlConfigClient::ListControlPanels(c
 
 ListRoutingControlsOutcome Route53RecoveryControlConfigClient::ListRoutingControls(const ListRoutingControlsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListRoutingControls);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRoutingControls, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ControlPanelArnHasBeenSet())
   {
@@ -380,6 +397,7 @@ ListRoutingControlsOutcome Route53RecoveryControlConfigClient::ListRoutingContro
 
 ListSafetyRulesOutcome Route53RecoveryControlConfigClient::ListSafetyRules(const ListSafetyRulesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListSafetyRules);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSafetyRules, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ControlPanelArnHasBeenSet())
   {
@@ -396,6 +414,7 @@ ListSafetyRulesOutcome Route53RecoveryControlConfigClient::ListSafetyRules(const
 
 ListTagsForResourceOutcome Route53RecoveryControlConfigClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -411,6 +430,7 @@ ListTagsForResourceOutcome Route53RecoveryControlConfigClient::ListTagsForResour
 
 TagResourceOutcome Route53RecoveryControlConfigClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -426,6 +446,7 @@ TagResourceOutcome Route53RecoveryControlConfigClient::TagResource(const TagReso
 
 UntagResourceOutcome Route53RecoveryControlConfigClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -446,6 +467,7 @@ UntagResourceOutcome Route53RecoveryControlConfigClient::UntagResource(const Unt
 
 UpdateControlPanelOutcome Route53RecoveryControlConfigClient::UpdateControlPanel(const UpdateControlPanelRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateControlPanel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateControlPanel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateControlPanel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -455,6 +477,7 @@ UpdateControlPanelOutcome Route53RecoveryControlConfigClient::UpdateControlPanel
 
 UpdateRoutingControlOutcome Route53RecoveryControlConfigClient::UpdateRoutingControl(const UpdateRoutingControlRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateRoutingControl);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateRoutingControl, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateRoutingControl, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -464,6 +487,7 @@ UpdateRoutingControlOutcome Route53RecoveryControlConfigClient::UpdateRoutingCon
 
 UpdateSafetyRuleOutcome Route53RecoveryControlConfigClient::UpdateSafetyRule(const UpdateSafetyRuleRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateSafetyRule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateSafetyRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateSafetyRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

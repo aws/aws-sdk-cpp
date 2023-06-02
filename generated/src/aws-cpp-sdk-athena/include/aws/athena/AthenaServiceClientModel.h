@@ -29,6 +29,7 @@
 #include <aws/athena/model/CreatePreparedStatementResult.h>
 #include <aws/athena/model/CreatePresignedNotebookUrlResult.h>
 #include <aws/athena/model/CreateWorkGroupResult.h>
+#include <aws/athena/model/DeleteCapacityReservationResult.h>
 #include <aws/athena/model/DeleteDataCatalogResult.h>
 #include <aws/athena/model/DeleteNamedQueryResult.h>
 #include <aws/athena/model/DeleteNotebookResult.h>
@@ -136,6 +137,7 @@ namespace Aws
       class CreatePreparedStatementRequest;
       class CreatePresignedNotebookUrlRequest;
       class CreateWorkGroupRequest;
+      class DeleteCapacityReservationRequest;
       class DeleteDataCatalogRequest;
       class DeleteNamedQueryRequest;
       class DeleteNotebookRequest;
@@ -206,6 +208,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreatePreparedStatementResult, Aws::Athena::AthenaError> CreatePreparedStatementOutcome;
       typedef Aws::Utils::Outcome<CreatePresignedNotebookUrlResult, Aws::Athena::AthenaError> CreatePresignedNotebookUrlOutcome;
       typedef Aws::Utils::Outcome<CreateWorkGroupResult, Aws::Athena::AthenaError> CreateWorkGroupOutcome;
+      typedef Aws::Utils::Outcome<DeleteCapacityReservationResult, Aws::Athena::AthenaError> DeleteCapacityReservationOutcome;
       typedef Aws::Utils::Outcome<DeleteDataCatalogResult, Aws::Athena::AthenaError> DeleteDataCatalogOutcome;
       typedef Aws::Utils::Outcome<DeleteNamedQueryResult, Aws::Athena::AthenaError> DeleteNamedQueryOutcome;
       typedef Aws::Utils::Outcome<DeleteNotebookResult, Aws::Athena::AthenaError> DeleteNotebookOutcome;
@@ -276,6 +279,7 @@ namespace Aws
       typedef std::future<CreatePreparedStatementOutcome> CreatePreparedStatementOutcomeCallable;
       typedef std::future<CreatePresignedNotebookUrlOutcome> CreatePresignedNotebookUrlOutcomeCallable;
       typedef std::future<CreateWorkGroupOutcome> CreateWorkGroupOutcomeCallable;
+      typedef std::future<DeleteCapacityReservationOutcome> DeleteCapacityReservationOutcomeCallable;
       typedef std::future<DeleteDataCatalogOutcome> DeleteDataCatalogOutcomeCallable;
       typedef std::future<DeleteNamedQueryOutcome> DeleteNamedQueryOutcomeCallable;
       typedef std::future<DeleteNotebookOutcome> DeleteNotebookOutcomeCallable;
@@ -349,6 +353,7 @@ namespace Aws
     typedef std::function<void(const AthenaClient*, const Model::CreatePreparedStatementRequest&, const Model::CreatePreparedStatementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePreparedStatementResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::CreatePresignedNotebookUrlRequest&, const Model::CreatePresignedNotebookUrlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePresignedNotebookUrlResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::CreateWorkGroupRequest&, const Model::CreateWorkGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWorkGroupResponseReceivedHandler;
+    typedef std::function<void(const AthenaClient*, const Model::DeleteCapacityReservationRequest&, const Model::DeleteCapacityReservationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCapacityReservationResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::DeleteDataCatalogRequest&, const Model::DeleteDataCatalogOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDataCatalogResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::DeleteNamedQueryRequest&, const Model::DeleteNamedQueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteNamedQueryResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::DeleteNotebookRequest&, const Model::DeleteNotebookOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteNotebookResponseReceivedHandler;

@@ -139,6 +139,7 @@ RecycleBinClient::RecycleBinClient(const std::shared_ptr<AWSCredentialsProvider>
     /* End of legacy constructors due deprecation */
 RecycleBinClient::~RecycleBinClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<RecycleBinEndpointProviderBase>& RecycleBinClient::accessEndpointProvider()
@@ -161,6 +162,7 @@ void RecycleBinClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CreateRuleOutcome RecycleBinClient::CreateRule(const CreateRuleRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateRule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -170,6 +172,7 @@ CreateRuleOutcome RecycleBinClient::CreateRule(const CreateRuleRequest& request)
 
 DeleteRuleOutcome RecycleBinClient::DeleteRule(const DeleteRuleRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteRule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdentifierHasBeenSet())
   {
@@ -185,6 +188,7 @@ DeleteRuleOutcome RecycleBinClient::DeleteRule(const DeleteRuleRequest& request)
 
 GetRuleOutcome RecycleBinClient::GetRule(const GetRuleRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetRule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdentifierHasBeenSet())
   {
@@ -200,6 +204,7 @@ GetRuleOutcome RecycleBinClient::GetRule(const GetRuleRequest& request) const
 
 ListRulesOutcome RecycleBinClient::ListRules(const ListRulesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListRules);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRules, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListRules, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -209,6 +214,7 @@ ListRulesOutcome RecycleBinClient::ListRules(const ListRulesRequest& request) co
 
 ListTagsForResourceOutcome RecycleBinClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -224,6 +230,7 @@ ListTagsForResourceOutcome RecycleBinClient::ListTagsForResource(const ListTagsF
 
 LockRuleOutcome RecycleBinClient::LockRule(const LockRuleRequest& request) const
 {
+  AWS_OPERATION_GUARD(LockRule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, LockRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdentifierHasBeenSet())
   {
@@ -240,6 +247,7 @@ LockRuleOutcome RecycleBinClient::LockRule(const LockRuleRequest& request) const
 
 TagResourceOutcome RecycleBinClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -255,6 +263,7 @@ TagResourceOutcome RecycleBinClient::TagResource(const TagResourceRequest& reque
 
 UnlockRuleOutcome RecycleBinClient::UnlockRule(const UnlockRuleRequest& request) const
 {
+  AWS_OPERATION_GUARD(UnlockRule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UnlockRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdentifierHasBeenSet())
   {
@@ -271,6 +280,7 @@ UnlockRuleOutcome RecycleBinClient::UnlockRule(const UnlockRuleRequest& request)
 
 UntagResourceOutcome RecycleBinClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -291,6 +301,7 @@ UntagResourceOutcome RecycleBinClient::UntagResource(const UntagResourceRequest&
 
 UpdateRuleOutcome RecycleBinClient::UpdateRule(const UpdateRuleRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateRule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdentifierHasBeenSet())
   {

@@ -157,6 +157,7 @@ SecurityLakeClient::SecurityLakeClient(const std::shared_ptr<AWSCredentialsProvi
     /* End of legacy constructors due deprecation */
 SecurityLakeClient::~SecurityLakeClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<SecurityLakeEndpointProviderBase>& SecurityLakeClient::accessEndpointProvider()
@@ -179,6 +180,7 @@ void SecurityLakeClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CreateAwsLogSourceOutcome SecurityLakeClient::CreateAwsLogSource(const CreateAwsLogSourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateAwsLogSource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAwsLogSource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateAwsLogSource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -188,6 +190,7 @@ CreateAwsLogSourceOutcome SecurityLakeClient::CreateAwsLogSource(const CreateAws
 
 CreateCustomLogSourceOutcome SecurityLakeClient::CreateCustomLogSource(const CreateCustomLogSourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateCustomLogSource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateCustomLogSource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateCustomLogSource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -197,6 +200,7 @@ CreateCustomLogSourceOutcome SecurityLakeClient::CreateCustomLogSource(const Cre
 
 CreateDataLakeOutcome SecurityLakeClient::CreateDataLake(const CreateDataLakeRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateDataLake);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDataLake, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateDataLake, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -206,6 +210,7 @@ CreateDataLakeOutcome SecurityLakeClient::CreateDataLake(const CreateDataLakeReq
 
 CreateDataLakeExceptionSubscriptionOutcome SecurityLakeClient::CreateDataLakeExceptionSubscription(const CreateDataLakeExceptionSubscriptionRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateDataLakeExceptionSubscription);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDataLakeExceptionSubscription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateDataLakeExceptionSubscription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -215,6 +220,7 @@ CreateDataLakeExceptionSubscriptionOutcome SecurityLakeClient::CreateDataLakeExc
 
 CreateDataLakeOrganizationConfigurationOutcome SecurityLakeClient::CreateDataLakeOrganizationConfiguration(const CreateDataLakeOrganizationConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateDataLakeOrganizationConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDataLakeOrganizationConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateDataLakeOrganizationConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -224,6 +230,7 @@ CreateDataLakeOrganizationConfigurationOutcome SecurityLakeClient::CreateDataLak
 
 CreateSubscriberOutcome SecurityLakeClient::CreateSubscriber(const CreateSubscriberRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateSubscriber);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateSubscriber, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateSubscriber, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -233,6 +240,7 @@ CreateSubscriberOutcome SecurityLakeClient::CreateSubscriber(const CreateSubscri
 
 CreateSubscriberNotificationOutcome SecurityLakeClient::CreateSubscriberNotification(const CreateSubscriberNotificationRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateSubscriberNotification);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateSubscriberNotification, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SubscriberIdHasBeenSet())
   {
@@ -249,6 +257,7 @@ CreateSubscriberNotificationOutcome SecurityLakeClient::CreateSubscriberNotifica
 
 DeleteAwsLogSourceOutcome SecurityLakeClient::DeleteAwsLogSource(const DeleteAwsLogSourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteAwsLogSource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAwsLogSource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteAwsLogSource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -258,6 +267,7 @@ DeleteAwsLogSourceOutcome SecurityLakeClient::DeleteAwsLogSource(const DeleteAws
 
 DeleteCustomLogSourceOutcome SecurityLakeClient::DeleteCustomLogSource(const DeleteCustomLogSourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteCustomLogSource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteCustomLogSource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SourceNameHasBeenSet())
   {
@@ -273,6 +283,7 @@ DeleteCustomLogSourceOutcome SecurityLakeClient::DeleteCustomLogSource(const Del
 
 DeleteDataLakeOutcome SecurityLakeClient::DeleteDataLake(const DeleteDataLakeRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteDataLake);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDataLake, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteDataLake, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -282,6 +293,7 @@ DeleteDataLakeOutcome SecurityLakeClient::DeleteDataLake(const DeleteDataLakeReq
 
 DeleteDataLakeExceptionSubscriptionOutcome SecurityLakeClient::DeleteDataLakeExceptionSubscription(const DeleteDataLakeExceptionSubscriptionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteDataLakeExceptionSubscription);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDataLakeExceptionSubscription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteDataLakeExceptionSubscription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -291,6 +303,7 @@ DeleteDataLakeExceptionSubscriptionOutcome SecurityLakeClient::DeleteDataLakeExc
 
 DeleteDataLakeOrganizationConfigurationOutcome SecurityLakeClient::DeleteDataLakeOrganizationConfiguration(const DeleteDataLakeOrganizationConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteDataLakeOrganizationConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDataLakeOrganizationConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteDataLakeOrganizationConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -300,6 +313,7 @@ DeleteDataLakeOrganizationConfigurationOutcome SecurityLakeClient::DeleteDataLak
 
 DeleteSubscriberOutcome SecurityLakeClient::DeleteSubscriber(const DeleteSubscriberRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteSubscriber);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteSubscriber, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SubscriberIdHasBeenSet())
   {
@@ -315,6 +329,7 @@ DeleteSubscriberOutcome SecurityLakeClient::DeleteSubscriber(const DeleteSubscri
 
 DeleteSubscriberNotificationOutcome SecurityLakeClient::DeleteSubscriberNotification(const DeleteSubscriberNotificationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteSubscriberNotification);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteSubscriberNotification, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SubscriberIdHasBeenSet())
   {
@@ -331,6 +346,7 @@ DeleteSubscriberNotificationOutcome SecurityLakeClient::DeleteSubscriberNotifica
 
 DeregisterDataLakeDelegatedAdministratorOutcome SecurityLakeClient::DeregisterDataLakeDelegatedAdministrator(const DeregisterDataLakeDelegatedAdministratorRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeregisterDataLakeDelegatedAdministrator);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeregisterDataLakeDelegatedAdministrator, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeregisterDataLakeDelegatedAdministrator, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -340,6 +356,7 @@ DeregisterDataLakeDelegatedAdministratorOutcome SecurityLakeClient::DeregisterDa
 
 GetDataLakeExceptionSubscriptionOutcome SecurityLakeClient::GetDataLakeExceptionSubscription(const GetDataLakeExceptionSubscriptionRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDataLakeExceptionSubscription);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDataLakeExceptionSubscription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetDataLakeExceptionSubscription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -349,6 +366,7 @@ GetDataLakeExceptionSubscriptionOutcome SecurityLakeClient::GetDataLakeException
 
 GetDataLakeOrganizationConfigurationOutcome SecurityLakeClient::GetDataLakeOrganizationConfiguration(const GetDataLakeOrganizationConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDataLakeOrganizationConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDataLakeOrganizationConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetDataLakeOrganizationConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -358,6 +376,7 @@ GetDataLakeOrganizationConfigurationOutcome SecurityLakeClient::GetDataLakeOrgan
 
 GetDataLakeSourcesOutcome SecurityLakeClient::GetDataLakeSources(const GetDataLakeSourcesRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDataLakeSources);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDataLakeSources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetDataLakeSources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -367,6 +386,7 @@ GetDataLakeSourcesOutcome SecurityLakeClient::GetDataLakeSources(const GetDataLa
 
 GetSubscriberOutcome SecurityLakeClient::GetSubscriber(const GetSubscriberRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSubscriber);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSubscriber, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SubscriberIdHasBeenSet())
   {
@@ -382,6 +402,7 @@ GetSubscriberOutcome SecurityLakeClient::GetSubscriber(const GetSubscriberReques
 
 ListDataLakeExceptionsOutcome SecurityLakeClient::ListDataLakeExceptions(const ListDataLakeExceptionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDataLakeExceptions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDataLakeExceptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDataLakeExceptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -391,6 +412,7 @@ ListDataLakeExceptionsOutcome SecurityLakeClient::ListDataLakeExceptions(const L
 
 ListDataLakesOutcome SecurityLakeClient::ListDataLakes(const ListDataLakesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDataLakes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDataLakes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDataLakes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -400,6 +422,7 @@ ListDataLakesOutcome SecurityLakeClient::ListDataLakes(const ListDataLakesReques
 
 ListLogSourcesOutcome SecurityLakeClient::ListLogSources(const ListLogSourcesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListLogSources);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListLogSources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListLogSources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -409,6 +432,7 @@ ListLogSourcesOutcome SecurityLakeClient::ListLogSources(const ListLogSourcesReq
 
 ListSubscribersOutcome SecurityLakeClient::ListSubscribers(const ListSubscribersRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListSubscribers);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSubscribers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListSubscribers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -418,6 +442,7 @@ ListSubscribersOutcome SecurityLakeClient::ListSubscribers(const ListSubscribers
 
 RegisterDataLakeDelegatedAdministratorOutcome SecurityLakeClient::RegisterDataLakeDelegatedAdministrator(const RegisterDataLakeDelegatedAdministratorRequest& request) const
 {
+  AWS_OPERATION_GUARD(RegisterDataLakeDelegatedAdministrator);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RegisterDataLakeDelegatedAdministrator, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RegisterDataLakeDelegatedAdministrator, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -427,6 +452,7 @@ RegisterDataLakeDelegatedAdministratorOutcome SecurityLakeClient::RegisterDataLa
 
 UpdateDataLakeOutcome SecurityLakeClient::UpdateDataLake(const UpdateDataLakeRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateDataLake);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDataLake, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateDataLake, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -436,6 +462,7 @@ UpdateDataLakeOutcome SecurityLakeClient::UpdateDataLake(const UpdateDataLakeReq
 
 UpdateDataLakeExceptionSubscriptionOutcome SecurityLakeClient::UpdateDataLakeExceptionSubscription(const UpdateDataLakeExceptionSubscriptionRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateDataLakeExceptionSubscription);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDataLakeExceptionSubscription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateDataLakeExceptionSubscription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -445,6 +472,7 @@ UpdateDataLakeExceptionSubscriptionOutcome SecurityLakeClient::UpdateDataLakeExc
 
 UpdateSubscriberOutcome SecurityLakeClient::UpdateSubscriber(const UpdateSubscriberRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateSubscriber);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateSubscriber, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SubscriberIdHasBeenSet())
   {
@@ -460,6 +488,7 @@ UpdateSubscriberOutcome SecurityLakeClient::UpdateSubscriber(const UpdateSubscri
 
 UpdateSubscriberNotificationOutcome SecurityLakeClient::UpdateSubscriberNotification(const UpdateSubscriberNotificationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateSubscriberNotification);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateSubscriberNotification, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SubscriberIdHasBeenSet())
   {

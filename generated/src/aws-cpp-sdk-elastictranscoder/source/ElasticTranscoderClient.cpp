@@ -145,6 +145,7 @@ ElasticTranscoderClient::ElasticTranscoderClient(const std::shared_ptr<AWSCreden
     /* End of legacy constructors due deprecation */
 ElasticTranscoderClient::~ElasticTranscoderClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<ElasticTranscoderEndpointProviderBase>& ElasticTranscoderClient::accessEndpointProvider()
@@ -167,6 +168,7 @@ void ElasticTranscoderClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CancelJobOutcome ElasticTranscoderClient::CancelJob(const CancelJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(CancelJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CancelJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -182,6 +184,7 @@ CancelJobOutcome ElasticTranscoderClient::CancelJob(const CancelJobRequest& requ
 
 CreateJobOutcome ElasticTranscoderClient::CreateJob(const CreateJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -191,6 +194,7 @@ CreateJobOutcome ElasticTranscoderClient::CreateJob(const CreateJobRequest& requ
 
 CreatePipelineOutcome ElasticTranscoderClient::CreatePipeline(const CreatePipelineRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreatePipeline);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreatePipeline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreatePipeline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -200,6 +204,7 @@ CreatePipelineOutcome ElasticTranscoderClient::CreatePipeline(const CreatePipeli
 
 CreatePresetOutcome ElasticTranscoderClient::CreatePreset(const CreatePresetRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreatePreset);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreatePreset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreatePreset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -209,6 +214,7 @@ CreatePresetOutcome ElasticTranscoderClient::CreatePreset(const CreatePresetRequ
 
 DeletePipelineOutcome ElasticTranscoderClient::DeletePipeline(const DeletePipelineRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeletePipeline);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeletePipeline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -224,6 +230,7 @@ DeletePipelineOutcome ElasticTranscoderClient::DeletePipeline(const DeletePipeli
 
 DeletePresetOutcome ElasticTranscoderClient::DeletePreset(const DeletePresetRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeletePreset);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeletePreset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -239,6 +246,7 @@ DeletePresetOutcome ElasticTranscoderClient::DeletePreset(const DeletePresetRequ
 
 ListJobsByPipelineOutcome ElasticTranscoderClient::ListJobsByPipeline(const ListJobsByPipelineRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListJobsByPipeline);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListJobsByPipeline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PipelineIdHasBeenSet())
   {
@@ -254,6 +262,7 @@ ListJobsByPipelineOutcome ElasticTranscoderClient::ListJobsByPipeline(const List
 
 ListJobsByStatusOutcome ElasticTranscoderClient::ListJobsByStatus(const ListJobsByStatusRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListJobsByStatus);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListJobsByStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StatusHasBeenSet())
   {
@@ -269,6 +278,7 @@ ListJobsByStatusOutcome ElasticTranscoderClient::ListJobsByStatus(const ListJobs
 
 ListPipelinesOutcome ElasticTranscoderClient::ListPipelines(const ListPipelinesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListPipelines);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPipelines, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListPipelines, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -278,6 +288,7 @@ ListPipelinesOutcome ElasticTranscoderClient::ListPipelines(const ListPipelinesR
 
 ListPresetsOutcome ElasticTranscoderClient::ListPresets(const ListPresetsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListPresets);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPresets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListPresets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -287,6 +298,7 @@ ListPresetsOutcome ElasticTranscoderClient::ListPresets(const ListPresetsRequest
 
 ReadJobOutcome ElasticTranscoderClient::ReadJob(const ReadJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(ReadJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ReadJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -302,6 +314,7 @@ ReadJobOutcome ElasticTranscoderClient::ReadJob(const ReadJobRequest& request) c
 
 ReadPipelineOutcome ElasticTranscoderClient::ReadPipeline(const ReadPipelineRequest& request) const
 {
+  AWS_OPERATION_GUARD(ReadPipeline);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ReadPipeline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -317,6 +330,7 @@ ReadPipelineOutcome ElasticTranscoderClient::ReadPipeline(const ReadPipelineRequ
 
 ReadPresetOutcome ElasticTranscoderClient::ReadPreset(const ReadPresetRequest& request) const
 {
+  AWS_OPERATION_GUARD(ReadPreset);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ReadPreset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -332,6 +346,7 @@ ReadPresetOutcome ElasticTranscoderClient::ReadPreset(const ReadPresetRequest& r
 
 UpdatePipelineOutcome ElasticTranscoderClient::UpdatePipeline(const UpdatePipelineRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdatePipeline);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdatePipeline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -347,6 +362,7 @@ UpdatePipelineOutcome ElasticTranscoderClient::UpdatePipeline(const UpdatePipeli
 
 UpdatePipelineNotificationsOutcome ElasticTranscoderClient::UpdatePipelineNotifications(const UpdatePipelineNotificationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdatePipelineNotifications);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdatePipelineNotifications, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -363,6 +379,7 @@ UpdatePipelineNotificationsOutcome ElasticTranscoderClient::UpdatePipelineNotifi
 
 UpdatePipelineStatusOutcome ElasticTranscoderClient::UpdatePipelineStatus(const UpdatePipelineStatusRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdatePipelineStatus);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdatePipelineStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {

@@ -162,6 +162,7 @@ GlacierClient::GlacierClient(const std::shared_ptr<AWSCredentialsProvider>& cred
     /* End of legacy constructors due deprecation */
 GlacierClient::~GlacierClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<GlacierEndpointProviderBase>& GlacierClient::accessEndpointProvider()
@@ -184,6 +185,7 @@ void GlacierClient::OverrideEndpoint(const Aws::String& endpoint)
 
 AbortMultipartUploadOutcome GlacierClient::AbortMultipartUpload(const AbortMultipartUploadRequest& request) const
 {
+  AWS_OPERATION_GUARD(AbortMultipartUpload);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AbortMultipartUpload, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -217,6 +219,7 @@ AbortMultipartUploadOutcome GlacierClient::AbortMultipartUpload(const AbortMulti
 
 AbortVaultLockOutcome GlacierClient::AbortVaultLock(const AbortVaultLockRequest& request) const
 {
+  AWS_OPERATION_GUARD(AbortVaultLock);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AbortVaultLock, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -244,6 +247,7 @@ AbortVaultLockOutcome GlacierClient::AbortVaultLock(const AbortVaultLockRequest&
 
 AddTagsToVaultOutcome GlacierClient::AddTagsToVault(const AddTagsToVaultRequest& request) const
 {
+  AWS_OPERATION_GUARD(AddTagsToVault);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AddTagsToVault, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -274,6 +278,7 @@ AddTagsToVaultOutcome GlacierClient::AddTagsToVault(const AddTagsToVaultRequest&
 
 CompleteMultipartUploadOutcome GlacierClient::CompleteMultipartUpload(const CompleteMultipartUploadRequest& request) const
 {
+  AWS_OPERATION_GUARD(CompleteMultipartUpload);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CompleteMultipartUpload, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -307,6 +312,7 @@ CompleteMultipartUploadOutcome GlacierClient::CompleteMultipartUpload(const Comp
 
 CompleteVaultLockOutcome GlacierClient::CompleteVaultLock(const CompleteVaultLockRequest& request) const
 {
+  AWS_OPERATION_GUARD(CompleteVaultLock);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CompleteVaultLock, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -340,6 +346,7 @@ CompleteVaultLockOutcome GlacierClient::CompleteVaultLock(const CompleteVaultLoc
 
 CreateVaultOutcome GlacierClient::CreateVault(const CreateVaultRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateVault);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateVault, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -366,6 +373,7 @@ CreateVaultOutcome GlacierClient::CreateVault(const CreateVaultRequest& request)
 
 DeleteArchiveOutcome GlacierClient::DeleteArchive(const DeleteArchiveRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteArchive);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteArchive, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -399,6 +407,7 @@ DeleteArchiveOutcome GlacierClient::DeleteArchive(const DeleteArchiveRequest& re
 
 DeleteVaultOutcome GlacierClient::DeleteVault(const DeleteVaultRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteVault);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteVault, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -425,6 +434,7 @@ DeleteVaultOutcome GlacierClient::DeleteVault(const DeleteVaultRequest& request)
 
 DeleteVaultAccessPolicyOutcome GlacierClient::DeleteVaultAccessPolicy(const DeleteVaultAccessPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteVaultAccessPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteVaultAccessPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -452,6 +462,7 @@ DeleteVaultAccessPolicyOutcome GlacierClient::DeleteVaultAccessPolicy(const Dele
 
 DeleteVaultNotificationsOutcome GlacierClient::DeleteVaultNotifications(const DeleteVaultNotificationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteVaultNotifications);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteVaultNotifications, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -479,6 +490,7 @@ DeleteVaultNotificationsOutcome GlacierClient::DeleteVaultNotifications(const De
 
 DescribeJobOutcome GlacierClient::DescribeJob(const DescribeJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -512,6 +524,7 @@ DescribeJobOutcome GlacierClient::DescribeJob(const DescribeJobRequest& request)
 
 DescribeVaultOutcome GlacierClient::DescribeVault(const DescribeVaultRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeVault);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeVault, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -538,6 +551,7 @@ DescribeVaultOutcome GlacierClient::DescribeVault(const DescribeVaultRequest& re
 
 GetDataRetrievalPolicyOutcome GlacierClient::GetDataRetrievalPolicy(const GetDataRetrievalPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDataRetrievalPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDataRetrievalPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -558,6 +572,7 @@ GetDataRetrievalPolicyOutcome GlacierClient::GetDataRetrievalPolicy(const GetDat
 
 GetJobOutputOutcome GlacierClient::GetJobOutput(const GetJobOutputRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetJobOutput);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetJobOutput, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -592,6 +607,7 @@ GetJobOutputOutcome GlacierClient::GetJobOutput(const GetJobOutputRequest& reque
 
 GetVaultAccessPolicyOutcome GlacierClient::GetVaultAccessPolicy(const GetVaultAccessPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetVaultAccessPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetVaultAccessPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -619,6 +635,7 @@ GetVaultAccessPolicyOutcome GlacierClient::GetVaultAccessPolicy(const GetVaultAc
 
 GetVaultLockOutcome GlacierClient::GetVaultLock(const GetVaultLockRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetVaultLock);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetVaultLock, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -646,6 +663,7 @@ GetVaultLockOutcome GlacierClient::GetVaultLock(const GetVaultLockRequest& reque
 
 GetVaultNotificationsOutcome GlacierClient::GetVaultNotifications(const GetVaultNotificationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetVaultNotifications);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetVaultNotifications, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -673,6 +691,7 @@ GetVaultNotificationsOutcome GlacierClient::GetVaultNotifications(const GetVault
 
 InitiateJobOutcome GlacierClient::InitiateJob(const InitiateJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(InitiateJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, InitiateJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -700,6 +719,7 @@ InitiateJobOutcome GlacierClient::InitiateJob(const InitiateJobRequest& request)
 
 InitiateMultipartUploadOutcome GlacierClient::InitiateMultipartUpload(const InitiateMultipartUploadRequest& request) const
 {
+  AWS_OPERATION_GUARD(InitiateMultipartUpload);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, InitiateMultipartUpload, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -727,6 +747,7 @@ InitiateMultipartUploadOutcome GlacierClient::InitiateMultipartUpload(const Init
 
 InitiateVaultLockOutcome GlacierClient::InitiateVaultLock(const InitiateVaultLockRequest& request) const
 {
+  AWS_OPERATION_GUARD(InitiateVaultLock);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, InitiateVaultLock, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -754,6 +775,7 @@ InitiateVaultLockOutcome GlacierClient::InitiateVaultLock(const InitiateVaultLoc
 
 ListJobsOutcome GlacierClient::ListJobs(const ListJobsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListJobs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -781,6 +803,7 @@ ListJobsOutcome GlacierClient::ListJobs(const ListJobsRequest& request) const
 
 ListMultipartUploadsOutcome GlacierClient::ListMultipartUploads(const ListMultipartUploadsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListMultipartUploads);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListMultipartUploads, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -808,6 +831,7 @@ ListMultipartUploadsOutcome GlacierClient::ListMultipartUploads(const ListMultip
 
 ListPartsOutcome GlacierClient::ListParts(const ListPartsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListParts);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListParts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -841,6 +865,7 @@ ListPartsOutcome GlacierClient::ListParts(const ListPartsRequest& request) const
 
 ListProvisionedCapacityOutcome GlacierClient::ListProvisionedCapacity(const ListProvisionedCapacityRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListProvisionedCapacity);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListProvisionedCapacity, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -861,6 +886,7 @@ ListProvisionedCapacityOutcome GlacierClient::ListProvisionedCapacity(const List
 
 ListTagsForVaultOutcome GlacierClient::ListTagsForVault(const ListTagsForVaultRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForVault);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForVault, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -888,6 +914,7 @@ ListTagsForVaultOutcome GlacierClient::ListTagsForVault(const ListTagsForVaultRe
 
 ListVaultsOutcome GlacierClient::ListVaults(const ListVaultsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListVaults);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListVaults, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -908,6 +935,7 @@ ListVaultsOutcome GlacierClient::ListVaults(const ListVaultsRequest& request) co
 
 PurchaseProvisionedCapacityOutcome GlacierClient::PurchaseProvisionedCapacity(const PurchaseProvisionedCapacityRequest& request) const
 {
+  AWS_OPERATION_GUARD(PurchaseProvisionedCapacity);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PurchaseProvisionedCapacity, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -928,6 +956,7 @@ PurchaseProvisionedCapacityOutcome GlacierClient::PurchaseProvisionedCapacity(co
 
 RemoveTagsFromVaultOutcome GlacierClient::RemoveTagsFromVault(const RemoveTagsFromVaultRequest& request) const
 {
+  AWS_OPERATION_GUARD(RemoveTagsFromVault);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RemoveTagsFromVault, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -958,6 +987,7 @@ RemoveTagsFromVaultOutcome GlacierClient::RemoveTagsFromVault(const RemoveTagsFr
 
 SetDataRetrievalPolicyOutcome GlacierClient::SetDataRetrievalPolicy(const SetDataRetrievalPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(SetDataRetrievalPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SetDataRetrievalPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -978,6 +1008,7 @@ SetDataRetrievalPolicyOutcome GlacierClient::SetDataRetrievalPolicy(const SetDat
 
 SetVaultAccessPolicyOutcome GlacierClient::SetVaultAccessPolicy(const SetVaultAccessPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(SetVaultAccessPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SetVaultAccessPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -1005,6 +1036,7 @@ SetVaultAccessPolicyOutcome GlacierClient::SetVaultAccessPolicy(const SetVaultAc
 
 SetVaultNotificationsOutcome GlacierClient::SetVaultNotifications(const SetVaultNotificationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(SetVaultNotifications);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SetVaultNotifications, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
@@ -1032,6 +1064,7 @@ SetVaultNotificationsOutcome GlacierClient::SetVaultNotifications(const SetVault
 
 UploadArchiveOutcome GlacierClient::UploadArchive(const UploadArchiveRequest& request) const
 {
+  AWS_OPERATION_GUARD(UploadArchive);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UploadArchive, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VaultNameHasBeenSet())
   {
@@ -1059,6 +1092,7 @@ UploadArchiveOutcome GlacierClient::UploadArchive(const UploadArchiveRequest& re
 
 UploadMultipartPartOutcome GlacierClient::UploadMultipartPart(const UploadMultipartPartRequest& request) const
 {
+  AWS_OPERATION_GUARD(UploadMultipartPart);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UploadMultipartPart, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {

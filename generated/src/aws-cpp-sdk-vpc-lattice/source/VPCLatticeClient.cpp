@@ -181,6 +181,7 @@ VPCLatticeClient::VPCLatticeClient(const std::shared_ptr<AWSCredentialsProvider>
     /* End of legacy constructors due deprecation */
 VPCLatticeClient::~VPCLatticeClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<VPCLatticeEndpointProviderBase>& VPCLatticeClient::accessEndpointProvider()
@@ -203,6 +204,7 @@ void VPCLatticeClient::OverrideEndpoint(const Aws::String& endpoint)
 
 BatchUpdateRuleOutcome VPCLatticeClient::BatchUpdateRule(const BatchUpdateRuleRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchUpdateRule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchUpdateRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ListenerIdentifierHasBeenSet())
   {
@@ -226,6 +228,7 @@ BatchUpdateRuleOutcome VPCLatticeClient::BatchUpdateRule(const BatchUpdateRuleRe
 
 CreateAccessLogSubscriptionOutcome VPCLatticeClient::CreateAccessLogSubscription(const CreateAccessLogSubscriptionRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateAccessLogSubscription);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAccessLogSubscription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateAccessLogSubscription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -235,6 +238,7 @@ CreateAccessLogSubscriptionOutcome VPCLatticeClient::CreateAccessLogSubscription
 
 CreateListenerOutcome VPCLatticeClient::CreateListener(const CreateListenerRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateListener);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateListener, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ServiceIdentifierHasBeenSet())
   {
@@ -251,6 +255,7 @@ CreateListenerOutcome VPCLatticeClient::CreateListener(const CreateListenerReque
 
 CreateRuleOutcome VPCLatticeClient::CreateRule(const CreateRuleRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateRule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ListenerIdentifierHasBeenSet())
   {
@@ -274,6 +279,7 @@ CreateRuleOutcome VPCLatticeClient::CreateRule(const CreateRuleRequest& request)
 
 CreateServiceOutcome VPCLatticeClient::CreateService(const CreateServiceRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateService);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateService, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateService, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -283,6 +289,7 @@ CreateServiceOutcome VPCLatticeClient::CreateService(const CreateServiceRequest&
 
 CreateServiceNetworkOutcome VPCLatticeClient::CreateServiceNetwork(const CreateServiceNetworkRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateServiceNetwork);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateServiceNetwork, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateServiceNetwork, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -292,6 +299,7 @@ CreateServiceNetworkOutcome VPCLatticeClient::CreateServiceNetwork(const CreateS
 
 CreateServiceNetworkServiceAssociationOutcome VPCLatticeClient::CreateServiceNetworkServiceAssociation(const CreateServiceNetworkServiceAssociationRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateServiceNetworkServiceAssociation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateServiceNetworkServiceAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateServiceNetworkServiceAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -301,6 +309,7 @@ CreateServiceNetworkServiceAssociationOutcome VPCLatticeClient::CreateServiceNet
 
 CreateServiceNetworkVpcAssociationOutcome VPCLatticeClient::CreateServiceNetworkVpcAssociation(const CreateServiceNetworkVpcAssociationRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateServiceNetworkVpcAssociation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateServiceNetworkVpcAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateServiceNetworkVpcAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -310,6 +319,7 @@ CreateServiceNetworkVpcAssociationOutcome VPCLatticeClient::CreateServiceNetwork
 
 CreateTargetGroupOutcome VPCLatticeClient::CreateTargetGroup(const CreateTargetGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateTargetGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateTargetGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateTargetGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -319,6 +329,7 @@ CreateTargetGroupOutcome VPCLatticeClient::CreateTargetGroup(const CreateTargetG
 
 DeleteAccessLogSubscriptionOutcome VPCLatticeClient::DeleteAccessLogSubscription(const DeleteAccessLogSubscriptionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteAccessLogSubscription);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAccessLogSubscription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccessLogSubscriptionIdentifierHasBeenSet())
   {
@@ -334,6 +345,7 @@ DeleteAccessLogSubscriptionOutcome VPCLatticeClient::DeleteAccessLogSubscription
 
 DeleteAuthPolicyOutcome VPCLatticeClient::DeleteAuthPolicy(const DeleteAuthPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteAuthPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAuthPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceIdentifierHasBeenSet())
   {
@@ -349,6 +361,7 @@ DeleteAuthPolicyOutcome VPCLatticeClient::DeleteAuthPolicy(const DeleteAuthPolic
 
 DeleteListenerOutcome VPCLatticeClient::DeleteListener(const DeleteListenerRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteListener);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteListener, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ListenerIdentifierHasBeenSet())
   {
@@ -371,6 +384,7 @@ DeleteListenerOutcome VPCLatticeClient::DeleteListener(const DeleteListenerReque
 
 DeleteResourcePolicyOutcome VPCLatticeClient::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteResourcePolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -386,6 +400,7 @@ DeleteResourcePolicyOutcome VPCLatticeClient::DeleteResourcePolicy(const DeleteR
 
 DeleteRuleOutcome VPCLatticeClient::DeleteRule(const DeleteRuleRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteRule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ListenerIdentifierHasBeenSet())
   {
@@ -415,6 +430,7 @@ DeleteRuleOutcome VPCLatticeClient::DeleteRule(const DeleteRuleRequest& request)
 
 DeleteServiceOutcome VPCLatticeClient::DeleteService(const DeleteServiceRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteService);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteService, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ServiceIdentifierHasBeenSet())
   {
@@ -430,6 +446,7 @@ DeleteServiceOutcome VPCLatticeClient::DeleteService(const DeleteServiceRequest&
 
 DeleteServiceNetworkOutcome VPCLatticeClient::DeleteServiceNetwork(const DeleteServiceNetworkRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteServiceNetwork);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteServiceNetwork, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ServiceNetworkIdentifierHasBeenSet())
   {
@@ -445,6 +462,7 @@ DeleteServiceNetworkOutcome VPCLatticeClient::DeleteServiceNetwork(const DeleteS
 
 DeleteServiceNetworkServiceAssociationOutcome VPCLatticeClient::DeleteServiceNetworkServiceAssociation(const DeleteServiceNetworkServiceAssociationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteServiceNetworkServiceAssociation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteServiceNetworkServiceAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ServiceNetworkServiceAssociationIdentifierHasBeenSet())
   {
@@ -460,6 +478,7 @@ DeleteServiceNetworkServiceAssociationOutcome VPCLatticeClient::DeleteServiceNet
 
 DeleteServiceNetworkVpcAssociationOutcome VPCLatticeClient::DeleteServiceNetworkVpcAssociation(const DeleteServiceNetworkVpcAssociationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteServiceNetworkVpcAssociation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteServiceNetworkVpcAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ServiceNetworkVpcAssociationIdentifierHasBeenSet())
   {
@@ -475,6 +494,7 @@ DeleteServiceNetworkVpcAssociationOutcome VPCLatticeClient::DeleteServiceNetwork
 
 DeleteTargetGroupOutcome VPCLatticeClient::DeleteTargetGroup(const DeleteTargetGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteTargetGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteTargetGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TargetGroupIdentifierHasBeenSet())
   {
@@ -490,6 +510,7 @@ DeleteTargetGroupOutcome VPCLatticeClient::DeleteTargetGroup(const DeleteTargetG
 
 DeregisterTargetsOutcome VPCLatticeClient::DeregisterTargets(const DeregisterTargetsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeregisterTargets);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeregisterTargets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TargetGroupIdentifierHasBeenSet())
   {
@@ -506,6 +527,7 @@ DeregisterTargetsOutcome VPCLatticeClient::DeregisterTargets(const DeregisterTar
 
 GetAccessLogSubscriptionOutcome VPCLatticeClient::GetAccessLogSubscription(const GetAccessLogSubscriptionRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetAccessLogSubscription);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAccessLogSubscription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccessLogSubscriptionIdentifierHasBeenSet())
   {
@@ -521,6 +543,7 @@ GetAccessLogSubscriptionOutcome VPCLatticeClient::GetAccessLogSubscription(const
 
 GetAuthPolicyOutcome VPCLatticeClient::GetAuthPolicy(const GetAuthPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetAuthPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAuthPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceIdentifierHasBeenSet())
   {
@@ -536,6 +559,7 @@ GetAuthPolicyOutcome VPCLatticeClient::GetAuthPolicy(const GetAuthPolicyRequest&
 
 GetListenerOutcome VPCLatticeClient::GetListener(const GetListenerRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetListener);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetListener, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ListenerIdentifierHasBeenSet())
   {
@@ -558,6 +582,7 @@ GetListenerOutcome VPCLatticeClient::GetListener(const GetListenerRequest& reque
 
 GetResourcePolicyOutcome VPCLatticeClient::GetResourcePolicy(const GetResourcePolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetResourcePolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -573,6 +598,7 @@ GetResourcePolicyOutcome VPCLatticeClient::GetResourcePolicy(const GetResourcePo
 
 GetRuleOutcome VPCLatticeClient::GetRule(const GetRuleRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetRule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ListenerIdentifierHasBeenSet())
   {
@@ -602,6 +628,7 @@ GetRuleOutcome VPCLatticeClient::GetRule(const GetRuleRequest& request) const
 
 GetServiceOutcome VPCLatticeClient::GetService(const GetServiceRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetService);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetService, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ServiceIdentifierHasBeenSet())
   {
@@ -617,6 +644,7 @@ GetServiceOutcome VPCLatticeClient::GetService(const GetServiceRequest& request)
 
 GetServiceNetworkOutcome VPCLatticeClient::GetServiceNetwork(const GetServiceNetworkRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetServiceNetwork);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetServiceNetwork, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ServiceNetworkIdentifierHasBeenSet())
   {
@@ -632,6 +660,7 @@ GetServiceNetworkOutcome VPCLatticeClient::GetServiceNetwork(const GetServiceNet
 
 GetServiceNetworkServiceAssociationOutcome VPCLatticeClient::GetServiceNetworkServiceAssociation(const GetServiceNetworkServiceAssociationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetServiceNetworkServiceAssociation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetServiceNetworkServiceAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ServiceNetworkServiceAssociationIdentifierHasBeenSet())
   {
@@ -647,6 +676,7 @@ GetServiceNetworkServiceAssociationOutcome VPCLatticeClient::GetServiceNetworkSe
 
 GetServiceNetworkVpcAssociationOutcome VPCLatticeClient::GetServiceNetworkVpcAssociation(const GetServiceNetworkVpcAssociationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetServiceNetworkVpcAssociation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetServiceNetworkVpcAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ServiceNetworkVpcAssociationIdentifierHasBeenSet())
   {
@@ -662,6 +692,7 @@ GetServiceNetworkVpcAssociationOutcome VPCLatticeClient::GetServiceNetworkVpcAss
 
 GetTargetGroupOutcome VPCLatticeClient::GetTargetGroup(const GetTargetGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetTargetGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetTargetGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TargetGroupIdentifierHasBeenSet())
   {
@@ -677,6 +708,7 @@ GetTargetGroupOutcome VPCLatticeClient::GetTargetGroup(const GetTargetGroupReque
 
 ListAccessLogSubscriptionsOutcome VPCLatticeClient::ListAccessLogSubscriptions(const ListAccessLogSubscriptionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAccessLogSubscriptions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAccessLogSubscriptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceIdentifierHasBeenSet())
   {
@@ -691,6 +723,7 @@ ListAccessLogSubscriptionsOutcome VPCLatticeClient::ListAccessLogSubscriptions(c
 
 ListListenersOutcome VPCLatticeClient::ListListeners(const ListListenersRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListListeners);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListListeners, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ServiceIdentifierHasBeenSet())
   {
@@ -707,6 +740,7 @@ ListListenersOutcome VPCLatticeClient::ListListeners(const ListListenersRequest&
 
 ListRulesOutcome VPCLatticeClient::ListRules(const ListRulesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListRules);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRules, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ListenerIdentifierHasBeenSet())
   {
@@ -730,6 +764,7 @@ ListRulesOutcome VPCLatticeClient::ListRules(const ListRulesRequest& request) co
 
 ListServiceNetworkServiceAssociationsOutcome VPCLatticeClient::ListServiceNetworkServiceAssociations(const ListServiceNetworkServiceAssociationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListServiceNetworkServiceAssociations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListServiceNetworkServiceAssociations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListServiceNetworkServiceAssociations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -739,6 +774,7 @@ ListServiceNetworkServiceAssociationsOutcome VPCLatticeClient::ListServiceNetwor
 
 ListServiceNetworkVpcAssociationsOutcome VPCLatticeClient::ListServiceNetworkVpcAssociations(const ListServiceNetworkVpcAssociationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListServiceNetworkVpcAssociations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListServiceNetworkVpcAssociations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListServiceNetworkVpcAssociations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -748,6 +784,7 @@ ListServiceNetworkVpcAssociationsOutcome VPCLatticeClient::ListServiceNetworkVpc
 
 ListServiceNetworksOutcome VPCLatticeClient::ListServiceNetworks(const ListServiceNetworksRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListServiceNetworks);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListServiceNetworks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListServiceNetworks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -757,6 +794,7 @@ ListServiceNetworksOutcome VPCLatticeClient::ListServiceNetworks(const ListServi
 
 ListServicesOutcome VPCLatticeClient::ListServices(const ListServicesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListServices);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListServices, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListServices, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -766,6 +804,7 @@ ListServicesOutcome VPCLatticeClient::ListServices(const ListServicesRequest& re
 
 ListTagsForResourceOutcome VPCLatticeClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -781,6 +820,7 @@ ListTagsForResourceOutcome VPCLatticeClient::ListTagsForResource(const ListTagsF
 
 ListTargetGroupsOutcome VPCLatticeClient::ListTargetGroups(const ListTargetGroupsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTargetGroups);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTargetGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTargetGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -790,6 +830,7 @@ ListTargetGroupsOutcome VPCLatticeClient::ListTargetGroups(const ListTargetGroup
 
 ListTargetsOutcome VPCLatticeClient::ListTargets(const ListTargetsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTargets);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTargets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TargetGroupIdentifierHasBeenSet())
   {
@@ -806,6 +847,7 @@ ListTargetsOutcome VPCLatticeClient::ListTargets(const ListTargetsRequest& reque
 
 PutAuthPolicyOutcome VPCLatticeClient::PutAuthPolicy(const PutAuthPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutAuthPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutAuthPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceIdentifierHasBeenSet())
   {
@@ -821,6 +863,7 @@ PutAuthPolicyOutcome VPCLatticeClient::PutAuthPolicy(const PutAuthPolicyRequest&
 
 PutResourcePolicyOutcome VPCLatticeClient::PutResourcePolicy(const PutResourcePolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutResourcePolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -836,6 +879,7 @@ PutResourcePolicyOutcome VPCLatticeClient::PutResourcePolicy(const PutResourcePo
 
 RegisterTargetsOutcome VPCLatticeClient::RegisterTargets(const RegisterTargetsRequest& request) const
 {
+  AWS_OPERATION_GUARD(RegisterTargets);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RegisterTargets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TargetGroupIdentifierHasBeenSet())
   {
@@ -852,6 +896,7 @@ RegisterTargetsOutcome VPCLatticeClient::RegisterTargets(const RegisterTargetsRe
 
 TagResourceOutcome VPCLatticeClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -867,6 +912,7 @@ TagResourceOutcome VPCLatticeClient::TagResource(const TagResourceRequest& reque
 
 UntagResourceOutcome VPCLatticeClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -887,6 +933,7 @@ UntagResourceOutcome VPCLatticeClient::UntagResource(const UntagResourceRequest&
 
 UpdateAccessLogSubscriptionOutcome VPCLatticeClient::UpdateAccessLogSubscription(const UpdateAccessLogSubscriptionRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateAccessLogSubscription);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAccessLogSubscription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccessLogSubscriptionIdentifierHasBeenSet())
   {
@@ -902,6 +949,7 @@ UpdateAccessLogSubscriptionOutcome VPCLatticeClient::UpdateAccessLogSubscription
 
 UpdateListenerOutcome VPCLatticeClient::UpdateListener(const UpdateListenerRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateListener);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateListener, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ListenerIdentifierHasBeenSet())
   {
@@ -924,6 +972,7 @@ UpdateListenerOutcome VPCLatticeClient::UpdateListener(const UpdateListenerReque
 
 UpdateRuleOutcome VPCLatticeClient::UpdateRule(const UpdateRuleRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateRule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ListenerIdentifierHasBeenSet())
   {
@@ -953,6 +1002,7 @@ UpdateRuleOutcome VPCLatticeClient::UpdateRule(const UpdateRuleRequest& request)
 
 UpdateServiceOutcome VPCLatticeClient::UpdateService(const UpdateServiceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateService);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateService, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ServiceIdentifierHasBeenSet())
   {
@@ -968,6 +1018,7 @@ UpdateServiceOutcome VPCLatticeClient::UpdateService(const UpdateServiceRequest&
 
 UpdateServiceNetworkOutcome VPCLatticeClient::UpdateServiceNetwork(const UpdateServiceNetworkRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateServiceNetwork);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateServiceNetwork, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ServiceNetworkIdentifierHasBeenSet())
   {
@@ -983,6 +1034,7 @@ UpdateServiceNetworkOutcome VPCLatticeClient::UpdateServiceNetwork(const UpdateS
 
 UpdateServiceNetworkVpcAssociationOutcome VPCLatticeClient::UpdateServiceNetworkVpcAssociation(const UpdateServiceNetworkVpcAssociationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateServiceNetworkVpcAssociation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateServiceNetworkVpcAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ServiceNetworkVpcAssociationIdentifierHasBeenSet())
   {
@@ -998,6 +1050,7 @@ UpdateServiceNetworkVpcAssociationOutcome VPCLatticeClient::UpdateServiceNetwork
 
 UpdateTargetGroupOutcome VPCLatticeClient::UpdateTargetGroup(const UpdateTargetGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateTargetGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateTargetGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TargetGroupIdentifierHasBeenSet())
   {

@@ -147,6 +147,7 @@ MediaPackageClient::MediaPackageClient(const std::shared_ptr<AWSCredentialsProvi
     /* End of legacy constructors due deprecation */
 MediaPackageClient::~MediaPackageClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<MediaPackageEndpointProviderBase>& MediaPackageClient::accessEndpointProvider()
@@ -169,6 +170,7 @@ void MediaPackageClient::OverrideEndpoint(const Aws::String& endpoint)
 
 ConfigureLogsOutcome MediaPackageClient::ConfigureLogs(const ConfigureLogsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ConfigureLogs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ConfigureLogs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -185,6 +187,7 @@ ConfigureLogsOutcome MediaPackageClient::ConfigureLogs(const ConfigureLogsReques
 
 CreateChannelOutcome MediaPackageClient::CreateChannel(const CreateChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -194,6 +197,7 @@ CreateChannelOutcome MediaPackageClient::CreateChannel(const CreateChannelReques
 
 CreateHarvestJobOutcome MediaPackageClient::CreateHarvestJob(const CreateHarvestJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateHarvestJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateHarvestJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateHarvestJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -203,6 +207,7 @@ CreateHarvestJobOutcome MediaPackageClient::CreateHarvestJob(const CreateHarvest
 
 CreateOriginEndpointOutcome MediaPackageClient::CreateOriginEndpoint(const CreateOriginEndpointRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateOriginEndpoint);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateOriginEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateOriginEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -212,6 +217,7 @@ CreateOriginEndpointOutcome MediaPackageClient::CreateOriginEndpoint(const Creat
 
 DeleteChannelOutcome MediaPackageClient::DeleteChannel(const DeleteChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -227,6 +233,7 @@ DeleteChannelOutcome MediaPackageClient::DeleteChannel(const DeleteChannelReques
 
 DeleteOriginEndpointOutcome MediaPackageClient::DeleteOriginEndpoint(const DeleteOriginEndpointRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteOriginEndpoint);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteOriginEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -242,6 +249,7 @@ DeleteOriginEndpointOutcome MediaPackageClient::DeleteOriginEndpoint(const Delet
 
 DescribeChannelOutcome MediaPackageClient::DescribeChannel(const DescribeChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -257,6 +265,7 @@ DescribeChannelOutcome MediaPackageClient::DescribeChannel(const DescribeChannel
 
 DescribeHarvestJobOutcome MediaPackageClient::DescribeHarvestJob(const DescribeHarvestJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeHarvestJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeHarvestJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -272,6 +281,7 @@ DescribeHarvestJobOutcome MediaPackageClient::DescribeHarvestJob(const DescribeH
 
 DescribeOriginEndpointOutcome MediaPackageClient::DescribeOriginEndpoint(const DescribeOriginEndpointRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeOriginEndpoint);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeOriginEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -287,6 +297,7 @@ DescribeOriginEndpointOutcome MediaPackageClient::DescribeOriginEndpoint(const D
 
 ListChannelsOutcome MediaPackageClient::ListChannels(const ListChannelsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListChannels);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListChannels, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListChannels, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -296,6 +307,7 @@ ListChannelsOutcome MediaPackageClient::ListChannels(const ListChannelsRequest& 
 
 ListHarvestJobsOutcome MediaPackageClient::ListHarvestJobs(const ListHarvestJobsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListHarvestJobs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListHarvestJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListHarvestJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -305,6 +317,7 @@ ListHarvestJobsOutcome MediaPackageClient::ListHarvestJobs(const ListHarvestJobs
 
 ListOriginEndpointsOutcome MediaPackageClient::ListOriginEndpoints(const ListOriginEndpointsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListOriginEndpoints);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListOriginEndpoints, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListOriginEndpoints, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -314,6 +327,7 @@ ListOriginEndpointsOutcome MediaPackageClient::ListOriginEndpoints(const ListOri
 
 ListTagsForResourceOutcome MediaPackageClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -329,6 +343,7 @@ ListTagsForResourceOutcome MediaPackageClient::ListTagsForResource(const ListTag
 
 RotateIngestEndpointCredentialsOutcome MediaPackageClient::RotateIngestEndpointCredentials(const RotateIngestEndpointCredentialsRequest& request) const
 {
+  AWS_OPERATION_GUARD(RotateIngestEndpointCredentials);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RotateIngestEndpointCredentials, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -352,6 +367,7 @@ RotateIngestEndpointCredentialsOutcome MediaPackageClient::RotateIngestEndpointC
 
 TagResourceOutcome MediaPackageClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -367,6 +383,7 @@ TagResourceOutcome MediaPackageClient::TagResource(const TagResourceRequest& req
 
 UntagResourceOutcome MediaPackageClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -387,6 +404,7 @@ UntagResourceOutcome MediaPackageClient::UntagResource(const UntagResourceReques
 
 UpdateChannelOutcome MediaPackageClient::UpdateChannel(const UpdateChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -402,6 +420,7 @@ UpdateChannelOutcome MediaPackageClient::UpdateChannel(const UpdateChannelReques
 
 UpdateOriginEndpointOutcome MediaPackageClient::UpdateOriginEndpoint(const UpdateOriginEndpointRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateOriginEndpoint);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateOriginEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {

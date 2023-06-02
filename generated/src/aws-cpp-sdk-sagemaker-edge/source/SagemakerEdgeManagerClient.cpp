@@ -132,6 +132,7 @@ SagemakerEdgeManagerClient::SagemakerEdgeManagerClient(const std::shared_ptr<AWS
     /* End of legacy constructors due deprecation */
 SagemakerEdgeManagerClient::~SagemakerEdgeManagerClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<SagemakerEdgeManagerEndpointProviderBase>& SagemakerEdgeManagerClient::accessEndpointProvider()
@@ -154,6 +155,7 @@ void SagemakerEdgeManagerClient::OverrideEndpoint(const Aws::String& endpoint)
 
 GetDeploymentsOutcome SagemakerEdgeManagerClient::GetDeployments(const GetDeploymentsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDeployments);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDeployments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetDeployments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -163,6 +165,7 @@ GetDeploymentsOutcome SagemakerEdgeManagerClient::GetDeployments(const GetDeploy
 
 GetDeviceRegistrationOutcome SagemakerEdgeManagerClient::GetDeviceRegistration(const GetDeviceRegistrationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDeviceRegistration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDeviceRegistration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetDeviceRegistration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -172,6 +175,7 @@ GetDeviceRegistrationOutcome SagemakerEdgeManagerClient::GetDeviceRegistration(c
 
 SendHeartbeatOutcome SagemakerEdgeManagerClient::SendHeartbeat(const SendHeartbeatRequest& request) const
 {
+  AWS_OPERATION_GUARD(SendHeartbeat);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SendHeartbeat, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SendHeartbeat, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

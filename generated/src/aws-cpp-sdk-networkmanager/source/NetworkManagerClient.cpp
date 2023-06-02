@@ -214,6 +214,7 @@ NetworkManagerClient::NetworkManagerClient(const std::shared_ptr<AWSCredentialsP
     /* End of legacy constructors due deprecation */
 NetworkManagerClient::~NetworkManagerClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<NetworkManagerEndpointProviderBase>& NetworkManagerClient::accessEndpointProvider()
@@ -236,6 +237,7 @@ void NetworkManagerClient::OverrideEndpoint(const Aws::String& endpoint)
 
 AcceptAttachmentOutcome NetworkManagerClient::AcceptAttachment(const AcceptAttachmentRequest& request) const
 {
+  AWS_OPERATION_GUARD(AcceptAttachment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AcceptAttachment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AttachmentIdHasBeenSet())
   {
@@ -252,6 +254,7 @@ AcceptAttachmentOutcome NetworkManagerClient::AcceptAttachment(const AcceptAttac
 
 AssociateConnectPeerOutcome NetworkManagerClient::AssociateConnectPeer(const AssociateConnectPeerRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociateConnectPeer);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateConnectPeer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GlobalNetworkIdHasBeenSet())
   {
@@ -268,6 +271,7 @@ AssociateConnectPeerOutcome NetworkManagerClient::AssociateConnectPeer(const Ass
 
 AssociateCustomerGatewayOutcome NetworkManagerClient::AssociateCustomerGateway(const AssociateCustomerGatewayRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociateCustomerGateway);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateCustomerGateway, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GlobalNetworkIdHasBeenSet())
   {
@@ -284,6 +288,7 @@ AssociateCustomerGatewayOutcome NetworkManagerClient::AssociateCustomerGateway(c
 
 AssociateLinkOutcome NetworkManagerClient::AssociateLink(const AssociateLinkRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociateLink);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateLink, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GlobalNetworkIdHasBeenSet())
   {
@@ -300,6 +305,7 @@ AssociateLinkOutcome NetworkManagerClient::AssociateLink(const AssociateLinkRequ
 
 AssociateTransitGatewayConnectPeerOutcome NetworkManagerClient::AssociateTransitGatewayConnectPeer(const AssociateTransitGatewayConnectPeerRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociateTransitGatewayConnectPeer);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateTransitGatewayConnectPeer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GlobalNetworkIdHasBeenSet())
   {
@@ -316,6 +322,7 @@ AssociateTransitGatewayConnectPeerOutcome NetworkManagerClient::AssociateTransit
 
 CreateConnectAttachmentOutcome NetworkManagerClient::CreateConnectAttachment(const CreateConnectAttachmentRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateConnectAttachment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateConnectAttachment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateConnectAttachment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -325,6 +332,7 @@ CreateConnectAttachmentOutcome NetworkManagerClient::CreateConnectAttachment(con
 
 CreateConnectPeerOutcome NetworkManagerClient::CreateConnectPeer(const CreateConnectPeerRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateConnectPeer);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateConnectPeer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateConnectPeer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -334,6 +342,7 @@ CreateConnectPeerOutcome NetworkManagerClient::CreateConnectPeer(const CreateCon
 
 CreateConnectionOutcome NetworkManagerClient::CreateConnection(const CreateConnectionRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateConnection);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateConnection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GlobalNetworkIdHasBeenSet())
   {
@@ -350,6 +359,7 @@ CreateConnectionOutcome NetworkManagerClient::CreateConnection(const CreateConne
 
 CreateCoreNetworkOutcome NetworkManagerClient::CreateCoreNetwork(const CreateCoreNetworkRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateCoreNetwork);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateCoreNetwork, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateCoreNetwork, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -359,6 +369,7 @@ CreateCoreNetworkOutcome NetworkManagerClient::CreateCoreNetwork(const CreateCor
 
 CreateDeviceOutcome NetworkManagerClient::CreateDevice(const CreateDeviceRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateDevice);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDevice, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GlobalNetworkIdHasBeenSet())
   {
@@ -375,6 +386,7 @@ CreateDeviceOutcome NetworkManagerClient::CreateDevice(const CreateDeviceRequest
 
 CreateGlobalNetworkOutcome NetworkManagerClient::CreateGlobalNetwork(const CreateGlobalNetworkRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateGlobalNetwork);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateGlobalNetwork, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateGlobalNetwork, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -384,6 +396,7 @@ CreateGlobalNetworkOutcome NetworkManagerClient::CreateGlobalNetwork(const Creat
 
 CreateLinkOutcome NetworkManagerClient::CreateLink(const CreateLinkRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateLink);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateLink, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GlobalNetworkIdHasBeenSet())
   {
@@ -400,6 +413,7 @@ CreateLinkOutcome NetworkManagerClient::CreateLink(const CreateLinkRequest& requ
 
 CreateSiteOutcome NetworkManagerClient::CreateSite(const CreateSiteRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateSite);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateSite, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GlobalNetworkIdHasBeenSet())
   {
@@ -416,6 +430,7 @@ CreateSiteOutcome NetworkManagerClient::CreateSite(const CreateSiteRequest& requ
 
 CreateSiteToSiteVpnAttachmentOutcome NetworkManagerClient::CreateSiteToSiteVpnAttachment(const CreateSiteToSiteVpnAttachmentRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateSiteToSiteVpnAttachment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateSiteToSiteVpnAttachment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateSiteToSiteVpnAttachment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -425,6 +440,7 @@ CreateSiteToSiteVpnAttachmentOutcome NetworkManagerClient::CreateSiteToSiteVpnAt
 
 CreateTransitGatewayPeeringOutcome NetworkManagerClient::CreateTransitGatewayPeering(const CreateTransitGatewayPeeringRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateTransitGatewayPeering);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateTransitGatewayPeering, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateTransitGatewayPeering, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -434,6 +450,7 @@ CreateTransitGatewayPeeringOutcome NetworkManagerClient::CreateTransitGatewayPee
 
 CreateTransitGatewayRouteTableAttachmentOutcome NetworkManagerClient::CreateTransitGatewayRouteTableAttachment(const CreateTransitGatewayRouteTableAttachmentRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateTransitGatewayRouteTableAttachment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateTransitGatewayRouteTableAttachment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateTransitGatewayRouteTableAttachment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -443,6 +460,7 @@ CreateTransitGatewayRouteTableAttachmentOutcome NetworkManagerClient::CreateTran
 
 CreateVpcAttachmentOutcome NetworkManagerClient::CreateVpcAttachment(const CreateVpcAttachmentRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateVpcAttachment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateVpcAttachment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateVpcAttachment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -452,6 +470,7 @@ CreateVpcAttachmentOutcome NetworkManagerClient::CreateVpcAttachment(const Creat
 
 DeleteAttachmentOutcome NetworkManagerClient::DeleteAttachment(const DeleteAttachmentRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteAttachment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAttachment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AttachmentIdHasBeenSet())
   {
@@ -467,6 +486,7 @@ DeleteAttachmentOutcome NetworkManagerClient::DeleteAttachment(const DeleteAttac
 
 DeleteConnectPeerOutcome NetworkManagerClient::DeleteConnectPeer(const DeleteConnectPeerRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteConnectPeer);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteConnectPeer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConnectPeerIdHasBeenSet())
   {
@@ -482,6 +502,7 @@ DeleteConnectPeerOutcome NetworkManagerClient::DeleteConnectPeer(const DeleteCon
 
 DeleteConnectionOutcome NetworkManagerClient::DeleteConnection(const DeleteConnectionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteConnection);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteConnection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GlobalNetworkIdHasBeenSet())
   {
@@ -504,6 +525,7 @@ DeleteConnectionOutcome NetworkManagerClient::DeleteConnection(const DeleteConne
 
 DeleteCoreNetworkOutcome NetworkManagerClient::DeleteCoreNetwork(const DeleteCoreNetworkRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteCoreNetwork);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteCoreNetwork, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CoreNetworkIdHasBeenSet())
   {
@@ -519,6 +541,7 @@ DeleteCoreNetworkOutcome NetworkManagerClient::DeleteCoreNetwork(const DeleteCor
 
 DeleteCoreNetworkPolicyVersionOutcome NetworkManagerClient::DeleteCoreNetworkPolicyVersion(const DeleteCoreNetworkPolicyVersionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteCoreNetworkPolicyVersion);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteCoreNetworkPolicyVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CoreNetworkIdHasBeenSet())
   {
@@ -541,6 +564,7 @@ DeleteCoreNetworkPolicyVersionOutcome NetworkManagerClient::DeleteCoreNetworkPol
 
 DeleteDeviceOutcome NetworkManagerClient::DeleteDevice(const DeleteDeviceRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteDevice);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDevice, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GlobalNetworkIdHasBeenSet())
   {
@@ -563,6 +587,7 @@ DeleteDeviceOutcome NetworkManagerClient::DeleteDevice(const DeleteDeviceRequest
 
 DeleteGlobalNetworkOutcome NetworkManagerClient::DeleteGlobalNetwork(const DeleteGlobalNetworkRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteGlobalNetwork);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteGlobalNetwork, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GlobalNetworkIdHasBeenSet())
   {
@@ -578,6 +603,7 @@ DeleteGlobalNetworkOutcome NetworkManagerClient::DeleteGlobalNetwork(const Delet
 
 DeleteLinkOutcome NetworkManagerClient::DeleteLink(const DeleteLinkRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteLink);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteLink, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GlobalNetworkIdHasBeenSet())
   {
@@ -600,6 +626,7 @@ DeleteLinkOutcome NetworkManagerClient::DeleteLink(const DeleteLinkRequest& requ
 
 DeletePeeringOutcome NetworkManagerClient::DeletePeering(const DeletePeeringRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeletePeering);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeletePeering, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PeeringIdHasBeenSet())
   {
@@ -615,6 +642,7 @@ DeletePeeringOutcome NetworkManagerClient::DeletePeering(const DeletePeeringRequ
 
 DeleteResourcePolicyOutcome NetworkManagerClient::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteResourcePolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -630,6 +658,7 @@ DeleteResourcePolicyOutcome NetworkManagerClient::DeleteResourcePolicy(const Del
 
 DeleteSiteOutcome NetworkManagerClient::DeleteSite(const DeleteSiteRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteSite);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteSite, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GlobalNetworkIdHasBeenSet())
   {
@@ -652,6 +681,7 @@ DeleteSiteOutcome NetworkManagerClient::DeleteSite(const DeleteSiteRequest& requ
 
 DeregisterTransitGatewayOutcome NetworkManagerClient::DeregisterTransitGateway(const DeregisterTransitGatewayRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeregisterTransitGateway);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeregisterTransitGateway, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GlobalNetworkIdHasBeenSet())
   {
@@ -674,6 +704,7 @@ DeregisterTransitGatewayOutcome NetworkManagerClient::DeregisterTransitGateway(c
 
 DescribeGlobalNetworksOutcome NetworkManagerClient::DescribeGlobalNetworks(const DescribeGlobalNetworksRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeGlobalNetworks);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeGlobalNetworks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeGlobalNetworks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -683,6 +714,7 @@ DescribeGlobalNetworksOutcome NetworkManagerClient::DescribeGlobalNetworks(const
 
 DisassociateConnectPeerOutcome NetworkManagerClient::DisassociateConnectPeer(const DisassociateConnectPeerRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociateConnectPeer);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateConnectPeer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GlobalNetworkIdHasBeenSet())
   {
@@ -705,6 +737,7 @@ DisassociateConnectPeerOutcome NetworkManagerClient::DisassociateConnectPeer(con
 
 DisassociateCustomerGatewayOutcome NetworkManagerClient::DisassociateCustomerGateway(const DisassociateCustomerGatewayRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociateCustomerGateway);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateCustomerGateway, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GlobalNetworkIdHasBeenSet())
   {
@@ -727,6 +760,7 @@ DisassociateCustomerGatewayOutcome NetworkManagerClient::DisassociateCustomerGat
 
 DisassociateLinkOutcome NetworkManagerClient::DisassociateLink(const DisassociateLinkRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociateLink);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateLink, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GlobalNetworkIdHasBeenSet())
   {
@@ -753,6 +787,7 @@ DisassociateLinkOutcome NetworkManagerClient::DisassociateLink(const Disassociat
 
 DisassociateTransitGatewayConnectPeerOutcome NetworkManagerClient::DisassociateTransitGatewayConnectPeer(const DisassociateTransitGatewayConnectPeerRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociateTransitGatewayConnectPeer);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateTransitGatewayConnectPeer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GlobalNetworkIdHasBeenSet())
   {
@@ -775,6 +810,7 @@ DisassociateTransitGatewayConnectPeerOutcome NetworkManagerClient::DisassociateT
 
 ExecuteCoreNetworkChangeSetOutcome NetworkManagerClient::ExecuteCoreNetworkChangeSet(const ExecuteCoreNetworkChangeSetRequest& request) const
 {
+  AWS_OPERATION_GUARD(ExecuteCoreNetworkChangeSet);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ExecuteCoreNetworkChangeSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CoreNetworkIdHasBeenSet())
   {
@@ -798,6 +834,7 @@ ExecuteCoreNetworkChangeSetOutcome NetworkManagerClient::ExecuteCoreNetworkChang
 
 GetConnectAttachmentOutcome NetworkManagerClient::GetConnectAttachment(const GetConnectAttachmentRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetConnectAttachment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetConnectAttachment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AttachmentIdHasBeenSet())
   {
@@ -813,6 +850,7 @@ GetConnectAttachmentOutcome NetworkManagerClient::GetConnectAttachment(const Get
 
 GetConnectPeerOutcome NetworkManagerClient::GetConnectPeer(const GetConnectPeerRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetConnectPeer);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetConnectPeer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConnectPeerIdHasBeenSet())
   {
@@ -828,6 +866,7 @@ GetConnectPeerOutcome NetworkManagerClient::GetConnectPeer(const GetConnectPeerR
 
 GetConnectPeerAssociationsOutcome NetworkManagerClient::GetConnectPeerAssociations(const GetConnectPeerAssociationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetConnectPeerAssociations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetConnectPeerAssociations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GlobalNetworkIdHasBeenSet())
   {
@@ -844,6 +883,7 @@ GetConnectPeerAssociationsOutcome NetworkManagerClient::GetConnectPeerAssociatio
 
 GetConnectionsOutcome NetworkManagerClient::GetConnections(const GetConnectionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetConnections);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetConnections, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GlobalNetworkIdHasBeenSet())
   {
@@ -860,6 +900,7 @@ GetConnectionsOutcome NetworkManagerClient::GetConnections(const GetConnectionsR
 
 GetCoreNetworkOutcome NetworkManagerClient::GetCoreNetwork(const GetCoreNetworkRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetCoreNetwork);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCoreNetwork, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CoreNetworkIdHasBeenSet())
   {
@@ -875,6 +916,7 @@ GetCoreNetworkOutcome NetworkManagerClient::GetCoreNetwork(const GetCoreNetworkR
 
 GetCoreNetworkChangeEventsOutcome NetworkManagerClient::GetCoreNetworkChangeEvents(const GetCoreNetworkChangeEventsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetCoreNetworkChangeEvents);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCoreNetworkChangeEvents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CoreNetworkIdHasBeenSet())
   {
@@ -897,6 +939,7 @@ GetCoreNetworkChangeEventsOutcome NetworkManagerClient::GetCoreNetworkChangeEven
 
 GetCoreNetworkChangeSetOutcome NetworkManagerClient::GetCoreNetworkChangeSet(const GetCoreNetworkChangeSetRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetCoreNetworkChangeSet);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCoreNetworkChangeSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CoreNetworkIdHasBeenSet())
   {
@@ -919,6 +962,7 @@ GetCoreNetworkChangeSetOutcome NetworkManagerClient::GetCoreNetworkChangeSet(con
 
 GetCoreNetworkPolicyOutcome NetworkManagerClient::GetCoreNetworkPolicy(const GetCoreNetworkPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetCoreNetworkPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCoreNetworkPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CoreNetworkIdHasBeenSet())
   {
@@ -935,6 +979,7 @@ GetCoreNetworkPolicyOutcome NetworkManagerClient::GetCoreNetworkPolicy(const Get
 
 GetCustomerGatewayAssociationsOutcome NetworkManagerClient::GetCustomerGatewayAssociations(const GetCustomerGatewayAssociationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetCustomerGatewayAssociations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCustomerGatewayAssociations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GlobalNetworkIdHasBeenSet())
   {
@@ -951,6 +996,7 @@ GetCustomerGatewayAssociationsOutcome NetworkManagerClient::GetCustomerGatewayAs
 
 GetDevicesOutcome NetworkManagerClient::GetDevices(const GetDevicesRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDevices);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDevices, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GlobalNetworkIdHasBeenSet())
   {
@@ -967,6 +1013,7 @@ GetDevicesOutcome NetworkManagerClient::GetDevices(const GetDevicesRequest& requ
 
 GetLinkAssociationsOutcome NetworkManagerClient::GetLinkAssociations(const GetLinkAssociationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetLinkAssociations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetLinkAssociations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GlobalNetworkIdHasBeenSet())
   {
@@ -983,6 +1030,7 @@ GetLinkAssociationsOutcome NetworkManagerClient::GetLinkAssociations(const GetLi
 
 GetLinksOutcome NetworkManagerClient::GetLinks(const GetLinksRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetLinks);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetLinks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GlobalNetworkIdHasBeenSet())
   {
@@ -999,6 +1047,7 @@ GetLinksOutcome NetworkManagerClient::GetLinks(const GetLinksRequest& request) c
 
 GetNetworkResourceCountsOutcome NetworkManagerClient::GetNetworkResourceCounts(const GetNetworkResourceCountsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetNetworkResourceCounts);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetNetworkResourceCounts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GlobalNetworkIdHasBeenSet())
   {
@@ -1015,6 +1064,7 @@ GetNetworkResourceCountsOutcome NetworkManagerClient::GetNetworkResourceCounts(c
 
 GetNetworkResourceRelationshipsOutcome NetworkManagerClient::GetNetworkResourceRelationships(const GetNetworkResourceRelationshipsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetNetworkResourceRelationships);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetNetworkResourceRelationships, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GlobalNetworkIdHasBeenSet())
   {
@@ -1031,6 +1081,7 @@ GetNetworkResourceRelationshipsOutcome NetworkManagerClient::GetNetworkResourceR
 
 GetNetworkResourcesOutcome NetworkManagerClient::GetNetworkResources(const GetNetworkResourcesRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetNetworkResources);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetNetworkResources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GlobalNetworkIdHasBeenSet())
   {
@@ -1047,6 +1098,7 @@ GetNetworkResourcesOutcome NetworkManagerClient::GetNetworkResources(const GetNe
 
 GetNetworkRoutesOutcome NetworkManagerClient::GetNetworkRoutes(const GetNetworkRoutesRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetNetworkRoutes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetNetworkRoutes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GlobalNetworkIdHasBeenSet())
   {
@@ -1063,6 +1115,7 @@ GetNetworkRoutesOutcome NetworkManagerClient::GetNetworkRoutes(const GetNetworkR
 
 GetNetworkTelemetryOutcome NetworkManagerClient::GetNetworkTelemetry(const GetNetworkTelemetryRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetNetworkTelemetry);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetNetworkTelemetry, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GlobalNetworkIdHasBeenSet())
   {
@@ -1079,6 +1132,7 @@ GetNetworkTelemetryOutcome NetworkManagerClient::GetNetworkTelemetry(const GetNe
 
 GetResourcePolicyOutcome NetworkManagerClient::GetResourcePolicy(const GetResourcePolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetResourcePolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -1094,6 +1148,7 @@ GetResourcePolicyOutcome NetworkManagerClient::GetResourcePolicy(const GetResour
 
 GetRouteAnalysisOutcome NetworkManagerClient::GetRouteAnalysis(const GetRouteAnalysisRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetRouteAnalysis);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetRouteAnalysis, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GlobalNetworkIdHasBeenSet())
   {
@@ -1116,6 +1171,7 @@ GetRouteAnalysisOutcome NetworkManagerClient::GetRouteAnalysis(const GetRouteAna
 
 GetSiteToSiteVpnAttachmentOutcome NetworkManagerClient::GetSiteToSiteVpnAttachment(const GetSiteToSiteVpnAttachmentRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSiteToSiteVpnAttachment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSiteToSiteVpnAttachment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AttachmentIdHasBeenSet())
   {
@@ -1131,6 +1187,7 @@ GetSiteToSiteVpnAttachmentOutcome NetworkManagerClient::GetSiteToSiteVpnAttachme
 
 GetSitesOutcome NetworkManagerClient::GetSites(const GetSitesRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSites);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSites, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GlobalNetworkIdHasBeenSet())
   {
@@ -1147,6 +1204,7 @@ GetSitesOutcome NetworkManagerClient::GetSites(const GetSitesRequest& request) c
 
 GetTransitGatewayConnectPeerAssociationsOutcome NetworkManagerClient::GetTransitGatewayConnectPeerAssociations(const GetTransitGatewayConnectPeerAssociationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetTransitGatewayConnectPeerAssociations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetTransitGatewayConnectPeerAssociations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GlobalNetworkIdHasBeenSet())
   {
@@ -1163,6 +1221,7 @@ GetTransitGatewayConnectPeerAssociationsOutcome NetworkManagerClient::GetTransit
 
 GetTransitGatewayPeeringOutcome NetworkManagerClient::GetTransitGatewayPeering(const GetTransitGatewayPeeringRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetTransitGatewayPeering);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetTransitGatewayPeering, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PeeringIdHasBeenSet())
   {
@@ -1178,6 +1237,7 @@ GetTransitGatewayPeeringOutcome NetworkManagerClient::GetTransitGatewayPeering(c
 
 GetTransitGatewayRegistrationsOutcome NetworkManagerClient::GetTransitGatewayRegistrations(const GetTransitGatewayRegistrationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetTransitGatewayRegistrations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetTransitGatewayRegistrations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GlobalNetworkIdHasBeenSet())
   {
@@ -1194,6 +1254,7 @@ GetTransitGatewayRegistrationsOutcome NetworkManagerClient::GetTransitGatewayReg
 
 GetTransitGatewayRouteTableAttachmentOutcome NetworkManagerClient::GetTransitGatewayRouteTableAttachment(const GetTransitGatewayRouteTableAttachmentRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetTransitGatewayRouteTableAttachment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetTransitGatewayRouteTableAttachment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AttachmentIdHasBeenSet())
   {
@@ -1209,6 +1270,7 @@ GetTransitGatewayRouteTableAttachmentOutcome NetworkManagerClient::GetTransitGat
 
 GetVpcAttachmentOutcome NetworkManagerClient::GetVpcAttachment(const GetVpcAttachmentRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetVpcAttachment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetVpcAttachment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AttachmentIdHasBeenSet())
   {
@@ -1224,6 +1286,7 @@ GetVpcAttachmentOutcome NetworkManagerClient::GetVpcAttachment(const GetVpcAttac
 
 ListAttachmentsOutcome NetworkManagerClient::ListAttachments(const ListAttachmentsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAttachments);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAttachments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAttachments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1233,6 +1296,7 @@ ListAttachmentsOutcome NetworkManagerClient::ListAttachments(const ListAttachmen
 
 ListConnectPeersOutcome NetworkManagerClient::ListConnectPeers(const ListConnectPeersRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListConnectPeers);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListConnectPeers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListConnectPeers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1242,6 +1306,7 @@ ListConnectPeersOutcome NetworkManagerClient::ListConnectPeers(const ListConnect
 
 ListCoreNetworkPolicyVersionsOutcome NetworkManagerClient::ListCoreNetworkPolicyVersions(const ListCoreNetworkPolicyVersionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListCoreNetworkPolicyVersions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListCoreNetworkPolicyVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CoreNetworkIdHasBeenSet())
   {
@@ -1258,6 +1323,7 @@ ListCoreNetworkPolicyVersionsOutcome NetworkManagerClient::ListCoreNetworkPolicy
 
 ListCoreNetworksOutcome NetworkManagerClient::ListCoreNetworks(const ListCoreNetworksRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListCoreNetworks);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListCoreNetworks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListCoreNetworks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1267,6 +1333,7 @@ ListCoreNetworksOutcome NetworkManagerClient::ListCoreNetworks(const ListCoreNet
 
 ListOrganizationServiceAccessStatusOutcome NetworkManagerClient::ListOrganizationServiceAccessStatus(const ListOrganizationServiceAccessStatusRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListOrganizationServiceAccessStatus);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListOrganizationServiceAccessStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListOrganizationServiceAccessStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1276,6 +1343,7 @@ ListOrganizationServiceAccessStatusOutcome NetworkManagerClient::ListOrganizatio
 
 ListPeeringsOutcome NetworkManagerClient::ListPeerings(const ListPeeringsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListPeerings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPeerings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListPeerings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1285,6 +1353,7 @@ ListPeeringsOutcome NetworkManagerClient::ListPeerings(const ListPeeringsRequest
 
 ListTagsForResourceOutcome NetworkManagerClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -1300,6 +1369,7 @@ ListTagsForResourceOutcome NetworkManagerClient::ListTagsForResource(const ListT
 
 PutCoreNetworkPolicyOutcome NetworkManagerClient::PutCoreNetworkPolicy(const PutCoreNetworkPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutCoreNetworkPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutCoreNetworkPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CoreNetworkIdHasBeenSet())
   {
@@ -1316,6 +1386,7 @@ PutCoreNetworkPolicyOutcome NetworkManagerClient::PutCoreNetworkPolicy(const Put
 
 PutResourcePolicyOutcome NetworkManagerClient::PutResourcePolicy(const PutResourcePolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutResourcePolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -1331,6 +1402,7 @@ PutResourcePolicyOutcome NetworkManagerClient::PutResourcePolicy(const PutResour
 
 RegisterTransitGatewayOutcome NetworkManagerClient::RegisterTransitGateway(const RegisterTransitGatewayRequest& request) const
 {
+  AWS_OPERATION_GUARD(RegisterTransitGateway);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RegisterTransitGateway, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GlobalNetworkIdHasBeenSet())
   {
@@ -1347,6 +1419,7 @@ RegisterTransitGatewayOutcome NetworkManagerClient::RegisterTransitGateway(const
 
 RejectAttachmentOutcome NetworkManagerClient::RejectAttachment(const RejectAttachmentRequest& request) const
 {
+  AWS_OPERATION_GUARD(RejectAttachment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RejectAttachment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AttachmentIdHasBeenSet())
   {
@@ -1363,6 +1436,7 @@ RejectAttachmentOutcome NetworkManagerClient::RejectAttachment(const RejectAttac
 
 RestoreCoreNetworkPolicyVersionOutcome NetworkManagerClient::RestoreCoreNetworkPolicyVersion(const RestoreCoreNetworkPolicyVersionRequest& request) const
 {
+  AWS_OPERATION_GUARD(RestoreCoreNetworkPolicyVersion);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RestoreCoreNetworkPolicyVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CoreNetworkIdHasBeenSet())
   {
@@ -1386,6 +1460,7 @@ RestoreCoreNetworkPolicyVersionOutcome NetworkManagerClient::RestoreCoreNetworkP
 
 StartOrganizationServiceAccessUpdateOutcome NetworkManagerClient::StartOrganizationServiceAccessUpdate(const StartOrganizationServiceAccessUpdateRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartOrganizationServiceAccessUpdate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartOrganizationServiceAccessUpdate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartOrganizationServiceAccessUpdate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1395,6 +1470,7 @@ StartOrganizationServiceAccessUpdateOutcome NetworkManagerClient::StartOrganizat
 
 StartRouteAnalysisOutcome NetworkManagerClient::StartRouteAnalysis(const StartRouteAnalysisRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartRouteAnalysis);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartRouteAnalysis, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GlobalNetworkIdHasBeenSet())
   {
@@ -1411,6 +1487,7 @@ StartRouteAnalysisOutcome NetworkManagerClient::StartRouteAnalysis(const StartRo
 
 TagResourceOutcome NetworkManagerClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -1426,6 +1503,7 @@ TagResourceOutcome NetworkManagerClient::TagResource(const TagResourceRequest& r
 
 UntagResourceOutcome NetworkManagerClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -1446,6 +1524,7 @@ UntagResourceOutcome NetworkManagerClient::UntagResource(const UntagResourceRequ
 
 UpdateConnectionOutcome NetworkManagerClient::UpdateConnection(const UpdateConnectionRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateConnection);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateConnection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GlobalNetworkIdHasBeenSet())
   {
@@ -1468,6 +1547,7 @@ UpdateConnectionOutcome NetworkManagerClient::UpdateConnection(const UpdateConne
 
 UpdateCoreNetworkOutcome NetworkManagerClient::UpdateCoreNetwork(const UpdateCoreNetworkRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateCoreNetwork);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateCoreNetwork, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CoreNetworkIdHasBeenSet())
   {
@@ -1483,6 +1563,7 @@ UpdateCoreNetworkOutcome NetworkManagerClient::UpdateCoreNetwork(const UpdateCor
 
 UpdateDeviceOutcome NetworkManagerClient::UpdateDevice(const UpdateDeviceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateDevice);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDevice, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GlobalNetworkIdHasBeenSet())
   {
@@ -1505,6 +1586,7 @@ UpdateDeviceOutcome NetworkManagerClient::UpdateDevice(const UpdateDeviceRequest
 
 UpdateGlobalNetworkOutcome NetworkManagerClient::UpdateGlobalNetwork(const UpdateGlobalNetworkRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateGlobalNetwork);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateGlobalNetwork, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GlobalNetworkIdHasBeenSet())
   {
@@ -1520,6 +1602,7 @@ UpdateGlobalNetworkOutcome NetworkManagerClient::UpdateGlobalNetwork(const Updat
 
 UpdateLinkOutcome NetworkManagerClient::UpdateLink(const UpdateLinkRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateLink);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateLink, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GlobalNetworkIdHasBeenSet())
   {
@@ -1542,6 +1625,7 @@ UpdateLinkOutcome NetworkManagerClient::UpdateLink(const UpdateLinkRequest& requ
 
 UpdateNetworkResourceMetadataOutcome NetworkManagerClient::UpdateNetworkResourceMetadata(const UpdateNetworkResourceMetadataRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateNetworkResourceMetadata);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateNetworkResourceMetadata, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GlobalNetworkIdHasBeenSet())
   {
@@ -1565,6 +1649,7 @@ UpdateNetworkResourceMetadataOutcome NetworkManagerClient::UpdateNetworkResource
 
 UpdateSiteOutcome NetworkManagerClient::UpdateSite(const UpdateSiteRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateSite);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateSite, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GlobalNetworkIdHasBeenSet())
   {
@@ -1587,6 +1672,7 @@ UpdateSiteOutcome NetworkManagerClient::UpdateSite(const UpdateSiteRequest& requ
 
 UpdateVpcAttachmentOutcome NetworkManagerClient::UpdateVpcAttachment(const UpdateVpcAttachmentRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateVpcAttachment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateVpcAttachment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AttachmentIdHasBeenSet())
   {

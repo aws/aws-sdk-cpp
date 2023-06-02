@@ -151,6 +151,7 @@ LookoutforVisionClient::LookoutforVisionClient(const std::shared_ptr<AWSCredenti
     /* End of legacy constructors due deprecation */
 LookoutforVisionClient::~LookoutforVisionClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<LookoutforVisionEndpointProviderBase>& LookoutforVisionClient::accessEndpointProvider()
@@ -173,6 +174,7 @@ void LookoutforVisionClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CreateDatasetOutcome LookoutforVisionClient::CreateDataset(const CreateDatasetRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateDataset);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDataset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectNameHasBeenSet())
   {
@@ -189,6 +191,7 @@ CreateDatasetOutcome LookoutforVisionClient::CreateDataset(const CreateDatasetRe
 
 CreateModelOutcome LookoutforVisionClient::CreateModel(const CreateModelRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateModel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateModel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectNameHasBeenSet())
   {
@@ -205,6 +208,7 @@ CreateModelOutcome LookoutforVisionClient::CreateModel(const CreateModelRequest&
 
 CreateProjectOutcome LookoutforVisionClient::CreateProject(const CreateProjectRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateProject);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateProject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateProject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -214,6 +218,7 @@ CreateProjectOutcome LookoutforVisionClient::CreateProject(const CreateProjectRe
 
 DeleteDatasetOutcome LookoutforVisionClient::DeleteDataset(const DeleteDatasetRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteDataset);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDataset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectNameHasBeenSet())
   {
@@ -236,6 +241,7 @@ DeleteDatasetOutcome LookoutforVisionClient::DeleteDataset(const DeleteDatasetRe
 
 DeleteModelOutcome LookoutforVisionClient::DeleteModel(const DeleteModelRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteModel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteModel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectNameHasBeenSet())
   {
@@ -258,6 +264,7 @@ DeleteModelOutcome LookoutforVisionClient::DeleteModel(const DeleteModelRequest&
 
 DeleteProjectOutcome LookoutforVisionClient::DeleteProject(const DeleteProjectRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteProject);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteProject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectNameHasBeenSet())
   {
@@ -273,6 +280,7 @@ DeleteProjectOutcome LookoutforVisionClient::DeleteProject(const DeleteProjectRe
 
 DescribeDatasetOutcome LookoutforVisionClient::DescribeDataset(const DescribeDatasetRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeDataset);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeDataset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectNameHasBeenSet())
   {
@@ -295,6 +303,7 @@ DescribeDatasetOutcome LookoutforVisionClient::DescribeDataset(const DescribeDat
 
 DescribeModelOutcome LookoutforVisionClient::DescribeModel(const DescribeModelRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeModel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeModel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectNameHasBeenSet())
   {
@@ -317,6 +326,7 @@ DescribeModelOutcome LookoutforVisionClient::DescribeModel(const DescribeModelRe
 
 DescribeModelPackagingJobOutcome LookoutforVisionClient::DescribeModelPackagingJob(const DescribeModelPackagingJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeModelPackagingJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeModelPackagingJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectNameHasBeenSet())
   {
@@ -339,6 +349,7 @@ DescribeModelPackagingJobOutcome LookoutforVisionClient::DescribeModelPackagingJ
 
 DescribeProjectOutcome LookoutforVisionClient::DescribeProject(const DescribeProjectRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeProject);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeProject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectNameHasBeenSet())
   {
@@ -354,6 +365,7 @@ DescribeProjectOutcome LookoutforVisionClient::DescribeProject(const DescribePro
 
 DetectAnomaliesOutcome LookoutforVisionClient::DetectAnomalies(const DetectAnomaliesRequest& request) const
 {
+  AWS_OPERATION_GUARD(DetectAnomalies);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DetectAnomalies, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectNameHasBeenSet())
   {
@@ -377,6 +389,7 @@ DetectAnomaliesOutcome LookoutforVisionClient::DetectAnomalies(const DetectAnoma
 
 ListDatasetEntriesOutcome LookoutforVisionClient::ListDatasetEntries(const ListDatasetEntriesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDatasetEntries);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDatasetEntries, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectNameHasBeenSet())
   {
@@ -400,6 +413,7 @@ ListDatasetEntriesOutcome LookoutforVisionClient::ListDatasetEntries(const ListD
 
 ListModelPackagingJobsOutcome LookoutforVisionClient::ListModelPackagingJobs(const ListModelPackagingJobsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListModelPackagingJobs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListModelPackagingJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectNameHasBeenSet())
   {
@@ -416,6 +430,7 @@ ListModelPackagingJobsOutcome LookoutforVisionClient::ListModelPackagingJobs(con
 
 ListModelsOutcome LookoutforVisionClient::ListModels(const ListModelsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListModels);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListModels, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectNameHasBeenSet())
   {
@@ -432,6 +447,7 @@ ListModelsOutcome LookoutforVisionClient::ListModels(const ListModelsRequest& re
 
 ListProjectsOutcome LookoutforVisionClient::ListProjects(const ListProjectsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListProjects);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListProjects, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListProjects, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -441,6 +457,7 @@ ListProjectsOutcome LookoutforVisionClient::ListProjects(const ListProjectsReque
 
 ListTagsForResourceOutcome LookoutforVisionClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -456,6 +473,7 @@ ListTagsForResourceOutcome LookoutforVisionClient::ListTagsForResource(const Lis
 
 StartModelOutcome LookoutforVisionClient::StartModel(const StartModelRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartModel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartModel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectNameHasBeenSet())
   {
@@ -479,6 +497,7 @@ StartModelOutcome LookoutforVisionClient::StartModel(const StartModelRequest& re
 
 StartModelPackagingJobOutcome LookoutforVisionClient::StartModelPackagingJob(const StartModelPackagingJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartModelPackagingJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartModelPackagingJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectNameHasBeenSet())
   {
@@ -495,6 +514,7 @@ StartModelPackagingJobOutcome LookoutforVisionClient::StartModelPackagingJob(con
 
 StopModelOutcome LookoutforVisionClient::StopModel(const StopModelRequest& request) const
 {
+  AWS_OPERATION_GUARD(StopModel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopModel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectNameHasBeenSet())
   {
@@ -518,6 +538,7 @@ StopModelOutcome LookoutforVisionClient::StopModel(const StopModelRequest& reque
 
 TagResourceOutcome LookoutforVisionClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -533,6 +554,7 @@ TagResourceOutcome LookoutforVisionClient::TagResource(const TagResourceRequest&
 
 UntagResourceOutcome LookoutforVisionClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -553,6 +575,7 @@ UntagResourceOutcome LookoutforVisionClient::UntagResource(const UntagResourceRe
 
 UpdateDatasetEntriesOutcome LookoutforVisionClient::UpdateDatasetEntries(const UpdateDatasetEntriesRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateDatasetEntries);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDatasetEntries, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectNameHasBeenSet())
   {

@@ -85,6 +85,7 @@ const char* CodeCatalystClient::ALLOCATION_TAG = "CodeCatalystClient";
     /* End of legacy constructors due deprecation */
 CodeCatalystClient::~CodeCatalystClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<CodeCatalystEndpointProviderBase>& CodeCatalystClient::accessEndpointProvider()
@@ -107,6 +108,7 @@ void CodeCatalystClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CreateAccessTokenOutcome CodeCatalystClient::CreateAccessToken(const CreateAccessTokenRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateAccessToken);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAccessToken, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateAccessToken, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -116,6 +118,7 @@ CreateAccessTokenOutcome CodeCatalystClient::CreateAccessToken(const CreateAcces
 
 CreateDevEnvironmentOutcome CodeCatalystClient::CreateDevEnvironment(const CreateDevEnvironmentRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateDevEnvironment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDevEnvironment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SpaceNameHasBeenSet())
   {
@@ -139,6 +142,7 @@ CreateDevEnvironmentOutcome CodeCatalystClient::CreateDevEnvironment(const Creat
 
 CreateProjectOutcome CodeCatalystClient::CreateProject(const CreateProjectRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateProject);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateProject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SpaceNameHasBeenSet())
   {
@@ -155,6 +159,7 @@ CreateProjectOutcome CodeCatalystClient::CreateProject(const CreateProjectReques
 
 CreateSourceRepositoryBranchOutcome CodeCatalystClient::CreateSourceRepositoryBranch(const CreateSourceRepositoryBranchRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateSourceRepositoryBranch);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateSourceRepositoryBranch, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SpaceNameHasBeenSet())
   {
@@ -191,6 +196,7 @@ CreateSourceRepositoryBranchOutcome CodeCatalystClient::CreateSourceRepositoryBr
 
 DeleteAccessTokenOutcome CodeCatalystClient::DeleteAccessToken(const DeleteAccessTokenRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteAccessToken);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAccessToken, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -206,6 +212,7 @@ DeleteAccessTokenOutcome CodeCatalystClient::DeleteAccessToken(const DeleteAcces
 
 DeleteDevEnvironmentOutcome CodeCatalystClient::DeleteDevEnvironment(const DeleteDevEnvironmentRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteDevEnvironment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDevEnvironment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SpaceNameHasBeenSet())
   {
@@ -235,6 +242,7 @@ DeleteDevEnvironmentOutcome CodeCatalystClient::DeleteDevEnvironment(const Delet
 
 GetDevEnvironmentOutcome CodeCatalystClient::GetDevEnvironment(const GetDevEnvironmentRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDevEnvironment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDevEnvironment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SpaceNameHasBeenSet())
   {
@@ -264,6 +272,7 @@ GetDevEnvironmentOutcome CodeCatalystClient::GetDevEnvironment(const GetDevEnvir
 
 GetProjectOutcome CodeCatalystClient::GetProject(const GetProjectRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetProject);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetProject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SpaceNameHasBeenSet())
   {
@@ -286,6 +295,7 @@ GetProjectOutcome CodeCatalystClient::GetProject(const GetProjectRequest& reques
 
 GetSourceRepositoryCloneUrlsOutcome CodeCatalystClient::GetSourceRepositoryCloneUrls(const GetSourceRepositoryCloneUrlsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSourceRepositoryCloneUrls);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSourceRepositoryCloneUrls, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SpaceNameHasBeenSet())
   {
@@ -316,6 +326,7 @@ GetSourceRepositoryCloneUrlsOutcome CodeCatalystClient::GetSourceRepositoryClone
 
 GetSpaceOutcome CodeCatalystClient::GetSpace(const GetSpaceRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSpace);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSpace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -331,6 +342,7 @@ GetSpaceOutcome CodeCatalystClient::GetSpace(const GetSpaceRequest& request) con
 
 GetSubscriptionOutcome CodeCatalystClient::GetSubscription(const GetSubscriptionRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSubscription);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSubscription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SpaceNameHasBeenSet())
   {
@@ -347,6 +359,7 @@ GetSubscriptionOutcome CodeCatalystClient::GetSubscription(const GetSubscription
 
 GetUserDetailsOutcome CodeCatalystClient::GetUserDetails(const GetUserDetailsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetUserDetails);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetUserDetails, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetUserDetails, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -356,6 +369,7 @@ GetUserDetailsOutcome CodeCatalystClient::GetUserDetails(const GetUserDetailsReq
 
 ListAccessTokensOutcome CodeCatalystClient::ListAccessTokens(const ListAccessTokensRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAccessTokens);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAccessTokens, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAccessTokens, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -365,6 +379,7 @@ ListAccessTokensOutcome CodeCatalystClient::ListAccessTokens(const ListAccessTok
 
 ListDevEnvironmentSessionsOutcome CodeCatalystClient::ListDevEnvironmentSessions(const ListDevEnvironmentSessionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDevEnvironmentSessions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDevEnvironmentSessions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SpaceNameHasBeenSet())
   {
@@ -395,6 +410,7 @@ ListDevEnvironmentSessionsOutcome CodeCatalystClient::ListDevEnvironmentSessions
 
 ListDevEnvironmentsOutcome CodeCatalystClient::ListDevEnvironments(const ListDevEnvironmentsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDevEnvironments);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDevEnvironments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SpaceNameHasBeenSet())
   {
@@ -418,6 +434,7 @@ ListDevEnvironmentsOutcome CodeCatalystClient::ListDevEnvironments(const ListDev
 
 ListEventLogsOutcome CodeCatalystClient::ListEventLogs(const ListEventLogsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListEventLogs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListEventLogs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SpaceNameHasBeenSet())
   {
@@ -434,6 +451,7 @@ ListEventLogsOutcome CodeCatalystClient::ListEventLogs(const ListEventLogsReques
 
 ListProjectsOutcome CodeCatalystClient::ListProjects(const ListProjectsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListProjects);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListProjects, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SpaceNameHasBeenSet())
   {
@@ -450,6 +468,7 @@ ListProjectsOutcome CodeCatalystClient::ListProjects(const ListProjectsRequest& 
 
 ListSourceRepositoriesOutcome CodeCatalystClient::ListSourceRepositories(const ListSourceRepositoriesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListSourceRepositories);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSourceRepositories, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SpaceNameHasBeenSet())
   {
@@ -473,6 +492,7 @@ ListSourceRepositoriesOutcome CodeCatalystClient::ListSourceRepositories(const L
 
 ListSourceRepositoryBranchesOutcome CodeCatalystClient::ListSourceRepositoryBranches(const ListSourceRepositoryBranchesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListSourceRepositoryBranches);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSourceRepositoryBranches, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SpaceNameHasBeenSet())
   {
@@ -503,6 +523,7 @@ ListSourceRepositoryBranchesOutcome CodeCatalystClient::ListSourceRepositoryBran
 
 ListSpacesOutcome CodeCatalystClient::ListSpaces(const ListSpacesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListSpaces);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSpaces, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListSpaces, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -512,6 +533,7 @@ ListSpacesOutcome CodeCatalystClient::ListSpaces(const ListSpacesRequest& reques
 
 StartDevEnvironmentOutcome CodeCatalystClient::StartDevEnvironment(const StartDevEnvironmentRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartDevEnvironment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartDevEnvironment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SpaceNameHasBeenSet())
   {
@@ -542,6 +564,7 @@ StartDevEnvironmentOutcome CodeCatalystClient::StartDevEnvironment(const StartDe
 
 StartDevEnvironmentSessionOutcome CodeCatalystClient::StartDevEnvironmentSession(const StartDevEnvironmentSessionRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartDevEnvironmentSession);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartDevEnvironmentSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SpaceNameHasBeenSet())
   {
@@ -572,6 +595,7 @@ StartDevEnvironmentSessionOutcome CodeCatalystClient::StartDevEnvironmentSession
 
 StopDevEnvironmentOutcome CodeCatalystClient::StopDevEnvironment(const StopDevEnvironmentRequest& request) const
 {
+  AWS_OPERATION_GUARD(StopDevEnvironment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopDevEnvironment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SpaceNameHasBeenSet())
   {
@@ -602,6 +626,7 @@ StopDevEnvironmentOutcome CodeCatalystClient::StopDevEnvironment(const StopDevEn
 
 StopDevEnvironmentSessionOutcome CodeCatalystClient::StopDevEnvironmentSession(const StopDevEnvironmentSessionRequest& request) const
 {
+  AWS_OPERATION_GUARD(StopDevEnvironmentSession);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopDevEnvironmentSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SpaceNameHasBeenSet())
   {
@@ -638,6 +663,7 @@ StopDevEnvironmentSessionOutcome CodeCatalystClient::StopDevEnvironmentSession(c
 
 UpdateDevEnvironmentOutcome CodeCatalystClient::UpdateDevEnvironment(const UpdateDevEnvironmentRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateDevEnvironment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDevEnvironment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SpaceNameHasBeenSet())
   {
@@ -667,6 +693,7 @@ UpdateDevEnvironmentOutcome CodeCatalystClient::UpdateDevEnvironment(const Updat
 
 VerifySessionOutcome CodeCatalystClient::VerifySession() const
 {
+AWS_OPERATION_GUARD(VerifySession);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, VerifySession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   const Aws::Vector<Aws::Endpoint::EndpointParameter> staticEndpointParameters;
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(staticEndpointParameters);

@@ -146,6 +146,7 @@ ResourceGroupsClient::ResourceGroupsClient(const std::shared_ptr<AWSCredentialsP
     /* End of legacy constructors due deprecation */
 ResourceGroupsClient::~ResourceGroupsClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<ResourceGroupsEndpointProviderBase>& ResourceGroupsClient::accessEndpointProvider()
@@ -168,6 +169,7 @@ void ResourceGroupsClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CreateGroupOutcome ResourceGroupsClient::CreateGroup(const CreateGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -177,6 +179,7 @@ CreateGroupOutcome ResourceGroupsClient::CreateGroup(const CreateGroupRequest& r
 
 DeleteGroupOutcome ResourceGroupsClient::DeleteGroup(const DeleteGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -186,6 +189,7 @@ DeleteGroupOutcome ResourceGroupsClient::DeleteGroup(const DeleteGroupRequest& r
 
 GetAccountSettingsOutcome ResourceGroupsClient::GetAccountSettings() const
 {
+AWS_OPERATION_GUARD(GetAccountSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAccountSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   const Aws::Vector<Aws::Endpoint::EndpointParameter> staticEndpointParameters;
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(staticEndpointParameters);
@@ -196,6 +200,7 @@ GetAccountSettingsOutcome ResourceGroupsClient::GetAccountSettings() const
 
 GetGroupOutcome ResourceGroupsClient::GetGroup(const GetGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -205,6 +210,7 @@ GetGroupOutcome ResourceGroupsClient::GetGroup(const GetGroupRequest& request) c
 
 GetGroupConfigurationOutcome ResourceGroupsClient::GetGroupConfiguration(const GetGroupConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetGroupConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetGroupConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetGroupConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -214,6 +220,7 @@ GetGroupConfigurationOutcome ResourceGroupsClient::GetGroupConfiguration(const G
 
 GetGroupQueryOutcome ResourceGroupsClient::GetGroupQuery(const GetGroupQueryRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetGroupQuery);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetGroupQuery, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetGroupQuery, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -223,6 +230,7 @@ GetGroupQueryOutcome ResourceGroupsClient::GetGroupQuery(const GetGroupQueryRequ
 
 GetTagsOutcome ResourceGroupsClient::GetTags(const GetTagsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetTags);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetTags, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ArnHasBeenSet())
   {
@@ -239,6 +247,7 @@ GetTagsOutcome ResourceGroupsClient::GetTags(const GetTagsRequest& request) cons
 
 GroupResourcesOutcome ResourceGroupsClient::GroupResources(const GroupResourcesRequest& request) const
 {
+  AWS_OPERATION_GUARD(GroupResources);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GroupResources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GroupResources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -248,6 +257,7 @@ GroupResourcesOutcome ResourceGroupsClient::GroupResources(const GroupResourcesR
 
 ListGroupResourcesOutcome ResourceGroupsClient::ListGroupResources(const ListGroupResourcesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListGroupResources);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListGroupResources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListGroupResources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -257,6 +267,7 @@ ListGroupResourcesOutcome ResourceGroupsClient::ListGroupResources(const ListGro
 
 ListGroupsOutcome ResourceGroupsClient::ListGroups(const ListGroupsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListGroups);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -266,6 +277,7 @@ ListGroupsOutcome ResourceGroupsClient::ListGroups(const ListGroupsRequest& requ
 
 PutGroupConfigurationOutcome ResourceGroupsClient::PutGroupConfiguration(const PutGroupConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutGroupConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutGroupConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutGroupConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -275,6 +287,7 @@ PutGroupConfigurationOutcome ResourceGroupsClient::PutGroupConfiguration(const P
 
 SearchResourcesOutcome ResourceGroupsClient::SearchResources(const SearchResourcesRequest& request) const
 {
+  AWS_OPERATION_GUARD(SearchResources);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SearchResources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SearchResources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -284,6 +297,7 @@ SearchResourcesOutcome ResourceGroupsClient::SearchResources(const SearchResourc
 
 TagOutcome ResourceGroupsClient::Tag(const TagRequest& request) const
 {
+  AWS_OPERATION_GUARD(Tag);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, Tag, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ArnHasBeenSet())
   {
@@ -300,6 +314,7 @@ TagOutcome ResourceGroupsClient::Tag(const TagRequest& request) const
 
 UngroupResourcesOutcome ResourceGroupsClient::UngroupResources(const UngroupResourcesRequest& request) const
 {
+  AWS_OPERATION_GUARD(UngroupResources);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UngroupResources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UngroupResources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -309,6 +324,7 @@ UngroupResourcesOutcome ResourceGroupsClient::UngroupResources(const UngroupReso
 
 UntagOutcome ResourceGroupsClient::Untag(const UntagRequest& request) const
 {
+  AWS_OPERATION_GUARD(Untag);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, Untag, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ArnHasBeenSet())
   {
@@ -325,6 +341,7 @@ UntagOutcome ResourceGroupsClient::Untag(const UntagRequest& request) const
 
 UpdateAccountSettingsOutcome ResourceGroupsClient::UpdateAccountSettings(const UpdateAccountSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateAccountSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAccountSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateAccountSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -334,6 +351,7 @@ UpdateAccountSettingsOutcome ResourceGroupsClient::UpdateAccountSettings(const U
 
 UpdateGroupOutcome ResourceGroupsClient::UpdateGroup(const UpdateGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -343,6 +361,7 @@ UpdateGroupOutcome ResourceGroupsClient::UpdateGroup(const UpdateGroupRequest& r
 
 UpdateGroupQueryOutcome ResourceGroupsClient::UpdateGroupQuery(const UpdateGroupQueryRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateGroupQuery);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateGroupQuery, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateGroupQuery, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

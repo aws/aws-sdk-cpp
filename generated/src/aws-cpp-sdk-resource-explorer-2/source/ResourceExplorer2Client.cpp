@@ -145,6 +145,7 @@ ResourceExplorer2Client::ResourceExplorer2Client(const std::shared_ptr<AWSCreden
     /* End of legacy constructors due deprecation */
 ResourceExplorer2Client::~ResourceExplorer2Client()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<ResourceExplorer2EndpointProviderBase>& ResourceExplorer2Client::accessEndpointProvider()
@@ -167,6 +168,7 @@ void ResourceExplorer2Client::OverrideEndpoint(const Aws::String& endpoint)
 
 AssociateDefaultViewOutcome ResourceExplorer2Client::AssociateDefaultView(const AssociateDefaultViewRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociateDefaultView);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateDefaultView, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AssociateDefaultView, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -176,6 +178,7 @@ AssociateDefaultViewOutcome ResourceExplorer2Client::AssociateDefaultView(const 
 
 BatchGetViewOutcome ResourceExplorer2Client::BatchGetView(const BatchGetViewRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchGetView);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchGetView, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchGetView, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -185,6 +188,7 @@ BatchGetViewOutcome ResourceExplorer2Client::BatchGetView(const BatchGetViewRequ
 
 CreateIndexOutcome ResourceExplorer2Client::CreateIndex(const CreateIndexRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateIndex);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateIndex, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateIndex, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -194,6 +198,7 @@ CreateIndexOutcome ResourceExplorer2Client::CreateIndex(const CreateIndexRequest
 
 CreateViewOutcome ResourceExplorer2Client::CreateView(const CreateViewRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateView);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateView, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateView, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -203,6 +208,7 @@ CreateViewOutcome ResourceExplorer2Client::CreateView(const CreateViewRequest& r
 
 DeleteIndexOutcome ResourceExplorer2Client::DeleteIndex(const DeleteIndexRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteIndex);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteIndex, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteIndex, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -212,6 +218,7 @@ DeleteIndexOutcome ResourceExplorer2Client::DeleteIndex(const DeleteIndexRequest
 
 DeleteViewOutcome ResourceExplorer2Client::DeleteView(const DeleteViewRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteView);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteView, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteView, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -221,6 +228,7 @@ DeleteViewOutcome ResourceExplorer2Client::DeleteView(const DeleteViewRequest& r
 
 DisassociateDefaultViewOutcome ResourceExplorer2Client::DisassociateDefaultView() const
 {
+AWS_OPERATION_GUARD(DisassociateDefaultView);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateDefaultView, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   const Aws::Vector<Aws::Endpoint::EndpointParameter> staticEndpointParameters;
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(staticEndpointParameters);
@@ -231,6 +239,7 @@ DisassociateDefaultViewOutcome ResourceExplorer2Client::DisassociateDefaultView(
 
 GetDefaultViewOutcome ResourceExplorer2Client::GetDefaultView() const
 {
+AWS_OPERATION_GUARD(GetDefaultView);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDefaultView, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   const Aws::Vector<Aws::Endpoint::EndpointParameter> staticEndpointParameters;
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(staticEndpointParameters);
@@ -241,6 +250,7 @@ GetDefaultViewOutcome ResourceExplorer2Client::GetDefaultView() const
 
 GetIndexOutcome ResourceExplorer2Client::GetIndex() const
 {
+AWS_OPERATION_GUARD(GetIndex);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetIndex, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   const Aws::Vector<Aws::Endpoint::EndpointParameter> staticEndpointParameters;
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(staticEndpointParameters);
@@ -251,6 +261,7 @@ GetIndexOutcome ResourceExplorer2Client::GetIndex() const
 
 GetViewOutcome ResourceExplorer2Client::GetView(const GetViewRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetView);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetView, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetView, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -260,6 +271,7 @@ GetViewOutcome ResourceExplorer2Client::GetView(const GetViewRequest& request) c
 
 ListIndexesOutcome ResourceExplorer2Client::ListIndexes(const ListIndexesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListIndexes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListIndexes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListIndexes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -269,6 +281,7 @@ ListIndexesOutcome ResourceExplorer2Client::ListIndexes(const ListIndexesRequest
 
 ListSupportedResourceTypesOutcome ResourceExplorer2Client::ListSupportedResourceTypes(const ListSupportedResourceTypesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListSupportedResourceTypes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSupportedResourceTypes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListSupportedResourceTypes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -278,6 +291,7 @@ ListSupportedResourceTypesOutcome ResourceExplorer2Client::ListSupportedResource
 
 ListTagsForResourceOutcome ResourceExplorer2Client::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -293,6 +307,7 @@ ListTagsForResourceOutcome ResourceExplorer2Client::ListTagsForResource(const Li
 
 ListViewsOutcome ResourceExplorer2Client::ListViews(const ListViewsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListViews);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListViews, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListViews, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -302,6 +317,7 @@ ListViewsOutcome ResourceExplorer2Client::ListViews(const ListViewsRequest& requ
 
 SearchOutcome ResourceExplorer2Client::Search(const SearchRequest& request) const
 {
+  AWS_OPERATION_GUARD(Search);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, Search, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, Search, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -311,6 +327,7 @@ SearchOutcome ResourceExplorer2Client::Search(const SearchRequest& request) cons
 
 TagResourceOutcome ResourceExplorer2Client::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -326,6 +343,7 @@ TagResourceOutcome ResourceExplorer2Client::TagResource(const TagResourceRequest
 
 UntagResourceOutcome ResourceExplorer2Client::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -346,6 +364,7 @@ UntagResourceOutcome ResourceExplorer2Client::UntagResource(const UntagResourceR
 
 UpdateIndexTypeOutcome ResourceExplorer2Client::UpdateIndexType(const UpdateIndexTypeRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateIndexType);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateIndexType, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateIndexType, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -355,6 +374,7 @@ UpdateIndexTypeOutcome ResourceExplorer2Client::UpdateIndexType(const UpdateInde
 
 UpdateViewOutcome ResourceExplorer2Client::UpdateView(const UpdateViewRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateView);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateView, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateView, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

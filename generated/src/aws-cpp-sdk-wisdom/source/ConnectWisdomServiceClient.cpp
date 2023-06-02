@@ -160,6 +160,7 @@ ConnectWisdomServiceClient::ConnectWisdomServiceClient(const std::shared_ptr<AWS
     /* End of legacy constructors due deprecation */
 ConnectWisdomServiceClient::~ConnectWisdomServiceClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<ConnectWisdomServiceEndpointProviderBase>& ConnectWisdomServiceClient::accessEndpointProvider()
@@ -182,6 +183,7 @@ void ConnectWisdomServiceClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CreateAssistantOutcome ConnectWisdomServiceClient::CreateAssistant(const CreateAssistantRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateAssistant);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAssistant, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateAssistant, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -191,6 +193,7 @@ CreateAssistantOutcome ConnectWisdomServiceClient::CreateAssistant(const CreateA
 
 CreateAssistantAssociationOutcome ConnectWisdomServiceClient::CreateAssistantAssociation(const CreateAssistantAssociationRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateAssistantAssociation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAssistantAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssistantIdHasBeenSet())
   {
@@ -207,6 +210,7 @@ CreateAssistantAssociationOutcome ConnectWisdomServiceClient::CreateAssistantAss
 
 CreateContentOutcome ConnectWisdomServiceClient::CreateContent(const CreateContentRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateContent);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateContent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.KnowledgeBaseIdHasBeenSet())
   {
@@ -223,6 +227,7 @@ CreateContentOutcome ConnectWisdomServiceClient::CreateContent(const CreateConte
 
 CreateKnowledgeBaseOutcome ConnectWisdomServiceClient::CreateKnowledgeBase(const CreateKnowledgeBaseRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateKnowledgeBase);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateKnowledgeBase, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateKnowledgeBase, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -232,6 +237,7 @@ CreateKnowledgeBaseOutcome ConnectWisdomServiceClient::CreateKnowledgeBase(const
 
 CreateSessionOutcome ConnectWisdomServiceClient::CreateSession(const CreateSessionRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateSession);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssistantIdHasBeenSet())
   {
@@ -248,6 +254,7 @@ CreateSessionOutcome ConnectWisdomServiceClient::CreateSession(const CreateSessi
 
 DeleteAssistantOutcome ConnectWisdomServiceClient::DeleteAssistant(const DeleteAssistantRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteAssistant);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAssistant, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssistantIdHasBeenSet())
   {
@@ -263,6 +270,7 @@ DeleteAssistantOutcome ConnectWisdomServiceClient::DeleteAssistant(const DeleteA
 
 DeleteAssistantAssociationOutcome ConnectWisdomServiceClient::DeleteAssistantAssociation(const DeleteAssistantAssociationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteAssistantAssociation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAssistantAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssistantAssociationIdHasBeenSet())
   {
@@ -285,6 +293,7 @@ DeleteAssistantAssociationOutcome ConnectWisdomServiceClient::DeleteAssistantAss
 
 DeleteContentOutcome ConnectWisdomServiceClient::DeleteContent(const DeleteContentRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteContent);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteContent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ContentIdHasBeenSet())
   {
@@ -307,6 +316,7 @@ DeleteContentOutcome ConnectWisdomServiceClient::DeleteContent(const DeleteConte
 
 DeleteKnowledgeBaseOutcome ConnectWisdomServiceClient::DeleteKnowledgeBase(const DeleteKnowledgeBaseRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteKnowledgeBase);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteKnowledgeBase, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.KnowledgeBaseIdHasBeenSet())
   {
@@ -322,6 +332,7 @@ DeleteKnowledgeBaseOutcome ConnectWisdomServiceClient::DeleteKnowledgeBase(const
 
 GetAssistantOutcome ConnectWisdomServiceClient::GetAssistant(const GetAssistantRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetAssistant);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAssistant, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssistantIdHasBeenSet())
   {
@@ -337,6 +348,7 @@ GetAssistantOutcome ConnectWisdomServiceClient::GetAssistant(const GetAssistantR
 
 GetAssistantAssociationOutcome ConnectWisdomServiceClient::GetAssistantAssociation(const GetAssistantAssociationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetAssistantAssociation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAssistantAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssistantAssociationIdHasBeenSet())
   {
@@ -359,6 +371,7 @@ GetAssistantAssociationOutcome ConnectWisdomServiceClient::GetAssistantAssociati
 
 GetContentOutcome ConnectWisdomServiceClient::GetContent(const GetContentRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetContent);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetContent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ContentIdHasBeenSet())
   {
@@ -381,6 +394,7 @@ GetContentOutcome ConnectWisdomServiceClient::GetContent(const GetContentRequest
 
 GetContentSummaryOutcome ConnectWisdomServiceClient::GetContentSummary(const GetContentSummaryRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetContentSummary);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetContentSummary, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ContentIdHasBeenSet())
   {
@@ -404,6 +418,7 @@ GetContentSummaryOutcome ConnectWisdomServiceClient::GetContentSummary(const Get
 
 GetKnowledgeBaseOutcome ConnectWisdomServiceClient::GetKnowledgeBase(const GetKnowledgeBaseRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetKnowledgeBase);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetKnowledgeBase, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.KnowledgeBaseIdHasBeenSet())
   {
@@ -419,6 +434,7 @@ GetKnowledgeBaseOutcome ConnectWisdomServiceClient::GetKnowledgeBase(const GetKn
 
 GetRecommendationsOutcome ConnectWisdomServiceClient::GetRecommendations(const GetRecommendationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetRecommendations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetRecommendations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssistantIdHasBeenSet())
   {
@@ -442,6 +458,7 @@ GetRecommendationsOutcome ConnectWisdomServiceClient::GetRecommendations(const G
 
 GetSessionOutcome ConnectWisdomServiceClient::GetSession(const GetSessionRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSession);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssistantIdHasBeenSet())
   {
@@ -464,6 +481,7 @@ GetSessionOutcome ConnectWisdomServiceClient::GetSession(const GetSessionRequest
 
 ListAssistantAssociationsOutcome ConnectWisdomServiceClient::ListAssistantAssociations(const ListAssistantAssociationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAssistantAssociations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAssistantAssociations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssistantIdHasBeenSet())
   {
@@ -480,6 +498,7 @@ ListAssistantAssociationsOutcome ConnectWisdomServiceClient::ListAssistantAssoci
 
 ListAssistantsOutcome ConnectWisdomServiceClient::ListAssistants(const ListAssistantsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAssistants);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAssistants, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAssistants, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -489,6 +508,7 @@ ListAssistantsOutcome ConnectWisdomServiceClient::ListAssistants(const ListAssis
 
 ListContentsOutcome ConnectWisdomServiceClient::ListContents(const ListContentsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListContents);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListContents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.KnowledgeBaseIdHasBeenSet())
   {
@@ -505,6 +525,7 @@ ListContentsOutcome ConnectWisdomServiceClient::ListContents(const ListContentsR
 
 ListKnowledgeBasesOutcome ConnectWisdomServiceClient::ListKnowledgeBases(const ListKnowledgeBasesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListKnowledgeBases);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListKnowledgeBases, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListKnowledgeBases, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -514,6 +535,7 @@ ListKnowledgeBasesOutcome ConnectWisdomServiceClient::ListKnowledgeBases(const L
 
 ListTagsForResourceOutcome ConnectWisdomServiceClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -529,6 +551,7 @@ ListTagsForResourceOutcome ConnectWisdomServiceClient::ListTagsForResource(const
 
 NotifyRecommendationsReceivedOutcome ConnectWisdomServiceClient::NotifyRecommendationsReceived(const NotifyRecommendationsReceivedRequest& request) const
 {
+  AWS_OPERATION_GUARD(NotifyRecommendationsReceived);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, NotifyRecommendationsReceived, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssistantIdHasBeenSet())
   {
@@ -552,6 +575,7 @@ NotifyRecommendationsReceivedOutcome ConnectWisdomServiceClient::NotifyRecommend
 
 QueryAssistantOutcome ConnectWisdomServiceClient::QueryAssistant(const QueryAssistantRequest& request) const
 {
+  AWS_OPERATION_GUARD(QueryAssistant);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, QueryAssistant, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssistantIdHasBeenSet())
   {
@@ -568,6 +592,7 @@ QueryAssistantOutcome ConnectWisdomServiceClient::QueryAssistant(const QueryAssi
 
 RemoveKnowledgeBaseTemplateUriOutcome ConnectWisdomServiceClient::RemoveKnowledgeBaseTemplateUri(const RemoveKnowledgeBaseTemplateUriRequest& request) const
 {
+  AWS_OPERATION_GUARD(RemoveKnowledgeBaseTemplateUri);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RemoveKnowledgeBaseTemplateUri, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.KnowledgeBaseIdHasBeenSet())
   {
@@ -584,6 +609,7 @@ RemoveKnowledgeBaseTemplateUriOutcome ConnectWisdomServiceClient::RemoveKnowledg
 
 SearchContentOutcome ConnectWisdomServiceClient::SearchContent(const SearchContentRequest& request) const
 {
+  AWS_OPERATION_GUARD(SearchContent);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SearchContent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.KnowledgeBaseIdHasBeenSet())
   {
@@ -600,6 +626,7 @@ SearchContentOutcome ConnectWisdomServiceClient::SearchContent(const SearchConte
 
 SearchSessionsOutcome ConnectWisdomServiceClient::SearchSessions(const SearchSessionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(SearchSessions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SearchSessions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssistantIdHasBeenSet())
   {
@@ -616,6 +643,7 @@ SearchSessionsOutcome ConnectWisdomServiceClient::SearchSessions(const SearchSes
 
 StartContentUploadOutcome ConnectWisdomServiceClient::StartContentUpload(const StartContentUploadRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartContentUpload);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartContentUpload, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.KnowledgeBaseIdHasBeenSet())
   {
@@ -632,6 +660,7 @@ StartContentUploadOutcome ConnectWisdomServiceClient::StartContentUpload(const S
 
 TagResourceOutcome ConnectWisdomServiceClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -647,6 +676,7 @@ TagResourceOutcome ConnectWisdomServiceClient::TagResource(const TagResourceRequ
 
 UntagResourceOutcome ConnectWisdomServiceClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -667,6 +697,7 @@ UntagResourceOutcome ConnectWisdomServiceClient::UntagResource(const UntagResour
 
 UpdateContentOutcome ConnectWisdomServiceClient::UpdateContent(const UpdateContentRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateContent);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateContent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ContentIdHasBeenSet())
   {
@@ -689,6 +720,7 @@ UpdateContentOutcome ConnectWisdomServiceClient::UpdateContent(const UpdateConte
 
 UpdateKnowledgeBaseTemplateUriOutcome ConnectWisdomServiceClient::UpdateKnowledgeBaseTemplateUri(const UpdateKnowledgeBaseTemplateUriRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateKnowledgeBaseTemplateUri);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateKnowledgeBaseTemplateUri, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.KnowledgeBaseIdHasBeenSet())
   {

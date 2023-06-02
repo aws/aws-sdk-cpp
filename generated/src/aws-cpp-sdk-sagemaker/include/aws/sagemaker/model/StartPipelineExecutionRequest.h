@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/ParallelismConfiguration.h>
+#include <aws/sagemaker/model/SelectiveExecutionConfig.h>
 #include <aws/sagemaker/model/Parameter.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -295,6 +296,37 @@ namespace Model
      */
     inline StartPipelineExecutionRequest& WithParallelismConfiguration(ParallelismConfiguration&& value) { SetParallelismConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The selective execution configuration applied to the pipeline run.</p>
+     */
+    inline const SelectiveExecutionConfig& GetSelectiveExecutionConfig() const{ return m_selectiveExecutionConfig; }
+
+    /**
+     * <p>The selective execution configuration applied to the pipeline run.</p>
+     */
+    inline bool SelectiveExecutionConfigHasBeenSet() const { return m_selectiveExecutionConfigHasBeenSet; }
+
+    /**
+     * <p>The selective execution configuration applied to the pipeline run.</p>
+     */
+    inline void SetSelectiveExecutionConfig(const SelectiveExecutionConfig& value) { m_selectiveExecutionConfigHasBeenSet = true; m_selectiveExecutionConfig = value; }
+
+    /**
+     * <p>The selective execution configuration applied to the pipeline run.</p>
+     */
+    inline void SetSelectiveExecutionConfig(SelectiveExecutionConfig&& value) { m_selectiveExecutionConfigHasBeenSet = true; m_selectiveExecutionConfig = std::move(value); }
+
+    /**
+     * <p>The selective execution configuration applied to the pipeline run.</p>
+     */
+    inline StartPipelineExecutionRequest& WithSelectiveExecutionConfig(const SelectiveExecutionConfig& value) { SetSelectiveExecutionConfig(value); return *this;}
+
+    /**
+     * <p>The selective execution configuration applied to the pipeline run.</p>
+     */
+    inline StartPipelineExecutionRequest& WithSelectiveExecutionConfig(SelectiveExecutionConfig&& value) { SetSelectiveExecutionConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_pipelineName;
@@ -314,6 +346,9 @@ namespace Model
 
     ParallelismConfiguration m_parallelismConfiguration;
     bool m_parallelismConfigurationHasBeenSet = false;
+
+    SelectiveExecutionConfig m_selectiveExecutionConfig;
+    bool m_selectiveExecutionConfigHasBeenSet = false;
   };
 
 } // namespace Model

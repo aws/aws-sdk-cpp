@@ -158,6 +158,7 @@ DataExchangeClient::DataExchangeClient(const std::shared_ptr<AWSCredentialsProvi
     /* End of legacy constructors due deprecation */
 DataExchangeClient::~DataExchangeClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<DataExchangeEndpointProviderBase>& DataExchangeClient::accessEndpointProvider()
@@ -180,6 +181,7 @@ void DataExchangeClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CancelJobOutcome DataExchangeClient::CancelJob(const CancelJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(CancelJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CancelJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.JobIdHasBeenSet())
   {
@@ -195,6 +197,7 @@ CancelJobOutcome DataExchangeClient::CancelJob(const CancelJobRequest& request) 
 
 CreateDataSetOutcome DataExchangeClient::CreateDataSet(const CreateDataSetRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateDataSet);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDataSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateDataSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -204,6 +207,7 @@ CreateDataSetOutcome DataExchangeClient::CreateDataSet(const CreateDataSetReques
 
 CreateEventActionOutcome DataExchangeClient::CreateEventAction(const CreateEventActionRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateEventAction);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateEventAction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateEventAction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -213,6 +217,7 @@ CreateEventActionOutcome DataExchangeClient::CreateEventAction(const CreateEvent
 
 CreateJobOutcome DataExchangeClient::CreateJob(const CreateJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -222,6 +227,7 @@ CreateJobOutcome DataExchangeClient::CreateJob(const CreateJobRequest& request) 
 
 CreateRevisionOutcome DataExchangeClient::CreateRevision(const CreateRevisionRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateRevision);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateRevision, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DataSetIdHasBeenSet())
   {
@@ -238,6 +244,7 @@ CreateRevisionOutcome DataExchangeClient::CreateRevision(const CreateRevisionReq
 
 DeleteAssetOutcome DataExchangeClient::DeleteAsset(const DeleteAssetRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteAsset);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAsset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssetIdHasBeenSet())
   {
@@ -267,6 +274,7 @@ DeleteAssetOutcome DataExchangeClient::DeleteAsset(const DeleteAssetRequest& req
 
 DeleteDataSetOutcome DataExchangeClient::DeleteDataSet(const DeleteDataSetRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteDataSet);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDataSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DataSetIdHasBeenSet())
   {
@@ -282,6 +290,7 @@ DeleteDataSetOutcome DataExchangeClient::DeleteDataSet(const DeleteDataSetReques
 
 DeleteEventActionOutcome DataExchangeClient::DeleteEventAction(const DeleteEventActionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteEventAction);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteEventAction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.EventActionIdHasBeenSet())
   {
@@ -297,6 +306,7 @@ DeleteEventActionOutcome DataExchangeClient::DeleteEventAction(const DeleteEvent
 
 DeleteRevisionOutcome DataExchangeClient::DeleteRevision(const DeleteRevisionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteRevision);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteRevision, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DataSetIdHasBeenSet())
   {
@@ -319,6 +329,7 @@ DeleteRevisionOutcome DataExchangeClient::DeleteRevision(const DeleteRevisionReq
 
 GetAssetOutcome DataExchangeClient::GetAsset(const GetAssetRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetAsset);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAsset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssetIdHasBeenSet())
   {
@@ -348,6 +359,7 @@ GetAssetOutcome DataExchangeClient::GetAsset(const GetAssetRequest& request) con
 
 GetDataSetOutcome DataExchangeClient::GetDataSet(const GetDataSetRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDataSet);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDataSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DataSetIdHasBeenSet())
   {
@@ -363,6 +375,7 @@ GetDataSetOutcome DataExchangeClient::GetDataSet(const GetDataSetRequest& reques
 
 GetEventActionOutcome DataExchangeClient::GetEventAction(const GetEventActionRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetEventAction);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetEventAction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.EventActionIdHasBeenSet())
   {
@@ -378,6 +391,7 @@ GetEventActionOutcome DataExchangeClient::GetEventAction(const GetEventActionReq
 
 GetJobOutcome DataExchangeClient::GetJob(const GetJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.JobIdHasBeenSet())
   {
@@ -393,6 +407,7 @@ GetJobOutcome DataExchangeClient::GetJob(const GetJobRequest& request) const
 
 GetRevisionOutcome DataExchangeClient::GetRevision(const GetRevisionRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetRevision);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetRevision, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DataSetIdHasBeenSet())
   {
@@ -415,6 +430,7 @@ GetRevisionOutcome DataExchangeClient::GetRevision(const GetRevisionRequest& req
 
 ListDataSetRevisionsOutcome DataExchangeClient::ListDataSetRevisions(const ListDataSetRevisionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDataSetRevisions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDataSetRevisions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DataSetIdHasBeenSet())
   {
@@ -431,6 +447,7 @@ ListDataSetRevisionsOutcome DataExchangeClient::ListDataSetRevisions(const ListD
 
 ListDataSetsOutcome DataExchangeClient::ListDataSets(const ListDataSetsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDataSets);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDataSets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDataSets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -440,6 +457,7 @@ ListDataSetsOutcome DataExchangeClient::ListDataSets(const ListDataSetsRequest& 
 
 ListEventActionsOutcome DataExchangeClient::ListEventActions(const ListEventActionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListEventActions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListEventActions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListEventActions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -449,6 +467,7 @@ ListEventActionsOutcome DataExchangeClient::ListEventActions(const ListEventActi
 
 ListJobsOutcome DataExchangeClient::ListJobs(const ListJobsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListJobs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -458,6 +477,7 @@ ListJobsOutcome DataExchangeClient::ListJobs(const ListJobsRequest& request) con
 
 ListRevisionAssetsOutcome DataExchangeClient::ListRevisionAssets(const ListRevisionAssetsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListRevisionAssets);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRevisionAssets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DataSetIdHasBeenSet())
   {
@@ -481,6 +501,7 @@ ListRevisionAssetsOutcome DataExchangeClient::ListRevisionAssets(const ListRevis
 
 ListTagsForResourceOutcome DataExchangeClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -496,6 +517,7 @@ ListTagsForResourceOutcome DataExchangeClient::ListTagsForResource(const ListTag
 
 RevokeRevisionOutcome DataExchangeClient::RevokeRevision(const RevokeRevisionRequest& request) const
 {
+  AWS_OPERATION_GUARD(RevokeRevision);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RevokeRevision, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DataSetIdHasBeenSet())
   {
@@ -519,6 +541,7 @@ RevokeRevisionOutcome DataExchangeClient::RevokeRevision(const RevokeRevisionReq
 
 SendApiAssetOutcome DataExchangeClient::SendApiAsset(const SendApiAssetRequest& request) const
 {
+  AWS_OPERATION_GUARD(SendApiAsset);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SendApiAsset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssetIdHasBeenSet())
   {
@@ -545,6 +568,7 @@ SendApiAssetOutcome DataExchangeClient::SendApiAsset(const SendApiAssetRequest& 
 
 StartJobOutcome DataExchangeClient::StartJob(const StartJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.JobIdHasBeenSet())
   {
@@ -560,6 +584,7 @@ StartJobOutcome DataExchangeClient::StartJob(const StartJobRequest& request) con
 
 TagResourceOutcome DataExchangeClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -575,6 +600,7 @@ TagResourceOutcome DataExchangeClient::TagResource(const TagResourceRequest& req
 
 UntagResourceOutcome DataExchangeClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -595,6 +621,7 @@ UntagResourceOutcome DataExchangeClient::UntagResource(const UntagResourceReques
 
 UpdateAssetOutcome DataExchangeClient::UpdateAsset(const UpdateAssetRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateAsset);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAsset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssetIdHasBeenSet())
   {
@@ -624,6 +651,7 @@ UpdateAssetOutcome DataExchangeClient::UpdateAsset(const UpdateAssetRequest& req
 
 UpdateDataSetOutcome DataExchangeClient::UpdateDataSet(const UpdateDataSetRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateDataSet);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDataSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DataSetIdHasBeenSet())
   {
@@ -639,6 +667,7 @@ UpdateDataSetOutcome DataExchangeClient::UpdateDataSet(const UpdateDataSetReques
 
 UpdateEventActionOutcome DataExchangeClient::UpdateEventAction(const UpdateEventActionRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateEventAction);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateEventAction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.EventActionIdHasBeenSet())
   {
@@ -654,6 +683,7 @@ UpdateEventActionOutcome DataExchangeClient::UpdateEventAction(const UpdateEvent
 
 UpdateRevisionOutcome DataExchangeClient::UpdateRevision(const UpdateRevisionRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateRevision);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateRevision, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DataSetIdHasBeenSet())
   {

@@ -131,6 +131,7 @@ MarketplaceCommerceAnalyticsClient::MarketplaceCommerceAnalyticsClient(const std
     /* End of legacy constructors due deprecation */
 MarketplaceCommerceAnalyticsClient::~MarketplaceCommerceAnalyticsClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<MarketplaceCommerceAnalyticsEndpointProviderBase>& MarketplaceCommerceAnalyticsClient::accessEndpointProvider()
@@ -153,6 +154,7 @@ void MarketplaceCommerceAnalyticsClient::OverrideEndpoint(const Aws::String& end
 
 GenerateDataSetOutcome MarketplaceCommerceAnalyticsClient::GenerateDataSet(const GenerateDataSetRequest& request) const
 {
+  AWS_OPERATION_GUARD(GenerateDataSet);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GenerateDataSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GenerateDataSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -161,6 +163,7 @@ GenerateDataSetOutcome MarketplaceCommerceAnalyticsClient::GenerateDataSet(const
 
 StartSupportDataExportOutcome MarketplaceCommerceAnalyticsClient::StartSupportDataExport(const StartSupportDataExportRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartSupportDataExport);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartSupportDataExport, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartSupportDataExport, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

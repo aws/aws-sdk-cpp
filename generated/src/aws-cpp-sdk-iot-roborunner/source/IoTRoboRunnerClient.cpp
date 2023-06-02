@@ -149,6 +149,7 @@ IoTRoboRunnerClient::IoTRoboRunnerClient(const std::shared_ptr<AWSCredentialsPro
     /* End of legacy constructors due deprecation */
 IoTRoboRunnerClient::~IoTRoboRunnerClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<IoTRoboRunnerEndpointProviderBase>& IoTRoboRunnerClient::accessEndpointProvider()
@@ -171,6 +172,7 @@ void IoTRoboRunnerClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CreateDestinationOutcome IoTRoboRunnerClient::CreateDestination(const CreateDestinationRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateDestination);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDestination, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateDestination, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -180,6 +182,7 @@ CreateDestinationOutcome IoTRoboRunnerClient::CreateDestination(const CreateDest
 
 CreateSiteOutcome IoTRoboRunnerClient::CreateSite(const CreateSiteRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateSite);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateSite, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateSite, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -189,6 +192,7 @@ CreateSiteOutcome IoTRoboRunnerClient::CreateSite(const CreateSiteRequest& reque
 
 CreateWorkerOutcome IoTRoboRunnerClient::CreateWorker(const CreateWorkerRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateWorker);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateWorker, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateWorker, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -198,6 +202,7 @@ CreateWorkerOutcome IoTRoboRunnerClient::CreateWorker(const CreateWorkerRequest&
 
 CreateWorkerFleetOutcome IoTRoboRunnerClient::CreateWorkerFleet(const CreateWorkerFleetRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateWorkerFleet);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateWorkerFleet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateWorkerFleet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -207,6 +212,7 @@ CreateWorkerFleetOutcome IoTRoboRunnerClient::CreateWorkerFleet(const CreateWork
 
 DeleteDestinationOutcome IoTRoboRunnerClient::DeleteDestination(const DeleteDestinationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteDestination);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDestination, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteDestination, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -216,6 +222,7 @@ DeleteDestinationOutcome IoTRoboRunnerClient::DeleteDestination(const DeleteDest
 
 DeleteSiteOutcome IoTRoboRunnerClient::DeleteSite(const DeleteSiteRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteSite);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteSite, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteSite, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -225,6 +232,7 @@ DeleteSiteOutcome IoTRoboRunnerClient::DeleteSite(const DeleteSiteRequest& reque
 
 DeleteWorkerOutcome IoTRoboRunnerClient::DeleteWorker(const DeleteWorkerRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteWorker);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteWorker, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteWorker, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -234,6 +242,7 @@ DeleteWorkerOutcome IoTRoboRunnerClient::DeleteWorker(const DeleteWorkerRequest&
 
 DeleteWorkerFleetOutcome IoTRoboRunnerClient::DeleteWorkerFleet(const DeleteWorkerFleetRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteWorkerFleet);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteWorkerFleet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteWorkerFleet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -243,6 +252,7 @@ DeleteWorkerFleetOutcome IoTRoboRunnerClient::DeleteWorkerFleet(const DeleteWork
 
 GetDestinationOutcome IoTRoboRunnerClient::GetDestination(const GetDestinationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDestination);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDestination, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -257,6 +267,7 @@ GetDestinationOutcome IoTRoboRunnerClient::GetDestination(const GetDestinationRe
 
 GetSiteOutcome IoTRoboRunnerClient::GetSite(const GetSiteRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSite);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSite, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -271,6 +282,7 @@ GetSiteOutcome IoTRoboRunnerClient::GetSite(const GetSiteRequest& request) const
 
 GetWorkerOutcome IoTRoboRunnerClient::GetWorker(const GetWorkerRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetWorker);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetWorker, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -285,6 +297,7 @@ GetWorkerOutcome IoTRoboRunnerClient::GetWorker(const GetWorkerRequest& request)
 
 GetWorkerFleetOutcome IoTRoboRunnerClient::GetWorkerFleet(const GetWorkerFleetRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetWorkerFleet);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetWorkerFleet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -299,6 +312,7 @@ GetWorkerFleetOutcome IoTRoboRunnerClient::GetWorkerFleet(const GetWorkerFleetRe
 
 ListDestinationsOutcome IoTRoboRunnerClient::ListDestinations(const ListDestinationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDestinations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDestinations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SiteHasBeenSet())
   {
@@ -313,6 +327,7 @@ ListDestinationsOutcome IoTRoboRunnerClient::ListDestinations(const ListDestinat
 
 ListSitesOutcome IoTRoboRunnerClient::ListSites(const ListSitesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListSites);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSites, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListSites, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -322,6 +337,7 @@ ListSitesOutcome IoTRoboRunnerClient::ListSites(const ListSitesRequest& request)
 
 ListWorkerFleetsOutcome IoTRoboRunnerClient::ListWorkerFleets(const ListWorkerFleetsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListWorkerFleets);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListWorkerFleets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SiteHasBeenSet())
   {
@@ -336,6 +352,7 @@ ListWorkerFleetsOutcome IoTRoboRunnerClient::ListWorkerFleets(const ListWorkerFl
 
 ListWorkersOutcome IoTRoboRunnerClient::ListWorkers(const ListWorkersRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListWorkers);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListWorkers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SiteHasBeenSet())
   {
@@ -350,6 +367,7 @@ ListWorkersOutcome IoTRoboRunnerClient::ListWorkers(const ListWorkersRequest& re
 
 UpdateDestinationOutcome IoTRoboRunnerClient::UpdateDestination(const UpdateDestinationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateDestination);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDestination, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateDestination, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -359,6 +377,7 @@ UpdateDestinationOutcome IoTRoboRunnerClient::UpdateDestination(const UpdateDest
 
 UpdateSiteOutcome IoTRoboRunnerClient::UpdateSite(const UpdateSiteRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateSite);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateSite, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateSite, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -368,6 +387,7 @@ UpdateSiteOutcome IoTRoboRunnerClient::UpdateSite(const UpdateSiteRequest& reque
 
 UpdateWorkerOutcome IoTRoboRunnerClient::UpdateWorker(const UpdateWorkerRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateWorker);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateWorker, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateWorker, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -377,6 +397,7 @@ UpdateWorkerOutcome IoTRoboRunnerClient::UpdateWorker(const UpdateWorkerRequest&
 
 UpdateWorkerFleetOutcome IoTRoboRunnerClient::UpdateWorkerFleet(const UpdateWorkerFleetRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateWorkerFleet);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateWorkerFleet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateWorkerFleet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

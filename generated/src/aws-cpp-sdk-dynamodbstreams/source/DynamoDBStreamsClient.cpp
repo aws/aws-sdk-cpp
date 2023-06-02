@@ -133,6 +133,7 @@ DynamoDBStreamsClient::DynamoDBStreamsClient(const std::shared_ptr<AWSCredential
     /* End of legacy constructors due deprecation */
 DynamoDBStreamsClient::~DynamoDBStreamsClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<DynamoDBStreamsEndpointProviderBase>& DynamoDBStreamsClient::accessEndpointProvider()
@@ -155,6 +156,7 @@ void DynamoDBStreamsClient::OverrideEndpoint(const Aws::String& endpoint)
 
 DescribeStreamOutcome DynamoDBStreamsClient::DescribeStream(const DescribeStreamRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeStream);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeStream, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeStream, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -163,6 +165,7 @@ DescribeStreamOutcome DynamoDBStreamsClient::DescribeStream(const DescribeStream
 
 GetRecordsOutcome DynamoDBStreamsClient::GetRecords(const GetRecordsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetRecords);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetRecords, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetRecords, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -171,6 +174,7 @@ GetRecordsOutcome DynamoDBStreamsClient::GetRecords(const GetRecordsRequest& req
 
 GetShardIteratorOutcome DynamoDBStreamsClient::GetShardIterator(const GetShardIteratorRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetShardIterator);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetShardIterator, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetShardIterator, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -179,6 +183,7 @@ GetShardIteratorOutcome DynamoDBStreamsClient::GetShardIterator(const GetShardIt
 
 ListStreamsOutcome DynamoDBStreamsClient::ListStreams(const ListStreamsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListStreams);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListStreams, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListStreams, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

@@ -201,6 +201,7 @@ SESClient::SESClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
     /* End of legacy constructors due deprecation */
 SESClient::~SESClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<SESEndpointProviderBase>& SESClient::accessEndpointProvider()
@@ -245,6 +246,7 @@ Aws::String SESClient::ConvertRequestToPresignedUrl(const AmazonSerializableWebS
 
 CloneReceiptRuleSetOutcome SESClient::CloneReceiptRuleSet(const CloneReceiptRuleSetRequest& request) const
 {
+  AWS_OPERATION_GUARD(CloneReceiptRuleSet);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CloneReceiptRuleSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CloneReceiptRuleSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -253,6 +255,7 @@ CloneReceiptRuleSetOutcome SESClient::CloneReceiptRuleSet(const CloneReceiptRule
 
 CreateConfigurationSetOutcome SESClient::CreateConfigurationSet(const CreateConfigurationSetRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateConfigurationSet);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateConfigurationSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateConfigurationSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -261,6 +264,7 @@ CreateConfigurationSetOutcome SESClient::CreateConfigurationSet(const CreateConf
 
 CreateConfigurationSetEventDestinationOutcome SESClient::CreateConfigurationSetEventDestination(const CreateConfigurationSetEventDestinationRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateConfigurationSetEventDestination);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateConfigurationSetEventDestination, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateConfigurationSetEventDestination, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -269,6 +273,7 @@ CreateConfigurationSetEventDestinationOutcome SESClient::CreateConfigurationSetE
 
 CreateConfigurationSetTrackingOptionsOutcome SESClient::CreateConfigurationSetTrackingOptions(const CreateConfigurationSetTrackingOptionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateConfigurationSetTrackingOptions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateConfigurationSetTrackingOptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateConfigurationSetTrackingOptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -277,6 +282,7 @@ CreateConfigurationSetTrackingOptionsOutcome SESClient::CreateConfigurationSetTr
 
 CreateCustomVerificationEmailTemplateOutcome SESClient::CreateCustomVerificationEmailTemplate(const CreateCustomVerificationEmailTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateCustomVerificationEmailTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateCustomVerificationEmailTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateCustomVerificationEmailTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -285,6 +291,7 @@ CreateCustomVerificationEmailTemplateOutcome SESClient::CreateCustomVerification
 
 CreateReceiptFilterOutcome SESClient::CreateReceiptFilter(const CreateReceiptFilterRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateReceiptFilter);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateReceiptFilter, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateReceiptFilter, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -293,6 +300,7 @@ CreateReceiptFilterOutcome SESClient::CreateReceiptFilter(const CreateReceiptFil
 
 CreateReceiptRuleOutcome SESClient::CreateReceiptRule(const CreateReceiptRuleRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateReceiptRule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateReceiptRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateReceiptRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -301,6 +309,7 @@ CreateReceiptRuleOutcome SESClient::CreateReceiptRule(const CreateReceiptRuleReq
 
 CreateReceiptRuleSetOutcome SESClient::CreateReceiptRuleSet(const CreateReceiptRuleSetRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateReceiptRuleSet);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateReceiptRuleSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateReceiptRuleSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -309,6 +318,7 @@ CreateReceiptRuleSetOutcome SESClient::CreateReceiptRuleSet(const CreateReceiptR
 
 CreateTemplateOutcome SESClient::CreateTemplate(const CreateTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -317,6 +327,7 @@ CreateTemplateOutcome SESClient::CreateTemplate(const CreateTemplateRequest& req
 
 DeleteConfigurationSetOutcome SESClient::DeleteConfigurationSet(const DeleteConfigurationSetRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteConfigurationSet);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteConfigurationSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteConfigurationSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -325,6 +336,7 @@ DeleteConfigurationSetOutcome SESClient::DeleteConfigurationSet(const DeleteConf
 
 DeleteConfigurationSetEventDestinationOutcome SESClient::DeleteConfigurationSetEventDestination(const DeleteConfigurationSetEventDestinationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteConfigurationSetEventDestination);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteConfigurationSetEventDestination, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteConfigurationSetEventDestination, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -333,6 +345,7 @@ DeleteConfigurationSetEventDestinationOutcome SESClient::DeleteConfigurationSetE
 
 DeleteConfigurationSetTrackingOptionsOutcome SESClient::DeleteConfigurationSetTrackingOptions(const DeleteConfigurationSetTrackingOptionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteConfigurationSetTrackingOptions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteConfigurationSetTrackingOptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteConfigurationSetTrackingOptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -341,6 +354,7 @@ DeleteConfigurationSetTrackingOptionsOutcome SESClient::DeleteConfigurationSetTr
 
 DeleteCustomVerificationEmailTemplateOutcome SESClient::DeleteCustomVerificationEmailTemplate(const DeleteCustomVerificationEmailTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteCustomVerificationEmailTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteCustomVerificationEmailTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteCustomVerificationEmailTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -349,6 +363,7 @@ DeleteCustomVerificationEmailTemplateOutcome SESClient::DeleteCustomVerification
 
 DeleteIdentityOutcome SESClient::DeleteIdentity(const DeleteIdentityRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteIdentity);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteIdentity, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteIdentity, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -357,6 +372,7 @@ DeleteIdentityOutcome SESClient::DeleteIdentity(const DeleteIdentityRequest& req
 
 DeleteIdentityPolicyOutcome SESClient::DeleteIdentityPolicy(const DeleteIdentityPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteIdentityPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteIdentityPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteIdentityPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -365,6 +381,7 @@ DeleteIdentityPolicyOutcome SESClient::DeleteIdentityPolicy(const DeleteIdentity
 
 DeleteReceiptFilterOutcome SESClient::DeleteReceiptFilter(const DeleteReceiptFilterRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteReceiptFilter);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteReceiptFilter, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteReceiptFilter, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -373,6 +390,7 @@ DeleteReceiptFilterOutcome SESClient::DeleteReceiptFilter(const DeleteReceiptFil
 
 DeleteReceiptRuleOutcome SESClient::DeleteReceiptRule(const DeleteReceiptRuleRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteReceiptRule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteReceiptRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteReceiptRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -381,6 +399,7 @@ DeleteReceiptRuleOutcome SESClient::DeleteReceiptRule(const DeleteReceiptRuleReq
 
 DeleteReceiptRuleSetOutcome SESClient::DeleteReceiptRuleSet(const DeleteReceiptRuleSetRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteReceiptRuleSet);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteReceiptRuleSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteReceiptRuleSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -389,6 +408,7 @@ DeleteReceiptRuleSetOutcome SESClient::DeleteReceiptRuleSet(const DeleteReceiptR
 
 DeleteTemplateOutcome SESClient::DeleteTemplate(const DeleteTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -397,6 +417,7 @@ DeleteTemplateOutcome SESClient::DeleteTemplate(const DeleteTemplateRequest& req
 
 DeleteVerifiedEmailAddressOutcome SESClient::DeleteVerifiedEmailAddress(const DeleteVerifiedEmailAddressRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteVerifiedEmailAddress);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteVerifiedEmailAddress, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteVerifiedEmailAddress, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -405,6 +426,7 @@ DeleteVerifiedEmailAddressOutcome SESClient::DeleteVerifiedEmailAddress(const De
 
 DescribeActiveReceiptRuleSetOutcome SESClient::DescribeActiveReceiptRuleSet(const DescribeActiveReceiptRuleSetRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeActiveReceiptRuleSet);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeActiveReceiptRuleSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeActiveReceiptRuleSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -413,6 +435,7 @@ DescribeActiveReceiptRuleSetOutcome SESClient::DescribeActiveReceiptRuleSet(cons
 
 DescribeConfigurationSetOutcome SESClient::DescribeConfigurationSet(const DescribeConfigurationSetRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeConfigurationSet);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeConfigurationSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeConfigurationSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -421,6 +444,7 @@ DescribeConfigurationSetOutcome SESClient::DescribeConfigurationSet(const Descri
 
 DescribeReceiptRuleOutcome SESClient::DescribeReceiptRule(const DescribeReceiptRuleRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeReceiptRule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeReceiptRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeReceiptRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -429,6 +453,7 @@ DescribeReceiptRuleOutcome SESClient::DescribeReceiptRule(const DescribeReceiptR
 
 DescribeReceiptRuleSetOutcome SESClient::DescribeReceiptRuleSet(const DescribeReceiptRuleSetRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeReceiptRuleSet);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeReceiptRuleSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeReceiptRuleSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -437,6 +462,7 @@ DescribeReceiptRuleSetOutcome SESClient::DescribeReceiptRuleSet(const DescribeRe
 
 GetAccountSendingEnabledOutcome SESClient::GetAccountSendingEnabled(const GetAccountSendingEnabledRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetAccountSendingEnabled);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAccountSendingEnabled, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetAccountSendingEnabled, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -445,6 +471,7 @@ GetAccountSendingEnabledOutcome SESClient::GetAccountSendingEnabled(const GetAcc
 
 GetCustomVerificationEmailTemplateOutcome SESClient::GetCustomVerificationEmailTemplate(const GetCustomVerificationEmailTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetCustomVerificationEmailTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCustomVerificationEmailTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetCustomVerificationEmailTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -453,6 +480,7 @@ GetCustomVerificationEmailTemplateOutcome SESClient::GetCustomVerificationEmailT
 
 GetIdentityDkimAttributesOutcome SESClient::GetIdentityDkimAttributes(const GetIdentityDkimAttributesRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetIdentityDkimAttributes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetIdentityDkimAttributes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetIdentityDkimAttributes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -461,6 +489,7 @@ GetIdentityDkimAttributesOutcome SESClient::GetIdentityDkimAttributes(const GetI
 
 GetIdentityMailFromDomainAttributesOutcome SESClient::GetIdentityMailFromDomainAttributes(const GetIdentityMailFromDomainAttributesRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetIdentityMailFromDomainAttributes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetIdentityMailFromDomainAttributes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetIdentityMailFromDomainAttributes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -469,6 +498,7 @@ GetIdentityMailFromDomainAttributesOutcome SESClient::GetIdentityMailFromDomainA
 
 GetIdentityNotificationAttributesOutcome SESClient::GetIdentityNotificationAttributes(const GetIdentityNotificationAttributesRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetIdentityNotificationAttributes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetIdentityNotificationAttributes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetIdentityNotificationAttributes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -477,6 +507,7 @@ GetIdentityNotificationAttributesOutcome SESClient::GetIdentityNotificationAttri
 
 GetIdentityPoliciesOutcome SESClient::GetIdentityPolicies(const GetIdentityPoliciesRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetIdentityPolicies);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetIdentityPolicies, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetIdentityPolicies, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -485,6 +516,7 @@ GetIdentityPoliciesOutcome SESClient::GetIdentityPolicies(const GetIdentityPolic
 
 GetIdentityVerificationAttributesOutcome SESClient::GetIdentityVerificationAttributes(const GetIdentityVerificationAttributesRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetIdentityVerificationAttributes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetIdentityVerificationAttributes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetIdentityVerificationAttributes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -493,6 +525,7 @@ GetIdentityVerificationAttributesOutcome SESClient::GetIdentityVerificationAttri
 
 GetSendQuotaOutcome SESClient::GetSendQuota(const GetSendQuotaRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSendQuota);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSendQuota, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetSendQuota, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -501,6 +534,7 @@ GetSendQuotaOutcome SESClient::GetSendQuota(const GetSendQuotaRequest& request) 
 
 GetSendStatisticsOutcome SESClient::GetSendStatistics(const GetSendStatisticsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSendStatistics);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSendStatistics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetSendStatistics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -509,6 +543,7 @@ GetSendStatisticsOutcome SESClient::GetSendStatistics(const GetSendStatisticsReq
 
 GetTemplateOutcome SESClient::GetTemplate(const GetTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -517,6 +552,7 @@ GetTemplateOutcome SESClient::GetTemplate(const GetTemplateRequest& request) con
 
 ListConfigurationSetsOutcome SESClient::ListConfigurationSets(const ListConfigurationSetsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListConfigurationSets);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListConfigurationSets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListConfigurationSets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -525,6 +561,7 @@ ListConfigurationSetsOutcome SESClient::ListConfigurationSets(const ListConfigur
 
 ListCustomVerificationEmailTemplatesOutcome SESClient::ListCustomVerificationEmailTemplates(const ListCustomVerificationEmailTemplatesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListCustomVerificationEmailTemplates);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListCustomVerificationEmailTemplates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListCustomVerificationEmailTemplates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -533,6 +570,7 @@ ListCustomVerificationEmailTemplatesOutcome SESClient::ListCustomVerificationEma
 
 ListIdentitiesOutcome SESClient::ListIdentities(const ListIdentitiesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListIdentities);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListIdentities, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListIdentities, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -541,6 +579,7 @@ ListIdentitiesOutcome SESClient::ListIdentities(const ListIdentitiesRequest& req
 
 ListIdentityPoliciesOutcome SESClient::ListIdentityPolicies(const ListIdentityPoliciesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListIdentityPolicies);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListIdentityPolicies, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListIdentityPolicies, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -549,6 +588,7 @@ ListIdentityPoliciesOutcome SESClient::ListIdentityPolicies(const ListIdentityPo
 
 ListReceiptFiltersOutcome SESClient::ListReceiptFilters(const ListReceiptFiltersRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListReceiptFilters);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListReceiptFilters, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListReceiptFilters, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -557,6 +597,7 @@ ListReceiptFiltersOutcome SESClient::ListReceiptFilters(const ListReceiptFilters
 
 ListReceiptRuleSetsOutcome SESClient::ListReceiptRuleSets(const ListReceiptRuleSetsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListReceiptRuleSets);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListReceiptRuleSets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListReceiptRuleSets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -565,6 +606,7 @@ ListReceiptRuleSetsOutcome SESClient::ListReceiptRuleSets(const ListReceiptRuleS
 
 ListTemplatesOutcome SESClient::ListTemplates(const ListTemplatesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTemplates);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTemplates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTemplates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -573,6 +615,7 @@ ListTemplatesOutcome SESClient::ListTemplates(const ListTemplatesRequest& reques
 
 ListVerifiedEmailAddressesOutcome SESClient::ListVerifiedEmailAddresses(const ListVerifiedEmailAddressesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListVerifiedEmailAddresses);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListVerifiedEmailAddresses, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListVerifiedEmailAddresses, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -581,6 +624,7 @@ ListVerifiedEmailAddressesOutcome SESClient::ListVerifiedEmailAddresses(const Li
 
 PutConfigurationSetDeliveryOptionsOutcome SESClient::PutConfigurationSetDeliveryOptions(const PutConfigurationSetDeliveryOptionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutConfigurationSetDeliveryOptions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutConfigurationSetDeliveryOptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutConfigurationSetDeliveryOptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -589,6 +633,7 @@ PutConfigurationSetDeliveryOptionsOutcome SESClient::PutConfigurationSetDelivery
 
 PutIdentityPolicyOutcome SESClient::PutIdentityPolicy(const PutIdentityPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutIdentityPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutIdentityPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutIdentityPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -597,6 +642,7 @@ PutIdentityPolicyOutcome SESClient::PutIdentityPolicy(const PutIdentityPolicyReq
 
 ReorderReceiptRuleSetOutcome SESClient::ReorderReceiptRuleSet(const ReorderReceiptRuleSetRequest& request) const
 {
+  AWS_OPERATION_GUARD(ReorderReceiptRuleSet);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ReorderReceiptRuleSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ReorderReceiptRuleSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -605,6 +651,7 @@ ReorderReceiptRuleSetOutcome SESClient::ReorderReceiptRuleSet(const ReorderRecei
 
 SendBounceOutcome SESClient::SendBounce(const SendBounceRequest& request) const
 {
+  AWS_OPERATION_GUARD(SendBounce);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SendBounce, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SendBounce, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -613,6 +660,7 @@ SendBounceOutcome SESClient::SendBounce(const SendBounceRequest& request) const
 
 SendBulkTemplatedEmailOutcome SESClient::SendBulkTemplatedEmail(const SendBulkTemplatedEmailRequest& request) const
 {
+  AWS_OPERATION_GUARD(SendBulkTemplatedEmail);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SendBulkTemplatedEmail, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SendBulkTemplatedEmail, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -621,6 +669,7 @@ SendBulkTemplatedEmailOutcome SESClient::SendBulkTemplatedEmail(const SendBulkTe
 
 SendCustomVerificationEmailOutcome SESClient::SendCustomVerificationEmail(const SendCustomVerificationEmailRequest& request) const
 {
+  AWS_OPERATION_GUARD(SendCustomVerificationEmail);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SendCustomVerificationEmail, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SendCustomVerificationEmail, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -629,6 +678,7 @@ SendCustomVerificationEmailOutcome SESClient::SendCustomVerificationEmail(const 
 
 SendEmailOutcome SESClient::SendEmail(const SendEmailRequest& request) const
 {
+  AWS_OPERATION_GUARD(SendEmail);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SendEmail, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SendEmail, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -637,6 +687,7 @@ SendEmailOutcome SESClient::SendEmail(const SendEmailRequest& request) const
 
 SendRawEmailOutcome SESClient::SendRawEmail(const SendRawEmailRequest& request) const
 {
+  AWS_OPERATION_GUARD(SendRawEmail);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SendRawEmail, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SendRawEmail, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -645,6 +696,7 @@ SendRawEmailOutcome SESClient::SendRawEmail(const SendRawEmailRequest& request) 
 
 SendTemplatedEmailOutcome SESClient::SendTemplatedEmail(const SendTemplatedEmailRequest& request) const
 {
+  AWS_OPERATION_GUARD(SendTemplatedEmail);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SendTemplatedEmail, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SendTemplatedEmail, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -653,6 +705,7 @@ SendTemplatedEmailOutcome SESClient::SendTemplatedEmail(const SendTemplatedEmail
 
 SetActiveReceiptRuleSetOutcome SESClient::SetActiveReceiptRuleSet(const SetActiveReceiptRuleSetRequest& request) const
 {
+  AWS_OPERATION_GUARD(SetActiveReceiptRuleSet);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SetActiveReceiptRuleSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SetActiveReceiptRuleSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -661,6 +714,7 @@ SetActiveReceiptRuleSetOutcome SESClient::SetActiveReceiptRuleSet(const SetActiv
 
 SetIdentityDkimEnabledOutcome SESClient::SetIdentityDkimEnabled(const SetIdentityDkimEnabledRequest& request) const
 {
+  AWS_OPERATION_GUARD(SetIdentityDkimEnabled);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SetIdentityDkimEnabled, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SetIdentityDkimEnabled, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -669,6 +723,7 @@ SetIdentityDkimEnabledOutcome SESClient::SetIdentityDkimEnabled(const SetIdentit
 
 SetIdentityFeedbackForwardingEnabledOutcome SESClient::SetIdentityFeedbackForwardingEnabled(const SetIdentityFeedbackForwardingEnabledRequest& request) const
 {
+  AWS_OPERATION_GUARD(SetIdentityFeedbackForwardingEnabled);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SetIdentityFeedbackForwardingEnabled, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SetIdentityFeedbackForwardingEnabled, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -677,6 +732,7 @@ SetIdentityFeedbackForwardingEnabledOutcome SESClient::SetIdentityFeedbackForwar
 
 SetIdentityHeadersInNotificationsEnabledOutcome SESClient::SetIdentityHeadersInNotificationsEnabled(const SetIdentityHeadersInNotificationsEnabledRequest& request) const
 {
+  AWS_OPERATION_GUARD(SetIdentityHeadersInNotificationsEnabled);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SetIdentityHeadersInNotificationsEnabled, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SetIdentityHeadersInNotificationsEnabled, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -685,6 +741,7 @@ SetIdentityHeadersInNotificationsEnabledOutcome SESClient::SetIdentityHeadersInN
 
 SetIdentityMailFromDomainOutcome SESClient::SetIdentityMailFromDomain(const SetIdentityMailFromDomainRequest& request) const
 {
+  AWS_OPERATION_GUARD(SetIdentityMailFromDomain);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SetIdentityMailFromDomain, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SetIdentityMailFromDomain, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -693,6 +750,7 @@ SetIdentityMailFromDomainOutcome SESClient::SetIdentityMailFromDomain(const SetI
 
 SetIdentityNotificationTopicOutcome SESClient::SetIdentityNotificationTopic(const SetIdentityNotificationTopicRequest& request) const
 {
+  AWS_OPERATION_GUARD(SetIdentityNotificationTopic);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SetIdentityNotificationTopic, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SetIdentityNotificationTopic, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -701,6 +759,7 @@ SetIdentityNotificationTopicOutcome SESClient::SetIdentityNotificationTopic(cons
 
 SetReceiptRulePositionOutcome SESClient::SetReceiptRulePosition(const SetReceiptRulePositionRequest& request) const
 {
+  AWS_OPERATION_GUARD(SetReceiptRulePosition);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SetReceiptRulePosition, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SetReceiptRulePosition, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -709,6 +768,7 @@ SetReceiptRulePositionOutcome SESClient::SetReceiptRulePosition(const SetReceipt
 
 TestRenderTemplateOutcome SESClient::TestRenderTemplate(const TestRenderTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(TestRenderTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TestRenderTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TestRenderTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -717,6 +777,7 @@ TestRenderTemplateOutcome SESClient::TestRenderTemplate(const TestRenderTemplate
 
 UpdateAccountSendingEnabledOutcome SESClient::UpdateAccountSendingEnabled(const UpdateAccountSendingEnabledRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateAccountSendingEnabled);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAccountSendingEnabled, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateAccountSendingEnabled, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -725,6 +786,7 @@ UpdateAccountSendingEnabledOutcome SESClient::UpdateAccountSendingEnabled(const 
 
 UpdateConfigurationSetEventDestinationOutcome SESClient::UpdateConfigurationSetEventDestination(const UpdateConfigurationSetEventDestinationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateConfigurationSetEventDestination);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateConfigurationSetEventDestination, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateConfigurationSetEventDestination, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -733,6 +795,7 @@ UpdateConfigurationSetEventDestinationOutcome SESClient::UpdateConfigurationSetE
 
 UpdateConfigurationSetReputationMetricsEnabledOutcome SESClient::UpdateConfigurationSetReputationMetricsEnabled(const UpdateConfigurationSetReputationMetricsEnabledRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateConfigurationSetReputationMetricsEnabled);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateConfigurationSetReputationMetricsEnabled, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateConfigurationSetReputationMetricsEnabled, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -741,6 +804,7 @@ UpdateConfigurationSetReputationMetricsEnabledOutcome SESClient::UpdateConfigura
 
 UpdateConfigurationSetSendingEnabledOutcome SESClient::UpdateConfigurationSetSendingEnabled(const UpdateConfigurationSetSendingEnabledRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateConfigurationSetSendingEnabled);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateConfigurationSetSendingEnabled, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateConfigurationSetSendingEnabled, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -749,6 +813,7 @@ UpdateConfigurationSetSendingEnabledOutcome SESClient::UpdateConfigurationSetSen
 
 UpdateConfigurationSetTrackingOptionsOutcome SESClient::UpdateConfigurationSetTrackingOptions(const UpdateConfigurationSetTrackingOptionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateConfigurationSetTrackingOptions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateConfigurationSetTrackingOptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateConfigurationSetTrackingOptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -757,6 +822,7 @@ UpdateConfigurationSetTrackingOptionsOutcome SESClient::UpdateConfigurationSetTr
 
 UpdateCustomVerificationEmailTemplateOutcome SESClient::UpdateCustomVerificationEmailTemplate(const UpdateCustomVerificationEmailTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateCustomVerificationEmailTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateCustomVerificationEmailTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateCustomVerificationEmailTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -765,6 +831,7 @@ UpdateCustomVerificationEmailTemplateOutcome SESClient::UpdateCustomVerification
 
 UpdateReceiptRuleOutcome SESClient::UpdateReceiptRule(const UpdateReceiptRuleRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateReceiptRule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateReceiptRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateReceiptRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -773,6 +840,7 @@ UpdateReceiptRuleOutcome SESClient::UpdateReceiptRule(const UpdateReceiptRuleReq
 
 UpdateTemplateOutcome SESClient::UpdateTemplate(const UpdateTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -781,6 +849,7 @@ UpdateTemplateOutcome SESClient::UpdateTemplate(const UpdateTemplateRequest& req
 
 VerifyDomainDkimOutcome SESClient::VerifyDomainDkim(const VerifyDomainDkimRequest& request) const
 {
+  AWS_OPERATION_GUARD(VerifyDomainDkim);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, VerifyDomainDkim, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, VerifyDomainDkim, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -789,6 +858,7 @@ VerifyDomainDkimOutcome SESClient::VerifyDomainDkim(const VerifyDomainDkimReques
 
 VerifyDomainIdentityOutcome SESClient::VerifyDomainIdentity(const VerifyDomainIdentityRequest& request) const
 {
+  AWS_OPERATION_GUARD(VerifyDomainIdentity);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, VerifyDomainIdentity, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, VerifyDomainIdentity, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -797,6 +867,7 @@ VerifyDomainIdentityOutcome SESClient::VerifyDomainIdentity(const VerifyDomainId
 
 VerifyEmailAddressOutcome SESClient::VerifyEmailAddress(const VerifyEmailAddressRequest& request) const
 {
+  AWS_OPERATION_GUARD(VerifyEmailAddress);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, VerifyEmailAddress, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, VerifyEmailAddress, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -805,6 +876,7 @@ VerifyEmailAddressOutcome SESClient::VerifyEmailAddress(const VerifyEmailAddress
 
 VerifyEmailIdentityOutcome SESClient::VerifyEmailIdentity(const VerifyEmailIdentityRequest& request) const
 {
+  AWS_OPERATION_GUARD(VerifyEmailIdentity);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, VerifyEmailIdentity, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, VerifyEmailIdentity, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

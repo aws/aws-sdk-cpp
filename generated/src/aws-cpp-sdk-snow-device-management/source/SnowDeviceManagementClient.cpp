@@ -142,6 +142,7 @@ SnowDeviceManagementClient::SnowDeviceManagementClient(const std::shared_ptr<AWS
     /* End of legacy constructors due deprecation */
 SnowDeviceManagementClient::~SnowDeviceManagementClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<SnowDeviceManagementEndpointProviderBase>& SnowDeviceManagementClient::accessEndpointProvider()
@@ -164,6 +165,7 @@ void SnowDeviceManagementClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CancelTaskOutcome SnowDeviceManagementClient::CancelTask(const CancelTaskRequest& request) const
 {
+  AWS_OPERATION_GUARD(CancelTask);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CancelTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TaskIdHasBeenSet())
   {
@@ -180,6 +182,7 @@ CancelTaskOutcome SnowDeviceManagementClient::CancelTask(const CancelTaskRequest
 
 CreateTaskOutcome SnowDeviceManagementClient::CreateTask(const CreateTaskRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateTask);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -189,6 +192,7 @@ CreateTaskOutcome SnowDeviceManagementClient::CreateTask(const CreateTaskRequest
 
 DescribeDeviceOutcome SnowDeviceManagementClient::DescribeDevice(const DescribeDeviceRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeDevice);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeDevice, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ManagedDeviceIdHasBeenSet())
   {
@@ -205,6 +209,7 @@ DescribeDeviceOutcome SnowDeviceManagementClient::DescribeDevice(const DescribeD
 
 DescribeDeviceEc2InstancesOutcome SnowDeviceManagementClient::DescribeDeviceEc2Instances(const DescribeDeviceEc2InstancesRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeDeviceEc2Instances);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeDeviceEc2Instances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ManagedDeviceIdHasBeenSet())
   {
@@ -221,6 +226,7 @@ DescribeDeviceEc2InstancesOutcome SnowDeviceManagementClient::DescribeDeviceEc2I
 
 DescribeExecutionOutcome SnowDeviceManagementClient::DescribeExecution(const DescribeExecutionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeExecution);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ManagedDeviceIdHasBeenSet())
   {
@@ -243,6 +249,7 @@ DescribeExecutionOutcome SnowDeviceManagementClient::DescribeExecution(const Des
 
 DescribeTaskOutcome SnowDeviceManagementClient::DescribeTask(const DescribeTaskRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeTask);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TaskIdHasBeenSet())
   {
@@ -258,6 +265,7 @@ DescribeTaskOutcome SnowDeviceManagementClient::DescribeTask(const DescribeTaskR
 
 ListDeviceResourcesOutcome SnowDeviceManagementClient::ListDeviceResources(const ListDeviceResourcesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDeviceResources);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDeviceResources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ManagedDeviceIdHasBeenSet())
   {
@@ -274,6 +282,7 @@ ListDeviceResourcesOutcome SnowDeviceManagementClient::ListDeviceResources(const
 
 ListDevicesOutcome SnowDeviceManagementClient::ListDevices(const ListDevicesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDevices);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDevices, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDevices, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -283,6 +292,7 @@ ListDevicesOutcome SnowDeviceManagementClient::ListDevices(const ListDevicesRequ
 
 ListExecutionsOutcome SnowDeviceManagementClient::ListExecutions(const ListExecutionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListExecutions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListExecutions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TaskIdHasBeenSet())
   {
@@ -297,6 +307,7 @@ ListExecutionsOutcome SnowDeviceManagementClient::ListExecutions(const ListExecu
 
 ListTagsForResourceOutcome SnowDeviceManagementClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -312,6 +323,7 @@ ListTagsForResourceOutcome SnowDeviceManagementClient::ListTagsForResource(const
 
 ListTasksOutcome SnowDeviceManagementClient::ListTasks(const ListTasksRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTasks);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTasks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTasks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -321,6 +333,7 @@ ListTasksOutcome SnowDeviceManagementClient::ListTasks(const ListTasksRequest& r
 
 TagResourceOutcome SnowDeviceManagementClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -336,6 +349,7 @@ TagResourceOutcome SnowDeviceManagementClient::TagResource(const TagResourceRequ
 
 UntagResourceOutcome SnowDeviceManagementClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {

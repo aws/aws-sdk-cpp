@@ -133,6 +133,7 @@ IoTJobsDataPlaneClient::IoTJobsDataPlaneClient(const std::shared_ptr<AWSCredenti
     /* End of legacy constructors due deprecation */
 IoTJobsDataPlaneClient::~IoTJobsDataPlaneClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<IoTJobsDataPlaneEndpointProviderBase>& IoTJobsDataPlaneClient::accessEndpointProvider()
@@ -155,6 +156,7 @@ void IoTJobsDataPlaneClient::OverrideEndpoint(const Aws::String& endpoint)
 
 DescribeJobExecutionOutcome IoTJobsDataPlaneClient::DescribeJobExecution(const DescribeJobExecutionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeJobExecution);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeJobExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.JobIdHasBeenSet())
   {
@@ -177,6 +179,7 @@ DescribeJobExecutionOutcome IoTJobsDataPlaneClient::DescribeJobExecution(const D
 
 GetPendingJobExecutionsOutcome IoTJobsDataPlaneClient::GetPendingJobExecutions(const GetPendingJobExecutionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetPendingJobExecutions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPendingJobExecutions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ThingNameHasBeenSet())
   {
@@ -193,6 +196,7 @@ GetPendingJobExecutionsOutcome IoTJobsDataPlaneClient::GetPendingJobExecutions(c
 
 StartNextPendingJobExecutionOutcome IoTJobsDataPlaneClient::StartNextPendingJobExecution(const StartNextPendingJobExecutionRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartNextPendingJobExecution);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartNextPendingJobExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ThingNameHasBeenSet())
   {
@@ -209,6 +213,7 @@ StartNextPendingJobExecutionOutcome IoTJobsDataPlaneClient::StartNextPendingJobE
 
 UpdateJobExecutionOutcome IoTJobsDataPlaneClient::UpdateJobExecution(const UpdateJobExecutionRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateJobExecution);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateJobExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.JobIdHasBeenSet())
   {

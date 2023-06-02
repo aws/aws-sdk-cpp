@@ -137,6 +137,7 @@ ConnectParticipantClient::ConnectParticipantClient(const std::shared_ptr<AWSCred
     /* End of legacy constructors due deprecation */
 ConnectParticipantClient::~ConnectParticipantClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<ConnectParticipantEndpointProviderBase>& ConnectParticipantClient::accessEndpointProvider()
@@ -159,6 +160,7 @@ void ConnectParticipantClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CompleteAttachmentUploadOutcome ConnectParticipantClient::CompleteAttachmentUpload(const CompleteAttachmentUploadRequest& request) const
 {
+  AWS_OPERATION_GUARD(CompleteAttachmentUpload);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CompleteAttachmentUpload, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConnectionTokenHasBeenSet())
   {
@@ -173,6 +175,7 @@ CompleteAttachmentUploadOutcome ConnectParticipantClient::CompleteAttachmentUplo
 
 CreateParticipantConnectionOutcome ConnectParticipantClient::CreateParticipantConnection(const CreateParticipantConnectionRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateParticipantConnection);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateParticipantConnection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ParticipantTokenHasBeenSet())
   {
@@ -187,6 +190,7 @@ CreateParticipantConnectionOutcome ConnectParticipantClient::CreateParticipantCo
 
 DisconnectParticipantOutcome ConnectParticipantClient::DisconnectParticipant(const DisconnectParticipantRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisconnectParticipant);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisconnectParticipant, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConnectionTokenHasBeenSet())
   {
@@ -201,6 +205,7 @@ DisconnectParticipantOutcome ConnectParticipantClient::DisconnectParticipant(con
 
 GetAttachmentOutcome ConnectParticipantClient::GetAttachment(const GetAttachmentRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetAttachment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAttachment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConnectionTokenHasBeenSet())
   {
@@ -215,6 +220,7 @@ GetAttachmentOutcome ConnectParticipantClient::GetAttachment(const GetAttachment
 
 GetTranscriptOutcome ConnectParticipantClient::GetTranscript(const GetTranscriptRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetTranscript);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetTranscript, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConnectionTokenHasBeenSet())
   {
@@ -229,6 +235,7 @@ GetTranscriptOutcome ConnectParticipantClient::GetTranscript(const GetTranscript
 
 SendEventOutcome ConnectParticipantClient::SendEvent(const SendEventRequest& request) const
 {
+  AWS_OPERATION_GUARD(SendEvent);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SendEvent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConnectionTokenHasBeenSet())
   {
@@ -243,6 +250,7 @@ SendEventOutcome ConnectParticipantClient::SendEvent(const SendEventRequest& req
 
 SendMessageOutcome ConnectParticipantClient::SendMessage(const SendMessageRequest& request) const
 {
+  AWS_OPERATION_GUARD(SendMessage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SendMessage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConnectionTokenHasBeenSet())
   {
@@ -257,6 +265,7 @@ SendMessageOutcome ConnectParticipantClient::SendMessage(const SendMessageReques
 
 StartAttachmentUploadOutcome ConnectParticipantClient::StartAttachmentUpload(const StartAttachmentUploadRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartAttachmentUpload);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartAttachmentUpload, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConnectionTokenHasBeenSet())
   {

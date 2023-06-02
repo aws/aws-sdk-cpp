@@ -133,6 +133,7 @@ TranscribeStreamingServiceClient::TranscribeStreamingServiceClient(const std::sh
     /* End of legacy constructors due deprecation */
 TranscribeStreamingServiceClient::~TranscribeStreamingServiceClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<TranscribeStreamingServiceEndpointProviderBase>& TranscribeStreamingServiceClient::accessEndpointProvider()

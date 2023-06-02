@@ -160,6 +160,7 @@ AmplifyBackendClient::AmplifyBackendClient(const std::shared_ptr<AWSCredentialsP
     /* End of legacy constructors due deprecation */
 AmplifyBackendClient::~AmplifyBackendClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<AmplifyBackendEndpointProviderBase>& AmplifyBackendClient::accessEndpointProvider()
@@ -182,6 +183,7 @@ void AmplifyBackendClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CloneBackendOutcome AmplifyBackendClient::CloneBackend(const CloneBackendRequest& request) const
 {
+  AWS_OPERATION_GUARD(CloneBackend);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CloneBackend, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -205,6 +207,7 @@ CloneBackendOutcome AmplifyBackendClient::CloneBackend(const CloneBackendRequest
 
 CreateBackendOutcome AmplifyBackendClient::CreateBackend(const CreateBackendRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateBackend);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateBackend, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateBackend, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -214,6 +217,7 @@ CreateBackendOutcome AmplifyBackendClient::CreateBackend(const CreateBackendRequ
 
 CreateBackendAPIOutcome AmplifyBackendClient::CreateBackendAPI(const CreateBackendAPIRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateBackendAPI);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateBackendAPI, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -230,6 +234,7 @@ CreateBackendAPIOutcome AmplifyBackendClient::CreateBackendAPI(const CreateBacke
 
 CreateBackendAuthOutcome AmplifyBackendClient::CreateBackendAuth(const CreateBackendAuthRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateBackendAuth);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateBackendAuth, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -246,6 +251,7 @@ CreateBackendAuthOutcome AmplifyBackendClient::CreateBackendAuth(const CreateBac
 
 CreateBackendConfigOutcome AmplifyBackendClient::CreateBackendConfig(const CreateBackendConfigRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateBackendConfig);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateBackendConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -262,6 +268,7 @@ CreateBackendConfigOutcome AmplifyBackendClient::CreateBackendConfig(const Creat
 
 CreateBackendStorageOutcome AmplifyBackendClient::CreateBackendStorage(const CreateBackendStorageRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateBackendStorage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateBackendStorage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -278,6 +285,7 @@ CreateBackendStorageOutcome AmplifyBackendClient::CreateBackendStorage(const Cre
 
 CreateTokenOutcome AmplifyBackendClient::CreateToken(const CreateTokenRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateToken);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateToken, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -294,6 +302,7 @@ CreateTokenOutcome AmplifyBackendClient::CreateToken(const CreateTokenRequest& r
 
 DeleteBackendOutcome AmplifyBackendClient::DeleteBackend(const DeleteBackendRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteBackend);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteBackend, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -317,6 +326,7 @@ DeleteBackendOutcome AmplifyBackendClient::DeleteBackend(const DeleteBackendRequ
 
 DeleteBackendAPIOutcome AmplifyBackendClient::DeleteBackendAPI(const DeleteBackendAPIRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteBackendAPI);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteBackendAPI, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -340,6 +350,7 @@ DeleteBackendAPIOutcome AmplifyBackendClient::DeleteBackendAPI(const DeleteBacke
 
 DeleteBackendAuthOutcome AmplifyBackendClient::DeleteBackendAuth(const DeleteBackendAuthRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteBackendAuth);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteBackendAuth, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -363,6 +374,7 @@ DeleteBackendAuthOutcome AmplifyBackendClient::DeleteBackendAuth(const DeleteBac
 
 DeleteBackendStorageOutcome AmplifyBackendClient::DeleteBackendStorage(const DeleteBackendStorageRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteBackendStorage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteBackendStorage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -386,6 +398,7 @@ DeleteBackendStorageOutcome AmplifyBackendClient::DeleteBackendStorage(const Del
 
 DeleteTokenOutcome AmplifyBackendClient::DeleteToken(const DeleteTokenRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteToken);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteToken, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -409,6 +422,7 @@ DeleteTokenOutcome AmplifyBackendClient::DeleteToken(const DeleteTokenRequest& r
 
 GenerateBackendAPIModelsOutcome AmplifyBackendClient::GenerateBackendAPIModels(const GenerateBackendAPIModelsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GenerateBackendAPIModels);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GenerateBackendAPIModels, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -432,6 +446,7 @@ GenerateBackendAPIModelsOutcome AmplifyBackendClient::GenerateBackendAPIModels(c
 
 GetBackendOutcome AmplifyBackendClient::GetBackend(const GetBackendRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetBackend);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBackend, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -448,6 +463,7 @@ GetBackendOutcome AmplifyBackendClient::GetBackend(const GetBackendRequest& requ
 
 GetBackendAPIOutcome AmplifyBackendClient::GetBackendAPI(const GetBackendAPIRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetBackendAPI);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBackendAPI, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -471,6 +487,7 @@ GetBackendAPIOutcome AmplifyBackendClient::GetBackendAPI(const GetBackendAPIRequ
 
 GetBackendAPIModelsOutcome AmplifyBackendClient::GetBackendAPIModels(const GetBackendAPIModelsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetBackendAPIModels);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBackendAPIModels, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -494,6 +511,7 @@ GetBackendAPIModelsOutcome AmplifyBackendClient::GetBackendAPIModels(const GetBa
 
 GetBackendAuthOutcome AmplifyBackendClient::GetBackendAuth(const GetBackendAuthRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetBackendAuth);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBackendAuth, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -517,6 +535,7 @@ GetBackendAuthOutcome AmplifyBackendClient::GetBackendAuth(const GetBackendAuthR
 
 GetBackendJobOutcome AmplifyBackendClient::GetBackendJob(const GetBackendJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetBackendJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBackendJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -545,6 +564,7 @@ GetBackendJobOutcome AmplifyBackendClient::GetBackendJob(const GetBackendJobRequ
 
 GetBackendStorageOutcome AmplifyBackendClient::GetBackendStorage(const GetBackendStorageRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetBackendStorage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBackendStorage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -568,6 +588,7 @@ GetBackendStorageOutcome AmplifyBackendClient::GetBackendStorage(const GetBacken
 
 GetTokenOutcome AmplifyBackendClient::GetToken(const GetTokenRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetToken);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetToken, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -590,6 +611,7 @@ GetTokenOutcome AmplifyBackendClient::GetToken(const GetTokenRequest& request) c
 
 ImportBackendAuthOutcome AmplifyBackendClient::ImportBackendAuth(const ImportBackendAuthRequest& request) const
 {
+  AWS_OPERATION_GUARD(ImportBackendAuth);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ImportBackendAuth, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -613,6 +635,7 @@ ImportBackendAuthOutcome AmplifyBackendClient::ImportBackendAuth(const ImportBac
 
 ImportBackendStorageOutcome AmplifyBackendClient::ImportBackendStorage(const ImportBackendStorageRequest& request) const
 {
+  AWS_OPERATION_GUARD(ImportBackendStorage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ImportBackendStorage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -636,6 +659,7 @@ ImportBackendStorageOutcome AmplifyBackendClient::ImportBackendStorage(const Imp
 
 ListBackendJobsOutcome AmplifyBackendClient::ListBackendJobs(const ListBackendJobsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListBackendJobs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListBackendJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -658,6 +682,7 @@ ListBackendJobsOutcome AmplifyBackendClient::ListBackendJobs(const ListBackendJo
 
 ListS3BucketsOutcome AmplifyBackendClient::ListS3Buckets(const ListS3BucketsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListS3Buckets);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListS3Buckets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListS3Buckets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -667,6 +692,7 @@ ListS3BucketsOutcome AmplifyBackendClient::ListS3Buckets(const ListS3BucketsRequ
 
 RemoveAllBackendsOutcome AmplifyBackendClient::RemoveAllBackends(const RemoveAllBackendsRequest& request) const
 {
+  AWS_OPERATION_GUARD(RemoveAllBackends);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RemoveAllBackends, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -683,6 +709,7 @@ RemoveAllBackendsOutcome AmplifyBackendClient::RemoveAllBackends(const RemoveAll
 
 RemoveBackendConfigOutcome AmplifyBackendClient::RemoveBackendConfig(const RemoveBackendConfigRequest& request) const
 {
+  AWS_OPERATION_GUARD(RemoveBackendConfig);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RemoveBackendConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -699,6 +726,7 @@ RemoveBackendConfigOutcome AmplifyBackendClient::RemoveBackendConfig(const Remov
 
 UpdateBackendAPIOutcome AmplifyBackendClient::UpdateBackendAPI(const UpdateBackendAPIRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateBackendAPI);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateBackendAPI, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -721,6 +749,7 @@ UpdateBackendAPIOutcome AmplifyBackendClient::UpdateBackendAPI(const UpdateBacke
 
 UpdateBackendAuthOutcome AmplifyBackendClient::UpdateBackendAuth(const UpdateBackendAuthRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateBackendAuth);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateBackendAuth, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -743,6 +772,7 @@ UpdateBackendAuthOutcome AmplifyBackendClient::UpdateBackendAuth(const UpdateBac
 
 UpdateBackendConfigOutcome AmplifyBackendClient::UpdateBackendConfig(const UpdateBackendConfigRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateBackendConfig);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateBackendConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -759,6 +789,7 @@ UpdateBackendConfigOutcome AmplifyBackendClient::UpdateBackendConfig(const Updat
 
 UpdateBackendJobOutcome AmplifyBackendClient::UpdateBackendJob(const UpdateBackendJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateBackendJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateBackendJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
@@ -787,6 +818,7 @@ UpdateBackendJobOutcome AmplifyBackendClient::UpdateBackendJob(const UpdateBacke
 
 UpdateBackendStorageOutcome AmplifyBackendClient::UpdateBackendStorage(const UpdateBackendStorageRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateBackendStorage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateBackendStorage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {

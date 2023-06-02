@@ -130,6 +130,7 @@ CloudTrailDataClient::CloudTrailDataClient(const std::shared_ptr<AWSCredentialsP
     /* End of legacy constructors due deprecation */
 CloudTrailDataClient::~CloudTrailDataClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<CloudTrailDataEndpointProviderBase>& CloudTrailDataClient::accessEndpointProvider()
@@ -152,6 +153,7 @@ void CloudTrailDataClient::OverrideEndpoint(const Aws::String& endpoint)
 
 PutAuditEventsOutcome CloudTrailDataClient::PutAuditEvents(const PutAuditEventsRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutAuditEvents);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutAuditEvents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelArnHasBeenSet())
   {

@@ -103,6 +103,12 @@ DescribePipelineExecutionResult& DescribePipelineExecutionResult::operator =(con
 
   }
 
+  if(jsonValue.ValueExists("SelectiveExecutionConfig"))
+  {
+    m_selectiveExecutionConfig = jsonValue.GetObject("SelectiveExecutionConfig");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

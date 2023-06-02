@@ -136,6 +136,7 @@ IoTDataPlaneClient::IoTDataPlaneClient(const std::shared_ptr<AWSCredentialsProvi
     /* End of legacy constructors due deprecation */
 IoTDataPlaneClient::~IoTDataPlaneClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<IoTDataPlaneEndpointProviderBase>& IoTDataPlaneClient::accessEndpointProvider()
@@ -158,6 +159,7 @@ void IoTDataPlaneClient::OverrideEndpoint(const Aws::String& endpoint)
 
 DeleteThingShadowOutcome IoTDataPlaneClient::DeleteThingShadow(const DeleteThingShadowRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteThingShadow);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteThingShadow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ThingNameHasBeenSet())
   {
@@ -174,6 +176,7 @@ DeleteThingShadowOutcome IoTDataPlaneClient::DeleteThingShadow(const DeleteThing
 
 GetRetainedMessageOutcome IoTDataPlaneClient::GetRetainedMessage(const GetRetainedMessageRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetRetainedMessage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetRetainedMessage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TopicHasBeenSet())
   {
@@ -189,6 +192,7 @@ GetRetainedMessageOutcome IoTDataPlaneClient::GetRetainedMessage(const GetRetain
 
 GetThingShadowOutcome IoTDataPlaneClient::GetThingShadow(const GetThingShadowRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetThingShadow);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetThingShadow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ThingNameHasBeenSet())
   {
@@ -205,6 +209,7 @@ GetThingShadowOutcome IoTDataPlaneClient::GetThingShadow(const GetThingShadowReq
 
 ListNamedShadowsForThingOutcome IoTDataPlaneClient::ListNamedShadowsForThing(const ListNamedShadowsForThingRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListNamedShadowsForThing);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListNamedShadowsForThing, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ThingNameHasBeenSet())
   {
@@ -220,6 +225,7 @@ ListNamedShadowsForThingOutcome IoTDataPlaneClient::ListNamedShadowsForThing(con
 
 ListRetainedMessagesOutcome IoTDataPlaneClient::ListRetainedMessages(const ListRetainedMessagesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListRetainedMessages);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRetainedMessages, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListRetainedMessages, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -229,6 +235,7 @@ ListRetainedMessagesOutcome IoTDataPlaneClient::ListRetainedMessages(const ListR
 
 PublishOutcome IoTDataPlaneClient::Publish(const PublishRequest& request) const
 {
+  AWS_OPERATION_GUARD(Publish);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, Publish, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TopicHasBeenSet())
   {
@@ -244,6 +251,7 @@ PublishOutcome IoTDataPlaneClient::Publish(const PublishRequest& request) const
 
 UpdateThingShadowOutcome IoTDataPlaneClient::UpdateThingShadow(const UpdateThingShadowRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateThingShadow);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateThingShadow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ThingNameHasBeenSet())
   {

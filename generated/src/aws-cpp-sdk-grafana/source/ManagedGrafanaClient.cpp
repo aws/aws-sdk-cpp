@@ -147,6 +147,7 @@ ManagedGrafanaClient::ManagedGrafanaClient(const std::shared_ptr<AWSCredentialsP
     /* End of legacy constructors due deprecation */
 ManagedGrafanaClient::~ManagedGrafanaClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<ManagedGrafanaEndpointProviderBase>& ManagedGrafanaClient::accessEndpointProvider()
@@ -169,6 +170,7 @@ void ManagedGrafanaClient::OverrideEndpoint(const Aws::String& endpoint)
 
 AssociateLicenseOutcome ManagedGrafanaClient::AssociateLicense(const AssociateLicenseRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociateLicense);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateLicense, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LicenseTypeHasBeenSet())
   {
@@ -191,6 +193,7 @@ AssociateLicenseOutcome ManagedGrafanaClient::AssociateLicense(const AssociateLi
 
 CreateWorkspaceOutcome ManagedGrafanaClient::CreateWorkspace(const CreateWorkspaceRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateWorkspace);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateWorkspace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateWorkspace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -200,6 +203,7 @@ CreateWorkspaceOutcome ManagedGrafanaClient::CreateWorkspace(const CreateWorkspa
 
 CreateWorkspaceApiKeyOutcome ManagedGrafanaClient::CreateWorkspaceApiKey(const CreateWorkspaceApiKeyRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateWorkspaceApiKey);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateWorkspaceApiKey, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkspaceIdHasBeenSet())
   {
@@ -216,6 +220,7 @@ CreateWorkspaceApiKeyOutcome ManagedGrafanaClient::CreateWorkspaceApiKey(const C
 
 DeleteWorkspaceOutcome ManagedGrafanaClient::DeleteWorkspace(const DeleteWorkspaceRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteWorkspace);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteWorkspace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkspaceIdHasBeenSet())
   {
@@ -231,6 +236,7 @@ DeleteWorkspaceOutcome ManagedGrafanaClient::DeleteWorkspace(const DeleteWorkspa
 
 DeleteWorkspaceApiKeyOutcome ManagedGrafanaClient::DeleteWorkspaceApiKey(const DeleteWorkspaceApiKeyRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteWorkspaceApiKey);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteWorkspaceApiKey, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.KeyNameHasBeenSet())
   {
@@ -253,6 +259,7 @@ DeleteWorkspaceApiKeyOutcome ManagedGrafanaClient::DeleteWorkspaceApiKey(const D
 
 DescribeWorkspaceOutcome ManagedGrafanaClient::DescribeWorkspace(const DescribeWorkspaceRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeWorkspace);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeWorkspace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkspaceIdHasBeenSet())
   {
@@ -268,6 +275,7 @@ DescribeWorkspaceOutcome ManagedGrafanaClient::DescribeWorkspace(const DescribeW
 
 DescribeWorkspaceAuthenticationOutcome ManagedGrafanaClient::DescribeWorkspaceAuthentication(const DescribeWorkspaceAuthenticationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeWorkspaceAuthentication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeWorkspaceAuthentication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkspaceIdHasBeenSet())
   {
@@ -284,6 +292,7 @@ DescribeWorkspaceAuthenticationOutcome ManagedGrafanaClient::DescribeWorkspaceAu
 
 DescribeWorkspaceConfigurationOutcome ManagedGrafanaClient::DescribeWorkspaceConfiguration(const DescribeWorkspaceConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeWorkspaceConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeWorkspaceConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkspaceIdHasBeenSet())
   {
@@ -300,6 +309,7 @@ DescribeWorkspaceConfigurationOutcome ManagedGrafanaClient::DescribeWorkspaceCon
 
 DisassociateLicenseOutcome ManagedGrafanaClient::DisassociateLicense(const DisassociateLicenseRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociateLicense);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateLicense, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LicenseTypeHasBeenSet())
   {
@@ -322,6 +332,7 @@ DisassociateLicenseOutcome ManagedGrafanaClient::DisassociateLicense(const Disas
 
 ListPermissionsOutcome ManagedGrafanaClient::ListPermissions(const ListPermissionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListPermissions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPermissions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkspaceIdHasBeenSet())
   {
@@ -338,6 +349,7 @@ ListPermissionsOutcome ManagedGrafanaClient::ListPermissions(const ListPermissio
 
 ListTagsForResourceOutcome ManagedGrafanaClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -353,6 +365,7 @@ ListTagsForResourceOutcome ManagedGrafanaClient::ListTagsForResource(const ListT
 
 ListWorkspacesOutcome ManagedGrafanaClient::ListWorkspaces(const ListWorkspacesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListWorkspaces);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListWorkspaces, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListWorkspaces, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -362,6 +375,7 @@ ListWorkspacesOutcome ManagedGrafanaClient::ListWorkspaces(const ListWorkspacesR
 
 TagResourceOutcome ManagedGrafanaClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -377,6 +391,7 @@ TagResourceOutcome ManagedGrafanaClient::TagResource(const TagResourceRequest& r
 
 UntagResourceOutcome ManagedGrafanaClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -397,6 +412,7 @@ UntagResourceOutcome ManagedGrafanaClient::UntagResource(const UntagResourceRequ
 
 UpdatePermissionsOutcome ManagedGrafanaClient::UpdatePermissions(const UpdatePermissionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdatePermissions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdatePermissions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkspaceIdHasBeenSet())
   {
@@ -413,6 +429,7 @@ UpdatePermissionsOutcome ManagedGrafanaClient::UpdatePermissions(const UpdatePer
 
 UpdateWorkspaceOutcome ManagedGrafanaClient::UpdateWorkspace(const UpdateWorkspaceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateWorkspace);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateWorkspace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkspaceIdHasBeenSet())
   {
@@ -428,6 +445,7 @@ UpdateWorkspaceOutcome ManagedGrafanaClient::UpdateWorkspace(const UpdateWorkspa
 
 UpdateWorkspaceAuthenticationOutcome ManagedGrafanaClient::UpdateWorkspaceAuthentication(const UpdateWorkspaceAuthenticationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateWorkspaceAuthentication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateWorkspaceAuthentication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkspaceIdHasBeenSet())
   {
@@ -444,6 +462,7 @@ UpdateWorkspaceAuthenticationOutcome ManagedGrafanaClient::UpdateWorkspaceAuthen
 
 UpdateWorkspaceConfigurationOutcome ManagedGrafanaClient::UpdateWorkspaceConfiguration(const UpdateWorkspaceConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateWorkspaceConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateWorkspaceConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkspaceIdHasBeenSet())
   {

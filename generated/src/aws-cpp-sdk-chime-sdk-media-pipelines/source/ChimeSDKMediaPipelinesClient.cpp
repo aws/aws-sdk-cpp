@@ -148,6 +148,7 @@ ChimeSDKMediaPipelinesClient::ChimeSDKMediaPipelinesClient(const std::shared_ptr
     /* End of legacy constructors due deprecation */
 ChimeSDKMediaPipelinesClient::~ChimeSDKMediaPipelinesClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<ChimeSDKMediaPipelinesEndpointProviderBase>& ChimeSDKMediaPipelinesClient::accessEndpointProvider()
@@ -170,6 +171,7 @@ void ChimeSDKMediaPipelinesClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CreateMediaCapturePipelineOutcome ChimeSDKMediaPipelinesClient::CreateMediaCapturePipeline(const CreateMediaCapturePipelineRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateMediaCapturePipeline);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateMediaCapturePipeline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateMediaCapturePipeline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -179,6 +181,7 @@ CreateMediaCapturePipelineOutcome ChimeSDKMediaPipelinesClient::CreateMediaCaptu
 
 CreateMediaConcatenationPipelineOutcome ChimeSDKMediaPipelinesClient::CreateMediaConcatenationPipeline(const CreateMediaConcatenationPipelineRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateMediaConcatenationPipeline);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateMediaConcatenationPipeline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateMediaConcatenationPipeline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -188,6 +191,7 @@ CreateMediaConcatenationPipelineOutcome ChimeSDKMediaPipelinesClient::CreateMedi
 
 CreateMediaInsightsPipelineOutcome ChimeSDKMediaPipelinesClient::CreateMediaInsightsPipeline(const CreateMediaInsightsPipelineRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateMediaInsightsPipeline);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateMediaInsightsPipeline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateMediaInsightsPipeline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -197,6 +201,7 @@ CreateMediaInsightsPipelineOutcome ChimeSDKMediaPipelinesClient::CreateMediaInsi
 
 CreateMediaInsightsPipelineConfigurationOutcome ChimeSDKMediaPipelinesClient::CreateMediaInsightsPipelineConfiguration(const CreateMediaInsightsPipelineConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateMediaInsightsPipelineConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateMediaInsightsPipelineConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateMediaInsightsPipelineConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -206,6 +211,7 @@ CreateMediaInsightsPipelineConfigurationOutcome ChimeSDKMediaPipelinesClient::Cr
 
 CreateMediaLiveConnectorPipelineOutcome ChimeSDKMediaPipelinesClient::CreateMediaLiveConnectorPipeline(const CreateMediaLiveConnectorPipelineRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateMediaLiveConnectorPipeline);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateMediaLiveConnectorPipeline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateMediaLiveConnectorPipeline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -215,6 +221,7 @@ CreateMediaLiveConnectorPipelineOutcome ChimeSDKMediaPipelinesClient::CreateMedi
 
 DeleteMediaCapturePipelineOutcome ChimeSDKMediaPipelinesClient::DeleteMediaCapturePipeline(const DeleteMediaCapturePipelineRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteMediaCapturePipeline);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteMediaCapturePipeline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MediaPipelineIdHasBeenSet())
   {
@@ -230,6 +237,7 @@ DeleteMediaCapturePipelineOutcome ChimeSDKMediaPipelinesClient::DeleteMediaCaptu
 
 DeleteMediaInsightsPipelineConfigurationOutcome ChimeSDKMediaPipelinesClient::DeleteMediaInsightsPipelineConfiguration(const DeleteMediaInsightsPipelineConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteMediaInsightsPipelineConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteMediaInsightsPipelineConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdentifierHasBeenSet())
   {
@@ -245,6 +253,7 @@ DeleteMediaInsightsPipelineConfigurationOutcome ChimeSDKMediaPipelinesClient::De
 
 DeleteMediaPipelineOutcome ChimeSDKMediaPipelinesClient::DeleteMediaPipeline(const DeleteMediaPipelineRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteMediaPipeline);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteMediaPipeline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MediaPipelineIdHasBeenSet())
   {
@@ -260,6 +269,7 @@ DeleteMediaPipelineOutcome ChimeSDKMediaPipelinesClient::DeleteMediaPipeline(con
 
 GetMediaCapturePipelineOutcome ChimeSDKMediaPipelinesClient::GetMediaCapturePipeline(const GetMediaCapturePipelineRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetMediaCapturePipeline);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMediaCapturePipeline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MediaPipelineIdHasBeenSet())
   {
@@ -275,6 +285,7 @@ GetMediaCapturePipelineOutcome ChimeSDKMediaPipelinesClient::GetMediaCapturePipe
 
 GetMediaInsightsPipelineConfigurationOutcome ChimeSDKMediaPipelinesClient::GetMediaInsightsPipelineConfiguration(const GetMediaInsightsPipelineConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetMediaInsightsPipelineConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMediaInsightsPipelineConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdentifierHasBeenSet())
   {
@@ -290,6 +301,7 @@ GetMediaInsightsPipelineConfigurationOutcome ChimeSDKMediaPipelinesClient::GetMe
 
 GetMediaPipelineOutcome ChimeSDKMediaPipelinesClient::GetMediaPipeline(const GetMediaPipelineRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetMediaPipeline);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMediaPipeline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MediaPipelineIdHasBeenSet())
   {
@@ -305,6 +317,7 @@ GetMediaPipelineOutcome ChimeSDKMediaPipelinesClient::GetMediaPipeline(const Get
 
 ListMediaCapturePipelinesOutcome ChimeSDKMediaPipelinesClient::ListMediaCapturePipelines(const ListMediaCapturePipelinesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListMediaCapturePipelines);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListMediaCapturePipelines, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListMediaCapturePipelines, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -314,6 +327,7 @@ ListMediaCapturePipelinesOutcome ChimeSDKMediaPipelinesClient::ListMediaCaptureP
 
 ListMediaInsightsPipelineConfigurationsOutcome ChimeSDKMediaPipelinesClient::ListMediaInsightsPipelineConfigurations(const ListMediaInsightsPipelineConfigurationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListMediaInsightsPipelineConfigurations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListMediaInsightsPipelineConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListMediaInsightsPipelineConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -323,6 +337,7 @@ ListMediaInsightsPipelineConfigurationsOutcome ChimeSDKMediaPipelinesClient::Lis
 
 ListMediaPipelinesOutcome ChimeSDKMediaPipelinesClient::ListMediaPipelines(const ListMediaPipelinesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListMediaPipelines);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListMediaPipelines, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListMediaPipelines, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -332,6 +347,7 @@ ListMediaPipelinesOutcome ChimeSDKMediaPipelinesClient::ListMediaPipelines(const
 
 ListTagsForResourceOutcome ChimeSDKMediaPipelinesClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceARNHasBeenSet())
   {
@@ -346,6 +362,7 @@ ListTagsForResourceOutcome ChimeSDKMediaPipelinesClient::ListTagsForResource(con
 
 TagResourceOutcome ChimeSDKMediaPipelinesClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -358,6 +375,7 @@ TagResourceOutcome ChimeSDKMediaPipelinesClient::TagResource(const TagResourceRe
 
 UntagResourceOutcome ChimeSDKMediaPipelinesClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -370,6 +388,7 @@ UntagResourceOutcome ChimeSDKMediaPipelinesClient::UntagResource(const UntagReso
 
 UpdateMediaInsightsPipelineConfigurationOutcome ChimeSDKMediaPipelinesClient::UpdateMediaInsightsPipelineConfiguration(const UpdateMediaInsightsPipelineConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateMediaInsightsPipelineConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateMediaInsightsPipelineConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdentifierHasBeenSet())
   {
@@ -385,6 +404,7 @@ UpdateMediaInsightsPipelineConfigurationOutcome ChimeSDKMediaPipelinesClient::Up
 
 UpdateMediaInsightsPipelineStatusOutcome ChimeSDKMediaPipelinesClient::UpdateMediaInsightsPipelineStatus(const UpdateMediaInsightsPipelineStatusRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateMediaInsightsPipelineStatus);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateMediaInsightsPipelineStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdentifierHasBeenSet())
   {

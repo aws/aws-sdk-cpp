@@ -166,6 +166,7 @@ CleanRoomsClient::CleanRoomsClient(const std::shared_ptr<AWSCredentialsProvider>
     /* End of legacy constructors due deprecation */
 CleanRoomsClient::~CleanRoomsClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<CleanRoomsEndpointProviderBase>& CleanRoomsClient::accessEndpointProvider()
@@ -188,6 +189,7 @@ void CleanRoomsClient::OverrideEndpoint(const Aws::String& endpoint)
 
 BatchGetSchemaOutcome CleanRoomsClient::BatchGetSchema(const BatchGetSchemaRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchGetSchema);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchGetSchema, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CollaborationIdentifierHasBeenSet())
   {
@@ -204,6 +206,7 @@ BatchGetSchemaOutcome CleanRoomsClient::BatchGetSchema(const BatchGetSchemaReque
 
 CreateCollaborationOutcome CleanRoomsClient::CreateCollaboration(const CreateCollaborationRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateCollaboration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateCollaboration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateCollaboration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -213,6 +216,7 @@ CreateCollaborationOutcome CleanRoomsClient::CreateCollaboration(const CreateCol
 
 CreateConfiguredTableOutcome CleanRoomsClient::CreateConfiguredTable(const CreateConfiguredTableRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateConfiguredTable);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateConfiguredTable, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateConfiguredTable, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -222,6 +226,7 @@ CreateConfiguredTableOutcome CleanRoomsClient::CreateConfiguredTable(const Creat
 
 CreateConfiguredTableAnalysisRuleOutcome CleanRoomsClient::CreateConfiguredTableAnalysisRule(const CreateConfiguredTableAnalysisRuleRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateConfiguredTableAnalysisRule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateConfiguredTableAnalysisRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConfiguredTableIdentifierHasBeenSet())
   {
@@ -238,6 +243,7 @@ CreateConfiguredTableAnalysisRuleOutcome CleanRoomsClient::CreateConfiguredTable
 
 CreateConfiguredTableAssociationOutcome CleanRoomsClient::CreateConfiguredTableAssociation(const CreateConfiguredTableAssociationRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateConfiguredTableAssociation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateConfiguredTableAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MembershipIdentifierHasBeenSet())
   {
@@ -254,6 +260,7 @@ CreateConfiguredTableAssociationOutcome CleanRoomsClient::CreateConfiguredTableA
 
 CreateMembershipOutcome CleanRoomsClient::CreateMembership(const CreateMembershipRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateMembership);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateMembership, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateMembership, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -263,6 +270,7 @@ CreateMembershipOutcome CleanRoomsClient::CreateMembership(const CreateMembershi
 
 DeleteCollaborationOutcome CleanRoomsClient::DeleteCollaboration(const DeleteCollaborationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteCollaboration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteCollaboration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CollaborationIdentifierHasBeenSet())
   {
@@ -278,6 +286,7 @@ DeleteCollaborationOutcome CleanRoomsClient::DeleteCollaboration(const DeleteCol
 
 DeleteConfiguredTableOutcome CleanRoomsClient::DeleteConfiguredTable(const DeleteConfiguredTableRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteConfiguredTable);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteConfiguredTable, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConfiguredTableIdentifierHasBeenSet())
   {
@@ -293,6 +302,7 @@ DeleteConfiguredTableOutcome CleanRoomsClient::DeleteConfiguredTable(const Delet
 
 DeleteConfiguredTableAnalysisRuleOutcome CleanRoomsClient::DeleteConfiguredTableAnalysisRule(const DeleteConfiguredTableAnalysisRuleRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteConfiguredTableAnalysisRule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteConfiguredTableAnalysisRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConfiguredTableIdentifierHasBeenSet())
   {
@@ -315,6 +325,7 @@ DeleteConfiguredTableAnalysisRuleOutcome CleanRoomsClient::DeleteConfiguredTable
 
 DeleteConfiguredTableAssociationOutcome CleanRoomsClient::DeleteConfiguredTableAssociation(const DeleteConfiguredTableAssociationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteConfiguredTableAssociation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteConfiguredTableAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConfiguredTableAssociationIdentifierHasBeenSet())
   {
@@ -337,6 +348,7 @@ DeleteConfiguredTableAssociationOutcome CleanRoomsClient::DeleteConfiguredTableA
 
 DeleteMemberOutcome CleanRoomsClient::DeleteMember(const DeleteMemberRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteMember);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteMember, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CollaborationIdentifierHasBeenSet())
   {
@@ -364,6 +376,7 @@ DeleteMemberOutcome CleanRoomsClient::DeleteMember(const DeleteMemberRequest& re
 
 DeleteMembershipOutcome CleanRoomsClient::DeleteMembership(const DeleteMembershipRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteMembership);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteMembership, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MembershipIdentifierHasBeenSet())
   {
@@ -379,6 +392,7 @@ DeleteMembershipOutcome CleanRoomsClient::DeleteMembership(const DeleteMembershi
 
 GetCollaborationOutcome CleanRoomsClient::GetCollaboration(const GetCollaborationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetCollaboration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCollaboration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CollaborationIdentifierHasBeenSet())
   {
@@ -394,6 +408,7 @@ GetCollaborationOutcome CleanRoomsClient::GetCollaboration(const GetCollaboratio
 
 GetConfiguredTableOutcome CleanRoomsClient::GetConfiguredTable(const GetConfiguredTableRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetConfiguredTable);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetConfiguredTable, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConfiguredTableIdentifierHasBeenSet())
   {
@@ -409,6 +424,7 @@ GetConfiguredTableOutcome CleanRoomsClient::GetConfiguredTable(const GetConfigur
 
 GetConfiguredTableAnalysisRuleOutcome CleanRoomsClient::GetConfiguredTableAnalysisRule(const GetConfiguredTableAnalysisRuleRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetConfiguredTableAnalysisRule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetConfiguredTableAnalysisRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConfiguredTableIdentifierHasBeenSet())
   {
@@ -431,6 +447,7 @@ GetConfiguredTableAnalysisRuleOutcome CleanRoomsClient::GetConfiguredTableAnalys
 
 GetConfiguredTableAssociationOutcome CleanRoomsClient::GetConfiguredTableAssociation(const GetConfiguredTableAssociationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetConfiguredTableAssociation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetConfiguredTableAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConfiguredTableAssociationIdentifierHasBeenSet())
   {
@@ -453,6 +470,7 @@ GetConfiguredTableAssociationOutcome CleanRoomsClient::GetConfiguredTableAssocia
 
 GetMembershipOutcome CleanRoomsClient::GetMembership(const GetMembershipRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetMembership);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMembership, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MembershipIdentifierHasBeenSet())
   {
@@ -468,6 +486,7 @@ GetMembershipOutcome CleanRoomsClient::GetMembership(const GetMembershipRequest&
 
 GetProtectedQueryOutcome CleanRoomsClient::GetProtectedQuery(const GetProtectedQueryRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetProtectedQuery);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetProtectedQuery, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MembershipIdentifierHasBeenSet())
   {
@@ -490,6 +509,7 @@ GetProtectedQueryOutcome CleanRoomsClient::GetProtectedQuery(const GetProtectedQ
 
 GetSchemaOutcome CleanRoomsClient::GetSchema(const GetSchemaRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSchema);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSchema, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CollaborationIdentifierHasBeenSet())
   {
@@ -512,6 +532,7 @@ GetSchemaOutcome CleanRoomsClient::GetSchema(const GetSchemaRequest& request) co
 
 GetSchemaAnalysisRuleOutcome CleanRoomsClient::GetSchemaAnalysisRule(const GetSchemaAnalysisRuleRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSchemaAnalysisRule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSchemaAnalysisRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CollaborationIdentifierHasBeenSet())
   {
@@ -541,6 +562,7 @@ GetSchemaAnalysisRuleOutcome CleanRoomsClient::GetSchemaAnalysisRule(const GetSc
 
 ListCollaborationsOutcome CleanRoomsClient::ListCollaborations(const ListCollaborationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListCollaborations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListCollaborations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListCollaborations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -550,6 +572,7 @@ ListCollaborationsOutcome CleanRoomsClient::ListCollaborations(const ListCollabo
 
 ListConfiguredTableAssociationsOutcome CleanRoomsClient::ListConfiguredTableAssociations(const ListConfiguredTableAssociationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListConfiguredTableAssociations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListConfiguredTableAssociations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MembershipIdentifierHasBeenSet())
   {
@@ -566,6 +589,7 @@ ListConfiguredTableAssociationsOutcome CleanRoomsClient::ListConfiguredTableAsso
 
 ListConfiguredTablesOutcome CleanRoomsClient::ListConfiguredTables(const ListConfiguredTablesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListConfiguredTables);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListConfiguredTables, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListConfiguredTables, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -575,6 +599,7 @@ ListConfiguredTablesOutcome CleanRoomsClient::ListConfiguredTables(const ListCon
 
 ListMembersOutcome CleanRoomsClient::ListMembers(const ListMembersRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListMembers);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListMembers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CollaborationIdentifierHasBeenSet())
   {
@@ -591,6 +616,7 @@ ListMembersOutcome CleanRoomsClient::ListMembers(const ListMembersRequest& reque
 
 ListMembershipsOutcome CleanRoomsClient::ListMemberships(const ListMembershipsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListMemberships);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListMemberships, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListMemberships, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -600,6 +626,7 @@ ListMembershipsOutcome CleanRoomsClient::ListMemberships(const ListMembershipsRe
 
 ListProtectedQueriesOutcome CleanRoomsClient::ListProtectedQueries(const ListProtectedQueriesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListProtectedQueries);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListProtectedQueries, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MembershipIdentifierHasBeenSet())
   {
@@ -616,6 +643,7 @@ ListProtectedQueriesOutcome CleanRoomsClient::ListProtectedQueries(const ListPro
 
 ListSchemasOutcome CleanRoomsClient::ListSchemas(const ListSchemasRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListSchemas);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSchemas, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CollaborationIdentifierHasBeenSet())
   {
@@ -632,6 +660,7 @@ ListSchemasOutcome CleanRoomsClient::ListSchemas(const ListSchemasRequest& reque
 
 ListTagsForResourceOutcome CleanRoomsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -647,6 +676,7 @@ ListTagsForResourceOutcome CleanRoomsClient::ListTagsForResource(const ListTagsF
 
 StartProtectedQueryOutcome CleanRoomsClient::StartProtectedQuery(const StartProtectedQueryRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartProtectedQuery);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartProtectedQuery, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MembershipIdentifierHasBeenSet())
   {
@@ -663,6 +693,7 @@ StartProtectedQueryOutcome CleanRoomsClient::StartProtectedQuery(const StartProt
 
 TagResourceOutcome CleanRoomsClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -678,6 +709,7 @@ TagResourceOutcome CleanRoomsClient::TagResource(const TagResourceRequest& reque
 
 UntagResourceOutcome CleanRoomsClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -698,6 +730,7 @@ UntagResourceOutcome CleanRoomsClient::UntagResource(const UntagResourceRequest&
 
 UpdateCollaborationOutcome CleanRoomsClient::UpdateCollaboration(const UpdateCollaborationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateCollaboration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateCollaboration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CollaborationIdentifierHasBeenSet())
   {
@@ -713,6 +746,7 @@ UpdateCollaborationOutcome CleanRoomsClient::UpdateCollaboration(const UpdateCol
 
 UpdateConfiguredTableOutcome CleanRoomsClient::UpdateConfiguredTable(const UpdateConfiguredTableRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateConfiguredTable);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateConfiguredTable, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConfiguredTableIdentifierHasBeenSet())
   {
@@ -728,6 +762,7 @@ UpdateConfiguredTableOutcome CleanRoomsClient::UpdateConfiguredTable(const Updat
 
 UpdateConfiguredTableAnalysisRuleOutcome CleanRoomsClient::UpdateConfiguredTableAnalysisRule(const UpdateConfiguredTableAnalysisRuleRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateConfiguredTableAnalysisRule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateConfiguredTableAnalysisRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConfiguredTableIdentifierHasBeenSet())
   {
@@ -750,6 +785,7 @@ UpdateConfiguredTableAnalysisRuleOutcome CleanRoomsClient::UpdateConfiguredTable
 
 UpdateConfiguredTableAssociationOutcome CleanRoomsClient::UpdateConfiguredTableAssociation(const UpdateConfiguredTableAssociationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateConfiguredTableAssociation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateConfiguredTableAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConfiguredTableAssociationIdentifierHasBeenSet())
   {
@@ -772,6 +808,7 @@ UpdateConfiguredTableAssociationOutcome CleanRoomsClient::UpdateConfiguredTableA
 
 UpdateMembershipOutcome CleanRoomsClient::UpdateMembership(const UpdateMembershipRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateMembership);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateMembership, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MembershipIdentifierHasBeenSet())
   {
@@ -787,6 +824,7 @@ UpdateMembershipOutcome CleanRoomsClient::UpdateMembership(const UpdateMembershi
 
 UpdateProtectedQueryOutcome CleanRoomsClient::UpdateProtectedQuery(const UpdateProtectedQueryRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateProtectedQuery);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateProtectedQuery, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MembershipIdentifierHasBeenSet())
   {

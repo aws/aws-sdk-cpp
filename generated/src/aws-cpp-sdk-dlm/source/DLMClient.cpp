@@ -137,6 +137,7 @@ DLMClient::DLMClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
     /* End of legacy constructors due deprecation */
 DLMClient::~DLMClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<DLMEndpointProviderBase>& DLMClient::accessEndpointProvider()
@@ -159,6 +160,7 @@ void DLMClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CreateLifecyclePolicyOutcome DLMClient::CreateLifecyclePolicy(const CreateLifecyclePolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateLifecyclePolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateLifecyclePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateLifecyclePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -168,6 +170,7 @@ CreateLifecyclePolicyOutcome DLMClient::CreateLifecyclePolicy(const CreateLifecy
 
 DeleteLifecyclePolicyOutcome DLMClient::DeleteLifecyclePolicy(const DeleteLifecyclePolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteLifecyclePolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteLifecyclePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PolicyIdHasBeenSet())
   {
@@ -183,6 +186,7 @@ DeleteLifecyclePolicyOutcome DLMClient::DeleteLifecyclePolicy(const DeleteLifecy
 
 GetLifecyclePoliciesOutcome DLMClient::GetLifecyclePolicies(const GetLifecyclePoliciesRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetLifecyclePolicies);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetLifecyclePolicies, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetLifecyclePolicies, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -192,6 +196,7 @@ GetLifecyclePoliciesOutcome DLMClient::GetLifecyclePolicies(const GetLifecyclePo
 
 GetLifecyclePolicyOutcome DLMClient::GetLifecyclePolicy(const GetLifecyclePolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetLifecyclePolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetLifecyclePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PolicyIdHasBeenSet())
   {
@@ -207,6 +212,7 @@ GetLifecyclePolicyOutcome DLMClient::GetLifecyclePolicy(const GetLifecyclePolicy
 
 ListTagsForResourceOutcome DLMClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -222,6 +228,7 @@ ListTagsForResourceOutcome DLMClient::ListTagsForResource(const ListTagsForResou
 
 TagResourceOutcome DLMClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -237,6 +244,7 @@ TagResourceOutcome DLMClient::TagResource(const TagResourceRequest& request) con
 
 UntagResourceOutcome DLMClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -257,6 +265,7 @@ UntagResourceOutcome DLMClient::UntagResource(const UntagResourceRequest& reques
 
 UpdateLifecyclePolicyOutcome DLMClient::UpdateLifecyclePolicy(const UpdateLifecyclePolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateLifecyclePolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateLifecyclePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PolicyIdHasBeenSet())
   {

@@ -155,6 +155,7 @@ OutpostsClient::OutpostsClient(const std::shared_ptr<AWSCredentialsProvider>& cr
     /* End of legacy constructors due deprecation */
 OutpostsClient::~OutpostsClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<OutpostsEndpointProviderBase>& OutpostsClient::accessEndpointProvider()
@@ -177,6 +178,7 @@ void OutpostsClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CancelOrderOutcome OutpostsClient::CancelOrder(const CancelOrderRequest& request) const
 {
+  AWS_OPERATION_GUARD(CancelOrder);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CancelOrder, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.OrderIdHasBeenSet())
   {
@@ -193,6 +195,7 @@ CancelOrderOutcome OutpostsClient::CancelOrder(const CancelOrderRequest& request
 
 CreateOrderOutcome OutpostsClient::CreateOrder(const CreateOrderRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateOrder);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateOrder, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateOrder, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -202,6 +205,7 @@ CreateOrderOutcome OutpostsClient::CreateOrder(const CreateOrderRequest& request
 
 CreateOutpostOutcome OutpostsClient::CreateOutpost(const CreateOutpostRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateOutpost);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateOutpost, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateOutpost, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -211,6 +215,7 @@ CreateOutpostOutcome OutpostsClient::CreateOutpost(const CreateOutpostRequest& r
 
 CreateSiteOutcome OutpostsClient::CreateSite(const CreateSiteRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateSite);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateSite, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateSite, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -220,6 +225,7 @@ CreateSiteOutcome OutpostsClient::CreateSite(const CreateSiteRequest& request) c
 
 DeleteOutpostOutcome OutpostsClient::DeleteOutpost(const DeleteOutpostRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteOutpost);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteOutpost, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.OutpostIdHasBeenSet())
   {
@@ -235,6 +241,7 @@ DeleteOutpostOutcome OutpostsClient::DeleteOutpost(const DeleteOutpostRequest& r
 
 DeleteSiteOutcome OutpostsClient::DeleteSite(const DeleteSiteRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteSite);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteSite, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SiteIdHasBeenSet())
   {
@@ -250,6 +257,7 @@ DeleteSiteOutcome OutpostsClient::DeleteSite(const DeleteSiteRequest& request) c
 
 GetCatalogItemOutcome OutpostsClient::GetCatalogItem(const GetCatalogItemRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetCatalogItem);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCatalogItem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CatalogItemIdHasBeenSet())
   {
@@ -265,6 +273,7 @@ GetCatalogItemOutcome OutpostsClient::GetCatalogItem(const GetCatalogItemRequest
 
 GetConnectionOutcome OutpostsClient::GetConnection(const GetConnectionRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetConnection);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetConnection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConnectionIdHasBeenSet())
   {
@@ -280,6 +289,7 @@ GetConnectionOutcome OutpostsClient::GetConnection(const GetConnectionRequest& r
 
 GetOrderOutcome OutpostsClient::GetOrder(const GetOrderRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetOrder);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetOrder, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.OrderIdHasBeenSet())
   {
@@ -295,6 +305,7 @@ GetOrderOutcome OutpostsClient::GetOrder(const GetOrderRequest& request) const
 
 GetOutpostOutcome OutpostsClient::GetOutpost(const GetOutpostRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetOutpost);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetOutpost, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.OutpostIdHasBeenSet())
   {
@@ -310,6 +321,7 @@ GetOutpostOutcome OutpostsClient::GetOutpost(const GetOutpostRequest& request) c
 
 GetOutpostInstanceTypesOutcome OutpostsClient::GetOutpostInstanceTypes(const GetOutpostInstanceTypesRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetOutpostInstanceTypes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetOutpostInstanceTypes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.OutpostIdHasBeenSet())
   {
@@ -326,6 +338,7 @@ GetOutpostInstanceTypesOutcome OutpostsClient::GetOutpostInstanceTypes(const Get
 
 GetSiteOutcome OutpostsClient::GetSite(const GetSiteRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSite);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSite, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SiteIdHasBeenSet())
   {
@@ -341,6 +354,7 @@ GetSiteOutcome OutpostsClient::GetSite(const GetSiteRequest& request) const
 
 GetSiteAddressOutcome OutpostsClient::GetSiteAddress(const GetSiteAddressRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSiteAddress);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSiteAddress, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SiteIdHasBeenSet())
   {
@@ -362,6 +376,7 @@ GetSiteAddressOutcome OutpostsClient::GetSiteAddress(const GetSiteAddressRequest
 
 ListAssetsOutcome OutpostsClient::ListAssets(const ListAssetsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAssets);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAssets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.OutpostIdentifierHasBeenSet())
   {
@@ -378,6 +393,7 @@ ListAssetsOutcome OutpostsClient::ListAssets(const ListAssetsRequest& request) c
 
 ListCatalogItemsOutcome OutpostsClient::ListCatalogItems(const ListCatalogItemsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListCatalogItems);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListCatalogItems, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListCatalogItems, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -387,6 +403,7 @@ ListCatalogItemsOutcome OutpostsClient::ListCatalogItems(const ListCatalogItemsR
 
 ListOrdersOutcome OutpostsClient::ListOrders(const ListOrdersRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListOrders);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListOrders, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListOrders, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -396,6 +413,7 @@ ListOrdersOutcome OutpostsClient::ListOrders(const ListOrdersRequest& request) c
 
 ListOutpostsOutcome OutpostsClient::ListOutposts(const ListOutpostsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListOutposts);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListOutposts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListOutposts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -405,6 +423,7 @@ ListOutpostsOutcome OutpostsClient::ListOutposts(const ListOutpostsRequest& requ
 
 ListSitesOutcome OutpostsClient::ListSites(const ListSitesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListSites);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSites, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListSites, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -414,6 +433,7 @@ ListSitesOutcome OutpostsClient::ListSites(const ListSitesRequest& request) cons
 
 ListTagsForResourceOutcome OutpostsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -429,6 +449,7 @@ ListTagsForResourceOutcome OutpostsClient::ListTagsForResource(const ListTagsFor
 
 StartConnectionOutcome OutpostsClient::StartConnection(const StartConnectionRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartConnection);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartConnection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartConnection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -438,6 +459,7 @@ StartConnectionOutcome OutpostsClient::StartConnection(const StartConnectionRequ
 
 TagResourceOutcome OutpostsClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -453,6 +475,7 @@ TagResourceOutcome OutpostsClient::TagResource(const TagResourceRequest& request
 
 UntagResourceOutcome OutpostsClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -473,6 +496,7 @@ UntagResourceOutcome OutpostsClient::UntagResource(const UntagResourceRequest& r
 
 UpdateOutpostOutcome OutpostsClient::UpdateOutpost(const UpdateOutpostRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateOutpost);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateOutpost, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.OutpostIdHasBeenSet())
   {
@@ -488,6 +512,7 @@ UpdateOutpostOutcome OutpostsClient::UpdateOutpost(const UpdateOutpostRequest& r
 
 UpdateSiteOutcome OutpostsClient::UpdateSite(const UpdateSiteRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateSite);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateSite, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SiteIdHasBeenSet())
   {
@@ -503,6 +528,7 @@ UpdateSiteOutcome OutpostsClient::UpdateSite(const UpdateSiteRequest& request) c
 
 UpdateSiteAddressOutcome OutpostsClient::UpdateSiteAddress(const UpdateSiteAddressRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateSiteAddress);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateSiteAddress, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SiteIdHasBeenSet())
   {
@@ -519,6 +545,7 @@ UpdateSiteAddressOutcome OutpostsClient::UpdateSiteAddress(const UpdateSiteAddre
 
 UpdateSiteRackPhysicalPropertiesOutcome OutpostsClient::UpdateSiteRackPhysicalProperties(const UpdateSiteRackPhysicalPropertiesRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateSiteRackPhysicalProperties);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateSiteRackPhysicalProperties, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SiteIdHasBeenSet())
   {

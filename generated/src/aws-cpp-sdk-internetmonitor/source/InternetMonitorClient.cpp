@@ -139,6 +139,7 @@ InternetMonitorClient::InternetMonitorClient(const std::shared_ptr<AWSCredential
     /* End of legacy constructors due deprecation */
 InternetMonitorClient::~InternetMonitorClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<InternetMonitorEndpointProviderBase>& InternetMonitorClient::accessEndpointProvider()
@@ -161,6 +162,7 @@ void InternetMonitorClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CreateMonitorOutcome InternetMonitorClient::CreateMonitor(const CreateMonitorRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateMonitor);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateMonitor, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateMonitor, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -170,6 +172,7 @@ CreateMonitorOutcome InternetMonitorClient::CreateMonitor(const CreateMonitorReq
 
 DeleteMonitorOutcome InternetMonitorClient::DeleteMonitor(const DeleteMonitorRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteMonitor);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteMonitor, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MonitorNameHasBeenSet())
   {
@@ -185,6 +188,7 @@ DeleteMonitorOutcome InternetMonitorClient::DeleteMonitor(const DeleteMonitorReq
 
 GetHealthEventOutcome InternetMonitorClient::GetHealthEvent(const GetHealthEventRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetHealthEvent);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetHealthEvent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MonitorNameHasBeenSet())
   {
@@ -207,6 +211,7 @@ GetHealthEventOutcome InternetMonitorClient::GetHealthEvent(const GetHealthEvent
 
 GetMonitorOutcome InternetMonitorClient::GetMonitor(const GetMonitorRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetMonitor);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMonitor, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MonitorNameHasBeenSet())
   {
@@ -222,6 +227,7 @@ GetMonitorOutcome InternetMonitorClient::GetMonitor(const GetMonitorRequest& req
 
 ListHealthEventsOutcome InternetMonitorClient::ListHealthEvents(const ListHealthEventsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListHealthEvents);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListHealthEvents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MonitorNameHasBeenSet())
   {
@@ -238,6 +244,7 @@ ListHealthEventsOutcome InternetMonitorClient::ListHealthEvents(const ListHealth
 
 ListMonitorsOutcome InternetMonitorClient::ListMonitors(const ListMonitorsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListMonitors);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListMonitors, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListMonitors, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -247,6 +254,7 @@ ListMonitorsOutcome InternetMonitorClient::ListMonitors(const ListMonitorsReques
 
 ListTagsForResourceOutcome InternetMonitorClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -262,6 +270,7 @@ ListTagsForResourceOutcome InternetMonitorClient::ListTagsForResource(const List
 
 TagResourceOutcome InternetMonitorClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -277,6 +286,7 @@ TagResourceOutcome InternetMonitorClient::TagResource(const TagResourceRequest& 
 
 UntagResourceOutcome InternetMonitorClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -297,6 +307,7 @@ UntagResourceOutcome InternetMonitorClient::UntagResource(const UntagResourceReq
 
 UpdateMonitorOutcome InternetMonitorClient::UpdateMonitor(const UpdateMonitorRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateMonitor);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateMonitor, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MonitorNameHasBeenSet())
   {

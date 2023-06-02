@@ -135,6 +135,7 @@ ElasticInferenceClient::ElasticInferenceClient(const std::shared_ptr<AWSCredenti
     /* End of legacy constructors due deprecation */
 ElasticInferenceClient::~ElasticInferenceClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<ElasticInferenceEndpointProviderBase>& ElasticInferenceClient::accessEndpointProvider()
@@ -157,6 +158,7 @@ void ElasticInferenceClient::OverrideEndpoint(const Aws::String& endpoint)
 
 DescribeAcceleratorOfferingsOutcome ElasticInferenceClient::DescribeAcceleratorOfferings(const DescribeAcceleratorOfferingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeAcceleratorOfferings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAcceleratorOfferings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeAcceleratorOfferings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -166,6 +168,7 @@ DescribeAcceleratorOfferingsOutcome ElasticInferenceClient::DescribeAcceleratorO
 
 DescribeAcceleratorTypesOutcome ElasticInferenceClient::DescribeAcceleratorTypes(const DescribeAcceleratorTypesRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeAcceleratorTypes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAcceleratorTypes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeAcceleratorTypes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -175,6 +178,7 @@ DescribeAcceleratorTypesOutcome ElasticInferenceClient::DescribeAcceleratorTypes
 
 DescribeAcceleratorsOutcome ElasticInferenceClient::DescribeAccelerators(const DescribeAcceleratorsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeAccelerators);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAccelerators, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeAccelerators, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -184,6 +188,7 @@ DescribeAcceleratorsOutcome ElasticInferenceClient::DescribeAccelerators(const D
 
 ListTagsForResourceOutcome ElasticInferenceClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -199,6 +204,7 @@ ListTagsForResourceOutcome ElasticInferenceClient::ListTagsForResource(const Lis
 
 TagResourceOutcome ElasticInferenceClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -214,6 +220,7 @@ TagResourceOutcome ElasticInferenceClient::TagResource(const TagResourceRequest&
 
 UntagResourceOutcome ElasticInferenceClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {

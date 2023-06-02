@@ -138,6 +138,7 @@ MobileClient::MobileClient(const std::shared_ptr<AWSCredentialsProvider>& creden
     /* End of legacy constructors due deprecation */
 MobileClient::~MobileClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<MobileEndpointProviderBase>& MobileClient::accessEndpointProvider()
@@ -160,6 +161,7 @@ void MobileClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CreateProjectOutcome MobileClient::CreateProject(const CreateProjectRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateProject);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateProject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateProject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -169,6 +171,7 @@ CreateProjectOutcome MobileClient::CreateProject(const CreateProjectRequest& req
 
 DeleteProjectOutcome MobileClient::DeleteProject(const DeleteProjectRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteProject);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteProject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectIdHasBeenSet())
   {
@@ -184,6 +187,7 @@ DeleteProjectOutcome MobileClient::DeleteProject(const DeleteProjectRequest& req
 
 DescribeBundleOutcome MobileClient::DescribeBundle(const DescribeBundleRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeBundle);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeBundle, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BundleIdHasBeenSet())
   {
@@ -199,6 +203,7 @@ DescribeBundleOutcome MobileClient::DescribeBundle(const DescribeBundleRequest& 
 
 DescribeProjectOutcome MobileClient::DescribeProject(const DescribeProjectRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeProject);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeProject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectIdHasBeenSet())
   {
@@ -213,6 +218,7 @@ DescribeProjectOutcome MobileClient::DescribeProject(const DescribeProjectReques
 
 ExportBundleOutcome MobileClient::ExportBundle(const ExportBundleRequest& request) const
 {
+  AWS_OPERATION_GUARD(ExportBundle);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ExportBundle, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BundleIdHasBeenSet())
   {
@@ -228,6 +234,7 @@ ExportBundleOutcome MobileClient::ExportBundle(const ExportBundleRequest& reques
 
 ExportProjectOutcome MobileClient::ExportProject(const ExportProjectRequest& request) const
 {
+  AWS_OPERATION_GUARD(ExportProject);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ExportProject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectIdHasBeenSet())
   {
@@ -243,6 +250,7 @@ ExportProjectOutcome MobileClient::ExportProject(const ExportProjectRequest& req
 
 ListBundlesOutcome MobileClient::ListBundles(const ListBundlesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListBundles);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListBundles, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListBundles, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -252,6 +260,7 @@ ListBundlesOutcome MobileClient::ListBundles(const ListBundlesRequest& request) 
 
 ListProjectsOutcome MobileClient::ListProjects(const ListProjectsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListProjects);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListProjects, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListProjects, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -261,6 +270,7 @@ ListProjectsOutcome MobileClient::ListProjects(const ListProjectsRequest& reques
 
 UpdateProjectOutcome MobileClient::UpdateProject(const UpdateProjectRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateProject);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateProject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectIdHasBeenSet())
   {

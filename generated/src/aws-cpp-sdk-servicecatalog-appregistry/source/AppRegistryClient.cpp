@@ -152,6 +152,7 @@ AppRegistryClient::AppRegistryClient(const std::shared_ptr<AWSCredentialsProvide
     /* End of legacy constructors due deprecation */
 AppRegistryClient::~AppRegistryClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<AppRegistryEndpointProviderBase>& AppRegistryClient::accessEndpointProvider()
@@ -174,6 +175,7 @@ void AppRegistryClient::OverrideEndpoint(const Aws::String& endpoint)
 
 AssociateAttributeGroupOutcome AppRegistryClient::AssociateAttributeGroup(const AssociateAttributeGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociateAttributeGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateAttributeGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationHasBeenSet())
   {
@@ -196,6 +198,7 @@ AssociateAttributeGroupOutcome AppRegistryClient::AssociateAttributeGroup(const 
 
 AssociateResourceOutcome AppRegistryClient::AssociateResource(const AssociateResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociateResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationHasBeenSet())
   {
@@ -224,6 +227,7 @@ AssociateResourceOutcome AppRegistryClient::AssociateResource(const AssociateRes
 
 CreateApplicationOutcome AppRegistryClient::CreateApplication(const CreateApplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateApplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -233,6 +237,7 @@ CreateApplicationOutcome AppRegistryClient::CreateApplication(const CreateApplic
 
 CreateAttributeGroupOutcome AppRegistryClient::CreateAttributeGroup(const CreateAttributeGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateAttributeGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAttributeGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateAttributeGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -242,6 +247,7 @@ CreateAttributeGroupOutcome AppRegistryClient::CreateAttributeGroup(const Create
 
 DeleteApplicationOutcome AppRegistryClient::DeleteApplication(const DeleteApplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteApplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationHasBeenSet())
   {
@@ -257,6 +263,7 @@ DeleteApplicationOutcome AppRegistryClient::DeleteApplication(const DeleteApplic
 
 DeleteAttributeGroupOutcome AppRegistryClient::DeleteAttributeGroup(const DeleteAttributeGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteAttributeGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAttributeGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AttributeGroupHasBeenSet())
   {
@@ -272,6 +279,7 @@ DeleteAttributeGroupOutcome AppRegistryClient::DeleteAttributeGroup(const Delete
 
 DisassociateAttributeGroupOutcome AppRegistryClient::DisassociateAttributeGroup(const DisassociateAttributeGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociateAttributeGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateAttributeGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationHasBeenSet())
   {
@@ -294,6 +302,7 @@ DisassociateAttributeGroupOutcome AppRegistryClient::DisassociateAttributeGroup(
 
 DisassociateResourceOutcome AppRegistryClient::DisassociateResource(const DisassociateResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociateResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationHasBeenSet())
   {
@@ -322,6 +331,7 @@ DisassociateResourceOutcome AppRegistryClient::DisassociateResource(const Disass
 
 GetApplicationOutcome AppRegistryClient::GetApplication(const GetApplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetApplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationHasBeenSet())
   {
@@ -337,6 +347,7 @@ GetApplicationOutcome AppRegistryClient::GetApplication(const GetApplicationRequ
 
 GetAssociatedResourceOutcome AppRegistryClient::GetAssociatedResource(const GetAssociatedResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetAssociatedResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAssociatedResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationHasBeenSet())
   {
@@ -365,6 +376,7 @@ GetAssociatedResourceOutcome AppRegistryClient::GetAssociatedResource(const GetA
 
 GetAttributeGroupOutcome AppRegistryClient::GetAttributeGroup(const GetAttributeGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetAttributeGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAttributeGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AttributeGroupHasBeenSet())
   {
@@ -380,6 +392,7 @@ GetAttributeGroupOutcome AppRegistryClient::GetAttributeGroup(const GetAttribute
 
 GetConfigurationOutcome AppRegistryClient::GetConfiguration() const
 {
+AWS_OPERATION_GUARD(GetConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   const Aws::Vector<Aws::Endpoint::EndpointParameter> staticEndpointParameters;
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(staticEndpointParameters);
@@ -390,6 +403,7 @@ GetConfigurationOutcome AppRegistryClient::GetConfiguration() const
 
 ListApplicationsOutcome AppRegistryClient::ListApplications(const ListApplicationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListApplications);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListApplications, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListApplications, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -399,6 +413,7 @@ ListApplicationsOutcome AppRegistryClient::ListApplications(const ListApplicatio
 
 ListAssociatedAttributeGroupsOutcome AppRegistryClient::ListAssociatedAttributeGroups(const ListAssociatedAttributeGroupsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAssociatedAttributeGroups);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAssociatedAttributeGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationHasBeenSet())
   {
@@ -415,6 +430,7 @@ ListAssociatedAttributeGroupsOutcome AppRegistryClient::ListAssociatedAttributeG
 
 ListAssociatedResourcesOutcome AppRegistryClient::ListAssociatedResources(const ListAssociatedResourcesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAssociatedResources);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAssociatedResources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationHasBeenSet())
   {
@@ -431,6 +447,7 @@ ListAssociatedResourcesOutcome AppRegistryClient::ListAssociatedResources(const 
 
 ListAttributeGroupsOutcome AppRegistryClient::ListAttributeGroups(const ListAttributeGroupsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAttributeGroups);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAttributeGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAttributeGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -440,6 +457,7 @@ ListAttributeGroupsOutcome AppRegistryClient::ListAttributeGroups(const ListAttr
 
 ListAttributeGroupsForApplicationOutcome AppRegistryClient::ListAttributeGroupsForApplication(const ListAttributeGroupsForApplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAttributeGroupsForApplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAttributeGroupsForApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationHasBeenSet())
   {
@@ -456,6 +474,7 @@ ListAttributeGroupsForApplicationOutcome AppRegistryClient::ListAttributeGroupsF
 
 ListTagsForResourceOutcome AppRegistryClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -471,6 +490,7 @@ ListTagsForResourceOutcome AppRegistryClient::ListTagsForResource(const ListTags
 
 PutConfigurationOutcome AppRegistryClient::PutConfiguration(const PutConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -480,6 +500,7 @@ PutConfigurationOutcome AppRegistryClient::PutConfiguration(const PutConfigurati
 
 SyncResourceOutcome AppRegistryClient::SyncResource(const SyncResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(SyncResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SyncResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceTypeHasBeenSet())
   {
@@ -501,6 +522,7 @@ SyncResourceOutcome AppRegistryClient::SyncResource(const SyncResourceRequest& r
 
 TagResourceOutcome AppRegistryClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -516,6 +538,7 @@ TagResourceOutcome AppRegistryClient::TagResource(const TagResourceRequest& requ
 
 UntagResourceOutcome AppRegistryClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -536,6 +559,7 @@ UntagResourceOutcome AppRegistryClient::UntagResource(const UntagResourceRequest
 
 UpdateApplicationOutcome AppRegistryClient::UpdateApplication(const UpdateApplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateApplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationHasBeenSet())
   {
@@ -551,6 +575,7 @@ UpdateApplicationOutcome AppRegistryClient::UpdateApplication(const UpdateApplic
 
 UpdateAttributeGroupOutcome AppRegistryClient::UpdateAttributeGroup(const UpdateAttributeGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateAttributeGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAttributeGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AttributeGroupHasBeenSet())
   {

@@ -168,6 +168,7 @@ SSMContactsClient::SSMContactsClient(const std::shared_ptr<AWSCredentialsProvide
     /* End of legacy constructors due deprecation */
 SSMContactsClient::~SSMContactsClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<SSMContactsEndpointProviderBase>& SSMContactsClient::accessEndpointProvider()
@@ -190,6 +191,7 @@ void SSMContactsClient::OverrideEndpoint(const Aws::String& endpoint)
 
 AcceptPageOutcome SSMContactsClient::AcceptPage(const AcceptPageRequest& request) const
 {
+  AWS_OPERATION_GUARD(AcceptPage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AcceptPage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AcceptPage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -198,6 +200,7 @@ AcceptPageOutcome SSMContactsClient::AcceptPage(const AcceptPageRequest& request
 
 ActivateContactChannelOutcome SSMContactsClient::ActivateContactChannel(const ActivateContactChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(ActivateContactChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ActivateContactChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ActivateContactChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -206,6 +209,7 @@ ActivateContactChannelOutcome SSMContactsClient::ActivateContactChannel(const Ac
 
 CreateContactOutcome SSMContactsClient::CreateContact(const CreateContactRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateContact);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateContact, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateContact, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -214,6 +218,7 @@ CreateContactOutcome SSMContactsClient::CreateContact(const CreateContactRequest
 
 CreateContactChannelOutcome SSMContactsClient::CreateContactChannel(const CreateContactChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateContactChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateContactChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateContactChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -222,6 +227,7 @@ CreateContactChannelOutcome SSMContactsClient::CreateContactChannel(const Create
 
 CreateRotationOutcome SSMContactsClient::CreateRotation(const CreateRotationRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateRotation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateRotation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateRotation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -230,6 +236,7 @@ CreateRotationOutcome SSMContactsClient::CreateRotation(const CreateRotationRequ
 
 CreateRotationOverrideOutcome SSMContactsClient::CreateRotationOverride(const CreateRotationOverrideRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateRotationOverride);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateRotationOverride, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateRotationOverride, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -238,6 +245,7 @@ CreateRotationOverrideOutcome SSMContactsClient::CreateRotationOverride(const Cr
 
 DeactivateContactChannelOutcome SSMContactsClient::DeactivateContactChannel(const DeactivateContactChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeactivateContactChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeactivateContactChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeactivateContactChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -246,6 +254,7 @@ DeactivateContactChannelOutcome SSMContactsClient::DeactivateContactChannel(cons
 
 DeleteContactOutcome SSMContactsClient::DeleteContact(const DeleteContactRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteContact);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteContact, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteContact, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -254,6 +263,7 @@ DeleteContactOutcome SSMContactsClient::DeleteContact(const DeleteContactRequest
 
 DeleteContactChannelOutcome SSMContactsClient::DeleteContactChannel(const DeleteContactChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteContactChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteContactChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteContactChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -262,6 +272,7 @@ DeleteContactChannelOutcome SSMContactsClient::DeleteContactChannel(const Delete
 
 DeleteRotationOutcome SSMContactsClient::DeleteRotation(const DeleteRotationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteRotation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteRotation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteRotation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -270,6 +281,7 @@ DeleteRotationOutcome SSMContactsClient::DeleteRotation(const DeleteRotationRequ
 
 DeleteRotationOverrideOutcome SSMContactsClient::DeleteRotationOverride(const DeleteRotationOverrideRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteRotationOverride);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteRotationOverride, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteRotationOverride, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -278,6 +290,7 @@ DeleteRotationOverrideOutcome SSMContactsClient::DeleteRotationOverride(const De
 
 DescribeEngagementOutcome SSMContactsClient::DescribeEngagement(const DescribeEngagementRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeEngagement);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeEngagement, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeEngagement, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -286,6 +299,7 @@ DescribeEngagementOutcome SSMContactsClient::DescribeEngagement(const DescribeEn
 
 DescribePageOutcome SSMContactsClient::DescribePage(const DescribePageRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribePage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribePage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribePage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -294,6 +308,7 @@ DescribePageOutcome SSMContactsClient::DescribePage(const DescribePageRequest& r
 
 GetContactOutcome SSMContactsClient::GetContact(const GetContactRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetContact);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetContact, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetContact, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -302,6 +317,7 @@ GetContactOutcome SSMContactsClient::GetContact(const GetContactRequest& request
 
 GetContactChannelOutcome SSMContactsClient::GetContactChannel(const GetContactChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetContactChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetContactChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetContactChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -310,6 +326,7 @@ GetContactChannelOutcome SSMContactsClient::GetContactChannel(const GetContactCh
 
 GetContactPolicyOutcome SSMContactsClient::GetContactPolicy(const GetContactPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetContactPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetContactPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetContactPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -318,6 +335,7 @@ GetContactPolicyOutcome SSMContactsClient::GetContactPolicy(const GetContactPoli
 
 GetRotationOutcome SSMContactsClient::GetRotation(const GetRotationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetRotation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetRotation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetRotation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -326,6 +344,7 @@ GetRotationOutcome SSMContactsClient::GetRotation(const GetRotationRequest& requ
 
 GetRotationOverrideOutcome SSMContactsClient::GetRotationOverride(const GetRotationOverrideRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetRotationOverride);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetRotationOverride, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetRotationOverride, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -334,6 +353,7 @@ GetRotationOverrideOutcome SSMContactsClient::GetRotationOverride(const GetRotat
 
 ListContactChannelsOutcome SSMContactsClient::ListContactChannels(const ListContactChannelsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListContactChannels);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListContactChannels, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListContactChannels, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -342,6 +362,7 @@ ListContactChannelsOutcome SSMContactsClient::ListContactChannels(const ListCont
 
 ListContactsOutcome SSMContactsClient::ListContacts(const ListContactsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListContacts);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListContacts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListContacts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -350,6 +371,7 @@ ListContactsOutcome SSMContactsClient::ListContacts(const ListContactsRequest& r
 
 ListEngagementsOutcome SSMContactsClient::ListEngagements(const ListEngagementsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListEngagements);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListEngagements, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListEngagements, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -358,6 +380,7 @@ ListEngagementsOutcome SSMContactsClient::ListEngagements(const ListEngagementsR
 
 ListPageReceiptsOutcome SSMContactsClient::ListPageReceipts(const ListPageReceiptsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListPageReceipts);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPageReceipts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListPageReceipts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -366,6 +389,7 @@ ListPageReceiptsOutcome SSMContactsClient::ListPageReceipts(const ListPageReceip
 
 ListPageResolutionsOutcome SSMContactsClient::ListPageResolutions(const ListPageResolutionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListPageResolutions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPageResolutions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListPageResolutions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -374,6 +398,7 @@ ListPageResolutionsOutcome SSMContactsClient::ListPageResolutions(const ListPage
 
 ListPagesByContactOutcome SSMContactsClient::ListPagesByContact(const ListPagesByContactRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListPagesByContact);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPagesByContact, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListPagesByContact, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -382,6 +407,7 @@ ListPagesByContactOutcome SSMContactsClient::ListPagesByContact(const ListPagesB
 
 ListPagesByEngagementOutcome SSMContactsClient::ListPagesByEngagement(const ListPagesByEngagementRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListPagesByEngagement);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPagesByEngagement, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListPagesByEngagement, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -390,6 +416,7 @@ ListPagesByEngagementOutcome SSMContactsClient::ListPagesByEngagement(const List
 
 ListPreviewRotationShiftsOutcome SSMContactsClient::ListPreviewRotationShifts(const ListPreviewRotationShiftsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListPreviewRotationShifts);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPreviewRotationShifts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListPreviewRotationShifts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -398,6 +425,7 @@ ListPreviewRotationShiftsOutcome SSMContactsClient::ListPreviewRotationShifts(co
 
 ListRotationOverridesOutcome SSMContactsClient::ListRotationOverrides(const ListRotationOverridesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListRotationOverrides);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRotationOverrides, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListRotationOverrides, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -406,6 +434,7 @@ ListRotationOverridesOutcome SSMContactsClient::ListRotationOverrides(const List
 
 ListRotationShiftsOutcome SSMContactsClient::ListRotationShifts(const ListRotationShiftsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListRotationShifts);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRotationShifts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListRotationShifts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -414,6 +443,7 @@ ListRotationShiftsOutcome SSMContactsClient::ListRotationShifts(const ListRotati
 
 ListRotationsOutcome SSMContactsClient::ListRotations(const ListRotationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListRotations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRotations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListRotations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -422,6 +452,7 @@ ListRotationsOutcome SSMContactsClient::ListRotations(const ListRotationsRequest
 
 ListTagsForResourceOutcome SSMContactsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -430,6 +461,7 @@ ListTagsForResourceOutcome SSMContactsClient::ListTagsForResource(const ListTags
 
 PutContactPolicyOutcome SSMContactsClient::PutContactPolicy(const PutContactPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutContactPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutContactPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutContactPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -438,6 +470,7 @@ PutContactPolicyOutcome SSMContactsClient::PutContactPolicy(const PutContactPoli
 
 SendActivationCodeOutcome SSMContactsClient::SendActivationCode(const SendActivationCodeRequest& request) const
 {
+  AWS_OPERATION_GUARD(SendActivationCode);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SendActivationCode, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SendActivationCode, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -446,6 +479,7 @@ SendActivationCodeOutcome SSMContactsClient::SendActivationCode(const SendActiva
 
 StartEngagementOutcome SSMContactsClient::StartEngagement(const StartEngagementRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartEngagement);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartEngagement, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartEngagement, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -454,6 +488,7 @@ StartEngagementOutcome SSMContactsClient::StartEngagement(const StartEngagementR
 
 StopEngagementOutcome SSMContactsClient::StopEngagement(const StopEngagementRequest& request) const
 {
+  AWS_OPERATION_GUARD(StopEngagement);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopEngagement, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StopEngagement, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -462,6 +497,7 @@ StopEngagementOutcome SSMContactsClient::StopEngagement(const StopEngagementRequ
 
 TagResourceOutcome SSMContactsClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -470,6 +506,7 @@ TagResourceOutcome SSMContactsClient::TagResource(const TagResourceRequest& requ
 
 UntagResourceOutcome SSMContactsClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -478,6 +515,7 @@ UntagResourceOutcome SSMContactsClient::UntagResource(const UntagResourceRequest
 
 UpdateContactOutcome SSMContactsClient::UpdateContact(const UpdateContactRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateContact);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateContact, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateContact, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -486,6 +524,7 @@ UpdateContactOutcome SSMContactsClient::UpdateContact(const UpdateContactRequest
 
 UpdateContactChannelOutcome SSMContactsClient::UpdateContactChannel(const UpdateContactChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateContactChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateContactChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateContactChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -494,6 +533,7 @@ UpdateContactChannelOutcome SSMContactsClient::UpdateContactChannel(const Update
 
 UpdateRotationOutcome SSMContactsClient::UpdateRotation(const UpdateRotationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateRotation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateRotation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateRotation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

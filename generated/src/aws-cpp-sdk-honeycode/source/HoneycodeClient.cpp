@@ -144,6 +144,7 @@ HoneycodeClient::HoneycodeClient(const std::shared_ptr<AWSCredentialsProvider>& 
     /* End of legacy constructors due deprecation */
 HoneycodeClient::~HoneycodeClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<HoneycodeEndpointProviderBase>& HoneycodeClient::accessEndpointProvider()
@@ -166,6 +167,7 @@ void HoneycodeClient::OverrideEndpoint(const Aws::String& endpoint)
 
 BatchCreateTableRowsOutcome HoneycodeClient::BatchCreateTableRows(const BatchCreateTableRowsRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchCreateTableRows);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchCreateTableRows, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkbookIdHasBeenSet())
   {
@@ -189,6 +191,7 @@ BatchCreateTableRowsOutcome HoneycodeClient::BatchCreateTableRows(const BatchCre
 
 BatchDeleteTableRowsOutcome HoneycodeClient::BatchDeleteTableRows(const BatchDeleteTableRowsRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchDeleteTableRows);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchDeleteTableRows, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkbookIdHasBeenSet())
   {
@@ -212,6 +215,7 @@ BatchDeleteTableRowsOutcome HoneycodeClient::BatchDeleteTableRows(const BatchDel
 
 BatchUpdateTableRowsOutcome HoneycodeClient::BatchUpdateTableRows(const BatchUpdateTableRowsRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchUpdateTableRows);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchUpdateTableRows, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkbookIdHasBeenSet())
   {
@@ -235,6 +239,7 @@ BatchUpdateTableRowsOutcome HoneycodeClient::BatchUpdateTableRows(const BatchUpd
 
 BatchUpsertTableRowsOutcome HoneycodeClient::BatchUpsertTableRows(const BatchUpsertTableRowsRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchUpsertTableRows);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchUpsertTableRows, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkbookIdHasBeenSet())
   {
@@ -258,6 +263,7 @@ BatchUpsertTableRowsOutcome HoneycodeClient::BatchUpsertTableRows(const BatchUps
 
 DescribeTableDataImportJobOutcome HoneycodeClient::DescribeTableDataImportJob(const DescribeTableDataImportJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeTableDataImportJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeTableDataImportJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkbookIdHasBeenSet())
   {
@@ -287,6 +293,7 @@ DescribeTableDataImportJobOutcome HoneycodeClient::DescribeTableDataImportJob(co
 
 GetScreenDataOutcome HoneycodeClient::GetScreenData(const GetScreenDataRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetScreenData);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetScreenData, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetScreenData, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -296,6 +303,7 @@ GetScreenDataOutcome HoneycodeClient::GetScreenData(const GetScreenDataRequest& 
 
 InvokeScreenAutomationOutcome HoneycodeClient::InvokeScreenAutomation(const InvokeScreenAutomationRequest& request) const
 {
+  AWS_OPERATION_GUARD(InvokeScreenAutomation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, InvokeScreenAutomation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkbookIdHasBeenSet())
   {
@@ -332,6 +340,7 @@ InvokeScreenAutomationOutcome HoneycodeClient::InvokeScreenAutomation(const Invo
 
 ListTableColumnsOutcome HoneycodeClient::ListTableColumns(const ListTableColumnsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTableColumns);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTableColumns, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkbookIdHasBeenSet())
   {
@@ -355,6 +364,7 @@ ListTableColumnsOutcome HoneycodeClient::ListTableColumns(const ListTableColumns
 
 ListTableRowsOutcome HoneycodeClient::ListTableRows(const ListTableRowsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTableRows);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTableRows, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkbookIdHasBeenSet())
   {
@@ -378,6 +388,7 @@ ListTableRowsOutcome HoneycodeClient::ListTableRows(const ListTableRowsRequest& 
 
 ListTablesOutcome HoneycodeClient::ListTables(const ListTablesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTables);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTables, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkbookIdHasBeenSet())
   {
@@ -394,6 +405,7 @@ ListTablesOutcome HoneycodeClient::ListTables(const ListTablesRequest& request) 
 
 ListTagsForResourceOutcome HoneycodeClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -409,6 +421,7 @@ ListTagsForResourceOutcome HoneycodeClient::ListTagsForResource(const ListTagsFo
 
 QueryTableRowsOutcome HoneycodeClient::QueryTableRows(const QueryTableRowsRequest& request) const
 {
+  AWS_OPERATION_GUARD(QueryTableRows);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, QueryTableRows, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkbookIdHasBeenSet())
   {
@@ -432,6 +445,7 @@ QueryTableRowsOutcome HoneycodeClient::QueryTableRows(const QueryTableRowsReques
 
 StartTableDataImportJobOutcome HoneycodeClient::StartTableDataImportJob(const StartTableDataImportJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartTableDataImportJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartTableDataImportJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkbookIdHasBeenSet())
   {
@@ -455,6 +469,7 @@ StartTableDataImportJobOutcome HoneycodeClient::StartTableDataImportJob(const St
 
 TagResourceOutcome HoneycodeClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -470,6 +485,7 @@ TagResourceOutcome HoneycodeClient::TagResource(const TagResourceRequest& reques
 
 UntagResourceOutcome HoneycodeClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {

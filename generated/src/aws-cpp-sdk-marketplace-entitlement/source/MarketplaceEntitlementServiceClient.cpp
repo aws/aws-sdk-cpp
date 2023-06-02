@@ -130,6 +130,7 @@ MarketplaceEntitlementServiceClient::MarketplaceEntitlementServiceClient(const s
     /* End of legacy constructors due deprecation */
 MarketplaceEntitlementServiceClient::~MarketplaceEntitlementServiceClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<MarketplaceEntitlementServiceEndpointProviderBase>& MarketplaceEntitlementServiceClient::accessEndpointProvider()
@@ -152,6 +153,7 @@ void MarketplaceEntitlementServiceClient::OverrideEndpoint(const Aws::String& en
 
 GetEntitlementsOutcome MarketplaceEntitlementServiceClient::GetEntitlements(const GetEntitlementsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetEntitlements);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetEntitlements, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetEntitlements, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

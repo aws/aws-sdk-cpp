@@ -32,7 +32,8 @@ PipelineExecution::PipelineExecution() :
     m_createdByHasBeenSet(false),
     m_lastModifiedByHasBeenSet(false),
     m_parallelismConfigurationHasBeenSet(false),
-    m_pipelineParametersHasBeenSet(false)
+    m_pipelineParametersHasBeenSet(false),
+    m_selectiveExecutionConfigHasBeenSet(false)
 {
 }
 
@@ -50,7 +51,8 @@ PipelineExecution::PipelineExecution(JsonView jsonValue) :
     m_createdByHasBeenSet(false),
     m_lastModifiedByHasBeenSet(false),
     m_parallelismConfigurationHasBeenSet(false),
-    m_pipelineParametersHasBeenSet(false)
+    m_pipelineParametersHasBeenSet(false),
+    m_selectiveExecutionConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -151,6 +153,13 @@ PipelineExecution& PipelineExecution::operator =(JsonView jsonValue)
     m_pipelineParametersHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SelectiveExecutionConfig"))
+  {
+    m_selectiveExecutionConfig = jsonValue.GetObject("SelectiveExecutionConfig");
+
+    m_selectiveExecutionConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -235,6 +244,12 @@ JsonValue PipelineExecution::Jsonize() const
      pipelineParametersJsonList[pipelineParametersIndex].AsObject(m_pipelineParameters[pipelineParametersIndex].Jsonize());
    }
    payload.WithArray("PipelineParameters", std::move(pipelineParametersJsonList));
+
+  }
+
+  if(m_selectiveExecutionConfigHasBeenSet)
+  {
+   payload.WithObject("SelectiveExecutionConfig", m_selectiveExecutionConfig.Jsonize());
 
   }
 

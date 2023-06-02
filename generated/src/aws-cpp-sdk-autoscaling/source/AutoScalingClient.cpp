@@ -195,6 +195,7 @@ AutoScalingClient::AutoScalingClient(const std::shared_ptr<AWSCredentialsProvide
     /* End of legacy constructors due deprecation */
 AutoScalingClient::~AutoScalingClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<AutoScalingEndpointProviderBase>& AutoScalingClient::accessEndpointProvider()
@@ -239,6 +240,7 @@ Aws::String AutoScalingClient::ConvertRequestToPresignedUrl(const AmazonSerializ
 
 AttachInstancesOutcome AutoScalingClient::AttachInstances(const AttachInstancesRequest& request) const
 {
+  AWS_OPERATION_GUARD(AttachInstances);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AttachInstances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AttachInstances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -247,6 +249,7 @@ AttachInstancesOutcome AutoScalingClient::AttachInstances(const AttachInstancesR
 
 AttachLoadBalancerTargetGroupsOutcome AutoScalingClient::AttachLoadBalancerTargetGroups(const AttachLoadBalancerTargetGroupsRequest& request) const
 {
+  AWS_OPERATION_GUARD(AttachLoadBalancerTargetGroups);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AttachLoadBalancerTargetGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AttachLoadBalancerTargetGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -255,6 +258,7 @@ AttachLoadBalancerTargetGroupsOutcome AutoScalingClient::AttachLoadBalancerTarge
 
 AttachLoadBalancersOutcome AutoScalingClient::AttachLoadBalancers(const AttachLoadBalancersRequest& request) const
 {
+  AWS_OPERATION_GUARD(AttachLoadBalancers);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AttachLoadBalancers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AttachLoadBalancers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -263,6 +267,7 @@ AttachLoadBalancersOutcome AutoScalingClient::AttachLoadBalancers(const AttachLo
 
 AttachTrafficSourcesOutcome AutoScalingClient::AttachTrafficSources(const AttachTrafficSourcesRequest& request) const
 {
+  AWS_OPERATION_GUARD(AttachTrafficSources);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AttachTrafficSources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AttachTrafficSources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -271,6 +276,7 @@ AttachTrafficSourcesOutcome AutoScalingClient::AttachTrafficSources(const Attach
 
 BatchDeleteScheduledActionOutcome AutoScalingClient::BatchDeleteScheduledAction(const BatchDeleteScheduledActionRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchDeleteScheduledAction);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchDeleteScheduledAction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchDeleteScheduledAction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -279,6 +285,7 @@ BatchDeleteScheduledActionOutcome AutoScalingClient::BatchDeleteScheduledAction(
 
 BatchPutScheduledUpdateGroupActionOutcome AutoScalingClient::BatchPutScheduledUpdateGroupAction(const BatchPutScheduledUpdateGroupActionRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchPutScheduledUpdateGroupAction);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchPutScheduledUpdateGroupAction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchPutScheduledUpdateGroupAction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -287,6 +294,7 @@ BatchPutScheduledUpdateGroupActionOutcome AutoScalingClient::BatchPutScheduledUp
 
 CancelInstanceRefreshOutcome AutoScalingClient::CancelInstanceRefresh(const CancelInstanceRefreshRequest& request) const
 {
+  AWS_OPERATION_GUARD(CancelInstanceRefresh);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CancelInstanceRefresh, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CancelInstanceRefresh, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -295,6 +303,7 @@ CancelInstanceRefreshOutcome AutoScalingClient::CancelInstanceRefresh(const Canc
 
 CompleteLifecycleActionOutcome AutoScalingClient::CompleteLifecycleAction(const CompleteLifecycleActionRequest& request) const
 {
+  AWS_OPERATION_GUARD(CompleteLifecycleAction);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CompleteLifecycleAction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CompleteLifecycleAction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -303,6 +312,7 @@ CompleteLifecycleActionOutcome AutoScalingClient::CompleteLifecycleAction(const 
 
 CreateAutoScalingGroupOutcome AutoScalingClient::CreateAutoScalingGroup(const CreateAutoScalingGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateAutoScalingGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAutoScalingGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateAutoScalingGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -311,6 +321,7 @@ CreateAutoScalingGroupOutcome AutoScalingClient::CreateAutoScalingGroup(const Cr
 
 CreateLaunchConfigurationOutcome AutoScalingClient::CreateLaunchConfiguration(const CreateLaunchConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateLaunchConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateLaunchConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateLaunchConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -319,6 +330,7 @@ CreateLaunchConfigurationOutcome AutoScalingClient::CreateLaunchConfiguration(co
 
 CreateOrUpdateTagsOutcome AutoScalingClient::CreateOrUpdateTags(const CreateOrUpdateTagsRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateOrUpdateTags);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateOrUpdateTags, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateOrUpdateTags, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -327,6 +339,7 @@ CreateOrUpdateTagsOutcome AutoScalingClient::CreateOrUpdateTags(const CreateOrUp
 
 DeleteAutoScalingGroupOutcome AutoScalingClient::DeleteAutoScalingGroup(const DeleteAutoScalingGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteAutoScalingGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAutoScalingGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteAutoScalingGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -335,6 +348,7 @@ DeleteAutoScalingGroupOutcome AutoScalingClient::DeleteAutoScalingGroup(const De
 
 DeleteLaunchConfigurationOutcome AutoScalingClient::DeleteLaunchConfiguration(const DeleteLaunchConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteLaunchConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteLaunchConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteLaunchConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -343,6 +357,7 @@ DeleteLaunchConfigurationOutcome AutoScalingClient::DeleteLaunchConfiguration(co
 
 DeleteLifecycleHookOutcome AutoScalingClient::DeleteLifecycleHook(const DeleteLifecycleHookRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteLifecycleHook);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteLifecycleHook, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteLifecycleHook, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -351,6 +366,7 @@ DeleteLifecycleHookOutcome AutoScalingClient::DeleteLifecycleHook(const DeleteLi
 
 DeleteNotificationConfigurationOutcome AutoScalingClient::DeleteNotificationConfiguration(const DeleteNotificationConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteNotificationConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteNotificationConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteNotificationConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -359,6 +375,7 @@ DeleteNotificationConfigurationOutcome AutoScalingClient::DeleteNotificationConf
 
 DeletePolicyOutcome AutoScalingClient::DeletePolicy(const DeletePolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeletePolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeletePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeletePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -367,6 +384,7 @@ DeletePolicyOutcome AutoScalingClient::DeletePolicy(const DeletePolicyRequest& r
 
 DeleteScheduledActionOutcome AutoScalingClient::DeleteScheduledAction(const DeleteScheduledActionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteScheduledAction);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteScheduledAction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteScheduledAction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -375,6 +393,7 @@ DeleteScheduledActionOutcome AutoScalingClient::DeleteScheduledAction(const Dele
 
 DeleteTagsOutcome AutoScalingClient::DeleteTags(const DeleteTagsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteTags);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteTags, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteTags, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -383,6 +402,7 @@ DeleteTagsOutcome AutoScalingClient::DeleteTags(const DeleteTagsRequest& request
 
 DeleteWarmPoolOutcome AutoScalingClient::DeleteWarmPool(const DeleteWarmPoolRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteWarmPool);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteWarmPool, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteWarmPool, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -391,6 +411,7 @@ DeleteWarmPoolOutcome AutoScalingClient::DeleteWarmPool(const DeleteWarmPoolRequ
 
 DescribeAccountLimitsOutcome AutoScalingClient::DescribeAccountLimits(const DescribeAccountLimitsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeAccountLimits);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAccountLimits, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeAccountLimits, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -399,6 +420,7 @@ DescribeAccountLimitsOutcome AutoScalingClient::DescribeAccountLimits(const Desc
 
 DescribeAdjustmentTypesOutcome AutoScalingClient::DescribeAdjustmentTypes(const DescribeAdjustmentTypesRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeAdjustmentTypes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAdjustmentTypes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeAdjustmentTypes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -407,6 +429,7 @@ DescribeAdjustmentTypesOutcome AutoScalingClient::DescribeAdjustmentTypes(const 
 
 DescribeAutoScalingGroupsOutcome AutoScalingClient::DescribeAutoScalingGroups(const DescribeAutoScalingGroupsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeAutoScalingGroups);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAutoScalingGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeAutoScalingGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -415,6 +438,7 @@ DescribeAutoScalingGroupsOutcome AutoScalingClient::DescribeAutoScalingGroups(co
 
 DescribeAutoScalingInstancesOutcome AutoScalingClient::DescribeAutoScalingInstances(const DescribeAutoScalingInstancesRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeAutoScalingInstances);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAutoScalingInstances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeAutoScalingInstances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -423,6 +447,7 @@ DescribeAutoScalingInstancesOutcome AutoScalingClient::DescribeAutoScalingInstan
 
 DescribeAutoScalingNotificationTypesOutcome AutoScalingClient::DescribeAutoScalingNotificationTypes(const DescribeAutoScalingNotificationTypesRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeAutoScalingNotificationTypes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAutoScalingNotificationTypes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeAutoScalingNotificationTypes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -431,6 +456,7 @@ DescribeAutoScalingNotificationTypesOutcome AutoScalingClient::DescribeAutoScali
 
 DescribeInstanceRefreshesOutcome AutoScalingClient::DescribeInstanceRefreshes(const DescribeInstanceRefreshesRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeInstanceRefreshes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeInstanceRefreshes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeInstanceRefreshes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -439,6 +465,7 @@ DescribeInstanceRefreshesOutcome AutoScalingClient::DescribeInstanceRefreshes(co
 
 DescribeLaunchConfigurationsOutcome AutoScalingClient::DescribeLaunchConfigurations(const DescribeLaunchConfigurationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeLaunchConfigurations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeLaunchConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeLaunchConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -447,6 +474,7 @@ DescribeLaunchConfigurationsOutcome AutoScalingClient::DescribeLaunchConfigurati
 
 DescribeLifecycleHookTypesOutcome AutoScalingClient::DescribeLifecycleHookTypes(const DescribeLifecycleHookTypesRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeLifecycleHookTypes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeLifecycleHookTypes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeLifecycleHookTypes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -455,6 +483,7 @@ DescribeLifecycleHookTypesOutcome AutoScalingClient::DescribeLifecycleHookTypes(
 
 DescribeLifecycleHooksOutcome AutoScalingClient::DescribeLifecycleHooks(const DescribeLifecycleHooksRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeLifecycleHooks);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeLifecycleHooks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeLifecycleHooks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -463,6 +492,7 @@ DescribeLifecycleHooksOutcome AutoScalingClient::DescribeLifecycleHooks(const De
 
 DescribeLoadBalancerTargetGroupsOutcome AutoScalingClient::DescribeLoadBalancerTargetGroups(const DescribeLoadBalancerTargetGroupsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeLoadBalancerTargetGroups);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeLoadBalancerTargetGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeLoadBalancerTargetGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -471,6 +501,7 @@ DescribeLoadBalancerTargetGroupsOutcome AutoScalingClient::DescribeLoadBalancerT
 
 DescribeLoadBalancersOutcome AutoScalingClient::DescribeLoadBalancers(const DescribeLoadBalancersRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeLoadBalancers);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeLoadBalancers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeLoadBalancers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -479,6 +510,7 @@ DescribeLoadBalancersOutcome AutoScalingClient::DescribeLoadBalancers(const Desc
 
 DescribeMetricCollectionTypesOutcome AutoScalingClient::DescribeMetricCollectionTypes(const DescribeMetricCollectionTypesRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeMetricCollectionTypes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeMetricCollectionTypes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeMetricCollectionTypes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -487,6 +519,7 @@ DescribeMetricCollectionTypesOutcome AutoScalingClient::DescribeMetricCollection
 
 DescribeNotificationConfigurationsOutcome AutoScalingClient::DescribeNotificationConfigurations(const DescribeNotificationConfigurationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeNotificationConfigurations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeNotificationConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeNotificationConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -495,6 +528,7 @@ DescribeNotificationConfigurationsOutcome AutoScalingClient::DescribeNotificatio
 
 DescribePoliciesOutcome AutoScalingClient::DescribePolicies(const DescribePoliciesRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribePolicies);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribePolicies, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribePolicies, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -503,6 +537,7 @@ DescribePoliciesOutcome AutoScalingClient::DescribePolicies(const DescribePolici
 
 DescribeScalingActivitiesOutcome AutoScalingClient::DescribeScalingActivities(const DescribeScalingActivitiesRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeScalingActivities);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeScalingActivities, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeScalingActivities, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -511,6 +546,7 @@ DescribeScalingActivitiesOutcome AutoScalingClient::DescribeScalingActivities(co
 
 DescribeScalingProcessTypesOutcome AutoScalingClient::DescribeScalingProcessTypes(const DescribeScalingProcessTypesRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeScalingProcessTypes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeScalingProcessTypes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeScalingProcessTypes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -519,6 +555,7 @@ DescribeScalingProcessTypesOutcome AutoScalingClient::DescribeScalingProcessType
 
 DescribeScheduledActionsOutcome AutoScalingClient::DescribeScheduledActions(const DescribeScheduledActionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeScheduledActions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeScheduledActions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeScheduledActions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -527,6 +564,7 @@ DescribeScheduledActionsOutcome AutoScalingClient::DescribeScheduledActions(cons
 
 DescribeTagsOutcome AutoScalingClient::DescribeTags(const DescribeTagsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeTags);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeTags, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeTags, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -535,6 +573,7 @@ DescribeTagsOutcome AutoScalingClient::DescribeTags(const DescribeTagsRequest& r
 
 DescribeTerminationPolicyTypesOutcome AutoScalingClient::DescribeTerminationPolicyTypes(const DescribeTerminationPolicyTypesRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeTerminationPolicyTypes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeTerminationPolicyTypes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeTerminationPolicyTypes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -543,6 +582,7 @@ DescribeTerminationPolicyTypesOutcome AutoScalingClient::DescribeTerminationPoli
 
 DescribeTrafficSourcesOutcome AutoScalingClient::DescribeTrafficSources(const DescribeTrafficSourcesRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeTrafficSources);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeTrafficSources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeTrafficSources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -551,6 +591,7 @@ DescribeTrafficSourcesOutcome AutoScalingClient::DescribeTrafficSources(const De
 
 DescribeWarmPoolOutcome AutoScalingClient::DescribeWarmPool(const DescribeWarmPoolRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeWarmPool);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeWarmPool, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeWarmPool, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -559,6 +600,7 @@ DescribeWarmPoolOutcome AutoScalingClient::DescribeWarmPool(const DescribeWarmPo
 
 DetachInstancesOutcome AutoScalingClient::DetachInstances(const DetachInstancesRequest& request) const
 {
+  AWS_OPERATION_GUARD(DetachInstances);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DetachInstances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DetachInstances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -567,6 +609,7 @@ DetachInstancesOutcome AutoScalingClient::DetachInstances(const DetachInstancesR
 
 DetachLoadBalancerTargetGroupsOutcome AutoScalingClient::DetachLoadBalancerTargetGroups(const DetachLoadBalancerTargetGroupsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DetachLoadBalancerTargetGroups);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DetachLoadBalancerTargetGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DetachLoadBalancerTargetGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -575,6 +618,7 @@ DetachLoadBalancerTargetGroupsOutcome AutoScalingClient::DetachLoadBalancerTarge
 
 DetachLoadBalancersOutcome AutoScalingClient::DetachLoadBalancers(const DetachLoadBalancersRequest& request) const
 {
+  AWS_OPERATION_GUARD(DetachLoadBalancers);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DetachLoadBalancers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DetachLoadBalancers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -583,6 +627,7 @@ DetachLoadBalancersOutcome AutoScalingClient::DetachLoadBalancers(const DetachLo
 
 DetachTrafficSourcesOutcome AutoScalingClient::DetachTrafficSources(const DetachTrafficSourcesRequest& request) const
 {
+  AWS_OPERATION_GUARD(DetachTrafficSources);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DetachTrafficSources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DetachTrafficSources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -591,6 +636,7 @@ DetachTrafficSourcesOutcome AutoScalingClient::DetachTrafficSources(const Detach
 
 DisableMetricsCollectionOutcome AutoScalingClient::DisableMetricsCollection(const DisableMetricsCollectionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisableMetricsCollection);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisableMetricsCollection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DisableMetricsCollection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -599,6 +645,7 @@ DisableMetricsCollectionOutcome AutoScalingClient::DisableMetricsCollection(cons
 
 EnableMetricsCollectionOutcome AutoScalingClient::EnableMetricsCollection(const EnableMetricsCollectionRequest& request) const
 {
+  AWS_OPERATION_GUARD(EnableMetricsCollection);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, EnableMetricsCollection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, EnableMetricsCollection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -607,6 +654,7 @@ EnableMetricsCollectionOutcome AutoScalingClient::EnableMetricsCollection(const 
 
 EnterStandbyOutcome AutoScalingClient::EnterStandby(const EnterStandbyRequest& request) const
 {
+  AWS_OPERATION_GUARD(EnterStandby);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, EnterStandby, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, EnterStandby, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -615,6 +663,7 @@ EnterStandbyOutcome AutoScalingClient::EnterStandby(const EnterStandbyRequest& r
 
 ExecutePolicyOutcome AutoScalingClient::ExecutePolicy(const ExecutePolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(ExecutePolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ExecutePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ExecutePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -623,6 +672,7 @@ ExecutePolicyOutcome AutoScalingClient::ExecutePolicy(const ExecutePolicyRequest
 
 ExitStandbyOutcome AutoScalingClient::ExitStandby(const ExitStandbyRequest& request) const
 {
+  AWS_OPERATION_GUARD(ExitStandby);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ExitStandby, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ExitStandby, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -631,6 +681,7 @@ ExitStandbyOutcome AutoScalingClient::ExitStandby(const ExitStandbyRequest& requ
 
 GetPredictiveScalingForecastOutcome AutoScalingClient::GetPredictiveScalingForecast(const GetPredictiveScalingForecastRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetPredictiveScalingForecast);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPredictiveScalingForecast, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetPredictiveScalingForecast, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -639,6 +690,7 @@ GetPredictiveScalingForecastOutcome AutoScalingClient::GetPredictiveScalingForec
 
 PutLifecycleHookOutcome AutoScalingClient::PutLifecycleHook(const PutLifecycleHookRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutLifecycleHook);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutLifecycleHook, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutLifecycleHook, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -647,6 +699,7 @@ PutLifecycleHookOutcome AutoScalingClient::PutLifecycleHook(const PutLifecycleHo
 
 PutNotificationConfigurationOutcome AutoScalingClient::PutNotificationConfiguration(const PutNotificationConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutNotificationConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutNotificationConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutNotificationConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -655,6 +708,7 @@ PutNotificationConfigurationOutcome AutoScalingClient::PutNotificationConfigurat
 
 PutScalingPolicyOutcome AutoScalingClient::PutScalingPolicy(const PutScalingPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutScalingPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutScalingPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutScalingPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -663,6 +717,7 @@ PutScalingPolicyOutcome AutoScalingClient::PutScalingPolicy(const PutScalingPoli
 
 PutScheduledUpdateGroupActionOutcome AutoScalingClient::PutScheduledUpdateGroupAction(const PutScheduledUpdateGroupActionRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutScheduledUpdateGroupAction);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutScheduledUpdateGroupAction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutScheduledUpdateGroupAction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -671,6 +726,7 @@ PutScheduledUpdateGroupActionOutcome AutoScalingClient::PutScheduledUpdateGroupA
 
 PutWarmPoolOutcome AutoScalingClient::PutWarmPool(const PutWarmPoolRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutWarmPool);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutWarmPool, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutWarmPool, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -679,6 +735,7 @@ PutWarmPoolOutcome AutoScalingClient::PutWarmPool(const PutWarmPoolRequest& requ
 
 RecordLifecycleActionHeartbeatOutcome AutoScalingClient::RecordLifecycleActionHeartbeat(const RecordLifecycleActionHeartbeatRequest& request) const
 {
+  AWS_OPERATION_GUARD(RecordLifecycleActionHeartbeat);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RecordLifecycleActionHeartbeat, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RecordLifecycleActionHeartbeat, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -687,6 +744,7 @@ RecordLifecycleActionHeartbeatOutcome AutoScalingClient::RecordLifecycleActionHe
 
 ResumeProcessesOutcome AutoScalingClient::ResumeProcesses(const ResumeProcessesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ResumeProcesses);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ResumeProcesses, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ResumeProcesses, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -695,6 +753,7 @@ ResumeProcessesOutcome AutoScalingClient::ResumeProcesses(const ResumeProcessesR
 
 RollbackInstanceRefreshOutcome AutoScalingClient::RollbackInstanceRefresh(const RollbackInstanceRefreshRequest& request) const
 {
+  AWS_OPERATION_GUARD(RollbackInstanceRefresh);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RollbackInstanceRefresh, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RollbackInstanceRefresh, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -703,6 +762,7 @@ RollbackInstanceRefreshOutcome AutoScalingClient::RollbackInstanceRefresh(const 
 
 SetDesiredCapacityOutcome AutoScalingClient::SetDesiredCapacity(const SetDesiredCapacityRequest& request) const
 {
+  AWS_OPERATION_GUARD(SetDesiredCapacity);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SetDesiredCapacity, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SetDesiredCapacity, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -711,6 +771,7 @@ SetDesiredCapacityOutcome AutoScalingClient::SetDesiredCapacity(const SetDesired
 
 SetInstanceHealthOutcome AutoScalingClient::SetInstanceHealth(const SetInstanceHealthRequest& request) const
 {
+  AWS_OPERATION_GUARD(SetInstanceHealth);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SetInstanceHealth, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SetInstanceHealth, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -719,6 +780,7 @@ SetInstanceHealthOutcome AutoScalingClient::SetInstanceHealth(const SetInstanceH
 
 SetInstanceProtectionOutcome AutoScalingClient::SetInstanceProtection(const SetInstanceProtectionRequest& request) const
 {
+  AWS_OPERATION_GUARD(SetInstanceProtection);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SetInstanceProtection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SetInstanceProtection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -727,6 +789,7 @@ SetInstanceProtectionOutcome AutoScalingClient::SetInstanceProtection(const SetI
 
 StartInstanceRefreshOutcome AutoScalingClient::StartInstanceRefresh(const StartInstanceRefreshRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartInstanceRefresh);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartInstanceRefresh, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartInstanceRefresh, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -735,6 +798,7 @@ StartInstanceRefreshOutcome AutoScalingClient::StartInstanceRefresh(const StartI
 
 SuspendProcessesOutcome AutoScalingClient::SuspendProcesses(const SuspendProcessesRequest& request) const
 {
+  AWS_OPERATION_GUARD(SuspendProcesses);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SuspendProcesses, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SuspendProcesses, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -743,6 +807,7 @@ SuspendProcessesOutcome AutoScalingClient::SuspendProcesses(const SuspendProcess
 
 TerminateInstanceInAutoScalingGroupOutcome AutoScalingClient::TerminateInstanceInAutoScalingGroup(const TerminateInstanceInAutoScalingGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(TerminateInstanceInAutoScalingGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TerminateInstanceInAutoScalingGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TerminateInstanceInAutoScalingGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -751,6 +816,7 @@ TerminateInstanceInAutoScalingGroupOutcome AutoScalingClient::TerminateInstanceI
 
 UpdateAutoScalingGroupOutcome AutoScalingClient::UpdateAutoScalingGroup(const UpdateAutoScalingGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateAutoScalingGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAutoScalingGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateAutoScalingGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

@@ -134,6 +134,7 @@ LexRuntimeServiceClient::LexRuntimeServiceClient(const std::shared_ptr<AWSCreden
     /* End of legacy constructors due deprecation */
 LexRuntimeServiceClient::~LexRuntimeServiceClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<LexRuntimeServiceEndpointProviderBase>& LexRuntimeServiceClient::accessEndpointProvider()
@@ -156,6 +157,7 @@ void LexRuntimeServiceClient::OverrideEndpoint(const Aws::String& endpoint)
 
 DeleteSessionOutcome LexRuntimeServiceClient::DeleteSession(const DeleteSessionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteSession);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BotNameHasBeenSet())
   {
@@ -186,6 +188,7 @@ DeleteSessionOutcome LexRuntimeServiceClient::DeleteSession(const DeleteSessionR
 
 GetSessionOutcome LexRuntimeServiceClient::GetSession(const GetSessionRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSession);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BotNameHasBeenSet())
   {
@@ -216,6 +219,7 @@ GetSessionOutcome LexRuntimeServiceClient::GetSession(const GetSessionRequest& r
 
 PostContentOutcome LexRuntimeServiceClient::PostContent(const PostContentRequest& request) const
 {
+  AWS_OPERATION_GUARD(PostContent);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PostContent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BotNameHasBeenSet())
   {
@@ -246,6 +250,7 @@ PostContentOutcome LexRuntimeServiceClient::PostContent(const PostContentRequest
 
 PostTextOutcome LexRuntimeServiceClient::PostText(const PostTextRequest& request) const
 {
+  AWS_OPERATION_GUARD(PostText);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PostText, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BotNameHasBeenSet())
   {
@@ -276,6 +281,7 @@ PostTextOutcome LexRuntimeServiceClient::PostText(const PostTextRequest& request
 
 PutSessionOutcome LexRuntimeServiceClient::PutSession(const PutSessionRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutSession);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BotNameHasBeenSet())
   {

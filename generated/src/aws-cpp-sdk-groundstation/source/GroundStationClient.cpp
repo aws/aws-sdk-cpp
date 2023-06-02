@@ -162,6 +162,7 @@ GroundStationClient::GroundStationClient(const std::shared_ptr<AWSCredentialsPro
     /* End of legacy constructors due deprecation */
 GroundStationClient::~GroundStationClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<GroundStationEndpointProviderBase>& GroundStationClient::accessEndpointProvider()
@@ -184,6 +185,7 @@ void GroundStationClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CancelContactOutcome GroundStationClient::CancelContact(const CancelContactRequest& request) const
 {
+  AWS_OPERATION_GUARD(CancelContact);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CancelContact, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ContactIdHasBeenSet())
   {
@@ -199,6 +201,7 @@ CancelContactOutcome GroundStationClient::CancelContact(const CancelContactReque
 
 CreateConfigOutcome GroundStationClient::CreateConfig(const CreateConfigRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateConfig);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -208,6 +211,7 @@ CreateConfigOutcome GroundStationClient::CreateConfig(const CreateConfigRequest&
 
 CreateDataflowEndpointGroupOutcome GroundStationClient::CreateDataflowEndpointGroup(const CreateDataflowEndpointGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateDataflowEndpointGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDataflowEndpointGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateDataflowEndpointGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -217,6 +221,7 @@ CreateDataflowEndpointGroupOutcome GroundStationClient::CreateDataflowEndpointGr
 
 CreateEphemerisOutcome GroundStationClient::CreateEphemeris(const CreateEphemerisRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateEphemeris);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateEphemeris, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateEphemeris, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -226,6 +231,7 @@ CreateEphemerisOutcome GroundStationClient::CreateEphemeris(const CreateEphemeri
 
 CreateMissionProfileOutcome GroundStationClient::CreateMissionProfile(const CreateMissionProfileRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateMissionProfile);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateMissionProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateMissionProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -235,6 +241,7 @@ CreateMissionProfileOutcome GroundStationClient::CreateMissionProfile(const Crea
 
 DeleteConfigOutcome GroundStationClient::DeleteConfig(const DeleteConfigRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteConfig);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConfigIdHasBeenSet())
   {
@@ -256,6 +263,7 @@ DeleteConfigOutcome GroundStationClient::DeleteConfig(const DeleteConfigRequest&
 
 DeleteDataflowEndpointGroupOutcome GroundStationClient::DeleteDataflowEndpointGroup(const DeleteDataflowEndpointGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteDataflowEndpointGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDataflowEndpointGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DataflowEndpointGroupIdHasBeenSet())
   {
@@ -271,6 +279,7 @@ DeleteDataflowEndpointGroupOutcome GroundStationClient::DeleteDataflowEndpointGr
 
 DeleteEphemerisOutcome GroundStationClient::DeleteEphemeris(const DeleteEphemerisRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteEphemeris);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteEphemeris, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.EphemerisIdHasBeenSet())
   {
@@ -286,6 +295,7 @@ DeleteEphemerisOutcome GroundStationClient::DeleteEphemeris(const DeleteEphemeri
 
 DeleteMissionProfileOutcome GroundStationClient::DeleteMissionProfile(const DeleteMissionProfileRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteMissionProfile);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteMissionProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MissionProfileIdHasBeenSet())
   {
@@ -301,6 +311,7 @@ DeleteMissionProfileOutcome GroundStationClient::DeleteMissionProfile(const Dele
 
 DescribeContactOutcome GroundStationClient::DescribeContact(const DescribeContactRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeContact);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeContact, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ContactIdHasBeenSet())
   {
@@ -316,6 +327,7 @@ DescribeContactOutcome GroundStationClient::DescribeContact(const DescribeContac
 
 DescribeEphemerisOutcome GroundStationClient::DescribeEphemeris(const DescribeEphemerisRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeEphemeris);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeEphemeris, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.EphemerisIdHasBeenSet())
   {
@@ -331,6 +343,7 @@ DescribeEphemerisOutcome GroundStationClient::DescribeEphemeris(const DescribeEp
 
 GetAgentConfigurationOutcome GroundStationClient::GetAgentConfiguration(const GetAgentConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetAgentConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAgentConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AgentIdHasBeenSet())
   {
@@ -347,6 +360,7 @@ GetAgentConfigurationOutcome GroundStationClient::GetAgentConfiguration(const Ge
 
 GetConfigOutcome GroundStationClient::GetConfig(const GetConfigRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetConfig);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConfigIdHasBeenSet())
   {
@@ -368,6 +382,7 @@ GetConfigOutcome GroundStationClient::GetConfig(const GetConfigRequest& request)
 
 GetDataflowEndpointGroupOutcome GroundStationClient::GetDataflowEndpointGroup(const GetDataflowEndpointGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDataflowEndpointGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDataflowEndpointGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DataflowEndpointGroupIdHasBeenSet())
   {
@@ -383,6 +398,7 @@ GetDataflowEndpointGroupOutcome GroundStationClient::GetDataflowEndpointGroup(co
 
 GetMinuteUsageOutcome GroundStationClient::GetMinuteUsage(const GetMinuteUsageRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetMinuteUsage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMinuteUsage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetMinuteUsage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -392,6 +408,7 @@ GetMinuteUsageOutcome GroundStationClient::GetMinuteUsage(const GetMinuteUsageRe
 
 GetMissionProfileOutcome GroundStationClient::GetMissionProfile(const GetMissionProfileRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetMissionProfile);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMissionProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MissionProfileIdHasBeenSet())
   {
@@ -407,6 +424,7 @@ GetMissionProfileOutcome GroundStationClient::GetMissionProfile(const GetMission
 
 GetSatelliteOutcome GroundStationClient::GetSatellite(const GetSatelliteRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSatellite);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSatellite, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SatelliteIdHasBeenSet())
   {
@@ -422,6 +440,7 @@ GetSatelliteOutcome GroundStationClient::GetSatellite(const GetSatelliteRequest&
 
 ListConfigsOutcome GroundStationClient::ListConfigs(const ListConfigsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListConfigs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListConfigs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListConfigs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -431,6 +450,7 @@ ListConfigsOutcome GroundStationClient::ListConfigs(const ListConfigsRequest& re
 
 ListContactsOutcome GroundStationClient::ListContacts(const ListContactsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListContacts);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListContacts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListContacts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -440,6 +460,7 @@ ListContactsOutcome GroundStationClient::ListContacts(const ListContactsRequest&
 
 ListDataflowEndpointGroupsOutcome GroundStationClient::ListDataflowEndpointGroups(const ListDataflowEndpointGroupsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDataflowEndpointGroups);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDataflowEndpointGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDataflowEndpointGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -449,6 +470,7 @@ ListDataflowEndpointGroupsOutcome GroundStationClient::ListDataflowEndpointGroup
 
 ListEphemeridesOutcome GroundStationClient::ListEphemerides(const ListEphemeridesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListEphemerides);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListEphemerides, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListEphemerides, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -458,6 +480,7 @@ ListEphemeridesOutcome GroundStationClient::ListEphemerides(const ListEphemeride
 
 ListGroundStationsOutcome GroundStationClient::ListGroundStations(const ListGroundStationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListGroundStations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListGroundStations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListGroundStations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -467,6 +490,7 @@ ListGroundStationsOutcome GroundStationClient::ListGroundStations(const ListGrou
 
 ListMissionProfilesOutcome GroundStationClient::ListMissionProfiles(const ListMissionProfilesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListMissionProfiles);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListMissionProfiles, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListMissionProfiles, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -476,6 +500,7 @@ ListMissionProfilesOutcome GroundStationClient::ListMissionProfiles(const ListMi
 
 ListSatellitesOutcome GroundStationClient::ListSatellites(const ListSatellitesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListSatellites);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSatellites, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListSatellites, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -485,6 +510,7 @@ ListSatellitesOutcome GroundStationClient::ListSatellites(const ListSatellitesRe
 
 ListTagsForResourceOutcome GroundStationClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -500,6 +526,7 @@ ListTagsForResourceOutcome GroundStationClient::ListTagsForResource(const ListTa
 
 RegisterAgentOutcome GroundStationClient::RegisterAgent(const RegisterAgentRequest& request) const
 {
+  AWS_OPERATION_GUARD(RegisterAgent);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RegisterAgent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RegisterAgent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -509,6 +536,7 @@ RegisterAgentOutcome GroundStationClient::RegisterAgent(const RegisterAgentReque
 
 ReserveContactOutcome GroundStationClient::ReserveContact(const ReserveContactRequest& request) const
 {
+  AWS_OPERATION_GUARD(ReserveContact);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ReserveContact, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ReserveContact, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -518,6 +546,7 @@ ReserveContactOutcome GroundStationClient::ReserveContact(const ReserveContactRe
 
 TagResourceOutcome GroundStationClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -533,6 +562,7 @@ TagResourceOutcome GroundStationClient::TagResource(const TagResourceRequest& re
 
 UntagResourceOutcome GroundStationClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -553,6 +583,7 @@ UntagResourceOutcome GroundStationClient::UntagResource(const UntagResourceReque
 
 UpdateAgentStatusOutcome GroundStationClient::UpdateAgentStatus(const UpdateAgentStatusRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateAgentStatus);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAgentStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AgentIdHasBeenSet())
   {
@@ -568,6 +599,7 @@ UpdateAgentStatusOutcome GroundStationClient::UpdateAgentStatus(const UpdateAgen
 
 UpdateConfigOutcome GroundStationClient::UpdateConfig(const UpdateConfigRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateConfig);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConfigIdHasBeenSet())
   {
@@ -589,6 +621,7 @@ UpdateConfigOutcome GroundStationClient::UpdateConfig(const UpdateConfigRequest&
 
 UpdateEphemerisOutcome GroundStationClient::UpdateEphemeris(const UpdateEphemerisRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateEphemeris);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateEphemeris, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.EphemerisIdHasBeenSet())
   {
@@ -604,6 +637,7 @@ UpdateEphemerisOutcome GroundStationClient::UpdateEphemeris(const UpdateEphemeri
 
 UpdateMissionProfileOutcome GroundStationClient::UpdateMissionProfile(const UpdateMissionProfileRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateMissionProfile);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateMissionProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MissionProfileIdHasBeenSet())
   {

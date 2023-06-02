@@ -135,6 +135,7 @@ EBSClient::EBSClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
     /* End of legacy constructors due deprecation */
 EBSClient::~EBSClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<EBSEndpointProviderBase>& EBSClient::accessEndpointProvider()
@@ -157,6 +158,7 @@ void EBSClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CompleteSnapshotOutcome EBSClient::CompleteSnapshot(const CompleteSnapshotRequest& request) const
 {
+  AWS_OPERATION_GUARD(CompleteSnapshot);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CompleteSnapshot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SnapshotIdHasBeenSet())
   {
@@ -177,6 +179,7 @@ CompleteSnapshotOutcome EBSClient::CompleteSnapshot(const CompleteSnapshotReques
 
 GetSnapshotBlockOutcome EBSClient::GetSnapshotBlock(const GetSnapshotBlockRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSnapshotBlock);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSnapshotBlock, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SnapshotIdHasBeenSet())
   {
@@ -204,6 +207,7 @@ GetSnapshotBlockOutcome EBSClient::GetSnapshotBlock(const GetSnapshotBlockReques
 
 ListChangedBlocksOutcome EBSClient::ListChangedBlocks(const ListChangedBlocksRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListChangedBlocks);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListChangedBlocks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SecondSnapshotIdHasBeenSet())
   {
@@ -220,6 +224,7 @@ ListChangedBlocksOutcome EBSClient::ListChangedBlocks(const ListChangedBlocksReq
 
 ListSnapshotBlocksOutcome EBSClient::ListSnapshotBlocks(const ListSnapshotBlocksRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListSnapshotBlocks);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSnapshotBlocks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SnapshotIdHasBeenSet())
   {
@@ -236,6 +241,7 @@ ListSnapshotBlocksOutcome EBSClient::ListSnapshotBlocks(const ListSnapshotBlocks
 
 PutSnapshotBlockOutcome EBSClient::PutSnapshotBlock(const PutSnapshotBlockRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutSnapshotBlock);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutSnapshotBlock, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SnapshotIdHasBeenSet())
   {
@@ -273,6 +279,7 @@ PutSnapshotBlockOutcome EBSClient::PutSnapshotBlock(const PutSnapshotBlockReques
 
 StartSnapshotOutcome EBSClient::StartSnapshot(const StartSnapshotRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartSnapshot);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartSnapshot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartSnapshot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

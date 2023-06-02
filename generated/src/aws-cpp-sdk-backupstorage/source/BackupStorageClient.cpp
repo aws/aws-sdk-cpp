@@ -138,6 +138,7 @@ BackupStorageClient::BackupStorageClient(const std::shared_ptr<AWSCredentialsPro
     /* End of legacy constructors due deprecation */
 BackupStorageClient::~BackupStorageClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<BackupStorageEndpointProviderBase>& BackupStorageClient::accessEndpointProvider()
@@ -160,6 +161,7 @@ void BackupStorageClient::OverrideEndpoint(const Aws::String& endpoint)
 
 DeleteObjectOutcome BackupStorageClient::DeleteObject(const DeleteObjectRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteObject);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteObject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BackupJobIdHasBeenSet())
   {
@@ -182,6 +184,7 @@ DeleteObjectOutcome BackupStorageClient::DeleteObject(const DeleteObjectRequest&
 
 GetChunkOutcome BackupStorageClient::GetChunk(const GetChunkRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetChunk);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetChunk, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StorageJobIdHasBeenSet())
   {
@@ -204,6 +207,7 @@ GetChunkOutcome BackupStorageClient::GetChunk(const GetChunkRequest& request) co
 
 GetObjectMetadataOutcome BackupStorageClient::GetObjectMetadata(const GetObjectMetadataRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetObjectMetadata);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetObjectMetadata, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StorageJobIdHasBeenSet())
   {
@@ -227,6 +231,7 @@ GetObjectMetadataOutcome BackupStorageClient::GetObjectMetadata(const GetObjectM
 
 ListChunksOutcome BackupStorageClient::ListChunks(const ListChunksRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListChunks);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListChunks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StorageJobIdHasBeenSet())
   {
@@ -250,6 +255,7 @@ ListChunksOutcome BackupStorageClient::ListChunks(const ListChunksRequest& reque
 
 ListObjectsOutcome BackupStorageClient::ListObjects(const ListObjectsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListObjects);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListObjects, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StorageJobIdHasBeenSet())
   {
@@ -266,6 +272,7 @@ ListObjectsOutcome BackupStorageClient::ListObjects(const ListObjectsRequest& re
 
 NotifyObjectCompleteOutcome BackupStorageClient::NotifyObjectComplete(const NotifyObjectCompleteRequest& request) const
 {
+  AWS_OPERATION_GUARD(NotifyObjectComplete);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, NotifyObjectComplete, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BackupJobIdHasBeenSet())
   {
@@ -299,6 +306,7 @@ NotifyObjectCompleteOutcome BackupStorageClient::NotifyObjectComplete(const Noti
 
 PutChunkOutcome BackupStorageClient::PutChunk(const PutChunkRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutChunk);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutChunk, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BackupJobIdHasBeenSet())
   {
@@ -342,6 +350,7 @@ PutChunkOutcome BackupStorageClient::PutChunk(const PutChunkRequest& request) co
 
 PutObjectOutcome BackupStorageClient::PutObject(const PutObjectRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutObject);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutObject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BackupJobIdHasBeenSet())
   {
@@ -365,6 +374,7 @@ PutObjectOutcome BackupStorageClient::PutObject(const PutObjectRequest& request)
 
 StartObjectOutcome BackupStorageClient::StartObject(const StartObjectRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartObject);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartObject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BackupJobIdHasBeenSet())
   {

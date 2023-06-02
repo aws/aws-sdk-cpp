@@ -167,6 +167,7 @@ CodeArtifactClient::CodeArtifactClient(const std::shared_ptr<AWSCredentialsProvi
     /* End of legacy constructors due deprecation */
 CodeArtifactClient::~CodeArtifactClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<CodeArtifactEndpointProviderBase>& CodeArtifactClient::accessEndpointProvider()
@@ -189,6 +190,7 @@ void CodeArtifactClient::OverrideEndpoint(const Aws::String& endpoint)
 
 AssociateExternalConnectionOutcome CodeArtifactClient::AssociateExternalConnection(const AssociateExternalConnectionRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociateExternalConnection);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateExternalConnection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainHasBeenSet())
   {
@@ -213,6 +215,7 @@ AssociateExternalConnectionOutcome CodeArtifactClient::AssociateExternalConnecti
 
 CopyPackageVersionsOutcome CodeArtifactClient::CopyPackageVersions(const CopyPackageVersionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(CopyPackageVersions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CopyPackageVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainHasBeenSet())
   {
@@ -247,6 +250,7 @@ CopyPackageVersionsOutcome CodeArtifactClient::CopyPackageVersions(const CopyPac
 
 CreateDomainOutcome CodeArtifactClient::CreateDomain(const CreateDomainRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateDomain);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDomain, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainHasBeenSet())
   {
@@ -261,6 +265,7 @@ CreateDomainOutcome CodeArtifactClient::CreateDomain(const CreateDomainRequest& 
 
 CreateRepositoryOutcome CodeArtifactClient::CreateRepository(const CreateRepositoryRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateRepository);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateRepository, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainHasBeenSet())
   {
@@ -280,6 +285,7 @@ CreateRepositoryOutcome CodeArtifactClient::CreateRepository(const CreateReposit
 
 DeleteDomainOutcome CodeArtifactClient::DeleteDomain(const DeleteDomainRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteDomain);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDomain, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainHasBeenSet())
   {
@@ -294,6 +300,7 @@ DeleteDomainOutcome CodeArtifactClient::DeleteDomain(const DeleteDomainRequest& 
 
 DeleteDomainPermissionsPolicyOutcome CodeArtifactClient::DeleteDomainPermissionsPolicy(const DeleteDomainPermissionsPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteDomainPermissionsPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDomainPermissionsPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainHasBeenSet())
   {
@@ -308,6 +315,7 @@ DeleteDomainPermissionsPolicyOutcome CodeArtifactClient::DeleteDomainPermissions
 
 DeletePackageOutcome CodeArtifactClient::DeletePackage(const DeletePackageRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeletePackage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeletePackage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainHasBeenSet())
   {
@@ -337,6 +345,7 @@ DeletePackageOutcome CodeArtifactClient::DeletePackage(const DeletePackageReques
 
 DeletePackageVersionsOutcome CodeArtifactClient::DeletePackageVersions(const DeletePackageVersionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeletePackageVersions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeletePackageVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainHasBeenSet())
   {
@@ -366,6 +375,7 @@ DeletePackageVersionsOutcome CodeArtifactClient::DeletePackageVersions(const Del
 
 DeleteRepositoryOutcome CodeArtifactClient::DeleteRepository(const DeleteRepositoryRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteRepository);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteRepository, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainHasBeenSet())
   {
@@ -385,6 +395,7 @@ DeleteRepositoryOutcome CodeArtifactClient::DeleteRepository(const DeleteReposit
 
 DeleteRepositoryPermissionsPolicyOutcome CodeArtifactClient::DeleteRepositoryPermissionsPolicy(const DeleteRepositoryPermissionsPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteRepositoryPermissionsPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteRepositoryPermissionsPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainHasBeenSet())
   {
@@ -404,6 +415,7 @@ DeleteRepositoryPermissionsPolicyOutcome CodeArtifactClient::DeleteRepositoryPer
 
 DescribeDomainOutcome CodeArtifactClient::DescribeDomain(const DescribeDomainRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeDomain);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeDomain, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainHasBeenSet())
   {
@@ -418,6 +430,7 @@ DescribeDomainOutcome CodeArtifactClient::DescribeDomain(const DescribeDomainReq
 
 DescribePackageOutcome CodeArtifactClient::DescribePackage(const DescribePackageRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribePackage);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribePackage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainHasBeenSet())
   {
@@ -447,6 +460,7 @@ DescribePackageOutcome CodeArtifactClient::DescribePackage(const DescribePackage
 
 DescribePackageVersionOutcome CodeArtifactClient::DescribePackageVersion(const DescribePackageVersionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribePackageVersion);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribePackageVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainHasBeenSet())
   {
@@ -481,6 +495,7 @@ DescribePackageVersionOutcome CodeArtifactClient::DescribePackageVersion(const D
 
 DescribeRepositoryOutcome CodeArtifactClient::DescribeRepository(const DescribeRepositoryRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeRepository);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeRepository, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainHasBeenSet())
   {
@@ -500,6 +515,7 @@ DescribeRepositoryOutcome CodeArtifactClient::DescribeRepository(const DescribeR
 
 DisassociateExternalConnectionOutcome CodeArtifactClient::DisassociateExternalConnection(const DisassociateExternalConnectionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociateExternalConnection);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateExternalConnection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainHasBeenSet())
   {
@@ -524,6 +540,7 @@ DisassociateExternalConnectionOutcome CodeArtifactClient::DisassociateExternalCo
 
 DisposePackageVersionsOutcome CodeArtifactClient::DisposePackageVersions(const DisposePackageVersionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisposePackageVersions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisposePackageVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainHasBeenSet())
   {
@@ -553,6 +570,7 @@ DisposePackageVersionsOutcome CodeArtifactClient::DisposePackageVersions(const D
 
 GetAuthorizationTokenOutcome CodeArtifactClient::GetAuthorizationToken(const GetAuthorizationTokenRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetAuthorizationToken);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAuthorizationToken, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainHasBeenSet())
   {
@@ -567,6 +585,7 @@ GetAuthorizationTokenOutcome CodeArtifactClient::GetAuthorizationToken(const Get
 
 GetDomainPermissionsPolicyOutcome CodeArtifactClient::GetDomainPermissionsPolicy(const GetDomainPermissionsPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDomainPermissionsPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDomainPermissionsPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainHasBeenSet())
   {
@@ -581,6 +600,7 @@ GetDomainPermissionsPolicyOutcome CodeArtifactClient::GetDomainPermissionsPolicy
 
 GetPackageVersionAssetOutcome CodeArtifactClient::GetPackageVersionAsset(const GetPackageVersionAssetRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetPackageVersionAsset);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPackageVersionAsset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainHasBeenSet())
   {
@@ -620,6 +640,7 @@ GetPackageVersionAssetOutcome CodeArtifactClient::GetPackageVersionAsset(const G
 
 GetPackageVersionReadmeOutcome CodeArtifactClient::GetPackageVersionReadme(const GetPackageVersionReadmeRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetPackageVersionReadme);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPackageVersionReadme, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainHasBeenSet())
   {
@@ -654,6 +675,7 @@ GetPackageVersionReadmeOutcome CodeArtifactClient::GetPackageVersionReadme(const
 
 GetRepositoryEndpointOutcome CodeArtifactClient::GetRepositoryEndpoint(const GetRepositoryEndpointRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetRepositoryEndpoint);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetRepositoryEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainHasBeenSet())
   {
@@ -678,6 +700,7 @@ GetRepositoryEndpointOutcome CodeArtifactClient::GetRepositoryEndpoint(const Get
 
 GetRepositoryPermissionsPolicyOutcome CodeArtifactClient::GetRepositoryPermissionsPolicy(const GetRepositoryPermissionsPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetRepositoryPermissionsPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetRepositoryPermissionsPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainHasBeenSet())
   {
@@ -697,6 +720,7 @@ GetRepositoryPermissionsPolicyOutcome CodeArtifactClient::GetRepositoryPermissio
 
 ListDomainsOutcome CodeArtifactClient::ListDomains(const ListDomainsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDomains);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDomains, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDomains, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -706,6 +730,7 @@ ListDomainsOutcome CodeArtifactClient::ListDomains(const ListDomainsRequest& req
 
 ListPackageVersionAssetsOutcome CodeArtifactClient::ListPackageVersionAssets(const ListPackageVersionAssetsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListPackageVersionAssets);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPackageVersionAssets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainHasBeenSet())
   {
@@ -740,6 +765,7 @@ ListPackageVersionAssetsOutcome CodeArtifactClient::ListPackageVersionAssets(con
 
 ListPackageVersionDependenciesOutcome CodeArtifactClient::ListPackageVersionDependencies(const ListPackageVersionDependenciesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListPackageVersionDependencies);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPackageVersionDependencies, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainHasBeenSet())
   {
@@ -774,6 +800,7 @@ ListPackageVersionDependenciesOutcome CodeArtifactClient::ListPackageVersionDepe
 
 ListPackageVersionsOutcome CodeArtifactClient::ListPackageVersions(const ListPackageVersionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListPackageVersions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPackageVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainHasBeenSet())
   {
@@ -803,6 +830,7 @@ ListPackageVersionsOutcome CodeArtifactClient::ListPackageVersions(const ListPac
 
 ListPackagesOutcome CodeArtifactClient::ListPackages(const ListPackagesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListPackages);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPackages, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainHasBeenSet())
   {
@@ -822,6 +850,7 @@ ListPackagesOutcome CodeArtifactClient::ListPackages(const ListPackagesRequest& 
 
 ListRepositoriesOutcome CodeArtifactClient::ListRepositories(const ListRepositoriesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListRepositories);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRepositories, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListRepositories, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -831,6 +860,7 @@ ListRepositoriesOutcome CodeArtifactClient::ListRepositories(const ListRepositor
 
 ListRepositoriesInDomainOutcome CodeArtifactClient::ListRepositoriesInDomain(const ListRepositoriesInDomainRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListRepositoriesInDomain);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRepositoriesInDomain, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainHasBeenSet())
   {
@@ -845,6 +875,7 @@ ListRepositoriesInDomainOutcome CodeArtifactClient::ListRepositoriesInDomain(con
 
 ListTagsForResourceOutcome CodeArtifactClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -859,6 +890,7 @@ ListTagsForResourceOutcome CodeArtifactClient::ListTagsForResource(const ListTag
 
 PublishPackageVersionOutcome CodeArtifactClient::PublishPackageVersion(const PublishPackageVersionRequest& request) const
 {
+  AWS_OPERATION_GUARD(PublishPackageVersion);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PublishPackageVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainHasBeenSet())
   {
@@ -903,6 +935,7 @@ PublishPackageVersionOutcome CodeArtifactClient::PublishPackageVersion(const Pub
 
 PutDomainPermissionsPolicyOutcome CodeArtifactClient::PutDomainPermissionsPolicy(const PutDomainPermissionsPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutDomainPermissionsPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutDomainPermissionsPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutDomainPermissionsPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -912,6 +945,7 @@ PutDomainPermissionsPolicyOutcome CodeArtifactClient::PutDomainPermissionsPolicy
 
 PutPackageOriginConfigurationOutcome CodeArtifactClient::PutPackageOriginConfiguration(const PutPackageOriginConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutPackageOriginConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutPackageOriginConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainHasBeenSet())
   {
@@ -941,6 +975,7 @@ PutPackageOriginConfigurationOutcome CodeArtifactClient::PutPackageOriginConfigu
 
 PutRepositoryPermissionsPolicyOutcome CodeArtifactClient::PutRepositoryPermissionsPolicy(const PutRepositoryPermissionsPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutRepositoryPermissionsPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutRepositoryPermissionsPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainHasBeenSet())
   {
@@ -960,6 +995,7 @@ PutRepositoryPermissionsPolicyOutcome CodeArtifactClient::PutRepositoryPermissio
 
 TagResourceOutcome CodeArtifactClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -974,6 +1010,7 @@ TagResourceOutcome CodeArtifactClient::TagResource(const TagResourceRequest& req
 
 UntagResourceOutcome CodeArtifactClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -988,6 +1025,7 @@ UntagResourceOutcome CodeArtifactClient::UntagResource(const UntagResourceReques
 
 UpdatePackageVersionsStatusOutcome CodeArtifactClient::UpdatePackageVersionsStatus(const UpdatePackageVersionsStatusRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdatePackageVersionsStatus);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdatePackageVersionsStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainHasBeenSet())
   {
@@ -1017,6 +1055,7 @@ UpdatePackageVersionsStatusOutcome CodeArtifactClient::UpdatePackageVersionsStat
 
 UpdateRepositoryOutcome CodeArtifactClient::UpdateRepository(const UpdateRepositoryRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateRepository);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateRepository, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainHasBeenSet())
   {

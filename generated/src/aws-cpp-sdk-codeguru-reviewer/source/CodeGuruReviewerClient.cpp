@@ -143,6 +143,7 @@ CodeGuruReviewerClient::CodeGuruReviewerClient(const std::shared_ptr<AWSCredenti
     /* End of legacy constructors due deprecation */
 CodeGuruReviewerClient::~CodeGuruReviewerClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<CodeGuruReviewerEndpointProviderBase>& CodeGuruReviewerClient::accessEndpointProvider()
@@ -165,6 +166,7 @@ void CodeGuruReviewerClient::OverrideEndpoint(const Aws::String& endpoint)
 
 AssociateRepositoryOutcome CodeGuruReviewerClient::AssociateRepository(const AssociateRepositoryRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociateRepository);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateRepository, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AssociateRepository, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -174,6 +176,7 @@ AssociateRepositoryOutcome CodeGuruReviewerClient::AssociateRepository(const Ass
 
 CreateCodeReviewOutcome CodeGuruReviewerClient::CreateCodeReview(const CreateCodeReviewRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateCodeReview);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateCodeReview, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateCodeReview, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -183,6 +186,7 @@ CreateCodeReviewOutcome CodeGuruReviewerClient::CreateCodeReview(const CreateCod
 
 DescribeCodeReviewOutcome CodeGuruReviewerClient::DescribeCodeReview(const DescribeCodeReviewRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeCodeReview);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeCodeReview, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CodeReviewArnHasBeenSet())
   {
@@ -198,6 +202,7 @@ DescribeCodeReviewOutcome CodeGuruReviewerClient::DescribeCodeReview(const Descr
 
 DescribeRecommendationFeedbackOutcome CodeGuruReviewerClient::DescribeRecommendationFeedback(const DescribeRecommendationFeedbackRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeRecommendationFeedback);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeRecommendationFeedback, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CodeReviewArnHasBeenSet())
   {
@@ -218,6 +223,7 @@ DescribeRecommendationFeedbackOutcome CodeGuruReviewerClient::DescribeRecommenda
 
 DescribeRepositoryAssociationOutcome CodeGuruReviewerClient::DescribeRepositoryAssociation(const DescribeRepositoryAssociationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeRepositoryAssociation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeRepositoryAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssociationArnHasBeenSet())
   {
@@ -233,6 +239,7 @@ DescribeRepositoryAssociationOutcome CodeGuruReviewerClient::DescribeRepositoryA
 
 DisassociateRepositoryOutcome CodeGuruReviewerClient::DisassociateRepository(const DisassociateRepositoryRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociateRepository);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateRepository, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssociationArnHasBeenSet())
   {
@@ -248,6 +255,7 @@ DisassociateRepositoryOutcome CodeGuruReviewerClient::DisassociateRepository(con
 
 ListCodeReviewsOutcome CodeGuruReviewerClient::ListCodeReviews(const ListCodeReviewsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListCodeReviews);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListCodeReviews, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TypeHasBeenSet())
   {
@@ -262,6 +270,7 @@ ListCodeReviewsOutcome CodeGuruReviewerClient::ListCodeReviews(const ListCodeRev
 
 ListRecommendationFeedbackOutcome CodeGuruReviewerClient::ListRecommendationFeedback(const ListRecommendationFeedbackRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListRecommendationFeedback);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRecommendationFeedback, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CodeReviewArnHasBeenSet())
   {
@@ -278,6 +287,7 @@ ListRecommendationFeedbackOutcome CodeGuruReviewerClient::ListRecommendationFeed
 
 ListRecommendationsOutcome CodeGuruReviewerClient::ListRecommendations(const ListRecommendationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListRecommendations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRecommendations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CodeReviewArnHasBeenSet())
   {
@@ -294,6 +304,7 @@ ListRecommendationsOutcome CodeGuruReviewerClient::ListRecommendations(const Lis
 
 ListRepositoryAssociationsOutcome CodeGuruReviewerClient::ListRepositoryAssociations(const ListRepositoryAssociationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListRepositoryAssociations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRepositoryAssociations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListRepositoryAssociations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -303,6 +314,7 @@ ListRepositoryAssociationsOutcome CodeGuruReviewerClient::ListRepositoryAssociat
 
 ListTagsForResourceOutcome CodeGuruReviewerClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -318,6 +330,7 @@ ListTagsForResourceOutcome CodeGuruReviewerClient::ListTagsForResource(const Lis
 
 PutRecommendationFeedbackOutcome CodeGuruReviewerClient::PutRecommendationFeedback(const PutRecommendationFeedbackRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutRecommendationFeedback);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutRecommendationFeedback, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutRecommendationFeedback, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -327,6 +340,7 @@ PutRecommendationFeedbackOutcome CodeGuruReviewerClient::PutRecommendationFeedba
 
 TagResourceOutcome CodeGuruReviewerClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -342,6 +356,7 @@ TagResourceOutcome CodeGuruReviewerClient::TagResource(const TagResourceRequest&
 
 UntagResourceOutcome CodeGuruReviewerClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {

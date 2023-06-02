@@ -136,6 +136,7 @@ ImportExportClient::ImportExportClient(const std::shared_ptr<AWSCredentialsProvi
     /* End of legacy constructors due deprecation */
 ImportExportClient::~ImportExportClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<ImportExportEndpointProviderBase>& ImportExportClient::accessEndpointProvider()
@@ -180,6 +181,7 @@ Aws::String ImportExportClient::ConvertRequestToPresignedUrl(const AmazonSeriali
 
 CancelJobOutcome ImportExportClient::CancelJob(const CancelJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(CancelJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CancelJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CancelJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -192,6 +194,7 @@ CancelJobOutcome ImportExportClient::CancelJob(const CancelJobRequest& request) 
 
 CreateJobOutcome ImportExportClient::CreateJob(const CreateJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -204,6 +207,7 @@ CreateJobOutcome ImportExportClient::CreateJob(const CreateJobRequest& request) 
 
 GetShippingLabelOutcome ImportExportClient::GetShippingLabel(const GetShippingLabelRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetShippingLabel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetShippingLabel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetShippingLabel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -216,6 +220,7 @@ GetShippingLabelOutcome ImportExportClient::GetShippingLabel(const GetShippingLa
 
 GetStatusOutcome ImportExportClient::GetStatus(const GetStatusRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetStatus);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -228,6 +233,7 @@ GetStatusOutcome ImportExportClient::GetStatus(const GetStatusRequest& request) 
 
 ListJobsOutcome ImportExportClient::ListJobs(const ListJobsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListJobs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -240,6 +246,7 @@ ListJobsOutcome ImportExportClient::ListJobs(const ListJobsRequest& request) con
 
 UpdateJobOutcome ImportExportClient::UpdateJob(const UpdateJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

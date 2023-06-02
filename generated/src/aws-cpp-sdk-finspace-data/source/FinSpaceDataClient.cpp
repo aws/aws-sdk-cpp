@@ -160,6 +160,7 @@ FinSpaceDataClient::FinSpaceDataClient(const std::shared_ptr<AWSCredentialsProvi
     /* End of legacy constructors due deprecation */
 FinSpaceDataClient::~FinSpaceDataClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<FinSpaceDataEndpointProviderBase>& FinSpaceDataClient::accessEndpointProvider()
@@ -182,6 +183,7 @@ void FinSpaceDataClient::OverrideEndpoint(const Aws::String& endpoint)
 
 AssociateUserToPermissionGroupOutcome FinSpaceDataClient::AssociateUserToPermissionGroup(const AssociateUserToPermissionGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociateUserToPermissionGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateUserToPermissionGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PermissionGroupIdHasBeenSet())
   {
@@ -204,6 +206,7 @@ AssociateUserToPermissionGroupOutcome FinSpaceDataClient::AssociateUserToPermiss
 
 CreateChangesetOutcome FinSpaceDataClient::CreateChangeset(const CreateChangesetRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateChangeset);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateChangeset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DatasetIdHasBeenSet())
   {
@@ -220,6 +223,7 @@ CreateChangesetOutcome FinSpaceDataClient::CreateChangeset(const CreateChangeset
 
 CreateDataViewOutcome FinSpaceDataClient::CreateDataView(const CreateDataViewRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateDataView);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDataView, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DatasetIdHasBeenSet())
   {
@@ -236,6 +240,7 @@ CreateDataViewOutcome FinSpaceDataClient::CreateDataView(const CreateDataViewReq
 
 CreateDatasetOutcome FinSpaceDataClient::CreateDataset(const CreateDatasetRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateDataset);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDataset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateDataset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -245,6 +250,7 @@ CreateDatasetOutcome FinSpaceDataClient::CreateDataset(const CreateDatasetReques
 
 CreatePermissionGroupOutcome FinSpaceDataClient::CreatePermissionGroup(const CreatePermissionGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreatePermissionGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreatePermissionGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreatePermissionGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -254,6 +260,7 @@ CreatePermissionGroupOutcome FinSpaceDataClient::CreatePermissionGroup(const Cre
 
 CreateUserOutcome FinSpaceDataClient::CreateUser(const CreateUserRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateUser);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -263,6 +270,7 @@ CreateUserOutcome FinSpaceDataClient::CreateUser(const CreateUserRequest& reques
 
 DeleteDatasetOutcome FinSpaceDataClient::DeleteDataset(const DeleteDatasetRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteDataset);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDataset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DatasetIdHasBeenSet())
   {
@@ -278,6 +286,7 @@ DeleteDatasetOutcome FinSpaceDataClient::DeleteDataset(const DeleteDatasetReques
 
 DeletePermissionGroupOutcome FinSpaceDataClient::DeletePermissionGroup(const DeletePermissionGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeletePermissionGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeletePermissionGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PermissionGroupIdHasBeenSet())
   {
@@ -293,6 +302,7 @@ DeletePermissionGroupOutcome FinSpaceDataClient::DeletePermissionGroup(const Del
 
 DisableUserOutcome FinSpaceDataClient::DisableUser(const DisableUserRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisableUser);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisableUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.UserIdHasBeenSet())
   {
@@ -309,6 +319,7 @@ DisableUserOutcome FinSpaceDataClient::DisableUser(const DisableUserRequest& req
 
 DisassociateUserFromPermissionGroupOutcome FinSpaceDataClient::DisassociateUserFromPermissionGroup(const DisassociateUserFromPermissionGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociateUserFromPermissionGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateUserFromPermissionGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PermissionGroupIdHasBeenSet())
   {
@@ -331,6 +342,7 @@ DisassociateUserFromPermissionGroupOutcome FinSpaceDataClient::DisassociateUserF
 
 EnableUserOutcome FinSpaceDataClient::EnableUser(const EnableUserRequest& request) const
 {
+  AWS_OPERATION_GUARD(EnableUser);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, EnableUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.UserIdHasBeenSet())
   {
@@ -347,6 +359,7 @@ EnableUserOutcome FinSpaceDataClient::EnableUser(const EnableUserRequest& reques
 
 GetChangesetOutcome FinSpaceDataClient::GetChangeset(const GetChangesetRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetChangeset);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetChangeset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DatasetIdHasBeenSet())
   {
@@ -369,6 +382,7 @@ GetChangesetOutcome FinSpaceDataClient::GetChangeset(const GetChangesetRequest& 
 
 GetDataViewOutcome FinSpaceDataClient::GetDataView(const GetDataViewRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDataView);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDataView, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DataViewIdHasBeenSet())
   {
@@ -391,6 +405,7 @@ GetDataViewOutcome FinSpaceDataClient::GetDataView(const GetDataViewRequest& req
 
 GetDatasetOutcome FinSpaceDataClient::GetDataset(const GetDatasetRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDataset);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDataset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DatasetIdHasBeenSet())
   {
@@ -406,6 +421,7 @@ GetDatasetOutcome FinSpaceDataClient::GetDataset(const GetDatasetRequest& reques
 
 GetExternalDataViewAccessDetailsOutcome FinSpaceDataClient::GetExternalDataViewAccessDetails(const GetExternalDataViewAccessDetailsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetExternalDataViewAccessDetails);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetExternalDataViewAccessDetails, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DataViewIdHasBeenSet())
   {
@@ -429,6 +445,7 @@ GetExternalDataViewAccessDetailsOutcome FinSpaceDataClient::GetExternalDataViewA
 
 GetPermissionGroupOutcome FinSpaceDataClient::GetPermissionGroup(const GetPermissionGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetPermissionGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPermissionGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PermissionGroupIdHasBeenSet())
   {
@@ -444,6 +461,7 @@ GetPermissionGroupOutcome FinSpaceDataClient::GetPermissionGroup(const GetPermis
 
 GetProgrammaticAccessCredentialsOutcome FinSpaceDataClient::GetProgrammaticAccessCredentials(const GetProgrammaticAccessCredentialsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetProgrammaticAccessCredentials);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetProgrammaticAccessCredentials, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.EnvironmentIdHasBeenSet())
   {
@@ -458,6 +476,7 @@ GetProgrammaticAccessCredentialsOutcome FinSpaceDataClient::GetProgrammaticAcces
 
 GetUserOutcome FinSpaceDataClient::GetUser(const GetUserRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetUser);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.UserIdHasBeenSet())
   {
@@ -473,6 +492,7 @@ GetUserOutcome FinSpaceDataClient::GetUser(const GetUserRequest& request) const
 
 GetWorkingLocationOutcome FinSpaceDataClient::GetWorkingLocation(const GetWorkingLocationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetWorkingLocation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetWorkingLocation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetWorkingLocation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -482,6 +502,7 @@ GetWorkingLocationOutcome FinSpaceDataClient::GetWorkingLocation(const GetWorkin
 
 ListChangesetsOutcome FinSpaceDataClient::ListChangesets(const ListChangesetsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListChangesets);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListChangesets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DatasetIdHasBeenSet())
   {
@@ -498,6 +519,7 @@ ListChangesetsOutcome FinSpaceDataClient::ListChangesets(const ListChangesetsReq
 
 ListDataViewsOutcome FinSpaceDataClient::ListDataViews(const ListDataViewsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDataViews);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDataViews, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DatasetIdHasBeenSet())
   {
@@ -514,6 +536,7 @@ ListDataViewsOutcome FinSpaceDataClient::ListDataViews(const ListDataViewsReques
 
 ListDatasetsOutcome FinSpaceDataClient::ListDatasets(const ListDatasetsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDatasets);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDatasets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDatasets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -523,6 +546,7 @@ ListDatasetsOutcome FinSpaceDataClient::ListDatasets(const ListDatasetsRequest& 
 
 ListPermissionGroupsOutcome FinSpaceDataClient::ListPermissionGroups(const ListPermissionGroupsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListPermissionGroups);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPermissionGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MaxResultsHasBeenSet())
   {
@@ -537,6 +561,7 @@ ListPermissionGroupsOutcome FinSpaceDataClient::ListPermissionGroups(const ListP
 
 ListPermissionGroupsByUserOutcome FinSpaceDataClient::ListPermissionGroupsByUser(const ListPermissionGroupsByUserRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListPermissionGroupsByUser);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPermissionGroupsByUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.UserIdHasBeenSet())
   {
@@ -558,6 +583,7 @@ ListPermissionGroupsByUserOutcome FinSpaceDataClient::ListPermissionGroupsByUser
 
 ListUsersOutcome FinSpaceDataClient::ListUsers(const ListUsersRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListUsers);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListUsers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MaxResultsHasBeenSet())
   {
@@ -572,6 +598,7 @@ ListUsersOutcome FinSpaceDataClient::ListUsers(const ListUsersRequest& request) 
 
 ListUsersByPermissionGroupOutcome FinSpaceDataClient::ListUsersByPermissionGroup(const ListUsersByPermissionGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListUsersByPermissionGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListUsersByPermissionGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PermissionGroupIdHasBeenSet())
   {
@@ -593,6 +620,7 @@ ListUsersByPermissionGroupOutcome FinSpaceDataClient::ListUsersByPermissionGroup
 
 ResetUserPasswordOutcome FinSpaceDataClient::ResetUserPassword(const ResetUserPasswordRequest& request) const
 {
+  AWS_OPERATION_GUARD(ResetUserPassword);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ResetUserPassword, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.UserIdHasBeenSet())
   {
@@ -609,6 +637,7 @@ ResetUserPasswordOutcome FinSpaceDataClient::ResetUserPassword(const ResetUserPa
 
 UpdateChangesetOutcome FinSpaceDataClient::UpdateChangeset(const UpdateChangesetRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateChangeset);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateChangeset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DatasetIdHasBeenSet())
   {
@@ -631,6 +660,7 @@ UpdateChangesetOutcome FinSpaceDataClient::UpdateChangeset(const UpdateChangeset
 
 UpdateDatasetOutcome FinSpaceDataClient::UpdateDataset(const UpdateDatasetRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateDataset);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDataset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DatasetIdHasBeenSet())
   {
@@ -646,6 +676,7 @@ UpdateDatasetOutcome FinSpaceDataClient::UpdateDataset(const UpdateDatasetReques
 
 UpdatePermissionGroupOutcome FinSpaceDataClient::UpdatePermissionGroup(const UpdatePermissionGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdatePermissionGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdatePermissionGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PermissionGroupIdHasBeenSet())
   {
@@ -661,6 +692,7 @@ UpdatePermissionGroupOutcome FinSpaceDataClient::UpdatePermissionGroup(const Upd
 
 UpdateUserOutcome FinSpaceDataClient::UpdateUser(const UpdateUserRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateUser);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.UserIdHasBeenSet())
   {

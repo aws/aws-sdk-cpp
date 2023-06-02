@@ -188,6 +188,7 @@ MediaLiveClient::MediaLiveClient(const std::shared_ptr<AWSCredentialsProvider>& 
     /* End of legacy constructors due deprecation */
 MediaLiveClient::~MediaLiveClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<MediaLiveEndpointProviderBase>& MediaLiveClient::accessEndpointProvider()
@@ -210,6 +211,7 @@ void MediaLiveClient::OverrideEndpoint(const Aws::String& endpoint)
 
 AcceptInputDeviceTransferOutcome MediaLiveClient::AcceptInputDeviceTransfer(const AcceptInputDeviceTransferRequest& request) const
 {
+  AWS_OPERATION_GUARD(AcceptInputDeviceTransfer);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AcceptInputDeviceTransfer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InputDeviceIdHasBeenSet())
   {
@@ -226,6 +228,7 @@ AcceptInputDeviceTransferOutcome MediaLiveClient::AcceptInputDeviceTransfer(cons
 
 BatchDeleteOutcome MediaLiveClient::BatchDelete(const BatchDeleteRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchDelete);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchDelete, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchDelete, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -235,6 +238,7 @@ BatchDeleteOutcome MediaLiveClient::BatchDelete(const BatchDeleteRequest& reques
 
 BatchStartOutcome MediaLiveClient::BatchStart(const BatchStartRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchStart);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchStart, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchStart, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -244,6 +248,7 @@ BatchStartOutcome MediaLiveClient::BatchStart(const BatchStartRequest& request) 
 
 BatchStopOutcome MediaLiveClient::BatchStop(const BatchStopRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchStop);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchStop, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchStop, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -253,6 +258,7 @@ BatchStopOutcome MediaLiveClient::BatchStop(const BatchStopRequest& request) con
 
 BatchUpdateScheduleOutcome MediaLiveClient::BatchUpdateSchedule(const BatchUpdateScheduleRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchUpdateSchedule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchUpdateSchedule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelIdHasBeenSet())
   {
@@ -269,6 +275,7 @@ BatchUpdateScheduleOutcome MediaLiveClient::BatchUpdateSchedule(const BatchUpdat
 
 CancelInputDeviceTransferOutcome MediaLiveClient::CancelInputDeviceTransfer(const CancelInputDeviceTransferRequest& request) const
 {
+  AWS_OPERATION_GUARD(CancelInputDeviceTransfer);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CancelInputDeviceTransfer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InputDeviceIdHasBeenSet())
   {
@@ -285,6 +292,7 @@ CancelInputDeviceTransferOutcome MediaLiveClient::CancelInputDeviceTransfer(cons
 
 ClaimDeviceOutcome MediaLiveClient::ClaimDevice(const ClaimDeviceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ClaimDevice);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ClaimDevice, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ClaimDevice, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -294,6 +302,7 @@ ClaimDeviceOutcome MediaLiveClient::ClaimDevice(const ClaimDeviceRequest& reques
 
 CreateChannelOutcome MediaLiveClient::CreateChannel(const CreateChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -303,6 +312,7 @@ CreateChannelOutcome MediaLiveClient::CreateChannel(const CreateChannelRequest& 
 
 CreateInputOutcome MediaLiveClient::CreateInput(const CreateInputRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateInput);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateInput, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateInput, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -312,6 +322,7 @@ CreateInputOutcome MediaLiveClient::CreateInput(const CreateInputRequest& reques
 
 CreateInputSecurityGroupOutcome MediaLiveClient::CreateInputSecurityGroup(const CreateInputSecurityGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateInputSecurityGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateInputSecurityGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateInputSecurityGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -321,6 +332,7 @@ CreateInputSecurityGroupOutcome MediaLiveClient::CreateInputSecurityGroup(const 
 
 CreateMultiplexOutcome MediaLiveClient::CreateMultiplex(const CreateMultiplexRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateMultiplex);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateMultiplex, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateMultiplex, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -330,6 +342,7 @@ CreateMultiplexOutcome MediaLiveClient::CreateMultiplex(const CreateMultiplexReq
 
 CreateMultiplexProgramOutcome MediaLiveClient::CreateMultiplexProgram(const CreateMultiplexProgramRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateMultiplexProgram);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateMultiplexProgram, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MultiplexIdHasBeenSet())
   {
@@ -346,6 +359,7 @@ CreateMultiplexProgramOutcome MediaLiveClient::CreateMultiplexProgram(const Crea
 
 CreatePartnerInputOutcome MediaLiveClient::CreatePartnerInput(const CreatePartnerInputRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreatePartnerInput);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreatePartnerInput, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InputIdHasBeenSet())
   {
@@ -362,6 +376,7 @@ CreatePartnerInputOutcome MediaLiveClient::CreatePartnerInput(const CreatePartne
 
 CreateTagsOutcome MediaLiveClient::CreateTags(const CreateTagsRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateTags);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateTags, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -377,6 +392,7 @@ CreateTagsOutcome MediaLiveClient::CreateTags(const CreateTagsRequest& request) 
 
 DeleteChannelOutcome MediaLiveClient::DeleteChannel(const DeleteChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelIdHasBeenSet())
   {
@@ -392,6 +408,7 @@ DeleteChannelOutcome MediaLiveClient::DeleteChannel(const DeleteChannelRequest& 
 
 DeleteInputOutcome MediaLiveClient::DeleteInput(const DeleteInputRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteInput);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteInput, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InputIdHasBeenSet())
   {
@@ -407,6 +424,7 @@ DeleteInputOutcome MediaLiveClient::DeleteInput(const DeleteInputRequest& reques
 
 DeleteInputSecurityGroupOutcome MediaLiveClient::DeleteInputSecurityGroup(const DeleteInputSecurityGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteInputSecurityGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteInputSecurityGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InputSecurityGroupIdHasBeenSet())
   {
@@ -422,6 +440,7 @@ DeleteInputSecurityGroupOutcome MediaLiveClient::DeleteInputSecurityGroup(const 
 
 DeleteMultiplexOutcome MediaLiveClient::DeleteMultiplex(const DeleteMultiplexRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteMultiplex);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteMultiplex, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MultiplexIdHasBeenSet())
   {
@@ -437,6 +456,7 @@ DeleteMultiplexOutcome MediaLiveClient::DeleteMultiplex(const DeleteMultiplexReq
 
 DeleteMultiplexProgramOutcome MediaLiveClient::DeleteMultiplexProgram(const DeleteMultiplexProgramRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteMultiplexProgram);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteMultiplexProgram, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MultiplexIdHasBeenSet())
   {
@@ -459,6 +479,7 @@ DeleteMultiplexProgramOutcome MediaLiveClient::DeleteMultiplexProgram(const Dele
 
 DeleteReservationOutcome MediaLiveClient::DeleteReservation(const DeleteReservationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteReservation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteReservation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ReservationIdHasBeenSet())
   {
@@ -474,6 +495,7 @@ DeleteReservationOutcome MediaLiveClient::DeleteReservation(const DeleteReservat
 
 DeleteScheduleOutcome MediaLiveClient::DeleteSchedule(const DeleteScheduleRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteSchedule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteSchedule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelIdHasBeenSet())
   {
@@ -490,6 +512,7 @@ DeleteScheduleOutcome MediaLiveClient::DeleteSchedule(const DeleteScheduleReques
 
 DeleteTagsOutcome MediaLiveClient::DeleteTags(const DeleteTagsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteTags);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteTags, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -510,6 +533,7 @@ DeleteTagsOutcome MediaLiveClient::DeleteTags(const DeleteTagsRequest& request) 
 
 DescribeChannelOutcome MediaLiveClient::DescribeChannel(const DescribeChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelIdHasBeenSet())
   {
@@ -525,6 +549,7 @@ DescribeChannelOutcome MediaLiveClient::DescribeChannel(const DescribeChannelReq
 
 DescribeInputOutcome MediaLiveClient::DescribeInput(const DescribeInputRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeInput);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeInput, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InputIdHasBeenSet())
   {
@@ -540,6 +565,7 @@ DescribeInputOutcome MediaLiveClient::DescribeInput(const DescribeInputRequest& 
 
 DescribeInputDeviceOutcome MediaLiveClient::DescribeInputDevice(const DescribeInputDeviceRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeInputDevice);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeInputDevice, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InputDeviceIdHasBeenSet())
   {
@@ -555,6 +581,7 @@ DescribeInputDeviceOutcome MediaLiveClient::DescribeInputDevice(const DescribeIn
 
 DescribeInputDeviceThumbnailOutcome MediaLiveClient::DescribeInputDeviceThumbnail(const DescribeInputDeviceThumbnailRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeInputDeviceThumbnail);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeInputDeviceThumbnail, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InputDeviceIdHasBeenSet())
   {
@@ -576,6 +603,7 @@ DescribeInputDeviceThumbnailOutcome MediaLiveClient::DescribeInputDeviceThumbnai
 
 DescribeInputSecurityGroupOutcome MediaLiveClient::DescribeInputSecurityGroup(const DescribeInputSecurityGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeInputSecurityGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeInputSecurityGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InputSecurityGroupIdHasBeenSet())
   {
@@ -591,6 +619,7 @@ DescribeInputSecurityGroupOutcome MediaLiveClient::DescribeInputSecurityGroup(co
 
 DescribeMultiplexOutcome MediaLiveClient::DescribeMultiplex(const DescribeMultiplexRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeMultiplex);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeMultiplex, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MultiplexIdHasBeenSet())
   {
@@ -606,6 +635,7 @@ DescribeMultiplexOutcome MediaLiveClient::DescribeMultiplex(const DescribeMultip
 
 DescribeMultiplexProgramOutcome MediaLiveClient::DescribeMultiplexProgram(const DescribeMultiplexProgramRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeMultiplexProgram);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeMultiplexProgram, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MultiplexIdHasBeenSet())
   {
@@ -628,6 +658,7 @@ DescribeMultiplexProgramOutcome MediaLiveClient::DescribeMultiplexProgram(const 
 
 DescribeOfferingOutcome MediaLiveClient::DescribeOffering(const DescribeOfferingRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeOffering);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeOffering, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.OfferingIdHasBeenSet())
   {
@@ -643,6 +674,7 @@ DescribeOfferingOutcome MediaLiveClient::DescribeOffering(const DescribeOffering
 
 DescribeReservationOutcome MediaLiveClient::DescribeReservation(const DescribeReservationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeReservation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeReservation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ReservationIdHasBeenSet())
   {
@@ -658,6 +690,7 @@ DescribeReservationOutcome MediaLiveClient::DescribeReservation(const DescribeRe
 
 DescribeScheduleOutcome MediaLiveClient::DescribeSchedule(const DescribeScheduleRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeSchedule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeSchedule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelIdHasBeenSet())
   {
@@ -674,6 +707,7 @@ DescribeScheduleOutcome MediaLiveClient::DescribeSchedule(const DescribeSchedule
 
 ListChannelsOutcome MediaLiveClient::ListChannels(const ListChannelsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListChannels);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListChannels, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListChannels, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -683,6 +717,7 @@ ListChannelsOutcome MediaLiveClient::ListChannels(const ListChannelsRequest& req
 
 ListInputDeviceTransfersOutcome MediaLiveClient::ListInputDeviceTransfers(const ListInputDeviceTransfersRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListInputDeviceTransfers);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListInputDeviceTransfers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TransferTypeHasBeenSet())
   {
@@ -697,6 +732,7 @@ ListInputDeviceTransfersOutcome MediaLiveClient::ListInputDeviceTransfers(const 
 
 ListInputDevicesOutcome MediaLiveClient::ListInputDevices(const ListInputDevicesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListInputDevices);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListInputDevices, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListInputDevices, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -706,6 +742,7 @@ ListInputDevicesOutcome MediaLiveClient::ListInputDevices(const ListInputDevices
 
 ListInputSecurityGroupsOutcome MediaLiveClient::ListInputSecurityGroups(const ListInputSecurityGroupsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListInputSecurityGroups);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListInputSecurityGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListInputSecurityGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -715,6 +752,7 @@ ListInputSecurityGroupsOutcome MediaLiveClient::ListInputSecurityGroups(const Li
 
 ListInputsOutcome MediaLiveClient::ListInputs(const ListInputsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListInputs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListInputs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListInputs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -724,6 +762,7 @@ ListInputsOutcome MediaLiveClient::ListInputs(const ListInputsRequest& request) 
 
 ListMultiplexProgramsOutcome MediaLiveClient::ListMultiplexPrograms(const ListMultiplexProgramsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListMultiplexPrograms);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListMultiplexPrograms, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MultiplexIdHasBeenSet())
   {
@@ -740,6 +779,7 @@ ListMultiplexProgramsOutcome MediaLiveClient::ListMultiplexPrograms(const ListMu
 
 ListMultiplexesOutcome MediaLiveClient::ListMultiplexes(const ListMultiplexesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListMultiplexes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListMultiplexes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListMultiplexes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -749,6 +789,7 @@ ListMultiplexesOutcome MediaLiveClient::ListMultiplexes(const ListMultiplexesReq
 
 ListOfferingsOutcome MediaLiveClient::ListOfferings(const ListOfferingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListOfferings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListOfferings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListOfferings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -758,6 +799,7 @@ ListOfferingsOutcome MediaLiveClient::ListOfferings(const ListOfferingsRequest& 
 
 ListReservationsOutcome MediaLiveClient::ListReservations(const ListReservationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListReservations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListReservations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListReservations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -767,6 +809,7 @@ ListReservationsOutcome MediaLiveClient::ListReservations(const ListReservations
 
 ListTagsForResourceOutcome MediaLiveClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -782,6 +825,7 @@ ListTagsForResourceOutcome MediaLiveClient::ListTagsForResource(const ListTagsFo
 
 PurchaseOfferingOutcome MediaLiveClient::PurchaseOffering(const PurchaseOfferingRequest& request) const
 {
+  AWS_OPERATION_GUARD(PurchaseOffering);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PurchaseOffering, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.OfferingIdHasBeenSet())
   {
@@ -798,6 +842,7 @@ PurchaseOfferingOutcome MediaLiveClient::PurchaseOffering(const PurchaseOffering
 
 RebootInputDeviceOutcome MediaLiveClient::RebootInputDevice(const RebootInputDeviceRequest& request) const
 {
+  AWS_OPERATION_GUARD(RebootInputDevice);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RebootInputDevice, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InputDeviceIdHasBeenSet())
   {
@@ -814,6 +859,7 @@ RebootInputDeviceOutcome MediaLiveClient::RebootInputDevice(const RebootInputDev
 
 RejectInputDeviceTransferOutcome MediaLiveClient::RejectInputDeviceTransfer(const RejectInputDeviceTransferRequest& request) const
 {
+  AWS_OPERATION_GUARD(RejectInputDeviceTransfer);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RejectInputDeviceTransfer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InputDeviceIdHasBeenSet())
   {
@@ -830,6 +876,7 @@ RejectInputDeviceTransferOutcome MediaLiveClient::RejectInputDeviceTransfer(cons
 
 StartChannelOutcome MediaLiveClient::StartChannel(const StartChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelIdHasBeenSet())
   {
@@ -846,6 +893,7 @@ StartChannelOutcome MediaLiveClient::StartChannel(const StartChannelRequest& req
 
 StartInputDeviceMaintenanceWindowOutcome MediaLiveClient::StartInputDeviceMaintenanceWindow(const StartInputDeviceMaintenanceWindowRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartInputDeviceMaintenanceWindow);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartInputDeviceMaintenanceWindow, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InputDeviceIdHasBeenSet())
   {
@@ -862,6 +910,7 @@ StartInputDeviceMaintenanceWindowOutcome MediaLiveClient::StartInputDeviceMainte
 
 StartMultiplexOutcome MediaLiveClient::StartMultiplex(const StartMultiplexRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartMultiplex);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartMultiplex, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MultiplexIdHasBeenSet())
   {
@@ -878,6 +927,7 @@ StartMultiplexOutcome MediaLiveClient::StartMultiplex(const StartMultiplexReques
 
 StopChannelOutcome MediaLiveClient::StopChannel(const StopChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(StopChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelIdHasBeenSet())
   {
@@ -894,6 +944,7 @@ StopChannelOutcome MediaLiveClient::StopChannel(const StopChannelRequest& reques
 
 StopMultiplexOutcome MediaLiveClient::StopMultiplex(const StopMultiplexRequest& request) const
 {
+  AWS_OPERATION_GUARD(StopMultiplex);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopMultiplex, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MultiplexIdHasBeenSet())
   {
@@ -910,6 +961,7 @@ StopMultiplexOutcome MediaLiveClient::StopMultiplex(const StopMultiplexRequest& 
 
 TransferInputDeviceOutcome MediaLiveClient::TransferInputDevice(const TransferInputDeviceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TransferInputDevice);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TransferInputDevice, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InputDeviceIdHasBeenSet())
   {
@@ -926,6 +978,7 @@ TransferInputDeviceOutcome MediaLiveClient::TransferInputDevice(const TransferIn
 
 UpdateChannelOutcome MediaLiveClient::UpdateChannel(const UpdateChannelRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateChannel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateChannel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelIdHasBeenSet())
   {
@@ -941,6 +994,7 @@ UpdateChannelOutcome MediaLiveClient::UpdateChannel(const UpdateChannelRequest& 
 
 UpdateChannelClassOutcome MediaLiveClient::UpdateChannelClass(const UpdateChannelClassRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateChannelClass);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateChannelClass, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ChannelIdHasBeenSet())
   {
@@ -957,6 +1011,7 @@ UpdateChannelClassOutcome MediaLiveClient::UpdateChannelClass(const UpdateChanne
 
 UpdateInputOutcome MediaLiveClient::UpdateInput(const UpdateInputRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateInput);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateInput, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InputIdHasBeenSet())
   {
@@ -972,6 +1027,7 @@ UpdateInputOutcome MediaLiveClient::UpdateInput(const UpdateInputRequest& reques
 
 UpdateInputDeviceOutcome MediaLiveClient::UpdateInputDevice(const UpdateInputDeviceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateInputDevice);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateInputDevice, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InputDeviceIdHasBeenSet())
   {
@@ -987,6 +1043,7 @@ UpdateInputDeviceOutcome MediaLiveClient::UpdateInputDevice(const UpdateInputDev
 
 UpdateInputSecurityGroupOutcome MediaLiveClient::UpdateInputSecurityGroup(const UpdateInputSecurityGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateInputSecurityGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateInputSecurityGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InputSecurityGroupIdHasBeenSet())
   {
@@ -1002,6 +1059,7 @@ UpdateInputSecurityGroupOutcome MediaLiveClient::UpdateInputSecurityGroup(const 
 
 UpdateMultiplexOutcome MediaLiveClient::UpdateMultiplex(const UpdateMultiplexRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateMultiplex);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateMultiplex, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MultiplexIdHasBeenSet())
   {
@@ -1017,6 +1075,7 @@ UpdateMultiplexOutcome MediaLiveClient::UpdateMultiplex(const UpdateMultiplexReq
 
 UpdateMultiplexProgramOutcome MediaLiveClient::UpdateMultiplexProgram(const UpdateMultiplexProgramRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateMultiplexProgram);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateMultiplexProgram, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MultiplexIdHasBeenSet())
   {
@@ -1039,6 +1098,7 @@ UpdateMultiplexProgramOutcome MediaLiveClient::UpdateMultiplexProgram(const Upda
 
 UpdateReservationOutcome MediaLiveClient::UpdateReservation(const UpdateReservationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateReservation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateReservation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ReservationIdHasBeenSet())
   {

@@ -179,20 +179,20 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the event data store collects events from all regions, or
-     * only from the region in which it was created.</p>
+     * <p>Indicates whether the event data store collects events from all Regions, or
+     * only from the Region in which it was created.</p>
      */
     inline bool GetMultiRegionEnabled() const{ return m_multiRegionEnabled; }
 
     /**
-     * <p>Indicates whether the event data store collects events from all regions, or
-     * only from the region in which it was created.</p>
+     * <p>Indicates whether the event data store collects events from all Regions, or
+     * only from the Region in which it was created.</p>
      */
     inline void SetMultiRegionEnabled(bool value) { m_multiRegionEnabled = value; }
 
     /**
-     * <p>Indicates whether the event data store collects events from all regions, or
-     * only from the region in which it was created.</p>
+     * <p>Indicates whether the event data store collects events from all Regions, or
+     * only from the Region in which it was created.</p>
      */
     inline CreateEventDataStoreResult& WithMultiRegionEnabled(bool value) { SetMultiRegionEnabled(value); return *this;}
 

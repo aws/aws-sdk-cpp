@@ -148,6 +148,7 @@ SageMakerGeospatialClient::SageMakerGeospatialClient(const std::shared_ptr<AWSCr
     /* End of legacy constructors due deprecation */
 SageMakerGeospatialClient::~SageMakerGeospatialClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<SageMakerGeospatialEndpointProviderBase>& SageMakerGeospatialClient::accessEndpointProvider()
@@ -170,6 +171,7 @@ void SageMakerGeospatialClient::OverrideEndpoint(const Aws::String& endpoint)
 
 DeleteEarthObservationJobOutcome SageMakerGeospatialClient::DeleteEarthObservationJob(const DeleteEarthObservationJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteEarthObservationJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteEarthObservationJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ArnHasBeenSet())
   {
@@ -185,6 +187,7 @@ DeleteEarthObservationJobOutcome SageMakerGeospatialClient::DeleteEarthObservati
 
 DeleteVectorEnrichmentJobOutcome SageMakerGeospatialClient::DeleteVectorEnrichmentJob(const DeleteVectorEnrichmentJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteVectorEnrichmentJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteVectorEnrichmentJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ArnHasBeenSet())
   {
@@ -200,6 +203,7 @@ DeleteVectorEnrichmentJobOutcome SageMakerGeospatialClient::DeleteVectorEnrichme
 
 ExportEarthObservationJobOutcome SageMakerGeospatialClient::ExportEarthObservationJob(const ExportEarthObservationJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(ExportEarthObservationJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ExportEarthObservationJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ExportEarthObservationJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -209,6 +213,7 @@ ExportEarthObservationJobOutcome SageMakerGeospatialClient::ExportEarthObservati
 
 ExportVectorEnrichmentJobOutcome SageMakerGeospatialClient::ExportVectorEnrichmentJob(const ExportVectorEnrichmentJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(ExportVectorEnrichmentJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ExportVectorEnrichmentJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ExportVectorEnrichmentJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -218,6 +223,7 @@ ExportVectorEnrichmentJobOutcome SageMakerGeospatialClient::ExportVectorEnrichme
 
 GetEarthObservationJobOutcome SageMakerGeospatialClient::GetEarthObservationJob(const GetEarthObservationJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetEarthObservationJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetEarthObservationJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ArnHasBeenSet())
   {
@@ -233,6 +239,7 @@ GetEarthObservationJobOutcome SageMakerGeospatialClient::GetEarthObservationJob(
 
 GetRasterDataCollectionOutcome SageMakerGeospatialClient::GetRasterDataCollection(const GetRasterDataCollectionRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetRasterDataCollection);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetRasterDataCollection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ArnHasBeenSet())
   {
@@ -248,6 +255,7 @@ GetRasterDataCollectionOutcome SageMakerGeospatialClient::GetRasterDataCollectio
 
 GetTileOutcome SageMakerGeospatialClient::GetTile(const GetTileRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetTile);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetTile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ArnHasBeenSet())
   {
@@ -290,6 +298,7 @@ GetTileOutcome SageMakerGeospatialClient::GetTile(const GetTileRequest& request)
 
 GetVectorEnrichmentJobOutcome SageMakerGeospatialClient::GetVectorEnrichmentJob(const GetVectorEnrichmentJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetVectorEnrichmentJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetVectorEnrichmentJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ArnHasBeenSet())
   {
@@ -305,6 +314,7 @@ GetVectorEnrichmentJobOutcome SageMakerGeospatialClient::GetVectorEnrichmentJob(
 
 ListEarthObservationJobsOutcome SageMakerGeospatialClient::ListEarthObservationJobs(const ListEarthObservationJobsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListEarthObservationJobs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListEarthObservationJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListEarthObservationJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -314,6 +324,7 @@ ListEarthObservationJobsOutcome SageMakerGeospatialClient::ListEarthObservationJ
 
 ListRasterDataCollectionsOutcome SageMakerGeospatialClient::ListRasterDataCollections(const ListRasterDataCollectionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListRasterDataCollections);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRasterDataCollections, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListRasterDataCollections, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -323,6 +334,7 @@ ListRasterDataCollectionsOutcome SageMakerGeospatialClient::ListRasterDataCollec
 
 ListTagsForResourceOutcome SageMakerGeospatialClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -338,6 +350,7 @@ ListTagsForResourceOutcome SageMakerGeospatialClient::ListTagsForResource(const 
 
 ListVectorEnrichmentJobsOutcome SageMakerGeospatialClient::ListVectorEnrichmentJobs(const ListVectorEnrichmentJobsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListVectorEnrichmentJobs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListVectorEnrichmentJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListVectorEnrichmentJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -347,6 +360,7 @@ ListVectorEnrichmentJobsOutcome SageMakerGeospatialClient::ListVectorEnrichmentJ
 
 SearchRasterDataCollectionOutcome SageMakerGeospatialClient::SearchRasterDataCollection(const SearchRasterDataCollectionRequest& request) const
 {
+  AWS_OPERATION_GUARD(SearchRasterDataCollection);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SearchRasterDataCollection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SearchRasterDataCollection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -356,6 +370,7 @@ SearchRasterDataCollectionOutcome SageMakerGeospatialClient::SearchRasterDataCol
 
 StartEarthObservationJobOutcome SageMakerGeospatialClient::StartEarthObservationJob(const StartEarthObservationJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartEarthObservationJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartEarthObservationJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartEarthObservationJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -365,6 +380,7 @@ StartEarthObservationJobOutcome SageMakerGeospatialClient::StartEarthObservation
 
 StartVectorEnrichmentJobOutcome SageMakerGeospatialClient::StartVectorEnrichmentJob(const StartVectorEnrichmentJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartVectorEnrichmentJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartVectorEnrichmentJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartVectorEnrichmentJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -374,6 +390,7 @@ StartVectorEnrichmentJobOutcome SageMakerGeospatialClient::StartVectorEnrichment
 
 StopEarthObservationJobOutcome SageMakerGeospatialClient::StopEarthObservationJob(const StopEarthObservationJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(StopEarthObservationJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopEarthObservationJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StopEarthObservationJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -383,6 +400,7 @@ StopEarthObservationJobOutcome SageMakerGeospatialClient::StopEarthObservationJo
 
 StopVectorEnrichmentJobOutcome SageMakerGeospatialClient::StopVectorEnrichmentJob(const StopVectorEnrichmentJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(StopVectorEnrichmentJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopVectorEnrichmentJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StopVectorEnrichmentJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -392,6 +410,7 @@ StopVectorEnrichmentJobOutcome SageMakerGeospatialClient::StopVectorEnrichmentJo
 
 TagResourceOutcome SageMakerGeospatialClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -407,6 +426,7 @@ TagResourceOutcome SageMakerGeospatialClient::TagResource(const TagResourceReque
 
 UntagResourceOutcome SageMakerGeospatialClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {

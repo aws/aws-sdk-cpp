@@ -287,6 +287,7 @@ QuickSightClient::QuickSightClient(const std::shared_ptr<AWSCredentialsProvider>
     /* End of legacy constructors due deprecation */
 QuickSightClient::~QuickSightClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<QuickSightEndpointProviderBase>& QuickSightClient::accessEndpointProvider()
@@ -309,6 +310,7 @@ void QuickSightClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CancelIngestionOutcome QuickSightClient::CancelIngestion(const CancelIngestionRequest& request) const
 {
+  AWS_OPERATION_GUARD(CancelIngestion);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CancelIngestion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -338,6 +340,7 @@ CancelIngestionOutcome QuickSightClient::CancelIngestion(const CancelIngestionRe
 
 CreateAccountCustomizationOutcome QuickSightClient::CreateAccountCustomization(const CreateAccountCustomizationRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateAccountCustomization);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAccountCustomization, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -354,6 +357,7 @@ CreateAccountCustomizationOutcome QuickSightClient::CreateAccountCustomization(c
 
 CreateAccountSubscriptionOutcome QuickSightClient::CreateAccountSubscription(const CreateAccountSubscriptionRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateAccountSubscription);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAccountSubscription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -369,6 +373,7 @@ CreateAccountSubscriptionOutcome QuickSightClient::CreateAccountSubscription(con
 
 CreateAnalysisOutcome QuickSightClient::CreateAnalysis(const CreateAnalysisRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateAnalysis);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAnalysis, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -391,6 +396,7 @@ CreateAnalysisOutcome QuickSightClient::CreateAnalysis(const CreateAnalysisReque
 
 CreateDashboardOutcome QuickSightClient::CreateDashboard(const CreateDashboardRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateDashboard);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDashboard, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -413,6 +419,7 @@ CreateDashboardOutcome QuickSightClient::CreateDashboard(const CreateDashboardRe
 
 CreateDataSetOutcome QuickSightClient::CreateDataSet(const CreateDataSetRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateDataSet);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDataSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -429,6 +436,7 @@ CreateDataSetOutcome QuickSightClient::CreateDataSet(const CreateDataSetRequest&
 
 CreateDataSourceOutcome QuickSightClient::CreateDataSource(const CreateDataSourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateDataSource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDataSource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -445,6 +453,7 @@ CreateDataSourceOutcome QuickSightClient::CreateDataSource(const CreateDataSourc
 
 CreateFolderOutcome QuickSightClient::CreateFolder(const CreateFolderRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateFolder);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateFolder, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -467,6 +476,7 @@ CreateFolderOutcome QuickSightClient::CreateFolder(const CreateFolderRequest& re
 
 CreateFolderMembershipOutcome QuickSightClient::CreateFolderMembership(const CreateFolderMembershipRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateFolderMembership);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateFolderMembership, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -502,6 +512,7 @@ CreateFolderMembershipOutcome QuickSightClient::CreateFolderMembership(const Cre
 
 CreateGroupOutcome QuickSightClient::CreateGroup(const CreateGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -525,6 +536,7 @@ CreateGroupOutcome QuickSightClient::CreateGroup(const CreateGroupRequest& reque
 
 CreateGroupMembershipOutcome QuickSightClient::CreateGroupMembership(const CreateGroupMembershipRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateGroupMembership);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateGroupMembership, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MemberNameHasBeenSet())
   {
@@ -561,6 +573,7 @@ CreateGroupMembershipOutcome QuickSightClient::CreateGroupMembership(const Creat
 
 CreateIAMPolicyAssignmentOutcome QuickSightClient::CreateIAMPolicyAssignment(const CreateIAMPolicyAssignmentRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateIAMPolicyAssignment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateIAMPolicyAssignment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -584,6 +597,7 @@ CreateIAMPolicyAssignmentOutcome QuickSightClient::CreateIAMPolicyAssignment(con
 
 CreateIngestionOutcome QuickSightClient::CreateIngestion(const CreateIngestionRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateIngestion);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateIngestion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DataSetIdHasBeenSet())
   {
@@ -613,6 +627,7 @@ CreateIngestionOutcome QuickSightClient::CreateIngestion(const CreateIngestionRe
 
 CreateNamespaceOutcome QuickSightClient::CreateNamespace(const CreateNamespaceRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateNamespace);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateNamespace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -628,6 +643,7 @@ CreateNamespaceOutcome QuickSightClient::CreateNamespace(const CreateNamespaceRe
 
 CreateRefreshScheduleOutcome QuickSightClient::CreateRefreshSchedule(const CreateRefreshScheduleRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateRefreshSchedule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateRefreshSchedule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DataSetIdHasBeenSet())
   {
@@ -651,6 +667,7 @@ CreateRefreshScheduleOutcome QuickSightClient::CreateRefreshSchedule(const Creat
 
 CreateTemplateOutcome QuickSightClient::CreateTemplate(const CreateTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -673,6 +690,7 @@ CreateTemplateOutcome QuickSightClient::CreateTemplate(const CreateTemplateReque
 
 CreateTemplateAliasOutcome QuickSightClient::CreateTemplateAlias(const CreateTemplateAliasRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateTemplateAlias);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateTemplateAlias, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -702,6 +720,7 @@ CreateTemplateAliasOutcome QuickSightClient::CreateTemplateAlias(const CreateTem
 
 CreateThemeOutcome QuickSightClient::CreateTheme(const CreateThemeRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateTheme);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateTheme, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -724,6 +743,7 @@ CreateThemeOutcome QuickSightClient::CreateTheme(const CreateThemeRequest& reque
 
 CreateThemeAliasOutcome QuickSightClient::CreateThemeAlias(const CreateThemeAliasRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateThemeAlias);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateThemeAlias, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -753,6 +773,7 @@ CreateThemeAliasOutcome QuickSightClient::CreateThemeAlias(const CreateThemeAlia
 
 CreateTopicOutcome QuickSightClient::CreateTopic(const CreateTopicRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateTopic);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateTopic, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -769,6 +790,7 @@ CreateTopicOutcome QuickSightClient::CreateTopic(const CreateTopicRequest& reque
 
 CreateTopicRefreshScheduleOutcome QuickSightClient::CreateTopicRefreshSchedule(const CreateTopicRefreshScheduleRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateTopicRefreshSchedule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateTopicRefreshSchedule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -792,6 +814,7 @@ CreateTopicRefreshScheduleOutcome QuickSightClient::CreateTopicRefreshSchedule(c
 
 CreateVPCConnectionOutcome QuickSightClient::CreateVPCConnection(const CreateVPCConnectionRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateVPCConnection);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateVPCConnection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -808,6 +831,7 @@ CreateVPCConnectionOutcome QuickSightClient::CreateVPCConnection(const CreateVPC
 
 DeleteAccountCustomizationOutcome QuickSightClient::DeleteAccountCustomization(const DeleteAccountCustomizationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteAccountCustomization);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAccountCustomization, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -824,6 +848,7 @@ DeleteAccountCustomizationOutcome QuickSightClient::DeleteAccountCustomization(c
 
 DeleteAccountSubscriptionOutcome QuickSightClient::DeleteAccountSubscription(const DeleteAccountSubscriptionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteAccountSubscription);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAccountSubscription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -839,6 +864,7 @@ DeleteAccountSubscriptionOutcome QuickSightClient::DeleteAccountSubscription(con
 
 DeleteAnalysisOutcome QuickSightClient::DeleteAnalysis(const DeleteAnalysisRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteAnalysis);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAnalysis, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -861,6 +887,7 @@ DeleteAnalysisOutcome QuickSightClient::DeleteAnalysis(const DeleteAnalysisReque
 
 DeleteDashboardOutcome QuickSightClient::DeleteDashboard(const DeleteDashboardRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteDashboard);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDashboard, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -883,6 +910,7 @@ DeleteDashboardOutcome QuickSightClient::DeleteDashboard(const DeleteDashboardRe
 
 DeleteDataSetOutcome QuickSightClient::DeleteDataSet(const DeleteDataSetRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteDataSet);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDataSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -905,6 +933,7 @@ DeleteDataSetOutcome QuickSightClient::DeleteDataSet(const DeleteDataSetRequest&
 
 DeleteDataSetRefreshPropertiesOutcome QuickSightClient::DeleteDataSetRefreshProperties(const DeleteDataSetRefreshPropertiesRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteDataSetRefreshProperties);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDataSetRefreshProperties, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -928,6 +957,7 @@ DeleteDataSetRefreshPropertiesOutcome QuickSightClient::DeleteDataSetRefreshProp
 
 DeleteDataSourceOutcome QuickSightClient::DeleteDataSource(const DeleteDataSourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteDataSource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDataSource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -950,6 +980,7 @@ DeleteDataSourceOutcome QuickSightClient::DeleteDataSource(const DeleteDataSourc
 
 DeleteFolderOutcome QuickSightClient::DeleteFolder(const DeleteFolderRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteFolder);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteFolder, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -972,6 +1003,7 @@ DeleteFolderOutcome QuickSightClient::DeleteFolder(const DeleteFolderRequest& re
 
 DeleteFolderMembershipOutcome QuickSightClient::DeleteFolderMembership(const DeleteFolderMembershipRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteFolderMembership);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteFolderMembership, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -1007,6 +1039,7 @@ DeleteFolderMembershipOutcome QuickSightClient::DeleteFolderMembership(const Del
 
 DeleteGroupOutcome QuickSightClient::DeleteGroup(const DeleteGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GroupNameHasBeenSet())
   {
@@ -1036,6 +1069,7 @@ DeleteGroupOutcome QuickSightClient::DeleteGroup(const DeleteGroupRequest& reque
 
 DeleteGroupMembershipOutcome QuickSightClient::DeleteGroupMembership(const DeleteGroupMembershipRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteGroupMembership);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteGroupMembership, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MemberNameHasBeenSet())
   {
@@ -1072,6 +1106,7 @@ DeleteGroupMembershipOutcome QuickSightClient::DeleteGroupMembership(const Delet
 
 DeleteIAMPolicyAssignmentOutcome QuickSightClient::DeleteIAMPolicyAssignment(const DeleteIAMPolicyAssignmentRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteIAMPolicyAssignment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteIAMPolicyAssignment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -1101,6 +1136,7 @@ DeleteIAMPolicyAssignmentOutcome QuickSightClient::DeleteIAMPolicyAssignment(con
 
 DeleteNamespaceOutcome QuickSightClient::DeleteNamespace(const DeleteNamespaceRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteNamespace);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteNamespace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -1123,6 +1159,7 @@ DeleteNamespaceOutcome QuickSightClient::DeleteNamespace(const DeleteNamespaceRe
 
 DeleteRefreshScheduleOutcome QuickSightClient::DeleteRefreshSchedule(const DeleteRefreshScheduleRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteRefreshSchedule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteRefreshSchedule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DataSetIdHasBeenSet())
   {
@@ -1152,6 +1189,7 @@ DeleteRefreshScheduleOutcome QuickSightClient::DeleteRefreshSchedule(const Delet
 
 DeleteTemplateOutcome QuickSightClient::DeleteTemplate(const DeleteTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -1174,6 +1212,7 @@ DeleteTemplateOutcome QuickSightClient::DeleteTemplate(const DeleteTemplateReque
 
 DeleteTemplateAliasOutcome QuickSightClient::DeleteTemplateAlias(const DeleteTemplateAliasRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteTemplateAlias);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteTemplateAlias, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -1203,6 +1242,7 @@ DeleteTemplateAliasOutcome QuickSightClient::DeleteTemplateAlias(const DeleteTem
 
 DeleteThemeOutcome QuickSightClient::DeleteTheme(const DeleteThemeRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteTheme);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteTheme, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -1225,6 +1265,7 @@ DeleteThemeOutcome QuickSightClient::DeleteTheme(const DeleteThemeRequest& reque
 
 DeleteThemeAliasOutcome QuickSightClient::DeleteThemeAlias(const DeleteThemeAliasRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteThemeAlias);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteThemeAlias, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -1254,6 +1295,7 @@ DeleteThemeAliasOutcome QuickSightClient::DeleteThemeAlias(const DeleteThemeAlia
 
 DeleteTopicOutcome QuickSightClient::DeleteTopic(const DeleteTopicRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteTopic);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteTopic, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -1276,6 +1318,7 @@ DeleteTopicOutcome QuickSightClient::DeleteTopic(const DeleteTopicRequest& reque
 
 DeleteTopicRefreshScheduleOutcome QuickSightClient::DeleteTopicRefreshSchedule(const DeleteTopicRefreshScheduleRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteTopicRefreshSchedule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteTopicRefreshSchedule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -1305,6 +1348,7 @@ DeleteTopicRefreshScheduleOutcome QuickSightClient::DeleteTopicRefreshSchedule(c
 
 DeleteUserOutcome QuickSightClient::DeleteUser(const DeleteUserRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteUser);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.UserNameHasBeenSet())
   {
@@ -1334,6 +1378,7 @@ DeleteUserOutcome QuickSightClient::DeleteUser(const DeleteUserRequest& request)
 
 DeleteUserByPrincipalIdOutcome QuickSightClient::DeleteUserByPrincipalId(const DeleteUserByPrincipalIdRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteUserByPrincipalId);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteUserByPrincipalId, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PrincipalIdHasBeenSet())
   {
@@ -1363,6 +1408,7 @@ DeleteUserByPrincipalIdOutcome QuickSightClient::DeleteUserByPrincipalId(const D
 
 DeleteVPCConnectionOutcome QuickSightClient::DeleteVPCConnection(const DeleteVPCConnectionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteVPCConnection);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteVPCConnection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -1385,6 +1431,7 @@ DeleteVPCConnectionOutcome QuickSightClient::DeleteVPCConnection(const DeleteVPC
 
 DescribeAccountCustomizationOutcome QuickSightClient::DescribeAccountCustomization(const DescribeAccountCustomizationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeAccountCustomization);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAccountCustomization, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -1401,6 +1448,7 @@ DescribeAccountCustomizationOutcome QuickSightClient::DescribeAccountCustomizati
 
 DescribeAccountSettingsOutcome QuickSightClient::DescribeAccountSettings(const DescribeAccountSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeAccountSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAccountSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -1417,6 +1465,7 @@ DescribeAccountSettingsOutcome QuickSightClient::DescribeAccountSettings(const D
 
 DescribeAccountSubscriptionOutcome QuickSightClient::DescribeAccountSubscription(const DescribeAccountSubscriptionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeAccountSubscription);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAccountSubscription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -1432,6 +1481,7 @@ DescribeAccountSubscriptionOutcome QuickSightClient::DescribeAccountSubscription
 
 DescribeAnalysisOutcome QuickSightClient::DescribeAnalysis(const DescribeAnalysisRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeAnalysis);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAnalysis, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -1454,6 +1504,7 @@ DescribeAnalysisOutcome QuickSightClient::DescribeAnalysis(const DescribeAnalysi
 
 DescribeAnalysisDefinitionOutcome QuickSightClient::DescribeAnalysisDefinition(const DescribeAnalysisDefinitionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeAnalysisDefinition);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAnalysisDefinition, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -1477,6 +1528,7 @@ DescribeAnalysisDefinitionOutcome QuickSightClient::DescribeAnalysisDefinition(c
 
 DescribeAnalysisPermissionsOutcome QuickSightClient::DescribeAnalysisPermissions(const DescribeAnalysisPermissionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeAnalysisPermissions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAnalysisPermissions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -1500,6 +1552,7 @@ DescribeAnalysisPermissionsOutcome QuickSightClient::DescribeAnalysisPermissions
 
 DescribeAssetBundleExportJobOutcome QuickSightClient::DescribeAssetBundleExportJob(const DescribeAssetBundleExportJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeAssetBundleExportJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAssetBundleExportJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -1522,6 +1575,7 @@ DescribeAssetBundleExportJobOutcome QuickSightClient::DescribeAssetBundleExportJ
 
 DescribeAssetBundleImportJobOutcome QuickSightClient::DescribeAssetBundleImportJob(const DescribeAssetBundleImportJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeAssetBundleImportJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAssetBundleImportJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -1544,6 +1598,7 @@ DescribeAssetBundleImportJobOutcome QuickSightClient::DescribeAssetBundleImportJ
 
 DescribeDashboardOutcome QuickSightClient::DescribeDashboard(const DescribeDashboardRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeDashboard);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeDashboard, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -1566,6 +1621,7 @@ DescribeDashboardOutcome QuickSightClient::DescribeDashboard(const DescribeDashb
 
 DescribeDashboardDefinitionOutcome QuickSightClient::DescribeDashboardDefinition(const DescribeDashboardDefinitionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeDashboardDefinition);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeDashboardDefinition, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -1589,6 +1645,7 @@ DescribeDashboardDefinitionOutcome QuickSightClient::DescribeDashboardDefinition
 
 DescribeDashboardPermissionsOutcome QuickSightClient::DescribeDashboardPermissions(const DescribeDashboardPermissionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeDashboardPermissions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeDashboardPermissions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -1612,6 +1669,7 @@ DescribeDashboardPermissionsOutcome QuickSightClient::DescribeDashboardPermissio
 
 DescribeDataSetOutcome QuickSightClient::DescribeDataSet(const DescribeDataSetRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeDataSet);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeDataSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -1634,6 +1692,7 @@ DescribeDataSetOutcome QuickSightClient::DescribeDataSet(const DescribeDataSetRe
 
 DescribeDataSetPermissionsOutcome QuickSightClient::DescribeDataSetPermissions(const DescribeDataSetPermissionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeDataSetPermissions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeDataSetPermissions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -1657,6 +1716,7 @@ DescribeDataSetPermissionsOutcome QuickSightClient::DescribeDataSetPermissions(c
 
 DescribeDataSetRefreshPropertiesOutcome QuickSightClient::DescribeDataSetRefreshProperties(const DescribeDataSetRefreshPropertiesRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeDataSetRefreshProperties);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeDataSetRefreshProperties, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -1680,6 +1740,7 @@ DescribeDataSetRefreshPropertiesOutcome QuickSightClient::DescribeDataSetRefresh
 
 DescribeDataSourceOutcome QuickSightClient::DescribeDataSource(const DescribeDataSourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeDataSource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeDataSource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -1702,6 +1763,7 @@ DescribeDataSourceOutcome QuickSightClient::DescribeDataSource(const DescribeDat
 
 DescribeDataSourcePermissionsOutcome QuickSightClient::DescribeDataSourcePermissions(const DescribeDataSourcePermissionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeDataSourcePermissions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeDataSourcePermissions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -1725,6 +1787,7 @@ DescribeDataSourcePermissionsOutcome QuickSightClient::DescribeDataSourcePermiss
 
 DescribeFolderOutcome QuickSightClient::DescribeFolder(const DescribeFolderRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeFolder);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeFolder, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -1747,6 +1810,7 @@ DescribeFolderOutcome QuickSightClient::DescribeFolder(const DescribeFolderReque
 
 DescribeFolderPermissionsOutcome QuickSightClient::DescribeFolderPermissions(const DescribeFolderPermissionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeFolderPermissions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeFolderPermissions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -1770,6 +1834,7 @@ DescribeFolderPermissionsOutcome QuickSightClient::DescribeFolderPermissions(con
 
 DescribeFolderResolvedPermissionsOutcome QuickSightClient::DescribeFolderResolvedPermissions(const DescribeFolderResolvedPermissionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeFolderResolvedPermissions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeFolderResolvedPermissions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -1793,6 +1858,7 @@ DescribeFolderResolvedPermissionsOutcome QuickSightClient::DescribeFolderResolve
 
 DescribeGroupOutcome QuickSightClient::DescribeGroup(const DescribeGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GroupNameHasBeenSet())
   {
@@ -1822,6 +1888,7 @@ DescribeGroupOutcome QuickSightClient::DescribeGroup(const DescribeGroupRequest&
 
 DescribeGroupMembershipOutcome QuickSightClient::DescribeGroupMembership(const DescribeGroupMembershipRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeGroupMembership);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeGroupMembership, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MemberNameHasBeenSet())
   {
@@ -1858,6 +1925,7 @@ DescribeGroupMembershipOutcome QuickSightClient::DescribeGroupMembership(const D
 
 DescribeIAMPolicyAssignmentOutcome QuickSightClient::DescribeIAMPolicyAssignment(const DescribeIAMPolicyAssignmentRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeIAMPolicyAssignment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeIAMPolicyAssignment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -1887,6 +1955,7 @@ DescribeIAMPolicyAssignmentOutcome QuickSightClient::DescribeIAMPolicyAssignment
 
 DescribeIngestionOutcome QuickSightClient::DescribeIngestion(const DescribeIngestionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeIngestion);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeIngestion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -1916,6 +1985,7 @@ DescribeIngestionOutcome QuickSightClient::DescribeIngestion(const DescribeInges
 
 DescribeIpRestrictionOutcome QuickSightClient::DescribeIpRestriction(const DescribeIpRestrictionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeIpRestriction);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeIpRestriction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -1932,6 +2002,7 @@ DescribeIpRestrictionOutcome QuickSightClient::DescribeIpRestriction(const Descr
 
 DescribeNamespaceOutcome QuickSightClient::DescribeNamespace(const DescribeNamespaceRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeNamespace);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeNamespace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -1954,6 +2025,7 @@ DescribeNamespaceOutcome QuickSightClient::DescribeNamespace(const DescribeNames
 
 DescribeRefreshScheduleOutcome QuickSightClient::DescribeRefreshSchedule(const DescribeRefreshScheduleRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeRefreshSchedule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeRefreshSchedule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -1983,6 +2055,7 @@ DescribeRefreshScheduleOutcome QuickSightClient::DescribeRefreshSchedule(const D
 
 DescribeTemplateOutcome QuickSightClient::DescribeTemplate(const DescribeTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -2005,6 +2078,7 @@ DescribeTemplateOutcome QuickSightClient::DescribeTemplate(const DescribeTemplat
 
 DescribeTemplateAliasOutcome QuickSightClient::DescribeTemplateAlias(const DescribeTemplateAliasRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeTemplateAlias);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeTemplateAlias, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -2034,6 +2108,7 @@ DescribeTemplateAliasOutcome QuickSightClient::DescribeTemplateAlias(const Descr
 
 DescribeTemplateDefinitionOutcome QuickSightClient::DescribeTemplateDefinition(const DescribeTemplateDefinitionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeTemplateDefinition);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeTemplateDefinition, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -2057,6 +2132,7 @@ DescribeTemplateDefinitionOutcome QuickSightClient::DescribeTemplateDefinition(c
 
 DescribeTemplatePermissionsOutcome QuickSightClient::DescribeTemplatePermissions(const DescribeTemplatePermissionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeTemplatePermissions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeTemplatePermissions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -2080,6 +2156,7 @@ DescribeTemplatePermissionsOutcome QuickSightClient::DescribeTemplatePermissions
 
 DescribeThemeOutcome QuickSightClient::DescribeTheme(const DescribeThemeRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeTheme);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeTheme, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -2102,6 +2179,7 @@ DescribeThemeOutcome QuickSightClient::DescribeTheme(const DescribeThemeRequest&
 
 DescribeThemeAliasOutcome QuickSightClient::DescribeThemeAlias(const DescribeThemeAliasRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeThemeAlias);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeThemeAlias, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -2131,6 +2209,7 @@ DescribeThemeAliasOutcome QuickSightClient::DescribeThemeAlias(const DescribeThe
 
 DescribeThemePermissionsOutcome QuickSightClient::DescribeThemePermissions(const DescribeThemePermissionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeThemePermissions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeThemePermissions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -2154,6 +2233,7 @@ DescribeThemePermissionsOutcome QuickSightClient::DescribeThemePermissions(const
 
 DescribeTopicOutcome QuickSightClient::DescribeTopic(const DescribeTopicRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeTopic);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeTopic, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -2176,6 +2256,7 @@ DescribeTopicOutcome QuickSightClient::DescribeTopic(const DescribeTopicRequest&
 
 DescribeTopicPermissionsOutcome QuickSightClient::DescribeTopicPermissions(const DescribeTopicPermissionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeTopicPermissions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeTopicPermissions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -2199,6 +2280,7 @@ DescribeTopicPermissionsOutcome QuickSightClient::DescribeTopicPermissions(const
 
 DescribeTopicRefreshOutcome QuickSightClient::DescribeTopicRefresh(const DescribeTopicRefreshRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeTopicRefresh);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeTopicRefresh, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -2228,6 +2310,7 @@ DescribeTopicRefreshOutcome QuickSightClient::DescribeTopicRefresh(const Describ
 
 DescribeTopicRefreshScheduleOutcome QuickSightClient::DescribeTopicRefreshSchedule(const DescribeTopicRefreshScheduleRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeTopicRefreshSchedule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeTopicRefreshSchedule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -2257,6 +2340,7 @@ DescribeTopicRefreshScheduleOutcome QuickSightClient::DescribeTopicRefreshSchedu
 
 DescribeUserOutcome QuickSightClient::DescribeUser(const DescribeUserRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeUser);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.UserNameHasBeenSet())
   {
@@ -2286,6 +2370,7 @@ DescribeUserOutcome QuickSightClient::DescribeUser(const DescribeUserRequest& re
 
 DescribeVPCConnectionOutcome QuickSightClient::DescribeVPCConnection(const DescribeVPCConnectionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeVPCConnection);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeVPCConnection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -2308,6 +2393,7 @@ DescribeVPCConnectionOutcome QuickSightClient::DescribeVPCConnection(const Descr
 
 GenerateEmbedUrlForAnonymousUserOutcome QuickSightClient::GenerateEmbedUrlForAnonymousUser(const GenerateEmbedUrlForAnonymousUserRequest& request) const
 {
+  AWS_OPERATION_GUARD(GenerateEmbedUrlForAnonymousUser);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GenerateEmbedUrlForAnonymousUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -2324,6 +2410,7 @@ GenerateEmbedUrlForAnonymousUserOutcome QuickSightClient::GenerateEmbedUrlForAno
 
 GenerateEmbedUrlForRegisteredUserOutcome QuickSightClient::GenerateEmbedUrlForRegisteredUser(const GenerateEmbedUrlForRegisteredUserRequest& request) const
 {
+  AWS_OPERATION_GUARD(GenerateEmbedUrlForRegisteredUser);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GenerateEmbedUrlForRegisteredUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -2340,6 +2427,7 @@ GenerateEmbedUrlForRegisteredUserOutcome QuickSightClient::GenerateEmbedUrlForRe
 
 GetDashboardEmbedUrlOutcome QuickSightClient::GetDashboardEmbedUrl(const GetDashboardEmbedUrlRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDashboardEmbedUrl);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDashboardEmbedUrl, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -2368,6 +2456,7 @@ GetDashboardEmbedUrlOutcome QuickSightClient::GetDashboardEmbedUrl(const GetDash
 
 GetSessionEmbedUrlOutcome QuickSightClient::GetSessionEmbedUrl(const GetSessionEmbedUrlRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSessionEmbedUrl);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSessionEmbedUrl, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -2384,6 +2473,7 @@ GetSessionEmbedUrlOutcome QuickSightClient::GetSessionEmbedUrl(const GetSessionE
 
 ListAnalysesOutcome QuickSightClient::ListAnalyses(const ListAnalysesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAnalyses);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAnalyses, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -2400,6 +2490,7 @@ ListAnalysesOutcome QuickSightClient::ListAnalyses(const ListAnalysesRequest& re
 
 ListAssetBundleExportJobsOutcome QuickSightClient::ListAssetBundleExportJobs(const ListAssetBundleExportJobsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAssetBundleExportJobs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAssetBundleExportJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -2416,6 +2507,7 @@ ListAssetBundleExportJobsOutcome QuickSightClient::ListAssetBundleExportJobs(con
 
 ListAssetBundleImportJobsOutcome QuickSightClient::ListAssetBundleImportJobs(const ListAssetBundleImportJobsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAssetBundleImportJobs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAssetBundleImportJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -2432,6 +2524,7 @@ ListAssetBundleImportJobsOutcome QuickSightClient::ListAssetBundleImportJobs(con
 
 ListDashboardVersionsOutcome QuickSightClient::ListDashboardVersions(const ListDashboardVersionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDashboardVersions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDashboardVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -2455,6 +2548,7 @@ ListDashboardVersionsOutcome QuickSightClient::ListDashboardVersions(const ListD
 
 ListDashboardsOutcome QuickSightClient::ListDashboards(const ListDashboardsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDashboards);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDashboards, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -2471,6 +2565,7 @@ ListDashboardsOutcome QuickSightClient::ListDashboards(const ListDashboardsReque
 
 ListDataSetsOutcome QuickSightClient::ListDataSets(const ListDataSetsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDataSets);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDataSets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -2487,6 +2582,7 @@ ListDataSetsOutcome QuickSightClient::ListDataSets(const ListDataSetsRequest& re
 
 ListDataSourcesOutcome QuickSightClient::ListDataSources(const ListDataSourcesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListDataSources);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDataSources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -2503,6 +2599,7 @@ ListDataSourcesOutcome QuickSightClient::ListDataSources(const ListDataSourcesRe
 
 ListFolderMembersOutcome QuickSightClient::ListFolderMembers(const ListFolderMembersRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListFolderMembers);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListFolderMembers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -2526,6 +2623,7 @@ ListFolderMembersOutcome QuickSightClient::ListFolderMembers(const ListFolderMem
 
 ListFoldersOutcome QuickSightClient::ListFolders(const ListFoldersRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListFolders);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListFolders, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -2542,6 +2640,7 @@ ListFoldersOutcome QuickSightClient::ListFolders(const ListFoldersRequest& reque
 
 ListGroupMembershipsOutcome QuickSightClient::ListGroupMemberships(const ListGroupMembershipsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListGroupMemberships);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListGroupMemberships, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GroupNameHasBeenSet())
   {
@@ -2572,6 +2671,7 @@ ListGroupMembershipsOutcome QuickSightClient::ListGroupMemberships(const ListGro
 
 ListGroupsOutcome QuickSightClient::ListGroups(const ListGroupsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListGroups);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -2595,6 +2695,7 @@ ListGroupsOutcome QuickSightClient::ListGroups(const ListGroupsRequest& request)
 
 ListIAMPolicyAssignmentsOutcome QuickSightClient::ListIAMPolicyAssignments(const ListIAMPolicyAssignmentsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListIAMPolicyAssignments);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListIAMPolicyAssignments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -2618,6 +2719,7 @@ ListIAMPolicyAssignmentsOutcome QuickSightClient::ListIAMPolicyAssignments(const
 
 ListIAMPolicyAssignmentsForUserOutcome QuickSightClient::ListIAMPolicyAssignmentsForUser(const ListIAMPolicyAssignmentsForUserRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListIAMPolicyAssignmentsForUser);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListIAMPolicyAssignmentsForUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -2648,6 +2750,7 @@ ListIAMPolicyAssignmentsForUserOutcome QuickSightClient::ListIAMPolicyAssignment
 
 ListIngestionsOutcome QuickSightClient::ListIngestions(const ListIngestionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListIngestions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListIngestions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DataSetIdHasBeenSet())
   {
@@ -2671,6 +2774,7 @@ ListIngestionsOutcome QuickSightClient::ListIngestions(const ListIngestionsReque
 
 ListNamespacesOutcome QuickSightClient::ListNamespaces(const ListNamespacesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListNamespaces);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListNamespaces, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -2687,6 +2791,7 @@ ListNamespacesOutcome QuickSightClient::ListNamespaces(const ListNamespacesReque
 
 ListRefreshSchedulesOutcome QuickSightClient::ListRefreshSchedules(const ListRefreshSchedulesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListRefreshSchedules);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRefreshSchedules, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -2710,6 +2815,7 @@ ListRefreshSchedulesOutcome QuickSightClient::ListRefreshSchedules(const ListRef
 
 ListTagsForResourceOutcome QuickSightClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -2726,6 +2832,7 @@ ListTagsForResourceOutcome QuickSightClient::ListTagsForResource(const ListTagsF
 
 ListTemplateAliasesOutcome QuickSightClient::ListTemplateAliases(const ListTemplateAliasesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTemplateAliases);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTemplateAliases, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -2749,6 +2856,7 @@ ListTemplateAliasesOutcome QuickSightClient::ListTemplateAliases(const ListTempl
 
 ListTemplateVersionsOutcome QuickSightClient::ListTemplateVersions(const ListTemplateVersionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTemplateVersions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTemplateVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -2772,6 +2880,7 @@ ListTemplateVersionsOutcome QuickSightClient::ListTemplateVersions(const ListTem
 
 ListTemplatesOutcome QuickSightClient::ListTemplates(const ListTemplatesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTemplates);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTemplates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -2788,6 +2897,7 @@ ListTemplatesOutcome QuickSightClient::ListTemplates(const ListTemplatesRequest&
 
 ListThemeAliasesOutcome QuickSightClient::ListThemeAliases(const ListThemeAliasesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListThemeAliases);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListThemeAliases, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -2811,6 +2921,7 @@ ListThemeAliasesOutcome QuickSightClient::ListThemeAliases(const ListThemeAliase
 
 ListThemeVersionsOutcome QuickSightClient::ListThemeVersions(const ListThemeVersionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListThemeVersions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListThemeVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -2834,6 +2945,7 @@ ListThemeVersionsOutcome QuickSightClient::ListThemeVersions(const ListThemeVers
 
 ListThemesOutcome QuickSightClient::ListThemes(const ListThemesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListThemes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListThemes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -2850,6 +2962,7 @@ ListThemesOutcome QuickSightClient::ListThemes(const ListThemesRequest& request)
 
 ListTopicRefreshSchedulesOutcome QuickSightClient::ListTopicRefreshSchedules(const ListTopicRefreshSchedulesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTopicRefreshSchedules);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTopicRefreshSchedules, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -2873,6 +2986,7 @@ ListTopicRefreshSchedulesOutcome QuickSightClient::ListTopicRefreshSchedules(con
 
 ListTopicsOutcome QuickSightClient::ListTopics(const ListTopicsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTopics);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTopics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -2889,6 +3003,7 @@ ListTopicsOutcome QuickSightClient::ListTopics(const ListTopicsRequest& request)
 
 ListUserGroupsOutcome QuickSightClient::ListUserGroups(const ListUserGroupsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListUserGroups);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListUserGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.UserNameHasBeenSet())
   {
@@ -2919,6 +3034,7 @@ ListUserGroupsOutcome QuickSightClient::ListUserGroups(const ListUserGroupsReque
 
 ListUsersOutcome QuickSightClient::ListUsers(const ListUsersRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListUsers);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListUsers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -2942,6 +3058,7 @@ ListUsersOutcome QuickSightClient::ListUsers(const ListUsersRequest& request) co
 
 ListVPCConnectionsOutcome QuickSightClient::ListVPCConnections(const ListVPCConnectionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListVPCConnections);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListVPCConnections, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -2958,6 +3075,7 @@ ListVPCConnectionsOutcome QuickSightClient::ListVPCConnections(const ListVPCConn
 
 PutDataSetRefreshPropertiesOutcome QuickSightClient::PutDataSetRefreshProperties(const PutDataSetRefreshPropertiesRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutDataSetRefreshProperties);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutDataSetRefreshProperties, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -2981,6 +3099,7 @@ PutDataSetRefreshPropertiesOutcome QuickSightClient::PutDataSetRefreshProperties
 
 RegisterUserOutcome QuickSightClient::RegisterUser(const RegisterUserRequest& request) const
 {
+  AWS_OPERATION_GUARD(RegisterUser);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RegisterUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -3004,6 +3123,7 @@ RegisterUserOutcome QuickSightClient::RegisterUser(const RegisterUserRequest& re
 
 RestoreAnalysisOutcome QuickSightClient::RestoreAnalysis(const RestoreAnalysisRequest& request) const
 {
+  AWS_OPERATION_GUARD(RestoreAnalysis);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RestoreAnalysis, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -3026,6 +3146,7 @@ RestoreAnalysisOutcome QuickSightClient::RestoreAnalysis(const RestoreAnalysisRe
 
 SearchAnalysesOutcome QuickSightClient::SearchAnalyses(const SearchAnalysesRequest& request) const
 {
+  AWS_OPERATION_GUARD(SearchAnalyses);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SearchAnalyses, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -3042,6 +3163,7 @@ SearchAnalysesOutcome QuickSightClient::SearchAnalyses(const SearchAnalysesReque
 
 SearchDashboardsOutcome QuickSightClient::SearchDashboards(const SearchDashboardsRequest& request) const
 {
+  AWS_OPERATION_GUARD(SearchDashboards);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SearchDashboards, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -3058,6 +3180,7 @@ SearchDashboardsOutcome QuickSightClient::SearchDashboards(const SearchDashboard
 
 SearchDataSetsOutcome QuickSightClient::SearchDataSets(const SearchDataSetsRequest& request) const
 {
+  AWS_OPERATION_GUARD(SearchDataSets);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SearchDataSets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -3074,6 +3197,7 @@ SearchDataSetsOutcome QuickSightClient::SearchDataSets(const SearchDataSetsReque
 
 SearchDataSourcesOutcome QuickSightClient::SearchDataSources(const SearchDataSourcesRequest& request) const
 {
+  AWS_OPERATION_GUARD(SearchDataSources);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SearchDataSources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -3090,6 +3214,7 @@ SearchDataSourcesOutcome QuickSightClient::SearchDataSources(const SearchDataSou
 
 SearchFoldersOutcome QuickSightClient::SearchFolders(const SearchFoldersRequest& request) const
 {
+  AWS_OPERATION_GUARD(SearchFolders);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SearchFolders, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -3106,6 +3231,7 @@ SearchFoldersOutcome QuickSightClient::SearchFolders(const SearchFoldersRequest&
 
 SearchGroupsOutcome QuickSightClient::SearchGroups(const SearchGroupsRequest& request) const
 {
+  AWS_OPERATION_GUARD(SearchGroups);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SearchGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -3129,6 +3255,7 @@ SearchGroupsOutcome QuickSightClient::SearchGroups(const SearchGroupsRequest& re
 
 StartAssetBundleExportJobOutcome QuickSightClient::StartAssetBundleExportJob(const StartAssetBundleExportJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartAssetBundleExportJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartAssetBundleExportJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -3145,6 +3272,7 @@ StartAssetBundleExportJobOutcome QuickSightClient::StartAssetBundleExportJob(con
 
 StartAssetBundleImportJobOutcome QuickSightClient::StartAssetBundleImportJob(const StartAssetBundleImportJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartAssetBundleImportJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartAssetBundleImportJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -3161,6 +3289,7 @@ StartAssetBundleImportJobOutcome QuickSightClient::StartAssetBundleImportJob(con
 
 TagResourceOutcome QuickSightClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -3177,6 +3306,7 @@ TagResourceOutcome QuickSightClient::TagResource(const TagResourceRequest& reque
 
 UntagResourceOutcome QuickSightClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -3198,6 +3328,7 @@ UntagResourceOutcome QuickSightClient::UntagResource(const UntagResourceRequest&
 
 UpdateAccountCustomizationOutcome QuickSightClient::UpdateAccountCustomization(const UpdateAccountCustomizationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateAccountCustomization);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAccountCustomization, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -3214,6 +3345,7 @@ UpdateAccountCustomizationOutcome QuickSightClient::UpdateAccountCustomization(c
 
 UpdateAccountSettingsOutcome QuickSightClient::UpdateAccountSettings(const UpdateAccountSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateAccountSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAccountSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -3230,6 +3362,7 @@ UpdateAccountSettingsOutcome QuickSightClient::UpdateAccountSettings(const Updat
 
 UpdateAnalysisOutcome QuickSightClient::UpdateAnalysis(const UpdateAnalysisRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateAnalysis);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAnalysis, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -3252,6 +3385,7 @@ UpdateAnalysisOutcome QuickSightClient::UpdateAnalysis(const UpdateAnalysisReque
 
 UpdateAnalysisPermissionsOutcome QuickSightClient::UpdateAnalysisPermissions(const UpdateAnalysisPermissionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateAnalysisPermissions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAnalysisPermissions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -3275,6 +3409,7 @@ UpdateAnalysisPermissionsOutcome QuickSightClient::UpdateAnalysisPermissions(con
 
 UpdateDashboardOutcome QuickSightClient::UpdateDashboard(const UpdateDashboardRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateDashboard);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDashboard, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -3297,6 +3432,7 @@ UpdateDashboardOutcome QuickSightClient::UpdateDashboard(const UpdateDashboardRe
 
 UpdateDashboardPermissionsOutcome QuickSightClient::UpdateDashboardPermissions(const UpdateDashboardPermissionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateDashboardPermissions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDashboardPermissions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -3320,6 +3456,7 @@ UpdateDashboardPermissionsOutcome QuickSightClient::UpdateDashboardPermissions(c
 
 UpdateDashboardPublishedVersionOutcome QuickSightClient::UpdateDashboardPublishedVersion(const UpdateDashboardPublishedVersionRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateDashboardPublishedVersion);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDashboardPublishedVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -3349,6 +3486,7 @@ UpdateDashboardPublishedVersionOutcome QuickSightClient::UpdateDashboardPublishe
 
 UpdateDataSetOutcome QuickSightClient::UpdateDataSet(const UpdateDataSetRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateDataSet);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDataSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -3371,6 +3509,7 @@ UpdateDataSetOutcome QuickSightClient::UpdateDataSet(const UpdateDataSetRequest&
 
 UpdateDataSetPermissionsOutcome QuickSightClient::UpdateDataSetPermissions(const UpdateDataSetPermissionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateDataSetPermissions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDataSetPermissions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -3394,6 +3533,7 @@ UpdateDataSetPermissionsOutcome QuickSightClient::UpdateDataSetPermissions(const
 
 UpdateDataSourceOutcome QuickSightClient::UpdateDataSource(const UpdateDataSourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateDataSource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDataSource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -3416,6 +3556,7 @@ UpdateDataSourceOutcome QuickSightClient::UpdateDataSource(const UpdateDataSourc
 
 UpdateDataSourcePermissionsOutcome QuickSightClient::UpdateDataSourcePermissions(const UpdateDataSourcePermissionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateDataSourcePermissions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDataSourcePermissions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -3439,6 +3580,7 @@ UpdateDataSourcePermissionsOutcome QuickSightClient::UpdateDataSourcePermissions
 
 UpdateFolderOutcome QuickSightClient::UpdateFolder(const UpdateFolderRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateFolder);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateFolder, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -3461,6 +3603,7 @@ UpdateFolderOutcome QuickSightClient::UpdateFolder(const UpdateFolderRequest& re
 
 UpdateFolderPermissionsOutcome QuickSightClient::UpdateFolderPermissions(const UpdateFolderPermissionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateFolderPermissions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateFolderPermissions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -3484,6 +3627,7 @@ UpdateFolderPermissionsOutcome QuickSightClient::UpdateFolderPermissions(const U
 
 UpdateGroupOutcome QuickSightClient::UpdateGroup(const UpdateGroupRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateGroup);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GroupNameHasBeenSet())
   {
@@ -3513,6 +3657,7 @@ UpdateGroupOutcome QuickSightClient::UpdateGroup(const UpdateGroupRequest& reque
 
 UpdateIAMPolicyAssignmentOutcome QuickSightClient::UpdateIAMPolicyAssignment(const UpdateIAMPolicyAssignmentRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateIAMPolicyAssignment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateIAMPolicyAssignment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -3542,6 +3687,7 @@ UpdateIAMPolicyAssignmentOutcome QuickSightClient::UpdateIAMPolicyAssignment(con
 
 UpdateIpRestrictionOutcome QuickSightClient::UpdateIpRestriction(const UpdateIpRestrictionRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateIpRestriction);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateIpRestriction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -3558,6 +3704,7 @@ UpdateIpRestrictionOutcome QuickSightClient::UpdateIpRestriction(const UpdateIpR
 
 UpdatePublicSharingSettingsOutcome QuickSightClient::UpdatePublicSharingSettings(const UpdatePublicSharingSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdatePublicSharingSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdatePublicSharingSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -3574,6 +3721,7 @@ UpdatePublicSharingSettingsOutcome QuickSightClient::UpdatePublicSharingSettings
 
 UpdateRefreshScheduleOutcome QuickSightClient::UpdateRefreshSchedule(const UpdateRefreshScheduleRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateRefreshSchedule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateRefreshSchedule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DataSetIdHasBeenSet())
   {
@@ -3597,6 +3745,7 @@ UpdateRefreshScheduleOutcome QuickSightClient::UpdateRefreshSchedule(const Updat
 
 UpdateTemplateOutcome QuickSightClient::UpdateTemplate(const UpdateTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -3619,6 +3768,7 @@ UpdateTemplateOutcome QuickSightClient::UpdateTemplate(const UpdateTemplateReque
 
 UpdateTemplateAliasOutcome QuickSightClient::UpdateTemplateAlias(const UpdateTemplateAliasRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateTemplateAlias);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateTemplateAlias, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -3648,6 +3798,7 @@ UpdateTemplateAliasOutcome QuickSightClient::UpdateTemplateAlias(const UpdateTem
 
 UpdateTemplatePermissionsOutcome QuickSightClient::UpdateTemplatePermissions(const UpdateTemplatePermissionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateTemplatePermissions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateTemplatePermissions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -3671,6 +3822,7 @@ UpdateTemplatePermissionsOutcome QuickSightClient::UpdateTemplatePermissions(con
 
 UpdateThemeOutcome QuickSightClient::UpdateTheme(const UpdateThemeRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateTheme);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateTheme, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -3693,6 +3845,7 @@ UpdateThemeOutcome QuickSightClient::UpdateTheme(const UpdateThemeRequest& reque
 
 UpdateThemeAliasOutcome QuickSightClient::UpdateThemeAlias(const UpdateThemeAliasRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateThemeAlias);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateThemeAlias, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -3722,6 +3875,7 @@ UpdateThemeAliasOutcome QuickSightClient::UpdateThemeAlias(const UpdateThemeAlia
 
 UpdateThemePermissionsOutcome QuickSightClient::UpdateThemePermissions(const UpdateThemePermissionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateThemePermissions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateThemePermissions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -3745,6 +3899,7 @@ UpdateThemePermissionsOutcome QuickSightClient::UpdateThemePermissions(const Upd
 
 UpdateTopicOutcome QuickSightClient::UpdateTopic(const UpdateTopicRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateTopic);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateTopic, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -3767,6 +3922,7 @@ UpdateTopicOutcome QuickSightClient::UpdateTopic(const UpdateTopicRequest& reque
 
 UpdateTopicPermissionsOutcome QuickSightClient::UpdateTopicPermissions(const UpdateTopicPermissionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateTopicPermissions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateTopicPermissions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -3790,6 +3946,7 @@ UpdateTopicPermissionsOutcome QuickSightClient::UpdateTopicPermissions(const Upd
 
 UpdateTopicRefreshScheduleOutcome QuickSightClient::UpdateTopicRefreshSchedule(const UpdateTopicRefreshScheduleRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateTopicRefreshSchedule);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateTopicRefreshSchedule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {
@@ -3819,6 +3976,7 @@ UpdateTopicRefreshScheduleOutcome QuickSightClient::UpdateTopicRefreshSchedule(c
 
 UpdateUserOutcome QuickSightClient::UpdateUser(const UpdateUserRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateUser);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.UserNameHasBeenSet())
   {
@@ -3848,6 +4006,7 @@ UpdateUserOutcome QuickSightClient::UpdateUser(const UpdateUserRequest& request)
 
 UpdateVPCConnectionOutcome QuickSightClient::UpdateVPCConnection(const UpdateVPCConnectionRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateVPCConnection);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateVPCConnection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AwsAccountIdHasBeenSet())
   {

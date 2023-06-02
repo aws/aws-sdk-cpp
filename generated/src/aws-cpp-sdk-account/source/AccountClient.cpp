@@ -138,6 +138,7 @@ AccountClient::AccountClient(const std::shared_ptr<AWSCredentialsProvider>& cred
     /* End of legacy constructors due deprecation */
 AccountClient::~AccountClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<AccountEndpointProviderBase>& AccountClient::accessEndpointProvider()
@@ -160,6 +161,7 @@ void AccountClient::OverrideEndpoint(const Aws::String& endpoint)
 
 DeleteAlternateContactOutcome AccountClient::DeleteAlternateContact(const DeleteAlternateContactRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteAlternateContact);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAlternateContact, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteAlternateContact, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -169,6 +171,7 @@ DeleteAlternateContactOutcome AccountClient::DeleteAlternateContact(const Delete
 
 DisableRegionOutcome AccountClient::DisableRegion(const DisableRegionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisableRegion);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisableRegion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DisableRegion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -178,6 +181,7 @@ DisableRegionOutcome AccountClient::DisableRegion(const DisableRegionRequest& re
 
 EnableRegionOutcome AccountClient::EnableRegion(const EnableRegionRequest& request) const
 {
+  AWS_OPERATION_GUARD(EnableRegion);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, EnableRegion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, EnableRegion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -187,6 +191,7 @@ EnableRegionOutcome AccountClient::EnableRegion(const EnableRegionRequest& reque
 
 GetAlternateContactOutcome AccountClient::GetAlternateContact(const GetAlternateContactRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetAlternateContact);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAlternateContact, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetAlternateContact, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -196,6 +201,7 @@ GetAlternateContactOutcome AccountClient::GetAlternateContact(const GetAlternate
 
 GetContactInformationOutcome AccountClient::GetContactInformation(const GetContactInformationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetContactInformation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetContactInformation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetContactInformation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -205,6 +211,7 @@ GetContactInformationOutcome AccountClient::GetContactInformation(const GetConta
 
 GetRegionOptStatusOutcome AccountClient::GetRegionOptStatus(const GetRegionOptStatusRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetRegionOptStatus);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetRegionOptStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetRegionOptStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -214,6 +221,7 @@ GetRegionOptStatusOutcome AccountClient::GetRegionOptStatus(const GetRegionOptSt
 
 ListRegionsOutcome AccountClient::ListRegions(const ListRegionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListRegions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRegions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListRegions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -223,6 +231,7 @@ ListRegionsOutcome AccountClient::ListRegions(const ListRegionsRequest& request)
 
 PutAlternateContactOutcome AccountClient::PutAlternateContact(const PutAlternateContactRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutAlternateContact);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutAlternateContact, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutAlternateContact, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -232,6 +241,7 @@ PutAlternateContactOutcome AccountClient::PutAlternateContact(const PutAlternate
 
 PutContactInformationOutcome AccountClient::PutContactInformation(const PutContactInformationRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutContactInformation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutContactInformation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutContactInformation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

@@ -559,6 +559,59 @@ namespace WAFV2
         }
 
         /**
+         * <p>Provides high-level information for the Amazon Web Services Managed Rules
+         * rule groups and Amazon Web Services Marketplace managed rule groups.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DescribeAllManagedProducts">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeAllManagedProductsOutcome DescribeAllManagedProducts(const Model::DescribeAllManagedProductsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeAllManagedProducts that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeAllManagedProductsRequestT = Model::DescribeAllManagedProductsRequest>
+        Model::DescribeAllManagedProductsOutcomeCallable DescribeAllManagedProductsCallable(const DescribeAllManagedProductsRequestT& request) const
+        {
+            return SubmitCallable(&WAFV2Client::DescribeAllManagedProducts, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeAllManagedProducts that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeAllManagedProductsRequestT = Model::DescribeAllManagedProductsRequest>
+        void DescribeAllManagedProductsAsync(const DescribeAllManagedProductsRequestT& request, const DescribeAllManagedProductsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&WAFV2Client::DescribeAllManagedProducts, request, handler, context);
+        }
+
+        /**
+         * <p>Provides high-level information for the managed rule groups owned by a
+         * specific vendor. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DescribeManagedProductsByVendor">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeManagedProductsByVendorOutcome DescribeManagedProductsByVendor(const Model::DescribeManagedProductsByVendorRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeManagedProductsByVendor that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeManagedProductsByVendorRequestT = Model::DescribeManagedProductsByVendorRequest>
+        Model::DescribeManagedProductsByVendorOutcomeCallable DescribeManagedProductsByVendorCallable(const DescribeManagedProductsByVendorRequestT& request) const
+        {
+            return SubmitCallable(&WAFV2Client::DescribeManagedProductsByVendor, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeManagedProductsByVendor that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeManagedProductsByVendorRequestT = Model::DescribeManagedProductsByVendorRequest>
+        void DescribeManagedProductsByVendorAsync(const DescribeManagedProductsByVendorRequestT& request, const DescribeManagedProductsByVendorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&WAFV2Client::DescribeManagedProductsByVendor, request, handler, context);
+        }
+
+        /**
          * <p>Provides high-level information for a managed rule group, including
          * descriptions of the rules. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DescribeManagedRuleGroup">AWS

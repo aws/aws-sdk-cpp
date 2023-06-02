@@ -130,6 +130,7 @@ KinesisVideoMediaClient::KinesisVideoMediaClient(const std::shared_ptr<AWSCreden
     /* End of legacy constructors due deprecation */
 KinesisVideoMediaClient::~KinesisVideoMediaClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<KinesisVideoMediaEndpointProviderBase>& KinesisVideoMediaClient::accessEndpointProvider()
@@ -152,6 +153,7 @@ void KinesisVideoMediaClient::OverrideEndpoint(const Aws::String& endpoint)
 
 GetMediaOutcome KinesisVideoMediaClient::GetMedia(const GetMediaRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetMedia);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMedia, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetMedia, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

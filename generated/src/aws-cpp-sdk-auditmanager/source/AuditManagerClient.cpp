@@ -190,6 +190,7 @@ AuditManagerClient::AuditManagerClient(const std::shared_ptr<AWSCredentialsProvi
     /* End of legacy constructors due deprecation */
 AuditManagerClient::~AuditManagerClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<AuditManagerEndpointProviderBase>& AuditManagerClient::accessEndpointProvider()
@@ -212,6 +213,7 @@ void AuditManagerClient::OverrideEndpoint(const Aws::String& endpoint)
 
 AssociateAssessmentReportEvidenceFolderOutcome AuditManagerClient::AssociateAssessmentReportEvidenceFolder(const AssociateAssessmentReportEvidenceFolderRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociateAssessmentReportEvidenceFolder);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateAssessmentReportEvidenceFolder, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssessmentIdHasBeenSet())
   {
@@ -228,6 +230,7 @@ AssociateAssessmentReportEvidenceFolderOutcome AuditManagerClient::AssociateAsse
 
 BatchAssociateAssessmentReportEvidenceOutcome AuditManagerClient::BatchAssociateAssessmentReportEvidence(const BatchAssociateAssessmentReportEvidenceRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchAssociateAssessmentReportEvidence);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchAssociateAssessmentReportEvidence, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssessmentIdHasBeenSet())
   {
@@ -244,6 +247,7 @@ BatchAssociateAssessmentReportEvidenceOutcome AuditManagerClient::BatchAssociate
 
 BatchCreateDelegationByAssessmentOutcome AuditManagerClient::BatchCreateDelegationByAssessment(const BatchCreateDelegationByAssessmentRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchCreateDelegationByAssessment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchCreateDelegationByAssessment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssessmentIdHasBeenSet())
   {
@@ -260,6 +264,7 @@ BatchCreateDelegationByAssessmentOutcome AuditManagerClient::BatchCreateDelegati
 
 BatchDeleteDelegationByAssessmentOutcome AuditManagerClient::BatchDeleteDelegationByAssessment(const BatchDeleteDelegationByAssessmentRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchDeleteDelegationByAssessment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchDeleteDelegationByAssessment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssessmentIdHasBeenSet())
   {
@@ -276,6 +281,7 @@ BatchDeleteDelegationByAssessmentOutcome AuditManagerClient::BatchDeleteDelegati
 
 BatchDisassociateAssessmentReportEvidenceOutcome AuditManagerClient::BatchDisassociateAssessmentReportEvidence(const BatchDisassociateAssessmentReportEvidenceRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchDisassociateAssessmentReportEvidence);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchDisassociateAssessmentReportEvidence, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssessmentIdHasBeenSet())
   {
@@ -292,6 +298,7 @@ BatchDisassociateAssessmentReportEvidenceOutcome AuditManagerClient::BatchDisass
 
 BatchImportEvidenceToAssessmentControlOutcome AuditManagerClient::BatchImportEvidenceToAssessmentControl(const BatchImportEvidenceToAssessmentControlRequest& request) const
 {
+  AWS_OPERATION_GUARD(BatchImportEvidenceToAssessmentControl);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchImportEvidenceToAssessmentControl, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssessmentIdHasBeenSet())
   {
@@ -322,6 +329,7 @@ BatchImportEvidenceToAssessmentControlOutcome AuditManagerClient::BatchImportEvi
 
 CreateAssessmentOutcome AuditManagerClient::CreateAssessment(const CreateAssessmentRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateAssessment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAssessment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateAssessment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -331,6 +339,7 @@ CreateAssessmentOutcome AuditManagerClient::CreateAssessment(const CreateAssessm
 
 CreateAssessmentFrameworkOutcome AuditManagerClient::CreateAssessmentFramework(const CreateAssessmentFrameworkRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateAssessmentFramework);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAssessmentFramework, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateAssessmentFramework, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -340,6 +349,7 @@ CreateAssessmentFrameworkOutcome AuditManagerClient::CreateAssessmentFramework(c
 
 CreateAssessmentReportOutcome AuditManagerClient::CreateAssessmentReport(const CreateAssessmentReportRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateAssessmentReport);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAssessmentReport, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssessmentIdHasBeenSet())
   {
@@ -356,6 +366,7 @@ CreateAssessmentReportOutcome AuditManagerClient::CreateAssessmentReport(const C
 
 CreateControlOutcome AuditManagerClient::CreateControl(const CreateControlRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateControl);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateControl, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateControl, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -365,6 +376,7 @@ CreateControlOutcome AuditManagerClient::CreateControl(const CreateControlReques
 
 DeleteAssessmentOutcome AuditManagerClient::DeleteAssessment(const DeleteAssessmentRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteAssessment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAssessment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssessmentIdHasBeenSet())
   {
@@ -380,6 +392,7 @@ DeleteAssessmentOutcome AuditManagerClient::DeleteAssessment(const DeleteAssessm
 
 DeleteAssessmentFrameworkOutcome AuditManagerClient::DeleteAssessmentFramework(const DeleteAssessmentFrameworkRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteAssessmentFramework);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAssessmentFramework, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FrameworkIdHasBeenSet())
   {
@@ -395,6 +408,7 @@ DeleteAssessmentFrameworkOutcome AuditManagerClient::DeleteAssessmentFramework(c
 
 DeleteAssessmentFrameworkShareOutcome AuditManagerClient::DeleteAssessmentFrameworkShare(const DeleteAssessmentFrameworkShareRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteAssessmentFrameworkShare);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAssessmentFrameworkShare, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RequestIdHasBeenSet())
   {
@@ -415,6 +429,7 @@ DeleteAssessmentFrameworkShareOutcome AuditManagerClient::DeleteAssessmentFramew
 
 DeleteAssessmentReportOutcome AuditManagerClient::DeleteAssessmentReport(const DeleteAssessmentReportRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteAssessmentReport);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAssessmentReport, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssessmentIdHasBeenSet())
   {
@@ -437,6 +452,7 @@ DeleteAssessmentReportOutcome AuditManagerClient::DeleteAssessmentReport(const D
 
 DeleteControlOutcome AuditManagerClient::DeleteControl(const DeleteControlRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteControl);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteControl, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ControlIdHasBeenSet())
   {
@@ -452,6 +468,7 @@ DeleteControlOutcome AuditManagerClient::DeleteControl(const DeleteControlReques
 
 DeregisterAccountOutcome AuditManagerClient::DeregisterAccount(const DeregisterAccountRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeregisterAccount);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeregisterAccount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeregisterAccount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -461,6 +478,7 @@ DeregisterAccountOutcome AuditManagerClient::DeregisterAccount(const DeregisterA
 
 DeregisterOrganizationAdminAccountOutcome AuditManagerClient::DeregisterOrganizationAdminAccount(const DeregisterOrganizationAdminAccountRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeregisterOrganizationAdminAccount);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeregisterOrganizationAdminAccount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeregisterOrganizationAdminAccount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -470,6 +488,7 @@ DeregisterOrganizationAdminAccountOutcome AuditManagerClient::DeregisterOrganiza
 
 DisassociateAssessmentReportEvidenceFolderOutcome AuditManagerClient::DisassociateAssessmentReportEvidenceFolder(const DisassociateAssessmentReportEvidenceFolderRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociateAssessmentReportEvidenceFolder);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateAssessmentReportEvidenceFolder, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssessmentIdHasBeenSet())
   {
@@ -486,6 +505,7 @@ DisassociateAssessmentReportEvidenceFolderOutcome AuditManagerClient::Disassocia
 
 GetAccountStatusOutcome AuditManagerClient::GetAccountStatus(const GetAccountStatusRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetAccountStatus);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAccountStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetAccountStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -495,6 +515,7 @@ GetAccountStatusOutcome AuditManagerClient::GetAccountStatus(const GetAccountSta
 
 GetAssessmentOutcome AuditManagerClient::GetAssessment(const GetAssessmentRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetAssessment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAssessment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssessmentIdHasBeenSet())
   {
@@ -510,6 +531,7 @@ GetAssessmentOutcome AuditManagerClient::GetAssessment(const GetAssessmentReques
 
 GetAssessmentFrameworkOutcome AuditManagerClient::GetAssessmentFramework(const GetAssessmentFrameworkRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetAssessmentFramework);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAssessmentFramework, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FrameworkIdHasBeenSet())
   {
@@ -525,6 +547,7 @@ GetAssessmentFrameworkOutcome AuditManagerClient::GetAssessmentFramework(const G
 
 GetAssessmentReportUrlOutcome AuditManagerClient::GetAssessmentReportUrl(const GetAssessmentReportUrlRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetAssessmentReportUrl);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAssessmentReportUrl, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssessmentReportIdHasBeenSet())
   {
@@ -548,6 +571,7 @@ GetAssessmentReportUrlOutcome AuditManagerClient::GetAssessmentReportUrl(const G
 
 GetChangeLogsOutcome AuditManagerClient::GetChangeLogs(const GetChangeLogsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetChangeLogs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetChangeLogs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssessmentIdHasBeenSet())
   {
@@ -564,6 +588,7 @@ GetChangeLogsOutcome AuditManagerClient::GetChangeLogs(const GetChangeLogsReques
 
 GetControlOutcome AuditManagerClient::GetControl(const GetControlRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetControl);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetControl, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ControlIdHasBeenSet())
   {
@@ -579,6 +604,7 @@ GetControlOutcome AuditManagerClient::GetControl(const GetControlRequest& reques
 
 GetDelegationsOutcome AuditManagerClient::GetDelegations(const GetDelegationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDelegations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDelegations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetDelegations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -588,6 +614,7 @@ GetDelegationsOutcome AuditManagerClient::GetDelegations(const GetDelegationsReq
 
 GetEvidenceOutcome AuditManagerClient::GetEvidence(const GetEvidenceRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetEvidence);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetEvidence, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssessmentIdHasBeenSet())
   {
@@ -624,6 +651,7 @@ GetEvidenceOutcome AuditManagerClient::GetEvidence(const GetEvidenceRequest& req
 
 GetEvidenceByEvidenceFolderOutcome AuditManagerClient::GetEvidenceByEvidenceFolder(const GetEvidenceByEvidenceFolderRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetEvidenceByEvidenceFolder);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetEvidenceByEvidenceFolder, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssessmentIdHasBeenSet())
   {
@@ -654,6 +682,7 @@ GetEvidenceByEvidenceFolderOutcome AuditManagerClient::GetEvidenceByEvidenceFold
 
 GetEvidenceFolderOutcome AuditManagerClient::GetEvidenceFolder(const GetEvidenceFolderRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetEvidenceFolder);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetEvidenceFolder, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssessmentIdHasBeenSet())
   {
@@ -683,6 +712,7 @@ GetEvidenceFolderOutcome AuditManagerClient::GetEvidenceFolder(const GetEvidence
 
 GetEvidenceFoldersByAssessmentOutcome AuditManagerClient::GetEvidenceFoldersByAssessment(const GetEvidenceFoldersByAssessmentRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetEvidenceFoldersByAssessment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetEvidenceFoldersByAssessment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssessmentIdHasBeenSet())
   {
@@ -699,6 +729,7 @@ GetEvidenceFoldersByAssessmentOutcome AuditManagerClient::GetEvidenceFoldersByAs
 
 GetEvidenceFoldersByAssessmentControlOutcome AuditManagerClient::GetEvidenceFoldersByAssessmentControl(const GetEvidenceFoldersByAssessmentControlRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetEvidenceFoldersByAssessmentControl);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetEvidenceFoldersByAssessmentControl, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssessmentIdHasBeenSet())
   {
@@ -727,6 +758,7 @@ GetEvidenceFoldersByAssessmentControlOutcome AuditManagerClient::GetEvidenceFold
 
 GetInsightsOutcome AuditManagerClient::GetInsights(const GetInsightsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetInsights);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetInsights, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetInsights, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -736,6 +768,7 @@ GetInsightsOutcome AuditManagerClient::GetInsights(const GetInsightsRequest& req
 
 GetInsightsByAssessmentOutcome AuditManagerClient::GetInsightsByAssessment(const GetInsightsByAssessmentRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetInsightsByAssessment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetInsightsByAssessment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssessmentIdHasBeenSet())
   {
@@ -751,6 +784,7 @@ GetInsightsByAssessmentOutcome AuditManagerClient::GetInsightsByAssessment(const
 
 GetOrganizationAdminAccountOutcome AuditManagerClient::GetOrganizationAdminAccount(const GetOrganizationAdminAccountRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetOrganizationAdminAccount);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetOrganizationAdminAccount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetOrganizationAdminAccount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -760,6 +794,7 @@ GetOrganizationAdminAccountOutcome AuditManagerClient::GetOrganizationAdminAccou
 
 GetServicesInScopeOutcome AuditManagerClient::GetServicesInScope(const GetServicesInScopeRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetServicesInScope);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetServicesInScope, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetServicesInScope, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -769,6 +804,7 @@ GetServicesInScopeOutcome AuditManagerClient::GetServicesInScope(const GetServic
 
 GetSettingsOutcome AuditManagerClient::GetSettings(const GetSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AttributeHasBeenSet())
   {
@@ -784,6 +820,7 @@ GetSettingsOutcome AuditManagerClient::GetSettings(const GetSettingsRequest& req
 
 ListAssessmentControlInsightsByControlDomainOutcome AuditManagerClient::ListAssessmentControlInsightsByControlDomain(const ListAssessmentControlInsightsByControlDomainRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAssessmentControlInsightsByControlDomain);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAssessmentControlInsightsByControlDomain, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ControlDomainIdHasBeenSet())
   {
@@ -803,6 +840,7 @@ ListAssessmentControlInsightsByControlDomainOutcome AuditManagerClient::ListAsse
 
 ListAssessmentFrameworkShareRequestsOutcome AuditManagerClient::ListAssessmentFrameworkShareRequests(const ListAssessmentFrameworkShareRequestsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAssessmentFrameworkShareRequests);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAssessmentFrameworkShareRequests, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RequestTypeHasBeenSet())
   {
@@ -817,6 +855,7 @@ ListAssessmentFrameworkShareRequestsOutcome AuditManagerClient::ListAssessmentFr
 
 ListAssessmentFrameworksOutcome AuditManagerClient::ListAssessmentFrameworks(const ListAssessmentFrameworksRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAssessmentFrameworks);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAssessmentFrameworks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FrameworkTypeHasBeenSet())
   {
@@ -831,6 +870,7 @@ ListAssessmentFrameworksOutcome AuditManagerClient::ListAssessmentFrameworks(con
 
 ListAssessmentReportsOutcome AuditManagerClient::ListAssessmentReports(const ListAssessmentReportsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAssessmentReports);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAssessmentReports, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAssessmentReports, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -840,6 +880,7 @@ ListAssessmentReportsOutcome AuditManagerClient::ListAssessmentReports(const Lis
 
 ListAssessmentsOutcome AuditManagerClient::ListAssessments(const ListAssessmentsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAssessments);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAssessments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAssessments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -849,6 +890,7 @@ ListAssessmentsOutcome AuditManagerClient::ListAssessments(const ListAssessments
 
 ListControlDomainInsightsOutcome AuditManagerClient::ListControlDomainInsights(const ListControlDomainInsightsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListControlDomainInsights);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListControlDomainInsights, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListControlDomainInsights, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -858,6 +900,7 @@ ListControlDomainInsightsOutcome AuditManagerClient::ListControlDomainInsights(c
 
 ListControlDomainInsightsByAssessmentOutcome AuditManagerClient::ListControlDomainInsightsByAssessment(const ListControlDomainInsightsByAssessmentRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListControlDomainInsightsByAssessment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListControlDomainInsightsByAssessment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssessmentIdHasBeenSet())
   {
@@ -872,6 +915,7 @@ ListControlDomainInsightsByAssessmentOutcome AuditManagerClient::ListControlDoma
 
 ListControlInsightsByControlDomainOutcome AuditManagerClient::ListControlInsightsByControlDomain(const ListControlInsightsByControlDomainRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListControlInsightsByControlDomain);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListControlInsightsByControlDomain, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ControlDomainIdHasBeenSet())
   {
@@ -886,6 +930,7 @@ ListControlInsightsByControlDomainOutcome AuditManagerClient::ListControlInsight
 
 ListControlsOutcome AuditManagerClient::ListControls(const ListControlsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListControls);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListControls, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ControlTypeHasBeenSet())
   {
@@ -900,6 +945,7 @@ ListControlsOutcome AuditManagerClient::ListControls(const ListControlsRequest& 
 
 ListKeywordsForDataSourceOutcome AuditManagerClient::ListKeywordsForDataSource(const ListKeywordsForDataSourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListKeywordsForDataSource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListKeywordsForDataSource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SourceHasBeenSet())
   {
@@ -914,6 +960,7 @@ ListKeywordsForDataSourceOutcome AuditManagerClient::ListKeywordsForDataSource(c
 
 ListNotificationsOutcome AuditManagerClient::ListNotifications(const ListNotificationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListNotifications);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListNotifications, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListNotifications, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -923,6 +970,7 @@ ListNotificationsOutcome AuditManagerClient::ListNotifications(const ListNotific
 
 ListTagsForResourceOutcome AuditManagerClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -938,6 +986,7 @@ ListTagsForResourceOutcome AuditManagerClient::ListTagsForResource(const ListTag
 
 RegisterAccountOutcome AuditManagerClient::RegisterAccount(const RegisterAccountRequest& request) const
 {
+  AWS_OPERATION_GUARD(RegisterAccount);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RegisterAccount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RegisterAccount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -947,6 +996,7 @@ RegisterAccountOutcome AuditManagerClient::RegisterAccount(const RegisterAccount
 
 RegisterOrganizationAdminAccountOutcome AuditManagerClient::RegisterOrganizationAdminAccount(const RegisterOrganizationAdminAccountRequest& request) const
 {
+  AWS_OPERATION_GUARD(RegisterOrganizationAdminAccount);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RegisterOrganizationAdminAccount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RegisterOrganizationAdminAccount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -956,6 +1006,7 @@ RegisterOrganizationAdminAccountOutcome AuditManagerClient::RegisterOrganization
 
 StartAssessmentFrameworkShareOutcome AuditManagerClient::StartAssessmentFrameworkShare(const StartAssessmentFrameworkShareRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartAssessmentFrameworkShare);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartAssessmentFrameworkShare, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FrameworkIdHasBeenSet())
   {
@@ -972,6 +1023,7 @@ StartAssessmentFrameworkShareOutcome AuditManagerClient::StartAssessmentFramewor
 
 TagResourceOutcome AuditManagerClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -987,6 +1039,7 @@ TagResourceOutcome AuditManagerClient::TagResource(const TagResourceRequest& req
 
 UntagResourceOutcome AuditManagerClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -1007,6 +1060,7 @@ UntagResourceOutcome AuditManagerClient::UntagResource(const UntagResourceReques
 
 UpdateAssessmentOutcome AuditManagerClient::UpdateAssessment(const UpdateAssessmentRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateAssessment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAssessment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssessmentIdHasBeenSet())
   {
@@ -1022,6 +1076,7 @@ UpdateAssessmentOutcome AuditManagerClient::UpdateAssessment(const UpdateAssessm
 
 UpdateAssessmentControlOutcome AuditManagerClient::UpdateAssessmentControl(const UpdateAssessmentControlRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateAssessmentControl);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAssessmentControl, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssessmentIdHasBeenSet())
   {
@@ -1051,6 +1106,7 @@ UpdateAssessmentControlOutcome AuditManagerClient::UpdateAssessmentControl(const
 
 UpdateAssessmentControlSetStatusOutcome AuditManagerClient::UpdateAssessmentControlSetStatus(const UpdateAssessmentControlSetStatusRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateAssessmentControlSetStatus);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAssessmentControlSetStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssessmentIdHasBeenSet())
   {
@@ -1074,6 +1130,7 @@ UpdateAssessmentControlSetStatusOutcome AuditManagerClient::UpdateAssessmentCont
 
 UpdateAssessmentFrameworkOutcome AuditManagerClient::UpdateAssessmentFramework(const UpdateAssessmentFrameworkRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateAssessmentFramework);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAssessmentFramework, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FrameworkIdHasBeenSet())
   {
@@ -1089,6 +1146,7 @@ UpdateAssessmentFrameworkOutcome AuditManagerClient::UpdateAssessmentFramework(c
 
 UpdateAssessmentFrameworkShareOutcome AuditManagerClient::UpdateAssessmentFrameworkShare(const UpdateAssessmentFrameworkShareRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateAssessmentFrameworkShare);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAssessmentFrameworkShare, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RequestIdHasBeenSet())
   {
@@ -1104,6 +1162,7 @@ UpdateAssessmentFrameworkShareOutcome AuditManagerClient::UpdateAssessmentFramew
 
 UpdateAssessmentStatusOutcome AuditManagerClient::UpdateAssessmentStatus(const UpdateAssessmentStatusRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateAssessmentStatus);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAssessmentStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssessmentIdHasBeenSet())
   {
@@ -1120,6 +1179,7 @@ UpdateAssessmentStatusOutcome AuditManagerClient::UpdateAssessmentStatus(const U
 
 UpdateControlOutcome AuditManagerClient::UpdateControl(const UpdateControlRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateControl);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateControl, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ControlIdHasBeenSet())
   {
@@ -1135,6 +1195,7 @@ UpdateControlOutcome AuditManagerClient::UpdateControl(const UpdateControlReques
 
 UpdateSettingsOutcome AuditManagerClient::UpdateSettings(const UpdateSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -1144,6 +1205,7 @@ UpdateSettingsOutcome AuditManagerClient::UpdateSettings(const UpdateSettingsReq
 
 ValidateAssessmentReportIntegrityOutcome AuditManagerClient::ValidateAssessmentReportIntegrity(const ValidateAssessmentReportIntegrityRequest& request) const
 {
+  AWS_OPERATION_GUARD(ValidateAssessmentReportIntegrity);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ValidateAssessmentReportIntegrity, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ValidateAssessmentReportIntegrity, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

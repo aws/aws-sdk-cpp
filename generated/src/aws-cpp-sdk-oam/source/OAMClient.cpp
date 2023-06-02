@@ -144,6 +144,7 @@ OAMClient::OAMClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
     /* End of legacy constructors due deprecation */
 OAMClient::~OAMClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<OAMEndpointProviderBase>& OAMClient::accessEndpointProvider()
@@ -166,6 +167,7 @@ void OAMClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CreateLinkOutcome OAMClient::CreateLink(const CreateLinkRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateLink);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateLink, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateLink, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -175,6 +177,7 @@ CreateLinkOutcome OAMClient::CreateLink(const CreateLinkRequest& request) const
 
 CreateSinkOutcome OAMClient::CreateSink(const CreateSinkRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateSink);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateSink, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateSink, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -184,6 +187,7 @@ CreateSinkOutcome OAMClient::CreateSink(const CreateSinkRequest& request) const
 
 DeleteLinkOutcome OAMClient::DeleteLink(const DeleteLinkRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteLink);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteLink, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteLink, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -193,6 +197,7 @@ DeleteLinkOutcome OAMClient::DeleteLink(const DeleteLinkRequest& request) const
 
 DeleteSinkOutcome OAMClient::DeleteSink(const DeleteSinkRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteSink);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteSink, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteSink, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -202,6 +207,7 @@ DeleteSinkOutcome OAMClient::DeleteSink(const DeleteSinkRequest& request) const
 
 GetLinkOutcome OAMClient::GetLink(const GetLinkRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetLink);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetLink, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetLink, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -211,6 +217,7 @@ GetLinkOutcome OAMClient::GetLink(const GetLinkRequest& request) const
 
 GetSinkOutcome OAMClient::GetSink(const GetSinkRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSink);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSink, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetSink, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -220,6 +227,7 @@ GetSinkOutcome OAMClient::GetSink(const GetSinkRequest& request) const
 
 GetSinkPolicyOutcome OAMClient::GetSinkPolicy(const GetSinkPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSinkPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSinkPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetSinkPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -229,6 +237,7 @@ GetSinkPolicyOutcome OAMClient::GetSinkPolicy(const GetSinkPolicyRequest& reques
 
 ListAttachedLinksOutcome OAMClient::ListAttachedLinks(const ListAttachedLinksRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAttachedLinks);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAttachedLinks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAttachedLinks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -238,6 +247,7 @@ ListAttachedLinksOutcome OAMClient::ListAttachedLinks(const ListAttachedLinksReq
 
 ListLinksOutcome OAMClient::ListLinks(const ListLinksRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListLinks);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListLinks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListLinks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -247,6 +257,7 @@ ListLinksOutcome OAMClient::ListLinks(const ListLinksRequest& request) const
 
 ListSinksOutcome OAMClient::ListSinks(const ListSinksRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListSinks);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSinks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListSinks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -256,6 +267,7 @@ ListSinksOutcome OAMClient::ListSinks(const ListSinksRequest& request) const
 
 ListTagsForResourceOutcome OAMClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -271,6 +283,7 @@ ListTagsForResourceOutcome OAMClient::ListTagsForResource(const ListTagsForResou
 
 PutSinkPolicyOutcome OAMClient::PutSinkPolicy(const PutSinkPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutSinkPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutSinkPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutSinkPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -280,6 +293,7 @@ PutSinkPolicyOutcome OAMClient::PutSinkPolicy(const PutSinkPolicyRequest& reques
 
 TagResourceOutcome OAMClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -295,6 +309,7 @@ TagResourceOutcome OAMClient::TagResource(const TagResourceRequest& request) con
 
 UntagResourceOutcome OAMClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -315,6 +330,7 @@ UntagResourceOutcome OAMClient::UntagResource(const UntagResourceRequest& reques
 
 UpdateLinkOutcome OAMClient::UpdateLink(const UpdateLinkRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateLink);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateLink, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateLink, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

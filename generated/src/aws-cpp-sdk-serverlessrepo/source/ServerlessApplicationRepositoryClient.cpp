@@ -143,6 +143,7 @@ ServerlessApplicationRepositoryClient::ServerlessApplicationRepositoryClient(con
     /* End of legacy constructors due deprecation */
 ServerlessApplicationRepositoryClient::~ServerlessApplicationRepositoryClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<ServerlessApplicationRepositoryEndpointProviderBase>& ServerlessApplicationRepositoryClient::accessEndpointProvider()
@@ -165,6 +166,7 @@ void ServerlessApplicationRepositoryClient::OverrideEndpoint(const Aws::String& 
 
 CreateApplicationOutcome ServerlessApplicationRepositoryClient::CreateApplication(const CreateApplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateApplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -174,6 +176,7 @@ CreateApplicationOutcome ServerlessApplicationRepositoryClient::CreateApplicatio
 
 CreateApplicationVersionOutcome ServerlessApplicationRepositoryClient::CreateApplicationVersion(const CreateApplicationVersionRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateApplicationVersion);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateApplicationVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -196,6 +199,7 @@ CreateApplicationVersionOutcome ServerlessApplicationRepositoryClient::CreateApp
 
 CreateCloudFormationChangeSetOutcome ServerlessApplicationRepositoryClient::CreateCloudFormationChangeSet(const CreateCloudFormationChangeSetRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateCloudFormationChangeSet);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateCloudFormationChangeSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -212,6 +216,7 @@ CreateCloudFormationChangeSetOutcome ServerlessApplicationRepositoryClient::Crea
 
 CreateCloudFormationTemplateOutcome ServerlessApplicationRepositoryClient::CreateCloudFormationTemplate(const CreateCloudFormationTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateCloudFormationTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateCloudFormationTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -228,6 +233,7 @@ CreateCloudFormationTemplateOutcome ServerlessApplicationRepositoryClient::Creat
 
 DeleteApplicationOutcome ServerlessApplicationRepositoryClient::DeleteApplication(const DeleteApplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteApplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -243,6 +249,7 @@ DeleteApplicationOutcome ServerlessApplicationRepositoryClient::DeleteApplicatio
 
 GetApplicationOutcome ServerlessApplicationRepositoryClient::GetApplication(const GetApplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetApplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -258,6 +265,7 @@ GetApplicationOutcome ServerlessApplicationRepositoryClient::GetApplication(cons
 
 GetApplicationPolicyOutcome ServerlessApplicationRepositoryClient::GetApplicationPolicy(const GetApplicationPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetApplicationPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetApplicationPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -274,6 +282,7 @@ GetApplicationPolicyOutcome ServerlessApplicationRepositoryClient::GetApplicatio
 
 GetCloudFormationTemplateOutcome ServerlessApplicationRepositoryClient::GetCloudFormationTemplate(const GetCloudFormationTemplateRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetCloudFormationTemplate);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCloudFormationTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -296,6 +305,7 @@ GetCloudFormationTemplateOutcome ServerlessApplicationRepositoryClient::GetCloud
 
 ListApplicationDependenciesOutcome ServerlessApplicationRepositoryClient::ListApplicationDependencies(const ListApplicationDependenciesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListApplicationDependencies);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListApplicationDependencies, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -312,6 +322,7 @@ ListApplicationDependenciesOutcome ServerlessApplicationRepositoryClient::ListAp
 
 ListApplicationVersionsOutcome ServerlessApplicationRepositoryClient::ListApplicationVersions(const ListApplicationVersionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListApplicationVersions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListApplicationVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -328,6 +339,7 @@ ListApplicationVersionsOutcome ServerlessApplicationRepositoryClient::ListApplic
 
 ListApplicationsOutcome ServerlessApplicationRepositoryClient::ListApplications(const ListApplicationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListApplications);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListApplications, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListApplications, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -337,6 +349,7 @@ ListApplicationsOutcome ServerlessApplicationRepositoryClient::ListApplications(
 
 PutApplicationPolicyOutcome ServerlessApplicationRepositoryClient::PutApplicationPolicy(const PutApplicationPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutApplicationPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutApplicationPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -353,6 +366,7 @@ PutApplicationPolicyOutcome ServerlessApplicationRepositoryClient::PutApplicatio
 
 UnshareApplicationOutcome ServerlessApplicationRepositoryClient::UnshareApplication(const UnshareApplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UnshareApplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UnshareApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -369,6 +383,7 @@ UnshareApplicationOutcome ServerlessApplicationRepositoryClient::UnshareApplicat
 
 UpdateApplicationOutcome ServerlessApplicationRepositoryClient::UpdateApplication(const UpdateApplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateApplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {

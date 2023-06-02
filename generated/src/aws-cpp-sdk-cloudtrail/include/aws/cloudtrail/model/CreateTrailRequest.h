@@ -341,34 +341,34 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the trail is created in the current region or in all
-     * regions. The default is false, which creates a trail only in the region where
+     * <p>Specifies whether the trail is created in the current Region or in all
+     * Regions. The default is false, which creates a trail only in the Region where
      * you are signed in. As a best practice, consider creating trails that log events
-     * in all regions.</p>
+     * in all Regions.</p>
      */
     inline bool GetIsMultiRegionTrail() const{ return m_isMultiRegionTrail; }
 
     /**
-     * <p>Specifies whether the trail is created in the current region or in all
-     * regions. The default is false, which creates a trail only in the region where
+     * <p>Specifies whether the trail is created in the current Region or in all
+     * Regions. The default is false, which creates a trail only in the Region where
      * you are signed in. As a best practice, consider creating trails that log events
-     * in all regions.</p>
+     * in all Regions.</p>
      */
     inline bool IsMultiRegionTrailHasBeenSet() const { return m_isMultiRegionTrailHasBeenSet; }
 
     /**
-     * <p>Specifies whether the trail is created in the current region or in all
-     * regions. The default is false, which creates a trail only in the region where
+     * <p>Specifies whether the trail is created in the current Region or in all
+     * Regions. The default is false, which creates a trail only in the Region where
      * you are signed in. As a best practice, consider creating trails that log events
-     * in all regions.</p>
+     * in all Regions.</p>
      */
     inline void SetIsMultiRegionTrail(bool value) { m_isMultiRegionTrailHasBeenSet = true; m_isMultiRegionTrail = value; }
 
     /**
-     * <p>Specifies whether the trail is created in the current region or in all
-     * regions. The default is false, which creates a trail only in the region where
+     * <p>Specifies whether the trail is created in the current Region or in all
+     * Regions. The default is false, which creates a trail only in the Region where
      * you are signed in. As a best practice, consider creating trails that log events
-     * in all regions.</p>
+     * in all Regions.</p>
      */
     inline CreateTrailRequest& WithIsMultiRegionTrail(bool value) { SetIsMultiRegionTrail(value); return *this;}
 

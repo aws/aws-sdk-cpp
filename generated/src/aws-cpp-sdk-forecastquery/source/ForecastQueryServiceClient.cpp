@@ -131,6 +131,7 @@ ForecastQueryServiceClient::ForecastQueryServiceClient(const std::shared_ptr<AWS
     /* End of legacy constructors due deprecation */
 ForecastQueryServiceClient::~ForecastQueryServiceClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<ForecastQueryServiceEndpointProviderBase>& ForecastQueryServiceClient::accessEndpointProvider()
@@ -153,6 +154,7 @@ void ForecastQueryServiceClient::OverrideEndpoint(const Aws::String& endpoint)
 
 QueryForecastOutcome ForecastQueryServiceClient::QueryForecast(const QueryForecastRequest& request) const
 {
+  AWS_OPERATION_GUARD(QueryForecast);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, QueryForecast, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, QueryForecast, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -161,6 +163,7 @@ QueryForecastOutcome ForecastQueryServiceClient::QueryForecast(const QueryForeca
 
 QueryWhatIfForecastOutcome ForecastQueryServiceClient::QueryWhatIfForecast(const QueryWhatIfForecastRequest& request) const
 {
+  AWS_OPERATION_GUARD(QueryWhatIfForecast);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, QueryWhatIfForecast, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, QueryWhatIfForecast, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

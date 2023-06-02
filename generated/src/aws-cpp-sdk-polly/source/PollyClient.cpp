@@ -138,6 +138,7 @@ PollyClient::PollyClient(const std::shared_ptr<AWSCredentialsProvider>& credenti
     /* End of legacy constructors due deprecation */
 PollyClient::~PollyClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<PollyEndpointProviderBase>& PollyClient::accessEndpointProvider()
@@ -160,6 +161,7 @@ void PollyClient::OverrideEndpoint(const Aws::String& endpoint)
 
 DeleteLexiconOutcome PollyClient::DeleteLexicon(const DeleteLexiconRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteLexicon);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteLexicon, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -175,6 +177,7 @@ DeleteLexiconOutcome PollyClient::DeleteLexicon(const DeleteLexiconRequest& requ
 
 DescribeVoicesOutcome PollyClient::DescribeVoices(const DescribeVoicesRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeVoices);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeVoices, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeVoices, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -184,6 +187,7 @@ DescribeVoicesOutcome PollyClient::DescribeVoices(const DescribeVoicesRequest& r
 
 GetLexiconOutcome PollyClient::GetLexicon(const GetLexiconRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetLexicon);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetLexicon, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -199,6 +203,7 @@ GetLexiconOutcome PollyClient::GetLexicon(const GetLexiconRequest& request) cons
 
 GetSpeechSynthesisTaskOutcome PollyClient::GetSpeechSynthesisTask(const GetSpeechSynthesisTaskRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetSpeechSynthesisTask);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSpeechSynthesisTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TaskIdHasBeenSet())
   {
@@ -214,6 +219,7 @@ GetSpeechSynthesisTaskOutcome PollyClient::GetSpeechSynthesisTask(const GetSpeec
 
 ListLexiconsOutcome PollyClient::ListLexicons(const ListLexiconsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListLexicons);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListLexicons, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListLexicons, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -223,6 +229,7 @@ ListLexiconsOutcome PollyClient::ListLexicons(const ListLexiconsRequest& request
 
 ListSpeechSynthesisTasksOutcome PollyClient::ListSpeechSynthesisTasks(const ListSpeechSynthesisTasksRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListSpeechSynthesisTasks);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSpeechSynthesisTasks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListSpeechSynthesisTasks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -232,6 +239,7 @@ ListSpeechSynthesisTasksOutcome PollyClient::ListSpeechSynthesisTasks(const List
 
 PutLexiconOutcome PollyClient::PutLexicon(const PutLexiconRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutLexicon);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutLexicon, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
@@ -247,6 +255,7 @@ PutLexiconOutcome PollyClient::PutLexicon(const PutLexiconRequest& request) cons
 
 StartSpeechSynthesisTaskOutcome PollyClient::StartSpeechSynthesisTask(const StartSpeechSynthesisTaskRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartSpeechSynthesisTask);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartSpeechSynthesisTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartSpeechSynthesisTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -256,6 +265,7 @@ StartSpeechSynthesisTaskOutcome PollyClient::StartSpeechSynthesisTask(const Star
 
 SynthesizeSpeechOutcome PollyClient::SynthesizeSpeech(const SynthesizeSpeechRequest& request) const
 {
+  AWS_OPERATION_GUARD(SynthesizeSpeech);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SynthesizeSpeech, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SynthesizeSpeech, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

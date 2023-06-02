@@ -135,6 +135,7 @@ ARCZonalShiftClient::ARCZonalShiftClient(const std::shared_ptr<AWSCredentialsPro
     /* End of legacy constructors due deprecation */
 ARCZonalShiftClient::~ARCZonalShiftClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<ARCZonalShiftEndpointProviderBase>& ARCZonalShiftClient::accessEndpointProvider()
@@ -157,6 +158,7 @@ void ARCZonalShiftClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CancelZonalShiftOutcome ARCZonalShiftClient::CancelZonalShift(const CancelZonalShiftRequest& request) const
 {
+  AWS_OPERATION_GUARD(CancelZonalShift);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CancelZonalShift, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ZonalShiftIdHasBeenSet())
   {
@@ -172,6 +174,7 @@ CancelZonalShiftOutcome ARCZonalShiftClient::CancelZonalShift(const CancelZonalS
 
 GetManagedResourceOutcome ARCZonalShiftClient::GetManagedResource(const GetManagedResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetManagedResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetManagedResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceIdentifierHasBeenSet())
   {
@@ -187,6 +190,7 @@ GetManagedResourceOutcome ARCZonalShiftClient::GetManagedResource(const GetManag
 
 ListManagedResourcesOutcome ARCZonalShiftClient::ListManagedResources(const ListManagedResourcesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListManagedResources);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListManagedResources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListManagedResources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -196,6 +200,7 @@ ListManagedResourcesOutcome ARCZonalShiftClient::ListManagedResources(const List
 
 ListZonalShiftsOutcome ARCZonalShiftClient::ListZonalShifts(const ListZonalShiftsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListZonalShifts);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListZonalShifts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListZonalShifts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -205,6 +210,7 @@ ListZonalShiftsOutcome ARCZonalShiftClient::ListZonalShifts(const ListZonalShift
 
 StartZonalShiftOutcome ARCZonalShiftClient::StartZonalShift(const StartZonalShiftRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartZonalShift);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartZonalShift, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartZonalShift, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -214,6 +220,7 @@ StartZonalShiftOutcome ARCZonalShiftClient::StartZonalShift(const StartZonalShif
 
 UpdateZonalShiftOutcome ARCZonalShiftClient::UpdateZonalShift(const UpdateZonalShiftRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateZonalShift);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateZonalShift, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ZonalShiftIdHasBeenSet())
   {

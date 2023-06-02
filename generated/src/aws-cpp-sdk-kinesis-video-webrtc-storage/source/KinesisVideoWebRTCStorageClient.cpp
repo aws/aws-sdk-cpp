@@ -130,6 +130,7 @@ KinesisVideoWebRTCStorageClient::KinesisVideoWebRTCStorageClient(const std::shar
     /* End of legacy constructors due deprecation */
 KinesisVideoWebRTCStorageClient::~KinesisVideoWebRTCStorageClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<KinesisVideoWebRTCStorageEndpointProviderBase>& KinesisVideoWebRTCStorageClient::accessEndpointProvider()
@@ -152,6 +153,7 @@ void KinesisVideoWebRTCStorageClient::OverrideEndpoint(const Aws::String& endpoi
 
 JoinStorageSessionOutcome KinesisVideoWebRTCStorageClient::JoinStorageSession(const JoinStorageSessionRequest& request) const
 {
+  AWS_OPERATION_GUARD(JoinStorageSession);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, JoinStorageSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, JoinStorageSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());

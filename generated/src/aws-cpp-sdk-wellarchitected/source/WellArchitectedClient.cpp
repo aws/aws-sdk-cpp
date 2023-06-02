@@ -172,6 +172,7 @@ WellArchitectedClient::WellArchitectedClient(const std::shared_ptr<AWSCredential
     /* End of legacy constructors due deprecation */
 WellArchitectedClient::~WellArchitectedClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<WellArchitectedEndpointProviderBase>& WellArchitectedClient::accessEndpointProvider()
@@ -194,6 +195,7 @@ void WellArchitectedClient::OverrideEndpoint(const Aws::String& endpoint)
 
 AssociateLensesOutcome WellArchitectedClient::AssociateLenses(const AssociateLensesRequest& request) const
 {
+  AWS_OPERATION_GUARD(AssociateLenses);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateLenses, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkloadIdHasBeenSet())
   {
@@ -210,6 +212,7 @@ AssociateLensesOutcome WellArchitectedClient::AssociateLenses(const AssociateLen
 
 CreateLensShareOutcome WellArchitectedClient::CreateLensShare(const CreateLensShareRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateLensShare);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateLensShare, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LensAliasHasBeenSet())
   {
@@ -226,6 +229,7 @@ CreateLensShareOutcome WellArchitectedClient::CreateLensShare(const CreateLensSh
 
 CreateLensVersionOutcome WellArchitectedClient::CreateLensVersion(const CreateLensVersionRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateLensVersion);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateLensVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LensAliasHasBeenSet())
   {
@@ -242,6 +246,7 @@ CreateLensVersionOutcome WellArchitectedClient::CreateLensVersion(const CreateLe
 
 CreateMilestoneOutcome WellArchitectedClient::CreateMilestone(const CreateMilestoneRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateMilestone);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateMilestone, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkloadIdHasBeenSet())
   {
@@ -258,6 +263,7 @@ CreateMilestoneOutcome WellArchitectedClient::CreateMilestone(const CreateMilest
 
 CreateWorkloadOutcome WellArchitectedClient::CreateWorkload(const CreateWorkloadRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateWorkload);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateWorkload, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateWorkload, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -267,6 +273,7 @@ CreateWorkloadOutcome WellArchitectedClient::CreateWorkload(const CreateWorkload
 
 CreateWorkloadShareOutcome WellArchitectedClient::CreateWorkloadShare(const CreateWorkloadShareRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateWorkloadShare);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateWorkloadShare, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkloadIdHasBeenSet())
   {
@@ -283,6 +290,7 @@ CreateWorkloadShareOutcome WellArchitectedClient::CreateWorkloadShare(const Crea
 
 DeleteLensOutcome WellArchitectedClient::DeleteLens(const DeleteLensRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteLens);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteLens, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LensAliasHasBeenSet())
   {
@@ -308,6 +316,7 @@ DeleteLensOutcome WellArchitectedClient::DeleteLens(const DeleteLensRequest& req
 
 DeleteLensShareOutcome WellArchitectedClient::DeleteLensShare(const DeleteLensShareRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteLensShare);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteLensShare, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ShareIdHasBeenSet())
   {
@@ -335,6 +344,7 @@ DeleteLensShareOutcome WellArchitectedClient::DeleteLensShare(const DeleteLensSh
 
 DeleteWorkloadOutcome WellArchitectedClient::DeleteWorkload(const DeleteWorkloadRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteWorkload);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteWorkload, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkloadIdHasBeenSet())
   {
@@ -355,6 +365,7 @@ DeleteWorkloadOutcome WellArchitectedClient::DeleteWorkload(const DeleteWorkload
 
 DeleteWorkloadShareOutcome WellArchitectedClient::DeleteWorkloadShare(const DeleteWorkloadShareRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteWorkloadShare);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteWorkloadShare, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ShareIdHasBeenSet())
   {
@@ -382,6 +393,7 @@ DeleteWorkloadShareOutcome WellArchitectedClient::DeleteWorkloadShare(const Dele
 
 DisassociateLensesOutcome WellArchitectedClient::DisassociateLenses(const DisassociateLensesRequest& request) const
 {
+  AWS_OPERATION_GUARD(DisassociateLenses);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateLenses, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkloadIdHasBeenSet())
   {
@@ -398,6 +410,7 @@ DisassociateLensesOutcome WellArchitectedClient::DisassociateLenses(const Disass
 
 ExportLensOutcome WellArchitectedClient::ExportLens(const ExportLensRequest& request) const
 {
+  AWS_OPERATION_GUARD(ExportLens);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ExportLens, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LensAliasHasBeenSet())
   {
@@ -414,6 +427,7 @@ ExportLensOutcome WellArchitectedClient::ExportLens(const ExportLensRequest& req
 
 GetAnswerOutcome WellArchitectedClient::GetAnswer(const GetAnswerRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetAnswer);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAnswer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkloadIdHasBeenSet())
   {
@@ -443,6 +457,7 @@ GetAnswerOutcome WellArchitectedClient::GetAnswer(const GetAnswerRequest& reques
 
 GetConsolidatedReportOutcome WellArchitectedClient::GetConsolidatedReport(const GetConsolidatedReportRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetConsolidatedReport);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetConsolidatedReport, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FormatHasBeenSet())
   {
@@ -457,6 +472,7 @@ GetConsolidatedReportOutcome WellArchitectedClient::GetConsolidatedReport(const 
 
 GetLensOutcome WellArchitectedClient::GetLens(const GetLensRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetLens);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetLens, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LensAliasHasBeenSet())
   {
@@ -472,6 +488,7 @@ GetLensOutcome WellArchitectedClient::GetLens(const GetLensRequest& request) con
 
 GetLensReviewOutcome WellArchitectedClient::GetLensReview(const GetLensReviewRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetLensReview);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetLensReview, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkloadIdHasBeenSet())
   {
@@ -494,6 +511,7 @@ GetLensReviewOutcome WellArchitectedClient::GetLensReview(const GetLensReviewReq
 
 GetLensReviewReportOutcome WellArchitectedClient::GetLensReviewReport(const GetLensReviewReportRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetLensReviewReport);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetLensReviewReport, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkloadIdHasBeenSet())
   {
@@ -517,6 +535,7 @@ GetLensReviewReportOutcome WellArchitectedClient::GetLensReviewReport(const GetL
 
 GetLensVersionDifferenceOutcome WellArchitectedClient::GetLensVersionDifference(const GetLensVersionDifferenceRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetLensVersionDifference);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetLensVersionDifference, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LensAliasHasBeenSet())
   {
@@ -533,6 +552,7 @@ GetLensVersionDifferenceOutcome WellArchitectedClient::GetLensVersionDifference(
 
 GetMilestoneOutcome WellArchitectedClient::GetMilestone(const GetMilestoneRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetMilestone);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMilestone, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkloadIdHasBeenSet())
   {
@@ -555,6 +575,7 @@ GetMilestoneOutcome WellArchitectedClient::GetMilestone(const GetMilestoneReques
 
 GetWorkloadOutcome WellArchitectedClient::GetWorkload(const GetWorkloadRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetWorkload);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetWorkload, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkloadIdHasBeenSet())
   {
@@ -570,6 +591,7 @@ GetWorkloadOutcome WellArchitectedClient::GetWorkload(const GetWorkloadRequest& 
 
 ImportLensOutcome WellArchitectedClient::ImportLens(const ImportLensRequest& request) const
 {
+  AWS_OPERATION_GUARD(ImportLens);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ImportLens, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ImportLens, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -579,6 +601,7 @@ ImportLensOutcome WellArchitectedClient::ImportLens(const ImportLensRequest& req
 
 ListAnswersOutcome WellArchitectedClient::ListAnswers(const ListAnswersRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAnswers);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAnswers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkloadIdHasBeenSet())
   {
@@ -602,6 +625,7 @@ ListAnswersOutcome WellArchitectedClient::ListAnswers(const ListAnswersRequest& 
 
 ListCheckDetailsOutcome WellArchitectedClient::ListCheckDetails(const ListCheckDetailsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListCheckDetails);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListCheckDetails, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkloadIdHasBeenSet())
   {
@@ -618,6 +642,7 @@ ListCheckDetailsOutcome WellArchitectedClient::ListCheckDetails(const ListCheckD
 
 ListCheckSummariesOutcome WellArchitectedClient::ListCheckSummaries(const ListCheckSummariesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListCheckSummaries);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListCheckSummaries, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkloadIdHasBeenSet())
   {
@@ -634,6 +659,7 @@ ListCheckSummariesOutcome WellArchitectedClient::ListCheckSummaries(const ListCh
 
 ListLensReviewImprovementsOutcome WellArchitectedClient::ListLensReviewImprovements(const ListLensReviewImprovementsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListLensReviewImprovements);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListLensReviewImprovements, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkloadIdHasBeenSet())
   {
@@ -657,6 +683,7 @@ ListLensReviewImprovementsOutcome WellArchitectedClient::ListLensReviewImproveme
 
 ListLensReviewsOutcome WellArchitectedClient::ListLensReviews(const ListLensReviewsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListLensReviews);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListLensReviews, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkloadIdHasBeenSet())
   {
@@ -673,6 +700,7 @@ ListLensReviewsOutcome WellArchitectedClient::ListLensReviews(const ListLensRevi
 
 ListLensSharesOutcome WellArchitectedClient::ListLensShares(const ListLensSharesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListLensShares);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListLensShares, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LensAliasHasBeenSet())
   {
@@ -689,6 +717,7 @@ ListLensSharesOutcome WellArchitectedClient::ListLensShares(const ListLensShares
 
 ListLensesOutcome WellArchitectedClient::ListLenses(const ListLensesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListLenses);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListLenses, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListLenses, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -698,6 +727,7 @@ ListLensesOutcome WellArchitectedClient::ListLenses(const ListLensesRequest& req
 
 ListMilestonesOutcome WellArchitectedClient::ListMilestones(const ListMilestonesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListMilestones);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListMilestones, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkloadIdHasBeenSet())
   {
@@ -714,6 +744,7 @@ ListMilestonesOutcome WellArchitectedClient::ListMilestones(const ListMilestones
 
 ListNotificationsOutcome WellArchitectedClient::ListNotifications(const ListNotificationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListNotifications);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListNotifications, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListNotifications, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -723,6 +754,7 @@ ListNotificationsOutcome WellArchitectedClient::ListNotifications(const ListNoti
 
 ListShareInvitationsOutcome WellArchitectedClient::ListShareInvitations(const ListShareInvitationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListShareInvitations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListShareInvitations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListShareInvitations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -732,6 +764,7 @@ ListShareInvitationsOutcome WellArchitectedClient::ListShareInvitations(const Li
 
 ListTagsForResourceOutcome WellArchitectedClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkloadArnHasBeenSet())
   {
@@ -747,6 +780,7 @@ ListTagsForResourceOutcome WellArchitectedClient::ListTagsForResource(const List
 
 ListWorkloadSharesOutcome WellArchitectedClient::ListWorkloadShares(const ListWorkloadSharesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListWorkloadShares);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListWorkloadShares, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkloadIdHasBeenSet())
   {
@@ -763,6 +797,7 @@ ListWorkloadSharesOutcome WellArchitectedClient::ListWorkloadShares(const ListWo
 
 ListWorkloadsOutcome WellArchitectedClient::ListWorkloads(const ListWorkloadsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListWorkloads);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListWorkloads, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListWorkloads, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -772,6 +807,7 @@ ListWorkloadsOutcome WellArchitectedClient::ListWorkloads(const ListWorkloadsReq
 
 TagResourceOutcome WellArchitectedClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkloadArnHasBeenSet())
   {
@@ -787,6 +823,7 @@ TagResourceOutcome WellArchitectedClient::TagResource(const TagResourceRequest& 
 
 UntagResourceOutcome WellArchitectedClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkloadArnHasBeenSet())
   {
@@ -807,6 +844,7 @@ UntagResourceOutcome WellArchitectedClient::UntagResource(const UntagResourceReq
 
 UpdateAnswerOutcome WellArchitectedClient::UpdateAnswer(const UpdateAnswerRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateAnswer);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAnswer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkloadIdHasBeenSet())
   {
@@ -836,6 +874,7 @@ UpdateAnswerOutcome WellArchitectedClient::UpdateAnswer(const UpdateAnswerReques
 
 UpdateGlobalSettingsOutcome WellArchitectedClient::UpdateGlobalSettings(const UpdateGlobalSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateGlobalSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateGlobalSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateGlobalSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -845,6 +884,7 @@ UpdateGlobalSettingsOutcome WellArchitectedClient::UpdateGlobalSettings(const Up
 
 UpdateLensReviewOutcome WellArchitectedClient::UpdateLensReview(const UpdateLensReviewRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateLensReview);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateLensReview, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkloadIdHasBeenSet())
   {
@@ -867,6 +907,7 @@ UpdateLensReviewOutcome WellArchitectedClient::UpdateLensReview(const UpdateLens
 
 UpdateShareInvitationOutcome WellArchitectedClient::UpdateShareInvitation(const UpdateShareInvitationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateShareInvitation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateShareInvitation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ShareInvitationIdHasBeenSet())
   {
@@ -882,6 +923,7 @@ UpdateShareInvitationOutcome WellArchitectedClient::UpdateShareInvitation(const 
 
 UpdateWorkloadOutcome WellArchitectedClient::UpdateWorkload(const UpdateWorkloadRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateWorkload);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateWorkload, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkloadIdHasBeenSet())
   {
@@ -897,6 +939,7 @@ UpdateWorkloadOutcome WellArchitectedClient::UpdateWorkload(const UpdateWorkload
 
 UpdateWorkloadShareOutcome WellArchitectedClient::UpdateWorkloadShare(const UpdateWorkloadShareRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateWorkloadShare);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateWorkloadShare, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ShareIdHasBeenSet())
   {
@@ -919,6 +962,7 @@ UpdateWorkloadShareOutcome WellArchitectedClient::UpdateWorkloadShare(const Upda
 
 UpgradeLensReviewOutcome WellArchitectedClient::UpgradeLensReview(const UpgradeLensReviewRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpgradeLensReview);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpgradeLensReview, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkloadIdHasBeenSet())
   {

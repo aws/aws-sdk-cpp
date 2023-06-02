@@ -151,6 +151,7 @@ ConnectCampaignsClient::ConnectCampaignsClient(const std::shared_ptr<AWSCredenti
     /* End of legacy constructors due deprecation */
 ConnectCampaignsClient::~ConnectCampaignsClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<ConnectCampaignsEndpointProviderBase>& ConnectCampaignsClient::accessEndpointProvider()
@@ -173,6 +174,7 @@ void ConnectCampaignsClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CreateCampaignOutcome ConnectCampaignsClient::CreateCampaign(const CreateCampaignRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateCampaign);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateCampaign, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateCampaign, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -182,6 +184,7 @@ CreateCampaignOutcome ConnectCampaignsClient::CreateCampaign(const CreateCampaig
 
 DeleteCampaignOutcome ConnectCampaignsClient::DeleteCampaign(const DeleteCampaignRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteCampaign);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteCampaign, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -197,6 +200,7 @@ DeleteCampaignOutcome ConnectCampaignsClient::DeleteCampaign(const DeleteCampaig
 
 DeleteConnectInstanceConfigOutcome ConnectCampaignsClient::DeleteConnectInstanceConfig(const DeleteConnectInstanceConfigRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteConnectInstanceConfig);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteConnectInstanceConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConnectInstanceIdHasBeenSet())
   {
@@ -213,6 +217,7 @@ DeleteConnectInstanceConfigOutcome ConnectCampaignsClient::DeleteConnectInstance
 
 DeleteInstanceOnboardingJobOutcome ConnectCampaignsClient::DeleteInstanceOnboardingJob(const DeleteInstanceOnboardingJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteInstanceOnboardingJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteInstanceOnboardingJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConnectInstanceIdHasBeenSet())
   {
@@ -229,6 +234,7 @@ DeleteInstanceOnboardingJobOutcome ConnectCampaignsClient::DeleteInstanceOnboard
 
 DescribeCampaignOutcome ConnectCampaignsClient::DescribeCampaign(const DescribeCampaignRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeCampaign);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeCampaign, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -244,6 +250,7 @@ DescribeCampaignOutcome ConnectCampaignsClient::DescribeCampaign(const DescribeC
 
 GetCampaignStateOutcome ConnectCampaignsClient::GetCampaignState(const GetCampaignStateRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetCampaignState);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCampaignState, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -260,6 +267,7 @@ GetCampaignStateOutcome ConnectCampaignsClient::GetCampaignState(const GetCampai
 
 GetCampaignStateBatchOutcome ConnectCampaignsClient::GetCampaignStateBatch(const GetCampaignStateBatchRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetCampaignStateBatch);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCampaignStateBatch, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetCampaignStateBatch, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -269,6 +277,7 @@ GetCampaignStateBatchOutcome ConnectCampaignsClient::GetCampaignStateBatch(const
 
 GetConnectInstanceConfigOutcome ConnectCampaignsClient::GetConnectInstanceConfig(const GetConnectInstanceConfigRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetConnectInstanceConfig);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetConnectInstanceConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConnectInstanceIdHasBeenSet())
   {
@@ -285,6 +294,7 @@ GetConnectInstanceConfigOutcome ConnectCampaignsClient::GetConnectInstanceConfig
 
 GetInstanceOnboardingJobStatusOutcome ConnectCampaignsClient::GetInstanceOnboardingJobStatus(const GetInstanceOnboardingJobStatusRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetInstanceOnboardingJobStatus);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetInstanceOnboardingJobStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConnectInstanceIdHasBeenSet())
   {
@@ -301,6 +311,7 @@ GetInstanceOnboardingJobStatusOutcome ConnectCampaignsClient::GetInstanceOnboard
 
 ListCampaignsOutcome ConnectCampaignsClient::ListCampaigns(const ListCampaignsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListCampaigns);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListCampaigns, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListCampaigns, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -310,6 +321,7 @@ ListCampaignsOutcome ConnectCampaignsClient::ListCampaigns(const ListCampaignsRe
 
 ListTagsForResourceOutcome ConnectCampaignsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ArnHasBeenSet())
   {
@@ -325,6 +337,7 @@ ListTagsForResourceOutcome ConnectCampaignsClient::ListTagsForResource(const Lis
 
 PauseCampaignOutcome ConnectCampaignsClient::PauseCampaign(const PauseCampaignRequest& request) const
 {
+  AWS_OPERATION_GUARD(PauseCampaign);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PauseCampaign, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -341,6 +354,7 @@ PauseCampaignOutcome ConnectCampaignsClient::PauseCampaign(const PauseCampaignRe
 
 PutDialRequestBatchOutcome ConnectCampaignsClient::PutDialRequestBatch(const PutDialRequestBatchRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutDialRequestBatch);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutDialRequestBatch, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -357,6 +371,7 @@ PutDialRequestBatchOutcome ConnectCampaignsClient::PutDialRequestBatch(const Put
 
 ResumeCampaignOutcome ConnectCampaignsClient::ResumeCampaign(const ResumeCampaignRequest& request) const
 {
+  AWS_OPERATION_GUARD(ResumeCampaign);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ResumeCampaign, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -373,6 +388,7 @@ ResumeCampaignOutcome ConnectCampaignsClient::ResumeCampaign(const ResumeCampaig
 
 StartCampaignOutcome ConnectCampaignsClient::StartCampaign(const StartCampaignRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartCampaign);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartCampaign, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -389,6 +405,7 @@ StartCampaignOutcome ConnectCampaignsClient::StartCampaign(const StartCampaignRe
 
 StartInstanceOnboardingJobOutcome ConnectCampaignsClient::StartInstanceOnboardingJob(const StartInstanceOnboardingJobRequest& request) const
 {
+  AWS_OPERATION_GUARD(StartInstanceOnboardingJob);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartInstanceOnboardingJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConnectInstanceIdHasBeenSet())
   {
@@ -405,6 +422,7 @@ StartInstanceOnboardingJobOutcome ConnectCampaignsClient::StartInstanceOnboardin
 
 StopCampaignOutcome ConnectCampaignsClient::StopCampaign(const StopCampaignRequest& request) const
 {
+  AWS_OPERATION_GUARD(StopCampaign);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopCampaign, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -421,6 +439,7 @@ StopCampaignOutcome ConnectCampaignsClient::StopCampaign(const StopCampaignReque
 
 TagResourceOutcome ConnectCampaignsClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ArnHasBeenSet())
   {
@@ -436,6 +455,7 @@ TagResourceOutcome ConnectCampaignsClient::TagResource(const TagResourceRequest&
 
 UntagResourceOutcome ConnectCampaignsClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ArnHasBeenSet())
   {
@@ -456,6 +476,7 @@ UntagResourceOutcome ConnectCampaignsClient::UntagResource(const UntagResourceRe
 
 UpdateCampaignDialerConfigOutcome ConnectCampaignsClient::UpdateCampaignDialerConfig(const UpdateCampaignDialerConfigRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateCampaignDialerConfig);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateCampaignDialerConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -472,6 +493,7 @@ UpdateCampaignDialerConfigOutcome ConnectCampaignsClient::UpdateCampaignDialerCo
 
 UpdateCampaignNameOutcome ConnectCampaignsClient::UpdateCampaignName(const UpdateCampaignNameRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateCampaignName);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateCampaignName, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
@@ -488,6 +510,7 @@ UpdateCampaignNameOutcome ConnectCampaignsClient::UpdateCampaignName(const Updat
 
 UpdateCampaignOutboundCallConfigOutcome ConnectCampaignsClient::UpdateCampaignOutboundCallConfig(const UpdateCampaignOutboundCallConfigRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateCampaignOutboundCallConfig);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateCampaignOutboundCallConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {

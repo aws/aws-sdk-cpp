@@ -188,8 +188,11 @@ namespace Athena
         }
 
         /**
-         * <p>Cancels the capacity reservation with the specified name.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Cancels the capacity reservation with the specified name. Cancelled
+         * reservations remain in your account and will be deleted 45 days after
+         * cancellation. During the 45 days, you cannot re-purpose or reuse a reservation
+         * that has been cancelled, but you can refer to its tags and view it for
+         * historical reference. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CancelCapacityReservation">AWS
          * API Reference</a></p>
          */
@@ -404,6 +407,36 @@ namespace Athena
         void CreateWorkGroupAsync(const CreateWorkGroupRequestT& request, const CreateWorkGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&AthenaClient::CreateWorkGroup, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a cancelled capacity reservation. A reservation must be cancelled
+         * before it can be deleted. A deleted reservation is immediately removed from your
+         * account and can no longer be referenced, including by its ARN. A deleted
+         * reservation cannot be called by <code>GetCapacityReservation</code>, and deleted
+         * reservations do not appear in the output of
+         * <code>ListCapacityReservations</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeleteCapacityReservation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteCapacityReservationOutcome DeleteCapacityReservation(const Model::DeleteCapacityReservationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteCapacityReservation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteCapacityReservationRequestT = Model::DeleteCapacityReservationRequest>
+        Model::DeleteCapacityReservationOutcomeCallable DeleteCapacityReservationCallable(const DeleteCapacityReservationRequestT& request) const
+        {
+            return SubmitCallable(&AthenaClient::DeleteCapacityReservation, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteCapacityReservation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteCapacityReservationRequestT = Model::DeleteCapacityReservationRequest>
+        void DeleteCapacityReservationAsync(const DeleteCapacityReservationRequestT& request, const DeleteCapacityReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AthenaClient::DeleteCapacityReservation, request, handler, context);
         }
 
         /**

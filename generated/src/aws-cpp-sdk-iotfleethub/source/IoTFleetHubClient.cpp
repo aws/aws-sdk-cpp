@@ -137,6 +137,7 @@ IoTFleetHubClient::IoTFleetHubClient(const std::shared_ptr<AWSCredentialsProvide
     /* End of legacy constructors due deprecation */
 IoTFleetHubClient::~IoTFleetHubClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<IoTFleetHubEndpointProviderBase>& IoTFleetHubClient::accessEndpointProvider()
@@ -159,6 +160,7 @@ void IoTFleetHubClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CreateApplicationOutcome IoTFleetHubClient::CreateApplication(const CreateApplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateApplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -168,6 +170,7 @@ CreateApplicationOutcome IoTFleetHubClient::CreateApplication(const CreateApplic
 
 DeleteApplicationOutcome IoTFleetHubClient::DeleteApplication(const DeleteApplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteApplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -183,6 +186,7 @@ DeleteApplicationOutcome IoTFleetHubClient::DeleteApplication(const DeleteApplic
 
 DescribeApplicationOutcome IoTFleetHubClient::DescribeApplication(const DescribeApplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeApplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {
@@ -198,6 +202,7 @@ DescribeApplicationOutcome IoTFleetHubClient::DescribeApplication(const Describe
 
 ListApplicationsOutcome IoTFleetHubClient::ListApplications(const ListApplicationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListApplications);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListApplications, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListApplications, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -207,6 +212,7 @@ ListApplicationsOutcome IoTFleetHubClient::ListApplications(const ListApplicatio
 
 ListTagsForResourceOutcome IoTFleetHubClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTagsForResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -222,6 +228,7 @@ ListTagsForResourceOutcome IoTFleetHubClient::ListTagsForResource(const ListTags
 
 TagResourceOutcome IoTFleetHubClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -237,6 +244,7 @@ TagResourceOutcome IoTFleetHubClient::TagResource(const TagResourceRequest& requ
 
 UntagResourceOutcome IoTFleetHubClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
@@ -257,6 +265,7 @@ UntagResourceOutcome IoTFleetHubClient::UntagResource(const UntagResourceRequest
 
 UpdateApplicationOutcome IoTFleetHubClient::UpdateApplication(const UpdateApplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateApplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateApplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApplicationIdHasBeenSet())
   {

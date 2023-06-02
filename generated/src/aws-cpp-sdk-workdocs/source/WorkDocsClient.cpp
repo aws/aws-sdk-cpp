@@ -173,6 +173,7 @@ WorkDocsClient::WorkDocsClient(const std::shared_ptr<AWSCredentialsProvider>& cr
     /* End of legacy constructors due deprecation */
 WorkDocsClient::~WorkDocsClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<WorkDocsEndpointProviderBase>& WorkDocsClient::accessEndpointProvider()
@@ -195,6 +196,7 @@ void WorkDocsClient::OverrideEndpoint(const Aws::String& endpoint)
 
 AbortDocumentVersionUploadOutcome WorkDocsClient::AbortDocumentVersionUpload(const AbortDocumentVersionUploadRequest& request) const
 {
+  AWS_OPERATION_GUARD(AbortDocumentVersionUpload);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AbortDocumentVersionUpload, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DocumentIdHasBeenSet())
   {
@@ -217,6 +219,7 @@ AbortDocumentVersionUploadOutcome WorkDocsClient::AbortDocumentVersionUpload(con
 
 ActivateUserOutcome WorkDocsClient::ActivateUser(const ActivateUserRequest& request) const
 {
+  AWS_OPERATION_GUARD(ActivateUser);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ActivateUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.UserIdHasBeenSet())
   {
@@ -233,6 +236,7 @@ ActivateUserOutcome WorkDocsClient::ActivateUser(const ActivateUserRequest& requ
 
 AddResourcePermissionsOutcome WorkDocsClient::AddResourcePermissions(const AddResourcePermissionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(AddResourcePermissions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AddResourcePermissions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceIdHasBeenSet())
   {
@@ -249,6 +253,7 @@ AddResourcePermissionsOutcome WorkDocsClient::AddResourcePermissions(const AddRe
 
 CreateCommentOutcome WorkDocsClient::CreateComment(const CreateCommentRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateComment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateComment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DocumentIdHasBeenSet())
   {
@@ -272,6 +277,7 @@ CreateCommentOutcome WorkDocsClient::CreateComment(const CreateCommentRequest& r
 
 CreateCustomMetadataOutcome WorkDocsClient::CreateCustomMetadata(const CreateCustomMetadataRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateCustomMetadata);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateCustomMetadata, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceIdHasBeenSet())
   {
@@ -288,6 +294,7 @@ CreateCustomMetadataOutcome WorkDocsClient::CreateCustomMetadata(const CreateCus
 
 CreateFolderOutcome WorkDocsClient::CreateFolder(const CreateFolderRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateFolder);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateFolder, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateFolder, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -297,6 +304,7 @@ CreateFolderOutcome WorkDocsClient::CreateFolder(const CreateFolderRequest& requ
 
 CreateLabelsOutcome WorkDocsClient::CreateLabels(const CreateLabelsRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateLabels);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateLabels, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceIdHasBeenSet())
   {
@@ -313,6 +321,7 @@ CreateLabelsOutcome WorkDocsClient::CreateLabels(const CreateLabelsRequest& requ
 
 CreateNotificationSubscriptionOutcome WorkDocsClient::CreateNotificationSubscription(const CreateNotificationSubscriptionRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateNotificationSubscription);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateNotificationSubscription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.OrganizationIdHasBeenSet())
   {
@@ -329,6 +338,7 @@ CreateNotificationSubscriptionOutcome WorkDocsClient::CreateNotificationSubscrip
 
 CreateUserOutcome WorkDocsClient::CreateUser(const CreateUserRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateUser);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -338,6 +348,7 @@ CreateUserOutcome WorkDocsClient::CreateUser(const CreateUserRequest& request) c
 
 DeactivateUserOutcome WorkDocsClient::DeactivateUser(const DeactivateUserRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeactivateUser);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeactivateUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.UserIdHasBeenSet())
   {
@@ -354,6 +365,7 @@ DeactivateUserOutcome WorkDocsClient::DeactivateUser(const DeactivateUserRequest
 
 DeleteCommentOutcome WorkDocsClient::DeleteComment(const DeleteCommentRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteComment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteComment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DocumentIdHasBeenSet())
   {
@@ -383,6 +395,7 @@ DeleteCommentOutcome WorkDocsClient::DeleteComment(const DeleteCommentRequest& r
 
 DeleteCustomMetadataOutcome WorkDocsClient::DeleteCustomMetadata(const DeleteCustomMetadataRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteCustomMetadata);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteCustomMetadata, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceIdHasBeenSet())
   {
@@ -399,6 +412,7 @@ DeleteCustomMetadataOutcome WorkDocsClient::DeleteCustomMetadata(const DeleteCus
 
 DeleteDocumentOutcome WorkDocsClient::DeleteDocument(const DeleteDocumentRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteDocument);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDocument, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DocumentIdHasBeenSet())
   {
@@ -414,6 +428,7 @@ DeleteDocumentOutcome WorkDocsClient::DeleteDocument(const DeleteDocumentRequest
 
 DeleteDocumentVersionOutcome WorkDocsClient::DeleteDocumentVersion(const DeleteDocumentVersionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteDocumentVersion);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDocumentVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DocumentIdHasBeenSet())
   {
@@ -441,6 +456,7 @@ DeleteDocumentVersionOutcome WorkDocsClient::DeleteDocumentVersion(const DeleteD
 
 DeleteFolderOutcome WorkDocsClient::DeleteFolder(const DeleteFolderRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteFolder);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteFolder, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FolderIdHasBeenSet())
   {
@@ -456,6 +472,7 @@ DeleteFolderOutcome WorkDocsClient::DeleteFolder(const DeleteFolderRequest& requ
 
 DeleteFolderContentsOutcome WorkDocsClient::DeleteFolderContents(const DeleteFolderContentsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteFolderContents);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteFolderContents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FolderIdHasBeenSet())
   {
@@ -472,6 +489,7 @@ DeleteFolderContentsOutcome WorkDocsClient::DeleteFolderContents(const DeleteFol
 
 DeleteLabelsOutcome WorkDocsClient::DeleteLabels(const DeleteLabelsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteLabels);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteLabels, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceIdHasBeenSet())
   {
@@ -488,6 +506,7 @@ DeleteLabelsOutcome WorkDocsClient::DeleteLabels(const DeleteLabelsRequest& requ
 
 DeleteNotificationSubscriptionOutcome WorkDocsClient::DeleteNotificationSubscription(const DeleteNotificationSubscriptionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteNotificationSubscription);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteNotificationSubscription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SubscriptionIdHasBeenSet())
   {
@@ -510,6 +529,7 @@ DeleteNotificationSubscriptionOutcome WorkDocsClient::DeleteNotificationSubscrip
 
 DeleteUserOutcome WorkDocsClient::DeleteUser(const DeleteUserRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteUser);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.UserIdHasBeenSet())
   {
@@ -525,6 +545,7 @@ DeleteUserOutcome WorkDocsClient::DeleteUser(const DeleteUserRequest& request) c
 
 DescribeActivitiesOutcome WorkDocsClient::DescribeActivities(const DescribeActivitiesRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeActivities);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeActivities, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeActivities, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -534,6 +555,7 @@ DescribeActivitiesOutcome WorkDocsClient::DescribeActivities(const DescribeActiv
 
 DescribeCommentsOutcome WorkDocsClient::DescribeComments(const DescribeCommentsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeComments);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeComments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DocumentIdHasBeenSet())
   {
@@ -557,6 +579,7 @@ DescribeCommentsOutcome WorkDocsClient::DescribeComments(const DescribeCommentsR
 
 DescribeDocumentVersionsOutcome WorkDocsClient::DescribeDocumentVersions(const DescribeDocumentVersionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeDocumentVersions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeDocumentVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DocumentIdHasBeenSet())
   {
@@ -573,6 +596,7 @@ DescribeDocumentVersionsOutcome WorkDocsClient::DescribeDocumentVersions(const D
 
 DescribeFolderContentsOutcome WorkDocsClient::DescribeFolderContents(const DescribeFolderContentsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeFolderContents);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeFolderContents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FolderIdHasBeenSet())
   {
@@ -589,6 +613,7 @@ DescribeFolderContentsOutcome WorkDocsClient::DescribeFolderContents(const Descr
 
 DescribeGroupsOutcome WorkDocsClient::DescribeGroups(const DescribeGroupsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeGroups);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeGroups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SearchQueryHasBeenSet())
   {
@@ -603,6 +628,7 @@ DescribeGroupsOutcome WorkDocsClient::DescribeGroups(const DescribeGroupsRequest
 
 DescribeNotificationSubscriptionsOutcome WorkDocsClient::DescribeNotificationSubscriptions(const DescribeNotificationSubscriptionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeNotificationSubscriptions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeNotificationSubscriptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.OrganizationIdHasBeenSet())
   {
@@ -619,6 +645,7 @@ DescribeNotificationSubscriptionsOutcome WorkDocsClient::DescribeNotificationSub
 
 DescribeResourcePermissionsOutcome WorkDocsClient::DescribeResourcePermissions(const DescribeResourcePermissionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeResourcePermissions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeResourcePermissions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceIdHasBeenSet())
   {
@@ -635,6 +662,7 @@ DescribeResourcePermissionsOutcome WorkDocsClient::DescribeResourcePermissions(c
 
 DescribeRootFoldersOutcome WorkDocsClient::DescribeRootFolders(const DescribeRootFoldersRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeRootFolders);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeRootFolders, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AuthenticationTokenHasBeenSet())
   {
@@ -649,6 +677,7 @@ DescribeRootFoldersOutcome WorkDocsClient::DescribeRootFolders(const DescribeRoo
 
 DescribeUsersOutcome WorkDocsClient::DescribeUsers(const DescribeUsersRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeUsers);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeUsers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeUsers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -658,6 +687,7 @@ DescribeUsersOutcome WorkDocsClient::DescribeUsers(const DescribeUsersRequest& r
 
 GetCurrentUserOutcome WorkDocsClient::GetCurrentUser(const GetCurrentUserRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetCurrentUser);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCurrentUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AuthenticationTokenHasBeenSet())
   {
@@ -672,6 +702,7 @@ GetCurrentUserOutcome WorkDocsClient::GetCurrentUser(const GetCurrentUserRequest
 
 GetDocumentOutcome WorkDocsClient::GetDocument(const GetDocumentRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDocument);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDocument, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DocumentIdHasBeenSet())
   {
@@ -687,6 +718,7 @@ GetDocumentOutcome WorkDocsClient::GetDocument(const GetDocumentRequest& request
 
 GetDocumentPathOutcome WorkDocsClient::GetDocumentPath(const GetDocumentPathRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDocumentPath);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDocumentPath, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DocumentIdHasBeenSet())
   {
@@ -703,6 +735,7 @@ GetDocumentPathOutcome WorkDocsClient::GetDocumentPath(const GetDocumentPathRequ
 
 GetDocumentVersionOutcome WorkDocsClient::GetDocumentVersion(const GetDocumentVersionRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetDocumentVersion);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDocumentVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DocumentIdHasBeenSet())
   {
@@ -725,6 +758,7 @@ GetDocumentVersionOutcome WorkDocsClient::GetDocumentVersion(const GetDocumentVe
 
 GetFolderOutcome WorkDocsClient::GetFolder(const GetFolderRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetFolder);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetFolder, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FolderIdHasBeenSet())
   {
@@ -740,6 +774,7 @@ GetFolderOutcome WorkDocsClient::GetFolder(const GetFolderRequest& request) cons
 
 GetFolderPathOutcome WorkDocsClient::GetFolderPath(const GetFolderPathRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetFolderPath);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetFolderPath, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FolderIdHasBeenSet())
   {
@@ -756,6 +791,7 @@ GetFolderPathOutcome WorkDocsClient::GetFolderPath(const GetFolderPathRequest& r
 
 GetResourcesOutcome WorkDocsClient::GetResources(const GetResourcesRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetResources);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetResources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetResources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -765,6 +801,7 @@ GetResourcesOutcome WorkDocsClient::GetResources(const GetResourcesRequest& requ
 
 InitiateDocumentVersionUploadOutcome WorkDocsClient::InitiateDocumentVersionUpload(const InitiateDocumentVersionUploadRequest& request) const
 {
+  AWS_OPERATION_GUARD(InitiateDocumentVersionUpload);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, InitiateDocumentVersionUpload, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, InitiateDocumentVersionUpload, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -774,6 +811,7 @@ InitiateDocumentVersionUploadOutcome WorkDocsClient::InitiateDocumentVersionUplo
 
 RemoveAllResourcePermissionsOutcome WorkDocsClient::RemoveAllResourcePermissions(const RemoveAllResourcePermissionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(RemoveAllResourcePermissions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RemoveAllResourcePermissions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceIdHasBeenSet())
   {
@@ -790,6 +828,7 @@ RemoveAllResourcePermissionsOutcome WorkDocsClient::RemoveAllResourcePermissions
 
 RemoveResourcePermissionOutcome WorkDocsClient::RemoveResourcePermission(const RemoveResourcePermissionRequest& request) const
 {
+  AWS_OPERATION_GUARD(RemoveResourcePermission);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RemoveResourcePermission, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceIdHasBeenSet())
   {
@@ -812,6 +851,7 @@ RemoveResourcePermissionOutcome WorkDocsClient::RemoveResourcePermission(const R
 
 RestoreDocumentVersionsOutcome WorkDocsClient::RestoreDocumentVersions(const RestoreDocumentVersionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(RestoreDocumentVersions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RestoreDocumentVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DocumentIdHasBeenSet())
   {
@@ -827,6 +867,7 @@ RestoreDocumentVersionsOutcome WorkDocsClient::RestoreDocumentVersions(const Res
 
 SearchResourcesOutcome WorkDocsClient::SearchResources(const SearchResourcesRequest& request) const
 {
+  AWS_OPERATION_GUARD(SearchResources);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SearchResources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SearchResources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -836,6 +877,7 @@ SearchResourcesOutcome WorkDocsClient::SearchResources(const SearchResourcesRequ
 
 UpdateDocumentOutcome WorkDocsClient::UpdateDocument(const UpdateDocumentRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateDocument);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDocument, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DocumentIdHasBeenSet())
   {
@@ -851,6 +893,7 @@ UpdateDocumentOutcome WorkDocsClient::UpdateDocument(const UpdateDocumentRequest
 
 UpdateDocumentVersionOutcome WorkDocsClient::UpdateDocumentVersion(const UpdateDocumentVersionRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateDocumentVersion);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDocumentVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DocumentIdHasBeenSet())
   {
@@ -873,6 +916,7 @@ UpdateDocumentVersionOutcome WorkDocsClient::UpdateDocumentVersion(const UpdateD
 
 UpdateFolderOutcome WorkDocsClient::UpdateFolder(const UpdateFolderRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateFolder);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateFolder, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FolderIdHasBeenSet())
   {
@@ -888,6 +932,7 @@ UpdateFolderOutcome WorkDocsClient::UpdateFolder(const UpdateFolderRequest& requ
 
 UpdateUserOutcome WorkDocsClient::UpdateUser(const UpdateUserRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateUser);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.UserIdHasBeenSet())
   {

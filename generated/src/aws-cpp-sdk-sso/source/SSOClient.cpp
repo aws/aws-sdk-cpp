@@ -133,6 +133,7 @@ SSOClient::SSOClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
     /* End of legacy constructors due deprecation */
 SSOClient::~SSOClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<SSOEndpointProviderBase>& SSOClient::accessEndpointProvider()
@@ -155,6 +156,7 @@ void SSOClient::OverrideEndpoint(const Aws::String& endpoint)
 
 GetRoleCredentialsOutcome SSOClient::GetRoleCredentials(const GetRoleCredentialsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetRoleCredentials);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetRoleCredentials, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RoleNameHasBeenSet())
   {
@@ -184,6 +186,7 @@ GetRoleCredentialsOutcome SSOClient::GetRoleCredentials(const GetRoleCredentials
 
 ListAccountRolesOutcome SSOClient::ListAccountRoles(const ListAccountRolesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAccountRoles);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAccountRoles, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccessTokenHasBeenSet())
   {
@@ -208,6 +211,7 @@ ListAccountRolesOutcome SSOClient::ListAccountRoles(const ListAccountRolesReques
 
 ListAccountsOutcome SSOClient::ListAccounts(const ListAccountsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAccounts);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAccounts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccessTokenHasBeenSet())
   {
@@ -222,6 +226,7 @@ ListAccountsOutcome SSOClient::ListAccounts(const ListAccountsRequest& request) 
 
 LogoutOutcome SSOClient::Logout(const LogoutRequest& request) const
 {
+  AWS_OPERATION_GUARD(Logout);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, Logout, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccessTokenHasBeenSet())
   {

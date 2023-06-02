@@ -141,6 +141,7 @@ KafkaConnectClient::KafkaConnectClient(const std::shared_ptr<AWSCredentialsProvi
     /* End of legacy constructors due deprecation */
 KafkaConnectClient::~KafkaConnectClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<KafkaConnectEndpointProviderBase>& KafkaConnectClient::accessEndpointProvider()
@@ -163,6 +164,7 @@ void KafkaConnectClient::OverrideEndpoint(const Aws::String& endpoint)
 
 CreateConnectorOutcome KafkaConnectClient::CreateConnector(const CreateConnectorRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateConnector);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateConnector, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateConnector, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -172,6 +174,7 @@ CreateConnectorOutcome KafkaConnectClient::CreateConnector(const CreateConnector
 
 CreateCustomPluginOutcome KafkaConnectClient::CreateCustomPlugin(const CreateCustomPluginRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateCustomPlugin);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateCustomPlugin, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateCustomPlugin, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -181,6 +184,7 @@ CreateCustomPluginOutcome KafkaConnectClient::CreateCustomPlugin(const CreateCus
 
 CreateWorkerConfigurationOutcome KafkaConnectClient::CreateWorkerConfiguration(const CreateWorkerConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateWorkerConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateWorkerConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateWorkerConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -190,6 +194,7 @@ CreateWorkerConfigurationOutcome KafkaConnectClient::CreateWorkerConfiguration(c
 
 DeleteConnectorOutcome KafkaConnectClient::DeleteConnector(const DeleteConnectorRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteConnector);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteConnector, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConnectorArnHasBeenSet())
   {
@@ -205,6 +210,7 @@ DeleteConnectorOutcome KafkaConnectClient::DeleteConnector(const DeleteConnector
 
 DeleteCustomPluginOutcome KafkaConnectClient::DeleteCustomPlugin(const DeleteCustomPluginRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteCustomPlugin);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteCustomPlugin, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CustomPluginArnHasBeenSet())
   {
@@ -220,6 +226,7 @@ DeleteCustomPluginOutcome KafkaConnectClient::DeleteCustomPlugin(const DeleteCus
 
 DescribeConnectorOutcome KafkaConnectClient::DescribeConnector(const DescribeConnectorRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeConnector);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeConnector, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConnectorArnHasBeenSet())
   {
@@ -235,6 +242,7 @@ DescribeConnectorOutcome KafkaConnectClient::DescribeConnector(const DescribeCon
 
 DescribeCustomPluginOutcome KafkaConnectClient::DescribeCustomPlugin(const DescribeCustomPluginRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeCustomPlugin);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeCustomPlugin, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CustomPluginArnHasBeenSet())
   {
@@ -250,6 +258,7 @@ DescribeCustomPluginOutcome KafkaConnectClient::DescribeCustomPlugin(const Descr
 
 DescribeWorkerConfigurationOutcome KafkaConnectClient::DescribeWorkerConfiguration(const DescribeWorkerConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DescribeWorkerConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeWorkerConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkerConfigurationArnHasBeenSet())
   {
@@ -265,6 +274,7 @@ DescribeWorkerConfigurationOutcome KafkaConnectClient::DescribeWorkerConfigurati
 
 ListConnectorsOutcome KafkaConnectClient::ListConnectors(const ListConnectorsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListConnectors);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListConnectors, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListConnectors, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -274,6 +284,7 @@ ListConnectorsOutcome KafkaConnectClient::ListConnectors(const ListConnectorsReq
 
 ListCustomPluginsOutcome KafkaConnectClient::ListCustomPlugins(const ListCustomPluginsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListCustomPlugins);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListCustomPlugins, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListCustomPlugins, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -283,6 +294,7 @@ ListCustomPluginsOutcome KafkaConnectClient::ListCustomPlugins(const ListCustomP
 
 ListWorkerConfigurationsOutcome KafkaConnectClient::ListWorkerConfigurations(const ListWorkerConfigurationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListWorkerConfigurations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListWorkerConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListWorkerConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -292,6 +304,7 @@ ListWorkerConfigurationsOutcome KafkaConnectClient::ListWorkerConfigurations(con
 
 UpdateConnectorOutcome KafkaConnectClient::UpdateConnector(const UpdateConnectorRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateConnector);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateConnector, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConnectorArnHasBeenSet())
   {
