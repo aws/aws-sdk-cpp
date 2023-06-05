@@ -18,6 +18,7 @@
 /* End of generic header includes */
 
 /* Service model headers required in CloudFormationClient header */
+#include <aws/cloudformation/model/ActivateOrganizationsAccessResult.h>
 #include <aws/cloudformation/model/ActivateTypeResult.h>
 #include <aws/cloudformation/model/BatchDescribeTypeConfigurationsResult.h>
 #include <aws/cloudformation/model/ContinueUpdateRollbackResult.h>
@@ -25,6 +26,7 @@
 #include <aws/cloudformation/model/CreateStackResult.h>
 #include <aws/cloudformation/model/CreateStackInstancesResult.h>
 #include <aws/cloudformation/model/CreateStackSetResult.h>
+#include <aws/cloudformation/model/DeactivateOrganizationsAccessResult.h>
 #include <aws/cloudformation/model/DeactivateTypeResult.h>
 #include <aws/cloudformation/model/DeleteChangeSetResult.h>
 #include <aws/cloudformation/model/DeleteStackInstancesResult.h>
@@ -33,6 +35,7 @@
 #include <aws/cloudformation/model/DescribeAccountLimitsResult.h>
 #include <aws/cloudformation/model/DescribeChangeSetResult.h>
 #include <aws/cloudformation/model/DescribeChangeSetHooksResult.h>
+#include <aws/cloudformation/model/DescribeOrganizationsAccessResult.h>
 #include <aws/cloudformation/model/DescribePublisherResult.h>
 #include <aws/cloudformation/model/DescribeStackDriftDetectionStatusResult.h>
 #include <aws/cloudformation/model/DescribeStackEventsResult.h>
@@ -121,6 +124,7 @@ namespace Aws
     namespace Model
     {
       /* Service model forward declarations required in CloudFormationClient header */
+      class ActivateOrganizationsAccessRequest;
       class ActivateTypeRequest;
       class BatchDescribeTypeConfigurationsRequest;
       class CancelUpdateStackRequest;
@@ -129,6 +133,7 @@ namespace Aws
       class CreateStackRequest;
       class CreateStackInstancesRequest;
       class CreateStackSetRequest;
+      class DeactivateOrganizationsAccessRequest;
       class DeactivateTypeRequest;
       class DeleteChangeSetRequest;
       class DeleteStackRequest;
@@ -138,6 +143,7 @@ namespace Aws
       class DescribeAccountLimitsRequest;
       class DescribeChangeSetRequest;
       class DescribeChangeSetHooksRequest;
+      class DescribeOrganizationsAccessRequest;
       class DescribePublisherRequest;
       class DescribeStackDriftDetectionStatusRequest;
       class DescribeStackEventsRequest;
@@ -190,6 +196,7 @@ namespace Aws
       /* End of service model forward declarations required in CloudFormationClient header */
 
       /* Service model Outcome class definitions */
+      typedef Aws::Utils::Outcome<ActivateOrganizationsAccessResult, CloudFormationError> ActivateOrganizationsAccessOutcome;
       typedef Aws::Utils::Outcome<ActivateTypeResult, CloudFormationError> ActivateTypeOutcome;
       typedef Aws::Utils::Outcome<BatchDescribeTypeConfigurationsResult, CloudFormationError> BatchDescribeTypeConfigurationsOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, CloudFormationError> CancelUpdateStackOutcome;
@@ -198,6 +205,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateStackResult, CloudFormationError> CreateStackOutcome;
       typedef Aws::Utils::Outcome<CreateStackInstancesResult, CloudFormationError> CreateStackInstancesOutcome;
       typedef Aws::Utils::Outcome<CreateStackSetResult, CloudFormationError> CreateStackSetOutcome;
+      typedef Aws::Utils::Outcome<DeactivateOrganizationsAccessResult, CloudFormationError> DeactivateOrganizationsAccessOutcome;
       typedef Aws::Utils::Outcome<DeactivateTypeResult, CloudFormationError> DeactivateTypeOutcome;
       typedef Aws::Utils::Outcome<DeleteChangeSetResult, CloudFormationError> DeleteChangeSetOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, CloudFormationError> DeleteStackOutcome;
@@ -207,6 +215,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeAccountLimitsResult, CloudFormationError> DescribeAccountLimitsOutcome;
       typedef Aws::Utils::Outcome<DescribeChangeSetResult, CloudFormationError> DescribeChangeSetOutcome;
       typedef Aws::Utils::Outcome<DescribeChangeSetHooksResult, CloudFormationError> DescribeChangeSetHooksOutcome;
+      typedef Aws::Utils::Outcome<DescribeOrganizationsAccessResult, CloudFormationError> DescribeOrganizationsAccessOutcome;
       typedef Aws::Utils::Outcome<DescribePublisherResult, CloudFormationError> DescribePublisherOutcome;
       typedef Aws::Utils::Outcome<DescribeStackDriftDetectionStatusResult, CloudFormationError> DescribeStackDriftDetectionStatusOutcome;
       typedef Aws::Utils::Outcome<DescribeStackEventsResult, CloudFormationError> DescribeStackEventsOutcome;
@@ -259,6 +268,7 @@ namespace Aws
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
+      typedef std::future<ActivateOrganizationsAccessOutcome> ActivateOrganizationsAccessOutcomeCallable;
       typedef std::future<ActivateTypeOutcome> ActivateTypeOutcomeCallable;
       typedef std::future<BatchDescribeTypeConfigurationsOutcome> BatchDescribeTypeConfigurationsOutcomeCallable;
       typedef std::future<CancelUpdateStackOutcome> CancelUpdateStackOutcomeCallable;
@@ -267,6 +277,7 @@ namespace Aws
       typedef std::future<CreateStackOutcome> CreateStackOutcomeCallable;
       typedef std::future<CreateStackInstancesOutcome> CreateStackInstancesOutcomeCallable;
       typedef std::future<CreateStackSetOutcome> CreateStackSetOutcomeCallable;
+      typedef std::future<DeactivateOrganizationsAccessOutcome> DeactivateOrganizationsAccessOutcomeCallable;
       typedef std::future<DeactivateTypeOutcome> DeactivateTypeOutcomeCallable;
       typedef std::future<DeleteChangeSetOutcome> DeleteChangeSetOutcomeCallable;
       typedef std::future<DeleteStackOutcome> DeleteStackOutcomeCallable;
@@ -276,6 +287,7 @@ namespace Aws
       typedef std::future<DescribeAccountLimitsOutcome> DescribeAccountLimitsOutcomeCallable;
       typedef std::future<DescribeChangeSetOutcome> DescribeChangeSetOutcomeCallable;
       typedef std::future<DescribeChangeSetHooksOutcome> DescribeChangeSetHooksOutcomeCallable;
+      typedef std::future<DescribeOrganizationsAccessOutcome> DescribeOrganizationsAccessOutcomeCallable;
       typedef std::future<DescribePublisherOutcome> DescribePublisherOutcomeCallable;
       typedef std::future<DescribeStackDriftDetectionStatusOutcome> DescribeStackDriftDetectionStatusOutcomeCallable;
       typedef std::future<DescribeStackEventsOutcome> DescribeStackEventsOutcomeCallable;
@@ -331,6 +343,7 @@ namespace Aws
     class CloudFormationClient;
 
     /* Service model async handlers definitions */
+    typedef std::function<void(const CloudFormationClient*, const Model::ActivateOrganizationsAccessRequest&, const Model::ActivateOrganizationsAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ActivateOrganizationsAccessResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::ActivateTypeRequest&, const Model::ActivateTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ActivateTypeResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::BatchDescribeTypeConfigurationsRequest&, const Model::BatchDescribeTypeConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDescribeTypeConfigurationsResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::CancelUpdateStackRequest&, const Model::CancelUpdateStackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelUpdateStackResponseReceivedHandler;
@@ -339,6 +352,7 @@ namespace Aws
     typedef std::function<void(const CloudFormationClient*, const Model::CreateStackRequest&, const Model::CreateStackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStackResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::CreateStackInstancesRequest&, const Model::CreateStackInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStackInstancesResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::CreateStackSetRequest&, const Model::CreateStackSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStackSetResponseReceivedHandler;
+    typedef std::function<void(const CloudFormationClient*, const Model::DeactivateOrganizationsAccessRequest&, const Model::DeactivateOrganizationsAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeactivateOrganizationsAccessResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::DeactivateTypeRequest&, const Model::DeactivateTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeactivateTypeResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::DeleteChangeSetRequest&, const Model::DeleteChangeSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteChangeSetResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::DeleteStackRequest&, const Model::DeleteStackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteStackResponseReceivedHandler;
@@ -348,6 +362,7 @@ namespace Aws
     typedef std::function<void(const CloudFormationClient*, const Model::DescribeAccountLimitsRequest&, const Model::DescribeAccountLimitsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccountLimitsResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::DescribeChangeSetRequest&, const Model::DescribeChangeSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeChangeSetResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::DescribeChangeSetHooksRequest&, const Model::DescribeChangeSetHooksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeChangeSetHooksResponseReceivedHandler;
+    typedef std::function<void(const CloudFormationClient*, const Model::DescribeOrganizationsAccessRequest&, const Model::DescribeOrganizationsAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeOrganizationsAccessResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::DescribePublisherRequest&, const Model::DescribePublisherOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePublisherResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::DescribeStackDriftDetectionStatusRequest&, const Model::DescribeStackDriftDetectionStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStackDriftDetectionStatusResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::DescribeStackEventsRequest&, const Model::DescribeStackEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStackEventsResponseReceivedHandler;

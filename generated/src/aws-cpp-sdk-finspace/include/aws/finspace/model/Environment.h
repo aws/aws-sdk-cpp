@@ -195,42 +195,42 @@ namespace Model
 
 
     /**
-     * <p>The sign-in url for the web application of your FinSpace environment.</p>
+     * <p>The sign-in URL for the web application of your FinSpace environment.</p>
      */
     inline const Aws::String& GetEnvironmentUrl() const{ return m_environmentUrl; }
 
     /**
-     * <p>The sign-in url for the web application of your FinSpace environment.</p>
+     * <p>The sign-in URL for the web application of your FinSpace environment.</p>
      */
     inline bool EnvironmentUrlHasBeenSet() const { return m_environmentUrlHasBeenSet; }
 
     /**
-     * <p>The sign-in url for the web application of your FinSpace environment.</p>
+     * <p>The sign-in URL for the web application of your FinSpace environment.</p>
      */
     inline void SetEnvironmentUrl(const Aws::String& value) { m_environmentUrlHasBeenSet = true; m_environmentUrl = value; }
 
     /**
-     * <p>The sign-in url for the web application of your FinSpace environment.</p>
+     * <p>The sign-in URL for the web application of your FinSpace environment.</p>
      */
     inline void SetEnvironmentUrl(Aws::String&& value) { m_environmentUrlHasBeenSet = true; m_environmentUrl = std::move(value); }
 
     /**
-     * <p>The sign-in url for the web application of your FinSpace environment.</p>
+     * <p>The sign-in URL for the web application of your FinSpace environment.</p>
      */
     inline void SetEnvironmentUrl(const char* value) { m_environmentUrlHasBeenSet = true; m_environmentUrl.assign(value); }
 
     /**
-     * <p>The sign-in url for the web application of your FinSpace environment.</p>
+     * <p>The sign-in URL for the web application of your FinSpace environment.</p>
      */
     inline Environment& WithEnvironmentUrl(const Aws::String& value) { SetEnvironmentUrl(value); return *this;}
 
     /**
-     * <p>The sign-in url for the web application of your FinSpace environment.</p>
+     * <p>The sign-in URL for the web application of your FinSpace environment.</p>
      */
     inline Environment& WithEnvironmentUrl(Aws::String&& value) { SetEnvironmentUrl(std::move(value)); return *this;}
 
     /**
-     * <p>The sign-in url for the web application of your FinSpace environment.</p>
+     * <p>The sign-in URL for the web application of your FinSpace environment.</p>
      */
     inline Environment& WithEnvironmentUrl(const char* value) { SetEnvironmentUrl(value); return *this;}
 
@@ -318,49 +318,49 @@ namespace Model
 
 
     /**
-     * <p>The url of the integrated FinSpace notebook environment in your web
+     * <p>The URL of the integrated FinSpace notebook environment in your web
      * application.</p>
      */
     inline const Aws::String& GetSageMakerStudioDomainUrl() const{ return m_sageMakerStudioDomainUrl; }
 
     /**
-     * <p>The url of the integrated FinSpace notebook environment in your web
+     * <p>The URL of the integrated FinSpace notebook environment in your web
      * application.</p>
      */
     inline bool SageMakerStudioDomainUrlHasBeenSet() const { return m_sageMakerStudioDomainUrlHasBeenSet; }
 
     /**
-     * <p>The url of the integrated FinSpace notebook environment in your web
+     * <p>The URL of the integrated FinSpace notebook environment in your web
      * application.</p>
      */
     inline void SetSageMakerStudioDomainUrl(const Aws::String& value) { m_sageMakerStudioDomainUrlHasBeenSet = true; m_sageMakerStudioDomainUrl = value; }
 
     /**
-     * <p>The url of the integrated FinSpace notebook environment in your web
+     * <p>The URL of the integrated FinSpace notebook environment in your web
      * application.</p>
      */
     inline void SetSageMakerStudioDomainUrl(Aws::String&& value) { m_sageMakerStudioDomainUrlHasBeenSet = true; m_sageMakerStudioDomainUrl = std::move(value); }
 
     /**
-     * <p>The url of the integrated FinSpace notebook environment in your web
+     * <p>The URL of the integrated FinSpace notebook environment in your web
      * application.</p>
      */
     inline void SetSageMakerStudioDomainUrl(const char* value) { m_sageMakerStudioDomainUrlHasBeenSet = true; m_sageMakerStudioDomainUrl.assign(value); }
 
     /**
-     * <p>The url of the integrated FinSpace notebook environment in your web
+     * <p>The URL of the integrated FinSpace notebook environment in your web
      * application.</p>
      */
     inline Environment& WithSageMakerStudioDomainUrl(const Aws::String& value) { SetSageMakerStudioDomainUrl(value); return *this;}
 
     /**
-     * <p>The url of the integrated FinSpace notebook environment in your web
+     * <p>The URL of the integrated FinSpace notebook environment in your web
      * application.</p>
      */
     inline Environment& WithSageMakerStudioDomainUrl(Aws::String&& value) { SetSageMakerStudioDomainUrl(std::move(value)); return *this;}
 
     /**
-     * <p>The url of the integrated FinSpace notebook environment in your web
+     * <p>The URL of the integrated FinSpace notebook environment in your web
      * application.</p>
      */
     inline Environment& WithSageMakerStudioDomainUrl(const char* value) { SetSageMakerStudioDomainUrl(value); return *this;}

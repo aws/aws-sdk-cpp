@@ -19,7 +19,8 @@ namespace Model
     STRING,
     INTEGER,
     FLOAT,
-    BOOLEAN
+    BOOLEAN,
+    DATETIME
   };
 
 namespace DataTypeMapper

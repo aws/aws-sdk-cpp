@@ -23,7 +23,9 @@ namespace Model
     DELETING,
     DELETED,
     UNAVAILABLE,
-    UPDATE_FAILED
+    UPDATE_FAILED,
+    ROLLING_BACK,
+    CREATING_SNAPSHOT
   };
 
 namespace EnvironmentStatusMapper

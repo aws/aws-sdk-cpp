@@ -41,42 +41,98 @@ namespace Model
   public:
 
     /**
-     * <p>The name or the unique stack ID that's associated with the stack.</p>
+     *  <p>If you don't pass a parameter to <code>StackName</code>, the API
+     * returns a response that describes all resources in the account.</p> <p>The IAM
+     * policy below can be added to IAM policies when you want to limit resource-level
+     * permissions and avoid returning a response when no parameter is sent in the
+     * request:</p> <p> <code>{ "Version": "2012-10-17", "Statement": [{ "Effect":
+     * "Deny", "Action": "cloudformation:DescribeStacks", "NotResource":
+     * "arn:aws:cloudformation:*:*:stack/ * / *" }] }</code> </p>  <p>The name or
+     * the unique stack ID that's associated with the stack.</p>
      */
     inline const Aws::String& GetStackName() const{ return m_stackName; }
 
     /**
-     * <p>The name or the unique stack ID that's associated with the stack.</p>
+     *  <p>If you don't pass a parameter to <code>StackName</code>, the API
+     * returns a response that describes all resources in the account.</p> <p>The IAM
+     * policy below can be added to IAM policies when you want to limit resource-level
+     * permissions and avoid returning a response when no parameter is sent in the
+     * request:</p> <p> <code>{ "Version": "2012-10-17", "Statement": [{ "Effect":
+     * "Deny", "Action": "cloudformation:DescribeStacks", "NotResource":
+     * "arn:aws:cloudformation:*:*:stack/ * / *" }] }</code> </p>  <p>The name or
+     * the unique stack ID that's associated with the stack.</p>
      */
     inline bool StackNameHasBeenSet() const { return m_stackNameHasBeenSet; }
 
     /**
-     * <p>The name or the unique stack ID that's associated with the stack.</p>
+     *  <p>If you don't pass a parameter to <code>StackName</code>, the API
+     * returns a response that describes all resources in the account.</p> <p>The IAM
+     * policy below can be added to IAM policies when you want to limit resource-level
+     * permissions and avoid returning a response when no parameter is sent in the
+     * request:</p> <p> <code>{ "Version": "2012-10-17", "Statement": [{ "Effect":
+     * "Deny", "Action": "cloudformation:DescribeStacks", "NotResource":
+     * "arn:aws:cloudformation:*:*:stack/ * / *" }] }</code> </p>  <p>The name or
+     * the unique stack ID that's associated with the stack.</p>
      */
     inline void SetStackName(const Aws::String& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
 
     /**
-     * <p>The name or the unique stack ID that's associated with the stack.</p>
+     *  <p>If you don't pass a parameter to <code>StackName</code>, the API
+     * returns a response that describes all resources in the account.</p> <p>The IAM
+     * policy below can be added to IAM policies when you want to limit resource-level
+     * permissions and avoid returning a response when no parameter is sent in the
+     * request:</p> <p> <code>{ "Version": "2012-10-17", "Statement": [{ "Effect":
+     * "Deny", "Action": "cloudformation:DescribeStacks", "NotResource":
+     * "arn:aws:cloudformation:*:*:stack/ * / *" }] }</code> </p>  <p>The name or
+     * the unique stack ID that's associated with the stack.</p>
      */
     inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = std::move(value); }
 
     /**
-     * <p>The name or the unique stack ID that's associated with the stack.</p>
+     *  <p>If you don't pass a parameter to <code>StackName</code>, the API
+     * returns a response that describes all resources in the account.</p> <p>The IAM
+     * policy below can be added to IAM policies when you want to limit resource-level
+     * permissions and avoid returning a response when no parameter is sent in the
+     * request:</p> <p> <code>{ "Version": "2012-10-17", "Statement": [{ "Effect":
+     * "Deny", "Action": "cloudformation:DescribeStacks", "NotResource":
+     * "arn:aws:cloudformation:*:*:stack/ * / *" }] }</code> </p>  <p>The name or
+     * the unique stack ID that's associated with the stack.</p>
      */
     inline void SetStackName(const char* value) { m_stackNameHasBeenSet = true; m_stackName.assign(value); }
 
     /**
-     * <p>The name or the unique stack ID that's associated with the stack.</p>
+     *  <p>If you don't pass a parameter to <code>StackName</code>, the API
+     * returns a response that describes all resources in the account.</p> <p>The IAM
+     * policy below can be added to IAM policies when you want to limit resource-level
+     * permissions and avoid returning a response when no parameter is sent in the
+     * request:</p> <p> <code>{ "Version": "2012-10-17", "Statement": [{ "Effect":
+     * "Deny", "Action": "cloudformation:DescribeStacks", "NotResource":
+     * "arn:aws:cloudformation:*:*:stack/ * / *" }] }</code> </p>  <p>The name or
+     * the unique stack ID that's associated with the stack.</p>
      */
     inline CancelUpdateStackRequest& WithStackName(const Aws::String& value) { SetStackName(value); return *this;}
 
     /**
-     * <p>The name or the unique stack ID that's associated with the stack.</p>
+     *  <p>If you don't pass a parameter to <code>StackName</code>, the API
+     * returns a response that describes all resources in the account.</p> <p>The IAM
+     * policy below can be added to IAM policies when you want to limit resource-level
+     * permissions and avoid returning a response when no parameter is sent in the
+     * request:</p> <p> <code>{ "Version": "2012-10-17", "Statement": [{ "Effect":
+     * "Deny", "Action": "cloudformation:DescribeStacks", "NotResource":
+     * "arn:aws:cloudformation:*:*:stack/ * / *" }] }</code> </p>  <p>The name or
+     * the unique stack ID that's associated with the stack.</p>
      */
     inline CancelUpdateStackRequest& WithStackName(Aws::String&& value) { SetStackName(std::move(value)); return *this;}
 
     /**
-     * <p>The name or the unique stack ID that's associated with the stack.</p>
+     *  <p>If you don't pass a parameter to <code>StackName</code>, the API
+     * returns a response that describes all resources in the account.</p> <p>The IAM
+     * policy below can be added to IAM policies when you want to limit resource-level
+     * permissions and avoid returning a response when no parameter is sent in the
+     * request:</p> <p> <code>{ "Version": "2012-10-17", "Statement": [{ "Effect":
+     * "Deny", "Action": "cloudformation:DescribeStacks", "NotResource":
+     * "arn:aws:cloudformation:*:*:stack/ * / *" }] }</code> </p>  <p>The name or
+     * the unique stack ID that's associated with the stack.</p>
      */
     inline CancelUpdateStackRequest& WithStackName(const char* value) { SetStackName(value); return *this;}
 

@@ -152,57 +152,57 @@ namespace Model
 
     /**
      * <p>The Apache Airflow version on your environment. Valid values:
-     * <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, and
-     * <code>2.4.3</code>.</p>
+     * <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>,
+     * <code>2.4.3</code>, and <code>2.5.1</code>.</p>
      */
     inline const Aws::String& GetAirflowVersion() const{ return m_airflowVersion; }
 
     /**
      * <p>The Apache Airflow version on your environment. Valid values:
-     * <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, and
-     * <code>2.4.3</code>.</p>
+     * <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>,
+     * <code>2.4.3</code>, and <code>2.5.1</code>.</p>
      */
     inline bool AirflowVersionHasBeenSet() const { return m_airflowVersionHasBeenSet; }
 
     /**
      * <p>The Apache Airflow version on your environment. Valid values:
-     * <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, and
-     * <code>2.4.3</code>.</p>
+     * <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>,
+     * <code>2.4.3</code>, and <code>2.5.1</code>.</p>
      */
     inline void SetAirflowVersion(const Aws::String& value) { m_airflowVersionHasBeenSet = true; m_airflowVersion = value; }
 
     /**
      * <p>The Apache Airflow version on your environment. Valid values:
-     * <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, and
-     * <code>2.4.3</code>.</p>
+     * <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>,
+     * <code>2.4.3</code>, and <code>2.5.1</code>.</p>
      */
     inline void SetAirflowVersion(Aws::String&& value) { m_airflowVersionHasBeenSet = true; m_airflowVersion = std::move(value); }
 
     /**
      * <p>The Apache Airflow version on your environment. Valid values:
-     * <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, and
-     * <code>2.4.3</code>.</p>
+     * <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>,
+     * <code>2.4.3</code>, and <code>2.5.1</code>.</p>
      */
     inline void SetAirflowVersion(const char* value) { m_airflowVersionHasBeenSet = true; m_airflowVersion.assign(value); }
 
     /**
      * <p>The Apache Airflow version on your environment. Valid values:
-     * <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, and
-     * <code>2.4.3</code>.</p>
+     * <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>,
+     * <code>2.4.3</code>, and <code>2.5.1</code>.</p>
      */
     inline Environment& WithAirflowVersion(const Aws::String& value) { SetAirflowVersion(value); return *this;}
 
     /**
      * <p>The Apache Airflow version on your environment. Valid values:
-     * <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, and
-     * <code>2.4.3</code>.</p>
+     * <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>,
+     * <code>2.4.3</code>, and <code>2.5.1</code>.</p>
      */
     inline Environment& WithAirflowVersion(Aws::String&& value) { SetAirflowVersion(std::move(value)); return *this;}
 
     /**
      * <p>The Apache Airflow version on your environment. Valid values:
-     * <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, and
-     * <code>2.4.3</code>.</p>
+     * <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>,
+     * <code>2.4.3</code>, and <code>2.5.1</code>.</p>
      */
     inline Environment& WithAirflowVersion(const char* value) { SetAirflowVersion(value); return *this;}
 
@@ -1503,13 +1503,22 @@ namespace Model
     /**
      * <p>The status of the Amazon MWAA environment. Valid values:</p> <ul> <li> <p>
      * <code>CREATING</code> - Indicates the request to create the environment is in
-     * progress.</p> </li> <li> <p> <code>CREATE_FAILED</code> - Indicates the request
-     * to create the environment failed, and the environment could not be created.</p>
+     * progress.</p> </li> <li> <p> <code>CREATING_SNAPSHOT</code> - Indicates the
+     * request to update environment details, or upgrade the environment version, is in
+     * progress and Amazon MWAA is creating a storage volume snapshot of the Amazon RDS
+     * database cluster associated with the environment. A database snapshot is a
+     * backup created at a specific point in time. Amazon MWAA uses snapshots to
+     * recover environment metadata if the process to update or upgrade an environment
+     * fails.</p> </li> <li> <p> <code>CREATE_FAILED</code> - Indicates the request to
+     * create the environment failed, and the environment could not be created.</p>
      * </li> <li> <p> <code>AVAILABLE</code> - Indicates the request was successful and
      * the environment is ready to use.</p> </li> <li> <p> <code>UPDATING</code> -
      * Indicates the request to update the environment is in progress.</p> </li> <li>
-     * <p> <code>DELETING</code> - Indicates the request to delete the environment is
-     * in progress.</p> </li> <li> <p> <code>DELETED</code> - Indicates the request to
+     * <p> <code>ROLLING_BACK</code> - Indicates the request to update environment
+     * details, or upgrade the environment version, failed and Amazon MWAA is restoring
+     * the environment using the latest storage volume snapshot.</p> </li> <li> <p>
+     * <code>DELETING</code> - Indicates the request to delete the environment is in
+     * progress.</p> </li> <li> <p> <code>DELETED</code> - Indicates the request to
      * delete the environment is complete, and the environment has been deleted.</p>
      * </li> <li> <p> <code>UNAVAILABLE</code> - Indicates the request failed, but the
      * environment was unable to rollback and is not in a stable state.</p> </li> <li>
@@ -1525,13 +1534,22 @@ namespace Model
     /**
      * <p>The status of the Amazon MWAA environment. Valid values:</p> <ul> <li> <p>
      * <code>CREATING</code> - Indicates the request to create the environment is in
-     * progress.</p> </li> <li> <p> <code>CREATE_FAILED</code> - Indicates the request
-     * to create the environment failed, and the environment could not be created.</p>
+     * progress.</p> </li> <li> <p> <code>CREATING_SNAPSHOT</code> - Indicates the
+     * request to update environment details, or upgrade the environment version, is in
+     * progress and Amazon MWAA is creating a storage volume snapshot of the Amazon RDS
+     * database cluster associated with the environment. A database snapshot is a
+     * backup created at a specific point in time. Amazon MWAA uses snapshots to
+     * recover environment metadata if the process to update or upgrade an environment
+     * fails.</p> </li> <li> <p> <code>CREATE_FAILED</code> - Indicates the request to
+     * create the environment failed, and the environment could not be created.</p>
      * </li> <li> <p> <code>AVAILABLE</code> - Indicates the request was successful and
      * the environment is ready to use.</p> </li> <li> <p> <code>UPDATING</code> -
      * Indicates the request to update the environment is in progress.</p> </li> <li>
-     * <p> <code>DELETING</code> - Indicates the request to delete the environment is
-     * in progress.</p> </li> <li> <p> <code>DELETED</code> - Indicates the request to
+     * <p> <code>ROLLING_BACK</code> - Indicates the request to update environment
+     * details, or upgrade the environment version, failed and Amazon MWAA is restoring
+     * the environment using the latest storage volume snapshot.</p> </li> <li> <p>
+     * <code>DELETING</code> - Indicates the request to delete the environment is in
+     * progress.</p> </li> <li> <p> <code>DELETED</code> - Indicates the request to
      * delete the environment is complete, and the environment has been deleted.</p>
      * </li> <li> <p> <code>UNAVAILABLE</code> - Indicates the request failed, but the
      * environment was unable to rollback and is not in a stable state.</p> </li> <li>
@@ -1547,13 +1565,22 @@ namespace Model
     /**
      * <p>The status of the Amazon MWAA environment. Valid values:</p> <ul> <li> <p>
      * <code>CREATING</code> - Indicates the request to create the environment is in
-     * progress.</p> </li> <li> <p> <code>CREATE_FAILED</code> - Indicates the request
-     * to create the environment failed, and the environment could not be created.</p>
+     * progress.</p> </li> <li> <p> <code>CREATING_SNAPSHOT</code> - Indicates the
+     * request to update environment details, or upgrade the environment version, is in
+     * progress and Amazon MWAA is creating a storage volume snapshot of the Amazon RDS
+     * database cluster associated with the environment. A database snapshot is a
+     * backup created at a specific point in time. Amazon MWAA uses snapshots to
+     * recover environment metadata if the process to update or upgrade an environment
+     * fails.</p> </li> <li> <p> <code>CREATE_FAILED</code> - Indicates the request to
+     * create the environment failed, and the environment could not be created.</p>
      * </li> <li> <p> <code>AVAILABLE</code> - Indicates the request was successful and
      * the environment is ready to use.</p> </li> <li> <p> <code>UPDATING</code> -
      * Indicates the request to update the environment is in progress.</p> </li> <li>
-     * <p> <code>DELETING</code> - Indicates the request to delete the environment is
-     * in progress.</p> </li> <li> <p> <code>DELETED</code> - Indicates the request to
+     * <p> <code>ROLLING_BACK</code> - Indicates the request to update environment
+     * details, or upgrade the environment version, failed and Amazon MWAA is restoring
+     * the environment using the latest storage volume snapshot.</p> </li> <li> <p>
+     * <code>DELETING</code> - Indicates the request to delete the environment is in
+     * progress.</p> </li> <li> <p> <code>DELETED</code> - Indicates the request to
      * delete the environment is complete, and the environment has been deleted.</p>
      * </li> <li> <p> <code>UNAVAILABLE</code> - Indicates the request failed, but the
      * environment was unable to rollback and is not in a stable state.</p> </li> <li>
@@ -1569,13 +1596,22 @@ namespace Model
     /**
      * <p>The status of the Amazon MWAA environment. Valid values:</p> <ul> <li> <p>
      * <code>CREATING</code> - Indicates the request to create the environment is in
-     * progress.</p> </li> <li> <p> <code>CREATE_FAILED</code> - Indicates the request
-     * to create the environment failed, and the environment could not be created.</p>
+     * progress.</p> </li> <li> <p> <code>CREATING_SNAPSHOT</code> - Indicates the
+     * request to update environment details, or upgrade the environment version, is in
+     * progress and Amazon MWAA is creating a storage volume snapshot of the Amazon RDS
+     * database cluster associated with the environment. A database snapshot is a
+     * backup created at a specific point in time. Amazon MWAA uses snapshots to
+     * recover environment metadata if the process to update or upgrade an environment
+     * fails.</p> </li> <li> <p> <code>CREATE_FAILED</code> - Indicates the request to
+     * create the environment failed, and the environment could not be created.</p>
      * </li> <li> <p> <code>AVAILABLE</code> - Indicates the request was successful and
      * the environment is ready to use.</p> </li> <li> <p> <code>UPDATING</code> -
      * Indicates the request to update the environment is in progress.</p> </li> <li>
-     * <p> <code>DELETING</code> - Indicates the request to delete the environment is
-     * in progress.</p> </li> <li> <p> <code>DELETED</code> - Indicates the request to
+     * <p> <code>ROLLING_BACK</code> - Indicates the request to update environment
+     * details, or upgrade the environment version, failed and Amazon MWAA is restoring
+     * the environment using the latest storage volume snapshot.</p> </li> <li> <p>
+     * <code>DELETING</code> - Indicates the request to delete the environment is in
+     * progress.</p> </li> <li> <p> <code>DELETED</code> - Indicates the request to
      * delete the environment is complete, and the environment has been deleted.</p>
      * </li> <li> <p> <code>UNAVAILABLE</code> - Indicates the request failed, but the
      * environment was unable to rollback and is not in a stable state.</p> </li> <li>
@@ -1591,13 +1627,22 @@ namespace Model
     /**
      * <p>The status of the Amazon MWAA environment. Valid values:</p> <ul> <li> <p>
      * <code>CREATING</code> - Indicates the request to create the environment is in
-     * progress.</p> </li> <li> <p> <code>CREATE_FAILED</code> - Indicates the request
-     * to create the environment failed, and the environment could not be created.</p>
+     * progress.</p> </li> <li> <p> <code>CREATING_SNAPSHOT</code> - Indicates the
+     * request to update environment details, or upgrade the environment version, is in
+     * progress and Amazon MWAA is creating a storage volume snapshot of the Amazon RDS
+     * database cluster associated with the environment. A database snapshot is a
+     * backup created at a specific point in time. Amazon MWAA uses snapshots to
+     * recover environment metadata if the process to update or upgrade an environment
+     * fails.</p> </li> <li> <p> <code>CREATE_FAILED</code> - Indicates the request to
+     * create the environment failed, and the environment could not be created.</p>
      * </li> <li> <p> <code>AVAILABLE</code> - Indicates the request was successful and
      * the environment is ready to use.</p> </li> <li> <p> <code>UPDATING</code> -
      * Indicates the request to update the environment is in progress.</p> </li> <li>
-     * <p> <code>DELETING</code> - Indicates the request to delete the environment is
-     * in progress.</p> </li> <li> <p> <code>DELETED</code> - Indicates the request to
+     * <p> <code>ROLLING_BACK</code> - Indicates the request to update environment
+     * details, or upgrade the environment version, failed and Amazon MWAA is restoring
+     * the environment using the latest storage volume snapshot.</p> </li> <li> <p>
+     * <code>DELETING</code> - Indicates the request to delete the environment is in
+     * progress.</p> </li> <li> <p> <code>DELETED</code> - Indicates the request to
      * delete the environment is complete, and the environment has been deleted.</p>
      * </li> <li> <p> <code>UNAVAILABLE</code> - Indicates the request failed, but the
      * environment was unable to rollback and is not in a stable state.</p> </li> <li>
@@ -1613,13 +1658,22 @@ namespace Model
     /**
      * <p>The status of the Amazon MWAA environment. Valid values:</p> <ul> <li> <p>
      * <code>CREATING</code> - Indicates the request to create the environment is in
-     * progress.</p> </li> <li> <p> <code>CREATE_FAILED</code> - Indicates the request
-     * to create the environment failed, and the environment could not be created.</p>
+     * progress.</p> </li> <li> <p> <code>CREATING_SNAPSHOT</code> - Indicates the
+     * request to update environment details, or upgrade the environment version, is in
+     * progress and Amazon MWAA is creating a storage volume snapshot of the Amazon RDS
+     * database cluster associated with the environment. A database snapshot is a
+     * backup created at a specific point in time. Amazon MWAA uses snapshots to
+     * recover environment metadata if the process to update or upgrade an environment
+     * fails.</p> </li> <li> <p> <code>CREATE_FAILED</code> - Indicates the request to
+     * create the environment failed, and the environment could not be created.</p>
      * </li> <li> <p> <code>AVAILABLE</code> - Indicates the request was successful and
      * the environment is ready to use.</p> </li> <li> <p> <code>UPDATING</code> -
      * Indicates the request to update the environment is in progress.</p> </li> <li>
-     * <p> <code>DELETING</code> - Indicates the request to delete the environment is
-     * in progress.</p> </li> <li> <p> <code>DELETED</code> - Indicates the request to
+     * <p> <code>ROLLING_BACK</code> - Indicates the request to update environment
+     * details, or upgrade the environment version, failed and Amazon MWAA is restoring
+     * the environment using the latest storage volume snapshot.</p> </li> <li> <p>
+     * <code>DELETING</code> - Indicates the request to delete the environment is in
+     * progress.</p> </li> <li> <p> <code>DELETED</code> - Indicates the request to
      * delete the environment is complete, and the environment has been deleted.</p>
      * </li> <li> <p> <code>UNAVAILABLE</code> - Indicates the request failed, but the
      * environment was unable to rollback and is not in a stable state.</p> </li> <li>

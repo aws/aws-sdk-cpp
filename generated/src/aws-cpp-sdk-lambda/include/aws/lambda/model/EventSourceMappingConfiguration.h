@@ -861,7 +861,9 @@ namespace Model
      * <p>(Kinesis and DynamoDB Streams only) Discard records older than the specified
      * age. The default value is -1, which sets the maximum age to infinite. When the
      * value is set to infinite, Lambda never discards old records.</p>  <p>The
-     * minimum value that can be set is 60 seconds.</p> 
+     * minimum valid value for maximum record age is 60s. Although values less than 60
+     * and greater than -1 fall within the parameter's absolute range, they are not
+     * allowed</p> 
      */
     inline int GetMaximumRecordAgeInSeconds() const{ return m_maximumRecordAgeInSeconds; }
 
@@ -869,7 +871,9 @@ namespace Model
      * <p>(Kinesis and DynamoDB Streams only) Discard records older than the specified
      * age. The default value is -1, which sets the maximum age to infinite. When the
      * value is set to infinite, Lambda never discards old records.</p>  <p>The
-     * minimum value that can be set is 60 seconds.</p> 
+     * minimum valid value for maximum record age is 60s. Although values less than 60
+     * and greater than -1 fall within the parameter's absolute range, they are not
+     * allowed</p> 
      */
     inline bool MaximumRecordAgeInSecondsHasBeenSet() const { return m_maximumRecordAgeInSecondsHasBeenSet; }
 
@@ -877,7 +881,9 @@ namespace Model
      * <p>(Kinesis and DynamoDB Streams only) Discard records older than the specified
      * age. The default value is -1, which sets the maximum age to infinite. When the
      * value is set to infinite, Lambda never discards old records.</p>  <p>The
-     * minimum value that can be set is 60 seconds.</p> 
+     * minimum valid value for maximum record age is 60s. Although values less than 60
+     * and greater than -1 fall within the parameter's absolute range, they are not
+     * allowed</p> 
      */
     inline void SetMaximumRecordAgeInSeconds(int value) { m_maximumRecordAgeInSecondsHasBeenSet = true; m_maximumRecordAgeInSeconds = value; }
 
@@ -885,7 +891,9 @@ namespace Model
      * <p>(Kinesis and DynamoDB Streams only) Discard records older than the specified
      * age. The default value is -1, which sets the maximum age to infinite. When the
      * value is set to infinite, Lambda never discards old records.</p>  <p>The
-     * minimum value that can be set is 60 seconds.</p> 
+     * minimum valid value for maximum record age is 60s. Although values less than 60
+     * and greater than -1 fall within the parameter's absolute range, they are not
+     * allowed</p> 
      */
     inline EventSourceMappingConfiguration& WithMaximumRecordAgeInSeconds(int value) { SetMaximumRecordAgeInSeconds(value); return *this;}
 

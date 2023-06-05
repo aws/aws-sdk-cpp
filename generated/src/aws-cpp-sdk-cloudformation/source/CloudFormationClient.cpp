@@ -21,6 +21,7 @@
 #include <aws/cloudformation/CloudFormationClient.h>
 #include <aws/cloudformation/CloudFormationErrorMarshaller.h>
 #include <aws/cloudformation/CloudFormationEndpointProvider.h>
+#include <aws/cloudformation/model/ActivateOrganizationsAccessRequest.h>
 #include <aws/cloudformation/model/ActivateTypeRequest.h>
 #include <aws/cloudformation/model/BatchDescribeTypeConfigurationsRequest.h>
 #include <aws/cloudformation/model/CancelUpdateStackRequest.h>
@@ -29,6 +30,7 @@
 #include <aws/cloudformation/model/CreateStackRequest.h>
 #include <aws/cloudformation/model/CreateStackInstancesRequest.h>
 #include <aws/cloudformation/model/CreateStackSetRequest.h>
+#include <aws/cloudformation/model/DeactivateOrganizationsAccessRequest.h>
 #include <aws/cloudformation/model/DeactivateTypeRequest.h>
 #include <aws/cloudformation/model/DeleteChangeSetRequest.h>
 #include <aws/cloudformation/model/DeleteStackRequest.h>
@@ -38,6 +40,7 @@
 #include <aws/cloudformation/model/DescribeAccountLimitsRequest.h>
 #include <aws/cloudformation/model/DescribeChangeSetRequest.h>
 #include <aws/cloudformation/model/DescribeChangeSetHooksRequest.h>
+#include <aws/cloudformation/model/DescribeOrganizationsAccessRequest.h>
 #include <aws/cloudformation/model/DescribePublisherRequest.h>
 #include <aws/cloudformation/model/DescribeStackDriftDetectionStatusRequest.h>
 #include <aws/cloudformation/model/DescribeStackEventsRequest.h>
@@ -239,6 +242,15 @@ Aws::String CloudFormationClient::ConvertRequestToPresignedUrl(const AmazonSeria
   return GeneratePresignedUrl(endpointResolutionOutcome.GetResult().GetURI(), Aws::Http::HttpMethod::HTTP_GET, region, 3600);
 }
 
+ActivateOrganizationsAccessOutcome CloudFormationClient::ActivateOrganizationsAccess(const ActivateOrganizationsAccessRequest& request) const
+{
+  AWS_OPERATION_GUARD(ActivateOrganizationsAccess);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ActivateOrganizationsAccess, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ActivateOrganizationsAccess, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ActivateOrganizationsAccessOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+}
+
 ActivateTypeOutcome CloudFormationClient::ActivateType(const ActivateTypeRequest& request) const
 {
   AWS_OPERATION_GUARD(ActivateType);
@@ -309,6 +321,15 @@ CreateStackSetOutcome CloudFormationClient::CreateStackSet(const CreateStackSetR
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateStackSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   return CreateStackSetOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DeactivateOrganizationsAccessOutcome CloudFormationClient::DeactivateOrganizationsAccess(const DeactivateOrganizationsAccessRequest& request) const
+{
+  AWS_OPERATION_GUARD(DeactivateOrganizationsAccess);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeactivateOrganizationsAccess, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeactivateOrganizationsAccess, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeactivateOrganizationsAccessOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
 }
 
 DeactivateTypeOutcome CloudFormationClient::DeactivateType(const DeactivateTypeRequest& request) const
@@ -390,6 +411,15 @@ DescribeChangeSetHooksOutcome CloudFormationClient::DescribeChangeSetHooks(const
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeChangeSetHooks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   return DescribeChangeSetHooksOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DescribeOrganizationsAccessOutcome CloudFormationClient::DescribeOrganizationsAccess(const DescribeOrganizationsAccessRequest& request) const
+{
+  AWS_OPERATION_GUARD(DescribeOrganizationsAccess);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeOrganizationsAccess, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeOrganizationsAccess, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeOrganizationsAccessOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
 }
 
 DescribePublisherOutcome CloudFormationClient::DescribePublisher(const DescribePublisherRequest& request) const

@@ -44,8 +44,8 @@ namespace Model
     /**
      * <p>The category of extensions to return.</p> <ul> <li> <p>
      * <code>REGISTERED</code>: Private extensions that have been registered for this
-     * account and region.</p> </li> <li> <p> <code>ACTIVATED</code>: Public extensions
-     * that have been activated for this account and region.</p> </li> <li> <p>
+     * account and Region.</p> </li> <li> <p> <code>ACTIVATED</code>: Public extensions
+     * that have been activated for this account and Region.</p> </li> <li> <p>
      * <code>THIRD_PARTY</code>: Extensions available for use from publishers other
      * than Amazon. This includes:</p> <ul> <li> <p>Private extensions registered in
      * the account.</p> </li> <li> <p>Public extensions from publishers other than
@@ -58,8 +58,8 @@ namespace Model
     /**
      * <p>The category of extensions to return.</p> <ul> <li> <p>
      * <code>REGISTERED</code>: Private extensions that have been registered for this
-     * account and region.</p> </li> <li> <p> <code>ACTIVATED</code>: Public extensions
-     * that have been activated for this account and region.</p> </li> <li> <p>
+     * account and Region.</p> </li> <li> <p> <code>ACTIVATED</code>: Public extensions
+     * that have been activated for this account and Region.</p> </li> <li> <p>
      * <code>THIRD_PARTY</code>: Extensions available for use from publishers other
      * than Amazon. This includes:</p> <ul> <li> <p>Private extensions registered in
      * the account.</p> </li> <li> <p>Public extensions from publishers other than
@@ -72,8 +72,8 @@ namespace Model
     /**
      * <p>The category of extensions to return.</p> <ul> <li> <p>
      * <code>REGISTERED</code>: Private extensions that have been registered for this
-     * account and region.</p> </li> <li> <p> <code>ACTIVATED</code>: Public extensions
-     * that have been activated for this account and region.</p> </li> <li> <p>
+     * account and Region.</p> </li> <li> <p> <code>ACTIVATED</code>: Public extensions
+     * that have been activated for this account and Region.</p> </li> <li> <p>
      * <code>THIRD_PARTY</code>: Extensions available for use from publishers other
      * than Amazon. This includes:</p> <ul> <li> <p>Private extensions registered in
      * the account.</p> </li> <li> <p>Public extensions from publishers other than
@@ -86,8 +86,8 @@ namespace Model
     /**
      * <p>The category of extensions to return.</p> <ul> <li> <p>
      * <code>REGISTERED</code>: Private extensions that have been registered for this
-     * account and region.</p> </li> <li> <p> <code>ACTIVATED</code>: Public extensions
-     * that have been activated for this account and region.</p> </li> <li> <p>
+     * account and Region.</p> </li> <li> <p> <code>ACTIVATED</code>: Public extensions
+     * that have been activated for this account and Region.</p> </li> <li> <p>
      * <code>THIRD_PARTY</code>: Extensions available for use from publishers other
      * than Amazon. This includes:</p> <ul> <li> <p>Private extensions registered in
      * the account.</p> </li> <li> <p>Public extensions from publishers other than
@@ -100,8 +100,8 @@ namespace Model
     /**
      * <p>The category of extensions to return.</p> <ul> <li> <p>
      * <code>REGISTERED</code>: Private extensions that have been registered for this
-     * account and region.</p> </li> <li> <p> <code>ACTIVATED</code>: Public extensions
-     * that have been activated for this account and region.</p> </li> <li> <p>
+     * account and Region.</p> </li> <li> <p> <code>ACTIVATED</code>: Public extensions
+     * that have been activated for this account and Region.</p> </li> <li> <p>
      * <code>THIRD_PARTY</code>: Extensions available for use from publishers other
      * than Amazon. This includes:</p> <ul> <li> <p>Private extensions registered in
      * the account.</p> </li> <li> <p>Public extensions from publishers other than
@@ -114,8 +114,8 @@ namespace Model
     /**
      * <p>The category of extensions to return.</p> <ul> <li> <p>
      * <code>REGISTERED</code>: Private extensions that have been registered for this
-     * account and region.</p> </li> <li> <p> <code>ACTIVATED</code>: Public extensions
-     * that have been activated for this account and region.</p> </li> <li> <p>
+     * account and Region.</p> </li> <li> <p> <code>ACTIVATED</code>: Public extensions
+     * that have been activated for this account and Region.</p> </li> <li> <p>
      * <code>THIRD_PARTY</code>: Extensions available for use from publishers other
      * than Amazon. This includes:</p> <ul> <li> <p>Private extensions registered in
      * the account.</p> </li> <li> <p>Public extensions from publishers other than

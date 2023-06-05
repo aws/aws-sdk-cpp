@@ -596,9 +596,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption">environment
      * variables</a>. When <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda
-     * SnapStart</a> is activated, this key is also used to encrypt your function's
-     * snapshot. If you don't provide a customer managed key, Lambda uses a default
-     * service key.</p>
+     * SnapStart</a> is activated, Lambda also uses this key is to encrypt your
+     * function's snapshot. If you deploy your function using a container image, Lambda
+     * also uses this key to encrypt your function when it's deployed. Note that this
+     * is not the same key that's used to protect your container image in the Amazon
+     * Elastic Container Registry (Amazon ECR). If you don't provide a customer managed
+     * key, Lambda uses a default service key.</p>
      */
     inline const Aws::String& GetKMSKeyArn() const{ return m_kMSKeyArn; }
 
@@ -608,9 +611,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption">environment
      * variables</a>. When <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda
-     * SnapStart</a> is activated, this key is also used to encrypt your function's
-     * snapshot. If you don't provide a customer managed key, Lambda uses a default
-     * service key.</p>
+     * SnapStart</a> is activated, Lambda also uses this key is to encrypt your
+     * function's snapshot. If you deploy your function using a container image, Lambda
+     * also uses this key to encrypt your function when it's deployed. Note that this
+     * is not the same key that's used to protect your container image in the Amazon
+     * Elastic Container Registry (Amazon ECR). If you don't provide a customer managed
+     * key, Lambda uses a default service key.</p>
      */
     inline bool KMSKeyArnHasBeenSet() const { return m_kMSKeyArnHasBeenSet; }
 
@@ -620,9 +626,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption">environment
      * variables</a>. When <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda
-     * SnapStart</a> is activated, this key is also used to encrypt your function's
-     * snapshot. If you don't provide a customer managed key, Lambda uses a default
-     * service key.</p>
+     * SnapStart</a> is activated, Lambda also uses this key is to encrypt your
+     * function's snapshot. If you deploy your function using a container image, Lambda
+     * also uses this key to encrypt your function when it's deployed. Note that this
+     * is not the same key that's used to protect your container image in the Amazon
+     * Elastic Container Registry (Amazon ECR). If you don't provide a customer managed
+     * key, Lambda uses a default service key.</p>
      */
     inline void SetKMSKeyArn(const Aws::String& value) { m_kMSKeyArnHasBeenSet = true; m_kMSKeyArn = value; }
 
@@ -632,9 +641,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption">environment
      * variables</a>. When <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda
-     * SnapStart</a> is activated, this key is also used to encrypt your function's
-     * snapshot. If you don't provide a customer managed key, Lambda uses a default
-     * service key.</p>
+     * SnapStart</a> is activated, Lambda also uses this key is to encrypt your
+     * function's snapshot. If you deploy your function using a container image, Lambda
+     * also uses this key to encrypt your function when it's deployed. Note that this
+     * is not the same key that's used to protect your container image in the Amazon
+     * Elastic Container Registry (Amazon ECR). If you don't provide a customer managed
+     * key, Lambda uses a default service key.</p>
      */
     inline void SetKMSKeyArn(Aws::String&& value) { m_kMSKeyArnHasBeenSet = true; m_kMSKeyArn = std::move(value); }
 
@@ -644,9 +656,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption">environment
      * variables</a>. When <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda
-     * SnapStart</a> is activated, this key is also used to encrypt your function's
-     * snapshot. If you don't provide a customer managed key, Lambda uses a default
-     * service key.</p>
+     * SnapStart</a> is activated, Lambda also uses this key is to encrypt your
+     * function's snapshot. If you deploy your function using a container image, Lambda
+     * also uses this key to encrypt your function when it's deployed. Note that this
+     * is not the same key that's used to protect your container image in the Amazon
+     * Elastic Container Registry (Amazon ECR). If you don't provide a customer managed
+     * key, Lambda uses a default service key.</p>
      */
     inline void SetKMSKeyArn(const char* value) { m_kMSKeyArnHasBeenSet = true; m_kMSKeyArn.assign(value); }
 
@@ -656,9 +671,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption">environment
      * variables</a>. When <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda
-     * SnapStart</a> is activated, this key is also used to encrypt your function's
-     * snapshot. If you don't provide a customer managed key, Lambda uses a default
-     * service key.</p>
+     * SnapStart</a> is activated, Lambda also uses this key is to encrypt your
+     * function's snapshot. If you deploy your function using a container image, Lambda
+     * also uses this key to encrypt your function when it's deployed. Note that this
+     * is not the same key that's used to protect your container image in the Amazon
+     * Elastic Container Registry (Amazon ECR). If you don't provide a customer managed
+     * key, Lambda uses a default service key.</p>
      */
     inline UpdateFunctionConfigurationRequest& WithKMSKeyArn(const Aws::String& value) { SetKMSKeyArn(value); return *this;}
 
@@ -668,9 +686,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption">environment
      * variables</a>. When <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda
-     * SnapStart</a> is activated, this key is also used to encrypt your function's
-     * snapshot. If you don't provide a customer managed key, Lambda uses a default
-     * service key.</p>
+     * SnapStart</a> is activated, Lambda also uses this key is to encrypt your
+     * function's snapshot. If you deploy your function using a container image, Lambda
+     * also uses this key to encrypt your function when it's deployed. Note that this
+     * is not the same key that's used to protect your container image in the Amazon
+     * Elastic Container Registry (Amazon ECR). If you don't provide a customer managed
+     * key, Lambda uses a default service key.</p>
      */
     inline UpdateFunctionConfigurationRequest& WithKMSKeyArn(Aws::String&& value) { SetKMSKeyArn(std::move(value)); return *this;}
 
@@ -680,9 +701,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption">environment
      * variables</a>. When <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda
-     * SnapStart</a> is activated, this key is also used to encrypt your function's
-     * snapshot. If you don't provide a customer managed key, Lambda uses a default
-     * service key.</p>
+     * SnapStart</a> is activated, Lambda also uses this key is to encrypt your
+     * function's snapshot. If you deploy your function using a container image, Lambda
+     * also uses this key to encrypt your function when it's deployed. Note that this
+     * is not the same key that's used to protect your container image in the Amazon
+     * Elastic Container Registry (Amazon ECR). If you don't provide a customer managed
+     * key, Lambda uses a default service key.</p>
      */
     inline UpdateFunctionConfigurationRequest& WithKMSKeyArn(const char* value) { SetKMSKeyArn(value); return *this;}
 

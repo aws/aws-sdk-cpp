@@ -539,7 +539,9 @@ namespace FraudDetector
         /**
          * <p>Deletes the specified event.</p> <p>When you delete an event, Amazon Fraud
          * Detector permanently deletes that event and the event data is no longer stored
-         * in Amazon Fraud Detector.</p><p><h3>See Also:</h3>   <a
+         * in Amazon Fraud Detector. If <code>deleteAuditHistory</code> is
+         * <code>True</code>, event data is available through search for up to 30 seconds
+         * after the delete operation is completed.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteEvent">AWS
          * API Reference</a></p>
          */

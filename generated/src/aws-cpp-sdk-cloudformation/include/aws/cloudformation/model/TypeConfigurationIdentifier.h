@@ -43,89 +43,89 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) for the extension, in this account and
-     * region.</p> <p>For public extensions, this will be the ARN assigned when you <a
+     * Region.</p> <p>For public extensions, this will be the ARN assigned when you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate
-     * the type</a> in this account and region. For private extensions, this will be
+     * the type</a> in this account and Region. For private extensions, this will be
      * the ARN assigned when you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register
-     * the type</a> in this account and region.</p>
+     * the type</a> in this account and Region.</p>
      */
     inline const Aws::String& GetTypeArn() const{ return m_typeArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the extension, in this account and
-     * region.</p> <p>For public extensions, this will be the ARN assigned when you <a
+     * Region.</p> <p>For public extensions, this will be the ARN assigned when you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate
-     * the type</a> in this account and region. For private extensions, this will be
+     * the type</a> in this account and Region. For private extensions, this will be
      * the ARN assigned when you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register
-     * the type</a> in this account and region.</p>
+     * the type</a> in this account and Region.</p>
      */
     inline bool TypeArnHasBeenSet() const { return m_typeArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the extension, in this account and
-     * region.</p> <p>For public extensions, this will be the ARN assigned when you <a
+     * Region.</p> <p>For public extensions, this will be the ARN assigned when you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate
-     * the type</a> in this account and region. For private extensions, this will be
+     * the type</a> in this account and Region. For private extensions, this will be
      * the ARN assigned when you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register
-     * the type</a> in this account and region.</p>
+     * the type</a> in this account and Region.</p>
      */
     inline void SetTypeArn(const Aws::String& value) { m_typeArnHasBeenSet = true; m_typeArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the extension, in this account and
-     * region.</p> <p>For public extensions, this will be the ARN assigned when you <a
+     * Region.</p> <p>For public extensions, this will be the ARN assigned when you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate
-     * the type</a> in this account and region. For private extensions, this will be
+     * the type</a> in this account and Region. For private extensions, this will be
      * the ARN assigned when you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register
-     * the type</a> in this account and region.</p>
+     * the type</a> in this account and Region.</p>
      */
     inline void SetTypeArn(Aws::String&& value) { m_typeArnHasBeenSet = true; m_typeArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the extension, in this account and
-     * region.</p> <p>For public extensions, this will be the ARN assigned when you <a
+     * Region.</p> <p>For public extensions, this will be the ARN assigned when you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate
-     * the type</a> in this account and region. For private extensions, this will be
+     * the type</a> in this account and Region. For private extensions, this will be
      * the ARN assigned when you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register
-     * the type</a> in this account and region.</p>
+     * the type</a> in this account and Region.</p>
      */
     inline void SetTypeArn(const char* value) { m_typeArnHasBeenSet = true; m_typeArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the extension, in this account and
-     * region.</p> <p>For public extensions, this will be the ARN assigned when you <a
+     * Region.</p> <p>For public extensions, this will be the ARN assigned when you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate
-     * the type</a> in this account and region. For private extensions, this will be
+     * the type</a> in this account and Region. For private extensions, this will be
      * the ARN assigned when you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register
-     * the type</a> in this account and region.</p>
+     * the type</a> in this account and Region.</p>
      */
     inline TypeConfigurationIdentifier& WithTypeArn(const Aws::String& value) { SetTypeArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) for the extension, in this account and
-     * region.</p> <p>For public extensions, this will be the ARN assigned when you <a
+     * Region.</p> <p>For public extensions, this will be the ARN assigned when you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate
-     * the type</a> in this account and region. For private extensions, this will be
+     * the type</a> in this account and Region. For private extensions, this will be
      * the ARN assigned when you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register
-     * the type</a> in this account and region.</p>
+     * the type</a> in this account and Region.</p>
      */
     inline TypeConfigurationIdentifier& WithTypeArn(Aws::String&& value) { SetTypeArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) for the extension, in this account and
-     * region.</p> <p>For public extensions, this will be the ARN assigned when you <a
+     * Region.</p> <p>For public extensions, this will be the ARN assigned when you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate
-     * the type</a> in this account and region. For private extensions, this will be
+     * the type</a> in this account and Region. For private extensions, this will be
      * the ARN assigned when you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register
-     * the type</a> in this account and region.</p>
+     * the type</a> in this account and Region.</p>
      */
     inline TypeConfigurationIdentifier& WithTypeArn(const char* value) { SetTypeArn(value); return *this;}
 
@@ -181,49 +181,49 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) for the configuration, in this account and
-     * region.</p>
+     * Region.</p>
      */
     inline const Aws::String& GetTypeConfigurationArn() const{ return m_typeConfigurationArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the configuration, in this account and
-     * region.</p>
+     * Region.</p>
      */
     inline bool TypeConfigurationArnHasBeenSet() const { return m_typeConfigurationArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the configuration, in this account and
-     * region.</p>
+     * Region.</p>
      */
     inline void SetTypeConfigurationArn(const Aws::String& value) { m_typeConfigurationArnHasBeenSet = true; m_typeConfigurationArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the configuration, in this account and
-     * region.</p>
+     * Region.</p>
      */
     inline void SetTypeConfigurationArn(Aws::String&& value) { m_typeConfigurationArnHasBeenSet = true; m_typeConfigurationArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the configuration, in this account and
-     * region.</p>
+     * Region.</p>
      */
     inline void SetTypeConfigurationArn(const char* value) { m_typeConfigurationArnHasBeenSet = true; m_typeConfigurationArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the configuration, in this account and
-     * region.</p>
+     * Region.</p>
      */
     inline TypeConfigurationIdentifier& WithTypeConfigurationArn(const Aws::String& value) { SetTypeConfigurationArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) for the configuration, in this account and
-     * region.</p>
+     * Region.</p>
      */
     inline TypeConfigurationIdentifier& WithTypeConfigurationArn(Aws::String&& value) { SetTypeConfigurationArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) for the configuration, in this account and
-     * region.</p>
+     * Region.</p>
      */
     inline TypeConfigurationIdentifier& WithTypeConfigurationArn(const char* value) { SetTypeConfigurationArn(value); return *this;}
 

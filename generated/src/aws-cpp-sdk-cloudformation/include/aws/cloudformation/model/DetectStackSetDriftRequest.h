@@ -88,22 +88,58 @@ namespace Model
     inline DetectStackSetDriftRequest& WithStackSetName(const char* value) { SetStackSetName(value); return *this;}
 
 
-    
+    /**
+     * <p>The user-specified preferences for how CloudFormation performs a stack set
+     * operation.</p> <p>For more information about maximum concurrent accounts and
+     * failure tolerance, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack
+     * set operation options</a>.</p>
+     */
     inline const StackSetOperationPreferences& GetOperationPreferences() const{ return m_operationPreferences; }
 
-    
+    /**
+     * <p>The user-specified preferences for how CloudFormation performs a stack set
+     * operation.</p> <p>For more information about maximum concurrent accounts and
+     * failure tolerance, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack
+     * set operation options</a>.</p>
+     */
     inline bool OperationPreferencesHasBeenSet() const { return m_operationPreferencesHasBeenSet; }
 
-    
+    /**
+     * <p>The user-specified preferences for how CloudFormation performs a stack set
+     * operation.</p> <p>For more information about maximum concurrent accounts and
+     * failure tolerance, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack
+     * set operation options</a>.</p>
+     */
     inline void SetOperationPreferences(const StackSetOperationPreferences& value) { m_operationPreferencesHasBeenSet = true; m_operationPreferences = value; }
 
-    
+    /**
+     * <p>The user-specified preferences for how CloudFormation performs a stack set
+     * operation.</p> <p>For more information about maximum concurrent accounts and
+     * failure tolerance, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack
+     * set operation options</a>.</p>
+     */
     inline void SetOperationPreferences(StackSetOperationPreferences&& value) { m_operationPreferencesHasBeenSet = true; m_operationPreferences = std::move(value); }
 
-    
+    /**
+     * <p>The user-specified preferences for how CloudFormation performs a stack set
+     * operation.</p> <p>For more information about maximum concurrent accounts and
+     * failure tolerance, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack
+     * set operation options</a>.</p>
+     */
     inline DetectStackSetDriftRequest& WithOperationPreferences(const StackSetOperationPreferences& value) { SetOperationPreferences(value); return *this;}
 
-    
+    /**
+     * <p>The user-specified preferences for how CloudFormation performs a stack set
+     * operation.</p> <p>For more information about maximum concurrent accounts and
+     * failure tolerance, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack
+     * set operation options</a>.</p>
+     */
     inline DetectStackSetDriftRequest& WithOperationPreferences(StackSetOperationPreferences&& value) { SetOperationPreferences(std::move(value)); return *this;}
 
 
