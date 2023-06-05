@@ -176,7 +176,7 @@ namespace Model
      * <p>The version of the extension to test.</p> <p>You can specify the version id
      * with either <code>Arn</code>, or with <code>TypeName</code> and
      * <code>Type</code>.</p> <p>If you don't specify a version, CloudFormation uses
-     * the default version of the extension in this account and region for testing.</p>
+     * the default version of the extension in this account and Region for testing.</p>
      */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
 
@@ -184,7 +184,7 @@ namespace Model
      * <p>The version of the extension to test.</p> <p>You can specify the version id
      * with either <code>Arn</code>, or with <code>TypeName</code> and
      * <code>Type</code>.</p> <p>If you don't specify a version, CloudFormation uses
-     * the default version of the extension in this account and region for testing.</p>
+     * the default version of the extension in this account and Region for testing.</p>
      */
     inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
 
@@ -192,7 +192,7 @@ namespace Model
      * <p>The version of the extension to test.</p> <p>You can specify the version id
      * with either <code>Arn</code>, or with <code>TypeName</code> and
      * <code>Type</code>.</p> <p>If you don't specify a version, CloudFormation uses
-     * the default version of the extension in this account and region for testing.</p>
+     * the default version of the extension in this account and Region for testing.</p>
      */
     inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
 
@@ -200,7 +200,7 @@ namespace Model
      * <p>The version of the extension to test.</p> <p>You can specify the version id
      * with either <code>Arn</code>, or with <code>TypeName</code> and
      * <code>Type</code>.</p> <p>If you don't specify a version, CloudFormation uses
-     * the default version of the extension in this account and region for testing.</p>
+     * the default version of the extension in this account and Region for testing.</p>
      */
     inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = std::move(value); }
 
@@ -208,7 +208,7 @@ namespace Model
      * <p>The version of the extension to test.</p> <p>You can specify the version id
      * with either <code>Arn</code>, or with <code>TypeName</code> and
      * <code>Type</code>.</p> <p>If you don't specify a version, CloudFormation uses
-     * the default version of the extension in this account and region for testing.</p>
+     * the default version of the extension in this account and Region for testing.</p>
      */
     inline void SetVersionId(const char* value) { m_versionIdHasBeenSet = true; m_versionId.assign(value); }
 
@@ -216,7 +216,7 @@ namespace Model
      * <p>The version of the extension to test.</p> <p>You can specify the version id
      * with either <code>Arn</code>, or with <code>TypeName</code> and
      * <code>Type</code>.</p> <p>If you don't specify a version, CloudFormation uses
-     * the default version of the extension in this account and region for testing.</p>
+     * the default version of the extension in this account and Region for testing.</p>
      */
     inline TestTypeRequest& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
 
@@ -224,7 +224,7 @@ namespace Model
      * <p>The version of the extension to test.</p> <p>You can specify the version id
      * with either <code>Arn</code>, or with <code>TypeName</code> and
      * <code>Type</code>.</p> <p>If you don't specify a version, CloudFormation uses
-     * the default version of the extension in this account and region for testing.</p>
+     * the default version of the extension in this account and Region for testing.</p>
      */
     inline TestTypeRequest& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
 
@@ -232,7 +232,7 @@ namespace Model
      * <p>The version of the extension to test.</p> <p>You can specify the version id
      * with either <code>Arn</code>, or with <code>TypeName</code> and
      * <code>Type</code>.</p> <p>If you don't specify a version, CloudFormation uses
-     * the default version of the extension in this account and region for testing.</p>
+     * the default version of the extension in this account and Region for testing.</p>
      */
     inline TestTypeRequest& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 

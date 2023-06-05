@@ -47,9 +47,11 @@ enum class FinspaceErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  INTERNAL_SERVER= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  INTERNAL_SERVER,
   INVALID_REQUEST,
   LIMIT_EXCEEDED,
+  RESOURCE_ALREADY_EXISTS,
   SERVICE_QUOTA_EXCEEDED
 };
 

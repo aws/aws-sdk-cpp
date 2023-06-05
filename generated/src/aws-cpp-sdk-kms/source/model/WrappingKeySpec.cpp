@@ -21,6 +21,8 @@ namespace Aws
       {
 
         static const int RSA_2048_HASH = HashingUtils::HashString("RSA_2048");
+        static const int RSA_3072_HASH = HashingUtils::HashString("RSA_3072");
+        static const int RSA_4096_HASH = HashingUtils::HashString("RSA_4096");
 
 
         WrappingKeySpec GetWrappingKeySpecForName(const Aws::String& name)
@@ -29,6 +31,14 @@ namespace Aws
           if (hashCode == RSA_2048_HASH)
           {
             return WrappingKeySpec::RSA_2048;
+          }
+          else if (hashCode == RSA_3072_HASH)
+          {
+            return WrappingKeySpec::RSA_3072;
+          }
+          else if (hashCode == RSA_4096_HASH)
+          {
+            return WrappingKeySpec::RSA_4096;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +56,10 @@ namespace Aws
           {
           case WrappingKeySpec::RSA_2048:
             return "RSA_2048";
+          case WrappingKeySpec::RSA_3072:
+            return "RSA_3072";
+          case WrappingKeySpec::RSA_4096:
+            return "RSA_4096";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

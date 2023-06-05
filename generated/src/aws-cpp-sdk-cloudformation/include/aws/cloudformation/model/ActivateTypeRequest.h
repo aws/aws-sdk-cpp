@@ -254,96 +254,96 @@ namespace Model
 
 
     /**
-     * <p>An alias to assign to the public extension, in this account and region. If
+     * <p>An alias to assign to the public extension, in this account and Region. If
      * you specify an alias for the extension, CloudFormation treats the alias as the
-     * extension type name within this account and region. You must use the alias to
+     * extension type name within this account and Region. You must use the alias to
      * refer to the extension in your templates, API calls, and CloudFormation
      * console.</p> <p>An extension alias must be unique within a given account and
-     * region. You can activate the same public resource multiple times in the same
-     * account and region, using different type name aliases.</p>
+     * Region. You can activate the same public resource multiple times in the same
+     * account and Region, using different type name aliases.</p>
      */
     inline const Aws::String& GetTypeNameAlias() const{ return m_typeNameAlias; }
 
     /**
-     * <p>An alias to assign to the public extension, in this account and region. If
+     * <p>An alias to assign to the public extension, in this account and Region. If
      * you specify an alias for the extension, CloudFormation treats the alias as the
-     * extension type name within this account and region. You must use the alias to
+     * extension type name within this account and Region. You must use the alias to
      * refer to the extension in your templates, API calls, and CloudFormation
      * console.</p> <p>An extension alias must be unique within a given account and
-     * region. You can activate the same public resource multiple times in the same
-     * account and region, using different type name aliases.</p>
+     * Region. You can activate the same public resource multiple times in the same
+     * account and Region, using different type name aliases.</p>
      */
     inline bool TypeNameAliasHasBeenSet() const { return m_typeNameAliasHasBeenSet; }
 
     /**
-     * <p>An alias to assign to the public extension, in this account and region. If
+     * <p>An alias to assign to the public extension, in this account and Region. If
      * you specify an alias for the extension, CloudFormation treats the alias as the
-     * extension type name within this account and region. You must use the alias to
+     * extension type name within this account and Region. You must use the alias to
      * refer to the extension in your templates, API calls, and CloudFormation
      * console.</p> <p>An extension alias must be unique within a given account and
-     * region. You can activate the same public resource multiple times in the same
-     * account and region, using different type name aliases.</p>
+     * Region. You can activate the same public resource multiple times in the same
+     * account and Region, using different type name aliases.</p>
      */
     inline void SetTypeNameAlias(const Aws::String& value) { m_typeNameAliasHasBeenSet = true; m_typeNameAlias = value; }
 
     /**
-     * <p>An alias to assign to the public extension, in this account and region. If
+     * <p>An alias to assign to the public extension, in this account and Region. If
      * you specify an alias for the extension, CloudFormation treats the alias as the
-     * extension type name within this account and region. You must use the alias to
+     * extension type name within this account and Region. You must use the alias to
      * refer to the extension in your templates, API calls, and CloudFormation
      * console.</p> <p>An extension alias must be unique within a given account and
-     * region. You can activate the same public resource multiple times in the same
-     * account and region, using different type name aliases.</p>
+     * Region. You can activate the same public resource multiple times in the same
+     * account and Region, using different type name aliases.</p>
      */
     inline void SetTypeNameAlias(Aws::String&& value) { m_typeNameAliasHasBeenSet = true; m_typeNameAlias = std::move(value); }
 
     /**
-     * <p>An alias to assign to the public extension, in this account and region. If
+     * <p>An alias to assign to the public extension, in this account and Region. If
      * you specify an alias for the extension, CloudFormation treats the alias as the
-     * extension type name within this account and region. You must use the alias to
+     * extension type name within this account and Region. You must use the alias to
      * refer to the extension in your templates, API calls, and CloudFormation
      * console.</p> <p>An extension alias must be unique within a given account and
-     * region. You can activate the same public resource multiple times in the same
-     * account and region, using different type name aliases.</p>
+     * Region. You can activate the same public resource multiple times in the same
+     * account and Region, using different type name aliases.</p>
      */
     inline void SetTypeNameAlias(const char* value) { m_typeNameAliasHasBeenSet = true; m_typeNameAlias.assign(value); }
 
     /**
-     * <p>An alias to assign to the public extension, in this account and region. If
+     * <p>An alias to assign to the public extension, in this account and Region. If
      * you specify an alias for the extension, CloudFormation treats the alias as the
-     * extension type name within this account and region. You must use the alias to
+     * extension type name within this account and Region. You must use the alias to
      * refer to the extension in your templates, API calls, and CloudFormation
      * console.</p> <p>An extension alias must be unique within a given account and
-     * region. You can activate the same public resource multiple times in the same
-     * account and region, using different type name aliases.</p>
+     * Region. You can activate the same public resource multiple times in the same
+     * account and Region, using different type name aliases.</p>
      */
     inline ActivateTypeRequest& WithTypeNameAlias(const Aws::String& value) { SetTypeNameAlias(value); return *this;}
 
     /**
-     * <p>An alias to assign to the public extension, in this account and region. If
+     * <p>An alias to assign to the public extension, in this account and Region. If
      * you specify an alias for the extension, CloudFormation treats the alias as the
-     * extension type name within this account and region. You must use the alias to
+     * extension type name within this account and Region. You must use the alias to
      * refer to the extension in your templates, API calls, and CloudFormation
      * console.</p> <p>An extension alias must be unique within a given account and
-     * region. You can activate the same public resource multiple times in the same
-     * account and region, using different type name aliases.</p>
+     * Region. You can activate the same public resource multiple times in the same
+     * account and Region, using different type name aliases.</p>
      */
     inline ActivateTypeRequest& WithTypeNameAlias(Aws::String&& value) { SetTypeNameAlias(std::move(value)); return *this;}
 
     /**
-     * <p>An alias to assign to the public extension, in this account and region. If
+     * <p>An alias to assign to the public extension, in this account and Region. If
      * you specify an alias for the extension, CloudFormation treats the alias as the
-     * extension type name within this account and region. You must use the alias to
+     * extension type name within this account and Region. You must use the alias to
      * refer to the extension in your templates, API calls, and CloudFormation
      * console.</p> <p>An extension alias must be unique within a given account and
-     * region. You can activate the same public resource multiple times in the same
-     * account and region, using different type name aliases.</p>
+     * Region. You can activate the same public resource multiple times in the same
+     * account and Region, using different type name aliases.</p>
      */
     inline ActivateTypeRequest& WithTypeNameAlias(const char* value) { SetTypeNameAlias(value); return *this;}
 
 
     /**
-     * <p>Whether to automatically update the extension in this account and region when
+     * <p>Whether to automatically update the extension in this account and Region when
      * a new <i>minor</i> version is published by the extension publisher. Major
      * versions released by the publisher must be manually updated.</p> <p>The default
      * is <code>true</code>.</p>
@@ -351,7 +351,7 @@ namespace Model
     inline bool GetAutoUpdate() const{ return m_autoUpdate; }
 
     /**
-     * <p>Whether to automatically update the extension in this account and region when
+     * <p>Whether to automatically update the extension in this account and Region when
      * a new <i>minor</i> version is published by the extension publisher. Major
      * versions released by the publisher must be manually updated.</p> <p>The default
      * is <code>true</code>.</p>
@@ -359,7 +359,7 @@ namespace Model
     inline bool AutoUpdateHasBeenSet() const { return m_autoUpdateHasBeenSet; }
 
     /**
-     * <p>Whether to automatically update the extension in this account and region when
+     * <p>Whether to automatically update the extension in this account and Region when
      * a new <i>minor</i> version is published by the extension publisher. Major
      * versions released by the publisher must be manually updated.</p> <p>The default
      * is <code>true</code>.</p>
@@ -367,7 +367,7 @@ namespace Model
     inline void SetAutoUpdate(bool value) { m_autoUpdateHasBeenSet = true; m_autoUpdate = value; }
 
     /**
-     * <p>Whether to automatically update the extension in this account and region when
+     * <p>Whether to automatically update the extension in this account and Region when
      * a new <i>minor</i> version is published by the extension publisher. Major
      * versions released by the publisher must be manually updated.</p> <p>The default
      * is <code>true</code>.</p>
@@ -375,22 +375,34 @@ namespace Model
     inline ActivateTypeRequest& WithAutoUpdate(bool value) { SetAutoUpdate(value); return *this;}
 
 
-    
+    /**
+     * <p>Contains logging configuration information for an extension.</p>
+     */
     inline const LoggingConfig& GetLoggingConfig() const{ return m_loggingConfig; }
 
-    
+    /**
+     * <p>Contains logging configuration information for an extension.</p>
+     */
     inline bool LoggingConfigHasBeenSet() const { return m_loggingConfigHasBeenSet; }
 
-    
+    /**
+     * <p>Contains logging configuration information for an extension.</p>
+     */
     inline void SetLoggingConfig(const LoggingConfig& value) { m_loggingConfigHasBeenSet = true; m_loggingConfig = value; }
 
-    
+    /**
+     * <p>Contains logging configuration information for an extension.</p>
+     */
     inline void SetLoggingConfig(LoggingConfig&& value) { m_loggingConfigHasBeenSet = true; m_loggingConfig = std::move(value); }
 
-    
+    /**
+     * <p>Contains logging configuration information for an extension.</p>
+     */
     inline ActivateTypeRequest& WithLoggingConfig(const LoggingConfig& value) { SetLoggingConfig(value); return *this;}
 
-    
+    /**
+     * <p>Contains logging configuration information for an extension.</p>
+     */
     inline ActivateTypeRequest& WithLoggingConfig(LoggingConfig&& value) { SetLoggingConfig(std::move(value)); return *this;}
 
 

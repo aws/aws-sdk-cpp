@@ -80,32 +80,32 @@ namespace Model
 
 
     /**
-     * <p>The data type.</p>
+     * <p>The data type of the variable.</p>
      */
     inline const DataType& GetDataType() const{ return m_dataType; }
 
     /**
-     * <p>The data type.</p>
+     * <p>The data type of the variable.</p>
      */
     inline bool DataTypeHasBeenSet() const { return m_dataTypeHasBeenSet; }
 
     /**
-     * <p>The data type.</p>
+     * <p>The data type of the variable.</p>
      */
     inline void SetDataType(const DataType& value) { m_dataTypeHasBeenSet = true; m_dataType = value; }
 
     /**
-     * <p>The data type.</p>
+     * <p>The data type of the variable.</p>
      */
     inline void SetDataType(DataType&& value) { m_dataTypeHasBeenSet = true; m_dataType = std::move(value); }
 
     /**
-     * <p>The data type.</p>
+     * <p>The data type of the variable.</p>
      */
     inline CreateVariableRequest& WithDataType(const DataType& value) { SetDataType(value); return *this;}
 
     /**
-     * <p>The data type.</p>
+     * <p>The data type of the variable.</p>
      */
     inline CreateVariableRequest& WithDataType(DataType&& value) { SetDataType(std::move(value)); return *this;}
 

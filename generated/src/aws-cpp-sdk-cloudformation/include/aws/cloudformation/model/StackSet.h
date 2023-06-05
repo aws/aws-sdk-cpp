@@ -905,31 +905,67 @@ namespace Model
     inline StackSet& WithManagedExecution(ManagedExecution&& value) { SetManagedExecution(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>Returns a list of all Amazon Web Services Regions the given StackSet has
+     * stack instances deployed in. The Amazon Web Services Regions list output is in
+     * no particular order.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetRegions() const{ return m_regions; }
 
-    
+    /**
+     * <p>Returns a list of all Amazon Web Services Regions the given StackSet has
+     * stack instances deployed in. The Amazon Web Services Regions list output is in
+     * no particular order.</p>
+     */
     inline bool RegionsHasBeenSet() const { return m_regionsHasBeenSet; }
 
-    
+    /**
+     * <p>Returns a list of all Amazon Web Services Regions the given StackSet has
+     * stack instances deployed in. The Amazon Web Services Regions list output is in
+     * no particular order.</p>
+     */
     inline void SetRegions(const Aws::Vector<Aws::String>& value) { m_regionsHasBeenSet = true; m_regions = value; }
 
-    
+    /**
+     * <p>Returns a list of all Amazon Web Services Regions the given StackSet has
+     * stack instances deployed in. The Amazon Web Services Regions list output is in
+     * no particular order.</p>
+     */
     inline void SetRegions(Aws::Vector<Aws::String>&& value) { m_regionsHasBeenSet = true; m_regions = std::move(value); }
 
-    
+    /**
+     * <p>Returns a list of all Amazon Web Services Regions the given StackSet has
+     * stack instances deployed in. The Amazon Web Services Regions list output is in
+     * no particular order.</p>
+     */
     inline StackSet& WithRegions(const Aws::Vector<Aws::String>& value) { SetRegions(value); return *this;}
 
-    
+    /**
+     * <p>Returns a list of all Amazon Web Services Regions the given StackSet has
+     * stack instances deployed in. The Amazon Web Services Regions list output is in
+     * no particular order.</p>
+     */
     inline StackSet& WithRegions(Aws::Vector<Aws::String>&& value) { SetRegions(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>Returns a list of all Amazon Web Services Regions the given StackSet has
+     * stack instances deployed in. The Amazon Web Services Regions list output is in
+     * no particular order.</p>
+     */
     inline StackSet& AddRegions(const Aws::String& value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
 
-    
+    /**
+     * <p>Returns a list of all Amazon Web Services Regions the given StackSet has
+     * stack instances deployed in. The Amazon Web Services Regions list output is in
+     * no particular order.</p>
+     */
     inline StackSet& AddRegions(Aws::String&& value) { m_regionsHasBeenSet = true; m_regions.push_back(std::move(value)); return *this; }
 
-    
+    /**
+     * <p>Returns a list of all Amazon Web Services Regions the given StackSet has
+     * stack instances deployed in. The Amazon Web Services Regions list output is in
+     * no particular order.</p>
+     */
     inline StackSet& AddRegions(const char* value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
 
   private:

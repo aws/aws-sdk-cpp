@@ -78,7 +78,7 @@ namespace Model
      * <p>The name of the extension.</p> <p>If you specified a
      * <code>TypeNameAlias</code> when you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate
-     * this extension</a> in your account and region, CloudFormation considers that
+     * this extension</a> in your account and Region, CloudFormation considers that
      * alias as the type name.</p>
      */
     inline const Aws::String& GetTypeName() const{ return m_typeName; }
@@ -87,7 +87,7 @@ namespace Model
      * <p>The name of the extension.</p> <p>If you specified a
      * <code>TypeNameAlias</code> when you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate
-     * this extension</a> in your account and region, CloudFormation considers that
+     * this extension</a> in your account and Region, CloudFormation considers that
      * alias as the type name.</p>
      */
     inline bool TypeNameHasBeenSet() const { return m_typeNameHasBeenSet; }
@@ -96,7 +96,7 @@ namespace Model
      * <p>The name of the extension.</p> <p>If you specified a
      * <code>TypeNameAlias</code> when you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate
-     * this extension</a> in your account and region, CloudFormation considers that
+     * this extension</a> in your account and Region, CloudFormation considers that
      * alias as the type name.</p>
      */
     inline void SetTypeName(const Aws::String& value) { m_typeNameHasBeenSet = true; m_typeName = value; }
@@ -105,7 +105,7 @@ namespace Model
      * <p>The name of the extension.</p> <p>If you specified a
      * <code>TypeNameAlias</code> when you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate
-     * this extension</a> in your account and region, CloudFormation considers that
+     * this extension</a> in your account and Region, CloudFormation considers that
      * alias as the type name.</p>
      */
     inline void SetTypeName(Aws::String&& value) { m_typeNameHasBeenSet = true; m_typeName = std::move(value); }
@@ -114,7 +114,7 @@ namespace Model
      * <p>The name of the extension.</p> <p>If you specified a
      * <code>TypeNameAlias</code> when you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate
-     * this extension</a> in your account and region, CloudFormation considers that
+     * this extension</a> in your account and Region, CloudFormation considers that
      * alias as the type name.</p>
      */
     inline void SetTypeName(const char* value) { m_typeNameHasBeenSet = true; m_typeName.assign(value); }
@@ -123,7 +123,7 @@ namespace Model
      * <p>The name of the extension.</p> <p>If you specified a
      * <code>TypeNameAlias</code> when you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate
-     * this extension</a> in your account and region, CloudFormation considers that
+     * this extension</a> in your account and Region, CloudFormation considers that
      * alias as the type name.</p>
      */
     inline TypeSummary& WithTypeName(const Aws::String& value) { SetTypeName(value); return *this;}
@@ -132,7 +132,7 @@ namespace Model
      * <p>The name of the extension.</p> <p>If you specified a
      * <code>TypeNameAlias</code> when you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate
-     * this extension</a> in your account and region, CloudFormation considers that
+     * this extension</a> in your account and Region, CloudFormation considers that
      * alias as the type name.</p>
      */
     inline TypeSummary& WithTypeName(Aws::String&& value) { SetTypeName(std::move(value)); return *this;}
@@ -141,7 +141,7 @@ namespace Model
      * <p>The name of the extension.</p> <p>If you specified a
      * <code>TypeNameAlias</code> when you <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate
-     * this extension</a> in your account and region, CloudFormation considers that
+     * this extension</a> in your account and Region, CloudFormation considers that
      * alias as the type name.</p>
      */
     inline TypeSummary& WithTypeName(const char* value) { SetTypeName(value); return *this;}
@@ -455,11 +455,11 @@ namespace Model
 
 
     /**
-     * <p>For public extensions that have been activated for this account and region,
+     * <p>For public extensions that have been activated for this account and Region,
      * the type name of the public extension.</p> <p>If you specified a
      * <code>TypeNameAlias</code> when enabling the extension in this account and
-     * region, CloudFormation treats that alias as the extension's type name within the
-     * account and region, not the type name of the public extension. For more
+     * Region, CloudFormation treats that alias as the extension's type name within the
+     * account and Region, not the type name of the public extension. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying
      * aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.</p>
@@ -467,11 +467,11 @@ namespace Model
     inline const Aws::String& GetOriginalTypeName() const{ return m_originalTypeName; }
 
     /**
-     * <p>For public extensions that have been activated for this account and region,
+     * <p>For public extensions that have been activated for this account and Region,
      * the type name of the public extension.</p> <p>If you specified a
      * <code>TypeNameAlias</code> when enabling the extension in this account and
-     * region, CloudFormation treats that alias as the extension's type name within the
-     * account and region, not the type name of the public extension. For more
+     * Region, CloudFormation treats that alias as the extension's type name within the
+     * account and Region, not the type name of the public extension. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying
      * aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.</p>
@@ -479,11 +479,11 @@ namespace Model
     inline bool OriginalTypeNameHasBeenSet() const { return m_originalTypeNameHasBeenSet; }
 
     /**
-     * <p>For public extensions that have been activated for this account and region,
+     * <p>For public extensions that have been activated for this account and Region,
      * the type name of the public extension.</p> <p>If you specified a
      * <code>TypeNameAlias</code> when enabling the extension in this account and
-     * region, CloudFormation treats that alias as the extension's type name within the
-     * account and region, not the type name of the public extension. For more
+     * Region, CloudFormation treats that alias as the extension's type name within the
+     * account and Region, not the type name of the public extension. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying
      * aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.</p>
@@ -491,11 +491,11 @@ namespace Model
     inline void SetOriginalTypeName(const Aws::String& value) { m_originalTypeNameHasBeenSet = true; m_originalTypeName = value; }
 
     /**
-     * <p>For public extensions that have been activated for this account and region,
+     * <p>For public extensions that have been activated for this account and Region,
      * the type name of the public extension.</p> <p>If you specified a
      * <code>TypeNameAlias</code> when enabling the extension in this account and
-     * region, CloudFormation treats that alias as the extension's type name within the
-     * account and region, not the type name of the public extension. For more
+     * Region, CloudFormation treats that alias as the extension's type name within the
+     * account and Region, not the type name of the public extension. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying
      * aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.</p>
@@ -503,11 +503,11 @@ namespace Model
     inline void SetOriginalTypeName(Aws::String&& value) { m_originalTypeNameHasBeenSet = true; m_originalTypeName = std::move(value); }
 
     /**
-     * <p>For public extensions that have been activated for this account and region,
+     * <p>For public extensions that have been activated for this account and Region,
      * the type name of the public extension.</p> <p>If you specified a
      * <code>TypeNameAlias</code> when enabling the extension in this account and
-     * region, CloudFormation treats that alias as the extension's type name within the
-     * account and region, not the type name of the public extension. For more
+     * Region, CloudFormation treats that alias as the extension's type name within the
+     * account and Region, not the type name of the public extension. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying
      * aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.</p>
@@ -515,11 +515,11 @@ namespace Model
     inline void SetOriginalTypeName(const char* value) { m_originalTypeNameHasBeenSet = true; m_originalTypeName.assign(value); }
 
     /**
-     * <p>For public extensions that have been activated for this account and region,
+     * <p>For public extensions that have been activated for this account and Region,
      * the type name of the public extension.</p> <p>If you specified a
      * <code>TypeNameAlias</code> when enabling the extension in this account and
-     * region, CloudFormation treats that alias as the extension's type name within the
-     * account and region, not the type name of the public extension. For more
+     * Region, CloudFormation treats that alias as the extension's type name within the
+     * account and Region, not the type name of the public extension. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying
      * aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.</p>
@@ -527,11 +527,11 @@ namespace Model
     inline TypeSummary& WithOriginalTypeName(const Aws::String& value) { SetOriginalTypeName(value); return *this;}
 
     /**
-     * <p>For public extensions that have been activated for this account and region,
+     * <p>For public extensions that have been activated for this account and Region,
      * the type name of the public extension.</p> <p>If you specified a
      * <code>TypeNameAlias</code> when enabling the extension in this account and
-     * region, CloudFormation treats that alias as the extension's type name within the
-     * account and region, not the type name of the public extension. For more
+     * Region, CloudFormation treats that alias as the extension's type name within the
+     * account and Region, not the type name of the public extension. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying
      * aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.</p>
@@ -539,11 +539,11 @@ namespace Model
     inline TypeSummary& WithOriginalTypeName(Aws::String&& value) { SetOriginalTypeName(std::move(value)); return *this;}
 
     /**
-     * <p>For public extensions that have been activated for this account and region,
+     * <p>For public extensions that have been activated for this account and Region,
      * the type name of the public extension.</p> <p>If you specified a
      * <code>TypeNameAlias</code> when enabling the extension in this account and
-     * region, CloudFormation treats that alias as the extension's type name within the
-     * account and region, not the type name of the public extension. For more
+     * Region, CloudFormation treats that alias as the extension's type name within the
+     * account and Region, not the type name of the public extension. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying
      * aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.</p>
@@ -552,11 +552,11 @@ namespace Model
 
 
     /**
-     * <p>For public extensions that have been activated for this account and region,
+     * <p>For public extensions that have been activated for this account and Region,
      * the version of the public extension to be used for CloudFormation operations in
      * this account and Region.</p> <p>How you specified <code>AutoUpdate</code> when
      * enabling the extension affects whether CloudFormation automatically updates the
-     * extension in this account and region when a new version is released. For more
+     * extension in this account and Region when a new version is released. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting
      * CloudFormation to automatically use new versions of extensions</a> in the
@@ -565,11 +565,11 @@ namespace Model
     inline const Aws::String& GetPublicVersionNumber() const{ return m_publicVersionNumber; }
 
     /**
-     * <p>For public extensions that have been activated for this account and region,
+     * <p>For public extensions that have been activated for this account and Region,
      * the version of the public extension to be used for CloudFormation operations in
      * this account and Region.</p> <p>How you specified <code>AutoUpdate</code> when
      * enabling the extension affects whether CloudFormation automatically updates the
-     * extension in this account and region when a new version is released. For more
+     * extension in this account and Region when a new version is released. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting
      * CloudFormation to automatically use new versions of extensions</a> in the
@@ -578,11 +578,11 @@ namespace Model
     inline bool PublicVersionNumberHasBeenSet() const { return m_publicVersionNumberHasBeenSet; }
 
     /**
-     * <p>For public extensions that have been activated for this account and region,
+     * <p>For public extensions that have been activated for this account and Region,
      * the version of the public extension to be used for CloudFormation operations in
      * this account and Region.</p> <p>How you specified <code>AutoUpdate</code> when
      * enabling the extension affects whether CloudFormation automatically updates the
-     * extension in this account and region when a new version is released. For more
+     * extension in this account and Region when a new version is released. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting
      * CloudFormation to automatically use new versions of extensions</a> in the
@@ -591,11 +591,11 @@ namespace Model
     inline void SetPublicVersionNumber(const Aws::String& value) { m_publicVersionNumberHasBeenSet = true; m_publicVersionNumber = value; }
 
     /**
-     * <p>For public extensions that have been activated for this account and region,
+     * <p>For public extensions that have been activated for this account and Region,
      * the version of the public extension to be used for CloudFormation operations in
      * this account and Region.</p> <p>How you specified <code>AutoUpdate</code> when
      * enabling the extension affects whether CloudFormation automatically updates the
-     * extension in this account and region when a new version is released. For more
+     * extension in this account and Region when a new version is released. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting
      * CloudFormation to automatically use new versions of extensions</a> in the
@@ -604,11 +604,11 @@ namespace Model
     inline void SetPublicVersionNumber(Aws::String&& value) { m_publicVersionNumberHasBeenSet = true; m_publicVersionNumber = std::move(value); }
 
     /**
-     * <p>For public extensions that have been activated for this account and region,
+     * <p>For public extensions that have been activated for this account and Region,
      * the version of the public extension to be used for CloudFormation operations in
      * this account and Region.</p> <p>How you specified <code>AutoUpdate</code> when
      * enabling the extension affects whether CloudFormation automatically updates the
-     * extension in this account and region when a new version is released. For more
+     * extension in this account and Region when a new version is released. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting
      * CloudFormation to automatically use new versions of extensions</a> in the
@@ -617,11 +617,11 @@ namespace Model
     inline void SetPublicVersionNumber(const char* value) { m_publicVersionNumberHasBeenSet = true; m_publicVersionNumber.assign(value); }
 
     /**
-     * <p>For public extensions that have been activated for this account and region,
+     * <p>For public extensions that have been activated for this account and Region,
      * the version of the public extension to be used for CloudFormation operations in
      * this account and Region.</p> <p>How you specified <code>AutoUpdate</code> when
      * enabling the extension affects whether CloudFormation automatically updates the
-     * extension in this account and region when a new version is released. For more
+     * extension in this account and Region when a new version is released. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting
      * CloudFormation to automatically use new versions of extensions</a> in the
@@ -630,11 +630,11 @@ namespace Model
     inline TypeSummary& WithPublicVersionNumber(const Aws::String& value) { SetPublicVersionNumber(value); return *this;}
 
     /**
-     * <p>For public extensions that have been activated for this account and region,
+     * <p>For public extensions that have been activated for this account and Region,
      * the version of the public extension to be used for CloudFormation operations in
      * this account and Region.</p> <p>How you specified <code>AutoUpdate</code> when
      * enabling the extension affects whether CloudFormation automatically updates the
-     * extension in this account and region when a new version is released. For more
+     * extension in this account and Region when a new version is released. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting
      * CloudFormation to automatically use new versions of extensions</a> in the
@@ -643,11 +643,11 @@ namespace Model
     inline TypeSummary& WithPublicVersionNumber(Aws::String&& value) { SetPublicVersionNumber(std::move(value)); return *this;}
 
     /**
-     * <p>For public extensions that have been activated for this account and region,
+     * <p>For public extensions that have been activated for this account and Region,
      * the version of the public extension to be used for CloudFormation operations in
      * this account and Region.</p> <p>How you specified <code>AutoUpdate</code> when
      * enabling the extension affects whether CloudFormation automatically updates the
-     * extension in this account and region when a new version is released. For more
+     * extension in this account and Region when a new version is released. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting
      * CloudFormation to automatically use new versions of extensions</a> in the
@@ -657,12 +657,12 @@ namespace Model
 
 
     /**
-     * <p>For public extensions that have been activated for this account and region,
+     * <p>For public extensions that have been activated for this account and Region,
      * the latest version of the public extension <i>that is available</i>. For any
      * extensions other than activated third-arty extensions, CloudFormation returns
      * <code>null</code>.</p> <p>How you specified <code>AutoUpdate</code> when
      * enabling the extension affects whether CloudFormation automatically updates the
-     * extension in this account and region when a new version is released. For more
+     * extension in this account and Region when a new version is released. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting
      * CloudFormation to automatically use new versions of extensions</a> in the
@@ -671,12 +671,12 @@ namespace Model
     inline const Aws::String& GetLatestPublicVersion() const{ return m_latestPublicVersion; }
 
     /**
-     * <p>For public extensions that have been activated for this account and region,
+     * <p>For public extensions that have been activated for this account and Region,
      * the latest version of the public extension <i>that is available</i>. For any
      * extensions other than activated third-arty extensions, CloudFormation returns
      * <code>null</code>.</p> <p>How you specified <code>AutoUpdate</code> when
      * enabling the extension affects whether CloudFormation automatically updates the
-     * extension in this account and region when a new version is released. For more
+     * extension in this account and Region when a new version is released. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting
      * CloudFormation to automatically use new versions of extensions</a> in the
@@ -685,12 +685,12 @@ namespace Model
     inline bool LatestPublicVersionHasBeenSet() const { return m_latestPublicVersionHasBeenSet; }
 
     /**
-     * <p>For public extensions that have been activated for this account and region,
+     * <p>For public extensions that have been activated for this account and Region,
      * the latest version of the public extension <i>that is available</i>. For any
      * extensions other than activated third-arty extensions, CloudFormation returns
      * <code>null</code>.</p> <p>How you specified <code>AutoUpdate</code> when
      * enabling the extension affects whether CloudFormation automatically updates the
-     * extension in this account and region when a new version is released. For more
+     * extension in this account and Region when a new version is released. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting
      * CloudFormation to automatically use new versions of extensions</a> in the
@@ -699,12 +699,12 @@ namespace Model
     inline void SetLatestPublicVersion(const Aws::String& value) { m_latestPublicVersionHasBeenSet = true; m_latestPublicVersion = value; }
 
     /**
-     * <p>For public extensions that have been activated for this account and region,
+     * <p>For public extensions that have been activated for this account and Region,
      * the latest version of the public extension <i>that is available</i>. For any
      * extensions other than activated third-arty extensions, CloudFormation returns
      * <code>null</code>.</p> <p>How you specified <code>AutoUpdate</code> when
      * enabling the extension affects whether CloudFormation automatically updates the
-     * extension in this account and region when a new version is released. For more
+     * extension in this account and Region when a new version is released. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting
      * CloudFormation to automatically use new versions of extensions</a> in the
@@ -713,12 +713,12 @@ namespace Model
     inline void SetLatestPublicVersion(Aws::String&& value) { m_latestPublicVersionHasBeenSet = true; m_latestPublicVersion = std::move(value); }
 
     /**
-     * <p>For public extensions that have been activated for this account and region,
+     * <p>For public extensions that have been activated for this account and Region,
      * the latest version of the public extension <i>that is available</i>. For any
      * extensions other than activated third-arty extensions, CloudFormation returns
      * <code>null</code>.</p> <p>How you specified <code>AutoUpdate</code> when
      * enabling the extension affects whether CloudFormation automatically updates the
-     * extension in this account and region when a new version is released. For more
+     * extension in this account and Region when a new version is released. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting
      * CloudFormation to automatically use new versions of extensions</a> in the
@@ -727,12 +727,12 @@ namespace Model
     inline void SetLatestPublicVersion(const char* value) { m_latestPublicVersionHasBeenSet = true; m_latestPublicVersion.assign(value); }
 
     /**
-     * <p>For public extensions that have been activated for this account and region,
+     * <p>For public extensions that have been activated for this account and Region,
      * the latest version of the public extension <i>that is available</i>. For any
      * extensions other than activated third-arty extensions, CloudFormation returns
      * <code>null</code>.</p> <p>How you specified <code>AutoUpdate</code> when
      * enabling the extension affects whether CloudFormation automatically updates the
-     * extension in this account and region when a new version is released. For more
+     * extension in this account and Region when a new version is released. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting
      * CloudFormation to automatically use new versions of extensions</a> in the
@@ -741,12 +741,12 @@ namespace Model
     inline TypeSummary& WithLatestPublicVersion(const Aws::String& value) { SetLatestPublicVersion(value); return *this;}
 
     /**
-     * <p>For public extensions that have been activated for this account and region,
+     * <p>For public extensions that have been activated for this account and Region,
      * the latest version of the public extension <i>that is available</i>. For any
      * extensions other than activated third-arty extensions, CloudFormation returns
      * <code>null</code>.</p> <p>How you specified <code>AutoUpdate</code> when
      * enabling the extension affects whether CloudFormation automatically updates the
-     * extension in this account and region when a new version is released. For more
+     * extension in this account and Region when a new version is released. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting
      * CloudFormation to automatically use new versions of extensions</a> in the
@@ -755,12 +755,12 @@ namespace Model
     inline TypeSummary& WithLatestPublicVersion(Aws::String&& value) { SetLatestPublicVersion(std::move(value)); return *this;}
 
     /**
-     * <p>For public extensions that have been activated for this account and region,
+     * <p>For public extensions that have been activated for this account and Region,
      * the latest version of the public extension <i>that is available</i>. For any
      * extensions other than activated third-arty extensions, CloudFormation returns
      * <code>null</code>.</p> <p>How you specified <code>AutoUpdate</code> when
      * enabling the extension affects whether CloudFormation automatically updates the
-     * extension in this account and region when a new version is released. For more
+     * extension in this account and Region when a new version is released. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting
      * CloudFormation to automatically use new versions of extensions</a> in the
@@ -874,28 +874,28 @@ namespace Model
 
 
     /**
-     * <p>Whether the extension is activated for this account and region.</p> <p>This
+     * <p>Whether the extension is activated for this account and Region.</p> <p>This
      * applies only to third-party public extensions. Extensions published by Amazon
      * are activated by default.</p>
      */
     inline bool GetIsActivated() const{ return m_isActivated; }
 
     /**
-     * <p>Whether the extension is activated for this account and region.</p> <p>This
+     * <p>Whether the extension is activated for this account and Region.</p> <p>This
      * applies only to third-party public extensions. Extensions published by Amazon
      * are activated by default.</p>
      */
     inline bool IsActivatedHasBeenSet() const { return m_isActivatedHasBeenSet; }
 
     /**
-     * <p>Whether the extension is activated for this account and region.</p> <p>This
+     * <p>Whether the extension is activated for this account and Region.</p> <p>This
      * applies only to third-party public extensions. Extensions published by Amazon
      * are activated by default.</p>
      */
     inline void SetIsActivated(bool value) { m_isActivatedHasBeenSet = true; m_isActivated = value; }
 
     /**
-     * <p>Whether the extension is activated for this account and region.</p> <p>This
+     * <p>Whether the extension is activated for this account and Region.</p> <p>This
      * applies only to third-party public extensions. Extensions published by Amazon
      * are activated by default.</p>
      */

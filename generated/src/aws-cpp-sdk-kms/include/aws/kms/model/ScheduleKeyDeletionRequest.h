@@ -121,7 +121,11 @@ namespace Model
      * key with replica keys, the waiting period begins when the last of its replica
      * keys is deleted. Otherwise, the waiting period begins immediately.</p> <p>This
      * value is optional. If you include a value, it must be between 7 and 30,
-     * inclusive. If you do not include a value, it defaults to 30.</p>
+     * inclusive. If you do not include a value, it defaults to 30. You can use the <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-pending-deletion-window">
+     * <code>kms:ScheduleKeyDeletionPendingWindowInDays</code> </a> condition key to
+     * further constrain the values that principals can specify in the
+     * <code>PendingWindowInDays</code> parameter.</p>
      */
     inline int GetPendingWindowInDays() const{ return m_pendingWindowInDays; }
 
@@ -131,7 +135,11 @@ namespace Model
      * key with replica keys, the waiting period begins when the last of its replica
      * keys is deleted. Otherwise, the waiting period begins immediately.</p> <p>This
      * value is optional. If you include a value, it must be between 7 and 30,
-     * inclusive. If you do not include a value, it defaults to 30.</p>
+     * inclusive. If you do not include a value, it defaults to 30. You can use the <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-pending-deletion-window">
+     * <code>kms:ScheduleKeyDeletionPendingWindowInDays</code> </a> condition key to
+     * further constrain the values that principals can specify in the
+     * <code>PendingWindowInDays</code> parameter.</p>
      */
     inline bool PendingWindowInDaysHasBeenSet() const { return m_pendingWindowInDaysHasBeenSet; }
 
@@ -141,7 +149,11 @@ namespace Model
      * key with replica keys, the waiting period begins when the last of its replica
      * keys is deleted. Otherwise, the waiting period begins immediately.</p> <p>This
      * value is optional. If you include a value, it must be between 7 and 30,
-     * inclusive. If you do not include a value, it defaults to 30.</p>
+     * inclusive. If you do not include a value, it defaults to 30. You can use the <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-pending-deletion-window">
+     * <code>kms:ScheduleKeyDeletionPendingWindowInDays</code> </a> condition key to
+     * further constrain the values that principals can specify in the
+     * <code>PendingWindowInDays</code> parameter.</p>
      */
     inline void SetPendingWindowInDays(int value) { m_pendingWindowInDaysHasBeenSet = true; m_pendingWindowInDays = value; }
 
@@ -151,7 +163,11 @@ namespace Model
      * key with replica keys, the waiting period begins when the last of its replica
      * keys is deleted. Otherwise, the waiting period begins immediately.</p> <p>This
      * value is optional. If you include a value, it must be between 7 and 30,
-     * inclusive. If you do not include a value, it defaults to 30.</p>
+     * inclusive. If you do not include a value, it defaults to 30. You can use the <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-pending-deletion-window">
+     * <code>kms:ScheduleKeyDeletionPendingWindowInDays</code> </a> condition key to
+     * further constrain the values that principals can specify in the
+     * <code>PendingWindowInDays</code> parameter.</p>
      */
     inline ScheduleKeyDeletionRequest& WithPendingWindowInDays(int value) { SetPendingWindowInDays(value); return *this;}
 

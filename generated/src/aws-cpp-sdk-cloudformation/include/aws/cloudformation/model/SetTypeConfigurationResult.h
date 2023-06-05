@@ -35,49 +35,49 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) for the configuration data, in this account
-     * and region.</p> <p>Conditional: You must specify <code>ConfigurationArn</code>,
+     * and Region.</p> <p>Conditional: You must specify <code>ConfigurationArn</code>,
      * or <code>Type</code> and <code>TypeName</code>.</p>
      */
     inline const Aws::String& GetConfigurationArn() const{ return m_configurationArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the configuration data, in this account
-     * and region.</p> <p>Conditional: You must specify <code>ConfigurationArn</code>,
+     * and Region.</p> <p>Conditional: You must specify <code>ConfigurationArn</code>,
      * or <code>Type</code> and <code>TypeName</code>.</p>
      */
     inline void SetConfigurationArn(const Aws::String& value) { m_configurationArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the configuration data, in this account
-     * and region.</p> <p>Conditional: You must specify <code>ConfigurationArn</code>,
+     * and Region.</p> <p>Conditional: You must specify <code>ConfigurationArn</code>,
      * or <code>Type</code> and <code>TypeName</code>.</p>
      */
     inline void SetConfigurationArn(Aws::String&& value) { m_configurationArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the configuration data, in this account
-     * and region.</p> <p>Conditional: You must specify <code>ConfigurationArn</code>,
+     * and Region.</p> <p>Conditional: You must specify <code>ConfigurationArn</code>,
      * or <code>Type</code> and <code>TypeName</code>.</p>
      */
     inline void SetConfigurationArn(const char* value) { m_configurationArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the configuration data, in this account
-     * and region.</p> <p>Conditional: You must specify <code>ConfigurationArn</code>,
+     * and Region.</p> <p>Conditional: You must specify <code>ConfigurationArn</code>,
      * or <code>Type</code> and <code>TypeName</code>.</p>
      */
     inline SetTypeConfigurationResult& WithConfigurationArn(const Aws::String& value) { SetConfigurationArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) for the configuration data, in this account
-     * and region.</p> <p>Conditional: You must specify <code>ConfigurationArn</code>,
+     * and Region.</p> <p>Conditional: You must specify <code>ConfigurationArn</code>,
      * or <code>Type</code> and <code>TypeName</code>.</p>
      */
     inline SetTypeConfigurationResult& WithConfigurationArn(Aws::String&& value) { SetConfigurationArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) for the configuration data, in this account
-     * and region.</p> <p>Conditional: You must specify <code>ConfigurationArn</code>,
+     * and Region.</p> <p>Conditional: You must specify <code>ConfigurationArn</code>,
      * or <code>Type</code> and <code>TypeName</code>.</p>
      */
     inline SetTypeConfigurationResult& WithConfigurationArn(const char* value) { SetConfigurationArn(value); return *this;}

@@ -112,43 +112,43 @@ namespace Model
 
 
     /**
-     * <p>The sign-in url for the web application of the FinSpace environment you
+     * <p>The sign-in URL for the web application of the FinSpace environment you
      * created.</p>
      */
     inline const Aws::String& GetEnvironmentUrl() const{ return m_environmentUrl; }
 
     /**
-     * <p>The sign-in url for the web application of the FinSpace environment you
+     * <p>The sign-in URL for the web application of the FinSpace environment you
      * created.</p>
      */
     inline void SetEnvironmentUrl(const Aws::String& value) { m_environmentUrl = value; }
 
     /**
-     * <p>The sign-in url for the web application of the FinSpace environment you
+     * <p>The sign-in URL for the web application of the FinSpace environment you
      * created.</p>
      */
     inline void SetEnvironmentUrl(Aws::String&& value) { m_environmentUrl = std::move(value); }
 
     /**
-     * <p>The sign-in url for the web application of the FinSpace environment you
+     * <p>The sign-in URL for the web application of the FinSpace environment you
      * created.</p>
      */
     inline void SetEnvironmentUrl(const char* value) { m_environmentUrl.assign(value); }
 
     /**
-     * <p>The sign-in url for the web application of the FinSpace environment you
+     * <p>The sign-in URL for the web application of the FinSpace environment you
      * created.</p>
      */
     inline CreateEnvironmentResult& WithEnvironmentUrl(const Aws::String& value) { SetEnvironmentUrl(value); return *this;}
 
     /**
-     * <p>The sign-in url for the web application of the FinSpace environment you
+     * <p>The sign-in URL for the web application of the FinSpace environment you
      * created.</p>
      */
     inline CreateEnvironmentResult& WithEnvironmentUrl(Aws::String&& value) { SetEnvironmentUrl(std::move(value)); return *this;}
 
     /**
-     * <p>The sign-in url for the web application of the FinSpace environment you
+     * <p>The sign-in URL for the web application of the FinSpace environment you
      * created.</p>
      */
     inline CreateEnvironmentResult& WithEnvironmentUrl(const char* value) { SetEnvironmentUrl(value); return *this;}

@@ -20,7 +20,7 @@ namespace MWAA
    * section contains the Amazon Managed Workflows for Apache Airflow (MWAA) API
    * reference documentation. For more information, see <a
    * href="https://docs.aws.amazon.com/mwaa/latest/userguide/what-is-mwaa.html">What
-   * Is Amazon MWAA?</a>.</p> <p> <b>Endpoints</b> </p> <ul> <li> <p>
+   * is Amazon MWAA?</a>.</p> <p> <b>Endpoints</b> </p> <ul> <li> <p>
    * <code>api.airflow.{region}.amazonaws.com</code> - This endpoint is used for
    * environment management.</p> <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/mwaa/latest/API/API_CreateEnvironment.html">CreateEnvironment</a>

@@ -117,26 +117,26 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether or not to delete any predictions associated with the
-     * event.</p>
+     * <p>Specifies whether or not to delete any predictions associated with the event.
+     * If set to <code>True</code>, </p>
      */
     inline bool GetDeleteAuditHistory() const{ return m_deleteAuditHistory; }
 
     /**
-     * <p>Specifies whether or not to delete any predictions associated with the
-     * event.</p>
+     * <p>Specifies whether or not to delete any predictions associated with the event.
+     * If set to <code>True</code>, </p>
      */
     inline bool DeleteAuditHistoryHasBeenSet() const { return m_deleteAuditHistoryHasBeenSet; }
 
     /**
-     * <p>Specifies whether or not to delete any predictions associated with the
-     * event.</p>
+     * <p>Specifies whether or not to delete any predictions associated with the event.
+     * If set to <code>True</code>, </p>
      */
     inline void SetDeleteAuditHistory(bool value) { m_deleteAuditHistoryHasBeenSet = true; m_deleteAuditHistory = value; }
 
     /**
-     * <p>Specifies whether or not to delete any predictions associated with the
-     * event.</p>
+     * <p>Specifies whether or not to delete any predictions associated with the event.
+     * If set to <code>True</code>, </p>
      */
     inline DeleteEventRequest& WithDeleteAuditHistory(bool value) { SetDeleteAuditHistory(value); return *this;}
 
