@@ -6,6 +6,7 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/iot/IoTErrors.h>
+#include <aws/iot/model/ConflictException.h>
 #include <aws/iot/model/ResourceAlreadyExistsException.h>
 
 using namespace Aws::Client;
@@ -17,6 +18,12 @@ namespace Aws
 {
 namespace IoT
 {
+template<> AWS_IOT_API ConflictException IoTError::GetModeledError()
+{
+  assert(this->GetErrorType() == IoTErrors::CONFLICT);
+  return ConflictException(this->GetJsonPayload().View());
+}
+
 template<> AWS_IOT_API ResourceAlreadyExistsException IoTError::GetModeledError()
 {
   assert(this->GetErrorType() == IoTErrors::RESOURCE_ALREADY_EXISTS);
@@ -33,6 +40,7 @@ static const int NOT_CONFIGURED_HASH = HashingUtils::HashString("NotConfiguredEx
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int MALFORMED_POLICY_HASH = HashingUtils::HashString("MalformedPolicyException");
 static const int INVALID_AGGREGATION_HASH = HashingUtils::HashString("InvalidAggregationException");
+static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
 static const int UNAUTHORIZED_HASH = HashingUtils::HashString("UnauthorizedException");
 static const int INVALID_RESPONSE_HASH = HashingUtils::HashString("InvalidResponseException");
 static const int TRANSFER_ALREADY_COMPLETED_HASH = HashingUtils::HashString("TransferAlreadyCompletedException");
@@ -86,6 +94,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_AGGREGATION_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::INVALID_AGGREGATION), false);
+  }
+  else if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTErrors::SERVICE_QUOTA_EXCEEDED), false);
   }
   else if (hashCode == UNAUTHORIZED_HASH)
   {

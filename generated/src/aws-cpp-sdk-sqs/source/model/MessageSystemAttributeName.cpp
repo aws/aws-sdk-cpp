@@ -28,6 +28,7 @@ namespace Aws
         static const int MessageDeduplicationId_HASH = HashingUtils::HashString("MessageDeduplicationId");
         static const int MessageGroupId_HASH = HashingUtils::HashString("MessageGroupId");
         static const int AWSTraceHeader_HASH = HashingUtils::HashString("AWSTraceHeader");
+        static const int DeadLetterQueueSourceArn_HASH = HashingUtils::HashString("DeadLetterQueueSourceArn");
 
 
         MessageSystemAttributeName GetMessageSystemAttributeNameForName(const Aws::String& name)
@@ -65,6 +66,10 @@ namespace Aws
           {
             return MessageSystemAttributeName::AWSTraceHeader;
           }
+          else if (hashCode == DeadLetterQueueSourceArn_HASH)
+          {
+            return MessageSystemAttributeName::DeadLetterQueueSourceArn;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -95,6 +100,8 @@ namespace Aws
             return "MessageGroupId";
           case MessageSystemAttributeName::AWSTraceHeader:
             return "AWSTraceHeader";
+          case MessageSystemAttributeName::DeadLetterQueueSourceArn:
+            return "DeadLetterQueueSourceArn";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -74,42 +74,42 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the version of the bot associated with the locale.</p>
+     * <p>The version of the bot associated with the locale.</p>
      */
     inline const Aws::String& GetBotVersion() const{ return m_botVersion; }
 
     /**
-     * <p>The identifier of the version of the bot associated with the locale.</p>
+     * <p>The version of the bot associated with the locale.</p>
      */
     inline bool BotVersionHasBeenSet() const { return m_botVersionHasBeenSet; }
 
     /**
-     * <p>The identifier of the version of the bot associated with the locale.</p>
+     * <p>The version of the bot associated with the locale.</p>
      */
     inline void SetBotVersion(const Aws::String& value) { m_botVersionHasBeenSet = true; m_botVersion = value; }
 
     /**
-     * <p>The identifier of the version of the bot associated with the locale.</p>
+     * <p>The version of the bot associated with the locale.</p>
      */
     inline void SetBotVersion(Aws::String&& value) { m_botVersionHasBeenSet = true; m_botVersion = std::move(value); }
 
     /**
-     * <p>The identifier of the version of the bot associated with the locale.</p>
+     * <p>The version of the bot associated with the locale.</p>
      */
     inline void SetBotVersion(const char* value) { m_botVersionHasBeenSet = true; m_botVersion.assign(value); }
 
     /**
-     * <p>The identifier of the version of the bot associated with the locale.</p>
+     * <p>The version of the bot associated with the locale.</p>
      */
     inline DescribeBotLocaleRequest& WithBotVersion(const Aws::String& value) { SetBotVersion(value); return *this;}
 
     /**
-     * <p>The identifier of the version of the bot associated with the locale.</p>
+     * <p>The version of the bot associated with the locale.</p>
      */
     inline DescribeBotLocaleRequest& WithBotVersion(Aws::String&& value) { SetBotVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the version of the bot associated with the locale.</p>
+     * <p>The version of the bot associated with the locale.</p>
      */
     inline DescribeBotLocaleRequest& WithBotVersion(const char* value) { SetBotVersion(value); return *this;}
 

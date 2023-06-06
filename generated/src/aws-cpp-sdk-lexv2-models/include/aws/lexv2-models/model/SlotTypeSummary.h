@@ -247,11 +247,12 @@ namespace Model
      * A slot type that you created using custom values. For more information, see <a
      * href="https://docs.aws.amazon.com/lexv2/latest/dg/custom-slot-types.html">Creating
      * custom slot types</a>.</p> </li> <li> <p> <code>Extended</code> - A slot type
-     * created by extending the AMAZON.AlphaNumeric built-in slot type. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/built-in-slot-alphanumerice.html">AMAZON.AlphaNumeric</a>.</p>
-     * </li> <li> <p> <code>ExternalGrammar</code> - A slot type using a custom GRXML
-     * grammar to define values. For more information, see <a
+     * created by extending the <code>AMAZON.AlphaNumeric</code> built-in slot type.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/built-in-slot-alphanumerice.html">
+     * <code>AMAZON.AlphaNumeric</code> </a>.</p> </li> <li> <p>
+     * <code>ExternalGrammar</code> - A slot type using a custom GRXML grammar to
+     * define values. For more information, see <a
      * href="https://docs.aws.amazon.com/lexv2/latest/dg/building-grxml.html">Using a
      * custom grammar slot type</a>.</p> </li> </ul>
      */
@@ -262,11 +263,12 @@ namespace Model
      * A slot type that you created using custom values. For more information, see <a
      * href="https://docs.aws.amazon.com/lexv2/latest/dg/custom-slot-types.html">Creating
      * custom slot types</a>.</p> </li> <li> <p> <code>Extended</code> - A slot type
-     * created by extending the AMAZON.AlphaNumeric built-in slot type. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/built-in-slot-alphanumerice.html">AMAZON.AlphaNumeric</a>.</p>
-     * </li> <li> <p> <code>ExternalGrammar</code> - A slot type using a custom GRXML
-     * grammar to define values. For more information, see <a
+     * created by extending the <code>AMAZON.AlphaNumeric</code> built-in slot type.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/built-in-slot-alphanumerice.html">
+     * <code>AMAZON.AlphaNumeric</code> </a>.</p> </li> <li> <p>
+     * <code>ExternalGrammar</code> - A slot type using a custom GRXML grammar to
+     * define values. For more information, see <a
      * href="https://docs.aws.amazon.com/lexv2/latest/dg/building-grxml.html">Using a
      * custom grammar slot type</a>.</p> </li> </ul>
      */
@@ -277,11 +279,12 @@ namespace Model
      * A slot type that you created using custom values. For more information, see <a
      * href="https://docs.aws.amazon.com/lexv2/latest/dg/custom-slot-types.html">Creating
      * custom slot types</a>.</p> </li> <li> <p> <code>Extended</code> - A slot type
-     * created by extending the AMAZON.AlphaNumeric built-in slot type. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/built-in-slot-alphanumerice.html">AMAZON.AlphaNumeric</a>.</p>
-     * </li> <li> <p> <code>ExternalGrammar</code> - A slot type using a custom GRXML
-     * grammar to define values. For more information, see <a
+     * created by extending the <code>AMAZON.AlphaNumeric</code> built-in slot type.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/built-in-slot-alphanumerice.html">
+     * <code>AMAZON.AlphaNumeric</code> </a>.</p> </li> <li> <p>
+     * <code>ExternalGrammar</code> - A slot type using a custom GRXML grammar to
+     * define values. For more information, see <a
      * href="https://docs.aws.amazon.com/lexv2/latest/dg/building-grxml.html">Using a
      * custom grammar slot type</a>.</p> </li> </ul>
      */
@@ -292,11 +295,12 @@ namespace Model
      * A slot type that you created using custom values. For more information, see <a
      * href="https://docs.aws.amazon.com/lexv2/latest/dg/custom-slot-types.html">Creating
      * custom slot types</a>.</p> </li> <li> <p> <code>Extended</code> - A slot type
-     * created by extending the AMAZON.AlphaNumeric built-in slot type. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/built-in-slot-alphanumerice.html">AMAZON.AlphaNumeric</a>.</p>
-     * </li> <li> <p> <code>ExternalGrammar</code> - A slot type using a custom GRXML
-     * grammar to define values. For more information, see <a
+     * created by extending the <code>AMAZON.AlphaNumeric</code> built-in slot type.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/built-in-slot-alphanumerice.html">
+     * <code>AMAZON.AlphaNumeric</code> </a>.</p> </li> <li> <p>
+     * <code>ExternalGrammar</code> - A slot type using a custom GRXML grammar to
+     * define values. For more information, see <a
      * href="https://docs.aws.amazon.com/lexv2/latest/dg/building-grxml.html">Using a
      * custom grammar slot type</a>.</p> </li> </ul>
      */
@@ -307,11 +311,12 @@ namespace Model
      * A slot type that you created using custom values. For more information, see <a
      * href="https://docs.aws.amazon.com/lexv2/latest/dg/custom-slot-types.html">Creating
      * custom slot types</a>.</p> </li> <li> <p> <code>Extended</code> - A slot type
-     * created by extending the AMAZON.AlphaNumeric built-in slot type. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/built-in-slot-alphanumerice.html">AMAZON.AlphaNumeric</a>.</p>
-     * </li> <li> <p> <code>ExternalGrammar</code> - A slot type using a custom GRXML
-     * grammar to define values. For more information, see <a
+     * created by extending the <code>AMAZON.AlphaNumeric</code> built-in slot type.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/built-in-slot-alphanumerice.html">
+     * <code>AMAZON.AlphaNumeric</code> </a>.</p> </li> <li> <p>
+     * <code>ExternalGrammar</code> - A slot type using a custom GRXML grammar to
+     * define values. For more information, see <a
      * href="https://docs.aws.amazon.com/lexv2/latest/dg/building-grxml.html">Using a
      * custom grammar slot type</a>.</p> </li> </ul>
      */
@@ -322,11 +327,12 @@ namespace Model
      * A slot type that you created using custom values. For more information, see <a
      * href="https://docs.aws.amazon.com/lexv2/latest/dg/custom-slot-types.html">Creating
      * custom slot types</a>.</p> </li> <li> <p> <code>Extended</code> - A slot type
-     * created by extending the AMAZON.AlphaNumeric built-in slot type. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/built-in-slot-alphanumerice.html">AMAZON.AlphaNumeric</a>.</p>
-     * </li> <li> <p> <code>ExternalGrammar</code> - A slot type using a custom GRXML
-     * grammar to define values. For more information, see <a
+     * created by extending the <code>AMAZON.AlphaNumeric</code> built-in slot type.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/built-in-slot-alphanumerice.html">
+     * <code>AMAZON.AlphaNumeric</code> </a>.</p> </li> <li> <p>
+     * <code>ExternalGrammar</code> - A slot type using a custom GRXML grammar to
+     * define values. For more information, see <a
      * href="https://docs.aws.amazon.com/lexv2/latest/dg/building-grxml.html">Using a
      * custom grammar slot type</a>.</p> </li> </ul>
      */

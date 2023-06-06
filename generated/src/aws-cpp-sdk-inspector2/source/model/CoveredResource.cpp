@@ -20,6 +20,7 @@ namespace Model
 
 CoveredResource::CoveredResource() : 
     m_accountIdHasBeenSet(false),
+    m_lastScannedAtHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
     m_resourceMetadataHasBeenSet(false),
     m_resourceType(CoverageResourceType::NOT_SET),
@@ -32,6 +33,7 @@ CoveredResource::CoveredResource() :
 
 CoveredResource::CoveredResource(JsonView jsonValue) : 
     m_accountIdHasBeenSet(false),
+    m_lastScannedAtHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
     m_resourceMetadataHasBeenSet(false),
     m_resourceType(CoverageResourceType::NOT_SET),
@@ -50,6 +52,13 @@ CoveredResource& CoveredResource::operator =(JsonView jsonValue)
     m_accountId = jsonValue.GetString("accountId");
 
     m_accountIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("lastScannedAt"))
+  {
+    m_lastScannedAt = jsonValue.GetDouble("lastScannedAt");
+
+    m_lastScannedAtHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("resourceId"))
@@ -98,6 +107,11 @@ JsonValue CoveredResource::Jsonize() const
   {
    payload.WithString("accountId", m_accountId);
 
+  }
+
+  if(m_lastScannedAtHasBeenSet)
+  {
+   payload.WithDouble("lastScannedAt", m_lastScannedAt.SecondsWithMSPrecision());
   }
 
   if(m_resourceIdHasBeenSet)

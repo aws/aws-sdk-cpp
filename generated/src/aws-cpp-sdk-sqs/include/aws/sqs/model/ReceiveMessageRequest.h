@@ -100,7 +100,7 @@ namespace Model
      * the number of times a message has been received across all queues but not
      * deleted.</p> </li> <li> <p> <code>AWSTraceHeader</code> – Returns the X-Ray
      * trace header string. </p> </li> <li> <p> <code>SenderId</code> </p> <ul> <li>
-     * <p>For an IAM user, returns the IAM user ID, for example
+     * <p>For a user, returns the user ID, for example
      * <code>ABCDEFGHI1JKLMNOPQ23R</code>.</p> </li> <li> <p>For an IAM role, returns
      * the IAM role ID, for example <code>ABCDE1F2GH3I4JK5LMNOP:i-a123b456</code>.</p>
      * </li> </ul> </li> <li> <p> <code>SentTimestamp</code> – Returns the time the
@@ -108,7 +108,7 @@ namespace Model
      * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
      * milliseconds).</p> </li> <li> <p> <code>SqsManagedSseEnabled</code> – Enables
      * server-side queue encryption using SQS owned encryption keys. Only one
-     * server-side encryption option is supported per queue (e.g. <a
+     * server-side encryption option is supported per queue (for example, <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a>
      * or <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p>
@@ -132,7 +132,7 @@ namespace Model
      * the number of times a message has been received across all queues but not
      * deleted.</p> </li> <li> <p> <code>AWSTraceHeader</code> – Returns the X-Ray
      * trace header string. </p> </li> <li> <p> <code>SenderId</code> </p> <ul> <li>
-     * <p>For an IAM user, returns the IAM user ID, for example
+     * <p>For a user, returns the user ID, for example
      * <code>ABCDEFGHI1JKLMNOPQ23R</code>.</p> </li> <li> <p>For an IAM role, returns
      * the IAM role ID, for example <code>ABCDE1F2GH3I4JK5LMNOP:i-a123b456</code>.</p>
      * </li> </ul> </li> <li> <p> <code>SentTimestamp</code> – Returns the time the
@@ -140,7 +140,7 @@ namespace Model
      * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
      * milliseconds).</p> </li> <li> <p> <code>SqsManagedSseEnabled</code> – Enables
      * server-side queue encryption using SQS owned encryption keys. Only one
-     * server-side encryption option is supported per queue (e.g. <a
+     * server-side encryption option is supported per queue (for example, <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a>
      * or <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p>
@@ -164,7 +164,7 @@ namespace Model
      * the number of times a message has been received across all queues but not
      * deleted.</p> </li> <li> <p> <code>AWSTraceHeader</code> – Returns the X-Ray
      * trace header string. </p> </li> <li> <p> <code>SenderId</code> </p> <ul> <li>
-     * <p>For an IAM user, returns the IAM user ID, for example
+     * <p>For a user, returns the user ID, for example
      * <code>ABCDEFGHI1JKLMNOPQ23R</code>.</p> </li> <li> <p>For an IAM role, returns
      * the IAM role ID, for example <code>ABCDE1F2GH3I4JK5LMNOP:i-a123b456</code>.</p>
      * </li> </ul> </li> <li> <p> <code>SentTimestamp</code> – Returns the time the
@@ -172,7 +172,7 @@ namespace Model
      * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
      * milliseconds).</p> </li> <li> <p> <code>SqsManagedSseEnabled</code> – Enables
      * server-side queue encryption using SQS owned encryption keys. Only one
-     * server-side encryption option is supported per queue (e.g. <a
+     * server-side encryption option is supported per queue (for example, <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a>
      * or <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p>
@@ -196,7 +196,7 @@ namespace Model
      * the number of times a message has been received across all queues but not
      * deleted.</p> </li> <li> <p> <code>AWSTraceHeader</code> – Returns the X-Ray
      * trace header string. </p> </li> <li> <p> <code>SenderId</code> </p> <ul> <li>
-     * <p>For an IAM user, returns the IAM user ID, for example
+     * <p>For a user, returns the user ID, for example
      * <code>ABCDEFGHI1JKLMNOPQ23R</code>.</p> </li> <li> <p>For an IAM role, returns
      * the IAM role ID, for example <code>ABCDE1F2GH3I4JK5LMNOP:i-a123b456</code>.</p>
      * </li> </ul> </li> <li> <p> <code>SentTimestamp</code> – Returns the time the
@@ -204,7 +204,7 @@ namespace Model
      * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
      * milliseconds).</p> </li> <li> <p> <code>SqsManagedSseEnabled</code> – Enables
      * server-side queue encryption using SQS owned encryption keys. Only one
-     * server-side encryption option is supported per queue (e.g. <a
+     * server-side encryption option is supported per queue (for example, <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a>
      * or <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p>
@@ -228,7 +228,7 @@ namespace Model
      * the number of times a message has been received across all queues but not
      * deleted.</p> </li> <li> <p> <code>AWSTraceHeader</code> – Returns the X-Ray
      * trace header string. </p> </li> <li> <p> <code>SenderId</code> </p> <ul> <li>
-     * <p>For an IAM user, returns the IAM user ID, for example
+     * <p>For a user, returns the user ID, for example
      * <code>ABCDEFGHI1JKLMNOPQ23R</code>.</p> </li> <li> <p>For an IAM role, returns
      * the IAM role ID, for example <code>ABCDE1F2GH3I4JK5LMNOP:i-a123b456</code>.</p>
      * </li> </ul> </li> <li> <p> <code>SentTimestamp</code> – Returns the time the
@@ -236,7 +236,7 @@ namespace Model
      * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
      * milliseconds).</p> </li> <li> <p> <code>SqsManagedSseEnabled</code> – Enables
      * server-side queue encryption using SQS owned encryption keys. Only one
-     * server-side encryption option is supported per queue (e.g. <a
+     * server-side encryption option is supported per queue (for example, <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a>
      * or <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p>
@@ -260,7 +260,7 @@ namespace Model
      * the number of times a message has been received across all queues but not
      * deleted.</p> </li> <li> <p> <code>AWSTraceHeader</code> – Returns the X-Ray
      * trace header string. </p> </li> <li> <p> <code>SenderId</code> </p> <ul> <li>
-     * <p>For an IAM user, returns the IAM user ID, for example
+     * <p>For a user, returns the user ID, for example
      * <code>ABCDEFGHI1JKLMNOPQ23R</code>.</p> </li> <li> <p>For an IAM role, returns
      * the IAM role ID, for example <code>ABCDE1F2GH3I4JK5LMNOP:i-a123b456</code>.</p>
      * </li> </ul> </li> <li> <p> <code>SentTimestamp</code> – Returns the time the
@@ -268,7 +268,7 @@ namespace Model
      * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
      * milliseconds).</p> </li> <li> <p> <code>SqsManagedSseEnabled</code> – Enables
      * server-side queue encryption using SQS owned encryption keys. Only one
-     * server-side encryption option is supported per queue (e.g. <a
+     * server-side encryption option is supported per queue (for example, <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a>
      * or <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p>
@@ -292,7 +292,7 @@ namespace Model
      * the number of times a message has been received across all queues but not
      * deleted.</p> </li> <li> <p> <code>AWSTraceHeader</code> – Returns the X-Ray
      * trace header string. </p> </li> <li> <p> <code>SenderId</code> </p> <ul> <li>
-     * <p>For an IAM user, returns the IAM user ID, for example
+     * <p>For a user, returns the user ID, for example
      * <code>ABCDEFGHI1JKLMNOPQ23R</code>.</p> </li> <li> <p>For an IAM role, returns
      * the IAM role ID, for example <code>ABCDE1F2GH3I4JK5LMNOP:i-a123b456</code>.</p>
      * </li> </ul> </li> <li> <p> <code>SentTimestamp</code> – Returns the time the
@@ -300,7 +300,7 @@ namespace Model
      * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
      * milliseconds).</p> </li> <li> <p> <code>SqsManagedSseEnabled</code> – Enables
      * server-side queue encryption using SQS owned encryption keys. Only one
-     * server-side encryption option is supported per queue (e.g. <a
+     * server-side encryption option is supported per queue (for example, <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a>
      * or <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p>
@@ -324,7 +324,7 @@ namespace Model
      * the number of times a message has been received across all queues but not
      * deleted.</p> </li> <li> <p> <code>AWSTraceHeader</code> – Returns the X-Ray
      * trace header string. </p> </li> <li> <p> <code>SenderId</code> </p> <ul> <li>
-     * <p>For an IAM user, returns the IAM user ID, for example
+     * <p>For a user, returns the user ID, for example
      * <code>ABCDEFGHI1JKLMNOPQ23R</code>.</p> </li> <li> <p>For an IAM role, returns
      * the IAM role ID, for example <code>ABCDE1F2GH3I4JK5LMNOP:i-a123b456</code>.</p>
      * </li> </ul> </li> <li> <p> <code>SentTimestamp</code> – Returns the time the
@@ -332,7 +332,7 @@ namespace Model
      * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
      * milliseconds).</p> </li> <li> <p> <code>SqsManagedSseEnabled</code> – Enables
      * server-side queue encryption using SQS owned encryption keys. Only one
-     * server-side encryption option is supported per queue (e.g. <a
+     * server-side encryption option is supported per queue (for example, <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a>
      * or <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p>

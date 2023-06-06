@@ -196,66 +196,74 @@ namespace Model
 
 
     /**
-     * <p>An IAM principal, such as an IAM users, IAM roles, or AWS services that is
-     * allowed or denied access to a resource. For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">AWS
-     * JSON policy elements: Principal</a>.</p>
+     * <p>An IAM principal, such as an IAM user, IAM role, or Amazon Web Services
+     * services that is allowed or denied access to a resource. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">Amazon
+     * Web Services JSON policy elements: Principal</a>.</p>
      */
     inline const Aws::Vector<Principal>& GetPrincipal() const{ return m_principal; }
 
     /**
-     * <p>An IAM principal, such as an IAM users, IAM roles, or AWS services that is
-     * allowed or denied access to a resource. For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">AWS
-     * JSON policy elements: Principal</a>.</p>
+     * <p>An IAM principal, such as an IAM user, IAM role, or Amazon Web Services
+     * services that is allowed or denied access to a resource. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">Amazon
+     * Web Services JSON policy elements: Principal</a>.</p>
      */
     inline bool PrincipalHasBeenSet() const { return m_principalHasBeenSet; }
 
     /**
-     * <p>An IAM principal, such as an IAM users, IAM roles, or AWS services that is
-     * allowed or denied access to a resource. For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">AWS
-     * JSON policy elements: Principal</a>.</p>
+     * <p>An IAM principal, such as an IAM user, IAM role, or Amazon Web Services
+     * services that is allowed or denied access to a resource. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">Amazon
+     * Web Services JSON policy elements: Principal</a>.</p>
      */
     inline void SetPrincipal(const Aws::Vector<Principal>& value) { m_principalHasBeenSet = true; m_principal = value; }
 
     /**
-     * <p>An IAM principal, such as an IAM users, IAM roles, or AWS services that is
-     * allowed or denied access to a resource. For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">AWS
-     * JSON policy elements: Principal</a>.</p>
+     * <p>An IAM principal, such as an IAM user, IAM role, or Amazon Web Services
+     * services that is allowed or denied access to a resource. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">Amazon
+     * Web Services JSON policy elements: Principal</a>.</p>
      */
     inline void SetPrincipal(Aws::Vector<Principal>&& value) { m_principalHasBeenSet = true; m_principal = std::move(value); }
 
     /**
-     * <p>An IAM principal, such as an IAM users, IAM roles, or AWS services that is
-     * allowed or denied access to a resource. For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">AWS
-     * JSON policy elements: Principal</a>.</p>
+     * <p>An IAM principal, such as an IAM user, IAM role, or Amazon Web Services
+     * services that is allowed or denied access to a resource. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">Amazon
+     * Web Services JSON policy elements: Principal</a>.</p>
      */
     inline CreateResourcePolicyStatementRequest& WithPrincipal(const Aws::Vector<Principal>& value) { SetPrincipal(value); return *this;}
 
     /**
-     * <p>An IAM principal, such as an IAM users, IAM roles, or AWS services that is
-     * allowed or denied access to a resource. For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">AWS
-     * JSON policy elements: Principal</a>.</p>
+     * <p>An IAM principal, such as an IAM user, IAM role, or Amazon Web Services
+     * services that is allowed or denied access to a resource. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">Amazon
+     * Web Services JSON policy elements: Principal</a>.</p>
      */
     inline CreateResourcePolicyStatementRequest& WithPrincipal(Aws::Vector<Principal>&& value) { SetPrincipal(std::move(value)); return *this;}
 
     /**
-     * <p>An IAM principal, such as an IAM users, IAM roles, or AWS services that is
-     * allowed or denied access to a resource. For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">AWS
-     * JSON policy elements: Principal</a>.</p>
+     * <p>An IAM principal, such as an IAM user, IAM role, or Amazon Web Services
+     * services that is allowed or denied access to a resource. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">Amazon
+     * Web Services JSON policy elements: Principal</a>.</p>
      */
     inline CreateResourcePolicyStatementRequest& AddPrincipal(const Principal& value) { m_principalHasBeenSet = true; m_principal.push_back(value); return *this; }
 
     /**
-     * <p>An IAM principal, such as an IAM users, IAM roles, or AWS services that is
-     * allowed or denied access to a resource. For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">AWS
-     * JSON policy elements: Principal</a>.</p>
+     * <p>An IAM principal, such as an IAM user, IAM role, or Amazon Web Services
+     * services that is allowed or denied access to a resource. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">Amazon
+     * Web Services JSON policy elements: Principal</a>.</p>
      */
     inline CreateResourcePolicyStatementRequest& AddPrincipal(Principal&& value) { m_principalHasBeenSet = true; m_principal.push_back(std::move(value)); return *this; }
 

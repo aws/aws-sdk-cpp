@@ -42,50 +42,50 @@ namespace Model
 
 
     /**
-     * <p>The name of the AWS service that should allowed or denied access to an Amazon
-     * Lex action.</p>
+     * <p>The name of the Amazon Web Services service that should allowed or denied
+     * access to an Amazon Lex action.</p>
      */
     inline const Aws::String& GetService() const{ return m_service; }
 
     /**
-     * <p>The name of the AWS service that should allowed or denied access to an Amazon
-     * Lex action.</p>
+     * <p>The name of the Amazon Web Services service that should allowed or denied
+     * access to an Amazon Lex action.</p>
      */
     inline bool ServiceHasBeenSet() const { return m_serviceHasBeenSet; }
 
     /**
-     * <p>The name of the AWS service that should allowed or denied access to an Amazon
-     * Lex action.</p>
+     * <p>The name of the Amazon Web Services service that should allowed or denied
+     * access to an Amazon Lex action.</p>
      */
     inline void SetService(const Aws::String& value) { m_serviceHasBeenSet = true; m_service = value; }
 
     /**
-     * <p>The name of the AWS service that should allowed or denied access to an Amazon
-     * Lex action.</p>
+     * <p>The name of the Amazon Web Services service that should allowed or denied
+     * access to an Amazon Lex action.</p>
      */
     inline void SetService(Aws::String&& value) { m_serviceHasBeenSet = true; m_service = std::move(value); }
 
     /**
-     * <p>The name of the AWS service that should allowed or denied access to an Amazon
-     * Lex action.</p>
+     * <p>The name of the Amazon Web Services service that should allowed or denied
+     * access to an Amazon Lex action.</p>
      */
     inline void SetService(const char* value) { m_serviceHasBeenSet = true; m_service.assign(value); }
 
     /**
-     * <p>The name of the AWS service that should allowed or denied access to an Amazon
-     * Lex action.</p>
+     * <p>The name of the Amazon Web Services service that should allowed or denied
+     * access to an Amazon Lex action.</p>
      */
     inline Principal& WithService(const Aws::String& value) { SetService(value); return *this;}
 
     /**
-     * <p>The name of the AWS service that should allowed or denied access to an Amazon
-     * Lex action.</p>
+     * <p>The name of the Amazon Web Services service that should allowed or denied
+     * access to an Amazon Lex action.</p>
      */
     inline Principal& WithService(Aws::String&& value) { SetService(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the AWS service that should allowed or denied access to an Amazon
-     * Lex action.</p>
+     * <p>The name of the Amazon Web Services service that should allowed or denied
+     * access to an Amazon Lex action.</p>
      */
     inline Principal& WithService(const char* value) { SetService(value); return *this;}
 

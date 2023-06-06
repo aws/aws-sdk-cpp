@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/quicksight/model/TextConditionalFormat.h>
 #include <aws/quicksight/model/PivotTableConditionalFormattingScope.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -142,6 +143,47 @@ namespace Model
      */
     inline PivotTableCellConditionalFormatting& WithScope(PivotTableConditionalFormattingScope&& value) { SetScope(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A list of cell scopes for conditional formatting.</p>
+     */
+    inline const Aws::Vector<PivotTableConditionalFormattingScope>& GetScopes() const{ return m_scopes; }
+
+    /**
+     * <p>A list of cell scopes for conditional formatting.</p>
+     */
+    inline bool ScopesHasBeenSet() const { return m_scopesHasBeenSet; }
+
+    /**
+     * <p>A list of cell scopes for conditional formatting.</p>
+     */
+    inline void SetScopes(const Aws::Vector<PivotTableConditionalFormattingScope>& value) { m_scopesHasBeenSet = true; m_scopes = value; }
+
+    /**
+     * <p>A list of cell scopes for conditional formatting.</p>
+     */
+    inline void SetScopes(Aws::Vector<PivotTableConditionalFormattingScope>&& value) { m_scopesHasBeenSet = true; m_scopes = std::move(value); }
+
+    /**
+     * <p>A list of cell scopes for conditional formatting.</p>
+     */
+    inline PivotTableCellConditionalFormatting& WithScopes(const Aws::Vector<PivotTableConditionalFormattingScope>& value) { SetScopes(value); return *this;}
+
+    /**
+     * <p>A list of cell scopes for conditional formatting.</p>
+     */
+    inline PivotTableCellConditionalFormatting& WithScopes(Aws::Vector<PivotTableConditionalFormattingScope>&& value) { SetScopes(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of cell scopes for conditional formatting.</p>
+     */
+    inline PivotTableCellConditionalFormatting& AddScopes(const PivotTableConditionalFormattingScope& value) { m_scopesHasBeenSet = true; m_scopes.push_back(value); return *this; }
+
+    /**
+     * <p>A list of cell scopes for conditional formatting.</p>
+     */
+    inline PivotTableCellConditionalFormatting& AddScopes(PivotTableConditionalFormattingScope&& value) { m_scopesHasBeenSet = true; m_scopes.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_fieldId;
@@ -152,6 +194,9 @@ namespace Model
 
     PivotTableConditionalFormattingScope m_scope;
     bool m_scopeHasBeenSet = false;
+
+    Aws::Vector<PivotTableConditionalFormattingScope> m_scopes;
+    bool m_scopesHasBeenSet = false;
   };
 
 } // namespace Model

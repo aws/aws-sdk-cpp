@@ -156,42 +156,42 @@ namespace Model
 
     /**
      * <p>An override for the <code>StartAfterDateTime</code> of a
-     * <code>RefreshSchedule</code> to ensure that the <code>StartAfterDateTime</code>
+     * <code>RefreshSchedule</code>. Make sure that the <code>StartAfterDateTime</code>
      * is set to a time that takes place in the future.</p>
      */
     inline const Aws::Utils::DateTime& GetStartAfterDateTime() const{ return m_startAfterDateTime; }
 
     /**
      * <p>An override for the <code>StartAfterDateTime</code> of a
-     * <code>RefreshSchedule</code> to ensure that the <code>StartAfterDateTime</code>
+     * <code>RefreshSchedule</code>. Make sure that the <code>StartAfterDateTime</code>
      * is set to a time that takes place in the future.</p>
      */
     inline bool StartAfterDateTimeHasBeenSet() const { return m_startAfterDateTimeHasBeenSet; }
 
     /**
      * <p>An override for the <code>StartAfterDateTime</code> of a
-     * <code>RefreshSchedule</code> to ensure that the <code>StartAfterDateTime</code>
+     * <code>RefreshSchedule</code>. Make sure that the <code>StartAfterDateTime</code>
      * is set to a time that takes place in the future.</p>
      */
     inline void SetStartAfterDateTime(const Aws::Utils::DateTime& value) { m_startAfterDateTimeHasBeenSet = true; m_startAfterDateTime = value; }
 
     /**
      * <p>An override for the <code>StartAfterDateTime</code> of a
-     * <code>RefreshSchedule</code> to ensure that the <code>StartAfterDateTime</code>
+     * <code>RefreshSchedule</code>. Make sure that the <code>StartAfterDateTime</code>
      * is set to a time that takes place in the future.</p>
      */
     inline void SetStartAfterDateTime(Aws::Utils::DateTime&& value) { m_startAfterDateTimeHasBeenSet = true; m_startAfterDateTime = std::move(value); }
 
     /**
      * <p>An override for the <code>StartAfterDateTime</code> of a
-     * <code>RefreshSchedule</code> to ensure that the <code>StartAfterDateTime</code>
+     * <code>RefreshSchedule</code>. Make sure that the <code>StartAfterDateTime</code>
      * is set to a time that takes place in the future.</p>
      */
     inline AssetBundleImportJobRefreshScheduleOverrideParameters& WithStartAfterDateTime(const Aws::Utils::DateTime& value) { SetStartAfterDateTime(value); return *this;}
 
     /**
      * <p>An override for the <code>StartAfterDateTime</code> of a
-     * <code>RefreshSchedule</code> to ensure that the <code>StartAfterDateTime</code>
+     * <code>RefreshSchedule</code>. Make sure that the <code>StartAfterDateTime</code>
      * is set to a time that takes place in the future.</p>
      */
     inline AssetBundleImportJobRefreshScheduleOverrideParameters& WithStartAfterDateTime(Aws::Utils::DateTime&& value) { SetStartAfterDateTime(std::move(value)); return *this;}

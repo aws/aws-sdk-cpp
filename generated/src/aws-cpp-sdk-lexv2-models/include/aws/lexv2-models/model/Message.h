@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>The object that provides message text and it's type.</p><p><h3>See Also:</h3>
+   * <p>The object that provides message text and its type.</p><p><h3>See Also:</h3> 
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/Message">AWS
    * API Reference</a></p>

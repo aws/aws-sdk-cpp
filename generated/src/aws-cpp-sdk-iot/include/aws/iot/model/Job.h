@@ -1135,6 +1135,79 @@ namespace Model
      */
     inline Job& AddScheduledJobRollouts(ScheduledJobRollout&& value) { m_scheduledJobRolloutsHasBeenSet = true; m_scheduledJobRollouts.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The package version Amazon Resource Names (ARNs) that are installed on the
+     * device when the job successfully completes. </p> <p> <b>Note:</b>The following
+     * Length Constraints relates to a single string. Up to five strings are
+     * allowed.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetDestinationPackageVersions() const{ return m_destinationPackageVersions; }
+
+    /**
+     * <p>The package version Amazon Resource Names (ARNs) that are installed on the
+     * device when the job successfully completes. </p> <p> <b>Note:</b>The following
+     * Length Constraints relates to a single string. Up to five strings are
+     * allowed.</p>
+     */
+    inline bool DestinationPackageVersionsHasBeenSet() const { return m_destinationPackageVersionsHasBeenSet; }
+
+    /**
+     * <p>The package version Amazon Resource Names (ARNs) that are installed on the
+     * device when the job successfully completes. </p> <p> <b>Note:</b>The following
+     * Length Constraints relates to a single string. Up to five strings are
+     * allowed.</p>
+     */
+    inline void SetDestinationPackageVersions(const Aws::Vector<Aws::String>& value) { m_destinationPackageVersionsHasBeenSet = true; m_destinationPackageVersions = value; }
+
+    /**
+     * <p>The package version Amazon Resource Names (ARNs) that are installed on the
+     * device when the job successfully completes. </p> <p> <b>Note:</b>The following
+     * Length Constraints relates to a single string. Up to five strings are
+     * allowed.</p>
+     */
+    inline void SetDestinationPackageVersions(Aws::Vector<Aws::String>&& value) { m_destinationPackageVersionsHasBeenSet = true; m_destinationPackageVersions = std::move(value); }
+
+    /**
+     * <p>The package version Amazon Resource Names (ARNs) that are installed on the
+     * device when the job successfully completes. </p> <p> <b>Note:</b>The following
+     * Length Constraints relates to a single string. Up to five strings are
+     * allowed.</p>
+     */
+    inline Job& WithDestinationPackageVersions(const Aws::Vector<Aws::String>& value) { SetDestinationPackageVersions(value); return *this;}
+
+    /**
+     * <p>The package version Amazon Resource Names (ARNs) that are installed on the
+     * device when the job successfully completes. </p> <p> <b>Note:</b>The following
+     * Length Constraints relates to a single string. Up to five strings are
+     * allowed.</p>
+     */
+    inline Job& WithDestinationPackageVersions(Aws::Vector<Aws::String>&& value) { SetDestinationPackageVersions(std::move(value)); return *this;}
+
+    /**
+     * <p>The package version Amazon Resource Names (ARNs) that are installed on the
+     * device when the job successfully completes. </p> <p> <b>Note:</b>The following
+     * Length Constraints relates to a single string. Up to five strings are
+     * allowed.</p>
+     */
+    inline Job& AddDestinationPackageVersions(const Aws::String& value) { m_destinationPackageVersionsHasBeenSet = true; m_destinationPackageVersions.push_back(value); return *this; }
+
+    /**
+     * <p>The package version Amazon Resource Names (ARNs) that are installed on the
+     * device when the job successfully completes. </p> <p> <b>Note:</b>The following
+     * Length Constraints relates to a single string. Up to five strings are
+     * allowed.</p>
+     */
+    inline Job& AddDestinationPackageVersions(Aws::String&& value) { m_destinationPackageVersionsHasBeenSet = true; m_destinationPackageVersions.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The package version Amazon Resource Names (ARNs) that are installed on the
+     * device when the job successfully completes. </p> <p> <b>Note:</b>The following
+     * Length Constraints relates to a single string. Up to five strings are
+     * allowed.</p>
+     */
+    inline Job& AddDestinationPackageVersions(const char* value) { m_destinationPackageVersionsHasBeenSet = true; m_destinationPackageVersions.push_back(value); return *this; }
+
   private:
 
     Aws::String m_jobArn;
@@ -1208,6 +1281,9 @@ namespace Model
 
     Aws::Vector<ScheduledJobRollout> m_scheduledJobRollouts;
     bool m_scheduledJobRolloutsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_destinationPackageVersions;
+    bool m_destinationPackageVersionsHasBeenSet = false;
   };
 
 } // namespace Model

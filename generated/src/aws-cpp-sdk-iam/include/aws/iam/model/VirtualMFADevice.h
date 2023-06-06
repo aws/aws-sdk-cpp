@@ -89,42 +89,42 @@ namespace Model
     /**
      * <p> The base32 seed defined as specified in <a
      * href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The
-     * <code>Base32StringSeed</code> is base64-encoded. </p>
+     * <code>Base32StringSeed</code> is base32-encoded. </p>
      */
     inline const Aws::Utils::CryptoBuffer& GetBase32StringSeed() const{ return m_base32StringSeed; }
 
     /**
      * <p> The base32 seed defined as specified in <a
      * href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The
-     * <code>Base32StringSeed</code> is base64-encoded. </p>
+     * <code>Base32StringSeed</code> is base32-encoded. </p>
      */
     inline bool Base32StringSeedHasBeenSet() const { return m_base32StringSeedHasBeenSet; }
 
     /**
      * <p> The base32 seed defined as specified in <a
      * href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The
-     * <code>Base32StringSeed</code> is base64-encoded. </p>
+     * <code>Base32StringSeed</code> is base32-encoded. </p>
      */
     inline void SetBase32StringSeed(const Aws::Utils::CryptoBuffer& value) { m_base32StringSeedHasBeenSet = true; m_base32StringSeed = value; }
 
     /**
      * <p> The base32 seed defined as specified in <a
      * href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The
-     * <code>Base32StringSeed</code> is base64-encoded. </p>
+     * <code>Base32StringSeed</code> is base32-encoded. </p>
      */
     inline void SetBase32StringSeed(Aws::Utils::CryptoBuffer&& value) { m_base32StringSeedHasBeenSet = true; m_base32StringSeed = std::move(value); }
 
     /**
      * <p> The base32 seed defined as specified in <a
      * href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The
-     * <code>Base32StringSeed</code> is base64-encoded. </p>
+     * <code>Base32StringSeed</code> is base32-encoded. </p>
      */
     inline VirtualMFADevice& WithBase32StringSeed(const Aws::Utils::CryptoBuffer& value) { SetBase32StringSeed(value); return *this;}
 
     /**
      * <p> The base32 seed defined as specified in <a
      * href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The
-     * <code>Base32StringSeed</code> is base64-encoded. </p>
+     * <code>Base32StringSeed</code> is base32-encoded. </p>
      */
     inline VirtualMFADevice& WithBase32StringSeed(Aws::Utils::CryptoBuffer&& value) { SetBase32StringSeed(std::move(value)); return *this;}
 

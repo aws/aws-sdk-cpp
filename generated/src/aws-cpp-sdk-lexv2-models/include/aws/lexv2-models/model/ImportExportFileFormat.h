@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     LexJson,
-    TSV
+    TSV,
+    CSV
   };
 
 namespace ImportExportFileFormatMapper

@@ -24,7 +24,8 @@ CreateJobTemplateRequest::CreateJobTemplateRequest() :
     m_timeoutConfigHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_jobExecutionsRetryConfigHasBeenSet(false),
-    m_maintenanceWindowsHasBeenSet(false)
+    m_maintenanceWindowsHasBeenSet(false),
+    m_destinationPackageVersionsHasBeenSet(false)
 {
 }
 
@@ -105,6 +106,17 @@ Aws::String CreateJobTemplateRequest::SerializePayload() const
      maintenanceWindowsJsonList[maintenanceWindowsIndex].AsObject(m_maintenanceWindows[maintenanceWindowsIndex].Jsonize());
    }
    payload.WithArray("maintenanceWindows", std::move(maintenanceWindowsJsonList));
+
+  }
+
+  if(m_destinationPackageVersionsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> destinationPackageVersionsJsonList(m_destinationPackageVersions.size());
+   for(unsigned destinationPackageVersionsIndex = 0; destinationPackageVersionsIndex < destinationPackageVersionsJsonList.GetLength(); ++destinationPackageVersionsIndex)
+   {
+     destinationPackageVersionsJsonList[destinationPackageVersionsIndex].AsString(m_destinationPackageVersions[destinationPackageVersionsIndex]);
+   }
+   payload.WithArray("destinationPackageVersions", std::move(destinationPackageVersionsJsonList));
 
   }
 

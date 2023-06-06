@@ -73,50 +73,50 @@ namespace Model
 
 
     /**
-     * <p>One to 5 message groups that contain update messages. Amazon Lex chooses one
-     * of the messages to play to the user.</p>
+     * <p>1 - 5 message groups that contain update messages. Amazon Lex chooses one of
+     * the messages to play to the user.</p>
      */
     inline const Aws::Vector<MessageGroup>& GetMessageGroups() const{ return m_messageGroups; }
 
     /**
-     * <p>One to 5 message groups that contain update messages. Amazon Lex chooses one
-     * of the messages to play to the user.</p>
+     * <p>1 - 5 message groups that contain update messages. Amazon Lex chooses one of
+     * the messages to play to the user.</p>
      */
     inline bool MessageGroupsHasBeenSet() const { return m_messageGroupsHasBeenSet; }
 
     /**
-     * <p>One to 5 message groups that contain update messages. Amazon Lex chooses one
-     * of the messages to play to the user.</p>
+     * <p>1 - 5 message groups that contain update messages. Amazon Lex chooses one of
+     * the messages to play to the user.</p>
      */
     inline void SetMessageGroups(const Aws::Vector<MessageGroup>& value) { m_messageGroupsHasBeenSet = true; m_messageGroups = value; }
 
     /**
-     * <p>One to 5 message groups that contain update messages. Amazon Lex chooses one
-     * of the messages to play to the user.</p>
+     * <p>1 - 5 message groups that contain update messages. Amazon Lex chooses one of
+     * the messages to play to the user.</p>
      */
     inline void SetMessageGroups(Aws::Vector<MessageGroup>&& value) { m_messageGroupsHasBeenSet = true; m_messageGroups = std::move(value); }
 
     /**
-     * <p>One to 5 message groups that contain update messages. Amazon Lex chooses one
-     * of the messages to play to the user.</p>
+     * <p>1 - 5 message groups that contain update messages. Amazon Lex chooses one of
+     * the messages to play to the user.</p>
      */
     inline FulfillmentUpdateResponseSpecification& WithMessageGroups(const Aws::Vector<MessageGroup>& value) { SetMessageGroups(value); return *this;}
 
     /**
-     * <p>One to 5 message groups that contain update messages. Amazon Lex chooses one
-     * of the messages to play to the user.</p>
+     * <p>1 - 5 message groups that contain update messages. Amazon Lex chooses one of
+     * the messages to play to the user.</p>
      */
     inline FulfillmentUpdateResponseSpecification& WithMessageGroups(Aws::Vector<MessageGroup>&& value) { SetMessageGroups(std::move(value)); return *this;}
 
     /**
-     * <p>One to 5 message groups that contain update messages. Amazon Lex chooses one
-     * of the messages to play to the user.</p>
+     * <p>1 - 5 message groups that contain update messages. Amazon Lex chooses one of
+     * the messages to play to the user.</p>
      */
     inline FulfillmentUpdateResponseSpecification& AddMessageGroups(const MessageGroup& value) { m_messageGroupsHasBeenSet = true; m_messageGroups.push_back(value); return *this; }
 
     /**
-     * <p>One to 5 message groups that contain update messages. Amazon Lex chooses one
-     * of the messages to play to the user.</p>
+     * <p>1 - 5 message groups that contain update messages. Amazon Lex chooses one of
+     * the messages to play to the user.</p>
      */
     inline FulfillmentUpdateResponseSpecification& AddMessageGroups(MessageGroup&& value) { m_messageGroupsHasBeenSet = true; m_messageGroups.push_back(std::move(value)); return *this; }
 

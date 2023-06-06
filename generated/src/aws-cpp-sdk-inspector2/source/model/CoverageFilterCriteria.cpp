@@ -26,6 +26,7 @@ CoverageFilterCriteria::CoverageFilterCriteria() :
     m_lambdaFunctionNameHasBeenSet(false),
     m_lambdaFunctionRuntimeHasBeenSet(false),
     m_lambdaFunctionTagsHasBeenSet(false),
+    m_lastScannedAtHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
     m_scanStatusCodeHasBeenSet(false),
@@ -42,6 +43,7 @@ CoverageFilterCriteria::CoverageFilterCriteria(JsonView jsonValue) :
     m_lambdaFunctionNameHasBeenSet(false),
     m_lambdaFunctionRuntimeHasBeenSet(false),
     m_lambdaFunctionTagsHasBeenSet(false),
+    m_lastScannedAtHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
     m_scanStatusCodeHasBeenSet(false),
@@ -121,6 +123,16 @@ CoverageFilterCriteria& CoverageFilterCriteria::operator =(JsonView jsonValue)
       m_lambdaFunctionTags.push_back(lambdaFunctionTagsJsonList[lambdaFunctionTagsIndex].AsObject());
     }
     m_lambdaFunctionTagsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("lastScannedAt"))
+  {
+    Aws::Utils::Array<JsonView> lastScannedAtJsonList = jsonValue.GetArray("lastScannedAt");
+    for(unsigned lastScannedAtIndex = 0; lastScannedAtIndex < lastScannedAtJsonList.GetLength(); ++lastScannedAtIndex)
+    {
+      m_lastScannedAt.push_back(lastScannedAtJsonList[lastScannedAtIndex].AsObject());
+    }
+    m_lastScannedAtHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("resourceId"))
@@ -254,6 +266,17 @@ JsonValue CoverageFilterCriteria::Jsonize() const
      lambdaFunctionTagsJsonList[lambdaFunctionTagsIndex].AsObject(m_lambdaFunctionTags[lambdaFunctionTagsIndex].Jsonize());
    }
    payload.WithArray("lambdaFunctionTags", std::move(lambdaFunctionTagsJsonList));
+
+  }
+
+  if(m_lastScannedAtHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> lastScannedAtJsonList(m_lastScannedAt.size());
+   for(unsigned lastScannedAtIndex = 0; lastScannedAtIndex < lastScannedAtJsonList.GetLength(); ++lastScannedAtIndex)
+   {
+     lastScannedAtJsonList[lastScannedAtIndex].AsObject(m_lastScannedAt[lastScannedAtIndex].Jsonize());
+   }
+   payload.WithArray("lastScannedAt", std::move(lastScannedAtJsonList));
 
   }
 

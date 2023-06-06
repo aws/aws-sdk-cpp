@@ -21,14 +21,16 @@ namespace Model
 ImportResourceSpecification::ImportResourceSpecification() : 
     m_botImportSpecificationHasBeenSet(false),
     m_botLocaleImportSpecificationHasBeenSet(false),
-    m_customVocabularyImportSpecificationHasBeenSet(false)
+    m_customVocabularyImportSpecificationHasBeenSet(false),
+    m_testSetImportResourceSpecificationHasBeenSet(false)
 {
 }
 
 ImportResourceSpecification::ImportResourceSpecification(JsonView jsonValue) : 
     m_botImportSpecificationHasBeenSet(false),
     m_botLocaleImportSpecificationHasBeenSet(false),
-    m_customVocabularyImportSpecificationHasBeenSet(false)
+    m_customVocabularyImportSpecificationHasBeenSet(false),
+    m_testSetImportResourceSpecificationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +58,13 @@ ImportResourceSpecification& ImportResourceSpecification::operator =(JsonView js
     m_customVocabularyImportSpecificationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("testSetImportResourceSpecification"))
+  {
+    m_testSetImportResourceSpecification = jsonValue.GetObject("testSetImportResourceSpecification");
+
+    m_testSetImportResourceSpecificationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +87,12 @@ JsonValue ImportResourceSpecification::Jsonize() const
   if(m_customVocabularyImportSpecificationHasBeenSet)
   {
    payload.WithObject("customVocabularyImportSpecification", m_customVocabularyImportSpecification.Jsonize());
+
+  }
+
+  if(m_testSetImportResourceSpecificationHasBeenSet)
+  {
+   payload.WithObject("testSetImportResourceSpecification", m_testSetImportResourceSpecification.Jsonize());
 
   }
 

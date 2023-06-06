@@ -738,32 +738,38 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Configuration settings for a response sent to the user before Amazon Lex
+     * starts eliciting slots.</p>
      */
     inline const InitialResponseSetting& GetInitialResponseSetting() const{ return m_initialResponseSetting; }
 
     /**
-     * <p/>
+     * <p>Configuration settings for a response sent to the user before Amazon Lex
+     * starts eliciting slots.</p>
      */
     inline bool InitialResponseSettingHasBeenSet() const { return m_initialResponseSettingHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Configuration settings for a response sent to the user before Amazon Lex
+     * starts eliciting slots.</p>
      */
     inline void SetInitialResponseSetting(const InitialResponseSetting& value) { m_initialResponseSettingHasBeenSet = true; m_initialResponseSetting = value; }
 
     /**
-     * <p/>
+     * <p>Configuration settings for a response sent to the user before Amazon Lex
+     * starts eliciting slots.</p>
      */
     inline void SetInitialResponseSetting(InitialResponseSetting&& value) { m_initialResponseSettingHasBeenSet = true; m_initialResponseSetting = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Configuration settings for a response sent to the user before Amazon Lex
+     * starts eliciting slots.</p>
      */
     inline UpdateIntentRequest& WithInitialResponseSetting(const InitialResponseSetting& value) { SetInitialResponseSetting(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Configuration settings for a response sent to the user before Amazon Lex
+     * starts eliciting slots.</p>
      */
     inline UpdateIntentRequest& WithInitialResponseSetting(InitialResponseSetting&& value) { SetInitialResponseSetting(std::move(value)); return *this;}
 

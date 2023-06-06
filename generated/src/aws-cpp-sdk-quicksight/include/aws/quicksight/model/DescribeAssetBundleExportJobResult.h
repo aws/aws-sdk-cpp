@@ -39,35 +39,35 @@ namespace Model
 
 
     /**
-     * <p>Indicates tha status of a job through its queueing and execution.</p> <p>Poll
+     * <p>Indicates the status of a job through its queuing and execution.</p> <p>Poll
      * this <code>DescribeAssetBundleExportApi</code> until <code>JobStatus</code> is
      * either <code>SUCCESSFUL</code> or <code>FAILED</code>.</p>
      */
     inline const AssetBundleExportJobStatus& GetJobStatus() const{ return m_jobStatus; }
 
     /**
-     * <p>Indicates tha status of a job through its queueing and execution.</p> <p>Poll
+     * <p>Indicates the status of a job through its queuing and execution.</p> <p>Poll
      * this <code>DescribeAssetBundleExportApi</code> until <code>JobStatus</code> is
      * either <code>SUCCESSFUL</code> or <code>FAILED</code>.</p>
      */
     inline void SetJobStatus(const AssetBundleExportJobStatus& value) { m_jobStatus = value; }
 
     /**
-     * <p>Indicates tha status of a job through its queueing and execution.</p> <p>Poll
+     * <p>Indicates the status of a job through its queuing and execution.</p> <p>Poll
      * this <code>DescribeAssetBundleExportApi</code> until <code>JobStatus</code> is
      * either <code>SUCCESSFUL</code> or <code>FAILED</code>.</p>
      */
     inline void SetJobStatus(AssetBundleExportJobStatus&& value) { m_jobStatus = std::move(value); }
 
     /**
-     * <p>Indicates tha status of a job through its queueing and execution.</p> <p>Poll
+     * <p>Indicates the status of a job through its queuing and execution.</p> <p>Poll
      * this <code>DescribeAssetBundleExportApi</code> until <code>JobStatus</code> is
      * either <code>SUCCESSFUL</code> or <code>FAILED</code>.</p>
      */
     inline DescribeAssetBundleExportJobResult& WithJobStatus(const AssetBundleExportJobStatus& value) { SetJobStatus(value); return *this;}
 
     /**
-     * <p>Indicates tha status of a job through its queueing and execution.</p> <p>Poll
+     * <p>Indicates the status of a job through its queuing and execution.</p> <p>Poll
      * this <code>DescribeAssetBundleExportApi</code> until <code>JobStatus</code> is
      * either <code>SUCCESSFUL</code> or <code>FAILED</code>.</p>
      */

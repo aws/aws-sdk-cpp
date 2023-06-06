@@ -74,37 +74,37 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the version of the bot associated with the locale.</p>
+     * <p>The version of the bot associated with the locale.</p>
      */
     inline const Aws::String& GetBotVersion() const{ return m_botVersion; }
 
     /**
-     * <p>The identifier of the version of the bot associated with the locale.</p>
+     * <p>The version of the bot associated with the locale.</p>
      */
     inline void SetBotVersion(const Aws::String& value) { m_botVersion = value; }
 
     /**
-     * <p>The identifier of the version of the bot associated with the locale.</p>
+     * <p>The version of the bot associated with the locale.</p>
      */
     inline void SetBotVersion(Aws::String&& value) { m_botVersion = std::move(value); }
 
     /**
-     * <p>The identifier of the version of the bot associated with the locale.</p>
+     * <p>The version of the bot associated with the locale.</p>
      */
     inline void SetBotVersion(const char* value) { m_botVersion.assign(value); }
 
     /**
-     * <p>The identifier of the version of the bot associated with the locale.</p>
+     * <p>The version of the bot associated with the locale.</p>
      */
     inline DescribeBotLocaleResult& WithBotVersion(const Aws::String& value) { SetBotVersion(value); return *this;}
 
     /**
-     * <p>The identifier of the version of the bot associated with the locale.</p>
+     * <p>The version of the bot associated with the locale.</p>
      */
     inline DescribeBotLocaleResult& WithBotVersion(Aws::String&& value) { SetBotVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the version of the bot associated with the locale.</p>
+     * <p>The version of the bot associated with the locale.</p>
      */
     inline DescribeBotLocaleResult& WithBotVersion(const char* value) { SetBotVersion(value); return *this;}
 
