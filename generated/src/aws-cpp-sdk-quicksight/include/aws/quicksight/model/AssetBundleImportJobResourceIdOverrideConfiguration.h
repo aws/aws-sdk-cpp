@@ -25,7 +25,7 @@ namespace Model
 
   /**
    * <p>An optional structure that configures resource ID overrides for the import
-   * job</p><p><h3>See Also:</h3>   <a
+   * job.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/AssetBundleImportJobResourceIdOverrideConfiguration">AWS
    * API Reference</a></p>
    */

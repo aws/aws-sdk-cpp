@@ -30,8 +30,8 @@ namespace Model
 {
 
   /**
-   * <p>Specifies the elicitation setting details for constituent sub slots of a
-   * composite slot.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies the elicitation setting details eliciting a slot.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/SlotValueElicitationSetting">AWS
    * API Reference</a></p>
    */

@@ -124,63 +124,63 @@ namespace Model
     /**
      * <p>A list of new subnet IDs for the VPC connection you are importing. This field
      * is required if you are importing the VPC connection from another Amazon Web
-     * Services account or region.</p>
+     * Services account or Region.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
 
     /**
      * <p>A list of new subnet IDs for the VPC connection you are importing. This field
      * is required if you are importing the VPC connection from another Amazon Web
-     * Services account or region.</p>
+     * Services account or Region.</p>
      */
     inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
 
     /**
      * <p>A list of new subnet IDs for the VPC connection you are importing. This field
      * is required if you are importing the VPC connection from another Amazon Web
-     * Services account or region.</p>
+     * Services account or Region.</p>
      */
     inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
 
     /**
      * <p>A list of new subnet IDs for the VPC connection you are importing. This field
      * is required if you are importing the VPC connection from another Amazon Web
-     * Services account or region.</p>
+     * Services account or Region.</p>
      */
     inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
 
     /**
      * <p>A list of new subnet IDs for the VPC connection you are importing. This field
      * is required if you are importing the VPC connection from another Amazon Web
-     * Services account or region.</p>
+     * Services account or Region.</p>
      */
     inline AssetBundleImportJobVPCConnectionOverrideParameters& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
 
     /**
      * <p>A list of new subnet IDs for the VPC connection you are importing. This field
      * is required if you are importing the VPC connection from another Amazon Web
-     * Services account or region.</p>
+     * Services account or Region.</p>
      */
     inline AssetBundleImportJobVPCConnectionOverrideParameters& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
 
     /**
      * <p>A list of new subnet IDs for the VPC connection you are importing. This field
      * is required if you are importing the VPC connection from another Amazon Web
-     * Services account or region.</p>
+     * Services account or Region.</p>
      */
     inline AssetBundleImportJobVPCConnectionOverrideParameters& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
     /**
      * <p>A list of new subnet IDs for the VPC connection you are importing. This field
      * is required if you are importing the VPC connection from another Amazon Web
-     * Services account or region.</p>
+     * Services account or Region.</p>
      */
     inline AssetBundleImportJobVPCConnectionOverrideParameters& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of new subnet IDs for the VPC connection you are importing. This field
      * is required if you are importing the VPC connection from another Amazon Web
-     * Services account or region.</p>
+     * Services account or Region.</p>
      */
     inline AssetBundleImportJobVPCConnectionOverrideParameters& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
@@ -188,109 +188,109 @@ namespace Model
     /**
      * <p>A new security group ID for the VPC connection you are importing. This field
      * is required if you are importing the VPC connection from another Amazon Web
-     * Services account or region.</p>
+     * Services account or Region.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
 
     /**
      * <p>A new security group ID for the VPC connection you are importing. This field
      * is required if you are importing the VPC connection from another Amazon Web
-     * Services account or region.</p>
+     * Services account or Region.</p>
      */
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
 
     /**
      * <p>A new security group ID for the VPC connection you are importing. This field
      * is required if you are importing the VPC connection from another Amazon Web
-     * Services account or region.</p>
+     * Services account or Region.</p>
      */
     inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
 
     /**
      * <p>A new security group ID for the VPC connection you are importing. This field
      * is required if you are importing the VPC connection from another Amazon Web
-     * Services account or region.</p>
+     * Services account or Region.</p>
      */
     inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
 
     /**
      * <p>A new security group ID for the VPC connection you are importing. This field
      * is required if you are importing the VPC connection from another Amazon Web
-     * Services account or region.</p>
+     * Services account or Region.</p>
      */
     inline AssetBundleImportJobVPCConnectionOverrideParameters& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
 
     /**
      * <p>A new security group ID for the VPC connection you are importing. This field
      * is required if you are importing the VPC connection from another Amazon Web
-     * Services account or region.</p>
+     * Services account or Region.</p>
      */
     inline AssetBundleImportJobVPCConnectionOverrideParameters& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
 
     /**
      * <p>A new security group ID for the VPC connection you are importing. This field
      * is required if you are importing the VPC connection from another Amazon Web
-     * Services account or region.</p>
+     * Services account or Region.</p>
      */
     inline AssetBundleImportJobVPCConnectionOverrideParameters& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
     /**
      * <p>A new security group ID for the VPC connection you are importing. This field
      * is required if you are importing the VPC connection from another Amazon Web
-     * Services account or region.</p>
+     * Services account or Region.</p>
      */
     inline AssetBundleImportJobVPCConnectionOverrideParameters& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A new security group ID for the VPC connection you are importing. This field
      * is required if you are importing the VPC connection from another Amazon Web
-     * Services account or region.</p>
+     * Services account or Region.</p>
      */
     inline AssetBundleImportJobVPCConnectionOverrideParameters& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
 
     /**
-     * <p>An optional override of dns resolvers to be used by the VPC connection.</p>
+     * <p>An optional override of DNS resolvers to be used by the VPC connection.</p>
      */
     inline const Aws::Vector<Aws::String>& GetDnsResolvers() const{ return m_dnsResolvers; }
 
     /**
-     * <p>An optional override of dns resolvers to be used by the VPC connection.</p>
+     * <p>An optional override of DNS resolvers to be used by the VPC connection.</p>
      */
     inline bool DnsResolversHasBeenSet() const { return m_dnsResolversHasBeenSet; }
 
     /**
-     * <p>An optional override of dns resolvers to be used by the VPC connection.</p>
+     * <p>An optional override of DNS resolvers to be used by the VPC connection.</p>
      */
     inline void SetDnsResolvers(const Aws::Vector<Aws::String>& value) { m_dnsResolversHasBeenSet = true; m_dnsResolvers = value; }
 
     /**
-     * <p>An optional override of dns resolvers to be used by the VPC connection.</p>
+     * <p>An optional override of DNS resolvers to be used by the VPC connection.</p>
      */
     inline void SetDnsResolvers(Aws::Vector<Aws::String>&& value) { m_dnsResolversHasBeenSet = true; m_dnsResolvers = std::move(value); }
 
     /**
-     * <p>An optional override of dns resolvers to be used by the VPC connection.</p>
+     * <p>An optional override of DNS resolvers to be used by the VPC connection.</p>
      */
     inline AssetBundleImportJobVPCConnectionOverrideParameters& WithDnsResolvers(const Aws::Vector<Aws::String>& value) { SetDnsResolvers(value); return *this;}
 
     /**
-     * <p>An optional override of dns resolvers to be used by the VPC connection.</p>
+     * <p>An optional override of DNS resolvers to be used by the VPC connection.</p>
      */
     inline AssetBundleImportJobVPCConnectionOverrideParameters& WithDnsResolvers(Aws::Vector<Aws::String>&& value) { SetDnsResolvers(std::move(value)); return *this;}
 
     /**
-     * <p>An optional override of dns resolvers to be used by the VPC connection.</p>
+     * <p>An optional override of DNS resolvers to be used by the VPC connection.</p>
      */
     inline AssetBundleImportJobVPCConnectionOverrideParameters& AddDnsResolvers(const Aws::String& value) { m_dnsResolversHasBeenSet = true; m_dnsResolvers.push_back(value); return *this; }
 
     /**
-     * <p>An optional override of dns resolvers to be used by the VPC connection.</p>
+     * <p>An optional override of DNS resolvers to be used by the VPC connection.</p>
      */
     inline AssetBundleImportJobVPCConnectionOverrideParameters& AddDnsResolvers(Aws::String&& value) { m_dnsResolversHasBeenSet = true; m_dnsResolvers.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>An optional override of dns resolvers to be used by the VPC connection.</p>
+     * <p>An optional override of DNS resolvers to be used by the VPC connection.</p>
      */
     inline AssetBundleImportJobVPCConnectionOverrideParameters& AddDnsResolvers(const char* value) { m_dnsResolversHasBeenSet = true; m_dnsResolvers.push_back(value); return *this; }
 

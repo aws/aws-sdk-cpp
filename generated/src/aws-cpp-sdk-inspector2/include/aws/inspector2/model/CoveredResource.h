@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/inspector2/model/ResourceScanMetadata.h>
 #include <aws/inspector2/model/CoverageResourceType.h>
 #include <aws/inspector2/model/ScanStatus.h>
@@ -81,6 +82,37 @@ namespace Model
      * <p>The Amazon Web Services account ID of the covered resource.</p>
      */
     inline CoveredResource& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+
+
+    /**
+     * <p>The date and time the resource was last checked for vulnerabilities.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastScannedAt() const{ return m_lastScannedAt; }
+
+    /**
+     * <p>The date and time the resource was last checked for vulnerabilities.</p>
+     */
+    inline bool LastScannedAtHasBeenSet() const { return m_lastScannedAtHasBeenSet; }
+
+    /**
+     * <p>The date and time the resource was last checked for vulnerabilities.</p>
+     */
+    inline void SetLastScannedAt(const Aws::Utils::DateTime& value) { m_lastScannedAtHasBeenSet = true; m_lastScannedAt = value; }
+
+    /**
+     * <p>The date and time the resource was last checked for vulnerabilities.</p>
+     */
+    inline void SetLastScannedAt(Aws::Utils::DateTime&& value) { m_lastScannedAtHasBeenSet = true; m_lastScannedAt = std::move(value); }
+
+    /**
+     * <p>The date and time the resource was last checked for vulnerabilities.</p>
+     */
+    inline CoveredResource& WithLastScannedAt(const Aws::Utils::DateTime& value) { SetLastScannedAt(value); return *this;}
+
+    /**
+     * <p>The date and time the resource was last checked for vulnerabilities.</p>
+     */
+    inline CoveredResource& WithLastScannedAt(Aws::Utils::DateTime&& value) { SetLastScannedAt(std::move(value)); return *this;}
 
 
     /**
@@ -251,6 +283,9 @@ namespace Model
 
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet = false;
+
+    Aws::Utils::DateTime m_lastScannedAt;
+    bool m_lastScannedAtHasBeenSet = false;
 
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet = false;

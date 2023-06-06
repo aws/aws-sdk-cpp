@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p> Defines the action that the bot executes at runtime when the conversation
+   * <p>Defines the action that the bot executes at runtime when the conversation
    * reaches this step.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DialogAction">AWS
    * API Reference</a></p>

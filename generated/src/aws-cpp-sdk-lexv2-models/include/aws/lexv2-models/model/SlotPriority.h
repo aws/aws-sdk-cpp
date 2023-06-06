@@ -39,22 +39,22 @@ namespace Model
 
 
     /**
-     * <p>The priority that a slot should be elicited.</p>
+     * <p>The priority that Amazon Lex should apply to the slot.</p>
      */
     inline int GetPriority() const{ return m_priority; }
 
     /**
-     * <p>The priority that a slot should be elicited.</p>
+     * <p>The priority that Amazon Lex should apply to the slot.</p>
      */
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
 
     /**
-     * <p>The priority that a slot should be elicited.</p>
+     * <p>The priority that Amazon Lex should apply to the slot.</p>
      */
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
 
     /**
-     * <p>The priority that a slot should be elicited.</p>
+     * <p>The priority that Amazon Lex should apply to the slot.</p>
      */
     inline SlotPriority& WithPriority(int value) { SetPriority(value); return *this;}
 

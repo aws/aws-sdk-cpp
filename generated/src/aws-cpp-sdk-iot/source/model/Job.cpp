@@ -46,7 +46,8 @@ Job::Job() :
     m_isConcurrent(false),
     m_isConcurrentHasBeenSet(false),
     m_schedulingConfigHasBeenSet(false),
-    m_scheduledJobRolloutsHasBeenSet(false)
+    m_scheduledJobRolloutsHasBeenSet(false),
+    m_destinationPackageVersionsHasBeenSet(false)
 {
 }
 
@@ -78,7 +79,8 @@ Job::Job(JsonView jsonValue) :
     m_isConcurrent(false),
     m_isConcurrentHasBeenSet(false),
     m_schedulingConfigHasBeenSet(false),
-    m_scheduledJobRolloutsHasBeenSet(false)
+    m_scheduledJobRolloutsHasBeenSet(false),
+    m_destinationPackageVersionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -262,6 +264,16 @@ Job& Job::operator =(JsonView jsonValue)
     m_scheduledJobRolloutsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("destinationPackageVersions"))
+  {
+    Aws::Utils::Array<JsonView> destinationPackageVersionsJsonList = jsonValue.GetArray("destinationPackageVersions");
+    for(unsigned destinationPackageVersionsIndex = 0; destinationPackageVersionsIndex < destinationPackageVersionsJsonList.GetLength(); ++destinationPackageVersionsIndex)
+    {
+      m_destinationPackageVersions.push_back(destinationPackageVersionsJsonList[destinationPackageVersionsIndex].AsString());
+    }
+    m_destinationPackageVersionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -420,6 +432,17 @@ JsonValue Job::Jsonize() const
      scheduledJobRolloutsJsonList[scheduledJobRolloutsIndex].AsObject(m_scheduledJobRollouts[scheduledJobRolloutsIndex].Jsonize());
    }
    payload.WithArray("scheduledJobRollouts", std::move(scheduledJobRolloutsJsonList));
+
+  }
+
+  if(m_destinationPackageVersionsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> destinationPackageVersionsJsonList(m_destinationPackageVersions.size());
+   for(unsigned destinationPackageVersionsIndex = 0; destinationPackageVersionsIndex < destinationPackageVersionsJsonList.GetLength(); ++destinationPackageVersionsIndex)
+   {
+     destinationPackageVersionsJsonList[destinationPackageVersionsIndex].AsString(m_destinationPackageVersions[destinationPackageVersionsIndex]);
+   }
+   payload.WithArray("destinationPackageVersions", std::move(destinationPackageVersionsJsonList));
 
   }
 

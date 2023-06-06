@@ -204,7 +204,7 @@ namespace Model
      * <code>ROLLBACK</code>, failed import jobs will attempt to undo any asset changes
      * caused by the failed job.</p> <p>If you choose <code>DO_NOTHING</code>, failed
      * import jobs will not attempt to roll back any asset changes caused by the failed
-     * job, possibly leaving the Amazon QuickSight account in an inconsistent
+     * job, possibly keeping the Amazon QuickSight account in an inconsistent
      * state.</p>
      */
     inline const AssetBundleImportFailureAction& GetFailureAction() const{ return m_failureAction; }
@@ -214,7 +214,7 @@ namespace Model
      * <code>ROLLBACK</code>, failed import jobs will attempt to undo any asset changes
      * caused by the failed job.</p> <p>If you choose <code>DO_NOTHING</code>, failed
      * import jobs will not attempt to roll back any asset changes caused by the failed
-     * job, possibly leaving the Amazon QuickSight account in an inconsistent
+     * job, possibly keeping the Amazon QuickSight account in an inconsistent
      * state.</p>
      */
     inline bool FailureActionHasBeenSet() const { return m_failureActionHasBeenSet; }
@@ -224,7 +224,7 @@ namespace Model
      * <code>ROLLBACK</code>, failed import jobs will attempt to undo any asset changes
      * caused by the failed job.</p> <p>If you choose <code>DO_NOTHING</code>, failed
      * import jobs will not attempt to roll back any asset changes caused by the failed
-     * job, possibly leaving the Amazon QuickSight account in an inconsistent
+     * job, possibly keeping the Amazon QuickSight account in an inconsistent
      * state.</p>
      */
     inline void SetFailureAction(const AssetBundleImportFailureAction& value) { m_failureActionHasBeenSet = true; m_failureAction = value; }
@@ -234,7 +234,7 @@ namespace Model
      * <code>ROLLBACK</code>, failed import jobs will attempt to undo any asset changes
      * caused by the failed job.</p> <p>If you choose <code>DO_NOTHING</code>, failed
      * import jobs will not attempt to roll back any asset changes caused by the failed
-     * job, possibly leaving the Amazon QuickSight account in an inconsistent
+     * job, possibly keeping the Amazon QuickSight account in an inconsistent
      * state.</p>
      */
     inline void SetFailureAction(AssetBundleImportFailureAction&& value) { m_failureActionHasBeenSet = true; m_failureAction = std::move(value); }
@@ -244,7 +244,7 @@ namespace Model
      * <code>ROLLBACK</code>, failed import jobs will attempt to undo any asset changes
      * caused by the failed job.</p> <p>If you choose <code>DO_NOTHING</code>, failed
      * import jobs will not attempt to roll back any asset changes caused by the failed
-     * job, possibly leaving the Amazon QuickSight account in an inconsistent
+     * job, possibly keeping the Amazon QuickSight account in an inconsistent
      * state.</p>
      */
     inline StartAssetBundleImportJobRequest& WithFailureAction(const AssetBundleImportFailureAction& value) { SetFailureAction(value); return *this;}
@@ -254,7 +254,7 @@ namespace Model
      * <code>ROLLBACK</code>, failed import jobs will attempt to undo any asset changes
      * caused by the failed job.</p> <p>If you choose <code>DO_NOTHING</code>, failed
      * import jobs will not attempt to roll back any asset changes caused by the failed
-     * job, possibly leaving the Amazon QuickSight account in an inconsistent
+     * job, possibly keeping the Amazon QuickSight account in an inconsistent
      * state.</p>
      */
     inline StartAssetBundleImportJobRequest& WithFailureAction(AssetBundleImportFailureAction&& value) { SetFailureAction(std::move(value)); return *this;}

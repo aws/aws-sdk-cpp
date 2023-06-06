@@ -617,7 +617,7 @@ namespace IoT
          * </p> <p>Requires permission to access the <a
          * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateCertificateFromCsr</a>
          * action. </p>  <p>The CSR must include a public key that is either an RSA
-         * key with a length of at least 2048 bits or an ECC key from NIST P-25 or NIST
+         * key with a length of at least 2048 bits or an ECC key from NIST P-256 or NIST
          * P-384 curves. For supported certificates, consult <a
          * href="https://docs.aws.amazon.com/iot/latest/developerguide/x509-client-certs.html#x509-cert-algorithms">
          * Certificate signing algorithms supported by IoT</a>. </p>  
@@ -953,6 +953,66 @@ namespace IoT
         void CreateOTAUpdateAsync(const CreateOTAUpdateRequestT& request, const CreateOTAUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&IoTClient::CreateOTAUpdate, request, handler, context);
+        }
+
+        /**
+         * <p>Creates an IoT software package that can be deployed to your fleet.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreatePackage</a>
+         * and <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetIndexingConfiguration</a>
+         * actions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreatePackage">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreatePackageOutcome CreatePackage(const Model::CreatePackageRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreatePackage that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreatePackageRequestT = Model::CreatePackageRequest>
+        Model::CreatePackageOutcomeCallable CreatePackageCallable(const CreatePackageRequestT& request) const
+        {
+            return SubmitCallable(&IoTClient::CreatePackage, request);
+        }
+
+        /**
+         * An Async wrapper for CreatePackage that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreatePackageRequestT = Model::CreatePackageRequest>
+        void CreatePackageAsync(const CreatePackageRequestT& request, const CreatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTClient::CreatePackage, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a new version for an existing IoT software package.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreatePackageVersion</a>
+         * and <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetIndexingConfiguration</a>
+         * actions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreatePackageVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreatePackageVersionOutcome CreatePackageVersion(const Model::CreatePackageVersionRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreatePackageVersion that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreatePackageVersionRequestT = Model::CreatePackageVersionRequest>
+        Model::CreatePackageVersionOutcomeCallable CreatePackageVersionCallable(const CreatePackageVersionRequestT& request) const
+        {
+            return SubmitCallable(&IoTClient::CreatePackageVersion, request);
+        }
+
+        /**
+         * An Async wrapper for CreatePackageVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreatePackageVersionRequestT = Model::CreatePackageVersionRequest>
+        void CreatePackageVersionAsync(const CreatePackageVersionRequestT& request, const CreatePackageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTClient::CreatePackageVersion, request, handler, context);
         }
 
         /**
@@ -1814,6 +1874,62 @@ namespace IoT
         void DeleteOTAUpdateAsync(const DeleteOTAUpdateRequestT& request, const DeleteOTAUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&IoTClient::DeleteOTAUpdate, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a specific version from a software package.</p> <p> <b>Note:</b> All
+         * package versions must be deleted before deleting the software package.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeletePackageVersion</a>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeletePackage">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeletePackageOutcome DeletePackage(const Model::DeletePackageRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeletePackage that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeletePackageRequestT = Model::DeletePackageRequest>
+        Model::DeletePackageOutcomeCallable DeletePackageCallable(const DeletePackageRequestT& request) const
+        {
+            return SubmitCallable(&IoTClient::DeletePackage, request);
+        }
+
+        /**
+         * An Async wrapper for DeletePackage that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeletePackageRequestT = Model::DeletePackageRequest>
+        void DeletePackageAsync(const DeletePackageRequestT& request, const DeletePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTClient::DeletePackage, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a specific version from a software package.</p> <p> <b>Note:</b> If a
+         * package version is designated as default, you must remove the designation from
+         * the package using the <a>UpdatePackage</a> action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeletePackageVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeletePackageVersionOutcome DeletePackageVersion(const Model::DeletePackageVersionRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeletePackageVersion that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeletePackageVersionRequestT = Model::DeletePackageVersionRequest>
+        Model::DeletePackageVersionOutcomeCallable DeletePackageVersionCallable(const DeletePackageVersionRequestT& request) const
+        {
+            return SubmitCallable(&IoTClient::DeletePackageVersion, request);
+        }
+
+        /**
+         * An Async wrapper for DeletePackageVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeletePackageVersionRequestT = Model::DeletePackageVersionRequest>
+        void DeletePackageVersionAsync(const DeletePackageVersionRequestT& request, const DeletePackageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTClient::DeletePackageVersion, request, handler, context);
         }
 
         /**
@@ -3547,6 +3663,90 @@ namespace IoT
         }
 
         /**
+         * <p>Gets information about the specified software package.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetPackage</a>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetPackage">AWS API
+         * Reference</a></p>
+         */
+        virtual Model::GetPackageOutcome GetPackage(const Model::GetPackageRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetPackage that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetPackageRequestT = Model::GetPackageRequest>
+        Model::GetPackageOutcomeCallable GetPackageCallable(const GetPackageRequestT& request) const
+        {
+            return SubmitCallable(&IoTClient::GetPackage, request);
+        }
+
+        /**
+         * An Async wrapper for GetPackage that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetPackageRequestT = Model::GetPackageRequest>
+        void GetPackageAsync(const GetPackageRequestT& request, const GetPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTClient::GetPackage, request, handler, context);
+        }
+
+        /**
+         * <p>Gets information about the specified software package's configuration.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetPackageConfiguration</a>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetPackageConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetPackageConfigurationOutcome GetPackageConfiguration(const Model::GetPackageConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetPackageConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetPackageConfigurationRequestT = Model::GetPackageConfigurationRequest>
+        Model::GetPackageConfigurationOutcomeCallable GetPackageConfigurationCallable(const GetPackageConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&IoTClient::GetPackageConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for GetPackageConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetPackageConfigurationRequestT = Model::GetPackageConfigurationRequest>
+        void GetPackageConfigurationAsync(const GetPackageConfigurationRequestT& request, const GetPackageConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTClient::GetPackageConfiguration, request, handler, context);
+        }
+
+        /**
+         * <p>Gets information about the specified package version. </p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetPackageVersion</a>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetPackageVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetPackageVersionOutcome GetPackageVersion(const Model::GetPackageVersionRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetPackageVersion that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetPackageVersionRequestT = Model::GetPackageVersionRequest>
+        Model::GetPackageVersionOutcomeCallable GetPackageVersionCallable(const GetPackageVersionRequestT& request) const
+        {
+            return SubmitCallable(&IoTClient::GetPackageVersion, request);
+        }
+
+        /**
+         * An Async wrapper for GetPackageVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetPackageVersionRequestT = Model::GetPackageVersionRequest>
+        void GetPackageVersionAsync(const GetPackageVersionRequestT& request, const GetPackageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTClient::GetPackageVersion, request, handler, context);
+        }
+
+        /**
          * <p>Groups the aggregated values that match the query into percentile groupings.
          * The default percentile groupings are: 1,5,25,50,75,95,99, although you can
          * specify your own when you call <code>GetPercentiles</code>. This function
@@ -4558,6 +4758,62 @@ namespace IoT
         void ListOutgoingCertificatesAsync(const ListOutgoingCertificatesRequestT& request, const ListOutgoingCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&IoTClient::ListOutgoingCertificates, request, handler, context);
+        }
+
+        /**
+         * <p>Lists the software package versions associated to the account.</p>
+         * <p>Requires permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListPackageVersions</a>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPackageVersions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListPackageVersionsOutcome ListPackageVersions(const Model::ListPackageVersionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListPackageVersions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListPackageVersionsRequestT = Model::ListPackageVersionsRequest>
+        Model::ListPackageVersionsOutcomeCallable ListPackageVersionsCallable(const ListPackageVersionsRequestT& request) const
+        {
+            return SubmitCallable(&IoTClient::ListPackageVersions, request);
+        }
+
+        /**
+         * An Async wrapper for ListPackageVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListPackageVersionsRequestT = Model::ListPackageVersionsRequest>
+        void ListPackageVersionsAsync(const ListPackageVersionsRequestT& request, const ListPackageVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTClient::ListPackageVersions, request, handler, context);
+        }
+
+        /**
+         * <p>Lists the software packages associated to the account.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListPackages</a>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPackages">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListPackagesOutcome ListPackages(const Model::ListPackagesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListPackages that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListPackagesRequestT = Model::ListPackagesRequest>
+        Model::ListPackagesOutcomeCallable ListPackagesCallable(const ListPackagesRequestT& request) const
+        {
+            return SubmitCallable(&IoTClient::ListPackages, request);
+        }
+
+        /**
+         * An Async wrapper for ListPackages that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListPackagesRequestT = Model::ListPackagesRequest>
+        void ListPackagesAsync(const ListPackagesRequestT& request, const ListPackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTClient::ListPackages, request, handler, context);
         }
 
         /**
@@ -6487,6 +6743,96 @@ namespace IoT
         void UpdateMitigationActionAsync(const UpdateMitigationActionRequestT& request, const UpdateMitigationActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&IoTClient::UpdateMitigationAction, request, handler, context);
+        }
+
+        /**
+         * <p>Updates the supported fields for a specific package.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdatePackage</a>
+         * and <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetIndexingConfiguration</a>
+         * actions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdatePackage">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdatePackageOutcome UpdatePackage(const Model::UpdatePackageRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdatePackage that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdatePackageRequestT = Model::UpdatePackageRequest>
+        Model::UpdatePackageOutcomeCallable UpdatePackageCallable(const UpdatePackageRequestT& request) const
+        {
+            return SubmitCallable(&IoTClient::UpdatePackage, request);
+        }
+
+        /**
+         * An Async wrapper for UpdatePackage that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdatePackageRequestT = Model::UpdatePackageRequest>
+        void UpdatePackageAsync(const UpdatePackageRequestT& request, const UpdatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTClient::UpdatePackage, request, handler, context);
+        }
+
+        /**
+         * <p>Updates the package configuration.</p> <p>Requires permission to access the
+         * <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdatePackageConfiguration</a>
+         * and <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">iam:PassRole</a>
+         * actions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdatePackageConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdatePackageConfigurationOutcome UpdatePackageConfiguration(const Model::UpdatePackageConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdatePackageConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdatePackageConfigurationRequestT = Model::UpdatePackageConfigurationRequest>
+        Model::UpdatePackageConfigurationOutcomeCallable UpdatePackageConfigurationCallable(const UpdatePackageConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&IoTClient::UpdatePackageConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for UpdatePackageConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdatePackageConfigurationRequestT = Model::UpdatePackageConfigurationRequest>
+        void UpdatePackageConfigurationAsync(const UpdatePackageConfigurationRequestT& request, const UpdatePackageConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTClient::UpdatePackageConfiguration, request, handler, context);
+        }
+
+        /**
+         * <p>Updates the supported fields for a specific package version.</p> <p>Requires
+         * permission to access the <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdatePackageVersion</a>
+         * and <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetIndexingConfiguration</a>
+         * actions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdatePackageVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdatePackageVersionOutcome UpdatePackageVersion(const Model::UpdatePackageVersionRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdatePackageVersion that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdatePackageVersionRequestT = Model::UpdatePackageVersionRequest>
+        Model::UpdatePackageVersionOutcomeCallable UpdatePackageVersionCallable(const UpdatePackageVersionRequestT& request) const
+        {
+            return SubmitCallable(&IoTClient::UpdatePackageVersion, request);
+        }
+
+        /**
+         * An Async wrapper for UpdatePackageVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdatePackageVersionRequestT = Model::UpdatePackageVersionRequest>
+        void UpdatePackageVersionAsync(const UpdatePackageVersionRequestT& request, const UpdatePackageVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTClient::UpdatePackageVersion, request, handler, context);
         }
 
         /**

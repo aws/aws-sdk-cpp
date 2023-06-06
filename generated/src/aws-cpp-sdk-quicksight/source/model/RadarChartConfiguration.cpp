@@ -35,7 +35,9 @@ RadarChartConfiguration::RadarChartConfiguration() :
     m_categoryLabelOptionsHasBeenSet(false),
     m_colorAxisHasBeenSet(false),
     m_colorLabelOptionsHasBeenSet(false),
-    m_legendHasBeenSet(false)
+    m_legendHasBeenSet(false),
+    m_axesRangeScale(RadarChartAxesRangeScale::NOT_SET),
+    m_axesRangeScaleHasBeenSet(false)
 {
 }
 
@@ -56,7 +58,9 @@ RadarChartConfiguration::RadarChartConfiguration(JsonView jsonValue) :
     m_categoryLabelOptionsHasBeenSet(false),
     m_colorAxisHasBeenSet(false),
     m_colorLabelOptionsHasBeenSet(false),
-    m_legendHasBeenSet(false)
+    m_legendHasBeenSet(false),
+    m_axesRangeScale(RadarChartAxesRangeScale::NOT_SET),
+    m_axesRangeScaleHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -161,6 +165,13 @@ RadarChartConfiguration& RadarChartConfiguration::operator =(JsonView jsonValue)
     m_legendHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AxesRangeScale"))
+  {
+    m_axesRangeScale = RadarChartAxesRangeScaleMapper::GetRadarChartAxesRangeScaleForName(jsonValue.GetString("AxesRangeScale"));
+
+    m_axesRangeScaleHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -248,6 +259,11 @@ JsonValue RadarChartConfiguration::Jsonize() const
   {
    payload.WithObject("Legend", m_legend.Jsonize());
 
+  }
+
+  if(m_axesRangeScaleHasBeenSet)
+  {
+   payload.WithString("AxesRangeScale", RadarChartAxesRangeScaleMapper::GetNameForRadarChartAxesRangeScale(m_axesRangeScale));
   }
 
   return payload;

@@ -40,9 +40,9 @@ namespace Model
 
 
     /**
-     * <p>Indicates tha status of a job through its queueing and execution.</p> <p>Poll
-     * this <code>DescribeAssetBundleImport</code> API until <code>JobStatus</code>
-     * returns one of the following values.</p> <ul> <li> <p> <code>SUCCESSFUL</code>
+     * <p>Indicates the status of a job through its queuing and execution.</p> <p>Poll
+     * the <code>DescribeAssetBundleImport</code> API until <code>JobStatus</code>
+     * returns one of the following values:</p> <ul> <li> <p> <code>SUCCESSFUL</code>
      * </p> </li> <li> <p> <code>FAILED</code> </p> </li> <li> <p>
      * <code>FAILED_ROLLBACK_COMPLETED</code> </p> </li> <li> <p>
      * <code>FAILED_ROLLBACK_ERROR</code> </p> </li> </ul>
@@ -50,9 +50,9 @@ namespace Model
     inline const AssetBundleImportJobStatus& GetJobStatus() const{ return m_jobStatus; }
 
     /**
-     * <p>Indicates tha status of a job through its queueing and execution.</p> <p>Poll
-     * this <code>DescribeAssetBundleImport</code> API until <code>JobStatus</code>
-     * returns one of the following values.</p> <ul> <li> <p> <code>SUCCESSFUL</code>
+     * <p>Indicates the status of a job through its queuing and execution.</p> <p>Poll
+     * the <code>DescribeAssetBundleImport</code> API until <code>JobStatus</code>
+     * returns one of the following values:</p> <ul> <li> <p> <code>SUCCESSFUL</code>
      * </p> </li> <li> <p> <code>FAILED</code> </p> </li> <li> <p>
      * <code>FAILED_ROLLBACK_COMPLETED</code> </p> </li> <li> <p>
      * <code>FAILED_ROLLBACK_ERROR</code> </p> </li> </ul>
@@ -60,9 +60,9 @@ namespace Model
     inline void SetJobStatus(const AssetBundleImportJobStatus& value) { m_jobStatus = value; }
 
     /**
-     * <p>Indicates tha status of a job through its queueing and execution.</p> <p>Poll
-     * this <code>DescribeAssetBundleImport</code> API until <code>JobStatus</code>
-     * returns one of the following values.</p> <ul> <li> <p> <code>SUCCESSFUL</code>
+     * <p>Indicates the status of a job through its queuing and execution.</p> <p>Poll
+     * the <code>DescribeAssetBundleImport</code> API until <code>JobStatus</code>
+     * returns one of the following values:</p> <ul> <li> <p> <code>SUCCESSFUL</code>
      * </p> </li> <li> <p> <code>FAILED</code> </p> </li> <li> <p>
      * <code>FAILED_ROLLBACK_COMPLETED</code> </p> </li> <li> <p>
      * <code>FAILED_ROLLBACK_ERROR</code> </p> </li> </ul>
@@ -70,9 +70,9 @@ namespace Model
     inline void SetJobStatus(AssetBundleImportJobStatus&& value) { m_jobStatus = std::move(value); }
 
     /**
-     * <p>Indicates tha status of a job through its queueing and execution.</p> <p>Poll
-     * this <code>DescribeAssetBundleImport</code> API until <code>JobStatus</code>
-     * returns one of the following values.</p> <ul> <li> <p> <code>SUCCESSFUL</code>
+     * <p>Indicates the status of a job through its queuing and execution.</p> <p>Poll
+     * the <code>DescribeAssetBundleImport</code> API until <code>JobStatus</code>
+     * returns one of the following values:</p> <ul> <li> <p> <code>SUCCESSFUL</code>
      * </p> </li> <li> <p> <code>FAILED</code> </p> </li> <li> <p>
      * <code>FAILED_ROLLBACK_COMPLETED</code> </p> </li> <li> <p>
      * <code>FAILED_ROLLBACK_ERROR</code> </p> </li> </ul>
@@ -80,9 +80,9 @@ namespace Model
     inline DescribeAssetBundleImportJobResult& WithJobStatus(const AssetBundleImportJobStatus& value) { SetJobStatus(value); return *this;}
 
     /**
-     * <p>Indicates tha status of a job through its queueing and execution.</p> <p>Poll
-     * this <code>DescribeAssetBundleImport</code> API until <code>JobStatus</code>
-     * returns one of the following values.</p> <ul> <li> <p> <code>SUCCESSFUL</code>
+     * <p>Indicates the status of a job through its queuing and execution.</p> <p>Poll
+     * the <code>DescribeAssetBundleImport</code> API until <code>JobStatus</code>
+     * returns one of the following values:</p> <ul> <li> <p> <code>SUCCESSFUL</code>
      * </p> </li> <li> <p> <code>FAILED</code> </p> </li> <li> <p>
      * <code>FAILED_ROLLBACK_COMPLETED</code> </p> </li> <li> <p>
      * <code>FAILED_ROLLBACK_ERROR</code> </p> </li> </ul>

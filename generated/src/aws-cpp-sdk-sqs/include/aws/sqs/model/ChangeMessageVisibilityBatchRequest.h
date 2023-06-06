@@ -91,49 +91,49 @@ namespace Model
 
 
     /**
-     * <p>A list of receipt handles of the messages for which the visibility timeout
+     * <p>Lists the receipt handles of the messages for which the visibility timeout
      * must be changed.</p>
      */
     inline const Aws::Vector<ChangeMessageVisibilityBatchRequestEntry>& GetEntries() const{ return m_entries; }
 
     /**
-     * <p>A list of receipt handles of the messages for which the visibility timeout
+     * <p>Lists the receipt handles of the messages for which the visibility timeout
      * must be changed.</p>
      */
     inline bool EntriesHasBeenSet() const { return m_entriesHasBeenSet; }
 
     /**
-     * <p>A list of receipt handles of the messages for which the visibility timeout
+     * <p>Lists the receipt handles of the messages for which the visibility timeout
      * must be changed.</p>
      */
     inline void SetEntries(const Aws::Vector<ChangeMessageVisibilityBatchRequestEntry>& value) { m_entriesHasBeenSet = true; m_entries = value; }
 
     /**
-     * <p>A list of receipt handles of the messages for which the visibility timeout
+     * <p>Lists the receipt handles of the messages for which the visibility timeout
      * must be changed.</p>
      */
     inline void SetEntries(Aws::Vector<ChangeMessageVisibilityBatchRequestEntry>&& value) { m_entriesHasBeenSet = true; m_entries = std::move(value); }
 
     /**
-     * <p>A list of receipt handles of the messages for which the visibility timeout
+     * <p>Lists the receipt handles of the messages for which the visibility timeout
      * must be changed.</p>
      */
     inline ChangeMessageVisibilityBatchRequest& WithEntries(const Aws::Vector<ChangeMessageVisibilityBatchRequestEntry>& value) { SetEntries(value); return *this;}
 
     /**
-     * <p>A list of receipt handles of the messages for which the visibility timeout
+     * <p>Lists the receipt handles of the messages for which the visibility timeout
      * must be changed.</p>
      */
     inline ChangeMessageVisibilityBatchRequest& WithEntries(Aws::Vector<ChangeMessageVisibilityBatchRequestEntry>&& value) { SetEntries(std::move(value)); return *this;}
 
     /**
-     * <p>A list of receipt handles of the messages for which the visibility timeout
+     * <p>Lists the receipt handles of the messages for which the visibility timeout
      * must be changed.</p>
      */
     inline ChangeMessageVisibilityBatchRequest& AddEntries(const ChangeMessageVisibilityBatchRequestEntry& value) { m_entriesHasBeenSet = true; m_entries.push_back(value); return *this; }
 
     /**
-     * <p>A list of receipt handles of the messages for which the visibility timeout
+     * <p>Lists the receipt handles of the messages for which the visibility timeout
      * must be changed.</p>
      */
     inline ChangeMessageVisibilityBatchRequest& AddEntries(ChangeMessageVisibilityBatchRequestEntry&& value) { m_entriesHasBeenSet = true; m_entries.push_back(std::move(value)); return *this; }

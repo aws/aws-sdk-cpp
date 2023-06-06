@@ -24,6 +24,7 @@
 #include <aws/signer/model/AddProfilePermissionRequest.h>
 #include <aws/signer/model/CancelSigningProfileRequest.h>
 #include <aws/signer/model/DescribeSigningJobRequest.h>
+#include <aws/signer/model/GetRevocationStatusRequest.h>
 #include <aws/signer/model/GetSigningPlatformRequest.h>
 #include <aws/signer/model/GetSigningProfileRequest.h>
 #include <aws/signer/model/ListProfilePermissionsRequest.h>
@@ -35,6 +36,7 @@
 #include <aws/signer/model/RemoveProfilePermissionRequest.h>
 #include <aws/signer/model/RevokeSignatureRequest.h>
 #include <aws/signer/model/RevokeSigningProfileRequest.h>
+#include <aws/signer/model/SignPayloadRequest.h>
 #include <aws/signer/model/StartSigningJobRequest.h>
 #include <aws/signer/model/TagResourceRequest.h>
 #include <aws/signer/model/UntagResourceRequest.h>
@@ -216,6 +218,43 @@ DescribeSigningJobOutcome SignerClient::DescribeSigningJob(const DescribeSigning
   return DescribeSigningJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
+GetRevocationStatusOutcome SignerClient::GetRevocationStatus(const GetRevocationStatusRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetRevocationStatus);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetRevocationStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.SignatureTimestampHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetRevocationStatus", "Required field: SignatureTimestamp, is not set");
+    return GetRevocationStatusOutcome(Aws::Client::AWSError<SignerErrors>(SignerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SignatureTimestamp]", false));
+  }
+  if (!request.PlatformIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetRevocationStatus", "Required field: PlatformId, is not set");
+    return GetRevocationStatusOutcome(Aws::Client::AWSError<SignerErrors>(SignerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PlatformId]", false));
+  }
+  if (!request.ProfileVersionArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetRevocationStatus", "Required field: ProfileVersionArn, is not set");
+    return GetRevocationStatusOutcome(Aws::Client::AWSError<SignerErrors>(SignerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfileVersionArn]", false));
+  }
+  if (!request.JobArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetRevocationStatus", "Required field: JobArn, is not set");
+    return GetRevocationStatusOutcome(Aws::Client::AWSError<SignerErrors>(SignerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobArn]", false));
+  }
+  if (!request.CertificateHashesHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetRevocationStatus", "Required field: CertificateHashes, is not set");
+    return GetRevocationStatusOutcome(Aws::Client::AWSError<SignerErrors>(SignerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CertificateHashes]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetRevocationStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("verification.");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), GetRevocationStatusOutcome(addPrefixErr.value()));
+  endpointResolutionOutcome.GetResult().AddPathSegments("/revocations");
+  return GetRevocationStatusOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
 GetSigningPlatformOutcome SignerClient::GetSigningPlatform(const GetSigningPlatformRequest& request) const
 {
   AWS_OPERATION_GUARD(GetSigningPlatform);
@@ -387,6 +426,16 @@ RevokeSigningProfileOutcome SignerClient::RevokeSigningProfile(const RevokeSigni
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProfileName());
   endpointResolutionOutcome.GetResult().AddPathSegments("/revoke");
   return RevokeSigningProfileOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+SignPayloadOutcome SignerClient::SignPayload(const SignPayloadRequest& request) const
+{
+  AWS_OPERATION_GUARD(SignPayload);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, SignPayload, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SignPayload, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/signing-jobs/with-payload");
+  return SignPayloadOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StartSigningJobOutcome SignerClient::StartSigningJob(const StartSigningJobRequest& request) const

@@ -91,42 +91,42 @@ namespace Model
 
 
     /**
-     * <p>A list of receipt handles for the messages to be deleted.</p>
+     * <p>Lists the receipt handles for the messages to be deleted.</p>
      */
     inline const Aws::Vector<DeleteMessageBatchRequestEntry>& GetEntries() const{ return m_entries; }
 
     /**
-     * <p>A list of receipt handles for the messages to be deleted.</p>
+     * <p>Lists the receipt handles for the messages to be deleted.</p>
      */
     inline bool EntriesHasBeenSet() const { return m_entriesHasBeenSet; }
 
     /**
-     * <p>A list of receipt handles for the messages to be deleted.</p>
+     * <p>Lists the receipt handles for the messages to be deleted.</p>
      */
     inline void SetEntries(const Aws::Vector<DeleteMessageBatchRequestEntry>& value) { m_entriesHasBeenSet = true; m_entries = value; }
 
     /**
-     * <p>A list of receipt handles for the messages to be deleted.</p>
+     * <p>Lists the receipt handles for the messages to be deleted.</p>
      */
     inline void SetEntries(Aws::Vector<DeleteMessageBatchRequestEntry>&& value) { m_entriesHasBeenSet = true; m_entries = std::move(value); }
 
     /**
-     * <p>A list of receipt handles for the messages to be deleted.</p>
+     * <p>Lists the receipt handles for the messages to be deleted.</p>
      */
     inline DeleteMessageBatchRequest& WithEntries(const Aws::Vector<DeleteMessageBatchRequestEntry>& value) { SetEntries(value); return *this;}
 
     /**
-     * <p>A list of receipt handles for the messages to be deleted.</p>
+     * <p>Lists the receipt handles for the messages to be deleted.</p>
      */
     inline DeleteMessageBatchRequest& WithEntries(Aws::Vector<DeleteMessageBatchRequestEntry>&& value) { SetEntries(std::move(value)); return *this;}
 
     /**
-     * <p>A list of receipt handles for the messages to be deleted.</p>
+     * <p>Lists the receipt handles for the messages to be deleted.</p>
      */
     inline DeleteMessageBatchRequest& AddEntries(const DeleteMessageBatchRequestEntry& value) { m_entriesHasBeenSet = true; m_entries.push_back(value); return *this; }
 
     /**
-     * <p>A list of receipt handles for the messages to be deleted.</p>
+     * <p>Lists the receipt handles for the messages to be deleted.</p>
      */
     inline DeleteMessageBatchRequest& AddEntries(DeleteMessageBatchRequestEntry&& value) { m_entriesHasBeenSet = true; m_entries.push_back(std::move(value)); return *this; }
 

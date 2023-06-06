@@ -239,7 +239,7 @@ namespace Model
      * recursively exported with the job. For example, say you provided a Dashboard ARN
      * to the <code>ResourceArns</code> parameter. If you set
      * <code>IncludeAllDependencies</code> to <code>TRUE</code>, any theme, dataset,
-     * and dataource resource that is a dependency of the dashboard is also
+     * and data source resource that is a dependency of the dashboard is also
      * exported.</p>
      */
     inline bool GetIncludeAllDependencies() const{ return m_includeAllDependencies; }
@@ -249,7 +249,7 @@ namespace Model
      * recursively exported with the job. For example, say you provided a Dashboard ARN
      * to the <code>ResourceArns</code> parameter. If you set
      * <code>IncludeAllDependencies</code> to <code>TRUE</code>, any theme, dataset,
-     * and dataource resource that is a dependency of the dashboard is also
+     * and data source resource that is a dependency of the dashboard is also
      * exported.</p>
      */
     inline bool IncludeAllDependenciesHasBeenSet() const { return m_includeAllDependenciesHasBeenSet; }
@@ -259,7 +259,7 @@ namespace Model
      * recursively exported with the job. For example, say you provided a Dashboard ARN
      * to the <code>ResourceArns</code> parameter. If you set
      * <code>IncludeAllDependencies</code> to <code>TRUE</code>, any theme, dataset,
-     * and dataource resource that is a dependency of the dashboard is also
+     * and data source resource that is a dependency of the dashboard is also
      * exported.</p>
      */
     inline void SetIncludeAllDependencies(bool value) { m_includeAllDependenciesHasBeenSet = true; m_includeAllDependencies = value; }
@@ -269,7 +269,7 @@ namespace Model
      * recursively exported with the job. For example, say you provided a Dashboard ARN
      * to the <code>ResourceArns</code> parameter. If you set
      * <code>IncludeAllDependencies</code> to <code>TRUE</code>, any theme, dataset,
-     * and dataource resource that is a dependency of the dashboard is also
+     * and data source resource that is a dependency of the dashboard is also
      * exported.</p>
      */
     inline StartAssetBundleExportJobRequest& WithIncludeAllDependencies(bool value) { SetIncludeAllDependencies(value); return *this;}

@@ -23,8 +23,8 @@ static const int OVER_LIMIT_HASH = HashingUtils::HashString("OverLimit");
 static const int QUEUE_NAME_EXISTS_HASH = HashingUtils::HashString("QueueAlreadyExists");
 static const int PURGE_QUEUE_IN_PROGRESS_HASH = HashingUtils::HashString("AWS.SimpleQueueService.PurgeQueueInProgress");
 static const int QUEUE_DOES_NOT_EXIST_HASH = HashingUtils::HashString("AWS.SimpleQueueService.NonExistentQueue");
-static const int BATCH_ENTRY_IDS_NOT_DISTINCT_HASH = HashingUtils::HashString("AWS.SimpleQueueService.BatchEntryIdsNotDistinct");
 static const int UNSUPPORTED_OPERATION_HASH = HashingUtils::HashString("AWS.SimpleQueueService.UnsupportedOperation");
+static const int BATCH_ENTRY_IDS_NOT_DISTINCT_HASH = HashingUtils::HashString("AWS.SimpleQueueService.BatchEntryIdsNotDistinct");
 static const int MESSAGE_NOT_INFLIGHT_HASH = HashingUtils::HashString("AWS.SimpleQueueService.MessageNotInflight");
 static const int BATCH_REQUEST_TOO_LONG_HASH = HashingUtils::HashString("AWS.SimpleQueueService.BatchRequestTooLong");
 static const int INVALID_BATCH_ENTRY_ID_HASH = HashingUtils::HashString("AWS.SimpleQueueService.InvalidBatchEntryId");
@@ -60,13 +60,13 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SQSErrors::QUEUE_DOES_NOT_EXIST), false);
   }
-  else if (hashCode == BATCH_ENTRY_IDS_NOT_DISTINCT_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SQSErrors::BATCH_ENTRY_IDS_NOT_DISTINCT), false);
-  }
   else if (hashCode == UNSUPPORTED_OPERATION_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SQSErrors::UNSUPPORTED_OPERATION), false);
+  }
+  else if (hashCode == BATCH_ENTRY_IDS_NOT_DISTINCT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SQSErrors::BATCH_ENTRY_IDS_NOT_DISTINCT), false);
   }
   else if (hashCode == MESSAGE_NOT_INFLIGHT_HASH)
   {

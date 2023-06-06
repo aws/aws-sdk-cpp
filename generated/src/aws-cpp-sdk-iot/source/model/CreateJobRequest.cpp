@@ -29,7 +29,8 @@ CreateJobRequest::CreateJobRequest() :
     m_jobTemplateArnHasBeenSet(false),
     m_jobExecutionsRetryConfigHasBeenSet(false),
     m_documentParametersHasBeenSet(false),
-    m_schedulingConfigHasBeenSet(false)
+    m_schedulingConfigHasBeenSet(false),
+    m_destinationPackageVersionsHasBeenSet(false)
 {
 }
 
@@ -138,6 +139,17 @@ Aws::String CreateJobRequest::SerializePayload() const
   if(m_schedulingConfigHasBeenSet)
   {
    payload.WithObject("schedulingConfig", m_schedulingConfig.Jsonize());
+
+  }
+
+  if(m_destinationPackageVersionsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> destinationPackageVersionsJsonList(m_destinationPackageVersions.size());
+   for(unsigned destinationPackageVersionsIndex = 0; destinationPackageVersionsIndex < destinationPackageVersionsJsonList.GetLength(); ++destinationPackageVersionsIndex)
+   {
+     destinationPackageVersionsJsonList[destinationPackageVersionsIndex].AsString(m_destinationPackageVersions[destinationPackageVersionsIndex]);
+   }
+   payload.WithArray("destinationPackageVersions", std::move(destinationPackageVersionsJsonList));
 
   }
 

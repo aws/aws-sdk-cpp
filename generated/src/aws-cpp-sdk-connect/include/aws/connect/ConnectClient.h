@@ -2504,9 +2504,8 @@ namespace Connect
          * description of the historical metrics that are supported by
          * <code>GetMetricDataV2</code> and <code>GetMetricData</code>, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
-         * metrics definitions</a> in the <i>Amazon Connect Administrator's Guide</i>. </p>
-         * <p>This API is not available in the Amazon Web Services GovCloud (US)
-         * Regions.</p><p><h3>See Also:</h3>   <a
+         * metrics definitions</a> in the <i>Amazon Connect Administrator's
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetMetricDataV2">AWS
          * API Reference</a></p>
          */

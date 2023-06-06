@@ -287,43 +287,43 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the slot version that contains the slot. Will always be
+     * <p>The version of the bot that contains the slot. Will always be
      * <code>DRAFT</code>.</p>
      */
     inline const Aws::String& GetBotVersion() const{ return m_botVersion; }
 
     /**
-     * <p>The identifier of the slot version that contains the slot. Will always be
+     * <p>The version of the bot that contains the slot. Will always be
      * <code>DRAFT</code>.</p>
      */
     inline void SetBotVersion(const Aws::String& value) { m_botVersion = value; }
 
     /**
-     * <p>The identifier of the slot version that contains the slot. Will always be
+     * <p>The version of the bot that contains the slot. Will always be
      * <code>DRAFT</code>.</p>
      */
     inline void SetBotVersion(Aws::String&& value) { m_botVersion = std::move(value); }
 
     /**
-     * <p>The identifier of the slot version that contains the slot. Will always be
+     * <p>The version of the bot that contains the slot. Will always be
      * <code>DRAFT</code>.</p>
      */
     inline void SetBotVersion(const char* value) { m_botVersion.assign(value); }
 
     /**
-     * <p>The identifier of the slot version that contains the slot. Will always be
+     * <p>The version of the bot that contains the slot. Will always be
      * <code>DRAFT</code>.</p>
      */
     inline UpdateSlotResult& WithBotVersion(const Aws::String& value) { SetBotVersion(value); return *this;}
 
     /**
-     * <p>The identifier of the slot version that contains the slot. Will always be
+     * <p>The version of the bot that contains the slot. Will always be
      * <code>DRAFT</code>.</p>
      */
     inline UpdateSlotResult& WithBotVersion(Aws::String&& value) { SetBotVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the slot version that contains the slot. Will always be
+     * <p>The version of the bot that contains the slot. Will always be
      * <code>DRAFT</code>.</p>
      */
     inline UpdateSlotResult& WithBotVersion(const char* value) { SetBotVersion(value); return *this;}

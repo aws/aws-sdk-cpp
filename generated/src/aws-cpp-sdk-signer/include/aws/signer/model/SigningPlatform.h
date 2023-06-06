@@ -42,42 +42,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of a code signing; platform.</p>
+     * <p>The ID of a code signing platform.</p>
      */
     inline const Aws::String& GetPlatformId() const{ return m_platformId; }
 
     /**
-     * <p>The ID of a code signing; platform.</p>
+     * <p>The ID of a code signing platform.</p>
      */
     inline bool PlatformIdHasBeenSet() const { return m_platformIdHasBeenSet; }
 
     /**
-     * <p>The ID of a code signing; platform.</p>
+     * <p>The ID of a code signing platform.</p>
      */
     inline void SetPlatformId(const Aws::String& value) { m_platformIdHasBeenSet = true; m_platformId = value; }
 
     /**
-     * <p>The ID of a code signing; platform.</p>
+     * <p>The ID of a code signing platform.</p>
      */
     inline void SetPlatformId(Aws::String&& value) { m_platformIdHasBeenSet = true; m_platformId = std::move(value); }
 
     /**
-     * <p>The ID of a code signing; platform.</p>
+     * <p>The ID of a code signing platform.</p>
      */
     inline void SetPlatformId(const char* value) { m_platformIdHasBeenSet = true; m_platformId.assign(value); }
 
     /**
-     * <p>The ID of a code signing; platform.</p>
+     * <p>The ID of a code signing platform.</p>
      */
     inline SigningPlatform& WithPlatformId(const Aws::String& value) { SetPlatformId(value); return *this;}
 
     /**
-     * <p>The ID of a code signing; platform.</p>
+     * <p>The ID of a code signing platform.</p>
      */
     inline SigningPlatform& WithPlatformId(Aws::String&& value) { SetPlatformId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of a code signing; platform.</p>
+     * <p>The ID of a code signing platform.</p>
      */
     inline SigningPlatform& WithPlatformId(const char* value) { SetPlatformId(value); return *this;}
 

@@ -50,6 +50,8 @@
 #include <aws/iot/model/CreateKeysAndCertificateRequest.h>
 #include <aws/iot/model/CreateMitigationActionRequest.h>
 #include <aws/iot/model/CreateOTAUpdateRequest.h>
+#include <aws/iot/model/CreatePackageRequest.h>
+#include <aws/iot/model/CreatePackageVersionRequest.h>
 #include <aws/iot/model/CreatePolicyRequest.h>
 #include <aws/iot/model/CreatePolicyVersionRequest.h>
 #include <aws/iot/model/CreateProvisioningClaimRequest.h>
@@ -80,6 +82,8 @@
 #include <aws/iot/model/DeleteJobTemplateRequest.h>
 #include <aws/iot/model/DeleteMitigationActionRequest.h>
 #include <aws/iot/model/DeleteOTAUpdateRequest.h>
+#include <aws/iot/model/DeletePackageRequest.h>
+#include <aws/iot/model/DeletePackageVersionRequest.h>
 #include <aws/iot/model/DeletePolicyRequest.h>
 #include <aws/iot/model/DeletePolicyVersionRequest.h>
 #include <aws/iot/model/DeleteProvisioningTemplateRequest.h>
@@ -142,6 +146,9 @@
 #include <aws/iot/model/GetJobDocumentRequest.h>
 #include <aws/iot/model/GetLoggingOptionsRequest.h>
 #include <aws/iot/model/GetOTAUpdateRequest.h>
+#include <aws/iot/model/GetPackageRequest.h>
+#include <aws/iot/model/GetPackageConfigurationRequest.h>
+#include <aws/iot/model/GetPackageVersionRequest.h>
 #include <aws/iot/model/GetPercentilesRequest.h>
 #include <aws/iot/model/GetPolicyRequest.h>
 #include <aws/iot/model/GetPolicyVersionRequest.h>
@@ -178,6 +185,8 @@
 #include <aws/iot/model/ListMitigationActionsRequest.h>
 #include <aws/iot/model/ListOTAUpdatesRequest.h>
 #include <aws/iot/model/ListOutgoingCertificatesRequest.h>
+#include <aws/iot/model/ListPackageVersionsRequest.h>
+#include <aws/iot/model/ListPackagesRequest.h>
 #include <aws/iot/model/ListPoliciesRequest.h>
 #include <aws/iot/model/ListPolicyVersionsRequest.h>
 #include <aws/iot/model/ListPrincipalThingsRequest.h>
@@ -245,6 +254,9 @@
 #include <aws/iot/model/UpdateIndexingConfigurationRequest.h>
 #include <aws/iot/model/UpdateJobRequest.h>
 #include <aws/iot/model/UpdateMitigationActionRequest.h>
+#include <aws/iot/model/UpdatePackageRequest.h>
+#include <aws/iot/model/UpdatePackageConfigurationRequest.h>
+#include <aws/iot/model/UpdatePackageVersionRequest.h>
 #include <aws/iot/model/UpdateProvisioningTemplateRequest.h>
 #include <aws/iot/model/UpdateRoleAliasRequest.h>
 #include <aws/iot/model/UpdateScheduledAuditRequest.h>
@@ -837,6 +849,45 @@ CreateOTAUpdateOutcome IoTClient::CreateOTAUpdate(const CreateOTAUpdateRequest& 
   return CreateOTAUpdateOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
+CreatePackageOutcome IoTClient::CreatePackage(const CreatePackageRequest& request) const
+{
+  AWS_OPERATION_GUARD(CreatePackage);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreatePackage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.PackageNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreatePackage", "Required field: PackageName, is not set");
+    return CreatePackageOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PackageName]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreatePackage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/packages/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPackageName());
+  return CreatePackageOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreatePackageVersionOutcome IoTClient::CreatePackageVersion(const CreatePackageVersionRequest& request) const
+{
+  AWS_OPERATION_GUARD(CreatePackageVersion);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreatePackageVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.PackageNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreatePackageVersion", "Required field: PackageName, is not set");
+    return CreatePackageVersionOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PackageName]", false));
+  }
+  if (!request.VersionNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreatePackageVersion", "Required field: VersionName, is not set");
+    return CreatePackageVersionOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VersionName]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreatePackageVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/packages/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPackageName());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/versions/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVersionName());
+  return CreatePackageVersionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
 CreatePolicyOutcome IoTClient::CreatePolicy(const CreatePolicyRequest& request) const
 {
   AWS_OPERATION_GUARD(CreatePolicy);
@@ -1308,6 +1359,45 @@ DeleteOTAUpdateOutcome IoTClient::DeleteOTAUpdate(const DeleteOTAUpdateRequest& 
   endpointResolutionOutcome.GetResult().AddPathSegments("/otaUpdates/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetOtaUpdateId());
   return DeleteOTAUpdateOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeletePackageOutcome IoTClient::DeletePackage(const DeletePackageRequest& request) const
+{
+  AWS_OPERATION_GUARD(DeletePackage);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeletePackage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.PackageNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeletePackage", "Required field: PackageName, is not set");
+    return DeletePackageOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PackageName]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeletePackage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/packages/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPackageName());
+  return DeletePackageOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeletePackageVersionOutcome IoTClient::DeletePackageVersion(const DeletePackageVersionRequest& request) const
+{
+  AWS_OPERATION_GUARD(DeletePackageVersion);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeletePackageVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.PackageNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeletePackageVersion", "Required field: PackageName, is not set");
+    return DeletePackageVersionOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PackageName]", false));
+  }
+  if (!request.VersionNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeletePackageVersion", "Required field: VersionName, is not set");
+    return DeletePackageVersionOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VersionName]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeletePackageVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/packages/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPackageName());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/versions/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVersionName());
+  return DeletePackageVersionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeletePolicyOutcome IoTClient::DeletePolicy(const DeletePolicyRequest& request) const
@@ -2278,6 +2368,55 @@ GetOTAUpdateOutcome IoTClient::GetOTAUpdate(const GetOTAUpdateRequest& request) 
   return GetOTAUpdateOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
+GetPackageOutcome IoTClient::GetPackage(const GetPackageRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetPackage);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPackage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.PackageNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetPackage", "Required field: PackageName, is not set");
+    return GetPackageOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PackageName]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetPackage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/packages/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPackageName());
+  return GetPackageOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetPackageConfigurationOutcome IoTClient::GetPackageConfiguration(const GetPackageConfigurationRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetPackageConfiguration);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPackageConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetPackageConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/package-configuration");
+  return GetPackageConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetPackageVersionOutcome IoTClient::GetPackageVersion(const GetPackageVersionRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetPackageVersion);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPackageVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.PackageNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetPackageVersion", "Required field: PackageName, is not set");
+    return GetPackageVersionOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PackageName]", false));
+  }
+  if (!request.VersionNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetPackageVersion", "Required field: VersionName, is not set");
+    return GetPackageVersionOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VersionName]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetPackageVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/packages/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPackageName());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/versions/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVersionName());
+  return GetPackageVersionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
 GetPercentilesOutcome IoTClient::GetPercentiles(const GetPercentilesRequest& request) const
 {
   AWS_OPERATION_GUARD(GetPercentiles);
@@ -2753,6 +2892,33 @@ ListOutgoingCertificatesOutcome IoTClient::ListOutgoingCertificates(const ListOu
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListOutgoingCertificates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   endpointResolutionOutcome.GetResult().AddPathSegments("/certificates-out-going");
   return ListOutgoingCertificatesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListPackageVersionsOutcome IoTClient::ListPackageVersions(const ListPackageVersionsRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListPackageVersions);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPackageVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.PackageNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListPackageVersions", "Required field: PackageName, is not set");
+    return ListPackageVersionsOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PackageName]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListPackageVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/packages/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPackageName());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/versions");
+  return ListPackageVersionsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListPackagesOutcome IoTClient::ListPackages(const ListPackagesRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListPackages);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPackages, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListPackages, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/packages");
+  return ListPackagesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListPoliciesOutcome IoTClient::ListPolicies(const ListPoliciesRequest& request) const
@@ -3659,6 +3825,55 @@ UpdateMitigationActionOutcome IoTClient::UpdateMitigationAction(const UpdateMiti
   endpointResolutionOutcome.GetResult().AddPathSegments("/mitigationactions/actions/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetActionName());
   return UpdateMitigationActionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdatePackageOutcome IoTClient::UpdatePackage(const UpdatePackageRequest& request) const
+{
+  AWS_OPERATION_GUARD(UpdatePackage);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdatePackage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.PackageNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdatePackage", "Required field: PackageName, is not set");
+    return UpdatePackageOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PackageName]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdatePackage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/packages/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPackageName());
+  return UpdatePackageOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdatePackageConfigurationOutcome IoTClient::UpdatePackageConfiguration(const UpdatePackageConfigurationRequest& request) const
+{
+  AWS_OPERATION_GUARD(UpdatePackageConfiguration);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdatePackageConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdatePackageConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/package-configuration");
+  return UpdatePackageConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdatePackageVersionOutcome IoTClient::UpdatePackageVersion(const UpdatePackageVersionRequest& request) const
+{
+  AWS_OPERATION_GUARD(UpdatePackageVersion);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdatePackageVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.PackageNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdatePackageVersion", "Required field: PackageName, is not set");
+    return UpdatePackageVersionOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PackageName]", false));
+  }
+  if (!request.VersionNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdatePackageVersion", "Required field: VersionName, is not set");
+    return UpdatePackageVersionOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VersionName]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdatePackageVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/packages/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPackageName());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/versions/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVersionName());
+  return UpdatePackageVersionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateProvisioningTemplateOutcome IoTClient::UpdateProvisioningTemplate(const UpdateProvisioningTemplateRequest& request) const

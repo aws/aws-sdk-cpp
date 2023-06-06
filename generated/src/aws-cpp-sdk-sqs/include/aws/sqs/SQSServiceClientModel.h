@@ -18,17 +18,20 @@
 /* End of generic header includes */
 
 /* Service model headers required in SQSClient header */
+#include <aws/sqs/model/CancelMessageMoveTaskResult.h>
 #include <aws/sqs/model/ChangeMessageVisibilityBatchResult.h>
 #include <aws/sqs/model/CreateQueueResult.h>
 #include <aws/sqs/model/DeleteMessageBatchResult.h>
 #include <aws/sqs/model/GetQueueAttributesResult.h>
 #include <aws/sqs/model/GetQueueUrlResult.h>
 #include <aws/sqs/model/ListDeadLetterSourceQueuesResult.h>
+#include <aws/sqs/model/ListMessageMoveTasksResult.h>
 #include <aws/sqs/model/ListQueueTagsResult.h>
 #include <aws/sqs/model/ListQueuesResult.h>
 #include <aws/sqs/model/ReceiveMessageResult.h>
 #include <aws/sqs/model/SendMessageResult.h>
 #include <aws/sqs/model/SendMessageBatchResult.h>
+#include <aws/sqs/model/StartMessageMoveTaskResult.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in SQSClient header */
 
@@ -71,6 +74,7 @@ namespace Aws
     {
       /* Service model forward declarations required in SQSClient header */
       class AddPermissionRequest;
+      class CancelMessageMoveTaskRequest;
       class ChangeMessageVisibilityRequest;
       class ChangeMessageVisibilityBatchRequest;
       class CreateQueueRequest;
@@ -80,6 +84,7 @@ namespace Aws
       class GetQueueAttributesRequest;
       class GetQueueUrlRequest;
       class ListDeadLetterSourceQueuesRequest;
+      class ListMessageMoveTasksRequest;
       class ListQueueTagsRequest;
       class ListQueuesRequest;
       class PurgeQueueRequest;
@@ -88,12 +93,14 @@ namespace Aws
       class SendMessageRequest;
       class SendMessageBatchRequest;
       class SetQueueAttributesRequest;
+      class StartMessageMoveTaskRequest;
       class TagQueueRequest;
       class UntagQueueRequest;
       /* End of service model forward declarations required in SQSClient header */
 
       /* Service model Outcome class definitions */
       typedef Aws::Utils::Outcome<Aws::NoResult, SQSError> AddPermissionOutcome;
+      typedef Aws::Utils::Outcome<CancelMessageMoveTaskResult, SQSError> CancelMessageMoveTaskOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, SQSError> ChangeMessageVisibilityOutcome;
       typedef Aws::Utils::Outcome<ChangeMessageVisibilityBatchResult, SQSError> ChangeMessageVisibilityBatchOutcome;
       typedef Aws::Utils::Outcome<CreateQueueResult, SQSError> CreateQueueOutcome;
@@ -103,6 +110,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetQueueAttributesResult, SQSError> GetQueueAttributesOutcome;
       typedef Aws::Utils::Outcome<GetQueueUrlResult, SQSError> GetQueueUrlOutcome;
       typedef Aws::Utils::Outcome<ListDeadLetterSourceQueuesResult, SQSError> ListDeadLetterSourceQueuesOutcome;
+      typedef Aws::Utils::Outcome<ListMessageMoveTasksResult, SQSError> ListMessageMoveTasksOutcome;
       typedef Aws::Utils::Outcome<ListQueueTagsResult, SQSError> ListQueueTagsOutcome;
       typedef Aws::Utils::Outcome<ListQueuesResult, SQSError> ListQueuesOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, SQSError> PurgeQueueOutcome;
@@ -111,12 +119,14 @@ namespace Aws
       typedef Aws::Utils::Outcome<SendMessageResult, SQSError> SendMessageOutcome;
       typedef Aws::Utils::Outcome<SendMessageBatchResult, SQSError> SendMessageBatchOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, SQSError> SetQueueAttributesOutcome;
+      typedef Aws::Utils::Outcome<StartMessageMoveTaskResult, SQSError> StartMessageMoveTaskOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, SQSError> TagQueueOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, SQSError> UntagQueueOutcome;
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
       typedef std::future<AddPermissionOutcome> AddPermissionOutcomeCallable;
+      typedef std::future<CancelMessageMoveTaskOutcome> CancelMessageMoveTaskOutcomeCallable;
       typedef std::future<ChangeMessageVisibilityOutcome> ChangeMessageVisibilityOutcomeCallable;
       typedef std::future<ChangeMessageVisibilityBatchOutcome> ChangeMessageVisibilityBatchOutcomeCallable;
       typedef std::future<CreateQueueOutcome> CreateQueueOutcomeCallable;
@@ -126,6 +136,7 @@ namespace Aws
       typedef std::future<GetQueueAttributesOutcome> GetQueueAttributesOutcomeCallable;
       typedef std::future<GetQueueUrlOutcome> GetQueueUrlOutcomeCallable;
       typedef std::future<ListDeadLetterSourceQueuesOutcome> ListDeadLetterSourceQueuesOutcomeCallable;
+      typedef std::future<ListMessageMoveTasksOutcome> ListMessageMoveTasksOutcomeCallable;
       typedef std::future<ListQueueTagsOutcome> ListQueueTagsOutcomeCallable;
       typedef std::future<ListQueuesOutcome> ListQueuesOutcomeCallable;
       typedef std::future<PurgeQueueOutcome> PurgeQueueOutcomeCallable;
@@ -134,6 +145,7 @@ namespace Aws
       typedef std::future<SendMessageOutcome> SendMessageOutcomeCallable;
       typedef std::future<SendMessageBatchOutcome> SendMessageBatchOutcomeCallable;
       typedef std::future<SetQueueAttributesOutcome> SetQueueAttributesOutcomeCallable;
+      typedef std::future<StartMessageMoveTaskOutcome> StartMessageMoveTaskOutcomeCallable;
       typedef std::future<TagQueueOutcome> TagQueueOutcomeCallable;
       typedef std::future<UntagQueueOutcome> UntagQueueOutcomeCallable;
       /* End of service model Outcome callable definitions */
@@ -143,6 +155,7 @@ namespace Aws
 
     /* Service model async handlers definitions */
     typedef std::function<void(const SQSClient*, const Model::AddPermissionRequest&, const Model::AddPermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddPermissionResponseReceivedHandler;
+    typedef std::function<void(const SQSClient*, const Model::CancelMessageMoveTaskRequest&, const Model::CancelMessageMoveTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelMessageMoveTaskResponseReceivedHandler;
     typedef std::function<void(const SQSClient*, const Model::ChangeMessageVisibilityRequest&, const Model::ChangeMessageVisibilityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ChangeMessageVisibilityResponseReceivedHandler;
     typedef std::function<void(const SQSClient*, const Model::ChangeMessageVisibilityBatchRequest&, const Model::ChangeMessageVisibilityBatchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ChangeMessageVisibilityBatchResponseReceivedHandler;
     typedef std::function<void(const SQSClient*, const Model::CreateQueueRequest&, const Model::CreateQueueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateQueueResponseReceivedHandler;
@@ -152,6 +165,7 @@ namespace Aws
     typedef std::function<void(const SQSClient*, const Model::GetQueueAttributesRequest&, const Model::GetQueueAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetQueueAttributesResponseReceivedHandler;
     typedef std::function<void(const SQSClient*, const Model::GetQueueUrlRequest&, const Model::GetQueueUrlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetQueueUrlResponseReceivedHandler;
     typedef std::function<void(const SQSClient*, const Model::ListDeadLetterSourceQueuesRequest&, const Model::ListDeadLetterSourceQueuesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDeadLetterSourceQueuesResponseReceivedHandler;
+    typedef std::function<void(const SQSClient*, const Model::ListMessageMoveTasksRequest&, const Model::ListMessageMoveTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMessageMoveTasksResponseReceivedHandler;
     typedef std::function<void(const SQSClient*, const Model::ListQueueTagsRequest&, const Model::ListQueueTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListQueueTagsResponseReceivedHandler;
     typedef std::function<void(const SQSClient*, const Model::ListQueuesRequest&, const Model::ListQueuesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListQueuesResponseReceivedHandler;
     typedef std::function<void(const SQSClient*, const Model::PurgeQueueRequest&, const Model::PurgeQueueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PurgeQueueResponseReceivedHandler;
@@ -160,6 +174,7 @@ namespace Aws
     typedef std::function<void(const SQSClient*, const Model::SendMessageRequest&, const Model::SendMessageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendMessageResponseReceivedHandler;
     typedef std::function<void(const SQSClient*, const Model::SendMessageBatchRequest&, const Model::SendMessageBatchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendMessageBatchResponseReceivedHandler;
     typedef std::function<void(const SQSClient*, const Model::SetQueueAttributesRequest&, const Model::SetQueueAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetQueueAttributesResponseReceivedHandler;
+    typedef std::function<void(const SQSClient*, const Model::StartMessageMoveTaskRequest&, const Model::StartMessageMoveTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartMessageMoveTaskResponseReceivedHandler;
     typedef std::function<void(const SQSClient*, const Model::TagQueueRequest&, const Model::TagQueueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagQueueResponseReceivedHandler;
     typedef std::function<void(const SQSClient*, const Model::UntagQueueRequest&, const Model::UntagQueueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagQueueResponseReceivedHandler;
     /* End of service model async handlers definitions */

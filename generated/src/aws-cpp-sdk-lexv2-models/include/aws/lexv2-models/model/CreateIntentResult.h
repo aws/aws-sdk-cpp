@@ -467,37 +467,37 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the version of the bot associated with the intent.</p>
+     * <p>The version of the bot associated with the intent.</p>
      */
     inline const Aws::String& GetBotVersion() const{ return m_botVersion; }
 
     /**
-     * <p>The identifier of the version of the bot associated with the intent.</p>
+     * <p>The version of the bot associated with the intent.</p>
      */
     inline void SetBotVersion(const Aws::String& value) { m_botVersion = value; }
 
     /**
-     * <p>The identifier of the version of the bot associated with the intent.</p>
+     * <p>The version of the bot associated with the intent.</p>
      */
     inline void SetBotVersion(Aws::String&& value) { m_botVersion = std::move(value); }
 
     /**
-     * <p>The identifier of the version of the bot associated with the intent.</p>
+     * <p>The version of the bot associated with the intent.</p>
      */
     inline void SetBotVersion(const char* value) { m_botVersion.assign(value); }
 
     /**
-     * <p>The identifier of the version of the bot associated with the intent.</p>
+     * <p>The version of the bot associated with the intent.</p>
      */
     inline CreateIntentResult& WithBotVersion(const Aws::String& value) { SetBotVersion(value); return *this;}
 
     /**
-     * <p>The identifier of the version of the bot associated with the intent.</p>
+     * <p>The version of the bot associated with the intent.</p>
      */
     inline CreateIntentResult& WithBotVersion(Aws::String&& value) { SetBotVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the version of the bot associated with the intent.</p>
+     * <p>The version of the bot associated with the intent.</p>
      */
     inline CreateIntentResult& WithBotVersion(const char* value) { SetBotVersion(value); return *this;}
 

@@ -18,21 +18,27 @@ namespace signer
   /**
    * <p>AWS Signer is a fully managed code signing service to help you ensure the
    * trust and integrity of your code. </p> <p>AWS Signer supports the following
-   * applications:</p> <p>With <i>code signing for AWS Lambda</i>, you can sign AWS
-   * Lambda deployment packages. Integrated support is provided for Amazon S3, Amazon
-   * CloudWatch, and AWS CloudTrail. In order to sign code, you create a signing
-   * profile and then use Signer to sign Lambda zip files in S3. </p> <p>With <i>code
-   * signing for IoT</i>, you can sign code for any IoT device that is supported by
-   * AWS. IoT code signing is available for <a
+   * applications:</p> <p>With code signing for AWS Lambda, you can sign <a
+   * href="http://docs.aws.amazon.com/lambda/latest/dg/">AWS Lambda</a> deployment
+   * packages. Integrated support is provided for <a
+   * href="http://docs.aws.amazon.com/AmazonS3/latest/gsg/">Amazon S3</a>, <a
+   * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/">Amazon
+   * CloudWatch</a>, and <a
+   * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/">AWS
+   * CloudTrail</a>. In order to sign code, you create a signing profile and then use
+   * Signer to sign Lambda zip files in S3. </p> <p>With code signing for IoT, you
+   * can sign code for any IoT device that is supported by AWS. IoT code signing is
+   * available for <a
    * href="http://docs.aws.amazon.com/freertos/latest/userguide/">Amazon FreeRTOS</a>
    * and <a href="http://docs.aws.amazon.com/iot/latest/developerguide/">AWS IoT
    * Device Management</a>, and is integrated with <a
    * href="http://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager
    * (ACM)</a>. In order to sign code, you import a third-party code signing
    * certificate using ACM, and use that to sign updates in Amazon FreeRTOS and AWS
-   * IoT Device Management. </p> <p>For more information about AWS Signer, see the <a
-   * href="http://docs.aws.amazon.com/signer/latest/developerguide/Welcome.html">AWS
-   * Signer Developer Guide</a>.</p> <p/>
+   * IoT Device Management. </p> <p>With code signing for containers …(TBD)</p>
+   * <p>For more information about AWS Signer, see the <a
+   * href="https://docs.aws.amazon.com/signer/latest/developerguide/Welcome.html">AWS
+   * Signer Developer Guide</a>.</p>
    */
   class AWS_SIGNER_API SignerClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SignerClient>
   {
@@ -171,6 +177,32 @@ namespace signer
         void DescribeSigningJobAsync(const DescribeSigningJobRequestT& request, const DescribeSigningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SignerClient::DescribeSigningJob, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves the revocation status of one or more of the signing profile,
+         * signing job, and signing certificate.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/GetRevocationStatus">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetRevocationStatusOutcome GetRevocationStatus(const Model::GetRevocationStatusRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetRevocationStatus that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetRevocationStatusRequestT = Model::GetRevocationStatusRequest>
+        Model::GetRevocationStatusOutcomeCallable GetRevocationStatusCallable(const GetRevocationStatusRequestT& request) const
+        {
+            return SubmitCallable(&SignerClient::GetRevocationStatus, request);
+        }
+
+        /**
+         * An Async wrapper for GetRevocationStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetRevocationStatusRequestT = Model::GetRevocationStatusRequest>
+        void GetRevocationStatusAsync(const GetRevocationStatusRequestT& request, const GetRevocationStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SignerClient::GetRevocationStatus, request, handler, context);
         }
 
         /**
@@ -378,9 +410,8 @@ namespace signer
 
         /**
          * <p>Creates a signing profile. A signing profile is a code signing template that
-         * can be used to carry out a pre-defined signing job. For more information, see <a
-         * href="http://docs.aws.amazon.com/signer/latest/developerguide/gs-profile.html">http://docs.aws.amazon.com/signer/latest/developerguide/gs-profile.html</a>
-         * </p><p><h3>See Also:</h3>   <a
+         * can be used to carry out a pre-defined signing job. </p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/PutSigningProfile">AWS
          * API Reference</a></p>
          */
@@ -484,11 +515,37 @@ namespace signer
         }
 
         /**
+         * <p>Signs a binary payload and returns a signature envelope.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/SignPayload">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SignPayloadOutcome SignPayload(const Model::SignPayloadRequest& request) const;
+
+        /**
+         * A Callable wrapper for SignPayload that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename SignPayloadRequestT = Model::SignPayloadRequest>
+        Model::SignPayloadOutcomeCallable SignPayloadCallable(const SignPayloadRequestT& request) const
+        {
+            return SubmitCallable(&SignerClient::SignPayload, request);
+        }
+
+        /**
+         * An Async wrapper for SignPayload that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename SignPayloadRequestT = Model::SignPayloadRequest>
+        void SignPayloadAsync(const SignPayloadRequestT& request, const SignPayloadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SignerClient::SignPayload, request, handler, context);
+        }
+
+        /**
          * <p>Initiates a signing job to be performed on the code provided. Signing jobs
          * are viewable by the <code>ListSigningJobs</code> operation for two years after
          * they are performed. Note the following requirements: </p> <ul> <li> <p> You must
          * create an Amazon S3 source bucket. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html">Create
+         * href="http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html">Creating
          * a Bucket</a> in the <i>Amazon S3 Getting Started Guide</i>. </p> </li> <li>
          * <p>Your S3 source bucket must be version enabled.</p> </li> <li> <p>You must
          * create an S3 destination bucket. Code signing uses your S3 destination bucket to
@@ -499,8 +556,8 @@ namespace signer
          * and the <a>ListSigningJobs</a> actions after you call
          * <code>StartSigningJob</code>.</p> <p>For a Java example that shows how to use
          * this action, see <a
-         * href="http://docs.aws.amazon.com/acm/latest/userguide/">http://docs.aws.amazon.com/acm/latest/userguide/</a>
-         * </p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/signer/latest/developerguide/api-startsigningjob.html">StartSigningJob</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/StartSigningJob">AWS
          * API Reference</a></p>
          */

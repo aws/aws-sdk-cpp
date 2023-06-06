@@ -22,6 +22,7 @@
 #include <aws/sqs/SQSErrorMarshaller.h>
 #include <aws/sqs/SQSEndpointProvider.h>
 #include <aws/sqs/model/AddPermissionRequest.h>
+#include <aws/sqs/model/CancelMessageMoveTaskRequest.h>
 #include <aws/sqs/model/ChangeMessageVisibilityRequest.h>
 #include <aws/sqs/model/ChangeMessageVisibilityBatchRequest.h>
 #include <aws/sqs/model/CreateQueueRequest.h>
@@ -31,6 +32,7 @@
 #include <aws/sqs/model/GetQueueAttributesRequest.h>
 #include <aws/sqs/model/GetQueueUrlRequest.h>
 #include <aws/sqs/model/ListDeadLetterSourceQueuesRequest.h>
+#include <aws/sqs/model/ListMessageMoveTasksRequest.h>
 #include <aws/sqs/model/ListQueueTagsRequest.h>
 #include <aws/sqs/model/ListQueuesRequest.h>
 #include <aws/sqs/model/PurgeQueueRequest.h>
@@ -39,6 +41,7 @@
 #include <aws/sqs/model/SendMessageRequest.h>
 #include <aws/sqs/model/SendMessageBatchRequest.h>
 #include <aws/sqs/model/SetQueueAttributesRequest.h>
+#include <aws/sqs/model/StartMessageMoveTaskRequest.h>
 #include <aws/sqs/model/TagQueueRequest.h>
 #include <aws/sqs/model/UntagQueueRequest.h>
 
@@ -178,6 +181,15 @@ AddPermissionOutcome SQSClient::AddPermission(const AddPermissionRequest& reques
   return AddPermissionOutcome(MakeRequest(request.GetQueueUrl(), request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
+CancelMessageMoveTaskOutcome SQSClient::CancelMessageMoveTask(const CancelMessageMoveTaskRequest& request) const
+{
+  AWS_OPERATION_GUARD(CancelMessageMoveTask);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CancelMessageMoveTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CancelMessageMoveTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CancelMessageMoveTaskOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+}
+
 ChangeMessageVisibilityOutcome SQSClient::ChangeMessageVisibility(const ChangeMessageVisibilityRequest& request) const
 {
   AWS_OPERATION_GUARD(ChangeMessageVisibility);
@@ -245,6 +257,15 @@ ListDeadLetterSourceQueuesOutcome SQSClient::ListDeadLetterSourceQueues(const Li
   return ListDeadLetterSourceQueuesOutcome(MakeRequest(request.GetQueueUrl(), request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
+ListMessageMoveTasksOutcome SQSClient::ListMessageMoveTasks(const ListMessageMoveTasksRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListMessageMoveTasks);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListMessageMoveTasks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListMessageMoveTasks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListMessageMoveTasksOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+}
+
 ListQueueTagsOutcome SQSClient::ListQueueTags(const ListQueueTagsRequest& request) const
 {
   AWS_OPERATION_GUARD(ListQueueTags);
@@ -301,6 +322,15 @@ SetQueueAttributesOutcome SQSClient::SetQueueAttributes(const SetQueueAttributes
   AWS_OPERATION_GUARD(SetQueueAttributes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SetQueueAttributes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   return SetQueueAttributesOutcome(MakeRequest(request.GetQueueUrl(), request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+StartMessageMoveTaskOutcome SQSClient::StartMessageMoveTask(const StartMessageMoveTaskRequest& request) const
+{
+  AWS_OPERATION_GUARD(StartMessageMoveTask);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartMessageMoveTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartMessageMoveTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return StartMessageMoveTaskOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
 }
 
 TagQueueOutcome SQSClient::TagQueue(const TagQueueRequest& request) const

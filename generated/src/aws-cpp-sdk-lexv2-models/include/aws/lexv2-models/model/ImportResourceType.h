@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     Bot,
     BotLocale,
-    CustomVocabulary
+    CustomVocabulary,
+    TestSet
   };
 
 namespace ImportResourceTypeMapper

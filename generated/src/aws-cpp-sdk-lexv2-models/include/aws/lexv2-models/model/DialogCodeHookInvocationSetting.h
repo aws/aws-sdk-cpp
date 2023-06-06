@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p> Settings that specify the dialog code hook that is called by Amazon Lex at a
+   * <p>Settings that specify the dialog code hook that is called by Amazon Lex at a
    * step of the conversation. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DialogCodeHookInvocationSetting">AWS
    * API Reference</a></p>
