@@ -22,7 +22,8 @@ MonitoringConfiguration::MonitoringConfiguration() :
     m_persistentAppUI(PersistentAppUI::NOT_SET),
     m_persistentAppUIHasBeenSet(false),
     m_cloudWatchMonitoringConfigurationHasBeenSet(false),
-    m_s3MonitoringConfigurationHasBeenSet(false)
+    m_s3MonitoringConfigurationHasBeenSet(false),
+    m_containerLogRotationConfigurationHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ MonitoringConfiguration::MonitoringConfiguration(JsonView jsonValue) :
     m_persistentAppUI(PersistentAppUI::NOT_SET),
     m_persistentAppUIHasBeenSet(false),
     m_cloudWatchMonitoringConfigurationHasBeenSet(false),
-    m_s3MonitoringConfigurationHasBeenSet(false)
+    m_s3MonitoringConfigurationHasBeenSet(false),
+    m_containerLogRotationConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -58,6 +60,13 @@ MonitoringConfiguration& MonitoringConfiguration::operator =(JsonView jsonValue)
     m_s3MonitoringConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("containerLogRotationConfiguration"))
+  {
+    m_containerLogRotationConfiguration = jsonValue.GetObject("containerLogRotationConfiguration");
+
+    m_containerLogRotationConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -79,6 +88,12 @@ JsonValue MonitoringConfiguration::Jsonize() const
   if(m_s3MonitoringConfigurationHasBeenSet)
   {
    payload.WithObject("s3MonitoringConfiguration", m_s3MonitoringConfiguration.Jsonize());
+
+  }
+
+  if(m_containerLogRotationConfigurationHasBeenSet)
+  {
+   payload.WithObject("containerLogRotationConfiguration", m_containerLogRotationConfiguration.Jsonize());
 
   }
 

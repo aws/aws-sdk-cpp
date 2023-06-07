@@ -8,6 +8,7 @@
 #include <aws/emr-containers/model/PersistentAppUI.h>
 #include <aws/emr-containers/model/CloudWatchMonitoringConfiguration.h>
 #include <aws/emr-containers/model/S3MonitoringConfiguration.h>
+#include <aws/emr-containers/model/ContainerLogRotationConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -131,6 +132,37 @@ namespace Model
      */
     inline MonitoringConfiguration& WithS3MonitoringConfiguration(S3MonitoringConfiguration&& value) { SetS3MonitoringConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Enable or disable container log rotation.</p>
+     */
+    inline const ContainerLogRotationConfiguration& GetContainerLogRotationConfiguration() const{ return m_containerLogRotationConfiguration; }
+
+    /**
+     * <p>Enable or disable container log rotation.</p>
+     */
+    inline bool ContainerLogRotationConfigurationHasBeenSet() const { return m_containerLogRotationConfigurationHasBeenSet; }
+
+    /**
+     * <p>Enable or disable container log rotation.</p>
+     */
+    inline void SetContainerLogRotationConfiguration(const ContainerLogRotationConfiguration& value) { m_containerLogRotationConfigurationHasBeenSet = true; m_containerLogRotationConfiguration = value; }
+
+    /**
+     * <p>Enable or disable container log rotation.</p>
+     */
+    inline void SetContainerLogRotationConfiguration(ContainerLogRotationConfiguration&& value) { m_containerLogRotationConfigurationHasBeenSet = true; m_containerLogRotationConfiguration = std::move(value); }
+
+    /**
+     * <p>Enable or disable container log rotation.</p>
+     */
+    inline MonitoringConfiguration& WithContainerLogRotationConfiguration(const ContainerLogRotationConfiguration& value) { SetContainerLogRotationConfiguration(value); return *this;}
+
+    /**
+     * <p>Enable or disable container log rotation.</p>
+     */
+    inline MonitoringConfiguration& WithContainerLogRotationConfiguration(ContainerLogRotationConfiguration&& value) { SetContainerLogRotationConfiguration(std::move(value)); return *this;}
+
   private:
 
     PersistentAppUI m_persistentAppUI;
@@ -141,6 +173,9 @@ namespace Model
 
     S3MonitoringConfiguration m_s3MonitoringConfiguration;
     bool m_s3MonitoringConfigurationHasBeenSet = false;
+
+    ContainerLogRotationConfiguration m_containerLogRotationConfiguration;
+    bool m_containerLogRotationConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

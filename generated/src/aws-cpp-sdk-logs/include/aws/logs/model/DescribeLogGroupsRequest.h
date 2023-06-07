@@ -162,9 +162,11 @@ namespace Model
      * search. For example, if you specify <code>Foo</code>, log groups named
      * <code>FooBar</code>, <code>aws/Foo</code>, and <code>GroupFoo</code> would
      * match, but <code>foo</code>, <code>F/o/o</code> and <code>Froo</code> would not
-     * match.</p>  <p> <code>logGroupNamePattern</code> and
-     * <code>logGroupNamePrefix</code> are mutually exclusive. Only one of these
-     * parameters can be passed. </p> 
+     * match.</p> <p>If you specify <code>logGroupNamePattern</code> in your request,
+     * then only <code>arn</code>, <code>creationTime</code>, and
+     * <code>logGroupName</code> are included in the response. </p>  <p>
+     * <code>logGroupNamePattern</code> and <code>logGroupNamePrefix</code> are
+     * mutually exclusive. Only one of these parameters can be passed. </p> 
      */
     inline const Aws::String& GetLogGroupNamePattern() const{ return m_logGroupNamePattern; }
 
@@ -174,9 +176,11 @@ namespace Model
      * search. For example, if you specify <code>Foo</code>, log groups named
      * <code>FooBar</code>, <code>aws/Foo</code>, and <code>GroupFoo</code> would
      * match, but <code>foo</code>, <code>F/o/o</code> and <code>Froo</code> would not
-     * match.</p>  <p> <code>logGroupNamePattern</code> and
-     * <code>logGroupNamePrefix</code> are mutually exclusive. Only one of these
-     * parameters can be passed. </p> 
+     * match.</p> <p>If you specify <code>logGroupNamePattern</code> in your request,
+     * then only <code>arn</code>, <code>creationTime</code>, and
+     * <code>logGroupName</code> are included in the response. </p>  <p>
+     * <code>logGroupNamePattern</code> and <code>logGroupNamePrefix</code> are
+     * mutually exclusive. Only one of these parameters can be passed. </p> 
      */
     inline bool LogGroupNamePatternHasBeenSet() const { return m_logGroupNamePatternHasBeenSet; }
 
@@ -186,9 +190,11 @@ namespace Model
      * search. For example, if you specify <code>Foo</code>, log groups named
      * <code>FooBar</code>, <code>aws/Foo</code>, and <code>GroupFoo</code> would
      * match, but <code>foo</code>, <code>F/o/o</code> and <code>Froo</code> would not
-     * match.</p>  <p> <code>logGroupNamePattern</code> and
-     * <code>logGroupNamePrefix</code> are mutually exclusive. Only one of these
-     * parameters can be passed. </p> 
+     * match.</p> <p>If you specify <code>logGroupNamePattern</code> in your request,
+     * then only <code>arn</code>, <code>creationTime</code>, and
+     * <code>logGroupName</code> are included in the response. </p>  <p>
+     * <code>logGroupNamePattern</code> and <code>logGroupNamePrefix</code> are
+     * mutually exclusive. Only one of these parameters can be passed. </p> 
      */
     inline void SetLogGroupNamePattern(const Aws::String& value) { m_logGroupNamePatternHasBeenSet = true; m_logGroupNamePattern = value; }
 
@@ -198,9 +204,11 @@ namespace Model
      * search. For example, if you specify <code>Foo</code>, log groups named
      * <code>FooBar</code>, <code>aws/Foo</code>, and <code>GroupFoo</code> would
      * match, but <code>foo</code>, <code>F/o/o</code> and <code>Froo</code> would not
-     * match.</p>  <p> <code>logGroupNamePattern</code> and
-     * <code>logGroupNamePrefix</code> are mutually exclusive. Only one of these
-     * parameters can be passed. </p> 
+     * match.</p> <p>If you specify <code>logGroupNamePattern</code> in your request,
+     * then only <code>arn</code>, <code>creationTime</code>, and
+     * <code>logGroupName</code> are included in the response. </p>  <p>
+     * <code>logGroupNamePattern</code> and <code>logGroupNamePrefix</code> are
+     * mutually exclusive. Only one of these parameters can be passed. </p> 
      */
     inline void SetLogGroupNamePattern(Aws::String&& value) { m_logGroupNamePatternHasBeenSet = true; m_logGroupNamePattern = std::move(value); }
 
@@ -210,9 +218,11 @@ namespace Model
      * search. For example, if you specify <code>Foo</code>, log groups named
      * <code>FooBar</code>, <code>aws/Foo</code>, and <code>GroupFoo</code> would
      * match, but <code>foo</code>, <code>F/o/o</code> and <code>Froo</code> would not
-     * match.</p>  <p> <code>logGroupNamePattern</code> and
-     * <code>logGroupNamePrefix</code> are mutually exclusive. Only one of these
-     * parameters can be passed. </p> 
+     * match.</p> <p>If you specify <code>logGroupNamePattern</code> in your request,
+     * then only <code>arn</code>, <code>creationTime</code>, and
+     * <code>logGroupName</code> are included in the response. </p>  <p>
+     * <code>logGroupNamePattern</code> and <code>logGroupNamePrefix</code> are
+     * mutually exclusive. Only one of these parameters can be passed. </p> 
      */
     inline void SetLogGroupNamePattern(const char* value) { m_logGroupNamePatternHasBeenSet = true; m_logGroupNamePattern.assign(value); }
 
@@ -222,9 +232,11 @@ namespace Model
      * search. For example, if you specify <code>Foo</code>, log groups named
      * <code>FooBar</code>, <code>aws/Foo</code>, and <code>GroupFoo</code> would
      * match, but <code>foo</code>, <code>F/o/o</code> and <code>Froo</code> would not
-     * match.</p>  <p> <code>logGroupNamePattern</code> and
-     * <code>logGroupNamePrefix</code> are mutually exclusive. Only one of these
-     * parameters can be passed. </p> 
+     * match.</p> <p>If you specify <code>logGroupNamePattern</code> in your request,
+     * then only <code>arn</code>, <code>creationTime</code>, and
+     * <code>logGroupName</code> are included in the response. </p>  <p>
+     * <code>logGroupNamePattern</code> and <code>logGroupNamePrefix</code> are
+     * mutually exclusive. Only one of these parameters can be passed. </p> 
      */
     inline DescribeLogGroupsRequest& WithLogGroupNamePattern(const Aws::String& value) { SetLogGroupNamePattern(value); return *this;}
 
@@ -234,9 +246,11 @@ namespace Model
      * search. For example, if you specify <code>Foo</code>, log groups named
      * <code>FooBar</code>, <code>aws/Foo</code>, and <code>GroupFoo</code> would
      * match, but <code>foo</code>, <code>F/o/o</code> and <code>Froo</code> would not
-     * match.</p>  <p> <code>logGroupNamePattern</code> and
-     * <code>logGroupNamePrefix</code> are mutually exclusive. Only one of these
-     * parameters can be passed. </p> 
+     * match.</p> <p>If you specify <code>logGroupNamePattern</code> in your request,
+     * then only <code>arn</code>, <code>creationTime</code>, and
+     * <code>logGroupName</code> are included in the response. </p>  <p>
+     * <code>logGroupNamePattern</code> and <code>logGroupNamePrefix</code> are
+     * mutually exclusive. Only one of these parameters can be passed. </p> 
      */
     inline DescribeLogGroupsRequest& WithLogGroupNamePattern(Aws::String&& value) { SetLogGroupNamePattern(std::move(value)); return *this;}
 
@@ -246,9 +260,11 @@ namespace Model
      * search. For example, if you specify <code>Foo</code>, log groups named
      * <code>FooBar</code>, <code>aws/Foo</code>, and <code>GroupFoo</code> would
      * match, but <code>foo</code>, <code>F/o/o</code> and <code>Froo</code> would not
-     * match.</p>  <p> <code>logGroupNamePattern</code> and
-     * <code>logGroupNamePrefix</code> are mutually exclusive. Only one of these
-     * parameters can be passed. </p> 
+     * match.</p> <p>If you specify <code>logGroupNamePattern</code> in your request,
+     * then only <code>arn</code>, <code>creationTime</code>, and
+     * <code>logGroupName</code> are included in the response. </p>  <p>
+     * <code>logGroupNamePattern</code> and <code>logGroupNamePrefix</code> are
+     * mutually exclusive. Only one of these parameters can be passed. </p> 
      */
     inline DescribeLogGroupsRequest& WithLogGroupNamePattern(const char* value) { SetLogGroupNamePattern(value); return *this;}
 
@@ -333,10 +349,7 @@ namespace Model
      * <code>accountIdentifiers</code>.</p> <p>If this parameter is set to
      * <code>true</code> and <code>accountIdentifiers</code> contains a null value, the
      * operation returns all log groups in the monitoring account and all log groups in
-     * all source accounts that are linked to the monitoring account. </p>  <p>
-     * If you specify <code>includeLinkedAccounts</code> in your request, then
-     * <code>metricFilterCount</code>, <code>retentionInDays</code>, and
-     * <code>storedBytes</code> are not included in the response. </p> 
+     * all source accounts that are linked to the monitoring account. </p>
      */
     inline bool GetIncludeLinkedAccounts() const{ return m_includeLinkedAccounts; }
 
@@ -346,10 +359,7 @@ namespace Model
      * <code>accountIdentifiers</code>.</p> <p>If this parameter is set to
      * <code>true</code> and <code>accountIdentifiers</code> contains a null value, the
      * operation returns all log groups in the monitoring account and all log groups in
-     * all source accounts that are linked to the monitoring account. </p>  <p>
-     * If you specify <code>includeLinkedAccounts</code> in your request, then
-     * <code>metricFilterCount</code>, <code>retentionInDays</code>, and
-     * <code>storedBytes</code> are not included in the response. </p> 
+     * all source accounts that are linked to the monitoring account. </p>
      */
     inline bool IncludeLinkedAccountsHasBeenSet() const { return m_includeLinkedAccountsHasBeenSet; }
 
@@ -359,10 +369,7 @@ namespace Model
      * <code>accountIdentifiers</code>.</p> <p>If this parameter is set to
      * <code>true</code> and <code>accountIdentifiers</code> contains a null value, the
      * operation returns all log groups in the monitoring account and all log groups in
-     * all source accounts that are linked to the monitoring account. </p>  <p>
-     * If you specify <code>includeLinkedAccounts</code> in your request, then
-     * <code>metricFilterCount</code>, <code>retentionInDays</code>, and
-     * <code>storedBytes</code> are not included in the response. </p> 
+     * all source accounts that are linked to the monitoring account. </p>
      */
     inline void SetIncludeLinkedAccounts(bool value) { m_includeLinkedAccountsHasBeenSet = true; m_includeLinkedAccounts = value; }
 
@@ -372,10 +379,7 @@ namespace Model
      * <code>accountIdentifiers</code>.</p> <p>If this parameter is set to
      * <code>true</code> and <code>accountIdentifiers</code> contains a null value, the
      * operation returns all log groups in the monitoring account and all log groups in
-     * all source accounts that are linked to the monitoring account. </p>  <p>
-     * If you specify <code>includeLinkedAccounts</code> in your request, then
-     * <code>metricFilterCount</code>, <code>retentionInDays</code>, and
-     * <code>storedBytes</code> are not included in the response. </p> 
+     * all source accounts that are linked to the monitoring account. </p>
      */
     inline DescribeLogGroupsRequest& WithIncludeLinkedAccounts(bool value) { SetIncludeLinkedAccounts(value); return *this;}
 

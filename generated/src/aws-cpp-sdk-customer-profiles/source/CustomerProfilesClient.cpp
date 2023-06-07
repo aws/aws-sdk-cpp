@@ -24,10 +24,12 @@
 #include <aws/customer-profiles/model/AddProfileKeyRequest.h>
 #include <aws/customer-profiles/model/CreateCalculatedAttributeDefinitionRequest.h>
 #include <aws/customer-profiles/model/CreateDomainRequest.h>
+#include <aws/customer-profiles/model/CreateEventStreamRequest.h>
 #include <aws/customer-profiles/model/CreateIntegrationWorkflowRequest.h>
 #include <aws/customer-profiles/model/CreateProfileRequest.h>
 #include <aws/customer-profiles/model/DeleteCalculatedAttributeDefinitionRequest.h>
 #include <aws/customer-profiles/model/DeleteDomainRequest.h>
+#include <aws/customer-profiles/model/DeleteEventStreamRequest.h>
 #include <aws/customer-profiles/model/DeleteIntegrationRequest.h>
 #include <aws/customer-profiles/model/DeleteProfileRequest.h>
 #include <aws/customer-profiles/model/DeleteProfileKeyRequest.h>
@@ -38,6 +40,7 @@
 #include <aws/customer-profiles/model/GetCalculatedAttributeDefinitionRequest.h>
 #include <aws/customer-profiles/model/GetCalculatedAttributeForProfileRequest.h>
 #include <aws/customer-profiles/model/GetDomainRequest.h>
+#include <aws/customer-profiles/model/GetEventStreamRequest.h>
 #include <aws/customer-profiles/model/GetIdentityResolutionJobRequest.h>
 #include <aws/customer-profiles/model/GetIntegrationRequest.h>
 #include <aws/customer-profiles/model/GetMatchesRequest.h>
@@ -49,6 +52,7 @@
 #include <aws/customer-profiles/model/ListCalculatedAttributeDefinitionsRequest.h>
 #include <aws/customer-profiles/model/ListCalculatedAttributesForProfileRequest.h>
 #include <aws/customer-profiles/model/ListDomainsRequest.h>
+#include <aws/customer-profiles/model/ListEventStreamsRequest.h>
 #include <aws/customer-profiles/model/ListIdentityResolutionJobsRequest.h>
 #include <aws/customer-profiles/model/ListIntegrationsRequest.h>
 #include <aws/customer-profiles/model/ListProfileObjectTypeTemplatesRequest.h>
@@ -251,6 +255,29 @@ CreateDomainOutcome CustomerProfilesClient::CreateDomain(const CreateDomainReque
   return CreateDomainOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
+CreateEventStreamOutcome CustomerProfilesClient::CreateEventStream(const CreateEventStreamRequest& request) const
+{
+  AWS_OPERATION_GUARD(CreateEventStream);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateEventStream, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DomainNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateEventStream", "Required field: DomainName, is not set");
+    return CreateEventStreamOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  if (!request.EventStreamNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateEventStream", "Required field: EventStreamName, is not set");
+    return CreateEventStreamOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EventStreamName]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateEventStream, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/domains/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/event-streams/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEventStreamName());
+  return CreateEventStreamOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
 CreateIntegrationWorkflowOutcome CustomerProfilesClient::CreateIntegrationWorkflow(const CreateIntegrationWorkflowRequest& request) const
 {
   AWS_OPERATION_GUARD(CreateIntegrationWorkflow);
@@ -322,6 +349,29 @@ DeleteDomainOutcome CustomerProfilesClient::DeleteDomain(const DeleteDomainReque
   endpointResolutionOutcome.GetResult().AddPathSegments("/domains/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
   return DeleteDomainOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteEventStreamOutcome CustomerProfilesClient::DeleteEventStream(const DeleteEventStreamRequest& request) const
+{
+  AWS_OPERATION_GUARD(DeleteEventStream);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteEventStream, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DomainNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteEventStream", "Required field: DomainName, is not set");
+    return DeleteEventStreamOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  if (!request.EventStreamNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteEventStream", "Required field: EventStreamName, is not set");
+    return DeleteEventStreamOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EventStreamName]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteEventStream, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/domains/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/event-streams/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEventStreamName());
+  return DeleteEventStreamOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteIntegrationOutcome CustomerProfilesClient::DeleteIntegration(const DeleteIntegrationRequest& request) const
@@ -522,6 +572,29 @@ GetDomainOutcome CustomerProfilesClient::GetDomain(const GetDomainRequest& reque
   endpointResolutionOutcome.GetResult().AddPathSegments("/domains/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
   return GetDomainOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetEventStreamOutcome CustomerProfilesClient::GetEventStream(const GetEventStreamRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetEventStream);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetEventStream, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DomainNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetEventStream", "Required field: DomainName, is not set");
+    return GetEventStreamOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  if (!request.EventStreamNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetEventStream", "Required field: EventStreamName, is not set");
+    return GetEventStreamOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EventStreamName]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetEventStream, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/domains/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/event-streams/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEventStreamName());
+  return GetEventStreamOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetIdentityResolutionJobOutcome CustomerProfilesClient::GetIdentityResolutionJob(const GetIdentityResolutionJobRequest& request) const
@@ -726,6 +799,23 @@ ListDomainsOutcome CustomerProfilesClient::ListDomains(const ListDomainsRequest&
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDomains, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   endpointResolutionOutcome.GetResult().AddPathSegments("/domains");
   return ListDomainsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListEventStreamsOutcome CustomerProfilesClient::ListEventStreams(const ListEventStreamsRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListEventStreams);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListEventStreams, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DomainNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListEventStreams", "Required field: DomainName, is not set");
+    return ListEventStreamsOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListEventStreams, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/domains/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/event-streams");
+  return ListEventStreamsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListIdentityResolutionJobsOutcome CustomerProfilesClient::ListIdentityResolutionJobs(const ListIdentityResolutionJobsRequest& request) const

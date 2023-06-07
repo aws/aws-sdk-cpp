@@ -227,7 +227,7 @@ namespace CloudWatchLogs
          * using the KMS key. This association is stored as long as the data encrypted with
          * the KMS key is still within CloudWatch Logs. This enables CloudWatch Logs to
          * decrypt this data whenever it is requested.</p> <p>If you attempt to associate a
-         * KMS key with the log group but the KMS keydoes not exist or the KMS key is
+         * KMS key with the log group but the KMS key does not exist or the KMS key is
          * disabled, you receive an <code>InvalidParameterException</code> error. </p>
          *  <p>CloudWatch Logs supports only symmetric KMS keys. Do not
          * associate an asymmetric KMS key with your log group. For more information, see
@@ -289,6 +289,33 @@ namespace CloudWatchLogs
         void CreateLogStreamAsync(const CreateLogStreamRequestT& request, const CreateLogStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CloudWatchLogsClient::CreateLogStream, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a CloudWatch Logs account policy.</p> <p>To use this operation, you
+         * must be signed on with the <code>logs:DeleteDataProtectionPolicy</code> and
+         * <code>logs:DeleteAccountPolicy</code> permissions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteAccountPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteAccountPolicyOutcome DeleteAccountPolicy(const Model::DeleteAccountPolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteAccountPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteAccountPolicyRequestT = Model::DeleteAccountPolicyRequest>
+        Model::DeleteAccountPolicyOutcomeCallable DeleteAccountPolicyCallable(const DeleteAccountPolicyRequestT& request) const
+        {
+            return SubmitCallable(&CloudWatchLogsClient::DeleteAccountPolicy, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteAccountPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteAccountPolicyRequestT = Model::DeleteAccountPolicyRequest>
+        void DeleteAccountPolicyAsync(const DeleteAccountPolicyRequestT& request, const DeleteAccountPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudWatchLogsClient::DeleteAccountPolicy, request, handler, context);
         }
 
         /**
@@ -529,6 +556,32 @@ namespace CloudWatchLogs
         void DeleteSubscriptionFilterAsync(const DeleteSubscriptionFilterRequestT& request, const DeleteSubscriptionFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CloudWatchLogsClient::DeleteSubscriptionFilter, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a list of all CloudWatch Logs account policies in the
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeAccountPolicies">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeAccountPoliciesOutcome DescribeAccountPolicies(const Model::DescribeAccountPoliciesRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeAccountPolicies that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeAccountPoliciesRequestT = Model::DescribeAccountPoliciesRequest>
+        Model::DescribeAccountPoliciesOutcomeCallable DescribeAccountPoliciesCallable(const DescribeAccountPoliciesRequestT& request) const
+        {
+            return SubmitCallable(&CloudWatchLogsClient::DescribeAccountPolicies, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeAccountPolicies that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeAccountPoliciesRequestT = Model::DescribeAccountPoliciesRequest>
+        void DescribeAccountPoliciesAsync(const DescribeAccountPoliciesRequestT& request, const DescribeAccountPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudWatchLogsClient::DescribeAccountPolicies, request, handler, context);
         }
 
         /**
@@ -827,7 +880,7 @@ namespace CloudWatchLogs
         /**
          * <p>Lists log events from the specified log group. You can list all the log
          * events or filter the results using a filter pattern, a time range, and the name
-         * of the log stream.</p> <p>You must have the <code>logs;FilterLogEvents</code>
+         * of the log stream.</p> <p>You must have the <code>logs:FilterLogEvents</code>
          * permission to perform this operation.</p> <p>You can specify the log group to
          * search by using either <code>logGroupIdentifier</code> or
          * <code>logGroupName</code>. You must include one of these two parameters, but you
@@ -1068,6 +1121,65 @@ namespace CloudWatchLogs
         }
 
         /**
+         * <p>Creates an account-level data protection policy that applies to all log
+         * groups in the account. A data protection policy can help safeguard sensitive
+         * data that's ingested by your log groups by auditing and masking the sensitive
+         * log data. Each account can have only one account-level policy.</p> 
+         * <p>Sensitive data is detected and masked when it is ingested into a log group.
+         * When you set a data protection policy, log events ingested into the log groups
+         * before that time are not masked.</p>  <p>If you use
+         * <code>PutAccountPolicy</code> to create a data protection policy for your whole
+         * account, it applies to both existing log groups and all log groups that are
+         * created later in this account. The account policy is applied to existing log
+         * groups with eventual consistency. It might take up to 5 minutes before sensitive
+         * data in existing log groups begins to be masked.</p> <p>By default, when a user
+         * views a log event that includes masked data, the sensitive data is replaced by
+         * asterisks. A user who has the <code>logs:Unmask</code> permission can use a <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogEvents.html">GetLogEvents</a>
+         * or <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_FilterLogEvents.html">FilterLogEvents</a>
+         * operation with the <code>unmask</code> parameter set to <code>true</code> to
+         * view the unmasked log events. Users with the <code>logs:Unmask</code> can also
+         * view unmasked data in the CloudWatch Logs console by running a CloudWatch Logs
+         * Insights query with the <code>unmask</code> query command.</p> <p>For more
+         * information, including a list of types of data that can be audited and masked,
+         * see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/mask-sensitive-log-data.html">Protect
+         * sensitive log data with masking</a>.</p> <p>To use the
+         * <code>PutAccountPolicy</code> operation, you must be signed on with the
+         * <code>logs:PutDataProtectionPolicy</code> and <code>logs:PutAccountPolicy</code>
+         * permissions.</p> <p>The <code>PutAccountPolicy</code> operation applies to all
+         * log groups in the account. You can also use <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html">PutDataProtectionPolicy</a>
+         * to create a data protection policy that applies to just one log group. If a log
+         * group has its own data protection policy and the account also has an
+         * account-level data protection policy, then the two policies are cumulative. Any
+         * sensitive term specified in either policy is masked.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutAccountPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutAccountPolicyOutcome PutAccountPolicy(const Model::PutAccountPolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutAccountPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PutAccountPolicyRequestT = Model::PutAccountPolicyRequest>
+        Model::PutAccountPolicyOutcomeCallable PutAccountPolicyCallable(const PutAccountPolicyRequestT& request) const
+        {
+            return SubmitCallable(&CloudWatchLogsClient::PutAccountPolicy, request);
+        }
+
+        /**
+         * An Async wrapper for PutAccountPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PutAccountPolicyRequestT = Model::PutAccountPolicyRequest>
+        void PutAccountPolicyAsync(const PutAccountPolicyRequestT& request, const PutAccountPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudWatchLogsClient::PutAccountPolicy, request, handler, context);
+        }
+
+        /**
          * <p>Creates a data protection policy for the specified log group. A data
          * protection policy can help safeguard sensitive data that's ingested by the log
          * group by auditing and masking the sensitive log data.</p> 
@@ -1086,7 +1198,16 @@ namespace CloudWatchLogs
          * information, including a list of types of data that can be audited and masked,
          * see <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/mask-sensitive-log-data.html">Protect
-         * sensitive log data with masking</a>.</p><p><h3>See Also:</h3>   <a
+         * sensitive log data with masking</a>.</p> <p>The
+         * <code>PutDataProtectionPolicy</code> operation applies to only the specified log
+         * group. You can also use <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutAccountPolicy.html">PutAccountPolicy</a>
+         * to create an account-level data protection policy that applies to all log groups
+         * in the account, including both existing log groups and log groups that are
+         * created level. If a log group has its own data protection policy and the account
+         * also has an account-level data protection policy, then the two policies are
+         * cumulative. Any sensitive term specified in either policy is
+         * masked.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutDataProtectionPolicy">AWS
          * API Reference</a></p>
          */
@@ -1199,12 +1320,13 @@ namespace CloudWatchLogs
          * timestamp is specified in .NET format: <code>yyyy-mm-ddThh:mm:ss</code>. For
          * example, <code>2017-09-15T13:45:30</code>.) </p> </li> <li> <p>A batch of log
          * events in a single request cannot span more than 24 hours. Otherwise, the
-         * operation fails.</p> </li> <li> <p>The maximum number of log events in a batch
-         * is 10,000.</p> </li> <li>  <p>The quota of five requests per second
-         * per log stream has been removed. Instead, <code>PutLogEvents</code> actions are
-         * throttled based on a per-second per-account quota. You can request an increase
-         * to the per-second throttling quota by using the Service Quotas service.</p>
-         *  </li> </ul> <p>If a call to <code>PutLogEvents</code> returns
+         * operation fails.</p> </li> <li> <p>Each log event can be no larger than 256
+         * KB.</p> </li> <li> <p>The maximum number of log events in a batch is 10,000.</p>
+         * </li> <li>  <p>The quota of five requests per second per log stream
+         * has been removed. Instead, <code>PutLogEvents</code> actions are throttled based
+         * on a per-second per-account quota. You can request an increase to the per-second
+         * throttling quota by using the Service Quotas service.</p>  </li>
+         * </ul> <p>If a call to <code>PutLogEvents</code> returns
          * "UnrecognizedClientException" the most likely cause is a non-valid Amazon Web
          * Services access key ID or secret key. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutLogEvents">AWS
@@ -1393,8 +1515,8 @@ namespace CloudWatchLogs
          * log group can have up to two subscription filters associated with it. If you are
          * updating an existing filter, you must specify the correct name in
          * <code>filterName</code>. </p> <p>To perform a <code>PutSubscriptionFilter</code>
-         * operation, you must also have the <code>iam:PassRole</code>
-         * permission.</p><p><h3>See Also:</h3>   <a
+         * operation for any destination except a Lambda function, you must also have the
+         * <code>iam:PassRole</code> permission.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutSubscriptionFilter">AWS
          * API Reference</a></p>
          */
@@ -1423,7 +1545,7 @@ namespace CloudWatchLogs
          * the log group and time range to query and the query string to use.</p> <p>For
          * more information, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch
-         * Logs Insights Query Syntax</a>.</p> <p>Queries time out after 15 minutes of
+         * Logs Insights Query Syntax</a>.</p> <p>Queries time out after 60 minutes of
          * runtime. If your queries are timing out, reduce the time range being searched or
          * partition your query into a number of queries.</p> <p>If you are using
          * CloudWatch cross-account observability, you can use this operation in a
@@ -1432,7 +1554,7 @@ namespace CloudWatchLogs
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch
          * cross-account observability</a>. For a cross-account <code>StartQuery</code>
          * operation, the query definition must be defined in the monitoring account.</p>
-         * <p>You can have up to 20 concurrent CloudWatch Logs insights queries, including
+         * <p>You can have up to 30 concurrent CloudWatch Logs insights queries, including
          * queries that have been added to dashboards. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/StartQuery">AWS API
          * Reference</a></p>

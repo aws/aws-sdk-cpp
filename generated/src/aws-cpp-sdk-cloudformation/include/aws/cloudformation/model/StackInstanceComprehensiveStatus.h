@@ -55,8 +55,11 @@ namespace Model
      * manually.</p> </li> <li> <p> <code>PENDING</code>: The operation in the
      * specified account and Region has yet to start.</p> </li> <li> <p>
      * <code>RUNNING</code>: The operation in the specified account and Region is
-     * currently in progress.</p> </li> <li> <p> <code>SUCCEEDED</code>: The operation
-     * in the specified account and Region completed successfully.</p> </li> </ul>
+     * currently in progress.</p> </li> <li> <p>
+     * <code>SKIPPED_SUSPENDED_ACCOUNT</code>: The operation in the specified account
+     * and Region has been skipped because the account was suspended at the time of the
+     * operation.</p> </li> <li> <p> <code>SUCCEEDED</code>: The operation in the
+     * specified account and Region completed successfully.</p> </li> </ul>
      */
     inline const StackInstanceDetailedStatus& GetDetailedStatus() const{ return m_detailedStatus; }
 
@@ -76,8 +79,11 @@ namespace Model
      * manually.</p> </li> <li> <p> <code>PENDING</code>: The operation in the
      * specified account and Region has yet to start.</p> </li> <li> <p>
      * <code>RUNNING</code>: The operation in the specified account and Region is
-     * currently in progress.</p> </li> <li> <p> <code>SUCCEEDED</code>: The operation
-     * in the specified account and Region completed successfully.</p> </li> </ul>
+     * currently in progress.</p> </li> <li> <p>
+     * <code>SKIPPED_SUSPENDED_ACCOUNT</code>: The operation in the specified account
+     * and Region has been skipped because the account was suspended at the time of the
+     * operation.</p> </li> <li> <p> <code>SUCCEEDED</code>: The operation in the
+     * specified account and Region completed successfully.</p> </li> </ul>
      */
     inline bool DetailedStatusHasBeenSet() const { return m_detailedStatusHasBeenSet; }
 
@@ -97,8 +103,11 @@ namespace Model
      * manually.</p> </li> <li> <p> <code>PENDING</code>: The operation in the
      * specified account and Region has yet to start.</p> </li> <li> <p>
      * <code>RUNNING</code>: The operation in the specified account and Region is
-     * currently in progress.</p> </li> <li> <p> <code>SUCCEEDED</code>: The operation
-     * in the specified account and Region completed successfully.</p> </li> </ul>
+     * currently in progress.</p> </li> <li> <p>
+     * <code>SKIPPED_SUSPENDED_ACCOUNT</code>: The operation in the specified account
+     * and Region has been skipped because the account was suspended at the time of the
+     * operation.</p> </li> <li> <p> <code>SUCCEEDED</code>: The operation in the
+     * specified account and Region completed successfully.</p> </li> </ul>
      */
     inline void SetDetailedStatus(const StackInstanceDetailedStatus& value) { m_detailedStatusHasBeenSet = true; m_detailedStatus = value; }
 
@@ -118,8 +127,11 @@ namespace Model
      * manually.</p> </li> <li> <p> <code>PENDING</code>: The operation in the
      * specified account and Region has yet to start.</p> </li> <li> <p>
      * <code>RUNNING</code>: The operation in the specified account and Region is
-     * currently in progress.</p> </li> <li> <p> <code>SUCCEEDED</code>: The operation
-     * in the specified account and Region completed successfully.</p> </li> </ul>
+     * currently in progress.</p> </li> <li> <p>
+     * <code>SKIPPED_SUSPENDED_ACCOUNT</code>: The operation in the specified account
+     * and Region has been skipped because the account was suspended at the time of the
+     * operation.</p> </li> <li> <p> <code>SUCCEEDED</code>: The operation in the
+     * specified account and Region completed successfully.</p> </li> </ul>
      */
     inline void SetDetailedStatus(StackInstanceDetailedStatus&& value) { m_detailedStatusHasBeenSet = true; m_detailedStatus = std::move(value); }
 
@@ -139,8 +151,11 @@ namespace Model
      * manually.</p> </li> <li> <p> <code>PENDING</code>: The operation in the
      * specified account and Region has yet to start.</p> </li> <li> <p>
      * <code>RUNNING</code>: The operation in the specified account and Region is
-     * currently in progress.</p> </li> <li> <p> <code>SUCCEEDED</code>: The operation
-     * in the specified account and Region completed successfully.</p> </li> </ul>
+     * currently in progress.</p> </li> <li> <p>
+     * <code>SKIPPED_SUSPENDED_ACCOUNT</code>: The operation in the specified account
+     * and Region has been skipped because the account was suspended at the time of the
+     * operation.</p> </li> <li> <p> <code>SUCCEEDED</code>: The operation in the
+     * specified account and Region completed successfully.</p> </li> </ul>
      */
     inline StackInstanceComprehensiveStatus& WithDetailedStatus(const StackInstanceDetailedStatus& value) { SetDetailedStatus(value); return *this;}
 
@@ -160,8 +175,11 @@ namespace Model
      * manually.</p> </li> <li> <p> <code>PENDING</code>: The operation in the
      * specified account and Region has yet to start.</p> </li> <li> <p>
      * <code>RUNNING</code>: The operation in the specified account and Region is
-     * currently in progress.</p> </li> <li> <p> <code>SUCCEEDED</code>: The operation
-     * in the specified account and Region completed successfully.</p> </li> </ul>
+     * currently in progress.</p> </li> <li> <p>
+     * <code>SKIPPED_SUSPENDED_ACCOUNT</code>: The operation in the specified account
+     * and Region has been skipped because the account was suspended at the time of the
+     * operation.</p> </li> <li> <p> <code>SUCCEEDED</code>: The operation in the
+     * specified account and Region completed successfully.</p> </li> </ul>
      */
     inline StackInstanceComprehensiveStatus& WithDetailedStatus(StackInstanceDetailedStatus&& value) { SetDetailedStatus(std::move(value)); return *this;}
 

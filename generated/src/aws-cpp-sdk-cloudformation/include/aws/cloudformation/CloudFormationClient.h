@@ -33,7 +33,7 @@ namespace CloudFormation
    * page</a>.</p> <p>CloudFormation makes use of other Amazon Web Services products.
    * If you need additional technical information about a specific Amazon Web
    * Services product, you can find the product's technical documentation at <a
-   * href="https://docs.aws.amazon.com/"> <code>docs.aws.amazon.com</code> </a>.</p>
+   * href="https://docs.aws.amazon.com/">docs.aws.amazon.com</a>.</p>
    */
   class AWS_CLOUDFORMATION_API CloudFormationClient : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<CloudFormationClient>
   {
@@ -306,7 +306,7 @@ namespace CloudFormation
         /**
          * <p>Creates a stack as specified in the template. After the call completes
          * successfully, the stack creation starts. You can check the status of the stack
-         * through the <a>DescribeStacks</a>operation.</p><p><h3>See Also:</h3>   <a
+         * through the <a>DescribeStacks</a> operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateStack">AWS
          * API Reference</a></p>
          */
@@ -1054,10 +1054,10 @@ namespace CloudFormation
         /**
          * <p>Returns information about an extension's registration, including its current
          * status and type and version identifiers.</p> <p>When you initiate a registration
-         * request using <code> <a>RegisterType</a> </code>, you can then use <code>
-         * <a>DescribeTypeRegistration</a> </code> to monitor the progress of that
-         * registration request.</p> <p>Once the registration request has completed, use
-         * <code> <a>DescribeType</a> </code> to return detailed information about an
+         * request using <a>RegisterType</a>, you can then use
+         * <a>DescribeTypeRegistration</a> to monitor the progress of that registration
+         * request.</p> <p>Once the registration request has completed, use
+         * <a>DescribeType</a> to return detailed information about an
          * extension.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeTypeRegistration">AWS
          * API Reference</a></p>
@@ -1177,28 +1177,27 @@ namespace CloudFormation
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">How
          * CloudFormation performs drift detection on a stack set</a>.</p> <p>
          * <code>DetectStackSetDrift</code> returns the <code>OperationId</code> of the
-         * stack set drift detection operation. Use this operation id with <code>
-         * <a>DescribeStackSetOperation</a> </code> to monitor the progress of the drift
-         * detection operation. The drift detection operation may take some time, depending
-         * on the number of stack instances included in the stack set, in addition to the
-         * number of resources included in each stack.</p> <p>Once the operation has
-         * completed, use the following actions to return drift information:</p> <ul> <li>
-         * <p>Use <code> <a>DescribeStackSet</a> </code> to return detailed information
-         * about the stack set, including detailed information about the last
-         * <i>completed</i> drift operation performed on the stack set. (Information about
-         * drift operations that are in progress isn't included.)</p> </li> <li> <p>Use
-         * <code> <a>ListStackInstances</a> </code> to return a list of stack instances
-         * belonging to the stack set, including the drift status and last drift time
-         * checked of each instance.</p> </li> <li> <p>Use <code>
-         * <a>DescribeStackInstance</a> </code> to return detailed information about a
-         * specific stack instance, including its drift status and last drift time
-         * checked.</p> </li> </ul> <p>For more information about performing a drift
-         * detection operation on a stack set, see <a
+         * stack set drift detection operation. Use this operation id with
+         * <a>DescribeStackSetOperation</a> to monitor the progress of the drift detection
+         * operation. The drift detection operation may take some time, depending on the
+         * number of stack instances included in the stack set, in addition to the number
+         * of resources included in each stack.</p> <p>Once the operation has completed,
+         * use the following actions to return drift information:</p> <ul> <li> <p>Use
+         * <a>DescribeStackSet</a> to return detailed information about the stack set,
+         * including detailed information about the last <i>completed</i> drift operation
+         * performed on the stack set. (Information about drift operations that are in
+         * progress isn't included.)</p> </li> <li> <p>Use <a>ListStackInstances</a> to
+         * return a list of stack instances belonging to the stack set, including the drift
+         * status and last drift time checked of each instance.</p> </li> <li> <p>Use
+         * <a>DescribeStackInstance</a> to return detailed information about a specific
+         * stack instance, including its drift status and last drift time checked.</p>
+         * </li> </ul> <p>For more information about performing a drift detection operation
+         * on a stack set, see <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting
          * unmanaged changes in stack sets</a>.</p> <p>You can only run a single drift
          * detection operation on a given stack set at one time.</p> <p>To stop a drift
-         * detection stack set operation, use <code> <a>StopStackSetOperation</a>
-         * </code>.</p><p><h3>See Also:</h3>   <a
+         * detection stack set operation, use <a>StopStackSetOperation</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DetectStackSetDrift">AWS
          * API Reference</a></p>
          */
@@ -1434,7 +1433,7 @@ namespace CloudFormation
          * this action. Use this action to see the exported output values that you can
          * import into other stacks. To import values, use the <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">
-         * <code>Fn::ImportValue</code> </a> function.</p> <p>For more information, see <a
+         * Fn::ImportValue</a> function.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-exports.html">
          * CloudFormation export stack output values</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListExports">AWS
@@ -1466,8 +1465,8 @@ namespace CloudFormation
          * using it. To see the exported output values in your account, see
          * <a>ListExports</a>.</p> <p>For more information about importing an exported
          * output value, see the <a
-         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">
-         * <code>Fn::ImportValue</code> </a> function.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">Fn::ImportValue</a>
+         * function.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListImports">AWS
          * API Reference</a></p>
          */
@@ -1848,10 +1847,10 @@ namespace CloudFormation
          * maximum is per account and per Region. Use <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeregisterType.html">DeregisterType</a>
          * to deregister specific extension versions if necessary.</p> <p>Once you have
-         * initiated a registration request using <code> <a>RegisterType</a> </code>, you
-         * can use <code> <a>DescribeTypeRegistration</a> </code> to monitor the progress
-         * of the registration request.</p> <p>Once you have registered a private extension
-         * in your account and Region, use <a
+         * initiated a registration request using <a>RegisterType</a>, you can use
+         * <a>DescribeTypeRegistration</a> to monitor the progress of the registration
+         * request.</p> <p>Once you have registered a private extension in your account and
+         * Region, use <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>
          * to specify configuration properties for the extension. For more information, see
          * <a

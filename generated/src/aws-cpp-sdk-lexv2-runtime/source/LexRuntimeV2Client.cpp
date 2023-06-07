@@ -407,7 +407,7 @@ void LexRuntimeV2Client::StartConversationAsync(Model::StartConversationRequest&
   auto sem = Aws::MakeShared<Aws::Utils::Threading::Semaphore>(ALLOCATION_TAG, 0, 1);
   request.SetRequestSignedHandler([eventEncoderStream, sem](const Aws::Http::HttpRequest& httpRequest) { eventEncoderStream->SetSignatureSeed(Aws::Client::GetAuthorizationHeader(httpRequest)); sem->ReleaseAll(); });
 
-  m_executor->Submit([this, &endpointResolutionOutcome, &request, handler, handlerContext] () mutable {
+  m_executor->Submit([this, endpointResolutionOutcome, &request, handler, handlerContext] () mutable {
       JsonOutcome outcome = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::EVENTSTREAM_SIGV4_SIGNER);
       if(outcome.IsSuccess())
       {

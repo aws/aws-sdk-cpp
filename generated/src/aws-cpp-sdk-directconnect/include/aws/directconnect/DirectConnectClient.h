@@ -1832,7 +1832,7 @@ namespace DirectConnect
          * to support jumbo frames. Updating the connection disrupts network connectivity
          * for all virtual interfaces associated with the connection for up to 30 seconds.
          * To check whether your connection supports jumbo frames, call
-         * <a>DescribeConnections</a>. To check whether your virtual q interface supports
+         * <a>DescribeConnections</a>. To check whether your virtual interface supports
          * jumbo frames, call <a>DescribeVirtualInterfaces</a>.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UpdateVirtualInterfaceAttributes">AWS

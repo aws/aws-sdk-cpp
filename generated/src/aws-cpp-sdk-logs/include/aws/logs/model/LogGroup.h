@@ -7,6 +7,8 @@
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/logs/model/DataProtectionStatus.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/logs/model/InheritedProperty.h>
 #include <utility>
 
 namespace Aws
@@ -291,6 +293,55 @@ namespace Model
      */
     inline LogGroup& WithDataProtectionStatus(DataProtectionStatus&& value) { SetDataProtectionStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Displays all the properties that this log group has inherited from
+     * account-level settings.</p>
+     */
+    inline const Aws::Vector<InheritedProperty>& GetInheritedProperties() const{ return m_inheritedProperties; }
+
+    /**
+     * <p>Displays all the properties that this log group has inherited from
+     * account-level settings.</p>
+     */
+    inline bool InheritedPropertiesHasBeenSet() const { return m_inheritedPropertiesHasBeenSet; }
+
+    /**
+     * <p>Displays all the properties that this log group has inherited from
+     * account-level settings.</p>
+     */
+    inline void SetInheritedProperties(const Aws::Vector<InheritedProperty>& value) { m_inheritedPropertiesHasBeenSet = true; m_inheritedProperties = value; }
+
+    /**
+     * <p>Displays all the properties that this log group has inherited from
+     * account-level settings.</p>
+     */
+    inline void SetInheritedProperties(Aws::Vector<InheritedProperty>&& value) { m_inheritedPropertiesHasBeenSet = true; m_inheritedProperties = std::move(value); }
+
+    /**
+     * <p>Displays all the properties that this log group has inherited from
+     * account-level settings.</p>
+     */
+    inline LogGroup& WithInheritedProperties(const Aws::Vector<InheritedProperty>& value) { SetInheritedProperties(value); return *this;}
+
+    /**
+     * <p>Displays all the properties that this log group has inherited from
+     * account-level settings.</p>
+     */
+    inline LogGroup& WithInheritedProperties(Aws::Vector<InheritedProperty>&& value) { SetInheritedProperties(std::move(value)); return *this;}
+
+    /**
+     * <p>Displays all the properties that this log group has inherited from
+     * account-level settings.</p>
+     */
+    inline LogGroup& AddInheritedProperties(const InheritedProperty& value) { m_inheritedPropertiesHasBeenSet = true; m_inheritedProperties.push_back(value); return *this; }
+
+    /**
+     * <p>Displays all the properties that this log group has inherited from
+     * account-level settings.</p>
+     */
+    inline LogGroup& AddInheritedProperties(InheritedProperty&& value) { m_inheritedPropertiesHasBeenSet = true; m_inheritedProperties.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_logGroupName;
@@ -316,6 +367,9 @@ namespace Model
 
     DataProtectionStatus m_dataProtectionStatus;
     bool m_dataProtectionStatusHasBeenSet = false;
+
+    Aws::Vector<InheritedProperty> m_inheritedProperties;
+    bool m_inheritedPropertiesHasBeenSet = false;
   };
 
 } // namespace Model
