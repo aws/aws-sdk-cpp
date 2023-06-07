@@ -168,8 +168,8 @@ namespace Model
      * those provided by Amazon Web Services and published by third parties,
      * CloudFormation returns <code>null</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
-     * <p>To set the default version of an extension, use <code>
-     * <a>SetTypeDefaultVersion</a> </code>.</p>
+     * <p>To set the default version of an extension, use
+     * <a>SetTypeDefaultVersion</a>.</p>
      */
     inline const Aws::String& GetDefaultVersionId() const{ return m_defaultVersionId; }
 
@@ -180,8 +180,8 @@ namespace Model
      * those provided by Amazon Web Services and published by third parties,
      * CloudFormation returns <code>null</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
-     * <p>To set the default version of an extension, use <code>
-     * <a>SetTypeDefaultVersion</a> </code>.</p>
+     * <p>To set the default version of an extension, use
+     * <a>SetTypeDefaultVersion</a>.</p>
      */
     inline void SetDefaultVersionId(const Aws::String& value) { m_defaultVersionId = value; }
 
@@ -192,8 +192,8 @@ namespace Model
      * those provided by Amazon Web Services and published by third parties,
      * CloudFormation returns <code>null</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
-     * <p>To set the default version of an extension, use <code>
-     * <a>SetTypeDefaultVersion</a> </code>.</p>
+     * <p>To set the default version of an extension, use
+     * <a>SetTypeDefaultVersion</a>.</p>
      */
     inline void SetDefaultVersionId(Aws::String&& value) { m_defaultVersionId = std::move(value); }
 
@@ -204,8 +204,8 @@ namespace Model
      * those provided by Amazon Web Services and published by third parties,
      * CloudFormation returns <code>null</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
-     * <p>To set the default version of an extension, use <code>
-     * <a>SetTypeDefaultVersion</a> </code>.</p>
+     * <p>To set the default version of an extension, use
+     * <a>SetTypeDefaultVersion</a>.</p>
      */
     inline void SetDefaultVersionId(const char* value) { m_defaultVersionId.assign(value); }
 
@@ -216,8 +216,8 @@ namespace Model
      * those provided by Amazon Web Services and published by third parties,
      * CloudFormation returns <code>null</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
-     * <p>To set the default version of an extension, use <code>
-     * <a>SetTypeDefaultVersion</a> </code>.</p>
+     * <p>To set the default version of an extension, use
+     * <a>SetTypeDefaultVersion</a>.</p>
      */
     inline DescribeTypeResult& WithDefaultVersionId(const Aws::String& value) { SetDefaultVersionId(value); return *this;}
 
@@ -228,8 +228,8 @@ namespace Model
      * those provided by Amazon Web Services and published by third parties,
      * CloudFormation returns <code>null</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
-     * <p>To set the default version of an extension, use <code>
-     * <a>SetTypeDefaultVersion</a> </code>.</p>
+     * <p>To set the default version of an extension, use
+     * <a>SetTypeDefaultVersion</a>.</p>
      */
     inline DescribeTypeResult& WithDefaultVersionId(Aws::String&& value) { SetDefaultVersionId(std::move(value)); return *this;}
 
@@ -240,8 +240,8 @@ namespace Model
      * those provided by Amazon Web Services and published by third parties,
      * CloudFormation returns <code>null</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
-     * <p>To set the default version of an extension, use <code>
-     * <a>SetTypeDefaultVersion</a> </code>.</p>
+     * <p>To set the default version of an extension, use
+     * <a>SetTypeDefaultVersion</a>.</p>
      */
     inline DescribeTypeResult& WithDefaultVersionId(const char* value) { SetDefaultVersionId(value); return *this;}
 

@@ -551,17 +551,17 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
+     * <p>Indicates whether jumbo frames are supported.</p>
      */
     inline bool GetJumboFrameCapable() const{ return m_jumboFrameCapable; }
 
     /**
-     * <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
+     * <p>Indicates whether jumbo frames are supported.</p>
      */
     inline void SetJumboFrameCapable(bool value) { m_jumboFrameCapable = value; }
 
     /**
-     * <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
+     * <p>Indicates whether jumbo frames are supported.</p>
      */
     inline CreateLagResult& WithJumboFrameCapable(bool value) { SetJumboFrameCapable(value); return *this;}
 

@@ -165,42 +165,106 @@ namespace Model
 
 
     /**
-     * <p>Gets the test suite root group. This is a required parameter.</p>
+     * <p>Gets the test suite root group. This is a required parameter. For updating or
+     * creating the latest qualification suite, if
+     * <code>intendedForQualification</code> is set to true, <code>rootGroup</code> can
+     * be an empty string. If <code>intendedForQualification</code> is false,
+     * <code>rootGroup</code> cannot be an empty string. If <code>rootGroup</code> is
+     * empty, and <code>intendedForQualification</code> is set to true, all the
+     * qualification tests are included, and the configuration is default.</p> <p> For
+     * a qualification suite, the minimum length is 0, and the maximum is 2048. For a
+     * non-qualification suite, the minimum length is 1, and the maximum is 2048. </p>
      */
     inline const Aws::String& GetRootGroup() const{ return m_rootGroup; }
 
     /**
-     * <p>Gets the test suite root group. This is a required parameter.</p>
+     * <p>Gets the test suite root group. This is a required parameter. For updating or
+     * creating the latest qualification suite, if
+     * <code>intendedForQualification</code> is set to true, <code>rootGroup</code> can
+     * be an empty string. If <code>intendedForQualification</code> is false,
+     * <code>rootGroup</code> cannot be an empty string. If <code>rootGroup</code> is
+     * empty, and <code>intendedForQualification</code> is set to true, all the
+     * qualification tests are included, and the configuration is default.</p> <p> For
+     * a qualification suite, the minimum length is 0, and the maximum is 2048. For a
+     * non-qualification suite, the minimum length is 1, and the maximum is 2048. </p>
      */
     inline bool RootGroupHasBeenSet() const { return m_rootGroupHasBeenSet; }
 
     /**
-     * <p>Gets the test suite root group. This is a required parameter.</p>
+     * <p>Gets the test suite root group. This is a required parameter. For updating or
+     * creating the latest qualification suite, if
+     * <code>intendedForQualification</code> is set to true, <code>rootGroup</code> can
+     * be an empty string. If <code>intendedForQualification</code> is false,
+     * <code>rootGroup</code> cannot be an empty string. If <code>rootGroup</code> is
+     * empty, and <code>intendedForQualification</code> is set to true, all the
+     * qualification tests are included, and the configuration is default.</p> <p> For
+     * a qualification suite, the minimum length is 0, and the maximum is 2048. For a
+     * non-qualification suite, the minimum length is 1, and the maximum is 2048. </p>
      */
     inline void SetRootGroup(const Aws::String& value) { m_rootGroupHasBeenSet = true; m_rootGroup = value; }
 
     /**
-     * <p>Gets the test suite root group. This is a required parameter.</p>
+     * <p>Gets the test suite root group. This is a required parameter. For updating or
+     * creating the latest qualification suite, if
+     * <code>intendedForQualification</code> is set to true, <code>rootGroup</code> can
+     * be an empty string. If <code>intendedForQualification</code> is false,
+     * <code>rootGroup</code> cannot be an empty string. If <code>rootGroup</code> is
+     * empty, and <code>intendedForQualification</code> is set to true, all the
+     * qualification tests are included, and the configuration is default.</p> <p> For
+     * a qualification suite, the minimum length is 0, and the maximum is 2048. For a
+     * non-qualification suite, the minimum length is 1, and the maximum is 2048. </p>
      */
     inline void SetRootGroup(Aws::String&& value) { m_rootGroupHasBeenSet = true; m_rootGroup = std::move(value); }
 
     /**
-     * <p>Gets the test suite root group. This is a required parameter.</p>
+     * <p>Gets the test suite root group. This is a required parameter. For updating or
+     * creating the latest qualification suite, if
+     * <code>intendedForQualification</code> is set to true, <code>rootGroup</code> can
+     * be an empty string. If <code>intendedForQualification</code> is false,
+     * <code>rootGroup</code> cannot be an empty string. If <code>rootGroup</code> is
+     * empty, and <code>intendedForQualification</code> is set to true, all the
+     * qualification tests are included, and the configuration is default.</p> <p> For
+     * a qualification suite, the minimum length is 0, and the maximum is 2048. For a
+     * non-qualification suite, the minimum length is 1, and the maximum is 2048. </p>
      */
     inline void SetRootGroup(const char* value) { m_rootGroupHasBeenSet = true; m_rootGroup.assign(value); }
 
     /**
-     * <p>Gets the test suite root group. This is a required parameter.</p>
+     * <p>Gets the test suite root group. This is a required parameter. For updating or
+     * creating the latest qualification suite, if
+     * <code>intendedForQualification</code> is set to true, <code>rootGroup</code> can
+     * be an empty string. If <code>intendedForQualification</code> is false,
+     * <code>rootGroup</code> cannot be an empty string. If <code>rootGroup</code> is
+     * empty, and <code>intendedForQualification</code> is set to true, all the
+     * qualification tests are included, and the configuration is default.</p> <p> For
+     * a qualification suite, the minimum length is 0, and the maximum is 2048. For a
+     * non-qualification suite, the minimum length is 1, and the maximum is 2048. </p>
      */
     inline SuiteDefinitionConfiguration& WithRootGroup(const Aws::String& value) { SetRootGroup(value); return *this;}
 
     /**
-     * <p>Gets the test suite root group. This is a required parameter.</p>
+     * <p>Gets the test suite root group. This is a required parameter. For updating or
+     * creating the latest qualification suite, if
+     * <code>intendedForQualification</code> is set to true, <code>rootGroup</code> can
+     * be an empty string. If <code>intendedForQualification</code> is false,
+     * <code>rootGroup</code> cannot be an empty string. If <code>rootGroup</code> is
+     * empty, and <code>intendedForQualification</code> is set to true, all the
+     * qualification tests are included, and the configuration is default.</p> <p> For
+     * a qualification suite, the minimum length is 0, and the maximum is 2048. For a
+     * non-qualification suite, the minimum length is 1, and the maximum is 2048. </p>
      */
     inline SuiteDefinitionConfiguration& WithRootGroup(Aws::String&& value) { SetRootGroup(std::move(value)); return *this;}
 
     /**
-     * <p>Gets the test suite root group. This is a required parameter.</p>
+     * <p>Gets the test suite root group. This is a required parameter. For updating or
+     * creating the latest qualification suite, if
+     * <code>intendedForQualification</code> is set to true, <code>rootGroup</code> can
+     * be an empty string. If <code>intendedForQualification</code> is false,
+     * <code>rootGroup</code> cannot be an empty string. If <code>rootGroup</code> is
+     * empty, and <code>intendedForQualification</code> is set to true, all the
+     * qualification tests are included, and the configuration is default.</p> <p> For
+     * a qualification suite, the minimum length is 0, and the maximum is 2048. For a
+     * non-qualification suite, the minimum length is 1, and the maximum is 2048. </p>
      */
     inline SuiteDefinitionConfiguration& WithRootGroup(const char* value) { SetRootGroup(value); return *this;}
 

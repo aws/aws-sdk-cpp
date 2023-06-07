@@ -35,50 +35,50 @@ namespace Model
 
     /**
      * <p>The identifier for this registration request.</p> <p>Use this registration
-     * token when calling <code> <a>DescribeTypeRegistration</a> </code>, which returns
-     * information about the status and IDs of the extension registration.</p>
+     * token when calling <a>DescribeTypeRegistration</a>, which returns information
+     * about the status and IDs of the extension registration.</p>
      */
     inline const Aws::String& GetRegistrationToken() const{ return m_registrationToken; }
 
     /**
      * <p>The identifier for this registration request.</p> <p>Use this registration
-     * token when calling <code> <a>DescribeTypeRegistration</a> </code>, which returns
-     * information about the status and IDs of the extension registration.</p>
+     * token when calling <a>DescribeTypeRegistration</a>, which returns information
+     * about the status and IDs of the extension registration.</p>
      */
     inline void SetRegistrationToken(const Aws::String& value) { m_registrationToken = value; }
 
     /**
      * <p>The identifier for this registration request.</p> <p>Use this registration
-     * token when calling <code> <a>DescribeTypeRegistration</a> </code>, which returns
-     * information about the status and IDs of the extension registration.</p>
+     * token when calling <a>DescribeTypeRegistration</a>, which returns information
+     * about the status and IDs of the extension registration.</p>
      */
     inline void SetRegistrationToken(Aws::String&& value) { m_registrationToken = std::move(value); }
 
     /**
      * <p>The identifier for this registration request.</p> <p>Use this registration
-     * token when calling <code> <a>DescribeTypeRegistration</a> </code>, which returns
-     * information about the status and IDs of the extension registration.</p>
+     * token when calling <a>DescribeTypeRegistration</a>, which returns information
+     * about the status and IDs of the extension registration.</p>
      */
     inline void SetRegistrationToken(const char* value) { m_registrationToken.assign(value); }
 
     /**
      * <p>The identifier for this registration request.</p> <p>Use this registration
-     * token when calling <code> <a>DescribeTypeRegistration</a> </code>, which returns
-     * information about the status and IDs of the extension registration.</p>
+     * token when calling <a>DescribeTypeRegistration</a>, which returns information
+     * about the status and IDs of the extension registration.</p>
      */
     inline RegisterTypeResult& WithRegistrationToken(const Aws::String& value) { SetRegistrationToken(value); return *this;}
 
     /**
      * <p>The identifier for this registration request.</p> <p>Use this registration
-     * token when calling <code> <a>DescribeTypeRegistration</a> </code>, which returns
-     * information about the status and IDs of the extension registration.</p>
+     * token when calling <a>DescribeTypeRegistration</a>, which returns information
+     * about the status and IDs of the extension registration.</p>
      */
     inline RegisterTypeResult& WithRegistrationToken(Aws::String&& value) { SetRegistrationToken(std::move(value)); return *this;}
 
     /**
      * <p>The identifier for this registration request.</p> <p>Use this registration
-     * token when calling <code> <a>DescribeTypeRegistration</a> </code>, which returns
-     * information about the status and IDs of the extension registration.</p>
+     * token when calling <a>DescribeTypeRegistration</a>, which returns information
+     * about the status and IDs of the extension registration.</p>
      */
     inline RegisterTypeResult& WithRegistrationToken(const char* value) { SetRegistrationToken(value); return *this;}
 

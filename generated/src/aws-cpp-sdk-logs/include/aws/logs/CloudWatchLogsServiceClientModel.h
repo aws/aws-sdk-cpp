@@ -20,6 +20,7 @@
 /* Service model headers required in CloudWatchLogsClient header */
 #include <aws/logs/model/CreateExportTaskResult.h>
 #include <aws/logs/model/DeleteQueryDefinitionResult.h>
+#include <aws/logs/model/DescribeAccountPoliciesResult.h>
 #include <aws/logs/model/DescribeDestinationsResult.h>
 #include <aws/logs/model/DescribeExportTasksResult.h>
 #include <aws/logs/model/DescribeLogGroupsResult.h>
@@ -36,6 +37,7 @@
 #include <aws/logs/model/GetLogRecordResult.h>
 #include <aws/logs/model/GetQueryResultsResult.h>
 #include <aws/logs/model/ListTagsForResourceResult.h>
+#include <aws/logs/model/PutAccountPolicyResult.h>
 #include <aws/logs/model/PutDataProtectionPolicyResult.h>
 #include <aws/logs/model/PutDestinationResult.h>
 #include <aws/logs/model/PutLogEventsResult.h>
@@ -90,6 +92,7 @@ namespace Aws
       class CreateExportTaskRequest;
       class CreateLogGroupRequest;
       class CreateLogStreamRequest;
+      class DeleteAccountPolicyRequest;
       class DeleteDataProtectionPolicyRequest;
       class DeleteDestinationRequest;
       class DeleteLogGroupRequest;
@@ -99,6 +102,7 @@ namespace Aws
       class DeleteResourcePolicyRequest;
       class DeleteRetentionPolicyRequest;
       class DeleteSubscriptionFilterRequest;
+      class DescribeAccountPoliciesRequest;
       class DescribeDestinationsRequest;
       class DescribeExportTasksRequest;
       class DescribeLogGroupsRequest;
@@ -116,6 +120,7 @@ namespace Aws
       class GetLogRecordRequest;
       class GetQueryResultsRequest;
       class ListTagsForResourceRequest;
+      class PutAccountPolicyRequest;
       class PutDataProtectionPolicyRequest;
       class PutDestinationRequest;
       class PutDestinationPolicyRequest;
@@ -138,6 +143,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateExportTaskResult, CloudWatchLogsError> CreateExportTaskOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> CreateLogGroupOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> CreateLogStreamOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> DeleteAccountPolicyOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> DeleteDataProtectionPolicyOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> DeleteDestinationOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> DeleteLogGroupOutcome;
@@ -147,6 +153,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> DeleteResourcePolicyOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> DeleteRetentionPolicyOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> DeleteSubscriptionFilterOutcome;
+      typedef Aws::Utils::Outcome<DescribeAccountPoliciesResult, CloudWatchLogsError> DescribeAccountPoliciesOutcome;
       typedef Aws::Utils::Outcome<DescribeDestinationsResult, CloudWatchLogsError> DescribeDestinationsOutcome;
       typedef Aws::Utils::Outcome<DescribeExportTasksResult, CloudWatchLogsError> DescribeExportTasksOutcome;
       typedef Aws::Utils::Outcome<DescribeLogGroupsResult, CloudWatchLogsError> DescribeLogGroupsOutcome;
@@ -164,6 +171,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetLogRecordResult, CloudWatchLogsError> GetLogRecordOutcome;
       typedef Aws::Utils::Outcome<GetQueryResultsResult, CloudWatchLogsError> GetQueryResultsOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, CloudWatchLogsError> ListTagsForResourceOutcome;
+      typedef Aws::Utils::Outcome<PutAccountPolicyResult, CloudWatchLogsError> PutAccountPolicyOutcome;
       typedef Aws::Utils::Outcome<PutDataProtectionPolicyResult, CloudWatchLogsError> PutDataProtectionPolicyOutcome;
       typedef Aws::Utils::Outcome<PutDestinationResult, CloudWatchLogsError> PutDestinationOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> PutDestinationPolicyOutcome;
@@ -186,6 +194,7 @@ namespace Aws
       typedef std::future<CreateExportTaskOutcome> CreateExportTaskOutcomeCallable;
       typedef std::future<CreateLogGroupOutcome> CreateLogGroupOutcomeCallable;
       typedef std::future<CreateLogStreamOutcome> CreateLogStreamOutcomeCallable;
+      typedef std::future<DeleteAccountPolicyOutcome> DeleteAccountPolicyOutcomeCallable;
       typedef std::future<DeleteDataProtectionPolicyOutcome> DeleteDataProtectionPolicyOutcomeCallable;
       typedef std::future<DeleteDestinationOutcome> DeleteDestinationOutcomeCallable;
       typedef std::future<DeleteLogGroupOutcome> DeleteLogGroupOutcomeCallable;
@@ -195,6 +204,7 @@ namespace Aws
       typedef std::future<DeleteResourcePolicyOutcome> DeleteResourcePolicyOutcomeCallable;
       typedef std::future<DeleteRetentionPolicyOutcome> DeleteRetentionPolicyOutcomeCallable;
       typedef std::future<DeleteSubscriptionFilterOutcome> DeleteSubscriptionFilterOutcomeCallable;
+      typedef std::future<DescribeAccountPoliciesOutcome> DescribeAccountPoliciesOutcomeCallable;
       typedef std::future<DescribeDestinationsOutcome> DescribeDestinationsOutcomeCallable;
       typedef std::future<DescribeExportTasksOutcome> DescribeExportTasksOutcomeCallable;
       typedef std::future<DescribeLogGroupsOutcome> DescribeLogGroupsOutcomeCallable;
@@ -212,6 +222,7 @@ namespace Aws
       typedef std::future<GetLogRecordOutcome> GetLogRecordOutcomeCallable;
       typedef std::future<GetQueryResultsOutcome> GetQueryResultsOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+      typedef std::future<PutAccountPolicyOutcome> PutAccountPolicyOutcomeCallable;
       typedef std::future<PutDataProtectionPolicyOutcome> PutDataProtectionPolicyOutcomeCallable;
       typedef std::future<PutDestinationOutcome> PutDestinationOutcomeCallable;
       typedef std::future<PutDestinationPolicyOutcome> PutDestinationPolicyOutcomeCallable;
@@ -237,6 +248,7 @@ namespace Aws
     typedef std::function<void(const CloudWatchLogsClient*, const Model::CreateExportTaskRequest&, const Model::CreateExportTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateExportTaskResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::CreateLogGroupRequest&, const Model::CreateLogGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLogGroupResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::CreateLogStreamRequest&, const Model::CreateLogStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLogStreamResponseReceivedHandler;
+    typedef std::function<void(const CloudWatchLogsClient*, const Model::DeleteAccountPolicyRequest&, const Model::DeleteAccountPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAccountPolicyResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::DeleteDataProtectionPolicyRequest&, const Model::DeleteDataProtectionPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDataProtectionPolicyResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::DeleteDestinationRequest&, const Model::DeleteDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDestinationResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::DeleteLogGroupRequest&, const Model::DeleteLogGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLogGroupResponseReceivedHandler;
@@ -246,6 +258,7 @@ namespace Aws
     typedef std::function<void(const CloudWatchLogsClient*, const Model::DeleteResourcePolicyRequest&, const Model::DeleteResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteResourcePolicyResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::DeleteRetentionPolicyRequest&, const Model::DeleteRetentionPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRetentionPolicyResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::DeleteSubscriptionFilterRequest&, const Model::DeleteSubscriptionFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSubscriptionFilterResponseReceivedHandler;
+    typedef std::function<void(const CloudWatchLogsClient*, const Model::DescribeAccountPoliciesRequest&, const Model::DescribeAccountPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccountPoliciesResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::DescribeDestinationsRequest&, const Model::DescribeDestinationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDestinationsResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::DescribeExportTasksRequest&, const Model::DescribeExportTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeExportTasksResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::DescribeLogGroupsRequest&, const Model::DescribeLogGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLogGroupsResponseReceivedHandler;
@@ -263,6 +276,7 @@ namespace Aws
     typedef std::function<void(const CloudWatchLogsClient*, const Model::GetLogRecordRequest&, const Model::GetLogRecordOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLogRecordResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::GetQueryResultsRequest&, const Model::GetQueryResultsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetQueryResultsResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const CloudWatchLogsClient*, const Model::PutAccountPolicyRequest&, const Model::PutAccountPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAccountPolicyResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::PutDataProtectionPolicyRequest&, const Model::PutDataProtectionPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutDataProtectionPolicyResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::PutDestinationRequest&, const Model::PutDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutDestinationResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::PutDestinationPolicyRequest&, const Model::PutDestinationPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutDestinationPolicyResponseReceivedHandler;

@@ -183,6 +183,35 @@ namespace CustomerProfiles
         }
 
         /**
+         * <p>Creates an event stream, which is a subscription to real-time events, such as
+         * when profiles are created and updated through Amazon Connect Customer
+         * Profiles.</p> <p>Each event stream can be associated with only one Kinesis Data
+         * Stream destination in the same region and Amazon Web Services account as the
+         * customer profiles domain</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateEventStream">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateEventStreamOutcome CreateEventStream(const Model::CreateEventStreamRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateEventStream that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateEventStreamRequestT = Model::CreateEventStreamRequest>
+        Model::CreateEventStreamOutcomeCallable CreateEventStreamCallable(const CreateEventStreamRequestT& request) const
+        {
+            return SubmitCallable(&CustomerProfilesClient::CreateEventStream, request);
+        }
+
+        /**
+         * An Async wrapper for CreateEventStream that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateEventStreamRequestT = Model::CreateEventStreamRequest>
+        void CreateEventStreamAsync(const CreateEventStreamRequestT& request, const CreateEventStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CustomerProfilesClient::CreateEventStream, request, handler, context);
+        }
+
+        /**
          * <p> Creates an integration workflow. An integration workflow is an async process
          * which ingests historic data and sets up an integration for ongoing updates. The
          * supported Amazon AppFlow sources are Salesforce, ServiceNow, and Marketo.
@@ -290,6 +319,32 @@ namespace CustomerProfiles
         void DeleteDomainAsync(const DeleteDomainRequestT& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CustomerProfilesClient::DeleteDomain, request, handler, context);
+        }
+
+        /**
+         * <p>Disables and deletes the specified event stream.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteEventStream">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteEventStreamOutcome DeleteEventStream(const Model::DeleteEventStreamRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteEventStream that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteEventStreamRequestT = Model::DeleteEventStreamRequest>
+        Model::DeleteEventStreamOutcomeCallable DeleteEventStreamCallable(const DeleteEventStreamRequestT& request) const
+        {
+            return SubmitCallable(&CustomerProfilesClient::DeleteEventStream, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteEventStream that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteEventStreamRequestT = Model::DeleteEventStreamRequest>
+        void DeleteEventStreamAsync(const DeleteEventStreamRequestT& request, const DeleteEventStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CustomerProfilesClient::DeleteEventStream, request, handler, context);
         }
 
         /**
@@ -565,6 +620,32 @@ namespace CustomerProfiles
         }
 
         /**
+         * <p>Returns information about the specified event stream in a specific
+         * domain.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetEventStream">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetEventStreamOutcome GetEventStream(const Model::GetEventStreamRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetEventStream that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetEventStreamRequestT = Model::GetEventStreamRequest>
+        Model::GetEventStreamOutcomeCallable GetEventStreamCallable(const GetEventStreamRequestT& request) const
+        {
+            return SubmitCallable(&CustomerProfilesClient::GetEventStream, request);
+        }
+
+        /**
+         * An Async wrapper for GetEventStream that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetEventStreamRequestT = Model::GetEventStreamRequest>
+        void GetEventStreamAsync(const GetEventStreamRequestT& request, const GetEventStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CustomerProfilesClient::GetEventStream, request, handler, context);
+        }
+
+        /**
          * <p>Returns information about an Identity Resolution Job in a specific domain.
          * </p> <p>Identity Resolution Jobs are set up using the Amazon Connect admin
          * console. For more information, see <a
@@ -645,9 +726,9 @@ namespace CustomerProfiles
          * example, two or more profiles—with spelling mistakes such as <b>John Doe</b> and
          * <b>Jhn Doe</b>, or different casing email addresses such as
          * <b>JOHN_DOE@ANYCOMPANY.COM</b> and <b>johndoe@anycompany.com</b>, or different
-         * phone number formats such as <b>555-010-0000</b> and
-         * <b>+1-555-010-0000</b>���can be detected as belonging to the same customer
-         * <b>John Doe</b> and merged into a unified profile.</p><p><h3>See Also:</h3>   <a
+         * phone number formats such as <b>555-010-0000</b> and <b>+1-555-010-0000</b>—can
+         * be detected as belonging to the same customer <b>John Doe</b> and merged into a
+         * unified profile.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetMatches">AWS
          * API Reference</a></p>
          */
@@ -878,6 +959,32 @@ namespace CustomerProfiles
         void ListDomainsAsync(const ListDomainsRequestT& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CustomerProfilesClient::ListDomains, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a list of all the event streams in a specific domain.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListEventStreams">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListEventStreamsOutcome ListEventStreams(const Model::ListEventStreamsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListEventStreams that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListEventStreamsRequestT = Model::ListEventStreamsRequest>
+        Model::ListEventStreamsOutcomeCallable ListEventStreamsCallable(const ListEventStreamsRequestT& request) const
+        {
+            return SubmitCallable(&CustomerProfilesClient::ListEventStreams, request);
+        }
+
+        /**
+         * An Async wrapper for ListEventStreams that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListEventStreamsRequestT = Model::ListEventStreamsRequest>
+        void ListEventStreamsAsync(const ListEventStreamsRequestT& request, const ListEventStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CustomerProfilesClient::ListEventStreams, request, handler, context);
         }
 
         /**

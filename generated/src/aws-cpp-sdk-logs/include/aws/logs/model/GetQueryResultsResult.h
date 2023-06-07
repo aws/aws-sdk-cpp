@@ -138,7 +138,7 @@ namespace Model
      * <p>The status of the most recent running of the query. Possible values are
      * <code>Cancelled</code>, <code>Complete</code>, <code>Failed</code>,
      * <code>Running</code>, <code>Scheduled</code>, <code>Timeout</code>, and
-     * <code>Unknown</code>.</p> <p>Queries time out after 15 minutes of runtime. To
+     * <code>Unknown</code>.</p> <p>Queries time out after 60 minutes of runtime. To
      * avoid having your queries time out, reduce the time range being searched or
      * partition your query into a number of queries.</p>
      */
@@ -148,7 +148,7 @@ namespace Model
      * <p>The status of the most recent running of the query. Possible values are
      * <code>Cancelled</code>, <code>Complete</code>, <code>Failed</code>,
      * <code>Running</code>, <code>Scheduled</code>, <code>Timeout</code>, and
-     * <code>Unknown</code>.</p> <p>Queries time out after 15 minutes of runtime. To
+     * <code>Unknown</code>.</p> <p>Queries time out after 60 minutes of runtime. To
      * avoid having your queries time out, reduce the time range being searched or
      * partition your query into a number of queries.</p>
      */
@@ -158,7 +158,7 @@ namespace Model
      * <p>The status of the most recent running of the query. Possible values are
      * <code>Cancelled</code>, <code>Complete</code>, <code>Failed</code>,
      * <code>Running</code>, <code>Scheduled</code>, <code>Timeout</code>, and
-     * <code>Unknown</code>.</p> <p>Queries time out after 15 minutes of runtime. To
+     * <code>Unknown</code>.</p> <p>Queries time out after 60 minutes of runtime. To
      * avoid having your queries time out, reduce the time range being searched or
      * partition your query into a number of queries.</p>
      */
@@ -168,7 +168,7 @@ namespace Model
      * <p>The status of the most recent running of the query. Possible values are
      * <code>Cancelled</code>, <code>Complete</code>, <code>Failed</code>,
      * <code>Running</code>, <code>Scheduled</code>, <code>Timeout</code>, and
-     * <code>Unknown</code>.</p> <p>Queries time out after 15 minutes of runtime. To
+     * <code>Unknown</code>.</p> <p>Queries time out after 60 minutes of runtime. To
      * avoid having your queries time out, reduce the time range being searched or
      * partition your query into a number of queries.</p>
      */
@@ -178,7 +178,7 @@ namespace Model
      * <p>The status of the most recent running of the query. Possible values are
      * <code>Cancelled</code>, <code>Complete</code>, <code>Failed</code>,
      * <code>Running</code>, <code>Scheduled</code>, <code>Timeout</code>, and
-     * <code>Unknown</code>.</p> <p>Queries time out after 15 minutes of runtime. To
+     * <code>Unknown</code>.</p> <p>Queries time out after 60 minutes of runtime. To
      * avoid having your queries time out, reduce the time range being searched or
      * partition your query into a number of queries.</p>
      */

@@ -1381,11 +1381,11 @@ namespace Model
      * specify <code>IMPORT</code>.</p> <p>If you create a change set for a new stack,
      * CloudFormation creates a stack with a unique stack ID, but no template or
      * resources. The stack will be in the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995">
-     * <code>REVIEW_IN_PROGRESS</code> </a> state until you execute the change set.</p>
-     * <p>By default, CloudFormation specifies <code>UPDATE</code>. You can't use the
-     * <code>UPDATE</code> type to create a change set for a new stack or the
-     * <code>CREATE</code> type to create a change set for an existing stack.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995">REVIEW_IN_PROGRESS</a>
+     * state until you execute the change set.</p> <p>By default, CloudFormation
+     * specifies <code>UPDATE</code>. You can't use the <code>UPDATE</code> type to
+     * create a change set for a new stack or the <code>CREATE</code> type to create a
+     * change set for an existing stack.</p>
      */
     inline const ChangeSetType& GetChangeSetType() const{ return m_changeSetType; }
 
@@ -1396,11 +1396,11 @@ namespace Model
      * specify <code>IMPORT</code>.</p> <p>If you create a change set for a new stack,
      * CloudFormation creates a stack with a unique stack ID, but no template or
      * resources. The stack will be in the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995">
-     * <code>REVIEW_IN_PROGRESS</code> </a> state until you execute the change set.</p>
-     * <p>By default, CloudFormation specifies <code>UPDATE</code>. You can't use the
-     * <code>UPDATE</code> type to create a change set for a new stack or the
-     * <code>CREATE</code> type to create a change set for an existing stack.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995">REVIEW_IN_PROGRESS</a>
+     * state until you execute the change set.</p> <p>By default, CloudFormation
+     * specifies <code>UPDATE</code>. You can't use the <code>UPDATE</code> type to
+     * create a change set for a new stack or the <code>CREATE</code> type to create a
+     * change set for an existing stack.</p>
      */
     inline bool ChangeSetTypeHasBeenSet() const { return m_changeSetTypeHasBeenSet; }
 
@@ -1411,11 +1411,11 @@ namespace Model
      * specify <code>IMPORT</code>.</p> <p>If you create a change set for a new stack,
      * CloudFormation creates a stack with a unique stack ID, but no template or
      * resources. The stack will be in the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995">
-     * <code>REVIEW_IN_PROGRESS</code> </a> state until you execute the change set.</p>
-     * <p>By default, CloudFormation specifies <code>UPDATE</code>. You can't use the
-     * <code>UPDATE</code> type to create a change set for a new stack or the
-     * <code>CREATE</code> type to create a change set for an existing stack.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995">REVIEW_IN_PROGRESS</a>
+     * state until you execute the change set.</p> <p>By default, CloudFormation
+     * specifies <code>UPDATE</code>. You can't use the <code>UPDATE</code> type to
+     * create a change set for a new stack or the <code>CREATE</code> type to create a
+     * change set for an existing stack.</p>
      */
     inline void SetChangeSetType(const ChangeSetType& value) { m_changeSetTypeHasBeenSet = true; m_changeSetType = value; }
 
@@ -1426,11 +1426,11 @@ namespace Model
      * specify <code>IMPORT</code>.</p> <p>If you create a change set for a new stack,
      * CloudFormation creates a stack with a unique stack ID, but no template or
      * resources. The stack will be in the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995">
-     * <code>REVIEW_IN_PROGRESS</code> </a> state until you execute the change set.</p>
-     * <p>By default, CloudFormation specifies <code>UPDATE</code>. You can't use the
-     * <code>UPDATE</code> type to create a change set for a new stack or the
-     * <code>CREATE</code> type to create a change set for an existing stack.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995">REVIEW_IN_PROGRESS</a>
+     * state until you execute the change set.</p> <p>By default, CloudFormation
+     * specifies <code>UPDATE</code>. You can't use the <code>UPDATE</code> type to
+     * create a change set for a new stack or the <code>CREATE</code> type to create a
+     * change set for an existing stack.</p>
      */
     inline void SetChangeSetType(ChangeSetType&& value) { m_changeSetTypeHasBeenSet = true; m_changeSetType = std::move(value); }
 
@@ -1441,11 +1441,11 @@ namespace Model
      * specify <code>IMPORT</code>.</p> <p>If you create a change set for a new stack,
      * CloudFormation creates a stack with a unique stack ID, but no template or
      * resources. The stack will be in the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995">
-     * <code>REVIEW_IN_PROGRESS</code> </a> state until you execute the change set.</p>
-     * <p>By default, CloudFormation specifies <code>UPDATE</code>. You can't use the
-     * <code>UPDATE</code> type to create a change set for a new stack or the
-     * <code>CREATE</code> type to create a change set for an existing stack.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995">REVIEW_IN_PROGRESS</a>
+     * state until you execute the change set.</p> <p>By default, CloudFormation
+     * specifies <code>UPDATE</code>. You can't use the <code>UPDATE</code> type to
+     * create a change set for a new stack or the <code>CREATE</code> type to create a
+     * change set for an existing stack.</p>
      */
     inline CreateChangeSetRequest& WithChangeSetType(const ChangeSetType& value) { SetChangeSetType(value); return *this;}
 
@@ -1456,11 +1456,11 @@ namespace Model
      * specify <code>IMPORT</code>.</p> <p>If you create a change set for a new stack,
      * CloudFormation creates a stack with a unique stack ID, but no template or
      * resources. The stack will be in the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995">
-     * <code>REVIEW_IN_PROGRESS</code> </a> state until you execute the change set.</p>
-     * <p>By default, CloudFormation specifies <code>UPDATE</code>. You can't use the
-     * <code>UPDATE</code> type to create a change set for a new stack or the
-     * <code>CREATE</code> type to create a change set for an existing stack.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995">REVIEW_IN_PROGRESS</a>
+     * state until you execute the change set.</p> <p>By default, CloudFormation
+     * specifies <code>UPDATE</code>. You can't use the <code>UPDATE</code> type to
+     * create a change set for a new stack or the <code>CREATE</code> type to create a
+     * change set for an existing stack.</p>
      */
     inline CreateChangeSetRequest& WithChangeSetType(ChangeSetType&& value) { SetChangeSetType(std::move(value)); return *this;}
 

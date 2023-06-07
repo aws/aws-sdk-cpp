@@ -98,8 +98,13 @@ namespace Model
      * contain the <code> "MaskConfig": {}</code> object. The <code> "MaskConfig":
      * {}</code> object must be empty.</p> </li> </ul> <p>For an example data
      * protection policy, see the <b>Examples</b> section on this page.</p> 
-     * <p>The contents of two <code>DataIdentifer</code> arrays must match exactly.</p>
-     * 
+     * <p>The contents of the two <code>DataIdentifer</code> arrays must match
+     * exactly.</p>  <p>In addition to the two JSON blocks, the
+     * <code>policyDocument</code> can also include <code>Name</code>,
+     * <code>Description</code>, and <code>Version</code> fields. The <code>Name</code>
+     * is used as a dimension when CloudWatch Logs reports audit findings metrics to
+     * CloudWatch.</p> <p>The JSON specified in <code>policyDocument</code> can be up
+     * to 30,720 characters.</p>
      */
     inline const Aws::String& GetPolicyDocument() const{ return m_policyDocument; }
 
@@ -126,8 +131,13 @@ namespace Model
      * contain the <code> "MaskConfig": {}</code> object. The <code> "MaskConfig":
      * {}</code> object must be empty.</p> </li> </ul> <p>For an example data
      * protection policy, see the <b>Examples</b> section on this page.</p> 
-     * <p>The contents of two <code>DataIdentifer</code> arrays must match exactly.</p>
-     * 
+     * <p>The contents of the two <code>DataIdentifer</code> arrays must match
+     * exactly.</p>  <p>In addition to the two JSON blocks, the
+     * <code>policyDocument</code> can also include <code>Name</code>,
+     * <code>Description</code>, and <code>Version</code> fields. The <code>Name</code>
+     * is used as a dimension when CloudWatch Logs reports audit findings metrics to
+     * CloudWatch.</p> <p>The JSON specified in <code>policyDocument</code> can be up
+     * to 30,720 characters.</p>
      */
     inline bool PolicyDocumentHasBeenSet() const { return m_policyDocumentHasBeenSet; }
 
@@ -154,8 +164,13 @@ namespace Model
      * contain the <code> "MaskConfig": {}</code> object. The <code> "MaskConfig":
      * {}</code> object must be empty.</p> </li> </ul> <p>For an example data
      * protection policy, see the <b>Examples</b> section on this page.</p> 
-     * <p>The contents of two <code>DataIdentifer</code> arrays must match exactly.</p>
-     * 
+     * <p>The contents of the two <code>DataIdentifer</code> arrays must match
+     * exactly.</p>  <p>In addition to the two JSON blocks, the
+     * <code>policyDocument</code> can also include <code>Name</code>,
+     * <code>Description</code>, and <code>Version</code> fields. The <code>Name</code>
+     * is used as a dimension when CloudWatch Logs reports audit findings metrics to
+     * CloudWatch.</p> <p>The JSON specified in <code>policyDocument</code> can be up
+     * to 30,720 characters.</p>
      */
     inline void SetPolicyDocument(const Aws::String& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = value; }
 
@@ -182,8 +197,13 @@ namespace Model
      * contain the <code> "MaskConfig": {}</code> object. The <code> "MaskConfig":
      * {}</code> object must be empty.</p> </li> </ul> <p>For an example data
      * protection policy, see the <b>Examples</b> section on this page.</p> 
-     * <p>The contents of two <code>DataIdentifer</code> arrays must match exactly.</p>
-     * 
+     * <p>The contents of the two <code>DataIdentifer</code> arrays must match
+     * exactly.</p>  <p>In addition to the two JSON blocks, the
+     * <code>policyDocument</code> can also include <code>Name</code>,
+     * <code>Description</code>, and <code>Version</code> fields. The <code>Name</code>
+     * is used as a dimension when CloudWatch Logs reports audit findings metrics to
+     * CloudWatch.</p> <p>The JSON specified in <code>policyDocument</code> can be up
+     * to 30,720 characters.</p>
      */
     inline void SetPolicyDocument(Aws::String&& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = std::move(value); }
 
@@ -210,8 +230,13 @@ namespace Model
      * contain the <code> "MaskConfig": {}</code> object. The <code> "MaskConfig":
      * {}</code> object must be empty.</p> </li> </ul> <p>For an example data
      * protection policy, see the <b>Examples</b> section on this page.</p> 
-     * <p>The contents of two <code>DataIdentifer</code> arrays must match exactly.</p>
-     * 
+     * <p>The contents of the two <code>DataIdentifer</code> arrays must match
+     * exactly.</p>  <p>In addition to the two JSON blocks, the
+     * <code>policyDocument</code> can also include <code>Name</code>,
+     * <code>Description</code>, and <code>Version</code> fields. The <code>Name</code>
+     * is used as a dimension when CloudWatch Logs reports audit findings metrics to
+     * CloudWatch.</p> <p>The JSON specified in <code>policyDocument</code> can be up
+     * to 30,720 characters.</p>
      */
     inline void SetPolicyDocument(const char* value) { m_policyDocumentHasBeenSet = true; m_policyDocument.assign(value); }
 
@@ -238,8 +263,13 @@ namespace Model
      * contain the <code> "MaskConfig": {}</code> object. The <code> "MaskConfig":
      * {}</code> object must be empty.</p> </li> </ul> <p>For an example data
      * protection policy, see the <b>Examples</b> section on this page.</p> 
-     * <p>The contents of two <code>DataIdentifer</code> arrays must match exactly.</p>
-     * 
+     * <p>The contents of the two <code>DataIdentifer</code> arrays must match
+     * exactly.</p>  <p>In addition to the two JSON blocks, the
+     * <code>policyDocument</code> can also include <code>Name</code>,
+     * <code>Description</code>, and <code>Version</code> fields. The <code>Name</code>
+     * is used as a dimension when CloudWatch Logs reports audit findings metrics to
+     * CloudWatch.</p> <p>The JSON specified in <code>policyDocument</code> can be up
+     * to 30,720 characters.</p>
      */
     inline PutDataProtectionPolicyRequest& WithPolicyDocument(const Aws::String& value) { SetPolicyDocument(value); return *this;}
 
@@ -266,8 +296,13 @@ namespace Model
      * contain the <code> "MaskConfig": {}</code> object. The <code> "MaskConfig":
      * {}</code> object must be empty.</p> </li> </ul> <p>For an example data
      * protection policy, see the <b>Examples</b> section on this page.</p> 
-     * <p>The contents of two <code>DataIdentifer</code> arrays must match exactly.</p>
-     * 
+     * <p>The contents of the two <code>DataIdentifer</code> arrays must match
+     * exactly.</p>  <p>In addition to the two JSON blocks, the
+     * <code>policyDocument</code> can also include <code>Name</code>,
+     * <code>Description</code>, and <code>Version</code> fields. The <code>Name</code>
+     * is used as a dimension when CloudWatch Logs reports audit findings metrics to
+     * CloudWatch.</p> <p>The JSON specified in <code>policyDocument</code> can be up
+     * to 30,720 characters.</p>
      */
     inline PutDataProtectionPolicyRequest& WithPolicyDocument(Aws::String&& value) { SetPolicyDocument(std::move(value)); return *this;}
 
@@ -294,8 +329,13 @@ namespace Model
      * contain the <code> "MaskConfig": {}</code> object. The <code> "MaskConfig":
      * {}</code> object must be empty.</p> </li> </ul> <p>For an example data
      * protection policy, see the <b>Examples</b> section on this page.</p> 
-     * <p>The contents of two <code>DataIdentifer</code> arrays must match exactly.</p>
-     * 
+     * <p>The contents of the two <code>DataIdentifer</code> arrays must match
+     * exactly.</p>  <p>In addition to the two JSON blocks, the
+     * <code>policyDocument</code> can also include <code>Name</code>,
+     * <code>Description</code>, and <code>Version</code> fields. The <code>Name</code>
+     * is used as a dimension when CloudWatch Logs reports audit findings metrics to
+     * CloudWatch.</p> <p>The JSON specified in <code>policyDocument</code> can be up
+     * to 30,720 characters.</p>
      */
     inline PutDataProtectionPolicyRequest& WithPolicyDocument(const char* value) { SetPolicyDocument(value); return *this;}
 
