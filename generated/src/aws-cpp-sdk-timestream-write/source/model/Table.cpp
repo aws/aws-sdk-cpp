@@ -27,7 +27,8 @@ Table::Table() :
     m_retentionPropertiesHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_lastUpdatedTimeHasBeenSet(false),
-    m_magneticStoreWritePropertiesHasBeenSet(false)
+    m_magneticStoreWritePropertiesHasBeenSet(false),
+    m_schemaHasBeenSet(false)
 {
 }
 
@@ -40,7 +41,8 @@ Table::Table(JsonView jsonValue) :
     m_retentionPropertiesHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_lastUpdatedTimeHasBeenSet(false),
-    m_magneticStoreWritePropertiesHasBeenSet(false)
+    m_magneticStoreWritePropertiesHasBeenSet(false),
+    m_schemaHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -103,6 +105,13 @@ Table& Table::operator =(JsonView jsonValue)
     m_magneticStoreWritePropertiesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Schema"))
+  {
+    m_schema = jsonValue.GetObject("Schema");
+
+    m_schemaHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -152,6 +161,12 @@ JsonValue Table::Jsonize() const
   if(m_magneticStoreWritePropertiesHasBeenSet)
   {
    payload.WithObject("MagneticStoreWriteProperties", m_magneticStoreWriteProperties.Jsonize());
+
+  }
+
+  if(m_schemaHasBeenSet)
+  {
+   payload.WithObject("Schema", m_schema.Jsonize());
 
   }
 

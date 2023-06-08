@@ -21,7 +21,8 @@ namespace Model
     TEST_VALUE,
     TEST_UNITS,
     DIRECTION,
-    SYSTEM_ORGAN_SITE
+    SYSTEM_ORGAN_SITE,
+    TEST_UNIT
   };
 
 namespace SNOMEDCTRelationshipTypeMapper

@@ -10,6 +10,7 @@
 #include <aws/timestream-write/model/RetentionProperties.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/timestream-write/model/MagneticStoreWriteProperties.h>
+#include <aws/timestream-write/model/Schema.h>
 #include <aws/timestream-write/model/Tag.h>
 #include <utility>
 
@@ -234,6 +235,37 @@ namespace Model
      */
     inline CreateTableRequest& WithMagneticStoreWriteProperties(MagneticStoreWriteProperties&& value) { SetMagneticStoreWriteProperties(std::move(value)); return *this;}
 
+
+    /**
+     * <p> The schema of the table. </p>
+     */
+    inline const Schema& GetSchema() const{ return m_schema; }
+
+    /**
+     * <p> The schema of the table. </p>
+     */
+    inline bool SchemaHasBeenSet() const { return m_schemaHasBeenSet; }
+
+    /**
+     * <p> The schema of the table. </p>
+     */
+    inline void SetSchema(const Schema& value) { m_schemaHasBeenSet = true; m_schema = value; }
+
+    /**
+     * <p> The schema of the table. </p>
+     */
+    inline void SetSchema(Schema&& value) { m_schemaHasBeenSet = true; m_schema = std::move(value); }
+
+    /**
+     * <p> The schema of the table. </p>
+     */
+    inline CreateTableRequest& WithSchema(const Schema& value) { SetSchema(value); return *this;}
+
+    /**
+     * <p> The schema of the table. </p>
+     */
+    inline CreateTableRequest& WithSchema(Schema&& value) { SetSchema(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_databaseName;
@@ -250,6 +282,9 @@ namespace Model
 
     MagneticStoreWriteProperties m_magneticStoreWriteProperties;
     bool m_magneticStoreWritePropertiesHasBeenSet = false;
+
+    Schema m_schema;
+    bool m_schemaHasBeenSet = false;
   };
 
 } // namespace Model

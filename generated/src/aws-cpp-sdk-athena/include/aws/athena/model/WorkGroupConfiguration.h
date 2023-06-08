@@ -403,37 +403,37 @@ namespace Model
 
     /**
      * <p>Specifies the KMS key that is used to encrypt the user's data stores in
-     * Athena.</p>
+     * Athena. This setting does not apply to Athena SQL workgroups.</p>
      */
     inline const CustomerContentEncryptionConfiguration& GetCustomerContentEncryptionConfiguration() const{ return m_customerContentEncryptionConfiguration; }
 
     /**
      * <p>Specifies the KMS key that is used to encrypt the user's data stores in
-     * Athena.</p>
+     * Athena. This setting does not apply to Athena SQL workgroups.</p>
      */
     inline bool CustomerContentEncryptionConfigurationHasBeenSet() const { return m_customerContentEncryptionConfigurationHasBeenSet; }
 
     /**
      * <p>Specifies the KMS key that is used to encrypt the user's data stores in
-     * Athena.</p>
+     * Athena. This setting does not apply to Athena SQL workgroups.</p>
      */
     inline void SetCustomerContentEncryptionConfiguration(const CustomerContentEncryptionConfiguration& value) { m_customerContentEncryptionConfigurationHasBeenSet = true; m_customerContentEncryptionConfiguration = value; }
 
     /**
      * <p>Specifies the KMS key that is used to encrypt the user's data stores in
-     * Athena.</p>
+     * Athena. This setting does not apply to Athena SQL workgroups.</p>
      */
     inline void SetCustomerContentEncryptionConfiguration(CustomerContentEncryptionConfiguration&& value) { m_customerContentEncryptionConfigurationHasBeenSet = true; m_customerContentEncryptionConfiguration = std::move(value); }
 
     /**
      * <p>Specifies the KMS key that is used to encrypt the user's data stores in
-     * Athena.</p>
+     * Athena. This setting does not apply to Athena SQL workgroups.</p>
      */
     inline WorkGroupConfiguration& WithCustomerContentEncryptionConfiguration(const CustomerContentEncryptionConfiguration& value) { SetCustomerContentEncryptionConfiguration(value); return *this;}
 
     /**
      * <p>Specifies the KMS key that is used to encrypt the user's data stores in
-     * Athena.</p>
+     * Athena. This setting does not apply to Athena SQL workgroups.</p>
      */
     inline WorkGroupConfiguration& WithCustomerContentEncryptionConfiguration(CustomerContentEncryptionConfiguration&& value) { SetCustomerContentEncryptionConfiguration(std::move(value)); return *this;}
 

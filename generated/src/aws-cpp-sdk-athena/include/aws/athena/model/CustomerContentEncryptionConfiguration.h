@@ -25,7 +25,8 @@ namespace Model
 
   /**
    * <p>Specifies the KMS key that is used to encrypt the user's data stores in
-   * Athena.</p><p><h3>See Also:</h3>   <a
+   * Athena. This setting does not apply to Athena SQL workgroups.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CustomerContentEncryptionConfiguration">AWS
    * API Reference</a></p>
    */

@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     OVERLAP,
-    SYSTEM_ORGAN_SITE
+    SYSTEM_ORGAN_SITE,
+    QUALITY
   };
 
 namespace ICD10CMRelationshipTypeMapper

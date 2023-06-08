@@ -198,37 +198,49 @@ namespace Model
 
     /**
      * <p> Contains the data type of the measure value for the time-series data point.
-     * Default type is <code>DOUBLE</code>. </p>
+     * Default type is <code>DOUBLE</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/timestream/latest/developerguide/writes.html#writes.data-types">Data
+     * types</a>.</p>
      */
     inline const MeasureValueType& GetMeasureValueType() const{ return m_measureValueType; }
 
     /**
      * <p> Contains the data type of the measure value for the time-series data point.
-     * Default type is <code>DOUBLE</code>. </p>
+     * Default type is <code>DOUBLE</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/timestream/latest/developerguide/writes.html#writes.data-types">Data
+     * types</a>.</p>
      */
     inline bool MeasureValueTypeHasBeenSet() const { return m_measureValueTypeHasBeenSet; }
 
     /**
      * <p> Contains the data type of the measure value for the time-series data point.
-     * Default type is <code>DOUBLE</code>. </p>
+     * Default type is <code>DOUBLE</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/timestream/latest/developerguide/writes.html#writes.data-types">Data
+     * types</a>.</p>
      */
     inline void SetMeasureValueType(const MeasureValueType& value) { m_measureValueTypeHasBeenSet = true; m_measureValueType = value; }
 
     /**
      * <p> Contains the data type of the measure value for the time-series data point.
-     * Default type is <code>DOUBLE</code>. </p>
+     * Default type is <code>DOUBLE</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/timestream/latest/developerguide/writes.html#writes.data-types">Data
+     * types</a>.</p>
      */
     inline void SetMeasureValueType(MeasureValueType&& value) { m_measureValueTypeHasBeenSet = true; m_measureValueType = std::move(value); }
 
     /**
      * <p> Contains the data type of the measure value for the time-series data point.
-     * Default type is <code>DOUBLE</code>. </p>
+     * Default type is <code>DOUBLE</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/timestream/latest/developerguide/writes.html#writes.data-types">Data
+     * types</a>.</p>
      */
     inline Record& WithMeasureValueType(const MeasureValueType& value) { SetMeasureValueType(value); return *this;}
 
     /**
      * <p> Contains the data type of the measure value for the time-series data point.
-     * Default type is <code>DOUBLE</code>. </p>
+     * Default type is <code>DOUBLE</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/timestream/latest/developerguide/writes.html#writes.data-types">Data
+     * types</a>.</p>
      */
     inline Record& WithMeasureValueType(MeasureValueType&& value) { SetMeasureValueType(std::move(value)); return *this;}
 

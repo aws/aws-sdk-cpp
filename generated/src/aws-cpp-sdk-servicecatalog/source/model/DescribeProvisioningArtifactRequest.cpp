@@ -19,7 +19,9 @@ DescribeProvisioningArtifactRequest::DescribeProvisioningArtifactRequest() :
     m_provisioningArtifactNameHasBeenSet(false),
     m_productNameHasBeenSet(false),
     m_verbose(false),
-    m_verboseHasBeenSet(false)
+    m_verboseHasBeenSet(false),
+    m_includeProvisioningArtifactParameters(false),
+    m_includeProvisioningArtifactParametersHasBeenSet(false)
 {
 }
 
@@ -60,6 +62,12 @@ Aws::String DescribeProvisioningArtifactRequest::SerializePayload() const
   if(m_verboseHasBeenSet)
   {
    payload.WithBool("Verbose", m_verbose);
+
+  }
+
+  if(m_includeProvisioningArtifactParametersHasBeenSet)
+  {
+   payload.WithBool("IncludeProvisioningArtifactParameters", m_includeProvisioningArtifactParameters);
 
   }
 

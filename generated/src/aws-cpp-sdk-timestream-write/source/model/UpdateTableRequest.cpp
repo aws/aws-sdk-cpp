@@ -16,7 +16,8 @@ UpdateTableRequest::UpdateTableRequest() :
     m_databaseNameHasBeenSet(false),
     m_tableNameHasBeenSet(false),
     m_retentionPropertiesHasBeenSet(false),
-    m_magneticStoreWritePropertiesHasBeenSet(false)
+    m_magneticStoreWritePropertiesHasBeenSet(false),
+    m_schemaHasBeenSet(false)
 {
 }
 
@@ -45,6 +46,12 @@ Aws::String UpdateTableRequest::SerializePayload() const
   if(m_magneticStoreWritePropertiesHasBeenSet)
   {
    payload.WithObject("MagneticStoreWriteProperties", m_magneticStoreWriteProperties.Jsonize());
+
+  }
+
+  if(m_schemaHasBeenSet)
+  {
+   payload.WithObject("Schema", m_schema.Jsonize());
 
   }
 
