@@ -310,22 +310,26 @@ namespace Model
 
 
     /**
-     * <p>Removes content encryption configuration for a workgroup.</p>
+     * <p>Removes content encryption configuration from an Apache Spark-enabled Athena
+     * workgroup.</p>
      */
     inline bool GetRemoveCustomerContentEncryptionConfiguration() const{ return m_removeCustomerContentEncryptionConfiguration; }
 
     /**
-     * <p>Removes content encryption configuration for a workgroup.</p>
+     * <p>Removes content encryption configuration from an Apache Spark-enabled Athena
+     * workgroup.</p>
      */
     inline bool RemoveCustomerContentEncryptionConfigurationHasBeenSet() const { return m_removeCustomerContentEncryptionConfigurationHasBeenSet; }
 
     /**
-     * <p>Removes content encryption configuration for a workgroup.</p>
+     * <p>Removes content encryption configuration from an Apache Spark-enabled Athena
+     * workgroup.</p>
      */
     inline void SetRemoveCustomerContentEncryptionConfiguration(bool value) { m_removeCustomerContentEncryptionConfigurationHasBeenSet = true; m_removeCustomerContentEncryptionConfiguration = value; }
 
     /**
-     * <p>Removes content encryption configuration for a workgroup.</p>
+     * <p>Removes content encryption configuration from an Apache Spark-enabled Athena
+     * workgroup.</p>
      */
     inline WorkGroupConfigurationUpdates& WithRemoveCustomerContentEncryptionConfiguration(bool value) { SetRemoveCustomerContentEncryptionConfiguration(value); return *this;}
 

@@ -8,7 +8,9 @@
 #include <aws/servicecatalog/model/ProvisioningArtifactDetail.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/servicecatalog/model/Status.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/servicecatalog/model/ProvisioningArtifactParameter.h>
 #include <utility>
 
 namespace Aws
@@ -160,6 +162,42 @@ namespace Model
     inline DescribeProvisioningArtifactResult& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
 
 
+    /**
+     * <p>Information about the parameters used to provision the product. </p>
+     */
+    inline const Aws::Vector<ProvisioningArtifactParameter>& GetProvisioningArtifactParameters() const{ return m_provisioningArtifactParameters; }
+
+    /**
+     * <p>Information about the parameters used to provision the product. </p>
+     */
+    inline void SetProvisioningArtifactParameters(const Aws::Vector<ProvisioningArtifactParameter>& value) { m_provisioningArtifactParameters = value; }
+
+    /**
+     * <p>Information about the parameters used to provision the product. </p>
+     */
+    inline void SetProvisioningArtifactParameters(Aws::Vector<ProvisioningArtifactParameter>&& value) { m_provisioningArtifactParameters = std::move(value); }
+
+    /**
+     * <p>Information about the parameters used to provision the product. </p>
+     */
+    inline DescribeProvisioningArtifactResult& WithProvisioningArtifactParameters(const Aws::Vector<ProvisioningArtifactParameter>& value) { SetProvisioningArtifactParameters(value); return *this;}
+
+    /**
+     * <p>Information about the parameters used to provision the product. </p>
+     */
+    inline DescribeProvisioningArtifactResult& WithProvisioningArtifactParameters(Aws::Vector<ProvisioningArtifactParameter>&& value) { SetProvisioningArtifactParameters(std::move(value)); return *this;}
+
+    /**
+     * <p>Information about the parameters used to provision the product. </p>
+     */
+    inline DescribeProvisioningArtifactResult& AddProvisioningArtifactParameters(const ProvisioningArtifactParameter& value) { m_provisioningArtifactParameters.push_back(value); return *this; }
+
+    /**
+     * <p>Information about the parameters used to provision the product. </p>
+     */
+    inline DescribeProvisioningArtifactResult& AddProvisioningArtifactParameters(ProvisioningArtifactParameter&& value) { m_provisioningArtifactParameters.push_back(std::move(value)); return *this; }
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -188,6 +226,8 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_info;
 
     Status m_status;
+
+    Aws::Vector<ProvisioningArtifactParameter> m_provisioningArtifactParameters;
 
     Aws::String m_requestId;
   };

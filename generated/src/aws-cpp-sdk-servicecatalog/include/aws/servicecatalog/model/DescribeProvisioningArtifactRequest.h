@@ -267,6 +267,31 @@ namespace Model
      */
     inline DescribeProvisioningArtifactRequest& WithVerbose(bool value) { SetVerbose(value); return *this;}
 
+
+    /**
+     * <p>Indicates if the API call response does or does not include additional
+     * details about the provisioning parameters. </p>
+     */
+    inline bool GetIncludeProvisioningArtifactParameters() const{ return m_includeProvisioningArtifactParameters; }
+
+    /**
+     * <p>Indicates if the API call response does or does not include additional
+     * details about the provisioning parameters. </p>
+     */
+    inline bool IncludeProvisioningArtifactParametersHasBeenSet() const { return m_includeProvisioningArtifactParametersHasBeenSet; }
+
+    /**
+     * <p>Indicates if the API call response does or does not include additional
+     * details about the provisioning parameters. </p>
+     */
+    inline void SetIncludeProvisioningArtifactParameters(bool value) { m_includeProvisioningArtifactParametersHasBeenSet = true; m_includeProvisioningArtifactParameters = value; }
+
+    /**
+     * <p>Indicates if the API call response does or does not include additional
+     * details about the provisioning parameters. </p>
+     */
+    inline DescribeProvisioningArtifactRequest& WithIncludeProvisioningArtifactParameters(bool value) { SetIncludeProvisioningArtifactParameters(value); return *this;}
+
   private:
 
     Aws::String m_acceptLanguage;
@@ -286,6 +311,9 @@ namespace Model
 
     bool m_verbose;
     bool m_verboseHasBeenSet = false;
+
+    bool m_includeProvisioningArtifactParameters;
+    bool m_includeProvisioningArtifactParametersHasBeenSet = false;
   };
 
 } // namespace Model
