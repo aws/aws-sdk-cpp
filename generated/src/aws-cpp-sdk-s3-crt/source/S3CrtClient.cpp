@@ -180,7 +180,10 @@ S3CrtClient::S3CrtClient(const std::shared_ptr<AWSCredentialsProvider>& credenti
 S3CrtClient::~S3CrtClient()
 {
   aws_s3_client_release(m_s3CrtClient);
-  m_clientShutdownSem->WaitOne(); // Wait aws_s3_client shutdown
+  if(m_clientShutdownSem)
+  {
+    m_clientShutdownSem->WaitOne(); // Wait aws_s3_client shutdown
+  }
   ShutdownSdkClient(this, -1);
 }
 
@@ -261,20 +264,48 @@ void S3CrtClient::init(const S3Crt::ClientConfiguration& config, const std::shar
   static const size_t DEFAULT_PART_SIZE = 5 * 1024 * 1024; // 5MB
   s3CrtConfig.part_size = config.partSize < DEFAULT_PART_SIZE ? DEFAULT_PART_SIZE : config.partSize;
 
-  Aws::Crt::Io::TlsConnectionOptions* tlsConnectionOptions = config.tlsConnectionOptions ? config.tlsConnectionOptions.get() : Aws::GetDefaultTlsConnectionOptions();
-  aws_tls_connection_options tlsOptions;
-  AWS_ZERO_STRUCT(tlsOptions);
-  if (tlsConnectionOptions)
+  Aws::UniquePtr<Aws::Crt::Io::TlsConnectionOptions> pTlsConnectionOptions;
+  if (config.tlsConnectionOptions)
   {
-    aws_tls_connection_options_copy(&tlsOptions, tlsConnectionOptions->GetUnderlyingHandle());
+    pTlsConnectionOptions = Aws::MakeUnique<Aws::Crt::Io::TlsConnectionOptions>(ALLOCATION_TAG, *config.tlsConnectionOptions);
+    if (!config.caPath.empty() || !config.caFile.empty())
+    {
+      AWS_LOGSTREAM_WARN(ALLOCATION_TAG, "caPath or caFile on client configuration are ignored in case of user-configured TlsConnectionOptions provided");
+    }
+  }
+
+  if (!pTlsConnectionOptions)
+  {
+    Aws::Crt::Io::TlsContextOptions crtTlsContextOptions = Aws::Crt::Io::TlsContextOptions::InitDefaultClient();
+    if (!config.caPath.empty() || !config.caFile.empty())
+    {
+      const char *caPath = config.caPath.empty() ? nullptr : config.caPath.c_str();
+      const char *caFile = config.caFile.empty() ? nullptr : config.caFile.c_str();
+      if(!crtTlsContextOptions.OverrideDefaultTrustStore(caPath, caFile)) {
+        AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize S3 Crt client: failed to set caPath/caFile");
+        m_isInitialized = false;
+        return;
+      }
+    }
+    Aws::Crt::Io::TlsContext crtTlsContext(crtTlsContextOptions, Aws::Crt::Io::TlsMode::CLIENT);
+    pTlsConnectionOptions = Aws::MakeUnique<Aws::Crt::Io::TlsConnectionOptions>(ALLOCATION_TAG, crtTlsContext.NewConnectionOptions());
+  }
+
+  aws_tls_connection_options nonConstTlsOptions;
+  AWS_ZERO_STRUCT(nonConstTlsOptions);
+  if (pTlsConnectionOptions)
+  {
     ResolveEndpointOutcome endpointOutcome = m_endpointProvider->ResolveEndpoint({});
     if (!endpointOutcome.IsSuccess())
     {
-      AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Failed to resolve base URI: " << endpointOutcome.GetError().GetMessage());
+      AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize S3 Crt client: failed to resolve base URI: " << endpointOutcome.GetError().GetMessage());
+      m_isInitialized = false;
       return;
     }
-    tlsOptions.server_name = aws_string_new_from_c_str(Aws::get_aws_allocator(), endpointOutcome.GetResult().GetURL().c_str());
-    s3CrtConfig.tls_connection_options = &tlsOptions;
+    Aws::Crt::ByteCursor serverName = Aws::Crt::ByteCursorFromCString(endpointOutcome.GetResult().GetURI().GetAuthority().c_str());
+    pTlsConnectionOptions->SetServerName(serverName);
+    aws_tls_connection_options_copy(&nonConstTlsOptions, pTlsConnectionOptions->GetUnderlyingHandle());
+    s3CrtConfig.tls_connection_options = &nonConstTlsOptions;
   }
   else
   {
@@ -291,13 +322,14 @@ void S3CrtClient::init(const S3Crt::ClientConfiguration& config, const std::shar
   s3CrtConfig.shutdown_callback_user_data = static_cast<void*>(&m_wrappedData);
 
   m_s3CrtClient = aws_s3_client_new(Aws::get_aws_allocator(), &s3CrtConfig);
-  if (tlsConnectionOptions)
+  if (pTlsConnectionOptions)
   {
-    aws_tls_connection_options_clean_up(&tlsOptions);
+    aws_tls_connection_options_clean_up(&nonConstTlsOptions);
   }
   if (!m_s3CrtClient)
   {
     AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to allocate aws_s3_client instance, abort.");
+    m_isInitialized = false;
   }
 }
 
