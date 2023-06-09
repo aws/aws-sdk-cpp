@@ -1,0 +1,18 @@
+@media (prefers-color-scheme: light) {
+    #MSearchCloseImg {
+        filter: brightness(0%)
+    }
+    a:link, a:visited, a:hover, a:focus, a:active {
+        color: var(--primary-dark-color) !important;
+        font-weight: 500;
+        filter: brightness(120%) saturate(250%);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    #MSearchCloseImg {
+        filter: brightness(100%)
+    }
+}
+
+
