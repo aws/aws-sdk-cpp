@@ -25,20 +25,17 @@ namespace Model
 {
 
   /**
-   * <p>The search criteria to be used to return routing profiles.</p>  <p>The
-   * <code>name</code> and <code>description</code> fields support "contains" queries
-   * with a minimum of 2 characters and a maximum of 25 characters. Any queries with
-   * character lengths outside of this range will throw invalid results. </p>
-   * <p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/RoutingProfileSearchCriteria">AWS
+   * <p>The search criteria to be used to return hours of operations.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/HoursOfOperationSearchCriteria">AWS
    * API Reference</a></p>
    */
-  class RoutingProfileSearchCriteria
+  class HoursOfOperationSearchCriteria
   {
   public:
-    AWS_CONNECT_API RoutingProfileSearchCriteria();
-    AWS_CONNECT_API RoutingProfileSearchCriteria(Aws::Utils::Json::JsonView jsonValue);
-    AWS_CONNECT_API RoutingProfileSearchCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API HoursOfOperationSearchCriteria();
+    AWS_CONNECT_API HoursOfOperationSearchCriteria(Aws::Utils::Json::JsonView jsonValue);
+    AWS_CONNECT_API HoursOfOperationSearchCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -46,7 +43,7 @@ namespace Model
      * <p>A list of conditions which would be applied together with an OR
      * condition.</p>
      */
-    inline const Aws::Vector<RoutingProfileSearchCriteria>& GetOrConditions() const{ return m_orConditions; }
+    inline const Aws::Vector<HoursOfOperationSearchCriteria>& GetOrConditions() const{ return m_orConditions; }
 
     /**
      * <p>A list of conditions which would be applied together with an OR
@@ -58,44 +55,44 @@ namespace Model
      * <p>A list of conditions which would be applied together with an OR
      * condition.</p>
      */
-    inline void SetOrConditions(const Aws::Vector<RoutingProfileSearchCriteria>& value) { m_orConditionsHasBeenSet = true; m_orConditions = value; }
+    inline void SetOrConditions(const Aws::Vector<HoursOfOperationSearchCriteria>& value) { m_orConditionsHasBeenSet = true; m_orConditions = value; }
 
     /**
      * <p>A list of conditions which would be applied together with an OR
      * condition.</p>
      */
-    inline void SetOrConditions(Aws::Vector<RoutingProfileSearchCriteria>&& value) { m_orConditionsHasBeenSet = true; m_orConditions = std::move(value); }
+    inline void SetOrConditions(Aws::Vector<HoursOfOperationSearchCriteria>&& value) { m_orConditionsHasBeenSet = true; m_orConditions = std::move(value); }
 
     /**
      * <p>A list of conditions which would be applied together with an OR
      * condition.</p>
      */
-    inline RoutingProfileSearchCriteria& WithOrConditions(const Aws::Vector<RoutingProfileSearchCriteria>& value) { SetOrConditions(value); return *this;}
+    inline HoursOfOperationSearchCriteria& WithOrConditions(const Aws::Vector<HoursOfOperationSearchCriteria>& value) { SetOrConditions(value); return *this;}
 
     /**
      * <p>A list of conditions which would be applied together with an OR
      * condition.</p>
      */
-    inline RoutingProfileSearchCriteria& WithOrConditions(Aws::Vector<RoutingProfileSearchCriteria>&& value) { SetOrConditions(std::move(value)); return *this;}
+    inline HoursOfOperationSearchCriteria& WithOrConditions(Aws::Vector<HoursOfOperationSearchCriteria>&& value) { SetOrConditions(std::move(value)); return *this;}
 
     /**
      * <p>A list of conditions which would be applied together with an OR
      * condition.</p>
      */
-    inline RoutingProfileSearchCriteria& AddOrConditions(const RoutingProfileSearchCriteria& value) { m_orConditionsHasBeenSet = true; m_orConditions.push_back(value); return *this; }
+    inline HoursOfOperationSearchCriteria& AddOrConditions(const HoursOfOperationSearchCriteria& value) { m_orConditionsHasBeenSet = true; m_orConditions.push_back(value); return *this; }
 
     /**
      * <p>A list of conditions which would be applied together with an OR
      * condition.</p>
      */
-    inline RoutingProfileSearchCriteria& AddOrConditions(RoutingProfileSearchCriteria&& value) { m_orConditionsHasBeenSet = true; m_orConditions.push_back(std::move(value)); return *this; }
+    inline HoursOfOperationSearchCriteria& AddOrConditions(HoursOfOperationSearchCriteria&& value) { m_orConditionsHasBeenSet = true; m_orConditions.push_back(std::move(value)); return *this; }
 
 
     /**
      * <p>A list of conditions which would be applied together with an AND
      * condition.</p>
      */
-    inline const Aws::Vector<RoutingProfileSearchCriteria>& GetAndConditions() const{ return m_andConditions; }
+    inline const Aws::Vector<HoursOfOperationSearchCriteria>& GetAndConditions() const{ return m_andConditions; }
 
     /**
      * <p>A list of conditions which would be applied together with an AND
@@ -107,93 +104,93 @@ namespace Model
      * <p>A list of conditions which would be applied together with an AND
      * condition.</p>
      */
-    inline void SetAndConditions(const Aws::Vector<RoutingProfileSearchCriteria>& value) { m_andConditionsHasBeenSet = true; m_andConditions = value; }
+    inline void SetAndConditions(const Aws::Vector<HoursOfOperationSearchCriteria>& value) { m_andConditionsHasBeenSet = true; m_andConditions = value; }
 
     /**
      * <p>A list of conditions which would be applied together with an AND
      * condition.</p>
      */
-    inline void SetAndConditions(Aws::Vector<RoutingProfileSearchCriteria>&& value) { m_andConditionsHasBeenSet = true; m_andConditions = std::move(value); }
+    inline void SetAndConditions(Aws::Vector<HoursOfOperationSearchCriteria>&& value) { m_andConditionsHasBeenSet = true; m_andConditions = std::move(value); }
 
     /**
      * <p>A list of conditions which would be applied together with an AND
      * condition.</p>
      */
-    inline RoutingProfileSearchCriteria& WithAndConditions(const Aws::Vector<RoutingProfileSearchCriteria>& value) { SetAndConditions(value); return *this;}
+    inline HoursOfOperationSearchCriteria& WithAndConditions(const Aws::Vector<HoursOfOperationSearchCriteria>& value) { SetAndConditions(value); return *this;}
 
     /**
      * <p>A list of conditions which would be applied together with an AND
      * condition.</p>
      */
-    inline RoutingProfileSearchCriteria& WithAndConditions(Aws::Vector<RoutingProfileSearchCriteria>&& value) { SetAndConditions(std::move(value)); return *this;}
+    inline HoursOfOperationSearchCriteria& WithAndConditions(Aws::Vector<HoursOfOperationSearchCriteria>&& value) { SetAndConditions(std::move(value)); return *this;}
 
     /**
      * <p>A list of conditions which would be applied together with an AND
      * condition.</p>
      */
-    inline RoutingProfileSearchCriteria& AddAndConditions(const RoutingProfileSearchCriteria& value) { m_andConditionsHasBeenSet = true; m_andConditions.push_back(value); return *this; }
+    inline HoursOfOperationSearchCriteria& AddAndConditions(const HoursOfOperationSearchCriteria& value) { m_andConditionsHasBeenSet = true; m_andConditions.push_back(value); return *this; }
 
     /**
      * <p>A list of conditions which would be applied together with an AND
      * condition.</p>
      */
-    inline RoutingProfileSearchCriteria& AddAndConditions(RoutingProfileSearchCriteria&& value) { m_andConditionsHasBeenSet = true; m_andConditions.push_back(std::move(value)); return *this; }
+    inline HoursOfOperationSearchCriteria& AddAndConditions(HoursOfOperationSearchCriteria&& value) { m_andConditionsHasBeenSet = true; m_andConditions.push_back(std::move(value)); return *this; }
 
 
     /**
      * <p>A leaf node condition which can be used to specify a string condition.</p>
      *  <p>The currently supported values for <code>FieldName</code> are
-     * <code>name</code>, <code>description</code>, and <code>resourceID</code>.</p>
-     * 
+     * <code>name</code>, <code>description</code>, <code>timezone</code>, and
+     * <code>resourceID</code>.</p> 
      */
     inline const StringCondition& GetStringCondition() const{ return m_stringCondition; }
 
     /**
      * <p>A leaf node condition which can be used to specify a string condition.</p>
      *  <p>The currently supported values for <code>FieldName</code> are
-     * <code>name</code>, <code>description</code>, and <code>resourceID</code>.</p>
-     * 
+     * <code>name</code>, <code>description</code>, <code>timezone</code>, and
+     * <code>resourceID</code>.</p> 
      */
     inline bool StringConditionHasBeenSet() const { return m_stringConditionHasBeenSet; }
 
     /**
      * <p>A leaf node condition which can be used to specify a string condition.</p>
      *  <p>The currently supported values for <code>FieldName</code> are
-     * <code>name</code>, <code>description</code>, and <code>resourceID</code>.</p>
-     * 
+     * <code>name</code>, <code>description</code>, <code>timezone</code>, and
+     * <code>resourceID</code>.</p> 
      */
     inline void SetStringCondition(const StringCondition& value) { m_stringConditionHasBeenSet = true; m_stringCondition = value; }
 
     /**
      * <p>A leaf node condition which can be used to specify a string condition.</p>
      *  <p>The currently supported values for <code>FieldName</code> are
-     * <code>name</code>, <code>description</code>, and <code>resourceID</code>.</p>
-     * 
+     * <code>name</code>, <code>description</code>, <code>timezone</code>, and
+     * <code>resourceID</code>.</p> 
      */
     inline void SetStringCondition(StringCondition&& value) { m_stringConditionHasBeenSet = true; m_stringCondition = std::move(value); }
 
     /**
      * <p>A leaf node condition which can be used to specify a string condition.</p>
      *  <p>The currently supported values for <code>FieldName</code> are
-     * <code>name</code>, <code>description</code>, and <code>resourceID</code>.</p>
-     * 
+     * <code>name</code>, <code>description</code>, <code>timezone</code>, and
+     * <code>resourceID</code>.</p> 
      */
-    inline RoutingProfileSearchCriteria& WithStringCondition(const StringCondition& value) { SetStringCondition(value); return *this;}
+    inline HoursOfOperationSearchCriteria& WithStringCondition(const StringCondition& value) { SetStringCondition(value); return *this;}
 
     /**
      * <p>A leaf node condition which can be used to specify a string condition.</p>
      *  <p>The currently supported values for <code>FieldName</code> are
-     * <code>name</code>, <code>description</code>, and <code>resourceID</code>.</p>
-     * 
+     * <code>name</code>, <code>description</code>, <code>timezone</code>, and
+     * <code>resourceID</code>.</p> 
      */
-    inline RoutingProfileSearchCriteria& WithStringCondition(StringCondition&& value) { SetStringCondition(std::move(value)); return *this;}
+    inline HoursOfOperationSearchCriteria& WithStringCondition(StringCondition&& value) { SetStringCondition(std::move(value)); return *this;}
 
   private:
 
-    Aws::Vector<RoutingProfileSearchCriteria> m_orConditions;
+    Aws::Vector<HoursOfOperationSearchCriteria> m_orConditions;
     bool m_orConditionsHasBeenSet = false;
 
-    Aws::Vector<RoutingProfileSearchCriteria> m_andConditions;
+    Aws::Vector<HoursOfOperationSearchCriteria> m_andConditions;
     bool m_andConditionsHasBeenSet = false;
 
     StringCondition m_stringCondition;
