@@ -292,7 +292,7 @@ namespace Model
      * issued. </p> <p>This parameter should not be confused with the
      * <code>SigningAlgorithm</code> parameter used to sign a CSR in the
      * <code>CreateCertificateAuthority</code> action.</p>  <p>The specified
-     * signing algorithm family (RSA or ECDSA) much match the algorithm family of the
+     * signing algorithm family (RSA or ECDSA) must match the algorithm family of the
      * CA's secret key.</p> 
      */
     inline const SigningAlgorithm& GetSigningAlgorithm() const{ return m_signingAlgorithm; }
@@ -302,7 +302,7 @@ namespace Model
      * issued. </p> <p>This parameter should not be confused with the
      * <code>SigningAlgorithm</code> parameter used to sign a CSR in the
      * <code>CreateCertificateAuthority</code> action.</p>  <p>The specified
-     * signing algorithm family (RSA or ECDSA) much match the algorithm family of the
+     * signing algorithm family (RSA or ECDSA) must match the algorithm family of the
      * CA's secret key.</p> 
      */
     inline bool SigningAlgorithmHasBeenSet() const { return m_signingAlgorithmHasBeenSet; }
@@ -312,7 +312,7 @@ namespace Model
      * issued. </p> <p>This parameter should not be confused with the
      * <code>SigningAlgorithm</code> parameter used to sign a CSR in the
      * <code>CreateCertificateAuthority</code> action.</p>  <p>The specified
-     * signing algorithm family (RSA or ECDSA) much match the algorithm family of the
+     * signing algorithm family (RSA or ECDSA) must match the algorithm family of the
      * CA's secret key.</p> 
      */
     inline void SetSigningAlgorithm(const SigningAlgorithm& value) { m_signingAlgorithmHasBeenSet = true; m_signingAlgorithm = value; }
@@ -322,7 +322,7 @@ namespace Model
      * issued. </p> <p>This parameter should not be confused with the
      * <code>SigningAlgorithm</code> parameter used to sign a CSR in the
      * <code>CreateCertificateAuthority</code> action.</p>  <p>The specified
-     * signing algorithm family (RSA or ECDSA) much match the algorithm family of the
+     * signing algorithm family (RSA or ECDSA) must match the algorithm family of the
      * CA's secret key.</p> 
      */
     inline void SetSigningAlgorithm(SigningAlgorithm&& value) { m_signingAlgorithmHasBeenSet = true; m_signingAlgorithm = std::move(value); }
@@ -332,7 +332,7 @@ namespace Model
      * issued. </p> <p>This parameter should not be confused with the
      * <code>SigningAlgorithm</code> parameter used to sign a CSR in the
      * <code>CreateCertificateAuthority</code> action.</p>  <p>The specified
-     * signing algorithm family (RSA or ECDSA) much match the algorithm family of the
+     * signing algorithm family (RSA or ECDSA) must match the algorithm family of the
      * CA's secret key.</p> 
      */
     inline IssueCertificateRequest& WithSigningAlgorithm(const SigningAlgorithm& value) { SetSigningAlgorithm(value); return *this;}
@@ -342,7 +342,7 @@ namespace Model
      * issued. </p> <p>This parameter should not be confused with the
      * <code>SigningAlgorithm</code> parameter used to sign a CSR in the
      * <code>CreateCertificateAuthority</code> action.</p>  <p>The specified
-     * signing algorithm family (RSA or ECDSA) much match the algorithm family of the
+     * signing algorithm family (RSA or ECDSA) must match the algorithm family of the
      * CA's secret key.</p> 
      */
     inline IssueCertificateRequest& WithSigningAlgorithm(SigningAlgorithm&& value) { SetSigningAlgorithm(std::move(value)); return *this;}
@@ -598,7 +598,7 @@ namespace Model
      * <code>ValidityNotBefore</code> value is expressed as an explicit date and time,
      * using the <code>Validity</code> type value <code>ABSOLUTE</code>. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_Validity.html">Validity</a>
+     * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_Validity.html">Validity</a>
      * in this API reference and <a
      * href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.5">Validity</a>
      * in RFC 5280.</p>
@@ -617,7 +617,7 @@ namespace Model
      * <code>ValidityNotBefore</code> value is expressed as an explicit date and time,
      * using the <code>Validity</code> type value <code>ABSOLUTE</code>. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_Validity.html">Validity</a>
+     * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_Validity.html">Validity</a>
      * in this API reference and <a
      * href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.5">Validity</a>
      * in RFC 5280.</p>
@@ -636,7 +636,7 @@ namespace Model
      * <code>ValidityNotBefore</code> value is expressed as an explicit date and time,
      * using the <code>Validity</code> type value <code>ABSOLUTE</code>. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_Validity.html">Validity</a>
+     * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_Validity.html">Validity</a>
      * in this API reference and <a
      * href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.5">Validity</a>
      * in RFC 5280.</p>
@@ -655,7 +655,7 @@ namespace Model
      * <code>ValidityNotBefore</code> value is expressed as an explicit date and time,
      * using the <code>Validity</code> type value <code>ABSOLUTE</code>. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_Validity.html">Validity</a>
+     * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_Validity.html">Validity</a>
      * in this API reference and <a
      * href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.5">Validity</a>
      * in RFC 5280.</p>
@@ -674,7 +674,7 @@ namespace Model
      * <code>ValidityNotBefore</code> value is expressed as an explicit date and time,
      * using the <code>Validity</code> type value <code>ABSOLUTE</code>. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_Validity.html">Validity</a>
+     * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_Validity.html">Validity</a>
      * in this API reference and <a
      * href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.5">Validity</a>
      * in RFC 5280.</p>
@@ -693,7 +693,7 @@ namespace Model
      * <code>ValidityNotBefore</code> value is expressed as an explicit date and time,
      * using the <code>Validity</code> type value <code>ABSOLUTE</code>. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_Validity.html">Validity</a>
+     * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_Validity.html">Validity</a>
      * in this API reference and <a
      * href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.5">Validity</a>
      * in RFC 5280.</p>

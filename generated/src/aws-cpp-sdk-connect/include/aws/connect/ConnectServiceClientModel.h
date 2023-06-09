@@ -121,7 +121,10 @@
 #include <aws/connect/model/ReplicateInstanceResult.h>
 #include <aws/connect/model/ResumeContactRecordingResult.h>
 #include <aws/connect/model/SearchAvailablePhoneNumbersResult.h>
+#include <aws/connect/model/SearchHoursOfOperationsResult.h>
+#include <aws/connect/model/SearchPromptsResult.h>
 #include <aws/connect/model/SearchQueuesResult.h>
+#include <aws/connect/model/SearchQuickConnectsResult.h>
 #include <aws/connect/model/SearchRoutingProfilesResult.h>
 #include <aws/connect/model/SearchSecurityProfilesResult.h>
 #include <aws/connect/model/SearchUsersResult.h>
@@ -326,7 +329,10 @@ namespace Aws
       class ReplicateInstanceRequest;
       class ResumeContactRecordingRequest;
       class SearchAvailablePhoneNumbersRequest;
+      class SearchHoursOfOperationsRequest;
+      class SearchPromptsRequest;
       class SearchQueuesRequest;
+      class SearchQuickConnectsRequest;
       class SearchRoutingProfilesRequest;
       class SearchSecurityProfilesRequest;
       class SearchUsersRequest;
@@ -519,7 +525,10 @@ namespace Aws
       typedef Aws::Utils::Outcome<ReplicateInstanceResult, ConnectError> ReplicateInstanceOutcome;
       typedef Aws::Utils::Outcome<ResumeContactRecordingResult, ConnectError> ResumeContactRecordingOutcome;
       typedef Aws::Utils::Outcome<SearchAvailablePhoneNumbersResult, ConnectError> SearchAvailablePhoneNumbersOutcome;
+      typedef Aws::Utils::Outcome<SearchHoursOfOperationsResult, ConnectError> SearchHoursOfOperationsOutcome;
+      typedef Aws::Utils::Outcome<SearchPromptsResult, ConnectError> SearchPromptsOutcome;
       typedef Aws::Utils::Outcome<SearchQueuesResult, ConnectError> SearchQueuesOutcome;
+      typedef Aws::Utils::Outcome<SearchQuickConnectsResult, ConnectError> SearchQuickConnectsOutcome;
       typedef Aws::Utils::Outcome<SearchRoutingProfilesResult, ConnectError> SearchRoutingProfilesOutcome;
       typedef Aws::Utils::Outcome<SearchSecurityProfilesResult, ConnectError> SearchSecurityProfilesOutcome;
       typedef Aws::Utils::Outcome<SearchUsersResult, ConnectError> SearchUsersOutcome;
@@ -712,7 +721,10 @@ namespace Aws
       typedef std::future<ReplicateInstanceOutcome> ReplicateInstanceOutcomeCallable;
       typedef std::future<ResumeContactRecordingOutcome> ResumeContactRecordingOutcomeCallable;
       typedef std::future<SearchAvailablePhoneNumbersOutcome> SearchAvailablePhoneNumbersOutcomeCallable;
+      typedef std::future<SearchHoursOfOperationsOutcome> SearchHoursOfOperationsOutcomeCallable;
+      typedef std::future<SearchPromptsOutcome> SearchPromptsOutcomeCallable;
       typedef std::future<SearchQueuesOutcome> SearchQueuesOutcomeCallable;
+      typedef std::future<SearchQuickConnectsOutcome> SearchQuickConnectsOutcomeCallable;
       typedef std::future<SearchRoutingProfilesOutcome> SearchRoutingProfilesOutcomeCallable;
       typedef std::future<SearchSecurityProfilesOutcome> SearchSecurityProfilesOutcomeCallable;
       typedef std::future<SearchUsersOutcome> SearchUsersOutcomeCallable;
@@ -908,7 +920,10 @@ namespace Aws
     typedef std::function<void(const ConnectClient*, const Model::ReplicateInstanceRequest&, const Model::ReplicateInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReplicateInstanceResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::ResumeContactRecordingRequest&, const Model::ResumeContactRecordingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResumeContactRecordingResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::SearchAvailablePhoneNumbersRequest&, const Model::SearchAvailablePhoneNumbersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchAvailablePhoneNumbersResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::SearchHoursOfOperationsRequest&, const Model::SearchHoursOfOperationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchHoursOfOperationsResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::SearchPromptsRequest&, const Model::SearchPromptsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchPromptsResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::SearchQueuesRequest&, const Model::SearchQueuesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchQueuesResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::SearchQuickConnectsRequest&, const Model::SearchQuickConnectsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchQuickConnectsResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::SearchRoutingProfilesRequest&, const Model::SearchRoutingProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchRoutingProfilesResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::SearchSecurityProfilesRequest&, const Model::SearchSecurityProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchSecurityProfilesResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::SearchUsersRequest&, const Model::SearchUsersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchUsersResponseReceivedHandler;

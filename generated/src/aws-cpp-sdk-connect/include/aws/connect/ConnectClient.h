@@ -3759,6 +3759,58 @@ namespace Connect
         }
 
         /**
+         * <p>Searches the hours of operation in an Amazon Connect instance, with optional
+         * filtering.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchHoursOfOperations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SearchHoursOfOperationsOutcome SearchHoursOfOperations(const Model::SearchHoursOfOperationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for SearchHoursOfOperations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename SearchHoursOfOperationsRequestT = Model::SearchHoursOfOperationsRequest>
+        Model::SearchHoursOfOperationsOutcomeCallable SearchHoursOfOperationsCallable(const SearchHoursOfOperationsRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::SearchHoursOfOperations, request);
+        }
+
+        /**
+         * An Async wrapper for SearchHoursOfOperations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename SearchHoursOfOperationsRequestT = Model::SearchHoursOfOperationsRequest>
+        void SearchHoursOfOperationsAsync(const SearchHoursOfOperationsRequestT& request, const SearchHoursOfOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::SearchHoursOfOperations, request, handler, context);
+        }
+
+        /**
+         * <p>Searches prompts in an Amazon Connect instance, with optional
+         * filtering.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchPrompts">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SearchPromptsOutcome SearchPrompts(const Model::SearchPromptsRequest& request) const;
+
+        /**
+         * A Callable wrapper for SearchPrompts that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename SearchPromptsRequestT = Model::SearchPromptsRequest>
+        Model::SearchPromptsOutcomeCallable SearchPromptsCallable(const SearchPromptsRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::SearchPrompts, request);
+        }
+
+        /**
+         * An Async wrapper for SearchPrompts that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename SearchPromptsRequestT = Model::SearchPromptsRequest>
+        void SearchPromptsAsync(const SearchPromptsRequestT& request, const SearchPromptsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::SearchPrompts, request, handler, context);
+        }
+
+        /**
          * <p>This API is in preview release for Amazon Connect and is subject to
          * change.</p> <p>Searches queues in an Amazon Connect instance, with optional
          * filtering.</p><p><h3>See Also:</h3>   <a
@@ -3783,6 +3835,32 @@ namespace Connect
         void SearchQueuesAsync(const SearchQueuesRequestT& request, const SearchQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ConnectClient::SearchQueues, request, handler, context);
+        }
+
+        /**
+         * <p>Searches quick connects in an Amazon Connect instance, with optional
+         * filtering.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchQuickConnects">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SearchQuickConnectsOutcome SearchQuickConnects(const Model::SearchQuickConnectsRequest& request) const;
+
+        /**
+         * A Callable wrapper for SearchQuickConnects that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename SearchQuickConnectsRequestT = Model::SearchQuickConnectsRequest>
+        Model::SearchQuickConnectsOutcomeCallable SearchQuickConnectsCallable(const SearchQuickConnectsRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::SearchQuickConnects, request);
+        }
+
+        /**
+         * An Async wrapper for SearchQuickConnects that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename SearchQuickConnectsRequestT = Model::SearchQuickConnectsRequest>
+        void SearchQuickConnectsAsync(const SearchQuickConnectsRequestT& request, const SearchQuickConnectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::SearchQuickConnects, request, handler, context);
         }
 
         /**
