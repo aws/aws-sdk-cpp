@@ -21,6 +21,7 @@
 #include <aws/rekognition/RekognitionClient.h>
 #include <aws/rekognition/RekognitionErrorMarshaller.h>
 #include <aws/rekognition/RekognitionEndpointProvider.h>
+#include <aws/rekognition/model/AssociateFacesRequest.h>
 #include <aws/rekognition/model/CompareFacesRequest.h>
 #include <aws/rekognition/model/CopyProjectVersionRequest.h>
 #include <aws/rekognition/model/CreateCollectionRequest.h>
@@ -29,6 +30,7 @@
 #include <aws/rekognition/model/CreateProjectRequest.h>
 #include <aws/rekognition/model/CreateProjectVersionRequest.h>
 #include <aws/rekognition/model/CreateStreamProcessorRequest.h>
+#include <aws/rekognition/model/CreateUserRequest.h>
 #include <aws/rekognition/model/DeleteCollectionRequest.h>
 #include <aws/rekognition/model/DeleteDatasetRequest.h>
 #include <aws/rekognition/model/DeleteFacesRequest.h>
@@ -36,6 +38,7 @@
 #include <aws/rekognition/model/DeleteProjectPolicyRequest.h>
 #include <aws/rekognition/model/DeleteProjectVersionRequest.h>
 #include <aws/rekognition/model/DeleteStreamProcessorRequest.h>
+#include <aws/rekognition/model/DeleteUserRequest.h>
 #include <aws/rekognition/model/DescribeCollectionRequest.h>
 #include <aws/rekognition/model/DescribeDatasetRequest.h>
 #include <aws/rekognition/model/DescribeProjectVersionsRequest.h>
@@ -47,6 +50,7 @@
 #include <aws/rekognition/model/DetectModerationLabelsRequest.h>
 #include <aws/rekognition/model/DetectProtectiveEquipmentRequest.h>
 #include <aws/rekognition/model/DetectTextRequest.h>
+#include <aws/rekognition/model/DisassociateFacesRequest.h>
 #include <aws/rekognition/model/DistributeDatasetEntriesRequest.h>
 #include <aws/rekognition/model/GetCelebrityInfoRequest.h>
 #include <aws/rekognition/model/GetCelebrityRecognitionRequest.h>
@@ -66,10 +70,13 @@
 #include <aws/rekognition/model/ListProjectPoliciesRequest.h>
 #include <aws/rekognition/model/ListStreamProcessorsRequest.h>
 #include <aws/rekognition/model/ListTagsForResourceRequest.h>
+#include <aws/rekognition/model/ListUsersRequest.h>
 #include <aws/rekognition/model/PutProjectPolicyRequest.h>
 #include <aws/rekognition/model/RecognizeCelebritiesRequest.h>
 #include <aws/rekognition/model/SearchFacesRequest.h>
 #include <aws/rekognition/model/SearchFacesByImageRequest.h>
+#include <aws/rekognition/model/SearchUsersRequest.h>
+#include <aws/rekognition/model/SearchUsersByImageRequest.h>
 #include <aws/rekognition/model/StartCelebrityRecognitionRequest.h>
 #include <aws/rekognition/model/StartContentModerationRequest.h>
 #include <aws/rekognition/model/StartFaceDetectionRequest.h>
@@ -215,6 +222,15 @@ void RekognitionClient::OverrideEndpoint(const Aws::String& endpoint)
   m_endpointProvider->OverrideEndpoint(endpoint);
 }
 
+AssociateFacesOutcome RekognitionClient::AssociateFaces(const AssociateFacesRequest& request) const
+{
+  AWS_OPERATION_GUARD(AssociateFaces);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateFaces, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AssociateFaces, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return AssociateFacesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
 CompareFacesOutcome RekognitionClient::CompareFaces(const CompareFacesRequest& request) const
 {
   AWS_OPERATION_GUARD(CompareFaces);
@@ -287,6 +303,15 @@ CreateStreamProcessorOutcome RekognitionClient::CreateStreamProcessor(const Crea
   return CreateStreamProcessorOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
+CreateUserOutcome RekognitionClient::CreateUser(const CreateUserRequest& request) const
+{
+  AWS_OPERATION_GUARD(CreateUser);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateUserOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
 DeleteCollectionOutcome RekognitionClient::DeleteCollection(const DeleteCollectionRequest& request) const
 {
   AWS_OPERATION_GUARD(DeleteCollection);
@@ -348,6 +373,15 @@ DeleteStreamProcessorOutcome RekognitionClient::DeleteStreamProcessor(const Dele
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteStreamProcessor, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   return DeleteStreamProcessorOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteUserOutcome RekognitionClient::DeleteUser(const DeleteUserRequest& request) const
+{
+  AWS_OPERATION_GUARD(DeleteUser);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteUserOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeCollectionOutcome RekognitionClient::DescribeCollection(const DescribeCollectionRequest& request) const
@@ -447,6 +481,15 @@ DetectTextOutcome RekognitionClient::DetectText(const DetectTextRequest& request
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DetectText, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   return DetectTextOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DisassociateFacesOutcome RekognitionClient::DisassociateFaces(const DisassociateFacesRequest& request) const
+{
+  AWS_OPERATION_GUARD(DisassociateFaces);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateFaces, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DisassociateFaces, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DisassociateFacesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DistributeDatasetEntriesOutcome RekognitionClient::DistributeDatasetEntries(const DistributeDatasetEntriesRequest& request) const
@@ -620,6 +663,15 @@ ListTagsForResourceOutcome RekognitionClient::ListTagsForResource(const ListTags
   return ListTagsForResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
+ListUsersOutcome RekognitionClient::ListUsers(const ListUsersRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListUsers);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListUsers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListUsers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListUsersOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
 PutProjectPolicyOutcome RekognitionClient::PutProjectPolicy(const PutProjectPolicyRequest& request) const
 {
   AWS_OPERATION_GUARD(PutProjectPolicy);
@@ -654,6 +706,24 @@ SearchFacesByImageOutcome RekognitionClient::SearchFacesByImage(const SearchFace
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SearchFacesByImage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   return SearchFacesByImageOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+SearchUsersOutcome RekognitionClient::SearchUsers(const SearchUsersRequest& request) const
+{
+  AWS_OPERATION_GUARD(SearchUsers);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, SearchUsers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SearchUsers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return SearchUsersOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+SearchUsersByImageOutcome RekognitionClient::SearchUsersByImage(const SearchUsersByImageRequest& request) const
+{
+  AWS_OPERATION_GUARD(SearchUsersByImage);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, SearchUsersByImage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SearchUsersByImage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return SearchUsersByImageOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StartCelebrityRecognitionOutcome RekognitionClient::StartCelebrityRecognition(const StartCelebrityRecognitionRequest& request) const

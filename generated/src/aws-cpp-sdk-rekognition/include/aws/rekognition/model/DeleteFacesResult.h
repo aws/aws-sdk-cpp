@@ -7,6 +7,7 @@
 #include <aws/rekognition/Rekognition_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/rekognition/model/UnsuccessfulFaceDeletion.h>
 #include <utility>
 
 namespace Aws
@@ -74,6 +75,42 @@ namespace Model
     inline DeleteFacesResult& AddDeletedFaces(const char* value) { m_deletedFaces.push_back(value); return *this; }
 
 
+    /**
+     * <p>An array of any faces that weren't deleted.</p>
+     */
+    inline const Aws::Vector<UnsuccessfulFaceDeletion>& GetUnsuccessfulFaceDeletions() const{ return m_unsuccessfulFaceDeletions; }
+
+    /**
+     * <p>An array of any faces that weren't deleted.</p>
+     */
+    inline void SetUnsuccessfulFaceDeletions(const Aws::Vector<UnsuccessfulFaceDeletion>& value) { m_unsuccessfulFaceDeletions = value; }
+
+    /**
+     * <p>An array of any faces that weren't deleted.</p>
+     */
+    inline void SetUnsuccessfulFaceDeletions(Aws::Vector<UnsuccessfulFaceDeletion>&& value) { m_unsuccessfulFaceDeletions = std::move(value); }
+
+    /**
+     * <p>An array of any faces that weren't deleted.</p>
+     */
+    inline DeleteFacesResult& WithUnsuccessfulFaceDeletions(const Aws::Vector<UnsuccessfulFaceDeletion>& value) { SetUnsuccessfulFaceDeletions(value); return *this;}
+
+    /**
+     * <p>An array of any faces that weren't deleted.</p>
+     */
+    inline DeleteFacesResult& WithUnsuccessfulFaceDeletions(Aws::Vector<UnsuccessfulFaceDeletion>&& value) { SetUnsuccessfulFaceDeletions(std::move(value)); return *this;}
+
+    /**
+     * <p>An array of any faces that weren't deleted.</p>
+     */
+    inline DeleteFacesResult& AddUnsuccessfulFaceDeletions(const UnsuccessfulFaceDeletion& value) { m_unsuccessfulFaceDeletions.push_back(value); return *this; }
+
+    /**
+     * <p>An array of any faces that weren't deleted.</p>
+     */
+    inline DeleteFacesResult& AddUnsuccessfulFaceDeletions(UnsuccessfulFaceDeletion&& value) { m_unsuccessfulFaceDeletions.push_back(std::move(value)); return *this; }
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -98,6 +135,8 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_deletedFaces;
+
+    Aws::Vector<UnsuccessfulFaceDeletion> m_unsuccessfulFaceDeletions;
 
     Aws::String m_requestId;
   };

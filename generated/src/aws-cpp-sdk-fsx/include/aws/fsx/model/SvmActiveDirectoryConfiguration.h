@@ -25,10 +25,10 @@ namespace Model
 {
 
   /**
-   * <p>Describes the configuration of the Microsoft Active Directory (AD) directory
-   * to which the Amazon FSx for ONTAP storage virtual machine (SVM) is joined. Pleae
-   * note, account credentials are not returned in the response
-   * payload.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes the Microsoft Active Directory (AD) directory configuration to
+   * which the FSx for ONTAP storage virtual machine (SVM) is joined. Note that
+   * account credentials are not returned in the response payload.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/SvmActiveDirectoryConfiguration">AWS
    * API Reference</a></p>
    */
@@ -42,50 +42,42 @@ namespace Model
 
 
     /**
-     * <p>The NetBIOS name of the Active Directory computer object that is joined to
-     * your SVM.</p>
+     * <p>The NetBIOS name of the AD computer object to which the SVM is joined.</p>
      */
     inline const Aws::String& GetNetBiosName() const{ return m_netBiosName; }
 
     /**
-     * <p>The NetBIOS name of the Active Directory computer object that is joined to
-     * your SVM.</p>
+     * <p>The NetBIOS name of the AD computer object to which the SVM is joined.</p>
      */
     inline bool NetBiosNameHasBeenSet() const { return m_netBiosNameHasBeenSet; }
 
     /**
-     * <p>The NetBIOS name of the Active Directory computer object that is joined to
-     * your SVM.</p>
+     * <p>The NetBIOS name of the AD computer object to which the SVM is joined.</p>
      */
     inline void SetNetBiosName(const Aws::String& value) { m_netBiosNameHasBeenSet = true; m_netBiosName = value; }
 
     /**
-     * <p>The NetBIOS name of the Active Directory computer object that is joined to
-     * your SVM.</p>
+     * <p>The NetBIOS name of the AD computer object to which the SVM is joined.</p>
      */
     inline void SetNetBiosName(Aws::String&& value) { m_netBiosNameHasBeenSet = true; m_netBiosName = std::move(value); }
 
     /**
-     * <p>The NetBIOS name of the Active Directory computer object that is joined to
-     * your SVM.</p>
+     * <p>The NetBIOS name of the AD computer object to which the SVM is joined.</p>
      */
     inline void SetNetBiosName(const char* value) { m_netBiosNameHasBeenSet = true; m_netBiosName.assign(value); }
 
     /**
-     * <p>The NetBIOS name of the Active Directory computer object that is joined to
-     * your SVM.</p>
+     * <p>The NetBIOS name of the AD computer object to which the SVM is joined.</p>
      */
     inline SvmActiveDirectoryConfiguration& WithNetBiosName(const Aws::String& value) { SetNetBiosName(value); return *this;}
 
     /**
-     * <p>The NetBIOS name of the Active Directory computer object that is joined to
-     * your SVM.</p>
+     * <p>The NetBIOS name of the AD computer object to which the SVM is joined.</p>
      */
     inline SvmActiveDirectoryConfiguration& WithNetBiosName(Aws::String&& value) { SetNetBiosName(std::move(value)); return *this;}
 
     /**
-     * <p>The NetBIOS name of the Active Directory computer object that is joined to
-     * your SVM.</p>
+     * <p>The NetBIOS name of the AD computer object to which the SVM is joined.</p>
      */
     inline SvmActiveDirectoryConfiguration& WithNetBiosName(const char* value) { SetNetBiosName(value); return *this;}
 

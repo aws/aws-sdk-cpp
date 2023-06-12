@@ -25,6 +25,8 @@ namespace Model
     ml_p3,
     ml_g4dn,
     ml_inf1,
+    ml_inf2,
+    ml_trn1,
     ml_eia2,
     jetson_tx1,
     jetson_tx2,

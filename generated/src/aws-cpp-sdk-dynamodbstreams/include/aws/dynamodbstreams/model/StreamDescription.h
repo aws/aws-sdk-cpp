@@ -90,9 +90,9 @@ namespace Model
      * <code>LatestStreamLabel</code> is not a unique identifier for the stream,
      * because it is possible that a stream from another table might have the same
      * timestamp. However, the combination of the following three elements is
-     * guaranteed to be unique:</p> <ul> <li> <p>the AWS customer ID.</p> </li> <li>
-     * <p>the table name</p> </li> <li> <p>the <code>StreamLabel</code> </p> </li>
-     * </ul>
+     * guaranteed to be unique:</p> <ul> <li> <p>the Amazon Web Services customer
+     * ID.</p> </li> <li> <p>the table name</p> </li> <li> <p>the
+     * <code>StreamLabel</code> </p> </li> </ul>
      */
     inline const Aws::String& GetStreamLabel() const{ return m_streamLabel; }
 
@@ -101,9 +101,9 @@ namespace Model
      * <code>LatestStreamLabel</code> is not a unique identifier for the stream,
      * because it is possible that a stream from another table might have the same
      * timestamp. However, the combination of the following three elements is
-     * guaranteed to be unique:</p> <ul> <li> <p>the AWS customer ID.</p> </li> <li>
-     * <p>the table name</p> </li> <li> <p>the <code>StreamLabel</code> </p> </li>
-     * </ul>
+     * guaranteed to be unique:</p> <ul> <li> <p>the Amazon Web Services customer
+     * ID.</p> </li> <li> <p>the table name</p> </li> <li> <p>the
+     * <code>StreamLabel</code> </p> </li> </ul>
      */
     inline bool StreamLabelHasBeenSet() const { return m_streamLabelHasBeenSet; }
 
@@ -112,9 +112,9 @@ namespace Model
      * <code>LatestStreamLabel</code> is not a unique identifier for the stream,
      * because it is possible that a stream from another table might have the same
      * timestamp. However, the combination of the following three elements is
-     * guaranteed to be unique:</p> <ul> <li> <p>the AWS customer ID.</p> </li> <li>
-     * <p>the table name</p> </li> <li> <p>the <code>StreamLabel</code> </p> </li>
-     * </ul>
+     * guaranteed to be unique:</p> <ul> <li> <p>the Amazon Web Services customer
+     * ID.</p> </li> <li> <p>the table name</p> </li> <li> <p>the
+     * <code>StreamLabel</code> </p> </li> </ul>
      */
     inline void SetStreamLabel(const Aws::String& value) { m_streamLabelHasBeenSet = true; m_streamLabel = value; }
 
@@ -123,9 +123,9 @@ namespace Model
      * <code>LatestStreamLabel</code> is not a unique identifier for the stream,
      * because it is possible that a stream from another table might have the same
      * timestamp. However, the combination of the following three elements is
-     * guaranteed to be unique:</p> <ul> <li> <p>the AWS customer ID.</p> </li> <li>
-     * <p>the table name</p> </li> <li> <p>the <code>StreamLabel</code> </p> </li>
-     * </ul>
+     * guaranteed to be unique:</p> <ul> <li> <p>the Amazon Web Services customer
+     * ID.</p> </li> <li> <p>the table name</p> </li> <li> <p>the
+     * <code>StreamLabel</code> </p> </li> </ul>
      */
     inline void SetStreamLabel(Aws::String&& value) { m_streamLabelHasBeenSet = true; m_streamLabel = std::move(value); }
 
@@ -134,9 +134,9 @@ namespace Model
      * <code>LatestStreamLabel</code> is not a unique identifier for the stream,
      * because it is possible that a stream from another table might have the same
      * timestamp. However, the combination of the following three elements is
-     * guaranteed to be unique:</p> <ul> <li> <p>the AWS customer ID.</p> </li> <li>
-     * <p>the table name</p> </li> <li> <p>the <code>StreamLabel</code> </p> </li>
-     * </ul>
+     * guaranteed to be unique:</p> <ul> <li> <p>the Amazon Web Services customer
+     * ID.</p> </li> <li> <p>the table name</p> </li> <li> <p>the
+     * <code>StreamLabel</code> </p> </li> </ul>
      */
     inline void SetStreamLabel(const char* value) { m_streamLabelHasBeenSet = true; m_streamLabel.assign(value); }
 
@@ -145,9 +145,9 @@ namespace Model
      * <code>LatestStreamLabel</code> is not a unique identifier for the stream,
      * because it is possible that a stream from another table might have the same
      * timestamp. However, the combination of the following three elements is
-     * guaranteed to be unique:</p> <ul> <li> <p>the AWS customer ID.</p> </li> <li>
-     * <p>the table name</p> </li> <li> <p>the <code>StreamLabel</code> </p> </li>
-     * </ul>
+     * guaranteed to be unique:</p> <ul> <li> <p>the Amazon Web Services customer
+     * ID.</p> </li> <li> <p>the table name</p> </li> <li> <p>the
+     * <code>StreamLabel</code> </p> </li> </ul>
      */
     inline StreamDescription& WithStreamLabel(const Aws::String& value) { SetStreamLabel(value); return *this;}
 
@@ -156,9 +156,9 @@ namespace Model
      * <code>LatestStreamLabel</code> is not a unique identifier for the stream,
      * because it is possible that a stream from another table might have the same
      * timestamp. However, the combination of the following three elements is
-     * guaranteed to be unique:</p> <ul> <li> <p>the AWS customer ID.</p> </li> <li>
-     * <p>the table name</p> </li> <li> <p>the <code>StreamLabel</code> </p> </li>
-     * </ul>
+     * guaranteed to be unique:</p> <ul> <li> <p>the Amazon Web Services customer
+     * ID.</p> </li> <li> <p>the table name</p> </li> <li> <p>the
+     * <code>StreamLabel</code> </p> </li> </ul>
      */
     inline StreamDescription& WithStreamLabel(Aws::String&& value) { SetStreamLabel(std::move(value)); return *this;}
 
@@ -167,9 +167,9 @@ namespace Model
      * <code>LatestStreamLabel</code> is not a unique identifier for the stream,
      * because it is possible that a stream from another table might have the same
      * timestamp. However, the combination of the following three elements is
-     * guaranteed to be unique:</p> <ul> <li> <p>the AWS customer ID.</p> </li> <li>
-     * <p>the table name</p> </li> <li> <p>the <code>StreamLabel</code> </p> </li>
-     * </ul>
+     * guaranteed to be unique:</p> <ul> <li> <p>the Amazon Web Services customer
+     * ID.</p> </li> <li> <p>the table name</p> </li> <li> <p>the
+     * <code>StreamLabel</code> </p> </li> </ul>
      */
     inline StreamDescription& WithStreamLabel(const char* value) { SetStreamLabel(value); return *this;}
 

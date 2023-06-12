@@ -445,6 +445,55 @@ namespace Model
     
     inline OntapFileSystemConfiguration& WithWeeklyMaintenanceStartTime(const char* value) { SetWeeklyMaintenanceStartTime(value); return *this;}
 
+
+    /**
+     * <p>You can use the <code>fsxadmin</code> user account to access the NetApp ONTAP
+     * CLI and REST API. The password value is always redacted in the response.</p>
+     */
+    inline const Aws::String& GetFsxAdminPassword() const{ return m_fsxAdminPassword; }
+
+    /**
+     * <p>You can use the <code>fsxadmin</code> user account to access the NetApp ONTAP
+     * CLI and REST API. The password value is always redacted in the response.</p>
+     */
+    inline bool FsxAdminPasswordHasBeenSet() const { return m_fsxAdminPasswordHasBeenSet; }
+
+    /**
+     * <p>You can use the <code>fsxadmin</code> user account to access the NetApp ONTAP
+     * CLI and REST API. The password value is always redacted in the response.</p>
+     */
+    inline void SetFsxAdminPassword(const Aws::String& value) { m_fsxAdminPasswordHasBeenSet = true; m_fsxAdminPassword = value; }
+
+    /**
+     * <p>You can use the <code>fsxadmin</code> user account to access the NetApp ONTAP
+     * CLI and REST API. The password value is always redacted in the response.</p>
+     */
+    inline void SetFsxAdminPassword(Aws::String&& value) { m_fsxAdminPasswordHasBeenSet = true; m_fsxAdminPassword = std::move(value); }
+
+    /**
+     * <p>You can use the <code>fsxadmin</code> user account to access the NetApp ONTAP
+     * CLI and REST API. The password value is always redacted in the response.</p>
+     */
+    inline void SetFsxAdminPassword(const char* value) { m_fsxAdminPasswordHasBeenSet = true; m_fsxAdminPassword.assign(value); }
+
+    /**
+     * <p>You can use the <code>fsxadmin</code> user account to access the NetApp ONTAP
+     * CLI and REST API. The password value is always redacted in the response.</p>
+     */
+    inline OntapFileSystemConfiguration& WithFsxAdminPassword(const Aws::String& value) { SetFsxAdminPassword(value); return *this;}
+
+    /**
+     * <p>You can use the <code>fsxadmin</code> user account to access the NetApp ONTAP
+     * CLI and REST API. The password value is always redacted in the response.</p>
+     */
+    inline OntapFileSystemConfiguration& WithFsxAdminPassword(Aws::String&& value) { SetFsxAdminPassword(std::move(value)); return *this;}
+
+    /**
+     * <p>You can use the <code>fsxadmin</code> user account to access the NetApp ONTAP
+     * CLI and REST API. The password value is always redacted in the response.</p>
+     */
+    inline OntapFileSystemConfiguration& WithFsxAdminPassword(const char* value) { SetFsxAdminPassword(value); return *this;}
+
   private:
 
     int m_automaticBackupRetentionDays;
@@ -476,6 +525,9 @@ namespace Model
 
     Aws::String m_weeklyMaintenanceStartTime;
     bool m_weeklyMaintenanceStartTimeHasBeenSet = false;
+
+    Aws::String m_fsxAdminPassword;
+    bool m_fsxAdminPasswordHasBeenSet = false;
   };
 
 } // namespace Model

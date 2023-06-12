@@ -27,13 +27,19 @@ namespace Rekognition
    * Rekognition Streaming Video</a>. It provides descriptions of actions, data
    * types, common parameters, and common errors.</p> <p> <b>Amazon Rekognition
    * Image</b> </p> <ul> <li> <p> <a
+   * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_AssociateFaces.html">AssociateFaces</a>
+   * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_CompareFaces.html">CompareFaces</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_CreateCollection.html">CreateCollection</a>
    * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_CreateUser.html">CreateUser</a>
+   * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DeleteCollection.html">DeleteCollection</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DeleteFaces.html">DeleteFaces</a>
+   * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DeleteUser.html">DeleteUser</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DescribeCollection.html">DescribeCollection</a>
    * </p> </li> <li> <p> <a
@@ -47,6 +53,8 @@ namespace Rekognition
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DetectText.html">DetectText</a>
    * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DisassociateFaces.html">DisassociateFaces</a>
+   * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_GetCelebrityInfo.html">GetCelebrityInfo</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_IndexFaces.html">IndexFaces</a>
@@ -55,11 +63,17 @@ namespace Rekognition
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_ListFaces.html">ListFaces</a>
    * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_ListFaces.html">ListUsers</a>
+   * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_RecognizeCelebrities.html">RecognizeCelebrities</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_SearchFaces.html">SearchFaces</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_SearchFacesByImage.html">SearchFacesByImage</a>
+   * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_SearchUsers.html">SearchUsers</a>
+   * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_SearchUsersByImage.html">SearchUsersByImage</a>
    * </p> </li> </ul> <p> <b>Amazon Rekognition Custom Labels</b> </p> <ul> <li> <p>
    * <a
    * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_CopyProjectVersion.html">CopyProjectVersion</a>
@@ -208,6 +222,54 @@ namespace Rekognition
 
         /* End of legacy constructors due deprecation */
         virtual ~RekognitionClient();
+
+        /**
+         * <p>Associates one or more faces with an existing UserID. Takes an array of
+         * <code>FaceIds</code>. Each <code>FaceId</code> that are present in the
+         * <code>FaceIds</code> list is associated with the provided UserID. The maximum
+         * number of total <code>FaceIds</code> per UserID is 100. </p> <p>The
+         * <code>UserMatchThreshold</code> parameter specifies the minimum user match
+         * confidence required for the face to be associated with a UserID that has at
+         * least one <code>FaceID</code> already associated. This ensures that the
+         * <code>FaceIds</code> are associated with the right UserID. The value ranges from
+         * 0-100 and default value is 75. </p> <p>If successful, an array of
+         * <code>AssociatedFace</code> objects containing the associated
+         * <code>FaceIds</code> is returned. If a given face is already associated with the
+         * given <code>UserID</code>, it will be ignored and will not be returned in the
+         * response. If a given face is already associated to a different
+         * <code>UserID</code>, isn't found in the collection, doesn’t meet the
+         * <code>UserMatchThreshold</code>, or there are already 100 faces associated with
+         * the <code>UserID</code>, it will be returned as part of an array of
+         * <code>UnsuccessfulFaceAssociations.</code> </p> <p>The <code>UserStatus</code>
+         * reflects the status of an operation which updates a UserID representation with a
+         * list of given faces. The <code>UserStatus</code> can be: </p> <ul> <li>
+         * <p>ACTIVE - All associations or disassociations of FaceID(s) for a UserID are
+         * complete.</p> </li> <li> <p>CREATED - A UserID has been created, but has no
+         * FaceID(s) associated with it.</p> </li> <li> <p>UPDATING - A UserID is being
+         * updated and there are current associations or disassociations of FaceID(s)
+         * taking place.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/AssociateFaces">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateFacesOutcome AssociateFaces(const Model::AssociateFacesRequest& request) const;
+
+        /**
+         * A Callable wrapper for AssociateFaces that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename AssociateFacesRequestT = Model::AssociateFacesRequest>
+        Model::AssociateFacesOutcomeCallable AssociateFacesCallable(const AssociateFacesRequestT& request) const
+        {
+            return SubmitCallable(&RekognitionClient::AssociateFaces, request);
+        }
+
+        /**
+         * An Async wrapper for AssociateFaces that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename AssociateFacesRequestT = Model::AssociateFacesRequest>
+        void AssociateFacesAsync(const AssociateFacesRequestT& request, const AssociateFacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RekognitionClient::AssociateFaces, request, handler, context);
+        }
 
         /**
          * <p>Compares a face in the <i>source</i> input image with each of the 100 largest
@@ -568,6 +630,39 @@ namespace Rekognition
         }
 
         /**
+         * <p>Creates a new User within a collection specified by
+         * <code>CollectionId</code>. Takes <code>UserId</code> as a parameter, which is a
+         * user provided ID which should be unique within the collection. The provided
+         * <code>UserId</code> will alias the system generated UUID to make the
+         * <code>UserId</code> more user friendly. </p> <p>Uses a <code>ClientToken</code>,
+         * an idempotency token that ensures a call to <code>CreateUser</code> completes
+         * only once. If the value is not supplied, the AWS SDK generates an idempotency
+         * token for the requests. This prevents retries after a network error results from
+         * making multiple <code>CreateUser</code> calls. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateUser">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateUserOutcome CreateUser(const Model::CreateUserRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateUser that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateUserRequestT = Model::CreateUserRequest>
+        Model::CreateUserOutcomeCallable CreateUserCallable(const CreateUserRequestT& request) const
+        {
+            return SubmitCallable(&RekognitionClient::CreateUser, request);
+        }
+
+        /**
+         * An Async wrapper for CreateUser that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateUserRequestT = Model::CreateUserRequest>
+        void CreateUserAsync(const CreateUserRequestT& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RekognitionClient::CreateUser, request, handler, context);
+        }
+
+        /**
          * <p>Deletes the specified collection. Note that this operation removes all faces
          * in the collection. For an example, see <a
          * href="https://docs.aws.amazon.com/rekognition/latest/dg/delete-collection-procedure.html">Deleting
@@ -778,6 +873,36 @@ namespace Rekognition
         void DeleteStreamProcessorAsync(const DeleteStreamProcessorRequestT& request, const DeleteStreamProcessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&RekognitionClient::DeleteStreamProcessor, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes the specified UserID within the collection. Faces that are associated
+         * with the UserID are disassociated from the UserID before deleting the specified
+         * UserID. If the specified <code>Collection</code> or <code>UserID</code> is
+         * already deleted or not found, a <code>ResourceNotFoundException</code> will be
+         * thrown. If the action is successful with a 200 response, an empty HTTP body is
+         * returned. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteUser">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteUserOutcome DeleteUser(const Model::DeleteUserRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteUser that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteUserRequestT = Model::DeleteUserRequest>
+        Model::DeleteUserOutcomeCallable DeleteUserCallable(const DeleteUserRequestT& request) const
+        {
+            return SubmitCallable(&RekognitionClient::DeleteUser, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteUser that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteUserRequestT = Model::DeleteUserRequest>
+        void DeleteUserAsync(const DeleteUserRequestT& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RekognitionClient::DeleteUser, request, handler, context);
         }
 
         /**
@@ -1238,6 +1363,39 @@ namespace Rekognition
         void DetectTextAsync(const DetectTextRequestT& request, const DetectTextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&RekognitionClient::DetectText, request, handler, context);
+        }
+
+        /**
+         * <p>Removes the association between a <code>Face</code> supplied in an array of
+         * <code>FaceIds</code> and the User. If the User is not present already, then a
+         * <code>ResourceNotFound</code> exception is thrown. If successful, an array of
+         * faces that are disassociated from the User is returned. If a given face is
+         * already disassociated from the given UserID, it will be ignored and not be
+         * returned in the response. If a given face is already associated with a different
+         * User or not found in the collection it will be returned as part of
+         * <code>UnsuccessfulDisassociations</code>. You can remove 1 - 100 face IDs from a
+         * user at one time.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DisassociateFaces">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateFacesOutcome DisassociateFaces(const Model::DisassociateFacesRequest& request) const;
+
+        /**
+         * A Callable wrapper for DisassociateFaces that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DisassociateFacesRequestT = Model::DisassociateFacesRequest>
+        Model::DisassociateFacesOutcomeCallable DisassociateFacesCallable(const DisassociateFacesRequestT& request) const
+        {
+            return SubmitCallable(&RekognitionClient::DisassociateFaces, request);
+        }
+
+        /**
+         * An Async wrapper for DisassociateFaces that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DisassociateFacesRequestT = Model::DisassociateFacesRequest>
+        void DisassociateFacesAsync(const DisassociateFacesRequestT& request, const DisassociateFacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RekognitionClient::DisassociateFaces, request, handler, context);
         }
 
         /**
@@ -2097,6 +2255,36 @@ namespace Rekognition
         }
 
         /**
+         * <p>Returns metadata of the User such as <code>UserID</code> in the specified
+         * collection. Anonymous User (to reserve faces without any identity) is not
+         * returned as part of this request. The results are sorted by system generated
+         * primary key ID. If the response is truncated, <code>NextToken</code> is returned
+         * in the response that can be used in the subsequent request to retrieve the next
+         * set of identities.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListUsers">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListUsersOutcome ListUsers(const Model::ListUsersRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListUsers that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListUsersRequestT = Model::ListUsersRequest>
+        Model::ListUsersOutcomeCallable ListUsersCallable(const ListUsersRequestT& request) const
+        {
+            return SubmitCallable(&RekognitionClient::ListUsers, request);
+        }
+
+        /**
+         * An Async wrapper for ListUsers that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListUsersRequestT = Model::ListUsersRequest>
+        void ListUsersAsync(const ListUsersRequestT& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RekognitionClient::ListUsers, request, handler, context);
+        }
+
+        /**
          * <p>Attaches a project policy to a Amazon Rekognition Custom Labels project in a
          * trusting AWS account. A project policy specifies that a trusted AWS account can
          * copy a model version from a trusting AWS account to a project in the trusted AWS
@@ -2280,6 +2468,71 @@ namespace Rekognition
         void SearchFacesByImageAsync(const SearchFacesByImageRequestT& request, const SearchFacesByImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&RekognitionClient::SearchFacesByImage, request, handler, context);
+        }
+
+        /**
+         * <p>Searches for UserIDs within a collection based on a <code>FaceId</code> or
+         * <code>UserId</code>. This API can be used to find the closest UserID (with a
+         * highest similarity) to associate a face. The request must be provided with
+         * either <code>FaceId</code> or <code>UserId</code>. The operation returns an
+         * array of UserID that match the <code>FaceId</code> or <code>UserId</code>,
+         * ordered by similarity score with the highest similarity first. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/SearchUsers">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SearchUsersOutcome SearchUsers(const Model::SearchUsersRequest& request) const;
+
+        /**
+         * A Callable wrapper for SearchUsers that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename SearchUsersRequestT = Model::SearchUsersRequest>
+        Model::SearchUsersOutcomeCallable SearchUsersCallable(const SearchUsersRequestT& request) const
+        {
+            return SubmitCallable(&RekognitionClient::SearchUsers, request);
+        }
+
+        /**
+         * An Async wrapper for SearchUsers that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename SearchUsersRequestT = Model::SearchUsersRequest>
+        void SearchUsersAsync(const SearchUsersRequestT& request, const SearchUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RekognitionClient::SearchUsers, request, handler, context);
+        }
+
+        /**
+         * <p>Searches for UserIDs using a supplied image. It first detects the largest
+         * face in the image, and then searches a specified collection for matching
+         * UserIDs. </p> <p>The operation returns an array of UserIDs that match the face
+         * in the supplied image, ordered by similarity score with the highest similarity
+         * first. It also returns a bounding box for the face found in the input image.
+         * </p> <p>Information about faces detected in the supplied image, but not used for
+         * the search, is returned in an array of <code>UnsearchedFace</code> objects. If
+         * no valid face is detected in the image, the response will contain an empty
+         * <code>UserMatches</code> list and no <code>SearchedFace</code> object.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/SearchUsersByImage">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SearchUsersByImageOutcome SearchUsersByImage(const Model::SearchUsersByImageRequest& request) const;
+
+        /**
+         * A Callable wrapper for SearchUsersByImage that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename SearchUsersByImageRequestT = Model::SearchUsersByImageRequest>
+        Model::SearchUsersByImageOutcomeCallable SearchUsersByImageCallable(const SearchUsersByImageRequestT& request) const
+        {
+            return SubmitCallable(&RekognitionClient::SearchUsersByImage, request);
+        }
+
+        /**
+         * An Async wrapper for SearchUsersByImage that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename SearchUsersByImageRequestT = Model::SearchUsersByImageRequest>
+        void SearchUsersByImageAsync(const SearchUsersByImageRequestT& request, const SearchUsersByImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RekognitionClient::SearchUsersByImage, request, handler, context);
         }
 
         /**

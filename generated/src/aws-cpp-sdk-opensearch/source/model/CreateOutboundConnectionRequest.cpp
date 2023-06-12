@@ -17,7 +17,8 @@ CreateOutboundConnectionRequest::CreateOutboundConnectionRequest() :
     m_remoteDomainInfoHasBeenSet(false),
     m_connectionAliasHasBeenSet(false),
     m_connectionMode(ConnectionMode::NOT_SET),
-    m_connectionModeHasBeenSet(false)
+    m_connectionModeHasBeenSet(false),
+    m_connectionPropertiesHasBeenSet(false)
 {
 }
 
@@ -46,6 +47,12 @@ Aws::String CreateOutboundConnectionRequest::SerializePayload() const
   if(m_connectionModeHasBeenSet)
   {
    payload.WithString("ConnectionMode", ConnectionModeMapper::GetNameForConnectionMode(m_connectionMode));
+  }
+
+  if(m_connectionPropertiesHasBeenSet)
+  {
+   payload.WithObject("ConnectionProperties", m_connectionProperties.Jsonize());
+
   }
 
   return payload.View().WriteReadable();

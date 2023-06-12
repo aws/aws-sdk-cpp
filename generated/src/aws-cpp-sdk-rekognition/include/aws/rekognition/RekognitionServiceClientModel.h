@@ -18,6 +18,7 @@
 /* End of generic header includes */
 
 /* Service model headers required in RekognitionClient header */
+#include <aws/rekognition/model/AssociateFacesResult.h>
 #include <aws/rekognition/model/CompareFacesResult.h>
 #include <aws/rekognition/model/CopyProjectVersionResult.h>
 #include <aws/rekognition/model/CreateCollectionResult.h>
@@ -26,6 +27,7 @@
 #include <aws/rekognition/model/CreateProjectResult.h>
 #include <aws/rekognition/model/CreateProjectVersionResult.h>
 #include <aws/rekognition/model/CreateStreamProcessorResult.h>
+#include <aws/rekognition/model/CreateUserResult.h>
 #include <aws/rekognition/model/DeleteCollectionResult.h>
 #include <aws/rekognition/model/DeleteDatasetResult.h>
 #include <aws/rekognition/model/DeleteFacesResult.h>
@@ -33,6 +35,7 @@
 #include <aws/rekognition/model/DeleteProjectPolicyResult.h>
 #include <aws/rekognition/model/DeleteProjectVersionResult.h>
 #include <aws/rekognition/model/DeleteStreamProcessorResult.h>
+#include <aws/rekognition/model/DeleteUserResult.h>
 #include <aws/rekognition/model/DescribeCollectionResult.h>
 #include <aws/rekognition/model/DescribeDatasetResult.h>
 #include <aws/rekognition/model/DescribeProjectVersionsResult.h>
@@ -44,6 +47,7 @@
 #include <aws/rekognition/model/DetectModerationLabelsResult.h>
 #include <aws/rekognition/model/DetectProtectiveEquipmentResult.h>
 #include <aws/rekognition/model/DetectTextResult.h>
+#include <aws/rekognition/model/DisassociateFacesResult.h>
 #include <aws/rekognition/model/DistributeDatasetEntriesResult.h>
 #include <aws/rekognition/model/GetCelebrityInfoResult.h>
 #include <aws/rekognition/model/GetCelebrityRecognitionResult.h>
@@ -63,10 +67,13 @@
 #include <aws/rekognition/model/ListProjectPoliciesResult.h>
 #include <aws/rekognition/model/ListStreamProcessorsResult.h>
 #include <aws/rekognition/model/ListTagsForResourceResult.h>
+#include <aws/rekognition/model/ListUsersResult.h>
 #include <aws/rekognition/model/PutProjectPolicyResult.h>
 #include <aws/rekognition/model/RecognizeCelebritiesResult.h>
 #include <aws/rekognition/model/SearchFacesResult.h>
 #include <aws/rekognition/model/SearchFacesByImageResult.h>
+#include <aws/rekognition/model/SearchUsersResult.h>
+#include <aws/rekognition/model/SearchUsersByImageResult.h>
 #include <aws/rekognition/model/StartCelebrityRecognitionResult.h>
 #include <aws/rekognition/model/StartContentModerationResult.h>
 #include <aws/rekognition/model/StartFaceDetectionResult.h>
@@ -123,6 +130,7 @@ namespace Aws
     namespace Model
     {
       /* Service model forward declarations required in RekognitionClient header */
+      class AssociateFacesRequest;
       class CompareFacesRequest;
       class CopyProjectVersionRequest;
       class CreateCollectionRequest;
@@ -131,6 +139,7 @@ namespace Aws
       class CreateProjectRequest;
       class CreateProjectVersionRequest;
       class CreateStreamProcessorRequest;
+      class CreateUserRequest;
       class DeleteCollectionRequest;
       class DeleteDatasetRequest;
       class DeleteFacesRequest;
@@ -138,6 +147,7 @@ namespace Aws
       class DeleteProjectPolicyRequest;
       class DeleteProjectVersionRequest;
       class DeleteStreamProcessorRequest;
+      class DeleteUserRequest;
       class DescribeCollectionRequest;
       class DescribeDatasetRequest;
       class DescribeProjectVersionsRequest;
@@ -149,6 +159,7 @@ namespace Aws
       class DetectModerationLabelsRequest;
       class DetectProtectiveEquipmentRequest;
       class DetectTextRequest;
+      class DisassociateFacesRequest;
       class DistributeDatasetEntriesRequest;
       class GetCelebrityInfoRequest;
       class GetCelebrityRecognitionRequest;
@@ -168,10 +179,13 @@ namespace Aws
       class ListProjectPoliciesRequest;
       class ListStreamProcessorsRequest;
       class ListTagsForResourceRequest;
+      class ListUsersRequest;
       class PutProjectPolicyRequest;
       class RecognizeCelebritiesRequest;
       class SearchFacesRequest;
       class SearchFacesByImageRequest;
+      class SearchUsersRequest;
+      class SearchUsersByImageRequest;
       class StartCelebrityRecognitionRequest;
       class StartContentModerationRequest;
       class StartFaceDetectionRequest;
@@ -191,6 +205,7 @@ namespace Aws
       /* End of service model forward declarations required in RekognitionClient header */
 
       /* Service model Outcome class definitions */
+      typedef Aws::Utils::Outcome<AssociateFacesResult, RekognitionError> AssociateFacesOutcome;
       typedef Aws::Utils::Outcome<CompareFacesResult, RekognitionError> CompareFacesOutcome;
       typedef Aws::Utils::Outcome<CopyProjectVersionResult, RekognitionError> CopyProjectVersionOutcome;
       typedef Aws::Utils::Outcome<CreateCollectionResult, RekognitionError> CreateCollectionOutcome;
@@ -199,6 +214,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateProjectResult, RekognitionError> CreateProjectOutcome;
       typedef Aws::Utils::Outcome<CreateProjectVersionResult, RekognitionError> CreateProjectVersionOutcome;
       typedef Aws::Utils::Outcome<CreateStreamProcessorResult, RekognitionError> CreateStreamProcessorOutcome;
+      typedef Aws::Utils::Outcome<CreateUserResult, RekognitionError> CreateUserOutcome;
       typedef Aws::Utils::Outcome<DeleteCollectionResult, RekognitionError> DeleteCollectionOutcome;
       typedef Aws::Utils::Outcome<DeleteDatasetResult, RekognitionError> DeleteDatasetOutcome;
       typedef Aws::Utils::Outcome<DeleteFacesResult, RekognitionError> DeleteFacesOutcome;
@@ -206,6 +222,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeleteProjectPolicyResult, RekognitionError> DeleteProjectPolicyOutcome;
       typedef Aws::Utils::Outcome<DeleteProjectVersionResult, RekognitionError> DeleteProjectVersionOutcome;
       typedef Aws::Utils::Outcome<DeleteStreamProcessorResult, RekognitionError> DeleteStreamProcessorOutcome;
+      typedef Aws::Utils::Outcome<DeleteUserResult, RekognitionError> DeleteUserOutcome;
       typedef Aws::Utils::Outcome<DescribeCollectionResult, RekognitionError> DescribeCollectionOutcome;
       typedef Aws::Utils::Outcome<DescribeDatasetResult, RekognitionError> DescribeDatasetOutcome;
       typedef Aws::Utils::Outcome<DescribeProjectVersionsResult, RekognitionError> DescribeProjectVersionsOutcome;
@@ -217,6 +234,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DetectModerationLabelsResult, RekognitionError> DetectModerationLabelsOutcome;
       typedef Aws::Utils::Outcome<DetectProtectiveEquipmentResult, RekognitionError> DetectProtectiveEquipmentOutcome;
       typedef Aws::Utils::Outcome<DetectTextResult, RekognitionError> DetectTextOutcome;
+      typedef Aws::Utils::Outcome<DisassociateFacesResult, RekognitionError> DisassociateFacesOutcome;
       typedef Aws::Utils::Outcome<DistributeDatasetEntriesResult, RekognitionError> DistributeDatasetEntriesOutcome;
       typedef Aws::Utils::Outcome<GetCelebrityInfoResult, RekognitionError> GetCelebrityInfoOutcome;
       typedef Aws::Utils::Outcome<GetCelebrityRecognitionResult, RekognitionError> GetCelebrityRecognitionOutcome;
@@ -236,10 +254,13 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListProjectPoliciesResult, RekognitionError> ListProjectPoliciesOutcome;
       typedef Aws::Utils::Outcome<ListStreamProcessorsResult, RekognitionError> ListStreamProcessorsOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, RekognitionError> ListTagsForResourceOutcome;
+      typedef Aws::Utils::Outcome<ListUsersResult, RekognitionError> ListUsersOutcome;
       typedef Aws::Utils::Outcome<PutProjectPolicyResult, RekognitionError> PutProjectPolicyOutcome;
       typedef Aws::Utils::Outcome<RecognizeCelebritiesResult, RekognitionError> RecognizeCelebritiesOutcome;
       typedef Aws::Utils::Outcome<SearchFacesResult, RekognitionError> SearchFacesOutcome;
       typedef Aws::Utils::Outcome<SearchFacesByImageResult, RekognitionError> SearchFacesByImageOutcome;
+      typedef Aws::Utils::Outcome<SearchUsersResult, RekognitionError> SearchUsersOutcome;
+      typedef Aws::Utils::Outcome<SearchUsersByImageResult, RekognitionError> SearchUsersByImageOutcome;
       typedef Aws::Utils::Outcome<StartCelebrityRecognitionResult, RekognitionError> StartCelebrityRecognitionOutcome;
       typedef Aws::Utils::Outcome<StartContentModerationResult, RekognitionError> StartContentModerationOutcome;
       typedef Aws::Utils::Outcome<StartFaceDetectionResult, RekognitionError> StartFaceDetectionOutcome;
@@ -259,6 +280,7 @@ namespace Aws
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
+      typedef std::future<AssociateFacesOutcome> AssociateFacesOutcomeCallable;
       typedef std::future<CompareFacesOutcome> CompareFacesOutcomeCallable;
       typedef std::future<CopyProjectVersionOutcome> CopyProjectVersionOutcomeCallable;
       typedef std::future<CreateCollectionOutcome> CreateCollectionOutcomeCallable;
@@ -267,6 +289,7 @@ namespace Aws
       typedef std::future<CreateProjectOutcome> CreateProjectOutcomeCallable;
       typedef std::future<CreateProjectVersionOutcome> CreateProjectVersionOutcomeCallable;
       typedef std::future<CreateStreamProcessorOutcome> CreateStreamProcessorOutcomeCallable;
+      typedef std::future<CreateUserOutcome> CreateUserOutcomeCallable;
       typedef std::future<DeleteCollectionOutcome> DeleteCollectionOutcomeCallable;
       typedef std::future<DeleteDatasetOutcome> DeleteDatasetOutcomeCallable;
       typedef std::future<DeleteFacesOutcome> DeleteFacesOutcomeCallable;
@@ -274,6 +297,7 @@ namespace Aws
       typedef std::future<DeleteProjectPolicyOutcome> DeleteProjectPolicyOutcomeCallable;
       typedef std::future<DeleteProjectVersionOutcome> DeleteProjectVersionOutcomeCallable;
       typedef std::future<DeleteStreamProcessorOutcome> DeleteStreamProcessorOutcomeCallable;
+      typedef std::future<DeleteUserOutcome> DeleteUserOutcomeCallable;
       typedef std::future<DescribeCollectionOutcome> DescribeCollectionOutcomeCallable;
       typedef std::future<DescribeDatasetOutcome> DescribeDatasetOutcomeCallable;
       typedef std::future<DescribeProjectVersionsOutcome> DescribeProjectVersionsOutcomeCallable;
@@ -285,6 +309,7 @@ namespace Aws
       typedef std::future<DetectModerationLabelsOutcome> DetectModerationLabelsOutcomeCallable;
       typedef std::future<DetectProtectiveEquipmentOutcome> DetectProtectiveEquipmentOutcomeCallable;
       typedef std::future<DetectTextOutcome> DetectTextOutcomeCallable;
+      typedef std::future<DisassociateFacesOutcome> DisassociateFacesOutcomeCallable;
       typedef std::future<DistributeDatasetEntriesOutcome> DistributeDatasetEntriesOutcomeCallable;
       typedef std::future<GetCelebrityInfoOutcome> GetCelebrityInfoOutcomeCallable;
       typedef std::future<GetCelebrityRecognitionOutcome> GetCelebrityRecognitionOutcomeCallable;
@@ -304,10 +329,13 @@ namespace Aws
       typedef std::future<ListProjectPoliciesOutcome> ListProjectPoliciesOutcomeCallable;
       typedef std::future<ListStreamProcessorsOutcome> ListStreamProcessorsOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+      typedef std::future<ListUsersOutcome> ListUsersOutcomeCallable;
       typedef std::future<PutProjectPolicyOutcome> PutProjectPolicyOutcomeCallable;
       typedef std::future<RecognizeCelebritiesOutcome> RecognizeCelebritiesOutcomeCallable;
       typedef std::future<SearchFacesOutcome> SearchFacesOutcomeCallable;
       typedef std::future<SearchFacesByImageOutcome> SearchFacesByImageOutcomeCallable;
+      typedef std::future<SearchUsersOutcome> SearchUsersOutcomeCallable;
+      typedef std::future<SearchUsersByImageOutcome> SearchUsersByImageOutcomeCallable;
       typedef std::future<StartCelebrityRecognitionOutcome> StartCelebrityRecognitionOutcomeCallable;
       typedef std::future<StartContentModerationOutcome> StartContentModerationOutcomeCallable;
       typedef std::future<StartFaceDetectionOutcome> StartFaceDetectionOutcomeCallable;
@@ -330,6 +358,7 @@ namespace Aws
     class RekognitionClient;
 
     /* Service model async handlers definitions */
+    typedef std::function<void(const RekognitionClient*, const Model::AssociateFacesRequest&, const Model::AssociateFacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateFacesResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::CompareFacesRequest&, const Model::CompareFacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CompareFacesResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::CopyProjectVersionRequest&, const Model::CopyProjectVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CopyProjectVersionResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::CreateCollectionRequest&, const Model::CreateCollectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCollectionResponseReceivedHandler;
@@ -338,6 +367,7 @@ namespace Aws
     typedef std::function<void(const RekognitionClient*, const Model::CreateProjectRequest&, const Model::CreateProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateProjectResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::CreateProjectVersionRequest&, const Model::CreateProjectVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateProjectVersionResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::CreateStreamProcessorRequest&, const Model::CreateStreamProcessorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStreamProcessorResponseReceivedHandler;
+    typedef std::function<void(const RekognitionClient*, const Model::CreateUserRequest&, const Model::CreateUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUserResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::DeleteCollectionRequest&, const Model::DeleteCollectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCollectionResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::DeleteDatasetRequest&, const Model::DeleteDatasetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDatasetResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::DeleteFacesRequest&, const Model::DeleteFacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFacesResponseReceivedHandler;
@@ -345,6 +375,7 @@ namespace Aws
     typedef std::function<void(const RekognitionClient*, const Model::DeleteProjectPolicyRequest&, const Model::DeleteProjectPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProjectPolicyResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::DeleteProjectVersionRequest&, const Model::DeleteProjectVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProjectVersionResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::DeleteStreamProcessorRequest&, const Model::DeleteStreamProcessorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteStreamProcessorResponseReceivedHandler;
+    typedef std::function<void(const RekognitionClient*, const Model::DeleteUserRequest&, const Model::DeleteUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::DescribeCollectionRequest&, const Model::DescribeCollectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCollectionResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::DescribeDatasetRequest&, const Model::DescribeDatasetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDatasetResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::DescribeProjectVersionsRequest&, const Model::DescribeProjectVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeProjectVersionsResponseReceivedHandler;
@@ -356,6 +387,7 @@ namespace Aws
     typedef std::function<void(const RekognitionClient*, const Model::DetectModerationLabelsRequest&, const Model::DetectModerationLabelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetectModerationLabelsResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::DetectProtectiveEquipmentRequest&, const Model::DetectProtectiveEquipmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetectProtectiveEquipmentResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::DetectTextRequest&, const Model::DetectTextOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetectTextResponseReceivedHandler;
+    typedef std::function<void(const RekognitionClient*, const Model::DisassociateFacesRequest&, const Model::DisassociateFacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateFacesResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::DistributeDatasetEntriesRequest&, const Model::DistributeDatasetEntriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DistributeDatasetEntriesResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::GetCelebrityInfoRequest&, const Model::GetCelebrityInfoOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCelebrityInfoResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::GetCelebrityRecognitionRequest&, const Model::GetCelebrityRecognitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCelebrityRecognitionResponseReceivedHandler;
@@ -375,10 +407,13 @@ namespace Aws
     typedef std::function<void(const RekognitionClient*, const Model::ListProjectPoliciesRequest&, const Model::ListProjectPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProjectPoliciesResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::ListStreamProcessorsRequest&, const Model::ListStreamProcessorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStreamProcessorsResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const RekognitionClient*, const Model::ListUsersRequest&, const Model::ListUsersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUsersResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::PutProjectPolicyRequest&, const Model::PutProjectPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutProjectPolicyResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::RecognizeCelebritiesRequest&, const Model::RecognizeCelebritiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RecognizeCelebritiesResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::SearchFacesRequest&, const Model::SearchFacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchFacesResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::SearchFacesByImageRequest&, const Model::SearchFacesByImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchFacesByImageResponseReceivedHandler;
+    typedef std::function<void(const RekognitionClient*, const Model::SearchUsersRequest&, const Model::SearchUsersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchUsersResponseReceivedHandler;
+    typedef std::function<void(const RekognitionClient*, const Model::SearchUsersByImageRequest&, const Model::SearchUsersByImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchUsersByImageResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::StartCelebrityRecognitionRequest&, const Model::StartCelebrityRecognitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartCelebrityRecognitionResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::StartContentModerationRequest&, const Model::StartContentModerationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartContentModerationResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::StartFaceDetectionRequest&, const Model::StartFaceDetectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartFaceDetectionResponseReceivedHandler;

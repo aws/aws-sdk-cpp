@@ -111,32 +111,40 @@ namespace Model
     /**
      * <p>The number of instances of the type specified by <code>InstanceType</code>.
      * Choose an instance count larger than 1 for distributed training algorithms. See
-     * <a href="https://docs.aws.amazon.com/data-parallel-use-api.html">SageMaker
-     * distributed training jobs</a> for more information.</p>
+     * <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/data-parallel-use-api.html">Step
+     * 2: Launch a SageMaker Distributed Training Job Using the SageMaker Python
+     * SDK</a> for more information.</p>
      */
     inline int GetInstanceCount() const{ return m_instanceCount; }
 
     /**
      * <p>The number of instances of the type specified by <code>InstanceType</code>.
      * Choose an instance count larger than 1 for distributed training algorithms. See
-     * <a href="https://docs.aws.amazon.com/data-parallel-use-api.html">SageMaker
-     * distributed training jobs</a> for more information.</p>
+     * <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/data-parallel-use-api.html">Step
+     * 2: Launch a SageMaker Distributed Training Job Using the SageMaker Python
+     * SDK</a> for more information.</p>
      */
     inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
 
     /**
      * <p>The number of instances of the type specified by <code>InstanceType</code>.
      * Choose an instance count larger than 1 for distributed training algorithms. See
-     * <a href="https://docs.aws.amazon.com/data-parallel-use-api.html">SageMaker
-     * distributed training jobs</a> for more information.</p>
+     * <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/data-parallel-use-api.html">Step
+     * 2: Launch a SageMaker Distributed Training Job Using the SageMaker Python
+     * SDK</a> for more information.</p>
      */
     inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
 
     /**
      * <p>The number of instances of the type specified by <code>InstanceType</code>.
      * Choose an instance count larger than 1 for distributed training algorithms. See
-     * <a href="https://docs.aws.amazon.com/data-parallel-use-api.html">SageMaker
-     * distributed training jobs</a> for more information.</p>
+     * <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/data-parallel-use-api.html">Step
+     * 2: Launch a SageMaker Distributed Training Job Using the SageMaker Python
+     * SDK</a> for more information.</p>
      */
     inline HyperParameterTuningInstanceConfig& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
 

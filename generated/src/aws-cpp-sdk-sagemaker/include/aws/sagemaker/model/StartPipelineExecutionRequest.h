@@ -40,42 +40,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the pipeline.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the pipeline.</p>
      */
     inline const Aws::String& GetPipelineName() const{ return m_pipelineName; }
 
     /**
-     * <p>The name of the pipeline.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the pipeline.</p>
      */
     inline bool PipelineNameHasBeenSet() const { return m_pipelineNameHasBeenSet; }
 
     /**
-     * <p>The name of the pipeline.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the pipeline.</p>
      */
     inline void SetPipelineName(const Aws::String& value) { m_pipelineNameHasBeenSet = true; m_pipelineName = value; }
 
     /**
-     * <p>The name of the pipeline.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the pipeline.</p>
      */
     inline void SetPipelineName(Aws::String&& value) { m_pipelineNameHasBeenSet = true; m_pipelineName = std::move(value); }
 
     /**
-     * <p>The name of the pipeline.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the pipeline.</p>
      */
     inline void SetPipelineName(const char* value) { m_pipelineNameHasBeenSet = true; m_pipelineName.assign(value); }
 
     /**
-     * <p>The name of the pipeline.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the pipeline.</p>
      */
     inline StartPipelineExecutionRequest& WithPipelineName(const Aws::String& value) { SetPipelineName(value); return *this;}
 
     /**
-     * <p>The name of the pipeline.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the pipeline.</p>
      */
     inline StartPipelineExecutionRequest& WithPipelineName(Aws::String&& value) { SetPipelineName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the pipeline.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the pipeline.</p>
      */
     inline StartPipelineExecutionRequest& WithPipelineName(const char* value) { SetPipelineName(value); return *this;}
 

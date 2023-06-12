@@ -174,6 +174,22 @@ namespace Model
     inline DescribeCollectionResult& WithCreationTimestamp(Aws::Utils::DateTime&& value) { SetCreationTimestamp(std::move(value)); return *this;}
 
 
+    /**
+     * <p>The number of UserIDs assigned to the specified colleciton.</p>
+     */
+    inline long long GetUserCount() const{ return m_userCount; }
+
+    /**
+     * <p>The number of UserIDs assigned to the specified colleciton.</p>
+     */
+    inline void SetUserCount(long long value) { m_userCount = value; }
+
+    /**
+     * <p>The number of UserIDs assigned to the specified colleciton.</p>
+     */
+    inline DescribeCollectionResult& WithUserCount(long long value) { SetUserCount(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -204,6 +220,8 @@ namespace Model
     Aws::String m_collectionARN;
 
     Aws::Utils::DateTime m_creationTimestamp;
+
+    long long m_userCount;
 
     Aws::String m_requestId;
   };

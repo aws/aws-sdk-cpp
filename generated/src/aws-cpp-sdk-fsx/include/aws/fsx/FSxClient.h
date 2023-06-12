@@ -266,13 +266,13 @@ namespace FSx
          * <p>Creates an Amazon FSx for Lustre data repository association (DRA). A data
          * repository association is a link between a directory on the file system and an
          * Amazon S3 bucket or prefix. You can have a maximum of 8 data repository
-         * associations on a file system. Data repository associations are supported for
-         * all file systems except for <code>Scratch_1</code> deployment type.</p> <p>Each
-         * data repository association must have a unique Amazon FSx file system directory
-         * and a unique S3 bucket or prefix associated with it. You can configure a data
-         * repository association for automatic import only, for automatic export only, or
-         * for both. To learn more about linking a data repository to your file system, see
-         * <a
+         * associations on a file system. Data repository associations are supported on all
+         * FSx for Lustre 2.12 and newer file systems, excluding <code>scratch_1</code>
+         * deployment type.</p> <p>Each data repository association must have a unique
+         * Amazon FSx file system directory and a unique S3 bucket or prefix associated
+         * with it. You can configure a data repository association for automatic import
+         * only, for automatic export only, or for both. To learn more about linking a data
+         * repository to your file system, see <a
          * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/create-dra-linked-data-repo.html">Linking
          * your file system to an S3 bucket</a>.</p>  <p>
          * <code>CreateDataRepositoryAssociation</code> isn't supported on Amazon File
@@ -640,9 +640,9 @@ namespace FSx
          * system. Deleting the data repository association unlinks the file system from
          * the Amazon S3 bucket. When deleting a data repository association, you have the
          * option of deleting the data in the file system that corresponds to the data
-         * repository association. Data repository associations are supported for all file
-         * systems except for <code>Scratch_1</code> deployment type.</p><p><h3>See
-         * Also:</h3>   <a
+         * repository association. Data repository associations are supported on all FSx
+         * for Lustre 2.12 and newer file systems, excluding <code>scratch_1</code>
+         * deployment type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteDataRepositoryAssociation">AWS
          * API Reference</a></p>
          */
@@ -875,10 +875,10 @@ namespace FSx
          * <p>Returns the description of specific Amazon FSx for Lustre or Amazon File
          * Cache data repository associations, if one or more <code>AssociationIds</code>
          * values are provided in the request, or if filters are used in the request. Data
-         * repository associations are supported on Amazon File Cache resources and all
-         * Amazon FSx for Lustre file systems excluding <code>Scratch_1</code> deployment
-         * types.</p> <p>You can use filters to narrow the response to include just data
-         * repository associations for specific file systems (use the
+         * repository associations are supported on Amazon File Cache resources and all FSx
+         * for Lustre 2.12 and newer file systems, excluding <code>scratch_1</code>
+         * deployment type.</p> <p>You can use filters to narrow the response to include
+         * just data repository associations for specific file systems (use the
          * <code>file-system-id</code> filter with the ID of the file system) or caches
          * (use the <code>file-cache-id</code> filter with the ID of the cache), or data
          * repository associations for a specific repository type (use the
@@ -1350,9 +1350,9 @@ namespace FSx
 
         /**
          * <p>Updates the configuration of an existing data repository association on an
-         * Amazon FSx for Lustre file system. Data repository associations are supported
-         * for all file systems except for <code>Scratch_1</code> deployment
-         * type.</p><p><h3>See Also:</h3>   <a
+         * Amazon FSx for Lustre file system. Data repository associations are supported on
+         * all FSx for Lustre 2.12 and newer file systems, excluding <code>scratch_1</code>
+         * deployment type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateDataRepositoryAssociation">AWS
          * API Reference</a></p>
          */
@@ -1488,7 +1488,7 @@ namespace FSx
         }
 
         /**
-         * <p>Updates an Amazon FSx for ONTAP storage virtual machine (SVM).</p><p><h3>See
+         * <p>Updates an FSx for ONTAP storage virtual machine (SVM).</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateStorageVirtualMachine">AWS
          * API Reference</a></p>

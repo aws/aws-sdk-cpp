@@ -86,22 +86,38 @@ namespace Model
 
 
     /**
-     * <p>Returns a list up to a specified limit.</p>
+     * <p>The total number of items to return in the response. If the total number of
+     * items available is more than the value specified, a <code>NextToken</code> is
+     * provided in the response. To resume pagination, provide the
+     * <code>NextToken</code> value in the as part of a subsequent call. The default
+     * value is 10.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>Returns a list up to a specified limit.</p>
+     * <p>The total number of items to return in the response. If the total number of
+     * items available is more than the value specified, a <code>NextToken</code> is
+     * provided in the response. To resume pagination, provide the
+     * <code>NextToken</code> value in the as part of a subsequent call. The default
+     * value is 10.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>Returns a list up to a specified limit.</p>
+     * <p>The total number of items to return in the response. If the total number of
+     * items available is more than the value specified, a <code>NextToken</code> is
+     * provided in the response. To resume pagination, provide the
+     * <code>NextToken</code> value in the as part of a subsequent call. The default
+     * value is 10.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>Returns a list up to a specified limit.</p>
+     * <p>The total number of items to return in the response. If the total number of
+     * items available is more than the value specified, a <code>NextToken</code> is
+     * provided in the response. To resume pagination, provide the
+     * <code>NextToken</code> value in the as part of a subsequent call. The default
+     * value is 10.</p>
      */
     inline ListAppsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

@@ -98,72 +98,88 @@ namespace Model
     /**
      * <p>The content type of the data from the input source. The following are the
      * allowed content types for different problems:</p> <ul> <li>
-     * <p>ImageClassification: <code>image/png</code>, <code>image/jpeg</code>,
-     * <code>image/ *</code> </p> </li> <li> <p>TextClassification:
-     * <code>text/csv;header=present</code> </p> </li> </ul>
+     * <p>ImageClassification: <code>image/png</code>, <code>image/jpeg</code>, or
+     * <code>image/ *</code>. The default value is <code>image/ *</code>.</p> </li> <li>
+     * <p>TextClassification: <code>text/csv;header=present</code> or
+     * <code>x-application/vnd.amazon+parquet</code>. The default value is
+     * <code>text/csv;header=present</code>.</p> </li> </ul>
      */
     inline const Aws::String& GetContentType() const{ return m_contentType; }
 
     /**
      * <p>The content type of the data from the input source. The following are the
      * allowed content types for different problems:</p> <ul> <li>
-     * <p>ImageClassification: <code>image/png</code>, <code>image/jpeg</code>,
-     * <code>image/ *</code> </p> </li> <li> <p>TextClassification:
-     * <code>text/csv;header=present</code> </p> </li> </ul>
+     * <p>ImageClassification: <code>image/png</code>, <code>image/jpeg</code>, or
+     * <code>image/ *</code>. The default value is <code>image/ *</code>.</p> </li> <li>
+     * <p>TextClassification: <code>text/csv;header=present</code> or
+     * <code>x-application/vnd.amazon+parquet</code>. The default value is
+     * <code>text/csv;header=present</code>.</p> </li> </ul>
      */
     inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
 
     /**
      * <p>The content type of the data from the input source. The following are the
      * allowed content types for different problems:</p> <ul> <li>
-     * <p>ImageClassification: <code>image/png</code>, <code>image/jpeg</code>,
-     * <code>image/ *</code> </p> </li> <li> <p>TextClassification:
-     * <code>text/csv;header=present</code> </p> </li> </ul>
+     * <p>ImageClassification: <code>image/png</code>, <code>image/jpeg</code>, or
+     * <code>image/ *</code>. The default value is <code>image/ *</code>.</p> </li> <li>
+     * <p>TextClassification: <code>text/csv;header=present</code> or
+     * <code>x-application/vnd.amazon+parquet</code>. The default value is
+     * <code>text/csv;header=present</code>.</p> </li> </ul>
      */
     inline void SetContentType(const Aws::String& value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
 
     /**
      * <p>The content type of the data from the input source. The following are the
      * allowed content types for different problems:</p> <ul> <li>
-     * <p>ImageClassification: <code>image/png</code>, <code>image/jpeg</code>,
-     * <code>image/ *</code> </p> </li> <li> <p>TextClassification:
-     * <code>text/csv;header=present</code> </p> </li> </ul>
+     * <p>ImageClassification: <code>image/png</code>, <code>image/jpeg</code>, or
+     * <code>image/ *</code>. The default value is <code>image/ *</code>.</p> </li> <li>
+     * <p>TextClassification: <code>text/csv;header=present</code> or
+     * <code>x-application/vnd.amazon+parquet</code>. The default value is
+     * <code>text/csv;header=present</code>.</p> </li> </ul>
      */
     inline void SetContentType(Aws::String&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::move(value); }
 
     /**
      * <p>The content type of the data from the input source. The following are the
      * allowed content types for different problems:</p> <ul> <li>
-     * <p>ImageClassification: <code>image/png</code>, <code>image/jpeg</code>,
-     * <code>image/ *</code> </p> </li> <li> <p>TextClassification:
-     * <code>text/csv;header=present</code> </p> </li> </ul>
+     * <p>ImageClassification: <code>image/png</code>, <code>image/jpeg</code>, or
+     * <code>image/ *</code>. The default value is <code>image/ *</code>.</p> </li> <li>
+     * <p>TextClassification: <code>text/csv;header=present</code> or
+     * <code>x-application/vnd.amazon+parquet</code>. The default value is
+     * <code>text/csv;header=present</code>.</p> </li> </ul>
      */
     inline void SetContentType(const char* value) { m_contentTypeHasBeenSet = true; m_contentType.assign(value); }
 
     /**
      * <p>The content type of the data from the input source. The following are the
      * allowed content types for different problems:</p> <ul> <li>
-     * <p>ImageClassification: <code>image/png</code>, <code>image/jpeg</code>,
-     * <code>image/ *</code> </p> </li> <li> <p>TextClassification:
-     * <code>text/csv;header=present</code> </p> </li> </ul>
+     * <p>ImageClassification: <code>image/png</code>, <code>image/jpeg</code>, or
+     * <code>image/ *</code>. The default value is <code>image/ *</code>.</p> </li> <li>
+     * <p>TextClassification: <code>text/csv;header=present</code> or
+     * <code>x-application/vnd.amazon+parquet</code>. The default value is
+     * <code>text/csv;header=present</code>.</p> </li> </ul>
      */
     inline AutoMLJobChannel& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
 
     /**
      * <p>The content type of the data from the input source. The following are the
      * allowed content types for different problems:</p> <ul> <li>
-     * <p>ImageClassification: <code>image/png</code>, <code>image/jpeg</code>,
-     * <code>image/ *</code> </p> </li> <li> <p>TextClassification:
-     * <code>text/csv;header=present</code> </p> </li> </ul>
+     * <p>ImageClassification: <code>image/png</code>, <code>image/jpeg</code>, or
+     * <code>image/ *</code>. The default value is <code>image/ *</code>.</p> </li> <li>
+     * <p>TextClassification: <code>text/csv;header=present</code> or
+     * <code>x-application/vnd.amazon+parquet</code>. The default value is
+     * <code>text/csv;header=present</code>.</p> </li> </ul>
      */
     inline AutoMLJobChannel& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
 
     /**
      * <p>The content type of the data from the input source. The following are the
      * allowed content types for different problems:</p> <ul> <li>
-     * <p>ImageClassification: <code>image/png</code>, <code>image/jpeg</code>,
-     * <code>image/ *</code> </p> </li> <li> <p>TextClassification:
-     * <code>text/csv;header=present</code> </p> </li> </ul>
+     * <p>ImageClassification: <code>image/png</code>, <code>image/jpeg</code>, or
+     * <code>image/ *</code>. The default value is <code>image/ *</code>.</p> </li> <li>
+     * <p>TextClassification: <code>text/csv;header=present</code> or
+     * <code>x-application/vnd.amazon+parquet</code>. The default value is
+     * <code>text/csv;header=present</code>.</p> </li> </ul>
      */
     inline AutoMLJobChannel& WithContentType(const char* value) { SetContentType(value); return *this;}
 
