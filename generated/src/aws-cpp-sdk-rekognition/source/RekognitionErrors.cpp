@@ -26,6 +26,7 @@ template<> AWS_REKOGNITION_API HumanLoopQuotaExceededException RekognitionError:
 namespace RekognitionErrorMapper
 {
 
+static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int IMAGE_TOO_LARGE_HASH = HashingUtils::HashString("ImageTooLargeException");
 static const int RESOURCE_NOT_READY_HASH = HashingUtils::HashString("ResourceNotReadyException");
 static const int RESOURCE_ALREADY_EXISTS_HASH = HashingUtils::HashString("ResourceAlreadyExistsException");
@@ -49,7 +50,11 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == IMAGE_TOO_LARGE_HASH)
+  if (hashCode == CONFLICT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RekognitionErrors::CONFLICT), false);
+  }
+  else if (hashCode == IMAGE_TOO_LARGE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RekognitionErrors::IMAGE_TOO_LARGE), false);
   }

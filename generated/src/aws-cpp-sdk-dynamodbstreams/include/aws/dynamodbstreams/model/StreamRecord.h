@@ -44,37 +44,43 @@ namespace Model
 
     /**
      * <p>The approximate date and time when the stream record was created, in <a
-     * href="http://www.epochconverter.com/">UNIX epoch time</a> format.</p>
+     * href="http://www.epochconverter.com/">UNIX epoch time</a> format and rounded
+     * down to the closest second.</p>
      */
     inline const Aws::Utils::DateTime& GetApproximateCreationDateTime() const{ return m_approximateCreationDateTime; }
 
     /**
      * <p>The approximate date and time when the stream record was created, in <a
-     * href="http://www.epochconverter.com/">UNIX epoch time</a> format.</p>
+     * href="http://www.epochconverter.com/">UNIX epoch time</a> format and rounded
+     * down to the closest second.</p>
      */
     inline bool ApproximateCreationDateTimeHasBeenSet() const { return m_approximateCreationDateTimeHasBeenSet; }
 
     /**
      * <p>The approximate date and time when the stream record was created, in <a
-     * href="http://www.epochconverter.com/">UNIX epoch time</a> format.</p>
+     * href="http://www.epochconverter.com/">UNIX epoch time</a> format and rounded
+     * down to the closest second.</p>
      */
     inline void SetApproximateCreationDateTime(const Aws::Utils::DateTime& value) { m_approximateCreationDateTimeHasBeenSet = true; m_approximateCreationDateTime = value; }
 
     /**
      * <p>The approximate date and time when the stream record was created, in <a
-     * href="http://www.epochconverter.com/">UNIX epoch time</a> format.</p>
+     * href="http://www.epochconverter.com/">UNIX epoch time</a> format and rounded
+     * down to the closest second.</p>
      */
     inline void SetApproximateCreationDateTime(Aws::Utils::DateTime&& value) { m_approximateCreationDateTimeHasBeenSet = true; m_approximateCreationDateTime = std::move(value); }
 
     /**
      * <p>The approximate date and time when the stream record was created, in <a
-     * href="http://www.epochconverter.com/">UNIX epoch time</a> format.</p>
+     * href="http://www.epochconverter.com/">UNIX epoch time</a> format and rounded
+     * down to the closest second.</p>
      */
     inline StreamRecord& WithApproximateCreationDateTime(const Aws::Utils::DateTime& value) { SetApproximateCreationDateTime(value); return *this;}
 
     /**
      * <p>The approximate date and time when the stream record was created, in <a
-     * href="http://www.epochconverter.com/">UNIX epoch time</a> format.</p>
+     * href="http://www.epochconverter.com/">UNIX epoch time</a> format and rounded
+     * down to the closest second.</p>
      */
     inline StreamRecord& WithApproximateCreationDateTime(Aws::Utils::DateTime&& value) { SetApproximateCreationDateTime(std::move(value)); return *this;}
 

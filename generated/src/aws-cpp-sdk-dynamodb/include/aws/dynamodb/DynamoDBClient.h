@@ -133,14 +133,15 @@ namespace DynamoDB
          * <p>A single operation can retrieve up to 16 MB of data, which can contain as
          * many as 100 items. <code>BatchGetItem</code> returns a partial result if the
          * response size limit is exceeded, the table's provisioned throughput is exceeded,
-         * or an internal processing failure occurs. If a partial result is returned, the
-         * operation returns a value for <code>UnprocessedKeys</code>. You can use this
-         * value to retry the operation starting with the next item to get.</p> 
-         * <p>If you request more than 100 items, <code>BatchGetItem</code> returns a
-         * <code>ValidationException</code> with the message "Too many items requested for
-         * the BatchGetItem call."</p>  <p>For example, if you ask to retrieve
-         * 100 items, but each individual item is 300 KB in size, the system returns 52
-         * items (so as not to exceed the 16 MB limit). It also returns an appropriate
+         * more than 1MB per partition is requested, or an internal processing failure
+         * occurs. If a partial result is returned, the operation returns a value for
+         * <code>UnprocessedKeys</code>. You can use this value to retry the operation
+         * starting with the next item to get.</p>  <p>If you request more than
+         * 100 items, <code>BatchGetItem</code> returns a <code>ValidationException</code>
+         * with the message "Too many items requested for the BatchGetItem call."</p>
+         *  <p>For example, if you ask to retrieve 100 items, but each
+         * individual item is 300 KB in size, the system returns 52 items (so as not to
+         * exceed the 16 MB limit). It also returns an appropriate
          * <code>UnprocessedKeys</code> value so you can get the next page of results. If
          * desired, your application can include its own logic to assemble the pages of
          * results into one dataset.</p> <p>If <i>none</i> of the items can be processed

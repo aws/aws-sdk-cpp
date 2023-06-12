@@ -178,10 +178,10 @@ namespace Model
      * configured for redundancy within a single Availability Zone in an Amazon Web
      * Services Region . Valid values are the following:</p> <ul> <li> <p>
      * <code>SINGLE_AZ_1</code>- (Default) Creates file systems with throughput
-     * capacities of 64 - 4,096 MB/s. <code>Single_AZ_1</code> is available in all
+     * capacities of 64 - 4,096 MBps. <code>Single_AZ_1</code> is available in all
      * Amazon Web Services Regions where Amazon FSx for OpenZFS is available, except US
      * West (Oregon).</p> </li> <li> <p> <code>SINGLE_AZ_2</code>- Creates file systems
-     * with throughput capacities of 160 - 10,240 MB/s using an NVMe L2ARC cache.
+     * with throughput capacities of 160 - 10,240 MBps using an NVMe L2ARC cache.
      * <code>Single_AZ_2</code> is available only in the US East (N. Virginia), US East
      * (Ohio), US West (Oregon), and Europe (Ireland) Amazon Web Services Regions.</p>
      * </li> </ul> <p>For more information, see: <a
@@ -197,10 +197,10 @@ namespace Model
      * configured for redundancy within a single Availability Zone in an Amazon Web
      * Services Region . Valid values are the following:</p> <ul> <li> <p>
      * <code>SINGLE_AZ_1</code>- (Default) Creates file systems with throughput
-     * capacities of 64 - 4,096 MB/s. <code>Single_AZ_1</code> is available in all
+     * capacities of 64 - 4,096 MBps. <code>Single_AZ_1</code> is available in all
      * Amazon Web Services Regions where Amazon FSx for OpenZFS is available, except US
      * West (Oregon).</p> </li> <li> <p> <code>SINGLE_AZ_2</code>- Creates file systems
-     * with throughput capacities of 160 - 10,240 MB/s using an NVMe L2ARC cache.
+     * with throughput capacities of 160 - 10,240 MBps using an NVMe L2ARC cache.
      * <code>Single_AZ_2</code> is available only in the US East (N. Virginia), US East
      * (Ohio), US West (Oregon), and Europe (Ireland) Amazon Web Services Regions.</p>
      * </li> </ul> <p>For more information, see: <a
@@ -216,10 +216,10 @@ namespace Model
      * configured for redundancy within a single Availability Zone in an Amazon Web
      * Services Region . Valid values are the following:</p> <ul> <li> <p>
      * <code>SINGLE_AZ_1</code>- (Default) Creates file systems with throughput
-     * capacities of 64 - 4,096 MB/s. <code>Single_AZ_1</code> is available in all
+     * capacities of 64 - 4,096 MBps. <code>Single_AZ_1</code> is available in all
      * Amazon Web Services Regions where Amazon FSx for OpenZFS is available, except US
      * West (Oregon).</p> </li> <li> <p> <code>SINGLE_AZ_2</code>- Creates file systems
-     * with throughput capacities of 160 - 10,240 MB/s using an NVMe L2ARC cache.
+     * with throughput capacities of 160 - 10,240 MBps using an NVMe L2ARC cache.
      * <code>Single_AZ_2</code> is available only in the US East (N. Virginia), US East
      * (Ohio), US West (Oregon), and Europe (Ireland) Amazon Web Services Regions.</p>
      * </li> </ul> <p>For more information, see: <a
@@ -235,10 +235,10 @@ namespace Model
      * configured for redundancy within a single Availability Zone in an Amazon Web
      * Services Region . Valid values are the following:</p> <ul> <li> <p>
      * <code>SINGLE_AZ_1</code>- (Default) Creates file systems with throughput
-     * capacities of 64 - 4,096 MB/s. <code>Single_AZ_1</code> is available in all
+     * capacities of 64 - 4,096 MBps. <code>Single_AZ_1</code> is available in all
      * Amazon Web Services Regions where Amazon FSx for OpenZFS is available, except US
      * West (Oregon).</p> </li> <li> <p> <code>SINGLE_AZ_2</code>- Creates file systems
-     * with throughput capacities of 160 - 10,240 MB/s using an NVMe L2ARC cache.
+     * with throughput capacities of 160 - 10,240 MBps using an NVMe L2ARC cache.
      * <code>Single_AZ_2</code> is available only in the US East (N. Virginia), US East
      * (Ohio), US West (Oregon), and Europe (Ireland) Amazon Web Services Regions.</p>
      * </li> </ul> <p>For more information, see: <a
@@ -254,10 +254,10 @@ namespace Model
      * configured for redundancy within a single Availability Zone in an Amazon Web
      * Services Region . Valid values are the following:</p> <ul> <li> <p>
      * <code>SINGLE_AZ_1</code>- (Default) Creates file systems with throughput
-     * capacities of 64 - 4,096 MB/s. <code>Single_AZ_1</code> is available in all
+     * capacities of 64 - 4,096 MBps. <code>Single_AZ_1</code> is available in all
      * Amazon Web Services Regions where Amazon FSx for OpenZFS is available, except US
      * West (Oregon).</p> </li> <li> <p> <code>SINGLE_AZ_2</code>- Creates file systems
-     * with throughput capacities of 160 - 10,240 MB/s using an NVMe L2ARC cache.
+     * with throughput capacities of 160 - 10,240 MBps using an NVMe L2ARC cache.
      * <code>Single_AZ_2</code> is available only in the US East (N. Virginia), US East
      * (Ohio), US West (Oregon), and Europe (Ireland) Amazon Web Services Regions.</p>
      * </li> </ul> <p>For more information, see: <a
@@ -273,10 +273,10 @@ namespace Model
      * configured for redundancy within a single Availability Zone in an Amazon Web
      * Services Region . Valid values are the following:</p> <ul> <li> <p>
      * <code>SINGLE_AZ_1</code>- (Default) Creates file systems with throughput
-     * capacities of 64 - 4,096 MB/s. <code>Single_AZ_1</code> is available in all
+     * capacities of 64 - 4,096 MBps. <code>Single_AZ_1</code> is available in all
      * Amazon Web Services Regions where Amazon FSx for OpenZFS is available, except US
      * West (Oregon).</p> </li> <li> <p> <code>SINGLE_AZ_2</code>- Creates file systems
-     * with throughput capacities of 160 - 10,240 MB/s using an NVMe L2ARC cache.
+     * with throughput capacities of 160 - 10,240 MBps using an NVMe L2ARC cache.
      * <code>Single_AZ_2</code> is available only in the US East (N. Virginia), US East
      * (Ohio), US West (Oregon), and Europe (Ireland) Amazon Web Services Regions.</p>
      * </li> </ul> <p>For more information, see: <a
@@ -290,44 +290,44 @@ namespace Model
 
     /**
      * <p>Specifies the throughput of an Amazon FSx for OpenZFS file system, measured
-     * in megabytes per second (MB/s). Valid values depend on the DeploymentType you
+     * in megabytes per second (MBps). Valid values depend on the DeploymentType you
      * choose, as follows:</p> <ul> <li> <p>For <code>SINGLE_AZ_1</code>, valid values
-     * are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p> </li> <li> <p>For
+     * are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MBps.</p> </li> <li> <p>For
      * <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840,
-     * 5120, 7680, or 10240 MB/s.</p> </li> </ul> <p>You pay for additional throughput
+     * 5120, 7680, or 10240 MBps.</p> </li> </ul> <p>You pay for additional throughput
      * capacity that you provision.</p>
      */
     inline int GetThroughputCapacity() const{ return m_throughputCapacity; }
 
     /**
      * <p>Specifies the throughput of an Amazon FSx for OpenZFS file system, measured
-     * in megabytes per second (MB/s). Valid values depend on the DeploymentType you
+     * in megabytes per second (MBps). Valid values depend on the DeploymentType you
      * choose, as follows:</p> <ul> <li> <p>For <code>SINGLE_AZ_1</code>, valid values
-     * are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p> </li> <li> <p>For
+     * are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MBps.</p> </li> <li> <p>For
      * <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840,
-     * 5120, 7680, or 10240 MB/s.</p> </li> </ul> <p>You pay for additional throughput
+     * 5120, 7680, or 10240 MBps.</p> </li> </ul> <p>You pay for additional throughput
      * capacity that you provision.</p>
      */
     inline bool ThroughputCapacityHasBeenSet() const { return m_throughputCapacityHasBeenSet; }
 
     /**
      * <p>Specifies the throughput of an Amazon FSx for OpenZFS file system, measured
-     * in megabytes per second (MB/s). Valid values depend on the DeploymentType you
+     * in megabytes per second (MBps). Valid values depend on the DeploymentType you
      * choose, as follows:</p> <ul> <li> <p>For <code>SINGLE_AZ_1</code>, valid values
-     * are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p> </li> <li> <p>For
+     * are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MBps.</p> </li> <li> <p>For
      * <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840,
-     * 5120, 7680, or 10240 MB/s.</p> </li> </ul> <p>You pay for additional throughput
+     * 5120, 7680, or 10240 MBps.</p> </li> </ul> <p>You pay for additional throughput
      * capacity that you provision.</p>
      */
     inline void SetThroughputCapacity(int value) { m_throughputCapacityHasBeenSet = true; m_throughputCapacity = value; }
 
     /**
      * <p>Specifies the throughput of an Amazon FSx for OpenZFS file system, measured
-     * in megabytes per second (MB/s). Valid values depend on the DeploymentType you
+     * in megabytes per second (MBps). Valid values depend on the DeploymentType you
      * choose, as follows:</p> <ul> <li> <p>For <code>SINGLE_AZ_1</code>, valid values
-     * are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p> </li> <li> <p>For
+     * are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MBps.</p> </li> <li> <p>For
      * <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840,
-     * 5120, 7680, or 10240 MB/s.</p> </li> </ul> <p>You pay for additional throughput
+     * 5120, 7680, or 10240 MBps.</p> </li> </ul> <p>You pay for additional throughput
      * capacity that you provision.</p>
      */
     inline CreateFileSystemOpenZFSConfiguration& WithThroughputCapacity(int value) { SetThroughputCapacity(value); return *this;}

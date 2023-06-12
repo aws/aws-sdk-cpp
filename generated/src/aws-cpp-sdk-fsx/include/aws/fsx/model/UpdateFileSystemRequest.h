@@ -170,7 +170,7 @@ namespace Model
      * capacity, the file system must have at least 16 MBps of throughput capacity. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing
-     * storage capacity</a> in the <i>Amazon FSx for Windows File Server User
+     * storage capacity</a> in the <i>Amazon FSxfor Windows File Server User
      * Guide</i>.</p> <p>For ONTAP file systems, the storage capacity target value must
      * be at least 10 percent greater than the current storage capacity value. For more
      * information, see <a
@@ -209,7 +209,7 @@ namespace Model
      * capacity, the file system must have at least 16 MBps of throughput capacity. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing
-     * storage capacity</a> in the <i>Amazon FSx for Windows File Server User
+     * storage capacity</a> in the <i>Amazon FSxfor Windows File Server User
      * Guide</i>.</p> <p>For ONTAP file systems, the storage capacity target value must
      * be at least 10 percent greater than the current storage capacity value. For more
      * information, see <a
@@ -248,7 +248,7 @@ namespace Model
      * capacity, the file system must have at least 16 MBps of throughput capacity. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing
-     * storage capacity</a> in the <i>Amazon FSx for Windows File Server User
+     * storage capacity</a> in the <i>Amazon FSxfor Windows File Server User
      * Guide</i>.</p> <p>For ONTAP file systems, the storage capacity target value must
      * be at least 10 percent greater than the current storage capacity value. For more
      * information, see <a
@@ -287,7 +287,7 @@ namespace Model
      * capacity, the file system must have at least 16 MBps of throughput capacity. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing
-     * storage capacity</a> in the <i>Amazon FSx for Windows File Server User
+     * storage capacity</a> in the <i>Amazon FSxfor Windows File Server User
      * Guide</i>.</p> <p>For ONTAP file systems, the storage capacity target value must
      * be at least 10 percent greater than the current storage capacity value. For more
      * information, see <a
@@ -374,32 +374,32 @@ namespace Model
 
 
     /**
-     * <p>The configuration updates for an Amazon FSx for OpenZFS file system.</p>
+     * <p>The configuration updates for an FSx for OpenZFS file system.</p>
      */
     inline const UpdateFileSystemOpenZFSConfiguration& GetOpenZFSConfiguration() const{ return m_openZFSConfiguration; }
 
     /**
-     * <p>The configuration updates for an Amazon FSx for OpenZFS file system.</p>
+     * <p>The configuration updates for an FSx for OpenZFS file system.</p>
      */
     inline bool OpenZFSConfigurationHasBeenSet() const { return m_openZFSConfigurationHasBeenSet; }
 
     /**
-     * <p>The configuration updates for an Amazon FSx for OpenZFS file system.</p>
+     * <p>The configuration updates for an FSx for OpenZFS file system.</p>
      */
     inline void SetOpenZFSConfiguration(const UpdateFileSystemOpenZFSConfiguration& value) { m_openZFSConfigurationHasBeenSet = true; m_openZFSConfiguration = value; }
 
     /**
-     * <p>The configuration updates for an Amazon FSx for OpenZFS file system.</p>
+     * <p>The configuration updates for an FSx for OpenZFS file system.</p>
      */
     inline void SetOpenZFSConfiguration(UpdateFileSystemOpenZFSConfiguration&& value) { m_openZFSConfigurationHasBeenSet = true; m_openZFSConfiguration = std::move(value); }
 
     /**
-     * <p>The configuration updates for an Amazon FSx for OpenZFS file system.</p>
+     * <p>The configuration updates for an FSx for OpenZFS file system.</p>
      */
     inline UpdateFileSystemRequest& WithOpenZFSConfiguration(const UpdateFileSystemOpenZFSConfiguration& value) { SetOpenZFSConfiguration(value); return *this;}
 
     /**
-     * <p>The configuration updates for an Amazon FSx for OpenZFS file system.</p>
+     * <p>The configuration updates for an FSx for OpenZFS file system.</p>
      */
     inline UpdateFileSystemRequest& WithOpenZFSConfiguration(UpdateFileSystemOpenZFSConfiguration&& value) { SetOpenZFSConfiguration(std::move(value)); return *this;}
 

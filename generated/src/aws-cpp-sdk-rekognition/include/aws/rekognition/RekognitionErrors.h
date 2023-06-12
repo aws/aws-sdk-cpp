@@ -47,7 +47,8 @@ enum class RekognitionErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  HUMAN_LOOP_QUOTA_EXCEEDED= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  HUMAN_LOOP_QUOTA_EXCEEDED,
   IDEMPOTENT_PARAMETER_MISMATCH,
   IMAGE_TOO_LARGE,
   INVALID_IMAGE_FORMAT,

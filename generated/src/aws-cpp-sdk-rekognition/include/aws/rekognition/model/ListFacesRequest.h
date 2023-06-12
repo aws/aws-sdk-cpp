@@ -7,6 +7,7 @@
 #include <aws/rekognition/Rekognition_EXPORTS.h>
 #include <aws/rekognition/RekognitionRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -152,6 +153,93 @@ namespace Model
      */
     inline ListFacesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
+
+    /**
+     * <p>An array of user IDs to match when listing faces in a collection.</p>
+     */
+    inline const Aws::String& GetUserId() const{ return m_userId; }
+
+    /**
+     * <p>An array of user IDs to match when listing faces in a collection.</p>
+     */
+    inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
+
+    /**
+     * <p>An array of user IDs to match when listing faces in a collection.</p>
+     */
+    inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
+
+    /**
+     * <p>An array of user IDs to match when listing faces in a collection.</p>
+     */
+    inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
+
+    /**
+     * <p>An array of user IDs to match when listing faces in a collection.</p>
+     */
+    inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
+
+    /**
+     * <p>An array of user IDs to match when listing faces in a collection.</p>
+     */
+    inline ListFacesRequest& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
+
+    /**
+     * <p>An array of user IDs to match when listing faces in a collection.</p>
+     */
+    inline ListFacesRequest& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
+
+    /**
+     * <p>An array of user IDs to match when listing faces in a collection.</p>
+     */
+    inline ListFacesRequest& WithUserId(const char* value) { SetUserId(value); return *this;}
+
+
+    /**
+     * <p>An array of face IDs to match when listing faces in a collection.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetFaceIds() const{ return m_faceIds; }
+
+    /**
+     * <p>An array of face IDs to match when listing faces in a collection.</p>
+     */
+    inline bool FaceIdsHasBeenSet() const { return m_faceIdsHasBeenSet; }
+
+    /**
+     * <p>An array of face IDs to match when listing faces in a collection.</p>
+     */
+    inline void SetFaceIds(const Aws::Vector<Aws::String>& value) { m_faceIdsHasBeenSet = true; m_faceIds = value; }
+
+    /**
+     * <p>An array of face IDs to match when listing faces in a collection.</p>
+     */
+    inline void SetFaceIds(Aws::Vector<Aws::String>&& value) { m_faceIdsHasBeenSet = true; m_faceIds = std::move(value); }
+
+    /**
+     * <p>An array of face IDs to match when listing faces in a collection.</p>
+     */
+    inline ListFacesRequest& WithFaceIds(const Aws::Vector<Aws::String>& value) { SetFaceIds(value); return *this;}
+
+    /**
+     * <p>An array of face IDs to match when listing faces in a collection.</p>
+     */
+    inline ListFacesRequest& WithFaceIds(Aws::Vector<Aws::String>&& value) { SetFaceIds(std::move(value)); return *this;}
+
+    /**
+     * <p>An array of face IDs to match when listing faces in a collection.</p>
+     */
+    inline ListFacesRequest& AddFaceIds(const Aws::String& value) { m_faceIdsHasBeenSet = true; m_faceIds.push_back(value); return *this; }
+
+    /**
+     * <p>An array of face IDs to match when listing faces in a collection.</p>
+     */
+    inline ListFacesRequest& AddFaceIds(Aws::String&& value) { m_faceIdsHasBeenSet = true; m_faceIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>An array of face IDs to match when listing faces in a collection.</p>
+     */
+    inline ListFacesRequest& AddFaceIds(const char* value) { m_faceIdsHasBeenSet = true; m_faceIds.push_back(value); return *this; }
+
   private:
 
     Aws::String m_collectionId;
@@ -162,6 +250,12 @@ namespace Model
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;
+
+    Aws::String m_userId;
+    bool m_userIdHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_faceIds;
+    bool m_faceIdsHasBeenSet = false;
   };
 
 } // namespace Model

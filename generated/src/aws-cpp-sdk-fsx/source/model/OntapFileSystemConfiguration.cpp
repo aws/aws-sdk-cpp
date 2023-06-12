@@ -31,7 +31,8 @@ OntapFileSystemConfiguration::OntapFileSystemConfiguration() :
     m_routeTableIdsHasBeenSet(false),
     m_throughputCapacity(0),
     m_throughputCapacityHasBeenSet(false),
-    m_weeklyMaintenanceStartTimeHasBeenSet(false)
+    m_weeklyMaintenanceStartTimeHasBeenSet(false),
+    m_fsxAdminPasswordHasBeenSet(false)
 {
 }
 
@@ -48,7 +49,8 @@ OntapFileSystemConfiguration::OntapFileSystemConfiguration(JsonView jsonValue) :
     m_routeTableIdsHasBeenSet(false),
     m_throughputCapacity(0),
     m_throughputCapacityHasBeenSet(false),
-    m_weeklyMaintenanceStartTimeHasBeenSet(false)
+    m_weeklyMaintenanceStartTimeHasBeenSet(false),
+    m_fsxAdminPasswordHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -128,6 +130,13 @@ OntapFileSystemConfiguration& OntapFileSystemConfiguration::operator =(JsonView 
     m_weeklyMaintenanceStartTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FsxAdminPassword"))
+  {
+    m_fsxAdminPassword = jsonValue.GetString("FsxAdminPassword");
+
+    m_fsxAdminPasswordHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -196,6 +205,12 @@ JsonValue OntapFileSystemConfiguration::Jsonize() const
   if(m_weeklyMaintenanceStartTimeHasBeenSet)
   {
    payload.WithString("WeeklyMaintenanceStartTime", m_weeklyMaintenanceStartTime);
+
+  }
+
+  if(m_fsxAdminPasswordHasBeenSet)
+  {
+   payload.WithString("FsxAdminPassword", m_fsxAdminPassword);
 
   }
 

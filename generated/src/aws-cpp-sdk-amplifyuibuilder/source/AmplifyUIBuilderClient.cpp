@@ -31,15 +31,18 @@
 #include <aws/amplifyuibuilder/model/ExportComponentsRequest.h>
 #include <aws/amplifyuibuilder/model/ExportFormsRequest.h>
 #include <aws/amplifyuibuilder/model/ExportThemesRequest.h>
+#include <aws/amplifyuibuilder/model/GetCodegenJobRequest.h>
 #include <aws/amplifyuibuilder/model/GetComponentRequest.h>
 #include <aws/amplifyuibuilder/model/GetFormRequest.h>
 #include <aws/amplifyuibuilder/model/GetMetadataRequest.h>
 #include <aws/amplifyuibuilder/model/GetThemeRequest.h>
+#include <aws/amplifyuibuilder/model/ListCodegenJobsRequest.h>
 #include <aws/amplifyuibuilder/model/ListComponentsRequest.h>
 #include <aws/amplifyuibuilder/model/ListFormsRequest.h>
 #include <aws/amplifyuibuilder/model/ListThemesRequest.h>
 #include <aws/amplifyuibuilder/model/PutMetadataFlagRequest.h>
 #include <aws/amplifyuibuilder/model/RefreshTokenRequest.h>
+#include <aws/amplifyuibuilder/model/StartCodegenJobRequest.h>
 #include <aws/amplifyuibuilder/model/UpdateComponentRequest.h>
 #include <aws/amplifyuibuilder/model/UpdateFormRequest.h>
 #include <aws/amplifyuibuilder/model/UpdateThemeRequest.h>
@@ -422,6 +425,36 @@ ExportThemesOutcome AmplifyUIBuilderClient::ExportThemes(const ExportThemesReque
   return ExportThemesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
+GetCodegenJobOutcome AmplifyUIBuilderClient::GetCodegenJob(const GetCodegenJobRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetCodegenJob);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCodegenJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AppIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetCodegenJob", "Required field: AppId, is not set");
+    return GetCodegenJobOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
+  }
+  if (!request.EnvironmentNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetCodegenJob", "Required field: EnvironmentName, is not set");
+    return GetCodegenJobOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentName]", false));
+  }
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetCodegenJob", "Required field: Id, is not set");
+    return GetCodegenJobOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetCodegenJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/app/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/environment/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEnvironmentName());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/codegen-jobs/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+  return GetCodegenJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
 GetComponentOutcome AmplifyUIBuilderClient::GetComponent(const GetComponentRequest& request) const
 {
   AWS_OPERATION_GUARD(GetComponent);
@@ -534,6 +567,30 @@ GetThemeOutcome AmplifyUIBuilderClient::GetTheme(const GetThemeRequest& request)
   endpointResolutionOutcome.GetResult().AddPathSegments("/themes/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   return GetThemeOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListCodegenJobsOutcome AmplifyUIBuilderClient::ListCodegenJobs(const ListCodegenJobsRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListCodegenJobs);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListCodegenJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AppIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListCodegenJobs", "Required field: AppId, is not set");
+    return ListCodegenJobsOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
+  }
+  if (!request.EnvironmentNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListCodegenJobs", "Required field: EnvironmentName, is not set");
+    return ListCodegenJobsOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentName]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListCodegenJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/app/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/environment/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEnvironmentName());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/codegen-jobs");
+  return ListCodegenJobsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListComponentsOutcome AmplifyUIBuilderClient::ListComponents(const ListComponentsRequest& request) const
@@ -653,6 +710,30 @@ RefreshTokenOutcome AmplifyUIBuilderClient::RefreshToken(const RefreshTokenReque
   endpointResolutionOutcome.GetResult().AddPathSegment(TokenProvidersMapper::GetNameForTokenProviders(request.GetProvider()));
   endpointResolutionOutcome.GetResult().AddPathSegments("/refresh");
   return RefreshTokenOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartCodegenJobOutcome AmplifyUIBuilderClient::StartCodegenJob(const StartCodegenJobRequest& request) const
+{
+  AWS_OPERATION_GUARD(StartCodegenJob);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartCodegenJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AppIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StartCodegenJob", "Required field: AppId, is not set");
+    return StartCodegenJobOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
+  }
+  if (!request.EnvironmentNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StartCodegenJob", "Required field: EnvironmentName, is not set");
+    return StartCodegenJobOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentName]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartCodegenJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/app/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAppId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/environment/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEnvironmentName());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/codegen-jobs");
+  return StartCodegenJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateComponentOutcome AmplifyUIBuilderClient::UpdateComponent(const UpdateComponentRequest& request) const

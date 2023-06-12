@@ -54,42 +54,42 @@ namespace Model
 
     /**
      * <p>The instance type used to run hyperparameter optimization tuning jobs. See <a
-     * href="https://docs.aws.amazon.com/notebooks-available-instance-types.html">
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebooks-available-instance-types.html">
      * descriptions of instance types</a> for more information.</p>
      */
     inline const TrainingInstanceType& GetInstanceType() const{ return m_instanceType; }
 
     /**
      * <p>The instance type used to run hyperparameter optimization tuning jobs. See <a
-     * href="https://docs.aws.amazon.com/notebooks-available-instance-types.html">
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebooks-available-instance-types.html">
      * descriptions of instance types</a> for more information.</p>
      */
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
      * <p>The instance type used to run hyperparameter optimization tuning jobs. See <a
-     * href="https://docs.aws.amazon.com/notebooks-available-instance-types.html">
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebooks-available-instance-types.html">
      * descriptions of instance types</a> for more information.</p>
      */
     inline void SetInstanceType(const TrainingInstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
      * <p>The instance type used to run hyperparameter optimization tuning jobs. See <a
-     * href="https://docs.aws.amazon.com/notebooks-available-instance-types.html">
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebooks-available-instance-types.html">
      * descriptions of instance types</a> for more information.</p>
      */
     inline void SetInstanceType(TrainingInstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
      * <p>The instance type used to run hyperparameter optimization tuning jobs. See <a
-     * href="https://docs.aws.amazon.com/notebooks-available-instance-types.html">
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebooks-available-instance-types.html">
      * descriptions of instance types</a> for more information.</p>
      */
     inline HyperParameterTuningResourceConfig& WithInstanceType(const TrainingInstanceType& value) { SetInstanceType(value); return *this;}
 
     /**
      * <p>The instance type used to run hyperparameter optimization tuning jobs. See <a
-     * href="https://docs.aws.amazon.com/notebooks-available-instance-types.html">
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebooks-available-instance-types.html">
      * descriptions of instance types</a> for more information.</p>
      */
     inline HyperParameterTuningResourceConfig& WithInstanceType(TrainingInstanceType&& value) { SetInstanceType(std::move(value)); return *this;}

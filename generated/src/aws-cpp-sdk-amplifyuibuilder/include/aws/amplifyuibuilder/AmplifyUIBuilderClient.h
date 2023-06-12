@@ -115,7 +115,7 @@ namespace AmplifyUIBuilder
         }
 
         /**
-         * <p>Creates a new form for an Amplify app.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new form for an Amplify.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/CreateForm">AWS
          * API Reference</a></p>
          */
@@ -344,6 +344,31 @@ namespace AmplifyUIBuilder
         }
 
         /**
+         * <p>Returns an existing code generation job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/GetCodegenJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetCodegenJobOutcome GetCodegenJob(const Model::GetCodegenJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetCodegenJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetCodegenJobRequestT = Model::GetCodegenJobRequest>
+        Model::GetCodegenJobOutcomeCallable GetCodegenJobCallable(const GetCodegenJobRequestT& request) const
+        {
+            return SubmitCallable(&AmplifyUIBuilderClient::GetCodegenJob, request);
+        }
+
+        /**
+         * An Async wrapper for GetCodegenJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetCodegenJobRequestT = Model::GetCodegenJobRequest>
+        void GetCodegenJobAsync(const GetCodegenJobRequestT& request, const GetCodegenJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AmplifyUIBuilderClient::GetCodegenJob, request, handler, context);
+        }
+
+        /**
          * <p>Returns an existing component for an Amplify app.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/GetComponent">AWS
@@ -442,6 +467,32 @@ namespace AmplifyUIBuilder
         void GetThemeAsync(const GetThemeRequestT& request, const GetThemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&AmplifyUIBuilderClient::GetTheme, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves a list of code generation jobs for a specified Amplify app and
+         * backend environment.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ListCodegenJobs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListCodegenJobsOutcome ListCodegenJobs(const Model::ListCodegenJobsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListCodegenJobs that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListCodegenJobsRequestT = Model::ListCodegenJobsRequest>
+        Model::ListCodegenJobsOutcomeCallable ListCodegenJobsCallable(const ListCodegenJobsRequestT& request) const
+        {
+            return SubmitCallable(&AmplifyUIBuilderClient::ListCodegenJobs, request);
+        }
+
+        /**
+         * An Async wrapper for ListCodegenJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListCodegenJobsRequestT = Model::ListCodegenJobsRequest>
+        void ListCodegenJobsAsync(const ListCodegenJobsRequestT& request, const ListCodegenJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AmplifyUIBuilderClient::ListCodegenJobs, request, handler, context);
         }
 
         /**
@@ -572,6 +623,32 @@ namespace AmplifyUIBuilder
         void RefreshTokenAsync(const RefreshTokenRequestT& request, const RefreshTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&AmplifyUIBuilderClient::RefreshToken, request, handler, context);
+        }
+
+        /**
+         * <p>Starts a code generation job for for a specified Amplify app and backend
+         * environment.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/StartCodegenJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartCodegenJobOutcome StartCodegenJob(const Model::StartCodegenJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartCodegenJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartCodegenJobRequestT = Model::StartCodegenJobRequest>
+        Model::StartCodegenJobOutcomeCallable StartCodegenJobCallable(const StartCodegenJobRequestT& request) const
+        {
+            return SubmitCallable(&AmplifyUIBuilderClient::StartCodegenJob, request);
+        }
+
+        /**
+         * An Async wrapper for StartCodegenJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartCodegenJobRequestT = Model::StartCodegenJobRequest>
+        void StartCodegenJobAsync(const StartCodegenJobRequestT& request, const StartCodegenJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AmplifyUIBuilderClient::StartCodegenJob, request, handler, context);
         }
 
         /**
