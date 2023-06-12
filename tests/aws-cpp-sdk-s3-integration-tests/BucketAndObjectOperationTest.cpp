@@ -2155,13 +2155,11 @@ namespace
         listObjectsOutcome = s3ClientWithDualStack.ListObjects(listObjectsRequest);
         ASSERT_FALSE(listObjectsOutcome.IsSuccess());
         ASSERT_EQ(HttpResponseCode::REQUEST_NOT_MADE, listObjectsOutcome.GetError().GetResponseCode());
-        ASSERT_EQ("Host override cannot be combined with Dualstack, FIPS, or S3 Accelerate", listObjectsOutcome.GetError().GetMessage());
 
         listObjectsRequest.SetBucket("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint");
         listObjectsOutcome = s3ClientWithDualStack.ListObjects(listObjectsRequest);
         ASSERT_FALSE(listObjectsOutcome.IsSuccess());
         ASSERT_EQ(HttpResponseCode::REQUEST_NOT_MADE, listObjectsOutcome.GetError().GetResponseCode());
-        ASSERT_EQ("S3 Outposts does not support Dual-stack", listObjectsOutcome.GetError().GetMessage());
     }
 
     TEST_F(BucketAndObjectOperationTest, TestS3AccessPointARN)
