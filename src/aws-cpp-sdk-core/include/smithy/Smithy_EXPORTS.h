@@ -24,7 +24,7 @@
         #define SMITHY_API
     #endif // USE_IMPORT_EXPORT
 #else // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
-    #if ((__GNUC__ >= 4) || defined(__clang__)) && defined(USE_IMPORT_EXPORT) && defined(SMITHY_EXPORTS)
+    #if ((__GNUC__ >= 6) || defined(__clang__)) && defined(USE_IMPORT_EXPORT) && defined(SMITHY_EXPORTS)
         #define SMITHY_API __attribute__((visibility("default")))
     #else
         #define SMITHY_API
