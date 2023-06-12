@@ -12,6 +12,7 @@
 #include <random>
 #include <chrono>
 #include <thread>
+#include <mutex>
 
 namespace Aws
 {
@@ -90,17 +91,29 @@ namespace Aws
             return UUID(randomBytes);
         }
 
+#ifdef UINT64_MAX
+        using MTEngine = std::mt19937_64;
+        using RandGenType = uint64_t;
+#else
+        using MTEngine = std::mt19937;
+        using RandGenType = unsigned int;
+#endif
+
+        static size_t GetCurrentThreadRandomSeed()
+        {
+            static size_t processRandomSeed = std::random_device{}();
+            static MTEngine threadRandomSeedGen(processRandomSeed);
+            // Threads can be re-used (esp. on OS X), generate a true random per-thread random seed
+            static std::mutex threadRandomSeedGenMtx;
+            std::unique_lock<std::mutex> lock(threadRandomSeedGenMtx);
+            return static_cast<size_t>(std::hash<std::thread::id>{}(std::this_thread::get_id()) ^ threadRandomSeedGen());
+        }
+
         UUID UUID::PseudoRandomUUID()
         {
-            static size_t randomSeed = std::random_device{}();
-            static const thread_local size_t threadId = std::hash<std::thread::id>{}(std::this_thread::get_id());
-#ifdef UINT64_MAX
-            static thread_local std::mt19937_64 gen(randomSeed ^ threadId);
-            using RandGenType = uint64_t;
-#else
-            static thread_local std::mt19937 gen(randomSeed ^ threadId);
-            using RandGenType = unsigned int;
-#endif
+            static const thread_local size_t threadSeed = GetCurrentThreadRandomSeed();
+            static thread_local MTEngine gen(threadSeed);
+
             unsigned char randomBytes[UUID_BINARY_SIZE] = {0};
 
             for (size_t i = 0; i < UUID_BINARY_SIZE / sizeof(RandGenType); i++) {
