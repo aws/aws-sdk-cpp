@@ -100,7 +100,8 @@ namespace Model
     vpn_connection_device_type,
     vpc_block_public_access_exclusion,
     ipam_resource_discovery,
-    ipam_resource_discovery_association
+    ipam_resource_discovery_association,
+    instance_connect_endpoint
   };
 
 namespace ResourceTypeMapper

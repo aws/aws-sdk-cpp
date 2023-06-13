@@ -23,7 +23,9 @@ ListAnswersRequest::ListAnswersRequest() :
     m_milestoneNumberHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+    m_maxResultsHasBeenSet(false),
+    m_questionPriority(QuestionPriority::NOT_SET),
+    m_questionPriorityHasBeenSet(false)
 {
 }
 
@@ -60,6 +62,13 @@ void ListAnswersRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_maxResults;
       uri.AddQueryStringParameter("MaxResults", ss.str());
+      ss.str("");
+    }
+
+    if(m_questionPriorityHasBeenSet)
+    {
+      ss << QuestionPriorityMapper::GetNameForQuestionPriority(m_questionPriority);
+      uri.AddQueryStringParameter("QuestionPriority", ss.str());
       ss.str("");
     }
 

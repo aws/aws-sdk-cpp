@@ -138,6 +138,31 @@ namespace Model
     
     inline PillarReviewSummary& AddRiskCounts(Risk&& key, int value) { m_riskCountsHasBeenSet = true; m_riskCounts.emplace(std::move(key), value); return *this; }
 
+
+    
+    inline const Aws::Map<Risk, int>& GetPrioritizedRiskCounts() const{ return m_prioritizedRiskCounts; }
+
+    
+    inline bool PrioritizedRiskCountsHasBeenSet() const { return m_prioritizedRiskCountsHasBeenSet; }
+
+    
+    inline void SetPrioritizedRiskCounts(const Aws::Map<Risk, int>& value) { m_prioritizedRiskCountsHasBeenSet = true; m_prioritizedRiskCounts = value; }
+
+    
+    inline void SetPrioritizedRiskCounts(Aws::Map<Risk, int>&& value) { m_prioritizedRiskCountsHasBeenSet = true; m_prioritizedRiskCounts = std::move(value); }
+
+    
+    inline PillarReviewSummary& WithPrioritizedRiskCounts(const Aws::Map<Risk, int>& value) { SetPrioritizedRiskCounts(value); return *this;}
+
+    
+    inline PillarReviewSummary& WithPrioritizedRiskCounts(Aws::Map<Risk, int>&& value) { SetPrioritizedRiskCounts(std::move(value)); return *this;}
+
+    
+    inline PillarReviewSummary& AddPrioritizedRiskCounts(const Risk& key, int value) { m_prioritizedRiskCountsHasBeenSet = true; m_prioritizedRiskCounts.emplace(key, value); return *this; }
+
+    
+    inline PillarReviewSummary& AddPrioritizedRiskCounts(Risk&& key, int value) { m_prioritizedRiskCountsHasBeenSet = true; m_prioritizedRiskCounts.emplace(std::move(key), value); return *this; }
+
   private:
 
     Aws::String m_pillarId;
@@ -151,6 +176,9 @@ namespace Model
 
     Aws::Map<Risk, int> m_riskCounts;
     bool m_riskCountsHasBeenSet = false;
+
+    Aws::Map<Risk, int> m_prioritizedRiskCounts;
+    bool m_prioritizedRiskCountsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -21,14 +21,18 @@ namespace Model
 AWSManagedRulesATPRuleSet::AWSManagedRulesATPRuleSet() : 
     m_loginPathHasBeenSet(false),
     m_requestInspectionHasBeenSet(false),
-    m_responseInspectionHasBeenSet(false)
+    m_responseInspectionHasBeenSet(false),
+    m_enableRegexInPath(false),
+    m_enableRegexInPathHasBeenSet(false)
 {
 }
 
 AWSManagedRulesATPRuleSet::AWSManagedRulesATPRuleSet(JsonView jsonValue) : 
     m_loginPathHasBeenSet(false),
     m_requestInspectionHasBeenSet(false),
-    m_responseInspectionHasBeenSet(false)
+    m_responseInspectionHasBeenSet(false),
+    m_enableRegexInPath(false),
+    m_enableRegexInPathHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +60,13 @@ AWSManagedRulesATPRuleSet& AWSManagedRulesATPRuleSet::operator =(JsonView jsonVa
     m_responseInspectionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EnableRegexInPath"))
+  {
+    m_enableRegexInPath = jsonValue.GetBool("EnableRegexInPath");
+
+    m_enableRegexInPathHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +89,12 @@ JsonValue AWSManagedRulesATPRuleSet::Jsonize() const
   if(m_responseInspectionHasBeenSet)
   {
    payload.WithObject("ResponseInspection", m_responseInspection.Jsonize());
+
+  }
+
+  if(m_enableRegexInPathHasBeenSet)
+  {
+   payload.WithBool("EnableRegexInPath", m_enableRegexInPath);
 
   }
 

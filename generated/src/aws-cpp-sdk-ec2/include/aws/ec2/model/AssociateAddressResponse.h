@@ -34,44 +34,44 @@ namespace Model
 
 
     /**
-     * <p>[EC2-VPC] The ID that represents the association of the Elastic IP address
-     * with an instance.</p>
+     * <p>The ID that represents the association of the Elastic IP address with an
+     * instance.</p>
      */
     inline const Aws::String& GetAssociationId() const{ return m_associationId; }
 
     /**
-     * <p>[EC2-VPC] The ID that represents the association of the Elastic IP address
-     * with an instance.</p>
+     * <p>The ID that represents the association of the Elastic IP address with an
+     * instance.</p>
      */
     inline void SetAssociationId(const Aws::String& value) { m_associationId = value; }
 
     /**
-     * <p>[EC2-VPC] The ID that represents the association of the Elastic IP address
-     * with an instance.</p>
+     * <p>The ID that represents the association of the Elastic IP address with an
+     * instance.</p>
      */
     inline void SetAssociationId(Aws::String&& value) { m_associationId = std::move(value); }
 
     /**
-     * <p>[EC2-VPC] The ID that represents the association of the Elastic IP address
-     * with an instance.</p>
+     * <p>The ID that represents the association of the Elastic IP address with an
+     * instance.</p>
      */
     inline void SetAssociationId(const char* value) { m_associationId.assign(value); }
 
     /**
-     * <p>[EC2-VPC] The ID that represents the association of the Elastic IP address
-     * with an instance.</p>
+     * <p>The ID that represents the association of the Elastic IP address with an
+     * instance.</p>
      */
     inline AssociateAddressResponse& WithAssociationId(const Aws::String& value) { SetAssociationId(value); return *this;}
 
     /**
-     * <p>[EC2-VPC] The ID that represents the association of the Elastic IP address
-     * with an instance.</p>
+     * <p>The ID that represents the association of the Elastic IP address with an
+     * instance.</p>
      */
     inline AssociateAddressResponse& WithAssociationId(Aws::String&& value) { SetAssociationId(std::move(value)); return *this;}
 
     /**
-     * <p>[EC2-VPC] The ID that represents the association of the Elastic IP address
-     * with an instance.</p>
+     * <p>The ID that represents the association of the Elastic IP address with an
+     * instance.</p>
      */
     inline AssociateAddressResponse& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
 

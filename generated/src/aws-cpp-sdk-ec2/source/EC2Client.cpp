@@ -91,6 +91,7 @@
 #include <aws/ec2/model/CreateFlowLogsRequest.h>
 #include <aws/ec2/model/CreateFpgaImageRequest.h>
 #include <aws/ec2/model/CreateImageRequest.h>
+#include <aws/ec2/model/CreateInstanceConnectEndpointRequest.h>
 #include <aws/ec2/model/CreateInstanceEventWindowRequest.h>
 #include <aws/ec2/model/CreateInstanceExportTaskRequest.h>
 #include <aws/ec2/model/CreateInternetGatewayRequest.h>
@@ -167,6 +168,7 @@
 #include <aws/ec2/model/DeleteFleetsRequest.h>
 #include <aws/ec2/model/DeleteFlowLogsRequest.h>
 #include <aws/ec2/model/DeleteFpgaImageRequest.h>
+#include <aws/ec2/model/DeleteInstanceConnectEndpointRequest.h>
 #include <aws/ec2/model/DeleteInstanceEventWindowRequest.h>
 #include <aws/ec2/model/DeleteInternetGatewayRequest.h>
 #include <aws/ec2/model/DeleteIpamRequest.h>
@@ -281,6 +283,7 @@
 #include <aws/ec2/model/DescribeImportImageTasksRequest.h>
 #include <aws/ec2/model/DescribeImportSnapshotTasksRequest.h>
 #include <aws/ec2/model/DescribeInstanceAttributeRequest.h>
+#include <aws/ec2/model/DescribeInstanceConnectEndpointsRequest.h>
 #include <aws/ec2/model/DescribeInstanceCreditSpecificationsRequest.h>
 #include <aws/ec2/model/DescribeInstanceEventNotificationAttributesRequest.h>
 #include <aws/ec2/model/DescribeInstanceEventWindowsRequest.h>
@@ -1383,6 +1386,15 @@ CreateImageOutcome EC2Client::CreateImage(const CreateImageRequest& request) con
   return CreateImageOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
 }
 
+CreateInstanceConnectEndpointOutcome EC2Client::CreateInstanceConnectEndpoint(const CreateInstanceConnectEndpointRequest& request) const
+{
+  AWS_OPERATION_GUARD(CreateInstanceConnectEndpoint);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateInstanceConnectEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateInstanceConnectEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateInstanceConnectEndpointOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+}
+
 CreateInstanceEventWindowOutcome EC2Client::CreateInstanceEventWindow(const CreateInstanceEventWindowRequest& request) const
 {
   AWS_OPERATION_GUARD(CreateInstanceEventWindow);
@@ -2065,6 +2077,15 @@ DeleteFpgaImageOutcome EC2Client::DeleteFpgaImage(const DeleteFpgaImageRequest& 
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteFpgaImage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   return DeleteFpgaImageOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DeleteInstanceConnectEndpointOutcome EC2Client::DeleteInstanceConnectEndpoint(const DeleteInstanceConnectEndpointRequest& request) const
+{
+  AWS_OPERATION_GUARD(DeleteInstanceConnectEndpoint);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteInstanceConnectEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteInstanceConnectEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteInstanceConnectEndpointOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
 }
 
 DeleteInstanceEventWindowOutcome EC2Client::DeleteInstanceEventWindow(const DeleteInstanceEventWindowRequest& request) const
@@ -3091,6 +3112,15 @@ DescribeInstanceAttributeOutcome EC2Client::DescribeInstanceAttribute(const Desc
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeInstanceAttribute, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   return DescribeInstanceAttributeOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DescribeInstanceConnectEndpointsOutcome EC2Client::DescribeInstanceConnectEndpoints(const DescribeInstanceConnectEndpointsRequest& request) const
+{
+  AWS_OPERATION_GUARD(DescribeInstanceConnectEndpoints);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeInstanceConnectEndpoints, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeInstanceConnectEndpoints, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeInstanceConnectEndpointsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
 }
 
 DescribeInstanceCreditSpecificationsOutcome EC2Client::DescribeInstanceCreditSpecifications(const DescribeInstanceCreditSpecificationsRequest& request) const

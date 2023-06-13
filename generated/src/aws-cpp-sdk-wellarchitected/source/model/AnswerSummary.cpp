@@ -30,7 +30,9 @@ AnswerSummary::AnswerSummary() :
     m_risk(Risk::NOT_SET),
     m_riskHasBeenSet(false),
     m_reason(AnswerReason::NOT_SET),
-    m_reasonHasBeenSet(false)
+    m_reasonHasBeenSet(false),
+    m_questionType(QuestionType::NOT_SET),
+    m_questionTypeHasBeenSet(false)
 {
 }
 
@@ -46,7 +48,9 @@ AnswerSummary::AnswerSummary(JsonView jsonValue) :
     m_risk(Risk::NOT_SET),
     m_riskHasBeenSet(false),
     m_reason(AnswerReason::NOT_SET),
-    m_reasonHasBeenSet(false)
+    m_reasonHasBeenSet(false),
+    m_questionType(QuestionType::NOT_SET),
+    m_questionTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -125,6 +129,13 @@ AnswerSummary& AnswerSummary::operator =(JsonView jsonValue)
     m_reasonHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("QuestionType"))
+  {
+    m_questionType = QuestionTypeMapper::GetQuestionTypeForName(jsonValue.GetString("QuestionType"));
+
+    m_questionTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -197,6 +208,11 @@ JsonValue AnswerSummary::Jsonize() const
   if(m_reasonHasBeenSet)
   {
    payload.WithString("Reason", AnswerReasonMapper::GetNameForAnswerReason(m_reason));
+  }
+
+  if(m_questionTypeHasBeenSet)
+  {
+   payload.WithString("QuestionType", QuestionTypeMapper::GetNameForQuestionType(m_questionType));
   }
 
   return payload;

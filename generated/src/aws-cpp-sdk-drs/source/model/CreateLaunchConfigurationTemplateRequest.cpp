@@ -17,6 +17,7 @@ CreateLaunchConfigurationTemplateRequest::CreateLaunchConfigurationTemplateReque
     m_copyPrivateIpHasBeenSet(false),
     m_copyTags(false),
     m_copyTagsHasBeenSet(false),
+    m_exportBucketArnHasBeenSet(false),
     m_launchDisposition(LaunchDisposition::NOT_SET),
     m_launchDispositionHasBeenSet(false),
     m_licensingHasBeenSet(false),
@@ -39,6 +40,12 @@ Aws::String CreateLaunchConfigurationTemplateRequest::SerializePayload() const
   if(m_copyTagsHasBeenSet)
   {
    payload.WithBool("copyTags", m_copyTags);
+
+  }
+
+  if(m_exportBucketArnHasBeenSet)
+  {
+   payload.WithString("exportBucketArn", m_exportBucketArn);
 
   }
 

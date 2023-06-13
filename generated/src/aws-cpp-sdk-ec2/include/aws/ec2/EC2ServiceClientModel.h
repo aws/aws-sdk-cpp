@@ -84,6 +84,7 @@
 #include <aws/ec2/model/CreateFlowLogsResponse.h>
 #include <aws/ec2/model/CreateFpgaImageResponse.h>
 #include <aws/ec2/model/CreateImageResponse.h>
+#include <aws/ec2/model/CreateInstanceConnectEndpointResponse.h>
 #include <aws/ec2/model/CreateInstanceEventWindowResponse.h>
 #include <aws/ec2/model/CreateInstanceExportTaskResponse.h>
 #include <aws/ec2/model/CreateInternetGatewayResponse.h>
@@ -155,6 +156,7 @@
 #include <aws/ec2/model/DeleteFleetsResponse.h>
 #include <aws/ec2/model/DeleteFlowLogsResponse.h>
 #include <aws/ec2/model/DeleteFpgaImageResponse.h>
+#include <aws/ec2/model/DeleteInstanceConnectEndpointResponse.h>
 #include <aws/ec2/model/DeleteInstanceEventWindowResponse.h>
 #include <aws/ec2/model/DeleteIpamResponse.h>
 #include <aws/ec2/model/DeleteIpamPoolResponse.h>
@@ -250,6 +252,7 @@
 #include <aws/ec2/model/DescribeImportImageTasksResponse.h>
 #include <aws/ec2/model/DescribeImportSnapshotTasksResponse.h>
 #include <aws/ec2/model/DescribeInstanceAttributeResponse.h>
+#include <aws/ec2/model/DescribeInstanceConnectEndpointsResponse.h>
 #include <aws/ec2/model/DescribeInstanceCreditSpecificationsResponse.h>
 #include <aws/ec2/model/DescribeInstanceEventNotificationAttributesResponse.h>
 #include <aws/ec2/model/DescribeInstanceEventWindowsResponse.h>
@@ -664,6 +667,7 @@ namespace Aws
       class CreateFlowLogsRequest;
       class CreateFpgaImageRequest;
       class CreateImageRequest;
+      class CreateInstanceConnectEndpointRequest;
       class CreateInstanceEventWindowRequest;
       class CreateInstanceExportTaskRequest;
       class CreateInternetGatewayRequest;
@@ -740,6 +744,7 @@ namespace Aws
       class DeleteFleetsRequest;
       class DeleteFlowLogsRequest;
       class DeleteFpgaImageRequest;
+      class DeleteInstanceConnectEndpointRequest;
       class DeleteInstanceEventWindowRequest;
       class DeleteInternetGatewayRequest;
       class DeleteIpamRequest;
@@ -854,6 +859,7 @@ namespace Aws
       class DescribeImportImageTasksRequest;
       class DescribeImportSnapshotTasksRequest;
       class DescribeInstanceAttributeRequest;
+      class DescribeInstanceConnectEndpointsRequest;
       class DescribeInstanceCreditSpecificationsRequest;
       class DescribeInstanceEventNotificationAttributesRequest;
       class DescribeInstanceEventWindowsRequest;
@@ -1258,6 +1264,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateFlowLogsResponse, EC2Error> CreateFlowLogsOutcome;
       typedef Aws::Utils::Outcome<CreateFpgaImageResponse, EC2Error> CreateFpgaImageOutcome;
       typedef Aws::Utils::Outcome<CreateImageResponse, EC2Error> CreateImageOutcome;
+      typedef Aws::Utils::Outcome<CreateInstanceConnectEndpointResponse, EC2Error> CreateInstanceConnectEndpointOutcome;
       typedef Aws::Utils::Outcome<CreateInstanceEventWindowResponse, EC2Error> CreateInstanceEventWindowOutcome;
       typedef Aws::Utils::Outcome<CreateInstanceExportTaskResponse, EC2Error> CreateInstanceExportTaskOutcome;
       typedef Aws::Utils::Outcome<CreateInternetGatewayResponse, EC2Error> CreateInternetGatewayOutcome;
@@ -1334,6 +1341,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeleteFleetsResponse, EC2Error> DeleteFleetsOutcome;
       typedef Aws::Utils::Outcome<DeleteFlowLogsResponse, EC2Error> DeleteFlowLogsOutcome;
       typedef Aws::Utils::Outcome<DeleteFpgaImageResponse, EC2Error> DeleteFpgaImageOutcome;
+      typedef Aws::Utils::Outcome<DeleteInstanceConnectEndpointResponse, EC2Error> DeleteInstanceConnectEndpointOutcome;
       typedef Aws::Utils::Outcome<DeleteInstanceEventWindowResponse, EC2Error> DeleteInstanceEventWindowOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DeleteInternetGatewayOutcome;
       typedef Aws::Utils::Outcome<DeleteIpamResponse, EC2Error> DeleteIpamOutcome;
@@ -1448,6 +1456,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeImportImageTasksResponse, EC2Error> DescribeImportImageTasksOutcome;
       typedef Aws::Utils::Outcome<DescribeImportSnapshotTasksResponse, EC2Error> DescribeImportSnapshotTasksOutcome;
       typedef Aws::Utils::Outcome<DescribeInstanceAttributeResponse, EC2Error> DescribeInstanceAttributeOutcome;
+      typedef Aws::Utils::Outcome<DescribeInstanceConnectEndpointsResponse, EC2Error> DescribeInstanceConnectEndpointsOutcome;
       typedef Aws::Utils::Outcome<DescribeInstanceCreditSpecificationsResponse, EC2Error> DescribeInstanceCreditSpecificationsOutcome;
       typedef Aws::Utils::Outcome<DescribeInstanceEventNotificationAttributesResponse, EC2Error> DescribeInstanceEventNotificationAttributesOutcome;
       typedef Aws::Utils::Outcome<DescribeInstanceEventWindowsResponse, EC2Error> DescribeInstanceEventWindowsOutcome;
@@ -1852,6 +1861,7 @@ namespace Aws
       typedef std::future<CreateFlowLogsOutcome> CreateFlowLogsOutcomeCallable;
       typedef std::future<CreateFpgaImageOutcome> CreateFpgaImageOutcomeCallable;
       typedef std::future<CreateImageOutcome> CreateImageOutcomeCallable;
+      typedef std::future<CreateInstanceConnectEndpointOutcome> CreateInstanceConnectEndpointOutcomeCallable;
       typedef std::future<CreateInstanceEventWindowOutcome> CreateInstanceEventWindowOutcomeCallable;
       typedef std::future<CreateInstanceExportTaskOutcome> CreateInstanceExportTaskOutcomeCallable;
       typedef std::future<CreateInternetGatewayOutcome> CreateInternetGatewayOutcomeCallable;
@@ -1928,6 +1938,7 @@ namespace Aws
       typedef std::future<DeleteFleetsOutcome> DeleteFleetsOutcomeCallable;
       typedef std::future<DeleteFlowLogsOutcome> DeleteFlowLogsOutcomeCallable;
       typedef std::future<DeleteFpgaImageOutcome> DeleteFpgaImageOutcomeCallable;
+      typedef std::future<DeleteInstanceConnectEndpointOutcome> DeleteInstanceConnectEndpointOutcomeCallable;
       typedef std::future<DeleteInstanceEventWindowOutcome> DeleteInstanceEventWindowOutcomeCallable;
       typedef std::future<DeleteInternetGatewayOutcome> DeleteInternetGatewayOutcomeCallable;
       typedef std::future<DeleteIpamOutcome> DeleteIpamOutcomeCallable;
@@ -2042,6 +2053,7 @@ namespace Aws
       typedef std::future<DescribeImportImageTasksOutcome> DescribeImportImageTasksOutcomeCallable;
       typedef std::future<DescribeImportSnapshotTasksOutcome> DescribeImportSnapshotTasksOutcomeCallable;
       typedef std::future<DescribeInstanceAttributeOutcome> DescribeInstanceAttributeOutcomeCallable;
+      typedef std::future<DescribeInstanceConnectEndpointsOutcome> DescribeInstanceConnectEndpointsOutcomeCallable;
       typedef std::future<DescribeInstanceCreditSpecificationsOutcome> DescribeInstanceCreditSpecificationsOutcomeCallable;
       typedef std::future<DescribeInstanceEventNotificationAttributesOutcome> DescribeInstanceEventNotificationAttributesOutcomeCallable;
       typedef std::future<DescribeInstanceEventWindowsOutcome> DescribeInstanceEventWindowsOutcomeCallable;
@@ -2449,6 +2461,7 @@ namespace Aws
     typedef std::function<void(const EC2Client*, const Model::CreateFlowLogsRequest&, const Model::CreateFlowLogsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFlowLogsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateFpgaImageRequest&, const Model::CreateFpgaImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFpgaImageResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateImageRequest&, const Model::CreateImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateImageResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::CreateInstanceConnectEndpointRequest&, const Model::CreateInstanceConnectEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateInstanceConnectEndpointResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateInstanceEventWindowRequest&, const Model::CreateInstanceEventWindowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateInstanceEventWindowResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateInstanceExportTaskRequest&, const Model::CreateInstanceExportTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateInstanceExportTaskResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateInternetGatewayRequest&, const Model::CreateInternetGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateInternetGatewayResponseReceivedHandler;
@@ -2525,6 +2538,7 @@ namespace Aws
     typedef std::function<void(const EC2Client*, const Model::DeleteFleetsRequest&, const Model::DeleteFleetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFleetsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteFlowLogsRequest&, const Model::DeleteFlowLogsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFlowLogsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteFpgaImageRequest&, const Model::DeleteFpgaImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFpgaImageResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DeleteInstanceConnectEndpointRequest&, const Model::DeleteInstanceConnectEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteInstanceConnectEndpointResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteInstanceEventWindowRequest&, const Model::DeleteInstanceEventWindowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteInstanceEventWindowResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteInternetGatewayRequest&, const Model::DeleteInternetGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteInternetGatewayResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteIpamRequest&, const Model::DeleteIpamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteIpamResponseReceivedHandler;
@@ -2639,6 +2653,7 @@ namespace Aws
     typedef std::function<void(const EC2Client*, const Model::DescribeImportImageTasksRequest&, const Model::DescribeImportImageTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeImportImageTasksResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeImportSnapshotTasksRequest&, const Model::DescribeImportSnapshotTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeImportSnapshotTasksResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeInstanceAttributeRequest&, const Model::DescribeInstanceAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstanceAttributeResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DescribeInstanceConnectEndpointsRequest&, const Model::DescribeInstanceConnectEndpointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstanceConnectEndpointsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeInstanceCreditSpecificationsRequest&, const Model::DescribeInstanceCreditSpecificationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstanceCreditSpecificationsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeInstanceEventNotificationAttributesRequest&, const Model::DescribeInstanceEventNotificationAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstanceEventNotificationAttributesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeInstanceEventWindowsRequest&, const Model::DescribeInstanceEventWindowsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstanceEventWindowsResponseReceivedHandler;

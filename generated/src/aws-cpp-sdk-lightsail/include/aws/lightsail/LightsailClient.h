@@ -2280,7 +2280,7 @@ namespace Lightsail
 
         /**
          * <p>Returns information about one or more Amazon Lightsail SSL/TLS
-         * certificates.</p>  <p>To get a summary of a certificate, ommit
+         * certificates.</p>  <p>To get a summary of a certificate, omit
          * <code>includeCertificateDetails</code> from your request. The response will
          * include only the certificate Amazon Resource Name (ARN), certificate name,
          * domain name, and tags.</p> <p><h3>See Also:</h3>   <a

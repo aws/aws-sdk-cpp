@@ -31,7 +31,8 @@ CreateWorkloadRequest::CreateWorkloadRequest() :
     m_clientRequestTokenHasBeenSet(true),
     m_tagsHasBeenSet(false),
     m_discoveryConfigHasBeenSet(false),
-    m_applicationsHasBeenSet(false)
+    m_applicationsHasBeenSet(false),
+    m_profileArnsHasBeenSet(false)
 {
 }
 
@@ -172,6 +173,17 @@ Aws::String CreateWorkloadRequest::SerializePayload() const
      applicationsJsonList[applicationsIndex].AsString(m_applications[applicationsIndex]);
    }
    payload.WithArray("Applications", std::move(applicationsJsonList));
+
+  }
+
+  if(m_profileArnsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> profileArnsJsonList(m_profileArns.size());
+   for(unsigned profileArnsIndex = 0; profileArnsIndex < profileArnsJsonList.GetLength(); ++profileArnsIndex)
+   {
+     profileArnsJsonList[profileArnsIndex].AsString(m_profileArns[profileArnsIndex]);
+   }
+   payload.WithArray("ProfileArns", std::move(profileArnsJsonList));
 
   }
 

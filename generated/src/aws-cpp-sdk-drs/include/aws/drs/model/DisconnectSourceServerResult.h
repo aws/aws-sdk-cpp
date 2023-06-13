@@ -293,6 +293,49 @@ namespace Model
 
 
     /**
+     * <p>ID of the Source Network which is protecting this Source Server's
+     * network.</p>
+     */
+    inline const Aws::String& GetSourceNetworkID() const{ return m_sourceNetworkID; }
+
+    /**
+     * <p>ID of the Source Network which is protecting this Source Server's
+     * network.</p>
+     */
+    inline void SetSourceNetworkID(const Aws::String& value) { m_sourceNetworkID = value; }
+
+    /**
+     * <p>ID of the Source Network which is protecting this Source Server's
+     * network.</p>
+     */
+    inline void SetSourceNetworkID(Aws::String&& value) { m_sourceNetworkID = std::move(value); }
+
+    /**
+     * <p>ID of the Source Network which is protecting this Source Server's
+     * network.</p>
+     */
+    inline void SetSourceNetworkID(const char* value) { m_sourceNetworkID.assign(value); }
+
+    /**
+     * <p>ID of the Source Network which is protecting this Source Server's
+     * network.</p>
+     */
+    inline DisconnectSourceServerResult& WithSourceNetworkID(const Aws::String& value) { SetSourceNetworkID(value); return *this;}
+
+    /**
+     * <p>ID of the Source Network which is protecting this Source Server's
+     * network.</p>
+     */
+    inline DisconnectSourceServerResult& WithSourceNetworkID(Aws::String&& value) { SetSourceNetworkID(std::move(value)); return *this;}
+
+    /**
+     * <p>ID of the Source Network which is protecting this Source Server's
+     * network.</p>
+     */
+    inline DisconnectSourceServerResult& WithSourceNetworkID(const char* value) { SetSourceNetworkID(value); return *this;}
+
+
+    /**
      * <p>The source properties of the Source Server.</p>
      */
     inline const SourceProperties& GetSourceProperties() const{ return m_sourceProperties; }
@@ -479,6 +522,8 @@ namespace Model
     Aws::String m_reversedDirectionSourceServerArn;
 
     SourceCloudProperties m_sourceCloudProperties;
+
+    Aws::String m_sourceNetworkID;
 
     SourceProperties m_sourceProperties;
 

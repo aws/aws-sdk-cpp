@@ -11,6 +11,7 @@
 #include <aws/drs/model/JobStatus.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/drs/model/JobType.h>
+#include <aws/drs/model/ParticipatingResource.h>
 #include <aws/drs/model/ParticipatingServer.h>
 #include <utility>
 
@@ -239,6 +240,47 @@ namespace Model
 
 
     /**
+     * <p>A list of resources that the Job is acting upon.</p>
+     */
+    inline const Aws::Vector<ParticipatingResource>& GetParticipatingResources() const{ return m_participatingResources; }
+
+    /**
+     * <p>A list of resources that the Job is acting upon.</p>
+     */
+    inline bool ParticipatingResourcesHasBeenSet() const { return m_participatingResourcesHasBeenSet; }
+
+    /**
+     * <p>A list of resources that the Job is acting upon.</p>
+     */
+    inline void SetParticipatingResources(const Aws::Vector<ParticipatingResource>& value) { m_participatingResourcesHasBeenSet = true; m_participatingResources = value; }
+
+    /**
+     * <p>A list of resources that the Job is acting upon.</p>
+     */
+    inline void SetParticipatingResources(Aws::Vector<ParticipatingResource>&& value) { m_participatingResourcesHasBeenSet = true; m_participatingResources = std::move(value); }
+
+    /**
+     * <p>A list of resources that the Job is acting upon.</p>
+     */
+    inline Job& WithParticipatingResources(const Aws::Vector<ParticipatingResource>& value) { SetParticipatingResources(value); return *this;}
+
+    /**
+     * <p>A list of resources that the Job is acting upon.</p>
+     */
+    inline Job& WithParticipatingResources(Aws::Vector<ParticipatingResource>&& value) { SetParticipatingResources(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of resources that the Job is acting upon.</p>
+     */
+    inline Job& AddParticipatingResources(const ParticipatingResource& value) { m_participatingResourcesHasBeenSet = true; m_participatingResources.push_back(value); return *this; }
+
+    /**
+     * <p>A list of resources that the Job is acting upon.</p>
+     */
+    inline Job& AddParticipatingResources(ParticipatingResource&& value) { m_participatingResourcesHasBeenSet = true; m_participatingResources.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>A list of servers that the Job is acting upon.</p>
      */
     inline const Aws::Vector<ParticipatingServer>& GetParticipatingServers() const{ return m_participatingServers; }
@@ -422,6 +464,9 @@ namespace Model
 
     Aws::String m_jobID;
     bool m_jobIDHasBeenSet = false;
+
+    Aws::Vector<ParticipatingResource> m_participatingResources;
+    bool m_participatingResourcesHasBeenSet = false;
 
     Aws::Vector<ParticipatingServer> m_participatingServers;
     bool m_participatingServersHasBeenSet = false;

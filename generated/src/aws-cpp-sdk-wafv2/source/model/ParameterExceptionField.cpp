@@ -89,6 +89,7 @@ namespace Aws
         static const int ASSOCIATED_RESOURCE_TYPE_HASH = HashingUtils::HashString("ASSOCIATED_RESOURCE_TYPE");
         static const int SCOPE_DOWN_HASH = HashingUtils::HashString("SCOPE_DOWN");
         static const int CUSTOM_KEYS_HASH = HashingUtils::HashString("CUSTOM_KEYS");
+        static const int ACP_RULE_SET_RESPONSE_INSPECTION_HASH = HashingUtils::HashString("ACP_RULE_SET_RESPONSE_INSPECTION");
 
 
         ParameterExceptionField GetParameterExceptionFieldForName(const Aws::String& name)
@@ -370,6 +371,10 @@ namespace Aws
           {
             return ParameterExceptionField::CUSTOM_KEYS;
           }
+          else if (hashCode == ACP_RULE_SET_RESPONSE_INSPECTION_HASH)
+          {
+            return ParameterExceptionField::ACP_RULE_SET_RESPONSE_INSPECTION;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -522,6 +527,8 @@ namespace Aws
             return "SCOPE_DOWN";
           case ParameterExceptionField::CUSTOM_KEYS:
             return "CUSTOM_KEYS";
+          case ParameterExceptionField::ACP_RULE_SET_RESPONSE_INSPECTION:
+            return "ACP_RULE_SET_RESPONSE_INSPECTION";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

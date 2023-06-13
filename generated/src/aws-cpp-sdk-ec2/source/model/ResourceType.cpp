@@ -105,6 +105,7 @@ namespace Aws
         static const int vpc_block_public_access_exclusion_HASH = HashingUtils::HashString("vpc-block-public-access-exclusion");
         static const int ipam_resource_discovery_HASH = HashingUtils::HashString("ipam-resource-discovery");
         static const int ipam_resource_discovery_association_HASH = HashingUtils::HashString("ipam-resource-discovery-association");
+        static const int instance_connect_endpoint_HASH = HashingUtils::HashString("instance-connect-endpoint");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
@@ -450,6 +451,10 @@ namespace Aws
           {
             return ResourceType::ipam_resource_discovery_association;
           }
+          else if (hashCode == instance_connect_endpoint_HASH)
+          {
+            return ResourceType::instance_connect_endpoint;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -634,6 +639,8 @@ namespace Aws
             return "ipam-resource-discovery";
           case ResourceType::ipam_resource_discovery_association:
             return "ipam-resource-discovery-association";
+          case ResourceType::instance_connect_endpoint:
+            return "instance-connect-endpoint";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

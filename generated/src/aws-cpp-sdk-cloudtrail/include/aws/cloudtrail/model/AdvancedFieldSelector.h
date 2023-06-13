@@ -74,9 +74,11 @@ namespace Model
      * <code>AWS::Lambda::Function</code> </p> </li> <li> <p>
      * <code>AWS::S3::Object</code> </p> </li> <li> <p>
      * <code>AWS::CloudTrail::Channel</code> </p> </li> <li> <p>
+     * <code>AWS::CodeWhisperer::Profile</code> </p> </li> <li> <p>
      * <code>AWS::Cognito::IdentityPool</code> </p> </li> <li> <p>
      * <code>AWS::DynamoDB::Stream</code> </p> </li> <li> <p>
      * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
+     * <code>AWS::EMRWAL::Workspace</code> </p> </li> <li> <p>
      * <code>AWS::FinSpace::Environment</code> </p> </li> <li> <p>
      * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
      * <code>AWS::GuardDuty::Detector</code> </p> </li> <li> <p>
@@ -117,6 +119,11 @@ namespace Model
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:cloudtrail:&lt;region&gt;:&lt;account_ID&gt;:channel/&lt;channel_UUID&gt;</code>
      * </p> </li> </ul> <p>When resources.type equals
+     * <code>AWS::CodeWhisperer::Profile</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:codewhisperer:&lt;region&gt;:&lt;account_ID&gt;:profile/&lt;profile_ID&gt;</code>
+     * </p> </li> </ul> <p>When resources.type equals
      * <code>AWS::Cognito::IdentityPool</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
@@ -131,6 +138,11 @@ namespace Model
      * or <code>NotEquals</code>, the ARN must be in the following format:</p> <ul>
      * <li> <p>
      * <code>arn:&lt;partition&gt;:ec2:&lt;region&gt;::snapshot/&lt;snapshot_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::EMRWAL::Workspace</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:emrwal:&lt;region&gt;::workspace/&lt;workspace_name&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::FinSpace::Environment</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
@@ -225,9 +237,11 @@ namespace Model
      * <code>AWS::Lambda::Function</code> </p> </li> <li> <p>
      * <code>AWS::S3::Object</code> </p> </li> <li> <p>
      * <code>AWS::CloudTrail::Channel</code> </p> </li> <li> <p>
+     * <code>AWS::CodeWhisperer::Profile</code> </p> </li> <li> <p>
      * <code>AWS::Cognito::IdentityPool</code> </p> </li> <li> <p>
      * <code>AWS::DynamoDB::Stream</code> </p> </li> <li> <p>
      * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
+     * <code>AWS::EMRWAL::Workspace</code> </p> </li> <li> <p>
      * <code>AWS::FinSpace::Environment</code> </p> </li> <li> <p>
      * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
      * <code>AWS::GuardDuty::Detector</code> </p> </li> <li> <p>
@@ -268,6 +282,11 @@ namespace Model
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:cloudtrail:&lt;region&gt;:&lt;account_ID&gt;:channel/&lt;channel_UUID&gt;</code>
      * </p> </li> </ul> <p>When resources.type equals
+     * <code>AWS::CodeWhisperer::Profile</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:codewhisperer:&lt;region&gt;:&lt;account_ID&gt;:profile/&lt;profile_ID&gt;</code>
+     * </p> </li> </ul> <p>When resources.type equals
      * <code>AWS::Cognito::IdentityPool</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
@@ -282,6 +301,11 @@ namespace Model
      * or <code>NotEquals</code>, the ARN must be in the following format:</p> <ul>
      * <li> <p>
      * <code>arn:&lt;partition&gt;:ec2:&lt;region&gt;::snapshot/&lt;snapshot_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::EMRWAL::Workspace</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:emrwal:&lt;region&gt;::workspace/&lt;workspace_name&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::FinSpace::Environment</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
@@ -376,9 +400,11 @@ namespace Model
      * <code>AWS::Lambda::Function</code> </p> </li> <li> <p>
      * <code>AWS::S3::Object</code> </p> </li> <li> <p>
      * <code>AWS::CloudTrail::Channel</code> </p> </li> <li> <p>
+     * <code>AWS::CodeWhisperer::Profile</code> </p> </li> <li> <p>
      * <code>AWS::Cognito::IdentityPool</code> </p> </li> <li> <p>
      * <code>AWS::DynamoDB::Stream</code> </p> </li> <li> <p>
      * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
+     * <code>AWS::EMRWAL::Workspace</code> </p> </li> <li> <p>
      * <code>AWS::FinSpace::Environment</code> </p> </li> <li> <p>
      * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
      * <code>AWS::GuardDuty::Detector</code> </p> </li> <li> <p>
@@ -419,6 +445,11 @@ namespace Model
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:cloudtrail:&lt;region&gt;:&lt;account_ID&gt;:channel/&lt;channel_UUID&gt;</code>
      * </p> </li> </ul> <p>When resources.type equals
+     * <code>AWS::CodeWhisperer::Profile</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:codewhisperer:&lt;region&gt;:&lt;account_ID&gt;:profile/&lt;profile_ID&gt;</code>
+     * </p> </li> </ul> <p>When resources.type equals
      * <code>AWS::Cognito::IdentityPool</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
@@ -433,6 +464,11 @@ namespace Model
      * or <code>NotEquals</code>, the ARN must be in the following format:</p> <ul>
      * <li> <p>
      * <code>arn:&lt;partition&gt;:ec2:&lt;region&gt;::snapshot/&lt;snapshot_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::EMRWAL::Workspace</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:emrwal:&lt;region&gt;::workspace/&lt;workspace_name&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::FinSpace::Environment</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
@@ -527,9 +563,11 @@ namespace Model
      * <code>AWS::Lambda::Function</code> </p> </li> <li> <p>
      * <code>AWS::S3::Object</code> </p> </li> <li> <p>
      * <code>AWS::CloudTrail::Channel</code> </p> </li> <li> <p>
+     * <code>AWS::CodeWhisperer::Profile</code> </p> </li> <li> <p>
      * <code>AWS::Cognito::IdentityPool</code> </p> </li> <li> <p>
      * <code>AWS::DynamoDB::Stream</code> </p> </li> <li> <p>
      * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
+     * <code>AWS::EMRWAL::Workspace</code> </p> </li> <li> <p>
      * <code>AWS::FinSpace::Environment</code> </p> </li> <li> <p>
      * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
      * <code>AWS::GuardDuty::Detector</code> </p> </li> <li> <p>
@@ -570,6 +608,11 @@ namespace Model
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:cloudtrail:&lt;region&gt;:&lt;account_ID&gt;:channel/&lt;channel_UUID&gt;</code>
      * </p> </li> </ul> <p>When resources.type equals
+     * <code>AWS::CodeWhisperer::Profile</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:codewhisperer:&lt;region&gt;:&lt;account_ID&gt;:profile/&lt;profile_ID&gt;</code>
+     * </p> </li> </ul> <p>When resources.type equals
      * <code>AWS::Cognito::IdentityPool</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
@@ -584,6 +627,11 @@ namespace Model
      * or <code>NotEquals</code>, the ARN must be in the following format:</p> <ul>
      * <li> <p>
      * <code>arn:&lt;partition&gt;:ec2:&lt;region&gt;::snapshot/&lt;snapshot_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::EMRWAL::Workspace</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:emrwal:&lt;region&gt;::workspace/&lt;workspace_name&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::FinSpace::Environment</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
@@ -678,9 +726,11 @@ namespace Model
      * <code>AWS::Lambda::Function</code> </p> </li> <li> <p>
      * <code>AWS::S3::Object</code> </p> </li> <li> <p>
      * <code>AWS::CloudTrail::Channel</code> </p> </li> <li> <p>
+     * <code>AWS::CodeWhisperer::Profile</code> </p> </li> <li> <p>
      * <code>AWS::Cognito::IdentityPool</code> </p> </li> <li> <p>
      * <code>AWS::DynamoDB::Stream</code> </p> </li> <li> <p>
      * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
+     * <code>AWS::EMRWAL::Workspace</code> </p> </li> <li> <p>
      * <code>AWS::FinSpace::Environment</code> </p> </li> <li> <p>
      * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
      * <code>AWS::GuardDuty::Detector</code> </p> </li> <li> <p>
@@ -721,6 +771,11 @@ namespace Model
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:cloudtrail:&lt;region&gt;:&lt;account_ID&gt;:channel/&lt;channel_UUID&gt;</code>
      * </p> </li> </ul> <p>When resources.type equals
+     * <code>AWS::CodeWhisperer::Profile</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:codewhisperer:&lt;region&gt;:&lt;account_ID&gt;:profile/&lt;profile_ID&gt;</code>
+     * </p> </li> </ul> <p>When resources.type equals
      * <code>AWS::Cognito::IdentityPool</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
@@ -735,6 +790,11 @@ namespace Model
      * or <code>NotEquals</code>, the ARN must be in the following format:</p> <ul>
      * <li> <p>
      * <code>arn:&lt;partition&gt;:ec2:&lt;region&gt;::snapshot/&lt;snapshot_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::EMRWAL::Workspace</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:emrwal:&lt;region&gt;::workspace/&lt;workspace_name&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::FinSpace::Environment</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
@@ -829,9 +889,11 @@ namespace Model
      * <code>AWS::Lambda::Function</code> </p> </li> <li> <p>
      * <code>AWS::S3::Object</code> </p> </li> <li> <p>
      * <code>AWS::CloudTrail::Channel</code> </p> </li> <li> <p>
+     * <code>AWS::CodeWhisperer::Profile</code> </p> </li> <li> <p>
      * <code>AWS::Cognito::IdentityPool</code> </p> </li> <li> <p>
      * <code>AWS::DynamoDB::Stream</code> </p> </li> <li> <p>
      * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
+     * <code>AWS::EMRWAL::Workspace</code> </p> </li> <li> <p>
      * <code>AWS::FinSpace::Environment</code> </p> </li> <li> <p>
      * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
      * <code>AWS::GuardDuty::Detector</code> </p> </li> <li> <p>
@@ -872,6 +934,11 @@ namespace Model
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:cloudtrail:&lt;region&gt;:&lt;account_ID&gt;:channel/&lt;channel_UUID&gt;</code>
      * </p> </li> </ul> <p>When resources.type equals
+     * <code>AWS::CodeWhisperer::Profile</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:codewhisperer:&lt;region&gt;:&lt;account_ID&gt;:profile/&lt;profile_ID&gt;</code>
+     * </p> </li> </ul> <p>When resources.type equals
      * <code>AWS::Cognito::IdentityPool</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
@@ -886,6 +953,11 @@ namespace Model
      * or <code>NotEquals</code>, the ARN must be in the following format:</p> <ul>
      * <li> <p>
      * <code>arn:&lt;partition&gt;:ec2:&lt;region&gt;::snapshot/&lt;snapshot_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::EMRWAL::Workspace</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:emrwal:&lt;region&gt;::workspace/&lt;workspace_name&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::FinSpace::Environment</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
@@ -980,9 +1052,11 @@ namespace Model
      * <code>AWS::Lambda::Function</code> </p> </li> <li> <p>
      * <code>AWS::S3::Object</code> </p> </li> <li> <p>
      * <code>AWS::CloudTrail::Channel</code> </p> </li> <li> <p>
+     * <code>AWS::CodeWhisperer::Profile</code> </p> </li> <li> <p>
      * <code>AWS::Cognito::IdentityPool</code> </p> </li> <li> <p>
      * <code>AWS::DynamoDB::Stream</code> </p> </li> <li> <p>
      * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
+     * <code>AWS::EMRWAL::Workspace</code> </p> </li> <li> <p>
      * <code>AWS::FinSpace::Environment</code> </p> </li> <li> <p>
      * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
      * <code>AWS::GuardDuty::Detector</code> </p> </li> <li> <p>
@@ -1023,6 +1097,11 @@ namespace Model
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:cloudtrail:&lt;region&gt;:&lt;account_ID&gt;:channel/&lt;channel_UUID&gt;</code>
      * </p> </li> </ul> <p>When resources.type equals
+     * <code>AWS::CodeWhisperer::Profile</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:codewhisperer:&lt;region&gt;:&lt;account_ID&gt;:profile/&lt;profile_ID&gt;</code>
+     * </p> </li> </ul> <p>When resources.type equals
      * <code>AWS::Cognito::IdentityPool</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
@@ -1037,6 +1116,11 @@ namespace Model
      * or <code>NotEquals</code>, the ARN must be in the following format:</p> <ul>
      * <li> <p>
      * <code>arn:&lt;partition&gt;:ec2:&lt;region&gt;::snapshot/&lt;snapshot_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::EMRWAL::Workspace</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:emrwal:&lt;region&gt;::workspace/&lt;workspace_name&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::FinSpace::Environment</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
@@ -1131,9 +1215,11 @@ namespace Model
      * <code>AWS::Lambda::Function</code> </p> </li> <li> <p>
      * <code>AWS::S3::Object</code> </p> </li> <li> <p>
      * <code>AWS::CloudTrail::Channel</code> </p> </li> <li> <p>
+     * <code>AWS::CodeWhisperer::Profile</code> </p> </li> <li> <p>
      * <code>AWS::Cognito::IdentityPool</code> </p> </li> <li> <p>
      * <code>AWS::DynamoDB::Stream</code> </p> </li> <li> <p>
      * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
+     * <code>AWS::EMRWAL::Workspace</code> </p> </li> <li> <p>
      * <code>AWS::FinSpace::Environment</code> </p> </li> <li> <p>
      * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
      * <code>AWS::GuardDuty::Detector</code> </p> </li> <li> <p>
@@ -1174,6 +1260,11 @@ namespace Model
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:cloudtrail:&lt;region&gt;:&lt;account_ID&gt;:channel/&lt;channel_UUID&gt;</code>
      * </p> </li> </ul> <p>When resources.type equals
+     * <code>AWS::CodeWhisperer::Profile</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:codewhisperer:&lt;region&gt;:&lt;account_ID&gt;:profile/&lt;profile_ID&gt;</code>
+     * </p> </li> </ul> <p>When resources.type equals
      * <code>AWS::Cognito::IdentityPool</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
@@ -1188,6 +1279,11 @@ namespace Model
      * or <code>NotEquals</code>, the ARN must be in the following format:</p> <ul>
      * <li> <p>
      * <code>arn:&lt;partition&gt;:ec2:&lt;region&gt;::snapshot/&lt;snapshot_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::EMRWAL::Workspace</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:emrwal:&lt;region&gt;::workspace/&lt;workspace_name&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::FinSpace::Environment</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following

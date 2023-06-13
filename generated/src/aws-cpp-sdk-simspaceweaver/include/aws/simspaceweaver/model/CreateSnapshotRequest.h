@@ -35,37 +35,43 @@ namespace Model
 
     /**
      * <p>The Amazon S3 bucket and optional folder (object key prefix) where SimSpace
-     * Weaver creates the snapshot file.</p>
+     * Weaver creates the snapshot file.</p> <p>The Amazon S3 bucket must be in the
+     * same Amazon Web Services Region as the simulation.</p>
      */
     inline const S3Destination& GetDestination() const{ return m_destination; }
 
     /**
      * <p>The Amazon S3 bucket and optional folder (object key prefix) where SimSpace
-     * Weaver creates the snapshot file.</p>
+     * Weaver creates the snapshot file.</p> <p>The Amazon S3 bucket must be in the
+     * same Amazon Web Services Region as the simulation.</p>
      */
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
 
     /**
      * <p>The Amazon S3 bucket and optional folder (object key prefix) where SimSpace
-     * Weaver creates the snapshot file.</p>
+     * Weaver creates the snapshot file.</p> <p>The Amazon S3 bucket must be in the
+     * same Amazon Web Services Region as the simulation.</p>
      */
     inline void SetDestination(const S3Destination& value) { m_destinationHasBeenSet = true; m_destination = value; }
 
     /**
      * <p>The Amazon S3 bucket and optional folder (object key prefix) where SimSpace
-     * Weaver creates the snapshot file.</p>
+     * Weaver creates the snapshot file.</p> <p>The Amazon S3 bucket must be in the
+     * same Amazon Web Services Region as the simulation.</p>
      */
     inline void SetDestination(S3Destination&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
 
     /**
      * <p>The Amazon S3 bucket and optional folder (object key prefix) where SimSpace
-     * Weaver creates the snapshot file.</p>
+     * Weaver creates the snapshot file.</p> <p>The Amazon S3 bucket must be in the
+     * same Amazon Web Services Region as the simulation.</p>
      */
     inline CreateSnapshotRequest& WithDestination(const S3Destination& value) { SetDestination(value); return *this;}
 
     /**
      * <p>The Amazon S3 bucket and optional folder (object key prefix) where SimSpace
-     * Weaver creates the snapshot file.</p>
+     * Weaver creates the snapshot file.</p> <p>The Amazon S3 bucket must be in the
+     * same Amazon Web Services Region as the simulation.</p>
      */
     inline CreateSnapshotRequest& WithDestination(S3Destination&& value) { SetDestination(std::move(value)); return *this;}
 

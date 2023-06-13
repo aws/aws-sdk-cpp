@@ -81,6 +81,12 @@ DisconnectSourceServerResult& DisconnectSourceServerResult::operator =(const Aws
 
   }
 
+  if(jsonValue.ValueExists("sourceNetworkID"))
+  {
+    m_sourceNetworkID = jsonValue.GetString("sourceNetworkID");
+
+  }
+
   if(jsonValue.ValueExists("sourceProperties"))
   {
     m_sourceProperties = jsonValue.GetObject("sourceProperties");

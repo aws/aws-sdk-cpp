@@ -22,16 +22,22 @@
 #include <aws/wellarchitected/WellArchitectedErrorMarshaller.h>
 #include <aws/wellarchitected/WellArchitectedEndpointProvider.h>
 #include <aws/wellarchitected/model/AssociateLensesRequest.h>
+#include <aws/wellarchitected/model/AssociateProfilesRequest.h>
 #include <aws/wellarchitected/model/CreateLensShareRequest.h>
 #include <aws/wellarchitected/model/CreateLensVersionRequest.h>
 #include <aws/wellarchitected/model/CreateMilestoneRequest.h>
+#include <aws/wellarchitected/model/CreateProfileRequest.h>
+#include <aws/wellarchitected/model/CreateProfileShareRequest.h>
 #include <aws/wellarchitected/model/CreateWorkloadRequest.h>
 #include <aws/wellarchitected/model/CreateWorkloadShareRequest.h>
 #include <aws/wellarchitected/model/DeleteLensRequest.h>
 #include <aws/wellarchitected/model/DeleteLensShareRequest.h>
+#include <aws/wellarchitected/model/DeleteProfileRequest.h>
+#include <aws/wellarchitected/model/DeleteProfileShareRequest.h>
 #include <aws/wellarchitected/model/DeleteWorkloadRequest.h>
 #include <aws/wellarchitected/model/DeleteWorkloadShareRequest.h>
 #include <aws/wellarchitected/model/DisassociateLensesRequest.h>
+#include <aws/wellarchitected/model/DisassociateProfilesRequest.h>
 #include <aws/wellarchitected/model/ExportLensRequest.h>
 #include <aws/wellarchitected/model/GetAnswerRequest.h>
 #include <aws/wellarchitected/model/GetConsolidatedReportRequest.h>
@@ -40,6 +46,8 @@
 #include <aws/wellarchitected/model/GetLensReviewReportRequest.h>
 #include <aws/wellarchitected/model/GetLensVersionDifferenceRequest.h>
 #include <aws/wellarchitected/model/GetMilestoneRequest.h>
+#include <aws/wellarchitected/model/GetProfileRequest.h>
+#include <aws/wellarchitected/model/GetProfileTemplateRequest.h>
 #include <aws/wellarchitected/model/GetWorkloadRequest.h>
 #include <aws/wellarchitected/model/ImportLensRequest.h>
 #include <aws/wellarchitected/model/ListAnswersRequest.h>
@@ -51,6 +59,9 @@
 #include <aws/wellarchitected/model/ListLensesRequest.h>
 #include <aws/wellarchitected/model/ListMilestonesRequest.h>
 #include <aws/wellarchitected/model/ListNotificationsRequest.h>
+#include <aws/wellarchitected/model/ListProfileNotificationsRequest.h>
+#include <aws/wellarchitected/model/ListProfileSharesRequest.h>
+#include <aws/wellarchitected/model/ListProfilesRequest.h>
 #include <aws/wellarchitected/model/ListShareInvitationsRequest.h>
 #include <aws/wellarchitected/model/ListTagsForResourceRequest.h>
 #include <aws/wellarchitected/model/ListWorkloadSharesRequest.h>
@@ -60,10 +71,12 @@
 #include <aws/wellarchitected/model/UpdateAnswerRequest.h>
 #include <aws/wellarchitected/model/UpdateGlobalSettingsRequest.h>
 #include <aws/wellarchitected/model/UpdateLensReviewRequest.h>
+#include <aws/wellarchitected/model/UpdateProfileRequest.h>
 #include <aws/wellarchitected/model/UpdateShareInvitationRequest.h>
 #include <aws/wellarchitected/model/UpdateWorkloadRequest.h>
 #include <aws/wellarchitected/model/UpdateWorkloadShareRequest.h>
 #include <aws/wellarchitected/model/UpgradeLensReviewRequest.h>
+#include <aws/wellarchitected/model/UpgradeProfileVersionRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -210,6 +223,23 @@ AssociateLensesOutcome WellArchitectedClient::AssociateLenses(const AssociateLen
   return AssociateLensesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
+AssociateProfilesOutcome WellArchitectedClient::AssociateProfiles(const AssociateProfilesRequest& request) const
+{
+  AWS_OPERATION_GUARD(AssociateProfiles);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateProfiles, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.WorkloadIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AssociateProfiles", "Required field: WorkloadId, is not set");
+    return AssociateProfilesOutcome(Aws::Client::AWSError<WellArchitectedErrors>(WellArchitectedErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WorkloadId]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AssociateProfiles, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/workloads/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkloadId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/associateProfiles");
+  return AssociateProfilesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+}
+
 CreateLensShareOutcome WellArchitectedClient::CreateLensShare(const CreateLensShareRequest& request) const
 {
   AWS_OPERATION_GUARD(CreateLensShare);
@@ -259,6 +289,33 @@ CreateMilestoneOutcome WellArchitectedClient::CreateMilestone(const CreateMilest
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkloadId());
   endpointResolutionOutcome.GetResult().AddPathSegments("/milestones");
   return CreateMilestoneOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateProfileOutcome WellArchitectedClient::CreateProfile(const CreateProfileRequest& request) const
+{
+  AWS_OPERATION_GUARD(CreateProfile);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/profiles");
+  return CreateProfileOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateProfileShareOutcome WellArchitectedClient::CreateProfileShare(const CreateProfileShareRequest& request) const
+{
+  AWS_OPERATION_GUARD(CreateProfileShare);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateProfileShare, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ProfileArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateProfileShare", "Required field: ProfileArn, is not set");
+    return CreateProfileShareOutcome(Aws::Client::AWSError<WellArchitectedErrors>(WellArchitectedErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfileArn]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateProfileShare, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/profiles/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProfileArn());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/shares");
+  return CreateProfileShareOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateWorkloadOutcome WellArchitectedClient::CreateWorkload(const CreateWorkloadRequest& request) const
@@ -342,6 +399,55 @@ DeleteLensShareOutcome WellArchitectedClient::DeleteLensShare(const DeleteLensSh
   return DeleteLensShareOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
+DeleteProfileOutcome WellArchitectedClient::DeleteProfile(const DeleteProfileRequest& request) const
+{
+  AWS_OPERATION_GUARD(DeleteProfile);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ProfileArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteProfile", "Required field: ProfileArn, is not set");
+    return DeleteProfileOutcome(Aws::Client::AWSError<WellArchitectedErrors>(WellArchitectedErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfileArn]", false));
+  }
+  if (!request.ClientRequestTokenHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteProfile", "Required field: ClientRequestToken, is not set");
+    return DeleteProfileOutcome(Aws::Client::AWSError<WellArchitectedErrors>(WellArchitectedErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClientRequestToken]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/profiles/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProfileArn());
+  return DeleteProfileOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteProfileShareOutcome WellArchitectedClient::DeleteProfileShare(const DeleteProfileShareRequest& request) const
+{
+  AWS_OPERATION_GUARD(DeleteProfileShare);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteProfileShare, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ShareIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteProfileShare", "Required field: ShareId, is not set");
+    return DeleteProfileShareOutcome(Aws::Client::AWSError<WellArchitectedErrors>(WellArchitectedErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ShareId]", false));
+  }
+  if (!request.ProfileArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteProfileShare", "Required field: ProfileArn, is not set");
+    return DeleteProfileShareOutcome(Aws::Client::AWSError<WellArchitectedErrors>(WellArchitectedErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfileArn]", false));
+  }
+  if (!request.ClientRequestTokenHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteProfileShare", "Required field: ClientRequestToken, is not set");
+    return DeleteProfileShareOutcome(Aws::Client::AWSError<WellArchitectedErrors>(WellArchitectedErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClientRequestToken]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteProfileShare, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/profiles/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProfileArn());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/shares/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetShareId());
+  return DeleteProfileShareOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
 DeleteWorkloadOutcome WellArchitectedClient::DeleteWorkload(const DeleteWorkloadRequest& request) const
 {
   AWS_OPERATION_GUARD(DeleteWorkload);
@@ -406,6 +512,23 @@ DisassociateLensesOutcome WellArchitectedClient::DisassociateLenses(const Disass
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkloadId());
   endpointResolutionOutcome.GetResult().AddPathSegments("/disassociateLenses");
   return DisassociateLensesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+}
+
+DisassociateProfilesOutcome WellArchitectedClient::DisassociateProfiles(const DisassociateProfilesRequest& request) const
+{
+  AWS_OPERATION_GUARD(DisassociateProfiles);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateProfiles, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.WorkloadIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DisassociateProfiles", "Required field: WorkloadId, is not set");
+    return DisassociateProfilesOutcome(Aws::Client::AWSError<WellArchitectedErrors>(WellArchitectedErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WorkloadId]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DisassociateProfiles, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/workloads/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkloadId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/disassociateProfiles");
+  return DisassociateProfilesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 ExportLensOutcome WellArchitectedClient::ExportLens(const ExportLensRequest& request) const
@@ -571,6 +694,32 @@ GetMilestoneOutcome WellArchitectedClient::GetMilestone(const GetMilestoneReques
   endpointResolutionOutcome.GetResult().AddPathSegments("/milestones/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMilestoneNumber());
   return GetMilestoneOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetProfileOutcome WellArchitectedClient::GetProfile(const GetProfileRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetProfile);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ProfileArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetProfile", "Required field: ProfileArn, is not set");
+    return GetProfileOutcome(Aws::Client::AWSError<WellArchitectedErrors>(WellArchitectedErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfileArn]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/profiles/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProfileArn());
+  return GetProfileOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetProfileTemplateOutcome WellArchitectedClient::GetProfileTemplate(const GetProfileTemplateRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetProfileTemplate);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetProfileTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetProfileTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/profileTemplate");
+  return GetProfileTemplateOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetWorkloadOutcome WellArchitectedClient::GetWorkload(const GetWorkloadRequest& request) const
@@ -752,6 +901,43 @@ ListNotificationsOutcome WellArchitectedClient::ListNotifications(const ListNoti
   return ListNotificationsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
+ListProfileNotificationsOutcome WellArchitectedClient::ListProfileNotifications(const ListProfileNotificationsRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListProfileNotifications);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListProfileNotifications, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListProfileNotifications, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/profileNotifications/");
+  return ListProfileNotificationsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListProfileSharesOutcome WellArchitectedClient::ListProfileShares(const ListProfileSharesRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListProfileShares);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListProfileShares, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ProfileArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListProfileShares", "Required field: ProfileArn, is not set");
+    return ListProfileSharesOutcome(Aws::Client::AWSError<WellArchitectedErrors>(WellArchitectedErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfileArn]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListProfileShares, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/profiles/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProfileArn());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/shares");
+  return ListProfileSharesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListProfilesOutcome WellArchitectedClient::ListProfiles(const ListProfilesRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListProfiles);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListProfiles, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListProfiles, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/profileSummaries");
+  return ListProfilesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
 ListShareInvitationsOutcome WellArchitectedClient::ListShareInvitations(const ListShareInvitationsRequest& request) const
 {
   AWS_OPERATION_GUARD(ListShareInvitations);
@@ -905,6 +1091,22 @@ UpdateLensReviewOutcome WellArchitectedClient::UpdateLensReview(const UpdateLens
   return UpdateLensReviewOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
+UpdateProfileOutcome WellArchitectedClient::UpdateProfile(const UpdateProfileRequest& request) const
+{
+  AWS_OPERATION_GUARD(UpdateProfile);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ProfileArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateProfile", "Required field: ProfileArn, is not set");
+    return UpdateProfileOutcome(Aws::Client::AWSError<WellArchitectedErrors>(WellArchitectedErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfileArn]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/profiles/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProfileArn());
+  return UpdateProfileOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+}
+
 UpdateShareInvitationOutcome WellArchitectedClient::UpdateShareInvitation(const UpdateShareInvitationRequest& request) const
 {
   AWS_OPERATION_GUARD(UpdateShareInvitation);
@@ -982,5 +1184,29 @@ UpgradeLensReviewOutcome WellArchitectedClient::UpgradeLensReview(const UpgradeL
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLensAlias());
   endpointResolutionOutcome.GetResult().AddPathSegments("/upgrade");
   return UpgradeLensReviewOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpgradeProfileVersionOutcome WellArchitectedClient::UpgradeProfileVersion(const UpgradeProfileVersionRequest& request) const
+{
+  AWS_OPERATION_GUARD(UpgradeProfileVersion);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpgradeProfileVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.WorkloadIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpgradeProfileVersion", "Required field: WorkloadId, is not set");
+    return UpgradeProfileVersionOutcome(Aws::Client::AWSError<WellArchitectedErrors>(WellArchitectedErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WorkloadId]", false));
+  }
+  if (!request.ProfileArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpgradeProfileVersion", "Required field: ProfileArn, is not set");
+    return UpgradeProfileVersionOutcome(Aws::Client::AWSError<WellArchitectedErrors>(WellArchitectedErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfileArn]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpgradeProfileVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/workloads/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkloadId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/profiles/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProfileArn());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/upgrade");
+  return UpgradeProfileVersionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 

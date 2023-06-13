@@ -22,6 +22,7 @@ namespace Aws
 
         static const int WORKLOAD_HASH = HashingUtils::HashString("WORKLOAD");
         static const int LENS_HASH = HashingUtils::HashString("LENS");
+        static const int PROFILE_HASH = HashingUtils::HashString("PROFILE");
 
 
         ShareResourceType GetShareResourceTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == LENS_HASH)
           {
             return ShareResourceType::LENS;
+          }
+          else if (hashCode == PROFILE_HASH)
+          {
+            return ShareResourceType::PROFILE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "WORKLOAD";
           case ShareResourceType::LENS:
             return "LENS";
+          case ShareResourceType::PROFILE:
+            return "PROFILE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

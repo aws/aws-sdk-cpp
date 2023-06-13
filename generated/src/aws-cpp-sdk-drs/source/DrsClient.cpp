@@ -21,13 +21,16 @@
 #include <aws/drs/DrsClient.h>
 #include <aws/drs/DrsErrorMarshaller.h>
 #include <aws/drs/DrsEndpointProvider.h>
+#include <aws/drs/model/AssociateSourceNetworkStackRequest.h>
 #include <aws/drs/model/CreateExtendedSourceServerRequest.h>
 #include <aws/drs/model/CreateLaunchConfigurationTemplateRequest.h>
 #include <aws/drs/model/CreateReplicationConfigurationTemplateRequest.h>
+#include <aws/drs/model/CreateSourceNetworkRequest.h>
 #include <aws/drs/model/DeleteJobRequest.h>
 #include <aws/drs/model/DeleteLaunchConfigurationTemplateRequest.h>
 #include <aws/drs/model/DeleteRecoveryInstanceRequest.h>
 #include <aws/drs/model/DeleteReplicationConfigurationTemplateRequest.h>
+#include <aws/drs/model/DeleteSourceNetworkRequest.h>
 #include <aws/drs/model/DeleteSourceServerRequest.h>
 #include <aws/drs/model/DescribeJobLogItemsRequest.h>
 #include <aws/drs/model/DescribeJobsRequest.h>
@@ -35,9 +38,11 @@
 #include <aws/drs/model/DescribeRecoveryInstancesRequest.h>
 #include <aws/drs/model/DescribeRecoverySnapshotsRequest.h>
 #include <aws/drs/model/DescribeReplicationConfigurationTemplatesRequest.h>
+#include <aws/drs/model/DescribeSourceNetworksRequest.h>
 #include <aws/drs/model/DescribeSourceServersRequest.h>
 #include <aws/drs/model/DisconnectRecoveryInstanceRequest.h>
 #include <aws/drs/model/DisconnectSourceServerRequest.h>
+#include <aws/drs/model/ExportSourceNetworkCfnTemplateRequest.h>
 #include <aws/drs/model/GetFailbackReplicationConfigurationRequest.h>
 #include <aws/drs/model/GetLaunchConfigurationRequest.h>
 #include <aws/drs/model/GetReplicationConfigurationRequest.h>
@@ -49,8 +54,11 @@
 #include <aws/drs/model/StartFailbackLaunchRequest.h>
 #include <aws/drs/model/StartRecoveryRequest.h>
 #include <aws/drs/model/StartReplicationRequest.h>
+#include <aws/drs/model/StartSourceNetworkRecoveryRequest.h>
+#include <aws/drs/model/StartSourceNetworkReplicationRequest.h>
 #include <aws/drs/model/StopFailbackRequest.h>
 #include <aws/drs/model/StopReplicationRequest.h>
+#include <aws/drs/model/StopSourceNetworkReplicationRequest.h>
 #include <aws/drs/model/TagResourceRequest.h>
 #include <aws/drs/model/TerminateRecoveryInstancesRequest.h>
 #include <aws/drs/model/UntagResourceRequest.h>
@@ -188,6 +196,16 @@ void DrsClient::OverrideEndpoint(const Aws::String& endpoint)
   m_endpointProvider->OverrideEndpoint(endpoint);
 }
 
+AssociateSourceNetworkStackOutcome DrsClient::AssociateSourceNetworkStack(const AssociateSourceNetworkStackRequest& request) const
+{
+  AWS_OPERATION_GUARD(AssociateSourceNetworkStack);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateSourceNetworkStack, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AssociateSourceNetworkStack, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/AssociateSourceNetworkStack");
+  return AssociateSourceNetworkStackOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
 CreateExtendedSourceServerOutcome DrsClient::CreateExtendedSourceServer(const CreateExtendedSourceServerRequest& request) const
 {
   AWS_OPERATION_GUARD(CreateExtendedSourceServer);
@@ -216,6 +234,16 @@ CreateReplicationConfigurationTemplateOutcome DrsClient::CreateReplicationConfig
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateReplicationConfigurationTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   endpointResolutionOutcome.GetResult().AddPathSegments("/CreateReplicationConfigurationTemplate");
   return CreateReplicationConfigurationTemplateOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateSourceNetworkOutcome DrsClient::CreateSourceNetwork(const CreateSourceNetworkRequest& request) const
+{
+  AWS_OPERATION_GUARD(CreateSourceNetwork);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateSourceNetwork, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateSourceNetwork, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/CreateSourceNetwork");
+  return CreateSourceNetworkOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteJobOutcome DrsClient::DeleteJob(const DeleteJobRequest& request) const
@@ -256,6 +284,16 @@ DeleteReplicationConfigurationTemplateOutcome DrsClient::DeleteReplicationConfig
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteReplicationConfigurationTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteReplicationConfigurationTemplate");
   return DeleteReplicationConfigurationTemplateOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteSourceNetworkOutcome DrsClient::DeleteSourceNetwork(const DeleteSourceNetworkRequest& request) const
+{
+  AWS_OPERATION_GUARD(DeleteSourceNetwork);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteSourceNetwork, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteSourceNetwork, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteSourceNetwork");
+  return DeleteSourceNetworkOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteSourceServerOutcome DrsClient::DeleteSourceServer(const DeleteSourceServerRequest& request) const
@@ -328,6 +366,16 @@ DescribeReplicationConfigurationTemplatesOutcome DrsClient::DescribeReplicationC
   return DescribeReplicationConfigurationTemplatesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
+DescribeSourceNetworksOutcome DrsClient::DescribeSourceNetworks(const DescribeSourceNetworksRequest& request) const
+{
+  AWS_OPERATION_GUARD(DescribeSourceNetworks);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeSourceNetworks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeSourceNetworks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/DescribeSourceNetworks");
+  return DescribeSourceNetworksOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
 DescribeSourceServersOutcome DrsClient::DescribeSourceServers(const DescribeSourceServersRequest& request) const
 {
   AWS_OPERATION_GUARD(DescribeSourceServers);
@@ -356,6 +404,16 @@ DisconnectSourceServerOutcome DrsClient::DisconnectSourceServer(const Disconnect
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DisconnectSourceServer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   endpointResolutionOutcome.GetResult().AddPathSegments("/DisconnectSourceServer");
   return DisconnectSourceServerOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ExportSourceNetworkCfnTemplateOutcome DrsClient::ExportSourceNetworkCfnTemplate(const ExportSourceNetworkCfnTemplateRequest& request) const
+{
+  AWS_OPERATION_GUARD(ExportSourceNetworkCfnTemplate);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ExportSourceNetworkCfnTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ExportSourceNetworkCfnTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/ExportSourceNetworkCfnTemplate");
+  return ExportSourceNetworkCfnTemplateOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetFailbackReplicationConfigurationOutcome DrsClient::GetFailbackReplicationConfiguration(const GetFailbackReplicationConfigurationRequest& request) const
@@ -474,6 +532,26 @@ StartReplicationOutcome DrsClient::StartReplication(const StartReplicationReques
   return StartReplicationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
+StartSourceNetworkRecoveryOutcome DrsClient::StartSourceNetworkRecovery(const StartSourceNetworkRecoveryRequest& request) const
+{
+  AWS_OPERATION_GUARD(StartSourceNetworkRecovery);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartSourceNetworkRecovery, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartSourceNetworkRecovery, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/StartSourceNetworkRecovery");
+  return StartSourceNetworkRecoveryOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartSourceNetworkReplicationOutcome DrsClient::StartSourceNetworkReplication(const StartSourceNetworkReplicationRequest& request) const
+{
+  AWS_OPERATION_GUARD(StartSourceNetworkReplication);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartSourceNetworkReplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartSourceNetworkReplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/StartSourceNetworkReplication");
+  return StartSourceNetworkReplicationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
 StopFailbackOutcome DrsClient::StopFailback(const StopFailbackRequest& request) const
 {
   AWS_OPERATION_GUARD(StopFailback);
@@ -492,6 +570,16 @@ StopReplicationOutcome DrsClient::StopReplication(const StopReplicationRequest& 
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StopReplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   endpointResolutionOutcome.GetResult().AddPathSegments("/StopReplication");
   return StopReplicationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StopSourceNetworkReplicationOutcome DrsClient::StopSourceNetworkReplication(const StopSourceNetworkReplicationRequest& request) const
+{
+  AWS_OPERATION_GUARD(StopSourceNetworkReplication);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopSourceNetworkReplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StopSourceNetworkReplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/StopSourceNetworkReplication");
+  return StopSourceNetworkReplicationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagResourceOutcome DrsClient::TagResource(const TagResourceRequest& request) const

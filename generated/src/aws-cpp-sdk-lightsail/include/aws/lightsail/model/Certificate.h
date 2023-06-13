@@ -32,7 +32,7 @@ namespace Model
   /**
    * <p>Describes the full details of an Amazon Lightsail SSL/TLS certificate.</p>
    *  <p>To get a summary of a certificate, use the
-   * <code>GetCertificates</code> action and ommit
+   * <code>GetCertificates</code> action and omit
    * <code>includeCertificateDetails</code> from your request. The response will
    * include only the certificate Amazon Resource Name (ARN), certificate name,
    * domain name, and tags.</p> <p><h3>See Also:</h3>   <a

@@ -70,6 +70,63 @@ namespace Model
     inline GetCertificatesResult& AddCertificates(CertificateSummary&& value) { m_certificates.push_back(std::move(value)); return *this; }
 
 
+    /**
+     * <p>If <code>NextPageToken</code> is returned there are more results available.
+     * The value of <code>NextPageToken</code> is a unique pagination token for each
+     * page. Make the call again using the returned token to retrieve the next page.
+     * Keep all other arguments unchanged.</p>
+     */
+    inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
+
+    /**
+     * <p>If <code>NextPageToken</code> is returned there are more results available.
+     * The value of <code>NextPageToken</code> is a unique pagination token for each
+     * page. Make the call again using the returned token to retrieve the next page.
+     * Keep all other arguments unchanged.</p>
+     */
+    inline void SetNextPageToken(const Aws::String& value) { m_nextPageToken = value; }
+
+    /**
+     * <p>If <code>NextPageToken</code> is returned there are more results available.
+     * The value of <code>NextPageToken</code> is a unique pagination token for each
+     * page. Make the call again using the returned token to retrieve the next page.
+     * Keep all other arguments unchanged.</p>
+     */
+    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = std::move(value); }
+
+    /**
+     * <p>If <code>NextPageToken</code> is returned there are more results available.
+     * The value of <code>NextPageToken</code> is a unique pagination token for each
+     * page. Make the call again using the returned token to retrieve the next page.
+     * Keep all other arguments unchanged.</p>
+     */
+    inline void SetNextPageToken(const char* value) { m_nextPageToken.assign(value); }
+
+    /**
+     * <p>If <code>NextPageToken</code> is returned there are more results available.
+     * The value of <code>NextPageToken</code> is a unique pagination token for each
+     * page. Make the call again using the returned token to retrieve the next page.
+     * Keep all other arguments unchanged.</p>
+     */
+    inline GetCertificatesResult& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
+
+    /**
+     * <p>If <code>NextPageToken</code> is returned there are more results available.
+     * The value of <code>NextPageToken</code> is a unique pagination token for each
+     * page. Make the call again using the returned token to retrieve the next page.
+     * Keep all other arguments unchanged.</p>
+     */
+    inline GetCertificatesResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
+
+    /**
+     * <p>If <code>NextPageToken</code> is returned there are more results available.
+     * The value of <code>NextPageToken</code> is a unique pagination token for each
+     * page. Make the call again using the returned token to retrieve the next page.
+     * Keep all other arguments unchanged.</p>
+     */
+    inline GetCertificatesResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -94,6 +151,8 @@ namespace Model
   private:
 
     Aws::Vector<CertificateSummary> m_certificates;
+
+    Aws::String m_nextPageToken;
 
     Aws::String m_requestId;
   };

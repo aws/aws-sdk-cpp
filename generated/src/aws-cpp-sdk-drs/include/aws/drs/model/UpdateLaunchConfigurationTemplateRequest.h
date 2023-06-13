@@ -78,6 +78,47 @@ namespace Model
 
 
     /**
+     * <p>S3 bucket ARN to export Source Network templates.</p>
+     */
+    inline const Aws::String& GetExportBucketArn() const{ return m_exportBucketArn; }
+
+    /**
+     * <p>S3 bucket ARN to export Source Network templates.</p>
+     */
+    inline bool ExportBucketArnHasBeenSet() const { return m_exportBucketArnHasBeenSet; }
+
+    /**
+     * <p>S3 bucket ARN to export Source Network templates.</p>
+     */
+    inline void SetExportBucketArn(const Aws::String& value) { m_exportBucketArnHasBeenSet = true; m_exportBucketArn = value; }
+
+    /**
+     * <p>S3 bucket ARN to export Source Network templates.</p>
+     */
+    inline void SetExportBucketArn(Aws::String&& value) { m_exportBucketArnHasBeenSet = true; m_exportBucketArn = std::move(value); }
+
+    /**
+     * <p>S3 bucket ARN to export Source Network templates.</p>
+     */
+    inline void SetExportBucketArn(const char* value) { m_exportBucketArnHasBeenSet = true; m_exportBucketArn.assign(value); }
+
+    /**
+     * <p>S3 bucket ARN to export Source Network templates.</p>
+     */
+    inline UpdateLaunchConfigurationTemplateRequest& WithExportBucketArn(const Aws::String& value) { SetExportBucketArn(value); return *this;}
+
+    /**
+     * <p>S3 bucket ARN to export Source Network templates.</p>
+     */
+    inline UpdateLaunchConfigurationTemplateRequest& WithExportBucketArn(Aws::String&& value) { SetExportBucketArn(std::move(value)); return *this;}
+
+    /**
+     * <p>S3 bucket ARN to export Source Network templates.</p>
+     */
+    inline UpdateLaunchConfigurationTemplateRequest& WithExportBucketArn(const char* value) { SetExportBucketArn(value); return *this;}
+
+
+    /**
      * <p>Launch Configuration Template ID.</p>
      */
     inline const Aws::String& GetLaunchConfigurationTemplateID() const{ return m_launchConfigurationTemplateID; }
@@ -217,6 +258,9 @@ namespace Model
 
     bool m_copyTags;
     bool m_copyTagsHasBeenSet = false;
+
+    Aws::String m_exportBucketArn;
+    bool m_exportBucketArnHasBeenSet = false;
 
     Aws::String m_launchConfigurationTemplateID;
     bool m_launchConfigurationTemplateIDHasBeenSet = false;
