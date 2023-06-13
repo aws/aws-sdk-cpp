@@ -71,44 +71,37 @@ namespace Model
 
 
     /**
-     * <p>[EC2-VPC] The ID that Amazon Web Services assigns to represent the allocation
-     * of the Elastic IP address for use with instances in a VPC.</p>
+     * <p>The ID that represents the allocation of the Elastic IP address.</p>
      */
     inline const Aws::String& GetAllocationId() const{ return m_allocationId; }
 
     /**
-     * <p>[EC2-VPC] The ID that Amazon Web Services assigns to represent the allocation
-     * of the Elastic IP address for use with instances in a VPC.</p>
+     * <p>The ID that represents the allocation of the Elastic IP address.</p>
      */
     inline void SetAllocationId(const Aws::String& value) { m_allocationId = value; }
 
     /**
-     * <p>[EC2-VPC] The ID that Amazon Web Services assigns to represent the allocation
-     * of the Elastic IP address for use with instances in a VPC.</p>
+     * <p>The ID that represents the allocation of the Elastic IP address.</p>
      */
     inline void SetAllocationId(Aws::String&& value) { m_allocationId = std::move(value); }
 
     /**
-     * <p>[EC2-VPC] The ID that Amazon Web Services assigns to represent the allocation
-     * of the Elastic IP address for use with instances in a VPC.</p>
+     * <p>The ID that represents the allocation of the Elastic IP address.</p>
      */
     inline void SetAllocationId(const char* value) { m_allocationId.assign(value); }
 
     /**
-     * <p>[EC2-VPC] The ID that Amazon Web Services assigns to represent the allocation
-     * of the Elastic IP address for use with instances in a VPC.</p>
+     * <p>The ID that represents the allocation of the Elastic IP address.</p>
      */
     inline AllocateAddressResponse& WithAllocationId(const Aws::String& value) { SetAllocationId(value); return *this;}
 
     /**
-     * <p>[EC2-VPC] The ID that Amazon Web Services assigns to represent the allocation
-     * of the Elastic IP address for use with instances in a VPC.</p>
+     * <p>The ID that represents the allocation of the Elastic IP address.</p>
      */
     inline AllocateAddressResponse& WithAllocationId(Aws::String&& value) { SetAllocationId(std::move(value)); return *this;}
 
     /**
-     * <p>[EC2-VPC] The ID that Amazon Web Services assigns to represent the allocation
-     * of the Elastic IP address for use with instances in a VPC.</p>
+     * <p>The ID that represents the allocation of the Elastic IP address.</p>
      */
     inline AllocateAddressResponse& WithAllocationId(const char* value) { SetAllocationId(value); return *this;}
 
@@ -193,32 +186,27 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the Elastic IP address is for use with instances in a VPC
-     * (<code>vpc</code>) or instances in EC2-Classic (<code>standard</code>).</p>
+     * <p>The network (<code>vpc</code>).</p>
      */
     inline const DomainType& GetDomain() const{ return m_domain; }
 
     /**
-     * <p>Indicates whether the Elastic IP address is for use with instances in a VPC
-     * (<code>vpc</code>) or instances in EC2-Classic (<code>standard</code>).</p>
+     * <p>The network (<code>vpc</code>).</p>
      */
     inline void SetDomain(const DomainType& value) { m_domain = value; }
 
     /**
-     * <p>Indicates whether the Elastic IP address is for use with instances in a VPC
-     * (<code>vpc</code>) or instances in EC2-Classic (<code>standard</code>).</p>
+     * <p>The network (<code>vpc</code>).</p>
      */
     inline void SetDomain(DomainType&& value) { m_domain = std::move(value); }
 
     /**
-     * <p>Indicates whether the Elastic IP address is for use with instances in a VPC
-     * (<code>vpc</code>) or instances in EC2-Classic (<code>standard</code>).</p>
+     * <p>The network (<code>vpc</code>).</p>
      */
     inline AllocateAddressResponse& WithDomain(const DomainType& value) { SetDomain(value); return *this;}
 
     /**
-     * <p>Indicates whether the Elastic IP address is for use with instances in a VPC
-     * (<code>vpc</code>) or instances in EC2-Classic (<code>standard</code>).</p>
+     * <p>The network (<code>vpc</code>).</p>
      */
     inline AllocateAddressResponse& WithDomain(DomainType&& value) { SetDomain(std::move(value)); return *this;}
 
@@ -297,50 +285,43 @@ namespace Model
 
     /**
      * <p>The carrier IP address. This option is only available for network interfaces
-     * which reside in a subnet in a Wavelength Zone (for example an EC2 instance).
-     * </p>
+     * that reside in a subnet in a Wavelength Zone.</p>
      */
     inline const Aws::String& GetCarrierIp() const{ return m_carrierIp; }
 
     /**
      * <p>The carrier IP address. This option is only available for network interfaces
-     * which reside in a subnet in a Wavelength Zone (for example an EC2 instance).
-     * </p>
+     * that reside in a subnet in a Wavelength Zone.</p>
      */
     inline void SetCarrierIp(const Aws::String& value) { m_carrierIp = value; }
 
     /**
      * <p>The carrier IP address. This option is only available for network interfaces
-     * which reside in a subnet in a Wavelength Zone (for example an EC2 instance).
-     * </p>
+     * that reside in a subnet in a Wavelength Zone.</p>
      */
     inline void SetCarrierIp(Aws::String&& value) { m_carrierIp = std::move(value); }
 
     /**
      * <p>The carrier IP address. This option is only available for network interfaces
-     * which reside in a subnet in a Wavelength Zone (for example an EC2 instance).
-     * </p>
+     * that reside in a subnet in a Wavelength Zone.</p>
      */
     inline void SetCarrierIp(const char* value) { m_carrierIp.assign(value); }
 
     /**
      * <p>The carrier IP address. This option is only available for network interfaces
-     * which reside in a subnet in a Wavelength Zone (for example an EC2 instance).
-     * </p>
+     * that reside in a subnet in a Wavelength Zone.</p>
      */
     inline AllocateAddressResponse& WithCarrierIp(const Aws::String& value) { SetCarrierIp(value); return *this;}
 
     /**
      * <p>The carrier IP address. This option is only available for network interfaces
-     * which reside in a subnet in a Wavelength Zone (for example an EC2 instance).
-     * </p>
+     * that reside in a subnet in a Wavelength Zone.</p>
      */
     inline AllocateAddressResponse& WithCarrierIp(Aws::String&& value) { SetCarrierIp(std::move(value)); return *this;}
 
     /**
      * <p>The carrier IP address. This option is only available for network interfaces
-     * which reside in a subnet in a Wavelength Zone (for example an EC2 instance).
-     * </p>
+     * that reside in a subnet in a Wavelength Zone.</p>
      */
     inline AllocateAddressResponse& WithCarrierIp(const char* value) { SetCarrierIp(value); return *this;}
 

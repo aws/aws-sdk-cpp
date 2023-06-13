@@ -433,8 +433,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html">
      * <i>Amazon Simple Storage Service User Guide</i> </a>.</p> <p>Provide a
      * <code>SnapshotS3Location</code> to start your simulation from a snapshot.</p>
-     * <p>If you provide a <code>SnapshotS3Location</code> then you can't provide a
-     * <code>SchemaS3Location</code>.</p>
+     * <p>The Amazon S3 bucket must be in the same Amazon Web Services Region as the
+     * simulation.</p> <p>If you provide a <code>SnapshotS3Location</code> then you
+     * can't provide a <code>SchemaS3Location</code>.</p>
      */
     inline const S3Location& GetSnapshotS3Location() const{ return m_snapshotS3Location; }
 
@@ -444,8 +445,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html">
      * <i>Amazon Simple Storage Service User Guide</i> </a>.</p> <p>Provide a
      * <code>SnapshotS3Location</code> to start your simulation from a snapshot.</p>
-     * <p>If you provide a <code>SnapshotS3Location</code> then you can't provide a
-     * <code>SchemaS3Location</code>.</p>
+     * <p>The Amazon S3 bucket must be in the same Amazon Web Services Region as the
+     * simulation.</p> <p>If you provide a <code>SnapshotS3Location</code> then you
+     * can't provide a <code>SchemaS3Location</code>.</p>
      */
     inline bool SnapshotS3LocationHasBeenSet() const { return m_snapshotS3LocationHasBeenSet; }
 
@@ -455,8 +457,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html">
      * <i>Amazon Simple Storage Service User Guide</i> </a>.</p> <p>Provide a
      * <code>SnapshotS3Location</code> to start your simulation from a snapshot.</p>
-     * <p>If you provide a <code>SnapshotS3Location</code> then you can't provide a
-     * <code>SchemaS3Location</code>.</p>
+     * <p>The Amazon S3 bucket must be in the same Amazon Web Services Region as the
+     * simulation.</p> <p>If you provide a <code>SnapshotS3Location</code> then you
+     * can't provide a <code>SchemaS3Location</code>.</p>
      */
     inline void SetSnapshotS3Location(const S3Location& value) { m_snapshotS3LocationHasBeenSet = true; m_snapshotS3Location = value; }
 
@@ -466,8 +469,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html">
      * <i>Amazon Simple Storage Service User Guide</i> </a>.</p> <p>Provide a
      * <code>SnapshotS3Location</code> to start your simulation from a snapshot.</p>
-     * <p>If you provide a <code>SnapshotS3Location</code> then you can't provide a
-     * <code>SchemaS3Location</code>.</p>
+     * <p>The Amazon S3 bucket must be in the same Amazon Web Services Region as the
+     * simulation.</p> <p>If you provide a <code>SnapshotS3Location</code> then you
+     * can't provide a <code>SchemaS3Location</code>.</p>
      */
     inline void SetSnapshotS3Location(S3Location&& value) { m_snapshotS3LocationHasBeenSet = true; m_snapshotS3Location = std::move(value); }
 
@@ -477,8 +481,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html">
      * <i>Amazon Simple Storage Service User Guide</i> </a>.</p> <p>Provide a
      * <code>SnapshotS3Location</code> to start your simulation from a snapshot.</p>
-     * <p>If you provide a <code>SnapshotS3Location</code> then you can't provide a
-     * <code>SchemaS3Location</code>.</p>
+     * <p>The Amazon S3 bucket must be in the same Amazon Web Services Region as the
+     * simulation.</p> <p>If you provide a <code>SnapshotS3Location</code> then you
+     * can't provide a <code>SchemaS3Location</code>.</p>
      */
     inline StartSimulationRequest& WithSnapshotS3Location(const S3Location& value) { SetSnapshotS3Location(value); return *this;}
 
@@ -488,8 +493,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html">
      * <i>Amazon Simple Storage Service User Guide</i> </a>.</p> <p>Provide a
      * <code>SnapshotS3Location</code> to start your simulation from a snapshot.</p>
-     * <p>If you provide a <code>SnapshotS3Location</code> then you can't provide a
-     * <code>SchemaS3Location</code>.</p>
+     * <p>The Amazon S3 bucket must be in the same Amazon Web Services Region as the
+     * simulation.</p> <p>If you provide a <code>SnapshotS3Location</code> then you
+     * can't provide a <code>SchemaS3Location</code>.</p>
      */
     inline StartSimulationRequest& WithSnapshotS3Location(S3Location&& value) { SetSnapshotS3Location(std::move(value)); return *this;}
 

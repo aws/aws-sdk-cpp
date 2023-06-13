@@ -1209,9 +1209,11 @@ namespace Model
      * <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
      * as a top-level statement within a rule.</p>  <p>You are charged additional
      * fees when you use the WAF Bot Control managed rule group
-     * <code>AWSManagedRulesBotControlRuleSet</code> or the WAF Fraud Control account
+     * <code>AWSManagedRulesBotControlRuleSet</code>, the WAF Fraud Control account
      * takeover prevention (ATP) managed rule group
-     * <code>AWSManagedRulesATPRuleSet</code>. For more information, see <a
+     * <code>AWSManagedRulesATPRuleSet</code>, or the WAF Fraud Control account
+     * creation fraud prevention (ACFP) managed rule group
+     * <code>AWSManagedRulesACFPRuleSet</code>. For more information, see <a
      * href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p> 
      */
     AWS_WAFV2_API const ManagedRuleGroupStatement& GetManagedRuleGroupStatement() const;
@@ -1225,9 +1227,11 @@ namespace Model
      * <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
      * as a top-level statement within a rule.</p>  <p>You are charged additional
      * fees when you use the WAF Bot Control managed rule group
-     * <code>AWSManagedRulesBotControlRuleSet</code> or the WAF Fraud Control account
+     * <code>AWSManagedRulesBotControlRuleSet</code>, the WAF Fraud Control account
      * takeover prevention (ATP) managed rule group
-     * <code>AWSManagedRulesATPRuleSet</code>. For more information, see <a
+     * <code>AWSManagedRulesATPRuleSet</code>, or the WAF Fraud Control account
+     * creation fraud prevention (ACFP) managed rule group
+     * <code>AWSManagedRulesACFPRuleSet</code>. For more information, see <a
      * href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p> 
      */
     AWS_WAFV2_API bool ManagedRuleGroupStatementHasBeenSet() const;
@@ -1241,9 +1245,11 @@ namespace Model
      * <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
      * as a top-level statement within a rule.</p>  <p>You are charged additional
      * fees when you use the WAF Bot Control managed rule group
-     * <code>AWSManagedRulesBotControlRuleSet</code> or the WAF Fraud Control account
+     * <code>AWSManagedRulesBotControlRuleSet</code>, the WAF Fraud Control account
      * takeover prevention (ATP) managed rule group
-     * <code>AWSManagedRulesATPRuleSet</code>. For more information, see <a
+     * <code>AWSManagedRulesATPRuleSet</code>, or the WAF Fraud Control account
+     * creation fraud prevention (ACFP) managed rule group
+     * <code>AWSManagedRulesACFPRuleSet</code>. For more information, see <a
      * href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p> 
      */
     AWS_WAFV2_API void SetManagedRuleGroupStatement(const ManagedRuleGroupStatement& value);
@@ -1257,9 +1263,11 @@ namespace Model
      * <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
      * as a top-level statement within a rule.</p>  <p>You are charged additional
      * fees when you use the WAF Bot Control managed rule group
-     * <code>AWSManagedRulesBotControlRuleSet</code> or the WAF Fraud Control account
+     * <code>AWSManagedRulesBotControlRuleSet</code>, the WAF Fraud Control account
      * takeover prevention (ATP) managed rule group
-     * <code>AWSManagedRulesATPRuleSet</code>. For more information, see <a
+     * <code>AWSManagedRulesATPRuleSet</code>, or the WAF Fraud Control account
+     * creation fraud prevention (ACFP) managed rule group
+     * <code>AWSManagedRulesACFPRuleSet</code>. For more information, see <a
      * href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p> 
      */
     AWS_WAFV2_API void SetManagedRuleGroupStatement(ManagedRuleGroupStatement&& value);
@@ -1273,9 +1281,11 @@ namespace Model
      * <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
      * as a top-level statement within a rule.</p>  <p>You are charged additional
      * fees when you use the WAF Bot Control managed rule group
-     * <code>AWSManagedRulesBotControlRuleSet</code> or the WAF Fraud Control account
+     * <code>AWSManagedRulesBotControlRuleSet</code>, the WAF Fraud Control account
      * takeover prevention (ATP) managed rule group
-     * <code>AWSManagedRulesATPRuleSet</code>. For more information, see <a
+     * <code>AWSManagedRulesATPRuleSet</code>, or the WAF Fraud Control account
+     * creation fraud prevention (ACFP) managed rule group
+     * <code>AWSManagedRulesACFPRuleSet</code>. For more information, see <a
      * href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p> 
      */
     AWS_WAFV2_API Statement& WithManagedRuleGroupStatement(const ManagedRuleGroupStatement& value);
@@ -1289,9 +1299,11 @@ namespace Model
      * <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
      * as a top-level statement within a rule.</p>  <p>You are charged additional
      * fees when you use the WAF Bot Control managed rule group
-     * <code>AWSManagedRulesBotControlRuleSet</code> or the WAF Fraud Control account
+     * <code>AWSManagedRulesBotControlRuleSet</code>, the WAF Fraud Control account
      * takeover prevention (ATP) managed rule group
-     * <code>AWSManagedRulesATPRuleSet</code>. For more information, see <a
+     * <code>AWSManagedRulesATPRuleSet</code>, or the WAF Fraud Control account
+     * creation fraud prevention (ACFP) managed rule group
+     * <code>AWSManagedRulesACFPRuleSet</code>. For more information, see <a
      * href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p> 
      */
     AWS_WAFV2_API Statement& WithManagedRuleGroupStatement(ManagedRuleGroupStatement&& value);

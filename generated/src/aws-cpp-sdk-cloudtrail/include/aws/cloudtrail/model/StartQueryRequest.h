@@ -7,6 +7,7 @@
 #include <aws/cloudtrail/CloudTrail_EXPORTS.h>
 #include <aws/cloudtrail/CloudTrailRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -115,6 +116,93 @@ namespace Model
      */
     inline StartQueryRequest& WithDeliveryS3Uri(const char* value) { SetDeliveryS3Uri(value); return *this;}
 
+
+    /**
+     * <p> The alias that identifies a query template. </p>
+     */
+    inline const Aws::String& GetQueryAlias() const{ return m_queryAlias; }
+
+    /**
+     * <p> The alias that identifies a query template. </p>
+     */
+    inline bool QueryAliasHasBeenSet() const { return m_queryAliasHasBeenSet; }
+
+    /**
+     * <p> The alias that identifies a query template. </p>
+     */
+    inline void SetQueryAlias(const Aws::String& value) { m_queryAliasHasBeenSet = true; m_queryAlias = value; }
+
+    /**
+     * <p> The alias that identifies a query template. </p>
+     */
+    inline void SetQueryAlias(Aws::String&& value) { m_queryAliasHasBeenSet = true; m_queryAlias = std::move(value); }
+
+    /**
+     * <p> The alias that identifies a query template. </p>
+     */
+    inline void SetQueryAlias(const char* value) { m_queryAliasHasBeenSet = true; m_queryAlias.assign(value); }
+
+    /**
+     * <p> The alias that identifies a query template. </p>
+     */
+    inline StartQueryRequest& WithQueryAlias(const Aws::String& value) { SetQueryAlias(value); return *this;}
+
+    /**
+     * <p> The alias that identifies a query template. </p>
+     */
+    inline StartQueryRequest& WithQueryAlias(Aws::String&& value) { SetQueryAlias(std::move(value)); return *this;}
+
+    /**
+     * <p> The alias that identifies a query template. </p>
+     */
+    inline StartQueryRequest& WithQueryAlias(const char* value) { SetQueryAlias(value); return *this;}
+
+
+    /**
+     * <p> The query parameters for the specified <code>QueryAlias</code>. </p>
+     */
+    inline const Aws::Vector<Aws::String>& GetQueryParameters() const{ return m_queryParameters; }
+
+    /**
+     * <p> The query parameters for the specified <code>QueryAlias</code>. </p>
+     */
+    inline bool QueryParametersHasBeenSet() const { return m_queryParametersHasBeenSet; }
+
+    /**
+     * <p> The query parameters for the specified <code>QueryAlias</code>. </p>
+     */
+    inline void SetQueryParameters(const Aws::Vector<Aws::String>& value) { m_queryParametersHasBeenSet = true; m_queryParameters = value; }
+
+    /**
+     * <p> The query parameters for the specified <code>QueryAlias</code>. </p>
+     */
+    inline void SetQueryParameters(Aws::Vector<Aws::String>&& value) { m_queryParametersHasBeenSet = true; m_queryParameters = std::move(value); }
+
+    /**
+     * <p> The query parameters for the specified <code>QueryAlias</code>. </p>
+     */
+    inline StartQueryRequest& WithQueryParameters(const Aws::Vector<Aws::String>& value) { SetQueryParameters(value); return *this;}
+
+    /**
+     * <p> The query parameters for the specified <code>QueryAlias</code>. </p>
+     */
+    inline StartQueryRequest& WithQueryParameters(Aws::Vector<Aws::String>&& value) { SetQueryParameters(std::move(value)); return *this;}
+
+    /**
+     * <p> The query parameters for the specified <code>QueryAlias</code>. </p>
+     */
+    inline StartQueryRequest& AddQueryParameters(const Aws::String& value) { m_queryParametersHasBeenSet = true; m_queryParameters.push_back(value); return *this; }
+
+    /**
+     * <p> The query parameters for the specified <code>QueryAlias</code>. </p>
+     */
+    inline StartQueryRequest& AddQueryParameters(Aws::String&& value) { m_queryParametersHasBeenSet = true; m_queryParameters.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p> The query parameters for the specified <code>QueryAlias</code>. </p>
+     */
+    inline StartQueryRequest& AddQueryParameters(const char* value) { m_queryParametersHasBeenSet = true; m_queryParameters.push_back(value); return *this; }
+
   private:
 
     Aws::String m_queryStatement;
@@ -122,6 +210,12 @@ namespace Model
 
     Aws::String m_deliveryS3Uri;
     bool m_deliveryS3UriHasBeenSet = false;
+
+    Aws::String m_queryAlias;
+    bool m_queryAliasHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_queryParameters;
+    bool m_queryParametersHasBeenSet = false;
   };
 
 } // namespace Model

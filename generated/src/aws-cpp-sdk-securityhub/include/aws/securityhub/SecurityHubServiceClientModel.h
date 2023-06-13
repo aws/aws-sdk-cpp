@@ -19,14 +19,18 @@
 
 /* Service model headers required in SecurityHubClient header */
 #include <aws/securityhub/model/AcceptAdministratorInvitationResult.h>
+#include <aws/securityhub/model/BatchDeleteAutomationRulesResult.h>
 #include <aws/securityhub/model/BatchDisableStandardsResult.h>
 #include <aws/securityhub/model/BatchEnableStandardsResult.h>
+#include <aws/securityhub/model/BatchGetAutomationRulesResult.h>
 #include <aws/securityhub/model/BatchGetSecurityControlsResult.h>
 #include <aws/securityhub/model/BatchGetStandardsControlAssociationsResult.h>
 #include <aws/securityhub/model/BatchImportFindingsResult.h>
+#include <aws/securityhub/model/BatchUpdateAutomationRulesResult.h>
 #include <aws/securityhub/model/BatchUpdateFindingsResult.h>
 #include <aws/securityhub/model/BatchUpdateStandardsControlAssociationsResult.h>
 #include <aws/securityhub/model/CreateActionTargetResult.h>
+#include <aws/securityhub/model/CreateAutomationRuleResult.h>
 #include <aws/securityhub/model/CreateFindingAggregatorResult.h>
 #include <aws/securityhub/model/CreateInsightResult.h>
 #include <aws/securityhub/model/CreateMembersResult.h>
@@ -60,6 +64,7 @@
 #include <aws/securityhub/model/GetInvitationsCountResult.h>
 #include <aws/securityhub/model/GetMembersResult.h>
 #include <aws/securityhub/model/InviteMembersResult.h>
+#include <aws/securityhub/model/ListAutomationRulesResult.h>
 #include <aws/securityhub/model/ListEnabledProductsForImportResult.h>
 #include <aws/securityhub/model/ListFindingAggregatorsResult.h>
 #include <aws/securityhub/model/ListInvitationsResult.h>
@@ -118,14 +123,18 @@ namespace Aws
     {
       /* Service model forward declarations required in SecurityHubClient header */
       class AcceptAdministratorInvitationRequest;
+      class BatchDeleteAutomationRulesRequest;
       class BatchDisableStandardsRequest;
       class BatchEnableStandardsRequest;
+      class BatchGetAutomationRulesRequest;
       class BatchGetSecurityControlsRequest;
       class BatchGetStandardsControlAssociationsRequest;
       class BatchImportFindingsRequest;
+      class BatchUpdateAutomationRulesRequest;
       class BatchUpdateFindingsRequest;
       class BatchUpdateStandardsControlAssociationsRequest;
       class CreateActionTargetRequest;
+      class CreateAutomationRuleRequest;
       class CreateFindingAggregatorRequest;
       class CreateInsightRequest;
       class CreateMembersRequest;
@@ -159,6 +168,7 @@ namespace Aws
       class GetInvitationsCountRequest;
       class GetMembersRequest;
       class InviteMembersRequest;
+      class ListAutomationRulesRequest;
       class ListEnabledProductsForImportRequest;
       class ListFindingAggregatorsRequest;
       class ListInvitationsRequest;
@@ -180,14 +190,18 @@ namespace Aws
 
       /* Service model Outcome class definitions */
       typedef Aws::Utils::Outcome<AcceptAdministratorInvitationResult, SecurityHubError> AcceptAdministratorInvitationOutcome;
+      typedef Aws::Utils::Outcome<BatchDeleteAutomationRulesResult, SecurityHubError> BatchDeleteAutomationRulesOutcome;
       typedef Aws::Utils::Outcome<BatchDisableStandardsResult, SecurityHubError> BatchDisableStandardsOutcome;
       typedef Aws::Utils::Outcome<BatchEnableStandardsResult, SecurityHubError> BatchEnableStandardsOutcome;
+      typedef Aws::Utils::Outcome<BatchGetAutomationRulesResult, SecurityHubError> BatchGetAutomationRulesOutcome;
       typedef Aws::Utils::Outcome<BatchGetSecurityControlsResult, SecurityHubError> BatchGetSecurityControlsOutcome;
       typedef Aws::Utils::Outcome<BatchGetStandardsControlAssociationsResult, SecurityHubError> BatchGetStandardsControlAssociationsOutcome;
       typedef Aws::Utils::Outcome<BatchImportFindingsResult, SecurityHubError> BatchImportFindingsOutcome;
+      typedef Aws::Utils::Outcome<BatchUpdateAutomationRulesResult, SecurityHubError> BatchUpdateAutomationRulesOutcome;
       typedef Aws::Utils::Outcome<BatchUpdateFindingsResult, SecurityHubError> BatchUpdateFindingsOutcome;
       typedef Aws::Utils::Outcome<BatchUpdateStandardsControlAssociationsResult, SecurityHubError> BatchUpdateStandardsControlAssociationsOutcome;
       typedef Aws::Utils::Outcome<CreateActionTargetResult, SecurityHubError> CreateActionTargetOutcome;
+      typedef Aws::Utils::Outcome<CreateAutomationRuleResult, SecurityHubError> CreateAutomationRuleOutcome;
       typedef Aws::Utils::Outcome<CreateFindingAggregatorResult, SecurityHubError> CreateFindingAggregatorOutcome;
       typedef Aws::Utils::Outcome<CreateInsightResult, SecurityHubError> CreateInsightOutcome;
       typedef Aws::Utils::Outcome<CreateMembersResult, SecurityHubError> CreateMembersOutcome;
@@ -221,6 +235,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetInvitationsCountResult, SecurityHubError> GetInvitationsCountOutcome;
       typedef Aws::Utils::Outcome<GetMembersResult, SecurityHubError> GetMembersOutcome;
       typedef Aws::Utils::Outcome<InviteMembersResult, SecurityHubError> InviteMembersOutcome;
+      typedef Aws::Utils::Outcome<ListAutomationRulesResult, SecurityHubError> ListAutomationRulesOutcome;
       typedef Aws::Utils::Outcome<ListEnabledProductsForImportResult, SecurityHubError> ListEnabledProductsForImportOutcome;
       typedef Aws::Utils::Outcome<ListFindingAggregatorsResult, SecurityHubError> ListFindingAggregatorsOutcome;
       typedef Aws::Utils::Outcome<ListInvitationsResult, SecurityHubError> ListInvitationsOutcome;
@@ -242,14 +257,18 @@ namespace Aws
 
       /* Service model Outcome callable definitions */
       typedef std::future<AcceptAdministratorInvitationOutcome> AcceptAdministratorInvitationOutcomeCallable;
+      typedef std::future<BatchDeleteAutomationRulesOutcome> BatchDeleteAutomationRulesOutcomeCallable;
       typedef std::future<BatchDisableStandardsOutcome> BatchDisableStandardsOutcomeCallable;
       typedef std::future<BatchEnableStandardsOutcome> BatchEnableStandardsOutcomeCallable;
+      typedef std::future<BatchGetAutomationRulesOutcome> BatchGetAutomationRulesOutcomeCallable;
       typedef std::future<BatchGetSecurityControlsOutcome> BatchGetSecurityControlsOutcomeCallable;
       typedef std::future<BatchGetStandardsControlAssociationsOutcome> BatchGetStandardsControlAssociationsOutcomeCallable;
       typedef std::future<BatchImportFindingsOutcome> BatchImportFindingsOutcomeCallable;
+      typedef std::future<BatchUpdateAutomationRulesOutcome> BatchUpdateAutomationRulesOutcomeCallable;
       typedef std::future<BatchUpdateFindingsOutcome> BatchUpdateFindingsOutcomeCallable;
       typedef std::future<BatchUpdateStandardsControlAssociationsOutcome> BatchUpdateStandardsControlAssociationsOutcomeCallable;
       typedef std::future<CreateActionTargetOutcome> CreateActionTargetOutcomeCallable;
+      typedef std::future<CreateAutomationRuleOutcome> CreateAutomationRuleOutcomeCallable;
       typedef std::future<CreateFindingAggregatorOutcome> CreateFindingAggregatorOutcomeCallable;
       typedef std::future<CreateInsightOutcome> CreateInsightOutcomeCallable;
       typedef std::future<CreateMembersOutcome> CreateMembersOutcomeCallable;
@@ -283,6 +302,7 @@ namespace Aws
       typedef std::future<GetInvitationsCountOutcome> GetInvitationsCountOutcomeCallable;
       typedef std::future<GetMembersOutcome> GetMembersOutcomeCallable;
       typedef std::future<InviteMembersOutcome> InviteMembersOutcomeCallable;
+      typedef std::future<ListAutomationRulesOutcome> ListAutomationRulesOutcomeCallable;
       typedef std::future<ListEnabledProductsForImportOutcome> ListEnabledProductsForImportOutcomeCallable;
       typedef std::future<ListFindingAggregatorsOutcome> ListFindingAggregatorsOutcomeCallable;
       typedef std::future<ListInvitationsOutcome> ListInvitationsOutcomeCallable;
@@ -307,14 +327,18 @@ namespace Aws
 
     /* Service model async handlers definitions */
     typedef std::function<void(const SecurityHubClient*, const Model::AcceptAdministratorInvitationRequest&, const Model::AcceptAdministratorInvitationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AcceptAdministratorInvitationResponseReceivedHandler;
+    typedef std::function<void(const SecurityHubClient*, const Model::BatchDeleteAutomationRulesRequest&, const Model::BatchDeleteAutomationRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDeleteAutomationRulesResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::BatchDisableStandardsRequest&, const Model::BatchDisableStandardsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDisableStandardsResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::BatchEnableStandardsRequest&, const Model::BatchEnableStandardsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchEnableStandardsResponseReceivedHandler;
+    typedef std::function<void(const SecurityHubClient*, const Model::BatchGetAutomationRulesRequest&, const Model::BatchGetAutomationRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetAutomationRulesResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::BatchGetSecurityControlsRequest&, const Model::BatchGetSecurityControlsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetSecurityControlsResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::BatchGetStandardsControlAssociationsRequest&, const Model::BatchGetStandardsControlAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetStandardsControlAssociationsResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::BatchImportFindingsRequest&, const Model::BatchImportFindingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchImportFindingsResponseReceivedHandler;
+    typedef std::function<void(const SecurityHubClient*, const Model::BatchUpdateAutomationRulesRequest&, const Model::BatchUpdateAutomationRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchUpdateAutomationRulesResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::BatchUpdateFindingsRequest&, const Model::BatchUpdateFindingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchUpdateFindingsResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::BatchUpdateStandardsControlAssociationsRequest&, const Model::BatchUpdateStandardsControlAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchUpdateStandardsControlAssociationsResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::CreateActionTargetRequest&, const Model::CreateActionTargetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateActionTargetResponseReceivedHandler;
+    typedef std::function<void(const SecurityHubClient*, const Model::CreateAutomationRuleRequest&, const Model::CreateAutomationRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAutomationRuleResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::CreateFindingAggregatorRequest&, const Model::CreateFindingAggregatorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFindingAggregatorResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::CreateInsightRequest&, const Model::CreateInsightOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateInsightResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::CreateMembersRequest&, const Model::CreateMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMembersResponseReceivedHandler;
@@ -348,6 +372,7 @@ namespace Aws
     typedef std::function<void(const SecurityHubClient*, const Model::GetInvitationsCountRequest&, const Model::GetInvitationsCountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInvitationsCountResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::GetMembersRequest&, const Model::GetMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMembersResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::InviteMembersRequest&, const Model::InviteMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InviteMembersResponseReceivedHandler;
+    typedef std::function<void(const SecurityHubClient*, const Model::ListAutomationRulesRequest&, const Model::ListAutomationRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAutomationRulesResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::ListEnabledProductsForImportRequest&, const Model::ListEnabledProductsForImportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEnabledProductsForImportResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::ListFindingAggregatorsRequest&, const Model::ListFindingAggregatorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFindingAggregatorsResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::ListInvitationsRequest&, const Model::ListInvitationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInvitationsResponseReceivedHandler;

@@ -77,6 +77,33 @@ namespace drs
         virtual ~DrsClient();
 
         /**
+         * <p>Associate a Source Network to an existing CloudFormation Stack and modify
+         * launch templates to use this network. Can be used for reverting to previously
+         * deployed CloudFormation stacks.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/AssociateSourceNetworkStack">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateSourceNetworkStackOutcome AssociateSourceNetworkStack(const Model::AssociateSourceNetworkStackRequest& request) const;
+
+        /**
+         * A Callable wrapper for AssociateSourceNetworkStack that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename AssociateSourceNetworkStackRequestT = Model::AssociateSourceNetworkStackRequest>
+        Model::AssociateSourceNetworkStackOutcomeCallable AssociateSourceNetworkStackCallable(const AssociateSourceNetworkStackRequestT& request) const
+        {
+            return SubmitCallable(&DrsClient::AssociateSourceNetworkStack, request);
+        }
+
+        /**
+         * An Async wrapper for AssociateSourceNetworkStack that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename AssociateSourceNetworkStackRequestT = Model::AssociateSourceNetworkStackRequest>
+        void AssociateSourceNetworkStackAsync(const AssociateSourceNetworkStackRequestT& request, const AssociateSourceNetworkStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DrsClient::AssociateSourceNetworkStack, request, handler, context);
+        }
+
+        /**
          * <p>Create an extended source server in the target Account based on the source
          * server in staging account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/CreateExtendedSourceServer">AWS
@@ -150,6 +177,32 @@ namespace drs
         void CreateReplicationConfigurationTemplateAsync(const CreateReplicationConfigurationTemplateRequestT& request, const CreateReplicationConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DrsClient::CreateReplicationConfigurationTemplate, request, handler, context);
+        }
+
+        /**
+         * <p>Create a new Source Network resource for a provided VPC ID.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/CreateSourceNetwork">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateSourceNetworkOutcome CreateSourceNetwork(const Model::CreateSourceNetworkRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateSourceNetwork that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateSourceNetworkRequestT = Model::CreateSourceNetworkRequest>
+        Model::CreateSourceNetworkOutcomeCallable CreateSourceNetworkCallable(const CreateSourceNetworkRequestT& request) const
+        {
+            return SubmitCallable(&DrsClient::CreateSourceNetwork, request);
+        }
+
+        /**
+         * An Async wrapper for CreateSourceNetwork that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateSourceNetworkRequestT = Model::CreateSourceNetworkRequest>
+        void CreateSourceNetworkAsync(const CreateSourceNetworkRequestT& request, const CreateSourceNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DrsClient::CreateSourceNetwork, request, handler, context);
         }
 
         /**
@@ -254,6 +307,31 @@ namespace drs
         void DeleteReplicationConfigurationTemplateAsync(const DeleteReplicationConfigurationTemplateRequestT& request, const DeleteReplicationConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DrsClient::DeleteReplicationConfigurationTemplate, request, handler, context);
+        }
+
+        /**
+         * <p>Delete Source Network resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DeleteSourceNetwork">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteSourceNetworkOutcome DeleteSourceNetwork(const Model::DeleteSourceNetworkRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteSourceNetwork that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteSourceNetworkRequestT = Model::DeleteSourceNetworkRequest>
+        Model::DeleteSourceNetworkOutcomeCallable DeleteSourceNetworkCallable(const DeleteSourceNetworkRequestT& request) const
+        {
+            return SubmitCallable(&DrsClient::DeleteSourceNetwork, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteSourceNetwork that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteSourceNetworkRequestT = Model::DeleteSourceNetworkRequest>
+        void DeleteSourceNetworkAsync(const DeleteSourceNetworkRequestT& request, const DeleteSourceNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DrsClient::DeleteSourceNetwork, request, handler, context);
         }
 
         /**
@@ -443,6 +521,32 @@ namespace drs
         }
 
         /**
+         * <p>Lists all Source Networks or multiple Source Networks filtered by
+         * ID.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DescribeSourceNetworks">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeSourceNetworksOutcome DescribeSourceNetworks(const Model::DescribeSourceNetworksRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeSourceNetworks that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeSourceNetworksRequestT = Model::DescribeSourceNetworksRequest>
+        Model::DescribeSourceNetworksOutcomeCallable DescribeSourceNetworksCallable(const DescribeSourceNetworksRequestT& request) const
+        {
+            return SubmitCallable(&DrsClient::DescribeSourceNetworks, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeSourceNetworks that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeSourceNetworksRequestT = Model::DescribeSourceNetworksRequest>
+        void DescribeSourceNetworksAsync(const DescribeSourceNetworksRequestT& request, const DescribeSourceNetworksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DrsClient::DescribeSourceNetworks, request, handler, context);
+        }
+
+        /**
          * <p>Lists all Source Servers or multiple Source Servers filtered by
          * ID.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DescribeSourceServers">AWS
@@ -538,6 +642,32 @@ namespace drs
         void DisconnectSourceServerAsync(const DisconnectSourceServerRequestT& request, const DisconnectSourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DrsClient::DisconnectSourceServer, request, handler, context);
+        }
+
+        /**
+         * <p>Export the Source Network CloudFormation template to an S3
+         * bucket.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ExportSourceNetworkCfnTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ExportSourceNetworkCfnTemplateOutcome ExportSourceNetworkCfnTemplate(const Model::ExportSourceNetworkCfnTemplateRequest& request) const;
+
+        /**
+         * A Callable wrapper for ExportSourceNetworkCfnTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ExportSourceNetworkCfnTemplateRequestT = Model::ExportSourceNetworkCfnTemplateRequest>
+        Model::ExportSourceNetworkCfnTemplateOutcomeCallable ExportSourceNetworkCfnTemplateCallable(const ExportSourceNetworkCfnTemplateRequestT& request) const
+        {
+            return SubmitCallable(&DrsClient::ExportSourceNetworkCfnTemplate, request);
+        }
+
+        /**
+         * An Async wrapper for ExportSourceNetworkCfnTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ExportSourceNetworkCfnTemplateRequestT = Model::ExportSourceNetworkCfnTemplateRequest>
+        void ExportSourceNetworkCfnTemplateAsync(const ExportSourceNetworkCfnTemplateRequestT& request, const ExportSourceNetworkCfnTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DrsClient::ExportSourceNetworkCfnTemplate, request, handler, context);
         }
 
         /**
@@ -835,6 +965,59 @@ namespace drs
         }
 
         /**
+         * <p>Deploy VPC for the specified Source Network and modify launch templates to
+         * use this network. The VPC will be deployed using a dedicated CloudFormation
+         * stack.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/StartSourceNetworkRecovery">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartSourceNetworkRecoveryOutcome StartSourceNetworkRecovery(const Model::StartSourceNetworkRecoveryRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartSourceNetworkRecovery that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartSourceNetworkRecoveryRequestT = Model::StartSourceNetworkRecoveryRequest>
+        Model::StartSourceNetworkRecoveryOutcomeCallable StartSourceNetworkRecoveryCallable(const StartSourceNetworkRecoveryRequestT& request) const
+        {
+            return SubmitCallable(&DrsClient::StartSourceNetworkRecovery, request);
+        }
+
+        /**
+         * An Async wrapper for StartSourceNetworkRecovery that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartSourceNetworkRecoveryRequestT = Model::StartSourceNetworkRecoveryRequest>
+        void StartSourceNetworkRecoveryAsync(const StartSourceNetworkRecoveryRequestT& request, const StartSourceNetworkRecoveryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DrsClient::StartSourceNetworkRecovery, request, handler, context);
+        }
+
+        /**
+         * <p>Starts replication for a Source Network. This action would make the Source
+         * Network protected.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/StartSourceNetworkReplication">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartSourceNetworkReplicationOutcome StartSourceNetworkReplication(const Model::StartSourceNetworkReplicationRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartSourceNetworkReplication that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartSourceNetworkReplicationRequestT = Model::StartSourceNetworkReplicationRequest>
+        Model::StartSourceNetworkReplicationOutcomeCallable StartSourceNetworkReplicationCallable(const StartSourceNetworkReplicationRequestT& request) const
+        {
+            return SubmitCallable(&DrsClient::StartSourceNetworkReplication, request);
+        }
+
+        /**
+         * An Async wrapper for StartSourceNetworkReplication that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartSourceNetworkReplicationRequestT = Model::StartSourceNetworkReplicationRequest>
+        void StartSourceNetworkReplicationAsync(const StartSourceNetworkReplicationRequestT& request, const StartSourceNetworkReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DrsClient::StartSourceNetworkReplication, request, handler, context);
+        }
+
+        /**
          * <p>Stops the failback process for a specified Recovery Instance. This changes
          * the Failback State of the Recovery Instance back to
          * FAILBACK_NOT_STARTED.</p><p><h3>See Also:</h3>   <a
@@ -886,6 +1069,32 @@ namespace drs
         void StopReplicationAsync(const StopReplicationRequestT& request, const StopReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DrsClient::StopReplication, request, handler, context);
+        }
+
+        /**
+         * <p>Stops replication for a Source Network. This action would make the Source
+         * Network unprotected.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/StopSourceNetworkReplication">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopSourceNetworkReplicationOutcome StopSourceNetworkReplication(const Model::StopSourceNetworkReplicationRequest& request) const;
+
+        /**
+         * A Callable wrapper for StopSourceNetworkReplication that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StopSourceNetworkReplicationRequestT = Model::StopSourceNetworkReplicationRequest>
+        Model::StopSourceNetworkReplicationOutcomeCallable StopSourceNetworkReplicationCallable(const StopSourceNetworkReplicationRequestT& request) const
+        {
+            return SubmitCallable(&DrsClient::StopSourceNetworkReplication, request);
+        }
+
+        /**
+         * An Async wrapper for StopSourceNetworkReplication that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StopSourceNetworkReplicationRequestT = Model::StopSourceNetworkReplicationRequest>
+        void StopSourceNetworkReplicationAsync(const StopSourceNetworkReplicationRequestT& request, const StopSourceNetworkReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DrsClient::StopSourceNetworkReplication, request, handler, context);
         }
 
         /**

@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     AES256,
-    aws_kms
+    aws_kms,
+    aws_kms_dsse
   };
 
 namespace ServerSideEncryptionMapper

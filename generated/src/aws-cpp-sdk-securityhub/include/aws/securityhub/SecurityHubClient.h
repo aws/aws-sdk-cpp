@@ -138,6 +138,31 @@ namespace SecurityHub
         }
 
         /**
+         * <p> Deletes one or more automation rules. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchDeleteAutomationRules">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchDeleteAutomationRulesOutcome BatchDeleteAutomationRules(const Model::BatchDeleteAutomationRulesRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchDeleteAutomationRules that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename BatchDeleteAutomationRulesRequestT = Model::BatchDeleteAutomationRulesRequest>
+        Model::BatchDeleteAutomationRulesOutcomeCallable BatchDeleteAutomationRulesCallable(const BatchDeleteAutomationRulesRequestT& request) const
+        {
+            return SubmitCallable(&SecurityHubClient::BatchDeleteAutomationRules, request);
+        }
+
+        /**
+         * An Async wrapper for BatchDeleteAutomationRules that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename BatchDeleteAutomationRulesRequestT = Model::BatchDeleteAutomationRulesRequest>
+        void BatchDeleteAutomationRulesAsync(const BatchDeleteAutomationRulesRequestT& request, const BatchDeleteAutomationRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SecurityHubClient::BatchDeleteAutomationRules, request, handler, context);
+        }
+
+        /**
          * <p>Disables the standards specified by the provided
          * <code>StandardsSubscriptionArns</code>.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Security
@@ -194,6 +219,32 @@ namespace SecurityHub
         void BatchEnableStandardsAsync(const BatchEnableStandardsRequestT& request, const BatchEnableStandardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SecurityHubClient::BatchEnableStandards, request, handler, context);
+        }
+
+        /**
+         * <p> Retrieves a list of details for automation rules based on rule Amazon
+         * Resource Names (ARNs). </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchGetAutomationRules">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchGetAutomationRulesOutcome BatchGetAutomationRules(const Model::BatchGetAutomationRulesRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchGetAutomationRules that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename BatchGetAutomationRulesRequestT = Model::BatchGetAutomationRulesRequest>
+        Model::BatchGetAutomationRulesOutcomeCallable BatchGetAutomationRulesCallable(const BatchGetAutomationRulesRequestT& request) const
+        {
+            return SubmitCallable(&SecurityHubClient::BatchGetAutomationRules, request);
+        }
+
+        /**
+         * An Async wrapper for BatchGetAutomationRules that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename BatchGetAutomationRulesRequestT = Model::BatchGetAutomationRulesRequest>
+        void BatchGetAutomationRulesAsync(const BatchGetAutomationRulesRequestT& request, const BatchGetAutomationRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SecurityHubClient::BatchGetAutomationRules, request, handler, context);
         }
 
         /**
@@ -302,6 +353,32 @@ namespace SecurityHub
         }
 
         /**
+         * <p> Updates one or more automation rules based on rule Amazon Resource Names
+         * (ARNs) and input parameters. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchUpdateAutomationRules">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchUpdateAutomationRulesOutcome BatchUpdateAutomationRules(const Model::BatchUpdateAutomationRulesRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchUpdateAutomationRules that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename BatchUpdateAutomationRulesRequestT = Model::BatchUpdateAutomationRulesRequest>
+        Model::BatchUpdateAutomationRulesOutcomeCallable BatchUpdateAutomationRulesCallable(const BatchUpdateAutomationRulesRequestT& request) const
+        {
+            return SubmitCallable(&SecurityHubClient::BatchUpdateAutomationRules, request);
+        }
+
+        /**
+         * An Async wrapper for BatchUpdateAutomationRules that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename BatchUpdateAutomationRulesRequestT = Model::BatchUpdateAutomationRulesRequest>
+        void BatchUpdateAutomationRulesAsync(const BatchUpdateAutomationRulesRequestT& request, const BatchUpdateAutomationRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SecurityHubClient::BatchUpdateAutomationRules, request, handler, context);
+        }
+
+        /**
          * <p>Used by Security Hub customers to update information about their
          * investigation into a finding. Requested by administrator accounts or member
          * accounts. Administrator accounts can update findings for their account and their
@@ -395,6 +472,32 @@ namespace SecurityHub
         void CreateActionTargetAsync(const CreateActionTargetRequestT& request, const CreateActionTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SecurityHubClient::CreateActionTarget, request, handler, context);
+        }
+
+        /**
+         * <p> Creates an automation rule based on input parameters. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateAutomationRule">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateAutomationRuleOutcome CreateAutomationRule(const Model::CreateAutomationRuleRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateAutomationRule that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateAutomationRuleRequestT = Model::CreateAutomationRuleRequest>
+        Model::CreateAutomationRuleOutcomeCallable CreateAutomationRuleCallable(const CreateAutomationRuleRequestT& request) const
+        {
+            return SubmitCallable(&SecurityHubClient::CreateAutomationRule, request);
+        }
+
+        /**
+         * An Async wrapper for CreateAutomationRule that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateAutomationRuleRequestT = Model::CreateAutomationRuleRequest>
+        void CreateAutomationRuleAsync(const CreateAutomationRuleRequestT& request, const CreateAutomationRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SecurityHubClient::CreateAutomationRule, request, handler, context);
         }
 
         /**
@@ -1354,6 +1457,32 @@ namespace SecurityHub
         void InviteMembersAsync(const InviteMembersRequestT& request, const InviteMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SecurityHubClient::InviteMembers, request, handler, context);
+        }
+
+        /**
+         * <p> A list of automation rules and their metadata for the calling account.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListAutomationRules">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAutomationRulesOutcome ListAutomationRules(const Model::ListAutomationRulesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListAutomationRules that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListAutomationRulesRequestT = Model::ListAutomationRulesRequest>
+        Model::ListAutomationRulesOutcomeCallable ListAutomationRulesCallable(const ListAutomationRulesRequestT& request) const
+        {
+            return SubmitCallable(&SecurityHubClient::ListAutomationRules, request);
+        }
+
+        /**
+         * An Async wrapper for ListAutomationRules that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListAutomationRulesRequestT = Model::ListAutomationRulesRequest>
+        void ListAutomationRulesAsync(const ListAutomationRulesRequestT& request, const ListAutomationRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SecurityHubClient::ListAutomationRules, request, handler, context);
         }
 
         /**

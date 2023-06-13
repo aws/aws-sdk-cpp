@@ -24,6 +24,7 @@ LaunchConfigurationTemplate::LaunchConfigurationTemplate() :
     m_copyPrivateIpHasBeenSet(false),
     m_copyTags(false),
     m_copyTagsHasBeenSet(false),
+    m_exportBucketArnHasBeenSet(false),
     m_launchConfigurationTemplateIDHasBeenSet(false),
     m_launchDisposition(LaunchDisposition::NOT_SET),
     m_launchDispositionHasBeenSet(false),
@@ -40,6 +41,7 @@ LaunchConfigurationTemplate::LaunchConfigurationTemplate(JsonView jsonValue) :
     m_copyPrivateIpHasBeenSet(false),
     m_copyTags(false),
     m_copyTagsHasBeenSet(false),
+    m_exportBucketArnHasBeenSet(false),
     m_launchConfigurationTemplateIDHasBeenSet(false),
     m_launchDisposition(LaunchDisposition::NOT_SET),
     m_launchDispositionHasBeenSet(false),
@@ -72,6 +74,13 @@ LaunchConfigurationTemplate& LaunchConfigurationTemplate::operator =(JsonView js
     m_copyTags = jsonValue.GetBool("copyTags");
 
     m_copyTagsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("exportBucketArn"))
+  {
+    m_exportBucketArn = jsonValue.GetString("exportBucketArn");
+
+    m_exportBucketArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("launchConfigurationTemplateID"))
@@ -134,6 +143,12 @@ JsonValue LaunchConfigurationTemplate::Jsonize() const
   if(m_copyTagsHasBeenSet)
   {
    payload.WithBool("copyTags", m_copyTags);
+
+  }
+
+  if(m_exportBucketArnHasBeenSet)
+  {
+   payload.WithString("exportBucketArn", m_exportBucketArn);
 
   }
 

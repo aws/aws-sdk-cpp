@@ -37,83 +37,83 @@ namespace Model
   public:
 
     /**
-     * <p>[EC2-VPC] The allocation ID. Required for EC2-VPC.</p>
+     * <p>The allocation ID. This parameter is required.</p>
      */
     inline const Aws::String& GetAllocationId() const{ return m_allocationId; }
 
     /**
-     * <p>[EC2-VPC] The allocation ID. Required for EC2-VPC.</p>
+     * <p>The allocation ID. This parameter is required.</p>
      */
     inline bool AllocationIdHasBeenSet() const { return m_allocationIdHasBeenSet; }
 
     /**
-     * <p>[EC2-VPC] The allocation ID. Required for EC2-VPC.</p>
+     * <p>The allocation ID. This parameter is required.</p>
      */
     inline void SetAllocationId(const Aws::String& value) { m_allocationIdHasBeenSet = true; m_allocationId = value; }
 
     /**
-     * <p>[EC2-VPC] The allocation ID. Required for EC2-VPC.</p>
+     * <p>The allocation ID. This parameter is required.</p>
      */
     inline void SetAllocationId(Aws::String&& value) { m_allocationIdHasBeenSet = true; m_allocationId = std::move(value); }
 
     /**
-     * <p>[EC2-VPC] The allocation ID. Required for EC2-VPC.</p>
+     * <p>The allocation ID. This parameter is required.</p>
      */
     inline void SetAllocationId(const char* value) { m_allocationIdHasBeenSet = true; m_allocationId.assign(value); }
 
     /**
-     * <p>[EC2-VPC] The allocation ID. Required for EC2-VPC.</p>
+     * <p>The allocation ID. This parameter is required.</p>
      */
     inline ReleaseAddressRequest& WithAllocationId(const Aws::String& value) { SetAllocationId(value); return *this;}
 
     /**
-     * <p>[EC2-VPC] The allocation ID. Required for EC2-VPC.</p>
+     * <p>The allocation ID. This parameter is required.</p>
      */
     inline ReleaseAddressRequest& WithAllocationId(Aws::String&& value) { SetAllocationId(std::move(value)); return *this;}
 
     /**
-     * <p>[EC2-VPC] The allocation ID. Required for EC2-VPC.</p>
+     * <p>The allocation ID. This parameter is required.</p>
      */
     inline ReleaseAddressRequest& WithAllocationId(const char* value) { SetAllocationId(value); return *this;}
 
 
     /**
-     * <p>[EC2-Classic] The Elastic IP address. Required for EC2-Classic.</p>
+     * <p>Deprecated.</p>
      */
     inline const Aws::String& GetPublicIp() const{ return m_publicIp; }
 
     /**
-     * <p>[EC2-Classic] The Elastic IP address. Required for EC2-Classic.</p>
+     * <p>Deprecated.</p>
      */
     inline bool PublicIpHasBeenSet() const { return m_publicIpHasBeenSet; }
 
     /**
-     * <p>[EC2-Classic] The Elastic IP address. Required for EC2-Classic.</p>
+     * <p>Deprecated.</p>
      */
     inline void SetPublicIp(const Aws::String& value) { m_publicIpHasBeenSet = true; m_publicIp = value; }
 
     /**
-     * <p>[EC2-Classic] The Elastic IP address. Required for EC2-Classic.</p>
+     * <p>Deprecated.</p>
      */
     inline void SetPublicIp(Aws::String&& value) { m_publicIpHasBeenSet = true; m_publicIp = std::move(value); }
 
     /**
-     * <p>[EC2-Classic] The Elastic IP address. Required for EC2-Classic.</p>
+     * <p>Deprecated.</p>
      */
     inline void SetPublicIp(const char* value) { m_publicIpHasBeenSet = true; m_publicIp.assign(value); }
 
     /**
-     * <p>[EC2-Classic] The Elastic IP address. Required for EC2-Classic.</p>
+     * <p>Deprecated.</p>
      */
     inline ReleaseAddressRequest& WithPublicIp(const Aws::String& value) { SetPublicIp(value); return *this;}
 
     /**
-     * <p>[EC2-Classic] The Elastic IP address. Required for EC2-Classic.</p>
+     * <p>Deprecated.</p>
      */
     inline ReleaseAddressRequest& WithPublicIp(Aws::String&& value) { SetPublicIp(std::move(value)); return *this;}
 
     /**
-     * <p>[EC2-Classic] The Elastic IP address. Required for EC2-Classic.</p>
+     * <p>Deprecated.</p>
      */
     inline ReleaseAddressRequest& WithPublicIp(const char* value) { SetPublicIp(value); return *this;}
 

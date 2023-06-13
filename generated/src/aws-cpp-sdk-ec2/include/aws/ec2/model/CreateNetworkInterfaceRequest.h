@@ -639,37 +639,43 @@ namespace Model
 
     /**
      * <p>The type of network interface. The default is <code>interface</code>.</p>
-     * <p>The only supported values are <code>efa</code> and <code>trunk</code>.</p>
+     * <p>The only supported values are <code>interface</code>, <code>efa</code>, and
+     * <code>trunk</code>.</p>
      */
     inline const NetworkInterfaceCreationType& GetInterfaceType() const{ return m_interfaceType; }
 
     /**
      * <p>The type of network interface. The default is <code>interface</code>.</p>
-     * <p>The only supported values are <code>efa</code> and <code>trunk</code>.</p>
+     * <p>The only supported values are <code>interface</code>, <code>efa</code>, and
+     * <code>trunk</code>.</p>
      */
     inline bool InterfaceTypeHasBeenSet() const { return m_interfaceTypeHasBeenSet; }
 
     /**
      * <p>The type of network interface. The default is <code>interface</code>.</p>
-     * <p>The only supported values are <code>efa</code> and <code>trunk</code>.</p>
+     * <p>The only supported values are <code>interface</code>, <code>efa</code>, and
+     * <code>trunk</code>.</p>
      */
     inline void SetInterfaceType(const NetworkInterfaceCreationType& value) { m_interfaceTypeHasBeenSet = true; m_interfaceType = value; }
 
     /**
      * <p>The type of network interface. The default is <code>interface</code>.</p>
-     * <p>The only supported values are <code>efa</code> and <code>trunk</code>.</p>
+     * <p>The only supported values are <code>interface</code>, <code>efa</code>, and
+     * <code>trunk</code>.</p>
      */
     inline void SetInterfaceType(NetworkInterfaceCreationType&& value) { m_interfaceTypeHasBeenSet = true; m_interfaceType = std::move(value); }
 
     /**
      * <p>The type of network interface. The default is <code>interface</code>.</p>
-     * <p>The only supported values are <code>efa</code> and <code>trunk</code>.</p>
+     * <p>The only supported values are <code>interface</code>, <code>efa</code>, and
+     * <code>trunk</code>.</p>
      */
     inline CreateNetworkInterfaceRequest& WithInterfaceType(const NetworkInterfaceCreationType& value) { SetInterfaceType(value); return *this;}
 
     /**
      * <p>The type of network interface. The default is <code>interface</code>.</p>
-     * <p>The only supported values are <code>efa</code> and <code>trunk</code>.</p>
+     * <p>The only supported values are <code>interface</code>, <code>efa</code>, and
+     * <code>trunk</code>.</p>
      */
     inline CreateNetworkInterfaceRequest& WithInterfaceType(NetworkInterfaceCreationType&& value) { SetInterfaceType(std::move(value)); return *this;}
 

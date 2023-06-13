@@ -200,6 +200,47 @@ namespace Model
      */
     inline ShareInvitation& WithLensArn(const char* value) { SetLensArn(value); return *this;}
 
+
+    /**
+     * <p>The profile ARN.</p>
+     */
+    inline const Aws::String& GetProfileArn() const{ return m_profileArn; }
+
+    /**
+     * <p>The profile ARN.</p>
+     */
+    inline bool ProfileArnHasBeenSet() const { return m_profileArnHasBeenSet; }
+
+    /**
+     * <p>The profile ARN.</p>
+     */
+    inline void SetProfileArn(const Aws::String& value) { m_profileArnHasBeenSet = true; m_profileArn = value; }
+
+    /**
+     * <p>The profile ARN.</p>
+     */
+    inline void SetProfileArn(Aws::String&& value) { m_profileArnHasBeenSet = true; m_profileArn = std::move(value); }
+
+    /**
+     * <p>The profile ARN.</p>
+     */
+    inline void SetProfileArn(const char* value) { m_profileArnHasBeenSet = true; m_profileArn.assign(value); }
+
+    /**
+     * <p>The profile ARN.</p>
+     */
+    inline ShareInvitation& WithProfileArn(const Aws::String& value) { SetProfileArn(value); return *this;}
+
+    /**
+     * <p>The profile ARN.</p>
+     */
+    inline ShareInvitation& WithProfileArn(Aws::String&& value) { SetProfileArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The profile ARN.</p>
+     */
+    inline ShareInvitation& WithProfileArn(const char* value) { SetProfileArn(value); return *this;}
+
   private:
 
     Aws::String m_shareInvitationId;
@@ -216,6 +257,9 @@ namespace Model
 
     Aws::String m_lensArn;
     bool m_lensArnHasBeenSet = false;
+
+    Aws::String m_profileArn;
+    bool m_profileArnHasBeenSet = false;
   };
 
 } // namespace Model

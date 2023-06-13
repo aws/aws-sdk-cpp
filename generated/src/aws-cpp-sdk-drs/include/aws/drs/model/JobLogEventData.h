@@ -7,6 +7,7 @@
 #include <aws/drs/Drs_EXPORTS.h>
 #include <aws/drs/model/ConversionProperties.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/drs/model/EventResourceData.h>
 #include <utility>
 
 namespace Aws
@@ -108,6 +109,37 @@ namespace Model
      * <p>The ID of a conversion server.</p>
      */
     inline JobLogEventData& WithConversionServerID(const char* value) { SetConversionServerID(value); return *this;}
+
+
+    /**
+     * <p>Properties of resource related to a job event.</p>
+     */
+    inline const EventResourceData& GetEventResourceData() const{ return m_eventResourceData; }
+
+    /**
+     * <p>Properties of resource related to a job event.</p>
+     */
+    inline bool EventResourceDataHasBeenSet() const { return m_eventResourceDataHasBeenSet; }
+
+    /**
+     * <p>Properties of resource related to a job event.</p>
+     */
+    inline void SetEventResourceData(const EventResourceData& value) { m_eventResourceDataHasBeenSet = true; m_eventResourceData = value; }
+
+    /**
+     * <p>Properties of resource related to a job event.</p>
+     */
+    inline void SetEventResourceData(EventResourceData&& value) { m_eventResourceDataHasBeenSet = true; m_eventResourceData = std::move(value); }
+
+    /**
+     * <p>Properties of resource related to a job event.</p>
+     */
+    inline JobLogEventData& WithEventResourceData(const EventResourceData& value) { SetEventResourceData(value); return *this;}
+
+    /**
+     * <p>Properties of resource related to a job event.</p>
+     */
+    inline JobLogEventData& WithEventResourceData(EventResourceData&& value) { SetEventResourceData(std::move(value)); return *this;}
 
 
     /**
@@ -239,6 +271,9 @@ namespace Model
 
     Aws::String m_conversionServerID;
     bool m_conversionServerIDHasBeenSet = false;
+
+    EventResourceData m_eventResourceData;
+    bool m_eventResourceDataHasBeenSet = false;
 
     Aws::String m_rawError;
     bool m_rawErrorHasBeenSet = false;

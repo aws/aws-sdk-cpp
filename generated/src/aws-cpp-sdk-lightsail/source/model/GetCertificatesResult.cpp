@@ -38,6 +38,12 @@ GetCertificatesResult& GetCertificatesResult::operator =(const Aws::AmazonWebSer
     }
   }
 
+  if(jsonValue.ValueExists("nextPageToken"))
+  {
+    m_nextPageToken = jsonValue.GetString("nextPageToken");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

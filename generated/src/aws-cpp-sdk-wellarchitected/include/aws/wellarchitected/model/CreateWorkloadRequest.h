@@ -547,6 +547,52 @@ namespace Model
      */
     inline CreateWorkloadRequest& AddApplications(const char* value) { m_applicationsHasBeenSet = true; m_applications.push_back(value); return *this; }
 
+
+    /**
+     * <p>The list of profile ARNs associated with the workload.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetProfileArns() const{ return m_profileArns; }
+
+    /**
+     * <p>The list of profile ARNs associated with the workload.</p>
+     */
+    inline bool ProfileArnsHasBeenSet() const { return m_profileArnsHasBeenSet; }
+
+    /**
+     * <p>The list of profile ARNs associated with the workload.</p>
+     */
+    inline void SetProfileArns(const Aws::Vector<Aws::String>& value) { m_profileArnsHasBeenSet = true; m_profileArns = value; }
+
+    /**
+     * <p>The list of profile ARNs associated with the workload.</p>
+     */
+    inline void SetProfileArns(Aws::Vector<Aws::String>&& value) { m_profileArnsHasBeenSet = true; m_profileArns = std::move(value); }
+
+    /**
+     * <p>The list of profile ARNs associated with the workload.</p>
+     */
+    inline CreateWorkloadRequest& WithProfileArns(const Aws::Vector<Aws::String>& value) { SetProfileArns(value); return *this;}
+
+    /**
+     * <p>The list of profile ARNs associated with the workload.</p>
+     */
+    inline CreateWorkloadRequest& WithProfileArns(Aws::Vector<Aws::String>&& value) { SetProfileArns(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of profile ARNs associated with the workload.</p>
+     */
+    inline CreateWorkloadRequest& AddProfileArns(const Aws::String& value) { m_profileArnsHasBeenSet = true; m_profileArns.push_back(value); return *this; }
+
+    /**
+     * <p>The list of profile ARNs associated with the workload.</p>
+     */
+    inline CreateWorkloadRequest& AddProfileArns(Aws::String&& value) { m_profileArnsHasBeenSet = true; m_profileArns.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The list of profile ARNs associated with the workload.</p>
+     */
+    inline CreateWorkloadRequest& AddProfileArns(const char* value) { m_profileArnsHasBeenSet = true; m_profileArns.push_back(value); return *this; }
+
   private:
 
     Aws::String m_workloadName;
@@ -599,6 +645,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_applications;
     bool m_applicationsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_profileArns;
+    bool m_profileArnsHasBeenSet = false;
   };
 
 } // namespace Model

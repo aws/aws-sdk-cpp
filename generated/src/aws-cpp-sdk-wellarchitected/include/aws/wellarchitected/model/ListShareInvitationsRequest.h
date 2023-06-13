@@ -192,6 +192,47 @@ namespace Model
      */
     inline ListShareInvitationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
+
+    /**
+     * <p>Profile name prefix.</p>
+     */
+    inline const Aws::String& GetProfileNamePrefix() const{ return m_profileNamePrefix; }
+
+    /**
+     * <p>Profile name prefix.</p>
+     */
+    inline bool ProfileNamePrefixHasBeenSet() const { return m_profileNamePrefixHasBeenSet; }
+
+    /**
+     * <p>Profile name prefix.</p>
+     */
+    inline void SetProfileNamePrefix(const Aws::String& value) { m_profileNamePrefixHasBeenSet = true; m_profileNamePrefix = value; }
+
+    /**
+     * <p>Profile name prefix.</p>
+     */
+    inline void SetProfileNamePrefix(Aws::String&& value) { m_profileNamePrefixHasBeenSet = true; m_profileNamePrefix = std::move(value); }
+
+    /**
+     * <p>Profile name prefix.</p>
+     */
+    inline void SetProfileNamePrefix(const char* value) { m_profileNamePrefixHasBeenSet = true; m_profileNamePrefix.assign(value); }
+
+    /**
+     * <p>Profile name prefix.</p>
+     */
+    inline ListShareInvitationsRequest& WithProfileNamePrefix(const Aws::String& value) { SetProfileNamePrefix(value); return *this;}
+
+    /**
+     * <p>Profile name prefix.</p>
+     */
+    inline ListShareInvitationsRequest& WithProfileNamePrefix(Aws::String&& value) { SetProfileNamePrefix(std::move(value)); return *this;}
+
+    /**
+     * <p>Profile name prefix.</p>
+     */
+    inline ListShareInvitationsRequest& WithProfileNamePrefix(const char* value) { SetProfileNamePrefix(value); return *this;}
+
   private:
 
     Aws::String m_workloadNamePrefix;
@@ -208,6 +249,9 @@ namespace Model
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;
+
+    Aws::String m_profileNamePrefix;
+    bool m_profileNamePrefixHasBeenSet = false;
   };
 
 } // namespace Model

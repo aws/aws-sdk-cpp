@@ -30,6 +30,7 @@ SourceServer::SourceServer() :
     m_replicationDirectionHasBeenSet(false),
     m_reversedDirectionSourceServerArnHasBeenSet(false),
     m_sourceCloudPropertiesHasBeenSet(false),
+    m_sourceNetworkIDHasBeenSet(false),
     m_sourcePropertiesHasBeenSet(false),
     m_sourceServerIDHasBeenSet(false),
     m_stagingAreaHasBeenSet(false),
@@ -49,6 +50,7 @@ SourceServer::SourceServer(JsonView jsonValue) :
     m_replicationDirectionHasBeenSet(false),
     m_reversedDirectionSourceServerArnHasBeenSet(false),
     m_sourceCloudPropertiesHasBeenSet(false),
+    m_sourceNetworkIDHasBeenSet(false),
     m_sourcePropertiesHasBeenSet(false),
     m_sourceServerIDHasBeenSet(false),
     m_stagingAreaHasBeenSet(false),
@@ -114,6 +116,13 @@ SourceServer& SourceServer::operator =(JsonView jsonValue)
     m_sourceCloudProperties = jsonValue.GetObject("sourceCloudProperties");
 
     m_sourceCloudPropertiesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("sourceNetworkID"))
+  {
+    m_sourceNetworkID = jsonValue.GetString("sourceNetworkID");
+
+    m_sourceNetworkIDHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("sourceProperties"))
@@ -197,6 +206,12 @@ JsonValue SourceServer::Jsonize() const
   if(m_sourceCloudPropertiesHasBeenSet)
   {
    payload.WithObject("sourceCloudProperties", m_sourceCloudProperties.Jsonize());
+
+  }
+
+  if(m_sourceNetworkIDHasBeenSet)
+  {
+   payload.WithString("sourceNetworkID", m_sourceNetworkID);
 
   }
 

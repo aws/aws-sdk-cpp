@@ -145,75 +145,102 @@ namespace Model
 
     /**
      * <p>The criteria for inspecting responses to login requests, used by the ATP rule
-     * group to track login failure rates. </p> <p>The ATP rule group evaluates the
-     * responses that your protected resources send back to client login attempts,
-     * keeping count of successful and failed attempts from each IP address and client
-     * session. Using this information, the rule group labels and mitigates requests
-     * from client sessions and IP addresses that submit too many failed login attempts
-     * in a short amount of time. </p>  <p>Response inspection is available only
-     * in web ACLs that protect Amazon CloudFront distributions.</p> 
+     * group to track login failure rates. </p>  <p>Response inspection is
+     * available only in web ACLs that protect Amazon CloudFront distributions.</p>
+     *  <p>The ATP rule group evaluates the responses that your protected
+     * resources send back to client login attempts, keeping count of successful and
+     * failed attempts for each IP address and client session. Using this information,
+     * the rule group labels and mitigates requests from client sessions and IP
+     * addresses that have had too many failed login attempts in a short amount of
+     * time. </p>
      */
     inline const ResponseInspection& GetResponseInspection() const{ return m_responseInspection; }
 
     /**
      * <p>The criteria for inspecting responses to login requests, used by the ATP rule
-     * group to track login failure rates. </p> <p>The ATP rule group evaluates the
-     * responses that your protected resources send back to client login attempts,
-     * keeping count of successful and failed attempts from each IP address and client
-     * session. Using this information, the rule group labels and mitigates requests
-     * from client sessions and IP addresses that submit too many failed login attempts
-     * in a short amount of time. </p>  <p>Response inspection is available only
-     * in web ACLs that protect Amazon CloudFront distributions.</p> 
+     * group to track login failure rates. </p>  <p>Response inspection is
+     * available only in web ACLs that protect Amazon CloudFront distributions.</p>
+     *  <p>The ATP rule group evaluates the responses that your protected
+     * resources send back to client login attempts, keeping count of successful and
+     * failed attempts for each IP address and client session. Using this information,
+     * the rule group labels and mitigates requests from client sessions and IP
+     * addresses that have had too many failed login attempts in a short amount of
+     * time. </p>
      */
     inline bool ResponseInspectionHasBeenSet() const { return m_responseInspectionHasBeenSet; }
 
     /**
      * <p>The criteria for inspecting responses to login requests, used by the ATP rule
-     * group to track login failure rates. </p> <p>The ATP rule group evaluates the
-     * responses that your protected resources send back to client login attempts,
-     * keeping count of successful and failed attempts from each IP address and client
-     * session. Using this information, the rule group labels and mitigates requests
-     * from client sessions and IP addresses that submit too many failed login attempts
-     * in a short amount of time. </p>  <p>Response inspection is available only
-     * in web ACLs that protect Amazon CloudFront distributions.</p> 
+     * group to track login failure rates. </p>  <p>Response inspection is
+     * available only in web ACLs that protect Amazon CloudFront distributions.</p>
+     *  <p>The ATP rule group evaluates the responses that your protected
+     * resources send back to client login attempts, keeping count of successful and
+     * failed attempts for each IP address and client session. Using this information,
+     * the rule group labels and mitigates requests from client sessions and IP
+     * addresses that have had too many failed login attempts in a short amount of
+     * time. </p>
      */
     inline void SetResponseInspection(const ResponseInspection& value) { m_responseInspectionHasBeenSet = true; m_responseInspection = value; }
 
     /**
      * <p>The criteria for inspecting responses to login requests, used by the ATP rule
-     * group to track login failure rates. </p> <p>The ATP rule group evaluates the
-     * responses that your protected resources send back to client login attempts,
-     * keeping count of successful and failed attempts from each IP address and client
-     * session. Using this information, the rule group labels and mitigates requests
-     * from client sessions and IP addresses that submit too many failed login attempts
-     * in a short amount of time. </p>  <p>Response inspection is available only
-     * in web ACLs that protect Amazon CloudFront distributions.</p> 
+     * group to track login failure rates. </p>  <p>Response inspection is
+     * available only in web ACLs that protect Amazon CloudFront distributions.</p>
+     *  <p>The ATP rule group evaluates the responses that your protected
+     * resources send back to client login attempts, keeping count of successful and
+     * failed attempts for each IP address and client session. Using this information,
+     * the rule group labels and mitigates requests from client sessions and IP
+     * addresses that have had too many failed login attempts in a short amount of
+     * time. </p>
      */
     inline void SetResponseInspection(ResponseInspection&& value) { m_responseInspectionHasBeenSet = true; m_responseInspection = std::move(value); }
 
     /**
      * <p>The criteria for inspecting responses to login requests, used by the ATP rule
-     * group to track login failure rates. </p> <p>The ATP rule group evaluates the
-     * responses that your protected resources send back to client login attempts,
-     * keeping count of successful and failed attempts from each IP address and client
-     * session. Using this information, the rule group labels and mitigates requests
-     * from client sessions and IP addresses that submit too many failed login attempts
-     * in a short amount of time. </p>  <p>Response inspection is available only
-     * in web ACLs that protect Amazon CloudFront distributions.</p> 
+     * group to track login failure rates. </p>  <p>Response inspection is
+     * available only in web ACLs that protect Amazon CloudFront distributions.</p>
+     *  <p>The ATP rule group evaluates the responses that your protected
+     * resources send back to client login attempts, keeping count of successful and
+     * failed attempts for each IP address and client session. Using this information,
+     * the rule group labels and mitigates requests from client sessions and IP
+     * addresses that have had too many failed login attempts in a short amount of
+     * time. </p>
      */
     inline AWSManagedRulesATPRuleSet& WithResponseInspection(const ResponseInspection& value) { SetResponseInspection(value); return *this;}
 
     /**
      * <p>The criteria for inspecting responses to login requests, used by the ATP rule
-     * group to track login failure rates. </p> <p>The ATP rule group evaluates the
-     * responses that your protected resources send back to client login attempts,
-     * keeping count of successful and failed attempts from each IP address and client
-     * session. Using this information, the rule group labels and mitigates requests
-     * from client sessions and IP addresses that submit too many failed login attempts
-     * in a short amount of time. </p>  <p>Response inspection is available only
-     * in web ACLs that protect Amazon CloudFront distributions.</p> 
+     * group to track login failure rates. </p>  <p>Response inspection is
+     * available only in web ACLs that protect Amazon CloudFront distributions.</p>
+     *  <p>The ATP rule group evaluates the responses that your protected
+     * resources send back to client login attempts, keeping count of successful and
+     * failed attempts for each IP address and client session. Using this information,
+     * the rule group labels and mitigates requests from client sessions and IP
+     * addresses that have had too many failed login attempts in a short amount of
+     * time. </p>
      */
     inline AWSManagedRulesATPRuleSet& WithResponseInspection(ResponseInspection&& value) { SetResponseInspection(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Allow the use of regular expressions in the login page path. </p>
+     */
+    inline bool GetEnableRegexInPath() const{ return m_enableRegexInPath; }
+
+    /**
+     * <p>Allow the use of regular expressions in the login page path. </p>
+     */
+    inline bool EnableRegexInPathHasBeenSet() const { return m_enableRegexInPathHasBeenSet; }
+
+    /**
+     * <p>Allow the use of regular expressions in the login page path. </p>
+     */
+    inline void SetEnableRegexInPath(bool value) { m_enableRegexInPathHasBeenSet = true; m_enableRegexInPath = value; }
+
+    /**
+     * <p>Allow the use of regular expressions in the login page path. </p>
+     */
+    inline AWSManagedRulesATPRuleSet& WithEnableRegexInPath(bool value) { SetEnableRegexInPath(value); return *this;}
 
   private:
 
@@ -225,6 +252,9 @@ namespace Model
 
     ResponseInspection m_responseInspection;
     bool m_responseInspectionHasBeenSet = false;
+
+    bool m_enableRegexInPath;
+    bool m_enableRegexInPathHasBeenSet = false;
   };
 
 } // namespace Model

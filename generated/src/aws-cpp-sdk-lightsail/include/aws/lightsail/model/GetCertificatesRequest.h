@@ -194,6 +194,71 @@ namespace Model
      */
     inline GetCertificatesRequest& WithCertificateName(const char* value) { SetCertificateName(value); return *this;}
 
+
+    /**
+     * <p>The token to advance to the next page of results from your request.</p> <p>To
+     * get a page token, perform an initial <code>GetCertificates</code> request. If
+     * your results are paginated, the response will return a next page token that you
+     * can specify as the page token in a subsequent request.</p>
+     */
+    inline const Aws::String& GetPageToken() const{ return m_pageToken; }
+
+    /**
+     * <p>The token to advance to the next page of results from your request.</p> <p>To
+     * get a page token, perform an initial <code>GetCertificates</code> request. If
+     * your results are paginated, the response will return a next page token that you
+     * can specify as the page token in a subsequent request.</p>
+     */
+    inline bool PageTokenHasBeenSet() const { return m_pageTokenHasBeenSet; }
+
+    /**
+     * <p>The token to advance to the next page of results from your request.</p> <p>To
+     * get a page token, perform an initial <code>GetCertificates</code> request. If
+     * your results are paginated, the response will return a next page token that you
+     * can specify as the page token in a subsequent request.</p>
+     */
+    inline void SetPageToken(const Aws::String& value) { m_pageTokenHasBeenSet = true; m_pageToken = value; }
+
+    /**
+     * <p>The token to advance to the next page of results from your request.</p> <p>To
+     * get a page token, perform an initial <code>GetCertificates</code> request. If
+     * your results are paginated, the response will return a next page token that you
+     * can specify as the page token in a subsequent request.</p>
+     */
+    inline void SetPageToken(Aws::String&& value) { m_pageTokenHasBeenSet = true; m_pageToken = std::move(value); }
+
+    /**
+     * <p>The token to advance to the next page of results from your request.</p> <p>To
+     * get a page token, perform an initial <code>GetCertificates</code> request. If
+     * your results are paginated, the response will return a next page token that you
+     * can specify as the page token in a subsequent request.</p>
+     */
+    inline void SetPageToken(const char* value) { m_pageTokenHasBeenSet = true; m_pageToken.assign(value); }
+
+    /**
+     * <p>The token to advance to the next page of results from your request.</p> <p>To
+     * get a page token, perform an initial <code>GetCertificates</code> request. If
+     * your results are paginated, the response will return a next page token that you
+     * can specify as the page token in a subsequent request.</p>
+     */
+    inline GetCertificatesRequest& WithPageToken(const Aws::String& value) { SetPageToken(value); return *this;}
+
+    /**
+     * <p>The token to advance to the next page of results from your request.</p> <p>To
+     * get a page token, perform an initial <code>GetCertificates</code> request. If
+     * your results are paginated, the response will return a next page token that you
+     * can specify as the page token in a subsequent request.</p>
+     */
+    inline GetCertificatesRequest& WithPageToken(Aws::String&& value) { SetPageToken(std::move(value)); return *this;}
+
+    /**
+     * <p>The token to advance to the next page of results from your request.</p> <p>To
+     * get a page token, perform an initial <code>GetCertificates</code> request. If
+     * your results are paginated, the response will return a next page token that you
+     * can specify as the page token in a subsequent request.</p>
+     */
+    inline GetCertificatesRequest& WithPageToken(const char* value) { SetPageToken(value); return *this;}
+
   private:
 
     Aws::Vector<CertificateStatus> m_certificateStatuses;
@@ -204,6 +269,9 @@ namespace Model
 
     Aws::String m_certificateName;
     bool m_certificateNameHasBeenSet = false;
+
+    Aws::String m_pageToken;
+    bool m_pageTokenHasBeenSet = false;
   };
 
 } // namespace Model

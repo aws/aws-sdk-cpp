@@ -46,7 +46,9 @@ Workload::Workload() :
     m_shareInvitationIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_discoveryConfigHasBeenSet(false),
-    m_applicationsHasBeenSet(false)
+    m_applicationsHasBeenSet(false),
+    m_profilesHasBeenSet(false),
+    m_prioritizedRiskCountsHasBeenSet(false)
 {
 }
 
@@ -78,7 +80,9 @@ Workload::Workload(JsonView jsonValue) :
     m_shareInvitationIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_discoveryConfigHasBeenSet(false),
-    m_applicationsHasBeenSet(false)
+    m_applicationsHasBeenSet(false),
+    m_profilesHasBeenSet(false),
+    m_prioritizedRiskCountsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -284,6 +288,26 @@ Workload& Workload::operator =(JsonView jsonValue)
     m_applicationsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Profiles"))
+  {
+    Aws::Utils::Array<JsonView> profilesJsonList = jsonValue.GetArray("Profiles");
+    for(unsigned profilesIndex = 0; profilesIndex < profilesJsonList.GetLength(); ++profilesIndex)
+    {
+      m_profiles.push_back(profilesJsonList[profilesIndex].AsObject());
+    }
+    m_profilesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PrioritizedRiskCounts"))
+  {
+    Aws::Map<Aws::String, JsonView> prioritizedRiskCountsJsonMap = jsonValue.GetObject("PrioritizedRiskCounts").GetAllObjects();
+    for(auto& prioritizedRiskCountsItem : prioritizedRiskCountsJsonMap)
+    {
+      m_prioritizedRiskCounts[RiskMapper::GetRiskForName(prioritizedRiskCountsItem.first)] = prioritizedRiskCountsItem.second.AsInteger();
+    }
+    m_prioritizedRiskCountsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -474,6 +498,28 @@ JsonValue Workload::Jsonize() const
      applicationsJsonList[applicationsIndex].AsString(m_applications[applicationsIndex]);
    }
    payload.WithArray("Applications", std::move(applicationsJsonList));
+
+  }
+
+  if(m_profilesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> profilesJsonList(m_profiles.size());
+   for(unsigned profilesIndex = 0; profilesIndex < profilesJsonList.GetLength(); ++profilesIndex)
+   {
+     profilesJsonList[profilesIndex].AsObject(m_profiles[profilesIndex].Jsonize());
+   }
+   payload.WithArray("Profiles", std::move(profilesJsonList));
+
+  }
+
+  if(m_prioritizedRiskCountsHasBeenSet)
+  {
+   JsonValue prioritizedRiskCountsJsonMap;
+   for(auto& prioritizedRiskCountsItem : m_prioritizedRiskCounts)
+   {
+     prioritizedRiskCountsJsonMap.WithInteger(RiskMapper::GetNameForRisk(prioritizedRiskCountsItem.first), prioritizedRiskCountsItem.second);
+   }
+   payload.WithObject("PrioritizedRiskCounts", std::move(prioritizedRiskCountsJsonMap));
 
   }
 

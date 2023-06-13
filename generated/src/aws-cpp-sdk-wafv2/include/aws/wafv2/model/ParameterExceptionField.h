@@ -84,7 +84,8 @@ namespace Model
     ATP_RULE_SET_RESPONSE_INSPECTION,
     ASSOCIATED_RESOURCE_TYPE,
     SCOPE_DOWN,
-    CUSTOM_KEYS
+    CUSTOM_KEYS,
+    ACP_RULE_SET_RESPONSE_INSPECTION
   };
 
 namespace ParameterExceptionFieldMapper

@@ -22,14 +22,18 @@
 #include <aws/securityhub/SecurityHubErrorMarshaller.h>
 #include <aws/securityhub/SecurityHubEndpointProvider.h>
 #include <aws/securityhub/model/AcceptAdministratorInvitationRequest.h>
+#include <aws/securityhub/model/BatchDeleteAutomationRulesRequest.h>
 #include <aws/securityhub/model/BatchDisableStandardsRequest.h>
 #include <aws/securityhub/model/BatchEnableStandardsRequest.h>
+#include <aws/securityhub/model/BatchGetAutomationRulesRequest.h>
 #include <aws/securityhub/model/BatchGetSecurityControlsRequest.h>
 #include <aws/securityhub/model/BatchGetStandardsControlAssociationsRequest.h>
 #include <aws/securityhub/model/BatchImportFindingsRequest.h>
+#include <aws/securityhub/model/BatchUpdateAutomationRulesRequest.h>
 #include <aws/securityhub/model/BatchUpdateFindingsRequest.h>
 #include <aws/securityhub/model/BatchUpdateStandardsControlAssociationsRequest.h>
 #include <aws/securityhub/model/CreateActionTargetRequest.h>
+#include <aws/securityhub/model/CreateAutomationRuleRequest.h>
 #include <aws/securityhub/model/CreateFindingAggregatorRequest.h>
 #include <aws/securityhub/model/CreateInsightRequest.h>
 #include <aws/securityhub/model/CreateMembersRequest.h>
@@ -63,6 +67,7 @@
 #include <aws/securityhub/model/GetInvitationsCountRequest.h>
 #include <aws/securityhub/model/GetMembersRequest.h>
 #include <aws/securityhub/model/InviteMembersRequest.h>
+#include <aws/securityhub/model/ListAutomationRulesRequest.h>
 #include <aws/securityhub/model/ListEnabledProductsForImportRequest.h>
 #include <aws/securityhub/model/ListFindingAggregatorsRequest.h>
 #include <aws/securityhub/model/ListInvitationsRequest.h>
@@ -219,6 +224,16 @@ AcceptAdministratorInvitationOutcome SecurityHubClient::AcceptAdministratorInvit
   return AcceptAdministratorInvitationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
+BatchDeleteAutomationRulesOutcome SecurityHubClient::BatchDeleteAutomationRules(const BatchDeleteAutomationRulesRequest& request) const
+{
+  AWS_OPERATION_GUARD(BatchDeleteAutomationRules);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchDeleteAutomationRules, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchDeleteAutomationRules, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/automationrules/delete");
+  return BatchDeleteAutomationRulesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
 BatchDisableStandardsOutcome SecurityHubClient::BatchDisableStandards(const BatchDisableStandardsRequest& request) const
 {
   AWS_OPERATION_GUARD(BatchDisableStandards);
@@ -237,6 +252,16 @@ BatchEnableStandardsOutcome SecurityHubClient::BatchEnableStandards(const BatchE
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchEnableStandards, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   endpointResolutionOutcome.GetResult().AddPathSegments("/standards/register");
   return BatchEnableStandardsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+BatchGetAutomationRulesOutcome SecurityHubClient::BatchGetAutomationRules(const BatchGetAutomationRulesRequest& request) const
+{
+  AWS_OPERATION_GUARD(BatchGetAutomationRules);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchGetAutomationRules, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchGetAutomationRules, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/automationrules/get");
+  return BatchGetAutomationRulesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 BatchGetSecurityControlsOutcome SecurityHubClient::BatchGetSecurityControls(const BatchGetSecurityControlsRequest& request) const
@@ -269,6 +294,16 @@ BatchImportFindingsOutcome SecurityHubClient::BatchImportFindings(const BatchImp
   return BatchImportFindingsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
+BatchUpdateAutomationRulesOutcome SecurityHubClient::BatchUpdateAutomationRules(const BatchUpdateAutomationRulesRequest& request) const
+{
+  AWS_OPERATION_GUARD(BatchUpdateAutomationRules);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchUpdateAutomationRules, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchUpdateAutomationRules, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/automationrules/update");
+  return BatchUpdateAutomationRulesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+}
+
 BatchUpdateFindingsOutcome SecurityHubClient::BatchUpdateFindings(const BatchUpdateFindingsRequest& request) const
 {
   AWS_OPERATION_GUARD(BatchUpdateFindings);
@@ -297,6 +332,16 @@ CreateActionTargetOutcome SecurityHubClient::CreateActionTarget(const CreateActi
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateActionTarget, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   endpointResolutionOutcome.GetResult().AddPathSegments("/actionTargets");
   return CreateActionTargetOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateAutomationRuleOutcome SecurityHubClient::CreateAutomationRule(const CreateAutomationRuleRequest& request) const
+{
+  AWS_OPERATION_GUARD(CreateAutomationRule);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAutomationRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateAutomationRule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/automationrules/create");
+  return CreateAutomationRuleOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateFindingAggregatorOutcome SecurityHubClient::CreateFindingAggregator(const CreateFindingAggregatorRequest& request) const
@@ -669,6 +714,16 @@ InviteMembersOutcome SecurityHubClient::InviteMembers(const InviteMembersRequest
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, InviteMembers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   endpointResolutionOutcome.GetResult().AddPathSegments("/members/invite");
   return InviteMembersOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListAutomationRulesOutcome SecurityHubClient::ListAutomationRules(const ListAutomationRulesRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListAutomationRules);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAutomationRules, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAutomationRules, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/automationrules/list");
+  return ListAutomationRulesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListEnabledProductsForImportOutcome SecurityHubClient::ListEnabledProductsForImport(const ListEnabledProductsForImportRequest& request) const

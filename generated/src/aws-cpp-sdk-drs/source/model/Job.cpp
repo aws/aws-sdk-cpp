@@ -25,6 +25,7 @@ Job::Job() :
     m_initiatedBy(InitiatedBy::NOT_SET),
     m_initiatedByHasBeenSet(false),
     m_jobIDHasBeenSet(false),
+    m_participatingResourcesHasBeenSet(false),
     m_participatingServersHasBeenSet(false),
     m_status(JobStatus::NOT_SET),
     m_statusHasBeenSet(false),
@@ -41,6 +42,7 @@ Job::Job(JsonView jsonValue) :
     m_initiatedBy(InitiatedBy::NOT_SET),
     m_initiatedByHasBeenSet(false),
     m_jobIDHasBeenSet(false),
+    m_participatingResourcesHasBeenSet(false),
     m_participatingServersHasBeenSet(false),
     m_status(JobStatus::NOT_SET),
     m_statusHasBeenSet(false),
@@ -86,6 +88,16 @@ Job& Job::operator =(JsonView jsonValue)
     m_jobID = jsonValue.GetString("jobID");
 
     m_jobIDHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("participatingResources"))
+  {
+    Aws::Utils::Array<JsonView> participatingResourcesJsonList = jsonValue.GetArray("participatingResources");
+    for(unsigned participatingResourcesIndex = 0; participatingResourcesIndex < participatingResourcesJsonList.GetLength(); ++participatingResourcesIndex)
+    {
+      m_participatingResources.push_back(participatingResourcesJsonList[participatingResourcesIndex].AsObject());
+    }
+    m_participatingResourcesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("participatingServers"))
@@ -155,6 +167,17 @@ JsonValue Job::Jsonize() const
   if(m_jobIDHasBeenSet)
   {
    payload.WithString("jobID", m_jobID);
+
+  }
+
+  if(m_participatingResourcesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> participatingResourcesJsonList(m_participatingResources.size());
+   for(unsigned participatingResourcesIndex = 0; participatingResourcesIndex < participatingResourcesJsonList.GetLength(); ++participatingResourcesIndex)
+   {
+     participatingResourcesJsonList[participatingResourcesIndex].AsObject(m_participatingResources[participatingResourcesIndex].Jsonize());
+   }
+   payload.WithArray("participatingResources", std::move(participatingResourcesJsonList));
 
   }
 
