@@ -15,6 +15,7 @@ using namespace Aws::Utils;
 SearchPlaceIndexForTextRequest::SearchPlaceIndexForTextRequest() : 
     m_biasPositionHasBeenSet(false),
     m_filterBBoxHasBeenSet(false),
+    m_filterCategoriesHasBeenSet(false),
     m_filterCountriesHasBeenSet(false),
     m_indexNameHasBeenSet(false),
     m_languageHasBeenSet(false),
@@ -47,6 +48,17 @@ Aws::String SearchPlaceIndexForTextRequest::SerializePayload() const
      filterBBoxJsonList[filterBBoxIndex].AsDouble(m_filterBBox[filterBBoxIndex]);
    }
    payload.WithArray("FilterBBox", std::move(filterBBoxJsonList));
+
+  }
+
+  if(m_filterCategoriesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> filterCategoriesJsonList(m_filterCategories.size());
+   for(unsigned filterCategoriesIndex = 0; filterCategoriesIndex < filterCategoriesJsonList.GetLength(); ++filterCategoriesIndex)
+   {
+     filterCategoriesJsonList[filterCategoriesIndex].AsString(m_filterCategories[filterCategoriesIndex]);
+   }
+   payload.WithArray("FilterCategories", std::move(filterCategoriesJsonList));
 
   }
 

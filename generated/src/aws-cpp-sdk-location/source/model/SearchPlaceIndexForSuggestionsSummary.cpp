@@ -22,6 +22,7 @@ SearchPlaceIndexForSuggestionsSummary::SearchPlaceIndexForSuggestionsSummary() :
     m_biasPositionHasBeenSet(false),
     m_dataSourceHasBeenSet(false),
     m_filterBBoxHasBeenSet(false),
+    m_filterCategoriesHasBeenSet(false),
     m_filterCountriesHasBeenSet(false),
     m_languageHasBeenSet(false),
     m_maxResults(0),
@@ -34,6 +35,7 @@ SearchPlaceIndexForSuggestionsSummary::SearchPlaceIndexForSuggestionsSummary(Jso
     m_biasPositionHasBeenSet(false),
     m_dataSourceHasBeenSet(false),
     m_filterBBoxHasBeenSet(false),
+    m_filterCategoriesHasBeenSet(false),
     m_filterCountriesHasBeenSet(false),
     m_languageHasBeenSet(false),
     m_maxResults(0),
@@ -70,6 +72,16 @@ SearchPlaceIndexForSuggestionsSummary& SearchPlaceIndexForSuggestionsSummary::op
       m_filterBBox.push_back(filterBBoxJsonList[filterBBoxIndex].AsDouble());
     }
     m_filterBBoxHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("FilterCategories"))
+  {
+    Aws::Utils::Array<JsonView> filterCategoriesJsonList = jsonValue.GetArray("FilterCategories");
+    for(unsigned filterCategoriesIndex = 0; filterCategoriesIndex < filterCategoriesJsonList.GetLength(); ++filterCategoriesIndex)
+    {
+      m_filterCategories.push_back(filterCategoriesJsonList[filterCategoriesIndex].AsString());
+    }
+    m_filterCategoriesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("FilterCountries"))
@@ -135,6 +147,17 @@ JsonValue SearchPlaceIndexForSuggestionsSummary::Jsonize() const
      filterBBoxJsonList[filterBBoxIndex].AsDouble(m_filterBBox[filterBBoxIndex]);
    }
    payload.WithArray("FilterBBox", std::move(filterBBoxJsonList));
+
+  }
+
+  if(m_filterCategoriesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> filterCategoriesJsonList(m_filterCategories.size());
+   for(unsigned filterCategoriesIndex = 0; filterCategoriesIndex < filterCategoriesJsonList.GetLength(); ++filterCategoriesIndex)
+   {
+     filterCategoriesJsonList[filterCategoriesIndex].AsString(m_filterCategories[filterCategoriesIndex]);
+   }
+   payload.WithArray("FilterCategories", std::move(filterCategoriesJsonList));
 
   }
 

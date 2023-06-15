@@ -48,6 +48,7 @@
 #include <aws/auditmanager/model/GetDelegationsRequest.h>
 #include <aws/auditmanager/model/GetEvidenceRequest.h>
 #include <aws/auditmanager/model/GetEvidenceByEvidenceFolderRequest.h>
+#include <aws/auditmanager/model/GetEvidenceFileUploadUrlRequest.h>
 #include <aws/auditmanager/model/GetEvidenceFolderRequest.h>
 #include <aws/auditmanager/model/GetEvidenceFoldersByAssessmentRequest.h>
 #include <aws/auditmanager/model/GetEvidenceFoldersByAssessmentControlRequest.h>
@@ -678,6 +679,21 @@ GetEvidenceByEvidenceFolderOutcome AuditManagerClient::GetEvidenceByEvidenceFold
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEvidenceFolderId());
   endpointResolutionOutcome.GetResult().AddPathSegments("/evidence");
   return GetEvidenceByEvidenceFolderOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetEvidenceFileUploadUrlOutcome AuditManagerClient::GetEvidenceFileUploadUrl(const GetEvidenceFileUploadUrlRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetEvidenceFileUploadUrl);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetEvidenceFileUploadUrl, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.FileNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetEvidenceFileUploadUrl", "Required field: FileName, is not set");
+    return GetEvidenceFileUploadUrlOutcome(Aws::Client::AWSError<AuditManagerErrors>(AuditManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FileName]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetEvidenceFileUploadUrl, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/evidenceFileUploadUrl");
+  return GetEvidenceFileUploadUrlOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetEvidenceFolderOutcome AuditManagerClient::GetEvidenceFolder(const GetEvidenceFolderRequest& request) const

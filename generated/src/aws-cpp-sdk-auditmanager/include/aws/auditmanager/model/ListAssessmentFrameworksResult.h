@@ -35,37 +35,44 @@ namespace Model
 
 
     /**
-     * <p> The list of metadata objects for the framework. </p>
+     * <p> A list of metadata that the <code>ListAssessmentFrameworks</code> API
+     * returns for each framework.</p>
      */
     inline const Aws::Vector<AssessmentFrameworkMetadata>& GetFrameworkMetadataList() const{ return m_frameworkMetadataList; }
 
     /**
-     * <p> The list of metadata objects for the framework. </p>
+     * <p> A list of metadata that the <code>ListAssessmentFrameworks</code> API
+     * returns for each framework.</p>
      */
     inline void SetFrameworkMetadataList(const Aws::Vector<AssessmentFrameworkMetadata>& value) { m_frameworkMetadataList = value; }
 
     /**
-     * <p> The list of metadata objects for the framework. </p>
+     * <p> A list of metadata that the <code>ListAssessmentFrameworks</code> API
+     * returns for each framework.</p>
      */
     inline void SetFrameworkMetadataList(Aws::Vector<AssessmentFrameworkMetadata>&& value) { m_frameworkMetadataList = std::move(value); }
 
     /**
-     * <p> The list of metadata objects for the framework. </p>
+     * <p> A list of metadata that the <code>ListAssessmentFrameworks</code> API
+     * returns for each framework.</p>
      */
     inline ListAssessmentFrameworksResult& WithFrameworkMetadataList(const Aws::Vector<AssessmentFrameworkMetadata>& value) { SetFrameworkMetadataList(value); return *this;}
 
     /**
-     * <p> The list of metadata objects for the framework. </p>
+     * <p> A list of metadata that the <code>ListAssessmentFrameworks</code> API
+     * returns for each framework.</p>
      */
     inline ListAssessmentFrameworksResult& WithFrameworkMetadataList(Aws::Vector<AssessmentFrameworkMetadata>&& value) { SetFrameworkMetadataList(std::move(value)); return *this;}
 
     /**
-     * <p> The list of metadata objects for the framework. </p>
+     * <p> A list of metadata that the <code>ListAssessmentFrameworks</code> API
+     * returns for each framework.</p>
      */
     inline ListAssessmentFrameworksResult& AddFrameworkMetadataList(const AssessmentFrameworkMetadata& value) { m_frameworkMetadataList.push_back(value); return *this; }
 
     /**
-     * <p> The list of metadata objects for the framework. </p>
+     * <p> A list of metadata that the <code>ListAssessmentFrameworks</code> API
+     * returns for each framework.</p>
      */
     inline ListAssessmentFrameworksResult& AddFrameworkMetadataList(AssessmentFrameworkMetadata&& value) { m_frameworkMetadataList.push_back(std::move(value)); return *this; }
 

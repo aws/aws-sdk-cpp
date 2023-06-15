@@ -71,42 +71,42 @@ namespace Model
 
 
     /**
-     * <p> The destination of the assessment report. </p>
+     * <p> The destination bucket where Audit Manager stores assessment reports. </p>
      */
     inline const Aws::String& GetDestination() const{ return m_destination; }
 
     /**
-     * <p> The destination of the assessment report. </p>
+     * <p> The destination bucket where Audit Manager stores assessment reports. </p>
      */
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
 
     /**
-     * <p> The destination of the assessment report. </p>
+     * <p> The destination bucket where Audit Manager stores assessment reports. </p>
      */
     inline void SetDestination(const Aws::String& value) { m_destinationHasBeenSet = true; m_destination = value; }
 
     /**
-     * <p> The destination of the assessment report. </p>
+     * <p> The destination bucket where Audit Manager stores assessment reports. </p>
      */
     inline void SetDestination(Aws::String&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
 
     /**
-     * <p> The destination of the assessment report. </p>
+     * <p> The destination bucket where Audit Manager stores assessment reports. </p>
      */
     inline void SetDestination(const char* value) { m_destinationHasBeenSet = true; m_destination.assign(value); }
 
     /**
-     * <p> The destination of the assessment report. </p>
+     * <p> The destination bucket where Audit Manager stores assessment reports. </p>
      */
     inline AssessmentReportsDestination& WithDestination(const Aws::String& value) { SetDestination(value); return *this;}
 
     /**
-     * <p> The destination of the assessment report. </p>
+     * <p> The destination bucket where Audit Manager stores assessment reports. </p>
      */
     inline AssessmentReportsDestination& WithDestination(Aws::String&& value) { SetDestination(std::move(value)); return *this;}
 
     /**
-     * <p> The destination of the assessment report. </p>
+     * <p> The destination bucket where Audit Manager stores assessment reports. </p>
      */
     inline AssessmentReportsDestination& WithDestination(const char* value) { SetDestination(value); return *this;}
 
