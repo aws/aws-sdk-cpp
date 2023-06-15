@@ -41,6 +41,15 @@ GetGeofenceResult& GetGeofenceResult::operator =(const Aws::AmazonWebServiceResu
 
   }
 
+  if(jsonValue.ValueExists("GeofenceProperties"))
+  {
+    Aws::Map<Aws::String, JsonView> geofencePropertiesJsonMap = jsonValue.GetObject("GeofenceProperties").GetAllObjects();
+    for(auto& geofencePropertiesItem : geofencePropertiesJsonMap)
+    {
+      m_geofenceProperties[geofencePropertiesItem.first] = geofencePropertiesItem.second.AsString();
+    }
+  }
+
   if(jsonValue.ValueExists("Geometry"))
   {
     m_geometry = jsonValue.GetObject("Geometry");

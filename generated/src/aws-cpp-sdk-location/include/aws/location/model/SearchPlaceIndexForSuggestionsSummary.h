@@ -235,6 +235,52 @@ namespace Model
 
 
     /**
+     * <p>The optional category filter specified in the request.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetFilterCategories() const{ return m_filterCategories; }
+
+    /**
+     * <p>The optional category filter specified in the request.</p>
+     */
+    inline bool FilterCategoriesHasBeenSet() const { return m_filterCategoriesHasBeenSet; }
+
+    /**
+     * <p>The optional category filter specified in the request.</p>
+     */
+    inline void SetFilterCategories(const Aws::Vector<Aws::String>& value) { m_filterCategoriesHasBeenSet = true; m_filterCategories = value; }
+
+    /**
+     * <p>The optional category filter specified in the request.</p>
+     */
+    inline void SetFilterCategories(Aws::Vector<Aws::String>&& value) { m_filterCategoriesHasBeenSet = true; m_filterCategories = std::move(value); }
+
+    /**
+     * <p>The optional category filter specified in the request.</p>
+     */
+    inline SearchPlaceIndexForSuggestionsSummary& WithFilterCategories(const Aws::Vector<Aws::String>& value) { SetFilterCategories(value); return *this;}
+
+    /**
+     * <p>The optional category filter specified in the request.</p>
+     */
+    inline SearchPlaceIndexForSuggestionsSummary& WithFilterCategories(Aws::Vector<Aws::String>&& value) { SetFilterCategories(std::move(value)); return *this;}
+
+    /**
+     * <p>The optional category filter specified in the request.</p>
+     */
+    inline SearchPlaceIndexForSuggestionsSummary& AddFilterCategories(const Aws::String& value) { m_filterCategoriesHasBeenSet = true; m_filterCategories.push_back(value); return *this; }
+
+    /**
+     * <p>The optional category filter specified in the request.</p>
+     */
+    inline SearchPlaceIndexForSuggestionsSummary& AddFilterCategories(Aws::String&& value) { m_filterCategoriesHasBeenSet = true; m_filterCategories.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The optional category filter specified in the request.</p>
+     */
+    inline SearchPlaceIndexForSuggestionsSummary& AddFilterCategories(const char* value) { m_filterCategoriesHasBeenSet = true; m_filterCategories.push_back(value); return *this; }
+
+
+    /**
      * <p>Contains the optional country filter specified in the request.</p>
      */
     inline const Aws::Vector<Aws::String>& GetFilterCountries() const{ return m_filterCountries; }
@@ -408,6 +454,9 @@ namespace Model
 
     Aws::Vector<double> m_filterBBox;
     bool m_filterBBoxHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_filterCategories;
+    bool m_filterCategoriesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_filterCountries;
     bool m_filterCountriesHasBeenSet = false;

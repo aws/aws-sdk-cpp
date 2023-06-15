@@ -85,7 +85,7 @@ namespace Model
      * set to <code>en</code>. The <code>city</code> in the results will most likely be
      * returned as <code>Athens</code>.</p> <p>If you set the <code>language</code>
      * parameter to <code>el</code>, for Greek, then the <code>city</code> in the
-     * results will more likely be returned as <code>Αθήνα</code>.</p> <p>If the data
+     * results will more likely be returned as <code>��θήνα</code>.</p> <p>If the data
      * provider does not have a value for Greek, the result will be in a language that
      * the provider does support.</p>
      */
@@ -102,7 +102,7 @@ namespace Model
      * set to <code>en</code>. The <code>city</code> in the results will most likely be
      * returned as <code>Athens</code>.</p> <p>If you set the <code>language</code>
      * parameter to <code>el</code>, for Greek, then the <code>city</code> in the
-     * results will more likely be returned as <code>Αθήνα</code>.</p> <p>If the data
+     * results will more likely be returned as <code>��θήνα</code>.</p> <p>If the data
      * provider does not have a value for Greek, the result will be in a language that
      * the provider does support.</p>
      */
@@ -119,7 +119,7 @@ namespace Model
      * set to <code>en</code>. The <code>city</code> in the results will most likely be
      * returned as <code>Athens</code>.</p> <p>If you set the <code>language</code>
      * parameter to <code>el</code>, for Greek, then the <code>city</code> in the
-     * results will more likely be returned as <code>Αθήνα</code>.</p> <p>If the data
+     * results will more likely be returned as <code>��θήνα</code>.</p> <p>If the data
      * provider does not have a value for Greek, the result will be in a language that
      * the provider does support.</p>
      */
@@ -136,7 +136,7 @@ namespace Model
      * set to <code>en</code>. The <code>city</code> in the results will most likely be
      * returned as <code>Athens</code>.</p> <p>If you set the <code>language</code>
      * parameter to <code>el</code>, for Greek, then the <code>city</code> in the
-     * results will more likely be returned as <code>Αθήνα</code>.</p> <p>If the data
+     * results will more likely be returned as <code>��θήνα</code>.</p> <p>If the data
      * provider does not have a value for Greek, the result will be in a language that
      * the provider does support.</p>
      */
@@ -153,7 +153,7 @@ namespace Model
      * set to <code>en</code>. The <code>city</code> in the results will most likely be
      * returned as <code>Athens</code>.</p> <p>If you set the <code>language</code>
      * parameter to <code>el</code>, for Greek, then the <code>city</code> in the
-     * results will more likely be returned as <code>Αθήνα</code>.</p> <p>If the data
+     * results will more likely be returned as <code>��θήνα</code>.</p> <p>If the data
      * provider does not have a value for Greek, the result will be in a language that
      * the provider does support.</p>
      */
@@ -170,7 +170,7 @@ namespace Model
      * set to <code>en</code>. The <code>city</code> in the results will most likely be
      * returned as <code>Athens</code>.</p> <p>If you set the <code>language</code>
      * parameter to <code>el</code>, for Greek, then the <code>city</code> in the
-     * results will more likely be returned as <code>Αθήνα</code>.</p> <p>If the data
+     * results will more likely be returned as <code>��θήνα</code>.</p> <p>If the data
      * provider does not have a value for Greek, the result will be in a language that
      * the provider does support.</p>
      */
@@ -187,7 +187,7 @@ namespace Model
      * set to <code>en</code>. The <code>city</code> in the results will most likely be
      * returned as <code>Athens</code>.</p> <p>If you set the <code>language</code>
      * parameter to <code>el</code>, for Greek, then the <code>city</code> in the
-     * results will more likely be returned as <code>Αθήνα</code>.</p> <p>If the data
+     * results will more likely be returned as <code>��θήνα</code>.</p> <p>If the data
      * provider does not have a value for Greek, the result will be in a language that
      * the provider does support.</p>
      */
@@ -204,7 +204,7 @@ namespace Model
      * set to <code>en</code>. The <code>city</code> in the results will most likely be
      * returned as <code>Athens</code>.</p> <p>If you set the <code>language</code>
      * parameter to <code>el</code>, for Greek, then the <code>city</code> in the
-     * results will more likely be returned as <code>Αθήνα</code>.</p> <p>If the data
+     * results will more likely be returned as <code>��θήνα</code>.</p> <p>If the data
      * provider does not have a value for Greek, the result will be in a language that
      * the provider does support.</p>
      */

@@ -239,6 +239,97 @@ namespace Model
 
 
     /**
+     * <p>A list of one or more Amazon Location categories to filter the returned
+     * places. If you include more than one category, the results will include results
+     * that match <i>any</i> of the categories listed.</p> <p>For more information
+     * about using categories, including a list of Amazon Location categories, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories
+     * and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetFilterCategories() const{ return m_filterCategories; }
+
+    /**
+     * <p>A list of one or more Amazon Location categories to filter the returned
+     * places. If you include more than one category, the results will include results
+     * that match <i>any</i> of the categories listed.</p> <p>For more information
+     * about using categories, including a list of Amazon Location categories, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories
+     * and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
+     */
+    inline bool FilterCategoriesHasBeenSet() const { return m_filterCategoriesHasBeenSet; }
+
+    /**
+     * <p>A list of one or more Amazon Location categories to filter the returned
+     * places. If you include more than one category, the results will include results
+     * that match <i>any</i> of the categories listed.</p> <p>For more information
+     * about using categories, including a list of Amazon Location categories, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories
+     * and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
+     */
+    inline void SetFilterCategories(const Aws::Vector<Aws::String>& value) { m_filterCategoriesHasBeenSet = true; m_filterCategories = value; }
+
+    /**
+     * <p>A list of one or more Amazon Location categories to filter the returned
+     * places. If you include more than one category, the results will include results
+     * that match <i>any</i> of the categories listed.</p> <p>For more information
+     * about using categories, including a list of Amazon Location categories, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories
+     * and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
+     */
+    inline void SetFilterCategories(Aws::Vector<Aws::String>&& value) { m_filterCategoriesHasBeenSet = true; m_filterCategories = std::move(value); }
+
+    /**
+     * <p>A list of one or more Amazon Location categories to filter the returned
+     * places. If you include more than one category, the results will include results
+     * that match <i>any</i> of the categories listed.</p> <p>For more information
+     * about using categories, including a list of Amazon Location categories, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories
+     * and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
+     */
+    inline SearchPlaceIndexForSuggestionsRequest& WithFilterCategories(const Aws::Vector<Aws::String>& value) { SetFilterCategories(value); return *this;}
+
+    /**
+     * <p>A list of one or more Amazon Location categories to filter the returned
+     * places. If you include more than one category, the results will include results
+     * that match <i>any</i> of the categories listed.</p> <p>For more information
+     * about using categories, including a list of Amazon Location categories, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories
+     * and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
+     */
+    inline SearchPlaceIndexForSuggestionsRequest& WithFilterCategories(Aws::Vector<Aws::String>&& value) { SetFilterCategories(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of one or more Amazon Location categories to filter the returned
+     * places. If you include more than one category, the results will include results
+     * that match <i>any</i> of the categories listed.</p> <p>For more information
+     * about using categories, including a list of Amazon Location categories, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories
+     * and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
+     */
+    inline SearchPlaceIndexForSuggestionsRequest& AddFilterCategories(const Aws::String& value) { m_filterCategoriesHasBeenSet = true; m_filterCategories.push_back(value); return *this; }
+
+    /**
+     * <p>A list of one or more Amazon Location categories to filter the returned
+     * places. If you include more than one category, the results will include results
+     * that match <i>any</i> of the categories listed.</p> <p>For more information
+     * about using categories, including a list of Amazon Location categories, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories
+     * and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
+     */
+    inline SearchPlaceIndexForSuggestionsRequest& AddFilterCategories(Aws::String&& value) { m_filterCategoriesHasBeenSet = true; m_filterCategories.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>A list of one or more Amazon Location categories to filter the returned
+     * places. If you include more than one category, the results will include results
+     * that match <i>any</i> of the categories listed.</p> <p>For more information
+     * about using categories, including a list of Amazon Location categories, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories
+     * and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.</p>
+     */
+    inline SearchPlaceIndexForSuggestionsRequest& AddFilterCategories(const char* value) { m_filterCategoriesHasBeenSet = true; m_filterCategories.push_back(value); return *this; }
+
+
+    /**
      * <p>An optional parameter that limits the search results by returning only
      * suggestions within the provided list of countries.</p> <ul> <li> <p>Use the <a
      * href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit
@@ -570,6 +661,9 @@ namespace Model
 
     Aws::Vector<double> m_filterBBox;
     bool m_filterBBoxHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_filterCategories;
+    bool m_filterCategoriesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_filterCountries;
     bool m_filterCountriesHasBeenSet = false;

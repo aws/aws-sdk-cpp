@@ -96,11 +96,18 @@ namespace EFS
          * href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Mounting
          * a file system using EFS access points</a>.</p>  <p>If multiple requests to
          * create access points on the same file system are sent in quick succession, and
-         * the file system is near the limit of 1000 access points, you may experience a
+         * the file system is near the limit of 1,000 access points, you may experience a
          * throttling response for these requests. This is to ensure that the file system
          * does not exceed the stated access point limit.</p>  <p>This operation
          * requires permissions for the <code>elasticfilesystem:CreateAccessPoint</code>
-         * action.</p><p><h3>See Also:</h3>   <a
+         * action.</p> <p>Access points can be tagged on creation. If tags are specified in
+         * the creation action, IAM performs additional authorization on the
+         * <code>elasticfilesystem:TagResource</code> action to verify if users have
+         * permissions to create tags. Therefore, you must grant explicit permissions to
+         * use the <code>elasticfilesystem:TagResource</code> action. For more information,
+         * see <a
+         * href="https://docs.aws.amazon.com/efs/latest/ug/using-tags-efs.html#supported-iam-actions-tagging.html">Granting
+         * permissions to tag resources during creation</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateAccessPoint">AWS
          * API Reference</a></p>
          */
@@ -166,9 +173,16 @@ namespace EFS
          * <a>CreateMountTarget</a>. You mount your Amazon EFS file system on an EC2
          * instances in your VPC by using the mount target. For more information, see <a
          * href="https://docs.aws.amazon.com/efs/latest/ug/how-it-works.html">Amazon EFS:
-         * How it Works</a>. </p> <p> This operation requires permissions for the
-         * <code>elasticfilesystem:CreateFileSystem</code> action. </p><p><h3>See
-         * Also:</h3>   <a
+         * How it Works</a>. </p> <p>This operation requires permissions for the
+         * <code>elasticfilesystem:CreateFileSystem</code> action. </p> <p>File systems can
+         * be tagged on creation. If tags are specified in the creation action, IAM
+         * performs additional authorization on the
+         * <code>elasticfilesystem:TagResource</code> action to verify if users have
+         * permissions to create tags. Therefore, you must grant explicit permissions to
+         * use the <code>elasticfilesystem:TagResource</code> action. For more information,
+         * see <a
+         * href="https://docs.aws.amazon.com/efs/latest/ug/using-tags-efs.html#supported-iam-actions-tagging.html">Granting
+         * permissions to tag resources during creation</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateFileSystem">AWS
          * API Reference</a></p>
          */

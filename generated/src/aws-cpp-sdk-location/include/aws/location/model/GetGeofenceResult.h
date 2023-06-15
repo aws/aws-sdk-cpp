@@ -7,6 +7,7 @@
 #include <aws/location/LocationService_EXPORTS.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/location/model/GeofenceGeometry.h>
 #include <utility>
 
@@ -104,6 +105,79 @@ namespace Model
      * <p>The geofence identifier.</p>
      */
     inline GetGeofenceResult& WithGeofenceId(const char* value) { SetGeofenceId(value); return *this;}
+
+
+    /**
+     * <p>Contains additional user-defined properties stored with the geofence. An
+     * array of key-value pairs.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetGeofenceProperties() const{ return m_geofenceProperties; }
+
+    /**
+     * <p>Contains additional user-defined properties stored with the geofence. An
+     * array of key-value pairs.</p>
+     */
+    inline void SetGeofenceProperties(const Aws::Map<Aws::String, Aws::String>& value) { m_geofenceProperties = value; }
+
+    /**
+     * <p>Contains additional user-defined properties stored with the geofence. An
+     * array of key-value pairs.</p>
+     */
+    inline void SetGeofenceProperties(Aws::Map<Aws::String, Aws::String>&& value) { m_geofenceProperties = std::move(value); }
+
+    /**
+     * <p>Contains additional user-defined properties stored with the geofence. An
+     * array of key-value pairs.</p>
+     */
+    inline GetGeofenceResult& WithGeofenceProperties(const Aws::Map<Aws::String, Aws::String>& value) { SetGeofenceProperties(value); return *this;}
+
+    /**
+     * <p>Contains additional user-defined properties stored with the geofence. An
+     * array of key-value pairs.</p>
+     */
+    inline GetGeofenceResult& WithGeofenceProperties(Aws::Map<Aws::String, Aws::String>&& value) { SetGeofenceProperties(std::move(value)); return *this;}
+
+    /**
+     * <p>Contains additional user-defined properties stored with the geofence. An
+     * array of key-value pairs.</p>
+     */
+    inline GetGeofenceResult& AddGeofenceProperties(const Aws::String& key, const Aws::String& value) { m_geofenceProperties.emplace(key, value); return *this; }
+
+    /**
+     * <p>Contains additional user-defined properties stored with the geofence. An
+     * array of key-value pairs.</p>
+     */
+    inline GetGeofenceResult& AddGeofenceProperties(Aws::String&& key, const Aws::String& value) { m_geofenceProperties.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Contains additional user-defined properties stored with the geofence. An
+     * array of key-value pairs.</p>
+     */
+    inline GetGeofenceResult& AddGeofenceProperties(const Aws::String& key, Aws::String&& value) { m_geofenceProperties.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Contains additional user-defined properties stored with the geofence. An
+     * array of key-value pairs.</p>
+     */
+    inline GetGeofenceResult& AddGeofenceProperties(Aws::String&& key, Aws::String&& value) { m_geofenceProperties.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>Contains additional user-defined properties stored with the geofence. An
+     * array of key-value pairs.</p>
+     */
+    inline GetGeofenceResult& AddGeofenceProperties(const char* key, Aws::String&& value) { m_geofenceProperties.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Contains additional user-defined properties stored with the geofence. An
+     * array of key-value pairs.</p>
+     */
+    inline GetGeofenceResult& AddGeofenceProperties(Aws::String&& key, const char* value) { m_geofenceProperties.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Contains additional user-defined properties stored with the geofence. An
+     * array of key-value pairs.</p>
+     */
+    inline GetGeofenceResult& AddGeofenceProperties(const char* key, const char* value) { m_geofenceProperties.emplace(key, value); return *this; }
 
 
     /**
@@ -279,6 +353,8 @@ namespace Model
     Aws::Utils::DateTime m_createTime;
 
     Aws::String m_geofenceId;
+
+    Aws::Map<Aws::String, Aws::String> m_geofenceProperties;
 
     GeofenceGeometry m_geometry;
 

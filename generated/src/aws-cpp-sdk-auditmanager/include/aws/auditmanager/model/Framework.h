@@ -167,81 +167,79 @@ namespace Model
 
 
     /**
-     * <p> The framework type, such as a custom framework or a standard framework. </p>
+     * <p> Specifies whether the framework is a standard framework or a custom
+     * framework.</p>
      */
     inline const FrameworkType& GetType() const{ return m_type; }
 
     /**
-     * <p> The framework type, such as a custom framework or a standard framework. </p>
+     * <p> Specifies whether the framework is a standard framework or a custom
+     * framework.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p> The framework type, such as a custom framework or a standard framework. </p>
+     * <p> Specifies whether the framework is a standard framework or a custom
+     * framework.</p>
      */
     inline void SetType(const FrameworkType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p> The framework type, such as a custom framework or a standard framework. </p>
+     * <p> Specifies whether the framework is a standard framework or a custom
+     * framework.</p>
      */
     inline void SetType(FrameworkType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p> The framework type, such as a custom framework or a standard framework. </p>
+     * <p> Specifies whether the framework is a standard framework or a custom
+     * framework.</p>
      */
     inline Framework& WithType(const FrameworkType& value) { SetType(value); return *this;}
 
     /**
-     * <p> The framework type, such as a custom framework or a standard framework. </p>
+     * <p> Specifies whether the framework is a standard framework or a custom
+     * framework.</p>
      */
     inline Framework& WithType(FrameworkType&& value) { SetType(std::move(value)); return *this;}
 
 
     /**
-     * <p> The compliance type that the new custom framework supports, such as CIS or
-     * HIPAA. </p>
+     * <p> The compliance type that the framework supports, such as CIS or HIPAA. </p>
      */
     inline const Aws::String& GetComplianceType() const{ return m_complianceType; }
 
     /**
-     * <p> The compliance type that the new custom framework supports, such as CIS or
-     * HIPAA. </p>
+     * <p> The compliance type that the framework supports, such as CIS or HIPAA. </p>
      */
     inline bool ComplianceTypeHasBeenSet() const { return m_complianceTypeHasBeenSet; }
 
     /**
-     * <p> The compliance type that the new custom framework supports, such as CIS or
-     * HIPAA. </p>
+     * <p> The compliance type that the framework supports, such as CIS or HIPAA. </p>
      */
     inline void SetComplianceType(const Aws::String& value) { m_complianceTypeHasBeenSet = true; m_complianceType = value; }
 
     /**
-     * <p> The compliance type that the new custom framework supports, such as CIS or
-     * HIPAA. </p>
+     * <p> The compliance type that the framework supports, such as CIS or HIPAA. </p>
      */
     inline void SetComplianceType(Aws::String&& value) { m_complianceTypeHasBeenSet = true; m_complianceType = std::move(value); }
 
     /**
-     * <p> The compliance type that the new custom framework supports, such as CIS or
-     * HIPAA. </p>
+     * <p> The compliance type that the framework supports, such as CIS or HIPAA. </p>
      */
     inline void SetComplianceType(const char* value) { m_complianceTypeHasBeenSet = true; m_complianceType.assign(value); }
 
     /**
-     * <p> The compliance type that the new custom framework supports, such as CIS or
-     * HIPAA. </p>
+     * <p> The compliance type that the framework supports, such as CIS or HIPAA. </p>
      */
     inline Framework& WithComplianceType(const Aws::String& value) { SetComplianceType(value); return *this;}
 
     /**
-     * <p> The compliance type that the new custom framework supports, such as CIS or
-     * HIPAA. </p>
+     * <p> The compliance type that the framework supports, such as CIS or HIPAA. </p>
      */
     inline Framework& WithComplianceType(Aws::String&& value) { SetComplianceType(std::move(value)); return *this;}
 
     /**
-     * <p> The compliance type that the new custom framework supports, such as CIS or
-     * HIPAA. </p>
+     * <p> The compliance type that the framework supports, such as CIS or HIPAA. </p>
      */
     inline Framework& WithComplianceType(const char* value) { SetComplianceType(value); return *this;}
 
@@ -329,42 +327,42 @@ namespace Model
 
 
     /**
-     * <p> The sources that Audit Manager collects evidence from for the control. </p>
+     * <p> The control data sources where Audit Manager collects evidence from.</p>
      */
     inline const Aws::String& GetControlSources() const{ return m_controlSources; }
 
     /**
-     * <p> The sources that Audit Manager collects evidence from for the control. </p>
+     * <p> The control data sources where Audit Manager collects evidence from.</p>
      */
     inline bool ControlSourcesHasBeenSet() const { return m_controlSourcesHasBeenSet; }
 
     /**
-     * <p> The sources that Audit Manager collects evidence from for the control. </p>
+     * <p> The control data sources where Audit Manager collects evidence from.</p>
      */
     inline void SetControlSources(const Aws::String& value) { m_controlSourcesHasBeenSet = true; m_controlSources = value; }
 
     /**
-     * <p> The sources that Audit Manager collects evidence from for the control. </p>
+     * <p> The control data sources where Audit Manager collects evidence from.</p>
      */
     inline void SetControlSources(Aws::String&& value) { m_controlSourcesHasBeenSet = true; m_controlSources = std::move(value); }
 
     /**
-     * <p> The sources that Audit Manager collects evidence from for the control. </p>
+     * <p> The control data sources where Audit Manager collects evidence from.</p>
      */
     inline void SetControlSources(const char* value) { m_controlSourcesHasBeenSet = true; m_controlSources.assign(value); }
 
     /**
-     * <p> The sources that Audit Manager collects evidence from for the control. </p>
+     * <p> The control data sources where Audit Manager collects evidence from.</p>
      */
     inline Framework& WithControlSources(const Aws::String& value) { SetControlSources(value); return *this;}
 
     /**
-     * <p> The sources that Audit Manager collects evidence from for the control. </p>
+     * <p> The control data sources where Audit Manager collects evidence from.</p>
      */
     inline Framework& WithControlSources(Aws::String&& value) { SetControlSources(std::move(value)); return *this;}
 
     /**
-     * <p> The sources that Audit Manager collects evidence from for the control. </p>
+     * <p> The control data sources where Audit Manager collects evidence from.</p>
      */
     inline Framework& WithControlSources(const char* value) { SetControlSources(value); return *this;}
 

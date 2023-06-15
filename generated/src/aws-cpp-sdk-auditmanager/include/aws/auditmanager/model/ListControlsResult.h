@@ -35,44 +35,44 @@ namespace Model
 
 
     /**
-     * <p> The list of control metadata objects that the <code>ListControls</code> API
-     * returned. </p>
+     * <p> A list of metadata that the <code>ListControls</code> API returns for each
+     * control.</p>
      */
     inline const Aws::Vector<ControlMetadata>& GetControlMetadataList() const{ return m_controlMetadataList; }
 
     /**
-     * <p> The list of control metadata objects that the <code>ListControls</code> API
-     * returned. </p>
+     * <p> A list of metadata that the <code>ListControls</code> API returns for each
+     * control.</p>
      */
     inline void SetControlMetadataList(const Aws::Vector<ControlMetadata>& value) { m_controlMetadataList = value; }
 
     /**
-     * <p> The list of control metadata objects that the <code>ListControls</code> API
-     * returned. </p>
+     * <p> A list of metadata that the <code>ListControls</code> API returns for each
+     * control.</p>
      */
     inline void SetControlMetadataList(Aws::Vector<ControlMetadata>&& value) { m_controlMetadataList = std::move(value); }
 
     /**
-     * <p> The list of control metadata objects that the <code>ListControls</code> API
-     * returned. </p>
+     * <p> A list of metadata that the <code>ListControls</code> API returns for each
+     * control.</p>
      */
     inline ListControlsResult& WithControlMetadataList(const Aws::Vector<ControlMetadata>& value) { SetControlMetadataList(value); return *this;}
 
     /**
-     * <p> The list of control metadata objects that the <code>ListControls</code> API
-     * returned. </p>
+     * <p> A list of metadata that the <code>ListControls</code> API returns for each
+     * control.</p>
      */
     inline ListControlsResult& WithControlMetadataList(Aws::Vector<ControlMetadata>&& value) { SetControlMetadataList(std::move(value)); return *this;}
 
     /**
-     * <p> The list of control metadata objects that the <code>ListControls</code> API
-     * returned. </p>
+     * <p> A list of metadata that the <code>ListControls</code> API returns for each
+     * control.</p>
      */
     inline ListControlsResult& AddControlMetadataList(const ControlMetadata& value) { m_controlMetadataList.push_back(value); return *this; }
 
     /**
-     * <p> The list of control metadata objects that the <code>ListControls</code> API
-     * returned. </p>
+     * <p> A list of metadata that the <code>ListControls</code> API returns for each
+     * control.</p>
      */
     inline ListControlsResult& AddControlMetadataList(ControlMetadata&& value) { m_controlMetadataList.push_back(std::move(value)); return *this; }
 

@@ -13,20 +13,18 @@ namespace AuditManager
 {
 namespace Model
 {
-  enum class KeywordInputType
+  enum class ExportDestinationType
   {
     NOT_SET,
-    SELECT_FROM_LIST,
-    UPLOAD_FILE,
-    INPUT_TEXT
+    S3
   };
 
-namespace KeywordInputTypeMapper
+namespace ExportDestinationTypeMapper
 {
-AWS_AUDITMANAGER_API KeywordInputType GetKeywordInputTypeForName(const Aws::String& name);
+AWS_AUDITMANAGER_API ExportDestinationType GetExportDestinationTypeForName(const Aws::String& name);
 
-AWS_AUDITMANAGER_API Aws::String GetNameForKeywordInputType(KeywordInputType value);
-} // namespace KeywordInputTypeMapper
+AWS_AUDITMANAGER_API Aws::String GetNameForExportDestinationType(ExportDestinationType value);
+} // namespace ExportDestinationTypeMapper
 } // namespace Model
 } // namespace AuditManager
 } // namespace Aws

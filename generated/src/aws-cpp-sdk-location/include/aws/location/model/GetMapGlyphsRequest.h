@@ -51,7 +51,7 @@ namespace Model
      * <li> <p>VectorEsriTopographic – <code>Noto Sans Italic</code> | <code>Noto Sans
      * Regular</code> | <code>Noto Sans Bold</code> | <code>Noto Serif Regular</code> |
      * <code>Roboto Condensed Light Italic</code> </p> </li> <li> <p>VectorEsriStreets
-     * ��� <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial
+     * – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial
      * Bold</code> </p> </li> <li> <p>VectorEsriNavigation – <code>Arial Regular</code>
      * | <code>Arial Italic</code> | <code>Arial Bold</code> </p> </li> </ul> <p>Valid
      * font stacks for <a
@@ -100,7 +100,7 @@ namespace Model
      * <li> <p>VectorEsriTopographic – <code>Noto Sans Italic</code> | <code>Noto Sans
      * Regular</code> | <code>Noto Sans Bold</code> | <code>Noto Serif Regular</code> |
      * <code>Roboto Condensed Light Italic</code> </p> </li> <li> <p>VectorEsriStreets
-     * ��� <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial
+     * – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial
      * Bold</code> </p> </li> <li> <p>VectorEsriNavigation – <code>Arial Regular</code>
      * | <code>Arial Italic</code> | <code>Arial Bold</code> </p> </li> </ul> <p>Valid
      * font stacks for <a
@@ -149,7 +149,7 @@ namespace Model
      * <li> <p>VectorEsriTopographic – <code>Noto Sans Italic</code> | <code>Noto Sans
      * Regular</code> | <code>Noto Sans Bold</code> | <code>Noto Serif Regular</code> |
      * <code>Roboto Condensed Light Italic</code> </p> </li> <li> <p>VectorEsriStreets
-     * ��� <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial
+     * – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial
      * Bold</code> </p> </li> <li> <p>VectorEsriNavigation – <code>Arial Regular</code>
      * | <code>Arial Italic</code> | <code>Arial Bold</code> </p> </li> </ul> <p>Valid
      * font stacks for <a
@@ -198,7 +198,7 @@ namespace Model
      * <li> <p>VectorEsriTopographic – <code>Noto Sans Italic</code> | <code>Noto Sans
      * Regular</code> | <code>Noto Sans Bold</code> | <code>Noto Serif Regular</code> |
      * <code>Roboto Condensed Light Italic</code> </p> </li> <li> <p>VectorEsriStreets
-     * ��� <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial
+     * – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial
      * Bold</code> </p> </li> <li> <p>VectorEsriNavigation – <code>Arial Regular</code>
      * | <code>Arial Italic</code> | <code>Arial Bold</code> </p> </li> </ul> <p>Valid
      * font stacks for <a
@@ -247,7 +247,7 @@ namespace Model
      * <li> <p>VectorEsriTopographic – <code>Noto Sans Italic</code> | <code>Noto Sans
      * Regular</code> | <code>Noto Sans Bold</code> | <code>Noto Serif Regular</code> |
      * <code>Roboto Condensed Light Italic</code> </p> </li> <li> <p>VectorEsriStreets
-     * ��� <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial
+     * – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial
      * Bold</code> </p> </li> <li> <p>VectorEsriNavigation – <code>Arial Regular</code>
      * | <code>Arial Italic</code> | <code>Arial Bold</code> </p> </li> </ul> <p>Valid
      * font stacks for <a
@@ -296,7 +296,7 @@ namespace Model
      * <li> <p>VectorEsriTopographic – <code>Noto Sans Italic</code> | <code>Noto Sans
      * Regular</code> | <code>Noto Sans Bold</code> | <code>Noto Serif Regular</code> |
      * <code>Roboto Condensed Light Italic</code> </p> </li> <li> <p>VectorEsriStreets
-     * ��� <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial
+     * – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial
      * Bold</code> </p> </li> <li> <p>VectorEsriNavigation – <code>Arial Regular</code>
      * | <code>Arial Italic</code> | <code>Arial Bold</code> </p> </li> </ul> <p>Valid
      * font stacks for <a
@@ -345,7 +345,7 @@ namespace Model
      * <li> <p>VectorEsriTopographic – <code>Noto Sans Italic</code> | <code>Noto Sans
      * Regular</code> | <code>Noto Sans Bold</code> | <code>Noto Serif Regular</code> |
      * <code>Roboto Condensed Light Italic</code> </p> </li> <li> <p>VectorEsriStreets
-     * ��� <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial
+     * – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial
      * Bold</code> </p> </li> <li> <p>VectorEsriNavigation – <code>Arial Regular</code>
      * | <code>Arial Italic</code> | <code>Arial Bold</code> </p> </li> </ul> <p>Valid
      * font stacks for <a
@@ -394,7 +394,7 @@ namespace Model
      * <li> <p>VectorEsriTopographic – <code>Noto Sans Italic</code> | <code>Noto Sans
      * Regular</code> | <code>Noto Sans Bold</code> | <code>Noto Serif Regular</code> |
      * <code>Roboto Condensed Light Italic</code> </p> </li> <li> <p>VectorEsriStreets
-     * ��� <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial
+     * – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial
      * Bold</code> </p> </li> <li> <p>VectorEsriNavigation – <code>Arial Regular</code>
      * | <code>Arial Italic</code> | <code>Arial Bold</code> </p> </li> </ul> <p>Valid
      * font stacks for <a

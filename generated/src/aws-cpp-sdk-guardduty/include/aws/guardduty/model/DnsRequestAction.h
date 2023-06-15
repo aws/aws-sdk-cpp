@@ -39,42 +39,42 @@ namespace Model
 
 
     /**
-     * <p>The domain information for the API request.</p>
+     * <p>The domain information for the DNS query.</p>
      */
     inline const Aws::String& GetDomain() const{ return m_domain; }
 
     /**
-     * <p>The domain information for the API request.</p>
+     * <p>The domain information for the DNS query.</p>
      */
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
 
     /**
-     * <p>The domain information for the API request.</p>
+     * <p>The domain information for the DNS query.</p>
      */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
-     * <p>The domain information for the API request.</p>
+     * <p>The domain information for the DNS query.</p>
      */
     inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
     /**
-     * <p>The domain information for the API request.</p>
+     * <p>The domain information for the DNS query.</p>
      */
     inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
 
     /**
-     * <p>The domain information for the API request.</p>
+     * <p>The domain information for the DNS query.</p>
      */
     inline DnsRequestAction& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
 
     /**
-     * <p>The domain information for the API request.</p>
+     * <p>The domain information for the DNS query.</p>
      */
     inline DnsRequestAction& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
 
     /**
-     * <p>The domain information for the API request.</p>
+     * <p>The domain information for the DNS query.</p>
      */
     inline DnsRequestAction& WithDomain(const char* value) { SetDomain(value); return *this;}
 
