@@ -1391,37 +1391,43 @@ namespace Model
 
     /**
      * <p>The server-side encryption algorithm used when storing this object in Amazon
-     * S3 (for example, AES256, <code>aws:kms</code>).</p>
+     * S3 (for example, <code>AES256</code>, <code>aws:kms</code>,
+     * <code>aws:kms:dsse</code>).</p>
      */
     inline const ServerSideEncryption& GetServerSideEncryption() const{ return m_serverSideEncryption; }
 
     /**
      * <p>The server-side encryption algorithm used when storing this object in Amazon
-     * S3 (for example, AES256, <code>aws:kms</code>).</p>
+     * S3 (for example, <code>AES256</code>, <code>aws:kms</code>,
+     * <code>aws:kms:dsse</code>).</p>
      */
     inline bool ServerSideEncryptionHasBeenSet() const { return m_serverSideEncryptionHasBeenSet; }
 
     /**
      * <p>The server-side encryption algorithm used when storing this object in Amazon
-     * S3 (for example, AES256, <code>aws:kms</code>).</p>
+     * S3 (for example, <code>AES256</code>, <code>aws:kms</code>,
+     * <code>aws:kms:dsse</code>).</p>
      */
     inline void SetServerSideEncryption(const ServerSideEncryption& value) { m_serverSideEncryptionHasBeenSet = true; m_serverSideEncryption = value; }
 
     /**
      * <p>The server-side encryption algorithm used when storing this object in Amazon
-     * S3 (for example, AES256, <code>aws:kms</code>).</p>
+     * S3 (for example, <code>AES256</code>, <code>aws:kms</code>,
+     * <code>aws:kms:dsse</code>).</p>
      */
     inline void SetServerSideEncryption(ServerSideEncryption&& value) { m_serverSideEncryptionHasBeenSet = true; m_serverSideEncryption = std::move(value); }
 
     /**
      * <p>The server-side encryption algorithm used when storing this object in Amazon
-     * S3 (for example, AES256, <code>aws:kms</code>).</p>
+     * S3 (for example, <code>AES256</code>, <code>aws:kms</code>,
+     * <code>aws:kms:dsse</code>).</p>
      */
     inline CopyObjectRequest& WithServerSideEncryption(const ServerSideEncryption& value) { SetServerSideEncryption(value); return *this;}
 
     /**
      * <p>The server-side encryption algorithm used when storing this object in Amazon
-     * S3 (for example, AES256, <code>aws:kms</code>).</p>
+     * S3 (for example, <code>AES256</code>, <code>aws:kms</code>,
+     * <code>aws:kms:dsse</code>).</p>
      */
     inline CopyObjectRequest& WithServerSideEncryption(ServerSideEncryption&& value) { SetServerSideEncryption(std::move(value)); return *this;}
 
@@ -1754,11 +1760,10 @@ namespace Model
 
 
     /**
-     * <p>Specifies the Amazon Web Services KMS key ID to use for object encryption.
-     * All GET and PUT requests for an object protected by Amazon Web Services KMS will
-     * fail if not made via SSL or using SigV4. For information about configuring using
-     * any of the officially supported Amazon Web Services SDKs and Amazon Web Services
-     * CLI, see <a
+     * <p>Specifies the KMS key ID to use for object encryption. All GET and PUT
+     * requests for an object protected by KMS will fail if they're not made via SSL or
+     * using SigV4. For information about configuring any of the officially supported
+     * Amazon Web Services SDKs and Amazon Web Services CLI, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
      * the Signature Version in Request Authentication</a> in the <i>Amazon S3 User
      * Guide</i>.</p>
@@ -1766,11 +1771,10 @@ namespace Model
     inline const Aws::String& GetSSEKMSKeyId() const{ return m_sSEKMSKeyId; }
 
     /**
-     * <p>Specifies the Amazon Web Services KMS key ID to use for object encryption.
-     * All GET and PUT requests for an object protected by Amazon Web Services KMS will
-     * fail if not made via SSL or using SigV4. For information about configuring using
-     * any of the officially supported Amazon Web Services SDKs and Amazon Web Services
-     * CLI, see <a
+     * <p>Specifies the KMS key ID to use for object encryption. All GET and PUT
+     * requests for an object protected by KMS will fail if they're not made via SSL or
+     * using SigV4. For information about configuring any of the officially supported
+     * Amazon Web Services SDKs and Amazon Web Services CLI, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
      * the Signature Version in Request Authentication</a> in the <i>Amazon S3 User
      * Guide</i>.</p>
@@ -1778,11 +1782,10 @@ namespace Model
     inline bool SSEKMSKeyIdHasBeenSet() const { return m_sSEKMSKeyIdHasBeenSet; }
 
     /**
-     * <p>Specifies the Amazon Web Services KMS key ID to use for object encryption.
-     * All GET and PUT requests for an object protected by Amazon Web Services KMS will
-     * fail if not made via SSL or using SigV4. For information about configuring using
-     * any of the officially supported Amazon Web Services SDKs and Amazon Web Services
-     * CLI, see <a
+     * <p>Specifies the KMS key ID to use for object encryption. All GET and PUT
+     * requests for an object protected by KMS will fail if they're not made via SSL or
+     * using SigV4. For information about configuring any of the officially supported
+     * Amazon Web Services SDKs and Amazon Web Services CLI, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
      * the Signature Version in Request Authentication</a> in the <i>Amazon S3 User
      * Guide</i>.</p>
@@ -1790,11 +1793,10 @@ namespace Model
     inline void SetSSEKMSKeyId(const Aws::String& value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId = value; }
 
     /**
-     * <p>Specifies the Amazon Web Services KMS key ID to use for object encryption.
-     * All GET and PUT requests for an object protected by Amazon Web Services KMS will
-     * fail if not made via SSL or using SigV4. For information about configuring using
-     * any of the officially supported Amazon Web Services SDKs and Amazon Web Services
-     * CLI, see <a
+     * <p>Specifies the KMS key ID to use for object encryption. All GET and PUT
+     * requests for an object protected by KMS will fail if they're not made via SSL or
+     * using SigV4. For information about configuring any of the officially supported
+     * Amazon Web Services SDKs and Amazon Web Services CLI, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
      * the Signature Version in Request Authentication</a> in the <i>Amazon S3 User
      * Guide</i>.</p>
@@ -1802,11 +1804,10 @@ namespace Model
     inline void SetSSEKMSKeyId(Aws::String&& value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId = std::move(value); }
 
     /**
-     * <p>Specifies the Amazon Web Services KMS key ID to use for object encryption.
-     * All GET and PUT requests for an object protected by Amazon Web Services KMS will
-     * fail if not made via SSL or using SigV4. For information about configuring using
-     * any of the officially supported Amazon Web Services SDKs and Amazon Web Services
-     * CLI, see <a
+     * <p>Specifies the KMS key ID to use for object encryption. All GET and PUT
+     * requests for an object protected by KMS will fail if they're not made via SSL or
+     * using SigV4. For information about configuring any of the officially supported
+     * Amazon Web Services SDKs and Amazon Web Services CLI, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
      * the Signature Version in Request Authentication</a> in the <i>Amazon S3 User
      * Guide</i>.</p>
@@ -1814,11 +1815,10 @@ namespace Model
     inline void SetSSEKMSKeyId(const char* value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId.assign(value); }
 
     /**
-     * <p>Specifies the Amazon Web Services KMS key ID to use for object encryption.
-     * All GET and PUT requests for an object protected by Amazon Web Services KMS will
-     * fail if not made via SSL or using SigV4. For information about configuring using
-     * any of the officially supported Amazon Web Services SDKs and Amazon Web Services
-     * CLI, see <a
+     * <p>Specifies the KMS key ID to use for object encryption. All GET and PUT
+     * requests for an object protected by KMS will fail if they're not made via SSL or
+     * using SigV4. For information about configuring any of the officially supported
+     * Amazon Web Services SDKs and Amazon Web Services CLI, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
      * the Signature Version in Request Authentication</a> in the <i>Amazon S3 User
      * Guide</i>.</p>
@@ -1826,11 +1826,10 @@ namespace Model
     inline CopyObjectRequest& WithSSEKMSKeyId(const Aws::String& value) { SetSSEKMSKeyId(value); return *this;}
 
     /**
-     * <p>Specifies the Amazon Web Services KMS key ID to use for object encryption.
-     * All GET and PUT requests for an object protected by Amazon Web Services KMS will
-     * fail if not made via SSL or using SigV4. For information about configuring using
-     * any of the officially supported Amazon Web Services SDKs and Amazon Web Services
-     * CLI, see <a
+     * <p>Specifies the KMS key ID to use for object encryption. All GET and PUT
+     * requests for an object protected by KMS will fail if they're not made via SSL or
+     * using SigV4. For information about configuring any of the officially supported
+     * Amazon Web Services SDKs and Amazon Web Services CLI, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
      * the Signature Version in Request Authentication</a> in the <i>Amazon S3 User
      * Guide</i>.</p>
@@ -1838,11 +1837,10 @@ namespace Model
     inline CopyObjectRequest& WithSSEKMSKeyId(Aws::String&& value) { SetSSEKMSKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the Amazon Web Services KMS key ID to use for object encryption.
-     * All GET and PUT requests for an object protected by Amazon Web Services KMS will
-     * fail if not made via SSL or using SigV4. For information about configuring using
-     * any of the officially supported Amazon Web Services SDKs and Amazon Web Services
-     * CLI, see <a
+     * <p>Specifies the KMS key ID to use for object encryption. All GET and PUT
+     * requests for an object protected by KMS will fail if they're not made via SSL or
+     * using SigV4. For information about configuring any of the officially supported
+     * Amazon Web Services SDKs and Amazon Web Services CLI, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
      * the Signature Version in Request Authentication</a> in the <i>Amazon S3 User
      * Guide</i>.</p>
@@ -1909,37 +1907,37 @@ namespace Model
 
     /**
      * <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption
-     * with server-side encryption using AWS KMS (SSE-KMS). Setting this header to
-     * <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object encryption
-     * with SSE-KMS. </p> <p>Specifying this header with a COPY action doesn’t affect
-     * bucket-level settings for S3 Bucket Key.</p>
+     * with server-side encryption using Key Management Service (KMS) keys (SSE-KMS).
+     * Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket
+     * Key for object encryption with SSE-KMS. </p> <p>Specifying this header with a
+     * COPY action doesn’t affect bucket-level settings for S3 Bucket Key.</p>
      */
     inline bool GetBucketKeyEnabled() const{ return m_bucketKeyEnabled; }
 
     /**
      * <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption
-     * with server-side encryption using AWS KMS (SSE-KMS). Setting this header to
-     * <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object encryption
-     * with SSE-KMS. </p> <p>Specifying this header with a COPY action doesn’t affect
-     * bucket-level settings for S3 Bucket Key.</p>
+     * with server-side encryption using Key Management Service (KMS) keys (SSE-KMS).
+     * Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket
+     * Key for object encryption with SSE-KMS. </p> <p>Specifying this header with a
+     * COPY action doesn’t affect bucket-level settings for S3 Bucket Key.</p>
      */
     inline bool BucketKeyEnabledHasBeenSet() const { return m_bucketKeyEnabledHasBeenSet; }
 
     /**
      * <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption
-     * with server-side encryption using AWS KMS (SSE-KMS). Setting this header to
-     * <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object encryption
-     * with SSE-KMS. </p> <p>Specifying this header with a COPY action doesn’t affect
-     * bucket-level settings for S3 Bucket Key.</p>
+     * with server-side encryption using Key Management Service (KMS) keys (SSE-KMS).
+     * Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket
+     * Key for object encryption with SSE-KMS. </p> <p>Specifying this header with a
+     * COPY action doesn’t affect bucket-level settings for S3 Bucket Key.</p>
      */
     inline void SetBucketKeyEnabled(bool value) { m_bucketKeyEnabledHasBeenSet = true; m_bucketKeyEnabled = value; }
 
     /**
      * <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption
-     * with server-side encryption using AWS KMS (SSE-KMS). Setting this header to
-     * <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object encryption
-     * with SSE-KMS. </p> <p>Specifying this header with a COPY action doesn’t affect
-     * bucket-level settings for S3 Bucket Key.</p>
+     * with server-side encryption using Key Management Service (KMS) keys (SSE-KMS).
+     * Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket
+     * Key for object encryption with SSE-KMS. </p> <p>Specifying this header with a
+     * COPY action doesn’t affect bucket-level settings for S3 Bucket Key.</p>
      */
     inline CopyObjectRequest& WithBucketKeyEnabled(bool value) { SetBucketKeyEnabled(value); return *this;}
 

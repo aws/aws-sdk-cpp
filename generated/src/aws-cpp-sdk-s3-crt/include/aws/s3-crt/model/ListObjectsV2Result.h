@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3-crt/model/EncodingType.h>
+#include <aws/s3-crt/model/RequestCharged.h>
 #include <aws/s3-crt/model/Object.h>
 #include <aws/s3-crt/model/CommonPrefix.h>
 #include <utility>
@@ -682,6 +683,22 @@ namespace Model
 
 
     
+    inline const RequestCharged& GetRequestCharged() const{ return m_requestCharged; }
+
+    
+    inline void SetRequestCharged(const RequestCharged& value) { m_requestCharged = value; }
+
+    
+    inline void SetRequestCharged(RequestCharged&& value) { m_requestCharged = std::move(value); }
+
+    
+    inline ListObjectsV2Result& WithRequestCharged(const RequestCharged& value) { SetRequestCharged(value); return *this;}
+
+    
+    inline ListObjectsV2Result& WithRequestCharged(RequestCharged&& value) { SetRequestCharged(std::move(value)); return *this;}
+
+
+    
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
     
@@ -727,6 +744,8 @@ namespace Model
     Aws::String m_nextContinuationToken;
 
     Aws::String m_startAfter;
+
+    RequestCharged m_requestCharged;
 
     Aws::String m_requestId;
   };

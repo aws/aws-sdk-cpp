@@ -188,19 +188,29 @@ namespace Model
     inline GetDiscoverySummaryResult& WithMeCollectorSummary(CustomerMeCollectorInfo&& value) { SetMeCollectorSummary(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p> Details about Agentless Collector collectors, including status. </p>
+     */
     inline const CustomerAgentlessCollectorInfo& GetAgentlessCollectorSummary() const{ return m_agentlessCollectorSummary; }
 
-    
+    /**
+     * <p> Details about Agentless Collector collectors, including status. </p>
+     */
     inline void SetAgentlessCollectorSummary(const CustomerAgentlessCollectorInfo& value) { m_agentlessCollectorSummary = value; }
 
-    
+    /**
+     * <p> Details about Agentless Collector collectors, including status. </p>
+     */
     inline void SetAgentlessCollectorSummary(CustomerAgentlessCollectorInfo&& value) { m_agentlessCollectorSummary = std::move(value); }
 
-    
+    /**
+     * <p> Details about Agentless Collector collectors, including status. </p>
+     */
     inline GetDiscoverySummaryResult& WithAgentlessCollectorSummary(const CustomerAgentlessCollectorInfo& value) { SetAgentlessCollectorSummary(value); return *this;}
 
-    
+    /**
+     * <p> Details about Agentless Collector collectors, including status. </p>
+     */
     inline GetDiscoverySummaryResult& WithAgentlessCollectorSummary(CustomerAgentlessCollectorInfo&& value) { SetAgentlessCollectorSummary(std::move(value)); return *this;}
 
 

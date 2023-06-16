@@ -152,31 +152,36 @@ namespace Model
 
     /**
      * <p>The server-side encryption algorithm used when storing this object in Amazon
-     * S3 (for example, AES256, <code>aws:kms</code>).</p>
+     * S3 (for example, <code>AES256</code>, <code>aws:kms</code>,
+     * <code>aws:kms:dsse</code>).</p>
      */
     inline const ServerSideEncryption& GetServerSideEncryption() const{ return m_serverSideEncryption; }
 
     /**
      * <p>The server-side encryption algorithm used when storing this object in Amazon
-     * S3 (for example, AES256, <code>aws:kms</code>).</p>
+     * S3 (for example, <code>AES256</code>, <code>aws:kms</code>,
+     * <code>aws:kms:dsse</code>).</p>
      */
     inline void SetServerSideEncryption(const ServerSideEncryption& value) { m_serverSideEncryption = value; }
 
     /**
      * <p>The server-side encryption algorithm used when storing this object in Amazon
-     * S3 (for example, AES256, <code>aws:kms</code>).</p>
+     * S3 (for example, <code>AES256</code>, <code>aws:kms</code>,
+     * <code>aws:kms:dsse</code>).</p>
      */
     inline void SetServerSideEncryption(ServerSideEncryption&& value) { m_serverSideEncryption = std::move(value); }
 
     /**
      * <p>The server-side encryption algorithm used when storing this object in Amazon
-     * S3 (for example, AES256, <code>aws:kms</code>).</p>
+     * S3 (for example, <code>AES256</code>, <code>aws:kms</code>,
+     * <code>aws:kms:dsse</code>).</p>
      */
     inline CopyObjectResult& WithServerSideEncryption(const ServerSideEncryption& value) { SetServerSideEncryption(value); return *this;}
 
     /**
      * <p>The server-side encryption algorithm used when storing this object in Amazon
-     * S3 (for example, AES256, <code>aws:kms</code>).</p>
+     * S3 (for example, <code>AES256</code>, <code>aws:kms</code>,
+     * <code>aws:kms:dsse</code>).</p>
      */
     inline CopyObjectResult& WithServerSideEncryption(ServerSideEncryption&& value) { SetServerSideEncryption(std::move(value)); return *this;}
 
@@ -282,51 +287,44 @@ namespace Model
 
 
     /**
-     * <p>If present, specifies the ID of the Amazon Web Services Key Management
-     * Service (Amazon Web Services KMS) symmetric encryption customer managed key that
-     * was used for the object.</p>
+     * <p>If present, specifies the ID of the Key Management Service (KMS) symmetric
+     * encryption customer managed key that was used for the object.</p>
      */
     inline const Aws::String& GetSSEKMSKeyId() const{ return m_sSEKMSKeyId; }
 
     /**
-     * <p>If present, specifies the ID of the Amazon Web Services Key Management
-     * Service (Amazon Web Services KMS) symmetric encryption customer managed key that
-     * was used for the object.</p>
+     * <p>If present, specifies the ID of the Key Management Service (KMS) symmetric
+     * encryption customer managed key that was used for the object.</p>
      */
     inline void SetSSEKMSKeyId(const Aws::String& value) { m_sSEKMSKeyId = value; }
 
     /**
-     * <p>If present, specifies the ID of the Amazon Web Services Key Management
-     * Service (Amazon Web Services KMS) symmetric encryption customer managed key that
-     * was used for the object.</p>
+     * <p>If present, specifies the ID of the Key Management Service (KMS) symmetric
+     * encryption customer managed key that was used for the object.</p>
      */
     inline void SetSSEKMSKeyId(Aws::String&& value) { m_sSEKMSKeyId = std::move(value); }
 
     /**
-     * <p>If present, specifies the ID of the Amazon Web Services Key Management
-     * Service (Amazon Web Services KMS) symmetric encryption customer managed key that
-     * was used for the object.</p>
+     * <p>If present, specifies the ID of the Key Management Service (KMS) symmetric
+     * encryption customer managed key that was used for the object.</p>
      */
     inline void SetSSEKMSKeyId(const char* value) { m_sSEKMSKeyId.assign(value); }
 
     /**
-     * <p>If present, specifies the ID of the Amazon Web Services Key Management
-     * Service (Amazon Web Services KMS) symmetric encryption customer managed key that
-     * was used for the object.</p>
+     * <p>If present, specifies the ID of the Key Management Service (KMS) symmetric
+     * encryption customer managed key that was used for the object.</p>
      */
     inline CopyObjectResult& WithSSEKMSKeyId(const Aws::String& value) { SetSSEKMSKeyId(value); return *this;}
 
     /**
-     * <p>If present, specifies the ID of the Amazon Web Services Key Management
-     * Service (Amazon Web Services KMS) symmetric encryption customer managed key that
-     * was used for the object.</p>
+     * <p>If present, specifies the ID of the Key Management Service (KMS) symmetric
+     * encryption customer managed key that was used for the object.</p>
      */
     inline CopyObjectResult& WithSSEKMSKeyId(Aws::String&& value) { SetSSEKMSKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>If present, specifies the ID of the Amazon Web Services Key Management
-     * Service (Amazon Web Services KMS) symmetric encryption customer managed key that
-     * was used for the object.</p>
+     * <p>If present, specifies the ID of the Key Management Service (KMS) symmetric
+     * encryption customer managed key that was used for the object.</p>
      */
     inline CopyObjectResult& WithSSEKMSKeyId(const char* value) { SetSSEKMSKeyId(value); return *this;}
 
@@ -383,19 +381,19 @@ namespace Model
 
     /**
      * <p>Indicates whether the copied object uses an S3 Bucket Key for server-side
-     * encryption with Amazon Web Services KMS (SSE-KMS).</p>
+     * encryption with Key Management Service (KMS) keys (SSE-KMS).</p>
      */
     inline bool GetBucketKeyEnabled() const{ return m_bucketKeyEnabled; }
 
     /**
      * <p>Indicates whether the copied object uses an S3 Bucket Key for server-side
-     * encryption with Amazon Web Services KMS (SSE-KMS).</p>
+     * encryption with Key Management Service (KMS) keys (SSE-KMS).</p>
      */
     inline void SetBucketKeyEnabled(bool value) { m_bucketKeyEnabled = value; }
 
     /**
      * <p>Indicates whether the copied object uses an S3 Bucket Key for server-side
-     * encryption with Amazon Web Services KMS (SSE-KMS).</p>
+     * encryption with Key Management Service (KMS) keys (SSE-KMS).</p>
      */
     inline CopyObjectResult& WithBucketKeyEnabled(bool value) { SetBucketKeyEnabled(value); return *this;}
 

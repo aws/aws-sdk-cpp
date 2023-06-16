@@ -39,42 +39,42 @@ namespace Model
 
 
     /**
-     * <p>The objects to delete.</p>
+     * <p>The object to delete.</p>
      */
     inline const Aws::Vector<ObjectIdentifier>& GetObjects() const{ return m_objects; }
 
     /**
-     * <p>The objects to delete.</p>
+     * <p>The object to delete.</p>
      */
     inline bool ObjectsHasBeenSet() const { return m_objectsHasBeenSet; }
 
     /**
-     * <p>The objects to delete.</p>
+     * <p>The object to delete.</p>
      */
     inline void SetObjects(const Aws::Vector<ObjectIdentifier>& value) { m_objectsHasBeenSet = true; m_objects = value; }
 
     /**
-     * <p>The objects to delete.</p>
+     * <p>The object to delete.</p>
      */
     inline void SetObjects(Aws::Vector<ObjectIdentifier>&& value) { m_objectsHasBeenSet = true; m_objects = std::move(value); }
 
     /**
-     * <p>The objects to delete.</p>
+     * <p>The object to delete.</p>
      */
     inline Delete& WithObjects(const Aws::Vector<ObjectIdentifier>& value) { SetObjects(value); return *this;}
 
     /**
-     * <p>The objects to delete.</p>
+     * <p>The object to delete.</p>
      */
     inline Delete& WithObjects(Aws::Vector<ObjectIdentifier>&& value) { SetObjects(std::move(value)); return *this;}
 
     /**
-     * <p>The objects to delete.</p>
+     * <p>The object to delete.</p>
      */
     inline Delete& AddObjects(const ObjectIdentifier& value) { m_objectsHasBeenSet = true; m_objects.push_back(value); return *this; }
 
     /**
-     * <p>The objects to delete.</p>
+     * <p>The object to delete.</p>
      */
     inline Delete& AddObjects(ObjectIdentifier&& value) { m_objectsHasBeenSet = true; m_objects.push_back(std::move(value)); return *this; }
 

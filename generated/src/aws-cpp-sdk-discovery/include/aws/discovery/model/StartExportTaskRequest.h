@@ -8,6 +8,7 @@
 #include <aws/discovery/ApplicationDiscoveryServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/discovery/model/ExportPreferences.h>
 #include <aws/discovery/model/ExportDataFormat.h>
 #include <aws/discovery/model/ExportFilter.h>
 #include <utility>
@@ -99,8 +100,9 @@ namespace Model
      * Application Discovery Agent for which data is exported. The <code>agentId</code>
      * can be found in the results of the <code>DescribeAgents</code> API or CLI. If no
      * filter is present, <code>startTime</code> and <code>endTime</code> are ignored
-     * and exported data includes both Agentless Discovery Connector data and summary
-     * data from Application Discovery agents. </p>
+     * and exported data includes both Amazon Web Services Application Discovery
+     * Service Agentless Collector collectors data and summary data from Application
+     * Discovery Agent agents. </p>
      */
     inline const Aws::Vector<ExportFilter>& GetFilters() const{ return m_filters; }
 
@@ -109,8 +111,9 @@ namespace Model
      * Application Discovery Agent for which data is exported. The <code>agentId</code>
      * can be found in the results of the <code>DescribeAgents</code> API or CLI. If no
      * filter is present, <code>startTime</code> and <code>endTime</code> are ignored
-     * and exported data includes both Agentless Discovery Connector data and summary
-     * data from Application Discovery agents. </p>
+     * and exported data includes both Amazon Web Services Application Discovery
+     * Service Agentless Collector collectors data and summary data from Application
+     * Discovery Agent agents. </p>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
@@ -119,8 +122,9 @@ namespace Model
      * Application Discovery Agent for which data is exported. The <code>agentId</code>
      * can be found in the results of the <code>DescribeAgents</code> API or CLI. If no
      * filter is present, <code>startTime</code> and <code>endTime</code> are ignored
-     * and exported data includes both Agentless Discovery Connector data and summary
-     * data from Application Discovery agents. </p>
+     * and exported data includes both Amazon Web Services Application Discovery
+     * Service Agentless Collector collectors data and summary data from Application
+     * Discovery Agent agents. </p>
      */
     inline void SetFilters(const Aws::Vector<ExportFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
@@ -129,8 +133,9 @@ namespace Model
      * Application Discovery Agent for which data is exported. The <code>agentId</code>
      * can be found in the results of the <code>DescribeAgents</code> API or CLI. If no
      * filter is present, <code>startTime</code> and <code>endTime</code> are ignored
-     * and exported data includes both Agentless Discovery Connector data and summary
-     * data from Application Discovery agents. </p>
+     * and exported data includes both Amazon Web Services Application Discovery
+     * Service Agentless Collector collectors data and summary data from Application
+     * Discovery Agent agents. </p>
      */
     inline void SetFilters(Aws::Vector<ExportFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
@@ -139,8 +144,9 @@ namespace Model
      * Application Discovery Agent for which data is exported. The <code>agentId</code>
      * can be found in the results of the <code>DescribeAgents</code> API or CLI. If no
      * filter is present, <code>startTime</code> and <code>endTime</code> are ignored
-     * and exported data includes both Agentless Discovery Connector data and summary
-     * data from Application Discovery agents. </p>
+     * and exported data includes both Amazon Web Services Application Discovery
+     * Service Agentless Collector collectors data and summary data from Application
+     * Discovery Agent agents. </p>
      */
     inline StartExportTaskRequest& WithFilters(const Aws::Vector<ExportFilter>& value) { SetFilters(value); return *this;}
 
@@ -149,8 +155,9 @@ namespace Model
      * Application Discovery Agent for which data is exported. The <code>agentId</code>
      * can be found in the results of the <code>DescribeAgents</code> API or CLI. If no
      * filter is present, <code>startTime</code> and <code>endTime</code> are ignored
-     * and exported data includes both Agentless Discovery Connector data and summary
-     * data from Application Discovery agents. </p>
+     * and exported data includes both Amazon Web Services Application Discovery
+     * Service Agentless Collector collectors data and summary data from Application
+     * Discovery Agent agents. </p>
      */
     inline StartExportTaskRequest& WithFilters(Aws::Vector<ExportFilter>&& value) { SetFilters(std::move(value)); return *this;}
 
@@ -159,8 +166,9 @@ namespace Model
      * Application Discovery Agent for which data is exported. The <code>agentId</code>
      * can be found in the results of the <code>DescribeAgents</code> API or CLI. If no
      * filter is present, <code>startTime</code> and <code>endTime</code> are ignored
-     * and exported data includes both Agentless Discovery Connector data and summary
-     * data from Application Discovery agents. </p>
+     * and exported data includes both Amazon Web Services Application Discovery
+     * Service Agentless Collector collectors data and summary data from Application
+     * Discovery Agent agents. </p>
      */
     inline StartExportTaskRequest& AddFilters(const ExportFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
@@ -169,8 +177,9 @@ namespace Model
      * Application Discovery Agent for which data is exported. The <code>agentId</code>
      * can be found in the results of the <code>DescribeAgents</code> API or CLI. If no
      * filter is present, <code>startTime</code> and <code>endTime</code> are ignored
-     * and exported data includes both Agentless Discovery Connector data and summary
-     * data from Application Discovery agents. </p>
+     * and exported data includes both Amazon Web Services Application Discovery
+     * Service Agentless Collector collectors data and summary data from Application
+     * Discovery Agent agents. </p>
      */
     inline StartExportTaskRequest& AddFilters(ExportFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
@@ -260,6 +269,49 @@ namespace Model
      */
     inline StartExportTaskRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p> Indicates the type of data that needs to be exported. Only one <a
+     * href="https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_ExportPreferences.html">ExportPreferences</a>
+     * can be enabled at any time. </p>
+     */
+    inline const ExportPreferences& GetPreferences() const{ return m_preferences; }
+
+    /**
+     * <p> Indicates the type of data that needs to be exported. Only one <a
+     * href="https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_ExportPreferences.html">ExportPreferences</a>
+     * can be enabled at any time. </p>
+     */
+    inline bool PreferencesHasBeenSet() const { return m_preferencesHasBeenSet; }
+
+    /**
+     * <p> Indicates the type of data that needs to be exported. Only one <a
+     * href="https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_ExportPreferences.html">ExportPreferences</a>
+     * can be enabled at any time. </p>
+     */
+    inline void SetPreferences(const ExportPreferences& value) { m_preferencesHasBeenSet = true; m_preferences = value; }
+
+    /**
+     * <p> Indicates the type of data that needs to be exported. Only one <a
+     * href="https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_ExportPreferences.html">ExportPreferences</a>
+     * can be enabled at any time. </p>
+     */
+    inline void SetPreferences(ExportPreferences&& value) { m_preferencesHasBeenSet = true; m_preferences = std::move(value); }
+
+    /**
+     * <p> Indicates the type of data that needs to be exported. Only one <a
+     * href="https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_ExportPreferences.html">ExportPreferences</a>
+     * can be enabled at any time. </p>
+     */
+    inline StartExportTaskRequest& WithPreferences(const ExportPreferences& value) { SetPreferences(value); return *this;}
+
+    /**
+     * <p> Indicates the type of data that needs to be exported. Only one <a
+     * href="https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_ExportPreferences.html">ExportPreferences</a>
+     * can be enabled at any time. </p>
+     */
+    inline StartExportTaskRequest& WithPreferences(ExportPreferences&& value) { SetPreferences(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<ExportDataFormat> m_exportDataFormat;
@@ -273,6 +325,9 @@ namespace Model
 
     Aws::Utils::DateTime m_endTime;
     bool m_endTimeHasBeenSet = false;
+
+    ExportPreferences m_preferences;
+    bool m_preferencesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -81,8 +81,8 @@ namespace Model
      * job results. Amazon S3 only supports symmetric encryption KMS keys. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric
-     * keys in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management
-     * Service Developer Guide</i>.</p>
+     * keys in KMS</a> in the <i>Amazon Web Services Key Management Service Developer
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetKMSKeyId() const{ return m_kMSKeyId; }
 
@@ -92,8 +92,8 @@ namespace Model
      * job results. Amazon S3 only supports symmetric encryption KMS keys. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric
-     * keys in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management
-     * Service Developer Guide</i>.</p>
+     * keys in KMS</a> in the <i>Amazon Web Services Key Management Service Developer
+     * Guide</i>.</p>
      */
     inline bool KMSKeyIdHasBeenSet() const { return m_kMSKeyIdHasBeenSet; }
 
@@ -103,8 +103,8 @@ namespace Model
      * job results. Amazon S3 only supports symmetric encryption KMS keys. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric
-     * keys in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management
-     * Service Developer Guide</i>.</p>
+     * keys in KMS</a> in the <i>Amazon Web Services Key Management Service Developer
+     * Guide</i>.</p>
      */
     inline void SetKMSKeyId(const Aws::String& value) { m_kMSKeyIdHasBeenSet = true; m_kMSKeyId = value; }
 
@@ -114,8 +114,8 @@ namespace Model
      * job results. Amazon S3 only supports symmetric encryption KMS keys. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric
-     * keys in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management
-     * Service Developer Guide</i>.</p>
+     * keys in KMS</a> in the <i>Amazon Web Services Key Management Service Developer
+     * Guide</i>.</p>
      */
     inline void SetKMSKeyId(Aws::String&& value) { m_kMSKeyIdHasBeenSet = true; m_kMSKeyId = std::move(value); }
 
@@ -125,8 +125,8 @@ namespace Model
      * job results. Amazon S3 only supports symmetric encryption KMS keys. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric
-     * keys in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management
-     * Service Developer Guide</i>.</p>
+     * keys in KMS</a> in the <i>Amazon Web Services Key Management Service Developer
+     * Guide</i>.</p>
      */
     inline void SetKMSKeyId(const char* value) { m_kMSKeyIdHasBeenSet = true; m_kMSKeyId.assign(value); }
 
@@ -136,8 +136,8 @@ namespace Model
      * job results. Amazon S3 only supports symmetric encryption KMS keys. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric
-     * keys in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management
-     * Service Developer Guide</i>.</p>
+     * keys in KMS</a> in the <i>Amazon Web Services Key Management Service Developer
+     * Guide</i>.</p>
      */
     inline Encryption& WithKMSKeyId(const Aws::String& value) { SetKMSKeyId(value); return *this;}
 
@@ -147,8 +147,8 @@ namespace Model
      * job results. Amazon S3 only supports symmetric encryption KMS keys. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric
-     * keys in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management
-     * Service Developer Guide</i>.</p>
+     * keys in KMS</a> in the <i>Amazon Web Services Key Management Service Developer
+     * Guide</i>.</p>
      */
     inline Encryption& WithKMSKeyId(Aws::String&& value) { SetKMSKeyId(std::move(value)); return *this;}
 
@@ -158,8 +158,8 @@ namespace Model
      * job results. Amazon S3 only supports symmetric encryption KMS keys. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric
-     * keys in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management
-     * Service Developer Guide</i>.</p>
+     * keys in KMS</a> in the <i>Amazon Web Services Key Management Service Developer
+     * Guide</i>.</p>
      */
     inline Encryption& WithKMSKeyId(const char* value) { SetKMSKeyId(value); return *this;}
 

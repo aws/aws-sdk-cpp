@@ -24,10 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>Information about agents or connectors that were instructed to start
-   * collecting data. Information includes the agent/connector ID, a description of
-   * the operation, and whether the agent/connector configuration was
-   * updated.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about agents that were instructed to start collecting data.
+   * Information includes the agent ID, a description of the operation, and whether
+   * the agent configuration was updated.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/AgentConfigurationStatus">AWS
    * API Reference</a></p>
    */
@@ -41,42 +40,42 @@ namespace Model
 
 
     /**
-     * <p>The agent/connector ID.</p>
+     * <p>The agent ID.</p>
      */
     inline const Aws::String& GetAgentId() const{ return m_agentId; }
 
     /**
-     * <p>The agent/connector ID.</p>
+     * <p>The agent ID.</p>
      */
     inline bool AgentIdHasBeenSet() const { return m_agentIdHasBeenSet; }
 
     /**
-     * <p>The agent/connector ID.</p>
+     * <p>The agent ID.</p>
      */
     inline void SetAgentId(const Aws::String& value) { m_agentIdHasBeenSet = true; m_agentId = value; }
 
     /**
-     * <p>The agent/connector ID.</p>
+     * <p>The agent ID.</p>
      */
     inline void SetAgentId(Aws::String&& value) { m_agentIdHasBeenSet = true; m_agentId = std::move(value); }
 
     /**
-     * <p>The agent/connector ID.</p>
+     * <p>The agent ID.</p>
      */
     inline void SetAgentId(const char* value) { m_agentIdHasBeenSet = true; m_agentId.assign(value); }
 
     /**
-     * <p>The agent/connector ID.</p>
+     * <p>The agent ID.</p>
      */
     inline AgentConfigurationStatus& WithAgentId(const Aws::String& value) { SetAgentId(value); return *this;}
 
     /**
-     * <p>The agent/connector ID.</p>
+     * <p>The agent ID.</p>
      */
     inline AgentConfigurationStatus& WithAgentId(Aws::String&& value) { SetAgentId(std::move(value)); return *this;}
 
     /**
-     * <p>The agent/connector ID.</p>
+     * <p>The agent ID.</p>
      */
     inline AgentConfigurationStatus& WithAgentId(const char* value) { SetAgentId(value); return *this;}
 
@@ -84,32 +83,32 @@ namespace Model
     /**
      * <p>Information about the status of the <code>StartDataCollection</code> and
      * <code>StopDataCollection</code> operations. The system has recorded the data
-     * collection operation. The agent/connector receives this command the next time it
-     * polls for a new command. </p>
+     * collection operation. The agent receives this command the next time it polls for
+     * a new command. </p>
      */
     inline bool GetOperationSucceeded() const{ return m_operationSucceeded; }
 
     /**
      * <p>Information about the status of the <code>StartDataCollection</code> and
      * <code>StopDataCollection</code> operations. The system has recorded the data
-     * collection operation. The agent/connector receives this command the next time it
-     * polls for a new command. </p>
+     * collection operation. The agent receives this command the next time it polls for
+     * a new command. </p>
      */
     inline bool OperationSucceededHasBeenSet() const { return m_operationSucceededHasBeenSet; }
 
     /**
      * <p>Information about the status of the <code>StartDataCollection</code> and
      * <code>StopDataCollection</code> operations. The system has recorded the data
-     * collection operation. The agent/connector receives this command the next time it
-     * polls for a new command. </p>
+     * collection operation. The agent receives this command the next time it polls for
+     * a new command. </p>
      */
     inline void SetOperationSucceeded(bool value) { m_operationSucceededHasBeenSet = true; m_operationSucceeded = value; }
 
     /**
      * <p>Information about the status of the <code>StartDataCollection</code> and
      * <code>StopDataCollection</code> operations. The system has recorded the data
-     * collection operation. The agent/connector receives this command the next time it
-     * polls for a new command. </p>
+     * collection operation. The agent receives this command the next time it polls for
+     * a new command. </p>
      */
     inline AgentConfigurationStatus& WithOperationSucceeded(bool value) { SetOperationSucceeded(value); return *this;}
 
