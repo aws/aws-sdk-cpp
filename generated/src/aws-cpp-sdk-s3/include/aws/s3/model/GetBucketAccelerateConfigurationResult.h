@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/s3/model/BucketAccelerateStatus.h>
+#include <aws/s3/model/RequestCharged.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -60,6 +61,22 @@ namespace Model
 
 
     
+    inline const RequestCharged& GetRequestCharged() const{ return m_requestCharged; }
+
+    
+    inline void SetRequestCharged(const RequestCharged& value) { m_requestCharged = value; }
+
+    
+    inline void SetRequestCharged(RequestCharged&& value) { m_requestCharged = std::move(value); }
+
+    
+    inline GetBucketAccelerateConfigurationResult& WithRequestCharged(const RequestCharged& value) { SetRequestCharged(value); return *this;}
+
+    
+    inline GetBucketAccelerateConfigurationResult& WithRequestCharged(RequestCharged&& value) { SetRequestCharged(std::move(value)); return *this;}
+
+
+    
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
     
@@ -83,6 +100,8 @@ namespace Model
   private:
 
     BucketAccelerateStatus m_status;
+
+    RequestCharged m_requestCharged;
 
     Aws::String m_requestId;
   };

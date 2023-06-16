@@ -16,7 +16,8 @@ StartExportTaskRequest::StartExportTaskRequest() :
     m_exportDataFormatHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+    m_endTimeHasBeenSet(false),
+    m_preferencesHasBeenSet(false)
 {
 }
 
@@ -54,6 +55,12 @@ Aws::String StartExportTaskRequest::SerializePayload() const
   if(m_endTimeHasBeenSet)
   {
    payload.WithDouble("endTime", m_endTime.SecondsWithMSPrecision());
+  }
+
+  if(m_preferencesHasBeenSet)
+  {
+   payload.WithObject("preferences", m_preferences.Jsonize());
+
   }
 
   return payload.View().WriteReadable();

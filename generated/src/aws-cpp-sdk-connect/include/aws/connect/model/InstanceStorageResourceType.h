@@ -24,7 +24,8 @@ namespace Model
     AGENT_EVENTS,
     REAL_TIME_CONTACT_ANALYSIS_SEGMENTS,
     ATTACHMENTS,
-    CONTACT_EVALUATIONS
+    CONTACT_EVALUATIONS,
+    SCREEN_RECORDINGS
   };
 
 namespace InstanceStorageResourceTypeMapper

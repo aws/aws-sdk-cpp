@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Network details about the host where the agent/connector
+   * <p>Network details about the host where the agent/collector
    * resides.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/AgentNetworkInfo">AWS
    * API Reference</a></p>
@@ -39,83 +39,83 @@ namespace Model
 
 
     /**
-     * <p>The IP address for the host where the agent/connector resides.</p>
+     * <p>The IP address for the host where the agent/collector resides.</p>
      */
     inline const Aws::String& GetIpAddress() const{ return m_ipAddress; }
 
     /**
-     * <p>The IP address for the host where the agent/connector resides.</p>
+     * <p>The IP address for the host where the agent/collector resides.</p>
      */
     inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
 
     /**
-     * <p>The IP address for the host where the agent/connector resides.</p>
+     * <p>The IP address for the host where the agent/collector resides.</p>
      */
     inline void SetIpAddress(const Aws::String& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
 
     /**
-     * <p>The IP address for the host where the agent/connector resides.</p>
+     * <p>The IP address for the host where the agent/collector resides.</p>
      */
     inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::move(value); }
 
     /**
-     * <p>The IP address for the host where the agent/connector resides.</p>
+     * <p>The IP address for the host where the agent/collector resides.</p>
      */
     inline void SetIpAddress(const char* value) { m_ipAddressHasBeenSet = true; m_ipAddress.assign(value); }
 
     /**
-     * <p>The IP address for the host where the agent/connector resides.</p>
+     * <p>The IP address for the host where the agent/collector resides.</p>
      */
     inline AgentNetworkInfo& WithIpAddress(const Aws::String& value) { SetIpAddress(value); return *this;}
 
     /**
-     * <p>The IP address for the host where the agent/connector resides.</p>
+     * <p>The IP address for the host where the agent/collector resides.</p>
      */
     inline AgentNetworkInfo& WithIpAddress(Aws::String&& value) { SetIpAddress(std::move(value)); return *this;}
 
     /**
-     * <p>The IP address for the host where the agent/connector resides.</p>
+     * <p>The IP address for the host where the agent/collector resides.</p>
      */
     inline AgentNetworkInfo& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
 
 
     /**
-     * <p>The MAC address for the host where the agent/connector resides.</p>
+     * <p>The MAC address for the host where the agent/collector resides.</p>
      */
     inline const Aws::String& GetMacAddress() const{ return m_macAddress; }
 
     /**
-     * <p>The MAC address for the host where the agent/connector resides.</p>
+     * <p>The MAC address for the host where the agent/collector resides.</p>
      */
     inline bool MacAddressHasBeenSet() const { return m_macAddressHasBeenSet; }
 
     /**
-     * <p>The MAC address for the host where the agent/connector resides.</p>
+     * <p>The MAC address for the host where the agent/collector resides.</p>
      */
     inline void SetMacAddress(const Aws::String& value) { m_macAddressHasBeenSet = true; m_macAddress = value; }
 
     /**
-     * <p>The MAC address for the host where the agent/connector resides.</p>
+     * <p>The MAC address for the host where the agent/collector resides.</p>
      */
     inline void SetMacAddress(Aws::String&& value) { m_macAddressHasBeenSet = true; m_macAddress = std::move(value); }
 
     /**
-     * <p>The MAC address for the host where the agent/connector resides.</p>
+     * <p>The MAC address for the host where the agent/collector resides.</p>
      */
     inline void SetMacAddress(const char* value) { m_macAddressHasBeenSet = true; m_macAddress.assign(value); }
 
     /**
-     * <p>The MAC address for the host where the agent/connector resides.</p>
+     * <p>The MAC address for the host where the agent/collector resides.</p>
      */
     inline AgentNetworkInfo& WithMacAddress(const Aws::String& value) { SetMacAddress(value); return *this;}
 
     /**
-     * <p>The MAC address for the host where the agent/connector resides.</p>
+     * <p>The MAC address for the host where the agent/collector resides.</p>
      */
     inline AgentNetworkInfo& WithMacAddress(Aws::String&& value) { SetMacAddress(std::move(value)); return *this;}
 
     /**
-     * <p>The MAC address for the host where the agent/connector resides.</p>
+     * <p>The MAC address for the host where the agent/collector resides.</p>
      */
     inline AgentNetworkInfo& WithMacAddress(const char* value) { SetMacAddress(value); return *this;}
 

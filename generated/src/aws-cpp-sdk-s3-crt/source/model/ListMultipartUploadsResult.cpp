@@ -19,14 +19,16 @@ using namespace Aws;
 ListMultipartUploadsResult::ListMultipartUploadsResult() : 
     m_maxUploads(0),
     m_isTruncated(false),
-    m_encodingType(EncodingType::NOT_SET)
+    m_encodingType(EncodingType::NOT_SET),
+    m_requestCharged(RequestCharged::NOT_SET)
 {
 }
 
 ListMultipartUploadsResult::ListMultipartUploadsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_maxUploads(0),
     m_isTruncated(false),
-    m_encodingType(EncodingType::NOT_SET)
+    m_encodingType(EncodingType::NOT_SET),
+    m_requestCharged(RequestCharged::NOT_SET)
 {
   *this = result;
 }
@@ -113,6 +115,12 @@ ListMultipartUploadsResult& ListMultipartUploadsResult::operator =(const Aws::Am
   }
 
   const auto& headers = result.GetHeaderValueCollection();
+  const auto& requestChargedIter = headers.find("x-amz-request-charged");
+  if(requestChargedIter != headers.end())
+  {
+    m_requestCharged = RequestChargedMapper::GetRequestChargedForName(requestChargedIter->second);
+  }
+
   const auto& requestIdIter = headers.find("x-amz-request-id");
   if(requestIdIter != headers.end())
   {

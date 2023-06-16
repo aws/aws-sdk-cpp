@@ -3540,11 +3540,13 @@ namespace IAM
          * the operation returns an empty list. For more information about roles, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
          * with roles</a>.</p>  <p>IAM resource-listing operations return a subset of
-         * the available attributes for the resource. For example, this operation does not
-         * return tags, even though they are an attribute of the returned object. To view
-         * all of the information for a role, see <a>GetRole</a>.</p>  <p>You can
-         * paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-         * parameters.</p><p><h3>See Also:</h3>   <a
+         * the available attributes for the resource. This operation does not return the
+         * following attributes, even though they are an attribute of the returned
+         * object:</p> <ul> <li> <p>PermissionsBoundary</p> </li> <li> <p>RoleLastUsed</p>
+         * </li> <li> <p>Tags</p> </li> </ul> <p>To view all of the information for a role,
+         * see <a>GetRole</a>.</p>  <p>You can paginate the results using the
+         * <code>MaxItems</code> and <code>Marker</code> parameters.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListRoles">AWS API
          * Reference</a></p>
          */
@@ -3871,11 +3873,12 @@ namespace IAM
          * specified, the operation returns all users in the Amazon Web Services account.
          * If there are none, the operation returns an empty list.</p>  <p>IAM
          * resource-listing operations return a subset of the available attributes for the
-         * resource. For example, this operation does not return tags, even though they are
-         * an attribute of the returned object. To view all of the information for a user,
-         * see <a>GetUser</a>.</p>  <p>You can paginate the results using the
-         * <code>MaxItems</code> and <code>Marker</code> parameters.</p><p><h3>See
-         * Also:</h3>   <a
+         * resource. This operation does not return the following attributes, even though
+         * they are an attribute of the returned object:</p> <ul> <li>
+         * <p>PermissionsBoundary</p> </li> <li> <p>Tags</p> </li> </ul> <p>To view all of
+         * the information for a user, see <a>GetUser</a>.</p>  <p>You can paginate
+         * the results using the <code>MaxItems</code> and <code>Marker</code>
+         * parameters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListUsers">AWS API
          * Reference</a></p>
          */

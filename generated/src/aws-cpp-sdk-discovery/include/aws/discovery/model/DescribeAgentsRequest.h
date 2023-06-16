@@ -37,65 +37,65 @@ namespace Model
 
 
     /**
-     * <p>The agent or the Connector IDs for which you want information. If you specify
-     * no IDs, the system returns information about all agents/Connectors associated
-     * with your Amazon Web Services user account.</p>
+     * <p>The agent or the collector IDs for which you want information. If you specify
+     * no IDs, the system returns information about all agents/collectors associated
+     * with your user.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAgentIds() const{ return m_agentIds; }
 
     /**
-     * <p>The agent or the Connector IDs for which you want information. If you specify
-     * no IDs, the system returns information about all agents/Connectors associated
-     * with your Amazon Web Services user account.</p>
+     * <p>The agent or the collector IDs for which you want information. If you specify
+     * no IDs, the system returns information about all agents/collectors associated
+     * with your user.</p>
      */
     inline bool AgentIdsHasBeenSet() const { return m_agentIdsHasBeenSet; }
 
     /**
-     * <p>The agent or the Connector IDs for which you want information. If you specify
-     * no IDs, the system returns information about all agents/Connectors associated
-     * with your Amazon Web Services user account.</p>
+     * <p>The agent or the collector IDs for which you want information. If you specify
+     * no IDs, the system returns information about all agents/collectors associated
+     * with your user.</p>
      */
     inline void SetAgentIds(const Aws::Vector<Aws::String>& value) { m_agentIdsHasBeenSet = true; m_agentIds = value; }
 
     /**
-     * <p>The agent or the Connector IDs for which you want information. If you specify
-     * no IDs, the system returns information about all agents/Connectors associated
-     * with your Amazon Web Services user account.</p>
+     * <p>The agent or the collector IDs for which you want information. If you specify
+     * no IDs, the system returns information about all agents/collectors associated
+     * with your user.</p>
      */
     inline void SetAgentIds(Aws::Vector<Aws::String>&& value) { m_agentIdsHasBeenSet = true; m_agentIds = std::move(value); }
 
     /**
-     * <p>The agent or the Connector IDs for which you want information. If you specify
-     * no IDs, the system returns information about all agents/Connectors associated
-     * with your Amazon Web Services user account.</p>
+     * <p>The agent or the collector IDs for which you want information. If you specify
+     * no IDs, the system returns information about all agents/collectors associated
+     * with your user.</p>
      */
     inline DescribeAgentsRequest& WithAgentIds(const Aws::Vector<Aws::String>& value) { SetAgentIds(value); return *this;}
 
     /**
-     * <p>The agent or the Connector IDs for which you want information. If you specify
-     * no IDs, the system returns information about all agents/Connectors associated
-     * with your Amazon Web Services user account.</p>
+     * <p>The agent or the collector IDs for which you want information. If you specify
+     * no IDs, the system returns information about all agents/collectors associated
+     * with your user.</p>
      */
     inline DescribeAgentsRequest& WithAgentIds(Aws::Vector<Aws::String>&& value) { SetAgentIds(std::move(value)); return *this;}
 
     /**
-     * <p>The agent or the Connector IDs for which you want information. If you specify
-     * no IDs, the system returns information about all agents/Connectors associated
-     * with your Amazon Web Services user account.</p>
+     * <p>The agent or the collector IDs for which you want information. If you specify
+     * no IDs, the system returns information about all agents/collectors associated
+     * with your user.</p>
      */
     inline DescribeAgentsRequest& AddAgentIds(const Aws::String& value) { m_agentIdsHasBeenSet = true; m_agentIds.push_back(value); return *this; }
 
     /**
-     * <p>The agent or the Connector IDs for which you want information. If you specify
-     * no IDs, the system returns information about all agents/Connectors associated
-     * with your Amazon Web Services user account.</p>
+     * <p>The agent or the collector IDs for which you want information. If you specify
+     * no IDs, the system returns information about all agents/collectors associated
+     * with your user.</p>
      */
     inline DescribeAgentsRequest& AddAgentIds(Aws::String&& value) { m_agentIdsHasBeenSet = true; m_agentIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The agent or the Connector IDs for which you want information. If you specify
-     * no IDs, the system returns information about all agents/Connectors associated
-     * with your Amazon Web Services user account.</p>
+     * <p>The agent or the collector IDs for which you want information. If you specify
+     * no IDs, the system returns information about all agents/collectors associated
+     * with your user.</p>
      */
     inline DescribeAgentsRequest& AddAgentIds(const char* value) { m_agentIdsHasBeenSet = true; m_agentIds.push_back(value); return *this; }
 
@@ -158,25 +158,25 @@ namespace Model
 
 
     /**
-     * <p>The total number of agents/Connectors to return in a single page of output.
+     * <p>The total number of agents/collectors to return in a single page of output.
      * The maximum value is 100.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The total number of agents/Connectors to return in a single page of output.
+     * <p>The total number of agents/collectors to return in a single page of output.
      * The maximum value is 100.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The total number of agents/Connectors to return in a single page of output.
+     * <p>The total number of agents/collectors to return in a single page of output.
      * The maximum value is 100.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The total number of agents/Connectors to return in a single page of output.
+     * <p>The total number of agents/collectors to return in a single page of output.
      * The maximum value is 100.</p>
      */
     inline DescribeAgentsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}

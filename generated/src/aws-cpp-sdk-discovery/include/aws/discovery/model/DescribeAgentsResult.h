@@ -35,65 +35,65 @@ namespace Model
 
 
     /**
-     * <p>Lists agents or the Connector by ID or lists all agents/Connectors associated
-     * with your user account if you did not specify an agent/Connector ID. The output
-     * includes agent/Connector IDs, IP addresses, media access control (MAC)
-     * addresses, agent/Connector health, host name where the agent/Connector resides,
-     * and the version number of each agent/Connector.</p>
+     * <p>Lists agents or the collector by ID or lists all agents/collectors associated
+     * with your user, if you did not specify an agent/collector ID. The output
+     * includes agent/collector IDs, IP addresses, media access control (MAC)
+     * addresses, agent/collector health, host name where the agent/collector resides,
+     * and the version number of each agent/collector.</p>
      */
     inline const Aws::Vector<AgentInfo>& GetAgentsInfo() const{ return m_agentsInfo; }
 
     /**
-     * <p>Lists agents or the Connector by ID or lists all agents/Connectors associated
-     * with your user account if you did not specify an agent/Connector ID. The output
-     * includes agent/Connector IDs, IP addresses, media access control (MAC)
-     * addresses, agent/Connector health, host name where the agent/Connector resides,
-     * and the version number of each agent/Connector.</p>
+     * <p>Lists agents or the collector by ID or lists all agents/collectors associated
+     * with your user, if you did not specify an agent/collector ID. The output
+     * includes agent/collector IDs, IP addresses, media access control (MAC)
+     * addresses, agent/collector health, host name where the agent/collector resides,
+     * and the version number of each agent/collector.</p>
      */
     inline void SetAgentsInfo(const Aws::Vector<AgentInfo>& value) { m_agentsInfo = value; }
 
     /**
-     * <p>Lists agents or the Connector by ID or lists all agents/Connectors associated
-     * with your user account if you did not specify an agent/Connector ID. The output
-     * includes agent/Connector IDs, IP addresses, media access control (MAC)
-     * addresses, agent/Connector health, host name where the agent/Connector resides,
-     * and the version number of each agent/Connector.</p>
+     * <p>Lists agents or the collector by ID or lists all agents/collectors associated
+     * with your user, if you did not specify an agent/collector ID. The output
+     * includes agent/collector IDs, IP addresses, media access control (MAC)
+     * addresses, agent/collector health, host name where the agent/collector resides,
+     * and the version number of each agent/collector.</p>
      */
     inline void SetAgentsInfo(Aws::Vector<AgentInfo>&& value) { m_agentsInfo = std::move(value); }
 
     /**
-     * <p>Lists agents or the Connector by ID or lists all agents/Connectors associated
-     * with your user account if you did not specify an agent/Connector ID. The output
-     * includes agent/Connector IDs, IP addresses, media access control (MAC)
-     * addresses, agent/Connector health, host name where the agent/Connector resides,
-     * and the version number of each agent/Connector.</p>
+     * <p>Lists agents or the collector by ID or lists all agents/collectors associated
+     * with your user, if you did not specify an agent/collector ID. The output
+     * includes agent/collector IDs, IP addresses, media access control (MAC)
+     * addresses, agent/collector health, host name where the agent/collector resides,
+     * and the version number of each agent/collector.</p>
      */
     inline DescribeAgentsResult& WithAgentsInfo(const Aws::Vector<AgentInfo>& value) { SetAgentsInfo(value); return *this;}
 
     /**
-     * <p>Lists agents or the Connector by ID or lists all agents/Connectors associated
-     * with your user account if you did not specify an agent/Connector ID. The output
-     * includes agent/Connector IDs, IP addresses, media access control (MAC)
-     * addresses, agent/Connector health, host name where the agent/Connector resides,
-     * and the version number of each agent/Connector.</p>
+     * <p>Lists agents or the collector by ID or lists all agents/collectors associated
+     * with your user, if you did not specify an agent/collector ID. The output
+     * includes agent/collector IDs, IP addresses, media access control (MAC)
+     * addresses, agent/collector health, host name where the agent/collector resides,
+     * and the version number of each agent/collector.</p>
      */
     inline DescribeAgentsResult& WithAgentsInfo(Aws::Vector<AgentInfo>&& value) { SetAgentsInfo(std::move(value)); return *this;}
 
     /**
-     * <p>Lists agents or the Connector by ID or lists all agents/Connectors associated
-     * with your user account if you did not specify an agent/Connector ID. The output
-     * includes agent/Connector IDs, IP addresses, media access control (MAC)
-     * addresses, agent/Connector health, host name where the agent/Connector resides,
-     * and the version number of each agent/Connector.</p>
+     * <p>Lists agents or the collector by ID or lists all agents/collectors associated
+     * with your user, if you did not specify an agent/collector ID. The output
+     * includes agent/collector IDs, IP addresses, media access control (MAC)
+     * addresses, agent/collector health, host name where the agent/collector resides,
+     * and the version number of each agent/collector.</p>
      */
     inline DescribeAgentsResult& AddAgentsInfo(const AgentInfo& value) { m_agentsInfo.push_back(value); return *this; }
 
     /**
-     * <p>Lists agents or the Connector by ID or lists all agents/Connectors associated
-     * with your user account if you did not specify an agent/Connector ID. The output
-     * includes agent/Connector IDs, IP addresses, media access control (MAC)
-     * addresses, agent/Connector health, host name where the agent/Connector resides,
-     * and the version number of each agent/Connector.</p>
+     * <p>Lists agents or the collector by ID or lists all agents/collectors associated
+     * with your user, if you did not specify an agent/collector ID. The output
+     * includes agent/collector IDs, IP addresses, media access control (MAC)
+     * addresses, agent/collector health, host name where the agent/collector resides,
+     * and the version number of each agent/collector.</p>
      */
     inline DescribeAgentsResult& AddAgentsInfo(AgentInfo&& value) { m_agentsInfo.push_back(std::move(value)); return *this; }
 

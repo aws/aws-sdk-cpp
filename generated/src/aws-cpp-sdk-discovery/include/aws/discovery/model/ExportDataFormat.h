@@ -16,8 +16,7 @@ namespace Model
   enum class ExportDataFormat
   {
     NOT_SET,
-    CSV,
-    GRAPHML
+    CSV
   };
 
 namespace ExportDataFormatMapper
