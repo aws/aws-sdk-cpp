@@ -37,29 +37,29 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of times a training job is allowed to run.</p> <p>For V2
-     * jobs (jobs created by calling <code>CreateAutoMLJobV2</code>), the supported
+     * <p>The maximum number of times a training job is allowed to run.</p> <p>For job
+     * V2s (jobs created by calling <code>CreateAutoMLJobV2</code>), the supported
      * value is 1.</p>
      */
     inline int GetMaxCandidates() const{ return m_maxCandidates; }
 
     /**
-     * <p>The maximum number of times a training job is allowed to run.</p> <p>For V2
-     * jobs (jobs created by calling <code>CreateAutoMLJobV2</code>), the supported
+     * <p>The maximum number of times a training job is allowed to run.</p> <p>For job
+     * V2s (jobs created by calling <code>CreateAutoMLJobV2</code>), the supported
      * value is 1.</p>
      */
     inline bool MaxCandidatesHasBeenSet() const { return m_maxCandidatesHasBeenSet; }
 
     /**
-     * <p>The maximum number of times a training job is allowed to run.</p> <p>For V2
-     * jobs (jobs created by calling <code>CreateAutoMLJobV2</code>), the supported
+     * <p>The maximum number of times a training job is allowed to run.</p> <p>For job
+     * V2s (jobs created by calling <code>CreateAutoMLJobV2</code>), the supported
      * value is 1.</p>
      */
     inline void SetMaxCandidates(int value) { m_maxCandidatesHasBeenSet = true; m_maxCandidates = value; }
 
     /**
-     * <p>The maximum number of times a training job is allowed to run.</p> <p>For V2
-     * jobs (jobs created by calling <code>CreateAutoMLJobV2</code>), the supported
+     * <p>The maximum number of times a training job is allowed to run.</p> <p>For job
+     * V2s (jobs created by calling <code>CreateAutoMLJobV2</code>), the supported
      * value is 1.</p>
      */
     inline AutoMLJobCompletionCriteria& WithMaxCandidates(int value) { SetMaxCandidates(value); return *this;}
@@ -72,7 +72,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StoppingCondition.html">StoppingCondition</a>
      * used by the <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateHyperParameterTuningJob.html">CreateHyperParameterTuningJob</a>
-     * action.</p> <p>For V2 jobs (jobs created by calling
+     * action.</p> <p>For job V2s (jobs created by calling
      * <code>CreateAutoMLJobV2</code>), this field controls the runtime of the job
      * candidate.</p>
      */
@@ -85,7 +85,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StoppingCondition.html">StoppingCondition</a>
      * used by the <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateHyperParameterTuningJob.html">CreateHyperParameterTuningJob</a>
-     * action.</p> <p>For V2 jobs (jobs created by calling
+     * action.</p> <p>For job V2s (jobs created by calling
      * <code>CreateAutoMLJobV2</code>), this field controls the runtime of the job
      * candidate.</p>
      */
@@ -98,7 +98,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StoppingCondition.html">StoppingCondition</a>
      * used by the <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateHyperParameterTuningJob.html">CreateHyperParameterTuningJob</a>
-     * action.</p> <p>For V2 jobs (jobs created by calling
+     * action.</p> <p>For job V2s (jobs created by calling
      * <code>CreateAutoMLJobV2</code>), this field controls the runtime of the job
      * candidate.</p>
      */
@@ -111,7 +111,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StoppingCondition.html">StoppingCondition</a>
      * used by the <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateHyperParameterTuningJob.html">CreateHyperParameterTuningJob</a>
-     * action.</p> <p>For V2 jobs (jobs created by calling
+     * action.</p> <p>For job V2s (jobs created by calling
      * <code>CreateAutoMLJobV2</code>), this field controls the runtime of the job
      * candidate.</p>
      */

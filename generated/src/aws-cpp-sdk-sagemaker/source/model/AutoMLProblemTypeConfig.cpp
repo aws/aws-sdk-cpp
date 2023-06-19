@@ -20,13 +20,15 @@ namespace Model
 
 AutoMLProblemTypeConfig::AutoMLProblemTypeConfig() : 
     m_imageClassificationJobConfigHasBeenSet(false),
-    m_textClassificationJobConfigHasBeenSet(false)
+    m_textClassificationJobConfigHasBeenSet(false),
+    m_tabularJobConfigHasBeenSet(false)
 {
 }
 
 AutoMLProblemTypeConfig::AutoMLProblemTypeConfig(JsonView jsonValue) : 
     m_imageClassificationJobConfigHasBeenSet(false),
-    m_textClassificationJobConfigHasBeenSet(false)
+    m_textClassificationJobConfigHasBeenSet(false),
+    m_tabularJobConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,13 @@ AutoMLProblemTypeConfig& AutoMLProblemTypeConfig::operator =(JsonView jsonValue)
     m_textClassificationJobConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TabularJobConfig"))
+  {
+    m_tabularJobConfig = jsonValue.GetObject("TabularJobConfig");
+
+    m_tabularJobConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +72,12 @@ JsonValue AutoMLProblemTypeConfig::Jsonize() const
   if(m_textClassificationJobConfigHasBeenSet)
   {
    payload.WithObject("TextClassificationJobConfig", m_textClassificationJobConfig.Jsonize());
+
+  }
+
+  if(m_tabularJobConfigHasBeenSet)
+  {
+   payload.WithObject("TabularJobConfig", m_tabularJobConfig.Jsonize());
 
   }
 

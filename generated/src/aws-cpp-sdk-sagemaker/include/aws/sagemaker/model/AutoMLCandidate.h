@@ -419,81 +419,91 @@ namespace Model
 
     /**
      * <p>The mapping of all supported processing unit (CPU, GPU, etc...) to inference
-     * container definitions for the candidate. This field is populated for the V2 API
-     * only (for example, for jobs created by calling
-     * <code>CreateAutoMLJobV2</code>).</p>
+     * container definitions for the candidate. This field is populated for the AutoML
+     * jobs V2 (for example, for jobs created by calling
+     * <code>CreateAutoMLJobV2</code>) related to image or text classification problem
+     * types only.</p>
      */
     inline const Aws::Map<AutoMLProcessingUnit, Aws::Vector<AutoMLContainerDefinition>>& GetInferenceContainerDefinitions() const{ return m_inferenceContainerDefinitions; }
 
     /**
      * <p>The mapping of all supported processing unit (CPU, GPU, etc...) to inference
-     * container definitions for the candidate. This field is populated for the V2 API
-     * only (for example, for jobs created by calling
-     * <code>CreateAutoMLJobV2</code>).</p>
+     * container definitions for the candidate. This field is populated for the AutoML
+     * jobs V2 (for example, for jobs created by calling
+     * <code>CreateAutoMLJobV2</code>) related to image or text classification problem
+     * types only.</p>
      */
     inline bool InferenceContainerDefinitionsHasBeenSet() const { return m_inferenceContainerDefinitionsHasBeenSet; }
 
     /**
      * <p>The mapping of all supported processing unit (CPU, GPU, etc...) to inference
-     * container definitions for the candidate. This field is populated for the V2 API
-     * only (for example, for jobs created by calling
-     * <code>CreateAutoMLJobV2</code>).</p>
+     * container definitions for the candidate. This field is populated for the AutoML
+     * jobs V2 (for example, for jobs created by calling
+     * <code>CreateAutoMLJobV2</code>) related to image or text classification problem
+     * types only.</p>
      */
     inline void SetInferenceContainerDefinitions(const Aws::Map<AutoMLProcessingUnit, Aws::Vector<AutoMLContainerDefinition>>& value) { m_inferenceContainerDefinitionsHasBeenSet = true; m_inferenceContainerDefinitions = value; }
 
     /**
      * <p>The mapping of all supported processing unit (CPU, GPU, etc...) to inference
-     * container definitions for the candidate. This field is populated for the V2 API
-     * only (for example, for jobs created by calling
-     * <code>CreateAutoMLJobV2</code>).</p>
+     * container definitions for the candidate. This field is populated for the AutoML
+     * jobs V2 (for example, for jobs created by calling
+     * <code>CreateAutoMLJobV2</code>) related to image or text classification problem
+     * types only.</p>
      */
     inline void SetInferenceContainerDefinitions(Aws::Map<AutoMLProcessingUnit, Aws::Vector<AutoMLContainerDefinition>>&& value) { m_inferenceContainerDefinitionsHasBeenSet = true; m_inferenceContainerDefinitions = std::move(value); }
 
     /**
      * <p>The mapping of all supported processing unit (CPU, GPU, etc...) to inference
-     * container definitions for the candidate. This field is populated for the V2 API
-     * only (for example, for jobs created by calling
-     * <code>CreateAutoMLJobV2</code>).</p>
+     * container definitions for the candidate. This field is populated for the AutoML
+     * jobs V2 (for example, for jobs created by calling
+     * <code>CreateAutoMLJobV2</code>) related to image or text classification problem
+     * types only.</p>
      */
     inline AutoMLCandidate& WithInferenceContainerDefinitions(const Aws::Map<AutoMLProcessingUnit, Aws::Vector<AutoMLContainerDefinition>>& value) { SetInferenceContainerDefinitions(value); return *this;}
 
     /**
      * <p>The mapping of all supported processing unit (CPU, GPU, etc...) to inference
-     * container definitions for the candidate. This field is populated for the V2 API
-     * only (for example, for jobs created by calling
-     * <code>CreateAutoMLJobV2</code>).</p>
+     * container definitions for the candidate. This field is populated for the AutoML
+     * jobs V2 (for example, for jobs created by calling
+     * <code>CreateAutoMLJobV2</code>) related to image or text classification problem
+     * types only.</p>
      */
     inline AutoMLCandidate& WithInferenceContainerDefinitions(Aws::Map<AutoMLProcessingUnit, Aws::Vector<AutoMLContainerDefinition>>&& value) { SetInferenceContainerDefinitions(std::move(value)); return *this;}
 
     /**
      * <p>The mapping of all supported processing unit (CPU, GPU, etc...) to inference
-     * container definitions for the candidate. This field is populated for the V2 API
-     * only (for example, for jobs created by calling
-     * <code>CreateAutoMLJobV2</code>).</p>
+     * container definitions for the candidate. This field is populated for the AutoML
+     * jobs V2 (for example, for jobs created by calling
+     * <code>CreateAutoMLJobV2</code>) related to image or text classification problem
+     * types only.</p>
      */
     inline AutoMLCandidate& AddInferenceContainerDefinitions(const AutoMLProcessingUnit& key, const Aws::Vector<AutoMLContainerDefinition>& value) { m_inferenceContainerDefinitionsHasBeenSet = true; m_inferenceContainerDefinitions.emplace(key, value); return *this; }
 
     /**
      * <p>The mapping of all supported processing unit (CPU, GPU, etc...) to inference
-     * container definitions for the candidate. This field is populated for the V2 API
-     * only (for example, for jobs created by calling
-     * <code>CreateAutoMLJobV2</code>).</p>
+     * container definitions for the candidate. This field is populated for the AutoML
+     * jobs V2 (for example, for jobs created by calling
+     * <code>CreateAutoMLJobV2</code>) related to image or text classification problem
+     * types only.</p>
      */
     inline AutoMLCandidate& AddInferenceContainerDefinitions(AutoMLProcessingUnit&& key, const Aws::Vector<AutoMLContainerDefinition>& value) { m_inferenceContainerDefinitionsHasBeenSet = true; m_inferenceContainerDefinitions.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The mapping of all supported processing unit (CPU, GPU, etc...) to inference
-     * container definitions for the candidate. This field is populated for the V2 API
-     * only (for example, for jobs created by calling
-     * <code>CreateAutoMLJobV2</code>).</p>
+     * container definitions for the candidate. This field is populated for the AutoML
+     * jobs V2 (for example, for jobs created by calling
+     * <code>CreateAutoMLJobV2</code>) related to image or text classification problem
+     * types only.</p>
      */
     inline AutoMLCandidate& AddInferenceContainerDefinitions(const AutoMLProcessingUnit& key, Aws::Vector<AutoMLContainerDefinition>&& value) { m_inferenceContainerDefinitionsHasBeenSet = true; m_inferenceContainerDefinitions.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The mapping of all supported processing unit (CPU, GPU, etc...) to inference
-     * container definitions for the candidate. This field is populated for the V2 API
-     * only (for example, for jobs created by calling
-     * <code>CreateAutoMLJobV2</code>).</p>
+     * container definitions for the candidate. This field is populated for the AutoML
+     * jobs V2 (for example, for jobs created by calling
+     * <code>CreateAutoMLJobV2</code>) related to image or text classification problem
+     * types only.</p>
      */
     inline AutoMLCandidate& AddInferenceContainerDefinitions(AutoMLProcessingUnit&& key, Aws::Vector<AutoMLContainerDefinition>&& value) { m_inferenceContainerDefinitionsHasBeenSet = true; m_inferenceContainerDefinitions.emplace(std::move(key), std::move(value)); return *this; }
 

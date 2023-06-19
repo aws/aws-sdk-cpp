@@ -25,7 +25,7 @@ namespace Model
 
   /**
    * <p>Stores the configuration information for the image classification problem of
-   * an AutoML job using the V2 API.</p><p><h3>See Also:</h3>   <a
+   * an AutoML job V2.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ImageClassificationJobConfig">AWS
    * API Reference</a></p>
    */

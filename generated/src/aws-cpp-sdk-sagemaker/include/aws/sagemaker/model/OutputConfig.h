@@ -100,7 +100,10 @@ namespace Model
      * to run your model on after the compilation has completed. Alternatively, you can
      * specify OS, architecture, and accelerator using <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TargetPlatform.html">TargetPlatform</a>
-     * fields. It can be used instead of <code>TargetPlatform</code>.</p>
+     * fields. It can be used instead of <code>TargetPlatform</code>.</p> 
+     * <p>Currently <code>ml_trn1</code> is available only in US East (N. Virginia)
+     * Region, and <code>ml_inf2</code> is available only in US East (Ohio) Region.</p>
+     * 
      */
     inline const TargetDevice& GetTargetDevice() const{ return m_targetDevice; }
 
@@ -109,7 +112,10 @@ namespace Model
      * to run your model on after the compilation has completed. Alternatively, you can
      * specify OS, architecture, and accelerator using <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TargetPlatform.html">TargetPlatform</a>
-     * fields. It can be used instead of <code>TargetPlatform</code>.</p>
+     * fields. It can be used instead of <code>TargetPlatform</code>.</p> 
+     * <p>Currently <code>ml_trn1</code> is available only in US East (N. Virginia)
+     * Region, and <code>ml_inf2</code> is available only in US East (Ohio) Region.</p>
+     * 
      */
     inline bool TargetDeviceHasBeenSet() const { return m_targetDeviceHasBeenSet; }
 
@@ -118,7 +124,10 @@ namespace Model
      * to run your model on after the compilation has completed. Alternatively, you can
      * specify OS, architecture, and accelerator using <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TargetPlatform.html">TargetPlatform</a>
-     * fields. It can be used instead of <code>TargetPlatform</code>.</p>
+     * fields. It can be used instead of <code>TargetPlatform</code>.</p> 
+     * <p>Currently <code>ml_trn1</code> is available only in US East (N. Virginia)
+     * Region, and <code>ml_inf2</code> is available only in US East (Ohio) Region.</p>
+     * 
      */
     inline void SetTargetDevice(const TargetDevice& value) { m_targetDeviceHasBeenSet = true; m_targetDevice = value; }
 
@@ -127,7 +136,10 @@ namespace Model
      * to run your model on after the compilation has completed. Alternatively, you can
      * specify OS, architecture, and accelerator using <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TargetPlatform.html">TargetPlatform</a>
-     * fields. It can be used instead of <code>TargetPlatform</code>.</p>
+     * fields. It can be used instead of <code>TargetPlatform</code>.</p> 
+     * <p>Currently <code>ml_trn1</code> is available only in US East (N. Virginia)
+     * Region, and <code>ml_inf2</code> is available only in US East (Ohio) Region.</p>
+     * 
      */
     inline void SetTargetDevice(TargetDevice&& value) { m_targetDeviceHasBeenSet = true; m_targetDevice = std::move(value); }
 
@@ -136,7 +148,10 @@ namespace Model
      * to run your model on after the compilation has completed. Alternatively, you can
      * specify OS, architecture, and accelerator using <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TargetPlatform.html">TargetPlatform</a>
-     * fields. It can be used instead of <code>TargetPlatform</code>.</p>
+     * fields. It can be used instead of <code>TargetPlatform</code>.</p> 
+     * <p>Currently <code>ml_trn1</code> is available only in US East (N. Virginia)
+     * Region, and <code>ml_inf2</code> is available only in US East (Ohio) Region.</p>
+     * 
      */
     inline OutputConfig& WithTargetDevice(const TargetDevice& value) { SetTargetDevice(value); return *this;}
 
@@ -145,7 +160,10 @@ namespace Model
      * to run your model on after the compilation has completed. Alternatively, you can
      * specify OS, architecture, and accelerator using <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TargetPlatform.html">TargetPlatform</a>
-     * fields. It can be used instead of <code>TargetPlatform</code>.</p>
+     * fields. It can be used instead of <code>TargetPlatform</code>.</p> 
+     * <p>Currently <code>ml_trn1</code> is available only in US East (N. Virginia)
+     * Region, and <code>ml_inf2</code> is available only in US East (Ohio) Region.</p>
+     * 
      */
     inline OutputConfig& WithTargetDevice(TargetDevice&& value) { SetTargetDevice(std::move(value)); return *this;}
 

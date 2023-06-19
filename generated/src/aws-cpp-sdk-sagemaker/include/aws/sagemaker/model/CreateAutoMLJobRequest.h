@@ -267,62 +267,50 @@ namespace Model
 
 
     /**
-     * <p>Defines the objective metric used to measure the predictive quality of an
-     * AutoML job. You provide an <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">AutoMLJobObjective$MetricName</a>
-     * and Autopilot infers whether to minimize or maximize it. For <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html">CreateAutoMLJobV2</a>,
-     * only <code>Accuracy</code> is supported.</p>
+     * <p>Specifies a metric to minimize or maximize as the objective of a job. If not
+     * specified, the default objective metric depends on the problem type. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">AutoMLJobObjective</a>
+     * for the default values.</p>
      */
     inline const AutoMLJobObjective& GetAutoMLJobObjective() const{ return m_autoMLJobObjective; }
 
     /**
-     * <p>Defines the objective metric used to measure the predictive quality of an
-     * AutoML job. You provide an <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">AutoMLJobObjective$MetricName</a>
-     * and Autopilot infers whether to minimize or maximize it. For <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html">CreateAutoMLJobV2</a>,
-     * only <code>Accuracy</code> is supported.</p>
+     * <p>Specifies a metric to minimize or maximize as the objective of a job. If not
+     * specified, the default objective metric depends on the problem type. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">AutoMLJobObjective</a>
+     * for the default values.</p>
      */
     inline bool AutoMLJobObjectiveHasBeenSet() const { return m_autoMLJobObjectiveHasBeenSet; }
 
     /**
-     * <p>Defines the objective metric used to measure the predictive quality of an
-     * AutoML job. You provide an <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">AutoMLJobObjective$MetricName</a>
-     * and Autopilot infers whether to minimize or maximize it. For <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html">CreateAutoMLJobV2</a>,
-     * only <code>Accuracy</code> is supported.</p>
+     * <p>Specifies a metric to minimize or maximize as the objective of a job. If not
+     * specified, the default objective metric depends on the problem type. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">AutoMLJobObjective</a>
+     * for the default values.</p>
      */
     inline void SetAutoMLJobObjective(const AutoMLJobObjective& value) { m_autoMLJobObjectiveHasBeenSet = true; m_autoMLJobObjective = value; }
 
     /**
-     * <p>Defines the objective metric used to measure the predictive quality of an
-     * AutoML job. You provide an <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">AutoMLJobObjective$MetricName</a>
-     * and Autopilot infers whether to minimize or maximize it. For <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html">CreateAutoMLJobV2</a>,
-     * only <code>Accuracy</code> is supported.</p>
+     * <p>Specifies a metric to minimize or maximize as the objective of a job. If not
+     * specified, the default objective metric depends on the problem type. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">AutoMLJobObjective</a>
+     * for the default values.</p>
      */
     inline void SetAutoMLJobObjective(AutoMLJobObjective&& value) { m_autoMLJobObjectiveHasBeenSet = true; m_autoMLJobObjective = std::move(value); }
 
     /**
-     * <p>Defines the objective metric used to measure the predictive quality of an
-     * AutoML job. You provide an <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">AutoMLJobObjective$MetricName</a>
-     * and Autopilot infers whether to minimize or maximize it. For <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html">CreateAutoMLJobV2</a>,
-     * only <code>Accuracy</code> is supported.</p>
+     * <p>Specifies a metric to minimize or maximize as the objective of a job. If not
+     * specified, the default objective metric depends on the problem type. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">AutoMLJobObjective</a>
+     * for the default values.</p>
      */
     inline CreateAutoMLJobRequest& WithAutoMLJobObjective(const AutoMLJobObjective& value) { SetAutoMLJobObjective(value); return *this;}
 
     /**
-     * <p>Defines the objective metric used to measure the predictive quality of an
-     * AutoML job. You provide an <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">AutoMLJobObjective$MetricName</a>
-     * and Autopilot infers whether to minimize or maximize it. For <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html">CreateAutoMLJobV2</a>,
-     * only <code>Accuracy</code> is supported.</p>
+     * <p>Specifies a metric to minimize or maximize as the objective of a job. If not
+     * specified, the default objective metric depends on the problem type. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">AutoMLJobObjective</a>
+     * for the default values.</p>
      */
     inline CreateAutoMLJobRequest& WithAutoMLJobObjective(AutoMLJobObjective&& value) { SetAutoMLJobObjective(std::move(value)); return *this;}
 

@@ -35,42 +35,42 @@ namespace Model
 
 
     /**
-     * <p>Requests information about an AutoML V2 job using its unique name.</p>
+     * <p>Requests information about an AutoML job V2 using its unique name.</p>
      */
     inline const Aws::String& GetAutoMLJobName() const{ return m_autoMLJobName; }
 
     /**
-     * <p>Requests information about an AutoML V2 job using its unique name.</p>
+     * <p>Requests information about an AutoML job V2 using its unique name.</p>
      */
     inline bool AutoMLJobNameHasBeenSet() const { return m_autoMLJobNameHasBeenSet; }
 
     /**
-     * <p>Requests information about an AutoML V2 job using its unique name.</p>
+     * <p>Requests information about an AutoML job V2 using its unique name.</p>
      */
     inline void SetAutoMLJobName(const Aws::String& value) { m_autoMLJobNameHasBeenSet = true; m_autoMLJobName = value; }
 
     /**
-     * <p>Requests information about an AutoML V2 job using its unique name.</p>
+     * <p>Requests information about an AutoML job V2 using its unique name.</p>
      */
     inline void SetAutoMLJobName(Aws::String&& value) { m_autoMLJobNameHasBeenSet = true; m_autoMLJobName = std::move(value); }
 
     /**
-     * <p>Requests information about an AutoML V2 job using its unique name.</p>
+     * <p>Requests information about an AutoML job V2 using its unique name.</p>
      */
     inline void SetAutoMLJobName(const char* value) { m_autoMLJobNameHasBeenSet = true; m_autoMLJobName.assign(value); }
 
     /**
-     * <p>Requests information about an AutoML V2 job using its unique name.</p>
+     * <p>Requests information about an AutoML job V2 using its unique name.</p>
      */
     inline DescribeAutoMLJobV2Request& WithAutoMLJobName(const Aws::String& value) { SetAutoMLJobName(value); return *this;}
 
     /**
-     * <p>Requests information about an AutoML V2 job using its unique name.</p>
+     * <p>Requests information about an AutoML job V2 using its unique name.</p>
      */
     inline DescribeAutoMLJobV2Request& WithAutoMLJobName(Aws::String&& value) { SetAutoMLJobName(std::move(value)); return *this;}
 
     /**
-     * <p>Requests information about an AutoML V2 job using its unique name.</p>
+     * <p>Requests information about an AutoML job V2 using its unique name.</p>
      */
     inline DescribeAutoMLJobV2Request& WithAutoMLJobName(const char* value) { SetAutoMLJobName(value); return *this;}
 
