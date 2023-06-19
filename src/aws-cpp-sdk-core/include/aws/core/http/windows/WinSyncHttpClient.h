@@ -7,7 +7,7 @@
 
 #include <aws/core/Core_EXPORTS.h>
 
-#include <aws/core/utils/memory/stl/AwsStringStream.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/standard/StandardHttpResponse.h>

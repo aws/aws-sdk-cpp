@@ -16,7 +16,7 @@ namespace smithy {
             /**
              * Status of the span.
              */
-            enum class SMITHY_API TraceSpanStatus {
+            enum class TraceSpanStatus {
                 UNSET,
                 OK,
                 ERROR,

@@ -34,7 +34,7 @@ namespace Aws
             /**
              * Gets the log tag to use for logging in the base class.
              */
-            const char* GetLogTag() const { return "WinHttpConnectionPoolMgr"; }
+            const char* GetLogTag() const override { return "WinHttpConnectionPoolMgr"; }
 
         private:
             virtual void DoCloseHandle(void* handle) const override;
