@@ -23,14 +23,20 @@ namespace Model
 VerifiedAccessLogs::VerifiedAccessLogs() : 
     m_s3HasBeenSet(false),
     m_cloudWatchLogsHasBeenSet(false),
-    m_kinesisDataFirehoseHasBeenSet(false)
+    m_kinesisDataFirehoseHasBeenSet(false),
+    m_logVersionHasBeenSet(false),
+    m_includeTrustContext(false),
+    m_includeTrustContextHasBeenSet(false)
 {
 }
 
 VerifiedAccessLogs::VerifiedAccessLogs(const XmlNode& xmlNode) : 
     m_s3HasBeenSet(false),
     m_cloudWatchLogsHasBeenSet(false),
-    m_kinesisDataFirehoseHasBeenSet(false)
+    m_kinesisDataFirehoseHasBeenSet(false),
+    m_logVersionHasBeenSet(false),
+    m_includeTrustContext(false),
+    m_includeTrustContextHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -58,6 +64,18 @@ VerifiedAccessLogs& VerifiedAccessLogs::operator =(const XmlNode& xmlNode)
     {
       m_kinesisDataFirehose = kinesisDataFirehoseNode;
       m_kinesisDataFirehoseHasBeenSet = true;
+    }
+    XmlNode logVersionNode = resultNode.FirstChild("logVersion");
+    if(!logVersionNode.IsNull())
+    {
+      m_logVersion = Aws::Utils::Xml::DecodeEscapedXmlText(logVersionNode.GetText());
+      m_logVersionHasBeenSet = true;
+    }
+    XmlNode includeTrustContextNode = resultNode.FirstChild("includeTrustContext");
+    if(!includeTrustContextNode.IsNull())
+    {
+      m_includeTrustContext = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(includeTrustContextNode.GetText()).c_str()).c_str());
+      m_includeTrustContextHasBeenSet = true;
     }
   }
 
@@ -87,6 +105,16 @@ void VerifiedAccessLogs::OutputToStream(Aws::OStream& oStream, const char* locat
       m_kinesisDataFirehose.OutputToStream(oStream, kinesisDataFirehoseLocationAndMemberSs.str().c_str());
   }
 
+  if(m_logVersionHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".LogVersion=" << StringUtils::URLEncode(m_logVersion.c_str()) << "&";
+  }
+
+  if(m_includeTrustContextHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".IncludeTrustContext=" << std::boolalpha << m_includeTrustContext << "&";
+  }
+
 }
 
 void VerifiedAccessLogs::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -108,6 +136,14 @@ void VerifiedAccessLogs::OutputToStream(Aws::OStream& oStream, const char* locat
       Aws::String kinesisDataFirehoseLocationAndMember(location);
       kinesisDataFirehoseLocationAndMember += ".KinesisDataFirehose";
       m_kinesisDataFirehose.OutputToStream(oStream, kinesisDataFirehoseLocationAndMember.c_str());
+  }
+  if(m_logVersionHasBeenSet)
+  {
+      oStream << location << ".LogVersion=" << StringUtils::URLEncode(m_logVersion.c_str()) << "&";
+  }
+  if(m_includeTrustContextHasBeenSet)
+  {
+      oStream << location << ".IncludeTrustContext=" << std::boolalpha << m_includeTrustContext << "&";
   }
 }
 

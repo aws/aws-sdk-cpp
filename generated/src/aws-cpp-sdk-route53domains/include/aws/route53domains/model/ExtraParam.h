@@ -160,16 +160,6 @@ namespace Model
      * <li> <p> <code>INSTITUTION</code> </p> </li> <li> <p>
      * <code>POLITICAL_PARTY</code> </p> </li> <li> <p> <code>PUBLIC_COMMUNITY</code>
      * </p> </li> <li> <p> <code>TOWNSHIP</code> </p> </li> </ul> </li> </ul> </dd>
-     * <dt>.fr</dt> <dd> <ul> <li> <p> <code>BIRTH_CITY</code> </p> </li> <li> <p>
-     * <code>BIRTH_COUNTRY</code> </p> </li> <li> <p>
-     * <code>BIRTH_DATE_IN_YYYY_MM_DD</code> </p> </li> <li> <p>
-     * <code>BIRTH_DEPARTMENT</code>: Specify the INSEE code that corresponds with the
-     * department where the contact was born. If the contact was born somewhere other
-     * than France or its overseas departments, specify <code>99</code>. For more
-     * information, including a list of departments and the corresponding INSEE
-     * numbers, see the Wikipedia entry <a
-     * href="https://en.wikipedia.org/wiki/Departments_of_France">Departments of
-     * France</a>.</p> </li> <li> <p> <code>BRAND_NUMBER</code> </p> </li> </ul> </dd>
      * <dt>.it</dt> <dd> <ul> <li> <p> <code>IT_NATIONALITY</code> </p> </li> <li> <p>
      * <code>IT_PIN</code> </p> </li> <li> <p> <code>IT_REGISTRANT_ENTITY_TYPE</code>
      * </p> <p>Valid values include the following:</p> <ul> <li> <p>
@@ -327,16 +317,6 @@ namespace Model
      * <li> <p> <code>INSTITUTION</code> </p> </li> <li> <p>
      * <code>POLITICAL_PARTY</code> </p> </li> <li> <p> <code>PUBLIC_COMMUNITY</code>
      * </p> </li> <li> <p> <code>TOWNSHIP</code> </p> </li> </ul> </li> </ul> </dd>
-     * <dt>.fr</dt> <dd> <ul> <li> <p> <code>BIRTH_CITY</code> </p> </li> <li> <p>
-     * <code>BIRTH_COUNTRY</code> </p> </li> <li> <p>
-     * <code>BIRTH_DATE_IN_YYYY_MM_DD</code> </p> </li> <li> <p>
-     * <code>BIRTH_DEPARTMENT</code>: Specify the INSEE code that corresponds with the
-     * department where the contact was born. If the contact was born somewhere other
-     * than France or its overseas departments, specify <code>99</code>. For more
-     * information, including a list of departments and the corresponding INSEE
-     * numbers, see the Wikipedia entry <a
-     * href="https://en.wikipedia.org/wiki/Departments_of_France">Departments of
-     * France</a>.</p> </li> <li> <p> <code>BRAND_NUMBER</code> </p> </li> </ul> </dd>
      * <dt>.it</dt> <dd> <ul> <li> <p> <code>IT_NATIONALITY</code> </p> </li> <li> <p>
      * <code>IT_PIN</code> </p> </li> <li> <p> <code>IT_REGISTRANT_ENTITY_TYPE</code>
      * </p> <p>Valid values include the following:</p> <ul> <li> <p>
@@ -494,16 +474,6 @@ namespace Model
      * <li> <p> <code>INSTITUTION</code> </p> </li> <li> <p>
      * <code>POLITICAL_PARTY</code> </p> </li> <li> <p> <code>PUBLIC_COMMUNITY</code>
      * </p> </li> <li> <p> <code>TOWNSHIP</code> </p> </li> </ul> </li> </ul> </dd>
-     * <dt>.fr</dt> <dd> <ul> <li> <p> <code>BIRTH_CITY</code> </p> </li> <li> <p>
-     * <code>BIRTH_COUNTRY</code> </p> </li> <li> <p>
-     * <code>BIRTH_DATE_IN_YYYY_MM_DD</code> </p> </li> <li> <p>
-     * <code>BIRTH_DEPARTMENT</code>: Specify the INSEE code that corresponds with the
-     * department where the contact was born. If the contact was born somewhere other
-     * than France or its overseas departments, specify <code>99</code>. For more
-     * information, including a list of departments and the corresponding INSEE
-     * numbers, see the Wikipedia entry <a
-     * href="https://en.wikipedia.org/wiki/Departments_of_France">Departments of
-     * France</a>.</p> </li> <li> <p> <code>BRAND_NUMBER</code> </p> </li> </ul> </dd>
      * <dt>.it</dt> <dd> <ul> <li> <p> <code>IT_NATIONALITY</code> </p> </li> <li> <p>
      * <code>IT_PIN</code> </p> </li> <li> <p> <code>IT_REGISTRANT_ENTITY_TYPE</code>
      * </p> <p>Valid values include the following:</p> <ul> <li> <p>
@@ -661,16 +631,6 @@ namespace Model
      * <li> <p> <code>INSTITUTION</code> </p> </li> <li> <p>
      * <code>POLITICAL_PARTY</code> </p> </li> <li> <p> <code>PUBLIC_COMMUNITY</code>
      * </p> </li> <li> <p> <code>TOWNSHIP</code> </p> </li> </ul> </li> </ul> </dd>
-     * <dt>.fr</dt> <dd> <ul> <li> <p> <code>BIRTH_CITY</code> </p> </li> <li> <p>
-     * <code>BIRTH_COUNTRY</code> </p> </li> <li> <p>
-     * <code>BIRTH_DATE_IN_YYYY_MM_DD</code> </p> </li> <li> <p>
-     * <code>BIRTH_DEPARTMENT</code>: Specify the INSEE code that corresponds with the
-     * department where the contact was born. If the contact was born somewhere other
-     * than France or its overseas departments, specify <code>99</code>. For more
-     * information, including a list of departments and the corresponding INSEE
-     * numbers, see the Wikipedia entry <a
-     * href="https://en.wikipedia.org/wiki/Departments_of_France">Departments of
-     * France</a>.</p> </li> <li> <p> <code>BRAND_NUMBER</code> </p> </li> </ul> </dd>
      * <dt>.it</dt> <dd> <ul> <li> <p> <code>IT_NATIONALITY</code> </p> </li> <li> <p>
      * <code>IT_PIN</code> </p> </li> <li> <p> <code>IT_REGISTRANT_ENTITY_TYPE</code>
      * </p> <p>Valid values include the following:</p> <ul> <li> <p>
@@ -828,16 +788,6 @@ namespace Model
      * <li> <p> <code>INSTITUTION</code> </p> </li> <li> <p>
      * <code>POLITICAL_PARTY</code> </p> </li> <li> <p> <code>PUBLIC_COMMUNITY</code>
      * </p> </li> <li> <p> <code>TOWNSHIP</code> </p> </li> </ul> </li> </ul> </dd>
-     * <dt>.fr</dt> <dd> <ul> <li> <p> <code>BIRTH_CITY</code> </p> </li> <li> <p>
-     * <code>BIRTH_COUNTRY</code> </p> </li> <li> <p>
-     * <code>BIRTH_DATE_IN_YYYY_MM_DD</code> </p> </li> <li> <p>
-     * <code>BIRTH_DEPARTMENT</code>: Specify the INSEE code that corresponds with the
-     * department where the contact was born. If the contact was born somewhere other
-     * than France or its overseas departments, specify <code>99</code>. For more
-     * information, including a list of departments and the corresponding INSEE
-     * numbers, see the Wikipedia entry <a
-     * href="https://en.wikipedia.org/wiki/Departments_of_France">Departments of
-     * France</a>.</p> </li> <li> <p> <code>BRAND_NUMBER</code> </p> </li> </ul> </dd>
      * <dt>.it</dt> <dd> <ul> <li> <p> <code>IT_NATIONALITY</code> </p> </li> <li> <p>
      * <code>IT_PIN</code> </p> </li> <li> <p> <code>IT_REGISTRANT_ENTITY_TYPE</code>
      * </p> <p>Valid values include the following:</p> <ul> <li> <p>
@@ -995,16 +945,6 @@ namespace Model
      * <li> <p> <code>INSTITUTION</code> </p> </li> <li> <p>
      * <code>POLITICAL_PARTY</code> </p> </li> <li> <p> <code>PUBLIC_COMMUNITY</code>
      * </p> </li> <li> <p> <code>TOWNSHIP</code> </p> </li> </ul> </li> </ul> </dd>
-     * <dt>.fr</dt> <dd> <ul> <li> <p> <code>BIRTH_CITY</code> </p> </li> <li> <p>
-     * <code>BIRTH_COUNTRY</code> </p> </li> <li> <p>
-     * <code>BIRTH_DATE_IN_YYYY_MM_DD</code> </p> </li> <li> <p>
-     * <code>BIRTH_DEPARTMENT</code>: Specify the INSEE code that corresponds with the
-     * department where the contact was born. If the contact was born somewhere other
-     * than France or its overseas departments, specify <code>99</code>. For more
-     * information, including a list of departments and the corresponding INSEE
-     * numbers, see the Wikipedia entry <a
-     * href="https://en.wikipedia.org/wiki/Departments_of_France">Departments of
-     * France</a>.</p> </li> <li> <p> <code>BRAND_NUMBER</code> </p> </li> </ul> </dd>
      * <dt>.it</dt> <dd> <ul> <li> <p> <code>IT_NATIONALITY</code> </p> </li> <li> <p>
      * <code>IT_PIN</code> </p> </li> <li> <p> <code>IT_REGISTRANT_ENTITY_TYPE</code>
      * </p> <p>Valid values include the following:</p> <ul> <li> <p>

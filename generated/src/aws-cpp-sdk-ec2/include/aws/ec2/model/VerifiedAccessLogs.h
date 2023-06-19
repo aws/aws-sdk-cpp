@@ -9,6 +9,7 @@
 #include <aws/ec2/model/VerifiedAccessLogS3Destination.h>
 #include <aws/ec2/model/VerifiedAccessLogCloudWatchLogsDestination.h>
 #include <aws/ec2/model/VerifiedAccessLogKinesisDataFirehoseDestination.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -26,8 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes the destinations for Verified Access logs.</p><p><h3>See Also:</h3>
-   * <a
+   * <p>Describes the options for Verified Access logs.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/VerifiedAccessLogs">AWS
    * API Reference</a></p>
    */
@@ -134,6 +134,68 @@ namespace Model
      */
     inline VerifiedAccessLogs& WithKinesisDataFirehose(VerifiedAccessLogKinesisDataFirehoseDestination&& value) { SetKinesisDataFirehose(std::move(value)); return *this;}
 
+
+    /**
+     * <p> Describes current setting for the logging version. </p>
+     */
+    inline const Aws::String& GetLogVersion() const{ return m_logVersion; }
+
+    /**
+     * <p> Describes current setting for the logging version. </p>
+     */
+    inline bool LogVersionHasBeenSet() const { return m_logVersionHasBeenSet; }
+
+    /**
+     * <p> Describes current setting for the logging version. </p>
+     */
+    inline void SetLogVersion(const Aws::String& value) { m_logVersionHasBeenSet = true; m_logVersion = value; }
+
+    /**
+     * <p> Describes current setting for the logging version. </p>
+     */
+    inline void SetLogVersion(Aws::String&& value) { m_logVersionHasBeenSet = true; m_logVersion = std::move(value); }
+
+    /**
+     * <p> Describes current setting for the logging version. </p>
+     */
+    inline void SetLogVersion(const char* value) { m_logVersionHasBeenSet = true; m_logVersion.assign(value); }
+
+    /**
+     * <p> Describes current setting for the logging version. </p>
+     */
+    inline VerifiedAccessLogs& WithLogVersion(const Aws::String& value) { SetLogVersion(value); return *this;}
+
+    /**
+     * <p> Describes current setting for the logging version. </p>
+     */
+    inline VerifiedAccessLogs& WithLogVersion(Aws::String&& value) { SetLogVersion(std::move(value)); return *this;}
+
+    /**
+     * <p> Describes current setting for the logging version. </p>
+     */
+    inline VerifiedAccessLogs& WithLogVersion(const char* value) { SetLogVersion(value); return *this;}
+
+
+    /**
+     * <p> Describes current setting for including trust data into the logs. </p>
+     */
+    inline bool GetIncludeTrustContext() const{ return m_includeTrustContext; }
+
+    /**
+     * <p> Describes current setting for including trust data into the logs. </p>
+     */
+    inline bool IncludeTrustContextHasBeenSet() const { return m_includeTrustContextHasBeenSet; }
+
+    /**
+     * <p> Describes current setting for including trust data into the logs. </p>
+     */
+    inline void SetIncludeTrustContext(bool value) { m_includeTrustContextHasBeenSet = true; m_includeTrustContext = value; }
+
+    /**
+     * <p> Describes current setting for including trust data into the logs. </p>
+     */
+    inline VerifiedAccessLogs& WithIncludeTrustContext(bool value) { SetIncludeTrustContext(value); return *this;}
+
   private:
 
     VerifiedAccessLogS3Destination m_s3;
@@ -144,6 +206,12 @@ namespace Model
 
     VerifiedAccessLogKinesisDataFirehoseDestination m_kinesisDataFirehose;
     bool m_kinesisDataFirehoseHasBeenSet = false;
+
+    Aws::String m_logVersion;
+    bool m_logVersionHasBeenSet = false;
+
+    bool m_includeTrustContext;
+    bool m_includeTrustContextHasBeenSet = false;
   };
 
 } // namespace Model

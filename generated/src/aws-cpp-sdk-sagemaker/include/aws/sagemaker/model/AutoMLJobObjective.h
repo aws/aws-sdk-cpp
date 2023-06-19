@@ -24,9 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Specifies a metric to minimize or maximize as the objective of a job. V2 API
-   * jobs (for example jobs created by calling <code>CreateAutoMLJobV2</code>),
-   * support <code>Accuracy</code> only.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies a metric to minimize or maximize as the objective of a
+   * job.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AutoMLJobObjective">AWS
    * API Reference</a></p>
    */
@@ -47,10 +46,11 @@ namespace Model
      * the list of all available metrics supported by Autopilot, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html#autopilot-metrics">Autopilot
      * metrics</a>.</p> <p>If you do not specify a metric explicitly, the default
-     * behavior is to automatically use:</p> <ul> <li> <p> <code>MSE</code>: for
-     * regression.</p> </li> <li> <p> <code>F1</code>: for binary classification</p>
-     * </li> <li> <p> <code>Accuracy</code>: for multiclass classification.</p> </li>
-     * </ul>
+     * behavior is to automatically use:</p> <ul> <li> <p>For tabular problem
+     * types:</p> <ul> <li> <p>Regression: <code>MSE</code>.</p> </li> <li> <p>Binary
+     * classification: <code>F1</code>.</p> </li> <li> <p>Multiclass classification:
+     * <code>Accuracy</code>.</p> </li> </ul> </li> <li> <p>For image or text
+     * classification problem types: <code>Accuracy</code> </p> </li> </ul>
      */
     inline const AutoMLMetricEnum& GetMetricName() const{ return m_metricName; }
 
@@ -62,10 +62,11 @@ namespace Model
      * the list of all available metrics supported by Autopilot, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html#autopilot-metrics">Autopilot
      * metrics</a>.</p> <p>If you do not specify a metric explicitly, the default
-     * behavior is to automatically use:</p> <ul> <li> <p> <code>MSE</code>: for
-     * regression.</p> </li> <li> <p> <code>F1</code>: for binary classification</p>
-     * </li> <li> <p> <code>Accuracy</code>: for multiclass classification.</p> </li>
-     * </ul>
+     * behavior is to automatically use:</p> <ul> <li> <p>For tabular problem
+     * types:</p> <ul> <li> <p>Regression: <code>MSE</code>.</p> </li> <li> <p>Binary
+     * classification: <code>F1</code>.</p> </li> <li> <p>Multiclass classification:
+     * <code>Accuracy</code>.</p> </li> </ul> </li> <li> <p>For image or text
+     * classification problem types: <code>Accuracy</code> </p> </li> </ul>
      */
     inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
 
@@ -77,10 +78,11 @@ namespace Model
      * the list of all available metrics supported by Autopilot, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html#autopilot-metrics">Autopilot
      * metrics</a>.</p> <p>If you do not specify a metric explicitly, the default
-     * behavior is to automatically use:</p> <ul> <li> <p> <code>MSE</code>: for
-     * regression.</p> </li> <li> <p> <code>F1</code>: for binary classification</p>
-     * </li> <li> <p> <code>Accuracy</code>: for multiclass classification.</p> </li>
-     * </ul>
+     * behavior is to automatically use:</p> <ul> <li> <p>For tabular problem
+     * types:</p> <ul> <li> <p>Regression: <code>MSE</code>.</p> </li> <li> <p>Binary
+     * classification: <code>F1</code>.</p> </li> <li> <p>Multiclass classification:
+     * <code>Accuracy</code>.</p> </li> </ul> </li> <li> <p>For image or text
+     * classification problem types: <code>Accuracy</code> </p> </li> </ul>
      */
     inline void SetMetricName(const AutoMLMetricEnum& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
 
@@ -92,10 +94,11 @@ namespace Model
      * the list of all available metrics supported by Autopilot, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html#autopilot-metrics">Autopilot
      * metrics</a>.</p> <p>If you do not specify a metric explicitly, the default
-     * behavior is to automatically use:</p> <ul> <li> <p> <code>MSE</code>: for
-     * regression.</p> </li> <li> <p> <code>F1</code>: for binary classification</p>
-     * </li> <li> <p> <code>Accuracy</code>: for multiclass classification.</p> </li>
-     * </ul>
+     * behavior is to automatically use:</p> <ul> <li> <p>For tabular problem
+     * types:</p> <ul> <li> <p>Regression: <code>MSE</code>.</p> </li> <li> <p>Binary
+     * classification: <code>F1</code>.</p> </li> <li> <p>Multiclass classification:
+     * <code>Accuracy</code>.</p> </li> </ul> </li> <li> <p>For image or text
+     * classification problem types: <code>Accuracy</code> </p> </li> </ul>
      */
     inline void SetMetricName(AutoMLMetricEnum&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
 
@@ -107,10 +110,11 @@ namespace Model
      * the list of all available metrics supported by Autopilot, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html#autopilot-metrics">Autopilot
      * metrics</a>.</p> <p>If you do not specify a metric explicitly, the default
-     * behavior is to automatically use:</p> <ul> <li> <p> <code>MSE</code>: for
-     * regression.</p> </li> <li> <p> <code>F1</code>: for binary classification</p>
-     * </li> <li> <p> <code>Accuracy</code>: for multiclass classification.</p> </li>
-     * </ul>
+     * behavior is to automatically use:</p> <ul> <li> <p>For tabular problem
+     * types:</p> <ul> <li> <p>Regression: <code>MSE</code>.</p> </li> <li> <p>Binary
+     * classification: <code>F1</code>.</p> </li> <li> <p>Multiclass classification:
+     * <code>Accuracy</code>.</p> </li> </ul> </li> <li> <p>For image or text
+     * classification problem types: <code>Accuracy</code> </p> </li> </ul>
      */
     inline AutoMLJobObjective& WithMetricName(const AutoMLMetricEnum& value) { SetMetricName(value); return *this;}
 
@@ -122,10 +126,11 @@ namespace Model
      * the list of all available metrics supported by Autopilot, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html#autopilot-metrics">Autopilot
      * metrics</a>.</p> <p>If you do not specify a metric explicitly, the default
-     * behavior is to automatically use:</p> <ul> <li> <p> <code>MSE</code>: for
-     * regression.</p> </li> <li> <p> <code>F1</code>: for binary classification</p>
-     * </li> <li> <p> <code>Accuracy</code>: for multiclass classification.</p> </li>
-     * </ul>
+     * behavior is to automatically use:</p> <ul> <li> <p>For tabular problem
+     * types:</p> <ul> <li> <p>Regression: <code>MSE</code>.</p> </li> <li> <p>Binary
+     * classification: <code>F1</code>.</p> </li> <li> <p>Multiclass classification:
+     * <code>Accuracy</code>.</p> </li> </ul> </li> <li> <p>For image or text
+     * classification problem types: <code>Accuracy</code> </p> </li> </ul>
      */
     inline AutoMLJobObjective& WithMetricName(AutoMLMetricEnum&& value) { SetMetricName(std::move(value)); return *this;}
 

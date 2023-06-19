@@ -20,14 +20,16 @@ using namespace Aws;
 DescribeChangeSetResult::DescribeChangeSetResult() : 
     m_executionStatus(ExecutionStatus::NOT_SET),
     m_status(ChangeSetStatus::NOT_SET),
-    m_includeNestedStacks(false)
+    m_includeNestedStacks(false),
+    m_onStackFailure(OnStackFailure::NOT_SET)
 {
 }
 
 DescribeChangeSetResult::DescribeChangeSetResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_executionStatus(ExecutionStatus::NOT_SET),
     m_status(ChangeSetStatus::NOT_SET),
-    m_includeNestedStacks(false)
+    m_includeNestedStacks(false),
+    m_onStackFailure(OnStackFailure::NOT_SET)
 {
   *this = result;
 }
@@ -168,6 +170,11 @@ DescribeChangeSetResult& DescribeChangeSetResult::operator =(const Aws::AmazonWe
     if(!rootChangeSetIdNode.IsNull())
     {
       m_rootChangeSetId = Aws::Utils::Xml::DecodeEscapedXmlText(rootChangeSetIdNode.GetText());
+    }
+    XmlNode onStackFailureNode = resultNode.FirstChild("OnStackFailure");
+    if(!onStackFailureNode.IsNull())
+    {
+      m_onStackFailure = OnStackFailureMapper::GetOnStackFailureForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(onStackFailureNode.GetText()).c_str()).c_str());
     }
   }
 
