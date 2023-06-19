@@ -932,7 +932,6 @@ namespace Aws
                 {
                     return CryptoBuffer();
                 }
-                size_t bytesWritten = 0;
                 Aws::Vector<ByteBuffer*> finalBufferSet(0);
 
                 CryptoBuffer bufferToEncrypt;
@@ -984,7 +983,6 @@ namespace Aws
                         *newBuffer = slicedBuffers[i] ^ encryptedText;
                         finalBufferSet[i] = newBuffer;
                         m_workingIv = IncrementCTRCounter(m_workingIv, 1);
-                        bytesWritten += static_cast<size_t>(lengthWritten);
                     }
                     else
                     {

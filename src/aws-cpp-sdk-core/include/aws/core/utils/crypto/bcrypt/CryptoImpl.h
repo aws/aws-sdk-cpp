@@ -209,7 +209,7 @@ namespace Aws
                 /**
                 * Initialize with key and initializationVector, set tag for decryption of authenticated modes  (move the buffers)
                 */
-                BCryptSymmetricCipher(CryptoBuffer&& key, CryptoBuffer&& initializationVector, CryptoBuffer&& tag = std::move(CryptoBuffer(0)));
+                BCryptSymmetricCipher(CryptoBuffer&& key, CryptoBuffer&& initializationVector, CryptoBuffer&& tag = CryptoBuffer(0));
 
                 BCryptSymmetricCipher(const BCryptSymmetricCipher&) = delete;
                 BCryptSymmetricCipher& operator=(const BCryptSymmetricCipher&) = delete;
