@@ -303,7 +303,15 @@ TEST_F(QueueOperationTest, TestSendReceiveDelete)
     AWS_ASSERT_SUCCESS(deleteMessageOutcome);
 
     receiveMessageOutcome = sqsClient->ReceiveMessage(receiveMessageRequest);
-    EXPECT_EQ(0uL, receiveMessageOutcome.GetResult().GetMessages().size());
+    EXPECT_EQ(0uL, receiveMessageOutcome.GetResult().GetMessages().size()) << "Found messages in queue: \n"
+                                                                           << [&]() -> Aws::String {
+                                                                               const auto &messages = receiveMessageOutcome.GetResult().GetMessages();
+                                                                               Aws::StringStream ss;
+                                                                               for (const auto &message: messages) {
+                                                                                   ss << message.GetBody() << "\n";
+                                                                               }
+                                                                               return ss.str();
+                                                                           }();
 }
 
 
