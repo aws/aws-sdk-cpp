@@ -447,8 +447,8 @@ namespace Model
 
 
     /**
-     * <p>The user name associated with the admin user for the cluster that is being
-     * created.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 - 128 alphanumeric
+     * <p>The user name associated with the admin user account for the cluster that is
+     * being created.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 - 128 alphanumeric
      * characters or hyphens. The user name can't be <code>PUBLIC</code>.</p> </li>
      * <li> <p>Must contain only lowercase letters, numbers, underscore, plus sign,
      * period (dot), at symbol (@), or hyphen.</p> </li> <li> <p>The first character
@@ -461,8 +461,8 @@ namespace Model
     inline const Aws::String& GetMasterUsername() const{ return m_masterUsername; }
 
     /**
-     * <p>The user name associated with the admin user for the cluster that is being
-     * created.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 - 128 alphanumeric
+     * <p>The user name associated with the admin user account for the cluster that is
+     * being created.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 - 128 alphanumeric
      * characters or hyphens. The user name can't be <code>PUBLIC</code>.</p> </li>
      * <li> <p>Must contain only lowercase letters, numbers, underscore, plus sign,
      * period (dot), at symbol (@), or hyphen.</p> </li> <li> <p>The first character
@@ -475,8 +475,8 @@ namespace Model
     inline bool MasterUsernameHasBeenSet() const { return m_masterUsernameHasBeenSet; }
 
     /**
-     * <p>The user name associated with the admin user for the cluster that is being
-     * created.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 - 128 alphanumeric
+     * <p>The user name associated with the admin user account for the cluster that is
+     * being created.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 - 128 alphanumeric
      * characters or hyphens. The user name can't be <code>PUBLIC</code>.</p> </li>
      * <li> <p>Must contain only lowercase letters, numbers, underscore, plus sign,
      * period (dot), at symbol (@), or hyphen.</p> </li> <li> <p>The first character
@@ -489,8 +489,8 @@ namespace Model
     inline void SetMasterUsername(const Aws::String& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = value; }
 
     /**
-     * <p>The user name associated with the admin user for the cluster that is being
-     * created.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 - 128 alphanumeric
+     * <p>The user name associated with the admin user account for the cluster that is
+     * being created.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 - 128 alphanumeric
      * characters or hyphens. The user name can't be <code>PUBLIC</code>.</p> </li>
      * <li> <p>Must contain only lowercase letters, numbers, underscore, plus sign,
      * period (dot), at symbol (@), or hyphen.</p> </li> <li> <p>The first character
@@ -503,8 +503,8 @@ namespace Model
     inline void SetMasterUsername(Aws::String&& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = std::move(value); }
 
     /**
-     * <p>The user name associated with the admin user for the cluster that is being
-     * created.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 - 128 alphanumeric
+     * <p>The user name associated with the admin user account for the cluster that is
+     * being created.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 - 128 alphanumeric
      * characters or hyphens. The user name can't be <code>PUBLIC</code>.</p> </li>
      * <li> <p>Must contain only lowercase letters, numbers, underscore, plus sign,
      * period (dot), at symbol (@), or hyphen.</p> </li> <li> <p>The first character
@@ -517,8 +517,8 @@ namespace Model
     inline void SetMasterUsername(const char* value) { m_masterUsernameHasBeenSet = true; m_masterUsername.assign(value); }
 
     /**
-     * <p>The user name associated with the admin user for the cluster that is being
-     * created.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 - 128 alphanumeric
+     * <p>The user name associated with the admin user account for the cluster that is
+     * being created.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 - 128 alphanumeric
      * characters or hyphens. The user name can't be <code>PUBLIC</code>.</p> </li>
      * <li> <p>Must contain only lowercase letters, numbers, underscore, plus sign,
      * period (dot), at symbol (@), or hyphen.</p> </li> <li> <p>The first character
@@ -531,8 +531,8 @@ namespace Model
     inline CreateClusterRequest& WithMasterUsername(const Aws::String& value) { SetMasterUsername(value); return *this;}
 
     /**
-     * <p>The user name associated with the admin user for the cluster that is being
-     * created.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 - 128 alphanumeric
+     * <p>The user name associated with the admin user account for the cluster that is
+     * being created.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 - 128 alphanumeric
      * characters or hyphens. The user name can't be <code>PUBLIC</code>.</p> </li>
      * <li> <p>Must contain only lowercase letters, numbers, underscore, plus sign,
      * period (dot), at symbol (@), or hyphen.</p> </li> <li> <p>The first character
@@ -545,8 +545,8 @@ namespace Model
     inline CreateClusterRequest& WithMasterUsername(Aws::String&& value) { SetMasterUsername(std::move(value)); return *this;}
 
     /**
-     * <p>The user name associated with the admin user for the cluster that is being
-     * created.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 - 128 alphanumeric
+     * <p>The user name associated with the admin user account for the cluster that is
+     * being created.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 - 128 alphanumeric
      * characters or hyphens. The user name can't be <code>PUBLIC</code>.</p> </li>
      * <li> <p>Must contain only lowercase letters, numbers, underscore, plus sign,
      * period (dot), at symbol (@), or hyphen.</p> </li> <li> <p>The first character
@@ -560,8 +560,8 @@ namespace Model
 
 
     /**
-     * <p>The password associated with the admin user for the cluster that is being
-     * created.</p> <p>Constraints:</p> <ul> <li> <p>Must be between 8 and 64
+     * <p>The password associated with the admin user account for the cluster that is
+     * being created.</p> <p>Constraints:</p> <ul> <li> <p>Must be between 8 and 64
      * characters in length.</p> </li> <li> <p>Must contain at least one uppercase
      * letter.</p> </li> <li> <p>Must contain at least one lowercase letter.</p> </li>
      * <li> <p>Must contain one number.</p> </li> <li> <p>Can be any printable ASCII
@@ -572,8 +572,8 @@ namespace Model
     inline const Aws::String& GetMasterUserPassword() const{ return m_masterUserPassword; }
 
     /**
-     * <p>The password associated with the admin user for the cluster that is being
-     * created.</p> <p>Constraints:</p> <ul> <li> <p>Must be between 8 and 64
+     * <p>The password associated with the admin user account for the cluster that is
+     * being created.</p> <p>Constraints:</p> <ul> <li> <p>Must be between 8 and 64
      * characters in length.</p> </li> <li> <p>Must contain at least one uppercase
      * letter.</p> </li> <li> <p>Must contain at least one lowercase letter.</p> </li>
      * <li> <p>Must contain one number.</p> </li> <li> <p>Can be any printable ASCII
@@ -584,8 +584,8 @@ namespace Model
     inline bool MasterUserPasswordHasBeenSet() const { return m_masterUserPasswordHasBeenSet; }
 
     /**
-     * <p>The password associated with the admin user for the cluster that is being
-     * created.</p> <p>Constraints:</p> <ul> <li> <p>Must be between 8 and 64
+     * <p>The password associated with the admin user account for the cluster that is
+     * being created.</p> <p>Constraints:</p> <ul> <li> <p>Must be between 8 and 64
      * characters in length.</p> </li> <li> <p>Must contain at least one uppercase
      * letter.</p> </li> <li> <p>Must contain at least one lowercase letter.</p> </li>
      * <li> <p>Must contain one number.</p> </li> <li> <p>Can be any printable ASCII
@@ -596,8 +596,8 @@ namespace Model
     inline void SetMasterUserPassword(const Aws::String& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = value; }
 
     /**
-     * <p>The password associated with the admin user for the cluster that is being
-     * created.</p> <p>Constraints:</p> <ul> <li> <p>Must be between 8 and 64
+     * <p>The password associated with the admin user account for the cluster that is
+     * being created.</p> <p>Constraints:</p> <ul> <li> <p>Must be between 8 and 64
      * characters in length.</p> </li> <li> <p>Must contain at least one uppercase
      * letter.</p> </li> <li> <p>Must contain at least one lowercase letter.</p> </li>
      * <li> <p>Must contain one number.</p> </li> <li> <p>Can be any printable ASCII
@@ -608,8 +608,8 @@ namespace Model
     inline void SetMasterUserPassword(Aws::String&& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = std::move(value); }
 
     /**
-     * <p>The password associated with the admin user for the cluster that is being
-     * created.</p> <p>Constraints:</p> <ul> <li> <p>Must be between 8 and 64
+     * <p>The password associated with the admin user account for the cluster that is
+     * being created.</p> <p>Constraints:</p> <ul> <li> <p>Must be between 8 and 64
      * characters in length.</p> </li> <li> <p>Must contain at least one uppercase
      * letter.</p> </li> <li> <p>Must contain at least one lowercase letter.</p> </li>
      * <li> <p>Must contain one number.</p> </li> <li> <p>Can be any printable ASCII
@@ -620,8 +620,8 @@ namespace Model
     inline void SetMasterUserPassword(const char* value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword.assign(value); }
 
     /**
-     * <p>The password associated with the admin user for the cluster that is being
-     * created.</p> <p>Constraints:</p> <ul> <li> <p>Must be between 8 and 64
+     * <p>The password associated with the admin user account for the cluster that is
+     * being created.</p> <p>Constraints:</p> <ul> <li> <p>Must be between 8 and 64
      * characters in length.</p> </li> <li> <p>Must contain at least one uppercase
      * letter.</p> </li> <li> <p>Must contain at least one lowercase letter.</p> </li>
      * <li> <p>Must contain one number.</p> </li> <li> <p>Can be any printable ASCII
@@ -632,8 +632,8 @@ namespace Model
     inline CreateClusterRequest& WithMasterUserPassword(const Aws::String& value) { SetMasterUserPassword(value); return *this;}
 
     /**
-     * <p>The password associated with the admin user for the cluster that is being
-     * created.</p> <p>Constraints:</p> <ul> <li> <p>Must be between 8 and 64
+     * <p>The password associated with the admin user account for the cluster that is
+     * being created.</p> <p>Constraints:</p> <ul> <li> <p>Must be between 8 and 64
      * characters in length.</p> </li> <li> <p>Must contain at least one uppercase
      * letter.</p> </li> <li> <p>Must contain at least one lowercase letter.</p> </li>
      * <li> <p>Must contain one number.</p> </li> <li> <p>Can be any printable ASCII
@@ -644,8 +644,8 @@ namespace Model
     inline CreateClusterRequest& WithMasterUserPassword(Aws::String&& value) { SetMasterUserPassword(std::move(value)); return *this;}
 
     /**
-     * <p>The password associated with the admin user for the cluster that is being
-     * created.</p> <p>Constraints:</p> <ul> <li> <p>Must be between 8 and 64
+     * <p>The password associated with the admin user account for the cluster that is
+     * being created.</p> <p>Constraints:</p> <ul> <li> <p>Must be between 8 and 64
      * characters in length.</p> </li> <li> <p>Must contain at least one uppercase
      * letter.</p> </li> <li> <p>Must contain at least one lowercase letter.</p> </li>
      * <li> <p>Must contain one number.</p> </li> <li> <p>Can be any printable ASCII

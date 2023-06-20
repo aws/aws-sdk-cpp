@@ -312,7 +312,28 @@ namespace Model
     AWS_Redshift_ScheduledAction,
     AWS_Route53Resolver_FirewallRuleGroupAssociation,
     AWS_SageMaker_AppImageConfig,
-    AWS_SageMaker_Image
+    AWS_SageMaker_Image,
+    AWS_ECS_TaskSet,
+    AWS_Cassandra_Keyspace,
+    AWS_Signer_SigningProfile,
+    AWS_Amplify_App,
+    AWS_AppMesh_VirtualNode,
+    AWS_AppMesh_VirtualService,
+    AWS_AppRunner_VpcConnector,
+    AWS_AppStream_Application,
+    AWS_CodeArtifact_Repository,
+    AWS_EC2_PrefixList,
+    AWS_EC2_SpotFleet,
+    AWS_Evidently_Project,
+    AWS_Forecast_Dataset,
+    AWS_IAM_SAMLProvider,
+    AWS_IAM_ServerCertificate,
+    AWS_Pinpoint_Campaign,
+    AWS_Pinpoint_InAppTemplate,
+    AWS_SageMaker_Domain,
+    AWS_Transfer_Agreement,
+    AWS_Transfer_Connector,
+    AWS_KinesisFirehose_DeliveryStream
   };
 
 namespace ResourceTypeMapper

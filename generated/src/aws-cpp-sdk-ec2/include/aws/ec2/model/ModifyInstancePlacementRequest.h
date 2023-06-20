@@ -225,56 +225,56 @@ namespace Model
 
 
     /**
-     * <p>The tenancy for the instance.</p>  <p>For T3 instances, you can't
-     * change the tenancy from <code>dedicated</code> to <code>host</code>, or from
-     * <code>host</code> to <code>dedicated</code>. Attempting to make one of these
-     * unsupported tenancy changes results in the <code>InvalidTenancy</code> error
-     * code.</p> 
+     * <p>The tenancy for the instance.</p>  <p>For T3 instances, you must launch
+     * the instance on a Dedicated Host to use a tenancy of <code>host</code>. You
+     * can't change the tenancy from <code>host</code> to <code>dedicated</code> or
+     * <code>default</code>. Attempting to make one of these unsupported tenancy
+     * changes results in an <code>InvalidRequest</code> error code.</p> 
      */
     inline const HostTenancy& GetTenancy() const{ return m_tenancy; }
 
     /**
-     * <p>The tenancy for the instance.</p>  <p>For T3 instances, you can't
-     * change the tenancy from <code>dedicated</code> to <code>host</code>, or from
-     * <code>host</code> to <code>dedicated</code>. Attempting to make one of these
-     * unsupported tenancy changes results in the <code>InvalidTenancy</code> error
-     * code.</p> 
+     * <p>The tenancy for the instance.</p>  <p>For T3 instances, you must launch
+     * the instance on a Dedicated Host to use a tenancy of <code>host</code>. You
+     * can't change the tenancy from <code>host</code> to <code>dedicated</code> or
+     * <code>default</code>. Attempting to make one of these unsupported tenancy
+     * changes results in an <code>InvalidRequest</code> error code.</p> 
      */
     inline bool TenancyHasBeenSet() const { return m_tenancyHasBeenSet; }
 
     /**
-     * <p>The tenancy for the instance.</p>  <p>For T3 instances, you can't
-     * change the tenancy from <code>dedicated</code> to <code>host</code>, or from
-     * <code>host</code> to <code>dedicated</code>. Attempting to make one of these
-     * unsupported tenancy changes results in the <code>InvalidTenancy</code> error
-     * code.</p> 
+     * <p>The tenancy for the instance.</p>  <p>For T3 instances, you must launch
+     * the instance on a Dedicated Host to use a tenancy of <code>host</code>. You
+     * can't change the tenancy from <code>host</code> to <code>dedicated</code> or
+     * <code>default</code>. Attempting to make one of these unsupported tenancy
+     * changes results in an <code>InvalidRequest</code> error code.</p> 
      */
     inline void SetTenancy(const HostTenancy& value) { m_tenancyHasBeenSet = true; m_tenancy = value; }
 
     /**
-     * <p>The tenancy for the instance.</p>  <p>For T3 instances, you can't
-     * change the tenancy from <code>dedicated</code> to <code>host</code>, or from
-     * <code>host</code> to <code>dedicated</code>. Attempting to make one of these
-     * unsupported tenancy changes results in the <code>InvalidTenancy</code> error
-     * code.</p> 
+     * <p>The tenancy for the instance.</p>  <p>For T3 instances, you must launch
+     * the instance on a Dedicated Host to use a tenancy of <code>host</code>. You
+     * can't change the tenancy from <code>host</code> to <code>dedicated</code> or
+     * <code>default</code>. Attempting to make one of these unsupported tenancy
+     * changes results in an <code>InvalidRequest</code> error code.</p> 
      */
     inline void SetTenancy(HostTenancy&& value) { m_tenancyHasBeenSet = true; m_tenancy = std::move(value); }
 
     /**
-     * <p>The tenancy for the instance.</p>  <p>For T3 instances, you can't
-     * change the tenancy from <code>dedicated</code> to <code>host</code>, or from
-     * <code>host</code> to <code>dedicated</code>. Attempting to make one of these
-     * unsupported tenancy changes results in the <code>InvalidTenancy</code> error
-     * code.</p> 
+     * <p>The tenancy for the instance.</p>  <p>For T3 instances, you must launch
+     * the instance on a Dedicated Host to use a tenancy of <code>host</code>. You
+     * can't change the tenancy from <code>host</code> to <code>dedicated</code> or
+     * <code>default</code>. Attempting to make one of these unsupported tenancy
+     * changes results in an <code>InvalidRequest</code> error code.</p> 
      */
     inline ModifyInstancePlacementRequest& WithTenancy(const HostTenancy& value) { SetTenancy(value); return *this;}
 
     /**
-     * <p>The tenancy for the instance.</p>  <p>For T3 instances, you can't
-     * change the tenancy from <code>dedicated</code> to <code>host</code>, or from
-     * <code>host</code> to <code>dedicated</code>. Attempting to make one of these
-     * unsupported tenancy changes results in the <code>InvalidTenancy</code> error
-     * code.</p> 
+     * <p>The tenancy for the instance.</p>  <p>For T3 instances, you must launch
+     * the instance on a Dedicated Host to use a tenancy of <code>host</code>. You
+     * can't change the tenancy from <code>host</code> to <code>dedicated</code> or
+     * <code>default</code>. Attempting to make one of these unsupported tenancy
+     * changes results in an <code>InvalidRequest</code> error code.</p> 
      */
     inline ModifyInstancePlacementRequest& WithTenancy(HostTenancy&& value) { SetTenancy(std::move(value)); return *this;}
 
@@ -305,42 +305,50 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the host resource group in which to place the instance.</p>
+     * <p>The ARN of the host resource group in which to place the instance. The
+     * instance must have a tenancy of <code>host</code> to specify this parameter.</p>
      */
     inline const Aws::String& GetHostResourceGroupArn() const{ return m_hostResourceGroupArn; }
 
     /**
-     * <p>The ARN of the host resource group in which to place the instance.</p>
+     * <p>The ARN of the host resource group in which to place the instance. The
+     * instance must have a tenancy of <code>host</code> to specify this parameter.</p>
      */
     inline bool HostResourceGroupArnHasBeenSet() const { return m_hostResourceGroupArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the host resource group in which to place the instance.</p>
+     * <p>The ARN of the host resource group in which to place the instance. The
+     * instance must have a tenancy of <code>host</code> to specify this parameter.</p>
      */
     inline void SetHostResourceGroupArn(const Aws::String& value) { m_hostResourceGroupArnHasBeenSet = true; m_hostResourceGroupArn = value; }
 
     /**
-     * <p>The ARN of the host resource group in which to place the instance.</p>
+     * <p>The ARN of the host resource group in which to place the instance. The
+     * instance must have a tenancy of <code>host</code> to specify this parameter.</p>
      */
     inline void SetHostResourceGroupArn(Aws::String&& value) { m_hostResourceGroupArnHasBeenSet = true; m_hostResourceGroupArn = std::move(value); }
 
     /**
-     * <p>The ARN of the host resource group in which to place the instance.</p>
+     * <p>The ARN of the host resource group in which to place the instance. The
+     * instance must have a tenancy of <code>host</code> to specify this parameter.</p>
      */
     inline void SetHostResourceGroupArn(const char* value) { m_hostResourceGroupArnHasBeenSet = true; m_hostResourceGroupArn.assign(value); }
 
     /**
-     * <p>The ARN of the host resource group in which to place the instance.</p>
+     * <p>The ARN of the host resource group in which to place the instance. The
+     * instance must have a tenancy of <code>host</code> to specify this parameter.</p>
      */
     inline ModifyInstancePlacementRequest& WithHostResourceGroupArn(const Aws::String& value) { SetHostResourceGroupArn(value); return *this;}
 
     /**
-     * <p>The ARN of the host resource group in which to place the instance.</p>
+     * <p>The ARN of the host resource group in which to place the instance. The
+     * instance must have a tenancy of <code>host</code> to specify this parameter.</p>
      */
     inline ModifyInstancePlacementRequest& WithHostResourceGroupArn(Aws::String&& value) { SetHostResourceGroupArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the host resource group in which to place the instance.</p>
+     * <p>The ARN of the host resource group in which to place the instance. The
+     * instance must have a tenancy of <code>host</code> to specify this parameter.</p>
      */
     inline ModifyInstancePlacementRequest& WithHostResourceGroupArn(const char* value) { SetHostResourceGroupArn(value); return *this;}
 

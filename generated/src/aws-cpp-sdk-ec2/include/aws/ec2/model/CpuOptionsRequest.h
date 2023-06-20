@@ -92,37 +92,49 @@ namespace Model
 
     /**
      * <p>Indicates whether to enable the instance for AMD SEV-SNP. AMD SEV-SNP is
-     * supported with M6a, R6a, and C6a instance types only.</p>
+     * supported with M6a, R6a, and C6a instance types only. For more information, see
+     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD
+     * SEV-SNP</a>.</p>
      */
     inline const AmdSevSnpSpecification& GetAmdSevSnp() const{ return m_amdSevSnp; }
 
     /**
      * <p>Indicates whether to enable the instance for AMD SEV-SNP. AMD SEV-SNP is
-     * supported with M6a, R6a, and C6a instance types only.</p>
+     * supported with M6a, R6a, and C6a instance types only. For more information, see
+     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD
+     * SEV-SNP</a>.</p>
      */
     inline bool AmdSevSnpHasBeenSet() const { return m_amdSevSnpHasBeenSet; }
 
     /**
      * <p>Indicates whether to enable the instance for AMD SEV-SNP. AMD SEV-SNP is
-     * supported with M6a, R6a, and C6a instance types only.</p>
+     * supported with M6a, R6a, and C6a instance types only. For more information, see
+     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD
+     * SEV-SNP</a>.</p>
      */
     inline void SetAmdSevSnp(const AmdSevSnpSpecification& value) { m_amdSevSnpHasBeenSet = true; m_amdSevSnp = value; }
 
     /**
      * <p>Indicates whether to enable the instance for AMD SEV-SNP. AMD SEV-SNP is
-     * supported with M6a, R6a, and C6a instance types only.</p>
+     * supported with M6a, R6a, and C6a instance types only. For more information, see
+     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD
+     * SEV-SNP</a>.</p>
      */
     inline void SetAmdSevSnp(AmdSevSnpSpecification&& value) { m_amdSevSnpHasBeenSet = true; m_amdSevSnp = std::move(value); }
 
     /**
      * <p>Indicates whether to enable the instance for AMD SEV-SNP. AMD SEV-SNP is
-     * supported with M6a, R6a, and C6a instance types only.</p>
+     * supported with M6a, R6a, and C6a instance types only. For more information, see
+     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD
+     * SEV-SNP</a>.</p>
      */
     inline CpuOptionsRequest& WithAmdSevSnp(const AmdSevSnpSpecification& value) { SetAmdSevSnp(value); return *this;}
 
     /**
      * <p>Indicates whether to enable the instance for AMD SEV-SNP. AMD SEV-SNP is
-     * supported with M6a, R6a, and C6a instance types only.</p>
+     * supported with M6a, R6a, and C6a instance types only. For more information, see
+     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD
+     * SEV-SNP</a>.</p>
      */
     inline CpuOptionsRequest& WithAmdSevSnp(AmdSevSnpSpecification&& value) { SetAmdSevSnp(std::move(value)); return *this;}
 

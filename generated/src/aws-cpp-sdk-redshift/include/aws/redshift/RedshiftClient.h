@@ -608,6 +608,33 @@ namespace Redshift
         }
 
         /**
+         * <p>Used to create a custom domain name for a cluster. Properties include the
+         * custom domain name, the cluster the custom domain is associated with, and the
+         * certificate Amazon Resource Name (ARN).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateCustomDomainAssociation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateCustomDomainAssociationOutcome CreateCustomDomainAssociation(const Model::CreateCustomDomainAssociationRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateCustomDomainAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateCustomDomainAssociationRequestT = Model::CreateCustomDomainAssociationRequest>
+        Model::CreateCustomDomainAssociationOutcomeCallable CreateCustomDomainAssociationCallable(const CreateCustomDomainAssociationRequestT& request) const
+        {
+            return SubmitCallable(&RedshiftClient::CreateCustomDomainAssociation, request);
+        }
+
+        /**
+         * An Async wrapper for CreateCustomDomainAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateCustomDomainAssociationRequestT = Model::CreateCustomDomainAssociationRequest>
+        void CreateCustomDomainAssociationAsync(const CreateCustomDomainAssociationRequestT& request, const CreateCustomDomainAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RedshiftClient::CreateCustomDomainAssociation, request, handler, context);
+        }
+
+        /**
          * <p>Creates a Redshift-managed VPC endpoint.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateEndpointAccess">AWS
          * API Reference</a></p>
@@ -1088,6 +1115,32 @@ namespace Redshift
         void DeleteClusterSubnetGroupAsync(const DeleteClusterSubnetGroupRequestT& request, const DeleteClusterSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&RedshiftClient::DeleteClusterSubnetGroup, request, handler, context);
+        }
+
+        /**
+         * <p>Contains information about deleting a custom domain association for a
+         * cluster.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteCustomDomainAssociation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteCustomDomainAssociationOutcome DeleteCustomDomainAssociation(const Model::DeleteCustomDomainAssociationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteCustomDomainAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteCustomDomainAssociationRequestT = Model::DeleteCustomDomainAssociationRequest>
+        Model::DeleteCustomDomainAssociationOutcomeCallable DeleteCustomDomainAssociationCallable(const DeleteCustomDomainAssociationRequestT& request) const
+        {
+            return SubmitCallable(&RedshiftClient::DeleteCustomDomainAssociation, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteCustomDomainAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteCustomDomainAssociationRequestT = Model::DeleteCustomDomainAssociationRequest>
+        void DeleteCustomDomainAssociationAsync(const DeleteCustomDomainAssociationRequestT& request, const DeleteCustomDomainAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RedshiftClient::DeleteCustomDomainAssociation, request, handler, context);
         }
 
         /**
@@ -1703,6 +1756,32 @@ namespace Redshift
         void DescribeClustersAsync(const DescribeClustersRequestT& request, const DescribeClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&RedshiftClient::DescribeClusters, request, handler, context);
+        }
+
+        /**
+         * <p>Contains information for custom domain associations for a
+         * cluster.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeCustomDomainAssociations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeCustomDomainAssociationsOutcome DescribeCustomDomainAssociations(const Model::DescribeCustomDomainAssociationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeCustomDomainAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeCustomDomainAssociationsRequestT = Model::DescribeCustomDomainAssociationsRequest>
+        Model::DescribeCustomDomainAssociationsOutcomeCallable DescribeCustomDomainAssociationsCallable(const DescribeCustomDomainAssociationsRequestT& request) const
+        {
+            return SubmitCallable(&RedshiftClient::DescribeCustomDomainAssociations, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeCustomDomainAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeCustomDomainAssociationsRequestT = Model::DescribeCustomDomainAssociationsRequest>
+        void DescribeCustomDomainAssociationsAsync(const DescribeCustomDomainAssociationsRequestT& request, const DescribeCustomDomainAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RedshiftClient::DescribeCustomDomainAssociations, request, handler, context);
         }
 
         /**
@@ -3021,6 +3100,32 @@ namespace Redshift
         void ModifyClusterSubnetGroupAsync(const ModifyClusterSubnetGroupRequestT& request, const ModifyClusterSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&RedshiftClient::ModifyClusterSubnetGroup, request, handler, context);
+        }
+
+        /**
+         * <p>Contains information for changing a custom domain association.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyCustomDomainAssociation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyCustomDomainAssociationOutcome ModifyCustomDomainAssociation(const Model::ModifyCustomDomainAssociationRequest& request) const;
+
+        /**
+         * A Callable wrapper for ModifyCustomDomainAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ModifyCustomDomainAssociationRequestT = Model::ModifyCustomDomainAssociationRequest>
+        Model::ModifyCustomDomainAssociationOutcomeCallable ModifyCustomDomainAssociationCallable(const ModifyCustomDomainAssociationRequestT& request) const
+        {
+            return SubmitCallable(&RedshiftClient::ModifyCustomDomainAssociation, request);
+        }
+
+        /**
+         * An Async wrapper for ModifyCustomDomainAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ModifyCustomDomainAssociationRequestT = Model::ModifyCustomDomainAssociationRequest>
+        void ModifyCustomDomainAssociationAsync(const ModifyCustomDomainAssociationRequestT& request, const ModifyCustomDomainAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RedshiftClient::ModifyCustomDomainAssociation, request, handler, context);
         }
 
         /**

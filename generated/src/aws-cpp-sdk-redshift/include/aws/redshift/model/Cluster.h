@@ -2359,6 +2359,125 @@ namespace Model
      */
     inline Cluster& WithReservedNodeExchangeStatus(ReservedNodeExchangeStatus&& value) { SetReservedNodeExchangeStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The custom domain name associated with the cluster.</p>
+     */
+    inline const Aws::String& GetCustomDomainName() const{ return m_customDomainName; }
+
+    /**
+     * <p>The custom domain name associated with the cluster.</p>
+     */
+    inline bool CustomDomainNameHasBeenSet() const { return m_customDomainNameHasBeenSet; }
+
+    /**
+     * <p>The custom domain name associated with the cluster.</p>
+     */
+    inline void SetCustomDomainName(const Aws::String& value) { m_customDomainNameHasBeenSet = true; m_customDomainName = value; }
+
+    /**
+     * <p>The custom domain name associated with the cluster.</p>
+     */
+    inline void SetCustomDomainName(Aws::String&& value) { m_customDomainNameHasBeenSet = true; m_customDomainName = std::move(value); }
+
+    /**
+     * <p>The custom domain name associated with the cluster.</p>
+     */
+    inline void SetCustomDomainName(const char* value) { m_customDomainNameHasBeenSet = true; m_customDomainName.assign(value); }
+
+    /**
+     * <p>The custom domain name associated with the cluster.</p>
+     */
+    inline Cluster& WithCustomDomainName(const Aws::String& value) { SetCustomDomainName(value); return *this;}
+
+    /**
+     * <p>The custom domain name associated with the cluster.</p>
+     */
+    inline Cluster& WithCustomDomainName(Aws::String&& value) { SetCustomDomainName(std::move(value)); return *this;}
+
+    /**
+     * <p>The custom domain name associated with the cluster.</p>
+     */
+    inline Cluster& WithCustomDomainName(const char* value) { SetCustomDomainName(value); return *this;}
+
+
+    /**
+     * <p>The certificate Amazon Resource Name (ARN) for the custom domain name.</p>
+     */
+    inline const Aws::String& GetCustomDomainCertificateArn() const{ return m_customDomainCertificateArn; }
+
+    /**
+     * <p>The certificate Amazon Resource Name (ARN) for the custom domain name.</p>
+     */
+    inline bool CustomDomainCertificateArnHasBeenSet() const { return m_customDomainCertificateArnHasBeenSet; }
+
+    /**
+     * <p>The certificate Amazon Resource Name (ARN) for the custom domain name.</p>
+     */
+    inline void SetCustomDomainCertificateArn(const Aws::String& value) { m_customDomainCertificateArnHasBeenSet = true; m_customDomainCertificateArn = value; }
+
+    /**
+     * <p>The certificate Amazon Resource Name (ARN) for the custom domain name.</p>
+     */
+    inline void SetCustomDomainCertificateArn(Aws::String&& value) { m_customDomainCertificateArnHasBeenSet = true; m_customDomainCertificateArn = std::move(value); }
+
+    /**
+     * <p>The certificate Amazon Resource Name (ARN) for the custom domain name.</p>
+     */
+    inline void SetCustomDomainCertificateArn(const char* value) { m_customDomainCertificateArnHasBeenSet = true; m_customDomainCertificateArn.assign(value); }
+
+    /**
+     * <p>The certificate Amazon Resource Name (ARN) for the custom domain name.</p>
+     */
+    inline Cluster& WithCustomDomainCertificateArn(const Aws::String& value) { SetCustomDomainCertificateArn(value); return *this;}
+
+    /**
+     * <p>The certificate Amazon Resource Name (ARN) for the custom domain name.</p>
+     */
+    inline Cluster& WithCustomDomainCertificateArn(Aws::String&& value) { SetCustomDomainCertificateArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The certificate Amazon Resource Name (ARN) for the custom domain name.</p>
+     */
+    inline Cluster& WithCustomDomainCertificateArn(const char* value) { SetCustomDomainCertificateArn(value); return *this;}
+
+
+    /**
+     * <p>The expiration date for the certificate associated with the custom domain
+     * name.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCustomDomainCertificateExpiryDate() const{ return m_customDomainCertificateExpiryDate; }
+
+    /**
+     * <p>The expiration date for the certificate associated with the custom domain
+     * name.</p>
+     */
+    inline bool CustomDomainCertificateExpiryDateHasBeenSet() const { return m_customDomainCertificateExpiryDateHasBeenSet; }
+
+    /**
+     * <p>The expiration date for the certificate associated with the custom domain
+     * name.</p>
+     */
+    inline void SetCustomDomainCertificateExpiryDate(const Aws::Utils::DateTime& value) { m_customDomainCertificateExpiryDateHasBeenSet = true; m_customDomainCertificateExpiryDate = value; }
+
+    /**
+     * <p>The expiration date for the certificate associated with the custom domain
+     * name.</p>
+     */
+    inline void SetCustomDomainCertificateExpiryDate(Aws::Utils::DateTime&& value) { m_customDomainCertificateExpiryDateHasBeenSet = true; m_customDomainCertificateExpiryDate = std::move(value); }
+
+    /**
+     * <p>The expiration date for the certificate associated with the custom domain
+     * name.</p>
+     */
+    inline Cluster& WithCustomDomainCertificateExpiryDate(const Aws::Utils::DateTime& value) { SetCustomDomainCertificateExpiryDate(value); return *this;}
+
+    /**
+     * <p>The expiration date for the certificate associated with the custom domain
+     * name.</p>
+     */
+    inline Cluster& WithCustomDomainCertificateExpiryDate(Aws::Utils::DateTime&& value) { SetCustomDomainCertificateExpiryDate(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_clusterIdentifier;
@@ -2516,6 +2635,15 @@ namespace Model
 
     ReservedNodeExchangeStatus m_reservedNodeExchangeStatus;
     bool m_reservedNodeExchangeStatusHasBeenSet = false;
+
+    Aws::String m_customDomainName;
+    bool m_customDomainNameHasBeenSet = false;
+
+    Aws::String m_customDomainCertificateArn;
+    bool m_customDomainCertificateArnHasBeenSet = false;
+
+    Aws::Utils::DateTime m_customDomainCertificateExpiryDate;
+    bool m_customDomainCertificateExpiryDateHasBeenSet = false;
   };
 
 } // namespace Model

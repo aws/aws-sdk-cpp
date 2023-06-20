@@ -11,6 +11,7 @@
 #include <aws/lambda/model/ResourceNotFoundException.h>
 #include <aws/lambda/model/ProvisionedConcurrencyConfigNotFoundException.h>
 #include <aws/lambda/model/KMSInvalidStateException.h>
+#include <aws/lambda/model/RecursiveInvocationException.h>
 #include <aws/lambda/model/InvalidParameterValueException.h>
 #include <aws/lambda/model/PolicyLengthExceededException.h>
 #include <aws/lambda/model/KMSNotFoundException.h>
@@ -81,6 +82,12 @@ template<> AWS_LAMBDA_API KMSInvalidStateException LambdaError::GetModeledError(
 {
   assert(this->GetErrorType() == LambdaErrors::K_M_S_INVALID_STATE);
   return KMSInvalidStateException(this->GetJsonPayload().View());
+}
+
+template<> AWS_LAMBDA_API RecursiveInvocationException LambdaError::GetModeledError()
+{
+  assert(this->GetErrorType() == LambdaErrors::RECURSIVE_INVOCATION);
+  return RecursiveInvocationException(this->GetJsonPayload().View());
 }
 
 template<> AWS_LAMBDA_API InvalidParameterValueException LambdaError::GetModeledError()
@@ -282,6 +289,7 @@ static const int E_F_S_MOUNT_CONNECTIVITY_HASH = HashingUtils::HashString("EFSMo
 static const int RESOURCE_NOT_READY_HASH = HashingUtils::HashString("ResourceNotReadyException");
 static const int PROVISIONED_CONCURRENCY_CONFIG_NOT_FOUND_HASH = HashingUtils::HashString("ProvisionedConcurrencyConfigNotFoundException");
 static const int K_M_S_INVALID_STATE_HASH = HashingUtils::HashString("KMSInvalidStateException");
+static const int RECURSIVE_INVOCATION_HASH = HashingUtils::HashString("RecursiveInvocationException");
 static const int POLICY_LENGTH_EXCEEDED_HASH = HashingUtils::HashString("PolicyLengthExceededException");
 static const int K_M_S_NOT_FOUND_HASH = HashingUtils::HashString("KMSNotFoundException");
 static const int PRECONDITION_FAILED_HASH = HashingUtils::HashString("PreconditionFailedException");
@@ -334,6 +342,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == K_M_S_INVALID_STATE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::K_M_S_INVALID_STATE), false);
+  }
+  else if (hashCode == RECURSIVE_INVOCATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::RECURSIVE_INVOCATION), false);
   }
   else if (hashCode == POLICY_LENGTH_EXCEEDED_HASH)
   {

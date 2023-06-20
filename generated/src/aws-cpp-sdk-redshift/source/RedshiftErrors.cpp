@@ -39,6 +39,7 @@ static const int ENDPOINT_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("
 static const int SNAPSHOT_COPY_GRANT_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("SnapshotCopyGrantAlreadyExistsFault");
 static const int AUTHENTICATION_PROFILE_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("AuthenticationProfileQuotaExceededFault");
 static const int SUBNET_ALREADY_IN_USE_HASH = HashingUtils::HashString("SubnetAlreadyInUse");
+static const int CUSTOM_CNAME_ASSOCIATION_FAULT_HASH = HashingUtils::HashString("CustomCnameAssociationFault");
 static const int SNAPSHOT_SCHEDULE_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("SnapshotScheduleAlreadyExists");
 static const int CLUSTER_SUBNET_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("ClusterSubnetQuotaExceededFault");
 static const int CLUSTER_SECURITY_GROUP_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ClusterSecurityGroupNotFound");
@@ -104,6 +105,7 @@ static const int SNAPSHOT_SCHEDULE_UPDATE_IN_PROGRESS_FAULT_HASH = HashingUtils:
 static const int EVENT_SUBSCRIPTION_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("EventSubscriptionQuotaExceeded");
 static const int INVALID_AUTHENTICATION_PROFILE_REQUEST_FAULT_HASH = HashingUtils::HashString("InvalidAuthenticationProfileRequestFault");
 static const int SCHEDULED_ACTION_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("ScheduledActionQuotaExceeded");
+static const int CUSTOM_DOMAIN_ASSOCIATION_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("CustomDomainAssociationNotFoundFault");
 static const int SCHEDULED_ACTION_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ScheduledActionNotFound");
 static const int INVALID_CLUSTER_SUBNET_STATE_FAULT_HASH = HashingUtils::HashString("InvalidClusterSubnetStateFault");
 static const int INVALID_SUBSCRIPTION_STATE_FAULT_HASH = HashingUtils::HashString("InvalidSubscriptionStateFault");
@@ -257,6 +259,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
   else if (hashCode == SUBNET_ALREADY_IN_USE_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::SUBNET_ALREADY_IN_USE), false);
+    return true;
+  }
+  else if (hashCode == CUSTOM_CNAME_ASSOCIATION_FAULT_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::CUSTOM_CNAME_ASSOCIATION_FAULT), false);
     return true;
   }
   else if (hashCode == SNAPSHOT_SCHEDULE_ALREADY_EXISTS_FAULT_HASH)
@@ -584,6 +591,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::SCHEDULED_ACTION_QUOTA_EXCEEDED_FAULT), false);
     return true;
   }
+  else if (hashCode == CUSTOM_DOMAIN_ASSOCIATION_NOT_FOUND_FAULT_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::CUSTOM_DOMAIN_ASSOCIATION_NOT_FOUND_FAULT), false);
+    return true;
+  }
   else if (hashCode == SCHEDULED_ACTION_NOT_FOUND_FAULT_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::SCHEDULED_ACTION_NOT_FOUND_FAULT), false);
@@ -754,7 +766,12 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::UNSUPPORTED_OPERATION_FAULT), false);
     return true;
   }
-  else if (hashCode == TAG_LIMIT_EXCEEDED_FAULT_HASH)
+  return false;
+}
+
+static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error)
+{
+  if (hashCode == TAG_LIMIT_EXCEEDED_FAULT_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::TAG_LIMIT_EXCEEDED_FAULT), false);
     return true;
@@ -764,12 +781,7 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_CLUSTER_SECURITY_GROUP_STATE_FAULT), false);
     return true;
   }
-  return false;
-}
-
-static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error)
-{
-  if (hashCode == CLUSTER_SUBNET_GROUP_NOT_FOUND_FAULT_HASH)
+  else if (hashCode == CLUSTER_SUBNET_GROUP_NOT_FOUND_FAULT_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::CLUSTER_SUBNET_GROUP_NOT_FOUND_FAULT), false);
     return true;

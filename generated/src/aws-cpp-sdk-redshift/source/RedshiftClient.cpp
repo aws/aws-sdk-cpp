@@ -38,6 +38,7 @@
 #include <aws/redshift/model/CreateClusterSecurityGroupRequest.h>
 #include <aws/redshift/model/CreateClusterSnapshotRequest.h>
 #include <aws/redshift/model/CreateClusterSubnetGroupRequest.h>
+#include <aws/redshift/model/CreateCustomDomainAssociationRequest.h>
 #include <aws/redshift/model/CreateEndpointAccessRequest.h>
 #include <aws/redshift/model/CreateEventSubscriptionRequest.h>
 #include <aws/redshift/model/CreateHsmClientCertificateRequest.h>
@@ -54,6 +55,7 @@
 #include <aws/redshift/model/DeleteClusterSecurityGroupRequest.h>
 #include <aws/redshift/model/DeleteClusterSnapshotRequest.h>
 #include <aws/redshift/model/DeleteClusterSubnetGroupRequest.h>
+#include <aws/redshift/model/DeleteCustomDomainAssociationRequest.h>
 #include <aws/redshift/model/DeleteEndpointAccessRequest.h>
 #include <aws/redshift/model/DeleteEventSubscriptionRequest.h>
 #include <aws/redshift/model/DeleteHsmClientCertificateRequest.h>
@@ -75,6 +77,7 @@
 #include <aws/redshift/model/DescribeClusterTracksRequest.h>
 #include <aws/redshift/model/DescribeClusterVersionsRequest.h>
 #include <aws/redshift/model/DescribeClustersRequest.h>
+#include <aws/redshift/model/DescribeCustomDomainAssociationsRequest.h>
 #include <aws/redshift/model/DescribeDataSharesRequest.h>
 #include <aws/redshift/model/DescribeDataSharesForConsumerRequest.h>
 #include <aws/redshift/model/DescribeDataSharesForProducerRequest.h>
@@ -120,6 +123,7 @@
 #include <aws/redshift/model/ModifyClusterSnapshotRequest.h>
 #include <aws/redshift/model/ModifyClusterSnapshotScheduleRequest.h>
 #include <aws/redshift/model/ModifyClusterSubnetGroupRequest.h>
+#include <aws/redshift/model/ModifyCustomDomainAssociationRequest.h>
 #include <aws/redshift/model/ModifyEndpointAccessRequest.h>
 #include <aws/redshift/model/ModifyEventSubscriptionRequest.h>
 #include <aws/redshift/model/ModifyScheduledActionRequest.h>
@@ -445,6 +449,15 @@ CreateClusterSubnetGroupOutcome RedshiftClient::CreateClusterSubnetGroup(const C
   return CreateClusterSubnetGroupOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
 }
 
+CreateCustomDomainAssociationOutcome RedshiftClient::CreateCustomDomainAssociation(const CreateCustomDomainAssociationRequest& request) const
+{
+  AWS_OPERATION_GUARD(CreateCustomDomainAssociation);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateCustomDomainAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateCustomDomainAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateCustomDomainAssociationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+}
+
 CreateEndpointAccessOutcome RedshiftClient::CreateEndpointAccess(const CreateEndpointAccessRequest& request) const
 {
   AWS_OPERATION_GUARD(CreateEndpointAccess);
@@ -587,6 +600,15 @@ DeleteClusterSubnetGroupOutcome RedshiftClient::DeleteClusterSubnetGroup(const D
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteClusterSubnetGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   return DeleteClusterSubnetGroupOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DeleteCustomDomainAssociationOutcome RedshiftClient::DeleteCustomDomainAssociation(const DeleteCustomDomainAssociationRequest& request) const
+{
+  AWS_OPERATION_GUARD(DeleteCustomDomainAssociation);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteCustomDomainAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteCustomDomainAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteCustomDomainAssociationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
 }
 
 DeleteEndpointAccessOutcome RedshiftClient::DeleteEndpointAccess(const DeleteEndpointAccessRequest& request) const
@@ -776,6 +798,15 @@ DescribeClustersOutcome RedshiftClient::DescribeClusters(const DescribeClustersR
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeClusters, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   return DescribeClustersOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DescribeCustomDomainAssociationsOutcome RedshiftClient::DescribeCustomDomainAssociations(const DescribeCustomDomainAssociationsRequest& request) const
+{
+  AWS_OPERATION_GUARD(DescribeCustomDomainAssociations);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeCustomDomainAssociations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeCustomDomainAssociations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeCustomDomainAssociationsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
 }
 
 DescribeDataSharesOutcome RedshiftClient::DescribeDataShares(const DescribeDataSharesRequest& request) const
@@ -1181,6 +1212,15 @@ ModifyClusterSubnetGroupOutcome RedshiftClient::ModifyClusterSubnetGroup(const M
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ModifyClusterSubnetGroup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   return ModifyClusterSubnetGroupOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+}
+
+ModifyCustomDomainAssociationOutcome RedshiftClient::ModifyCustomDomainAssociation(const ModifyCustomDomainAssociationRequest& request) const
+{
+  AWS_OPERATION_GUARD(ModifyCustomDomainAssociation);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ModifyCustomDomainAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ModifyCustomDomainAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ModifyCustomDomainAssociationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
 }
 
 ModifyEndpointAccessOutcome RedshiftClient::ModifyEndpointAccess(const ModifyEndpointAccessRequest& request) const
