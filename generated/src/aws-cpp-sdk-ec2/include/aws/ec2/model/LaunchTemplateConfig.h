@@ -42,32 +42,44 @@ namespace Model
 
 
     /**
-     * <p>The launch template.</p>
+     * <p>The launch template to use. Make sure that the launch template does not
+     * contain the <code>NetworkInterfaceId</code> parameter because you can't specify
+     * a network interface ID in a Spot Fleet.</p>
      */
     inline const FleetLaunchTemplateSpecification& GetLaunchTemplateSpecification() const{ return m_launchTemplateSpecification; }
 
     /**
-     * <p>The launch template.</p>
+     * <p>The launch template to use. Make sure that the launch template does not
+     * contain the <code>NetworkInterfaceId</code> parameter because you can't specify
+     * a network interface ID in a Spot Fleet.</p>
      */
     inline bool LaunchTemplateSpecificationHasBeenSet() const { return m_launchTemplateSpecificationHasBeenSet; }
 
     /**
-     * <p>The launch template.</p>
+     * <p>The launch template to use. Make sure that the launch template does not
+     * contain the <code>NetworkInterfaceId</code> parameter because you can't specify
+     * a network interface ID in a Spot Fleet.</p>
      */
     inline void SetLaunchTemplateSpecification(const FleetLaunchTemplateSpecification& value) { m_launchTemplateSpecificationHasBeenSet = true; m_launchTemplateSpecification = value; }
 
     /**
-     * <p>The launch template.</p>
+     * <p>The launch template to use. Make sure that the launch template does not
+     * contain the <code>NetworkInterfaceId</code> parameter because you can't specify
+     * a network interface ID in a Spot Fleet.</p>
      */
     inline void SetLaunchTemplateSpecification(FleetLaunchTemplateSpecification&& value) { m_launchTemplateSpecificationHasBeenSet = true; m_launchTemplateSpecification = std::move(value); }
 
     /**
-     * <p>The launch template.</p>
+     * <p>The launch template to use. Make sure that the launch template does not
+     * contain the <code>NetworkInterfaceId</code> parameter because you can't specify
+     * a network interface ID in a Spot Fleet.</p>
      */
     inline LaunchTemplateConfig& WithLaunchTemplateSpecification(const FleetLaunchTemplateSpecification& value) { SetLaunchTemplateSpecification(value); return *this;}
 
     /**
-     * <p>The launch template.</p>
+     * <p>The launch template to use. Make sure that the launch template does not
+     * contain the <code>NetworkInterfaceId</code> parameter because you can't specify
+     * a network interface ID in a Spot Fleet.</p>
      */
     inline LaunchTemplateConfig& WithLaunchTemplateSpecification(FleetLaunchTemplateSpecification&& value) { SetLaunchTemplateSpecification(std::move(value)); return *this;}
 

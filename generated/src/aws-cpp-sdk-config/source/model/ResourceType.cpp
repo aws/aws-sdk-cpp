@@ -317,6 +317,27 @@ namespace Aws
         static const int AWS_Route53Resolver_FirewallRuleGroupAssociation_HASH = HashingUtils::HashString("AWS::Route53Resolver::FirewallRuleGroupAssociation");
         static const int AWS_SageMaker_AppImageConfig_HASH = HashingUtils::HashString("AWS::SageMaker::AppImageConfig");
         static const int AWS_SageMaker_Image_HASH = HashingUtils::HashString("AWS::SageMaker::Image");
+        static const int AWS_ECS_TaskSet_HASH = HashingUtils::HashString("AWS::ECS::TaskSet");
+        static const int AWS_Cassandra_Keyspace_HASH = HashingUtils::HashString("AWS::Cassandra::Keyspace");
+        static const int AWS_Signer_SigningProfile_HASH = HashingUtils::HashString("AWS::Signer::SigningProfile");
+        static const int AWS_Amplify_App_HASH = HashingUtils::HashString("AWS::Amplify::App");
+        static const int AWS_AppMesh_VirtualNode_HASH = HashingUtils::HashString("AWS::AppMesh::VirtualNode");
+        static const int AWS_AppMesh_VirtualService_HASH = HashingUtils::HashString("AWS::AppMesh::VirtualService");
+        static const int AWS_AppRunner_VpcConnector_HASH = HashingUtils::HashString("AWS::AppRunner::VpcConnector");
+        static const int AWS_AppStream_Application_HASH = HashingUtils::HashString("AWS::AppStream::Application");
+        static const int AWS_CodeArtifact_Repository_HASH = HashingUtils::HashString("AWS::CodeArtifact::Repository");
+        static const int AWS_EC2_PrefixList_HASH = HashingUtils::HashString("AWS::EC2::PrefixList");
+        static const int AWS_EC2_SpotFleet_HASH = HashingUtils::HashString("AWS::EC2::SpotFleet");
+        static const int AWS_Evidently_Project_HASH = HashingUtils::HashString("AWS::Evidently::Project");
+        static const int AWS_Forecast_Dataset_HASH = HashingUtils::HashString("AWS::Forecast::Dataset");
+        static const int AWS_IAM_SAMLProvider_HASH = HashingUtils::HashString("AWS::IAM::SAMLProvider");
+        static const int AWS_IAM_ServerCertificate_HASH = HashingUtils::HashString("AWS::IAM::ServerCertificate");
+        static const int AWS_Pinpoint_Campaign_HASH = HashingUtils::HashString("AWS::Pinpoint::Campaign");
+        static const int AWS_Pinpoint_InAppTemplate_HASH = HashingUtils::HashString("AWS::Pinpoint::InAppTemplate");
+        static const int AWS_SageMaker_Domain_HASH = HashingUtils::HashString("AWS::SageMaker::Domain");
+        static const int AWS_Transfer_Agreement_HASH = HashingUtils::HashString("AWS::Transfer::Agreement");
+        static const int AWS_Transfer_Connector_HASH = HashingUtils::HashString("AWS::Transfer::Connector");
+        static const int AWS_KinesisFirehose_DeliveryStream_HASH = HashingUtils::HashString("AWS::KinesisFirehose::DeliveryStream");
 
         /*
         The if-else chains in this file are converted into a jump table by the compiler,
@@ -1818,6 +1839,111 @@ namespace Aws
             enumValue = ResourceType::AWS_SageMaker_Image;
             return true;
           }
+          else if (hashCode == AWS_ECS_TaskSet_HASH)
+          {
+            enumValue = ResourceType::AWS_ECS_TaskSet;
+            return true;
+          }
+          else if (hashCode == AWS_Cassandra_Keyspace_HASH)
+          {
+            enumValue = ResourceType::AWS_Cassandra_Keyspace;
+            return true;
+          }
+          else if (hashCode == AWS_Signer_SigningProfile_HASH)
+          {
+            enumValue = ResourceType::AWS_Signer_SigningProfile;
+            return true;
+          }
+          else if (hashCode == AWS_Amplify_App_HASH)
+          {
+            enumValue = ResourceType::AWS_Amplify_App;
+            return true;
+          }
+          else if (hashCode == AWS_AppMesh_VirtualNode_HASH)
+          {
+            enumValue = ResourceType::AWS_AppMesh_VirtualNode;
+            return true;
+          }
+          else if (hashCode == AWS_AppMesh_VirtualService_HASH)
+          {
+            enumValue = ResourceType::AWS_AppMesh_VirtualService;
+            return true;
+          }
+          else if (hashCode == AWS_AppRunner_VpcConnector_HASH)
+          {
+            enumValue = ResourceType::AWS_AppRunner_VpcConnector;
+            return true;
+          }
+          else if (hashCode == AWS_AppStream_Application_HASH)
+          {
+            enumValue = ResourceType::AWS_AppStream_Application;
+            return true;
+          }
+          else if (hashCode == AWS_CodeArtifact_Repository_HASH)
+          {
+            enumValue = ResourceType::AWS_CodeArtifact_Repository;
+            return true;
+          }
+          else if (hashCode == AWS_EC2_PrefixList_HASH)
+          {
+            enumValue = ResourceType::AWS_EC2_PrefixList;
+            return true;
+          }
+          else if (hashCode == AWS_EC2_SpotFleet_HASH)
+          {
+            enumValue = ResourceType::AWS_EC2_SpotFleet;
+            return true;
+          }
+          else if (hashCode == AWS_Evidently_Project_HASH)
+          {
+            enumValue = ResourceType::AWS_Evidently_Project;
+            return true;
+          }
+          else if (hashCode == AWS_Forecast_Dataset_HASH)
+          {
+            enumValue = ResourceType::AWS_Forecast_Dataset;
+            return true;
+          }
+          else if (hashCode == AWS_IAM_SAMLProvider_HASH)
+          {
+            enumValue = ResourceType::AWS_IAM_SAMLProvider;
+            return true;
+          }
+          else if (hashCode == AWS_IAM_ServerCertificate_HASH)
+          {
+            enumValue = ResourceType::AWS_IAM_ServerCertificate;
+            return true;
+          }
+          else if (hashCode == AWS_Pinpoint_Campaign_HASH)
+          {
+            enumValue = ResourceType::AWS_Pinpoint_Campaign;
+            return true;
+          }
+          else if (hashCode == AWS_Pinpoint_InAppTemplate_HASH)
+          {
+            enumValue = ResourceType::AWS_Pinpoint_InAppTemplate;
+            return true;
+          }
+          else if (hashCode == AWS_SageMaker_Domain_HASH)
+          {
+            enumValue = ResourceType::AWS_SageMaker_Domain;
+            return true;
+          }
+          else if (hashCode == AWS_Transfer_Agreement_HASH)
+          {
+            enumValue = ResourceType::AWS_Transfer_Agreement;
+            return true;
+          }
+          else if (hashCode == AWS_Transfer_Connector_HASH)
+          {
+            enumValue = ResourceType::AWS_Transfer_Connector;
+            return true;
+          }
+          else if (hashCode == AWS_KinesisFirehose_DeliveryStream_HASH)
+          {
+            enumValue = ResourceType::AWS_KinesisFirehose_DeliveryStream;
+            return true;
+          }
           return false;
         }
 
@@ -2731,6 +2857,69 @@ namespace Aws
             return true;
           case ResourceType::AWS_SageMaker_Image:
             value = "AWS::SageMaker::Image";
+            return true;
+          case ResourceType::AWS_ECS_TaskSet:
+            value = "AWS::ECS::TaskSet";
+            return true;
+          case ResourceType::AWS_Cassandra_Keyspace:
+            value = "AWS::Cassandra::Keyspace";
+            return true;
+          case ResourceType::AWS_Signer_SigningProfile:
+            value = "AWS::Signer::SigningProfile";
+            return true;
+          case ResourceType::AWS_Amplify_App:
+            value = "AWS::Amplify::App";
+            return true;
+          case ResourceType::AWS_AppMesh_VirtualNode:
+            value = "AWS::AppMesh::VirtualNode";
+            return true;
+          case ResourceType::AWS_AppMesh_VirtualService:
+            value = "AWS::AppMesh::VirtualService";
+            return true;
+          case ResourceType::AWS_AppRunner_VpcConnector:
+            value = "AWS::AppRunner::VpcConnector";
+            return true;
+          case ResourceType::AWS_AppStream_Application:
+            value = "AWS::AppStream::Application";
+            return true;
+          case ResourceType::AWS_CodeArtifact_Repository:
+            value = "AWS::CodeArtifact::Repository";
+            return true;
+          case ResourceType::AWS_EC2_PrefixList:
+            value = "AWS::EC2::PrefixList";
+            return true;
+          case ResourceType::AWS_EC2_SpotFleet:
+            value = "AWS::EC2::SpotFleet";
+            return true;
+          case ResourceType::AWS_Evidently_Project:
+            value = "AWS::Evidently::Project";
+            return true;
+          case ResourceType::AWS_Forecast_Dataset:
+            value = "AWS::Forecast::Dataset";
+            return true;
+          case ResourceType::AWS_IAM_SAMLProvider:
+            value = "AWS::IAM::SAMLProvider";
+            return true;
+          case ResourceType::AWS_IAM_ServerCertificate:
+            value = "AWS::IAM::ServerCertificate";
+            return true;
+          case ResourceType::AWS_Pinpoint_Campaign:
+            value = "AWS::Pinpoint::Campaign";
+            return true;
+          case ResourceType::AWS_Pinpoint_InAppTemplate:
+            value = "AWS::Pinpoint::InAppTemplate";
+            return true;
+          case ResourceType::AWS_SageMaker_Domain:
+            value = "AWS::SageMaker::Domain";
+            return true;
+          case ResourceType::AWS_Transfer_Agreement:
+            value = "AWS::Transfer::Agreement";
+            return true;
+          case ResourceType::AWS_Transfer_Connector:
+            value = "AWS::Transfer::Connector";
+            return true;
+          case ResourceType::AWS_KinesisFirehose_DeliveryStream:
+            value = "AWS::KinesisFirehose::DeliveryStream";
             return true;
           default:
             return false;

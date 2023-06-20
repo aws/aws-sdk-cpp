@@ -485,12 +485,12 @@ namespace Model
      * of the request, the <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response. </p>
      *  <p>Operations never return the password, so this operation provides a way
-     * to regain access to the admin user for a cluster if the password is lost.</p>
-     *  <p>Default: Uses existing setting.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must be between 8 and 64 characters in length.</p> </li> <li> <p>Must contain
-     * at least one uppercase letter.</p> </li> <li> <p>Must contain at least one
-     * lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li> <li>
-     * <p>Can be any printable ASCII character (ASCII code 33-126) except
+     * to regain access to the admin user account for a cluster if the password is
+     * lost.</p>  <p>Default: Uses existing setting.</p> <p>Constraints:</p>
+     * <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li>
+     * <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at
+     * least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li>
+     * <li> <p>Can be any printable ASCII character (ASCII code 33-126) except
      * <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>,
      * <code>/</code>, or <code>@</code>.</p> </li> </ul>
      */
@@ -502,12 +502,12 @@ namespace Model
      * of the request, the <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response. </p>
      *  <p>Operations never return the password, so this operation provides a way
-     * to regain access to the admin user for a cluster if the password is lost.</p>
-     *  <p>Default: Uses existing setting.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must be between 8 and 64 characters in length.</p> </li> <li> <p>Must contain
-     * at least one uppercase letter.</p> </li> <li> <p>Must contain at least one
-     * lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li> <li>
-     * <p>Can be any printable ASCII character (ASCII code 33-126) except
+     * to regain access to the admin user account for a cluster if the password is
+     * lost.</p>  <p>Default: Uses existing setting.</p> <p>Constraints:</p>
+     * <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li>
+     * <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at
+     * least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li>
+     * <li> <p>Can be any printable ASCII character (ASCII code 33-126) except
      * <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>,
      * <code>/</code>, or <code>@</code>.</p> </li> </ul>
      */
@@ -519,12 +519,12 @@ namespace Model
      * of the request, the <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response. </p>
      *  <p>Operations never return the password, so this operation provides a way
-     * to regain access to the admin user for a cluster if the password is lost.</p>
-     *  <p>Default: Uses existing setting.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must be between 8 and 64 characters in length.</p> </li> <li> <p>Must contain
-     * at least one uppercase letter.</p> </li> <li> <p>Must contain at least one
-     * lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li> <li>
-     * <p>Can be any printable ASCII character (ASCII code 33-126) except
+     * to regain access to the admin user account for a cluster if the password is
+     * lost.</p>  <p>Default: Uses existing setting.</p> <p>Constraints:</p>
+     * <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li>
+     * <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at
+     * least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li>
+     * <li> <p>Can be any printable ASCII character (ASCII code 33-126) except
      * <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>,
      * <code>/</code>, or <code>@</code>.</p> </li> </ul>
      */
@@ -536,12 +536,12 @@ namespace Model
      * of the request, the <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response. </p>
      *  <p>Operations never return the password, so this operation provides a way
-     * to regain access to the admin user for a cluster if the password is lost.</p>
-     *  <p>Default: Uses existing setting.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must be between 8 and 64 characters in length.</p> </li> <li> <p>Must contain
-     * at least one uppercase letter.</p> </li> <li> <p>Must contain at least one
-     * lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li> <li>
-     * <p>Can be any printable ASCII character (ASCII code 33-126) except
+     * to regain access to the admin user account for a cluster if the password is
+     * lost.</p>  <p>Default: Uses existing setting.</p> <p>Constraints:</p>
+     * <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li>
+     * <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at
+     * least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li>
+     * <li> <p>Can be any printable ASCII character (ASCII code 33-126) except
      * <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>,
      * <code>/</code>, or <code>@</code>.</p> </li> </ul>
      */
@@ -553,12 +553,12 @@ namespace Model
      * of the request, the <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response. </p>
      *  <p>Operations never return the password, so this operation provides a way
-     * to regain access to the admin user for a cluster if the password is lost.</p>
-     *  <p>Default: Uses existing setting.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must be between 8 and 64 characters in length.</p> </li> <li> <p>Must contain
-     * at least one uppercase letter.</p> </li> <li> <p>Must contain at least one
-     * lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li> <li>
-     * <p>Can be any printable ASCII character (ASCII code 33-126) except
+     * to regain access to the admin user account for a cluster if the password is
+     * lost.</p>  <p>Default: Uses existing setting.</p> <p>Constraints:</p>
+     * <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li>
+     * <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at
+     * least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li>
+     * <li> <p>Can be any printable ASCII character (ASCII code 33-126) except
      * <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>,
      * <code>/</code>, or <code>@</code>.</p> </li> </ul>
      */
@@ -570,12 +570,12 @@ namespace Model
      * of the request, the <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response. </p>
      *  <p>Operations never return the password, so this operation provides a way
-     * to regain access to the admin user for a cluster if the password is lost.</p>
-     *  <p>Default: Uses existing setting.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must be between 8 and 64 characters in length.</p> </li> <li> <p>Must contain
-     * at least one uppercase letter.</p> </li> <li> <p>Must contain at least one
-     * lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li> <li>
-     * <p>Can be any printable ASCII character (ASCII code 33-126) except
+     * to regain access to the admin user account for a cluster if the password is
+     * lost.</p>  <p>Default: Uses existing setting.</p> <p>Constraints:</p>
+     * <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li>
+     * <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at
+     * least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li>
+     * <li> <p>Can be any printable ASCII character (ASCII code 33-126) except
      * <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>,
      * <code>/</code>, or <code>@</code>.</p> </li> </ul>
      */
@@ -587,12 +587,12 @@ namespace Model
      * of the request, the <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response. </p>
      *  <p>Operations never return the password, so this operation provides a way
-     * to regain access to the admin user for a cluster if the password is lost.</p>
-     *  <p>Default: Uses existing setting.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must be between 8 and 64 characters in length.</p> </li> <li> <p>Must contain
-     * at least one uppercase letter.</p> </li> <li> <p>Must contain at least one
-     * lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li> <li>
-     * <p>Can be any printable ASCII character (ASCII code 33-126) except
+     * to regain access to the admin user account for a cluster if the password is
+     * lost.</p>  <p>Default: Uses existing setting.</p> <p>Constraints:</p>
+     * <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li>
+     * <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at
+     * least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li>
+     * <li> <p>Can be any printable ASCII character (ASCII code 33-126) except
      * <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>,
      * <code>/</code>, or <code>@</code>.</p> </li> </ul>
      */
@@ -604,12 +604,12 @@ namespace Model
      * of the request, the <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response. </p>
      *  <p>Operations never return the password, so this operation provides a way
-     * to regain access to the admin user for a cluster if the password is lost.</p>
-     *  <p>Default: Uses existing setting.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must be between 8 and 64 characters in length.</p> </li> <li> <p>Must contain
-     * at least one uppercase letter.</p> </li> <li> <p>Must contain at least one
-     * lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li> <li>
-     * <p>Can be any printable ASCII character (ASCII code 33-126) except
+     * to regain access to the admin user account for a cluster if the password is
+     * lost.</p>  <p>Default: Uses existing setting.</p> <p>Constraints:</p>
+     * <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li>
+     * <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at
+     * least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li>
+     * <li> <p>Can be any printable ASCII character (ASCII code 33-126) except
      * <code>'</code> (single quote), <code>"</code> (double quote), <code>\</code>,
      * <code>/</code>, or <code>@</code>.</p> </li> </ul>
      */

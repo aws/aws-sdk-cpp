@@ -558,6 +558,39 @@ namespace Appflow
         }
 
         /**
+         * <p>Resets metadata about your connector entities that Amazon AppFlow stored in
+         * its cache. Use this action when you want Amazon AppFlow to return the latest
+         * information about the data that you have in a source application.</p> <p>Amazon
+         * AppFlow returns metadata about your entities when you use the
+         * ListConnectorEntities or DescribeConnectorEntities actions. Following these
+         * actions, Amazon AppFlow caches the metadata to reduce the number of API requests
+         * that it must send to the source application. Amazon AppFlow automatically resets
+         * the cache once every hour, but you can use this action when you want to get the
+         * latest metadata right away.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/ResetConnectorMetadataCache">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ResetConnectorMetadataCacheOutcome ResetConnectorMetadataCache(const Model::ResetConnectorMetadataCacheRequest& request) const;
+
+        /**
+         * A Callable wrapper for ResetConnectorMetadataCache that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ResetConnectorMetadataCacheRequestT = Model::ResetConnectorMetadataCacheRequest>
+        Model::ResetConnectorMetadataCacheOutcomeCallable ResetConnectorMetadataCacheCallable(const ResetConnectorMetadataCacheRequestT& request) const
+        {
+            return SubmitCallable(&AppflowClient::ResetConnectorMetadataCache, request);
+        }
+
+        /**
+         * An Async wrapper for ResetConnectorMetadataCache that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ResetConnectorMetadataCacheRequestT = Model::ResetConnectorMetadataCacheRequest>
+        void ResetConnectorMetadataCacheAsync(const ResetConnectorMetadataCacheRequestT& request, const ResetConnectorMetadataCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AppflowClient::ResetConnectorMetadataCache, request, handler, context);
+        }
+
+        /**
          * <p> Activates an existing flow. For on-demand flows, this operation runs the
          * flow immediately. For schedule and event-triggered flows, this operation
          * activates the flow. </p><p><h3>See Also:</h3>   <a

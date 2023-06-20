@@ -107,56 +107,72 @@ namespace Model
     /**
      * <p>Indicates whether the instance type supports AMD SEV-SNP. If the request
      * returns <code>amd-sev-snp</code>, AMD SEV-SNP is supported. Otherwise, it is not
-     * supported.</p>
+     * supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html"> AMD
+     * SEV-SNP</a>.</p>
      */
     inline const Aws::Vector<SupportedAdditionalProcessorFeature>& GetSupportedFeatures() const{ return m_supportedFeatures; }
 
     /**
      * <p>Indicates whether the instance type supports AMD SEV-SNP. If the request
      * returns <code>amd-sev-snp</code>, AMD SEV-SNP is supported. Otherwise, it is not
-     * supported.</p>
+     * supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html"> AMD
+     * SEV-SNP</a>.</p>
      */
     inline bool SupportedFeaturesHasBeenSet() const { return m_supportedFeaturesHasBeenSet; }
 
     /**
      * <p>Indicates whether the instance type supports AMD SEV-SNP. If the request
      * returns <code>amd-sev-snp</code>, AMD SEV-SNP is supported. Otherwise, it is not
-     * supported.</p>
+     * supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html"> AMD
+     * SEV-SNP</a>.</p>
      */
     inline void SetSupportedFeatures(const Aws::Vector<SupportedAdditionalProcessorFeature>& value) { m_supportedFeaturesHasBeenSet = true; m_supportedFeatures = value; }
 
     /**
      * <p>Indicates whether the instance type supports AMD SEV-SNP. If the request
      * returns <code>amd-sev-snp</code>, AMD SEV-SNP is supported. Otherwise, it is not
-     * supported.</p>
+     * supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html"> AMD
+     * SEV-SNP</a>.</p>
      */
     inline void SetSupportedFeatures(Aws::Vector<SupportedAdditionalProcessorFeature>&& value) { m_supportedFeaturesHasBeenSet = true; m_supportedFeatures = std::move(value); }
 
     /**
      * <p>Indicates whether the instance type supports AMD SEV-SNP. If the request
      * returns <code>amd-sev-snp</code>, AMD SEV-SNP is supported. Otherwise, it is not
-     * supported.</p>
+     * supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html"> AMD
+     * SEV-SNP</a>.</p>
      */
     inline ProcessorInfo& WithSupportedFeatures(const Aws::Vector<SupportedAdditionalProcessorFeature>& value) { SetSupportedFeatures(value); return *this;}
 
     /**
      * <p>Indicates whether the instance type supports AMD SEV-SNP. If the request
      * returns <code>amd-sev-snp</code>, AMD SEV-SNP is supported. Otherwise, it is not
-     * supported.</p>
+     * supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html"> AMD
+     * SEV-SNP</a>.</p>
      */
     inline ProcessorInfo& WithSupportedFeatures(Aws::Vector<SupportedAdditionalProcessorFeature>&& value) { SetSupportedFeatures(std::move(value)); return *this;}
 
     /**
      * <p>Indicates whether the instance type supports AMD SEV-SNP. If the request
      * returns <code>amd-sev-snp</code>, AMD SEV-SNP is supported. Otherwise, it is not
-     * supported.</p>
+     * supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html"> AMD
+     * SEV-SNP</a>.</p>
      */
     inline ProcessorInfo& AddSupportedFeatures(const SupportedAdditionalProcessorFeature& value) { m_supportedFeaturesHasBeenSet = true; m_supportedFeatures.push_back(value); return *this; }
 
     /**
      * <p>Indicates whether the instance type supports AMD SEV-SNP. If the request
      * returns <code>amd-sev-snp</code>, AMD SEV-SNP is supported. Otherwise, it is not
-     * supported.</p>
+     * supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html"> AMD
+     * SEV-SNP</a>.</p>
      */
     inline ProcessorInfo& AddSupportedFeatures(SupportedAdditionalProcessorFeature&& value) { m_supportedFeaturesHasBeenSet = true; m_supportedFeatures.push_back(std::move(value)); return *this; }
 

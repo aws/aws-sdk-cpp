@@ -581,6 +581,47 @@ namespace Model
      */
     inline GetClusterCredentialsRequest& AddDbGroups(const char* value) { m_dbGroupsHasBeenSet = true; m_dbGroups.push_back(value); return *this; }
 
+
+    /**
+     * <p>The custom domain name for the cluster credentials.</p>
+     */
+    inline const Aws::String& GetCustomDomainName() const{ return m_customDomainName; }
+
+    /**
+     * <p>The custom domain name for the cluster credentials.</p>
+     */
+    inline bool CustomDomainNameHasBeenSet() const { return m_customDomainNameHasBeenSet; }
+
+    /**
+     * <p>The custom domain name for the cluster credentials.</p>
+     */
+    inline void SetCustomDomainName(const Aws::String& value) { m_customDomainNameHasBeenSet = true; m_customDomainName = value; }
+
+    /**
+     * <p>The custom domain name for the cluster credentials.</p>
+     */
+    inline void SetCustomDomainName(Aws::String&& value) { m_customDomainNameHasBeenSet = true; m_customDomainName = std::move(value); }
+
+    /**
+     * <p>The custom domain name for the cluster credentials.</p>
+     */
+    inline void SetCustomDomainName(const char* value) { m_customDomainNameHasBeenSet = true; m_customDomainName.assign(value); }
+
+    /**
+     * <p>The custom domain name for the cluster credentials.</p>
+     */
+    inline GetClusterCredentialsRequest& WithCustomDomainName(const Aws::String& value) { SetCustomDomainName(value); return *this;}
+
+    /**
+     * <p>The custom domain name for the cluster credentials.</p>
+     */
+    inline GetClusterCredentialsRequest& WithCustomDomainName(Aws::String&& value) { SetCustomDomainName(std::move(value)); return *this;}
+
+    /**
+     * <p>The custom domain name for the cluster credentials.</p>
+     */
+    inline GetClusterCredentialsRequest& WithCustomDomainName(const char* value) { SetCustomDomainName(value); return *this;}
+
   private:
 
     Aws::String m_dbUser;
@@ -600,6 +641,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_dbGroups;
     bool m_dbGroupsHasBeenSet = false;
+
+    Aws::String m_customDomainName;
+    bool m_customDomainNameHasBeenSet = false;
   };
 
 } // namespace Model

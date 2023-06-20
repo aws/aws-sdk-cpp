@@ -372,25 +372,41 @@ namespace Model
 
     /**
      * <p>The number of Dedicated Hosts to allocate to your account with these
-     * parameters.</p>
+     * parameters. If you are allocating the Dedicated Hosts on an Outpost, and you
+     * specify <b>AssetIds</b>, you can omit this parameter. In this case, Amazon EC2
+     * allocates a Dedicated Host on each specified hardware asset. If you specify both
+     * <b>AssetIds</b> and <b>Quantity</b>, then the value that you specify for
+     * <b>Quantity</b> must be equal to the number of asset IDs specified.</p>
      */
     inline int GetQuantity() const{ return m_quantity; }
 
     /**
      * <p>The number of Dedicated Hosts to allocate to your account with these
-     * parameters.</p>
+     * parameters. If you are allocating the Dedicated Hosts on an Outpost, and you
+     * specify <b>AssetIds</b>, you can omit this parameter. In this case, Amazon EC2
+     * allocates a Dedicated Host on each specified hardware asset. If you specify both
+     * <b>AssetIds</b> and <b>Quantity</b>, then the value that you specify for
+     * <b>Quantity</b> must be equal to the number of asset IDs specified.</p>
      */
     inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
 
     /**
      * <p>The number of Dedicated Hosts to allocate to your account with these
-     * parameters.</p>
+     * parameters. If you are allocating the Dedicated Hosts on an Outpost, and you
+     * specify <b>AssetIds</b>, you can omit this parameter. In this case, Amazon EC2
+     * allocates a Dedicated Host on each specified hardware asset. If you specify both
+     * <b>AssetIds</b> and <b>Quantity</b>, then the value that you specify for
+     * <b>Quantity</b> must be equal to the number of asset IDs specified.</p>
      */
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /**
      * <p>The number of Dedicated Hosts to allocate to your account with these
-     * parameters.</p>
+     * parameters. If you are allocating the Dedicated Hosts on an Outpost, and you
+     * specify <b>AssetIds</b>, you can omit this parameter. In this case, Amazon EC2
+     * allocates a Dedicated Host on each specified hardware asset. If you specify both
+     * <b>AssetIds</b> and <b>Quantity</b>, then the value that you specify for
+     * <b>Quantity</b> must be equal to the number of asset IDs specified.</p>
      */
     inline AllocateHostsRequest& WithQuantity(int value) { SetQuantity(value); return *this;}
 
@@ -493,49 +509,65 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost on which to
-     * allocate the Dedicated Host.</p>
+     * allocate the Dedicated Host. If you specify <b>OutpostArn</b>, you can
+     * optionally specify <b>AssetIds</b>.</p> <p>If you are allocating the Dedicated
+     * Host in a Region, omit this parameter.</p>
      */
     inline const Aws::String& GetOutpostArn() const{ return m_outpostArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost on which to
-     * allocate the Dedicated Host.</p>
+     * allocate the Dedicated Host. If you specify <b>OutpostArn</b>, you can
+     * optionally specify <b>AssetIds</b>.</p> <p>If you are allocating the Dedicated
+     * Host in a Region, omit this parameter.</p>
      */
     inline bool OutpostArnHasBeenSet() const { return m_outpostArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost on which to
-     * allocate the Dedicated Host.</p>
+     * allocate the Dedicated Host. If you specify <b>OutpostArn</b>, you can
+     * optionally specify <b>AssetIds</b>.</p> <p>If you are allocating the Dedicated
+     * Host in a Region, omit this parameter.</p>
      */
     inline void SetOutpostArn(const Aws::String& value) { m_outpostArnHasBeenSet = true; m_outpostArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost on which to
-     * allocate the Dedicated Host.</p>
+     * allocate the Dedicated Host. If you specify <b>OutpostArn</b>, you can
+     * optionally specify <b>AssetIds</b>.</p> <p>If you are allocating the Dedicated
+     * Host in a Region, omit this parameter.</p>
      */
     inline void SetOutpostArn(Aws::String&& value) { m_outpostArnHasBeenSet = true; m_outpostArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost on which to
-     * allocate the Dedicated Host.</p>
+     * allocate the Dedicated Host. If you specify <b>OutpostArn</b>, you can
+     * optionally specify <b>AssetIds</b>.</p> <p>If you are allocating the Dedicated
+     * Host in a Region, omit this parameter.</p>
      */
     inline void SetOutpostArn(const char* value) { m_outpostArnHasBeenSet = true; m_outpostArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost on which to
-     * allocate the Dedicated Host.</p>
+     * allocate the Dedicated Host. If you specify <b>OutpostArn</b>, you can
+     * optionally specify <b>AssetIds</b>.</p> <p>If you are allocating the Dedicated
+     * Host in a Region, omit this parameter.</p>
      */
     inline AllocateHostsRequest& WithOutpostArn(const Aws::String& value) { SetOutpostArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost on which to
-     * allocate the Dedicated Host.</p>
+     * allocate the Dedicated Host. If you specify <b>OutpostArn</b>, you can
+     * optionally specify <b>AssetIds</b>.</p> <p>If you are allocating the Dedicated
+     * Host in a Region, omit this parameter.</p>
      */
     inline AllocateHostsRequest& WithOutpostArn(Aws::String&& value) { SetOutpostArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost on which to
-     * allocate the Dedicated Host.</p>
+     * allocate the Dedicated Host. If you specify <b>OutpostArn</b>, you can
+     * optionally specify <b>AssetIds</b>.</p> <p>If you are allocating the Dedicated
+     * Host in a Region, omit this parameter.</p>
      */
     inline AllocateHostsRequest& WithOutpostArn(const char* value) { SetOutpostArn(value); return *this;}
 
@@ -588,6 +620,124 @@ namespace Model
      */
     inline AllocateHostsRequest& WithHostMaintenance(HostMaintenance&& value) { SetHostMaintenance(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The IDs of the Outpost hardware assets on which to allocate the Dedicated
+     * Hosts. Targeting specific hardware assets on an Outpost can help to minimize
+     * latency between your workloads. This parameter is supported only if you specify
+     * <b>OutpostArn</b>. If you are allocating the Dedicated Hosts in a Region, omit
+     * this parameter.</p> <ul> <li> <p>If you specify this parameter, you can omit
+     * <b>Quantity</b>. In this case, Amazon EC2 allocates a Dedicated Host on each
+     * specified hardware asset.</p> </li> <li> <p>If you specify both <b>AssetIds</b>
+     * and <b>Quantity</b>, then the value for <b>Quantity</b> must be equal to the
+     * number of asset IDs specified.</p> </li> </ul>
+     */
+    inline const Aws::Vector<Aws::String>& GetAssetIds() const{ return m_assetIds; }
+
+    /**
+     * <p>The IDs of the Outpost hardware assets on which to allocate the Dedicated
+     * Hosts. Targeting specific hardware assets on an Outpost can help to minimize
+     * latency between your workloads. This parameter is supported only if you specify
+     * <b>OutpostArn</b>. If you are allocating the Dedicated Hosts in a Region, omit
+     * this parameter.</p> <ul> <li> <p>If you specify this parameter, you can omit
+     * <b>Quantity</b>. In this case, Amazon EC2 allocates a Dedicated Host on each
+     * specified hardware asset.</p> </li> <li> <p>If you specify both <b>AssetIds</b>
+     * and <b>Quantity</b>, then the value for <b>Quantity</b> must be equal to the
+     * number of asset IDs specified.</p> </li> </ul>
+     */
+    inline bool AssetIdsHasBeenSet() const { return m_assetIdsHasBeenSet; }
+
+    /**
+     * <p>The IDs of the Outpost hardware assets on which to allocate the Dedicated
+     * Hosts. Targeting specific hardware assets on an Outpost can help to minimize
+     * latency between your workloads. This parameter is supported only if you specify
+     * <b>OutpostArn</b>. If you are allocating the Dedicated Hosts in a Region, omit
+     * this parameter.</p> <ul> <li> <p>If you specify this parameter, you can omit
+     * <b>Quantity</b>. In this case, Amazon EC2 allocates a Dedicated Host on each
+     * specified hardware asset.</p> </li> <li> <p>If you specify both <b>AssetIds</b>
+     * and <b>Quantity</b>, then the value for <b>Quantity</b> must be equal to the
+     * number of asset IDs specified.</p> </li> </ul>
+     */
+    inline void SetAssetIds(const Aws::Vector<Aws::String>& value) { m_assetIdsHasBeenSet = true; m_assetIds = value; }
+
+    /**
+     * <p>The IDs of the Outpost hardware assets on which to allocate the Dedicated
+     * Hosts. Targeting specific hardware assets on an Outpost can help to minimize
+     * latency between your workloads. This parameter is supported only if you specify
+     * <b>OutpostArn</b>. If you are allocating the Dedicated Hosts in a Region, omit
+     * this parameter.</p> <ul> <li> <p>If you specify this parameter, you can omit
+     * <b>Quantity</b>. In this case, Amazon EC2 allocates a Dedicated Host on each
+     * specified hardware asset.</p> </li> <li> <p>If you specify both <b>AssetIds</b>
+     * and <b>Quantity</b>, then the value for <b>Quantity</b> must be equal to the
+     * number of asset IDs specified.</p> </li> </ul>
+     */
+    inline void SetAssetIds(Aws::Vector<Aws::String>&& value) { m_assetIdsHasBeenSet = true; m_assetIds = std::move(value); }
+
+    /**
+     * <p>The IDs of the Outpost hardware assets on which to allocate the Dedicated
+     * Hosts. Targeting specific hardware assets on an Outpost can help to minimize
+     * latency between your workloads. This parameter is supported only if you specify
+     * <b>OutpostArn</b>. If you are allocating the Dedicated Hosts in a Region, omit
+     * this parameter.</p> <ul> <li> <p>If you specify this parameter, you can omit
+     * <b>Quantity</b>. In this case, Amazon EC2 allocates a Dedicated Host on each
+     * specified hardware asset.</p> </li> <li> <p>If you specify both <b>AssetIds</b>
+     * and <b>Quantity</b>, then the value for <b>Quantity</b> must be equal to the
+     * number of asset IDs specified.</p> </li> </ul>
+     */
+    inline AllocateHostsRequest& WithAssetIds(const Aws::Vector<Aws::String>& value) { SetAssetIds(value); return *this;}
+
+    /**
+     * <p>The IDs of the Outpost hardware assets on which to allocate the Dedicated
+     * Hosts. Targeting specific hardware assets on an Outpost can help to minimize
+     * latency between your workloads. This parameter is supported only if you specify
+     * <b>OutpostArn</b>. If you are allocating the Dedicated Hosts in a Region, omit
+     * this parameter.</p> <ul> <li> <p>If you specify this parameter, you can omit
+     * <b>Quantity</b>. In this case, Amazon EC2 allocates a Dedicated Host on each
+     * specified hardware asset.</p> </li> <li> <p>If you specify both <b>AssetIds</b>
+     * and <b>Quantity</b>, then the value for <b>Quantity</b> must be equal to the
+     * number of asset IDs specified.</p> </li> </ul>
+     */
+    inline AllocateHostsRequest& WithAssetIds(Aws::Vector<Aws::String>&& value) { SetAssetIds(std::move(value)); return *this;}
+
+    /**
+     * <p>The IDs of the Outpost hardware assets on which to allocate the Dedicated
+     * Hosts. Targeting specific hardware assets on an Outpost can help to minimize
+     * latency between your workloads. This parameter is supported only if you specify
+     * <b>OutpostArn</b>. If you are allocating the Dedicated Hosts in a Region, omit
+     * this parameter.</p> <ul> <li> <p>If you specify this parameter, you can omit
+     * <b>Quantity</b>. In this case, Amazon EC2 allocates a Dedicated Host on each
+     * specified hardware asset.</p> </li> <li> <p>If you specify both <b>AssetIds</b>
+     * and <b>Quantity</b>, then the value for <b>Quantity</b> must be equal to the
+     * number of asset IDs specified.</p> </li> </ul>
+     */
+    inline AllocateHostsRequest& AddAssetIds(const Aws::String& value) { m_assetIdsHasBeenSet = true; m_assetIds.push_back(value); return *this; }
+
+    /**
+     * <p>The IDs of the Outpost hardware assets on which to allocate the Dedicated
+     * Hosts. Targeting specific hardware assets on an Outpost can help to minimize
+     * latency between your workloads. This parameter is supported only if you specify
+     * <b>OutpostArn</b>. If you are allocating the Dedicated Hosts in a Region, omit
+     * this parameter.</p> <ul> <li> <p>If you specify this parameter, you can omit
+     * <b>Quantity</b>. In this case, Amazon EC2 allocates a Dedicated Host on each
+     * specified hardware asset.</p> </li> <li> <p>If you specify both <b>AssetIds</b>
+     * and <b>Quantity</b>, then the value for <b>Quantity</b> must be equal to the
+     * number of asset IDs specified.</p> </li> </ul>
+     */
+    inline AllocateHostsRequest& AddAssetIds(Aws::String&& value) { m_assetIdsHasBeenSet = true; m_assetIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The IDs of the Outpost hardware assets on which to allocate the Dedicated
+     * Hosts. Targeting specific hardware assets on an Outpost can help to minimize
+     * latency between your workloads. This parameter is supported only if you specify
+     * <b>OutpostArn</b>. If you are allocating the Dedicated Hosts in a Region, omit
+     * this parameter.</p> <ul> <li> <p>If you specify this parameter, you can omit
+     * <b>Quantity</b>. In this case, Amazon EC2 allocates a Dedicated Host on each
+     * specified hardware asset.</p> </li> <li> <p>If you specify both <b>AssetIds</b>
+     * and <b>Quantity</b>, then the value for <b>Quantity</b> must be equal to the
+     * number of asset IDs specified.</p> </li> </ul>
+     */
+    inline AllocateHostsRequest& AddAssetIds(const char* value) { m_assetIdsHasBeenSet = true; m_assetIds.push_back(value); return *this; }
+
   private:
 
     AutoPlacement m_autoPlacement;
@@ -619,6 +769,9 @@ namespace Model
 
     HostMaintenance m_hostMaintenance;
     bool m_hostMaintenanceHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_assetIds;
+    bool m_assetIdsHasBeenSet = false;
   };
 
 } // namespace Model

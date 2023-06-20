@@ -37,6 +37,7 @@
 #include <aws/appflow/model/ListFlowsRequest.h>
 #include <aws/appflow/model/ListTagsForResourceRequest.h>
 #include <aws/appflow/model/RegisterConnectorRequest.h>
+#include <aws/appflow/model/ResetConnectorMetadataCacheRequest.h>
 #include <aws/appflow/model/StartFlowRequest.h>
 #include <aws/appflow/model/StopFlowRequest.h>
 #include <aws/appflow/model/TagResourceRequest.h>
@@ -338,6 +339,16 @@ RegisterConnectorOutcome AppflowClient::RegisterConnector(const RegisterConnecto
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RegisterConnector, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   endpointResolutionOutcome.GetResult().AddPathSegments("/register-connector");
   return RegisterConnectorOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ResetConnectorMetadataCacheOutcome AppflowClient::ResetConnectorMetadataCache(const ResetConnectorMetadataCacheRequest& request) const
+{
+  AWS_OPERATION_GUARD(ResetConnectorMetadataCache);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ResetConnectorMetadataCache, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ResetConnectorMetadataCache, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/reset-connector-metadata-cache");
+  return ResetConnectorMetadataCacheOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StartFlowOutcome AppflowClient::StartFlow(const StartFlowRequest& request) const

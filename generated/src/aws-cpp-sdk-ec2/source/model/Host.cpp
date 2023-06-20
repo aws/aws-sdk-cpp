@@ -45,7 +45,8 @@ Host::Host() :
     m_memberOfServiceLinkedResourceGroupHasBeenSet(false),
     m_outpostArnHasBeenSet(false),
     m_hostMaintenance(HostMaintenance::NOT_SET),
-    m_hostMaintenanceHasBeenSet(false)
+    m_hostMaintenanceHasBeenSet(false),
+    m_assetIdHasBeenSet(false)
 {
 }
 
@@ -74,7 +75,8 @@ Host::Host(const XmlNode& xmlNode) :
     m_memberOfServiceLinkedResourceGroupHasBeenSet(false),
     m_outpostArnHasBeenSet(false),
     m_hostMaintenance(HostMaintenance::NOT_SET),
-    m_hostMaintenanceHasBeenSet(false)
+    m_hostMaintenanceHasBeenSet(false),
+    m_assetIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -211,6 +213,12 @@ Host& Host::operator =(const XmlNode& xmlNode)
       m_hostMaintenance = HostMaintenanceMapper::GetHostMaintenanceForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(hostMaintenanceNode.GetText()).c_str()).c_str());
       m_hostMaintenanceHasBeenSet = true;
     }
+    XmlNode assetIdNode = resultNode.FirstChild("assetId");
+    if(!assetIdNode.IsNull())
+    {
+      m_assetId = Aws::Utils::Xml::DecodeEscapedXmlText(assetIdNode.GetText());
+      m_assetIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -329,6 +337,11 @@ void Host::OutputToStream(Aws::OStream& oStream, const char* location, unsigned 
       oStream << location << index << locationValue << ".HostMaintenance=" << HostMaintenanceMapper::GetNameForHostMaintenance(m_hostMaintenance) << "&";
   }
 
+  if(m_assetIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AssetId=" << StringUtils::URLEncode(m_assetId.c_str()) << "&";
+  }
+
 }
 
 void Host::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -424,6 +437,10 @@ void Host::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_hostMaintenanceHasBeenSet)
   {
       oStream << location << ".HostMaintenance=" << HostMaintenanceMapper::GetNameForHostMaintenance(m_hostMaintenance) << "&";
+  }
+  if(m_assetIdHasBeenSet)
+  {
+      oStream << location << ".AssetId=" << StringUtils::URLEncode(m_assetId.c_str()) << "&";
   }
 }
 
