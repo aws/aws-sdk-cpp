@@ -81,7 +81,7 @@ TEST_F(CacheTests, TestPutWithSameKey)
     cache.Put("one", 1.0f, std::chrono::minutes(5));
     cache.Put("one", 1.1f, std::chrono::seconds(1));
 
-    float out;
+    float out = 0.0f;
     ASSERT_TRUE(cache.Get("one", out));
     ASSERT_EQ(1.1f, out);
 
