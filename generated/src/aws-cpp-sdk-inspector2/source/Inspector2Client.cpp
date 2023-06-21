@@ -23,12 +23,15 @@
 #include <aws/inspector2/Inspector2EndpointProvider.h>
 #include <aws/inspector2/model/AssociateMemberRequest.h>
 #include <aws/inspector2/model/BatchGetAccountStatusRequest.h>
+#include <aws/inspector2/model/BatchGetCodeSnippetRequest.h>
 #include <aws/inspector2/model/BatchGetFreeTrialInfoRequest.h>
 #include <aws/inspector2/model/BatchGetMemberEc2DeepInspectionStatusRequest.h>
 #include <aws/inspector2/model/BatchUpdateMemberEc2DeepInspectionStatusRequest.h>
 #include <aws/inspector2/model/CancelFindingsReportRequest.h>
+#include <aws/inspector2/model/CancelSbomExportRequest.h>
 #include <aws/inspector2/model/CreateFilterRequest.h>
 #include <aws/inspector2/model/CreateFindingsReportRequest.h>
+#include <aws/inspector2/model/CreateSbomExportRequest.h>
 #include <aws/inspector2/model/DeleteFilterRequest.h>
 #include <aws/inspector2/model/DescribeOrganizationConfigurationRequest.h>
 #include <aws/inspector2/model/DisableRequest.h>
@@ -39,8 +42,10 @@
 #include <aws/inspector2/model/GetConfigurationRequest.h>
 #include <aws/inspector2/model/GetDelegatedAdminAccountRequest.h>
 #include <aws/inspector2/model/GetEc2DeepInspectionConfigurationRequest.h>
+#include <aws/inspector2/model/GetEncryptionKeyRequest.h>
 #include <aws/inspector2/model/GetFindingsReportStatusRequest.h>
 #include <aws/inspector2/model/GetMemberRequest.h>
+#include <aws/inspector2/model/GetSbomExportRequest.h>
 #include <aws/inspector2/model/ListAccountPermissionsRequest.h>
 #include <aws/inspector2/model/ListCoverageRequest.h>
 #include <aws/inspector2/model/ListCoverageStatisticsRequest.h>
@@ -51,11 +56,13 @@
 #include <aws/inspector2/model/ListMembersRequest.h>
 #include <aws/inspector2/model/ListTagsForResourceRequest.h>
 #include <aws/inspector2/model/ListUsageTotalsRequest.h>
+#include <aws/inspector2/model/ResetEncryptionKeyRequest.h>
 #include <aws/inspector2/model/SearchVulnerabilitiesRequest.h>
 #include <aws/inspector2/model/TagResourceRequest.h>
 #include <aws/inspector2/model/UntagResourceRequest.h>
 #include <aws/inspector2/model/UpdateConfigurationRequest.h>
 #include <aws/inspector2/model/UpdateEc2DeepInspectionConfigurationRequest.h>
+#include <aws/inspector2/model/UpdateEncryptionKeyRequest.h>
 #include <aws/inspector2/model/UpdateFilterRequest.h>
 #include <aws/inspector2/model/UpdateOrgEc2DeepInspectionConfigurationRequest.h>
 #include <aws/inspector2/model/UpdateOrganizationConfigurationRequest.h>
@@ -208,6 +215,16 @@ BatchGetAccountStatusOutcome Inspector2Client::BatchGetAccountStatus(const Batch
   return BatchGetAccountStatusOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
+BatchGetCodeSnippetOutcome Inspector2Client::BatchGetCodeSnippet(const BatchGetCodeSnippetRequest& request) const
+{
+  AWS_OPERATION_GUARD(BatchGetCodeSnippet);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchGetCodeSnippet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchGetCodeSnippet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/codesnippet/batchget");
+  return BatchGetCodeSnippetOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
 BatchGetFreeTrialInfoOutcome Inspector2Client::BatchGetFreeTrialInfo(const BatchGetFreeTrialInfoRequest& request) const
 {
   AWS_OPERATION_GUARD(BatchGetFreeTrialInfo);
@@ -248,6 +265,16 @@ CancelFindingsReportOutcome Inspector2Client::CancelFindingsReport(const CancelF
   return CancelFindingsReportOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
+CancelSbomExportOutcome Inspector2Client::CancelSbomExport(const CancelSbomExportRequest& request) const
+{
+  AWS_OPERATION_GUARD(CancelSbomExport);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CancelSbomExport, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CancelSbomExport, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/sbomexport/cancel");
+  return CancelSbomExportOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
 CreateFilterOutcome Inspector2Client::CreateFilter(const CreateFilterRequest& request) const
 {
   AWS_OPERATION_GUARD(CreateFilter);
@@ -266,6 +293,16 @@ CreateFindingsReportOutcome Inspector2Client::CreateFindingsReport(const CreateF
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateFindingsReport, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   endpointResolutionOutcome.GetResult().AddPathSegments("/reporting/create");
   return CreateFindingsReportOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateSbomExportOutcome Inspector2Client::CreateSbomExport(const CreateSbomExportRequest& request) const
+{
+  AWS_OPERATION_GUARD(CreateSbomExport);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateSbomExport, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateSbomExport, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/sbomexport/create");
+  return CreateSbomExportOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteFilterOutcome Inspector2Client::DeleteFilter(const DeleteFilterRequest& request) const
@@ -368,6 +405,26 @@ GetEc2DeepInspectionConfigurationOutcome Inspector2Client::GetEc2DeepInspectionC
   return GetEc2DeepInspectionConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
+GetEncryptionKeyOutcome Inspector2Client::GetEncryptionKey(const GetEncryptionKeyRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetEncryptionKey);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetEncryptionKey, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ResourceTypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetEncryptionKey", "Required field: ResourceType, is not set");
+    return GetEncryptionKeyOutcome(Aws::Client::AWSError<Inspector2Errors>(Inspector2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceType]", false));
+  }
+  if (!request.ScanTypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetEncryptionKey", "Required field: ScanType, is not set");
+    return GetEncryptionKeyOutcome(Aws::Client::AWSError<Inspector2Errors>(Inspector2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ScanType]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetEncryptionKey, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/encryptionkey/get");
+  return GetEncryptionKeyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
 GetFindingsReportStatusOutcome Inspector2Client::GetFindingsReportStatus(const GetFindingsReportStatusRequest& request) const
 {
   AWS_OPERATION_GUARD(GetFindingsReportStatus);
@@ -386,6 +443,16 @@ GetMemberOutcome Inspector2Client::GetMember(const GetMemberRequest& request) co
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetMember, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   endpointResolutionOutcome.GetResult().AddPathSegments("/members/get");
   return GetMemberOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetSbomExportOutcome Inspector2Client::GetSbomExport(const GetSbomExportRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetSbomExport);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSbomExport, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetSbomExport, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/sbomexport/get");
+  return GetSbomExportOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListAccountPermissionsOutcome Inspector2Client::ListAccountPermissions(const ListAccountPermissionsRequest& request) const
@@ -494,6 +561,16 @@ ListUsageTotalsOutcome Inspector2Client::ListUsageTotals(const ListUsageTotalsRe
   return ListUsageTotalsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
+ResetEncryptionKeyOutcome Inspector2Client::ResetEncryptionKey(const ResetEncryptionKeyRequest& request) const
+{
+  AWS_OPERATION_GUARD(ResetEncryptionKey);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ResetEncryptionKey, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ResetEncryptionKey, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/encryptionkey/reset");
+  return ResetEncryptionKeyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
 SearchVulnerabilitiesOutcome Inspector2Client::SearchVulnerabilities(const SearchVulnerabilitiesRequest& request) const
 {
   AWS_OPERATION_GUARD(SearchVulnerabilities);
@@ -559,6 +636,16 @@ UpdateEc2DeepInspectionConfigurationOutcome Inspector2Client::UpdateEc2DeepInspe
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateEc2DeepInspectionConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   endpointResolutionOutcome.GetResult().AddPathSegments("/ec2deepinspectionconfiguration/update");
   return UpdateEc2DeepInspectionConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateEncryptionKeyOutcome Inspector2Client::UpdateEncryptionKey(const UpdateEncryptionKeyRequest& request) const
+{
+  AWS_OPERATION_GUARD(UpdateEncryptionKey);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateEncryptionKey, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateEncryptionKey, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/encryptionkey/update");
+  return UpdateEncryptionKeyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateFilterOutcome Inspector2Client::UpdateFilter(const UpdateFilterRequest& request) const

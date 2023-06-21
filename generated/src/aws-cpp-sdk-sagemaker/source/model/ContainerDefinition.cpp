@@ -28,7 +28,8 @@ ContainerDefinition::ContainerDefinition() :
     m_environmentHasBeenSet(false),
     m_modelPackageNameHasBeenSet(false),
     m_inferenceSpecificationNameHasBeenSet(false),
-    m_multiModelConfigHasBeenSet(false)
+    m_multiModelConfigHasBeenSet(false),
+    m_modelDataSourceHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ ContainerDefinition::ContainerDefinition(JsonView jsonValue) :
     m_environmentHasBeenSet(false),
     m_modelPackageNameHasBeenSet(false),
     m_inferenceSpecificationNameHasBeenSet(false),
-    m_multiModelConfigHasBeenSet(false)
+    m_multiModelConfigHasBeenSet(false),
+    m_modelDataSourceHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -115,6 +117,13 @@ ContainerDefinition& ContainerDefinition::operator =(JsonView jsonValue)
     m_multiModelConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ModelDataSource"))
+  {
+    m_modelDataSource = jsonValue.GetObject("ModelDataSource");
+
+    m_modelDataSourceHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -177,6 +186,12 @@ JsonValue ContainerDefinition::Jsonize() const
   if(m_multiModelConfigHasBeenSet)
   {
    payload.WithObject("MultiModelConfig", m_multiModelConfig.Jsonize());
+
+  }
+
+  if(m_modelDataSourceHasBeenSet)
+  {
+   payload.WithObject("ModelDataSource", m_modelDataSource.Jsonize());
 
   }
 

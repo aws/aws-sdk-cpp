@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/inspector2/model/CodeVulnerabilityDetails.h>
+#include <aws/inspector2/model/EpssDetails.h>
 #include <aws/inspector2/model/ExploitAvailable.h>
 #include <aws/inspector2/model/ExploitabilityDetails.h>
 #include <aws/core/utils/DateTime.h>
@@ -92,6 +94,43 @@ namespace Model
 
 
     /**
+     * <p>Details about the code vulnerability identified in a Lambda function used to
+     * filter findings.</p>
+     */
+    inline const CodeVulnerabilityDetails& GetCodeVulnerabilityDetails() const{ return m_codeVulnerabilityDetails; }
+
+    /**
+     * <p>Details about the code vulnerability identified in a Lambda function used to
+     * filter findings.</p>
+     */
+    inline bool CodeVulnerabilityDetailsHasBeenSet() const { return m_codeVulnerabilityDetailsHasBeenSet; }
+
+    /**
+     * <p>Details about the code vulnerability identified in a Lambda function used to
+     * filter findings.</p>
+     */
+    inline void SetCodeVulnerabilityDetails(const CodeVulnerabilityDetails& value) { m_codeVulnerabilityDetailsHasBeenSet = true; m_codeVulnerabilityDetails = value; }
+
+    /**
+     * <p>Details about the code vulnerability identified in a Lambda function used to
+     * filter findings.</p>
+     */
+    inline void SetCodeVulnerabilityDetails(CodeVulnerabilityDetails&& value) { m_codeVulnerabilityDetailsHasBeenSet = true; m_codeVulnerabilityDetails = std::move(value); }
+
+    /**
+     * <p>Details about the code vulnerability identified in a Lambda function used to
+     * filter findings.</p>
+     */
+    inline Finding& WithCodeVulnerabilityDetails(const CodeVulnerabilityDetails& value) { SetCodeVulnerabilityDetails(value); return *this;}
+
+    /**
+     * <p>Details about the code vulnerability identified in a Lambda function used to
+     * filter findings.</p>
+     */
+    inline Finding& WithCodeVulnerabilityDetails(CodeVulnerabilityDetails&& value) { SetCodeVulnerabilityDetails(std::move(value)); return *this;}
+
+
+    /**
      * <p>The description of the finding.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
@@ -130,6 +169,37 @@ namespace Model
      * <p>The description of the finding.</p>
      */
     inline Finding& WithDescription(const char* value) { SetDescription(value); return *this;}
+
+
+    /**
+     * <p>The finding's EPSS score.</p>
+     */
+    inline const EpssDetails& GetEpss() const{ return m_epss; }
+
+    /**
+     * <p>The finding's EPSS score.</p>
+     */
+    inline bool EpssHasBeenSet() const { return m_epssHasBeenSet; }
+
+    /**
+     * <p>The finding's EPSS score.</p>
+     */
+    inline void SetEpss(const EpssDetails& value) { m_epssHasBeenSet = true; m_epss = value; }
+
+    /**
+     * <p>The finding's EPSS score.</p>
+     */
+    inline void SetEpss(EpssDetails&& value) { m_epssHasBeenSet = true; m_epss = std::move(value); }
+
+    /**
+     * <p>The finding's EPSS score.</p>
+     */
+    inline Finding& WithEpss(const EpssDetails& value) { SetEpss(value); return *this;}
+
+    /**
+     * <p>The finding's EPSS score.</p>
+     */
+    inline Finding& WithEpss(EpssDetails&& value) { SetEpss(std::move(value)); return *this;}
 
 
     /**
@@ -707,8 +777,14 @@ namespace Model
     Aws::String m_awsAccountId;
     bool m_awsAccountIdHasBeenSet = false;
 
+    CodeVulnerabilityDetails m_codeVulnerabilityDetails;
+    bool m_codeVulnerabilityDetailsHasBeenSet = false;
+
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
+
+    EpssDetails m_epss;
+    bool m_epssHasBeenSet = false;
 
     ExploitAvailable m_exploitAvailable;
     bool m_exploitAvailableHasBeenSet = false;

@@ -21,6 +21,7 @@
 #include <aws/mediaconvert/model/HlsManifestDurationFormat.h>
 #include <aws/mediaconvert/model/HlsOutputSelection.h>
 #include <aws/mediaconvert/model/HlsProgramDateTime.h>
+#include <aws/mediaconvert/model/HlsProgressiveWriteHlsManifest.h>
 #include <aws/mediaconvert/model/HlsSegmentControl.h>
 #include <aws/mediaconvert/model/HlsSegmentLengthControl.h>
 #include <aws/mediaconvert/model/HlsStreamInfResolution.h>
@@ -1103,6 +1104,91 @@ namespace Model
 
 
     /**
+     * Specify whether MediaConvert generates HLS manifests while your job is running
+     * or when your job is complete. To generate HLS manifests while your job is
+     * running: Choose Enabled. Use if you want to play back your content as soon as
+     * it's available. MediaConvert writes the parent and child manifests after the
+     * first three media segments are written to your destination S3 bucket. It then
+     * writes new updated manifests after each additional segment is written. The
+     * parent manifest includes the latest BANDWIDTH and AVERAGE-BANDWIDTH attributes,
+     * and child manifests include the latest available media segment. When your job
+     * completes, the final child playlists include an EXT-X-ENDLIST tag. To generate
+     * HLS manifests only when your job completes: Choose Disabled.
+     */
+    inline const HlsProgressiveWriteHlsManifest& GetProgressiveWriteHlsManifest() const{ return m_progressiveWriteHlsManifest; }
+
+    /**
+     * Specify whether MediaConvert generates HLS manifests while your job is running
+     * or when your job is complete. To generate HLS manifests while your job is
+     * running: Choose Enabled. Use if you want to play back your content as soon as
+     * it's available. MediaConvert writes the parent and child manifests after the
+     * first three media segments are written to your destination S3 bucket. It then
+     * writes new updated manifests after each additional segment is written. The
+     * parent manifest includes the latest BANDWIDTH and AVERAGE-BANDWIDTH attributes,
+     * and child manifests include the latest available media segment. When your job
+     * completes, the final child playlists include an EXT-X-ENDLIST tag. To generate
+     * HLS manifests only when your job completes: Choose Disabled.
+     */
+    inline bool ProgressiveWriteHlsManifestHasBeenSet() const { return m_progressiveWriteHlsManifestHasBeenSet; }
+
+    /**
+     * Specify whether MediaConvert generates HLS manifests while your job is running
+     * or when your job is complete. To generate HLS manifests while your job is
+     * running: Choose Enabled. Use if you want to play back your content as soon as
+     * it's available. MediaConvert writes the parent and child manifests after the
+     * first three media segments are written to your destination S3 bucket. It then
+     * writes new updated manifests after each additional segment is written. The
+     * parent manifest includes the latest BANDWIDTH and AVERAGE-BANDWIDTH attributes,
+     * and child manifests include the latest available media segment. When your job
+     * completes, the final child playlists include an EXT-X-ENDLIST tag. To generate
+     * HLS manifests only when your job completes: Choose Disabled.
+     */
+    inline void SetProgressiveWriteHlsManifest(const HlsProgressiveWriteHlsManifest& value) { m_progressiveWriteHlsManifestHasBeenSet = true; m_progressiveWriteHlsManifest = value; }
+
+    /**
+     * Specify whether MediaConvert generates HLS manifests while your job is running
+     * or when your job is complete. To generate HLS manifests while your job is
+     * running: Choose Enabled. Use if you want to play back your content as soon as
+     * it's available. MediaConvert writes the parent and child manifests after the
+     * first three media segments are written to your destination S3 bucket. It then
+     * writes new updated manifests after each additional segment is written. The
+     * parent manifest includes the latest BANDWIDTH and AVERAGE-BANDWIDTH attributes,
+     * and child manifests include the latest available media segment. When your job
+     * completes, the final child playlists include an EXT-X-ENDLIST tag. To generate
+     * HLS manifests only when your job completes: Choose Disabled.
+     */
+    inline void SetProgressiveWriteHlsManifest(HlsProgressiveWriteHlsManifest&& value) { m_progressiveWriteHlsManifestHasBeenSet = true; m_progressiveWriteHlsManifest = std::move(value); }
+
+    /**
+     * Specify whether MediaConvert generates HLS manifests while your job is running
+     * or when your job is complete. To generate HLS manifests while your job is
+     * running: Choose Enabled. Use if you want to play back your content as soon as
+     * it's available. MediaConvert writes the parent and child manifests after the
+     * first three media segments are written to your destination S3 bucket. It then
+     * writes new updated manifests after each additional segment is written. The
+     * parent manifest includes the latest BANDWIDTH and AVERAGE-BANDWIDTH attributes,
+     * and child manifests include the latest available media segment. When your job
+     * completes, the final child playlists include an EXT-X-ENDLIST tag. To generate
+     * HLS manifests only when your job completes: Choose Disabled.
+     */
+    inline HlsGroupSettings& WithProgressiveWriteHlsManifest(const HlsProgressiveWriteHlsManifest& value) { SetProgressiveWriteHlsManifest(value); return *this;}
+
+    /**
+     * Specify whether MediaConvert generates HLS manifests while your job is running
+     * or when your job is complete. To generate HLS manifests while your job is
+     * running: Choose Enabled. Use if you want to play back your content as soon as
+     * it's available. MediaConvert writes the parent and child manifests after the
+     * first three media segments are written to your destination S3 bucket. It then
+     * writes new updated manifests after each additional segment is written. The
+     * parent manifest includes the latest BANDWIDTH and AVERAGE-BANDWIDTH attributes,
+     * and child manifests include the latest available media segment. When your job
+     * completes, the final child playlists include an EXT-X-ENDLIST tag. To generate
+     * HLS manifests only when your job completes: Choose Disabled.
+     */
+    inline HlsGroupSettings& WithProgressiveWriteHlsManifest(HlsProgressiveWriteHlsManifest&& value) { SetProgressiveWriteHlsManifest(std::move(value)); return *this;}
+
+
+    /**
      * When set to SINGLE_FILE, emits program as a single media resource (.ts) file,
      * uses #EXT-X-BYTERANGE tags to index segment for playback.
      */
@@ -1563,6 +1649,9 @@ namespace Model
 
     int m_programDateTimePeriod;
     bool m_programDateTimePeriodHasBeenSet = false;
+
+    HlsProgressiveWriteHlsManifest m_progressiveWriteHlsManifest;
+    bool m_progressiveWriteHlsManifestHasBeenSet = false;
 
     HlsSegmentControl m_segmentControl;
     bool m_segmentControlHasBeenSet = false;

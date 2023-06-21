@@ -94,12 +94,12 @@ namespace Model
 
     /**
      * <p>An array of channel objects describing the input data and their location.
-     * Each channel is a named input source. Similar to <a
+     * Each channel is a named input source. Similar to the <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html#sagemaker-CreateAutoMLJob-request-InputDataConfig">InputDataConfig</a>
-     * supported by <code>CreateAutoMLJob</code>. The supported formats depend on the
-     * problem type:</p> <ul> <li> <p>For Tabular problem types: <code>S3Prefix</code>,
-     * <code>ManifestFile</code>.</p> </li> <li> <p>For ImageClassification:
-     * <code>S3Prefix</code>, <code>ManifestFile</code>,
+     * attribute in the <code>CreateAutoMLJob</code> input parameters. The supported
+     * formats depend on the problem type:</p> <ul> <li> <p>For Tabular problem types:
+     * <code>S3Prefix</code>, <code>ManifestFile</code>.</p> </li> <li> <p>For
+     * ImageClassification: <code>S3Prefix</code>, <code>ManifestFile</code>,
      * <code>AugmentedManifestFile</code>.</p> </li> <li> <p>For TextClassification:
      * <code>S3Prefix</code>.</p> </li> </ul>
      */
@@ -107,12 +107,12 @@ namespace Model
 
     /**
      * <p>An array of channel objects describing the input data and their location.
-     * Each channel is a named input source. Similar to <a
+     * Each channel is a named input source. Similar to the <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html#sagemaker-CreateAutoMLJob-request-InputDataConfig">InputDataConfig</a>
-     * supported by <code>CreateAutoMLJob</code>. The supported formats depend on the
-     * problem type:</p> <ul> <li> <p>For Tabular problem types: <code>S3Prefix</code>,
-     * <code>ManifestFile</code>.</p> </li> <li> <p>For ImageClassification:
-     * <code>S3Prefix</code>, <code>ManifestFile</code>,
+     * attribute in the <code>CreateAutoMLJob</code> input parameters. The supported
+     * formats depend on the problem type:</p> <ul> <li> <p>For Tabular problem types:
+     * <code>S3Prefix</code>, <code>ManifestFile</code>.</p> </li> <li> <p>For
+     * ImageClassification: <code>S3Prefix</code>, <code>ManifestFile</code>,
      * <code>AugmentedManifestFile</code>.</p> </li> <li> <p>For TextClassification:
      * <code>S3Prefix</code>.</p> </li> </ul>
      */
@@ -120,12 +120,12 @@ namespace Model
 
     /**
      * <p>An array of channel objects describing the input data and their location.
-     * Each channel is a named input source. Similar to <a
+     * Each channel is a named input source. Similar to the <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html#sagemaker-CreateAutoMLJob-request-InputDataConfig">InputDataConfig</a>
-     * supported by <code>CreateAutoMLJob</code>. The supported formats depend on the
-     * problem type:</p> <ul> <li> <p>For Tabular problem types: <code>S3Prefix</code>,
-     * <code>ManifestFile</code>.</p> </li> <li> <p>For ImageClassification:
-     * <code>S3Prefix</code>, <code>ManifestFile</code>,
+     * attribute in the <code>CreateAutoMLJob</code> input parameters. The supported
+     * formats depend on the problem type:</p> <ul> <li> <p>For Tabular problem types:
+     * <code>S3Prefix</code>, <code>ManifestFile</code>.</p> </li> <li> <p>For
+     * ImageClassification: <code>S3Prefix</code>, <code>ManifestFile</code>,
      * <code>AugmentedManifestFile</code>.</p> </li> <li> <p>For TextClassification:
      * <code>S3Prefix</code>.</p> </li> </ul>
      */
@@ -133,12 +133,12 @@ namespace Model
 
     /**
      * <p>An array of channel objects describing the input data and their location.
-     * Each channel is a named input source. Similar to <a
+     * Each channel is a named input source. Similar to the <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html#sagemaker-CreateAutoMLJob-request-InputDataConfig">InputDataConfig</a>
-     * supported by <code>CreateAutoMLJob</code>. The supported formats depend on the
-     * problem type:</p> <ul> <li> <p>For Tabular problem types: <code>S3Prefix</code>,
-     * <code>ManifestFile</code>.</p> </li> <li> <p>For ImageClassification:
-     * <code>S3Prefix</code>, <code>ManifestFile</code>,
+     * attribute in the <code>CreateAutoMLJob</code> input parameters. The supported
+     * formats depend on the problem type:</p> <ul> <li> <p>For Tabular problem types:
+     * <code>S3Prefix</code>, <code>ManifestFile</code>.</p> </li> <li> <p>For
+     * ImageClassification: <code>S3Prefix</code>, <code>ManifestFile</code>,
      * <code>AugmentedManifestFile</code>.</p> </li> <li> <p>For TextClassification:
      * <code>S3Prefix</code>.</p> </li> </ul>
      */
@@ -146,12 +146,12 @@ namespace Model
 
     /**
      * <p>An array of channel objects describing the input data and their location.
-     * Each channel is a named input source. Similar to <a
+     * Each channel is a named input source. Similar to the <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html#sagemaker-CreateAutoMLJob-request-InputDataConfig">InputDataConfig</a>
-     * supported by <code>CreateAutoMLJob</code>. The supported formats depend on the
-     * problem type:</p> <ul> <li> <p>For Tabular problem types: <code>S3Prefix</code>,
-     * <code>ManifestFile</code>.</p> </li> <li> <p>For ImageClassification:
-     * <code>S3Prefix</code>, <code>ManifestFile</code>,
+     * attribute in the <code>CreateAutoMLJob</code> input parameters. The supported
+     * formats depend on the problem type:</p> <ul> <li> <p>For Tabular problem types:
+     * <code>S3Prefix</code>, <code>ManifestFile</code>.</p> </li> <li> <p>For
+     * ImageClassification: <code>S3Prefix</code>, <code>ManifestFile</code>,
      * <code>AugmentedManifestFile</code>.</p> </li> <li> <p>For TextClassification:
      * <code>S3Prefix</code>.</p> </li> </ul>
      */
@@ -159,12 +159,12 @@ namespace Model
 
     /**
      * <p>An array of channel objects describing the input data and their location.
-     * Each channel is a named input source. Similar to <a
+     * Each channel is a named input source. Similar to the <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html#sagemaker-CreateAutoMLJob-request-InputDataConfig">InputDataConfig</a>
-     * supported by <code>CreateAutoMLJob</code>. The supported formats depend on the
-     * problem type:</p> <ul> <li> <p>For Tabular problem types: <code>S3Prefix</code>,
-     * <code>ManifestFile</code>.</p> </li> <li> <p>For ImageClassification:
-     * <code>S3Prefix</code>, <code>ManifestFile</code>,
+     * attribute in the <code>CreateAutoMLJob</code> input parameters. The supported
+     * formats depend on the problem type:</p> <ul> <li> <p>For Tabular problem types:
+     * <code>S3Prefix</code>, <code>ManifestFile</code>.</p> </li> <li> <p>For
+     * ImageClassification: <code>S3Prefix</code>, <code>ManifestFile</code>,
      * <code>AugmentedManifestFile</code>.</p> </li> <li> <p>For TextClassification:
      * <code>S3Prefix</code>.</p> </li> </ul>
      */
@@ -172,12 +172,12 @@ namespace Model
 
     /**
      * <p>An array of channel objects describing the input data and their location.
-     * Each channel is a named input source. Similar to <a
+     * Each channel is a named input source. Similar to the <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html#sagemaker-CreateAutoMLJob-request-InputDataConfig">InputDataConfig</a>
-     * supported by <code>CreateAutoMLJob</code>. The supported formats depend on the
-     * problem type:</p> <ul> <li> <p>For Tabular problem types: <code>S3Prefix</code>,
-     * <code>ManifestFile</code>.</p> </li> <li> <p>For ImageClassification:
-     * <code>S3Prefix</code>, <code>ManifestFile</code>,
+     * attribute in the <code>CreateAutoMLJob</code> input parameters. The supported
+     * formats depend on the problem type:</p> <ul> <li> <p>For Tabular problem types:
+     * <code>S3Prefix</code>, <code>ManifestFile</code>.</p> </li> <li> <p>For
+     * ImageClassification: <code>S3Prefix</code>, <code>ManifestFile</code>,
      * <code>AugmentedManifestFile</code>.</p> </li> <li> <p>For TextClassification:
      * <code>S3Prefix</code>.</p> </li> </ul>
      */
@@ -185,12 +185,12 @@ namespace Model
 
     /**
      * <p>An array of channel objects describing the input data and their location.
-     * Each channel is a named input source. Similar to <a
+     * Each channel is a named input source. Similar to the <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html#sagemaker-CreateAutoMLJob-request-InputDataConfig">InputDataConfig</a>
-     * supported by <code>CreateAutoMLJob</code>. The supported formats depend on the
-     * problem type:</p> <ul> <li> <p>For Tabular problem types: <code>S3Prefix</code>,
-     * <code>ManifestFile</code>.</p> </li> <li> <p>For ImageClassification:
-     * <code>S3Prefix</code>, <code>ManifestFile</code>,
+     * attribute in the <code>CreateAutoMLJob</code> input parameters. The supported
+     * formats depend on the problem type:</p> <ul> <li> <p>For Tabular problem types:
+     * <code>S3Prefix</code>, <code>ManifestFile</code>.</p> </li> <li> <p>For
+     * ImageClassification: <code>S3Prefix</code>, <code>ManifestFile</code>,
      * <code>AugmentedManifestFile</code>.</p> </li> <li> <p>For TextClassification:
      * <code>S3Prefix</code>.</p> </li> </ul>
      */
@@ -236,55 +236,31 @@ namespace Model
 
     /**
      * <p>Defines the configuration settings of one of the supported problem types.</p>
-     *  <p>For tabular problem types, you must either specify the type of
-     * supervised learning problem in <code>AutoMLProblemTypeConfig</code>
-     * (<code>TabularJobConfig.ProblemType</code>) and provide the
-     * <code>AutoMLJobObjective</code>, or none at all.</p> 
      */
     inline const AutoMLProblemTypeConfig& GetAutoMLProblemTypeConfig() const{ return m_autoMLProblemTypeConfig; }
 
     /**
      * <p>Defines the configuration settings of one of the supported problem types.</p>
-     *  <p>For tabular problem types, you must either specify the type of
-     * supervised learning problem in <code>AutoMLProblemTypeConfig</code>
-     * (<code>TabularJobConfig.ProblemType</code>) and provide the
-     * <code>AutoMLJobObjective</code>, or none at all.</p> 
      */
     inline bool AutoMLProblemTypeConfigHasBeenSet() const { return m_autoMLProblemTypeConfigHasBeenSet; }
 
     /**
      * <p>Defines the configuration settings of one of the supported problem types.</p>
-     *  <p>For tabular problem types, you must either specify the type of
-     * supervised learning problem in <code>AutoMLProblemTypeConfig</code>
-     * (<code>TabularJobConfig.ProblemType</code>) and provide the
-     * <code>AutoMLJobObjective</code>, or none at all.</p> 
      */
     inline void SetAutoMLProblemTypeConfig(const AutoMLProblemTypeConfig& value) { m_autoMLProblemTypeConfigHasBeenSet = true; m_autoMLProblemTypeConfig = value; }
 
     /**
      * <p>Defines the configuration settings of one of the supported problem types.</p>
-     *  <p>For tabular problem types, you must either specify the type of
-     * supervised learning problem in <code>AutoMLProblemTypeConfig</code>
-     * (<code>TabularJobConfig.ProblemType</code>) and provide the
-     * <code>AutoMLJobObjective</code>, or none at all.</p> 
      */
     inline void SetAutoMLProblemTypeConfig(AutoMLProblemTypeConfig&& value) { m_autoMLProblemTypeConfigHasBeenSet = true; m_autoMLProblemTypeConfig = std::move(value); }
 
     /**
      * <p>Defines the configuration settings of one of the supported problem types.</p>
-     *  <p>For tabular problem types, you must either specify the type of
-     * supervised learning problem in <code>AutoMLProblemTypeConfig</code>
-     * (<code>TabularJobConfig.ProblemType</code>) and provide the
-     * <code>AutoMLJobObjective</code>, or none at all.</p> 
      */
     inline CreateAutoMLJobV2Request& WithAutoMLProblemTypeConfig(const AutoMLProblemTypeConfig& value) { SetAutoMLProblemTypeConfig(value); return *this;}
 
     /**
      * <p>Defines the configuration settings of one of the supported problem types.</p>
-     *  <p>For tabular problem types, you must either specify the type of
-     * supervised learning problem in <code>AutoMLProblemTypeConfig</code>
-     * (<code>TabularJobConfig.ProblemType</code>) and provide the
-     * <code>AutoMLJobObjective</code>, or none at all.</p> 
      */
     inline CreateAutoMLJobV2Request& WithAutoMLProblemTypeConfig(AutoMLProblemTypeConfig&& value) { SetAutoMLProblemTypeConfig(std::move(value)); return *this;}
 
@@ -439,10 +415,10 @@ namespace Model
      * specified, the default objective metric depends on the problem type. For the
      * list of default values per problem type, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">AutoMLJobObjective</a>.</p>
-     *  <p>For tabular problem types, you must either provide the
+     *  <p>For tabular problem types, you must either provide both the
      * <code>AutoMLJobObjective</code> and indicate the type of supervised learning
      * problem in <code>AutoMLProblemTypeConfig</code>
-     * (<code>TabularJobConfig.ProblemType</code>), or none.</p> 
+     * (<code>TabularJobConfig.ProblemType</code>), or none at all.</p> 
      */
     inline const AutoMLJobObjective& GetAutoMLJobObjective() const{ return m_autoMLJobObjective; }
 
@@ -451,10 +427,10 @@ namespace Model
      * specified, the default objective metric depends on the problem type. For the
      * list of default values per problem type, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">AutoMLJobObjective</a>.</p>
-     *  <p>For tabular problem types, you must either provide the
+     *  <p>For tabular problem types, you must either provide both the
      * <code>AutoMLJobObjective</code> and indicate the type of supervised learning
      * problem in <code>AutoMLProblemTypeConfig</code>
-     * (<code>TabularJobConfig.ProblemType</code>), or none.</p> 
+     * (<code>TabularJobConfig.ProblemType</code>), or none at all.</p> 
      */
     inline bool AutoMLJobObjectiveHasBeenSet() const { return m_autoMLJobObjectiveHasBeenSet; }
 
@@ -463,10 +439,10 @@ namespace Model
      * specified, the default objective metric depends on the problem type. For the
      * list of default values per problem type, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">AutoMLJobObjective</a>.</p>
-     *  <p>For tabular problem types, you must either provide the
+     *  <p>For tabular problem types, you must either provide both the
      * <code>AutoMLJobObjective</code> and indicate the type of supervised learning
      * problem in <code>AutoMLProblemTypeConfig</code>
-     * (<code>TabularJobConfig.ProblemType</code>), or none.</p> 
+     * (<code>TabularJobConfig.ProblemType</code>), or none at all.</p> 
      */
     inline void SetAutoMLJobObjective(const AutoMLJobObjective& value) { m_autoMLJobObjectiveHasBeenSet = true; m_autoMLJobObjective = value; }
 
@@ -475,10 +451,10 @@ namespace Model
      * specified, the default objective metric depends on the problem type. For the
      * list of default values per problem type, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">AutoMLJobObjective</a>.</p>
-     *  <p>For tabular problem types, you must either provide the
+     *  <p>For tabular problem types, you must either provide both the
      * <code>AutoMLJobObjective</code> and indicate the type of supervised learning
      * problem in <code>AutoMLProblemTypeConfig</code>
-     * (<code>TabularJobConfig.ProblemType</code>), or none.</p> 
+     * (<code>TabularJobConfig.ProblemType</code>), or none at all.</p> 
      */
     inline void SetAutoMLJobObjective(AutoMLJobObjective&& value) { m_autoMLJobObjectiveHasBeenSet = true; m_autoMLJobObjective = std::move(value); }
 
@@ -487,10 +463,10 @@ namespace Model
      * specified, the default objective metric depends on the problem type. For the
      * list of default values per problem type, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">AutoMLJobObjective</a>.</p>
-     *  <p>For tabular problem types, you must either provide the
+     *  <p>For tabular problem types, you must either provide both the
      * <code>AutoMLJobObjective</code> and indicate the type of supervised learning
      * problem in <code>AutoMLProblemTypeConfig</code>
-     * (<code>TabularJobConfig.ProblemType</code>), or none.</p> 
+     * (<code>TabularJobConfig.ProblemType</code>), or none at all.</p> 
      */
     inline CreateAutoMLJobV2Request& WithAutoMLJobObjective(const AutoMLJobObjective& value) { SetAutoMLJobObjective(value); return *this;}
 
@@ -499,10 +475,10 @@ namespace Model
      * specified, the default objective metric depends on the problem type. For the
      * list of default values per problem type, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">AutoMLJobObjective</a>.</p>
-     *  <p>For tabular problem types, you must either provide the
+     *  <p>For tabular problem types, you must either provide both the
      * <code>AutoMLJobObjective</code> and indicate the type of supervised learning
      * problem in <code>AutoMLProblemTypeConfig</code>
-     * (<code>TabularJobConfig.ProblemType</code>), or none.</p> 
+     * (<code>TabularJobConfig.ProblemType</code>), or none at all.</p> 
      */
     inline CreateAutoMLJobV2Request& WithAutoMLJobObjective(AutoMLJobObjective&& value) { SetAutoMLJobObjective(std::move(value)); return *this;}
 

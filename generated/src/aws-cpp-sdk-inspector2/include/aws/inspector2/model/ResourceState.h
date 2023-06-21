@@ -130,6 +130,25 @@ namespace Model
     
     inline ResourceState& WithLambda(State&& value) { SetLambda(std::move(value)); return *this;}
 
+
+    
+    inline const State& GetLambdaCode() const{ return m_lambdaCode; }
+
+    
+    inline bool LambdaCodeHasBeenSet() const { return m_lambdaCodeHasBeenSet; }
+
+    
+    inline void SetLambdaCode(const State& value) { m_lambdaCodeHasBeenSet = true; m_lambdaCode = value; }
+
+    
+    inline void SetLambdaCode(State&& value) { m_lambdaCodeHasBeenSet = true; m_lambdaCode = std::move(value); }
+
+    
+    inline ResourceState& WithLambdaCode(const State& value) { SetLambdaCode(value); return *this;}
+
+    
+    inline ResourceState& WithLambdaCode(State&& value) { SetLambdaCode(std::move(value)); return *this;}
+
   private:
 
     State m_ec2;
@@ -140,6 +159,9 @@ namespace Model
 
     State m_lambda;
     bool m_lambdaHasBeenSet = false;
+
+    State m_lambdaCode;
+    bool m_lambdaCodeHasBeenSet = false;
   };
 
 } // namespace Model

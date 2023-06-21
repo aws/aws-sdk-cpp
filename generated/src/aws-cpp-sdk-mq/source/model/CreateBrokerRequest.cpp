@@ -38,7 +38,10 @@ CreateBrokerRequest::CreateBrokerRequest() :
     m_storageTypeHasBeenSet(false),
     m_subnetIdsHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_usersHasBeenSet(false)
+    m_usersHasBeenSet(false),
+    m_dataReplicationMode(DataReplicationMode::NOT_SET),
+    m_dataReplicationModeHasBeenSet(false),
+    m_dataReplicationPrimaryBrokerArnHasBeenSet(false)
 {
 }
 
@@ -173,6 +176,17 @@ Aws::String CreateBrokerRequest::SerializePayload() const
      usersJsonList[usersIndex].AsObject(m_users[usersIndex].Jsonize());
    }
    payload.WithArray("users", std::move(usersJsonList));
+
+  }
+
+  if(m_dataReplicationModeHasBeenSet)
+  {
+   payload.WithString("dataReplicationMode", DataReplicationModeMapper::GetNameForDataReplicationMode(m_dataReplicationMode));
+  }
+
+  if(m_dataReplicationPrimaryBrokerArnHasBeenSet)
+  {
+   payload.WithString("dataReplicationPrimaryBrokerArn", m_dataReplicationPrimaryBrokerArn);
 
   }
 

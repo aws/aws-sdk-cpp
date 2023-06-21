@@ -24,8 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>A list of information about the configuration.</p> <p>Does not
-   * apply to RabbitMQ brokers.</p><p><h3>See Also:</h3>   <a
+   * <p>A list of information about the configuration.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/ConfigurationId">AWS
    * API Reference</a></p>
    */

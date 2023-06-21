@@ -13,6 +13,7 @@
 #include <aws/mq/model/Logs.h>
 #include <aws/mq/model/WeeklyStartTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/mq/model/DataReplicationMode.h>
 #include <utility>
 
 namespace Aws
@@ -455,6 +456,37 @@ namespace Model
      */
     inline UpdateBrokerRequest& AddSecurityGroups(const char* value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
 
+
+    /**
+     * <p>Defines whether this broker is a part of a data replication pair.</p>
+     */
+    inline const DataReplicationMode& GetDataReplicationMode() const{ return m_dataReplicationMode; }
+
+    /**
+     * <p>Defines whether this broker is a part of a data replication pair.</p>
+     */
+    inline bool DataReplicationModeHasBeenSet() const { return m_dataReplicationModeHasBeenSet; }
+
+    /**
+     * <p>Defines whether this broker is a part of a data replication pair.</p>
+     */
+    inline void SetDataReplicationMode(const DataReplicationMode& value) { m_dataReplicationModeHasBeenSet = true; m_dataReplicationMode = value; }
+
+    /**
+     * <p>Defines whether this broker is a part of a data replication pair.</p>
+     */
+    inline void SetDataReplicationMode(DataReplicationMode&& value) { m_dataReplicationModeHasBeenSet = true; m_dataReplicationMode = std::move(value); }
+
+    /**
+     * <p>Defines whether this broker is a part of a data replication pair.</p>
+     */
+    inline UpdateBrokerRequest& WithDataReplicationMode(const DataReplicationMode& value) { SetDataReplicationMode(value); return *this;}
+
+    /**
+     * <p>Defines whether this broker is a part of a data replication pair.</p>
+     */
+    inline UpdateBrokerRequest& WithDataReplicationMode(DataReplicationMode&& value) { SetDataReplicationMode(std::move(value)); return *this;}
+
   private:
 
     AuthenticationStrategy m_authenticationStrategy;
@@ -486,6 +518,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_securityGroups;
     bool m_securityGroupsHasBeenSet = false;
+
+    DataReplicationMode m_dataReplicationMode;
+    bool m_dataReplicationModeHasBeenSet = false;
   };
 
 } // namespace Model

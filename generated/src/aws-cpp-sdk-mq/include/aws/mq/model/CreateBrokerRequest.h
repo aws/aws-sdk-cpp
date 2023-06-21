@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mq/model/BrokerStorageType.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/mq/model/DataReplicationMode.h>
 #include <aws/mq/model/User.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -120,66 +121,98 @@ namespace Model
 
 
     /**
-     * <p>Required. The broker's name. This value must be unique in your AWS account,
-     * 1-50 characters long, must contain only letters, numbers, dashes, and
-     * underscores, and must not contain white spaces, brackets, wildcard characters,
-     * or special characters.</p>
+     * <p>Required. The broker's name. This value must be unique in your Amazon Web
+     * Services account, 1-50 characters long, must contain only letters, numbers,
+     * dashes, and underscores, and must not contain white spaces, brackets, wildcard
+     * characters, or special characters.</p> <p>Do not add personally
+     * identifiable information (PII) or other confidential or sensitive information in
+     * broker names. Broker names are accessible to other Amazon Web Services services,
+     * including CloudWatch Logs. Broker names are not intended to be used for private
+     * or sensitive data.</p>
      */
     inline const Aws::String& GetBrokerName() const{ return m_brokerName; }
 
     /**
-     * <p>Required. The broker's name. This value must be unique in your AWS account,
-     * 1-50 characters long, must contain only letters, numbers, dashes, and
-     * underscores, and must not contain white spaces, brackets, wildcard characters,
-     * or special characters.</p>
+     * <p>Required. The broker's name. This value must be unique in your Amazon Web
+     * Services account, 1-50 characters long, must contain only letters, numbers,
+     * dashes, and underscores, and must not contain white spaces, brackets, wildcard
+     * characters, or special characters.</p> <p>Do not add personally
+     * identifiable information (PII) or other confidential or sensitive information in
+     * broker names. Broker names are accessible to other Amazon Web Services services,
+     * including CloudWatch Logs. Broker names are not intended to be used for private
+     * or sensitive data.</p>
      */
     inline bool BrokerNameHasBeenSet() const { return m_brokerNameHasBeenSet; }
 
     /**
-     * <p>Required. The broker's name. This value must be unique in your AWS account,
-     * 1-50 characters long, must contain only letters, numbers, dashes, and
-     * underscores, and must not contain white spaces, brackets, wildcard characters,
-     * or special characters.</p>
+     * <p>Required. The broker's name. This value must be unique in your Amazon Web
+     * Services account, 1-50 characters long, must contain only letters, numbers,
+     * dashes, and underscores, and must not contain white spaces, brackets, wildcard
+     * characters, or special characters.</p> <p>Do not add personally
+     * identifiable information (PII) or other confidential or sensitive information in
+     * broker names. Broker names are accessible to other Amazon Web Services services,
+     * including CloudWatch Logs. Broker names are not intended to be used for private
+     * or sensitive data.</p>
      */
     inline void SetBrokerName(const Aws::String& value) { m_brokerNameHasBeenSet = true; m_brokerName = value; }
 
     /**
-     * <p>Required. The broker's name. This value must be unique in your AWS account,
-     * 1-50 characters long, must contain only letters, numbers, dashes, and
-     * underscores, and must not contain white spaces, brackets, wildcard characters,
-     * or special characters.</p>
+     * <p>Required. The broker's name. This value must be unique in your Amazon Web
+     * Services account, 1-50 characters long, must contain only letters, numbers,
+     * dashes, and underscores, and must not contain white spaces, brackets, wildcard
+     * characters, or special characters.</p> <p>Do not add personally
+     * identifiable information (PII) or other confidential or sensitive information in
+     * broker names. Broker names are accessible to other Amazon Web Services services,
+     * including CloudWatch Logs. Broker names are not intended to be used for private
+     * or sensitive data.</p>
      */
     inline void SetBrokerName(Aws::String&& value) { m_brokerNameHasBeenSet = true; m_brokerName = std::move(value); }
 
     /**
-     * <p>Required. The broker's name. This value must be unique in your AWS account,
-     * 1-50 characters long, must contain only letters, numbers, dashes, and
-     * underscores, and must not contain white spaces, brackets, wildcard characters,
-     * or special characters.</p>
+     * <p>Required. The broker's name. This value must be unique in your Amazon Web
+     * Services account, 1-50 characters long, must contain only letters, numbers,
+     * dashes, and underscores, and must not contain white spaces, brackets, wildcard
+     * characters, or special characters.</p> <p>Do not add personally
+     * identifiable information (PII) or other confidential or sensitive information in
+     * broker names. Broker names are accessible to other Amazon Web Services services,
+     * including CloudWatch Logs. Broker names are not intended to be used for private
+     * or sensitive data.</p>
      */
     inline void SetBrokerName(const char* value) { m_brokerNameHasBeenSet = true; m_brokerName.assign(value); }
 
     /**
-     * <p>Required. The broker's name. This value must be unique in your AWS account,
-     * 1-50 characters long, must contain only letters, numbers, dashes, and
-     * underscores, and must not contain white spaces, brackets, wildcard characters,
-     * or special characters.</p>
+     * <p>Required. The broker's name. This value must be unique in your Amazon Web
+     * Services account, 1-50 characters long, must contain only letters, numbers,
+     * dashes, and underscores, and must not contain white spaces, brackets, wildcard
+     * characters, or special characters.</p> <p>Do not add personally
+     * identifiable information (PII) or other confidential or sensitive information in
+     * broker names. Broker names are accessible to other Amazon Web Services services,
+     * including CloudWatch Logs. Broker names are not intended to be used for private
+     * or sensitive data.</p>
      */
     inline CreateBrokerRequest& WithBrokerName(const Aws::String& value) { SetBrokerName(value); return *this;}
 
     /**
-     * <p>Required. The broker's name. This value must be unique in your AWS account,
-     * 1-50 characters long, must contain only letters, numbers, dashes, and
-     * underscores, and must not contain white spaces, brackets, wildcard characters,
-     * or special characters.</p>
+     * <p>Required. The broker's name. This value must be unique in your Amazon Web
+     * Services account, 1-50 characters long, must contain only letters, numbers,
+     * dashes, and underscores, and must not contain white spaces, brackets, wildcard
+     * characters, or special characters.</p> <p>Do not add personally
+     * identifiable information (PII) or other confidential or sensitive information in
+     * broker names. Broker names are accessible to other Amazon Web Services services,
+     * including CloudWatch Logs. Broker names are not intended to be used for private
+     * or sensitive data.</p>
      */
     inline CreateBrokerRequest& WithBrokerName(Aws::String&& value) { SetBrokerName(std::move(value)); return *this;}
 
     /**
-     * <p>Required. The broker's name. This value must be unique in your AWS account,
-     * 1-50 characters long, must contain only letters, numbers, dashes, and
-     * underscores, and must not contain white spaces, brackets, wildcard characters,
-     * or special characters.</p>
+     * <p>Required. The broker's name. This value must be unique in your Amazon Web
+     * Services account, 1-50 characters long, must contain only letters, numbers,
+     * dashes, and underscores, and must not contain white spaces, brackets, wildcard
+     * characters, or special characters.</p> <p>Do not add personally
+     * identifiable information (PII) or other confidential or sensitive information in
+     * broker names. Broker names are accessible to other Amazon Web Services services,
+     * including CloudWatch Logs. Broker names are not intended to be used for private
+     * or sensitive data.</p>
      */
     inline CreateBrokerRequest& WithBrokerName(const char* value) { SetBrokerName(value); return *this;}
 
@@ -217,64 +250,64 @@ namespace Model
 
     /**
      * <p>The unique ID that the requester receives for the created broker. Amazon MQ
-     * passes your ID with the API action. Note: We recommend using a Universally
-     * Unique Identifier (UUID) for the creatorRequestId. You may omit the
+     * passes your ID with the API action.</p> <p>We recommend using a
+     * Universally Unique Identifier (UUID) for the creatorRequestId. You may omit the
      * creatorRequestId if your application doesn't require idempotency.</p>
      */
     inline const Aws::String& GetCreatorRequestId() const{ return m_creatorRequestId; }
 
     /**
      * <p>The unique ID that the requester receives for the created broker. Amazon MQ
-     * passes your ID with the API action. Note: We recommend using a Universally
-     * Unique Identifier (UUID) for the creatorRequestId. You may omit the
+     * passes your ID with the API action.</p> <p>We recommend using a
+     * Universally Unique Identifier (UUID) for the creatorRequestId. You may omit the
      * creatorRequestId if your application doesn't require idempotency.</p>
      */
     inline bool CreatorRequestIdHasBeenSet() const { return m_creatorRequestIdHasBeenSet; }
 
     /**
      * <p>The unique ID that the requester receives for the created broker. Amazon MQ
-     * passes your ID with the API action. Note: We recommend using a Universally
-     * Unique Identifier (UUID) for the creatorRequestId. You may omit the
+     * passes your ID with the API action.</p> <p>We recommend using a
+     * Universally Unique Identifier (UUID) for the creatorRequestId. You may omit the
      * creatorRequestId if your application doesn't require idempotency.</p>
      */
     inline void SetCreatorRequestId(const Aws::String& value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId = value; }
 
     /**
      * <p>The unique ID that the requester receives for the created broker. Amazon MQ
-     * passes your ID with the API action. Note: We recommend using a Universally
-     * Unique Identifier (UUID) for the creatorRequestId. You may omit the
+     * passes your ID with the API action.</p> <p>We recommend using a
+     * Universally Unique Identifier (UUID) for the creatorRequestId. You may omit the
      * creatorRequestId if your application doesn't require idempotency.</p>
      */
     inline void SetCreatorRequestId(Aws::String&& value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId = std::move(value); }
 
     /**
      * <p>The unique ID that the requester receives for the created broker. Amazon MQ
-     * passes your ID with the API action. Note: We recommend using a Universally
-     * Unique Identifier (UUID) for the creatorRequestId. You may omit the
+     * passes your ID with the API action.</p> <p>We recommend using a
+     * Universally Unique Identifier (UUID) for the creatorRequestId. You may omit the
      * creatorRequestId if your application doesn't require idempotency.</p>
      */
     inline void SetCreatorRequestId(const char* value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId.assign(value); }
 
     /**
      * <p>The unique ID that the requester receives for the created broker. Amazon MQ
-     * passes your ID with the API action. Note: We recommend using a Universally
-     * Unique Identifier (UUID) for the creatorRequestId. You may omit the
+     * passes your ID with the API action.</p> <p>We recommend using a
+     * Universally Unique Identifier (UUID) for the creatorRequestId. You may omit the
      * creatorRequestId if your application doesn't require idempotency.</p>
      */
     inline CreateBrokerRequest& WithCreatorRequestId(const Aws::String& value) { SetCreatorRequestId(value); return *this;}
 
     /**
      * <p>The unique ID that the requester receives for the created broker. Amazon MQ
-     * passes your ID with the API action. Note: We recommend using a Universally
-     * Unique Identifier (UUID) for the creatorRequestId. You may omit the
+     * passes your ID with the API action.</p> <p>We recommend using a
+     * Universally Unique Identifier (UUID) for the creatorRequestId. You may omit the
      * creatorRequestId if your application doesn't require idempotency.</p>
      */
     inline CreateBrokerRequest& WithCreatorRequestId(Aws::String&& value) { SetCreatorRequestId(std::move(value)); return *this;}
 
     /**
      * <p>The unique ID that the requester receives for the created broker. Amazon MQ
-     * passes your ID with the API action. Note: We recommend using a Universally
-     * Unique Identifier (UUID) for the creatorRequestId. You may omit the
+     * passes your ID with the API action.</p> <p>We recommend using a
+     * Universally Unique Identifier (UUID) for the creatorRequestId. You may omit the
      * creatorRequestId if your application doesn't require idempotency.</p>
      */
     inline CreateBrokerRequest& WithCreatorRequestId(const char* value) { SetCreatorRequestId(value); return *this;}
@@ -312,32 +345,32 @@ namespace Model
 
 
     /**
-     * <p>Encryption options for the broker. Does not apply to RabbitMQ brokers.</p>
+     * <p>Encryption options for the broker.</p>
      */
     inline const EncryptionOptions& GetEncryptionOptions() const{ return m_encryptionOptions; }
 
     /**
-     * <p>Encryption options for the broker. Does not apply to RabbitMQ brokers.</p>
+     * <p>Encryption options for the broker.</p>
      */
     inline bool EncryptionOptionsHasBeenSet() const { return m_encryptionOptionsHasBeenSet; }
 
     /**
-     * <p>Encryption options for the broker. Does not apply to RabbitMQ brokers.</p>
+     * <p>Encryption options for the broker.</p>
      */
     inline void SetEncryptionOptions(const EncryptionOptions& value) { m_encryptionOptionsHasBeenSet = true; m_encryptionOptions = value; }
 
     /**
-     * <p>Encryption options for the broker. Does not apply to RabbitMQ brokers.</p>
+     * <p>Encryption options for the broker.</p>
      */
     inline void SetEncryptionOptions(EncryptionOptions&& value) { m_encryptionOptionsHasBeenSet = true; m_encryptionOptions = std::move(value); }
 
     /**
-     * <p>Encryption options for the broker. Does not apply to RabbitMQ brokers.</p>
+     * <p>Encryption options for the broker.</p>
      */
     inline CreateBrokerRequest& WithEncryptionOptions(const EncryptionOptions& value) { SetEncryptionOptions(value); return *this;}
 
     /**
-     * <p>Encryption options for the broker. Does not apply to RabbitMQ brokers.</p>
+     * <p>Encryption options for the broker.</p>
      */
     inline CreateBrokerRequest& WithEncryptionOptions(EncryptionOptions&& value) { SetEncryptionOptions(std::move(value)); return *this;}
 
@@ -708,8 +741,9 @@ namespace Model
      * <p>If you specify subnets in a <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">shared
      * VPC</a> for a RabbitMQ broker, the associated VPC to which the specified subnets
-     * belong must be owned by your AWS account. Amazon MQ will not be able to create
-     * VPC endpoints in VPCs that are not owned by your AWS account.</p>
+     * belong must be owned by your Amazon Web Services account. Amazon MQ will not be
+     * able to create VPC endpoints in VPCs that are not owned by your Amazon Web
+     * Services account.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
 
@@ -726,8 +760,9 @@ namespace Model
      * <p>If you specify subnets in a <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">shared
      * VPC</a> for a RabbitMQ broker, the associated VPC to which the specified subnets
-     * belong must be owned by your AWS account. Amazon MQ will not be able to create
-     * VPC endpoints in VPCs that are not owned by your AWS account.</p>
+     * belong must be owned by your Amazon Web Services account. Amazon MQ will not be
+     * able to create VPC endpoints in VPCs that are not owned by your Amazon Web
+     * Services account.</p>
      */
     inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
 
@@ -744,8 +779,9 @@ namespace Model
      * <p>If you specify subnets in a <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">shared
      * VPC</a> for a RabbitMQ broker, the associated VPC to which the specified subnets
-     * belong must be owned by your AWS account. Amazon MQ will not be able to create
-     * VPC endpoints in VPCs that are not owned by your AWS account.</p>
+     * belong must be owned by your Amazon Web Services account. Amazon MQ will not be
+     * able to create VPC endpoints in VPCs that are not owned by your Amazon Web
+     * Services account.</p>
      */
     inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
 
@@ -762,8 +798,9 @@ namespace Model
      * <p>If you specify subnets in a <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">shared
      * VPC</a> for a RabbitMQ broker, the associated VPC to which the specified subnets
-     * belong must be owned by your AWS account. Amazon MQ will not be able to create
-     * VPC endpoints in VPCs that are not owned by your AWS account.</p>
+     * belong must be owned by your Amazon Web Services account. Amazon MQ will not be
+     * able to create VPC endpoints in VPCs that are not owned by your Amazon Web
+     * Services account.</p>
      */
     inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
 
@@ -780,8 +817,9 @@ namespace Model
      * <p>If you specify subnets in a <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">shared
      * VPC</a> for a RabbitMQ broker, the associated VPC to which the specified subnets
-     * belong must be owned by your AWS account. Amazon MQ will not be able to create
-     * VPC endpoints in VPCs that are not owned by your AWS account.</p>
+     * belong must be owned by your Amazon Web Services account. Amazon MQ will not be
+     * able to create VPC endpoints in VPCs that are not owned by your Amazon Web
+     * Services account.</p>
      */
     inline CreateBrokerRequest& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
 
@@ -798,8 +836,9 @@ namespace Model
      * <p>If you specify subnets in a <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">shared
      * VPC</a> for a RabbitMQ broker, the associated VPC to which the specified subnets
-     * belong must be owned by your AWS account. Amazon MQ will not be able to create
-     * VPC endpoints in VPCs that are not owned by your AWS account.</p>
+     * belong must be owned by your Amazon Web Services account. Amazon MQ will not be
+     * able to create VPC endpoints in VPCs that are not owned by your Amazon Web
+     * Services account.</p>
      */
     inline CreateBrokerRequest& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
 
@@ -816,8 +855,9 @@ namespace Model
      * <p>If you specify subnets in a <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">shared
      * VPC</a> for a RabbitMQ broker, the associated VPC to which the specified subnets
-     * belong must be owned by your AWS account. Amazon MQ will not be able to create
-     * VPC endpoints in VPCs that are not owned by your AWS account.</p>
+     * belong must be owned by your Amazon Web Services account. Amazon MQ will not be
+     * able to create VPC endpoints in VPCs that are not owned by your Amazon Web
+     * Services account.</p>
      */
     inline CreateBrokerRequest& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
@@ -834,8 +874,9 @@ namespace Model
      * <p>If you specify subnets in a <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">shared
      * VPC</a> for a RabbitMQ broker, the associated VPC to which the specified subnets
-     * belong must be owned by your AWS account. Amazon MQ will not be able to create
-     * VPC endpoints in VPCs that are not owned by your AWS account.</p>
+     * belong must be owned by your Amazon Web Services account. Amazon MQ will not be
+     * able to create VPC endpoints in VPCs that are not owned by your Amazon Web
+     * Services account.</p>
      */
     inline CreateBrokerRequest& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
 
@@ -852,8 +893,9 @@ namespace Model
      * <p>If you specify subnets in a <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">shared
      * VPC</a> for a RabbitMQ broker, the associated VPC to which the specified subnets
-     * belong must be owned by your AWS account. Amazon MQ will not be able to create
-     * VPC endpoints in VPCs that are not owned by your AWS account.</p>
+     * belong must be owned by your Amazon Web Services account. Amazon MQ will not be
+     * able to create VPC endpoints in VPCs that are not owned by your Amazon Web
+     * Services account.</p>
      */
     inline CreateBrokerRequest& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
@@ -925,100 +967,164 @@ namespace Model
 
 
     /**
-     * <p>Required. The list of broker users (persons or applications) who can access
-     * queues and topics. This value can contain only alphanumeric characters, dashes,
-     * periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters
-     * long.</p> <title>Amazon MQ for RabbitMQ</title> <p>When you create an
-     * Amazon MQ for RabbitMQ broker, one and only one administrative user is accepted
-     * and created when a broker is first provisioned. All subsequent broker users are
-     * created by making RabbitMQ API calls directly to brokers or via the RabbitMQ web
-     * console.</p>
+     * <p>The list of broker users (persons or applications) who can access queues and
+     * topics. For Amazon MQ for RabbitMQ brokers, one and only one administrative user
+     * is accepted and created when a broker is first provisioned. All subsequent
+     * broker users are created by making RabbitMQ API calls directly to brokers or via
+     * the RabbitMQ web console.</p>
      */
     inline const Aws::Vector<User>& GetUsers() const{ return m_users; }
 
     /**
-     * <p>Required. The list of broker users (persons or applications) who can access
-     * queues and topics. This value can contain only alphanumeric characters, dashes,
-     * periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters
-     * long.</p> <title>Amazon MQ for RabbitMQ</title> <p>When you create an
-     * Amazon MQ for RabbitMQ broker, one and only one administrative user is accepted
-     * and created when a broker is first provisioned. All subsequent broker users are
-     * created by making RabbitMQ API calls directly to brokers or via the RabbitMQ web
-     * console.</p>
+     * <p>The list of broker users (persons or applications) who can access queues and
+     * topics. For Amazon MQ for RabbitMQ brokers, one and only one administrative user
+     * is accepted and created when a broker is first provisioned. All subsequent
+     * broker users are created by making RabbitMQ API calls directly to brokers or via
+     * the RabbitMQ web console.</p>
      */
     inline bool UsersHasBeenSet() const { return m_usersHasBeenSet; }
 
     /**
-     * <p>Required. The list of broker users (persons or applications) who can access
-     * queues and topics. This value can contain only alphanumeric characters, dashes,
-     * periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters
-     * long.</p> <title>Amazon MQ for RabbitMQ</title> <p>When you create an
-     * Amazon MQ for RabbitMQ broker, one and only one administrative user is accepted
-     * and created when a broker is first provisioned. All subsequent broker users are
-     * created by making RabbitMQ API calls directly to brokers or via the RabbitMQ web
-     * console.</p>
+     * <p>The list of broker users (persons or applications) who can access queues and
+     * topics. For Amazon MQ for RabbitMQ brokers, one and only one administrative user
+     * is accepted and created when a broker is first provisioned. All subsequent
+     * broker users are created by making RabbitMQ API calls directly to brokers or via
+     * the RabbitMQ web console.</p>
      */
     inline void SetUsers(const Aws::Vector<User>& value) { m_usersHasBeenSet = true; m_users = value; }
 
     /**
-     * <p>Required. The list of broker users (persons or applications) who can access
-     * queues and topics. This value can contain only alphanumeric characters, dashes,
-     * periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters
-     * long.</p> <title>Amazon MQ for RabbitMQ</title> <p>When you create an
-     * Amazon MQ for RabbitMQ broker, one and only one administrative user is accepted
-     * and created when a broker is first provisioned. All subsequent broker users are
-     * created by making RabbitMQ API calls directly to brokers or via the RabbitMQ web
-     * console.</p>
+     * <p>The list of broker users (persons or applications) who can access queues and
+     * topics. For Amazon MQ for RabbitMQ brokers, one and only one administrative user
+     * is accepted and created when a broker is first provisioned. All subsequent
+     * broker users are created by making RabbitMQ API calls directly to brokers or via
+     * the RabbitMQ web console.</p>
      */
     inline void SetUsers(Aws::Vector<User>&& value) { m_usersHasBeenSet = true; m_users = std::move(value); }
 
     /**
-     * <p>Required. The list of broker users (persons or applications) who can access
-     * queues and topics. This value can contain only alphanumeric characters, dashes,
-     * periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters
-     * long.</p> <title>Amazon MQ for RabbitMQ</title> <p>When you create an
-     * Amazon MQ for RabbitMQ broker, one and only one administrative user is accepted
-     * and created when a broker is first provisioned. All subsequent broker users are
-     * created by making RabbitMQ API calls directly to brokers or via the RabbitMQ web
-     * console.</p>
+     * <p>The list of broker users (persons or applications) who can access queues and
+     * topics. For Amazon MQ for RabbitMQ brokers, one and only one administrative user
+     * is accepted and created when a broker is first provisioned. All subsequent
+     * broker users are created by making RabbitMQ API calls directly to brokers or via
+     * the RabbitMQ web console.</p>
      */
     inline CreateBrokerRequest& WithUsers(const Aws::Vector<User>& value) { SetUsers(value); return *this;}
 
     /**
-     * <p>Required. The list of broker users (persons or applications) who can access
-     * queues and topics. This value can contain only alphanumeric characters, dashes,
-     * periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters
-     * long.</p> <title>Amazon MQ for RabbitMQ</title> <p>When you create an
-     * Amazon MQ for RabbitMQ broker, one and only one administrative user is accepted
-     * and created when a broker is first provisioned. All subsequent broker users are
-     * created by making RabbitMQ API calls directly to brokers or via the RabbitMQ web
-     * console.</p>
+     * <p>The list of broker users (persons or applications) who can access queues and
+     * topics. For Amazon MQ for RabbitMQ brokers, one and only one administrative user
+     * is accepted and created when a broker is first provisioned. All subsequent
+     * broker users are created by making RabbitMQ API calls directly to brokers or via
+     * the RabbitMQ web console.</p>
      */
     inline CreateBrokerRequest& WithUsers(Aws::Vector<User>&& value) { SetUsers(std::move(value)); return *this;}
 
     /**
-     * <p>Required. The list of broker users (persons or applications) who can access
-     * queues and topics. This value can contain only alphanumeric characters, dashes,
-     * periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters
-     * long.</p> <title>Amazon MQ for RabbitMQ</title> <p>When you create an
-     * Amazon MQ for RabbitMQ broker, one and only one administrative user is accepted
-     * and created when a broker is first provisioned. All subsequent broker users are
-     * created by making RabbitMQ API calls directly to brokers or via the RabbitMQ web
-     * console.</p>
+     * <p>The list of broker users (persons or applications) who can access queues and
+     * topics. For Amazon MQ for RabbitMQ brokers, one and only one administrative user
+     * is accepted and created when a broker is first provisioned. All subsequent
+     * broker users are created by making RabbitMQ API calls directly to brokers or via
+     * the RabbitMQ web console.</p>
      */
     inline CreateBrokerRequest& AddUsers(const User& value) { m_usersHasBeenSet = true; m_users.push_back(value); return *this; }
 
     /**
-     * <p>Required. The list of broker users (persons or applications) who can access
-     * queues and topics. This value can contain only alphanumeric characters, dashes,
-     * periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters
-     * long.</p> <title>Amazon MQ for RabbitMQ</title> <p>When you create an
-     * Amazon MQ for RabbitMQ broker, one and only one administrative user is accepted
-     * and created when a broker is first provisioned. All subsequent broker users are
-     * created by making RabbitMQ API calls directly to brokers or via the RabbitMQ web
-     * console.</p>
+     * <p>The list of broker users (persons or applications) who can access queues and
+     * topics. For Amazon MQ for RabbitMQ brokers, one and only one administrative user
+     * is accepted and created when a broker is first provisioned. All subsequent
+     * broker users are created by making RabbitMQ API calls directly to brokers or via
+     * the RabbitMQ web console.</p>
      */
     inline CreateBrokerRequest& AddUsers(User&& value) { m_usersHasBeenSet = true; m_users.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Defines whether this broker is a part of a data replication pair.</p>
+     */
+    inline const DataReplicationMode& GetDataReplicationMode() const{ return m_dataReplicationMode; }
+
+    /**
+     * <p>Defines whether this broker is a part of a data replication pair.</p>
+     */
+    inline bool DataReplicationModeHasBeenSet() const { return m_dataReplicationModeHasBeenSet; }
+
+    /**
+     * <p>Defines whether this broker is a part of a data replication pair.</p>
+     */
+    inline void SetDataReplicationMode(const DataReplicationMode& value) { m_dataReplicationModeHasBeenSet = true; m_dataReplicationMode = value; }
+
+    /**
+     * <p>Defines whether this broker is a part of a data replication pair.</p>
+     */
+    inline void SetDataReplicationMode(DataReplicationMode&& value) { m_dataReplicationModeHasBeenSet = true; m_dataReplicationMode = std::move(value); }
+
+    /**
+     * <p>Defines whether this broker is a part of a data replication pair.</p>
+     */
+    inline CreateBrokerRequest& WithDataReplicationMode(const DataReplicationMode& value) { SetDataReplicationMode(value); return *this;}
+
+    /**
+     * <p>Defines whether this broker is a part of a data replication pair.</p>
+     */
+    inline CreateBrokerRequest& WithDataReplicationMode(DataReplicationMode&& value) { SetDataReplicationMode(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the primary broker that is used to
+     * replicate data from in a data replication pair, and is applied to the replica
+     * broker. Must be set when dataReplicationMode is set to CRDR.</p>
+     */
+    inline const Aws::String& GetDataReplicationPrimaryBrokerArn() const{ return m_dataReplicationPrimaryBrokerArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the primary broker that is used to
+     * replicate data from in a data replication pair, and is applied to the replica
+     * broker. Must be set when dataReplicationMode is set to CRDR.</p>
+     */
+    inline bool DataReplicationPrimaryBrokerArnHasBeenSet() const { return m_dataReplicationPrimaryBrokerArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the primary broker that is used to
+     * replicate data from in a data replication pair, and is applied to the replica
+     * broker. Must be set when dataReplicationMode is set to CRDR.</p>
+     */
+    inline void SetDataReplicationPrimaryBrokerArn(const Aws::String& value) { m_dataReplicationPrimaryBrokerArnHasBeenSet = true; m_dataReplicationPrimaryBrokerArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the primary broker that is used to
+     * replicate data from in a data replication pair, and is applied to the replica
+     * broker. Must be set when dataReplicationMode is set to CRDR.</p>
+     */
+    inline void SetDataReplicationPrimaryBrokerArn(Aws::String&& value) { m_dataReplicationPrimaryBrokerArnHasBeenSet = true; m_dataReplicationPrimaryBrokerArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the primary broker that is used to
+     * replicate data from in a data replication pair, and is applied to the replica
+     * broker. Must be set when dataReplicationMode is set to CRDR.</p>
+     */
+    inline void SetDataReplicationPrimaryBrokerArn(const char* value) { m_dataReplicationPrimaryBrokerArnHasBeenSet = true; m_dataReplicationPrimaryBrokerArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the primary broker that is used to
+     * replicate data from in a data replication pair, and is applied to the replica
+     * broker. Must be set when dataReplicationMode is set to CRDR.</p>
+     */
+    inline CreateBrokerRequest& WithDataReplicationPrimaryBrokerArn(const Aws::String& value) { SetDataReplicationPrimaryBrokerArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the primary broker that is used to
+     * replicate data from in a data replication pair, and is applied to the replica
+     * broker. Must be set when dataReplicationMode is set to CRDR.</p>
+     */
+    inline CreateBrokerRequest& WithDataReplicationPrimaryBrokerArn(Aws::String&& value) { SetDataReplicationPrimaryBrokerArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the primary broker that is used to
+     * replicate data from in a data replication pair, and is applied to the replica
+     * broker. Must be set when dataReplicationMode is set to CRDR.</p>
+     */
+    inline CreateBrokerRequest& WithDataReplicationPrimaryBrokerArn(const char* value) { SetDataReplicationPrimaryBrokerArn(value); return *this;}
 
   private:
 
@@ -1078,6 +1184,12 @@ namespace Model
 
     Aws::Vector<User> m_users;
     bool m_usersHasBeenSet = false;
+
+    DataReplicationMode m_dataReplicationMode;
+    bool m_dataReplicationModeHasBeenSet = false;
+
+    Aws::String m_dataReplicationPrimaryBrokerArn;
+    bool m_dataReplicationPrimaryBrokerArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -1395,6 +1395,142 @@ namespace Model
      */
     inline UpdateServerRequest& WithWorkflowDetails(WorkflowDetails&& value) { SetWorkflowDetails(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies the log groups to which your server logs are sent.</p> <p>To
+     * specify a log group, you must provide the ARN for an existing log group. In this
+     * case, the format of the log group is as follows:</p> <p>
+     * <code>arn:aws:logs:region-name:amazon-account-id:log-group:log-group-name:*</code>
+     * </p> <p>For example,
+     * <code>arn:aws:logs:us-east-1:111122223333:log-group:mytestgroup:*</code> </p>
+     * <p>If you have previously specified a log group for a server, you can clear it,
+     * and in effect turn off structured logging, by providing an empty value for this
+     * parameter in an <code>update-server</code> call. For example:</p> <p>
+     * <code>update-server --server-id s-1234567890abcdef0
+     * --structured-log-destinations</code> </p>
+     */
+    inline const Aws::Vector<Aws::String>& GetStructuredLogDestinations() const{ return m_structuredLogDestinations; }
+
+    /**
+     * <p>Specifies the log groups to which your server logs are sent.</p> <p>To
+     * specify a log group, you must provide the ARN for an existing log group. In this
+     * case, the format of the log group is as follows:</p> <p>
+     * <code>arn:aws:logs:region-name:amazon-account-id:log-group:log-group-name:*</code>
+     * </p> <p>For example,
+     * <code>arn:aws:logs:us-east-1:111122223333:log-group:mytestgroup:*</code> </p>
+     * <p>If you have previously specified a log group for a server, you can clear it,
+     * and in effect turn off structured logging, by providing an empty value for this
+     * parameter in an <code>update-server</code> call. For example:</p> <p>
+     * <code>update-server --server-id s-1234567890abcdef0
+     * --structured-log-destinations</code> </p>
+     */
+    inline bool StructuredLogDestinationsHasBeenSet() const { return m_structuredLogDestinationsHasBeenSet; }
+
+    /**
+     * <p>Specifies the log groups to which your server logs are sent.</p> <p>To
+     * specify a log group, you must provide the ARN for an existing log group. In this
+     * case, the format of the log group is as follows:</p> <p>
+     * <code>arn:aws:logs:region-name:amazon-account-id:log-group:log-group-name:*</code>
+     * </p> <p>For example,
+     * <code>arn:aws:logs:us-east-1:111122223333:log-group:mytestgroup:*</code> </p>
+     * <p>If you have previously specified a log group for a server, you can clear it,
+     * and in effect turn off structured logging, by providing an empty value for this
+     * parameter in an <code>update-server</code> call. For example:</p> <p>
+     * <code>update-server --server-id s-1234567890abcdef0
+     * --structured-log-destinations</code> </p>
+     */
+    inline void SetStructuredLogDestinations(const Aws::Vector<Aws::String>& value) { m_structuredLogDestinationsHasBeenSet = true; m_structuredLogDestinations = value; }
+
+    /**
+     * <p>Specifies the log groups to which your server logs are sent.</p> <p>To
+     * specify a log group, you must provide the ARN for an existing log group. In this
+     * case, the format of the log group is as follows:</p> <p>
+     * <code>arn:aws:logs:region-name:amazon-account-id:log-group:log-group-name:*</code>
+     * </p> <p>For example,
+     * <code>arn:aws:logs:us-east-1:111122223333:log-group:mytestgroup:*</code> </p>
+     * <p>If you have previously specified a log group for a server, you can clear it,
+     * and in effect turn off structured logging, by providing an empty value for this
+     * parameter in an <code>update-server</code> call. For example:</p> <p>
+     * <code>update-server --server-id s-1234567890abcdef0
+     * --structured-log-destinations</code> </p>
+     */
+    inline void SetStructuredLogDestinations(Aws::Vector<Aws::String>&& value) { m_structuredLogDestinationsHasBeenSet = true; m_structuredLogDestinations = std::move(value); }
+
+    /**
+     * <p>Specifies the log groups to which your server logs are sent.</p> <p>To
+     * specify a log group, you must provide the ARN for an existing log group. In this
+     * case, the format of the log group is as follows:</p> <p>
+     * <code>arn:aws:logs:region-name:amazon-account-id:log-group:log-group-name:*</code>
+     * </p> <p>For example,
+     * <code>arn:aws:logs:us-east-1:111122223333:log-group:mytestgroup:*</code> </p>
+     * <p>If you have previously specified a log group for a server, you can clear it,
+     * and in effect turn off structured logging, by providing an empty value for this
+     * parameter in an <code>update-server</code> call. For example:</p> <p>
+     * <code>update-server --server-id s-1234567890abcdef0
+     * --structured-log-destinations</code> </p>
+     */
+    inline UpdateServerRequest& WithStructuredLogDestinations(const Aws::Vector<Aws::String>& value) { SetStructuredLogDestinations(value); return *this;}
+
+    /**
+     * <p>Specifies the log groups to which your server logs are sent.</p> <p>To
+     * specify a log group, you must provide the ARN for an existing log group. In this
+     * case, the format of the log group is as follows:</p> <p>
+     * <code>arn:aws:logs:region-name:amazon-account-id:log-group:log-group-name:*</code>
+     * </p> <p>For example,
+     * <code>arn:aws:logs:us-east-1:111122223333:log-group:mytestgroup:*</code> </p>
+     * <p>If you have previously specified a log group for a server, you can clear it,
+     * and in effect turn off structured logging, by providing an empty value for this
+     * parameter in an <code>update-server</code> call. For example:</p> <p>
+     * <code>update-server --server-id s-1234567890abcdef0
+     * --structured-log-destinations</code> </p>
+     */
+    inline UpdateServerRequest& WithStructuredLogDestinations(Aws::Vector<Aws::String>&& value) { SetStructuredLogDestinations(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the log groups to which your server logs are sent.</p> <p>To
+     * specify a log group, you must provide the ARN for an existing log group. In this
+     * case, the format of the log group is as follows:</p> <p>
+     * <code>arn:aws:logs:region-name:amazon-account-id:log-group:log-group-name:*</code>
+     * </p> <p>For example,
+     * <code>arn:aws:logs:us-east-1:111122223333:log-group:mytestgroup:*</code> </p>
+     * <p>If you have previously specified a log group for a server, you can clear it,
+     * and in effect turn off structured logging, by providing an empty value for this
+     * parameter in an <code>update-server</code> call. For example:</p> <p>
+     * <code>update-server --server-id s-1234567890abcdef0
+     * --structured-log-destinations</code> </p>
+     */
+    inline UpdateServerRequest& AddStructuredLogDestinations(const Aws::String& value) { m_structuredLogDestinationsHasBeenSet = true; m_structuredLogDestinations.push_back(value); return *this; }
+
+    /**
+     * <p>Specifies the log groups to which your server logs are sent.</p> <p>To
+     * specify a log group, you must provide the ARN for an existing log group. In this
+     * case, the format of the log group is as follows:</p> <p>
+     * <code>arn:aws:logs:region-name:amazon-account-id:log-group:log-group-name:*</code>
+     * </p> <p>For example,
+     * <code>arn:aws:logs:us-east-1:111122223333:log-group:mytestgroup:*</code> </p>
+     * <p>If you have previously specified a log group for a server, you can clear it,
+     * and in effect turn off structured logging, by providing an empty value for this
+     * parameter in an <code>update-server</code> call. For example:</p> <p>
+     * <code>update-server --server-id s-1234567890abcdef0
+     * --structured-log-destinations</code> </p>
+     */
+    inline UpdateServerRequest& AddStructuredLogDestinations(Aws::String&& value) { m_structuredLogDestinationsHasBeenSet = true; m_structuredLogDestinations.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>Specifies the log groups to which your server logs are sent.</p> <p>To
+     * specify a log group, you must provide the ARN for an existing log group. In this
+     * case, the format of the log group is as follows:</p> <p>
+     * <code>arn:aws:logs:region-name:amazon-account-id:log-group:log-group-name:*</code>
+     * </p> <p>For example,
+     * <code>arn:aws:logs:us-east-1:111122223333:log-group:mytestgroup:*</code> </p>
+     * <p>If you have previously specified a log group for a server, you can clear it,
+     * and in effect turn off structured logging, by providing an empty value for this
+     * parameter in an <code>update-server</code> call. For example:</p> <p>
+     * <code>update-server --server-id s-1234567890abcdef0
+     * --structured-log-destinations</code> </p>
+     */
+    inline UpdateServerRequest& AddStructuredLogDestinations(const char* value) { m_structuredLogDestinationsHasBeenSet = true; m_structuredLogDestinations.push_back(value); return *this; }
+
   private:
 
     Aws::String m_certificate;
@@ -1435,6 +1571,9 @@ namespace Model
 
     WorkflowDetails m_workflowDetails;
     bool m_workflowDetailsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_structuredLogDestinations;
+    bool m_structuredLogDestinationsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -19,6 +19,8 @@ namespace Model
 {
 
 TitleAggregation::TitleAggregation() : 
+    m_findingType(AggregationFindingType::NOT_SET),
+    m_findingTypeHasBeenSet(false),
     m_resourceType(AggregationResourceType::NOT_SET),
     m_resourceTypeHasBeenSet(false),
     m_sortBy(TitleSortBy::NOT_SET),
@@ -31,6 +33,8 @@ TitleAggregation::TitleAggregation() :
 }
 
 TitleAggregation::TitleAggregation(JsonView jsonValue) : 
+    m_findingType(AggregationFindingType::NOT_SET),
+    m_findingTypeHasBeenSet(false),
     m_resourceType(AggregationResourceType::NOT_SET),
     m_resourceTypeHasBeenSet(false),
     m_sortBy(TitleSortBy::NOT_SET),
@@ -45,6 +49,13 @@ TitleAggregation::TitleAggregation(JsonView jsonValue) :
 
 TitleAggregation& TitleAggregation::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("findingType"))
+  {
+    m_findingType = AggregationFindingTypeMapper::GetAggregationFindingTypeForName(jsonValue.GetString("findingType"));
+
+    m_findingTypeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("resourceType"))
   {
     m_resourceType = AggregationResourceTypeMapper::GetAggregationResourceTypeForName(jsonValue.GetString("resourceType"));
@@ -92,6 +103,11 @@ TitleAggregation& TitleAggregation::operator =(JsonView jsonValue)
 JsonValue TitleAggregation::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_findingTypeHasBeenSet)
+  {
+   payload.WithString("findingType", AggregationFindingTypeMapper::GetNameForAggregationFindingType(m_findingType));
+  }
 
   if(m_resourceTypeHasBeenSet)
   {

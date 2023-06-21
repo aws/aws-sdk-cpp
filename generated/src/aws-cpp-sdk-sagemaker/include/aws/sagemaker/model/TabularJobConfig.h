@@ -491,7 +491,11 @@ namespace Model
      * <p>The type of supervised learning problem available for the model candidates of
      * the AutoML job V2. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types">
-     * Amazon SageMaker Autopilot problem types</a>.</p>
+     * Amazon SageMaker Autopilot problem types</a>.</p>  <p>You must either
+     * specify the type of supervised learning problem in <code>ProblemType</code> and
+     * provide the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html#sagemaker-CreateAutoMLJobV2-request-AutoMLJobObjective">AutoMLJobObjective</a>
+     * metric, or none at all.</p> 
      */
     inline const ProblemType& GetProblemType() const{ return m_problemType; }
 
@@ -499,7 +503,11 @@ namespace Model
      * <p>The type of supervised learning problem available for the model candidates of
      * the AutoML job V2. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types">
-     * Amazon SageMaker Autopilot problem types</a>.</p>
+     * Amazon SageMaker Autopilot problem types</a>.</p>  <p>You must either
+     * specify the type of supervised learning problem in <code>ProblemType</code> and
+     * provide the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html#sagemaker-CreateAutoMLJobV2-request-AutoMLJobObjective">AutoMLJobObjective</a>
+     * metric, or none at all.</p> 
      */
     inline bool ProblemTypeHasBeenSet() const { return m_problemTypeHasBeenSet; }
 
@@ -507,7 +515,11 @@ namespace Model
      * <p>The type of supervised learning problem available for the model candidates of
      * the AutoML job V2. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types">
-     * Amazon SageMaker Autopilot problem types</a>.</p>
+     * Amazon SageMaker Autopilot problem types</a>.</p>  <p>You must either
+     * specify the type of supervised learning problem in <code>ProblemType</code> and
+     * provide the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html#sagemaker-CreateAutoMLJobV2-request-AutoMLJobObjective">AutoMLJobObjective</a>
+     * metric, or none at all.</p> 
      */
     inline void SetProblemType(const ProblemType& value) { m_problemTypeHasBeenSet = true; m_problemType = value; }
 
@@ -515,7 +527,11 @@ namespace Model
      * <p>The type of supervised learning problem available for the model candidates of
      * the AutoML job V2. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types">
-     * Amazon SageMaker Autopilot problem types</a>.</p>
+     * Amazon SageMaker Autopilot problem types</a>.</p>  <p>You must either
+     * specify the type of supervised learning problem in <code>ProblemType</code> and
+     * provide the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html#sagemaker-CreateAutoMLJobV2-request-AutoMLJobObjective">AutoMLJobObjective</a>
+     * metric, or none at all.</p> 
      */
     inline void SetProblemType(ProblemType&& value) { m_problemTypeHasBeenSet = true; m_problemType = std::move(value); }
 
@@ -523,7 +539,11 @@ namespace Model
      * <p>The type of supervised learning problem available for the model candidates of
      * the AutoML job V2. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types">
-     * Amazon SageMaker Autopilot problem types</a>.</p>
+     * Amazon SageMaker Autopilot problem types</a>.</p>  <p>You must either
+     * specify the type of supervised learning problem in <code>ProblemType</code> and
+     * provide the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html#sagemaker-CreateAutoMLJobV2-request-AutoMLJobObjective">AutoMLJobObjective</a>
+     * metric, or none at all.</p> 
      */
     inline TabularJobConfig& WithProblemType(const ProblemType& value) { SetProblemType(value); return *this;}
 
@@ -531,7 +551,11 @@ namespace Model
      * <p>The type of supervised learning problem available for the model candidates of
      * the AutoML job V2. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types">
-     * Amazon SageMaker Autopilot problem types</a>.</p>
+     * Amazon SageMaker Autopilot problem types</a>.</p>  <p>You must either
+     * specify the type of supervised learning problem in <code>ProblemType</code> and
+     * provide the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html#sagemaker-CreateAutoMLJobV2-request-AutoMLJobObjective">AutoMLJobObjective</a>
+     * metric, or none at all.</p> 
      */
     inline TabularJobConfig& WithProblemType(ProblemType&& value) { SetProblemType(std::move(value)); return *this;}
 

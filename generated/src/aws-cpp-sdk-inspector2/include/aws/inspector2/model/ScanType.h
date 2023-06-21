@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     NETWORK,
-    PACKAGE
+    PACKAGE,
+    CODE
   };
 
 namespace ScanTypeMapper

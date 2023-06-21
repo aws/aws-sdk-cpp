@@ -995,6 +995,33 @@ namespace EMR
         }
 
         /**
+         * <p>A list of the instance types that Amazon EMR supports. You can filter the
+         * list by Amazon Web Services Region and Amazon EMR release. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListSupportedInstanceTypes">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListSupportedInstanceTypesOutcome ListSupportedInstanceTypes(const Model::ListSupportedInstanceTypesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListSupportedInstanceTypes that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListSupportedInstanceTypesRequestT = Model::ListSupportedInstanceTypesRequest>
+        Model::ListSupportedInstanceTypesOutcomeCallable ListSupportedInstanceTypesCallable(const ListSupportedInstanceTypesRequestT& request) const
+        {
+            return SubmitCallable(&EMRClient::ListSupportedInstanceTypes, request);
+        }
+
+        /**
+         * An Async wrapper for ListSupportedInstanceTypes that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListSupportedInstanceTypesRequestT = Model::ListSupportedInstanceTypesRequest>
+        void ListSupportedInstanceTypesAsync(const ListSupportedInstanceTypesRequestT& request, const ListSupportedInstanceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EMRClient::ListSupportedInstanceTypes, request, handler, context);
+        }
+
+        /**
          * <p>Modifies the number of steps that can be executed concurrently for the
          * cluster specified using ClusterID.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ModifyCluster">AWS
