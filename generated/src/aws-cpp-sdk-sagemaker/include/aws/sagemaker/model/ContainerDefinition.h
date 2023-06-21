@@ -10,6 +10,7 @@
 #include <aws/sagemaker/model/ContainerMode.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/sagemaker/model/MultiModelConfig.h>
+#include <aws/sagemaker/model/ModelDataSource.h>
 #include <utility>
 
 namespace Aws
@@ -817,6 +818,55 @@ namespace Model
      */
     inline ContainerDefinition& WithMultiModelConfig(MultiModelConfig&& value) { SetMultiModelConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies the location of ML model data to deploy.</p>  <p>Currently
+     * you cannot use <code>ModelDataSource</code> in conjuction with SageMaker batch
+     * transform, SageMaker serverless endpoints, SageMaker multi-model endpoints, and
+     * SageMaker Marketplace.</p> 
+     */
+    inline const ModelDataSource& GetModelDataSource() const{ return m_modelDataSource; }
+
+    /**
+     * <p>Specifies the location of ML model data to deploy.</p>  <p>Currently
+     * you cannot use <code>ModelDataSource</code> in conjuction with SageMaker batch
+     * transform, SageMaker serverless endpoints, SageMaker multi-model endpoints, and
+     * SageMaker Marketplace.</p> 
+     */
+    inline bool ModelDataSourceHasBeenSet() const { return m_modelDataSourceHasBeenSet; }
+
+    /**
+     * <p>Specifies the location of ML model data to deploy.</p>  <p>Currently
+     * you cannot use <code>ModelDataSource</code> in conjuction with SageMaker batch
+     * transform, SageMaker serverless endpoints, SageMaker multi-model endpoints, and
+     * SageMaker Marketplace.</p> 
+     */
+    inline void SetModelDataSource(const ModelDataSource& value) { m_modelDataSourceHasBeenSet = true; m_modelDataSource = value; }
+
+    /**
+     * <p>Specifies the location of ML model data to deploy.</p>  <p>Currently
+     * you cannot use <code>ModelDataSource</code> in conjuction with SageMaker batch
+     * transform, SageMaker serverless endpoints, SageMaker multi-model endpoints, and
+     * SageMaker Marketplace.</p> 
+     */
+    inline void SetModelDataSource(ModelDataSource&& value) { m_modelDataSourceHasBeenSet = true; m_modelDataSource = std::move(value); }
+
+    /**
+     * <p>Specifies the location of ML model data to deploy.</p>  <p>Currently
+     * you cannot use <code>ModelDataSource</code> in conjuction with SageMaker batch
+     * transform, SageMaker serverless endpoints, SageMaker multi-model endpoints, and
+     * SageMaker Marketplace.</p> 
+     */
+    inline ContainerDefinition& WithModelDataSource(const ModelDataSource& value) { SetModelDataSource(value); return *this;}
+
+    /**
+     * <p>Specifies the location of ML model data to deploy.</p>  <p>Currently
+     * you cannot use <code>ModelDataSource</code> in conjuction with SageMaker batch
+     * transform, SageMaker serverless endpoints, SageMaker multi-model endpoints, and
+     * SageMaker Marketplace.</p> 
+     */
+    inline ContainerDefinition& WithModelDataSource(ModelDataSource&& value) { SetModelDataSource(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_containerHostname;
@@ -845,6 +895,9 @@ namespace Model
 
     MultiModelConfig m_multiModelConfig;
     bool m_multiModelConfigHasBeenSet = false;
+
+    ModelDataSource m_modelDataSource;
+    bool m_modelDataSourceHasBeenSet = false;
   };
 
 } // namespace Model

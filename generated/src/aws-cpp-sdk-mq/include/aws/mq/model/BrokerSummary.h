@@ -124,66 +124,66 @@ namespace Model
 
 
     /**
-     * <p>The broker's name. This value is unique in your AWS account, 1-50 characters
-     * long, and containing only letters, numbers, dashes, and underscores, and must
-     * not contain white spaces, brackets, wildcard characters, or special
-     * characters.</p>
+     * <p>The broker's name. This value is unique in your Amazon Web Services account,
+     * 1-50 characters long, and containing only letters, numbers, dashes, and
+     * underscores, and must not contain white spaces, brackets, wildcard characters,
+     * or special characters.</p>
      */
     inline const Aws::String& GetBrokerName() const{ return m_brokerName; }
 
     /**
-     * <p>The broker's name. This value is unique in your AWS account, 1-50 characters
-     * long, and containing only letters, numbers, dashes, and underscores, and must
-     * not contain white spaces, brackets, wildcard characters, or special
-     * characters.</p>
+     * <p>The broker's name. This value is unique in your Amazon Web Services account,
+     * 1-50 characters long, and containing only letters, numbers, dashes, and
+     * underscores, and must not contain white spaces, brackets, wildcard characters,
+     * or special characters.</p>
      */
     inline bool BrokerNameHasBeenSet() const { return m_brokerNameHasBeenSet; }
 
     /**
-     * <p>The broker's name. This value is unique in your AWS account, 1-50 characters
-     * long, and containing only letters, numbers, dashes, and underscores, and must
-     * not contain white spaces, brackets, wildcard characters, or special
-     * characters.</p>
+     * <p>The broker's name. This value is unique in your Amazon Web Services account,
+     * 1-50 characters long, and containing only letters, numbers, dashes, and
+     * underscores, and must not contain white spaces, brackets, wildcard characters,
+     * or special characters.</p>
      */
     inline void SetBrokerName(const Aws::String& value) { m_brokerNameHasBeenSet = true; m_brokerName = value; }
 
     /**
-     * <p>The broker's name. This value is unique in your AWS account, 1-50 characters
-     * long, and containing only letters, numbers, dashes, and underscores, and must
-     * not contain white spaces, brackets, wildcard characters, or special
-     * characters.</p>
+     * <p>The broker's name. This value is unique in your Amazon Web Services account,
+     * 1-50 characters long, and containing only letters, numbers, dashes, and
+     * underscores, and must not contain white spaces, brackets, wildcard characters,
+     * or special characters.</p>
      */
     inline void SetBrokerName(Aws::String&& value) { m_brokerNameHasBeenSet = true; m_brokerName = std::move(value); }
 
     /**
-     * <p>The broker's name. This value is unique in your AWS account, 1-50 characters
-     * long, and containing only letters, numbers, dashes, and underscores, and must
-     * not contain white spaces, brackets, wildcard characters, or special
-     * characters.</p>
+     * <p>The broker's name. This value is unique in your Amazon Web Services account,
+     * 1-50 characters long, and containing only letters, numbers, dashes, and
+     * underscores, and must not contain white spaces, brackets, wildcard characters,
+     * or special characters.</p>
      */
     inline void SetBrokerName(const char* value) { m_brokerNameHasBeenSet = true; m_brokerName.assign(value); }
 
     /**
-     * <p>The broker's name. This value is unique in your AWS account, 1-50 characters
-     * long, and containing only letters, numbers, dashes, and underscores, and must
-     * not contain white spaces, brackets, wildcard characters, or special
-     * characters.</p>
+     * <p>The broker's name. This value is unique in your Amazon Web Services account,
+     * 1-50 characters long, and containing only letters, numbers, dashes, and
+     * underscores, and must not contain white spaces, brackets, wildcard characters,
+     * or special characters.</p>
      */
     inline BrokerSummary& WithBrokerName(const Aws::String& value) { SetBrokerName(value); return *this;}
 
     /**
-     * <p>The broker's name. This value is unique in your AWS account, 1-50 characters
-     * long, and containing only letters, numbers, dashes, and underscores, and must
-     * not contain white spaces, brackets, wildcard characters, or special
-     * characters.</p>
+     * <p>The broker's name. This value is unique in your Amazon Web Services account,
+     * 1-50 characters long, and containing only letters, numbers, dashes, and
+     * underscores, and must not contain white spaces, brackets, wildcard characters,
+     * or special characters.</p>
      */
     inline BrokerSummary& WithBrokerName(Aws::String&& value) { SetBrokerName(std::move(value)); return *this;}
 
     /**
-     * <p>The broker's name. This value is unique in your AWS account, 1-50 characters
-     * long, and containing only letters, numbers, dashes, and underscores, and must
-     * not contain white spaces, brackets, wildcard characters, or special
-     * characters.</p>
+     * <p>The broker's name. This value is unique in your Amazon Web Services account,
+     * 1-50 characters long, and containing only letters, numbers, dashes, and
+     * underscores, and must not contain white spaces, brackets, wildcard characters,
+     * or special characters.</p>
      */
     inline BrokerSummary& WithBrokerName(const char* value) { SetBrokerName(value); return *this;}
 

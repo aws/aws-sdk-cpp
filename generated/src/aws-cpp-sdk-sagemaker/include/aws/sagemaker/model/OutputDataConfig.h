@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/model/OutputCompressionType.h>
 #include <utility>
 
 namespace Aws
@@ -343,6 +344,43 @@ namespace Model
      */
     inline OutputDataConfig& WithS3OutputPath(const char* value) { SetS3OutputPath(value); return *this;}
 
+
+    /**
+     * <p>The model output compression type. Select <code>None</code> to output an
+     * uncompressed model, recommended for large model outputs. Defaults to gzip.</p>
+     */
+    inline const OutputCompressionType& GetCompressionType() const{ return m_compressionType; }
+
+    /**
+     * <p>The model output compression type. Select <code>None</code> to output an
+     * uncompressed model, recommended for large model outputs. Defaults to gzip.</p>
+     */
+    inline bool CompressionTypeHasBeenSet() const { return m_compressionTypeHasBeenSet; }
+
+    /**
+     * <p>The model output compression type. Select <code>None</code> to output an
+     * uncompressed model, recommended for large model outputs. Defaults to gzip.</p>
+     */
+    inline void SetCompressionType(const OutputCompressionType& value) { m_compressionTypeHasBeenSet = true; m_compressionType = value; }
+
+    /**
+     * <p>The model output compression type. Select <code>None</code> to output an
+     * uncompressed model, recommended for large model outputs. Defaults to gzip.</p>
+     */
+    inline void SetCompressionType(OutputCompressionType&& value) { m_compressionTypeHasBeenSet = true; m_compressionType = std::move(value); }
+
+    /**
+     * <p>The model output compression type. Select <code>None</code> to output an
+     * uncompressed model, recommended for large model outputs. Defaults to gzip.</p>
+     */
+    inline OutputDataConfig& WithCompressionType(const OutputCompressionType& value) { SetCompressionType(value); return *this;}
+
+    /**
+     * <p>The model output compression type. Select <code>None</code> to output an
+     * uncompressed model, recommended for large model outputs. Defaults to gzip.</p>
+     */
+    inline OutputDataConfig& WithCompressionType(OutputCompressionType&& value) { SetCompressionType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_kmsKeyId;
@@ -350,6 +388,9 @@ namespace Model
 
     Aws::String m_s3OutputPath;
     bool m_s3OutputPathHasBeenSet = false;
+
+    OutputCompressionType m_compressionType;
+    bool m_compressionTypeHasBeenSet = false;
   };
 
 } // namespace Model

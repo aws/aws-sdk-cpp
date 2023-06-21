@@ -37,37 +37,37 @@ namespace Model
 
 
     /**
-     * <p>Required. The Amazon Resource Name (ARN) of the configuration.</p>
+     * <p>The Amazon Resource Name (ARN) of the configuration.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>Required. The Amazon Resource Name (ARN) of the configuration.</p>
+     * <p>The Amazon Resource Name (ARN) of the configuration.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arn = value; }
 
     /**
-     * <p>Required. The Amazon Resource Name (ARN) of the configuration.</p>
+     * <p>The Amazon Resource Name (ARN) of the configuration.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
 
     /**
-     * <p>Required. The Amazon Resource Name (ARN) of the configuration.</p>
+     * <p>The Amazon Resource Name (ARN) of the configuration.</p>
      */
     inline void SetArn(const char* value) { m_arn.assign(value); }
 
     /**
-     * <p>Required. The Amazon Resource Name (ARN) of the configuration.</p>
+     * <p>The Amazon Resource Name (ARN) of the configuration.</p>
      */
     inline UpdateConfigurationResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>Required. The Amazon Resource Name (ARN) of the configuration.</p>
+     * <p>The Amazon Resource Name (ARN) of the configuration.</p>
      */
     inline UpdateConfigurationResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>Required. The Amazon Resource Name (ARN) of the configuration.</p>
+     * <p>The Amazon Resource Name (ARN) of the configuration.</p>
      */
     inline UpdateConfigurationResult& WithArn(const char* value) { SetArn(value); return *this;}
 
@@ -99,37 +99,37 @@ namespace Model
 
 
     /**
-     * <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
+     * <p>The unique ID that Amazon MQ generates for the configuration.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
+     * <p>The unique ID that Amazon MQ generates for the configuration.</p>
      */
     inline void SetId(const Aws::String& value) { m_id = value; }
 
     /**
-     * <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
+     * <p>The unique ID that Amazon MQ generates for the configuration.</p>
      */
     inline void SetId(Aws::String&& value) { m_id = std::move(value); }
 
     /**
-     * <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
+     * <p>The unique ID that Amazon MQ generates for the configuration.</p>
      */
     inline void SetId(const char* value) { m_id.assign(value); }
 
     /**
-     * <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
+     * <p>The unique ID that Amazon MQ generates for the configuration.</p>
      */
     inline UpdateConfigurationResult& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
+     * <p>The unique ID that Amazon MQ generates for the configuration.</p>
      */
     inline UpdateConfigurationResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
+     * <p>The unique ID that Amazon MQ generates for the configuration.</p>
      */
     inline UpdateConfigurationResult& WithId(const char* value) { SetId(value); return *this;}
 
@@ -161,93 +161,93 @@ namespace Model
 
 
     /**
-     * <p>Required. The name of the configuration. This value can contain only
-     * alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~).
-     * This value must be 1-150 characters long.</p>
+     * <p>The name of the configuration. This value can contain only alphanumeric
+     * characters, dashes, periods, underscores, and tildes (- . _ ~). This value must
+     * be 1-150 characters long.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Required. The name of the configuration. This value can contain only
-     * alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~).
-     * This value must be 1-150 characters long.</p>
+     * <p>The name of the configuration. This value can contain only alphanumeric
+     * characters, dashes, periods, underscores, and tildes (- . _ ~). This value must
+     * be 1-150 characters long.</p>
      */
     inline void SetName(const Aws::String& value) { m_name = value; }
 
     /**
-     * <p>Required. The name of the configuration. This value can contain only
-     * alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~).
-     * This value must be 1-150 characters long.</p>
+     * <p>The name of the configuration. This value can contain only alphanumeric
+     * characters, dashes, periods, underscores, and tildes (- . _ ~). This value must
+     * be 1-150 characters long.</p>
      */
     inline void SetName(Aws::String&& value) { m_name = std::move(value); }
 
     /**
-     * <p>Required. The name of the configuration. This value can contain only
-     * alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~).
-     * This value must be 1-150 characters long.</p>
+     * <p>The name of the configuration. This value can contain only alphanumeric
+     * characters, dashes, periods, underscores, and tildes (- . _ ~). This value must
+     * be 1-150 characters long.</p>
      */
     inline void SetName(const char* value) { m_name.assign(value); }
 
     /**
-     * <p>Required. The name of the configuration. This value can contain only
-     * alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~).
-     * This value must be 1-150 characters long.</p>
+     * <p>The name of the configuration. This value can contain only alphanumeric
+     * characters, dashes, periods, underscores, and tildes (- . _ ~). This value must
+     * be 1-150 characters long.</p>
      */
     inline UpdateConfigurationResult& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Required. The name of the configuration. This value can contain only
-     * alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~).
-     * This value must be 1-150 characters long.</p>
+     * <p>The name of the configuration. This value can contain only alphanumeric
+     * characters, dashes, periods, underscores, and tildes (- . _ ~). This value must
+     * be 1-150 characters long.</p>
      */
     inline UpdateConfigurationResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>Required. The name of the configuration. This value can contain only
-     * alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~).
-     * This value must be 1-150 characters long.</p>
+     * <p>The name of the configuration. This value can contain only alphanumeric
+     * characters, dashes, periods, underscores, and tildes (- . _ ~). This value must
+     * be 1-150 characters long.</p>
      */
     inline UpdateConfigurationResult& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>The list of the first 20 warnings about the configuration XML elements or
+     * <p>The list of the first 20 warnings about the configuration elements or
      * attributes that were sanitized.</p>
      */
     inline const Aws::Vector<SanitizationWarning>& GetWarnings() const{ return m_warnings; }
 
     /**
-     * <p>The list of the first 20 warnings about the configuration XML elements or
+     * <p>The list of the first 20 warnings about the configuration elements or
      * attributes that were sanitized.</p>
      */
     inline void SetWarnings(const Aws::Vector<SanitizationWarning>& value) { m_warnings = value; }
 
     /**
-     * <p>The list of the first 20 warnings about the configuration XML elements or
+     * <p>The list of the first 20 warnings about the configuration elements or
      * attributes that were sanitized.</p>
      */
     inline void SetWarnings(Aws::Vector<SanitizationWarning>&& value) { m_warnings = std::move(value); }
 
     /**
-     * <p>The list of the first 20 warnings about the configuration XML elements or
+     * <p>The list of the first 20 warnings about the configuration elements or
      * attributes that were sanitized.</p>
      */
     inline UpdateConfigurationResult& WithWarnings(const Aws::Vector<SanitizationWarning>& value) { SetWarnings(value); return *this;}
 
     /**
-     * <p>The list of the first 20 warnings about the configuration XML elements or
+     * <p>The list of the first 20 warnings about the configuration elements or
      * attributes that were sanitized.</p>
      */
     inline UpdateConfigurationResult& WithWarnings(Aws::Vector<SanitizationWarning>&& value) { SetWarnings(std::move(value)); return *this;}
 
     /**
-     * <p>The list of the first 20 warnings about the configuration XML elements or
+     * <p>The list of the first 20 warnings about the configuration elements or
      * attributes that were sanitized.</p>
      */
     inline UpdateConfigurationResult& AddWarnings(const SanitizationWarning& value) { m_warnings.push_back(value); return *this; }
 
     /**
-     * <p>The list of the first 20 warnings about the configuration XML elements or
+     * <p>The list of the first 20 warnings about the configuration elements or
      * attributes that were sanitized.</p>
      */
     inline UpdateConfigurationResult& AddWarnings(SanitizationWarning&& value) { m_warnings.push_back(std::move(value)); return *this; }

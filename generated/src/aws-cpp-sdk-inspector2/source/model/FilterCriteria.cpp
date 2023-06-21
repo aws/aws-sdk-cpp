@@ -20,6 +20,9 @@ namespace Model
 
 FilterCriteria::FilterCriteria() : 
     m_awsAccountIdHasBeenSet(false),
+    m_codeVulnerabilityDetectorNameHasBeenSet(false),
+    m_codeVulnerabilityDetectorTagsHasBeenSet(false),
+    m_codeVulnerabilityFilePathHasBeenSet(false),
     m_componentIdHasBeenSet(false),
     m_componentTypeHasBeenSet(false),
     m_ec2InstanceImageIdHasBeenSet(false),
@@ -31,6 +34,7 @@ FilterCriteria::FilterCriteria() :
     m_ecrImageRegistryHasBeenSet(false),
     m_ecrImageRepositoryNameHasBeenSet(false),
     m_ecrImageTagsHasBeenSet(false),
+    m_epssScoreHasBeenSet(false),
     m_exploitAvailableHasBeenSet(false),
     m_findingArnHasBeenSet(false),
     m_findingStatusHasBeenSet(false),
@@ -62,6 +66,9 @@ FilterCriteria::FilterCriteria() :
 
 FilterCriteria::FilterCriteria(JsonView jsonValue) : 
     m_awsAccountIdHasBeenSet(false),
+    m_codeVulnerabilityDetectorNameHasBeenSet(false),
+    m_codeVulnerabilityDetectorTagsHasBeenSet(false),
+    m_codeVulnerabilityFilePathHasBeenSet(false),
     m_componentIdHasBeenSet(false),
     m_componentTypeHasBeenSet(false),
     m_ec2InstanceImageIdHasBeenSet(false),
@@ -73,6 +80,7 @@ FilterCriteria::FilterCriteria(JsonView jsonValue) :
     m_ecrImageRegistryHasBeenSet(false),
     m_ecrImageRepositoryNameHasBeenSet(false),
     m_ecrImageTagsHasBeenSet(false),
+    m_epssScoreHasBeenSet(false),
     m_exploitAvailableHasBeenSet(false),
     m_findingArnHasBeenSet(false),
     m_findingStatusHasBeenSet(false),
@@ -113,6 +121,36 @@ FilterCriteria& FilterCriteria::operator =(JsonView jsonValue)
       m_awsAccountId.push_back(awsAccountIdJsonList[awsAccountIdIndex].AsObject());
     }
     m_awsAccountIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("codeVulnerabilityDetectorName"))
+  {
+    Aws::Utils::Array<JsonView> codeVulnerabilityDetectorNameJsonList = jsonValue.GetArray("codeVulnerabilityDetectorName");
+    for(unsigned codeVulnerabilityDetectorNameIndex = 0; codeVulnerabilityDetectorNameIndex < codeVulnerabilityDetectorNameJsonList.GetLength(); ++codeVulnerabilityDetectorNameIndex)
+    {
+      m_codeVulnerabilityDetectorName.push_back(codeVulnerabilityDetectorNameJsonList[codeVulnerabilityDetectorNameIndex].AsObject());
+    }
+    m_codeVulnerabilityDetectorNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("codeVulnerabilityDetectorTags"))
+  {
+    Aws::Utils::Array<JsonView> codeVulnerabilityDetectorTagsJsonList = jsonValue.GetArray("codeVulnerabilityDetectorTags");
+    for(unsigned codeVulnerabilityDetectorTagsIndex = 0; codeVulnerabilityDetectorTagsIndex < codeVulnerabilityDetectorTagsJsonList.GetLength(); ++codeVulnerabilityDetectorTagsIndex)
+    {
+      m_codeVulnerabilityDetectorTags.push_back(codeVulnerabilityDetectorTagsJsonList[codeVulnerabilityDetectorTagsIndex].AsObject());
+    }
+    m_codeVulnerabilityDetectorTagsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("codeVulnerabilityFilePath"))
+  {
+    Aws::Utils::Array<JsonView> codeVulnerabilityFilePathJsonList = jsonValue.GetArray("codeVulnerabilityFilePath");
+    for(unsigned codeVulnerabilityFilePathIndex = 0; codeVulnerabilityFilePathIndex < codeVulnerabilityFilePathJsonList.GetLength(); ++codeVulnerabilityFilePathIndex)
+    {
+      m_codeVulnerabilityFilePath.push_back(codeVulnerabilityFilePathJsonList[codeVulnerabilityFilePathIndex].AsObject());
+    }
+    m_codeVulnerabilityFilePathHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("componentId"))
@@ -223,6 +261,16 @@ FilterCriteria& FilterCriteria::operator =(JsonView jsonValue)
       m_ecrImageTags.push_back(ecrImageTagsJsonList[ecrImageTagsIndex].AsObject());
     }
     m_ecrImageTagsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("epssScore"))
+  {
+    Aws::Utils::Array<JsonView> epssScoreJsonList = jsonValue.GetArray("epssScore");
+    for(unsigned epssScoreIndex = 0; epssScoreIndex < epssScoreJsonList.GetLength(); ++epssScoreIndex)
+    {
+      m_epssScore.push_back(epssScoreJsonList[epssScoreIndex].AsObject());
+    }
+    m_epssScoreHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("exploitAvailable"))
@@ -503,6 +551,39 @@ JsonValue FilterCriteria::Jsonize() const
 
   }
 
+  if(m_codeVulnerabilityDetectorNameHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> codeVulnerabilityDetectorNameJsonList(m_codeVulnerabilityDetectorName.size());
+   for(unsigned codeVulnerabilityDetectorNameIndex = 0; codeVulnerabilityDetectorNameIndex < codeVulnerabilityDetectorNameJsonList.GetLength(); ++codeVulnerabilityDetectorNameIndex)
+   {
+     codeVulnerabilityDetectorNameJsonList[codeVulnerabilityDetectorNameIndex].AsObject(m_codeVulnerabilityDetectorName[codeVulnerabilityDetectorNameIndex].Jsonize());
+   }
+   payload.WithArray("codeVulnerabilityDetectorName", std::move(codeVulnerabilityDetectorNameJsonList));
+
+  }
+
+  if(m_codeVulnerabilityDetectorTagsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> codeVulnerabilityDetectorTagsJsonList(m_codeVulnerabilityDetectorTags.size());
+   for(unsigned codeVulnerabilityDetectorTagsIndex = 0; codeVulnerabilityDetectorTagsIndex < codeVulnerabilityDetectorTagsJsonList.GetLength(); ++codeVulnerabilityDetectorTagsIndex)
+   {
+     codeVulnerabilityDetectorTagsJsonList[codeVulnerabilityDetectorTagsIndex].AsObject(m_codeVulnerabilityDetectorTags[codeVulnerabilityDetectorTagsIndex].Jsonize());
+   }
+   payload.WithArray("codeVulnerabilityDetectorTags", std::move(codeVulnerabilityDetectorTagsJsonList));
+
+  }
+
+  if(m_codeVulnerabilityFilePathHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> codeVulnerabilityFilePathJsonList(m_codeVulnerabilityFilePath.size());
+   for(unsigned codeVulnerabilityFilePathIndex = 0; codeVulnerabilityFilePathIndex < codeVulnerabilityFilePathJsonList.GetLength(); ++codeVulnerabilityFilePathIndex)
+   {
+     codeVulnerabilityFilePathJsonList[codeVulnerabilityFilePathIndex].AsObject(m_codeVulnerabilityFilePath[codeVulnerabilityFilePathIndex].Jsonize());
+   }
+   payload.WithArray("codeVulnerabilityFilePath", std::move(codeVulnerabilityFilePathJsonList));
+
+  }
+
   if(m_componentIdHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> componentIdJsonList(m_componentId.size());
@@ -621,6 +702,17 @@ JsonValue FilterCriteria::Jsonize() const
      ecrImageTagsJsonList[ecrImageTagsIndex].AsObject(m_ecrImageTags[ecrImageTagsIndex].Jsonize());
    }
    payload.WithArray("ecrImageTags", std::move(ecrImageTagsJsonList));
+
+  }
+
+  if(m_epssScoreHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> epssScoreJsonList(m_epssScore.size());
+   for(unsigned epssScoreIndex = 0; epssScoreIndex < epssScoreJsonList.GetLength(); ++epssScoreIndex)
+   {
+     epssScoreJsonList[epssScoreIndex].AsObject(m_epssScore[epssScoreIndex].Jsonize());
+   }
+   payload.WithArray("epssScore", std::move(epssScoreJsonList));
 
   }
 

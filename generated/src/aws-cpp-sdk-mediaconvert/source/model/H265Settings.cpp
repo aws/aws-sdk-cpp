@@ -23,6 +23,7 @@ H265Settings::H265Settings() :
     m_adaptiveQuantizationHasBeenSet(false),
     m_alternateTransferFunctionSei(H265AlternateTransferFunctionSei::NOT_SET),
     m_alternateTransferFunctionSeiHasBeenSet(false),
+    m_bandwidthReductionFilterHasBeenSet(false),
     m_bitrate(0),
     m_bitrateHasBeenSet(false),
     m_codecLevel(H265CodecLevel::NOT_SET),
@@ -108,6 +109,7 @@ H265Settings::H265Settings(JsonView jsonValue) :
     m_adaptiveQuantizationHasBeenSet(false),
     m_alternateTransferFunctionSei(H265AlternateTransferFunctionSei::NOT_SET),
     m_alternateTransferFunctionSeiHasBeenSet(false),
+    m_bandwidthReductionFilterHasBeenSet(false),
     m_bitrate(0),
     m_bitrateHasBeenSet(false),
     m_codecLevel(H265CodecLevel::NOT_SET),
@@ -203,6 +205,13 @@ H265Settings& H265Settings::operator =(JsonView jsonValue)
     m_alternateTransferFunctionSei = H265AlternateTransferFunctionSeiMapper::GetH265AlternateTransferFunctionSeiForName(jsonValue.GetString("alternateTransferFunctionSei"));
 
     m_alternateTransferFunctionSeiHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("bandwidthReductionFilter"))
+  {
+    m_bandwidthReductionFilter = jsonValue.GetObject("bandwidthReductionFilter");
+
+    m_bandwidthReductionFilterHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("bitrate"))
@@ -493,6 +502,12 @@ JsonValue H265Settings::Jsonize() const
   if(m_alternateTransferFunctionSeiHasBeenSet)
   {
    payload.WithString("alternateTransferFunctionSei", H265AlternateTransferFunctionSeiMapper::GetNameForH265AlternateTransferFunctionSei(m_alternateTransferFunctionSei));
+  }
+
+  if(m_bandwidthReductionFilterHasBeenSet)
+  {
+   payload.WithObject("bandwidthReductionFilter", m_bandwidthReductionFilter.Jsonize());
+
   }
 
   if(m_bitrateHasBeenSet)

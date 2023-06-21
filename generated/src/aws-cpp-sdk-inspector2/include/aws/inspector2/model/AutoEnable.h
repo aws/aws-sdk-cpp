@@ -110,6 +110,35 @@ namespace Model
      */
     inline AutoEnable& WithLambda(bool value) { SetLambda(value); return *this;}
 
+
+    /**
+     * <p>Represents whether AWS Lambda code scans are automatically enabled for new
+     * members of your Amazon Inspector organization. <pre><code> &lt;/p&gt;
+     * </code></pre>
+     */
+    inline bool GetLambdaCode() const{ return m_lambdaCode; }
+
+    /**
+     * <p>Represents whether AWS Lambda code scans are automatically enabled for new
+     * members of your Amazon Inspector organization. <pre><code> &lt;/p&gt;
+     * </code></pre>
+     */
+    inline bool LambdaCodeHasBeenSet() const { return m_lambdaCodeHasBeenSet; }
+
+    /**
+     * <p>Represents whether AWS Lambda code scans are automatically enabled for new
+     * members of your Amazon Inspector organization. <pre><code> &lt;/p&gt;
+     * </code></pre>
+     */
+    inline void SetLambdaCode(bool value) { m_lambdaCodeHasBeenSet = true; m_lambdaCode = value; }
+
+    /**
+     * <p>Represents whether AWS Lambda code scans are automatically enabled for new
+     * members of your Amazon Inspector organization. <pre><code> &lt;/p&gt;
+     * </code></pre>
+     */
+    inline AutoEnable& WithLambdaCode(bool value) { SetLambdaCode(value); return *this;}
+
   private:
 
     bool m_ec2;
@@ -120,6 +149,9 @@ namespace Model
 
     bool m_lambda;
     bool m_lambdaHasBeenSet = false;
+
+    bool m_lambdaCode;
+    bool m_lambdaCodeHasBeenSet = false;
   };
 
 } // namespace Model

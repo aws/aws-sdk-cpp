@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     NETWORK_REACHABILITY,
-    PACKAGE_VULNERABILITY
+    PACKAGE_VULNERABILITY,
+    CODE_VULNERABILITY
   };
 
 namespace FindingTypeMapper

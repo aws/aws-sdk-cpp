@@ -42,7 +42,8 @@ DescribedServer::DescribedServer() :
     m_tagsHasBeenSet(false),
     m_userCount(0),
     m_userCountHasBeenSet(false),
-    m_workflowDetailsHasBeenSet(false)
+    m_workflowDetailsHasBeenSet(false),
+    m_structuredLogDestinationsHasBeenSet(false)
 {
 }
 
@@ -70,7 +71,8 @@ DescribedServer::DescribedServer(JsonView jsonValue) :
     m_tagsHasBeenSet(false),
     m_userCount(0),
     m_userCountHasBeenSet(false),
-    m_workflowDetailsHasBeenSet(false)
+    m_workflowDetailsHasBeenSet(false),
+    m_structuredLogDestinationsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -216,6 +218,16 @@ DescribedServer& DescribedServer::operator =(JsonView jsonValue)
     m_workflowDetailsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("StructuredLogDestinations"))
+  {
+    Aws::Utils::Array<JsonView> structuredLogDestinationsJsonList = jsonValue.GetArray("StructuredLogDestinations");
+    for(unsigned structuredLogDestinationsIndex = 0; structuredLogDestinationsIndex < structuredLogDestinationsJsonList.GetLength(); ++structuredLogDestinationsIndex)
+    {
+      m_structuredLogDestinations.push_back(structuredLogDestinationsJsonList[structuredLogDestinationsIndex].AsString());
+    }
+    m_structuredLogDestinationsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -340,6 +352,17 @@ JsonValue DescribedServer::Jsonize() const
   if(m_workflowDetailsHasBeenSet)
   {
    payload.WithObject("WorkflowDetails", m_workflowDetails.Jsonize());
+
+  }
+
+  if(m_structuredLogDestinationsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> structuredLogDestinationsJsonList(m_structuredLogDestinations.size());
+   for(unsigned structuredLogDestinationsIndex = 0; structuredLogDestinationsIndex < structuredLogDestinationsJsonList.GetLength(); ++structuredLogDestinationsIndex)
+   {
+     structuredLogDestinationsJsonList[structuredLogDestinationsIndex].AsString(m_structuredLogDestinations[structuredLogDestinationsIndex]);
+   }
+   payload.WithArray("StructuredLogDestinations", std::move(structuredLogDestinationsJsonList));
 
   }
 

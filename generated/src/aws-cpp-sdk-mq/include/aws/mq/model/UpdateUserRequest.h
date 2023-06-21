@@ -275,6 +275,27 @@ namespace Model
      */
     inline UpdateUserRequest& WithUsername(const char* value) { SetUsername(value); return *this;}
 
+
+    /**
+     * <p>Defines whether the user is intended for data replication.</p>
+     */
+    inline bool GetReplicationUser() const{ return m_replicationUser; }
+
+    /**
+     * <p>Defines whether the user is intended for data replication.</p>
+     */
+    inline bool ReplicationUserHasBeenSet() const { return m_replicationUserHasBeenSet; }
+
+    /**
+     * <p>Defines whether the user is intended for data replication.</p>
+     */
+    inline void SetReplicationUser(bool value) { m_replicationUserHasBeenSet = true; m_replicationUser = value; }
+
+    /**
+     * <p>Defines whether the user is intended for data replication.</p>
+     */
+    inline UpdateUserRequest& WithReplicationUser(bool value) { SetReplicationUser(value); return *this;}
+
   private:
 
     Aws::String m_brokerId;
@@ -291,6 +312,9 @@ namespace Model
 
     Aws::String m_username;
     bool m_usernameHasBeenSet = false;
+
+    bool m_replicationUser;
+    bool m_replicationUserHasBeenSet = false;
   };
 
 } // namespace Model

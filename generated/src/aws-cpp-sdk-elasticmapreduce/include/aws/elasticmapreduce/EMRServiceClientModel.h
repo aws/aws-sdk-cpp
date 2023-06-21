@@ -48,6 +48,7 @@
 #include <aws/elasticmapreduce/model/ListStepsResult.h>
 #include <aws/elasticmapreduce/model/ListStudioSessionMappingsResult.h>
 #include <aws/elasticmapreduce/model/ListStudiosResult.h>
+#include <aws/elasticmapreduce/model/ListSupportedInstanceTypesResult.h>
 #include <aws/elasticmapreduce/model/ModifyClusterResult.h>
 #include <aws/elasticmapreduce/model/PutAutoScalingPolicyResult.h>
 #include <aws/elasticmapreduce/model/PutAutoTerminationPolicyResult.h>
@@ -133,6 +134,7 @@ namespace Aws
       class ListStepsRequest;
       class ListStudioSessionMappingsRequest;
       class ListStudiosRequest;
+      class ListSupportedInstanceTypesRequest;
       class ModifyClusterRequest;
       class ModifyInstanceFleetRequest;
       class ModifyInstanceGroupsRequest;
@@ -188,6 +190,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListStepsResult, EMRError> ListStepsOutcome;
       typedef Aws::Utils::Outcome<ListStudioSessionMappingsResult, EMRError> ListStudioSessionMappingsOutcome;
       typedef Aws::Utils::Outcome<ListStudiosResult, EMRError> ListStudiosOutcome;
+      typedef Aws::Utils::Outcome<ListSupportedInstanceTypesResult, EMRError> ListSupportedInstanceTypesOutcome;
       typedef Aws::Utils::Outcome<ModifyClusterResult, EMRError> ModifyClusterOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, EMRError> ModifyInstanceFleetOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, EMRError> ModifyInstanceGroupsOutcome;
@@ -243,6 +246,7 @@ namespace Aws
       typedef std::future<ListStepsOutcome> ListStepsOutcomeCallable;
       typedef std::future<ListStudioSessionMappingsOutcome> ListStudioSessionMappingsOutcomeCallable;
       typedef std::future<ListStudiosOutcome> ListStudiosOutcomeCallable;
+      typedef std::future<ListSupportedInstanceTypesOutcome> ListSupportedInstanceTypesOutcomeCallable;
       typedef std::future<ModifyClusterOutcome> ModifyClusterOutcomeCallable;
       typedef std::future<ModifyInstanceFleetOutcome> ModifyInstanceFleetOutcomeCallable;
       typedef std::future<ModifyInstanceGroupsOutcome> ModifyInstanceGroupsOutcomeCallable;
@@ -301,6 +305,7 @@ namespace Aws
     typedef std::function<void(const EMRClient*, const Model::ListStepsRequest&, const Model::ListStepsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStepsResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::ListStudioSessionMappingsRequest&, const Model::ListStudioSessionMappingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStudioSessionMappingsResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::ListStudiosRequest&, const Model::ListStudiosOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStudiosResponseReceivedHandler;
+    typedef std::function<void(const EMRClient*, const Model::ListSupportedInstanceTypesRequest&, const Model::ListSupportedInstanceTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSupportedInstanceTypesResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::ModifyClusterRequest&, const Model::ModifyClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyClusterResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::ModifyInstanceFleetRequest&, const Model::ModifyInstanceFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyInstanceFleetResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::ModifyInstanceGroupsRequest&, const Model::ModifyInstanceGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyInstanceGroupsResponseReceivedHandler;

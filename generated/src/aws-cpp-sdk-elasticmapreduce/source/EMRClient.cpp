@@ -54,6 +54,7 @@
 #include <aws/elasticmapreduce/model/ListStepsRequest.h>
 #include <aws/elasticmapreduce/model/ListStudioSessionMappingsRequest.h>
 #include <aws/elasticmapreduce/model/ListStudiosRequest.h>
+#include <aws/elasticmapreduce/model/ListSupportedInstanceTypesRequest.h>
 #include <aws/elasticmapreduce/model/ModifyClusterRequest.h>
 #include <aws/elasticmapreduce/model/ModifyInstanceFleetRequest.h>
 #include <aws/elasticmapreduce/model/ModifyInstanceGroupsRequest.h>
@@ -497,6 +498,15 @@ ListStudiosOutcome EMRClient::ListStudios(const ListStudiosRequest& request) con
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListStudios, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   return ListStudiosOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListSupportedInstanceTypesOutcome EMRClient::ListSupportedInstanceTypes(const ListSupportedInstanceTypesRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListSupportedInstanceTypes);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSupportedInstanceTypes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListSupportedInstanceTypes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListSupportedInstanceTypesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ModifyClusterOutcome EMRClient::ModifyCluster(const ModifyClusterRequest& request) const

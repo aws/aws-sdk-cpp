@@ -219,6 +219,22 @@ namespace Model
     inline DescribeUserResult& WithUsername(const char* value) { SetUsername(value); return *this;}
 
 
+    /**
+     * <p>Describes whether the user is intended for data replication</p>
+     */
+    inline bool GetReplicationUser() const{ return m_replicationUser; }
+
+    /**
+     * <p>Describes whether the user is intended for data replication</p>
+     */
+    inline void SetReplicationUser(bool value) { m_replicationUser = value; }
+
+    /**
+     * <p>Describes whether the user is intended for data replication</p>
+     */
+    inline DescribeUserResult& WithReplicationUser(bool value) { SetReplicationUser(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -251,6 +267,8 @@ namespace Model
     UserPendingChanges m_pending;
 
     Aws::String m_username;
+
+    bool m_replicationUser;
 
     Aws::String m_requestId;
   };

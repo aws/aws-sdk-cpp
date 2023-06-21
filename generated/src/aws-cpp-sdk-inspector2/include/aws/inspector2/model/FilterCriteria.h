@@ -86,6 +86,193 @@ namespace Model
 
 
     /**
+     * <p>The name of the detector used to identify a code vulnerability in a Lambda
+     * function used to filter findings.</p>
+     */
+    inline const Aws::Vector<StringFilter>& GetCodeVulnerabilityDetectorName() const{ return m_codeVulnerabilityDetectorName; }
+
+    /**
+     * <p>The name of the detector used to identify a code vulnerability in a Lambda
+     * function used to filter findings.</p>
+     */
+    inline bool CodeVulnerabilityDetectorNameHasBeenSet() const { return m_codeVulnerabilityDetectorNameHasBeenSet; }
+
+    /**
+     * <p>The name of the detector used to identify a code vulnerability in a Lambda
+     * function used to filter findings.</p>
+     */
+    inline void SetCodeVulnerabilityDetectorName(const Aws::Vector<StringFilter>& value) { m_codeVulnerabilityDetectorNameHasBeenSet = true; m_codeVulnerabilityDetectorName = value; }
+
+    /**
+     * <p>The name of the detector used to identify a code vulnerability in a Lambda
+     * function used to filter findings.</p>
+     */
+    inline void SetCodeVulnerabilityDetectorName(Aws::Vector<StringFilter>&& value) { m_codeVulnerabilityDetectorNameHasBeenSet = true; m_codeVulnerabilityDetectorName = std::move(value); }
+
+    /**
+     * <p>The name of the detector used to identify a code vulnerability in a Lambda
+     * function used to filter findings.</p>
+     */
+    inline FilterCriteria& WithCodeVulnerabilityDetectorName(const Aws::Vector<StringFilter>& value) { SetCodeVulnerabilityDetectorName(value); return *this;}
+
+    /**
+     * <p>The name of the detector used to identify a code vulnerability in a Lambda
+     * function used to filter findings.</p>
+     */
+    inline FilterCriteria& WithCodeVulnerabilityDetectorName(Aws::Vector<StringFilter>&& value) { SetCodeVulnerabilityDetectorName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the detector used to identify a code vulnerability in a Lambda
+     * function used to filter findings.</p>
+     */
+    inline FilterCriteria& AddCodeVulnerabilityDetectorName(const StringFilter& value) { m_codeVulnerabilityDetectorNameHasBeenSet = true; m_codeVulnerabilityDetectorName.push_back(value); return *this; }
+
+    /**
+     * <p>The name of the detector used to identify a code vulnerability in a Lambda
+     * function used to filter findings.</p>
+     */
+    inline FilterCriteria& AddCodeVulnerabilityDetectorName(StringFilter&& value) { m_codeVulnerabilityDetectorNameHasBeenSet = true; m_codeVulnerabilityDetectorName.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The detector type tag associated with the vulnerability used to filter
+     * findings. Detector tags group related vulnerabilities by common themes or
+     * tactics. For a list of available tags by programming language, see <a
+     * href="https://docs.aws.amazon.com/codeguru/detector-library/java/tags/">Java
+     * tags</a>, or <a
+     * href="https://docs.aws.amazon.com/codeguru/detector-library/python/tags/">Python
+     * tags</a>. </p>
+     */
+    inline const Aws::Vector<StringFilter>& GetCodeVulnerabilityDetectorTags() const{ return m_codeVulnerabilityDetectorTags; }
+
+    /**
+     * <p>The detector type tag associated with the vulnerability used to filter
+     * findings. Detector tags group related vulnerabilities by common themes or
+     * tactics. For a list of available tags by programming language, see <a
+     * href="https://docs.aws.amazon.com/codeguru/detector-library/java/tags/">Java
+     * tags</a>, or <a
+     * href="https://docs.aws.amazon.com/codeguru/detector-library/python/tags/">Python
+     * tags</a>. </p>
+     */
+    inline bool CodeVulnerabilityDetectorTagsHasBeenSet() const { return m_codeVulnerabilityDetectorTagsHasBeenSet; }
+
+    /**
+     * <p>The detector type tag associated with the vulnerability used to filter
+     * findings. Detector tags group related vulnerabilities by common themes or
+     * tactics. For a list of available tags by programming language, see <a
+     * href="https://docs.aws.amazon.com/codeguru/detector-library/java/tags/">Java
+     * tags</a>, or <a
+     * href="https://docs.aws.amazon.com/codeguru/detector-library/python/tags/">Python
+     * tags</a>. </p>
+     */
+    inline void SetCodeVulnerabilityDetectorTags(const Aws::Vector<StringFilter>& value) { m_codeVulnerabilityDetectorTagsHasBeenSet = true; m_codeVulnerabilityDetectorTags = value; }
+
+    /**
+     * <p>The detector type tag associated with the vulnerability used to filter
+     * findings. Detector tags group related vulnerabilities by common themes or
+     * tactics. For a list of available tags by programming language, see <a
+     * href="https://docs.aws.amazon.com/codeguru/detector-library/java/tags/">Java
+     * tags</a>, or <a
+     * href="https://docs.aws.amazon.com/codeguru/detector-library/python/tags/">Python
+     * tags</a>. </p>
+     */
+    inline void SetCodeVulnerabilityDetectorTags(Aws::Vector<StringFilter>&& value) { m_codeVulnerabilityDetectorTagsHasBeenSet = true; m_codeVulnerabilityDetectorTags = std::move(value); }
+
+    /**
+     * <p>The detector type tag associated with the vulnerability used to filter
+     * findings. Detector tags group related vulnerabilities by common themes or
+     * tactics. For a list of available tags by programming language, see <a
+     * href="https://docs.aws.amazon.com/codeguru/detector-library/java/tags/">Java
+     * tags</a>, or <a
+     * href="https://docs.aws.amazon.com/codeguru/detector-library/python/tags/">Python
+     * tags</a>. </p>
+     */
+    inline FilterCriteria& WithCodeVulnerabilityDetectorTags(const Aws::Vector<StringFilter>& value) { SetCodeVulnerabilityDetectorTags(value); return *this;}
+
+    /**
+     * <p>The detector type tag associated with the vulnerability used to filter
+     * findings. Detector tags group related vulnerabilities by common themes or
+     * tactics. For a list of available tags by programming language, see <a
+     * href="https://docs.aws.amazon.com/codeguru/detector-library/java/tags/">Java
+     * tags</a>, or <a
+     * href="https://docs.aws.amazon.com/codeguru/detector-library/python/tags/">Python
+     * tags</a>. </p>
+     */
+    inline FilterCriteria& WithCodeVulnerabilityDetectorTags(Aws::Vector<StringFilter>&& value) { SetCodeVulnerabilityDetectorTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The detector type tag associated with the vulnerability used to filter
+     * findings. Detector tags group related vulnerabilities by common themes or
+     * tactics. For a list of available tags by programming language, see <a
+     * href="https://docs.aws.amazon.com/codeguru/detector-library/java/tags/">Java
+     * tags</a>, or <a
+     * href="https://docs.aws.amazon.com/codeguru/detector-library/python/tags/">Python
+     * tags</a>. </p>
+     */
+    inline FilterCriteria& AddCodeVulnerabilityDetectorTags(const StringFilter& value) { m_codeVulnerabilityDetectorTagsHasBeenSet = true; m_codeVulnerabilityDetectorTags.push_back(value); return *this; }
+
+    /**
+     * <p>The detector type tag associated with the vulnerability used to filter
+     * findings. Detector tags group related vulnerabilities by common themes or
+     * tactics. For a list of available tags by programming language, see <a
+     * href="https://docs.aws.amazon.com/codeguru/detector-library/java/tags/">Java
+     * tags</a>, or <a
+     * href="https://docs.aws.amazon.com/codeguru/detector-library/python/tags/">Python
+     * tags</a>. </p>
+     */
+    inline FilterCriteria& AddCodeVulnerabilityDetectorTags(StringFilter&& value) { m_codeVulnerabilityDetectorTagsHasBeenSet = true; m_codeVulnerabilityDetectorTags.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The file path to the file in a Lambda function that contains a code
+     * vulnerability used to filter findings.</p>
+     */
+    inline const Aws::Vector<StringFilter>& GetCodeVulnerabilityFilePath() const{ return m_codeVulnerabilityFilePath; }
+
+    /**
+     * <p>The file path to the file in a Lambda function that contains a code
+     * vulnerability used to filter findings.</p>
+     */
+    inline bool CodeVulnerabilityFilePathHasBeenSet() const { return m_codeVulnerabilityFilePathHasBeenSet; }
+
+    /**
+     * <p>The file path to the file in a Lambda function that contains a code
+     * vulnerability used to filter findings.</p>
+     */
+    inline void SetCodeVulnerabilityFilePath(const Aws::Vector<StringFilter>& value) { m_codeVulnerabilityFilePathHasBeenSet = true; m_codeVulnerabilityFilePath = value; }
+
+    /**
+     * <p>The file path to the file in a Lambda function that contains a code
+     * vulnerability used to filter findings.</p>
+     */
+    inline void SetCodeVulnerabilityFilePath(Aws::Vector<StringFilter>&& value) { m_codeVulnerabilityFilePathHasBeenSet = true; m_codeVulnerabilityFilePath = std::move(value); }
+
+    /**
+     * <p>The file path to the file in a Lambda function that contains a code
+     * vulnerability used to filter findings.</p>
+     */
+    inline FilterCriteria& WithCodeVulnerabilityFilePath(const Aws::Vector<StringFilter>& value) { SetCodeVulnerabilityFilePath(value); return *this;}
+
+    /**
+     * <p>The file path to the file in a Lambda function that contains a code
+     * vulnerability used to filter findings.</p>
+     */
+    inline FilterCriteria& WithCodeVulnerabilityFilePath(Aws::Vector<StringFilter>&& value) { SetCodeVulnerabilityFilePath(std::move(value)); return *this;}
+
+    /**
+     * <p>The file path to the file in a Lambda function that contains a code
+     * vulnerability used to filter findings.</p>
+     */
+    inline FilterCriteria& AddCodeVulnerabilityFilePath(const StringFilter& value) { m_codeVulnerabilityFilePathHasBeenSet = true; m_codeVulnerabilityFilePath.push_back(value); return *this; }
+
+    /**
+     * <p>The file path to the file in a Lambda function that contains a code
+     * vulnerability used to filter findings.</p>
+     */
+    inline FilterCriteria& AddCodeVulnerabilityFilePath(StringFilter&& value) { m_codeVulnerabilityFilePathHasBeenSet = true; m_codeVulnerabilityFilePath.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>Details of the component IDs used to filter findings.</p>
      */
     inline const Aws::Vector<StringFilter>& GetComponentId() const{ return m_componentId; }
@@ -550,6 +737,47 @@ namespace Model
      * <p>The tags attached to the Amazon ECR container image.</p>
      */
     inline FilterCriteria& AddEcrImageTags(StringFilter&& value) { m_ecrImageTagsHasBeenSet = true; m_ecrImageTags.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The EPSS score used to filter findings.</p>
+     */
+    inline const Aws::Vector<NumberFilter>& GetEpssScore() const{ return m_epssScore; }
+
+    /**
+     * <p>The EPSS score used to filter findings.</p>
+     */
+    inline bool EpssScoreHasBeenSet() const { return m_epssScoreHasBeenSet; }
+
+    /**
+     * <p>The EPSS score used to filter findings.</p>
+     */
+    inline void SetEpssScore(const Aws::Vector<NumberFilter>& value) { m_epssScoreHasBeenSet = true; m_epssScore = value; }
+
+    /**
+     * <p>The EPSS score used to filter findings.</p>
+     */
+    inline void SetEpssScore(Aws::Vector<NumberFilter>&& value) { m_epssScoreHasBeenSet = true; m_epssScore = std::move(value); }
+
+    /**
+     * <p>The EPSS score used to filter findings.</p>
+     */
+    inline FilterCriteria& WithEpssScore(const Aws::Vector<NumberFilter>& value) { SetEpssScore(value); return *this;}
+
+    /**
+     * <p>The EPSS score used to filter findings.</p>
+     */
+    inline FilterCriteria& WithEpssScore(Aws::Vector<NumberFilter>&& value) { SetEpssScore(std::move(value)); return *this;}
+
+    /**
+     * <p>The EPSS score used to filter findings.</p>
+     */
+    inline FilterCriteria& AddEpssScore(const NumberFilter& value) { m_epssScoreHasBeenSet = true; m_epssScore.push_back(value); return *this; }
+
+    /**
+     * <p>The EPSS score used to filter findings.</p>
+     */
+    inline FilterCriteria& AddEpssScore(NumberFilter&& value) { m_epssScoreHasBeenSet = true; m_epssScore.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -1718,6 +1946,15 @@ namespace Model
     Aws::Vector<StringFilter> m_awsAccountId;
     bool m_awsAccountIdHasBeenSet = false;
 
+    Aws::Vector<StringFilter> m_codeVulnerabilityDetectorName;
+    bool m_codeVulnerabilityDetectorNameHasBeenSet = false;
+
+    Aws::Vector<StringFilter> m_codeVulnerabilityDetectorTags;
+    bool m_codeVulnerabilityDetectorTagsHasBeenSet = false;
+
+    Aws::Vector<StringFilter> m_codeVulnerabilityFilePath;
+    bool m_codeVulnerabilityFilePathHasBeenSet = false;
+
     Aws::Vector<StringFilter> m_componentId;
     bool m_componentIdHasBeenSet = false;
 
@@ -1750,6 +1987,9 @@ namespace Model
 
     Aws::Vector<StringFilter> m_ecrImageTags;
     bool m_ecrImageTagsHasBeenSet = false;
+
+    Aws::Vector<NumberFilter> m_epssScore;
+    bool m_epssScoreHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_exploitAvailable;
     bool m_exploitAvailableHasBeenSet = false;

@@ -40,56 +40,56 @@ namespace Model
 
 
     /**
-     * <p>Specifies the location of the LDAP server such as AWS Directory Service for
-     * Microsoft Active Directory . Optional failover server.</p>
+     * <p>Specifies the location of the LDAP server such as Directory Service for
+     * Microsoft Active Directory. Optional failover server.</p>
      */
     inline const Aws::Vector<Aws::String>& GetHosts() const{ return m_hosts; }
 
     /**
-     * <p>Specifies the location of the LDAP server such as AWS Directory Service for
-     * Microsoft Active Directory . Optional failover server.</p>
+     * <p>Specifies the location of the LDAP server such as Directory Service for
+     * Microsoft Active Directory. Optional failover server.</p>
      */
     inline bool HostsHasBeenSet() const { return m_hostsHasBeenSet; }
 
     /**
-     * <p>Specifies the location of the LDAP server such as AWS Directory Service for
-     * Microsoft Active Directory . Optional failover server.</p>
+     * <p>Specifies the location of the LDAP server such as Directory Service for
+     * Microsoft Active Directory. Optional failover server.</p>
      */
     inline void SetHosts(const Aws::Vector<Aws::String>& value) { m_hostsHasBeenSet = true; m_hosts = value; }
 
     /**
-     * <p>Specifies the location of the LDAP server such as AWS Directory Service for
-     * Microsoft Active Directory . Optional failover server.</p>
+     * <p>Specifies the location of the LDAP server such as Directory Service for
+     * Microsoft Active Directory. Optional failover server.</p>
      */
     inline void SetHosts(Aws::Vector<Aws::String>&& value) { m_hostsHasBeenSet = true; m_hosts = std::move(value); }
 
     /**
-     * <p>Specifies the location of the LDAP server such as AWS Directory Service for
-     * Microsoft Active Directory . Optional failover server.</p>
+     * <p>Specifies the location of the LDAP server such as Directory Service for
+     * Microsoft Active Directory. Optional failover server.</p>
      */
     inline LdapServerMetadataOutput& WithHosts(const Aws::Vector<Aws::String>& value) { SetHosts(value); return *this;}
 
     /**
-     * <p>Specifies the location of the LDAP server such as AWS Directory Service for
-     * Microsoft Active Directory . Optional failover server.</p>
+     * <p>Specifies the location of the LDAP server such as Directory Service for
+     * Microsoft Active Directory. Optional failover server.</p>
      */
     inline LdapServerMetadataOutput& WithHosts(Aws::Vector<Aws::String>&& value) { SetHosts(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the location of the LDAP server such as AWS Directory Service for
-     * Microsoft Active Directory . Optional failover server.</p>
+     * <p>Specifies the location of the LDAP server such as Directory Service for
+     * Microsoft Active Directory. Optional failover server.</p>
      */
     inline LdapServerMetadataOutput& AddHosts(const Aws::String& value) { m_hostsHasBeenSet = true; m_hosts.push_back(value); return *this; }
 
     /**
-     * <p>Specifies the location of the LDAP server such as AWS Directory Service for
-     * Microsoft Active Directory . Optional failover server.</p>
+     * <p>Specifies the location of the LDAP server such as Directory Service for
+     * Microsoft Active Directory. Optional failover server.</p>
      */
     inline LdapServerMetadataOutput& AddHosts(Aws::String&& value) { m_hostsHasBeenSet = true; m_hosts.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Specifies the location of the LDAP server such as AWS Directory Service for
-     * Microsoft Active Directory . Optional failover server.</p>
+     * <p>Specifies the location of the LDAP server such as Directory Service for
+     * Microsoft Active Directory. Optional failover server.</p>
      */
     inline LdapServerMetadataOutput& AddHosts(const char* value) { m_hostsHasBeenSet = true; m_hosts.push_back(value); return *this; }
 

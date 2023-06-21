@@ -137,6 +137,32 @@ namespace Inspector2
         }
 
         /**
+         * <p>Retrieves code snippets from findings that Amazon Inspector detected code
+         * vulnerabilities in.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/BatchGetCodeSnippet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchGetCodeSnippetOutcome BatchGetCodeSnippet(const Model::BatchGetCodeSnippetRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchGetCodeSnippet that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename BatchGetCodeSnippetRequestT = Model::BatchGetCodeSnippetRequest>
+        Model::BatchGetCodeSnippetOutcomeCallable BatchGetCodeSnippetCallable(const BatchGetCodeSnippetRequestT& request) const
+        {
+            return SubmitCallable(&Inspector2Client::BatchGetCodeSnippet, request);
+        }
+
+        /**
+         * An Async wrapper for BatchGetCodeSnippet that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename BatchGetCodeSnippetRequestT = Model::BatchGetCodeSnippetRequest>
+        void BatchGetCodeSnippetAsync(const BatchGetCodeSnippetRequestT& request, const BatchGetCodeSnippetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&Inspector2Client::BatchGetCodeSnippet, request, handler, context);
+        }
+
+        /**
          * <p>Gets free trial status for multiple Amazon Web Services
          * accounts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/BatchGetFreeTrialInfo">AWS
@@ -244,6 +270,32 @@ namespace Inspector2
         }
 
         /**
+         * <p>Cancels a software bill of materials (SBOM) report.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/CancelSbomExport">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CancelSbomExportOutcome CancelSbomExport(const Model::CancelSbomExportRequest& request) const;
+
+        /**
+         * A Callable wrapper for CancelSbomExport that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CancelSbomExportRequestT = Model::CancelSbomExportRequest>
+        Model::CancelSbomExportOutcomeCallable CancelSbomExportCallable(const CancelSbomExportRequestT& request) const
+        {
+            return SubmitCallable(&Inspector2Client::CancelSbomExport, request);
+        }
+
+        /**
+         * An Async wrapper for CancelSbomExport that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CancelSbomExportRequestT = Model::CancelSbomExportRequest>
+        void CancelSbomExportAsync(const CancelSbomExportRequestT& request, const CancelSbomExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&Inspector2Client::CancelSbomExport, request, handler, context);
+        }
+
+        /**
          * <p>Creates a filter resource using specified filter criteria.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/CreateFilter">AWS
@@ -295,6 +347,32 @@ namespace Inspector2
         void CreateFindingsReportAsync(const CreateFindingsReportRequestT& request, const CreateFindingsReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&Inspector2Client::CreateFindingsReport, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a software bill of materials (SBOM) report.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/CreateSbomExport">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateSbomExportOutcome CreateSbomExport(const Model::CreateSbomExportRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateSbomExport that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateSbomExportRequestT = Model::CreateSbomExportRequest>
+        Model::CreateSbomExportOutcomeCallable CreateSbomExportCallable(const CreateSbomExportRequestT& request) const
+        {
+            return SubmitCallable(&Inspector2Client::CreateSbomExport, request);
+        }
+
+        /**
+         * An Async wrapper for CreateSbomExport that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateSbomExportRequestT = Model::CreateSbomExportRequest>
+        void CreateSbomExportAsync(const CreateSbomExportRequestT& request, const CreateSbomExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&Inspector2Client::CreateSbomExport, request, handler, context);
         }
 
         /**
@@ -558,6 +636,31 @@ namespace Inspector2
         }
 
         /**
+         * <p>Gets an encryption key.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetEncryptionKey">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetEncryptionKeyOutcome GetEncryptionKey(const Model::GetEncryptionKeyRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetEncryptionKey that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetEncryptionKeyRequestT = Model::GetEncryptionKeyRequest>
+        Model::GetEncryptionKeyOutcomeCallable GetEncryptionKeyCallable(const GetEncryptionKeyRequestT& request) const
+        {
+            return SubmitCallable(&Inspector2Client::GetEncryptionKey, request);
+        }
+
+        /**
+         * An Async wrapper for GetEncryptionKey that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetEncryptionKeyRequestT = Model::GetEncryptionKeyRequest>
+        void GetEncryptionKeyAsync(const GetEncryptionKeyRequestT& request, const GetEncryptionKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&Inspector2Client::GetEncryptionKey, request, handler, context);
+        }
+
+        /**
          * <p>Gets the status of a findings report.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetFindingsReportStatus">AWS
          * API Reference</a></p>
@@ -605,6 +708,32 @@ namespace Inspector2
         void GetMemberAsync(const GetMemberRequestT& request, const GetMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&Inspector2Client::GetMember, request, handler, context);
+        }
+
+        /**
+         * <p>Gets details of a software bill of materials (SBOM) report.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetSbomExport">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetSbomExportOutcome GetSbomExport(const Model::GetSbomExportRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetSbomExport that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetSbomExportRequestT = Model::GetSbomExportRequest>
+        Model::GetSbomExportOutcomeCallable GetSbomExportCallable(const GetSbomExportRequestT& request) const
+        {
+            return SubmitCallable(&Inspector2Client::GetSbomExport, request);
+        }
+
+        /**
+         * An Async wrapper for GetSbomExport that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetSbomExportRequestT = Model::GetSbomExportRequest>
+        void GetSbomExportAsync(const GetSbomExportRequestT& request, const GetSbomExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&Inspector2Client::GetSbomExport, request, handler, context);
         }
 
         /**
@@ -864,6 +993,32 @@ namespace Inspector2
         }
 
         /**
+         * <p>Resets an encryption key. After the key is reset your resources will be
+         * encrypted by an Amazon Web Services owned key.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ResetEncryptionKey">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ResetEncryptionKeyOutcome ResetEncryptionKey(const Model::ResetEncryptionKeyRequest& request) const;
+
+        /**
+         * A Callable wrapper for ResetEncryptionKey that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ResetEncryptionKeyRequestT = Model::ResetEncryptionKeyRequest>
+        Model::ResetEncryptionKeyOutcomeCallable ResetEncryptionKeyCallable(const ResetEncryptionKeyRequestT& request) const
+        {
+            return SubmitCallable(&Inspector2Client::ResetEncryptionKey, request);
+        }
+
+        /**
+         * An Async wrapper for ResetEncryptionKey that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ResetEncryptionKeyRequestT = Model::ResetEncryptionKeyRequest>
+        void ResetEncryptionKeyAsync(const ResetEncryptionKeyRequestT& request, const ResetEncryptionKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&Inspector2Client::ResetEncryptionKey, request, handler, context);
+        }
+
+        /**
          * <p>Lists Amazon Inspector coverage details for a specific
          * vulnerability.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/SearchVulnerabilities">AWS
@@ -991,6 +1146,33 @@ namespace Inspector2
         void UpdateEc2DeepInspectionConfigurationAsync(const UpdateEc2DeepInspectionConfigurationRequestT& request, const UpdateEc2DeepInspectionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&Inspector2Client::UpdateEc2DeepInspectionConfiguration, request, handler, context);
+        }
+
+        /**
+         * <p>Updates an encryption key. A <code>ResourceNotFoundException</code> means
+         * that an AWS owned key is being used for encryption.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/UpdateEncryptionKey">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateEncryptionKeyOutcome UpdateEncryptionKey(const Model::UpdateEncryptionKeyRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateEncryptionKey that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateEncryptionKeyRequestT = Model::UpdateEncryptionKeyRequest>
+        Model::UpdateEncryptionKeyOutcomeCallable UpdateEncryptionKeyCallable(const UpdateEncryptionKeyRequestT& request) const
+        {
+            return SubmitCallable(&Inspector2Client::UpdateEncryptionKey, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateEncryptionKey that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateEncryptionKeyRequestT = Model::UpdateEncryptionKeyRequest>
+        void UpdateEncryptionKeyAsync(const UpdateEncryptionKeyRequestT& request, const UpdateEncryptionKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&Inspector2Client::UpdateEncryptionKey, request, handler, context);
         }
 
         /**

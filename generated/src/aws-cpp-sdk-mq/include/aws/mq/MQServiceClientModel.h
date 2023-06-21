@@ -34,6 +34,7 @@
 #include <aws/mq/model/ListConfigurationsResult.h>
 #include <aws/mq/model/ListTagsResult.h>
 #include <aws/mq/model/ListUsersResult.h>
+#include <aws/mq/model/PromoteResult.h>
 #include <aws/mq/model/RebootBrokerResult.h>
 #include <aws/mq/model/UpdateBrokerResult.h>
 #include <aws/mq/model/UpdateConfigurationResult.h>
@@ -97,6 +98,7 @@ namespace Aws
       class ListConfigurationsRequest;
       class ListTagsRequest;
       class ListUsersRequest;
+      class PromoteRequest;
       class RebootBrokerRequest;
       class UpdateBrokerRequest;
       class UpdateConfigurationRequest;
@@ -122,6 +124,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListConfigurationsResult, MQError> ListConfigurationsOutcome;
       typedef Aws::Utils::Outcome<ListTagsResult, MQError> ListTagsOutcome;
       typedef Aws::Utils::Outcome<ListUsersResult, MQError> ListUsersOutcome;
+      typedef Aws::Utils::Outcome<PromoteResult, MQError> PromoteOutcome;
       typedef Aws::Utils::Outcome<RebootBrokerResult, MQError> RebootBrokerOutcome;
       typedef Aws::Utils::Outcome<UpdateBrokerResult, MQError> UpdateBrokerOutcome;
       typedef Aws::Utils::Outcome<UpdateConfigurationResult, MQError> UpdateConfigurationOutcome;
@@ -147,6 +150,7 @@ namespace Aws
       typedef std::future<ListConfigurationsOutcome> ListConfigurationsOutcomeCallable;
       typedef std::future<ListTagsOutcome> ListTagsOutcomeCallable;
       typedef std::future<ListUsersOutcome> ListUsersOutcomeCallable;
+      typedef std::future<PromoteOutcome> PromoteOutcomeCallable;
       typedef std::future<RebootBrokerOutcome> RebootBrokerOutcomeCallable;
       typedef std::future<UpdateBrokerOutcome> UpdateBrokerOutcomeCallable;
       typedef std::future<UpdateConfigurationOutcome> UpdateConfigurationOutcomeCallable;
@@ -175,6 +179,7 @@ namespace Aws
     typedef std::function<void(const MQClient*, const Model::ListConfigurationsRequest&, const Model::ListConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListConfigurationsResponseReceivedHandler;
     typedef std::function<void(const MQClient*, const Model::ListTagsRequest&, const Model::ListTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsResponseReceivedHandler;
     typedef std::function<void(const MQClient*, const Model::ListUsersRequest&, const Model::ListUsersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUsersResponseReceivedHandler;
+    typedef std::function<void(const MQClient*, const Model::PromoteRequest&, const Model::PromoteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PromoteResponseReceivedHandler;
     typedef std::function<void(const MQClient*, const Model::RebootBrokerRequest&, const Model::RebootBrokerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RebootBrokerResponseReceivedHandler;
     typedef std::function<void(const MQClient*, const Model::UpdateBrokerRequest&, const Model::UpdateBrokerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateBrokerResponseReceivedHandler;
     typedef std::function<void(const MQClient*, const Model::UpdateConfigurationRequest&, const Model::UpdateConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateConfigurationResponseReceivedHandler;

@@ -25,7 +25,9 @@ DescribeBrokerResult::DescribeBrokerResult() :
     m_engineType(EngineType::NOT_SET),
     m_pendingAuthenticationStrategy(AuthenticationStrategy::NOT_SET),
     m_publiclyAccessible(false),
-    m_storageType(BrokerStorageType::NOT_SET)
+    m_storageType(BrokerStorageType::NOT_SET),
+    m_dataReplicationMode(DataReplicationMode::NOT_SET),
+    m_pendingDataReplicationMode(DataReplicationMode::NOT_SET)
 {
 }
 
@@ -37,7 +39,9 @@ DescribeBrokerResult::DescribeBrokerResult(const Aws::AmazonWebServiceResult<Jso
     m_engineType(EngineType::NOT_SET),
     m_pendingAuthenticationStrategy(AuthenticationStrategy::NOT_SET),
     m_publiclyAccessible(false),
-    m_storageType(BrokerStorageType::NOT_SET)
+    m_storageType(BrokerStorageType::NOT_SET),
+    m_dataReplicationMode(DataReplicationMode::NOT_SET),
+    m_pendingDataReplicationMode(DataReplicationMode::NOT_SET)
 {
   *this = result;
 }
@@ -238,6 +242,30 @@ DescribeBrokerResult& DescribeBrokerResult::operator =(const Aws::AmazonWebServi
     {
       m_users.push_back(usersJsonList[usersIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("dataReplicationMetadata"))
+  {
+    m_dataReplicationMetadata = jsonValue.GetObject("dataReplicationMetadata");
+
+  }
+
+  if(jsonValue.ValueExists("dataReplicationMode"))
+  {
+    m_dataReplicationMode = DataReplicationModeMapper::GetDataReplicationModeForName(jsonValue.GetString("dataReplicationMode"));
+
+  }
+
+  if(jsonValue.ValueExists("pendingDataReplicationMetadata"))
+  {
+    m_pendingDataReplicationMetadata = jsonValue.GetObject("pendingDataReplicationMetadata");
+
+  }
+
+  if(jsonValue.ValueExists("pendingDataReplicationMode"))
+  {
+    m_pendingDataReplicationMode = DataReplicationModeMapper::GetDataReplicationModeForName(jsonValue.GetString("pendingDataReplicationMode"));
+
   }
 
 

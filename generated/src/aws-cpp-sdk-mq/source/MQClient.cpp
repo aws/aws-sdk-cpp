@@ -39,6 +39,7 @@
 #include <aws/mq/model/ListConfigurationsRequest.h>
 #include <aws/mq/model/ListTagsRequest.h>
 #include <aws/mq/model/ListUsersRequest.h>
+#include <aws/mq/model/PromoteRequest.h>
 #include <aws/mq/model/RebootBrokerRequest.h>
 #include <aws/mq/model/UpdateBrokerRequest.h>
 #include <aws/mq/model/UpdateConfigurationRequest.h>
@@ -457,6 +458,23 @@ ListUsersOutcome MQClient::ListUsers(const ListUsersRequest& request) const
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBrokerId());
   endpointResolutionOutcome.GetResult().AddPathSegments("/users");
   return ListUsersOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+PromoteOutcome MQClient::Promote(const PromoteRequest& request) const
+{
+  AWS_OPERATION_GUARD(Promote);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, Promote, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.BrokerIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("Promote", "Required field: BrokerId, is not set");
+    return PromoteOutcome(Aws::Client::AWSError<MQErrors>(MQErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BrokerId]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, Promote, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/v1/brokers/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBrokerId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/promote");
+  return PromoteOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 RebootBrokerOutcome MQClient::RebootBroker(const RebootBrokerRequest& request) const

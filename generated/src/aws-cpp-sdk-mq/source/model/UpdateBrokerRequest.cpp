@@ -24,7 +24,9 @@ UpdateBrokerRequest::UpdateBrokerRequest() :
     m_ldapServerMetadataHasBeenSet(false),
     m_logsHasBeenSet(false),
     m_maintenanceWindowStartTimeHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false)
+    m_securityGroupsHasBeenSet(false),
+    m_dataReplicationMode(DataReplicationMode::NOT_SET),
+    m_dataReplicationModeHasBeenSet(false)
 {
 }
 
@@ -88,6 +90,11 @@ Aws::String UpdateBrokerRequest::SerializePayload() const
    }
    payload.WithArray("securityGroups", std::move(securityGroupsJsonList));
 
+  }
+
+  if(m_dataReplicationModeHasBeenSet)
+  {
+   payload.WithString("dataReplicationMode", DataReplicationModeMapper::GetNameForDataReplicationMode(m_dataReplicationMode));
   }
 
   return payload.View().WriteReadable();

@@ -12,6 +12,8 @@
 #include <aws/mq/model/Logs.h>
 #include <aws/mq/model/WeeklyStartTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/mq/model/DataReplicationMetadataOutput.h>
+#include <aws/mq/model/DataReplicationMode.h>
 #include <utility>
 
 namespace Aws
@@ -404,6 +406,125 @@ namespace Model
     inline UpdateBrokerResult& AddSecurityGroups(const char* value) { m_securityGroups.push_back(value); return *this; }
 
 
+    /**
+     * <p>The replication details of the data replication-enabled broker. Only returned
+     * if dataReplicationMode is set to CRDR.</p>
+     */
+    inline const DataReplicationMetadataOutput& GetDataReplicationMetadata() const{ return m_dataReplicationMetadata; }
+
+    /**
+     * <p>The replication details of the data replication-enabled broker. Only returned
+     * if dataReplicationMode is set to CRDR.</p>
+     */
+    inline void SetDataReplicationMetadata(const DataReplicationMetadataOutput& value) { m_dataReplicationMetadata = value; }
+
+    /**
+     * <p>The replication details of the data replication-enabled broker. Only returned
+     * if dataReplicationMode is set to CRDR.</p>
+     */
+    inline void SetDataReplicationMetadata(DataReplicationMetadataOutput&& value) { m_dataReplicationMetadata = std::move(value); }
+
+    /**
+     * <p>The replication details of the data replication-enabled broker. Only returned
+     * if dataReplicationMode is set to CRDR.</p>
+     */
+    inline UpdateBrokerResult& WithDataReplicationMetadata(const DataReplicationMetadataOutput& value) { SetDataReplicationMetadata(value); return *this;}
+
+    /**
+     * <p>The replication details of the data replication-enabled broker. Only returned
+     * if dataReplicationMode is set to CRDR.</p>
+     */
+    inline UpdateBrokerResult& WithDataReplicationMetadata(DataReplicationMetadataOutput&& value) { SetDataReplicationMetadata(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Describes whether this broker is a part of a data replication pair.</p>
+     */
+    inline const DataReplicationMode& GetDataReplicationMode() const{ return m_dataReplicationMode; }
+
+    /**
+     * <p>Describes whether this broker is a part of a data replication pair.</p>
+     */
+    inline void SetDataReplicationMode(const DataReplicationMode& value) { m_dataReplicationMode = value; }
+
+    /**
+     * <p>Describes whether this broker is a part of a data replication pair.</p>
+     */
+    inline void SetDataReplicationMode(DataReplicationMode&& value) { m_dataReplicationMode = std::move(value); }
+
+    /**
+     * <p>Describes whether this broker is a part of a data replication pair.</p>
+     */
+    inline UpdateBrokerResult& WithDataReplicationMode(const DataReplicationMode& value) { SetDataReplicationMode(value); return *this;}
+
+    /**
+     * <p>Describes whether this broker is a part of a data replication pair.</p>
+     */
+    inline UpdateBrokerResult& WithDataReplicationMode(DataReplicationMode&& value) { SetDataReplicationMode(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The pending replication details of the data replication-enabled broker. Only
+     * returned if pendingDataReplicationMode is set to CRDR.</p>
+     */
+    inline const DataReplicationMetadataOutput& GetPendingDataReplicationMetadata() const{ return m_pendingDataReplicationMetadata; }
+
+    /**
+     * <p>The pending replication details of the data replication-enabled broker. Only
+     * returned if pendingDataReplicationMode is set to CRDR.</p>
+     */
+    inline void SetPendingDataReplicationMetadata(const DataReplicationMetadataOutput& value) { m_pendingDataReplicationMetadata = value; }
+
+    /**
+     * <p>The pending replication details of the data replication-enabled broker. Only
+     * returned if pendingDataReplicationMode is set to CRDR.</p>
+     */
+    inline void SetPendingDataReplicationMetadata(DataReplicationMetadataOutput&& value) { m_pendingDataReplicationMetadata = std::move(value); }
+
+    /**
+     * <p>The pending replication details of the data replication-enabled broker. Only
+     * returned if pendingDataReplicationMode is set to CRDR.</p>
+     */
+    inline UpdateBrokerResult& WithPendingDataReplicationMetadata(const DataReplicationMetadataOutput& value) { SetPendingDataReplicationMetadata(value); return *this;}
+
+    /**
+     * <p>The pending replication details of the data replication-enabled broker. Only
+     * returned if pendingDataReplicationMode is set to CRDR.</p>
+     */
+    inline UpdateBrokerResult& WithPendingDataReplicationMetadata(DataReplicationMetadataOutput&& value) { SetPendingDataReplicationMetadata(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Describes whether this broker will be a part of a data replication pair after
+     * reboot.</p>
+     */
+    inline const DataReplicationMode& GetPendingDataReplicationMode() const{ return m_pendingDataReplicationMode; }
+
+    /**
+     * <p>Describes whether this broker will be a part of a data replication pair after
+     * reboot.</p>
+     */
+    inline void SetPendingDataReplicationMode(const DataReplicationMode& value) { m_pendingDataReplicationMode = value; }
+
+    /**
+     * <p>Describes whether this broker will be a part of a data replication pair after
+     * reboot.</p>
+     */
+    inline void SetPendingDataReplicationMode(DataReplicationMode&& value) { m_pendingDataReplicationMode = std::move(value); }
+
+    /**
+     * <p>Describes whether this broker will be a part of a data replication pair after
+     * reboot.</p>
+     */
+    inline UpdateBrokerResult& WithPendingDataReplicationMode(const DataReplicationMode& value) { SetPendingDataReplicationMode(value); return *this;}
+
+    /**
+     * <p>Describes whether this broker will be a part of a data replication pair after
+     * reboot.</p>
+     */
+    inline UpdateBrokerResult& WithPendingDataReplicationMode(DataReplicationMode&& value) { SetPendingDataReplicationMode(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -446,6 +567,14 @@ namespace Model
     WeeklyStartTime m_maintenanceWindowStartTime;
 
     Aws::Vector<Aws::String> m_securityGroups;
+
+    DataReplicationMetadataOutput m_dataReplicationMetadata;
+
+    DataReplicationMode m_dataReplicationMode;
+
+    DataReplicationMetadataOutput m_pendingDataReplicationMetadata;
+
+    DataReplicationMode m_pendingDataReplicationMode;
 
     Aws::String m_requestId;
   };

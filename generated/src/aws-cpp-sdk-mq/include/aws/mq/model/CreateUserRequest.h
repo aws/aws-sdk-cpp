@@ -275,6 +275,27 @@ namespace Model
      */
     inline CreateUserRequest& WithUsername(const char* value) { SetUsername(value); return *this;}
 
+
+    /**
+     * <p>Defines if this user is intended for CRDR replication purposes.</p>
+     */
+    inline bool GetReplicationUser() const{ return m_replicationUser; }
+
+    /**
+     * <p>Defines if this user is intended for CRDR replication purposes.</p>
+     */
+    inline bool ReplicationUserHasBeenSet() const { return m_replicationUserHasBeenSet; }
+
+    /**
+     * <p>Defines if this user is intended for CRDR replication purposes.</p>
+     */
+    inline void SetReplicationUser(bool value) { m_replicationUserHasBeenSet = true; m_replicationUser = value; }
+
+    /**
+     * <p>Defines if this user is intended for CRDR replication purposes.</p>
+     */
+    inline CreateUserRequest& WithReplicationUser(bool value) { SetReplicationUser(value); return *this;}
+
   private:
 
     Aws::String m_brokerId;
@@ -291,6 +312,9 @@ namespace Model
 
     Aws::String m_username;
     bool m_usernameHasBeenSet = false;
+
+    bool m_replicationUser;
+    bool m_replicationUserHasBeenSet = false;
   };
 
 } // namespace Model

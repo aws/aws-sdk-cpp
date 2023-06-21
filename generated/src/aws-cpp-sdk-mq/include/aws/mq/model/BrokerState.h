@@ -21,7 +21,8 @@ namespace Model
     DELETION_IN_PROGRESS,
     RUNNING,
     REBOOT_IN_PROGRESS,
-    CRITICAL_ACTION_REQUIRED
+    CRITICAL_ACTION_REQUIRED,
+    REPLICA
   };
 
 namespace BrokerStateMapper
