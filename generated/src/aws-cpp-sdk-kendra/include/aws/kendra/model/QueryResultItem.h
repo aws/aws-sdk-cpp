@@ -182,42 +182,50 @@ namespace Model
 
 
     /**
-     * <p>One or more additional attributes associated with the query result.</p>
+     * <p>One or more additional fields/attributes associated with the query
+     * result.</p>
      */
     inline const Aws::Vector<AdditionalResultAttribute>& GetAdditionalAttributes() const{ return m_additionalAttributes; }
 
     /**
-     * <p>One or more additional attributes associated with the query result.</p>
+     * <p>One or more additional fields/attributes associated with the query
+     * result.</p>
      */
     inline bool AdditionalAttributesHasBeenSet() const { return m_additionalAttributesHasBeenSet; }
 
     /**
-     * <p>One or more additional attributes associated with the query result.</p>
+     * <p>One or more additional fields/attributes associated with the query
+     * result.</p>
      */
     inline void SetAdditionalAttributes(const Aws::Vector<AdditionalResultAttribute>& value) { m_additionalAttributesHasBeenSet = true; m_additionalAttributes = value; }
 
     /**
-     * <p>One or more additional attributes associated with the query result.</p>
+     * <p>One or more additional fields/attributes associated with the query
+     * result.</p>
      */
     inline void SetAdditionalAttributes(Aws::Vector<AdditionalResultAttribute>&& value) { m_additionalAttributesHasBeenSet = true; m_additionalAttributes = std::move(value); }
 
     /**
-     * <p>One or more additional attributes associated with the query result.</p>
+     * <p>One or more additional fields/attributes associated with the query
+     * result.</p>
      */
     inline QueryResultItem& WithAdditionalAttributes(const Aws::Vector<AdditionalResultAttribute>& value) { SetAdditionalAttributes(value); return *this;}
 
     /**
-     * <p>One or more additional attributes associated with the query result.</p>
+     * <p>One or more additional fields/attributes associated with the query
+     * result.</p>
      */
     inline QueryResultItem& WithAdditionalAttributes(Aws::Vector<AdditionalResultAttribute>&& value) { SetAdditionalAttributes(std::move(value)); return *this;}
 
     /**
-     * <p>One or more additional attributes associated with the query result.</p>
+     * <p>One or more additional fields/attributes associated with the query
+     * result.</p>
      */
     inline QueryResultItem& AddAdditionalAttributes(const AdditionalResultAttribute& value) { m_additionalAttributesHasBeenSet = true; m_additionalAttributes.push_back(value); return *this; }
 
     /**
-     * <p>One or more additional attributes associated with the query result.</p>
+     * <p>One or more additional fields/attributes associated with the query
+     * result.</p>
      */
     inline QueryResultItem& AddAdditionalAttributes(AdditionalResultAttribute&& value) { m_additionalAttributesHasBeenSet = true; m_additionalAttributes.push_back(std::move(value)); return *this; }
 
@@ -379,131 +387,131 @@ namespace Model
 
 
     /**
-     * <p>An array of document attributes assigned to a document in the search results.
-     * For example, the document author (<code>_author</code>) or the source URI
-     * (<code>_source_uri</code>) of the document.</p>
+     * <p>An array of document fields/attributes assigned to a document in the search
+     * results. For example, the document author (<code>_author</code>) or the source
+     * URI (<code>_source_uri</code>) of the document.</p>
      */
     inline const Aws::Vector<DocumentAttribute>& GetDocumentAttributes() const{ return m_documentAttributes; }
 
     /**
-     * <p>An array of document attributes assigned to a document in the search results.
-     * For example, the document author (<code>_author</code>) or the source URI
-     * (<code>_source_uri</code>) of the document.</p>
+     * <p>An array of document fields/attributes assigned to a document in the search
+     * results. For example, the document author (<code>_author</code>) or the source
+     * URI (<code>_source_uri</code>) of the document.</p>
      */
     inline bool DocumentAttributesHasBeenSet() const { return m_documentAttributesHasBeenSet; }
 
     /**
-     * <p>An array of document attributes assigned to a document in the search results.
-     * For example, the document author (<code>_author</code>) or the source URI
-     * (<code>_source_uri</code>) of the document.</p>
+     * <p>An array of document fields/attributes assigned to a document in the search
+     * results. For example, the document author (<code>_author</code>) or the source
+     * URI (<code>_source_uri</code>) of the document.</p>
      */
     inline void SetDocumentAttributes(const Aws::Vector<DocumentAttribute>& value) { m_documentAttributesHasBeenSet = true; m_documentAttributes = value; }
 
     /**
-     * <p>An array of document attributes assigned to a document in the search results.
-     * For example, the document author (<code>_author</code>) or the source URI
-     * (<code>_source_uri</code>) of the document.</p>
+     * <p>An array of document fields/attributes assigned to a document in the search
+     * results. For example, the document author (<code>_author</code>) or the source
+     * URI (<code>_source_uri</code>) of the document.</p>
      */
     inline void SetDocumentAttributes(Aws::Vector<DocumentAttribute>&& value) { m_documentAttributesHasBeenSet = true; m_documentAttributes = std::move(value); }
 
     /**
-     * <p>An array of document attributes assigned to a document in the search results.
-     * For example, the document author (<code>_author</code>) or the source URI
-     * (<code>_source_uri</code>) of the document.</p>
+     * <p>An array of document fields/attributes assigned to a document in the search
+     * results. For example, the document author (<code>_author</code>) or the source
+     * URI (<code>_source_uri</code>) of the document.</p>
      */
     inline QueryResultItem& WithDocumentAttributes(const Aws::Vector<DocumentAttribute>& value) { SetDocumentAttributes(value); return *this;}
 
     /**
-     * <p>An array of document attributes assigned to a document in the search results.
-     * For example, the document author (<code>_author</code>) or the source URI
-     * (<code>_source_uri</code>) of the document.</p>
+     * <p>An array of document fields/attributes assigned to a document in the search
+     * results. For example, the document author (<code>_author</code>) or the source
+     * URI (<code>_source_uri</code>) of the document.</p>
      */
     inline QueryResultItem& WithDocumentAttributes(Aws::Vector<DocumentAttribute>&& value) { SetDocumentAttributes(std::move(value)); return *this;}
 
     /**
-     * <p>An array of document attributes assigned to a document in the search results.
-     * For example, the document author (<code>_author</code>) or the source URI
-     * (<code>_source_uri</code>) of the document.</p>
+     * <p>An array of document fields/attributes assigned to a document in the search
+     * results. For example, the document author (<code>_author</code>) or the source
+     * URI (<code>_source_uri</code>) of the document.</p>
      */
     inline QueryResultItem& AddDocumentAttributes(const DocumentAttribute& value) { m_documentAttributesHasBeenSet = true; m_documentAttributes.push_back(value); return *this; }
 
     /**
-     * <p>An array of document attributes assigned to a document in the search results.
-     * For example, the document author (<code>_author</code>) or the source URI
-     * (<code>_source_uri</code>) of the document.</p>
+     * <p>An array of document fields/attributes assigned to a document in the search
+     * results. For example, the document author (<code>_author</code>) or the source
+     * URI (<code>_source_uri</code>) of the document.</p>
      */
     inline QueryResultItem& AddDocumentAttributes(DocumentAttribute&& value) { m_documentAttributesHasBeenSet = true; m_documentAttributes.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>Indicates the confidence that Amazon Kendra has that a result matches the
-     * query that you provided. Each result is placed into a bin that indicates the
-     * confidence, <code>VERY_HIGH</code>, <code>HIGH</code>, <code>MEDIUM</code> and
+     * <p>Indicates the confidence level of Amazon Kendra providing a relevant result
+     * for the query. Each result is placed into a bin that indicates the confidence,
+     * <code>VERY_HIGH</code>, <code>HIGH</code>, <code>MEDIUM</code> and
      * <code>LOW</code>. You can use the score to determine if a response meets the
      * confidence needed for your application.</p> <p>The field is only set to
      * <code>LOW</code> when the <code>Type</code> field is set to
-     * <code>DOCUMENT</code> and Amazon Kendra is not confident that the result matches
-     * the query.</p>
+     * <code>DOCUMENT</code> and Amazon Kendra is not confident that the result is
+     * relevant to the query.</p>
      */
     inline const ScoreAttributes& GetScoreAttributes() const{ return m_scoreAttributes; }
 
     /**
-     * <p>Indicates the confidence that Amazon Kendra has that a result matches the
-     * query that you provided. Each result is placed into a bin that indicates the
-     * confidence, <code>VERY_HIGH</code>, <code>HIGH</code>, <code>MEDIUM</code> and
+     * <p>Indicates the confidence level of Amazon Kendra providing a relevant result
+     * for the query. Each result is placed into a bin that indicates the confidence,
+     * <code>VERY_HIGH</code>, <code>HIGH</code>, <code>MEDIUM</code> and
      * <code>LOW</code>. You can use the score to determine if a response meets the
      * confidence needed for your application.</p> <p>The field is only set to
      * <code>LOW</code> when the <code>Type</code> field is set to
-     * <code>DOCUMENT</code> and Amazon Kendra is not confident that the result matches
-     * the query.</p>
+     * <code>DOCUMENT</code> and Amazon Kendra is not confident that the result is
+     * relevant to the query.</p>
      */
     inline bool ScoreAttributesHasBeenSet() const { return m_scoreAttributesHasBeenSet; }
 
     /**
-     * <p>Indicates the confidence that Amazon Kendra has that a result matches the
-     * query that you provided. Each result is placed into a bin that indicates the
-     * confidence, <code>VERY_HIGH</code>, <code>HIGH</code>, <code>MEDIUM</code> and
+     * <p>Indicates the confidence level of Amazon Kendra providing a relevant result
+     * for the query. Each result is placed into a bin that indicates the confidence,
+     * <code>VERY_HIGH</code>, <code>HIGH</code>, <code>MEDIUM</code> and
      * <code>LOW</code>. You can use the score to determine if a response meets the
      * confidence needed for your application.</p> <p>The field is only set to
      * <code>LOW</code> when the <code>Type</code> field is set to
-     * <code>DOCUMENT</code> and Amazon Kendra is not confident that the result matches
-     * the query.</p>
+     * <code>DOCUMENT</code> and Amazon Kendra is not confident that the result is
+     * relevant to the query.</p>
      */
     inline void SetScoreAttributes(const ScoreAttributes& value) { m_scoreAttributesHasBeenSet = true; m_scoreAttributes = value; }
 
     /**
-     * <p>Indicates the confidence that Amazon Kendra has that a result matches the
-     * query that you provided. Each result is placed into a bin that indicates the
-     * confidence, <code>VERY_HIGH</code>, <code>HIGH</code>, <code>MEDIUM</code> and
+     * <p>Indicates the confidence level of Amazon Kendra providing a relevant result
+     * for the query. Each result is placed into a bin that indicates the confidence,
+     * <code>VERY_HIGH</code>, <code>HIGH</code>, <code>MEDIUM</code> and
      * <code>LOW</code>. You can use the score to determine if a response meets the
      * confidence needed for your application.</p> <p>The field is only set to
      * <code>LOW</code> when the <code>Type</code> field is set to
-     * <code>DOCUMENT</code> and Amazon Kendra is not confident that the result matches
-     * the query.</p>
+     * <code>DOCUMENT</code> and Amazon Kendra is not confident that the result is
+     * relevant to the query.</p>
      */
     inline void SetScoreAttributes(ScoreAttributes&& value) { m_scoreAttributesHasBeenSet = true; m_scoreAttributes = std::move(value); }
 
     /**
-     * <p>Indicates the confidence that Amazon Kendra has that a result matches the
-     * query that you provided. Each result is placed into a bin that indicates the
-     * confidence, <code>VERY_HIGH</code>, <code>HIGH</code>, <code>MEDIUM</code> and
+     * <p>Indicates the confidence level of Amazon Kendra providing a relevant result
+     * for the query. Each result is placed into a bin that indicates the confidence,
+     * <code>VERY_HIGH</code>, <code>HIGH</code>, <code>MEDIUM</code> and
      * <code>LOW</code>. You can use the score to determine if a response meets the
      * confidence needed for your application.</p> <p>The field is only set to
      * <code>LOW</code> when the <code>Type</code> field is set to
-     * <code>DOCUMENT</code> and Amazon Kendra is not confident that the result matches
-     * the query.</p>
+     * <code>DOCUMENT</code> and Amazon Kendra is not confident that the result is
+     * relevant to the query.</p>
      */
     inline QueryResultItem& WithScoreAttributes(const ScoreAttributes& value) { SetScoreAttributes(value); return *this;}
 
     /**
-     * <p>Indicates the confidence that Amazon Kendra has that a result matches the
-     * query that you provided. Each result is placed into a bin that indicates the
-     * confidence, <code>VERY_HIGH</code>, <code>HIGH</code>, <code>MEDIUM</code> and
+     * <p>Indicates the confidence level of Amazon Kendra providing a relevant result
+     * for the query. Each result is placed into a bin that indicates the confidence,
+     * <code>VERY_HIGH</code>, <code>HIGH</code>, <code>MEDIUM</code> and
      * <code>LOW</code>. You can use the score to determine if a response meets the
      * confidence needed for your application.</p> <p>The field is only set to
      * <code>LOW</code> when the <code>Type</code> field is set to
-     * <code>DOCUMENT</code> and Amazon Kendra is not confident that the result matches
-     * the query.</p>
+     * <code>DOCUMENT</code> and Amazon Kendra is not confident that the result is
+     * relevant to the query.</p>
      */
     inline QueryResultItem& WithScoreAttributes(ScoreAttributes&& value) { SetScoreAttributes(std::move(value)); return *this;}
 
@@ -513,7 +521,7 @@ namespace Model
      * token to provide click-through feedback for the result. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">Submitting
-     * feedback </a>.</p>
+     * feedback</a>.</p>
      */
     inline const Aws::String& GetFeedbackToken() const{ return m_feedbackToken; }
 
@@ -522,7 +530,7 @@ namespace Model
      * token to provide click-through feedback for the result. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">Submitting
-     * feedback </a>.</p>
+     * feedback</a>.</p>
      */
     inline bool FeedbackTokenHasBeenSet() const { return m_feedbackTokenHasBeenSet; }
 
@@ -531,7 +539,7 @@ namespace Model
      * token to provide click-through feedback for the result. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">Submitting
-     * feedback </a>.</p>
+     * feedback</a>.</p>
      */
     inline void SetFeedbackToken(const Aws::String& value) { m_feedbackTokenHasBeenSet = true; m_feedbackToken = value; }
 
@@ -540,7 +548,7 @@ namespace Model
      * token to provide click-through feedback for the result. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">Submitting
-     * feedback </a>.</p>
+     * feedback</a>.</p>
      */
     inline void SetFeedbackToken(Aws::String&& value) { m_feedbackTokenHasBeenSet = true; m_feedbackToken = std::move(value); }
 
@@ -549,7 +557,7 @@ namespace Model
      * token to provide click-through feedback for the result. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">Submitting
-     * feedback </a>.</p>
+     * feedback</a>.</p>
      */
     inline void SetFeedbackToken(const char* value) { m_feedbackTokenHasBeenSet = true; m_feedbackToken.assign(value); }
 
@@ -558,7 +566,7 @@ namespace Model
      * token to provide click-through feedback for the result. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">Submitting
-     * feedback </a>.</p>
+     * feedback</a>.</p>
      */
     inline QueryResultItem& WithFeedbackToken(const Aws::String& value) { SetFeedbackToken(value); return *this;}
 
@@ -567,7 +575,7 @@ namespace Model
      * token to provide click-through feedback for the result. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">Submitting
-     * feedback </a>.</p>
+     * feedback</a>.</p>
      */
     inline QueryResultItem& WithFeedbackToken(Aws::String&& value) { SetFeedbackToken(std::move(value)); return *this;}
 
@@ -576,7 +584,7 @@ namespace Model
      * token to provide click-through feedback for the result. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">Submitting
-     * feedback </a>.</p>
+     * feedback</a>.</p>
      */
     inline QueryResultItem& WithFeedbackToken(const char* value) { SetFeedbackToken(value); return *this;}
 

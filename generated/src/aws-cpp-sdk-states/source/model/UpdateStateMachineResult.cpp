@@ -35,6 +35,18 @@ UpdateStateMachineResult& UpdateStateMachineResult::operator =(const Aws::Amazon
 
   }
 
+  if(jsonValue.ValueExists("revisionId"))
+  {
+    m_revisionId = jsonValue.GetString("revisionId");
+
+  }
+
+  if(jsonValue.ValueExists("stateMachineVersionArn"))
+  {
+    m_stateMachineVersionArn = jsonValue.GetString("stateMachineVersionArn");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

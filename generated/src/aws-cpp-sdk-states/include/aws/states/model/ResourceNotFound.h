@@ -24,8 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Could not find the referenced resource. Only state machine and activity ARNs
-   * are supported.</p><p><h3>See Also:</h3>   <a
+   * <p>Could not find the referenced resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ResourceNotFound">AWS
    * API Reference</a></p>
    */

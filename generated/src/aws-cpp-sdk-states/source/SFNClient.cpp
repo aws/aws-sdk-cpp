@@ -23,20 +23,27 @@
 #include <aws/states/SFNEndpointProvider.h>
 #include <aws/states/model/CreateActivityRequest.h>
 #include <aws/states/model/CreateStateMachineRequest.h>
+#include <aws/states/model/CreateStateMachineAliasRequest.h>
 #include <aws/states/model/DeleteActivityRequest.h>
 #include <aws/states/model/DeleteStateMachineRequest.h>
+#include <aws/states/model/DeleteStateMachineAliasRequest.h>
+#include <aws/states/model/DeleteStateMachineVersionRequest.h>
 #include <aws/states/model/DescribeActivityRequest.h>
 #include <aws/states/model/DescribeExecutionRequest.h>
 #include <aws/states/model/DescribeMapRunRequest.h>
 #include <aws/states/model/DescribeStateMachineRequest.h>
+#include <aws/states/model/DescribeStateMachineAliasRequest.h>
 #include <aws/states/model/DescribeStateMachineForExecutionRequest.h>
 #include <aws/states/model/GetActivityTaskRequest.h>
 #include <aws/states/model/GetExecutionHistoryRequest.h>
 #include <aws/states/model/ListActivitiesRequest.h>
 #include <aws/states/model/ListExecutionsRequest.h>
 #include <aws/states/model/ListMapRunsRequest.h>
+#include <aws/states/model/ListStateMachineAliasesRequest.h>
+#include <aws/states/model/ListStateMachineVersionsRequest.h>
 #include <aws/states/model/ListStateMachinesRequest.h>
 #include <aws/states/model/ListTagsForResourceRequest.h>
+#include <aws/states/model/PublishStateMachineVersionRequest.h>
 #include <aws/states/model/SendTaskFailureRequest.h>
 #include <aws/states/model/SendTaskHeartbeatRequest.h>
 #include <aws/states/model/SendTaskSuccessRequest.h>
@@ -47,6 +54,7 @@
 #include <aws/states/model/UntagResourceRequest.h>
 #include <aws/states/model/UpdateMapRunRequest.h>
 #include <aws/states/model/UpdateStateMachineRequest.h>
+#include <aws/states/model/UpdateStateMachineAliasRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -194,6 +202,15 @@ CreateStateMachineOutcome SFNClient::CreateStateMachine(const CreateStateMachine
   return CreateStateMachineOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
+CreateStateMachineAliasOutcome SFNClient::CreateStateMachineAlias(const CreateStateMachineAliasRequest& request) const
+{
+  AWS_OPERATION_GUARD(CreateStateMachineAlias);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateStateMachineAlias, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateStateMachineAlias, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateStateMachineAliasOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
 DeleteActivityOutcome SFNClient::DeleteActivity(const DeleteActivityRequest& request) const
 {
   AWS_OPERATION_GUARD(DeleteActivity);
@@ -210,6 +227,24 @@ DeleteStateMachineOutcome SFNClient::DeleteStateMachine(const DeleteStateMachine
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteStateMachine, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   return DeleteStateMachineOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteStateMachineAliasOutcome SFNClient::DeleteStateMachineAlias(const DeleteStateMachineAliasRequest& request) const
+{
+  AWS_OPERATION_GUARD(DeleteStateMachineAlias);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteStateMachineAlias, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteStateMachineAlias, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteStateMachineAliasOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteStateMachineVersionOutcome SFNClient::DeleteStateMachineVersion(const DeleteStateMachineVersionRequest& request) const
+{
+  AWS_OPERATION_GUARD(DeleteStateMachineVersion);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteStateMachineVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteStateMachineVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteStateMachineVersionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeActivityOutcome SFNClient::DescribeActivity(const DescribeActivityRequest& request) const
@@ -246,6 +281,15 @@ DescribeStateMachineOutcome SFNClient::DescribeStateMachine(const DescribeStateM
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeStateMachine, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   return DescribeStateMachineOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeStateMachineAliasOutcome SFNClient::DescribeStateMachineAlias(const DescribeStateMachineAliasRequest& request) const
+{
+  AWS_OPERATION_GUARD(DescribeStateMachineAlias);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeStateMachineAlias, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeStateMachineAlias, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeStateMachineAliasOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeStateMachineForExecutionOutcome SFNClient::DescribeStateMachineForExecution(const DescribeStateMachineForExecutionRequest& request) const
@@ -302,6 +346,24 @@ ListMapRunsOutcome SFNClient::ListMapRuns(const ListMapRunsRequest& request) con
   return ListMapRunsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
+ListStateMachineAliasesOutcome SFNClient::ListStateMachineAliases(const ListStateMachineAliasesRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListStateMachineAliases);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListStateMachineAliases, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListStateMachineAliases, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListStateMachineAliasesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListStateMachineVersionsOutcome SFNClient::ListStateMachineVersions(const ListStateMachineVersionsRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListStateMachineVersions);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListStateMachineVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListStateMachineVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListStateMachineVersionsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
 ListStateMachinesOutcome SFNClient::ListStateMachines(const ListStateMachinesRequest& request) const
 {
   AWS_OPERATION_GUARD(ListStateMachines);
@@ -318,6 +380,15 @@ ListTagsForResourceOutcome SFNClient::ListTagsForResource(const ListTagsForResou
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   return ListTagsForResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+PublishStateMachineVersionOutcome SFNClient::PublishStateMachineVersion(const PublishStateMachineVersionRequest& request) const
+{
+  AWS_OPERATION_GUARD(PublishStateMachineVersion);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PublishStateMachineVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PublishStateMachineVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return PublishStateMachineVersionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 SendTaskFailureOutcome SFNClient::SendTaskFailure(const SendTaskFailureRequest& request) const
@@ -410,5 +481,14 @@ UpdateStateMachineOutcome SFNClient::UpdateStateMachine(const UpdateStateMachine
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateStateMachine, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   return UpdateStateMachineOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateStateMachineAliasOutcome SFNClient::UpdateStateMachineAlias(const UpdateStateMachineAliasRequest& request) const
+{
+  AWS_OPERATION_GUARD(UpdateStateMachineAlias);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateStateMachineAlias, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateStateMachineAlias, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateStateMachineAliasOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

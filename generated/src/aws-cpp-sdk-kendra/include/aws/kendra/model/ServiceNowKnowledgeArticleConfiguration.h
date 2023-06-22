@@ -62,201 +62,165 @@ namespace Model
 
 
     /**
-     * <p>A list of regular expression patterns to include certain attachments of
-     * knowledge articles in your ServiceNow. Item that match the patterns are included
-     * in the index. Items that don't match the patterns are excluded from the index.
-     * If an item matches both an inclusion and exclusion pattern, the exclusion
-     * pattern takes precedence and the item isn't included in the index.</p> <p>The
-     * regex is applied to the field specified in the
-     * <code>PatternTargetField</code>.</p>
+     * <p>A list of regular expression patterns applied to include knowledge article
+     * attachments. Attachments that match the patterns are included in the index.
+     * Items that don't match the patterns are excluded from the index. If an item
+     * matches both an inclusion and exclusion pattern, the exclusion pattern takes
+     * precedence and the item isn't included in the index.</p>
      */
     inline const Aws::Vector<Aws::String>& GetIncludeAttachmentFilePatterns() const{ return m_includeAttachmentFilePatterns; }
 
     /**
-     * <p>A list of regular expression patterns to include certain attachments of
-     * knowledge articles in your ServiceNow. Item that match the patterns are included
-     * in the index. Items that don't match the patterns are excluded from the index.
-     * If an item matches both an inclusion and exclusion pattern, the exclusion
-     * pattern takes precedence and the item isn't included in the index.</p> <p>The
-     * regex is applied to the field specified in the
-     * <code>PatternTargetField</code>.</p>
+     * <p>A list of regular expression patterns applied to include knowledge article
+     * attachments. Attachments that match the patterns are included in the index.
+     * Items that don't match the patterns are excluded from the index. If an item
+     * matches both an inclusion and exclusion pattern, the exclusion pattern takes
+     * precedence and the item isn't included in the index.</p>
      */
     inline bool IncludeAttachmentFilePatternsHasBeenSet() const { return m_includeAttachmentFilePatternsHasBeenSet; }
 
     /**
-     * <p>A list of regular expression patterns to include certain attachments of
-     * knowledge articles in your ServiceNow. Item that match the patterns are included
-     * in the index. Items that don't match the patterns are excluded from the index.
-     * If an item matches both an inclusion and exclusion pattern, the exclusion
-     * pattern takes precedence and the item isn't included in the index.</p> <p>The
-     * regex is applied to the field specified in the
-     * <code>PatternTargetField</code>.</p>
+     * <p>A list of regular expression patterns applied to include knowledge article
+     * attachments. Attachments that match the patterns are included in the index.
+     * Items that don't match the patterns are excluded from the index. If an item
+     * matches both an inclusion and exclusion pattern, the exclusion pattern takes
+     * precedence and the item isn't included in the index.</p>
      */
     inline void SetIncludeAttachmentFilePatterns(const Aws::Vector<Aws::String>& value) { m_includeAttachmentFilePatternsHasBeenSet = true; m_includeAttachmentFilePatterns = value; }
 
     /**
-     * <p>A list of regular expression patterns to include certain attachments of
-     * knowledge articles in your ServiceNow. Item that match the patterns are included
-     * in the index. Items that don't match the patterns are excluded from the index.
-     * If an item matches both an inclusion and exclusion pattern, the exclusion
-     * pattern takes precedence and the item isn't included in the index.</p> <p>The
-     * regex is applied to the field specified in the
-     * <code>PatternTargetField</code>.</p>
+     * <p>A list of regular expression patterns applied to include knowledge article
+     * attachments. Attachments that match the patterns are included in the index.
+     * Items that don't match the patterns are excluded from the index. If an item
+     * matches both an inclusion and exclusion pattern, the exclusion pattern takes
+     * precedence and the item isn't included in the index.</p>
      */
     inline void SetIncludeAttachmentFilePatterns(Aws::Vector<Aws::String>&& value) { m_includeAttachmentFilePatternsHasBeenSet = true; m_includeAttachmentFilePatterns = std::move(value); }
 
     /**
-     * <p>A list of regular expression patterns to include certain attachments of
-     * knowledge articles in your ServiceNow. Item that match the patterns are included
-     * in the index. Items that don't match the patterns are excluded from the index.
-     * If an item matches both an inclusion and exclusion pattern, the exclusion
-     * pattern takes precedence and the item isn't included in the index.</p> <p>The
-     * regex is applied to the field specified in the
-     * <code>PatternTargetField</code>.</p>
+     * <p>A list of regular expression patterns applied to include knowledge article
+     * attachments. Attachments that match the patterns are included in the index.
+     * Items that don't match the patterns are excluded from the index. If an item
+     * matches both an inclusion and exclusion pattern, the exclusion pattern takes
+     * precedence and the item isn't included in the index.</p>
      */
     inline ServiceNowKnowledgeArticleConfiguration& WithIncludeAttachmentFilePatterns(const Aws::Vector<Aws::String>& value) { SetIncludeAttachmentFilePatterns(value); return *this;}
 
     /**
-     * <p>A list of regular expression patterns to include certain attachments of
-     * knowledge articles in your ServiceNow. Item that match the patterns are included
-     * in the index. Items that don't match the patterns are excluded from the index.
-     * If an item matches both an inclusion and exclusion pattern, the exclusion
-     * pattern takes precedence and the item isn't included in the index.</p> <p>The
-     * regex is applied to the field specified in the
-     * <code>PatternTargetField</code>.</p>
+     * <p>A list of regular expression patterns applied to include knowledge article
+     * attachments. Attachments that match the patterns are included in the index.
+     * Items that don't match the patterns are excluded from the index. If an item
+     * matches both an inclusion and exclusion pattern, the exclusion pattern takes
+     * precedence and the item isn't included in the index.</p>
      */
     inline ServiceNowKnowledgeArticleConfiguration& WithIncludeAttachmentFilePatterns(Aws::Vector<Aws::String>&& value) { SetIncludeAttachmentFilePatterns(std::move(value)); return *this;}
 
     /**
-     * <p>A list of regular expression patterns to include certain attachments of
-     * knowledge articles in your ServiceNow. Item that match the patterns are included
-     * in the index. Items that don't match the patterns are excluded from the index.
-     * If an item matches both an inclusion and exclusion pattern, the exclusion
-     * pattern takes precedence and the item isn't included in the index.</p> <p>The
-     * regex is applied to the field specified in the
-     * <code>PatternTargetField</code>.</p>
+     * <p>A list of regular expression patterns applied to include knowledge article
+     * attachments. Attachments that match the patterns are included in the index.
+     * Items that don't match the patterns are excluded from the index. If an item
+     * matches both an inclusion and exclusion pattern, the exclusion pattern takes
+     * precedence and the item isn't included in the index.</p>
      */
     inline ServiceNowKnowledgeArticleConfiguration& AddIncludeAttachmentFilePatterns(const Aws::String& value) { m_includeAttachmentFilePatternsHasBeenSet = true; m_includeAttachmentFilePatterns.push_back(value); return *this; }
 
     /**
-     * <p>A list of regular expression patterns to include certain attachments of
-     * knowledge articles in your ServiceNow. Item that match the patterns are included
-     * in the index. Items that don't match the patterns are excluded from the index.
-     * If an item matches both an inclusion and exclusion pattern, the exclusion
-     * pattern takes precedence and the item isn't included in the index.</p> <p>The
-     * regex is applied to the field specified in the
-     * <code>PatternTargetField</code>.</p>
+     * <p>A list of regular expression patterns applied to include knowledge article
+     * attachments. Attachments that match the patterns are included in the index.
+     * Items that don't match the patterns are excluded from the index. If an item
+     * matches both an inclusion and exclusion pattern, the exclusion pattern takes
+     * precedence and the item isn't included in the index.</p>
      */
     inline ServiceNowKnowledgeArticleConfiguration& AddIncludeAttachmentFilePatterns(Aws::String&& value) { m_includeAttachmentFilePatternsHasBeenSet = true; m_includeAttachmentFilePatterns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of regular expression patterns to include certain attachments of
-     * knowledge articles in your ServiceNow. Item that match the patterns are included
-     * in the index. Items that don't match the patterns are excluded from the index.
-     * If an item matches both an inclusion and exclusion pattern, the exclusion
-     * pattern takes precedence and the item isn't included in the index.</p> <p>The
-     * regex is applied to the field specified in the
-     * <code>PatternTargetField</code>.</p>
+     * <p>A list of regular expression patterns applied to include knowledge article
+     * attachments. Attachments that match the patterns are included in the index.
+     * Items that don't match the patterns are excluded from the index. If an item
+     * matches both an inclusion and exclusion pattern, the exclusion pattern takes
+     * precedence and the item isn't included in the index.</p>
      */
     inline ServiceNowKnowledgeArticleConfiguration& AddIncludeAttachmentFilePatterns(const char* value) { m_includeAttachmentFilePatternsHasBeenSet = true; m_includeAttachmentFilePatterns.push_back(value); return *this; }
 
 
     /**
-     * <p>A list of regular expression patterns to exclude certain attachments of
-     * knowledge articles in your ServiceNow. Item that match the patterns are excluded
-     * from the index. Items that don't match the patterns are included in the index.
-     * If an item matches both an inclusion and exclusion pattern, the exclusion
-     * pattern takes precedence and the item isn't included in the index.</p> <p>The
-     * regex is applied to the field specified in the
-     * <code>PatternTargetField</code>.</p>
+     * <p>A list of regular expression patterns applied to exclude certain knowledge
+     * article attachments. Attachments that match the patterns are excluded from the
+     * index. Items that don't match the patterns are included in the index. If an item
+     * matches both an inclusion and exclusion pattern, the exclusion pattern takes
+     * precedence and the item isn't included in the index.</p>
      */
     inline const Aws::Vector<Aws::String>& GetExcludeAttachmentFilePatterns() const{ return m_excludeAttachmentFilePatterns; }
 
     /**
-     * <p>A list of regular expression patterns to exclude certain attachments of
-     * knowledge articles in your ServiceNow. Item that match the patterns are excluded
-     * from the index. Items that don't match the patterns are included in the index.
-     * If an item matches both an inclusion and exclusion pattern, the exclusion
-     * pattern takes precedence and the item isn't included in the index.</p> <p>The
-     * regex is applied to the field specified in the
-     * <code>PatternTargetField</code>.</p>
+     * <p>A list of regular expression patterns applied to exclude certain knowledge
+     * article attachments. Attachments that match the patterns are excluded from the
+     * index. Items that don't match the patterns are included in the index. If an item
+     * matches both an inclusion and exclusion pattern, the exclusion pattern takes
+     * precedence and the item isn't included in the index.</p>
      */
     inline bool ExcludeAttachmentFilePatternsHasBeenSet() const { return m_excludeAttachmentFilePatternsHasBeenSet; }
 
     /**
-     * <p>A list of regular expression patterns to exclude certain attachments of
-     * knowledge articles in your ServiceNow. Item that match the patterns are excluded
-     * from the index. Items that don't match the patterns are included in the index.
-     * If an item matches both an inclusion and exclusion pattern, the exclusion
-     * pattern takes precedence and the item isn't included in the index.</p> <p>The
-     * regex is applied to the field specified in the
-     * <code>PatternTargetField</code>.</p>
+     * <p>A list of regular expression patterns applied to exclude certain knowledge
+     * article attachments. Attachments that match the patterns are excluded from the
+     * index. Items that don't match the patterns are included in the index. If an item
+     * matches both an inclusion and exclusion pattern, the exclusion pattern takes
+     * precedence and the item isn't included in the index.</p>
      */
     inline void SetExcludeAttachmentFilePatterns(const Aws::Vector<Aws::String>& value) { m_excludeAttachmentFilePatternsHasBeenSet = true; m_excludeAttachmentFilePatterns = value; }
 
     /**
-     * <p>A list of regular expression patterns to exclude certain attachments of
-     * knowledge articles in your ServiceNow. Item that match the patterns are excluded
-     * from the index. Items that don't match the patterns are included in the index.
-     * If an item matches both an inclusion and exclusion pattern, the exclusion
-     * pattern takes precedence and the item isn't included in the index.</p> <p>The
-     * regex is applied to the field specified in the
-     * <code>PatternTargetField</code>.</p>
+     * <p>A list of regular expression patterns applied to exclude certain knowledge
+     * article attachments. Attachments that match the patterns are excluded from the
+     * index. Items that don't match the patterns are included in the index. If an item
+     * matches both an inclusion and exclusion pattern, the exclusion pattern takes
+     * precedence and the item isn't included in the index.</p>
      */
     inline void SetExcludeAttachmentFilePatterns(Aws::Vector<Aws::String>&& value) { m_excludeAttachmentFilePatternsHasBeenSet = true; m_excludeAttachmentFilePatterns = std::move(value); }
 
     /**
-     * <p>A list of regular expression patterns to exclude certain attachments of
-     * knowledge articles in your ServiceNow. Item that match the patterns are excluded
-     * from the index. Items that don't match the patterns are included in the index.
-     * If an item matches both an inclusion and exclusion pattern, the exclusion
-     * pattern takes precedence and the item isn't included in the index.</p> <p>The
-     * regex is applied to the field specified in the
-     * <code>PatternTargetField</code>.</p>
+     * <p>A list of regular expression patterns applied to exclude certain knowledge
+     * article attachments. Attachments that match the patterns are excluded from the
+     * index. Items that don't match the patterns are included in the index. If an item
+     * matches both an inclusion and exclusion pattern, the exclusion pattern takes
+     * precedence and the item isn't included in the index.</p>
      */
     inline ServiceNowKnowledgeArticleConfiguration& WithExcludeAttachmentFilePatterns(const Aws::Vector<Aws::String>& value) { SetExcludeAttachmentFilePatterns(value); return *this;}
 
     /**
-     * <p>A list of regular expression patterns to exclude certain attachments of
-     * knowledge articles in your ServiceNow. Item that match the patterns are excluded
-     * from the index. Items that don't match the patterns are included in the index.
-     * If an item matches both an inclusion and exclusion pattern, the exclusion
-     * pattern takes precedence and the item isn't included in the index.</p> <p>The
-     * regex is applied to the field specified in the
-     * <code>PatternTargetField</code>.</p>
+     * <p>A list of regular expression patterns applied to exclude certain knowledge
+     * article attachments. Attachments that match the patterns are excluded from the
+     * index. Items that don't match the patterns are included in the index. If an item
+     * matches both an inclusion and exclusion pattern, the exclusion pattern takes
+     * precedence and the item isn't included in the index.</p>
      */
     inline ServiceNowKnowledgeArticleConfiguration& WithExcludeAttachmentFilePatterns(Aws::Vector<Aws::String>&& value) { SetExcludeAttachmentFilePatterns(std::move(value)); return *this;}
 
     /**
-     * <p>A list of regular expression patterns to exclude certain attachments of
-     * knowledge articles in your ServiceNow. Item that match the patterns are excluded
-     * from the index. Items that don't match the patterns are included in the index.
-     * If an item matches both an inclusion and exclusion pattern, the exclusion
-     * pattern takes precedence and the item isn't included in the index.</p> <p>The
-     * regex is applied to the field specified in the
-     * <code>PatternTargetField</code>.</p>
+     * <p>A list of regular expression patterns applied to exclude certain knowledge
+     * article attachments. Attachments that match the patterns are excluded from the
+     * index. Items that don't match the patterns are included in the index. If an item
+     * matches both an inclusion and exclusion pattern, the exclusion pattern takes
+     * precedence and the item isn't included in the index.</p>
      */
     inline ServiceNowKnowledgeArticleConfiguration& AddExcludeAttachmentFilePatterns(const Aws::String& value) { m_excludeAttachmentFilePatternsHasBeenSet = true; m_excludeAttachmentFilePatterns.push_back(value); return *this; }
 
     /**
-     * <p>A list of regular expression patterns to exclude certain attachments of
-     * knowledge articles in your ServiceNow. Item that match the patterns are excluded
-     * from the index. Items that don't match the patterns are included in the index.
-     * If an item matches both an inclusion and exclusion pattern, the exclusion
-     * pattern takes precedence and the item isn't included in the index.</p> <p>The
-     * regex is applied to the field specified in the
-     * <code>PatternTargetField</code>.</p>
+     * <p>A list of regular expression patterns applied to exclude certain knowledge
+     * article attachments. Attachments that match the patterns are excluded from the
+     * index. Items that don't match the patterns are included in the index. If an item
+     * matches both an inclusion and exclusion pattern, the exclusion pattern takes
+     * precedence and the item isn't included in the index.</p>
      */
     inline ServiceNowKnowledgeArticleConfiguration& AddExcludeAttachmentFilePatterns(Aws::String&& value) { m_excludeAttachmentFilePatternsHasBeenSet = true; m_excludeAttachmentFilePatterns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of regular expression patterns to exclude certain attachments of
-     * knowledge articles in your ServiceNow. Item that match the patterns are excluded
-     * from the index. Items that don't match the patterns are included in the index.
-     * If an item matches both an inclusion and exclusion pattern, the exclusion
-     * pattern takes precedence and the item isn't included in the index.</p> <p>The
-     * regex is applied to the field specified in the
-     * <code>PatternTargetField</code>.</p>
+     * <p>A list of regular expression patterns applied to exclude certain knowledge
+     * article attachments. Attachments that match the patterns are excluded from the
+     * index. Items that don't match the patterns are included in the index. If an item
+     * matches both an inclusion and exclusion pattern, the exclusion pattern takes
+     * precedence and the item isn't included in the index.</p>
      */
     inline ServiceNowKnowledgeArticleConfiguration& AddExcludeAttachmentFilePatterns(const char* value) { m_excludeAttachmentFilePatternsHasBeenSet = true; m_excludeAttachmentFilePatterns.push_back(value); return *this; }
 

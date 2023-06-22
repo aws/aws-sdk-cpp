@@ -17,7 +17,10 @@ UpdateStateMachineRequest::UpdateStateMachineRequest() :
     m_definitionHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_loggingConfigurationHasBeenSet(false),
-    m_tracingConfigurationHasBeenSet(false)
+    m_tracingConfigurationHasBeenSet(false),
+    m_publish(false),
+    m_publishHasBeenSet(false),
+    m_versionDescriptionHasBeenSet(false)
 {
 }
 
@@ -52,6 +55,18 @@ Aws::String UpdateStateMachineRequest::SerializePayload() const
   if(m_tracingConfigurationHasBeenSet)
   {
    payload.WithObject("tracingConfiguration", m_tracingConfiguration.Jsonize());
+
+  }
+
+  if(m_publishHasBeenSet)
+  {
+   payload.WithBool("publish", m_publish);
+
+  }
+
+  if(m_versionDescriptionHasBeenSet)
+  {
+   payload.WithString("versionDescription", m_versionDescription);
 
   }
 

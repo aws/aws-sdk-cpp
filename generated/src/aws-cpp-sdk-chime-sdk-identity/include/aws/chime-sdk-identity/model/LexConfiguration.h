@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/chime-sdk-identity/ChimeSDKIdentity_EXPORTS.h>
 #include <aws/chime-sdk-identity/model/RespondsTo.h>
+#include <aws/chime-sdk-identity/model/InvokedBy.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -39,40 +40,77 @@ namespace Model
 
 
     /**
-     * <p>Determines whether the Amazon Lex V2 bot responds to all standard messages.
-     * Control messages are not supported.</p>
+     *  <p> <b>Deprecated</b>. Use <code>InvokedBy</code> instead.</p>
+     *  <p>Determines whether the Amazon Lex V2 bot responds to all
+     * standard messages. Control messages are not supported.</p>
      */
     inline const RespondsTo& GetRespondsTo() const{ return m_respondsTo; }
 
     /**
-     * <p>Determines whether the Amazon Lex V2 bot responds to all standard messages.
-     * Control messages are not supported.</p>
+     *  <p> <b>Deprecated</b>. Use <code>InvokedBy</code> instead.</p>
+     *  <p>Determines whether the Amazon Lex V2 bot responds to all
+     * standard messages. Control messages are not supported.</p>
      */
     inline bool RespondsToHasBeenSet() const { return m_respondsToHasBeenSet; }
 
     /**
-     * <p>Determines whether the Amazon Lex V2 bot responds to all standard messages.
-     * Control messages are not supported.</p>
+     *  <p> <b>Deprecated</b>. Use <code>InvokedBy</code> instead.</p>
+     *  <p>Determines whether the Amazon Lex V2 bot responds to all
+     * standard messages. Control messages are not supported.</p>
      */
     inline void SetRespondsTo(const RespondsTo& value) { m_respondsToHasBeenSet = true; m_respondsTo = value; }
 
     /**
-     * <p>Determines whether the Amazon Lex V2 bot responds to all standard messages.
-     * Control messages are not supported.</p>
+     *  <p> <b>Deprecated</b>. Use <code>InvokedBy</code> instead.</p>
+     *  <p>Determines whether the Amazon Lex V2 bot responds to all
+     * standard messages. Control messages are not supported.</p>
      */
     inline void SetRespondsTo(RespondsTo&& value) { m_respondsToHasBeenSet = true; m_respondsTo = std::move(value); }
 
     /**
-     * <p>Determines whether the Amazon Lex V2 bot responds to all standard messages.
-     * Control messages are not supported.</p>
+     *  <p> <b>Deprecated</b>. Use <code>InvokedBy</code> instead.</p>
+     *  <p>Determines whether the Amazon Lex V2 bot responds to all
+     * standard messages. Control messages are not supported.</p>
      */
     inline LexConfiguration& WithRespondsTo(const RespondsTo& value) { SetRespondsTo(value); return *this;}
 
     /**
-     * <p>Determines whether the Amazon Lex V2 bot responds to all standard messages.
-     * Control messages are not supported.</p>
+     *  <p> <b>Deprecated</b>. Use <code>InvokedBy</code> instead.</p>
+     *  <p>Determines whether the Amazon Lex V2 bot responds to all
+     * standard messages. Control messages are not supported.</p>
      */
     inline LexConfiguration& WithRespondsTo(RespondsTo&& value) { SetRespondsTo(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies the type of message that triggers a bot.</p>
+     */
+    inline const InvokedBy& GetInvokedBy() const{ return m_invokedBy; }
+
+    /**
+     * <p>Specifies the type of message that triggers a bot.</p>
+     */
+    inline bool InvokedByHasBeenSet() const { return m_invokedByHasBeenSet; }
+
+    /**
+     * <p>Specifies the type of message that triggers a bot.</p>
+     */
+    inline void SetInvokedBy(const InvokedBy& value) { m_invokedByHasBeenSet = true; m_invokedBy = value; }
+
+    /**
+     * <p>Specifies the type of message that triggers a bot.</p>
+     */
+    inline void SetInvokedBy(InvokedBy&& value) { m_invokedByHasBeenSet = true; m_invokedBy = std::move(value); }
+
+    /**
+     * <p>Specifies the type of message that triggers a bot.</p>
+     */
+    inline LexConfiguration& WithInvokedBy(const InvokedBy& value) { SetInvokedBy(value); return *this;}
+
+    /**
+     * <p>Specifies the type of message that triggers a bot.</p>
+     */
+    inline LexConfiguration& WithInvokedBy(InvokedBy&& value) { SetInvokedBy(std::move(value)); return *this;}
 
 
     /**
@@ -249,6 +287,9 @@ namespace Model
 
     RespondsTo m_respondsTo;
     bool m_respondsToHasBeenSet = false;
+
+    InvokedBy m_invokedBy;
+    bool m_invokedByHasBeenSet = false;
 
     Aws::String m_lexBotAliasArn;
     bool m_lexBotAliasArnHasBeenSet = false;

@@ -39,44 +39,58 @@ namespace Model
 
 
     /**
-     * <p>The identifier for the search. You use <code>QueryId</code> to identify the
-     * search when using the feedback API.</p>
+     * <p>The identifier for the search. You also use <code>QueryId</code> to identify
+     * the search when using the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_SubmitFeedback.html">SubmitFeedback</a>
+     * API.</p>
      */
     inline const Aws::String& GetQueryId() const{ return m_queryId; }
 
     /**
-     * <p>The identifier for the search. You use <code>QueryId</code> to identify the
-     * search when using the feedback API.</p>
+     * <p>The identifier for the search. You also use <code>QueryId</code> to identify
+     * the search when using the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_SubmitFeedback.html">SubmitFeedback</a>
+     * API.</p>
      */
     inline void SetQueryId(const Aws::String& value) { m_queryId = value; }
 
     /**
-     * <p>The identifier for the search. You use <code>QueryId</code> to identify the
-     * search when using the feedback API.</p>
+     * <p>The identifier for the search. You also use <code>QueryId</code> to identify
+     * the search when using the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_SubmitFeedback.html">SubmitFeedback</a>
+     * API.</p>
      */
     inline void SetQueryId(Aws::String&& value) { m_queryId = std::move(value); }
 
     /**
-     * <p>The identifier for the search. You use <code>QueryId</code> to identify the
-     * search when using the feedback API.</p>
+     * <p>The identifier for the search. You also use <code>QueryId</code> to identify
+     * the search when using the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_SubmitFeedback.html">SubmitFeedback</a>
+     * API.</p>
      */
     inline void SetQueryId(const char* value) { m_queryId.assign(value); }
 
     /**
-     * <p>The identifier for the search. You use <code>QueryId</code> to identify the
-     * search when using the feedback API.</p>
+     * <p>The identifier for the search. You also use <code>QueryId</code> to identify
+     * the search when using the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_SubmitFeedback.html">SubmitFeedback</a>
+     * API.</p>
      */
     inline QueryResult& WithQueryId(const Aws::String& value) { SetQueryId(value); return *this;}
 
     /**
-     * <p>The identifier for the search. You use <code>QueryId</code> to identify the
-     * search when using the feedback API.</p>
+     * <p>The identifier for the search. You also use <code>QueryId</code> to identify
+     * the search when using the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_SubmitFeedback.html">SubmitFeedback</a>
+     * API.</p>
      */
     inline QueryResult& WithQueryId(Aws::String&& value) { SetQueryId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier for the search. You use <code>QueryId</code> to identify the
-     * search when using the feedback API.</p>
+     * <p>The identifier for the search. You also use <code>QueryId</code> to identify
+     * the search when using the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_SubmitFeedback.html">SubmitFeedback</a>
+     * API.</p>
      */
     inline QueryResult& WithQueryId(const char* value) { SetQueryId(value); return *this;}
 
@@ -119,70 +133,70 @@ namespace Model
 
     /**
      * <p>Contains the facet results. A <code>FacetResult</code> contains the counts
-     * for each attribute key that was specified in the <code>Facets</code> input
+     * for each field/attribute key that was specified in the <code>Facets</code> input
      * parameter.</p>
      */
     inline const Aws::Vector<FacetResult>& GetFacetResults() const{ return m_facetResults; }
 
     /**
      * <p>Contains the facet results. A <code>FacetResult</code> contains the counts
-     * for each attribute key that was specified in the <code>Facets</code> input
+     * for each field/attribute key that was specified in the <code>Facets</code> input
      * parameter.</p>
      */
     inline void SetFacetResults(const Aws::Vector<FacetResult>& value) { m_facetResults = value; }
 
     /**
      * <p>Contains the facet results. A <code>FacetResult</code> contains the counts
-     * for each attribute key that was specified in the <code>Facets</code> input
+     * for each field/attribute key that was specified in the <code>Facets</code> input
      * parameter.</p>
      */
     inline void SetFacetResults(Aws::Vector<FacetResult>&& value) { m_facetResults = std::move(value); }
 
     /**
      * <p>Contains the facet results. A <code>FacetResult</code> contains the counts
-     * for each attribute key that was specified in the <code>Facets</code> input
+     * for each field/attribute key that was specified in the <code>Facets</code> input
      * parameter.</p>
      */
     inline QueryResult& WithFacetResults(const Aws::Vector<FacetResult>& value) { SetFacetResults(value); return *this;}
 
     /**
      * <p>Contains the facet results. A <code>FacetResult</code> contains the counts
-     * for each attribute key that was specified in the <code>Facets</code> input
+     * for each field/attribute key that was specified in the <code>Facets</code> input
      * parameter.</p>
      */
     inline QueryResult& WithFacetResults(Aws::Vector<FacetResult>&& value) { SetFacetResults(std::move(value)); return *this;}
 
     /**
      * <p>Contains the facet results. A <code>FacetResult</code> contains the counts
-     * for each attribute key that was specified in the <code>Facets</code> input
+     * for each field/attribute key that was specified in the <code>Facets</code> input
      * parameter.</p>
      */
     inline QueryResult& AddFacetResults(const FacetResult& value) { m_facetResults.push_back(value); return *this; }
 
     /**
      * <p>Contains the facet results. A <code>FacetResult</code> contains the counts
-     * for each attribute key that was specified in the <code>Facets</code> input
+     * for each field/attribute key that was specified in the <code>Facets</code> input
      * parameter.</p>
      */
     inline QueryResult& AddFacetResults(FacetResult&& value) { m_facetResults.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The total number of items found by the search; however, you can only retrieve
+     * <p>The total number of items found by the search. However, you can only retrieve
      * up to 100 items. For example, if the search found 192 items, you can only
      * retrieve the first 100 of the items.</p>
      */
     inline int GetTotalNumberOfResults() const{ return m_totalNumberOfResults; }
 
     /**
-     * <p>The total number of items found by the search; however, you can only retrieve
+     * <p>The total number of items found by the search. However, you can only retrieve
      * up to 100 items. For example, if the search found 192 items, you can only
      * retrieve the first 100 of the items.</p>
      */
     inline void SetTotalNumberOfResults(int value) { m_totalNumberOfResults = value; }
 
     /**
-     * <p>The total number of items found by the search; however, you can only retrieve
+     * <p>The total number of items found by the search. However, you can only retrieve
      * up to 100 items. For example, if the search found 192 items, you can only
      * retrieve the first 100 of the items.</p>
      */

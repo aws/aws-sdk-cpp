@@ -93,6 +93,18 @@ DescribeStateMachineResult& DescribeStateMachineResult::operator =(const Aws::Am
 
   }
 
+  if(jsonValue.ValueExists("revisionId"))
+  {
+    m_revisionId = jsonValue.GetString("revisionId");
+
+  }
+
+  if(jsonValue.ValueExists("description"))
+  {
+    m_description = jsonValue.GetString("description");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

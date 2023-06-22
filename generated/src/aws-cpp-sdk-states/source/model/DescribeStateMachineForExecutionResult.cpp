@@ -83,6 +83,12 @@ DescribeStateMachineForExecutionResult& DescribeStateMachineForExecutionResult::
 
   }
 
+  if(jsonValue.ValueExists("revisionId"))
+  {
+    m_revisionId = jsonValue.GetString("revisionId");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -73,6 +73,7 @@
 #include <aws/kendra/model/ListThesauriRequest.h>
 #include <aws/kendra/model/PutPrincipalMappingRequest.h>
 #include <aws/kendra/model/QueryRequest.h>
+#include <aws/kendra/model/RetrieveRequest.h>
 #include <aws/kendra/model/StartDataSourceSyncJobRequest.h>
 #include <aws/kendra/model/StopDataSourceSyncJobRequest.h>
 #include <aws/kendra/model/SubmitFeedbackRequest.h>
@@ -681,6 +682,15 @@ QueryOutcome KendraClient::Query(const QueryRequest& request) const
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, Query, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   return QueryOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+RetrieveOutcome KendraClient::Retrieve(const RetrieveRequest& request) const
+{
+  AWS_OPERATION_GUARD(Retrieve);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, Retrieve, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, Retrieve, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return RetrieveOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StartDataSourceSyncJobOutcome KendraClient::StartDataSourceSyncJob(const StartDataSourceSyncJobRequest& request) const

@@ -21,14 +21,18 @@ namespace Model
 ExecutionStartedEventDetails::ExecutionStartedEventDetails() : 
     m_inputHasBeenSet(false),
     m_inputDetailsHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+    m_roleArnHasBeenSet(false),
+    m_stateMachineAliasArnHasBeenSet(false),
+    m_stateMachineVersionArnHasBeenSet(false)
 {
 }
 
 ExecutionStartedEventDetails::ExecutionStartedEventDetails(JsonView jsonValue) : 
     m_inputHasBeenSet(false),
     m_inputDetailsHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+    m_roleArnHasBeenSet(false),
+    m_stateMachineAliasArnHasBeenSet(false),
+    m_stateMachineVersionArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +60,20 @@ ExecutionStartedEventDetails& ExecutionStartedEventDetails::operator =(JsonView 
     m_roleArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("stateMachineAliasArn"))
+  {
+    m_stateMachineAliasArn = jsonValue.GetString("stateMachineAliasArn");
+
+    m_stateMachineAliasArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("stateMachineVersionArn"))
+  {
+    m_stateMachineVersionArn = jsonValue.GetString("stateMachineVersionArn");
+
+    m_stateMachineVersionArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +96,18 @@ JsonValue ExecutionStartedEventDetails::Jsonize() const
   if(m_roleArnHasBeenSet)
   {
    payload.WithString("roleArn", m_roleArn);
+
+  }
+
+  if(m_stateMachineAliasArnHasBeenSet)
+  {
+   payload.WithString("stateMachineAliasArn", m_stateMachineAliasArn);
+
+  }
+
+  if(m_stateMachineVersionArnHasBeenSet)
+  {
+   payload.WithString("stateMachineVersionArn", m_stateMachineVersionArn);
 
   }
 

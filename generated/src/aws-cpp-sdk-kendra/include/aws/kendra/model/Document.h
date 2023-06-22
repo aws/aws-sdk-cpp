@@ -452,32 +452,50 @@ namespace Model
 
 
     /**
-     * <p>The file type of the document in the <code>Blob</code> field.</p>
+     * <p>The file type of the document in the <code>Blob</code> field.</p> <p>If you
+     * want to index snippets or subsets of HTML documents instead of the entirety of
+     * the HTML documents, you must add the <code>HTML</code> start and closing tags
+     * (<code>&lt;HTML&gt;content&lt;/HTML&gt;</code>) around the content.</p>
      */
     inline const ContentType& GetContentType() const{ return m_contentType; }
 
     /**
-     * <p>The file type of the document in the <code>Blob</code> field.</p>
+     * <p>The file type of the document in the <code>Blob</code> field.</p> <p>If you
+     * want to index snippets or subsets of HTML documents instead of the entirety of
+     * the HTML documents, you must add the <code>HTML</code> start and closing tags
+     * (<code>&lt;HTML&gt;content&lt;/HTML&gt;</code>) around the content.</p>
      */
     inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
 
     /**
-     * <p>The file type of the document in the <code>Blob</code> field.</p>
+     * <p>The file type of the document in the <code>Blob</code> field.</p> <p>If you
+     * want to index snippets or subsets of HTML documents instead of the entirety of
+     * the HTML documents, you must add the <code>HTML</code> start and closing tags
+     * (<code>&lt;HTML&gt;content&lt;/HTML&gt;</code>) around the content.</p>
      */
     inline void SetContentType(const ContentType& value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
 
     /**
-     * <p>The file type of the document in the <code>Blob</code> field.</p>
+     * <p>The file type of the document in the <code>Blob</code> field.</p> <p>If you
+     * want to index snippets or subsets of HTML documents instead of the entirety of
+     * the HTML documents, you must add the <code>HTML</code> start and closing tags
+     * (<code>&lt;HTML&gt;content&lt;/HTML&gt;</code>) around the content.</p>
      */
     inline void SetContentType(ContentType&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::move(value); }
 
     /**
-     * <p>The file type of the document in the <code>Blob</code> field.</p>
+     * <p>The file type of the document in the <code>Blob</code> field.</p> <p>If you
+     * want to index snippets or subsets of HTML documents instead of the entirety of
+     * the HTML documents, you must add the <code>HTML</code> start and closing tags
+     * (<code>&lt;HTML&gt;content&lt;/HTML&gt;</code>) around the content.</p>
      */
     inline Document& WithContentType(const ContentType& value) { SetContentType(value); return *this;}
 
     /**
-     * <p>The file type of the document in the <code>Blob</code> field.</p>
+     * <p>The file type of the document in the <code>Blob</code> field.</p> <p>If you
+     * want to index snippets or subsets of HTML documents instead of the entirety of
+     * the HTML documents, you must add the <code>HTML</code> start and closing tags
+     * (<code>&lt;HTML&gt;content&lt;/HTML&gt;</code>) around the content.</p>
      */
     inline Document& WithContentType(ContentType&& value) { SetContentType(std::move(value)); return *this;}
 

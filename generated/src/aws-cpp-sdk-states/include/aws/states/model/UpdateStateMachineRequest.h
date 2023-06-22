@@ -176,38 +176,38 @@ namespace Model
 
 
     /**
-     * <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch
-     * Logs options.</p>
+     * <p>Use the <code>LoggingConfiguration</code> data type to set CloudWatch Logs
+     * options.</p>
      */
     inline const LoggingConfiguration& GetLoggingConfiguration() const{ return m_loggingConfiguration; }
 
     /**
-     * <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch
-     * Logs options.</p>
+     * <p>Use the <code>LoggingConfiguration</code> data type to set CloudWatch Logs
+     * options.</p>
      */
     inline bool LoggingConfigurationHasBeenSet() const { return m_loggingConfigurationHasBeenSet; }
 
     /**
-     * <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch
-     * Logs options.</p>
+     * <p>Use the <code>LoggingConfiguration</code> data type to set CloudWatch Logs
+     * options.</p>
      */
     inline void SetLoggingConfiguration(const LoggingConfiguration& value) { m_loggingConfigurationHasBeenSet = true; m_loggingConfiguration = value; }
 
     /**
-     * <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch
-     * Logs options.</p>
+     * <p>Use the <code>LoggingConfiguration</code> data type to set CloudWatch Logs
+     * options.</p>
      */
     inline void SetLoggingConfiguration(LoggingConfiguration&& value) { m_loggingConfigurationHasBeenSet = true; m_loggingConfiguration = std::move(value); }
 
     /**
-     * <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch
-     * Logs options.</p>
+     * <p>Use the <code>LoggingConfiguration</code> data type to set CloudWatch Logs
+     * options.</p>
      */
     inline UpdateStateMachineRequest& WithLoggingConfiguration(const LoggingConfiguration& value) { SetLoggingConfiguration(value); return *this;}
 
     /**
-     * <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch
-     * Logs options.</p>
+     * <p>Use the <code>LoggingConfiguration</code> data type to set CloudWatch Logs
+     * options.</p>
      */
     inline UpdateStateMachineRequest& WithLoggingConfiguration(LoggingConfiguration&& value) { SetLoggingConfiguration(std::move(value)); return *this;}
 
@@ -242,6 +242,92 @@ namespace Model
      */
     inline UpdateStateMachineRequest& WithTracingConfiguration(TracingConfiguration&& value) { SetTracingConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies whether the state machine version is published. The default is
+     * <code>false</code>. To publish a version after updating the state machine, set
+     * <code>publish</code> to <code>true</code>.</p>
+     */
+    inline bool GetPublish() const{ return m_publish; }
+
+    /**
+     * <p>Specifies whether the state machine version is published. The default is
+     * <code>false</code>. To publish a version after updating the state machine, set
+     * <code>publish</code> to <code>true</code>.</p>
+     */
+    inline bool PublishHasBeenSet() const { return m_publishHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the state machine version is published. The default is
+     * <code>false</code>. To publish a version after updating the state machine, set
+     * <code>publish</code> to <code>true</code>.</p>
+     */
+    inline void SetPublish(bool value) { m_publishHasBeenSet = true; m_publish = value; }
+
+    /**
+     * <p>Specifies whether the state machine version is published. The default is
+     * <code>false</code>. To publish a version after updating the state machine, set
+     * <code>publish</code> to <code>true</code>.</p>
+     */
+    inline UpdateStateMachineRequest& WithPublish(bool value) { SetPublish(value); return *this;}
+
+
+    /**
+     * <p>An optional description of the state machine version to publish.</p> <p>You
+     * can only specify the <code>versionDescription</code> parameter if you've set
+     * <code>publish</code> to <code>true</code>.</p>
+     */
+    inline const Aws::String& GetVersionDescription() const{ return m_versionDescription; }
+
+    /**
+     * <p>An optional description of the state machine version to publish.</p> <p>You
+     * can only specify the <code>versionDescription</code> parameter if you've set
+     * <code>publish</code> to <code>true</code>.</p>
+     */
+    inline bool VersionDescriptionHasBeenSet() const { return m_versionDescriptionHasBeenSet; }
+
+    /**
+     * <p>An optional description of the state machine version to publish.</p> <p>You
+     * can only specify the <code>versionDescription</code> parameter if you've set
+     * <code>publish</code> to <code>true</code>.</p>
+     */
+    inline void SetVersionDescription(const Aws::String& value) { m_versionDescriptionHasBeenSet = true; m_versionDescription = value; }
+
+    /**
+     * <p>An optional description of the state machine version to publish.</p> <p>You
+     * can only specify the <code>versionDescription</code> parameter if you've set
+     * <code>publish</code> to <code>true</code>.</p>
+     */
+    inline void SetVersionDescription(Aws::String&& value) { m_versionDescriptionHasBeenSet = true; m_versionDescription = std::move(value); }
+
+    /**
+     * <p>An optional description of the state machine version to publish.</p> <p>You
+     * can only specify the <code>versionDescription</code> parameter if you've set
+     * <code>publish</code> to <code>true</code>.</p>
+     */
+    inline void SetVersionDescription(const char* value) { m_versionDescriptionHasBeenSet = true; m_versionDescription.assign(value); }
+
+    /**
+     * <p>An optional description of the state machine version to publish.</p> <p>You
+     * can only specify the <code>versionDescription</code> parameter if you've set
+     * <code>publish</code> to <code>true</code>.</p>
+     */
+    inline UpdateStateMachineRequest& WithVersionDescription(const Aws::String& value) { SetVersionDescription(value); return *this;}
+
+    /**
+     * <p>An optional description of the state machine version to publish.</p> <p>You
+     * can only specify the <code>versionDescription</code> parameter if you've set
+     * <code>publish</code> to <code>true</code>.</p>
+     */
+    inline UpdateStateMachineRequest& WithVersionDescription(Aws::String&& value) { SetVersionDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>An optional description of the state machine version to publish.</p> <p>You
+     * can only specify the <code>versionDescription</code> parameter if you've set
+     * <code>publish</code> to <code>true</code>.</p>
+     */
+    inline UpdateStateMachineRequest& WithVersionDescription(const char* value) { SetVersionDescription(value); return *this;}
+
   private:
 
     Aws::String m_stateMachineArn;
@@ -258,6 +344,12 @@ namespace Model
 
     TracingConfiguration m_tracingConfiguration;
     bool m_tracingConfigurationHasBeenSet = false;
+
+    bool m_publish;
+    bool m_publishHasBeenSet = false;
+
+    Aws::String m_versionDescription;
+    bool m_versionDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

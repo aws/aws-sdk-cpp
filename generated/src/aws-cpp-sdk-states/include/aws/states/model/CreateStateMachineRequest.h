@@ -459,6 +459,104 @@ namespace Model
      */
     inline CreateStateMachineRequest& WithTracingConfiguration(TracingConfiguration&& value) { SetTracingConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Set to <code>true</code> to publish the first version of the state machine
+     * during creation. The default is <code>false</code>.</p>
+     */
+    inline bool GetPublish() const{ return m_publish; }
+
+    /**
+     * <p>Set to <code>true</code> to publish the first version of the state machine
+     * during creation. The default is <code>false</code>.</p>
+     */
+    inline bool PublishHasBeenSet() const { return m_publishHasBeenSet; }
+
+    /**
+     * <p>Set to <code>true</code> to publish the first version of the state machine
+     * during creation. The default is <code>false</code>.</p>
+     */
+    inline void SetPublish(bool value) { m_publishHasBeenSet = true; m_publish = value; }
+
+    /**
+     * <p>Set to <code>true</code> to publish the first version of the state machine
+     * during creation. The default is <code>false</code>.</p>
+     */
+    inline CreateStateMachineRequest& WithPublish(bool value) { SetPublish(value); return *this;}
+
+
+    /**
+     * <p>Sets description about the state machine version. You can only set the
+     * description if the <code>publish</code> parameter is set to <code>true</code>.
+     * Otherwise, if you set <code>versionDescription</code>, but <code>publish</code>
+     * to <code>false</code>, this API action throws
+     * <code>ValidationException</code>.</p>
+     */
+    inline const Aws::String& GetVersionDescription() const{ return m_versionDescription; }
+
+    /**
+     * <p>Sets description about the state machine version. You can only set the
+     * description if the <code>publish</code> parameter is set to <code>true</code>.
+     * Otherwise, if you set <code>versionDescription</code>, but <code>publish</code>
+     * to <code>false</code>, this API action throws
+     * <code>ValidationException</code>.</p>
+     */
+    inline bool VersionDescriptionHasBeenSet() const { return m_versionDescriptionHasBeenSet; }
+
+    /**
+     * <p>Sets description about the state machine version. You can only set the
+     * description if the <code>publish</code> parameter is set to <code>true</code>.
+     * Otherwise, if you set <code>versionDescription</code>, but <code>publish</code>
+     * to <code>false</code>, this API action throws
+     * <code>ValidationException</code>.</p>
+     */
+    inline void SetVersionDescription(const Aws::String& value) { m_versionDescriptionHasBeenSet = true; m_versionDescription = value; }
+
+    /**
+     * <p>Sets description about the state machine version. You can only set the
+     * description if the <code>publish</code> parameter is set to <code>true</code>.
+     * Otherwise, if you set <code>versionDescription</code>, but <code>publish</code>
+     * to <code>false</code>, this API action throws
+     * <code>ValidationException</code>.</p>
+     */
+    inline void SetVersionDescription(Aws::String&& value) { m_versionDescriptionHasBeenSet = true; m_versionDescription = std::move(value); }
+
+    /**
+     * <p>Sets description about the state machine version. You can only set the
+     * description if the <code>publish</code> parameter is set to <code>true</code>.
+     * Otherwise, if you set <code>versionDescription</code>, but <code>publish</code>
+     * to <code>false</code>, this API action throws
+     * <code>ValidationException</code>.</p>
+     */
+    inline void SetVersionDescription(const char* value) { m_versionDescriptionHasBeenSet = true; m_versionDescription.assign(value); }
+
+    /**
+     * <p>Sets description about the state machine version. You can only set the
+     * description if the <code>publish</code> parameter is set to <code>true</code>.
+     * Otherwise, if you set <code>versionDescription</code>, but <code>publish</code>
+     * to <code>false</code>, this API action throws
+     * <code>ValidationException</code>.</p>
+     */
+    inline CreateStateMachineRequest& WithVersionDescription(const Aws::String& value) { SetVersionDescription(value); return *this;}
+
+    /**
+     * <p>Sets description about the state machine version. You can only set the
+     * description if the <code>publish</code> parameter is set to <code>true</code>.
+     * Otherwise, if you set <code>versionDescription</code>, but <code>publish</code>
+     * to <code>false</code>, this API action throws
+     * <code>ValidationException</code>.</p>
+     */
+    inline CreateStateMachineRequest& WithVersionDescription(Aws::String&& value) { SetVersionDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>Sets description about the state machine version. You can only set the
+     * description if the <code>publish</code> parameter is set to <code>true</code>.
+     * Otherwise, if you set <code>versionDescription</code>, but <code>publish</code>
+     * to <code>false</code>, this API action throws
+     * <code>ValidationException</code>.</p>
+     */
+    inline CreateStateMachineRequest& WithVersionDescription(const char* value) { SetVersionDescription(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -481,6 +579,12 @@ namespace Model
 
     TracingConfiguration m_tracingConfiguration;
     bool m_tracingConfigurationHasBeenSet = false;
+
+    bool m_publish;
+    bool m_publishHasBeenSet = false;
+
+    Aws::String m_versionDescription;
+    bool m_versionDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

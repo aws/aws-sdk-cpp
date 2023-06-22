@@ -35,42 +35,74 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the state machine to describe.</p>
+     * <p>The Amazon Resource Name (ARN) of the state machine for which you want the
+     * information.</p> <p>If you specify a state machine version ARN, this API returns
+     * details about that version. The version ARN is a combination of state machine
+     * ARN and the version number separated by a colon (:). For example,
+     * <code>stateMachineARN:1</code>.</p>
      */
     inline const Aws::String& GetStateMachineArn() const{ return m_stateMachineArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the state machine to describe.</p>
+     * <p>The Amazon Resource Name (ARN) of the state machine for which you want the
+     * information.</p> <p>If you specify a state machine version ARN, this API returns
+     * details about that version. The version ARN is a combination of state machine
+     * ARN and the version number separated by a colon (:). For example,
+     * <code>stateMachineARN:1</code>.</p>
      */
     inline bool StateMachineArnHasBeenSet() const { return m_stateMachineArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the state machine to describe.</p>
+     * <p>The Amazon Resource Name (ARN) of the state machine for which you want the
+     * information.</p> <p>If you specify a state machine version ARN, this API returns
+     * details about that version. The version ARN is a combination of state machine
+     * ARN and the version number separated by a colon (:). For example,
+     * <code>stateMachineARN:1</code>.</p>
      */
     inline void SetStateMachineArn(const Aws::String& value) { m_stateMachineArnHasBeenSet = true; m_stateMachineArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the state machine to describe.</p>
+     * <p>The Amazon Resource Name (ARN) of the state machine for which you want the
+     * information.</p> <p>If you specify a state machine version ARN, this API returns
+     * details about that version. The version ARN is a combination of state machine
+     * ARN and the version number separated by a colon (:). For example,
+     * <code>stateMachineARN:1</code>.</p>
      */
     inline void SetStateMachineArn(Aws::String&& value) { m_stateMachineArnHasBeenSet = true; m_stateMachineArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the state machine to describe.</p>
+     * <p>The Amazon Resource Name (ARN) of the state machine for which you want the
+     * information.</p> <p>If you specify a state machine version ARN, this API returns
+     * details about that version. The version ARN is a combination of state machine
+     * ARN and the version number separated by a colon (:). For example,
+     * <code>stateMachineARN:1</code>.</p>
      */
     inline void SetStateMachineArn(const char* value) { m_stateMachineArnHasBeenSet = true; m_stateMachineArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the state machine to describe.</p>
+     * <p>The Amazon Resource Name (ARN) of the state machine for which you want the
+     * information.</p> <p>If you specify a state machine version ARN, this API returns
+     * details about that version. The version ARN is a combination of state machine
+     * ARN and the version number separated by a colon (:). For example,
+     * <code>stateMachineARN:1</code>.</p>
      */
     inline DescribeStateMachineRequest& WithStateMachineArn(const Aws::String& value) { SetStateMachineArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the state machine to describe.</p>
+     * <p>The Amazon Resource Name (ARN) of the state machine for which you want the
+     * information.</p> <p>If you specify a state machine version ARN, this API returns
+     * details about that version. The version ARN is a combination of state machine
+     * ARN and the version number separated by a colon (:). For example,
+     * <code>stateMachineARN:1</code>.</p>
      */
     inline DescribeStateMachineRequest& WithStateMachineArn(Aws::String&& value) { SetStateMachineArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the state machine to describe.</p>
+     * <p>The Amazon Resource Name (ARN) of the state machine for which you want the
+     * information.</p> <p>If you specify a state machine version ARN, this API returns
+     * details about that version. The version ARN is a combination of state machine
+     * ARN and the version number separated by a colon (:). For example,
+     * <code>stateMachineARN:1</code>.</p>
      */
     inline DescribeStateMachineRequest& WithStateMachineArn(const char* value) { SetStateMachineArn(value); return *this;}
 
