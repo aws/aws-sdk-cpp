@@ -6,7 +6,9 @@
 #include <aws/core/utils/logging/CRTLogging.h>
 #include <aws/core/utils/logging/CRTLogSystem.h>
 #include <aws/core/utils/logging/LogLevel.h>
+#include <aws/core/utils/threading/ReaderWriterLock.h>
 #include <aws/common/logging.h>
+
 #include <memory>
 #include <mutex>
 #include <assert.h>
@@ -22,6 +24,7 @@ namespace Utils
 namespace Logging {
 
 static std::shared_ptr<CRTLogSystemInterface> CRTLogSystem(nullptr);
+static Aws::Utils::Threading::ReaderWriterLock CRTLogSystemLock;
 
 static bool s_CRTLogsRedirectionIsSet(false);
 static aws_logger s_sdkCrtLogger;
@@ -34,16 +37,15 @@ static int s_aws_logger_redirect_log(
         const char *format, ...)
 {
     AWS_UNREFERENCED_PARAM(logger);
-    // use local variable because global variable can be modified in the middle by another thread.
-    std::shared_ptr<CRTLogSystemInterface> localCRTLogSystem = CRTLogSystem;
-    if (localCRTLogSystem)
+    Aws::Utils::Threading::ReaderLockGuard guard(CRTLogSystemLock);
+    if (CRTLogSystem)
     {
         assert(logger->p_impl == &s_sdkCrtLogger);
         Aws::Utils::Logging::LogLevel logLevel = static_cast<LogLevel>(log_level);
         const char* subjectName = aws_log_subject_name(subject);
         va_list args;
         va_start(args, format);
-        localCRTLogSystem->Log(logLevel, subjectName, format, args);
+        CRTLogSystem->Log(logLevel, subjectName, format, args);
         va_end(args);
         return AWS_OP_SUCCESS;
     }
@@ -64,11 +66,11 @@ static int s_aws_logger_redirect_log(
 static enum aws_log_level s_aws_logger_redirect_get_log_level(struct aws_logger *logger, aws_log_subject_t subject)
 {
     AWS_UNREFERENCED_PARAM(logger);
-    std::shared_ptr<CRTLogSystemInterface> localCRTLogSystem = CRTLogSystem;
-    if (localCRTLogSystem)
+    Aws::Utils::Threading::ReaderLockGuard guard(CRTLogSystemLock);
+    if (CRTLogSystem)
     {
         assert(logger->p_impl == &s_sdkCrtLogger);
-        return (aws_log_level) (localCRTLogSystem->GetLogLevel());
+        return (aws_log_level) (CRTLogSystem->GetLogLevel());
     }
     else if (s_CRTLogsRedirectionIsSet)
     {
@@ -82,11 +84,11 @@ static enum aws_log_level s_aws_logger_redirect_get_log_level(struct aws_logger 
 static void s_aws_logger_redirect_clean_up(struct aws_logger *logger)
 {
     AWS_UNREFERENCED_PARAM(logger);
-    std::shared_ptr<CRTLogSystemInterface> localCRTLogSystem = CRTLogSystem;
-    if (localCRTLogSystem)
+    Aws::Utils::Threading::ReaderLockGuard guard(CRTLogSystemLock);
+    if (CRTLogSystem)
     {
         assert(logger->p_impl == &s_sdkCrtLogger);
-        return localCRTLogSystem->CleanUp();
+        return CRTLogSystem->CleanUp();
     }
     else if (s_CRTLogsRedirectionIsSet)
     {
@@ -99,11 +101,11 @@ static void s_aws_logger_redirect_clean_up(struct aws_logger *logger)
 static int s_aws_logger_redirect_set_log_level(struct aws_logger *logger, enum aws_log_level log_level)
 {
     AWS_UNREFERENCED_PARAM(logger);
-    std::shared_ptr<CRTLogSystemInterface> localCRTLogSystem = CRTLogSystem;
-    if (localCRTLogSystem)
+    Aws::Utils::Threading::ReaderLockGuard guard(CRTLogSystemLock);
+    if (CRTLogSystem)
     {
         assert(logger->p_impl == &s_sdkCrtLogger);
-        localCRTLogSystem->SetLogLevel(static_cast<LogLevel>(log_level));
+        CRTLogSystem->SetLogLevel(static_cast<LogLevel>(log_level));
         return AWS_OP_SUCCESS;
     }
     else if (s_CRTLogsRedirectionIsSet)
@@ -151,16 +153,14 @@ void SetUpCrtLogsRedirection()
 }
 
 void InitializeCRTLogging(const std::shared_ptr<CRTLogSystemInterface>& inputCrtLogSystem) {
+    Aws::Utils::Threading::WriterLockGuard g(CRTLogSystemLock);
     SetUpCrtLogsRedirection();
-    // stop using CRTLogSystem to avoid race condition and lost logs in ~CRTLogSystemInterface
-    std::shared_ptr<CRTLogSystemInterface> tmpCRTLogSystem = std::move(CRTLogSystem);
     CRTLogSystem = inputCrtLogSystem;
 }
 
 void ShutdownCRTLogging() {
-    // stop using CRTLogSystem to avoid race condition and lost logs in ~CRTLogSystemInterface
-    std::shared_ptr<CRTLogSystemInterface> tmpCRTLogSystem = std::move(CRTLogSystem);
-    tmpCRTLogSystem.reset(); // just being explicit
+    Aws::Utils::Threading::WriterLockGuard g(CRTLogSystemLock);
+    CRTLogSystem.reset();
 }
 
 } // namespace Logging
