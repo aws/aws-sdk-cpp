@@ -134,42 +134,30 @@ namespace Model
 
 
     /**
-     * <p>Specifies the number of levels in a website that you want to crawl.</p>
-     * <p>The first level begins from the website seed or starting point URL. For
-     * example, if a website has three levels—index level (the seed in this example),
-     * sections level, and subsections level—and you are only interested in crawling
-     * information up to the sections level (levels 0-1), you can set your depth to
-     * 1.</p> <p>The default crawl depth is set to 2.</p>
+     * <p>The 'depth' or number of levels from the seed level to crawl. For example,
+     * the seed URL page is depth 1 and any hyperlinks on this page that are also
+     * crawled are depth 2.</p>
      */
     inline int GetCrawlDepth() const{ return m_crawlDepth; }
 
     /**
-     * <p>Specifies the number of levels in a website that you want to crawl.</p>
-     * <p>The first level begins from the website seed or starting point URL. For
-     * example, if a website has three levels—index level (the seed in this example),
-     * sections level, and subsections level—and you are only interested in crawling
-     * information up to the sections level (levels 0-1), you can set your depth to
-     * 1.</p> <p>The default crawl depth is set to 2.</p>
+     * <p>The 'depth' or number of levels from the seed level to crawl. For example,
+     * the seed URL page is depth 1 and any hyperlinks on this page that are also
+     * crawled are depth 2.</p>
      */
     inline bool CrawlDepthHasBeenSet() const { return m_crawlDepthHasBeenSet; }
 
     /**
-     * <p>Specifies the number of levels in a website that you want to crawl.</p>
-     * <p>The first level begins from the website seed or starting point URL. For
-     * example, if a website has three levels—index level (the seed in this example),
-     * sections level, and subsections level—and you are only interested in crawling
-     * information up to the sections level (levels 0-1), you can set your depth to
-     * 1.</p> <p>The default crawl depth is set to 2.</p>
+     * <p>The 'depth' or number of levels from the seed level to crawl. For example,
+     * the seed URL page is depth 1 and any hyperlinks on this page that are also
+     * crawled are depth 2.</p>
      */
     inline void SetCrawlDepth(int value) { m_crawlDepthHasBeenSet = true; m_crawlDepth = value; }
 
     /**
-     * <p>Specifies the number of levels in a website that you want to crawl.</p>
-     * <p>The first level begins from the website seed or starting point URL. For
-     * example, if a website has three levels—index level (the seed in this example),
-     * sections level, and subsections level—and you are only interested in crawling
-     * information up to the sections level (levels 0-1), you can set your depth to
-     * 1.</p> <p>The default crawl depth is set to 2.</p>
+     * <p>The 'depth' or number of levels from the seed level to crawl. For example,
+     * the seed URL page is depth 1 and any hyperlinks on this page that are also
+     * crawled are depth 2.</p>
      */
     inline WebCrawlerConfiguration& WithCrawlDepth(int value) { SetCrawlDepth(value); return *this;}
 

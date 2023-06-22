@@ -27,7 +27,8 @@ SendChannelMessageRequest::SendChannelMessageRequest() :
     m_pushNotificationHasBeenSet(false),
     m_messageAttributesHasBeenSet(false),
     m_subChannelIdHasBeenSet(false),
-    m_contentTypeHasBeenSet(false)
+    m_contentTypeHasBeenSet(false),
+    m_targetHasBeenSet(false)
 {
 }
 
@@ -89,6 +90,17 @@ Aws::String SendChannelMessageRequest::SerializePayload() const
   if(m_contentTypeHasBeenSet)
   {
    payload.WithString("ContentType", m_contentType);
+
+  }
+
+  if(m_targetHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> targetJsonList(m_target.size());
+   for(unsigned targetIndex = 0; targetIndex < targetJsonList.GetLength(); ++targetIndex)
+   {
+     targetJsonList[targetIndex].AsObject(m_target[targetIndex].Jsonize());
+   }
+   payload.WithArray("Target", std::move(targetJsonList));
 
   }
 

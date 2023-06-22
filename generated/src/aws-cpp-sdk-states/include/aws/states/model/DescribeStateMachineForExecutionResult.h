@@ -380,6 +380,77 @@ namespace Model
     inline DescribeStateMachineForExecutionResult& WithLabel(const char* value) { SetLabel(value); return *this;}
 
 
+    /**
+     * <p>The revision identifier for the state machine. The first revision ID when you
+     * create the state machine is null.</p> <p>Use the state machine
+     * <code>revisionId</code> parameter to compare the revision of a state machine
+     * with the configuration of the state machine used for executions without
+     * performing a diff of the properties, such as <code>definition</code> and
+     * <code>roleArn</code>.</p>
+     */
+    inline const Aws::String& GetRevisionId() const{ return m_revisionId; }
+
+    /**
+     * <p>The revision identifier for the state machine. The first revision ID when you
+     * create the state machine is null.</p> <p>Use the state machine
+     * <code>revisionId</code> parameter to compare the revision of a state machine
+     * with the configuration of the state machine used for executions without
+     * performing a diff of the properties, such as <code>definition</code> and
+     * <code>roleArn</code>.</p>
+     */
+    inline void SetRevisionId(const Aws::String& value) { m_revisionId = value; }
+
+    /**
+     * <p>The revision identifier for the state machine. The first revision ID when you
+     * create the state machine is null.</p> <p>Use the state machine
+     * <code>revisionId</code> parameter to compare the revision of a state machine
+     * with the configuration of the state machine used for executions without
+     * performing a diff of the properties, such as <code>definition</code> and
+     * <code>roleArn</code>.</p>
+     */
+    inline void SetRevisionId(Aws::String&& value) { m_revisionId = std::move(value); }
+
+    /**
+     * <p>The revision identifier for the state machine. The first revision ID when you
+     * create the state machine is null.</p> <p>Use the state machine
+     * <code>revisionId</code> parameter to compare the revision of a state machine
+     * with the configuration of the state machine used for executions without
+     * performing a diff of the properties, such as <code>definition</code> and
+     * <code>roleArn</code>.</p>
+     */
+    inline void SetRevisionId(const char* value) { m_revisionId.assign(value); }
+
+    /**
+     * <p>The revision identifier for the state machine. The first revision ID when you
+     * create the state machine is null.</p> <p>Use the state machine
+     * <code>revisionId</code> parameter to compare the revision of a state machine
+     * with the configuration of the state machine used for executions without
+     * performing a diff of the properties, such as <code>definition</code> and
+     * <code>roleArn</code>.</p>
+     */
+    inline DescribeStateMachineForExecutionResult& WithRevisionId(const Aws::String& value) { SetRevisionId(value); return *this;}
+
+    /**
+     * <p>The revision identifier for the state machine. The first revision ID when you
+     * create the state machine is null.</p> <p>Use the state machine
+     * <code>revisionId</code> parameter to compare the revision of a state machine
+     * with the configuration of the state machine used for executions without
+     * performing a diff of the properties, such as <code>definition</code> and
+     * <code>roleArn</code>.</p>
+     */
+    inline DescribeStateMachineForExecutionResult& WithRevisionId(Aws::String&& value) { SetRevisionId(std::move(value)); return *this;}
+
+    /**
+     * <p>The revision identifier for the state machine. The first revision ID when you
+     * create the state machine is null.</p> <p>Use the state machine
+     * <code>revisionId</code> parameter to compare the revision of a state machine
+     * with the configuration of the state machine used for executions without
+     * performing a diff of the properties, such as <code>definition</code> and
+     * <code>roleArn</code>.</p>
+     */
+    inline DescribeStateMachineForExecutionResult& WithRevisionId(const char* value) { SetRevisionId(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -420,6 +491,8 @@ namespace Model
     Aws::String m_mapRunArn;
 
     Aws::String m_label;
+
+    Aws::String m_revisionId;
 
     Aws::String m_requestId;
   };

@@ -38,37 +38,65 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) that identifies the state machine.</p>
+     * <p>The Amazon Resource Name (ARN) that identifies the state machine.</p> <p>If
+     * you specified a state machine version ARN in your request, the API returns the
+     * version ARN. The version ARN is a combination of state machine ARN and the
+     * version number separated by a colon (:). For example,
+     * <code>stateMachineARN:1</code>.</p>
      */
     inline const Aws::String& GetStateMachineArn() const{ return m_stateMachineArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that identifies the state machine.</p>
+     * <p>The Amazon Resource Name (ARN) that identifies the state machine.</p> <p>If
+     * you specified a state machine version ARN in your request, the API returns the
+     * version ARN. The version ARN is a combination of state machine ARN and the
+     * version number separated by a colon (:). For example,
+     * <code>stateMachineARN:1</code>.</p>
      */
     inline void SetStateMachineArn(const Aws::String& value) { m_stateMachineArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that identifies the state machine.</p>
+     * <p>The Amazon Resource Name (ARN) that identifies the state machine.</p> <p>If
+     * you specified a state machine version ARN in your request, the API returns the
+     * version ARN. The version ARN is a combination of state machine ARN and the
+     * version number separated by a colon (:). For example,
+     * <code>stateMachineARN:1</code>.</p>
      */
     inline void SetStateMachineArn(Aws::String&& value) { m_stateMachineArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that identifies the state machine.</p>
+     * <p>The Amazon Resource Name (ARN) that identifies the state machine.</p> <p>If
+     * you specified a state machine version ARN in your request, the API returns the
+     * version ARN. The version ARN is a combination of state machine ARN and the
+     * version number separated by a colon (:). For example,
+     * <code>stateMachineARN:1</code>.</p>
      */
     inline void SetStateMachineArn(const char* value) { m_stateMachineArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that identifies the state machine.</p>
+     * <p>The Amazon Resource Name (ARN) that identifies the state machine.</p> <p>If
+     * you specified a state machine version ARN in your request, the API returns the
+     * version ARN. The version ARN is a combination of state machine ARN and the
+     * version number separated by a colon (:). For example,
+     * <code>stateMachineARN:1</code>.</p>
      */
     inline DescribeStateMachineResult& WithStateMachineArn(const Aws::String& value) { SetStateMachineArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) that identifies the state machine.</p>
+     * <p>The Amazon Resource Name (ARN) that identifies the state machine.</p> <p>If
+     * you specified a state machine version ARN in your request, the API returns the
+     * version ARN. The version ARN is a combination of state machine ARN and the
+     * version number separated by a colon (:). For example,
+     * <code>stateMachineARN:1</code>.</p>
      */
     inline DescribeStateMachineResult& WithStateMachineArn(Aws::String&& value) { SetStateMachineArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) that identifies the state machine.</p>
+     * <p>The Amazon Resource Name (ARN) that identifies the state machine.</p> <p>If
+     * you specified a state machine version ARN in your request, the API returns the
+     * version ARN. The version ARN is a combination of state machine ARN and the
+     * version number separated by a colon (:). For example,
+     * <code>stateMachineARN:1</code>.</p>
      */
     inline DescribeStateMachineResult& WithStateMachineArn(const char* value) { SetStateMachineArn(value); return *this;}
 
@@ -309,27 +337,32 @@ namespace Model
 
 
     /**
-     * <p>The date the state machine is created.</p>
+     * <p>The date the state machine is created.</p> <p>For a state machine version,
+     * <code>creationDate</code> is the date the version was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
 
     /**
-     * <p>The date the state machine is created.</p>
+     * <p>The date the state machine is created.</p> <p>For a state machine version,
+     * <code>creationDate</code> is the date the version was created.</p>
      */
     inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDate = value; }
 
     /**
-     * <p>The date the state machine is created.</p>
+     * <p>The date the state machine is created.</p> <p>For a state machine version,
+     * <code>creationDate</code> is the date the version was created.</p>
      */
     inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDate = std::move(value); }
 
     /**
-     * <p>The date the state machine is created.</p>
+     * <p>The date the state machine is created.</p> <p>For a state machine version,
+     * <code>creationDate</code> is the date the version was created.</p>
      */
     inline DescribeStateMachineResult& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
 
     /**
-     * <p>The date the state machine is created.</p>
+     * <p>The date the state machine is created.</p> <p>For a state machine version,
+     * <code>creationDate</code> is the date the version was created.</p>
      */
     inline DescribeStateMachineResult& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
 
@@ -426,6 +459,99 @@ namespace Model
     inline DescribeStateMachineResult& WithLabel(const char* value) { SetLabel(value); return *this;}
 
 
+    /**
+     * <p>The revision identifier for the state machine.</p> <p>Use the
+     * <code>revisionId</code> parameter to compare between versions of a state machine
+     * configuration used for executions without performing a diff of the properties,
+     * such as <code>definition</code> and <code>roleArn</code>.</p>
+     */
+    inline const Aws::String& GetRevisionId() const{ return m_revisionId; }
+
+    /**
+     * <p>The revision identifier for the state machine.</p> <p>Use the
+     * <code>revisionId</code> parameter to compare between versions of a state machine
+     * configuration used for executions without performing a diff of the properties,
+     * such as <code>definition</code> and <code>roleArn</code>.</p>
+     */
+    inline void SetRevisionId(const Aws::String& value) { m_revisionId = value; }
+
+    /**
+     * <p>The revision identifier for the state machine.</p> <p>Use the
+     * <code>revisionId</code> parameter to compare between versions of a state machine
+     * configuration used for executions without performing a diff of the properties,
+     * such as <code>definition</code> and <code>roleArn</code>.</p>
+     */
+    inline void SetRevisionId(Aws::String&& value) { m_revisionId = std::move(value); }
+
+    /**
+     * <p>The revision identifier for the state machine.</p> <p>Use the
+     * <code>revisionId</code> parameter to compare between versions of a state machine
+     * configuration used for executions without performing a diff of the properties,
+     * such as <code>definition</code> and <code>roleArn</code>.</p>
+     */
+    inline void SetRevisionId(const char* value) { m_revisionId.assign(value); }
+
+    /**
+     * <p>The revision identifier for the state machine.</p> <p>Use the
+     * <code>revisionId</code> parameter to compare between versions of a state machine
+     * configuration used for executions without performing a diff of the properties,
+     * such as <code>definition</code> and <code>roleArn</code>.</p>
+     */
+    inline DescribeStateMachineResult& WithRevisionId(const Aws::String& value) { SetRevisionId(value); return *this;}
+
+    /**
+     * <p>The revision identifier for the state machine.</p> <p>Use the
+     * <code>revisionId</code> parameter to compare between versions of a state machine
+     * configuration used for executions without performing a diff of the properties,
+     * such as <code>definition</code> and <code>roleArn</code>.</p>
+     */
+    inline DescribeStateMachineResult& WithRevisionId(Aws::String&& value) { SetRevisionId(std::move(value)); return *this;}
+
+    /**
+     * <p>The revision identifier for the state machine.</p> <p>Use the
+     * <code>revisionId</code> parameter to compare between versions of a state machine
+     * configuration used for executions without performing a diff of the properties,
+     * such as <code>definition</code> and <code>roleArn</code>.</p>
+     */
+    inline DescribeStateMachineResult& WithRevisionId(const char* value) { SetRevisionId(value); return *this;}
+
+
+    /**
+     * <p>The description of the state machine version.</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description of the state machine version.</p>
+     */
+    inline void SetDescription(const Aws::String& value) { m_description = value; }
+
+    /**
+     * <p>The description of the state machine version.</p>
+     */
+    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
+
+    /**
+     * <p>The description of the state machine version.</p>
+     */
+    inline void SetDescription(const char* value) { m_description.assign(value); }
+
+    /**
+     * <p>The description of the state machine version.</p>
+     */
+    inline DescribeStateMachineResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>The description of the state machine version.</p>
+     */
+    inline DescribeStateMachineResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>The description of the state machine version.</p>
+     */
+    inline DescribeStateMachineResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -468,6 +594,10 @@ namespace Model
     TracingConfiguration m_tracingConfiguration;
 
     Aws::String m_label;
+
+    Aws::String m_revisionId;
+
+    Aws::String m_description;
 
     Aws::String m_requestId;
   };

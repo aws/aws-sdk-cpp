@@ -115,6 +115,18 @@ DescribeExecutionResult& DescribeExecutionResult::operator =(const Aws::AmazonWe
 
   }
 
+  if(jsonValue.ValueExists("stateMachineVersionArn"))
+  {
+    m_stateMachineVersionArn = jsonValue.GetString("stateMachineVersionArn");
+
+  }
+
+  if(jsonValue.ValueExists("stateMachineAliasArn"))
+  {
+    m_stateMachineAliasArn = jsonValue.GetString("stateMachineAliasArn");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

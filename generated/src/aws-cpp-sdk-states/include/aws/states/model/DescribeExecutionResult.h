@@ -238,27 +238,27 @@ namespace Model
 
 
     /**
-     * <p>If the execution has already ended, the date the execution stopped.</p>
+     * <p>If the execution ended, the date the execution stopped.</p>
      */
     inline const Aws::Utils::DateTime& GetStopDate() const{ return m_stopDate; }
 
     /**
-     * <p>If the execution has already ended, the date the execution stopped.</p>
+     * <p>If the execution ended, the date the execution stopped.</p>
      */
     inline void SetStopDate(const Aws::Utils::DateTime& value) { m_stopDate = value; }
 
     /**
-     * <p>If the execution has already ended, the date the execution stopped.</p>
+     * <p>If the execution ended, the date the execution stopped.</p>
      */
     inline void SetStopDate(Aws::Utils::DateTime&& value) { m_stopDate = std::move(value); }
 
     /**
-     * <p>If the execution has already ended, the date the execution stopped.</p>
+     * <p>If the execution ended, the date the execution stopped.</p>
      */
     inline DescribeExecutionResult& WithStopDate(const Aws::Utils::DateTime& value) { SetStopDate(value); return *this;}
 
     /**
-     * <p>If the execution has already ended, the date the execution stopped.</p>
+     * <p>If the execution ended, the date the execution stopped.</p>
      */
     inline DescribeExecutionResult& WithStopDate(Aws::Utils::DateTime&& value) { SetStopDate(std::move(value)); return *this;}
 
@@ -553,6 +553,148 @@ namespace Model
     inline DescribeExecutionResult& WithCause(const char* value) { SetCause(value); return *this;}
 
 
+    /**
+     * <p>The Amazon Resource Name (ARN) of the state machine version associated with
+     * the execution. The version ARN is a combination of state machine ARN and the
+     * version number separated by a colon (:). For example,
+     * <code>stateMachineARN:1</code>.</p> <p>If you start an execution from a
+     * <code>StartExecution</code> request without specifying a state machine version
+     * or alias ARN, Step Functions returns a null value.</p>
+     */
+    inline const Aws::String& GetStateMachineVersionArn() const{ return m_stateMachineVersionArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the state machine version associated with
+     * the execution. The version ARN is a combination of state machine ARN and the
+     * version number separated by a colon (:). For example,
+     * <code>stateMachineARN:1</code>.</p> <p>If you start an execution from a
+     * <code>StartExecution</code> request without specifying a state machine version
+     * or alias ARN, Step Functions returns a null value.</p>
+     */
+    inline void SetStateMachineVersionArn(const Aws::String& value) { m_stateMachineVersionArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the state machine version associated with
+     * the execution. The version ARN is a combination of state machine ARN and the
+     * version number separated by a colon (:). For example,
+     * <code>stateMachineARN:1</code>.</p> <p>If you start an execution from a
+     * <code>StartExecution</code> request without specifying a state machine version
+     * or alias ARN, Step Functions returns a null value.</p>
+     */
+    inline void SetStateMachineVersionArn(Aws::String&& value) { m_stateMachineVersionArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the state machine version associated with
+     * the execution. The version ARN is a combination of state machine ARN and the
+     * version number separated by a colon (:). For example,
+     * <code>stateMachineARN:1</code>.</p> <p>If you start an execution from a
+     * <code>StartExecution</code> request without specifying a state machine version
+     * or alias ARN, Step Functions returns a null value.</p>
+     */
+    inline void SetStateMachineVersionArn(const char* value) { m_stateMachineVersionArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the state machine version associated with
+     * the execution. The version ARN is a combination of state machine ARN and the
+     * version number separated by a colon (:). For example,
+     * <code>stateMachineARN:1</code>.</p> <p>If you start an execution from a
+     * <code>StartExecution</code> request without specifying a state machine version
+     * or alias ARN, Step Functions returns a null value.</p>
+     */
+    inline DescribeExecutionResult& WithStateMachineVersionArn(const Aws::String& value) { SetStateMachineVersionArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the state machine version associated with
+     * the execution. The version ARN is a combination of state machine ARN and the
+     * version number separated by a colon (:). For example,
+     * <code>stateMachineARN:1</code>.</p> <p>If you start an execution from a
+     * <code>StartExecution</code> request without specifying a state machine version
+     * or alias ARN, Step Functions returns a null value.</p>
+     */
+    inline DescribeExecutionResult& WithStateMachineVersionArn(Aws::String&& value) { SetStateMachineVersionArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the state machine version associated with
+     * the execution. The version ARN is a combination of state machine ARN and the
+     * version number separated by a colon (:). For example,
+     * <code>stateMachineARN:1</code>.</p> <p>If you start an execution from a
+     * <code>StartExecution</code> request without specifying a state machine version
+     * or alias ARN, Step Functions returns a null value.</p>
+     */
+    inline DescribeExecutionResult& WithStateMachineVersionArn(const char* value) { SetStateMachineVersionArn(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the state machine alias associated with the
+     * execution. The alias ARN is a combination of state machine ARN and the alias
+     * name separated by a colon (:). For example,
+     * <code>stateMachineARN:PROD</code>.</p> <p>If you start an execution from a
+     * <code>StartExecution</code> request with a state machine version ARN, this field
+     * will be null.</p>
+     */
+    inline const Aws::String& GetStateMachineAliasArn() const{ return m_stateMachineAliasArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the state machine alias associated with the
+     * execution. The alias ARN is a combination of state machine ARN and the alias
+     * name separated by a colon (:). For example,
+     * <code>stateMachineARN:PROD</code>.</p> <p>If you start an execution from a
+     * <code>StartExecution</code> request with a state machine version ARN, this field
+     * will be null.</p>
+     */
+    inline void SetStateMachineAliasArn(const Aws::String& value) { m_stateMachineAliasArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the state machine alias associated with the
+     * execution. The alias ARN is a combination of state machine ARN and the alias
+     * name separated by a colon (:). For example,
+     * <code>stateMachineARN:PROD</code>.</p> <p>If you start an execution from a
+     * <code>StartExecution</code> request with a state machine version ARN, this field
+     * will be null.</p>
+     */
+    inline void SetStateMachineAliasArn(Aws::String&& value) { m_stateMachineAliasArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the state machine alias associated with the
+     * execution. The alias ARN is a combination of state machine ARN and the alias
+     * name separated by a colon (:). For example,
+     * <code>stateMachineARN:PROD</code>.</p> <p>If you start an execution from a
+     * <code>StartExecution</code> request with a state machine version ARN, this field
+     * will be null.</p>
+     */
+    inline void SetStateMachineAliasArn(const char* value) { m_stateMachineAliasArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the state machine alias associated with the
+     * execution. The alias ARN is a combination of state machine ARN and the alias
+     * name separated by a colon (:). For example,
+     * <code>stateMachineARN:PROD</code>.</p> <p>If you start an execution from a
+     * <code>StartExecution</code> request with a state machine version ARN, this field
+     * will be null.</p>
+     */
+    inline DescribeExecutionResult& WithStateMachineAliasArn(const Aws::String& value) { SetStateMachineAliasArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the state machine alias associated with the
+     * execution. The alias ARN is a combination of state machine ARN and the alias
+     * name separated by a colon (:). For example,
+     * <code>stateMachineARN:PROD</code>.</p> <p>If you start an execution from a
+     * <code>StartExecution</code> request with a state machine version ARN, this field
+     * will be null.</p>
+     */
+    inline DescribeExecutionResult& WithStateMachineAliasArn(Aws::String&& value) { SetStateMachineAliasArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the state machine alias associated with the
+     * execution. The alias ARN is a combination of state machine ARN and the alias
+     * name separated by a colon (:). For example,
+     * <code>stateMachineARN:PROD</code>.</p> <p>If you start an execution from a
+     * <code>StartExecution</code> request with a state machine version ARN, this field
+     * will be null.</p>
+     */
+    inline DescribeExecutionResult& WithStateMachineAliasArn(const char* value) { SetStateMachineAliasArn(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -603,6 +745,10 @@ namespace Model
     Aws::String m_error;
 
     Aws::String m_cause;
+
+    Aws::String m_stateMachineVersionArn;
+
+    Aws::String m_stateMachineAliasArn;
 
     Aws::String m_requestId;
   };

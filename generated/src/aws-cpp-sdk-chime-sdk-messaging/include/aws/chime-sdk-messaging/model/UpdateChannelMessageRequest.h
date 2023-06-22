@@ -117,42 +117,42 @@ namespace Model
 
 
     /**
-     * <p>The content of the message being updated.</p>
+     * <p>The content of the channel message. </p>
      */
     inline const Aws::String& GetContent() const{ return m_content; }
 
     /**
-     * <p>The content of the message being updated.</p>
+     * <p>The content of the channel message. </p>
      */
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
 
     /**
-     * <p>The content of the message being updated.</p>
+     * <p>The content of the channel message. </p>
      */
     inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
 
     /**
-     * <p>The content of the message being updated.</p>
+     * <p>The content of the channel message. </p>
      */
     inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
 
     /**
-     * <p>The content of the message being updated.</p>
+     * <p>The content of the channel message. </p>
      */
     inline void SetContent(const char* value) { m_contentHasBeenSet = true; m_content.assign(value); }
 
     /**
-     * <p>The content of the message being updated.</p>
+     * <p>The content of the channel message. </p>
      */
     inline UpdateChannelMessageRequest& WithContent(const Aws::String& value) { SetContent(value); return *this;}
 
     /**
-     * <p>The content of the message being updated.</p>
+     * <p>The content of the channel message. </p>
      */
     inline UpdateChannelMessageRequest& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
 
     /**
-     * <p>The content of the message being updated.</p>
+     * <p>The content of the channel message. </p>
      */
     inline UpdateChannelMessageRequest& WithContent(const char* value) { SetContent(value); return *this;}
 

@@ -23,6 +23,7 @@ namespace Aws
         static const int API_DOES_NOT_SUPPORT_LABELED_ARNS_HASH = HashingUtils::HashString("API_DOES_NOT_SUPPORT_LABELED_ARNS");
         static const int MISSING_REQUIRED_PARAMETER_HASH = HashingUtils::HashString("MISSING_REQUIRED_PARAMETER");
         static const int CANNOT_UPDATE_COMPLETED_MAP_RUN_HASH = HashingUtils::HashString("CANNOT_UPDATE_COMPLETED_MAP_RUN");
+        static const int INVALID_ROUTING_CONFIGURATION_HASH = HashingUtils::HashString("INVALID_ROUTING_CONFIGURATION");
 
 
         ValidationExceptionReason GetValidationExceptionReasonForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == CANNOT_UPDATE_COMPLETED_MAP_RUN_HASH)
           {
             return ValidationExceptionReason::CANNOT_UPDATE_COMPLETED_MAP_RUN;
+          }
+          else if (hashCode == INVALID_ROUTING_CONFIGURATION_HASH)
+          {
+            return ValidationExceptionReason::INVALID_ROUTING_CONFIGURATION;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +65,8 @@ namespace Aws
             return "MISSING_REQUIRED_PARAMETER";
           case ValidationExceptionReason::CANNOT_UPDATE_COMPLETED_MAP_RUN:
             return "CANNOT_UPDATE_COMPLETED_MAP_RUN";
+          case ValidationExceptionReason::INVALID_ROUTING_CONFIGURATION:
+            return "INVALID_ROUTING_CONFIGURATION";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

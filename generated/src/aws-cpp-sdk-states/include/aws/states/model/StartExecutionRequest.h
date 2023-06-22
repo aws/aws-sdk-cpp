@@ -35,49 +35,217 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the state machine to execute.</p>
+     * <p>The Amazon Resource Name (ARN) of the state machine to execute.</p> <p>The
+     * <code>stateMachineArn</code> parameter accepts one of the following inputs:</p>
+     * <ul> <li> <p> <b>An unqualified state machine ARN</b> – Refers to a state
+     * machine ARN that isn't qualified with a version or alias ARN. The following is
+     * an example of an unqualified state machine ARN.</p> <p>
+     * <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine&gt;</code>
+     * </p> <p>Step Functions doesn't associate state machine executions that you start
+     * with an unqualified ARN with a version. This is true even if that version uses
+     * the same revision that the execution used.</p> </li> <li> <p> <b>A state machine
+     * version ARN</b> – Refers to a version ARN, which is a combination of state
+     * machine ARN and the version number separated by a colon (:). The following is an
+     * example of the ARN for version 10. </p> <p>
+     * <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine&gt;:10</code>
+     * </p> <p>Step Functions doesn't associate executions that you start with a
+     * version ARN with any aliases that point to that version.</p> </li> <li> <p> <b>A
+     * state machine alias ARN</b> – Refers to an alias ARN, which is a combination of
+     * state machine ARN and the alias name separated by a colon (:). The following is
+     * an example of the ARN for an alias named <code>PROD</code>.</p> <p>
+     * <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine:PROD&gt;</code>
+     * </p> <p>Step Functions associates executions that you start with an alias ARN
+     * with that alias and the state machine version used for that execution.</p> </li>
+     * </ul>
      */
     inline const Aws::String& GetStateMachineArn() const{ return m_stateMachineArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the state machine to execute.</p>
+     * <p>The Amazon Resource Name (ARN) of the state machine to execute.</p> <p>The
+     * <code>stateMachineArn</code> parameter accepts one of the following inputs:</p>
+     * <ul> <li> <p> <b>An unqualified state machine ARN</b> – Refers to a state
+     * machine ARN that isn't qualified with a version or alias ARN. The following is
+     * an example of an unqualified state machine ARN.</p> <p>
+     * <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine&gt;</code>
+     * </p> <p>Step Functions doesn't associate state machine executions that you start
+     * with an unqualified ARN with a version. This is true even if that version uses
+     * the same revision that the execution used.</p> </li> <li> <p> <b>A state machine
+     * version ARN</b> – Refers to a version ARN, which is a combination of state
+     * machine ARN and the version number separated by a colon (:). The following is an
+     * example of the ARN for version 10. </p> <p>
+     * <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine&gt;:10</code>
+     * </p> <p>Step Functions doesn't associate executions that you start with a
+     * version ARN with any aliases that point to that version.</p> </li> <li> <p> <b>A
+     * state machine alias ARN</b> – Refers to an alias ARN, which is a combination of
+     * state machine ARN and the alias name separated by a colon (:). The following is
+     * an example of the ARN for an alias named <code>PROD</code>.</p> <p>
+     * <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine:PROD&gt;</code>
+     * </p> <p>Step Functions associates executions that you start with an alias ARN
+     * with that alias and the state machine version used for that execution.</p> </li>
+     * </ul>
      */
     inline bool StateMachineArnHasBeenSet() const { return m_stateMachineArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the state machine to execute.</p>
+     * <p>The Amazon Resource Name (ARN) of the state machine to execute.</p> <p>The
+     * <code>stateMachineArn</code> parameter accepts one of the following inputs:</p>
+     * <ul> <li> <p> <b>An unqualified state machine ARN</b> – Refers to a state
+     * machine ARN that isn't qualified with a version or alias ARN. The following is
+     * an example of an unqualified state machine ARN.</p> <p>
+     * <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine&gt;</code>
+     * </p> <p>Step Functions doesn't associate state machine executions that you start
+     * with an unqualified ARN with a version. This is true even if that version uses
+     * the same revision that the execution used.</p> </li> <li> <p> <b>A state machine
+     * version ARN</b> – Refers to a version ARN, which is a combination of state
+     * machine ARN and the version number separated by a colon (:). The following is an
+     * example of the ARN for version 10. </p> <p>
+     * <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine&gt;:10</code>
+     * </p> <p>Step Functions doesn't associate executions that you start with a
+     * version ARN with any aliases that point to that version.</p> </li> <li> <p> <b>A
+     * state machine alias ARN</b> – Refers to an alias ARN, which is a combination of
+     * state machine ARN and the alias name separated by a colon (:). The following is
+     * an example of the ARN for an alias named <code>PROD</code>.</p> <p>
+     * <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine:PROD&gt;</code>
+     * </p> <p>Step Functions associates executions that you start with an alias ARN
+     * with that alias and the state machine version used for that execution.</p> </li>
+     * </ul>
      */
     inline void SetStateMachineArn(const Aws::String& value) { m_stateMachineArnHasBeenSet = true; m_stateMachineArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the state machine to execute.</p>
+     * <p>The Amazon Resource Name (ARN) of the state machine to execute.</p> <p>The
+     * <code>stateMachineArn</code> parameter accepts one of the following inputs:</p>
+     * <ul> <li> <p> <b>An unqualified state machine ARN</b> – Refers to a state
+     * machine ARN that isn't qualified with a version or alias ARN. The following is
+     * an example of an unqualified state machine ARN.</p> <p>
+     * <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine&gt;</code>
+     * </p> <p>Step Functions doesn't associate state machine executions that you start
+     * with an unqualified ARN with a version. This is true even if that version uses
+     * the same revision that the execution used.</p> </li> <li> <p> <b>A state machine
+     * version ARN</b> – Refers to a version ARN, which is a combination of state
+     * machine ARN and the version number separated by a colon (:). The following is an
+     * example of the ARN for version 10. </p> <p>
+     * <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine&gt;:10</code>
+     * </p> <p>Step Functions doesn't associate executions that you start with a
+     * version ARN with any aliases that point to that version.</p> </li> <li> <p> <b>A
+     * state machine alias ARN</b> – Refers to an alias ARN, which is a combination of
+     * state machine ARN and the alias name separated by a colon (:). The following is
+     * an example of the ARN for an alias named <code>PROD</code>.</p> <p>
+     * <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine:PROD&gt;</code>
+     * </p> <p>Step Functions associates executions that you start with an alias ARN
+     * with that alias and the state machine version used for that execution.</p> </li>
+     * </ul>
      */
     inline void SetStateMachineArn(Aws::String&& value) { m_stateMachineArnHasBeenSet = true; m_stateMachineArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the state machine to execute.</p>
+     * <p>The Amazon Resource Name (ARN) of the state machine to execute.</p> <p>The
+     * <code>stateMachineArn</code> parameter accepts one of the following inputs:</p>
+     * <ul> <li> <p> <b>An unqualified state machine ARN</b> – Refers to a state
+     * machine ARN that isn't qualified with a version or alias ARN. The following is
+     * an example of an unqualified state machine ARN.</p> <p>
+     * <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine&gt;</code>
+     * </p> <p>Step Functions doesn't associate state machine executions that you start
+     * with an unqualified ARN with a version. This is true even if that version uses
+     * the same revision that the execution used.</p> </li> <li> <p> <b>A state machine
+     * version ARN</b> – Refers to a version ARN, which is a combination of state
+     * machine ARN and the version number separated by a colon (:). The following is an
+     * example of the ARN for version 10. </p> <p>
+     * <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine&gt;:10</code>
+     * </p> <p>Step Functions doesn't associate executions that you start with a
+     * version ARN with any aliases that point to that version.</p> </li> <li> <p> <b>A
+     * state machine alias ARN</b> – Refers to an alias ARN, which is a combination of
+     * state machine ARN and the alias name separated by a colon (:). The following is
+     * an example of the ARN for an alias named <code>PROD</code>.</p> <p>
+     * <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine:PROD&gt;</code>
+     * </p> <p>Step Functions associates executions that you start with an alias ARN
+     * with that alias and the state machine version used for that execution.</p> </li>
+     * </ul>
      */
     inline void SetStateMachineArn(const char* value) { m_stateMachineArnHasBeenSet = true; m_stateMachineArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the state machine to execute.</p>
+     * <p>The Amazon Resource Name (ARN) of the state machine to execute.</p> <p>The
+     * <code>stateMachineArn</code> parameter accepts one of the following inputs:</p>
+     * <ul> <li> <p> <b>An unqualified state machine ARN</b> – Refers to a state
+     * machine ARN that isn't qualified with a version or alias ARN. The following is
+     * an example of an unqualified state machine ARN.</p> <p>
+     * <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine&gt;</code>
+     * </p> <p>Step Functions doesn't associate state machine executions that you start
+     * with an unqualified ARN with a version. This is true even if that version uses
+     * the same revision that the execution used.</p> </li> <li> <p> <b>A state machine
+     * version ARN</b> – Refers to a version ARN, which is a combination of state
+     * machine ARN and the version number separated by a colon (:). The following is an
+     * example of the ARN for version 10. </p> <p>
+     * <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine&gt;:10</code>
+     * </p> <p>Step Functions doesn't associate executions that you start with a
+     * version ARN with any aliases that point to that version.</p> </li> <li> <p> <b>A
+     * state machine alias ARN</b> – Refers to an alias ARN, which is a combination of
+     * state machine ARN and the alias name separated by a colon (:). The following is
+     * an example of the ARN for an alias named <code>PROD</code>.</p> <p>
+     * <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine:PROD&gt;</code>
+     * </p> <p>Step Functions associates executions that you start with an alias ARN
+     * with that alias and the state machine version used for that execution.</p> </li>
+     * </ul>
      */
     inline StartExecutionRequest& WithStateMachineArn(const Aws::String& value) { SetStateMachineArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the state machine to execute.</p>
+     * <p>The Amazon Resource Name (ARN) of the state machine to execute.</p> <p>The
+     * <code>stateMachineArn</code> parameter accepts one of the following inputs:</p>
+     * <ul> <li> <p> <b>An unqualified state machine ARN</b> – Refers to a state
+     * machine ARN that isn't qualified with a version or alias ARN. The following is
+     * an example of an unqualified state machine ARN.</p> <p>
+     * <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine&gt;</code>
+     * </p> <p>Step Functions doesn't associate state machine executions that you start
+     * with an unqualified ARN with a version. This is true even if that version uses
+     * the same revision that the execution used.</p> </li> <li> <p> <b>A state machine
+     * version ARN</b> – Refers to a version ARN, which is a combination of state
+     * machine ARN and the version number separated by a colon (:). The following is an
+     * example of the ARN for version 10. </p> <p>
+     * <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine&gt;:10</code>
+     * </p> <p>Step Functions doesn't associate executions that you start with a
+     * version ARN with any aliases that point to that version.</p> </li> <li> <p> <b>A
+     * state machine alias ARN</b> – Refers to an alias ARN, which is a combination of
+     * state machine ARN and the alias name separated by a colon (:). The following is
+     * an example of the ARN for an alias named <code>PROD</code>.</p> <p>
+     * <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine:PROD&gt;</code>
+     * </p> <p>Step Functions associates executions that you start with an alias ARN
+     * with that alias and the state machine version used for that execution.</p> </li>
+     * </ul>
      */
     inline StartExecutionRequest& WithStateMachineArn(Aws::String&& value) { SetStateMachineArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the state machine to execute.</p>
+     * <p>The Amazon Resource Name (ARN) of the state machine to execute.</p> <p>The
+     * <code>stateMachineArn</code> parameter accepts one of the following inputs:</p>
+     * <ul> <li> <p> <b>An unqualified state machine ARN</b> – Refers to a state
+     * machine ARN that isn't qualified with a version or alias ARN. The following is
+     * an example of an unqualified state machine ARN.</p> <p>
+     * <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine&gt;</code>
+     * </p> <p>Step Functions doesn't associate state machine executions that you start
+     * with an unqualified ARN with a version. This is true even if that version uses
+     * the same revision that the execution used.</p> </li> <li> <p> <b>A state machine
+     * version ARN</b> – Refers to a version ARN, which is a combination of state
+     * machine ARN and the version number separated by a colon (:). The following is an
+     * example of the ARN for version 10. </p> <p>
+     * <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine&gt;:10</code>
+     * </p> <p>Step Functions doesn't associate executions that you start with a
+     * version ARN with any aliases that point to that version.</p> </li> <li> <p> <b>A
+     * state machine alias ARN</b> – Refers to an alias ARN, which is a combination of
+     * state machine ARN and the alias name separated by a colon (:). The following is
+     * an example of the ARN for an alias named <code>PROD</code>.</p> <p>
+     * <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine:PROD&gt;</code>
+     * </p> <p>Step Functions associates executions that you start with an alias ARN
+     * with that alias and the state machine version used for that execution.</p> </li>
+     * </ul>
      */
     inline StartExecutionRequest& WithStateMachineArn(const char* value) { SetStateMachineArn(value); return *this;}
 
 
     /**
-     * <p>The name of the execution. This name must be unique for your Amazon Web
-     * Services account, region, and state machine for 90 days. For more information,
+     * <p>Optional name of the execution. This name must be unique for your Amazon Web
+     * Services account, Region, and state machine for 90 days. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
      * Limits Related to State Machine Executions</a> in the <i>Step Functions
@@ -92,8 +260,8 @@ namespace Model
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the execution. This name must be unique for your Amazon Web
-     * Services account, region, and state machine for 90 days. For more information,
+     * <p>Optional name of the execution. This name must be unique for your Amazon Web
+     * Services account, Region, and state machine for 90 days. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
      * Limits Related to State Machine Executions</a> in the <i>Step Functions
@@ -108,8 +276,8 @@ namespace Model
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the execution. This name must be unique for your Amazon Web
-     * Services account, region, and state machine for 90 days. For more information,
+     * <p>Optional name of the execution. This name must be unique for your Amazon Web
+     * Services account, Region, and state machine for 90 days. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
      * Limits Related to State Machine Executions</a> in the <i>Step Functions
@@ -124,8 +292,8 @@ namespace Model
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the execution. This name must be unique for your Amazon Web
-     * Services account, region, and state machine for 90 days. For more information,
+     * <p>Optional name of the execution. This name must be unique for your Amazon Web
+     * Services account, Region, and state machine for 90 days. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
      * Limits Related to State Machine Executions</a> in the <i>Step Functions
@@ -140,8 +308,8 @@ namespace Model
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the execution. This name must be unique for your Amazon Web
-     * Services account, region, and state machine for 90 days. For more information,
+     * <p>Optional name of the execution. This name must be unique for your Amazon Web
+     * Services account, Region, and state machine for 90 days. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
      * Limits Related to State Machine Executions</a> in the <i>Step Functions
@@ -156,8 +324,8 @@ namespace Model
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the execution. This name must be unique for your Amazon Web
-     * Services account, region, and state machine for 90 days. For more information,
+     * <p>Optional name of the execution. This name must be unique for your Amazon Web
+     * Services account, Region, and state machine for 90 days. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
      * Limits Related to State Machine Executions</a> in the <i>Step Functions
@@ -172,8 +340,8 @@ namespace Model
     inline StartExecutionRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the execution. This name must be unique for your Amazon Web
-     * Services account, region, and state machine for 90 days. For more information,
+     * <p>Optional name of the execution. This name must be unique for your Amazon Web
+     * Services account, Region, and state machine for 90 days. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
      * Limits Related to State Machine Executions</a> in the <i>Step Functions
@@ -188,8 +356,8 @@ namespace Model
     inline StartExecutionRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the execution. This name must be unique for your Amazon Web
-     * Services account, region, and state machine for 90 days. For more information,
+     * <p>Optional name of the execution. This name must be unique for your Amazon Web
+     * Services account, Region, and state machine for 90 days. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
      * Limits Related to State Machine Executions</a> in the <i>Step Functions

@@ -21,6 +21,7 @@ namespace Model
 LexConfiguration::LexConfiguration() : 
     m_respondsTo(RespondsTo::NOT_SET),
     m_respondsToHasBeenSet(false),
+    m_invokedByHasBeenSet(false),
     m_lexBotAliasArnHasBeenSet(false),
     m_localeIdHasBeenSet(false),
     m_welcomeIntentHasBeenSet(false)
@@ -30,6 +31,7 @@ LexConfiguration::LexConfiguration() :
 LexConfiguration::LexConfiguration(JsonView jsonValue) : 
     m_respondsTo(RespondsTo::NOT_SET),
     m_respondsToHasBeenSet(false),
+    m_invokedByHasBeenSet(false),
     m_lexBotAliasArnHasBeenSet(false),
     m_localeIdHasBeenSet(false),
     m_welcomeIntentHasBeenSet(false)
@@ -44,6 +46,13 @@ LexConfiguration& LexConfiguration::operator =(JsonView jsonValue)
     m_respondsTo = RespondsToMapper::GetRespondsToForName(jsonValue.GetString("RespondsTo"));
 
     m_respondsToHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("InvokedBy"))
+  {
+    m_invokedBy = jsonValue.GetObject("InvokedBy");
+
+    m_invokedByHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("LexBotAliasArn"))
@@ -77,6 +86,12 @@ JsonValue LexConfiguration::Jsonize() const
   if(m_respondsToHasBeenSet)
   {
    payload.WithString("RespondsTo", RespondsToMapper::GetNameForRespondsTo(m_respondsTo));
+  }
+
+  if(m_invokedByHasBeenSet)
+  {
+   payload.WithObject("InvokedBy", m_invokedBy.Jsonize());
+
   }
 
   if(m_lexBotAliasArnHasBeenSet)

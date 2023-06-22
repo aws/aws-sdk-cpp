@@ -95,6 +95,56 @@ namespace Model
     inline CreateStateMachineResult& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
 
 
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies the created state machine
+     * version. If you do not set the <code>publish</code> parameter to
+     * <code>true</code>, this field returns null value.</p>
+     */
+    inline const Aws::String& GetStateMachineVersionArn() const{ return m_stateMachineVersionArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies the created state machine
+     * version. If you do not set the <code>publish</code> parameter to
+     * <code>true</code>, this field returns null value.</p>
+     */
+    inline void SetStateMachineVersionArn(const Aws::String& value) { m_stateMachineVersionArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies the created state machine
+     * version. If you do not set the <code>publish</code> parameter to
+     * <code>true</code>, this field returns null value.</p>
+     */
+    inline void SetStateMachineVersionArn(Aws::String&& value) { m_stateMachineVersionArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies the created state machine
+     * version. If you do not set the <code>publish</code> parameter to
+     * <code>true</code>, this field returns null value.</p>
+     */
+    inline void SetStateMachineVersionArn(const char* value) { m_stateMachineVersionArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies the created state machine
+     * version. If you do not set the <code>publish</code> parameter to
+     * <code>true</code>, this field returns null value.</p>
+     */
+    inline CreateStateMachineResult& WithStateMachineVersionArn(const Aws::String& value) { SetStateMachineVersionArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies the created state machine
+     * version. If you do not set the <code>publish</code> parameter to
+     * <code>true</code>, this field returns null value.</p>
+     */
+    inline CreateStateMachineResult& WithStateMachineVersionArn(Aws::String&& value) { SetStateMachineVersionArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies the created state machine
+     * version. If you do not set the <code>publish</code> parameter to
+     * <code>true</code>, this field returns null value.</p>
+     */
+    inline CreateStateMachineResult& WithStateMachineVersionArn(const char* value) { SetStateMachineVersionArn(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -121,6 +171,8 @@ namespace Model
     Aws::String m_stateMachineArn;
 
     Aws::Utils::DateTime m_creationDate;
+
+    Aws::String m_stateMachineVersionArn;
 
     Aws::String m_requestId;
   };

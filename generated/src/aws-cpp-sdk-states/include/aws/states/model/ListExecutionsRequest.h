@@ -38,56 +38,104 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the state machine whose executions is
      * listed.</p> <p>You can specify either a <code>mapRunArn</code> or a
-     * <code>stateMachineArn</code>, but not both.</p>
+     * <code>stateMachineArn</code>, but not both.</p> <p>You can also return a list of
+     * executions associated with a specific <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">version</a>,
+     * by specifying an alias ARN or a version ARN in the <code>stateMachineArn</code>
+     * parameter.</p>
      */
     inline const Aws::String& GetStateMachineArn() const{ return m_stateMachineArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the state machine whose executions is
      * listed.</p> <p>You can specify either a <code>mapRunArn</code> or a
-     * <code>stateMachineArn</code>, but not both.</p>
+     * <code>stateMachineArn</code>, but not both.</p> <p>You can also return a list of
+     * executions associated with a specific <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">version</a>,
+     * by specifying an alias ARN or a version ARN in the <code>stateMachineArn</code>
+     * parameter.</p>
      */
     inline bool StateMachineArnHasBeenSet() const { return m_stateMachineArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the state machine whose executions is
      * listed.</p> <p>You can specify either a <code>mapRunArn</code> or a
-     * <code>stateMachineArn</code>, but not both.</p>
+     * <code>stateMachineArn</code>, but not both.</p> <p>You can also return a list of
+     * executions associated with a specific <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">version</a>,
+     * by specifying an alias ARN or a version ARN in the <code>stateMachineArn</code>
+     * parameter.</p>
      */
     inline void SetStateMachineArn(const Aws::String& value) { m_stateMachineArnHasBeenSet = true; m_stateMachineArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the state machine whose executions is
      * listed.</p> <p>You can specify either a <code>mapRunArn</code> or a
-     * <code>stateMachineArn</code>, but not both.</p>
+     * <code>stateMachineArn</code>, but not both.</p> <p>You can also return a list of
+     * executions associated with a specific <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">version</a>,
+     * by specifying an alias ARN or a version ARN in the <code>stateMachineArn</code>
+     * parameter.</p>
      */
     inline void SetStateMachineArn(Aws::String&& value) { m_stateMachineArnHasBeenSet = true; m_stateMachineArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the state machine whose executions is
      * listed.</p> <p>You can specify either a <code>mapRunArn</code> or a
-     * <code>stateMachineArn</code>, but not both.</p>
+     * <code>stateMachineArn</code>, but not both.</p> <p>You can also return a list of
+     * executions associated with a specific <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">version</a>,
+     * by specifying an alias ARN or a version ARN in the <code>stateMachineArn</code>
+     * parameter.</p>
      */
     inline void SetStateMachineArn(const char* value) { m_stateMachineArnHasBeenSet = true; m_stateMachineArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the state machine whose executions is
      * listed.</p> <p>You can specify either a <code>mapRunArn</code> or a
-     * <code>stateMachineArn</code>, but not both.</p>
+     * <code>stateMachineArn</code>, but not both.</p> <p>You can also return a list of
+     * executions associated with a specific <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">version</a>,
+     * by specifying an alias ARN or a version ARN in the <code>stateMachineArn</code>
+     * parameter.</p>
      */
     inline ListExecutionsRequest& WithStateMachineArn(const Aws::String& value) { SetStateMachineArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the state machine whose executions is
      * listed.</p> <p>You can specify either a <code>mapRunArn</code> or a
-     * <code>stateMachineArn</code>, but not both.</p>
+     * <code>stateMachineArn</code>, but not both.</p> <p>You can also return a list of
+     * executions associated with a specific <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">version</a>,
+     * by specifying an alias ARN or a version ARN in the <code>stateMachineArn</code>
+     * parameter.</p>
      */
     inline ListExecutionsRequest& WithStateMachineArn(Aws::String&& value) { SetStateMachineArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the state machine whose executions is
      * listed.</p> <p>You can specify either a <code>mapRunArn</code> or a
-     * <code>stateMachineArn</code>, but not both.</p>
+     * <code>stateMachineArn</code>, but not both.</p> <p>You can also return a list of
+     * executions associated with a specific <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">version</a>,
+     * by specifying an alias ARN or a version ARN in the <code>stateMachineArn</code>
+     * parameter.</p>
      */
     inline ListExecutionsRequest& WithStateMachineArn(const char* value) { SetStateMachineArn(value); return *this;}
 
