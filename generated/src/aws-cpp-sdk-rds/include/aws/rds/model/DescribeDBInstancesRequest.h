@@ -46,7 +46,7 @@ namespace Model
      * the DB instance. If this parameter is specified, information from only the
      * specific DB instance is returned. This parameter isn't case-sensitive.</p>
      * <p>Constraints:</p> <ul> <li> <p>If supplied, must match the identifier of an
-     * existing DBInstance.</p> </li> </ul>
+     * existing DB instance.</p> </li> </ul>
      */
     inline const Aws::String& GetDBInstanceIdentifier() const{ return m_dBInstanceIdentifier; }
 
@@ -55,7 +55,7 @@ namespace Model
      * the DB instance. If this parameter is specified, information from only the
      * specific DB instance is returned. This parameter isn't case-sensitive.</p>
      * <p>Constraints:</p> <ul> <li> <p>If supplied, must match the identifier of an
-     * existing DBInstance.</p> </li> </ul>
+     * existing DB instance.</p> </li> </ul>
      */
     inline bool DBInstanceIdentifierHasBeenSet() const { return m_dBInstanceIdentifierHasBeenSet; }
 
@@ -64,7 +64,7 @@ namespace Model
      * the DB instance. If this parameter is specified, information from only the
      * specific DB instance is returned. This parameter isn't case-sensitive.</p>
      * <p>Constraints:</p> <ul> <li> <p>If supplied, must match the identifier of an
-     * existing DBInstance.</p> </li> </ul>
+     * existing DB instance.</p> </li> </ul>
      */
     inline void SetDBInstanceIdentifier(const Aws::String& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
 
@@ -73,7 +73,7 @@ namespace Model
      * the DB instance. If this parameter is specified, information from only the
      * specific DB instance is returned. This parameter isn't case-sensitive.</p>
      * <p>Constraints:</p> <ul> <li> <p>If supplied, must match the identifier of an
-     * existing DBInstance.</p> </li> </ul>
+     * existing DB instance.</p> </li> </ul>
      */
     inline void SetDBInstanceIdentifier(Aws::String&& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = std::move(value); }
 
@@ -82,7 +82,7 @@ namespace Model
      * the DB instance. If this parameter is specified, information from only the
      * specific DB instance is returned. This parameter isn't case-sensitive.</p>
      * <p>Constraints:</p> <ul> <li> <p>If supplied, must match the identifier of an
-     * existing DBInstance.</p> </li> </ul>
+     * existing DB instance.</p> </li> </ul>
      */
     inline void SetDBInstanceIdentifier(const char* value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier.assign(value); }
 
@@ -91,7 +91,7 @@ namespace Model
      * the DB instance. If this parameter is specified, information from only the
      * specific DB instance is returned. This parameter isn't case-sensitive.</p>
      * <p>Constraints:</p> <ul> <li> <p>If supplied, must match the identifier of an
-     * existing DBInstance.</p> </li> </ul>
+     * existing DB instance.</p> </li> </ul>
      */
     inline DescribeDBInstancesRequest& WithDBInstanceIdentifier(const Aws::String& value) { SetDBInstanceIdentifier(value); return *this;}
 
@@ -100,7 +100,7 @@ namespace Model
      * the DB instance. If this parameter is specified, information from only the
      * specific DB instance is returned. This parameter isn't case-sensitive.</p>
      * <p>Constraints:</p> <ul> <li> <p>If supplied, must match the identifier of an
-     * existing DBInstance.</p> </li> </ul>
+     * existing DB instance.</p> </li> </ul>
      */
     inline DescribeDBInstancesRequest& WithDBInstanceIdentifier(Aws::String&& value) { SetDBInstanceIdentifier(std::move(value)); return *this;}
 
@@ -109,14 +109,14 @@ namespace Model
      * the DB instance. If this parameter is specified, information from only the
      * specific DB instance is returned. This parameter isn't case-sensitive.</p>
      * <p>Constraints:</p> <ul> <li> <p>If supplied, must match the identifier of an
-     * existing DBInstance.</p> </li> </ul>
+     * existing DB instance.</p> </li> </ul>
      */
     inline DescribeDBInstancesRequest& WithDBInstanceIdentifier(const char* value) { SetDBInstanceIdentifier(value); return *this;}
 
 
     /**
      * <p>A filter that specifies one or more DB instances to describe.</p>
-     * <p>Supported filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB
+     * <p>Supported Filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB
      * cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results
      * list only includes information about the DB instances associated with the DB
      * clusters identified by these ARNs.</p> </li> <li> <p>
@@ -124,7 +124,7 @@ namespace Model
      * Amazon Resource Names (ARNs). The results list only includes information about
      * the DB instances identified by these ARNs.</p> </li> <li> <p>
      * <code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The
-     * results list will only include information about the DB instances identified by
+     * results list only includes information about the DB instances identified by
      * these DB instance resource identifiers.</p> </li> <li> <p> <code>domain</code> -
      * Accepts Active Directory directory IDs. The results list only includes
      * information about the DB instances associated with these domains.</p> </li> <li>
@@ -135,7 +135,7 @@ namespace Model
 
     /**
      * <p>A filter that specifies one or more DB instances to describe.</p>
-     * <p>Supported filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB
+     * <p>Supported Filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB
      * cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results
      * list only includes information about the DB instances associated with the DB
      * clusters identified by these ARNs.</p> </li> <li> <p>
@@ -143,7 +143,7 @@ namespace Model
      * Amazon Resource Names (ARNs). The results list only includes information about
      * the DB instances identified by these ARNs.</p> </li> <li> <p>
      * <code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The
-     * results list will only include information about the DB instances identified by
+     * results list only includes information about the DB instances identified by
      * these DB instance resource identifiers.</p> </li> <li> <p> <code>domain</code> -
      * Accepts Active Directory directory IDs. The results list only includes
      * information about the DB instances associated with these domains.</p> </li> <li>
@@ -154,7 +154,7 @@ namespace Model
 
     /**
      * <p>A filter that specifies one or more DB instances to describe.</p>
-     * <p>Supported filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB
+     * <p>Supported Filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB
      * cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results
      * list only includes information about the DB instances associated with the DB
      * clusters identified by these ARNs.</p> </li> <li> <p>
@@ -162,7 +162,7 @@ namespace Model
      * Amazon Resource Names (ARNs). The results list only includes information about
      * the DB instances identified by these ARNs.</p> </li> <li> <p>
      * <code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The
-     * results list will only include information about the DB instances identified by
+     * results list only includes information about the DB instances identified by
      * these DB instance resource identifiers.</p> </li> <li> <p> <code>domain</code> -
      * Accepts Active Directory directory IDs. The results list only includes
      * information about the DB instances associated with these domains.</p> </li> <li>
@@ -173,7 +173,7 @@ namespace Model
 
     /**
      * <p>A filter that specifies one or more DB instances to describe.</p>
-     * <p>Supported filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB
+     * <p>Supported Filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB
      * cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results
      * list only includes information about the DB instances associated with the DB
      * clusters identified by these ARNs.</p> </li> <li> <p>
@@ -181,7 +181,7 @@ namespace Model
      * Amazon Resource Names (ARNs). The results list only includes information about
      * the DB instances identified by these ARNs.</p> </li> <li> <p>
      * <code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The
-     * results list will only include information about the DB instances identified by
+     * results list only includes information about the DB instances identified by
      * these DB instance resource identifiers.</p> </li> <li> <p> <code>domain</code> -
      * Accepts Active Directory directory IDs. The results list only includes
      * information about the DB instances associated with these domains.</p> </li> <li>
@@ -192,7 +192,7 @@ namespace Model
 
     /**
      * <p>A filter that specifies one or more DB instances to describe.</p>
-     * <p>Supported filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB
+     * <p>Supported Filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB
      * cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results
      * list only includes information about the DB instances associated with the DB
      * clusters identified by these ARNs.</p> </li> <li> <p>
@@ -200,7 +200,7 @@ namespace Model
      * Amazon Resource Names (ARNs). The results list only includes information about
      * the DB instances identified by these ARNs.</p> </li> <li> <p>
      * <code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The
-     * results list will only include information about the DB instances identified by
+     * results list only includes information about the DB instances identified by
      * these DB instance resource identifiers.</p> </li> <li> <p> <code>domain</code> -
      * Accepts Active Directory directory IDs. The results list only includes
      * information about the DB instances associated with these domains.</p> </li> <li>
@@ -211,7 +211,7 @@ namespace Model
 
     /**
      * <p>A filter that specifies one or more DB instances to describe.</p>
-     * <p>Supported filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB
+     * <p>Supported Filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB
      * cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results
      * list only includes information about the DB instances associated with the DB
      * clusters identified by these ARNs.</p> </li> <li> <p>
@@ -219,7 +219,7 @@ namespace Model
      * Amazon Resource Names (ARNs). The results list only includes information about
      * the DB instances identified by these ARNs.</p> </li> <li> <p>
      * <code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The
-     * results list will only include information about the DB instances identified by
+     * results list only includes information about the DB instances identified by
      * these DB instance resource identifiers.</p> </li> <li> <p> <code>domain</code> -
      * Accepts Active Directory directory IDs. The results list only includes
      * information about the DB instances associated with these domains.</p> </li> <li>
@@ -230,7 +230,7 @@ namespace Model
 
     /**
      * <p>A filter that specifies one or more DB instances to describe.</p>
-     * <p>Supported filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB
+     * <p>Supported Filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB
      * cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results
      * list only includes information about the DB instances associated with the DB
      * clusters identified by these ARNs.</p> </li> <li> <p>
@@ -238,7 +238,7 @@ namespace Model
      * Amazon Resource Names (ARNs). The results list only includes information about
      * the DB instances identified by these ARNs.</p> </li> <li> <p>
      * <code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The
-     * results list will only include information about the DB instances identified by
+     * results list only includes information about the DB instances identified by
      * these DB instance resource identifiers.</p> </li> <li> <p> <code>domain</code> -
      * Accepts Active Directory directory IDs. The results list only includes
      * information about the DB instances associated with these domains.</p> </li> <li>
@@ -249,7 +249,7 @@ namespace Model
 
     /**
      * <p>A filter that specifies one or more DB instances to describe.</p>
-     * <p>Supported filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB
+     * <p>Supported Filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB
      * cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results
      * list only includes information about the DB instances associated with the DB
      * clusters identified by these ARNs.</p> </li> <li> <p>
@@ -257,7 +257,7 @@ namespace Model
      * Amazon Resource Names (ARNs). The results list only includes information about
      * the DB instances identified by these ARNs.</p> </li> <li> <p>
      * <code>dbi-resource-id</code> - Accepts DB instance resource identifiers. The
-     * results list will only include information about the DB instances identified by
+     * results list only includes information about the DB instances identified by
      * these DB instance resource identifiers.</p> </li> <li> <p> <code>domain</code> -
      * Accepts Active Directory directory IDs. The results list only includes
      * information about the DB instances associated with these domains.</p> </li> <li>

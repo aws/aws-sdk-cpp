@@ -1958,8 +1958,8 @@ namespace Aws
         }
 
         /**
-         * <p>Returns information about Amazon Aurora DB clusters and Multi-AZ DB clusters.
-         * This API supports pagination.</p> <p>For more information on Amazon Aurora DB
+         * <p>Describes existing Amazon Aurora DB clusters and Multi-AZ DB clusters. This
+         * API supports pagination.</p> <p>For more information on Amazon Aurora DB
          * clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
          * What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>For
@@ -2047,10 +2047,9 @@ namespace Aws
         }
 
         /**
-         * <p>Returns information about provisioned RDS instances. This API supports
-         * pagination.</p>  <p>This operation can also return information for Amazon
-         * Neptune DB instances and Amazon DocumentDB instances.</p> <p><h3>See
-         * Also:</h3>   <a
+         * <p>Describes provisioned RDS instances. This API supports pagination.</p> 
+         * <p>This operation can also return information for Amazon Neptune DB instances
+         * and Amazon DocumentDB instances.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBInstances">AWS
          * API Reference</a></p>
          */
@@ -3101,10 +3100,10 @@ namespace Aws
         }
 
         /**
-         * <p>Modify the settings for an Amazon Aurora DB cluster or a Multi-AZ DB cluster.
-         * You can change one or more settings by specifying these parameters and the new
-         * values in the request.</p> <p>For more information on Amazon Aurora DB clusters,
-         * see <a
+         * <p>Modifies the settings of an Amazon Aurora DB cluster or a Multi-AZ DB
+         * cluster. You can change one or more settings by specifying these parameters and
+         * the new values in the request.</p> <p>For more information on Amazon Aurora DB
+         * clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
          * What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>For
          * more information on Multi-AZ DB clusters, see <a

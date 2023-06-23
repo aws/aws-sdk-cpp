@@ -7,6 +7,7 @@
 #include <aws/devops-guru/DevOpsGuru_EXPORTS.h>
 #include <aws/devops-guru/model/OpsCenterIntegrationConfig.h>
 #include <aws/devops-guru/model/LogsAnomalyDetectionIntegrationConfig.h>
+#include <aws/devops-guru/model/KMSServerSideEncryptionIntegrationConfig.h>
 #include <utility>
 
 namespace Aws
@@ -95,6 +96,43 @@ namespace Model
      */
     inline UpdateServiceIntegrationConfig& WithLogsAnomalyDetection(LogsAnomalyDetectionIntegrationConfig&& value) { SetLogsAnomalyDetection(std::move(value)); return *this;}
 
+
+    /**
+     * <p> Information about whether DevOps Guru is configured to encrypt server-side
+     * data using KMS. </p>
+     */
+    inline const KMSServerSideEncryptionIntegrationConfig& GetKMSServerSideEncryption() const{ return m_kMSServerSideEncryption; }
+
+    /**
+     * <p> Information about whether DevOps Guru is configured to encrypt server-side
+     * data using KMS. </p>
+     */
+    inline bool KMSServerSideEncryptionHasBeenSet() const { return m_kMSServerSideEncryptionHasBeenSet; }
+
+    /**
+     * <p> Information about whether DevOps Guru is configured to encrypt server-side
+     * data using KMS. </p>
+     */
+    inline void SetKMSServerSideEncryption(const KMSServerSideEncryptionIntegrationConfig& value) { m_kMSServerSideEncryptionHasBeenSet = true; m_kMSServerSideEncryption = value; }
+
+    /**
+     * <p> Information about whether DevOps Guru is configured to encrypt server-side
+     * data using KMS. </p>
+     */
+    inline void SetKMSServerSideEncryption(KMSServerSideEncryptionIntegrationConfig&& value) { m_kMSServerSideEncryptionHasBeenSet = true; m_kMSServerSideEncryption = std::move(value); }
+
+    /**
+     * <p> Information about whether DevOps Guru is configured to encrypt server-side
+     * data using KMS. </p>
+     */
+    inline UpdateServiceIntegrationConfig& WithKMSServerSideEncryption(const KMSServerSideEncryptionIntegrationConfig& value) { SetKMSServerSideEncryption(value); return *this;}
+
+    /**
+     * <p> Information about whether DevOps Guru is configured to encrypt server-side
+     * data using KMS. </p>
+     */
+    inline UpdateServiceIntegrationConfig& WithKMSServerSideEncryption(KMSServerSideEncryptionIntegrationConfig&& value) { SetKMSServerSideEncryption(std::move(value)); return *this;}
+
   private:
 
     OpsCenterIntegrationConfig m_opsCenter;
@@ -102,6 +140,9 @@ namespace Model
 
     LogsAnomalyDetectionIntegrationConfig m_logsAnomalyDetection;
     bool m_logsAnomalyDetectionHasBeenSet = false;
+
+    KMSServerSideEncryptionIntegrationConfig m_kMSServerSideEncryption;
+    bool m_kMSServerSideEncryptionHasBeenSet = false;
   };
 
 } // namespace Model

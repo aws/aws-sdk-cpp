@@ -43,80 +43,80 @@ namespace Model
 
     /**
      * <p>The user-supplied DB cluster identifier or the Amazon Resource Name (ARN) of
-     * the DB cluster. If this parameter is specified, information from only the
+     * the DB cluster. If this parameter is specified, information for only the
      * specific DB cluster is returned. This parameter isn't case-sensitive.</p>
-     * <p>Constraints:</p> <ul> <li> <p>If supplied, must match an existing
-     * DBClusterIdentifier.</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>If supplied, must match an existing DB cluster
+     * identifier.</p> </li> </ul>
      */
     inline const Aws::String& GetDBClusterIdentifier() const{ return m_dBClusterIdentifier; }
 
     /**
      * <p>The user-supplied DB cluster identifier or the Amazon Resource Name (ARN) of
-     * the DB cluster. If this parameter is specified, information from only the
+     * the DB cluster. If this parameter is specified, information for only the
      * specific DB cluster is returned. This parameter isn't case-sensitive.</p>
-     * <p>Constraints:</p> <ul> <li> <p>If supplied, must match an existing
-     * DBClusterIdentifier.</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>If supplied, must match an existing DB cluster
+     * identifier.</p> </li> </ul>
      */
     inline bool DBClusterIdentifierHasBeenSet() const { return m_dBClusterIdentifierHasBeenSet; }
 
     /**
      * <p>The user-supplied DB cluster identifier or the Amazon Resource Name (ARN) of
-     * the DB cluster. If this parameter is specified, information from only the
+     * the DB cluster. If this parameter is specified, information for only the
      * specific DB cluster is returned. This parameter isn't case-sensitive.</p>
-     * <p>Constraints:</p> <ul> <li> <p>If supplied, must match an existing
-     * DBClusterIdentifier.</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>If supplied, must match an existing DB cluster
+     * identifier.</p> </li> </ul>
      */
     inline void SetDBClusterIdentifier(const Aws::String& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = value; }
 
     /**
      * <p>The user-supplied DB cluster identifier or the Amazon Resource Name (ARN) of
-     * the DB cluster. If this parameter is specified, information from only the
+     * the DB cluster. If this parameter is specified, information for only the
      * specific DB cluster is returned. This parameter isn't case-sensitive.</p>
-     * <p>Constraints:</p> <ul> <li> <p>If supplied, must match an existing
-     * DBClusterIdentifier.</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>If supplied, must match an existing DB cluster
+     * identifier.</p> </li> </ul>
      */
     inline void SetDBClusterIdentifier(Aws::String&& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = std::move(value); }
 
     /**
      * <p>The user-supplied DB cluster identifier or the Amazon Resource Name (ARN) of
-     * the DB cluster. If this parameter is specified, information from only the
+     * the DB cluster. If this parameter is specified, information for only the
      * specific DB cluster is returned. This parameter isn't case-sensitive.</p>
-     * <p>Constraints:</p> <ul> <li> <p>If supplied, must match an existing
-     * DBClusterIdentifier.</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>If supplied, must match an existing DB cluster
+     * identifier.</p> </li> </ul>
      */
     inline void SetDBClusterIdentifier(const char* value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier.assign(value); }
 
     /**
      * <p>The user-supplied DB cluster identifier or the Amazon Resource Name (ARN) of
-     * the DB cluster. If this parameter is specified, information from only the
+     * the DB cluster. If this parameter is specified, information for only the
      * specific DB cluster is returned. This parameter isn't case-sensitive.</p>
-     * <p>Constraints:</p> <ul> <li> <p>If supplied, must match an existing
-     * DBClusterIdentifier.</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>If supplied, must match an existing DB cluster
+     * identifier.</p> </li> </ul>
      */
     inline DescribeDBClustersRequest& WithDBClusterIdentifier(const Aws::String& value) { SetDBClusterIdentifier(value); return *this;}
 
     /**
      * <p>The user-supplied DB cluster identifier or the Amazon Resource Name (ARN) of
-     * the DB cluster. If this parameter is specified, information from only the
+     * the DB cluster. If this parameter is specified, information for only the
      * specific DB cluster is returned. This parameter isn't case-sensitive.</p>
-     * <p>Constraints:</p> <ul> <li> <p>If supplied, must match an existing
-     * DBClusterIdentifier.</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>If supplied, must match an existing DB cluster
+     * identifier.</p> </li> </ul>
      */
     inline DescribeDBClustersRequest& WithDBClusterIdentifier(Aws::String&& value) { SetDBClusterIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The user-supplied DB cluster identifier or the Amazon Resource Name (ARN) of
-     * the DB cluster. If this parameter is specified, information from only the
+     * the DB cluster. If this parameter is specified, information for only the
      * specific DB cluster is returned. This parameter isn't case-sensitive.</p>
-     * <p>Constraints:</p> <ul> <li> <p>If supplied, must match an existing
-     * DBClusterIdentifier.</p> </li> </ul>
+     * <p>Constraints:</p> <ul> <li> <p>If supplied, must match an existing DB cluster
+     * identifier.</p> </li> </ul>
      */
     inline DescribeDBClustersRequest& WithDBClusterIdentifier(const char* value) { SetDBClusterIdentifier(value); return *this;}
 
 
     /**
      * <p>A filter that specifies one or more DB clusters to describe.</p> <p>Supported
-     * filters:</p> <ul> <li> <p> <code>clone-group-id</code> - Accepts clone group
+     * Filters:</p> <ul> <li> <p> <code>clone-group-id</code> - Accepts clone group
      * identifiers. The results list only includes information about the DB clusters
      * associated with these clone groups.</p> </li> <li> <p>
      * <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster
@@ -134,7 +134,7 @@ namespace Model
 
     /**
      * <p>A filter that specifies one or more DB clusters to describe.</p> <p>Supported
-     * filters:</p> <ul> <li> <p> <code>clone-group-id</code> - Accepts clone group
+     * Filters:</p> <ul> <li> <p> <code>clone-group-id</code> - Accepts clone group
      * identifiers. The results list only includes information about the DB clusters
      * associated with these clone groups.</p> </li> <li> <p>
      * <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster
@@ -152,7 +152,7 @@ namespace Model
 
     /**
      * <p>A filter that specifies one or more DB clusters to describe.</p> <p>Supported
-     * filters:</p> <ul> <li> <p> <code>clone-group-id</code> - Accepts clone group
+     * Filters:</p> <ul> <li> <p> <code>clone-group-id</code> - Accepts clone group
      * identifiers. The results list only includes information about the DB clusters
      * associated with these clone groups.</p> </li> <li> <p>
      * <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster
@@ -170,7 +170,7 @@ namespace Model
 
     /**
      * <p>A filter that specifies one or more DB clusters to describe.</p> <p>Supported
-     * filters:</p> <ul> <li> <p> <code>clone-group-id</code> - Accepts clone group
+     * Filters:</p> <ul> <li> <p> <code>clone-group-id</code> - Accepts clone group
      * identifiers. The results list only includes information about the DB clusters
      * associated with these clone groups.</p> </li> <li> <p>
      * <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster
@@ -188,7 +188,7 @@ namespace Model
 
     /**
      * <p>A filter that specifies one or more DB clusters to describe.</p> <p>Supported
-     * filters:</p> <ul> <li> <p> <code>clone-group-id</code> - Accepts clone group
+     * Filters:</p> <ul> <li> <p> <code>clone-group-id</code> - Accepts clone group
      * identifiers. The results list only includes information about the DB clusters
      * associated with these clone groups.</p> </li> <li> <p>
      * <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster
@@ -206,7 +206,7 @@ namespace Model
 
     /**
      * <p>A filter that specifies one or more DB clusters to describe.</p> <p>Supported
-     * filters:</p> <ul> <li> <p> <code>clone-group-id</code> - Accepts clone group
+     * Filters:</p> <ul> <li> <p> <code>clone-group-id</code> - Accepts clone group
      * identifiers. The results list only includes information about the DB clusters
      * associated with these clone groups.</p> </li> <li> <p>
      * <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster
@@ -224,7 +224,7 @@ namespace Model
 
     /**
      * <p>A filter that specifies one or more DB clusters to describe.</p> <p>Supported
-     * filters:</p> <ul> <li> <p> <code>clone-group-id</code> - Accepts clone group
+     * Filters:</p> <ul> <li> <p> <code>clone-group-id</code> - Accepts clone group
      * identifiers. The results list only includes information about the DB clusters
      * associated with these clone groups.</p> </li> <li> <p>
      * <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster
@@ -242,7 +242,7 @@ namespace Model
 
     /**
      * <p>A filter that specifies one or more DB clusters to describe.</p> <p>Supported
-     * filters:</p> <ul> <li> <p> <code>clone-group-id</code> - Accepts clone group
+     * Filters:</p> <ul> <li> <p> <code>clone-group-id</code> - Accepts clone group
      * identifiers. The results list only includes information about the DB clusters
      * associated with these clone groups.</p> </li> <li> <p>
      * <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster
@@ -358,26 +358,26 @@ namespace Model
 
 
     /**
-     * <p>Optional Boolean parameter that specifies whether the output includes
-     * information about clusters shared from other Amazon Web Services accounts.</p>
+     * <p>Specifies whether the output includes information about clusters shared from
+     * other Amazon Web Services accounts.</p>
      */
     inline bool GetIncludeShared() const{ return m_includeShared; }
 
     /**
-     * <p>Optional Boolean parameter that specifies whether the output includes
-     * information about clusters shared from other Amazon Web Services accounts.</p>
+     * <p>Specifies whether the output includes information about clusters shared from
+     * other Amazon Web Services accounts.</p>
      */
     inline bool IncludeSharedHasBeenSet() const { return m_includeSharedHasBeenSet; }
 
     /**
-     * <p>Optional Boolean parameter that specifies whether the output includes
-     * information about clusters shared from other Amazon Web Services accounts.</p>
+     * <p>Specifies whether the output includes information about clusters shared from
+     * other Amazon Web Services accounts.</p>
      */
     inline void SetIncludeShared(bool value) { m_includeSharedHasBeenSet = true; m_includeShared = value; }
 
     /**
-     * <p>Optional Boolean parameter that specifies whether the output includes
-     * information about clusters shared from other Amazon Web Services accounts.</p>
+     * <p>Specifies whether the output includes information about clusters shared from
+     * other Amazon Web Services accounts.</p>
      */
     inline DescribeDBClustersRequest& WithIncludeShared(bool value) { SetIncludeShared(value); return *this;}
 

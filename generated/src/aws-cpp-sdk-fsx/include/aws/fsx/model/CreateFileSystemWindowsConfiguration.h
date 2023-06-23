@@ -423,30 +423,30 @@ namespace Model
 
 
     /**
-     * <p>The number of days to retain automatic backups. The default is to retain
-     * backups for 7 days. Setting this value to 0 disables the creation of automatic
-     * backups. The maximum retention period for backups is 90 days.</p>
+     * <p>The number of days to retain automatic backups. Setting this property to
+     * <code>0</code> disables automatic backups. You can retain automatic backups for
+     * a maximum of 90 days. The default is <code>30</code>.</p>
      */
     inline int GetAutomaticBackupRetentionDays() const{ return m_automaticBackupRetentionDays; }
 
     /**
-     * <p>The number of days to retain automatic backups. The default is to retain
-     * backups for 7 days. Setting this value to 0 disables the creation of automatic
-     * backups. The maximum retention period for backups is 90 days.</p>
+     * <p>The number of days to retain automatic backups. Setting this property to
+     * <code>0</code> disables automatic backups. You can retain automatic backups for
+     * a maximum of 90 days. The default is <code>30</code>.</p>
      */
     inline bool AutomaticBackupRetentionDaysHasBeenSet() const { return m_automaticBackupRetentionDaysHasBeenSet; }
 
     /**
-     * <p>The number of days to retain automatic backups. The default is to retain
-     * backups for 7 days. Setting this value to 0 disables the creation of automatic
-     * backups. The maximum retention period for backups is 90 days.</p>
+     * <p>The number of days to retain automatic backups. Setting this property to
+     * <code>0</code> disables automatic backups. You can retain automatic backups for
+     * a maximum of 90 days. The default is <code>30</code>.</p>
      */
     inline void SetAutomaticBackupRetentionDays(int value) { m_automaticBackupRetentionDaysHasBeenSet = true; m_automaticBackupRetentionDays = value; }
 
     /**
-     * <p>The number of days to retain automatic backups. The default is to retain
-     * backups for 7 days. Setting this value to 0 disables the creation of automatic
-     * backups. The maximum retention period for backups is 90 days.</p>
+     * <p>The number of days to retain automatic backups. Setting this property to
+     * <code>0</code> disables automatic backups. You can retain automatic backups for
+     * a maximum of 90 days. The default is <code>30</code>.</p>
      */
     inline CreateFileSystemWindowsConfiguration& WithAutomaticBackupRetentionDays(int value) { SetAutomaticBackupRetentionDays(value); return *this;}
 

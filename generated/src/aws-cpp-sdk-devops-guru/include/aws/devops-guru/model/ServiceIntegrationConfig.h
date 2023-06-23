@@ -7,6 +7,7 @@
 #include <aws/devops-guru/DevOpsGuru_EXPORTS.h>
 #include <aws/devops-guru/model/OpsCenterIntegration.h>
 #include <aws/devops-guru/model/LogsAnomalyDetectionIntegration.h>
+#include <aws/devops-guru/model/KMSServerSideEncryptionIntegration.h>
 #include <utility>
 
 namespace Aws
@@ -113,6 +114,43 @@ namespace Model
      */
     inline ServiceIntegrationConfig& WithLogsAnomalyDetection(LogsAnomalyDetectionIntegration&& value) { SetLogsAnomalyDetection(std::move(value)); return *this;}
 
+
+    /**
+     * <p> Information about whether DevOps Guru is configured to encrypt server-side
+     * data using KMS. </p>
+     */
+    inline const KMSServerSideEncryptionIntegration& GetKMSServerSideEncryption() const{ return m_kMSServerSideEncryption; }
+
+    /**
+     * <p> Information about whether DevOps Guru is configured to encrypt server-side
+     * data using KMS. </p>
+     */
+    inline bool KMSServerSideEncryptionHasBeenSet() const { return m_kMSServerSideEncryptionHasBeenSet; }
+
+    /**
+     * <p> Information about whether DevOps Guru is configured to encrypt server-side
+     * data using KMS. </p>
+     */
+    inline void SetKMSServerSideEncryption(const KMSServerSideEncryptionIntegration& value) { m_kMSServerSideEncryptionHasBeenSet = true; m_kMSServerSideEncryption = value; }
+
+    /**
+     * <p> Information about whether DevOps Guru is configured to encrypt server-side
+     * data using KMS. </p>
+     */
+    inline void SetKMSServerSideEncryption(KMSServerSideEncryptionIntegration&& value) { m_kMSServerSideEncryptionHasBeenSet = true; m_kMSServerSideEncryption = std::move(value); }
+
+    /**
+     * <p> Information about whether DevOps Guru is configured to encrypt server-side
+     * data using KMS. </p>
+     */
+    inline ServiceIntegrationConfig& WithKMSServerSideEncryption(const KMSServerSideEncryptionIntegration& value) { SetKMSServerSideEncryption(value); return *this;}
+
+    /**
+     * <p> Information about whether DevOps Guru is configured to encrypt server-side
+     * data using KMS. </p>
+     */
+    inline ServiceIntegrationConfig& WithKMSServerSideEncryption(KMSServerSideEncryptionIntegration&& value) { SetKMSServerSideEncryption(std::move(value)); return *this;}
+
   private:
 
     OpsCenterIntegration m_opsCenter;
@@ -120,6 +158,9 @@ namespace Model
 
     LogsAnomalyDetectionIntegration m_logsAnomalyDetection;
     bool m_logsAnomalyDetectionHasBeenSet = false;
+
+    KMSServerSideEncryptionIntegration m_kMSServerSideEncryption;
+    bool m_kMSServerSideEncryptionHasBeenSet = false;
   };
 
 } // namespace Model

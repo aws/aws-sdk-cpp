@@ -58,11 +58,12 @@ namespace VerifiedPermissions
    * structure used in a parameter of one operation might need to change in a way
    * that wouldn't make sense for the same parameter in a different operation. To
    * help you understand the purpose of each, the following naming convention is used
-   * for the structures:</p> <ul> <li> <p>Parameters that end in <code>Detail</code>
-   * are used in <code>Get</code> operations.</p> </li> <li> <p>Parameters that end
-   * in <code>Item</code> are used in <code>List</code> operations.</p> </li> <li>
-   * <p>Parameters that use neither suffix are used in the mutating (create and
-   * update) operations.</p> </li> </ul>
+   * for the structures:</p> <ul> <li> <p>Parameter type structures that end in
+   * <code>Detail</code> are used in <code>Get</code> operations.</p> </li> <li>
+   * <p>Parameter type structures that end in <code>Item</code> are used in
+   * <code>List</code> operations.</p> </li> <li> <p>Parameter type structures that
+   * use neither suffix are used in the mutating (create and update) operations.</p>
+   * </li> </ul>
    */
   class AWS_VERIFIEDPERMISSIONS_API VerifiedPermissionsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<VerifiedPermissionsClient>
   {
@@ -208,7 +209,10 @@ namespace VerifiedPermissions
 
         /**
          * <p>Creates a policy store. A policy store is a container for policy
-         * resources.</p><p><h3>See Also:</h3>   <a
+         * resources.</p>  <p>Although <a
+         * href="https://docs.cedarpolicy.com/schema.html#namespace">Cedar supports
+         * multiple namespaces</a>, Verified Permissions currently supports only one
+         * namespace per policy store.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/CreatePolicyStore">AWS
          * API Reference</a></p>
          */
