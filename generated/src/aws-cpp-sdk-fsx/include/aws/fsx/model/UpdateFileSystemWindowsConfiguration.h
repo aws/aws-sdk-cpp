@@ -148,36 +148,40 @@ namespace Model
 
 
     /**
-     * <p>The number of days to retain automatic daily backups. Setting this to zero
-     * (0) disables automatic daily backups. You can retain automatic daily backups for
-     * a maximum of 90 days. For more information, see <a
+     * <p>The number of days to retain automatic backups. Setting this property to
+     * <code>0</code> disables automatic backups. You can retain automatic backups for
+     * a maximum of 90 days. The default is <code>30</code>. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html#automatic-backups">Working
      * with Automatic Daily Backups</a>.</p>
      */
     inline int GetAutomaticBackupRetentionDays() const{ return m_automaticBackupRetentionDays; }
 
     /**
-     * <p>The number of days to retain automatic daily backups. Setting this to zero
-     * (0) disables automatic daily backups. You can retain automatic daily backups for
-     * a maximum of 90 days. For more information, see <a
+     * <p>The number of days to retain automatic backups. Setting this property to
+     * <code>0</code> disables automatic backups. You can retain automatic backups for
+     * a maximum of 90 days. The default is <code>30</code>. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html#automatic-backups">Working
      * with Automatic Daily Backups</a>.</p>
      */
     inline bool AutomaticBackupRetentionDaysHasBeenSet() const { return m_automaticBackupRetentionDaysHasBeenSet; }
 
     /**
-     * <p>The number of days to retain automatic daily backups. Setting this to zero
-     * (0) disables automatic daily backups. You can retain automatic daily backups for
-     * a maximum of 90 days. For more information, see <a
+     * <p>The number of days to retain automatic backups. Setting this property to
+     * <code>0</code> disables automatic backups. You can retain automatic backups for
+     * a maximum of 90 days. The default is <code>30</code>. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html#automatic-backups">Working
      * with Automatic Daily Backups</a>.</p>
      */
     inline void SetAutomaticBackupRetentionDays(int value) { m_automaticBackupRetentionDaysHasBeenSet = true; m_automaticBackupRetentionDays = value; }
 
     /**
-     * <p>The number of days to retain automatic daily backups. Setting this to zero
-     * (0) disables automatic daily backups. You can retain automatic daily backups for
-     * a maximum of 90 days. For more information, see <a
+     * <p>The number of days to retain automatic backups. Setting this property to
+     * <code>0</code> disables automatic backups. You can retain automatic backups for
+     * a maximum of 90 days. The default is <code>30</code>. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html#automatic-backups">Working
      * with Automatic Daily Backups</a>.</p>
      */

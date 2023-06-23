@@ -82,11 +82,14 @@ namespace Model
      * the database engines and engine versions that are available when you upgrade a
      * DB snapshot.</p> <p> <b>MySQL</b> </p> <ul> <li> <p> <code>5.5.46</code>
      * (supported for 5.1 DB snapshots)</p> </li> </ul> <p> <b>Oracle</b> </p> <ul>
-     * <li> <p> <code>12.1.0.2.v8</code> (supported for 12.1.0.1 DB snapshots)</p>
-     * </li> <li> <p> <code>11.2.0.4.v12</code> (supported for 11.2.0.2 DB
-     * snapshots)</p> </li> <li> <p> <code>11.2.0.4.v11</code> (supported for 11.2.0.3
-     * DB snapshots)</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <p>For the list of
-     * engine versions that are available for upgrading a DB snapshot, see <a
+     * <li> <p> <code>19.0.0.0.ru-2022-01.rur-2022-01.r1</code> (supported for 12.2.0.1
+     * DB snapshots)</p> </li> <li> <p> <code>19.0.0.0.ru-2022-07.rur-2022-07.r1</code>
+     * (supported for 12.1.0.2 DB snapshots)</p> </li> <li> <p>
+     * <code>12.1.0.2.v8</code> (supported for 12.1.0.1 DB snapshots)</p> </li> <li>
+     * <p> <code>11.2.0.4.v12</code> (supported for 11.2.0.2 DB snapshots)</p> </li>
+     * <li> <p> <code>11.2.0.4.v11</code> (supported for 11.2.0.3 DB snapshots)</p>
+     * </li> </ul> <p> <b>PostgreSQL</b> </p> <p>For the list of engine versions that
+     * are available for upgrading a DB snapshot, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.PostgreSQL.html#USER_UpgradeDBInstance.PostgreSQL.MajorVersion">
      * Upgrading the PostgreSQL DB Engine for Amazon RDS</a>.</p>
      */
@@ -97,11 +100,14 @@ namespace Model
      * the database engines and engine versions that are available when you upgrade a
      * DB snapshot.</p> <p> <b>MySQL</b> </p> <ul> <li> <p> <code>5.5.46</code>
      * (supported for 5.1 DB snapshots)</p> </li> </ul> <p> <b>Oracle</b> </p> <ul>
-     * <li> <p> <code>12.1.0.2.v8</code> (supported for 12.1.0.1 DB snapshots)</p>
-     * </li> <li> <p> <code>11.2.0.4.v12</code> (supported for 11.2.0.2 DB
-     * snapshots)</p> </li> <li> <p> <code>11.2.0.4.v11</code> (supported for 11.2.0.3
-     * DB snapshots)</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <p>For the list of
-     * engine versions that are available for upgrading a DB snapshot, see <a
+     * <li> <p> <code>19.0.0.0.ru-2022-01.rur-2022-01.r1</code> (supported for 12.2.0.1
+     * DB snapshots)</p> </li> <li> <p> <code>19.0.0.0.ru-2022-07.rur-2022-07.r1</code>
+     * (supported for 12.1.0.2 DB snapshots)</p> </li> <li> <p>
+     * <code>12.1.0.2.v8</code> (supported for 12.1.0.1 DB snapshots)</p> </li> <li>
+     * <p> <code>11.2.0.4.v12</code> (supported for 11.2.0.2 DB snapshots)</p> </li>
+     * <li> <p> <code>11.2.0.4.v11</code> (supported for 11.2.0.3 DB snapshots)</p>
+     * </li> </ul> <p> <b>PostgreSQL</b> </p> <p>For the list of engine versions that
+     * are available for upgrading a DB snapshot, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.PostgreSQL.html#USER_UpgradeDBInstance.PostgreSQL.MajorVersion">
      * Upgrading the PostgreSQL DB Engine for Amazon RDS</a>.</p>
      */
@@ -112,11 +118,14 @@ namespace Model
      * the database engines and engine versions that are available when you upgrade a
      * DB snapshot.</p> <p> <b>MySQL</b> </p> <ul> <li> <p> <code>5.5.46</code>
      * (supported for 5.1 DB snapshots)</p> </li> </ul> <p> <b>Oracle</b> </p> <ul>
-     * <li> <p> <code>12.1.0.2.v8</code> (supported for 12.1.0.1 DB snapshots)</p>
-     * </li> <li> <p> <code>11.2.0.4.v12</code> (supported for 11.2.0.2 DB
-     * snapshots)</p> </li> <li> <p> <code>11.2.0.4.v11</code> (supported for 11.2.0.3
-     * DB snapshots)</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <p>For the list of
-     * engine versions that are available for upgrading a DB snapshot, see <a
+     * <li> <p> <code>19.0.0.0.ru-2022-01.rur-2022-01.r1</code> (supported for 12.2.0.1
+     * DB snapshots)</p> </li> <li> <p> <code>19.0.0.0.ru-2022-07.rur-2022-07.r1</code>
+     * (supported for 12.1.0.2 DB snapshots)</p> </li> <li> <p>
+     * <code>12.1.0.2.v8</code> (supported for 12.1.0.1 DB snapshots)</p> </li> <li>
+     * <p> <code>11.2.0.4.v12</code> (supported for 11.2.0.2 DB snapshots)</p> </li>
+     * <li> <p> <code>11.2.0.4.v11</code> (supported for 11.2.0.3 DB snapshots)</p>
+     * </li> </ul> <p> <b>PostgreSQL</b> </p> <p>For the list of engine versions that
+     * are available for upgrading a DB snapshot, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.PostgreSQL.html#USER_UpgradeDBInstance.PostgreSQL.MajorVersion">
      * Upgrading the PostgreSQL DB Engine for Amazon RDS</a>.</p>
      */
@@ -127,11 +136,14 @@ namespace Model
      * the database engines and engine versions that are available when you upgrade a
      * DB snapshot.</p> <p> <b>MySQL</b> </p> <ul> <li> <p> <code>5.5.46</code>
      * (supported for 5.1 DB snapshots)</p> </li> </ul> <p> <b>Oracle</b> </p> <ul>
-     * <li> <p> <code>12.1.0.2.v8</code> (supported for 12.1.0.1 DB snapshots)</p>
-     * </li> <li> <p> <code>11.2.0.4.v12</code> (supported for 11.2.0.2 DB
-     * snapshots)</p> </li> <li> <p> <code>11.2.0.4.v11</code> (supported for 11.2.0.3
-     * DB snapshots)</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <p>For the list of
-     * engine versions that are available for upgrading a DB snapshot, see <a
+     * <li> <p> <code>19.0.0.0.ru-2022-01.rur-2022-01.r1</code> (supported for 12.2.0.1
+     * DB snapshots)</p> </li> <li> <p> <code>19.0.0.0.ru-2022-07.rur-2022-07.r1</code>
+     * (supported for 12.1.0.2 DB snapshots)</p> </li> <li> <p>
+     * <code>12.1.0.2.v8</code> (supported for 12.1.0.1 DB snapshots)</p> </li> <li>
+     * <p> <code>11.2.0.4.v12</code> (supported for 11.2.0.2 DB snapshots)</p> </li>
+     * <li> <p> <code>11.2.0.4.v11</code> (supported for 11.2.0.3 DB snapshots)</p>
+     * </li> </ul> <p> <b>PostgreSQL</b> </p> <p>For the list of engine versions that
+     * are available for upgrading a DB snapshot, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.PostgreSQL.html#USER_UpgradeDBInstance.PostgreSQL.MajorVersion">
      * Upgrading the PostgreSQL DB Engine for Amazon RDS</a>.</p>
      */
@@ -142,11 +154,14 @@ namespace Model
      * the database engines and engine versions that are available when you upgrade a
      * DB snapshot.</p> <p> <b>MySQL</b> </p> <ul> <li> <p> <code>5.5.46</code>
      * (supported for 5.1 DB snapshots)</p> </li> </ul> <p> <b>Oracle</b> </p> <ul>
-     * <li> <p> <code>12.1.0.2.v8</code> (supported for 12.1.0.1 DB snapshots)</p>
-     * </li> <li> <p> <code>11.2.0.4.v12</code> (supported for 11.2.0.2 DB
-     * snapshots)</p> </li> <li> <p> <code>11.2.0.4.v11</code> (supported for 11.2.0.3
-     * DB snapshots)</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <p>For the list of
-     * engine versions that are available for upgrading a DB snapshot, see <a
+     * <li> <p> <code>19.0.0.0.ru-2022-01.rur-2022-01.r1</code> (supported for 12.2.0.1
+     * DB snapshots)</p> </li> <li> <p> <code>19.0.0.0.ru-2022-07.rur-2022-07.r1</code>
+     * (supported for 12.1.0.2 DB snapshots)</p> </li> <li> <p>
+     * <code>12.1.0.2.v8</code> (supported for 12.1.0.1 DB snapshots)</p> </li> <li>
+     * <p> <code>11.2.0.4.v12</code> (supported for 11.2.0.2 DB snapshots)</p> </li>
+     * <li> <p> <code>11.2.0.4.v11</code> (supported for 11.2.0.3 DB snapshots)</p>
+     * </li> </ul> <p> <b>PostgreSQL</b> </p> <p>For the list of engine versions that
+     * are available for upgrading a DB snapshot, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.PostgreSQL.html#USER_UpgradeDBInstance.PostgreSQL.MajorVersion">
      * Upgrading the PostgreSQL DB Engine for Amazon RDS</a>.</p>
      */
@@ -157,11 +172,14 @@ namespace Model
      * the database engines and engine versions that are available when you upgrade a
      * DB snapshot.</p> <p> <b>MySQL</b> </p> <ul> <li> <p> <code>5.5.46</code>
      * (supported for 5.1 DB snapshots)</p> </li> </ul> <p> <b>Oracle</b> </p> <ul>
-     * <li> <p> <code>12.1.0.2.v8</code> (supported for 12.1.0.1 DB snapshots)</p>
-     * </li> <li> <p> <code>11.2.0.4.v12</code> (supported for 11.2.0.2 DB
-     * snapshots)</p> </li> <li> <p> <code>11.2.0.4.v11</code> (supported for 11.2.0.3
-     * DB snapshots)</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <p>For the list of
-     * engine versions that are available for upgrading a DB snapshot, see <a
+     * <li> <p> <code>19.0.0.0.ru-2022-01.rur-2022-01.r1</code> (supported for 12.2.0.1
+     * DB snapshots)</p> </li> <li> <p> <code>19.0.0.0.ru-2022-07.rur-2022-07.r1</code>
+     * (supported for 12.1.0.2 DB snapshots)</p> </li> <li> <p>
+     * <code>12.1.0.2.v8</code> (supported for 12.1.0.1 DB snapshots)</p> </li> <li>
+     * <p> <code>11.2.0.4.v12</code> (supported for 11.2.0.2 DB snapshots)</p> </li>
+     * <li> <p> <code>11.2.0.4.v11</code> (supported for 11.2.0.3 DB snapshots)</p>
+     * </li> </ul> <p> <b>PostgreSQL</b> </p> <p>For the list of engine versions that
+     * are available for upgrading a DB snapshot, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.PostgreSQL.html#USER_UpgradeDBInstance.PostgreSQL.MajorVersion">
      * Upgrading the PostgreSQL DB Engine for Amazon RDS</a>.</p>
      */
@@ -172,11 +190,14 @@ namespace Model
      * the database engines and engine versions that are available when you upgrade a
      * DB snapshot.</p> <p> <b>MySQL</b> </p> <ul> <li> <p> <code>5.5.46</code>
      * (supported for 5.1 DB snapshots)</p> </li> </ul> <p> <b>Oracle</b> </p> <ul>
-     * <li> <p> <code>12.1.0.2.v8</code> (supported for 12.1.0.1 DB snapshots)</p>
-     * </li> <li> <p> <code>11.2.0.4.v12</code> (supported for 11.2.0.2 DB
-     * snapshots)</p> </li> <li> <p> <code>11.2.0.4.v11</code> (supported for 11.2.0.3
-     * DB snapshots)</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <p>For the list of
-     * engine versions that are available for upgrading a DB snapshot, see <a
+     * <li> <p> <code>19.0.0.0.ru-2022-01.rur-2022-01.r1</code> (supported for 12.2.0.1
+     * DB snapshots)</p> </li> <li> <p> <code>19.0.0.0.ru-2022-07.rur-2022-07.r1</code>
+     * (supported for 12.1.0.2 DB snapshots)</p> </li> <li> <p>
+     * <code>12.1.0.2.v8</code> (supported for 12.1.0.1 DB snapshots)</p> </li> <li>
+     * <p> <code>11.2.0.4.v12</code> (supported for 11.2.0.2 DB snapshots)</p> </li>
+     * <li> <p> <code>11.2.0.4.v11</code> (supported for 11.2.0.3 DB snapshots)</p>
+     * </li> </ul> <p> <b>PostgreSQL</b> </p> <p>For the list of engine versions that
+     * are available for upgrading a DB snapshot, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.PostgreSQL.html#USER_UpgradeDBInstance.PostgreSQL.MajorVersion">
      * Upgrading the PostgreSQL DB Engine for Amazon RDS</a>.</p>
      */
@@ -187,11 +208,14 @@ namespace Model
      * the database engines and engine versions that are available when you upgrade a
      * DB snapshot.</p> <p> <b>MySQL</b> </p> <ul> <li> <p> <code>5.5.46</code>
      * (supported for 5.1 DB snapshots)</p> </li> </ul> <p> <b>Oracle</b> </p> <ul>
-     * <li> <p> <code>12.1.0.2.v8</code> (supported for 12.1.0.1 DB snapshots)</p>
-     * </li> <li> <p> <code>11.2.0.4.v12</code> (supported for 11.2.0.2 DB
-     * snapshots)</p> </li> <li> <p> <code>11.2.0.4.v11</code> (supported for 11.2.0.3
-     * DB snapshots)</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <p>For the list of
-     * engine versions that are available for upgrading a DB snapshot, see <a
+     * <li> <p> <code>19.0.0.0.ru-2022-01.rur-2022-01.r1</code> (supported for 12.2.0.1
+     * DB snapshots)</p> </li> <li> <p> <code>19.0.0.0.ru-2022-07.rur-2022-07.r1</code>
+     * (supported for 12.1.0.2 DB snapshots)</p> </li> <li> <p>
+     * <code>12.1.0.2.v8</code> (supported for 12.1.0.1 DB snapshots)</p> </li> <li>
+     * <p> <code>11.2.0.4.v12</code> (supported for 11.2.0.2 DB snapshots)</p> </li>
+     * <li> <p> <code>11.2.0.4.v11</code> (supported for 11.2.0.3 DB snapshots)</p>
+     * </li> </ul> <p> <b>PostgreSQL</b> </p> <p>For the list of engine versions that
+     * are available for upgrading a DB snapshot, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.PostgreSQL.html#USER_UpgradeDBInstance.PostgreSQL.MajorVersion">
      * Upgrading the PostgreSQL DB Engine for Amazon RDS</a>.</p>
      */

@@ -236,38 +236,56 @@ namespace Model
 
 
     /**
-     * <p>Specifies the list of entities and their associated attributes that Verified
-     * Permissions can examine when evaluating the policies.</p>
+     * <p>Specifies the list of resources and principals and their associated
+     * attributes that Verified Permissions can examine when evaluating the policies.
+     * </p>  <p>You can include only principal and resource entities in this
+     * parameter; you can't include actions. You must specify actions in the
+     * schema.</p> 
      */
     inline const EntitiesDefinition& GetEntities() const{ return m_entities; }
 
     /**
-     * <p>Specifies the list of entities and their associated attributes that Verified
-     * Permissions can examine when evaluating the policies.</p>
+     * <p>Specifies the list of resources and principals and their associated
+     * attributes that Verified Permissions can examine when evaluating the policies.
+     * </p>  <p>You can include only principal and resource entities in this
+     * parameter; you can't include actions. You must specify actions in the
+     * schema.</p> 
      */
     inline bool EntitiesHasBeenSet() const { return m_entitiesHasBeenSet; }
 
     /**
-     * <p>Specifies the list of entities and their associated attributes that Verified
-     * Permissions can examine when evaluating the policies.</p>
+     * <p>Specifies the list of resources and principals and their associated
+     * attributes that Verified Permissions can examine when evaluating the policies.
+     * </p>  <p>You can include only principal and resource entities in this
+     * parameter; you can't include actions. You must specify actions in the
+     * schema.</p> 
      */
     inline void SetEntities(const EntitiesDefinition& value) { m_entitiesHasBeenSet = true; m_entities = value; }
 
     /**
-     * <p>Specifies the list of entities and their associated attributes that Verified
-     * Permissions can examine when evaluating the policies.</p>
+     * <p>Specifies the list of resources and principals and their associated
+     * attributes that Verified Permissions can examine when evaluating the policies.
+     * </p>  <p>You can include only principal and resource entities in this
+     * parameter; you can't include actions. You must specify actions in the
+     * schema.</p> 
      */
     inline void SetEntities(EntitiesDefinition&& value) { m_entitiesHasBeenSet = true; m_entities = std::move(value); }
 
     /**
-     * <p>Specifies the list of entities and their associated attributes that Verified
-     * Permissions can examine when evaluating the policies.</p>
+     * <p>Specifies the list of resources and principals and their associated
+     * attributes that Verified Permissions can examine when evaluating the policies.
+     * </p>  <p>You can include only principal and resource entities in this
+     * parameter; you can't include actions. You must specify actions in the
+     * schema.</p> 
      */
     inline IsAuthorizedRequest& WithEntities(const EntitiesDefinition& value) { SetEntities(value); return *this;}
 
     /**
-     * <p>Specifies the list of entities and their associated attributes that Verified
-     * Permissions can examine when evaluating the policies.</p>
+     * <p>Specifies the list of resources and principals and their associated
+     * attributes that Verified Permissions can examine when evaluating the policies.
+     * </p>  <p>You can include only principal and resource entities in this
+     * parameter; you can't include actions. You must specify actions in the
+     * schema.</p> 
      */
     inline IsAuthorizedRequest& WithEntities(EntitiesDefinition&& value) { SetEntities(std::move(value)); return *this;}
 

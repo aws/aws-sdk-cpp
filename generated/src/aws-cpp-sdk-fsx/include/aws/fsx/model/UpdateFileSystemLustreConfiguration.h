@@ -124,16 +124,32 @@ namespace Model
     inline UpdateFileSystemLustreConfiguration& WithDailyAutomaticBackupStartTime(const char* value) { SetDailyAutomaticBackupStartTime(value); return *this;}
 
 
-    
+    /**
+     * <p>The number of days to retain automatic backups. Setting this property to
+     * <code>0</code> disables automatic backups. You can retain automatic backups for
+     * a maximum of 90 days. The default is <code>0</code>.</p>
+     */
     inline int GetAutomaticBackupRetentionDays() const{ return m_automaticBackupRetentionDays; }
 
-    
+    /**
+     * <p>The number of days to retain automatic backups. Setting this property to
+     * <code>0</code> disables automatic backups. You can retain automatic backups for
+     * a maximum of 90 days. The default is <code>0</code>.</p>
+     */
     inline bool AutomaticBackupRetentionDaysHasBeenSet() const { return m_automaticBackupRetentionDaysHasBeenSet; }
 
-    
+    /**
+     * <p>The number of days to retain automatic backups. Setting this property to
+     * <code>0</code> disables automatic backups. You can retain automatic backups for
+     * a maximum of 90 days. The default is <code>0</code>.</p>
+     */
     inline void SetAutomaticBackupRetentionDays(int value) { m_automaticBackupRetentionDaysHasBeenSet = true; m_automaticBackupRetentionDays = value; }
 
-    
+    /**
+     * <p>The number of days to retain automatic backups. Setting this property to
+     * <code>0</code> disables automatic backups. You can retain automatic backups for
+     * a maximum of 90 days. The default is <code>0</code>.</p>
+     */
     inline UpdateFileSystemLustreConfiguration& WithAutomaticBackupRetentionDays(int value) { SetAutomaticBackupRetentionDays(value); return *this;}
 
 
