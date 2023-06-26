@@ -1,0 +1,134 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/storagegateway/StorageGateway_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
+
+namespace Aws
+{
+template<typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+} // namespace Json
+} // namespace Utils
+namespace StorageGateway
+{
+namespace Model
+{
+  /**
+   * <p>A JSON object containing the following fields:</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeBandwidthRateLimitOutput">AWS
+   * API Reference</a></p>
+   */
+  class DescribeBandwidthRateLimitResult
+  {
+  public:
+    AWS_STORAGEGATEWAY_API DescribeBandwidthRateLimitResult();
+    AWS_STORAGEGATEWAY_API DescribeBandwidthRateLimitResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_STORAGEGATEWAY_API DescribeBandwidthRateLimitResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+
+    
+    inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
+
+    
+    inline void SetGatewayARN(const Aws::String& value) { m_gatewayARN = value; }
+
+    
+    inline void SetGatewayARN(Aws::String&& value) { m_gatewayARN = std::move(value); }
+
+    
+    inline void SetGatewayARN(const char* value) { m_gatewayARN.assign(value); }
+
+    
+    inline DescribeBandwidthRateLimitResult& WithGatewayARN(const Aws::String& value) { SetGatewayARN(value); return *this;}
+
+    
+    inline DescribeBandwidthRateLimitResult& WithGatewayARN(Aws::String&& value) { SetGatewayARN(std::move(value)); return *this;}
+
+    
+    inline DescribeBandwidthRateLimitResult& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
+
+
+    /**
+     * <p>The average upload bandwidth rate limit in bits per second. This field does
+     * not appear in the response if the upload rate limit is not set.</p>
+     */
+    inline long long GetAverageUploadRateLimitInBitsPerSec() const{ return m_averageUploadRateLimitInBitsPerSec; }
+
+    /**
+     * <p>The average upload bandwidth rate limit in bits per second. This field does
+     * not appear in the response if the upload rate limit is not set.</p>
+     */
+    inline void SetAverageUploadRateLimitInBitsPerSec(long long value) { m_averageUploadRateLimitInBitsPerSec = value; }
+
+    /**
+     * <p>The average upload bandwidth rate limit in bits per second. This field does
+     * not appear in the response if the upload rate limit is not set.</p>
+     */
+    inline DescribeBandwidthRateLimitResult& WithAverageUploadRateLimitInBitsPerSec(long long value) { SetAverageUploadRateLimitInBitsPerSec(value); return *this;}
+
+
+    /**
+     * <p>The average download bandwidth rate limit in bits per second. This field does
+     * not appear in the response if the download rate limit is not set.</p>
+     */
+    inline long long GetAverageDownloadRateLimitInBitsPerSec() const{ return m_averageDownloadRateLimitInBitsPerSec; }
+
+    /**
+     * <p>The average download bandwidth rate limit in bits per second. This field does
+     * not appear in the response if the download rate limit is not set.</p>
+     */
+    inline void SetAverageDownloadRateLimitInBitsPerSec(long long value) { m_averageDownloadRateLimitInBitsPerSec = value; }
+
+    /**
+     * <p>The average download bandwidth rate limit in bits per second. This field does
+     * not appear in the response if the download rate limit is not set.</p>
+     */
+    inline DescribeBandwidthRateLimitResult& WithAverageDownloadRateLimitInBitsPerSec(long long value) { SetAverageDownloadRateLimitInBitsPerSec(value); return *this;}
+
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline DescribeBandwidthRateLimitResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline DescribeBandwidthRateLimitResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline DescribeBandwidthRateLimitResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
+  private:
+
+    Aws::String m_gatewayARN;
+
+    long long m_averageUploadRateLimitInBitsPerSec;
+
+    long long m_averageDownloadRateLimitInBitsPerSec;
+
+    Aws::String m_requestId;
+  };
+
+} // namespace Model
+} // namespace StorageGateway
+} // namespace Aws

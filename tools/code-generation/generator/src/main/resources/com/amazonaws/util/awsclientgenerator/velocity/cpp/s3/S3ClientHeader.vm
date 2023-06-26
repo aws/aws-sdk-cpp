@@ -1,0 +1,283 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
+
+#set($metadata = $serviceModel.metadata)
+#set($rootNamespace = $serviceModel.namespace)
+#set($serviceNamespace = $metadata.namespace)
+#set($className = "${metadata.classNamePrefix}Client")
+#pragma once
+\#include <aws/$metadata.projectName/${metadata.classNamePrefix}_EXPORTS.h>
+\#include <aws/core/client/ClientConfiguration.h>
+#if($serviceNamespace == "S3Crt")
+\#include <aws/core/auth/AWSCredentialsProviderChain.h>
+\#include <aws/core/utils/crypto/Factories.h>
+\#include <aws/s3-crt/ClientConfiguration.h>
+\#include <aws/s3-crt/S3CrtErrorMarshaller.h>
+\#include <aws/s3/s3_client.h>
+\#include <aws/crt/auth/Sigv4Signing.h>
+\#include <aws/crt/http/HttpRequestResponse.h>
+#end
+\#include <aws/core/client/AWSClient.h>
+\#include <aws/core/client/AWSClientAsyncCRTP.h>
+\#include <aws/core/auth/AWSAuthSigner.h>
+\#include <aws/core/utils/xml/XmlSerializer.h>
+\#include <aws/core/utils/DNS.h>
+\#include <aws/$metadata.projectName/${metadata.classNamePrefix}ServiceClientModel.h>
+#set($signPayloadsOptional = true)
+#set($virtualAddressingSupported = true)
+#set($arnEndpointSupported = true)
+#set($USEast1RegionalEndpointArgString = ", Aws::$serviceNamespace::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption = Aws::$serviceNamespace::US_EAST_1_REGIONAL_ENDPOINT_OPTION::NOT_SET")
+
+#if($serviceNamespace == "S3Crt")
+struct aws_s3_client;
+#end
+// TODO: temporary fix for naming conflicts on Windows.
+#ifdef _WIN32
+#ifdef GetObject
+#undef GetObject
+#endif
+#endif
+
+namespace ${rootNamespace}
+{
+  namespace ${metadata.namespace}
+  {
+    namespace SSEHeaders
+    {
+        static const char SERVER_SIDE_ENCRYPTION[] = "x-amz-server-side-encryption";
+        static const char SERVER_SIDE_ENCRYPTION_AWS_KMS_KEY_ID[] = "x-amz-server-side-encryption-aws-kms-key-id";
+        static const char SERVER_SIDE_ENCRYPTION_CUSTOMER_ALGORITHM[] = "x-amz-server-side-encryption-customer-algorithm";
+        static const char SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY[] = "x-amz-server-side-encryption-customer-key";
+        static const char SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY_MD5[] = "x-amz-server-side-encryption-customer-key-MD5";
+    } // SS3Headers
+#if(!$serviceModel.endpointRules)
+
+    // Get endpoint, signer region and signer service name after computing the endpoint.
+    struct ComputeEndpointResult
+    {
+      ComputeEndpointResult(const Aws::String& endpointName = {}, const Aws::String& region = {}, const Aws::String& serviceName = {}, const Aws::String signer = Aws::Auth::SIGV4_SIGNER) :
+        endpoint(endpointName), signerRegion(region), signerServiceName(serviceName), signerName(signer) {}
+
+      Aws::String endpoint;
+      Aws::String signerRegion;
+      Aws::String signerServiceName;
+      Aws::String signerName;
+    };
+
+    typedef Aws::Utils::Outcome<ComputeEndpointResult, Aws::Client::AWSError<${metadata.classNamePrefix}Errors>> ComputeEndpointOutcome;
+#end
+
+    //max expiration for presigned urls in s3 is 7 days.
+    static const unsigned MAX_EXPIRATION_SECONDS = 7 * 24 * 60 * 60;
+
+#if($serviceModel.documentation)
+    /**
+     * ${serviceModel.documentation}
+     */
+#end
+#if(!$serviceModel.endpointRules)
+    enum class US_EAST_1_REGIONAL_ENDPOINT_OPTION
+    {
+      NOT_SET,
+      LEGACY,   //stands for using global endpoint for us-east-1,
+      REGIONAL //stands for using regional endpoint for us-east-1
+    };
+#end
+#set($finalClass = " final")
+#if($serviceModel.enableVirtualOperations)
+#set($finalClass = "")
+#end
+    class ${CppViewHelper.computeExportValue($metadata.classNamePrefix)} ${className}${finalClass} : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<${className}>
+    {
+    public:
+        typedef Aws::Client::AWSXMLClient BASECLASS;
+        static const char* SERVICE_NAME;
+        static const char* ALLOCATION_TAG;
+
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderConfigTypeDeclarations.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderConstructors.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderOperations.vm")
+
+        Aws::String GeneratePresignedUrl(const Aws::String& bucket,
+                                         const Aws::String& key,
+                                         Aws::Http::HttpMethod method,
+                                         uint64_t expirationInSeconds = MAX_EXPIRATION_SECONDS);
+
+        Aws::String GeneratePresignedUrl(const Aws::String& bucket,
+                                         const Aws::String& key,
+                                         Aws::Http::HttpMethod method,
+                                         const Http::HeaderValueCollection& customizedHeaders,
+                                         uint64_t expirationInSeconds = MAX_EXPIRATION_SECONDS);
+
+        /**
+         * Server Side Encryption Headers and Algorithm
+         * Method    Algorithm    Required Headers
+         * SSE-S3    AES256       x-amz-server-side-encryption:AES256
+         * SSE-KMS   aws:kms      x-amz-server-side--encryption:aws:kms, x-amz-server-side-encryption-aws-kms-key-id:<kmsMasterKeyId>
+         * SS3-C     AES256       x-amz-server-side-encryption-customer-algorithm:AES256, x-amz-server-side-encryption-customer-key:<base64EncodedKey>, x-amz-server-side-encryption-customer-key-MD5:<Base64EncodedMD5ofNonBase64EncodedKey>
+         */
+        /**
+         * Generate presigned URL with Sever Side Encryption(SSE) and with S3 managed keys.
+         * https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html (algo: AES256)
+         */
+        Aws::String GeneratePresignedUrlWithSSES3(const Aws::String& bucket,
+                                                  const Aws::String& key,
+                                                  Aws::Http::HttpMethod method,
+                                                  uint64_t expirationInSeconds = MAX_EXPIRATION_SECONDS);
+        /**
+         * Generate presigned URL with Sever Side Encryption(SSE) and with S3 managed keys.
+         * https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html (algo: AES256)
+         * Header: "x-amz-server-side-encryption" will be added internally, don't customize it.
+         */
+        Aws::String GeneratePresignedUrlWithSSES3(const Aws::String& bucket,
+                                                  const Aws::String& key,
+                                                  Aws::Http::HttpMethod method,
+                                                  Http::HeaderValueCollection customizedHeaders,
+                                                  uint64_t expirationInSeconds = MAX_EXPIRATION_SECONDS);
+
+        /**
+         * Generate presigned URL with Server Side Encryption(SSE) and with KMS master key id.
+         * if kmsMasterKeyId is empty, we will end up use the default one generated by KMS for you. You can find it via AWS IAM console, it's the one aliased as "aws/s3".
+         * https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html (algo: aws:kms)
+         */
+        Aws::String GeneratePresignedUrlWithSSEKMS(const Aws::String& bucket,
+                                                   const Aws::String& key,
+                                                   Aws::Http::HttpMethod method,
+                                                   const Aws::String& kmsMasterKeyId = "",
+                                                   uint64_t expirationInSeconds = MAX_EXPIRATION_SECONDS);
+        /**
+         * Generate presigned URL with Server Side Encryption(SSE) and with KMS master key id.
+         * if kmsMasterKeyId is empty, we will end up use the default one generated by KMS for you. You can find it via AWS IAM console, it's the one aliased as "aws/s3".
+         * https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html (algo: aws:kms)
+         * Headers: "x-amz-server-side-encryption" and "x-amz-server-side-encryption-aws-kms-key-id" will be added internally, don't customize them.
+         */
+        Aws::String GeneratePresignedUrlWithSSEKMS(const Aws::String& bucket,
+                                                   const Aws::String& key,
+                                                   Aws::Http::HttpMethod method,
+                                                   Http::HeaderValueCollection customizedHeaders,
+                                                   const Aws::String& kmsMasterKeyId = "",
+                                                   uint64_t expirationInSeconds = MAX_EXPIRATION_SECONDS);
+
+        /**
+         * Generate presigned URL with Sever Side Encryption(SSE) and with customer supplied Key.
+         * https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html (algo: AES256)
+         */
+        Aws::String GeneratePresignedUrlWithSSEC(const Aws::String& bucket,
+                                                 const Aws::String& key,
+                                                 Aws::Http::HttpMethod method,
+                                                 const Aws::String& base64EncodedAES256Key,
+                                                 uint64_t expirationInSeconds = MAX_EXPIRATION_SECONDS);
+        /**
+         * Generate presigned URL with Sever Side Encryption(SSE) and with customer supplied Key.
+         * https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html (algo: AES256)
+         * Headers: "x-amz-server-side-encryption-customer-algorithm","x-amz-server-side-encryption-customer-key" and "x-amz-server-side-encryption-customer-key-MD5" will be added internally, don't customize them.
+         */
+        Aws::String GeneratePresignedUrlWithSSEC(const Aws::String& bucket,
+                                                 const Aws::String& key,
+                                                 Aws::Http::HttpMethod method,
+                                                 Http::HeaderValueCollection customizedHeaders,
+                                                 const Aws::String& base64EncodedAES256Key,
+                                                 uint64_t expirationInSeconds = MAX_EXPIRATION_SECONDS);
+
+
+        virtual bool MultipartUploadSupported() const;
+
+        void OverrideEndpoint(const Aws::String& endpoint);
+#if($serviceModel.endpointRules)
+        std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase>& accessEndpointProvider();
+#end
+
+#if($serviceNamespace == "S3Crt")
+
+        struct CrtRequestCallbackUserData {
+          const S3CrtClient *s3CrtClient;
+          GetObjectResponseReceivedHandler getResponseHandler;
+          PutObjectResponseReceivedHandler putResponseHandler;
+          std::shared_ptr<const Aws::Client::AsyncCallerContext> asyncCallerContext;
+          const Aws::AmazonWebServiceRequest *originalRequest;
+          std::shared_ptr<Aws::Http::HttpRequest> request;
+          std::shared_ptr<Aws::Http::HttpResponse> response;
+          std::shared_ptr<Aws::Crt::Http::HttpRequest> crtHttpRequest;
+        };
+
+        Aws::Client::XmlOutcome GenerateXmlOutcome(const std::shared_ptr<Http::HttpResponse>& response) const;
+        Aws::Client::StreamOutcome GenerateStreamOutcome(const std::shared_ptr<Http::HttpResponse>& response) const;
+
+#end
+    private:
+        friend class Aws::Client::ClientWithAsyncTemplateMethods<${className}>;
+#if($serviceNamespace == "S3Crt")
+        void init(const S3Crt::ClientConfiguration& clientConfiguration, const std::shared_ptr<Aws::Auth::AWSCredentialsProvider> credentialsProvider);
+
+        struct CrtClientShutdownCallbackDataWrapper {
+          void *data;
+          std::function<void(void*)> fn;
+          std::shared_ptr<Aws::Utils::Threading::Semaphore> clientShutdownSem;
+        };
+
+        static void CrtClientShutdownCallback(void *data) {
+          auto *wrappedData = static_cast<CrtClientShutdownCallbackDataWrapper*>(data);
+          if (wrappedData->fn)
+          {
+            wrappedData->fn(wrappedData->data);
+          }
+          wrappedData->clientShutdownSem->Release();
+        }
+
+        void InitCommonCrtRequestOption(CrtRequestCallbackUserData *userData,
+                                        aws_s3_meta_request_options *options,
+                                        const Aws::AmazonWebServiceRequest *requset,
+                                        const Aws::Http::URI &uri, Aws::Http::HttpMethod method) const;
+#else
+#if(!$serviceModel.endpointRules)
+        void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+#else
+        void init(const ${metadata.classNamePrefix}ClientConfiguration& clientConfiguration);
+#end
+#end
+#if(!$serviceModel.endpointRules)
+        void Load${metadata.classNamePrefix}SpecificConfig(const Aws::String& profile);
+        ComputeEndpointOutcome ComputeEndpointString(const Aws::String& bucket) const;
+        ComputeEndpointOutcome ComputeEndpointString() const;
+        ComputeEndpointOutcome ComputeEndpointStringWithServiceName(const Aws::String& serviceNameOverride = "") const;
+
+        Aws::String m_baseUri;
+        Aws::String m_scheme;
+        bool m_enableHostPrefixInjection = false;
+        Aws::String m_configScheme;
+#end##-#if(!$serviceModel.endpointRules)
+#if($serviceModel.endpointRules)
+        ${metadata.classNamePrefix}ClientConfiguration m_clientConfiguration;
+#end
+        std::shared_ptr<Utils::Threading::Executor> m_executor;
+#if($serviceNamespace == "S3Crt")
+        struct aws_s3_client* m_s3CrtClient = {};
+        struct aws_signing_config_aws m_s3CrtSigningConfig = {};
+        struct CrtClientShutdownCallbackDataWrapper m_wrappedData = {};
+        std::shared_ptr<Aws::Utils::Threading::Semaphore> m_clientShutdownSem;
+        Aws::String m_userAgent;
+        std::shared_ptr<Aws::Auth::AWSCredentialsProvider> m_credProvider;
+        std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider> m_crtCredProvider;
+#end
+#if(!$serviceModel.endpointRules)
+        bool m_useVirtualAddressing = false;
+        bool m_useDualStack = false;
+        bool m_useArnRegion = false;
+        bool m_disableMultiRegionAccessPoints = false;
+        bool m_useCustomEndpoint = false;
+#end##-#if(!$serviceModel.endpointRules)
+#if($metadata.hasEndpointDiscoveryTrait)
+        mutable Aws::Utils::ConcurrentCache<Aws::String, Aws::String> m_endpointsCache;
+#if(!$serviceModel.endpointRules)
+        bool m_enableEndpointDiscovery = false;
+#end
+#end
+#if($serviceModel.endpointRules)
+        std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase> m_endpointProvider;
+#end
+#if(!$serviceModel.endpointRules)
+        ${rootNamespace}::$serviceNamespace::US_EAST_1_REGIONAL_ENDPOINT_OPTION m_USEast1RegionalEndpointOption = ${rootNamespace}::$serviceNamespace::US_EAST_1_REGIONAL_ENDPOINT_OPTION::NOT_SET;
+#end
+    };
+
+  } // namespace ${metadata.namespace}
+} // namespace ${rootNamespace}

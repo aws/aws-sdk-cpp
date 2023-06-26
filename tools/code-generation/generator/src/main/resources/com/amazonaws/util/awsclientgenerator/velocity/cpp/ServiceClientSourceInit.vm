@@ -1,0 +1,418 @@
+#set($additionalCtorSignatureArgs = {})
+#set($ctorMemberInitList = [])
+#set($signerCtorArgs = [])
+#set($additionalCtorArgs = {})
+#if($signPayloadsOptional)
+#if(!$serviceModel.endpointRules)
+#set($signPayloads = ", Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads")
+#set($signPayloadsParam = ", signPayloads")
+#set($addArgDummy = $additionalCtorArgs.put("signPayloads", "Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads /*= Never*/"))
+#set($addArgDummy = $signerCtorArgs.add("signPayloads"))
+#else
+#set($addArgDummy = $signerCtorArgs.add("clientConfiguration.payloadSigningPolicy"))
+#end##-#if(!$serviceModel.endpointRules)
+#else
+#set($signPayloads = "")
+#set($signPayloadsParam = "")
+#end
+#if($metadata.signatureVersion.equals("s3") || $metadata.signatureVersion.equals("s3v4"))
+#if(!$signPayloadsOptional)
+#set($signPayloadsParam = ", Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy::RequestDependent")
+#set($addArgDummy = $signerCtorArgs.add("Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy::RequestDependent"))
+#end
+#set($doubleEncodeValue = ", false")
+#set($addArgDummy = $signerCtorArgs.add("/*doubleEncodeValue*/ false"))
+#else
+#set($doubleEncodeValue = "")
+#end
+#if($virtualAddressingSupported)
+#if(!$serviceModel.endpointRules)
+#set($addArgDummy = $additionalCtorArgs.put("useVirtualAddressing", "bool useVirtualAddressing /*= true*/"))
+#set($addArgDummy = $ctorMemberInitList.add("m_useVirtualAddressing(useVirtualAddressing)"))
+#set($virtualAddressing = ", bool useVirtualAddressing")
+#set($virtualAddressingInit = ", m_useVirtualAddressing(useVirtualAddressing)")
+#end##-#if(!$serviceModel.endpointRules)
+#else
+#set($virtualAddressing = "")
+#set($virtualAddressingInit = "")
+#end
+#if($serviceModel.endpointRules)
+#set($addArgDummy = $ctorMemberInitList.add("m_endpointProvider(std::move(endpointProvider))"))
+#end
+#if(!$USEast1RegionalEndpointArgString)
+#set($USEast1RegionalEndpointArgString = "")
+#else
+#if(!$serviceModel.endpointRules)
+#set($addArgDummy = $additionalCtorArgs.put("USEast1RegionalEndpoint", $USEast1RegionalEndpointArgString.replace(", ", "")))
+#end
+#end
+#if(!$USEast1RegionalEndpointInitString)
+#set($USEast1RegionalEndpointInitString = "")
+#else
+#if(!$serviceModel.endpointRules)
+#set($addArgDummy = $ctorMemberInitList.add($USEast1RegionalEndpointInitString.replace(", ", "")))
+#end
+#end
+#if(!$ForRegionExtraArgsString)
+#set($ForRegionExtraArgsString = "")##single place in m_baseUri assignment-init
+#end
+#if($metadata.hasEndpointDiscoveryTrait && !$serviceModel.endpointRules)
+#set($AdditionalServiceSpecificConfigLoadString = "Load${metadata.classNamePrefix}SpecificConfig(config);")
+#end
+#set($clientConfigurationNamespace = "Client")
+#set($defaultCredentialsProviderChainParam = "Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG)")
+#set($simpleCredentialsProviderParam = "Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials)")
+#set($hasEventStreamInputOperation = $serviceModel.hasStreamingRequestShapes())
+#set($signerToMake = "AWSAuthV4Signer")
+#if($serviceModel.hasOnlyBearerAuth())
+    #set($signerToMake = "Aws::Auth::BearerTokenAuthSignerProvider")
+#elseif($hasEventStreamInputOperation || $multiRegionAccessPointSupported)
+    #set($signerToMake = "Aws::Auth::DefaultAuthSignerProvider")
+#end
+#if($serviceModel.endpointRules)
+#set($clientConfigurationCls = ${serviceNamespace} + "::" + ${metadata.classNamePrefix} + "ClientConfiguration")
+#else
+#set($clientConfigurationCls = ${clientConfigurationNamespace} + "::ClientConfiguration")
+#end
+#set($clsWSpace = $className.replaceAll(".", " "))
+#set($signerWSpace = $signerToMake.replaceAll(".", " "))
+#if($serviceModel.hasOnlyBearerAuth())
+##BEARER TOKEN AUTH PROVIDER C-TOR
+#set($bearerAddCtorArgs = {})
+#foreach ($ctorKey in ["signPayloads", "useVirtualAddressing", "USEast1RegionalEndpoint"])
+#if($additionalCtorArgs.containsKey($ctorKey))#set($addArgDummy = $bearerAddCtorArgs.put($ctorKey, $additionalCtorArgs.get($ctorKey)))#end
+#end
+    ${className}::${className}(const ${signerToMake}& bearerTokenProvider,
+#if($serviceModel.endpointRules)
+    ${clsWSpace}  ${clsWSpace} std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase> endpointProvider,
+#end
+    ${clsWSpace}  ${clsWSpace} const ${clientConfigurationCls}& clientConfiguration#if($bearerAddCtorArgs.isEmpty())) :#else,#end
+#foreach($ctorArgument in $bearerAddCtorArgs)
+    ${clsWSpace}  ${clsWSpace} ${ctorArgument}#if( $foreach.hasNext ),#else) :#end
+
+#end
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<${signerToMake}>(ALLOCATION_TAG, bearerTokenProvider),
+            Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
+#if($serviceModel.endpointRules)
+  m_clientConfiguration(clientConfiguration),
+#end
+  m_executor(clientConfiguration.executor)#if($ctorMemberInitList.isEmpty())
+#else,#end
+#foreach($ctorMemberInit in $ctorMemberInitList)
+  ${ctorMemberInit}#if( $foreach.hasNext ),
+
+#else#end
+#end
+{
+  init(m_clientConfiguration);
+}
+## END OF BEARER TOKEN AUTH PROVIDER C-TOR
+
+#else##!#if($serviceModel.hasOnlyBearerAuth())
+##DEFAULT CREDENTIALS PROVIDER C-TOR
+#set($defCredsChainCtor = {})
+#foreach ($ctorKey in ["signPayloads", "useVirtualAddressing", "USEast1RegionalEndpoint"])
+#if($additionalCtorArgs.containsKey($ctorKey))#set($addArgDummy = $defCredsChainCtor.put($ctorKey, $additionalCtorArgs.get($ctorKey)))#end
+#end
+${className}::${className}(const ${clientConfigurationCls}& clientConfiguration#if($defCredsChainCtor.isEmpty() && !$serviceModel.endpointRules)) :#else,#end
+
+#if($serviceModel.endpointRules)
+${clsWSpace}  ${clsWSpace} std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase> endpointProvider#if($defCredsChainCtor.isEmpty())) :#else,#end
+
+#end
+#foreach($ctorArgument in $defCredsChainCtor)
+${clsWSpace}  ${clsWSpace} ${ctorArgument}#if( $foreach.hasNext ),#else) :#end
+
+#end
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<${signerToMake}>(ALLOCATION_TAG,
+                            ${signerWSpace}  ${defaultCredentialsProviderChainParam},
+                            ${signerWSpace}  SERVICE_NAME,
+                            ${signerWSpace}  Aws::Region::ComputeSignerRegion(clientConfiguration.region)#if($signerCtorArgs.isEmpty())#else,
+#end
+#foreach($signerCtorArg in $signerCtorArgs)
+                            ${signerWSpace}  ${signerCtorArg}#if( $foreach.hasNext ),
+#else#end
+#end),
+            Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
+#if($serviceModel.endpointRules)
+  m_clientConfiguration(clientConfiguration),
+#end
+  m_executor(clientConfiguration.executor)#if($ctorMemberInitList.isEmpty())#else,
+#end
+#foreach($ctorMemberInit in $ctorMemberInitList)
+  ${ctorMemberInit}#if( $foreach.hasNext ),
+#else#end
+#end
+
+{
+  init(m_clientConfiguration);
+}
+##END OF DEFAULT CREDENTIALS PROVIDER C-TOR
+
+##SIMPLE CREDENTIALS PROVIDER C-TOR
+#set($simpleCredsCtor = {})
+#foreach ($ctorKey in ["signPayloads", "useVirtualAddressing", "USEast1RegionalEndpoint"])
+#if($additionalCtorArgs.containsKey($ctorKey))#set($addArgDummy = $simpleCredsCtor.put($ctorKey, $additionalCtorArgs.get($ctorKey)))#end
+#end
+${className}::${className}(const AWSCredentials& credentials,
+#if($serviceModel.endpointRules)
+${clsWSpace}  ${clsWSpace} std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase> endpointProvider,
+#end
+${clsWSpace}  ${clsWSpace} const ${clientConfigurationCls}& clientConfiguration#if($simpleCredsCtor.isEmpty())) :#else,#end
+
+#foreach($ctorArgument in $simpleCredsCtor)
+${clsWSpace}  ${clsWSpace} ${ctorArgument}#if( $foreach.hasNext ),#else) :#end
+
+#end
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<${signerToMake}>(ALLOCATION_TAG,
+                            ${signerWSpace}  ${simpleCredentialsProviderParam},
+                            ${signerWSpace}  SERVICE_NAME,
+                            ${signerWSpace}  Aws::Region::ComputeSignerRegion(clientConfiguration.region)#if($signerCtorArgs.isEmpty())#else,
+#end
+#foreach($signerCtorArg in $signerCtorArgs)
+                            ${signerWSpace}  ${signerCtorArg}#if( $foreach.hasNext ),
+#else#end
+#end),
+            Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
+#if($serviceModel.endpointRules)
+    m_clientConfiguration(clientConfiguration),
+#end
+    m_executor(clientConfiguration.executor)#if($ctorMemberInitList.isEmpty())#else,
+#end
+#foreach($ctorMemberInit in $ctorMemberInitList)
+    ${ctorMemberInit}#if( $foreach.hasNext ),
+#else#end
+#end
+
+{
+  init(m_clientConfiguration);
+}
+##END OF SIMPLE CREDENTIALS PROVIDER C-TOR
+
+##SPECIFIED CREDENTIALS PROVIDER C-TOR
+#set($specCredsCtor = {})
+#foreach ($ctorKey in ["signPayloads", "useVirtualAddressing", "USEast1RegionalEndpoint"])
+#if($additionalCtorArgs.containsKey($ctorKey))#set($addArgDummy = $specCredsCtor.put($ctorKey, $additionalCtorArgs.get($ctorKey)))#end
+#end
+${className}::${className}(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
+#if($serviceModel.endpointRules)
+${clsWSpace}  ${clsWSpace} std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase> endpointProvider,
+#end
+${clsWSpace}  ${clsWSpace} const ${clientConfigurationCls}& clientConfiguration#if($specCredsCtor.isEmpty())) :#else,#end
+
+#foreach($ctorArgument in $specCredsCtor)
+${clsWSpace}  ${clsWSpace} ${ctorArgument}#if( $foreach.hasNext ),#else) :#end
+
+#end
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<${signerToMake}>(ALLOCATION_TAG,
+                            ${signerWSpace}  credentialsProvider,
+                            ${signerWSpace}  SERVICE_NAME,
+                            ${signerWSpace}  Aws::Region::ComputeSignerRegion(clientConfiguration.region)#if($signerCtorArgs.isEmpty())#else,
+#end
+#foreach($signerCtorArg in $signerCtorArgs)
+                            ${signerWSpace}  ${signerCtorArg}#if( $foreach.hasNext ),
+#else#end
+#end),
+            Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
+#if($serviceModel.endpointRules)
+    m_clientConfiguration(clientConfiguration),
+#end
+    m_executor(clientConfiguration.executor)#if($ctorMemberInitList.isEmpty())#else,
+#end
+#foreach($ctorMemberInit in $ctorMemberInitList)
+    ${ctorMemberInit}#if( $foreach.hasNext ),
+#else#end
+#end
+
+{
+  init(m_clientConfiguration);
+}
+##END OF SPECIFIED CREDENTIALS PROVIDER C-TOR
+#end##if($serviceModel.hasOnlyBearerAuth())
+
+#if($metadata.standalone || $metadata.apigateway)
+#set($standaloneCredsCtor = {})
+#foreach ($ctorKey in ["signPayloads", "useVirtualAddressing", "USEast1RegionalEndpoint"])
+#if($additionalCtorArgs.containsKey($ctorKey))#set($addArgDummy = $standaloneCredsCtor.put($ctorKey, $additionalCtorArgs.get($ctorKey)))#end
+#end
+${className}::${className}(const std::shared_ptr<Aws::Auth::AWSAuthSignerProvider>& signerProvider,
+${clsWSpace}  ${clsWSpace} const ${clientConfigurationCls}& clientConfiguration#if($standaloneCredsCtor.isEmpty())) :#else,#end
+
+#foreach($ctorArgument in $specCredsCtor)
+${clsWSpace}  ${clsWSpace} ${ctorArgument}#if( $foreach.hasNext ),#else) :#end
+
+#end
+  BASECLASS(clientConfiguration,
+            signerProvider,
+            Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
+#if($serviceModel.endpointRules)
+  m_clientConfiguration(clientConfiguration),
+#end
+  m_executor(clientConfiguration.executor)${virtualAddressingInit}
+{
+  init(m_clientConfiguration);
+}
+
+#end
+#if($serviceModel.endpointRules)
+    /* Legacy constructors due deprecation */
+  #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientSourceLegacyConstructors.vm")
+    /* End of legacy constructors due deprecation */
+#end
+${className}::~${className}()
+{
+  ShutdownSdkClient(this, -1);
+}
+
+#if($serviceModel.endpointRules)
+std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase>& ${className}::accessEndpointProvider()
+{
+  return m_endpointProvider;
+}
+
+#end
+void ${className}::init(const ${clientConfigurationCls}& config)
+{
+  AWSClient::SetServiceClientName("${metadata.serviceId}");
+#if($serviceModel.endpointRules)
+  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
+  m_endpointProvider->InitBuiltInParameters(config);
+#if($AdditionalServiceSpecificConfigLoadString)
+  ${AdditionalServiceSpecificConfigLoadString}
+#end##if($AdditionalServiceSpecificConfigLoadString)
+#else##-#if($serviceModel.endpointRules)
+#if($AdditionalServiceSpecificConfigLoadString)
+  ${AdditionalServiceSpecificConfigLoadString}
+#end##if($AdditionalServiceSpecificConfigLoadString)
+  m_configScheme = SchemeMapper::ToString(config.scheme);
+#if($metadata.hasPreSignedUrl)
+  m_useDualStack = config.useDualStack;
+#end##if($metadata.hasPreSignedUrl)
+#if($virtualAddressingSupported || $arnEndpointSupported || $vpcEndpointSupported || $metadata.hasEndpointTrait)
+  m_scheme = m_configScheme;
+#if($arnEndpointSupported)
+  m_useDualStack = config.useDualStack;
+#end##if($arnEndpointSupported)
+  if (config.endpointOverride.empty())
+  {
+#if($arnEndpointSupported || $vpcEndpointSupported || $customEndpointUsed)
+      m_useCustomEndpoint = false;
+#end##if($arnEndpointSupported || $vpcEndpointSupported || $customEndpointUsed)
+      m_baseUri = ${metadata.classNamePrefix}Endpoint::ForRegion(config.region, config.useDualStack${ForRegionExtraArgsString});
+  }
+  else
+  {
+#if($arnEndpointSupported || $vpcEndpointSupported || $customEndpointUsed)
+      m_useCustomEndpoint = true;
+#end##if($arnEndpointSupported || $vpcEndpointSupported || $customEndpointUsed)
+      OverrideEndpoint(config.endpointOverride);
+  }
+#else##of if($virtualAddressingSupported || $arnEndpointSupported || $vpcEndpointSupported || $metadata.hasEndpointTrait)
+  if (config.endpointOverride.empty())
+  {
+      m_uri = m_configScheme + "://" + ${metadata.classNamePrefix}Endpoint::ForRegion(config.region, config.useDualStack);
+#if($customEndpointUsed)
+      m_useCustomEndpoint = false;
+#end##if($customEndpointUsed)
+#if($serviceModel.endpointRules)
+#end##if($serviceModel.endpointRules)
+  }
+##if (config.endpointOverride.empty())
+  else
+  {
+      OverrideEndpoint(config.endpointOverride);
+#if($arnEndpointSupported || $vpcEndpointSupported || $customEndpointUsed)
+      m_useCustomEndpoint = true;
+#end##if($arnEndpointSupported || $vpcEndpointSupported || $customEndpointUsed)
+  }
+#end##if($virtualAddressingSupported || $arnEndpointSupported || $vpcEndpointSupported || $metadata.hasEndpointTrait)
+#if($metadata.hasEndpointTrait)
+  m_enableHostPrefixInjection = config.enableHostPrefixInjection;
+#end##if($metadata.hasEndpointTrait)
+#end##-#if($serviceModel.endpointRules)
+}
+#if(!$serviceModel.endpointRules && $metadata.hasEndpointDiscoveryTrait)
+
+void ${className}::Load${metadata.classNamePrefix}SpecificConfig(const Aws::Client::ClientConfiguration& clientConfiguration)
+{
+  if (!clientConfiguration.endpointOverride.empty())
+  {
+    m_enableEndpointDiscovery = false;
+  }
+  else if (clientConfiguration.enableEndpointDiscovery)
+  {
+    m_enableEndpointDiscovery = clientConfiguration.enableEndpointDiscovery.value();
+  }
+  else
+  {
+#if($metadata.requireEndpointDiscovery)
+    m_enableEndpointDiscovery = true;
+#else
+    m_enableEndpointDiscovery = false;
+#end
+
+    Aws::String enableEndpointDiscovery = Aws::Environment::GetEnv("AWS_ENABLE_ENDPOINT_DISCOVERY");
+    if (enableEndpointDiscovery.empty())
+    {
+      enableEndpointDiscovery = Aws::Config::GetCachedConfigValue(clientConfiguration.profileName, "endpoint_discovery_enabled");
+    }
+
+    if (enableEndpointDiscovery == "true")
+    {
+      m_enableEndpointDiscovery = true;
+    }
+    else if (enableEndpointDiscovery == "false")
+    {
+      m_enableEndpointDiscovery = false;
+    }
+    else if (!enableEndpointDiscovery.empty())
+    {
+      AWS_LOGSTREAM_WARN("${className}", R"(Using the SDK default configuration for Endpoint Discovery. )"
+        R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY" or )"
+        R"(your config file's variable "endpoint_discovery_enabled" are explicitly set to "true" or "false" (case-sensitive) or not set at all.)");
+    }
+  }
+}
+#end
+
+void ${className}::OverrideEndpoint(const Aws::String& endpoint)
+{
+#if($serviceModel.endpointRules)
+  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
+  m_endpointProvider->OverrideEndpoint(endpoint);
+#else##-#if($serviceModel.endpointRules)
+#if($virtualAddressingSupported || $arnEndpointSupported || $metadata.hasEndpointTrait)
+  if (endpoint.compare(0, 7, "http://") == 0)
+  {
+      m_scheme = "http";
+      m_baseUri = endpoint.substr(7);
+  }
+  else if (endpoint.compare(0, 8, "https://") == 0)
+  {
+      m_scheme = "https";
+      m_baseUri = endpoint.substr(8);
+  }
+  else
+  {
+      m_scheme = m_configScheme;
+      m_baseUri = endpoint;
+  }
+#else
+  if (endpoint.compare(0, 7, "http://") == 0 || endpoint.compare(0, 8, "https://") == 0)
+  {
+      m_uri = endpoint;
+  }
+  else
+  {
+      m_uri = m_configScheme + "://" + endpoint;
+  }
+#end
+#if($metadata.hasEndpointDiscoveryTrait)
+  m_enableEndpointDiscovery = false;
+#end
+#end##-#if($serviceModel.endpointRules)
+}

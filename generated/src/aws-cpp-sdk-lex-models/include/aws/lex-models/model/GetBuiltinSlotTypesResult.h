@@ -1,0 +1,155 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/lex-models/LexModelBuildingService_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lex-models/model/BuiltinSlotTypeMetadata.h>
+#include <utility>
+
+namespace Aws
+{
+template<typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+} // namespace Json
+} // namespace Utils
+namespace LexModelBuildingService
+{
+namespace Model
+{
+  class GetBuiltinSlotTypesResult
+  {
+  public:
+    AWS_LEXMODELBUILDINGSERVICE_API GetBuiltinSlotTypesResult();
+    AWS_LEXMODELBUILDINGSERVICE_API GetBuiltinSlotTypesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_LEXMODELBUILDINGSERVICE_API GetBuiltinSlotTypesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+
+    /**
+     * <p>An array of <code>BuiltInSlotTypeMetadata</code> objects, one entry for each
+     * slot type returned.</p>
+     */
+    inline const Aws::Vector<BuiltinSlotTypeMetadata>& GetSlotTypes() const{ return m_slotTypes; }
+
+    /**
+     * <p>An array of <code>BuiltInSlotTypeMetadata</code> objects, one entry for each
+     * slot type returned.</p>
+     */
+    inline void SetSlotTypes(const Aws::Vector<BuiltinSlotTypeMetadata>& value) { m_slotTypes = value; }
+
+    /**
+     * <p>An array of <code>BuiltInSlotTypeMetadata</code> objects, one entry for each
+     * slot type returned.</p>
+     */
+    inline void SetSlotTypes(Aws::Vector<BuiltinSlotTypeMetadata>&& value) { m_slotTypes = std::move(value); }
+
+    /**
+     * <p>An array of <code>BuiltInSlotTypeMetadata</code> objects, one entry for each
+     * slot type returned.</p>
+     */
+    inline GetBuiltinSlotTypesResult& WithSlotTypes(const Aws::Vector<BuiltinSlotTypeMetadata>& value) { SetSlotTypes(value); return *this;}
+
+    /**
+     * <p>An array of <code>BuiltInSlotTypeMetadata</code> objects, one entry for each
+     * slot type returned.</p>
+     */
+    inline GetBuiltinSlotTypesResult& WithSlotTypes(Aws::Vector<BuiltinSlotTypeMetadata>&& value) { SetSlotTypes(std::move(value)); return *this;}
+
+    /**
+     * <p>An array of <code>BuiltInSlotTypeMetadata</code> objects, one entry for each
+     * slot type returned.</p>
+     */
+    inline GetBuiltinSlotTypesResult& AddSlotTypes(const BuiltinSlotTypeMetadata& value) { m_slotTypes.push_back(value); return *this; }
+
+    /**
+     * <p>An array of <code>BuiltInSlotTypeMetadata</code> objects, one entry for each
+     * slot type returned.</p>
+     */
+    inline GetBuiltinSlotTypesResult& AddSlotTypes(BuiltinSlotTypeMetadata&& value) { m_slotTypes.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>If the response is truncated, the response includes a pagination token that
+     * you can use in your next request to fetch the next page of slot types.</p>
+     */
+    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>If the response is truncated, the response includes a pagination token that
+     * you can use in your next request to fetch the next page of slot types.</p>
+     */
+    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
+
+    /**
+     * <p>If the response is truncated, the response includes a pagination token that
+     * you can use in your next request to fetch the next page of slot types.</p>
+     */
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
+
+    /**
+     * <p>If the response is truncated, the response includes a pagination token that
+     * you can use in your next request to fetch the next page of slot types.</p>
+     */
+    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
+
+    /**
+     * <p>If the response is truncated, the response includes a pagination token that
+     * you can use in your next request to fetch the next page of slot types.</p>
+     */
+    inline GetBuiltinSlotTypesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /**
+     * <p>If the response is truncated, the response includes a pagination token that
+     * you can use in your next request to fetch the next page of slot types.</p>
+     */
+    inline GetBuiltinSlotTypesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
+
+    /**
+     * <p>If the response is truncated, the response includes a pagination token that
+     * you can use in your next request to fetch the next page of slot types.</p>
+     */
+    inline GetBuiltinSlotTypesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetBuiltinSlotTypesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetBuiltinSlotTypesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetBuiltinSlotTypesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
+  private:
+
+    Aws::Vector<BuiltinSlotTypeMetadata> m_slotTypes;
+
+    Aws::String m_nextToken;
+
+    Aws::String m_requestId;
+  };
+
+} // namespace Model
+} // namespace LexModelBuildingService
+} // namespace Aws

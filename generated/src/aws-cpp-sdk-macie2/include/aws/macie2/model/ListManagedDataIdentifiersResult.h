@@ -1,0 +1,148 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/macie2/Macie2_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/macie2/model/ManagedDataIdentifierSummary.h>
+#include <utility>
+
+namespace Aws
+{
+template<typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+} // namespace Json
+} // namespace Utils
+namespace Macie2
+{
+namespace Model
+{
+  class ListManagedDataIdentifiersResult
+  {
+  public:
+    AWS_MACIE2_API ListManagedDataIdentifiersResult();
+    AWS_MACIE2_API ListManagedDataIdentifiersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_MACIE2_API ListManagedDataIdentifiersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+
+    /**
+     * <p>An array of objects, one for each managed data identifier.</p>
+     */
+    inline const Aws::Vector<ManagedDataIdentifierSummary>& GetItems() const{ return m_items; }
+
+    /**
+     * <p>An array of objects, one for each managed data identifier.</p>
+     */
+    inline void SetItems(const Aws::Vector<ManagedDataIdentifierSummary>& value) { m_items = value; }
+
+    /**
+     * <p>An array of objects, one for each managed data identifier.</p>
+     */
+    inline void SetItems(Aws::Vector<ManagedDataIdentifierSummary>&& value) { m_items = std::move(value); }
+
+    /**
+     * <p>An array of objects, one for each managed data identifier.</p>
+     */
+    inline ListManagedDataIdentifiersResult& WithItems(const Aws::Vector<ManagedDataIdentifierSummary>& value) { SetItems(value); return *this;}
+
+    /**
+     * <p>An array of objects, one for each managed data identifier.</p>
+     */
+    inline ListManagedDataIdentifiersResult& WithItems(Aws::Vector<ManagedDataIdentifierSummary>&& value) { SetItems(std::move(value)); return *this;}
+
+    /**
+     * <p>An array of objects, one for each managed data identifier.</p>
+     */
+    inline ListManagedDataIdentifiersResult& AddItems(const ManagedDataIdentifierSummary& value) { m_items.push_back(value); return *this; }
+
+    /**
+     * <p>An array of objects, one for each managed data identifier.</p>
+     */
+    inline ListManagedDataIdentifiersResult& AddItems(ManagedDataIdentifierSummary&& value) { m_items.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The string to use in a subsequent request to get the next page of results in
+     * a paginated response. This value is null if there are no additional pages.</p>
+     */
+    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The string to use in a subsequent request to get the next page of results in
+     * a paginated response. This value is null if there are no additional pages.</p>
+     */
+    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
+
+    /**
+     * <p>The string to use in a subsequent request to get the next page of results in
+     * a paginated response. This value is null if there are no additional pages.</p>
+     */
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
+
+    /**
+     * <p>The string to use in a subsequent request to get the next page of results in
+     * a paginated response. This value is null if there are no additional pages.</p>
+     */
+    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
+
+    /**
+     * <p>The string to use in a subsequent request to get the next page of results in
+     * a paginated response. This value is null if there are no additional pages.</p>
+     */
+    inline ListManagedDataIdentifiersResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /**
+     * <p>The string to use in a subsequent request to get the next page of results in
+     * a paginated response. This value is null if there are no additional pages.</p>
+     */
+    inline ListManagedDataIdentifiersResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
+
+    /**
+     * <p>The string to use in a subsequent request to get the next page of results in
+     * a paginated response. This value is null if there are no additional pages.</p>
+     */
+    inline ListManagedDataIdentifiersResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline ListManagedDataIdentifiersResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline ListManagedDataIdentifiersResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline ListManagedDataIdentifiersResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
+  private:
+
+    Aws::Vector<ManagedDataIdentifierSummary> m_items;
+
+    Aws::String m_nextToken;
+
+    Aws::String m_requestId;
+  };
+
+} // namespace Model
+} // namespace Macie2
+} // namespace Aws
