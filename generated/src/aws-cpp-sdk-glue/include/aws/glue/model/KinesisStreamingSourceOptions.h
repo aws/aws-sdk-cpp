@@ -7,6 +7,7 @@
 #include <aws/glue/Glue_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/glue/model/StartingPosition.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -205,43 +206,73 @@ namespace Model
 
     /**
      * <p>The starting position in the Kinesis data stream to read data from. The
-     * possible values are <code>"latest"</code>, <code>"trim_horizon"</code>, or
-     * <code>"earliest"</code>. The default value is <code>"latest"</code>.</p>
+     * possible values are <code>"latest"</code>, <code>"trim_horizon"</code>,
+     * <code>"earliest"</code>, or a timestamp string in UTC format in the pattern
+     * <code>yyyy-mm-ddTHH:MM:SSZ</code> (where <code>Z</code> represents a UTC
+     * timezone offset with a +/-. For example: "2023-04-04T08:00:00-04:00"). The
+     * default value is <code>"latest"</code>.</p> <p>Note: Using a value that is a
+     * timestamp string in UTC format for "startingPosition" is supported only for Glue
+     * version 4.0 or later.</p>
      */
     inline const StartingPosition& GetStartingPosition() const{ return m_startingPosition; }
 
     /**
      * <p>The starting position in the Kinesis data stream to read data from. The
-     * possible values are <code>"latest"</code>, <code>"trim_horizon"</code>, or
-     * <code>"earliest"</code>. The default value is <code>"latest"</code>.</p>
+     * possible values are <code>"latest"</code>, <code>"trim_horizon"</code>,
+     * <code>"earliest"</code>, or a timestamp string in UTC format in the pattern
+     * <code>yyyy-mm-ddTHH:MM:SSZ</code> (where <code>Z</code> represents a UTC
+     * timezone offset with a +/-. For example: "2023-04-04T08:00:00-04:00"). The
+     * default value is <code>"latest"</code>.</p> <p>Note: Using a value that is a
+     * timestamp string in UTC format for "startingPosition" is supported only for Glue
+     * version 4.0 or later.</p>
      */
     inline bool StartingPositionHasBeenSet() const { return m_startingPositionHasBeenSet; }
 
     /**
      * <p>The starting position in the Kinesis data stream to read data from. The
-     * possible values are <code>"latest"</code>, <code>"trim_horizon"</code>, or
-     * <code>"earliest"</code>. The default value is <code>"latest"</code>.</p>
+     * possible values are <code>"latest"</code>, <code>"trim_horizon"</code>,
+     * <code>"earliest"</code>, or a timestamp string in UTC format in the pattern
+     * <code>yyyy-mm-ddTHH:MM:SSZ</code> (where <code>Z</code> represents a UTC
+     * timezone offset with a +/-. For example: "2023-04-04T08:00:00-04:00"). The
+     * default value is <code>"latest"</code>.</p> <p>Note: Using a value that is a
+     * timestamp string in UTC format for "startingPosition" is supported only for Glue
+     * version 4.0 or later.</p>
      */
     inline void SetStartingPosition(const StartingPosition& value) { m_startingPositionHasBeenSet = true; m_startingPosition = value; }
 
     /**
      * <p>The starting position in the Kinesis data stream to read data from. The
-     * possible values are <code>"latest"</code>, <code>"trim_horizon"</code>, or
-     * <code>"earliest"</code>. The default value is <code>"latest"</code>.</p>
+     * possible values are <code>"latest"</code>, <code>"trim_horizon"</code>,
+     * <code>"earliest"</code>, or a timestamp string in UTC format in the pattern
+     * <code>yyyy-mm-ddTHH:MM:SSZ</code> (where <code>Z</code> represents a UTC
+     * timezone offset with a +/-. For example: "2023-04-04T08:00:00-04:00"). The
+     * default value is <code>"latest"</code>.</p> <p>Note: Using a value that is a
+     * timestamp string in UTC format for "startingPosition" is supported only for Glue
+     * version 4.0 or later.</p>
      */
     inline void SetStartingPosition(StartingPosition&& value) { m_startingPositionHasBeenSet = true; m_startingPosition = std::move(value); }
 
     /**
      * <p>The starting position in the Kinesis data stream to read data from. The
-     * possible values are <code>"latest"</code>, <code>"trim_horizon"</code>, or
-     * <code>"earliest"</code>. The default value is <code>"latest"</code>.</p>
+     * possible values are <code>"latest"</code>, <code>"trim_horizon"</code>,
+     * <code>"earliest"</code>, or a timestamp string in UTC format in the pattern
+     * <code>yyyy-mm-ddTHH:MM:SSZ</code> (where <code>Z</code> represents a UTC
+     * timezone offset with a +/-. For example: "2023-04-04T08:00:00-04:00"). The
+     * default value is <code>"latest"</code>.</p> <p>Note: Using a value that is a
+     * timestamp string in UTC format for "startingPosition" is supported only for Glue
+     * version 4.0 or later.</p>
      */
     inline KinesisStreamingSourceOptions& WithStartingPosition(const StartingPosition& value) { SetStartingPosition(value); return *this;}
 
     /**
      * <p>The starting position in the Kinesis data stream to read data from. The
-     * possible values are <code>"latest"</code>, <code>"trim_horizon"</code>, or
-     * <code>"earliest"</code>. The default value is <code>"latest"</code>.</p>
+     * possible values are <code>"latest"</code>, <code>"trim_horizon"</code>,
+     * <code>"earliest"</code>, or a timestamp string in UTC format in the pattern
+     * <code>yyyy-mm-ddTHH:MM:SSZ</code> (where <code>Z</code> represents a UTC
+     * timezone offset with a +/-. For example: "2023-04-04T08:00:00-04:00"). The
+     * default value is <code>"latest"</code>.</p> <p>Note: Using a value that is a
+     * timestamp string in UTC format for "startingPosition" is supported only for Glue
+     * version 4.0 or later.</p>
      */
     inline KinesisStreamingSourceOptions& WithStartingPosition(StartingPosition&& value) { SetStartingPosition(std::move(value)); return *this;}
 
@@ -820,6 +851,55 @@ namespace Model
      */
     inline KinesisStreamingSourceOptions& WithEmitConsumerLagMetrics(const char* value) { SetEmitConsumerLagMetrics(value); return *this;}
 
+
+    /**
+     * <p>The timestamp of the record in the Kinesis data stream to start reading data
+     * from. The possible values are a timestamp string in UTC format of the pattern
+     * <code>yyyy-mm-ddTHH:MM:SSZ</code> (where Z represents a UTC timezone offset with
+     * a +/-. For example: "2023-04-04T08:00:00+08:00"). </p>
+     */
+    inline const Aws::Utils::DateTime& GetStartingTimestamp() const{ return m_startingTimestamp; }
+
+    /**
+     * <p>The timestamp of the record in the Kinesis data stream to start reading data
+     * from. The possible values are a timestamp string in UTC format of the pattern
+     * <code>yyyy-mm-ddTHH:MM:SSZ</code> (where Z represents a UTC timezone offset with
+     * a +/-. For example: "2023-04-04T08:00:00+08:00"). </p>
+     */
+    inline bool StartingTimestampHasBeenSet() const { return m_startingTimestampHasBeenSet; }
+
+    /**
+     * <p>The timestamp of the record in the Kinesis data stream to start reading data
+     * from. The possible values are a timestamp string in UTC format of the pattern
+     * <code>yyyy-mm-ddTHH:MM:SSZ</code> (where Z represents a UTC timezone offset with
+     * a +/-. For example: "2023-04-04T08:00:00+08:00"). </p>
+     */
+    inline void SetStartingTimestamp(const Aws::Utils::DateTime& value) { m_startingTimestampHasBeenSet = true; m_startingTimestamp = value; }
+
+    /**
+     * <p>The timestamp of the record in the Kinesis data stream to start reading data
+     * from. The possible values are a timestamp string in UTC format of the pattern
+     * <code>yyyy-mm-ddTHH:MM:SSZ</code> (where Z represents a UTC timezone offset with
+     * a +/-. For example: "2023-04-04T08:00:00+08:00"). </p>
+     */
+    inline void SetStartingTimestamp(Aws::Utils::DateTime&& value) { m_startingTimestampHasBeenSet = true; m_startingTimestamp = std::move(value); }
+
+    /**
+     * <p>The timestamp of the record in the Kinesis data stream to start reading data
+     * from. The possible values are a timestamp string in UTC format of the pattern
+     * <code>yyyy-mm-ddTHH:MM:SSZ</code> (where Z represents a UTC timezone offset with
+     * a +/-. For example: "2023-04-04T08:00:00+08:00"). </p>
+     */
+    inline KinesisStreamingSourceOptions& WithStartingTimestamp(const Aws::Utils::DateTime& value) { SetStartingTimestamp(value); return *this;}
+
+    /**
+     * <p>The timestamp of the record in the Kinesis data stream to start reading data
+     * from. The possible values are a timestamp string in UTC format of the pattern
+     * <code>yyyy-mm-ddTHH:MM:SSZ</code> (where Z represents a UTC timezone offset with
+     * a +/-. For example: "2023-04-04T08:00:00+08:00"). </p>
+     */
+    inline KinesisStreamingSourceOptions& WithStartingTimestamp(Aws::Utils::DateTime&& value) { SetStartingTimestamp(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_endpointUrl;
@@ -881,6 +961,9 @@ namespace Model
 
     Aws::String m_emitConsumerLagMetrics;
     bool m_emitConsumerLagMetricsHasBeenSet = false;
+
+    Aws::Utils::DateTime m_startingTimestamp;
+    bool m_startingTimestampHasBeenSet = false;
   };
 
 } // namespace Model

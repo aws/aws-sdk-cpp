@@ -46,6 +46,7 @@
 #include <aws/iam/model/GetGroupPolicyResult.h>
 #include <aws/iam/model/GetInstanceProfileResult.h>
 #include <aws/iam/model/GetLoginProfileResult.h>
+#include <aws/iam/model/GetMFADeviceResult.h>
 #include <aws/iam/model/GetOpenIDConnectProviderResult.h>
 #include <aws/iam/model/GetOrganizationsAccessReportResult.h>
 #include <aws/iam/model/GetPolicyResult.h>
@@ -207,6 +208,7 @@ namespace Aws
       class GetGroupPolicyRequest;
       class GetInstanceProfileRequest;
       class GetLoginProfileRequest;
+      class GetMFADeviceRequest;
       class GetOpenIDConnectProviderRequest;
       class GetOrganizationsAccessReportRequest;
       class GetPolicyRequest;
@@ -368,6 +370,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetGroupPolicyResult, IAMError> GetGroupPolicyOutcome;
       typedef Aws::Utils::Outcome<GetInstanceProfileResult, IAMError> GetInstanceProfileOutcome;
       typedef Aws::Utils::Outcome<GetLoginProfileResult, IAMError> GetLoginProfileOutcome;
+      typedef Aws::Utils::Outcome<GetMFADeviceResult, IAMError> GetMFADeviceOutcome;
       typedef Aws::Utils::Outcome<GetOpenIDConnectProviderResult, IAMError> GetOpenIDConnectProviderOutcome;
       typedef Aws::Utils::Outcome<GetOrganizationsAccessReportResult, IAMError> GetOrganizationsAccessReportOutcome;
       typedef Aws::Utils::Outcome<GetPolicyResult, IAMError> GetPolicyOutcome;
@@ -529,6 +532,7 @@ namespace Aws
       typedef std::future<GetGroupPolicyOutcome> GetGroupPolicyOutcomeCallable;
       typedef std::future<GetInstanceProfileOutcome> GetInstanceProfileOutcomeCallable;
       typedef std::future<GetLoginProfileOutcome> GetLoginProfileOutcomeCallable;
+      typedef std::future<GetMFADeviceOutcome> GetMFADeviceOutcomeCallable;
       typedef std::future<GetOpenIDConnectProviderOutcome> GetOpenIDConnectProviderOutcomeCallable;
       typedef std::future<GetOrganizationsAccessReportOutcome> GetOrganizationsAccessReportOutcomeCallable;
       typedef std::future<GetPolicyOutcome> GetPolicyOutcomeCallable;
@@ -693,6 +697,7 @@ namespace Aws
     typedef std::function<void(const IAMClient*, const Model::GetGroupPolicyRequest&, const Model::GetGroupPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGroupPolicyResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::GetInstanceProfileRequest&, const Model::GetInstanceProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInstanceProfileResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::GetLoginProfileRequest&, const Model::GetLoginProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLoginProfileResponseReceivedHandler;
+    typedef std::function<void(const IAMClient*, const Model::GetMFADeviceRequest&, const Model::GetMFADeviceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMFADeviceResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::GetOpenIDConnectProviderRequest&, const Model::GetOpenIDConnectProviderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetOpenIDConnectProviderResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::GetOrganizationsAccessReportRequest&, const Model::GetOrganizationsAccessReportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetOrganizationsAccessReportResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::GetPolicyRequest&, const Model::GetPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPolicyResponseReceivedHandler;

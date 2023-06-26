@@ -125,6 +125,7 @@
 #include <aws/connect/model/SearchPromptsResult.h>
 #include <aws/connect/model/SearchQueuesResult.h>
 #include <aws/connect/model/SearchQuickConnectsResult.h>
+#include <aws/connect/model/SearchResourceTagsResult.h>
 #include <aws/connect/model/SearchRoutingProfilesResult.h>
 #include <aws/connect/model/SearchSecurityProfilesResult.h>
 #include <aws/connect/model/SearchUsersResult.h>
@@ -333,6 +334,7 @@ namespace Aws
       class SearchPromptsRequest;
       class SearchQueuesRequest;
       class SearchQuickConnectsRequest;
+      class SearchResourceTagsRequest;
       class SearchRoutingProfilesRequest;
       class SearchSecurityProfilesRequest;
       class SearchUsersRequest;
@@ -529,6 +531,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<SearchPromptsResult, ConnectError> SearchPromptsOutcome;
       typedef Aws::Utils::Outcome<SearchQueuesResult, ConnectError> SearchQueuesOutcome;
       typedef Aws::Utils::Outcome<SearchQuickConnectsResult, ConnectError> SearchQuickConnectsOutcome;
+      typedef Aws::Utils::Outcome<SearchResourceTagsResult, ConnectError> SearchResourceTagsOutcome;
       typedef Aws::Utils::Outcome<SearchRoutingProfilesResult, ConnectError> SearchRoutingProfilesOutcome;
       typedef Aws::Utils::Outcome<SearchSecurityProfilesResult, ConnectError> SearchSecurityProfilesOutcome;
       typedef Aws::Utils::Outcome<SearchUsersResult, ConnectError> SearchUsersOutcome;
@@ -725,6 +728,7 @@ namespace Aws
       typedef std::future<SearchPromptsOutcome> SearchPromptsOutcomeCallable;
       typedef std::future<SearchQueuesOutcome> SearchQueuesOutcomeCallable;
       typedef std::future<SearchQuickConnectsOutcome> SearchQuickConnectsOutcomeCallable;
+      typedef std::future<SearchResourceTagsOutcome> SearchResourceTagsOutcomeCallable;
       typedef std::future<SearchRoutingProfilesOutcome> SearchRoutingProfilesOutcomeCallable;
       typedef std::future<SearchSecurityProfilesOutcome> SearchSecurityProfilesOutcomeCallable;
       typedef std::future<SearchUsersOutcome> SearchUsersOutcomeCallable;
@@ -924,6 +928,7 @@ namespace Aws
     typedef std::function<void(const ConnectClient*, const Model::SearchPromptsRequest&, const Model::SearchPromptsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchPromptsResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::SearchQueuesRequest&, const Model::SearchQueuesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchQueuesResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::SearchQuickConnectsRequest&, const Model::SearchQuickConnectsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchQuickConnectsResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::SearchResourceTagsRequest&, const Model::SearchResourceTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchResourceTagsResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::SearchRoutingProfilesRequest&, const Model::SearchRoutingProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchRoutingProfilesResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::SearchSecurityProfilesRequest&, const Model::SearchSecurityProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchSecurityProfilesResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::SearchUsersRequest&, const Model::SearchUsersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchUsersResponseReceivedHandler;

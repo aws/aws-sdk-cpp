@@ -23,6 +23,7 @@ namespace Aws
         static const int latest_HASH = HashingUtils::HashString("latest");
         static const int trim_horizon_HASH = HashingUtils::HashString("trim_horizon");
         static const int earliest_HASH = HashingUtils::HashString("earliest");
+        static const int timestamp_HASH = HashingUtils::HashString("timestamp");
 
 
         StartingPosition GetStartingPositionForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == earliest_HASH)
           {
             return StartingPosition::earliest;
+          }
+          else if (hashCode == timestamp_HASH)
+          {
+            return StartingPosition::timestamp;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +65,8 @@ namespace Aws
             return "trim_horizon";
           case StartingPosition::earliest:
             return "earliest";
+          case StartingPosition::timestamp:
+            return "timestamp";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -414,7 +414,20 @@ namespace Connect
          * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribePhoneNumber.html">DescribePhoneNumber</a>
          * API to verify the status of a previous <a
          * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimPhoneNumber.html">ClaimPhoneNumber</a>
-         * operation.</p> <p><h3>See Also:</h3>   <a
+         * operation.</p>  <p>If you plan to claim and release numbers
+         * frequently during a 30 day period, contact us for a service quota exception.
+         * Otherwise, it is possible you will be blocked from claiming and releasing any
+         * more numbers until 30 days past the oldest number released has expired.</p>
+         * <p>By default you can claim and release up to 200% of your maximum number of
+         * active phone numbers during any 30 day period. If you claim and release phone
+         * numbers using the UI or API during a rolling 30 day cycle that exceeds 200% of
+         * your phone number service level quota, you will be blocked from claiming any
+         * more numbers until 30 days past the oldest number released has expired. </p>
+         * <p>For example, if you already have 99 claimed numbers and a service level quota
+         * of 99 phone numbers, and in any 30 day period you release 99, claim 99, and then
+         * release 99, you will have exceeded the 200% limit. At that point you are blocked
+         * from claiming any more numbers until you open an Amazon Web Services support
+         * ticket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ClaimPhoneNumber">AWS
          * API Reference</a></p>
          */
@@ -3648,7 +3661,20 @@ namespace Connect
          * <p>After releasing a phone number, the phone number enters into a cooldown
          * period of 30 days. It cannot be searched for or claimed again until the period
          * has ended. If you accidentally release a phone number, contact Amazon Web
-         * Services Support.</p> <p><h3>See Also:</h3>   <a
+         * Services Support.</p>  <p>If you plan to claim and release numbers
+         * frequently during a 30 day period, contact us for a service quota exception.
+         * Otherwise, it is possible you will be blocked from claiming and releasing any
+         * more numbers until 30 days past the oldest number released has expired.</p>
+         * <p>By default you can claim and release up to 200% of your maximum number of
+         * active phone numbers during any 30 day period. If you claim and release phone
+         * numbers using the UI or API during a rolling 30 day cycle that exceeds 200% of
+         * your phone number service level quota, you will be blocked from claiming any
+         * more numbers until 30 days past the oldest number released has expired. </p>
+         * <p>For example, if you already have 99 claimed numbers and a service level quota
+         * of 99 phone numbers, and in any 30 day period you release 99, claim 99, and then
+         * release 99, you will have exceeded the 200% limit. At that point you are blocked
+         * from claiming any more numbers until you open an Amazon Web Services support
+         * ticket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ReleasePhoneNumber">AWS
          * API Reference</a></p>
          */
@@ -3861,6 +3887,32 @@ namespace Connect
         void SearchQuickConnectsAsync(const SearchQuickConnectsRequestT& request, const SearchQuickConnectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ConnectClient::SearchQuickConnects, request, handler, context);
+        }
+
+        /**
+         * <p>Searches tags used in an Amazon Connect instance using optional search
+         * criteria.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchResourceTags">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SearchResourceTagsOutcome SearchResourceTags(const Model::SearchResourceTagsRequest& request) const;
+
+        /**
+         * A Callable wrapper for SearchResourceTags that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename SearchResourceTagsRequestT = Model::SearchResourceTagsRequest>
+        Model::SearchResourceTagsOutcomeCallable SearchResourceTagsCallable(const SearchResourceTagsRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::SearchResourceTags, request);
+        }
+
+        /**
+         * An Async wrapper for SearchResourceTags that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename SearchResourceTagsRequestT = Model::SearchResourceTagsRequest>
+        void SearchResourceTagsAsync(const SearchResourceTagsRequestT& request, const SearchResourceTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::SearchResourceTags, request, handler, context);
         }
 
         /**
