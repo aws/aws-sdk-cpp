@@ -190,8 +190,10 @@ namespace IAM
         /**
          * <p>Attaches the specified managed policy to the specified IAM group.</p> <p>You
          * use this operation to attach a managed policy to a group. To embed an inline
-         * policy in a group, use <a>PutGroupPolicy</a>.</p> <p>As a best practice, you can
-         * validate your IAM policies. To learn more, see <a
+         * policy in a group, use <a
+         * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_PutGroupPolicy.html">
+         * <code>PutGroupPolicy</code> </a>.</p> <p>As a best practice, you can validate
+         * your IAM policies. To learn more, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_policy-validator.html">Validating
          * IAM policies</a> in the <i>IAM User Guide</i>.</p> <p>For more information about
          * policies, see <a
@@ -226,10 +228,15 @@ namespace IAM
          * attach a managed policy to a role, the managed policy becomes part of the role's
          * permission (access) policy.</p>  <p>You cannot use a managed policy as the
          * role's trust policy. The role's trust policy is created at the same time as the
-         * role, using <a>CreateRole</a>. You can update a role's trust policy using
-         * <a>UpdateAssumeRolePolicy</a>.</p>  <p>Use this operation to attach a
-         * <i>managed</i> policy to a role. To embed an inline policy in a role, use
-         * <a>PutRolePolicy</a>. For more information about policies, see <a
+         * role, using <a
+         * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">
+         * <code>CreateRole</code> </a>. You can update a role's trust policy using <a
+         * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAssumeRolePolicy.html">
+         * <code>UpdateAssumerolePolicy</code> </a>.</p>  <p>Use this operation to
+         * attach a <i>managed</i> policy to a role. To embed an inline policy in a role,
+         * use <a
+         * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_PutRolePolicy.html">
+         * <code>PutRolePolicy</code> </a>. For more information about policies, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
          * policies and inline policies</a> in the <i>IAM User Guide</i>.</p> <p>As a best
          * practice, you can validate your IAM policies. To learn more, see <a
@@ -261,8 +268,10 @@ namespace IAM
         /**
          * <p>Attaches the specified managed policy to the specified user.</p> <p>You use
          * this operation to attach a <i>managed</i> policy to a user. To embed an inline
-         * policy in a user, use <a>PutUserPolicy</a>.</p> <p>As a best practice, you can
-         * validate your IAM policies. To learn more, see <a
+         * policy in a user, use <a
+         * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_PutUserPolicy.html">
+         * <code>PutUserPolicy</code> </a>.</p> <p>As a best practice, you can validate
+         * your IAM policies. To learn more, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_policy-validator.html">Validating
          * IAM policies</a> in the <i>IAM User Guide</i>.</p> <p>For more information about
          * policies, see <a
@@ -2300,6 +2309,32 @@ namespace IAM
         }
 
         /**
+         * <p>Retrieves information about an MFA device for a specified user.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetMFADevice">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetMFADeviceOutcome GetMFADevice(const Model::GetMFADeviceRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetMFADevice that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetMFADeviceRequestT = Model::GetMFADeviceRequest>
+        Model::GetMFADeviceOutcomeCallable GetMFADeviceCallable(const GetMFADeviceRequestT& request) const
+        {
+            return SubmitCallable(&IAMClient::GetMFADevice, request);
+        }
+
+        /**
+         * An Async wrapper for GetMFADevice that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetMFADeviceRequestT = Model::GetMFADeviceRequest>
+        void GetMFADeviceAsync(const GetMFADeviceRequestT& request, const GetMFADeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IAMClient::GetMFADevice, request, handler, context);
+        }
+
+        /**
          * <p>Returns information about the specified OpenID Connect (OIDC) provider
          * resource object in IAM.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetOpenIDConnectProvider">AWS
@@ -3939,9 +3974,11 @@ namespace IAM
         /**
          * <p>Adds or updates an inline policy document that is embedded in the specified
          * IAM group.</p> <p>A user can also have managed policies attached to it. To
-         * attach a managed policy to a group, use <a>AttachGroupPolicy</a>. To create a
-         * new managed policy, use <a>CreatePolicy</a>. For information about policies, see
-         * <a
+         * attach a managed policy to a group, use <a
+         * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_AttachGroupPolicy.html">
+         * <code>AttachGroupPolicy</code> </a>. To create a new managed policy, use <a
+         * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">
+         * <code>CreatePolicy</code> </a>. For information about policies, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
          * policies and inline policies</a> in the <i>IAM User Guide</i>.</p> <p>For
          * information about the maximum number of inline policies that you can embed in a
@@ -4017,14 +4054,20 @@ namespace IAM
          * <p>Adds or updates an inline policy document that is embedded in the specified
          * IAM role.</p> <p>When you embed an inline policy in a role, the inline policy is
          * used as part of the role's access (permissions) policy. The role's trust policy
-         * is created at the same time as the role, using <a>CreateRole</a>. You can update
-         * a role's trust policy using <a>UpdateAssumeRolePolicy</a>. For more information
-         * about IAM roles, see <a
+         * is created at the same time as the role, using <a
+         * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">
+         * <code>CreateRole</code> </a>. You can update a role's trust policy using <a
+         * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAssumeRolePolicy.html">
+         * <code>UpdateAssumerolePolicy</code> </a>. For more information about IAM roles,
+         * see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html">Using
          * roles to delegate permissions and federate identities</a>.</p> <p>A role can
          * also have a managed policy attached to it. To attach a managed policy to a role,
-         * use <a>AttachRolePolicy</a>. To create a new managed policy, use
-         * <a>CreatePolicy</a>. For information about policies, see <a
+         * use <a
+         * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_AttachRolePolicy.html">
+         * <code>AttachRolePolicy</code> </a>. To create a new managed policy, use <a
+         * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">
+         * <code>CreatePolicy</code> </a>. For information about policies, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
          * policies and inline policies</a> in the <i>IAM User Guide</i>.</p> <p>For
          * information about the maximum number of inline policies that you can embed with
@@ -4098,8 +4141,11 @@ namespace IAM
         /**
          * <p>Adds or updates an inline policy document that is embedded in the specified
          * IAM user.</p> <p>An IAM user can also have a managed policy attached to it. To
-         * attach a managed policy to a user, use <a>AttachUserPolicy</a>. To create a new
-         * managed policy, use <a>CreatePolicy</a>. For information about policies, see <a
+         * attach a managed policy to a user, use <a
+         * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_AttachUserPolicy.html">
+         * <code>AttachUserPolicy</code> </a>. To create a new managed policy, use <a
+         * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">
+         * <code>CreatePolicy</code> </a>. For information about policies, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
          * policies and inline policies</a> in the <i>IAM User Guide</i>.</p> <p>For
          * information about the maximum number of inline policies that you can embed in a

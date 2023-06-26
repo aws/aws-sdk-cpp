@@ -21,14 +21,16 @@ namespace Model
 KubernetesUserDetails::KubernetesUserDetails() : 
     m_usernameHasBeenSet(false),
     m_uidHasBeenSet(false),
-    m_groupsHasBeenSet(false)
+    m_groupsHasBeenSet(false),
+    m_sessionNameHasBeenSet(false)
 {
 }
 
 KubernetesUserDetails::KubernetesUserDetails(JsonView jsonValue) : 
     m_usernameHasBeenSet(false),
     m_uidHasBeenSet(false),
-    m_groupsHasBeenSet(false)
+    m_groupsHasBeenSet(false),
+    m_sessionNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -59,6 +61,16 @@ KubernetesUserDetails& KubernetesUserDetails::operator =(JsonView jsonValue)
     m_groupsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("sessionName"))
+  {
+    Aws::Utils::Array<JsonView> sessionNameJsonList = jsonValue.GetArray("sessionName");
+    for(unsigned sessionNameIndex = 0; sessionNameIndex < sessionNameJsonList.GetLength(); ++sessionNameIndex)
+    {
+      m_sessionName.push_back(sessionNameJsonList[sessionNameIndex].AsString());
+    }
+    m_sessionNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -86,6 +98,17 @@ JsonValue KubernetesUserDetails::Jsonize() const
      groupsJsonList[groupsIndex].AsString(m_groups[groupsIndex]);
    }
    payload.WithArray("groups", std::move(groupsJsonList));
+
+  }
+
+  if(m_sessionNameHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> sessionNameJsonList(m_sessionName.size());
+   for(unsigned sessionNameIndex = 0; sessionNameIndex < sessionNameJsonList.GetLength(); ++sessionNameIndex)
+   {
+     sessionNameJsonList[sessionNameIndex].AsString(m_sessionName[sessionNameIndex]);
+   }
+   payload.WithArray("sessionName", std::move(sessionNameJsonList));
 
   }
 

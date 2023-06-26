@@ -15,7 +15,9 @@
 #include <aws/pinpoint/model/JourneyChannelSettings.h>
 #include <aws/pinpoint/model/OpenHours.h>
 #include <aws/pinpoint/model/ClosedDays.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/pinpoint/model/Activity.h>
+#include <aws/pinpoint/model/__TimezoneEstimationMethodsElement.h>
 #include <utility>
 
 namespace Aws
@@ -1007,6 +1009,127 @@ namespace Model
      */
     inline JourneyResponse& WithClosedDays(ClosedDays&& value) { SetClosedDays(std::move(value)); return *this;}
 
+
+    /**
+     * <p>An array of time zone estimation methods, if any, to use for determining an
+     * <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id.html">Endpoints</a>
+     * time zone if the Endpoint does not have a value for the Demographic.Timezone
+     * attribute.</p> <ul> <li><p>PHONE_NUMBER - A time zone is determined based on the
+     * Endpoint.Address and Endpoint.Location.Country.</p></li> <li><p>POSTAL_CODE - A
+     * time zone is determined based on the Endpoint.Location.PostalCode and
+     * Endpoint.Location.Country.</p> <p>POSTAL_CODE detection is only supported
+     * in the United States, United Kingdom, Australia, New Zealand, Canada, France,
+     * Italy, Spain, Germany and in regions where Amazon Pinpoint is
+     * available.</p></li> </ul>
+     */
+    inline const Aws::Vector<__TimezoneEstimationMethodsElement>& GetTimezoneEstimationMethods() const{ return m_timezoneEstimationMethods; }
+
+    /**
+     * <p>An array of time zone estimation methods, if any, to use for determining an
+     * <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id.html">Endpoints</a>
+     * time zone if the Endpoint does not have a value for the Demographic.Timezone
+     * attribute.</p> <ul> <li><p>PHONE_NUMBER - A time zone is determined based on the
+     * Endpoint.Address and Endpoint.Location.Country.</p></li> <li><p>POSTAL_CODE - A
+     * time zone is determined based on the Endpoint.Location.PostalCode and
+     * Endpoint.Location.Country.</p> <p>POSTAL_CODE detection is only supported
+     * in the United States, United Kingdom, Australia, New Zealand, Canada, France,
+     * Italy, Spain, Germany and in regions where Amazon Pinpoint is
+     * available.</p></li> </ul>
+     */
+    inline bool TimezoneEstimationMethodsHasBeenSet() const { return m_timezoneEstimationMethodsHasBeenSet; }
+
+    /**
+     * <p>An array of time zone estimation methods, if any, to use for determining an
+     * <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id.html">Endpoints</a>
+     * time zone if the Endpoint does not have a value for the Demographic.Timezone
+     * attribute.</p> <ul> <li><p>PHONE_NUMBER - A time zone is determined based on the
+     * Endpoint.Address and Endpoint.Location.Country.</p></li> <li><p>POSTAL_CODE - A
+     * time zone is determined based on the Endpoint.Location.PostalCode and
+     * Endpoint.Location.Country.</p> <p>POSTAL_CODE detection is only supported
+     * in the United States, United Kingdom, Australia, New Zealand, Canada, France,
+     * Italy, Spain, Germany and in regions where Amazon Pinpoint is
+     * available.</p></li> </ul>
+     */
+    inline void SetTimezoneEstimationMethods(const Aws::Vector<__TimezoneEstimationMethodsElement>& value) { m_timezoneEstimationMethodsHasBeenSet = true; m_timezoneEstimationMethods = value; }
+
+    /**
+     * <p>An array of time zone estimation methods, if any, to use for determining an
+     * <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id.html">Endpoints</a>
+     * time zone if the Endpoint does not have a value for the Demographic.Timezone
+     * attribute.</p> <ul> <li><p>PHONE_NUMBER - A time zone is determined based on the
+     * Endpoint.Address and Endpoint.Location.Country.</p></li> <li><p>POSTAL_CODE - A
+     * time zone is determined based on the Endpoint.Location.PostalCode and
+     * Endpoint.Location.Country.</p> <p>POSTAL_CODE detection is only supported
+     * in the United States, United Kingdom, Australia, New Zealand, Canada, France,
+     * Italy, Spain, Germany and in regions where Amazon Pinpoint is
+     * available.</p></li> </ul>
+     */
+    inline void SetTimezoneEstimationMethods(Aws::Vector<__TimezoneEstimationMethodsElement>&& value) { m_timezoneEstimationMethodsHasBeenSet = true; m_timezoneEstimationMethods = std::move(value); }
+
+    /**
+     * <p>An array of time zone estimation methods, if any, to use for determining an
+     * <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id.html">Endpoints</a>
+     * time zone if the Endpoint does not have a value for the Demographic.Timezone
+     * attribute.</p> <ul> <li><p>PHONE_NUMBER - A time zone is determined based on the
+     * Endpoint.Address and Endpoint.Location.Country.</p></li> <li><p>POSTAL_CODE - A
+     * time zone is determined based on the Endpoint.Location.PostalCode and
+     * Endpoint.Location.Country.</p> <p>POSTAL_CODE detection is only supported
+     * in the United States, United Kingdom, Australia, New Zealand, Canada, France,
+     * Italy, Spain, Germany and in regions where Amazon Pinpoint is
+     * available.</p></li> </ul>
+     */
+    inline JourneyResponse& WithTimezoneEstimationMethods(const Aws::Vector<__TimezoneEstimationMethodsElement>& value) { SetTimezoneEstimationMethods(value); return *this;}
+
+    /**
+     * <p>An array of time zone estimation methods, if any, to use for determining an
+     * <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id.html">Endpoints</a>
+     * time zone if the Endpoint does not have a value for the Demographic.Timezone
+     * attribute.</p> <ul> <li><p>PHONE_NUMBER - A time zone is determined based on the
+     * Endpoint.Address and Endpoint.Location.Country.</p></li> <li><p>POSTAL_CODE - A
+     * time zone is determined based on the Endpoint.Location.PostalCode and
+     * Endpoint.Location.Country.</p> <p>POSTAL_CODE detection is only supported
+     * in the United States, United Kingdom, Australia, New Zealand, Canada, France,
+     * Italy, Spain, Germany and in regions where Amazon Pinpoint is
+     * available.</p></li> </ul>
+     */
+    inline JourneyResponse& WithTimezoneEstimationMethods(Aws::Vector<__TimezoneEstimationMethodsElement>&& value) { SetTimezoneEstimationMethods(std::move(value)); return *this;}
+
+    /**
+     * <p>An array of time zone estimation methods, if any, to use for determining an
+     * <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id.html">Endpoints</a>
+     * time zone if the Endpoint does not have a value for the Demographic.Timezone
+     * attribute.</p> <ul> <li><p>PHONE_NUMBER - A time zone is determined based on the
+     * Endpoint.Address and Endpoint.Location.Country.</p></li> <li><p>POSTAL_CODE - A
+     * time zone is determined based on the Endpoint.Location.PostalCode and
+     * Endpoint.Location.Country.</p> <p>POSTAL_CODE detection is only supported
+     * in the United States, United Kingdom, Australia, New Zealand, Canada, France,
+     * Italy, Spain, Germany and in regions where Amazon Pinpoint is
+     * available.</p></li> </ul>
+     */
+    inline JourneyResponse& AddTimezoneEstimationMethods(const __TimezoneEstimationMethodsElement& value) { m_timezoneEstimationMethodsHasBeenSet = true; m_timezoneEstimationMethods.push_back(value); return *this; }
+
+    /**
+     * <p>An array of time zone estimation methods, if any, to use for determining an
+     * <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-endpoints-endpoint-id.html">Endpoints</a>
+     * time zone if the Endpoint does not have a value for the Demographic.Timezone
+     * attribute.</p> <ul> <li><p>PHONE_NUMBER - A time zone is determined based on the
+     * Endpoint.Address and Endpoint.Location.Country.</p></li> <li><p>POSTAL_CODE - A
+     * time zone is determined based on the Endpoint.Location.PostalCode and
+     * Endpoint.Location.Country.</p> <p>POSTAL_CODE detection is only supported
+     * in the United States, United Kingdom, Australia, New Zealand, Canada, France,
+     * Italy, Spain, Germany and in regions where Amazon Pinpoint is
+     * available.</p></li> </ul>
+     */
+    inline JourneyResponse& AddTimezoneEstimationMethods(__TimezoneEstimationMethodsElement&& value) { m_timezoneEstimationMethodsHasBeenSet = true; m_timezoneEstimationMethods.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::Map<Aws::String, Activity> m_activities;
@@ -1071,6 +1194,9 @@ namespace Model
 
     ClosedDays m_closedDays;
     bool m_closedDaysHasBeenSet = false;
+
+    Aws::Vector<__TimezoneEstimationMethodsElement> m_timezoneEstimationMethods;
+    bool m_timezoneEstimationMethodsHasBeenSet = false;
   };
 
 } // namespace Model

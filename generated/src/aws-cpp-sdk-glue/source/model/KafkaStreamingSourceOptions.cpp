@@ -42,7 +42,8 @@ KafkaStreamingSourceOptions::KafkaStreamingSourceOptions() :
     m_includeHeaders(false),
     m_includeHeadersHasBeenSet(false),
     m_addRecordTimestampHasBeenSet(false),
-    m_emitConsumerLagMetricsHasBeenSet(false)
+    m_emitConsumerLagMetricsHasBeenSet(false),
+    m_startingTimestampHasBeenSet(false)
 {
 }
 
@@ -70,7 +71,8 @@ KafkaStreamingSourceOptions::KafkaStreamingSourceOptions(JsonView jsonValue) :
     m_includeHeaders(false),
     m_includeHeadersHasBeenSet(false),
     m_addRecordTimestampHasBeenSet(false),
-    m_emitConsumerLagMetricsHasBeenSet(false)
+    m_emitConsumerLagMetricsHasBeenSet(false),
+    m_startingTimestampHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -203,6 +205,13 @@ KafkaStreamingSourceOptions& KafkaStreamingSourceOptions::operator =(JsonView js
     m_emitConsumerLagMetricsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("StartingTimestamp"))
+  {
+    m_startingTimestamp = jsonValue.GetString("StartingTimestamp");
+
+    m_startingTimestampHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -316,6 +325,11 @@ JsonValue KafkaStreamingSourceOptions::Jsonize() const
   {
    payload.WithString("EmitConsumerLagMetrics", m_emitConsumerLagMetrics);
 
+  }
+
+  if(m_startingTimestampHasBeenSet)
+  {
+   payload.WithString("StartingTimestamp", m_startingTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

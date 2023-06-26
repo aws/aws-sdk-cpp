@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/glue/Glue_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -874,6 +875,61 @@ namespace Model
      */
     inline KafkaStreamingSourceOptions& WithEmitConsumerLagMetrics(const char* value) { SetEmitConsumerLagMetrics(value); return *this;}
 
+
+    /**
+     * <p>The timestamp of the record in the Kafka topic to start reading data from.
+     * The possible values are a timestamp string in UTC format of the pattern
+     * <code>yyyy-mm-ddTHH:MM:SSZ</code> (where Z represents a UTC timezone offset with
+     * a +/-. For example: "2023-04-04T08:00:00+08:00"). </p> <p>Only one of
+     * <code>StartingTimestamp</code> or <code>StartingOffsets</code> must be set.</p>
+     */
+    inline const Aws::Utils::DateTime& GetStartingTimestamp() const{ return m_startingTimestamp; }
+
+    /**
+     * <p>The timestamp of the record in the Kafka topic to start reading data from.
+     * The possible values are a timestamp string in UTC format of the pattern
+     * <code>yyyy-mm-ddTHH:MM:SSZ</code> (where Z represents a UTC timezone offset with
+     * a +/-. For example: "2023-04-04T08:00:00+08:00"). </p> <p>Only one of
+     * <code>StartingTimestamp</code> or <code>StartingOffsets</code> must be set.</p>
+     */
+    inline bool StartingTimestampHasBeenSet() const { return m_startingTimestampHasBeenSet; }
+
+    /**
+     * <p>The timestamp of the record in the Kafka topic to start reading data from.
+     * The possible values are a timestamp string in UTC format of the pattern
+     * <code>yyyy-mm-ddTHH:MM:SSZ</code> (where Z represents a UTC timezone offset with
+     * a +/-. For example: "2023-04-04T08:00:00+08:00"). </p> <p>Only one of
+     * <code>StartingTimestamp</code> or <code>StartingOffsets</code> must be set.</p>
+     */
+    inline void SetStartingTimestamp(const Aws::Utils::DateTime& value) { m_startingTimestampHasBeenSet = true; m_startingTimestamp = value; }
+
+    /**
+     * <p>The timestamp of the record in the Kafka topic to start reading data from.
+     * The possible values are a timestamp string in UTC format of the pattern
+     * <code>yyyy-mm-ddTHH:MM:SSZ</code> (where Z represents a UTC timezone offset with
+     * a +/-. For example: "2023-04-04T08:00:00+08:00"). </p> <p>Only one of
+     * <code>StartingTimestamp</code> or <code>StartingOffsets</code> must be set.</p>
+     */
+    inline void SetStartingTimestamp(Aws::Utils::DateTime&& value) { m_startingTimestampHasBeenSet = true; m_startingTimestamp = std::move(value); }
+
+    /**
+     * <p>The timestamp of the record in the Kafka topic to start reading data from.
+     * The possible values are a timestamp string in UTC format of the pattern
+     * <code>yyyy-mm-ddTHH:MM:SSZ</code> (where Z represents a UTC timezone offset with
+     * a +/-. For example: "2023-04-04T08:00:00+08:00"). </p> <p>Only one of
+     * <code>StartingTimestamp</code> or <code>StartingOffsets</code> must be set.</p>
+     */
+    inline KafkaStreamingSourceOptions& WithStartingTimestamp(const Aws::Utils::DateTime& value) { SetStartingTimestamp(value); return *this;}
+
+    /**
+     * <p>The timestamp of the record in the Kafka topic to start reading data from.
+     * The possible values are a timestamp string in UTC format of the pattern
+     * <code>yyyy-mm-ddTHH:MM:SSZ</code> (where Z represents a UTC timezone offset with
+     * a +/-. For example: "2023-04-04T08:00:00+08:00"). </p> <p>Only one of
+     * <code>StartingTimestamp</code> or <code>StartingOffsets</code> must be set.</p>
+     */
+    inline KafkaStreamingSourceOptions& WithStartingTimestamp(Aws::Utils::DateTime&& value) { SetStartingTimestamp(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_bootstrapServers;
@@ -929,6 +985,9 @@ namespace Model
 
     Aws::String m_emitConsumerLagMetrics;
     bool m_emitConsumerLagMetricsHasBeenSet = false;
+
+    Aws::Utils::DateTime m_startingTimestamp;
+    bool m_startingTimestampHasBeenSet = false;
   };
 
 } // namespace Model
