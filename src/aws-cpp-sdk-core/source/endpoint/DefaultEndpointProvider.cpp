@@ -12,12 +12,16 @@ namespace Aws
 namespace Endpoint
 {
 
+#ifndef AWS_CORE_EXPORTS // Except for Windows DLL
 /**
- * Export endpoint provider symbols from DLL
+ * Instantiate endpoint providers
  */
-template class AWS_CORE_API DefaultEndpointProvider<Aws::Client::GenericClientConfiguration<false>,
+template class DefaultEndpointProvider<Aws::Client::GenericClientConfiguration<false>,
             Aws::Endpoint::BuiltInParameters,
             Aws::Endpoint::ClientContextParameters>;
+
+template class DefaultEndpointProvider<Aws::Client::GenericClientConfiguration<true>>;
+#endif
 
 char CharToDec(const char c)
 {
