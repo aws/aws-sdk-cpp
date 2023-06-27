@@ -303,6 +303,59 @@ namespace Model
      */
     inline SAPODataConnectorProfileProperties& WithOAuthProperties(OAuthProperties&& value) { SetOAuthProperties(std::move(value)); return *this;}
 
+
+    /**
+     * <p>If you set this parameter to <code>true</code>, Amazon AppFlow bypasses the
+     * single sign-on (SSO) settings in your SAP account when it accesses your SAP
+     * OData instance.</p> <p>Whether you need this option depends on the types of
+     * credentials that you applied to your SAP OData connection profile. If your
+     * profile uses basic authentication credentials, SAP SSO can prevent Amazon
+     * AppFlow from connecting to your account with your username and password. In this
+     * case, bypassing SSO makes it possible for Amazon AppFlow to connect
+     * successfully. However, if your profile uses OAuth credentials, this parameter
+     * has no affect.</p>
+     */
+    inline bool GetDisableSSO() const{ return m_disableSSO; }
+
+    /**
+     * <p>If you set this parameter to <code>true</code>, Amazon AppFlow bypasses the
+     * single sign-on (SSO) settings in your SAP account when it accesses your SAP
+     * OData instance.</p> <p>Whether you need this option depends on the types of
+     * credentials that you applied to your SAP OData connection profile. If your
+     * profile uses basic authentication credentials, SAP SSO can prevent Amazon
+     * AppFlow from connecting to your account with your username and password. In this
+     * case, bypassing SSO makes it possible for Amazon AppFlow to connect
+     * successfully. However, if your profile uses OAuth credentials, this parameter
+     * has no affect.</p>
+     */
+    inline bool DisableSSOHasBeenSet() const { return m_disableSSOHasBeenSet; }
+
+    /**
+     * <p>If you set this parameter to <code>true</code>, Amazon AppFlow bypasses the
+     * single sign-on (SSO) settings in your SAP account when it accesses your SAP
+     * OData instance.</p> <p>Whether you need this option depends on the types of
+     * credentials that you applied to your SAP OData connection profile. If your
+     * profile uses basic authentication credentials, SAP SSO can prevent Amazon
+     * AppFlow from connecting to your account with your username and password. In this
+     * case, bypassing SSO makes it possible for Amazon AppFlow to connect
+     * successfully. However, if your profile uses OAuth credentials, this parameter
+     * has no affect.</p>
+     */
+    inline void SetDisableSSO(bool value) { m_disableSSOHasBeenSet = true; m_disableSSO = value; }
+
+    /**
+     * <p>If you set this parameter to <code>true</code>, Amazon AppFlow bypasses the
+     * single sign-on (SSO) settings in your SAP account when it accesses your SAP
+     * OData instance.</p> <p>Whether you need this option depends on the types of
+     * credentials that you applied to your SAP OData connection profile. If your
+     * profile uses basic authentication credentials, SAP SSO can prevent Amazon
+     * AppFlow from connecting to your account with your username and password. In this
+     * case, bypassing SSO makes it possible for Amazon AppFlow to connect
+     * successfully. However, if your profile uses OAuth credentials, this parameter
+     * has no affect.</p>
+     */
+    inline SAPODataConnectorProfileProperties& WithDisableSSO(bool value) { SetDisableSSO(value); return *this;}
+
   private:
 
     Aws::String m_applicationHostUrl;
@@ -325,6 +378,9 @@ namespace Model
 
     OAuthProperties m_oAuthProperties;
     bool m_oAuthPropertiesHasBeenSet = false;
+
+    bool m_disableSSO;
+    bool m_disableSSOHasBeenSet = false;
   };
 
 } // namespace Model

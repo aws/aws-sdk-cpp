@@ -82,7 +82,7 @@ namespace Model
      * Amazon Macie can't verify the location of the sensitive data to retrieve. There
      * isn't a corresponding sensitive data discovery result for the finding. Or the
      * sensitive data discovery result specified by the
-     * ClassificationDetails.detailedResultsLocation field of the finding isn't
+     * classificationDetails.detailedResultsLocation field of the finding isn't
      * available, is malformed or corrupted, or uses an unsupported storage
      * format.</p></li> <li><p>OBJECT_EXCEEDS_SIZE_QUOTA - The storage size of the
      * affected S3 object exceeds the size quota for retrieving occurrences of
@@ -103,7 +103,7 @@ namespace Model
      * Amazon Macie can't verify the location of the sensitive data to retrieve. There
      * isn't a corresponding sensitive data discovery result for the finding. Or the
      * sensitive data discovery result specified by the
-     * ClassificationDetails.detailedResultsLocation field of the finding isn't
+     * classificationDetails.detailedResultsLocation field of the finding isn't
      * available, is malformed or corrupted, or uses an unsupported storage
      * format.</p></li> <li><p>OBJECT_EXCEEDS_SIZE_QUOTA - The storage size of the
      * affected S3 object exceeds the size quota for retrieving occurrences of
@@ -124,7 +124,7 @@ namespace Model
      * Amazon Macie can't verify the location of the sensitive data to retrieve. There
      * isn't a corresponding sensitive data discovery result for the finding. Or the
      * sensitive data discovery result specified by the
-     * ClassificationDetails.detailedResultsLocation field of the finding isn't
+     * classificationDetails.detailedResultsLocation field of the finding isn't
      * available, is malformed or corrupted, or uses an unsupported storage
      * format.</p></li> <li><p>OBJECT_EXCEEDS_SIZE_QUOTA - The storage size of the
      * affected S3 object exceeds the size quota for retrieving occurrences of
@@ -145,7 +145,7 @@ namespace Model
      * Amazon Macie can't verify the location of the sensitive data to retrieve. There
      * isn't a corresponding sensitive data discovery result for the finding. Or the
      * sensitive data discovery result specified by the
-     * ClassificationDetails.detailedResultsLocation field of the finding isn't
+     * classificationDetails.detailedResultsLocation field of the finding isn't
      * available, is malformed or corrupted, or uses an unsupported storage
      * format.</p></li> <li><p>OBJECT_EXCEEDS_SIZE_QUOTA - The storage size of the
      * affected S3 object exceeds the size quota for retrieving occurrences of
@@ -166,7 +166,7 @@ namespace Model
      * Amazon Macie can't verify the location of the sensitive data to retrieve. There
      * isn't a corresponding sensitive data discovery result for the finding. Or the
      * sensitive data discovery result specified by the
-     * ClassificationDetails.detailedResultsLocation field of the finding isn't
+     * classificationDetails.detailedResultsLocation field of the finding isn't
      * available, is malformed or corrupted, or uses an unsupported storage
      * format.</p></li> <li><p>OBJECT_EXCEEDS_SIZE_QUOTA - The storage size of the
      * affected S3 object exceeds the size quota for retrieving occurrences of
@@ -187,7 +187,7 @@ namespace Model
      * Amazon Macie can't verify the location of the sensitive data to retrieve. There
      * isn't a corresponding sensitive data discovery result for the finding. Or the
      * sensitive data discovery result specified by the
-     * ClassificationDetails.detailedResultsLocation field of the finding isn't
+     * classificationDetails.detailedResultsLocation field of the finding isn't
      * available, is malformed or corrupted, or uses an unsupported storage
      * format.</p></li> <li><p>OBJECT_EXCEEDS_SIZE_QUOTA - The storage size of the
      * affected S3 object exceeds the size quota for retrieving occurrences of
@@ -208,7 +208,7 @@ namespace Model
      * Amazon Macie can't verify the location of the sensitive data to retrieve. There
      * isn't a corresponding sensitive data discovery result for the finding. Or the
      * sensitive data discovery result specified by the
-     * ClassificationDetails.detailedResultsLocation field of the finding isn't
+     * classificationDetails.detailedResultsLocation field of the finding isn't
      * available, is malformed or corrupted, or uses an unsupported storage
      * format.</p></li> <li><p>OBJECT_EXCEEDS_SIZE_QUOTA - The storage size of the
      * affected S3 object exceeds the size quota for retrieving occurrences of

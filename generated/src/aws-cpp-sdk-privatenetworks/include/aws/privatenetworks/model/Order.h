@@ -8,8 +8,9 @@
 #include <aws/privatenetworks/model/AcknowledgmentStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/privatenetworks/model/Address.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/privatenetworks/model/Address.h>
+#include <aws/privatenetworks/model/OrderedResourceDefinition.h>
 #include <aws/privatenetworks/model/TrackingInformation.h>
 #include <utility>
 
@@ -236,6 +237,47 @@ namespace Model
 
 
     /**
+     * <p>A list of the network resources placed in the order.</p>
+     */
+    inline const Aws::Vector<OrderedResourceDefinition>& GetOrderedResources() const{ return m_orderedResources; }
+
+    /**
+     * <p>A list of the network resources placed in the order.</p>
+     */
+    inline bool OrderedResourcesHasBeenSet() const { return m_orderedResourcesHasBeenSet; }
+
+    /**
+     * <p>A list of the network resources placed in the order.</p>
+     */
+    inline void SetOrderedResources(const Aws::Vector<OrderedResourceDefinition>& value) { m_orderedResourcesHasBeenSet = true; m_orderedResources = value; }
+
+    /**
+     * <p>A list of the network resources placed in the order.</p>
+     */
+    inline void SetOrderedResources(Aws::Vector<OrderedResourceDefinition>&& value) { m_orderedResourcesHasBeenSet = true; m_orderedResources = std::move(value); }
+
+    /**
+     * <p>A list of the network resources placed in the order.</p>
+     */
+    inline Order& WithOrderedResources(const Aws::Vector<OrderedResourceDefinition>& value) { SetOrderedResources(value); return *this;}
+
+    /**
+     * <p>A list of the network resources placed in the order.</p>
+     */
+    inline Order& WithOrderedResources(Aws::Vector<OrderedResourceDefinition>&& value) { SetOrderedResources(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of the network resources placed in the order.</p>
+     */
+    inline Order& AddOrderedResources(const OrderedResourceDefinition& value) { m_orderedResourcesHasBeenSet = true; m_orderedResources.push_back(value); return *this; }
+
+    /**
+     * <p>A list of the network resources placed in the order.</p>
+     */
+    inline Order& AddOrderedResources(OrderedResourceDefinition&& value) { m_orderedResourcesHasBeenSet = true; m_orderedResources.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The shipping address of the order.</p>
      */
     inline const Address& GetShippingAddress() const{ return m_shippingAddress; }
@@ -322,6 +364,9 @@ namespace Model
 
     Aws::String m_orderArn;
     bool m_orderArnHasBeenSet = false;
+
+    Aws::Vector<OrderedResourceDefinition> m_orderedResources;
+    bool m_orderedResourcesHasBeenSet = false;
 
     Address m_shippingAddress;
     bool m_shippingAddressHasBeenSet = false;

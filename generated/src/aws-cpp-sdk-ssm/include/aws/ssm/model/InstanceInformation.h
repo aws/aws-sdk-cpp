@@ -403,7 +403,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
      * in the <i>Amazon EC2 API Reference</i> or <a
-     * href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a>
+     * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html">describe-instances</a>
      * in the <i>Amazon Web Services CLI Command Reference</i>.</p>
      */
     inline const Aws::String& GetIamRole() const{ return m_iamRole; }
@@ -416,7 +416,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
      * in the <i>Amazon EC2 API Reference</i> or <a
-     * href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a>
+     * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html">describe-instances</a>
      * in the <i>Amazon Web Services CLI Command Reference</i>.</p>
      */
     inline bool IamRoleHasBeenSet() const { return m_iamRoleHasBeenSet; }
@@ -429,7 +429,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
      * in the <i>Amazon EC2 API Reference</i> or <a
-     * href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a>
+     * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html">describe-instances</a>
      * in the <i>Amazon Web Services CLI Command Reference</i>.</p>
      */
     inline void SetIamRole(const Aws::String& value) { m_iamRoleHasBeenSet = true; m_iamRole = value; }
@@ -442,7 +442,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
      * in the <i>Amazon EC2 API Reference</i> or <a
-     * href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a>
+     * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html">describe-instances</a>
      * in the <i>Amazon Web Services CLI Command Reference</i>.</p>
      */
     inline void SetIamRole(Aws::String&& value) { m_iamRoleHasBeenSet = true; m_iamRole = std::move(value); }
@@ -455,7 +455,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
      * in the <i>Amazon EC2 API Reference</i> or <a
-     * href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a>
+     * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html">describe-instances</a>
      * in the <i>Amazon Web Services CLI Command Reference</i>.</p>
      */
     inline void SetIamRole(const char* value) { m_iamRoleHasBeenSet = true; m_iamRole.assign(value); }
@@ -468,7 +468,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
      * in the <i>Amazon EC2 API Reference</i> or <a
-     * href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a>
+     * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html">describe-instances</a>
      * in the <i>Amazon Web Services CLI Command Reference</i>.</p>
      */
     inline InstanceInformation& WithIamRole(const Aws::String& value) { SetIamRole(value); return *this;}
@@ -481,7 +481,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
      * in the <i>Amazon EC2 API Reference</i> or <a
-     * href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a>
+     * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html">describe-instances</a>
      * in the <i>Amazon Web Services CLI Command Reference</i>.</p>
      */
     inline InstanceInformation& WithIamRole(Aws::String&& value) { SetIamRole(std::move(value)); return *this;}
@@ -494,7 +494,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
      * in the <i>Amazon EC2 API Reference</i> or <a
-     * href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a>
+     * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html">describe-instances</a>
      * in the <i>Amazon Web Services CLI Command Reference</i>.</p>
      */
     inline InstanceInformation& WithIamRole(const char* value) { SetIamRole(value); return *this;}
@@ -589,7 +589,7 @@ namespace Model
      * <code>DescribeInstances</code> operation. For information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
      * in the <i>Amazon EC2 API Reference</i> or <a
-     * href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a>
+     * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html">describe-instances</a>
      * in the <i>Amazon Web Services CLI Command Reference</i>.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -609,7 +609,7 @@ namespace Model
      * <code>DescribeInstances</code> operation. For information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
      * in the <i>Amazon EC2 API Reference</i> or <a
-     * href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a>
+     * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html">describe-instances</a>
      * in the <i>Amazon Web Services CLI Command Reference</i>.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -629,7 +629,7 @@ namespace Model
      * <code>DescribeInstances</code> operation. For information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
      * in the <i>Amazon EC2 API Reference</i> or <a
-     * href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a>
+     * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html">describe-instances</a>
      * in the <i>Amazon Web Services CLI Command Reference</i>.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
@@ -649,7 +649,7 @@ namespace Model
      * <code>DescribeInstances</code> operation. For information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
      * in the <i>Amazon EC2 API Reference</i> or <a
-     * href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a>
+     * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html">describe-instances</a>
      * in the <i>Amazon Web Services CLI Command Reference</i>.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
@@ -669,7 +669,7 @@ namespace Model
      * <code>DescribeInstances</code> operation. For information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
      * in the <i>Amazon EC2 API Reference</i> or <a
-     * href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a>
+     * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html">describe-instances</a>
      * in the <i>Amazon Web Services CLI Command Reference</i>.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
@@ -689,7 +689,7 @@ namespace Model
      * <code>DescribeInstances</code> operation. For information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
      * in the <i>Amazon EC2 API Reference</i> or <a
-     * href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a>
+     * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html">describe-instances</a>
      * in the <i>Amazon Web Services CLI Command Reference</i>.</p>
      */
     inline InstanceInformation& WithName(const Aws::String& value) { SetName(value); return *this;}
@@ -709,7 +709,7 @@ namespace Model
      * <code>DescribeInstances</code> operation. For information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
      * in the <i>Amazon EC2 API Reference</i> or <a
-     * href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a>
+     * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html">describe-instances</a>
      * in the <i>Amazon Web Services CLI Command Reference</i>.</p>
      */
     inline InstanceInformation& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
@@ -729,7 +729,7 @@ namespace Model
      * <code>DescribeInstances</code> operation. For information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
      * in the <i>Amazon EC2 API Reference</i> or <a
-     * href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a>
+     * href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html">describe-instances</a>
      * in the <i>Amazon Web Services CLI Command Reference</i>.</p>
      */
     inline InstanceInformation& WithName(const char* value) { SetName(value); return *this;}

@@ -33,22 +33,22 @@ namespace VerifiedPermissions
    * the <a
    * href="https://docs.aws.amazon.com/verifiedpermissions/latest/userguide/">Amazon
    * Verified Permissions User Guide</a>.</p> <p>For more information about the Cedar
-   * policy language, see the <a href="docs.cedarpolicy.com">Cedar Policy Language
-   * Guide</a>.</p>  <p>When you write Cedar policies that reference
-   * principals, resources and actions, you can define the unique identifiers used
-   * for each of those elements. We strongly recommend that you follow these best
-   * practices:</p> <ul> <li> <p> <b>Use values like universally unique identifiers
-   * (UUIDs) for all principal and resource identifiers.</b> </p> <p>For example, if
-   * user <code>jane</code> leaves the company, and you later let someone else use
-   * the name <code>jane</code>, then that new user automatically gets access to
-   * everything granted by policies that still reference <code>User::"jane"</code>.
-   * Cedar can’t distinguish between the new user and the old. This applies to both
-   * principal and resource identifiers. Always use identifiers that are guaranteed
-   * unique and never reused to ensure that you don’t unintentionally grant access
-   * because of the presence of an old identifier in a policy.</p> <p>Where you use a
-   * UUID for an entity, we recommend that you follow it with the // comment
-   * specifier and the ‘friendly’ name of your entity. This helps to make your
-   * policies easier to understand. For example: principal ==
+   * policy language, see the <a href="https://docs.cedarpolicy.com/">Cedar Policy
+   * Language Guide</a>.</p>  <p>When you write Cedar policies that
+   * reference principals, resources and actions, you can define the unique
+   * identifiers used for each of those elements. We strongly recommend that you
+   * follow these best practices:</p> <ul> <li> <p> <b>Use values like universally
+   * unique identifiers (UUIDs) for all principal and resource identifiers.</b> </p>
+   * <p>For example, if user <code>jane</code> leaves the company, and you later let
+   * someone else use the name <code>jane</code>, then that new user automatically
+   * gets access to everything granted by policies that still reference
+   * <code>User::"jane"</code>. Cedar can’t distinguish between the new user and the
+   * old. This applies to both principal and resource identifiers. Always use
+   * identifiers that are guaranteed unique and never reused to ensure that you don’t
+   * unintentionally grant access because of the presence of an old identifier in a
+   * policy.</p> <p>Where you use a UUID for an entity, we recommend that you follow
+   * it with the // comment specifier and the ‘friendly’ name of your entity. This
+   * helps to make your policies easier to understand. For example: principal ==
    * User::"a1b2c3d4-e5f6-a1b2-c3d4-EXAMPLE11111", // alice</p> </li> <li> <p> <b>Do
    * not include personally identifying, confidential, or sensitive information as
    * part of the unique identifier for your principals or resources.</b> These

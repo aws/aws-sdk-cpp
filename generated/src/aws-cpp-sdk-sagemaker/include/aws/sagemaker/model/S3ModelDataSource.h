@@ -87,7 +87,8 @@ namespace Model
      * SageMaker uses all objects that match the specified key name prefix as part of
      * the ML model data to deploy. A valid key name prefix identified by
      * <code>S3Uri</code> always ends with a forward slash (/).</p> <p>If you choose
-     * S3Object, S3Uri identifies an object that is the ML model data to deploy.</p>
+     * <code>S3Object</code>, <code>S3Uri</code> identifies an object that is the ML
+     * model data to deploy.</p>
      */
     inline const S3ModelDataType& GetS3DataType() const{ return m_s3DataType; }
 
@@ -97,7 +98,8 @@ namespace Model
      * SageMaker uses all objects that match the specified key name prefix as part of
      * the ML model data to deploy. A valid key name prefix identified by
      * <code>S3Uri</code> always ends with a forward slash (/).</p> <p>If you choose
-     * S3Object, S3Uri identifies an object that is the ML model data to deploy.</p>
+     * <code>S3Object</code>, <code>S3Uri</code> identifies an object that is the ML
+     * model data to deploy.</p>
      */
     inline bool S3DataTypeHasBeenSet() const { return m_s3DataTypeHasBeenSet; }
 
@@ -107,7 +109,8 @@ namespace Model
      * SageMaker uses all objects that match the specified key name prefix as part of
      * the ML model data to deploy. A valid key name prefix identified by
      * <code>S3Uri</code> always ends with a forward slash (/).</p> <p>If you choose
-     * S3Object, S3Uri identifies an object that is the ML model data to deploy.</p>
+     * <code>S3Object</code>, <code>S3Uri</code> identifies an object that is the ML
+     * model data to deploy.</p>
      */
     inline void SetS3DataType(const S3ModelDataType& value) { m_s3DataTypeHasBeenSet = true; m_s3DataType = value; }
 
@@ -117,7 +120,8 @@ namespace Model
      * SageMaker uses all objects that match the specified key name prefix as part of
      * the ML model data to deploy. A valid key name prefix identified by
      * <code>S3Uri</code> always ends with a forward slash (/).</p> <p>If you choose
-     * S3Object, S3Uri identifies an object that is the ML model data to deploy.</p>
+     * <code>S3Object</code>, <code>S3Uri</code> identifies an object that is the ML
+     * model data to deploy.</p>
      */
     inline void SetS3DataType(S3ModelDataType&& value) { m_s3DataTypeHasBeenSet = true; m_s3DataType = std::move(value); }
 
@@ -127,7 +131,8 @@ namespace Model
      * SageMaker uses all objects that match the specified key name prefix as part of
      * the ML model data to deploy. A valid key name prefix identified by
      * <code>S3Uri</code> always ends with a forward slash (/).</p> <p>If you choose
-     * S3Object, S3Uri identifies an object that is the ML model data to deploy.</p>
+     * <code>S3Object</code>, <code>S3Uri</code> identifies an object that is the ML
+     * model data to deploy.</p>
      */
     inline S3ModelDataSource& WithS3DataType(const S3ModelDataType& value) { SetS3DataType(value); return *this;}
 
@@ -137,7 +142,8 @@ namespace Model
      * SageMaker uses all objects that match the specified key name prefix as part of
      * the ML model data to deploy. A valid key name prefix identified by
      * <code>S3Uri</code> always ends with a forward slash (/).</p> <p>If you choose
-     * S3Object, S3Uri identifies an object that is the ML model data to deploy.</p>
+     * <code>S3Object</code>, <code>S3Uri</code> identifies an object that is the ML
+     * model data to deploy.</p>
      */
     inline S3ModelDataSource& WithS3DataType(S3ModelDataType&& value) { SetS3DataType(std::move(value)); return *this;}
 
@@ -175,9 +181,9 @@ namespace Model
      * <code>s3://mybucket/model/weights</code> and
      * <code>s3://mybucket/model/weights/part1</code> and you specify
      * <code>s3://mybucket/model/</code> as the value of <code>S3Uri</code> and
-     * <code>S3Prefix</code> as the value of S3DataType, then it will result in name
-     * clash between <code>/opt/ml/model/weights</code> (a regular file) and
-     * <code>/opt/ml/model/weights/</code> (a directory).</p> </li> <li> <p>Do not
+     * <code>S3Prefix</code> as the value of <code>S3DataType</code>, then it will
+     * result in name clash between <code>/opt/ml/model/weights</code> (a regular file)
+     * and <code>/opt/ml/model/weights/</code> (a directory).</p> </li> <li> <p>Do not
      * organize the model artifacts in <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-folders.html">S3
      * console using folders</a>. When you create a folder in S3 console, S3 creates a
@@ -220,9 +226,9 @@ namespace Model
      * <code>s3://mybucket/model/weights</code> and
      * <code>s3://mybucket/model/weights/part1</code> and you specify
      * <code>s3://mybucket/model/</code> as the value of <code>S3Uri</code> and
-     * <code>S3Prefix</code> as the value of S3DataType, then it will result in name
-     * clash between <code>/opt/ml/model/weights</code> (a regular file) and
-     * <code>/opt/ml/model/weights/</code> (a directory).</p> </li> <li> <p>Do not
+     * <code>S3Prefix</code> as the value of <code>S3DataType</code>, then it will
+     * result in name clash between <code>/opt/ml/model/weights</code> (a regular file)
+     * and <code>/opt/ml/model/weights/</code> (a directory).</p> </li> <li> <p>Do not
      * organize the model artifacts in <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-folders.html">S3
      * console using folders</a>. When you create a folder in S3 console, S3 creates a
@@ -265,9 +271,9 @@ namespace Model
      * <code>s3://mybucket/model/weights</code> and
      * <code>s3://mybucket/model/weights/part1</code> and you specify
      * <code>s3://mybucket/model/</code> as the value of <code>S3Uri</code> and
-     * <code>S3Prefix</code> as the value of S3DataType, then it will result in name
-     * clash between <code>/opt/ml/model/weights</code> (a regular file) and
-     * <code>/opt/ml/model/weights/</code> (a directory).</p> </li> <li> <p>Do not
+     * <code>S3Prefix</code> as the value of <code>S3DataType</code>, then it will
+     * result in name clash between <code>/opt/ml/model/weights</code> (a regular file)
+     * and <code>/opt/ml/model/weights/</code> (a directory).</p> </li> <li> <p>Do not
      * organize the model artifacts in <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-folders.html">S3
      * console using folders</a>. When you create a folder in S3 console, S3 creates a
@@ -310,9 +316,9 @@ namespace Model
      * <code>s3://mybucket/model/weights</code> and
      * <code>s3://mybucket/model/weights/part1</code> and you specify
      * <code>s3://mybucket/model/</code> as the value of <code>S3Uri</code> and
-     * <code>S3Prefix</code> as the value of S3DataType, then it will result in name
-     * clash between <code>/opt/ml/model/weights</code> (a regular file) and
-     * <code>/opt/ml/model/weights/</code> (a directory).</p> </li> <li> <p>Do not
+     * <code>S3Prefix</code> as the value of <code>S3DataType</code>, then it will
+     * result in name clash between <code>/opt/ml/model/weights</code> (a regular file)
+     * and <code>/opt/ml/model/weights/</code> (a directory).</p> </li> <li> <p>Do not
      * organize the model artifacts in <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-folders.html">S3
      * console using folders</a>. When you create a folder in S3 console, S3 creates a
@@ -355,9 +361,9 @@ namespace Model
      * <code>s3://mybucket/model/weights</code> and
      * <code>s3://mybucket/model/weights/part1</code> and you specify
      * <code>s3://mybucket/model/</code> as the value of <code>S3Uri</code> and
-     * <code>S3Prefix</code> as the value of S3DataType, then it will result in name
-     * clash between <code>/opt/ml/model/weights</code> (a regular file) and
-     * <code>/opt/ml/model/weights/</code> (a directory).</p> </li> <li> <p>Do not
+     * <code>S3Prefix</code> as the value of <code>S3DataType</code>, then it will
+     * result in name clash between <code>/opt/ml/model/weights</code> (a regular file)
+     * and <code>/opt/ml/model/weights/</code> (a directory).</p> </li> <li> <p>Do not
      * organize the model artifacts in <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-folders.html">S3
      * console using folders</a>. When you create a folder in S3 console, S3 creates a
@@ -400,9 +406,9 @@ namespace Model
      * <code>s3://mybucket/model/weights</code> and
      * <code>s3://mybucket/model/weights/part1</code> and you specify
      * <code>s3://mybucket/model/</code> as the value of <code>S3Uri</code> and
-     * <code>S3Prefix</code> as the value of S3DataType, then it will result in name
-     * clash between <code>/opt/ml/model/weights</code> (a regular file) and
-     * <code>/opt/ml/model/weights/</code> (a directory).</p> </li> <li> <p>Do not
+     * <code>S3Prefix</code> as the value of <code>S3DataType</code>, then it will
+     * result in name clash between <code>/opt/ml/model/weights</code> (a regular file)
+     * and <code>/opt/ml/model/weights/</code> (a directory).</p> </li> <li> <p>Do not
      * organize the model artifacts in <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-folders.html">S3
      * console using folders</a>. When you create a folder in S3 console, S3 creates a

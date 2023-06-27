@@ -16,10 +16,10 @@ namespace Aws
 namespace EMRServerless
 {
   /**
-   * <p>Amazon EMR Serverless is a new deployment option for Amazon EMR. EMR
+   * <p>Amazon EMR Serverless is a new deployment option for Amazon EMR. Amazon EMR
    * Serverless provides a serverless runtime environment that simplifies running
    * analytics applications using the latest open source frameworks such as Apache
-   * Spark and Apache Hive. With EMR Serverless, you don’t have to configure,
+   * Spark and Apache Hive. With Amazon EMR Serverless, you don’t have to configure,
    * optimize, secure, or operate clusters to run applications with these
    * frameworks.</p> <p>The API reference to Amazon EMR Serverless is
    * <code>emr-serverless</code>. The <code>emr-serverless</code> prefix is used in

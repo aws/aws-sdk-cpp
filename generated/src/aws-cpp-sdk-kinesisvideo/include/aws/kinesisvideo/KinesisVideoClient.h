@@ -135,6 +135,39 @@ namespace KinesisVideo
         }
 
         /**
+         * <p>An asynchronous API that deletes a stream’s existing edge configuration, as
+         * well as the corresponding media from the Edge Agent.</p> <p>When you invoke this
+         * API, the sync status is set to <code>DELETING</code>. A deletion process starts,
+         * in which active edge jobs are stopped and all media is deleted from the edge
+         * device. The time to delete varies, depending on the total amount of stored
+         * media. If the deletion process fails, the sync status changes to
+         * <code>DELETE_FAILED</code>. You will need to re-try the deletion.</p> <p>When
+         * the deletion process has completed successfully, the edge configuration is no
+         * longer accessible.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DeleteEdgeConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteEdgeConfigurationOutcome DeleteEdgeConfiguration(const Model::DeleteEdgeConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteEdgeConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteEdgeConfigurationRequestT = Model::DeleteEdgeConfigurationRequest>
+        Model::DeleteEdgeConfigurationOutcomeCallable DeleteEdgeConfigurationCallable(const DeleteEdgeConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&KinesisVideoClient::DeleteEdgeConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteEdgeConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteEdgeConfigurationRequestT = Model::DeleteEdgeConfigurationRequest>
+        void DeleteEdgeConfigurationAsync(const DeleteEdgeConfigurationRequestT& request, const DeleteEdgeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&KinesisVideoClient::DeleteEdgeConfiguration, request, handler, context);
+        }
+
+        /**
          * <p>Deletes a specified signaling channel. <code>DeleteSignalingChannel</code> is
          * an asynchronous operation. If you don't specify the channel's current version,
          * the most recent version is deleted.</p><p><h3>See Also:</h3>   <a
@@ -196,9 +229,11 @@ namespace KinesisVideo
 
         /**
          * <p>Describes a stream’s edge configuration that was set using the
-         * <code>StartEdgeConfigurationUpdate</code> API. Use this API to get the status of
-         * the configuration if the configuration is in sync with the Edge
-         * Agent.</p><p><h3>See Also:</h3>   <a
+         * <code>StartEdgeConfigurationUpdate</code> API and the latest status of the edge
+         * agent's recorder and uploader jobs. Use this API to get the status of the
+         * configuration to determine if the configuration is in sync with the Edge Agent.
+         * Use this API to evaluate the health of the Edge Agent.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeEdgeConfiguration">AWS
          * API Reference</a></p>
          */
@@ -249,11 +284,9 @@ namespace KinesisVideo
         }
 
         /**
-         * <p>Returns the most current information about the stream. Either streamName or
-         * streamARN should be provided in the input.</p> <p>Returns the most current
-         * information about the stream. The <code>streamName</code> or
-         * <code>streamARN</code> should be provided in the input.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Returns the most current information about the stream. The
+         * <code>streamName</code> or <code>streamARN</code> should be provided in the
+         * input.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeMappedResourceConfiguration">AWS
          * API Reference</a></p>
          */
@@ -451,6 +484,33 @@ namespace KinesisVideo
         void GetSignalingChannelEndpointAsync(const GetSignalingChannelEndpointRequestT& request, const GetSignalingChannelEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&KinesisVideoClient::GetSignalingChannelEndpoint, request, handler, context);
+        }
+
+        /**
+         * <p>Returns an array of edge configurations associated with the specified Edge
+         * Agent.</p> <p>In the request, you must specify the Edge Agent
+         * <code>HubDeviceArn</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/ListEdgeAgentConfigurations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListEdgeAgentConfigurationsOutcome ListEdgeAgentConfigurations(const Model::ListEdgeAgentConfigurationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListEdgeAgentConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListEdgeAgentConfigurationsRequestT = Model::ListEdgeAgentConfigurationsRequest>
+        Model::ListEdgeAgentConfigurationsOutcomeCallable ListEdgeAgentConfigurationsCallable(const ListEdgeAgentConfigurationsRequestT& request) const
+        {
+            return SubmitCallable(&KinesisVideoClient::ListEdgeAgentConfigurations, request);
+        }
+
+        /**
+         * An Async wrapper for ListEdgeAgentConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListEdgeAgentConfigurationsRequestT = Model::ListEdgeAgentConfigurationsRequest>
+        void ListEdgeAgentConfigurationsAsync(const ListEdgeAgentConfigurationsRequestT& request, const ListEdgeAgentConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&KinesisVideoClient::ListEdgeAgentConfigurations, request, handler, context);
         }
 
         /**

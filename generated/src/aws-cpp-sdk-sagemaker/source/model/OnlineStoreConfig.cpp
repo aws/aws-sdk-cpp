@@ -21,14 +21,16 @@ namespace Model
 OnlineStoreConfig::OnlineStoreConfig() : 
     m_securityConfigHasBeenSet(false),
     m_enableOnlineStore(false),
-    m_enableOnlineStoreHasBeenSet(false)
+    m_enableOnlineStoreHasBeenSet(false),
+    m_ttlDurationHasBeenSet(false)
 {
 }
 
 OnlineStoreConfig::OnlineStoreConfig(JsonView jsonValue) : 
     m_securityConfigHasBeenSet(false),
     m_enableOnlineStore(false),
-    m_enableOnlineStoreHasBeenSet(false)
+    m_enableOnlineStoreHasBeenSet(false),
+    m_ttlDurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -49,6 +51,13 @@ OnlineStoreConfig& OnlineStoreConfig::operator =(JsonView jsonValue)
     m_enableOnlineStoreHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TtlDuration"))
+  {
+    m_ttlDuration = jsonValue.GetObject("TtlDuration");
+
+    m_ttlDurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -65,6 +74,12 @@ JsonValue OnlineStoreConfig::Jsonize() const
   if(m_enableOnlineStoreHasBeenSet)
   {
    payload.WithBool("EnableOnlineStore", m_enableOnlineStore);
+
+  }
+
+  if(m_ttlDurationHasBeenSet)
+  {
+   payload.WithObject("TtlDuration", m_ttlDuration.Jsonize());
 
   }
 

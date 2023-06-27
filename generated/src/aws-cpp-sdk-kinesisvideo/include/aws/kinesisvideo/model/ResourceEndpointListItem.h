@@ -26,7 +26,9 @@ namespace Model
 
   /**
    * <p>An object that describes the endpoint of the signaling channel returned by
-   * the <code>GetSignalingChannelEndpoint</code> API.</p><p><h3>See Also:</h3>   <a
+   * the <code>GetSignalingChannelEndpoint</code> API.</p> <p>The media server
+   * endpoint will correspond to the <code>WEBRTC</code> Protocol.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/ResourceEndpointListItem">AWS
    * API Reference</a></p>
    */

@@ -35,8 +35,8 @@ namespace Model
 {
 
   /**
-   * <p>Information about an application. EMR Serverless uses applications to run
-   * jobs.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about an application. Amazon EMR Serverless uses applications to
+   * run jobs.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/Application">AWS
    * API Reference</a></p>
    */
@@ -173,42 +173,42 @@ namespace Model
 
 
     /**
-     * <p>The EMR release associated with the application.</p>
+     * <p>The Amazon EMR release associated with the application.</p>
      */
     inline const Aws::String& GetReleaseLabel() const{ return m_releaseLabel; }
 
     /**
-     * <p>The EMR release associated with the application.</p>
+     * <p>The Amazon EMR release associated with the application.</p>
      */
     inline bool ReleaseLabelHasBeenSet() const { return m_releaseLabelHasBeenSet; }
 
     /**
-     * <p>The EMR release associated with the application.</p>
+     * <p>The Amazon EMR release associated with the application.</p>
      */
     inline void SetReleaseLabel(const Aws::String& value) { m_releaseLabelHasBeenSet = true; m_releaseLabel = value; }
 
     /**
-     * <p>The EMR release associated with the application.</p>
+     * <p>The Amazon EMR release associated with the application.</p>
      */
     inline void SetReleaseLabel(Aws::String&& value) { m_releaseLabelHasBeenSet = true; m_releaseLabel = std::move(value); }
 
     /**
-     * <p>The EMR release associated with the application.</p>
+     * <p>The Amazon EMR release associated with the application.</p>
      */
     inline void SetReleaseLabel(const char* value) { m_releaseLabelHasBeenSet = true; m_releaseLabel.assign(value); }
 
     /**
-     * <p>The EMR release associated with the application.</p>
+     * <p>The Amazon EMR release associated with the application.</p>
      */
     inline Application& WithReleaseLabel(const Aws::String& value) { SetReleaseLabel(value); return *this;}
 
     /**
-     * <p>The EMR release associated with the application.</p>
+     * <p>The Amazon EMR release associated with the application.</p>
      */
     inline Application& WithReleaseLabel(Aws::String&& value) { SetReleaseLabel(std::move(value)); return *this;}
 
     /**
-     * <p>The EMR release associated with the application.</p>
+     * <p>The Amazon EMR release associated with the application.</p>
      */
     inline Application& WithReleaseLabel(const char* value) { SetReleaseLabel(value); return *this;}
 

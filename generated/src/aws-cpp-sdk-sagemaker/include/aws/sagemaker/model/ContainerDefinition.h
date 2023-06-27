@@ -821,7 +821,7 @@ namespace Model
 
     /**
      * <p>Specifies the location of ML model data to deploy.</p>  <p>Currently
-     * you cannot use <code>ModelDataSource</code> in conjuction with SageMaker batch
+     * you cannot use <code>ModelDataSource</code> in conjunction with SageMaker batch
      * transform, SageMaker serverless endpoints, SageMaker multi-model endpoints, and
      * SageMaker Marketplace.</p> 
      */
@@ -829,7 +829,7 @@ namespace Model
 
     /**
      * <p>Specifies the location of ML model data to deploy.</p>  <p>Currently
-     * you cannot use <code>ModelDataSource</code> in conjuction with SageMaker batch
+     * you cannot use <code>ModelDataSource</code> in conjunction with SageMaker batch
      * transform, SageMaker serverless endpoints, SageMaker multi-model endpoints, and
      * SageMaker Marketplace.</p> 
      */
@@ -837,7 +837,7 @@ namespace Model
 
     /**
      * <p>Specifies the location of ML model data to deploy.</p>  <p>Currently
-     * you cannot use <code>ModelDataSource</code> in conjuction with SageMaker batch
+     * you cannot use <code>ModelDataSource</code> in conjunction with SageMaker batch
      * transform, SageMaker serverless endpoints, SageMaker multi-model endpoints, and
      * SageMaker Marketplace.</p> 
      */
@@ -845,7 +845,7 @@ namespace Model
 
     /**
      * <p>Specifies the location of ML model data to deploy.</p>  <p>Currently
-     * you cannot use <code>ModelDataSource</code> in conjuction with SageMaker batch
+     * you cannot use <code>ModelDataSource</code> in conjunction with SageMaker batch
      * transform, SageMaker serverless endpoints, SageMaker multi-model endpoints, and
      * SageMaker Marketplace.</p> 
      */
@@ -853,7 +853,7 @@ namespace Model
 
     /**
      * <p>Specifies the location of ML model data to deploy.</p>  <p>Currently
-     * you cannot use <code>ModelDataSource</code> in conjuction with SageMaker batch
+     * you cannot use <code>ModelDataSource</code> in conjunction with SageMaker batch
      * transform, SageMaker serverless endpoints, SageMaker multi-model endpoints, and
      * SageMaker Marketplace.</p> 
      */
@@ -861,7 +861,7 @@ namespace Model
 
     /**
      * <p>Specifies the location of ML model data to deploy.</p>  <p>Currently
-     * you cannot use <code>ModelDataSource</code> in conjuction with SageMaker batch
+     * you cannot use <code>ModelDataSource</code> in conjunction with SageMaker batch
      * transform, SageMaker serverless endpoints, SageMaker multi-model endpoints, and
      * SageMaker Marketplace.</p> 
      */

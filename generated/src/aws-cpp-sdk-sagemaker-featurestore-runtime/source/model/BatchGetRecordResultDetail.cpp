@@ -21,14 +21,16 @@ namespace Model
 BatchGetRecordResultDetail::BatchGetRecordResultDetail() : 
     m_featureGroupNameHasBeenSet(false),
     m_recordIdentifierValueAsStringHasBeenSet(false),
-    m_recordHasBeenSet(false)
+    m_recordHasBeenSet(false),
+    m_expiresAtHasBeenSet(false)
 {
 }
 
 BatchGetRecordResultDetail::BatchGetRecordResultDetail(JsonView jsonValue) : 
     m_featureGroupNameHasBeenSet(false),
     m_recordIdentifierValueAsStringHasBeenSet(false),
-    m_recordHasBeenSet(false)
+    m_recordHasBeenSet(false),
+    m_expiresAtHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -59,6 +61,13 @@ BatchGetRecordResultDetail& BatchGetRecordResultDetail::operator =(JsonView json
     m_recordHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ExpiresAt"))
+  {
+    m_expiresAt = jsonValue.GetString("ExpiresAt");
+
+    m_expiresAtHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -86,6 +95,12 @@ JsonValue BatchGetRecordResultDetail::Jsonize() const
      recordJsonList[recordIndex].AsObject(m_record[recordIndex].Jsonize());
    }
    payload.WithArray("Record", std::move(recordJsonList));
+
+  }
+
+  if(m_expiresAtHasBeenSet)
+  {
+   payload.WithString("ExpiresAt", m_expiresAt);
 
   }
 

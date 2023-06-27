@@ -638,12 +638,16 @@ namespace PrivateNetworks
             return SubmitAsync(&PrivateNetworksClient::Ping, handler, context);
         }
         /**
-         * <p>Starts an update of the specified network resource.</p> <p>After you submit a
-         * request to replace or return a network resource, the status of the network
-         * resource is <code>CREATING_SHIPPING_LABEL</code>. The shipping label is
-         * available when the status of the network resource is
-         * <code>PENDING_RETURN</code>. After the network resource is successfully
-         * returned, its status is <code>DELETED</code>. For more information, see <a
+         * <p>Use this action to do the following tasks:</p> <ul> <li> <p>Update the
+         * duration and renewal status of the commitment period for a radio unit. The
+         * update goes into effect immediately.</p> </li> <li> <p>Request a replacement for
+         * a network resource.</p> </li> <li> <p>Request that you return a network
+         * resource.</p> </li> </ul> <p>After you submit a request to replace or return a
+         * network resource, the status of the network resource changes to
+         * <code>CREATING_SHIPPING_LABEL</code>. The shipping label is available when the
+         * status of the network resource is <code>PENDING_RETURN</code>. After the network
+         * resource is successfully returned, its status changes to <code>DELETED</code>.
+         * For more information, see <a
          * href="https://docs.aws.amazon.com/private-networks/latest/userguide/radio-units.html#return-radio-unit">Return
          * a radio unit</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/privatenetworks-2021-12-03/StartNetworkResourceUpdate">AWS

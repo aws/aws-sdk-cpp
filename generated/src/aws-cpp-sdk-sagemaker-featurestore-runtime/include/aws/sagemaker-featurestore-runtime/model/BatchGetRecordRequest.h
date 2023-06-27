@@ -7,6 +7,7 @@
 #include <aws/sagemaker-featurestore-runtime/SageMakerFeatureStoreRuntime_EXPORTS.h>
 #include <aws/sagemaker-featurestore-runtime/SageMakerFeatureStoreRuntimeRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker-featurestore-runtime/model/ExpirationTimeResponse.h>
 #include <aws/sagemaker-featurestore-runtime/model/BatchGetRecordIdentifier.h>
 #include <utility>
 
@@ -89,10 +90,62 @@ namespace Model
      */
     inline BatchGetRecordRequest& AddIdentifiers(BatchGetRecordIdentifier&& value) { m_identifiersHasBeenSet = true; m_identifiers.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Parameter to request <code>ExpiresAt</code> in response. If
+     * <code>Enabled</code>, <code>BatchGetRecord</code> will return the value of
+     * <code>ExpiresAt</code>, if it is not null. If <code>Disabled</code> and null,
+     * <code>BatchGetRecord</code> will return null.</p>
+     */
+    inline const ExpirationTimeResponse& GetExpirationTimeResponse() const{ return m_expirationTimeResponse; }
+
+    /**
+     * <p>Parameter to request <code>ExpiresAt</code> in response. If
+     * <code>Enabled</code>, <code>BatchGetRecord</code> will return the value of
+     * <code>ExpiresAt</code>, if it is not null. If <code>Disabled</code> and null,
+     * <code>BatchGetRecord</code> will return null.</p>
+     */
+    inline bool ExpirationTimeResponseHasBeenSet() const { return m_expirationTimeResponseHasBeenSet; }
+
+    /**
+     * <p>Parameter to request <code>ExpiresAt</code> in response. If
+     * <code>Enabled</code>, <code>BatchGetRecord</code> will return the value of
+     * <code>ExpiresAt</code>, if it is not null. If <code>Disabled</code> and null,
+     * <code>BatchGetRecord</code> will return null.</p>
+     */
+    inline void SetExpirationTimeResponse(const ExpirationTimeResponse& value) { m_expirationTimeResponseHasBeenSet = true; m_expirationTimeResponse = value; }
+
+    /**
+     * <p>Parameter to request <code>ExpiresAt</code> in response. If
+     * <code>Enabled</code>, <code>BatchGetRecord</code> will return the value of
+     * <code>ExpiresAt</code>, if it is not null. If <code>Disabled</code> and null,
+     * <code>BatchGetRecord</code> will return null.</p>
+     */
+    inline void SetExpirationTimeResponse(ExpirationTimeResponse&& value) { m_expirationTimeResponseHasBeenSet = true; m_expirationTimeResponse = std::move(value); }
+
+    /**
+     * <p>Parameter to request <code>ExpiresAt</code> in response. If
+     * <code>Enabled</code>, <code>BatchGetRecord</code> will return the value of
+     * <code>ExpiresAt</code>, if it is not null. If <code>Disabled</code> and null,
+     * <code>BatchGetRecord</code> will return null.</p>
+     */
+    inline BatchGetRecordRequest& WithExpirationTimeResponse(const ExpirationTimeResponse& value) { SetExpirationTimeResponse(value); return *this;}
+
+    /**
+     * <p>Parameter to request <code>ExpiresAt</code> in response. If
+     * <code>Enabled</code>, <code>BatchGetRecord</code> will return the value of
+     * <code>ExpiresAt</code>, if it is not null. If <code>Disabled</code> and null,
+     * <code>BatchGetRecord</code> will return null.</p>
+     */
+    inline BatchGetRecordRequest& WithExpirationTimeResponse(ExpirationTimeResponse&& value) { SetExpirationTimeResponse(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<BatchGetRecordIdentifier> m_identifiers;
     bool m_identifiersHasBeenSet = false;
+
+    ExpirationTimeResponse m_expirationTimeResponse;
+    bool m_expirationTimeResponseHasBeenSet = false;
   };
 
 } // namespace Model

@@ -41,50 +41,50 @@ namespace Model
 
 
     /**
-     * <p>The AWS Secrets Manager ARN for the username and password of the camera, or a
-     * local media file location.</p>
+     * <p>The Amazon Web Services Secrets Manager ARN for the username and password of
+     * the camera, or a local media file location.</p>
      */
     inline const Aws::String& GetMediaUriSecretArn() const{ return m_mediaUriSecretArn; }
 
     /**
-     * <p>The AWS Secrets Manager ARN for the username and password of the camera, or a
-     * local media file location.</p>
+     * <p>The Amazon Web Services Secrets Manager ARN for the username and password of
+     * the camera, or a local media file location.</p>
      */
     inline bool MediaUriSecretArnHasBeenSet() const { return m_mediaUriSecretArnHasBeenSet; }
 
     /**
-     * <p>The AWS Secrets Manager ARN for the username and password of the camera, or a
-     * local media file location.</p>
+     * <p>The Amazon Web Services Secrets Manager ARN for the username and password of
+     * the camera, or a local media file location.</p>
      */
     inline void SetMediaUriSecretArn(const Aws::String& value) { m_mediaUriSecretArnHasBeenSet = true; m_mediaUriSecretArn = value; }
 
     /**
-     * <p>The AWS Secrets Manager ARN for the username and password of the camera, or a
-     * local media file location.</p>
+     * <p>The Amazon Web Services Secrets Manager ARN for the username and password of
+     * the camera, or a local media file location.</p>
      */
     inline void SetMediaUriSecretArn(Aws::String&& value) { m_mediaUriSecretArnHasBeenSet = true; m_mediaUriSecretArn = std::move(value); }
 
     /**
-     * <p>The AWS Secrets Manager ARN for the username and password of the camera, or a
-     * local media file location.</p>
+     * <p>The Amazon Web Services Secrets Manager ARN for the username and password of
+     * the camera, or a local media file location.</p>
      */
     inline void SetMediaUriSecretArn(const char* value) { m_mediaUriSecretArnHasBeenSet = true; m_mediaUriSecretArn.assign(value); }
 
     /**
-     * <p>The AWS Secrets Manager ARN for the username and password of the camera, or a
-     * local media file location.</p>
+     * <p>The Amazon Web Services Secrets Manager ARN for the username and password of
+     * the camera, or a local media file location.</p>
      */
     inline MediaSourceConfig& WithMediaUriSecretArn(const Aws::String& value) { SetMediaUriSecretArn(value); return *this;}
 
     /**
-     * <p>The AWS Secrets Manager ARN for the username and password of the camera, or a
-     * local media file location.</p>
+     * <p>The Amazon Web Services Secrets Manager ARN for the username and password of
+     * the camera, or a local media file location.</p>
      */
     inline MediaSourceConfig& WithMediaUriSecretArn(Aws::String&& value) { SetMediaUriSecretArn(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Secrets Manager ARN for the username and password of the camera, or a
-     * local media file location.</p>
+     * <p>The Amazon Web Services Secrets Manager ARN for the username and password of
+     * the camera, or a local media file location.</p>
      */
     inline MediaSourceConfig& WithMediaUriSecretArn(const char* value) { SetMediaUriSecretArn(value); return *this;}
 

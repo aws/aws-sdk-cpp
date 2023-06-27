@@ -120,65 +120,73 @@ namespace Model
 
     /**
      * <p>One or more filters. Use a filter to return a more specific list of managed
-     * nodes. You can filter based on tags applied to your managed nodes. Use this
-     * <code>Filters</code> data type instead of
-     * <code>InstanceInformationFilterList</code>, which is deprecated.</p>
+     * nodes. You can filter based on tags applied to your managed nodes. Tag filters
+     * can't be combined with other filter types. Use this <code>Filters</code> data
+     * type instead of <code>InstanceInformationFilterList</code>, which is
+     * deprecated.</p>
      */
     inline const Aws::Vector<InstanceInformationStringFilter>& GetFilters() const{ return m_filters; }
 
     /**
      * <p>One or more filters. Use a filter to return a more specific list of managed
-     * nodes. You can filter based on tags applied to your managed nodes. Use this
-     * <code>Filters</code> data type instead of
-     * <code>InstanceInformationFilterList</code>, which is deprecated.</p>
+     * nodes. You can filter based on tags applied to your managed nodes. Tag filters
+     * can't be combined with other filter types. Use this <code>Filters</code> data
+     * type instead of <code>InstanceInformationFilterList</code>, which is
+     * deprecated.</p>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>One or more filters. Use a filter to return a more specific list of managed
-     * nodes. You can filter based on tags applied to your managed nodes. Use this
-     * <code>Filters</code> data type instead of
-     * <code>InstanceInformationFilterList</code>, which is deprecated.</p>
+     * nodes. You can filter based on tags applied to your managed nodes. Tag filters
+     * can't be combined with other filter types. Use this <code>Filters</code> data
+     * type instead of <code>InstanceInformationFilterList</code>, which is
+     * deprecated.</p>
      */
     inline void SetFilters(const Aws::Vector<InstanceInformationStringFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
      * <p>One or more filters. Use a filter to return a more specific list of managed
-     * nodes. You can filter based on tags applied to your managed nodes. Use this
-     * <code>Filters</code> data type instead of
-     * <code>InstanceInformationFilterList</code>, which is deprecated.</p>
+     * nodes. You can filter based on tags applied to your managed nodes. Tag filters
+     * can't be combined with other filter types. Use this <code>Filters</code> data
+     * type instead of <code>InstanceInformationFilterList</code>, which is
+     * deprecated.</p>
      */
     inline void SetFilters(Aws::Vector<InstanceInformationStringFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>One or more filters. Use a filter to return a more specific list of managed
-     * nodes. You can filter based on tags applied to your managed nodes. Use this
-     * <code>Filters</code> data type instead of
-     * <code>InstanceInformationFilterList</code>, which is deprecated.</p>
+     * nodes. You can filter based on tags applied to your managed nodes. Tag filters
+     * can't be combined with other filter types. Use this <code>Filters</code> data
+     * type instead of <code>InstanceInformationFilterList</code>, which is
+     * deprecated.</p>
      */
     inline DescribeInstanceInformationRequest& WithFilters(const Aws::Vector<InstanceInformationStringFilter>& value) { SetFilters(value); return *this;}
 
     /**
      * <p>One or more filters. Use a filter to return a more specific list of managed
-     * nodes. You can filter based on tags applied to your managed nodes. Use this
-     * <code>Filters</code> data type instead of
-     * <code>InstanceInformationFilterList</code>, which is deprecated.</p>
+     * nodes. You can filter based on tags applied to your managed nodes. Tag filters
+     * can't be combined with other filter types. Use this <code>Filters</code> data
+     * type instead of <code>InstanceInformationFilterList</code>, which is
+     * deprecated.</p>
      */
     inline DescribeInstanceInformationRequest& WithFilters(Aws::Vector<InstanceInformationStringFilter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>One or more filters. Use a filter to return a more specific list of managed
-     * nodes. You can filter based on tags applied to your managed nodes. Use this
-     * <code>Filters</code> data type instead of
-     * <code>InstanceInformationFilterList</code>, which is deprecated.</p>
+     * nodes. You can filter based on tags applied to your managed nodes. Tag filters
+     * can't be combined with other filter types. Use this <code>Filters</code> data
+     * type instead of <code>InstanceInformationFilterList</code>, which is
+     * deprecated.</p>
      */
     inline DescribeInstanceInformationRequest& AddFilters(const InstanceInformationStringFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
      * <p>One or more filters. Use a filter to return a more specific list of managed
-     * nodes. You can filter based on tags applied to your managed nodes. Use this
-     * <code>Filters</code> data type instead of
-     * <code>InstanceInformationFilterList</code>, which is deprecated.</p>
+     * nodes. You can filter based on tags applied to your managed nodes. Tag filters
+     * can't be combined with other filter types. Use this <code>Filters</code> data
+     * type instead of <code>InstanceInformationFilterList</code>, which is
+     * deprecated.</p>
      */
     inline DescribeInstanceInformationRequest& AddFilters(InstanceInformationStringFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
@@ -186,28 +194,28 @@ namespace Model
     /**
      * <p>The maximum number of items to return for this call. The call also returns a
      * token that you can specify in a subsequent call to get the next set of results.
-     * </p>
+     * The default value is 10 items. </p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>The maximum number of items to return for this call. The call also returns a
      * token that you can specify in a subsequent call to get the next set of results.
-     * </p>
+     * The default value is 10 items. </p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of items to return for this call. The call also returns a
      * token that you can specify in a subsequent call to get the next set of results.
-     * </p>
+     * The default value is 10 items. </p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>The maximum number of items to return for this call. The call also returns a
      * token that you can specify in a subsequent call to get the next set of results.
-     * </p>
+     * The default value is 10 items. </p>
      */
     inline DescribeInstanceInformationRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

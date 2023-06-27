@@ -23,6 +23,7 @@
 #include <aws/kinesisvideo/KinesisVideoEndpointProvider.h>
 #include <aws/kinesisvideo/model/CreateSignalingChannelRequest.h>
 #include <aws/kinesisvideo/model/CreateStreamRequest.h>
+#include <aws/kinesisvideo/model/DeleteEdgeConfigurationRequest.h>
 #include <aws/kinesisvideo/model/DeleteSignalingChannelRequest.h>
 #include <aws/kinesisvideo/model/DeleteStreamRequest.h>
 #include <aws/kinesisvideo/model/DescribeEdgeConfigurationRequest.h>
@@ -34,6 +35,7 @@
 #include <aws/kinesisvideo/model/DescribeStreamRequest.h>
 #include <aws/kinesisvideo/model/GetDataEndpointRequest.h>
 #include <aws/kinesisvideo/model/GetSignalingChannelEndpointRequest.h>
+#include <aws/kinesisvideo/model/ListEdgeAgentConfigurationsRequest.h>
 #include <aws/kinesisvideo/model/ListSignalingChannelsRequest.h>
 #include <aws/kinesisvideo/model/ListStreamsRequest.h>
 #include <aws/kinesisvideo/model/ListTagsForResourceRequest.h>
@@ -198,6 +200,16 @@ CreateStreamOutcome KinesisVideoClient::CreateStream(const CreateStreamRequest& 
   return CreateStreamOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
+DeleteEdgeConfigurationOutcome KinesisVideoClient::DeleteEdgeConfiguration(const DeleteEdgeConfigurationRequest& request) const
+{
+  AWS_OPERATION_GUARD(DeleteEdgeConfiguration);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteEdgeConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteEdgeConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/deleteEdgeConfiguration");
+  return DeleteEdgeConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
 DeleteSignalingChannelOutcome KinesisVideoClient::DeleteSignalingChannel(const DeleteSignalingChannelRequest& request) const
 {
   AWS_OPERATION_GUARD(DeleteSignalingChannel);
@@ -306,6 +318,16 @@ GetSignalingChannelEndpointOutcome KinesisVideoClient::GetSignalingChannelEndpoi
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetSignalingChannelEndpoint, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   endpointResolutionOutcome.GetResult().AddPathSegments("/getSignalingChannelEndpoint");
   return GetSignalingChannelEndpointOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListEdgeAgentConfigurationsOutcome KinesisVideoClient::ListEdgeAgentConfigurations(const ListEdgeAgentConfigurationsRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListEdgeAgentConfigurations);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListEdgeAgentConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListEdgeAgentConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/listEdgeAgentConfigurations");
+  return ListEdgeAgentConfigurationsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListSignalingChannelsOutcome KinesisVideoClient::ListSignalingChannels(const ListSignalingChannelsRequest& request) const
