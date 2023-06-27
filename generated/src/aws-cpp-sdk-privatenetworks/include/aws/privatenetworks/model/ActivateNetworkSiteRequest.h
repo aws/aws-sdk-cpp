@@ -7,6 +7,7 @@
 #include <aws/privatenetworks/PrivateNetworks_EXPORTS.h>
 #include <aws/privatenetworks/PrivateNetworksRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/privatenetworks/model/CommitmentConfiguration.h>
 #include <aws/privatenetworks/model/Address.h>
 #include <utility>
 
@@ -99,6 +100,97 @@ namespace Model
 
 
     /**
+     * <p>Determines the duration and renewal status of the commitment period for all
+     * pending radio units.</p> <p>If you include <code>commitmentConfiguration</code>
+     * in the <code>ActivateNetworkSiteRequest</code> action, you must specify the
+     * following:</p> <ul> <li> <p>The commitment period for the radio unit. You can
+     * choose a 60-day, 1-year, or 3-year period.</p> </li> <li> <p>Whether you want
+     * your commitment period to automatically renew for one more year after your
+     * current commitment period expires.</p> </li> </ul> <p>For pricing, see <a
+     * href="http://aws.amazon.com/private5g/pricing">Amazon Web Services Private 5G
+     * Pricing</a>.</p> <p>If you do not include <code>commitmentConfiguration</code>
+     * in the <code>ActivateNetworkSiteRequest</code> action, the commitment period is
+     * set to 60-days.</p>
+     */
+    inline const CommitmentConfiguration& GetCommitmentConfiguration() const{ return m_commitmentConfiguration; }
+
+    /**
+     * <p>Determines the duration and renewal status of the commitment period for all
+     * pending radio units.</p> <p>If you include <code>commitmentConfiguration</code>
+     * in the <code>ActivateNetworkSiteRequest</code> action, you must specify the
+     * following:</p> <ul> <li> <p>The commitment period for the radio unit. You can
+     * choose a 60-day, 1-year, or 3-year period.</p> </li> <li> <p>Whether you want
+     * your commitment period to automatically renew for one more year after your
+     * current commitment period expires.</p> </li> </ul> <p>For pricing, see <a
+     * href="http://aws.amazon.com/private5g/pricing">Amazon Web Services Private 5G
+     * Pricing</a>.</p> <p>If you do not include <code>commitmentConfiguration</code>
+     * in the <code>ActivateNetworkSiteRequest</code> action, the commitment period is
+     * set to 60-days.</p>
+     */
+    inline bool CommitmentConfigurationHasBeenSet() const { return m_commitmentConfigurationHasBeenSet; }
+
+    /**
+     * <p>Determines the duration and renewal status of the commitment period for all
+     * pending radio units.</p> <p>If you include <code>commitmentConfiguration</code>
+     * in the <code>ActivateNetworkSiteRequest</code> action, you must specify the
+     * following:</p> <ul> <li> <p>The commitment period for the radio unit. You can
+     * choose a 60-day, 1-year, or 3-year period.</p> </li> <li> <p>Whether you want
+     * your commitment period to automatically renew for one more year after your
+     * current commitment period expires.</p> </li> </ul> <p>For pricing, see <a
+     * href="http://aws.amazon.com/private5g/pricing">Amazon Web Services Private 5G
+     * Pricing</a>.</p> <p>If you do not include <code>commitmentConfiguration</code>
+     * in the <code>ActivateNetworkSiteRequest</code> action, the commitment period is
+     * set to 60-days.</p>
+     */
+    inline void SetCommitmentConfiguration(const CommitmentConfiguration& value) { m_commitmentConfigurationHasBeenSet = true; m_commitmentConfiguration = value; }
+
+    /**
+     * <p>Determines the duration and renewal status of the commitment period for all
+     * pending radio units.</p> <p>If you include <code>commitmentConfiguration</code>
+     * in the <code>ActivateNetworkSiteRequest</code> action, you must specify the
+     * following:</p> <ul> <li> <p>The commitment period for the radio unit. You can
+     * choose a 60-day, 1-year, or 3-year period.</p> </li> <li> <p>Whether you want
+     * your commitment period to automatically renew for one more year after your
+     * current commitment period expires.</p> </li> </ul> <p>For pricing, see <a
+     * href="http://aws.amazon.com/private5g/pricing">Amazon Web Services Private 5G
+     * Pricing</a>.</p> <p>If you do not include <code>commitmentConfiguration</code>
+     * in the <code>ActivateNetworkSiteRequest</code> action, the commitment period is
+     * set to 60-days.</p>
+     */
+    inline void SetCommitmentConfiguration(CommitmentConfiguration&& value) { m_commitmentConfigurationHasBeenSet = true; m_commitmentConfiguration = std::move(value); }
+
+    /**
+     * <p>Determines the duration and renewal status of the commitment period for all
+     * pending radio units.</p> <p>If you include <code>commitmentConfiguration</code>
+     * in the <code>ActivateNetworkSiteRequest</code> action, you must specify the
+     * following:</p> <ul> <li> <p>The commitment period for the radio unit. You can
+     * choose a 60-day, 1-year, or 3-year period.</p> </li> <li> <p>Whether you want
+     * your commitment period to automatically renew for one more year after your
+     * current commitment period expires.</p> </li> </ul> <p>For pricing, see <a
+     * href="http://aws.amazon.com/private5g/pricing">Amazon Web Services Private 5G
+     * Pricing</a>.</p> <p>If you do not include <code>commitmentConfiguration</code>
+     * in the <code>ActivateNetworkSiteRequest</code> action, the commitment period is
+     * set to 60-days.</p>
+     */
+    inline ActivateNetworkSiteRequest& WithCommitmentConfiguration(const CommitmentConfiguration& value) { SetCommitmentConfiguration(value); return *this;}
+
+    /**
+     * <p>Determines the duration and renewal status of the commitment period for all
+     * pending radio units.</p> <p>If you include <code>commitmentConfiguration</code>
+     * in the <code>ActivateNetworkSiteRequest</code> action, you must specify the
+     * following:</p> <ul> <li> <p>The commitment period for the radio unit. You can
+     * choose a 60-day, 1-year, or 3-year period.</p> </li> <li> <p>Whether you want
+     * your commitment period to automatically renew for one more year after your
+     * current commitment period expires.</p> </li> </ul> <p>For pricing, see <a
+     * href="http://aws.amazon.com/private5g/pricing">Amazon Web Services Private 5G
+     * Pricing</a>.</p> <p>If you do not include <code>commitmentConfiguration</code>
+     * in the <code>ActivateNetworkSiteRequest</code> action, the commitment period is
+     * set to 60-days.</p>
+     */
+    inline ActivateNetworkSiteRequest& WithCommitmentConfiguration(CommitmentConfiguration&& value) { SetCommitmentConfiguration(std::move(value)); return *this;}
+
+
+    /**
      * <p>The Amazon Resource Name (ARN) of the network site.</p>
      */
     inline const Aws::String& GetNetworkSiteArn() const{ return m_networkSiteArn; }
@@ -173,6 +265,9 @@ namespace Model
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
+
+    CommitmentConfiguration m_commitmentConfiguration;
+    bool m_commitmentConfigurationHasBeenSet = false;
 
     Aws::String m_networkSiteArn;
     bool m_networkSiteArnHasBeenSet = false;

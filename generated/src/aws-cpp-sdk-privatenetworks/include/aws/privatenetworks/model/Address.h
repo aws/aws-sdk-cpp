@@ -161,6 +161,47 @@ namespace Model
 
 
     /**
+     * <p>The recipient's email address.</p>
+     */
+    inline const Aws::String& GetEmailAddress() const{ return m_emailAddress; }
+
+    /**
+     * <p>The recipient's email address.</p>
+     */
+    inline bool EmailAddressHasBeenSet() const { return m_emailAddressHasBeenSet; }
+
+    /**
+     * <p>The recipient's email address.</p>
+     */
+    inline void SetEmailAddress(const Aws::String& value) { m_emailAddressHasBeenSet = true; m_emailAddress = value; }
+
+    /**
+     * <p>The recipient's email address.</p>
+     */
+    inline void SetEmailAddress(Aws::String&& value) { m_emailAddressHasBeenSet = true; m_emailAddress = std::move(value); }
+
+    /**
+     * <p>The recipient's email address.</p>
+     */
+    inline void SetEmailAddress(const char* value) { m_emailAddressHasBeenSet = true; m_emailAddress.assign(value); }
+
+    /**
+     * <p>The recipient's email address.</p>
+     */
+    inline Address& WithEmailAddress(const Aws::String& value) { SetEmailAddress(value); return *this;}
+
+    /**
+     * <p>The recipient's email address.</p>
+     */
+    inline Address& WithEmailAddress(Aws::String&& value) { SetEmailAddress(std::move(value)); return *this;}
+
+    /**
+     * <p>The recipient's email address.</p>
+     */
+    inline Address& WithEmailAddress(const char* value) { SetEmailAddress(value); return *this;}
+
+
+    /**
      * <p>The recipient's name for this address.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -202,42 +243,42 @@ namespace Model
 
 
     /**
-     * <p>The phone number for this address.</p>
+     * <p>The recipient's phone number.</p>
      */
     inline const Aws::String& GetPhoneNumber() const{ return m_phoneNumber; }
 
     /**
-     * <p>The phone number for this address.</p>
+     * <p>The recipient's phone number.</p>
      */
     inline bool PhoneNumberHasBeenSet() const { return m_phoneNumberHasBeenSet; }
 
     /**
-     * <p>The phone number for this address.</p>
+     * <p>The recipient's phone number.</p>
      */
     inline void SetPhoneNumber(const Aws::String& value) { m_phoneNumberHasBeenSet = true; m_phoneNumber = value; }
 
     /**
-     * <p>The phone number for this address.</p>
+     * <p>The recipient's phone number.</p>
      */
     inline void SetPhoneNumber(Aws::String&& value) { m_phoneNumberHasBeenSet = true; m_phoneNumber = std::move(value); }
 
     /**
-     * <p>The phone number for this address.</p>
+     * <p>The recipient's phone number.</p>
      */
     inline void SetPhoneNumber(const char* value) { m_phoneNumberHasBeenSet = true; m_phoneNumber.assign(value); }
 
     /**
-     * <p>The phone number for this address.</p>
+     * <p>The recipient's phone number.</p>
      */
     inline Address& WithPhoneNumber(const Aws::String& value) { SetPhoneNumber(value); return *this;}
 
     /**
-     * <p>The phone number for this address.</p>
+     * <p>The recipient's phone number.</p>
      */
     inline Address& WithPhoneNumber(Aws::String&& value) { SetPhoneNumber(std::move(value)); return *this;}
 
     /**
-     * <p>The phone number for this address.</p>
+     * <p>The recipient's phone number.</p>
      */
     inline Address& WithPhoneNumber(const char* value) { SetPhoneNumber(value); return *this;}
 
@@ -456,6 +497,9 @@ namespace Model
 
     Aws::String m_country;
     bool m_countryHasBeenSet = false;
+
+    Aws::String m_emailAddress;
+    bool m_emailAddressHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;

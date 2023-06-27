@@ -49,7 +49,7 @@ namespace Model
      * occurrences of sensitive data.</p> <p>This value can help you determine whether
      * to investigate additional occurrences of sensitive data in an object. You can do
      * this by referring to the corresponding sensitive data discovery result for the
-     * finding (ClassificationDetails.detailedResultsLocation).</p>
+     * finding (classificationDetails.detailedResultsLocation).</p>
      */
     inline bool GetAdditionalOccurrences() const{ return m_additionalOccurrences; }
 
@@ -59,7 +59,7 @@ namespace Model
      * occurrences of sensitive data.</p> <p>This value can help you determine whether
      * to investigate additional occurrences of sensitive data in an object. You can do
      * this by referring to the corresponding sensitive data discovery result for the
-     * finding (ClassificationDetails.detailedResultsLocation).</p>
+     * finding (classificationDetails.detailedResultsLocation).</p>
      */
     inline bool AdditionalOccurrencesHasBeenSet() const { return m_additionalOccurrencesHasBeenSet; }
 
@@ -69,7 +69,7 @@ namespace Model
      * occurrences of sensitive data.</p> <p>This value can help you determine whether
      * to investigate additional occurrences of sensitive data in an object. You can do
      * this by referring to the corresponding sensitive data discovery result for the
-     * finding (ClassificationDetails.detailedResultsLocation).</p>
+     * finding (classificationDetails.detailedResultsLocation).</p>
      */
     inline void SetAdditionalOccurrences(bool value) { m_additionalOccurrencesHasBeenSet = true; m_additionalOccurrences = value; }
 
@@ -79,7 +79,7 @@ namespace Model
      * occurrences of sensitive data.</p> <p>This value can help you determine whether
      * to investigate additional occurrences of sensitive data in an object. You can do
      * this by referring to the corresponding sensitive data discovery result for the
-     * finding (ClassificationDetails.detailedResultsLocation).</p>
+     * finding (classificationDetails.detailedResultsLocation).</p>
      */
     inline ClassificationResult& WithAdditionalOccurrences(bool value) { SetAdditionalOccurrences(value); return *this;}
 

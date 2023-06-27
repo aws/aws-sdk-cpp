@@ -26,6 +26,7 @@ namespace Aws
         static const int SYNC_FAILED_HASH = HashingUtils::HashString("SYNC_FAILED");
         static const int DELETING_HASH = HashingUtils::HashString("DELETING");
         static const int DELETE_FAILED_HASH = HashingUtils::HashString("DELETE_FAILED");
+        static const int DELETING_ACKNOWLEDGED_HASH = HashingUtils::HashString("DELETING_ACKNOWLEDGED");
 
 
         SyncStatus GetSyncStatusForName(const Aws::String& name)
@@ -55,6 +56,10 @@ namespace Aws
           {
             return SyncStatus::DELETE_FAILED;
           }
+          else if (hashCode == DELETING_ACKNOWLEDGED_HASH)
+          {
+            return SyncStatus::DELETING_ACKNOWLEDGED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -81,6 +86,8 @@ namespace Aws
             return "DELETING";
           case SyncStatus::DELETE_FAILED:
             return "DELETE_FAILED";
+          case SyncStatus::DELETING_ACKNOWLEDGED:
+            return "DELETING_ACKNOWLEDGED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

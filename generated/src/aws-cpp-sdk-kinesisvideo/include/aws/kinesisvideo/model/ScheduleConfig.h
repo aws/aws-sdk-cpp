@@ -28,8 +28,11 @@ namespace Model
    * file, should record onto the Edge Agent. The <code>ScheduleConfig</code>
    * consists of the <code>ScheduleExpression</code> and the
    * <code>DurationInMinutes</code> attributes. </p> <p>If the
-   * <code>ScheduleExpression</code> is not provided, then the Edge Agent will always
-   * be set to recording mode.</p><p><h3>See Also:</h3>   <a
+   * <code>ScheduleConfig</code> is not provided in the <code>RecorderConfig</code>,
+   * then the Edge Agent will always be set to recording mode.</p> <p>If the
+   * <code>ScheduleConfig</code> is not provided in the <code>UploaderConfig</code>,
+   * then the Edge Agent will upload at regular intervals (every 1
+   * hour).</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/ScheduleConfig">AWS
    * API Reference</a></p>
    */

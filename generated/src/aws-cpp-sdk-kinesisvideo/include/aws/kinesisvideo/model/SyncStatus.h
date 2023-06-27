@@ -21,7 +21,8 @@ namespace Model
     IN_SYNC,
     SYNC_FAILED,
     DELETING,
-    DELETE_FAILED
+    DELETE_FAILED,
+    DELETING_ACKNOWLEDGED
   };
 
 namespace SyncStatusMapper

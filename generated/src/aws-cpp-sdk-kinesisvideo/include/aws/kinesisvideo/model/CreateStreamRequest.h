@@ -247,8 +247,8 @@ namespace Model
     /**
      * <p>The ID of the Key Management Service (KMS) key that you want Kinesis Video
      * Streams to use to encrypt stream data.</p> <p>If no key ID is specified, the
-     * default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is used.</p>
-     * <p> For more information, see <a
+     * default, Kinesis Video-managed key (<code>Amazon Web
+     * Services/kinesisvideo</code>) is used.</p> <p> For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>.
      * </p>
      */
@@ -257,8 +257,8 @@ namespace Model
     /**
      * <p>The ID of the Key Management Service (KMS) key that you want Kinesis Video
      * Streams to use to encrypt stream data.</p> <p>If no key ID is specified, the
-     * default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is used.</p>
-     * <p> For more information, see <a
+     * default, Kinesis Video-managed key (<code>Amazon Web
+     * Services/kinesisvideo</code>) is used.</p> <p> For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>.
      * </p>
      */
@@ -267,8 +267,8 @@ namespace Model
     /**
      * <p>The ID of the Key Management Service (KMS) key that you want Kinesis Video
      * Streams to use to encrypt stream data.</p> <p>If no key ID is specified, the
-     * default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is used.</p>
-     * <p> For more information, see <a
+     * default, Kinesis Video-managed key (<code>Amazon Web
+     * Services/kinesisvideo</code>) is used.</p> <p> For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>.
      * </p>
      */
@@ -277,8 +277,8 @@ namespace Model
     /**
      * <p>The ID of the Key Management Service (KMS) key that you want Kinesis Video
      * Streams to use to encrypt stream data.</p> <p>If no key ID is specified, the
-     * default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is used.</p>
-     * <p> For more information, see <a
+     * default, Kinesis Video-managed key (<code>Amazon Web
+     * Services/kinesisvideo</code>) is used.</p> <p> For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>.
      * </p>
      */
@@ -287,8 +287,8 @@ namespace Model
     /**
      * <p>The ID of the Key Management Service (KMS) key that you want Kinesis Video
      * Streams to use to encrypt stream data.</p> <p>If no key ID is specified, the
-     * default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is used.</p>
-     * <p> For more information, see <a
+     * default, Kinesis Video-managed key (<code>Amazon Web
+     * Services/kinesisvideo</code>) is used.</p> <p> For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>.
      * </p>
      */
@@ -297,8 +297,8 @@ namespace Model
     /**
      * <p>The ID of the Key Management Service (KMS) key that you want Kinesis Video
      * Streams to use to encrypt stream data.</p> <p>If no key ID is specified, the
-     * default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is used.</p>
-     * <p> For more information, see <a
+     * default, Kinesis Video-managed key (<code>Amazon Web
+     * Services/kinesisvideo</code>) is used.</p> <p> For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>.
      * </p>
      */
@@ -307,8 +307,8 @@ namespace Model
     /**
      * <p>The ID of the Key Management Service (KMS) key that you want Kinesis Video
      * Streams to use to encrypt stream data.</p> <p>If no key ID is specified, the
-     * default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is used.</p>
-     * <p> For more information, see <a
+     * default, Kinesis Video-managed key (<code>Amazon Web
+     * Services/kinesisvideo</code>) is used.</p> <p> For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>.
      * </p>
      */
@@ -317,8 +317,8 @@ namespace Model
     /**
      * <p>The ID of the Key Management Service (KMS) key that you want Kinesis Video
      * Streams to use to encrypt stream data.</p> <p>If no key ID is specified, the
-     * default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is used.</p>
-     * <p> For more information, see <a
+     * default, Kinesis Video-managed key (<code>Amazon Web
+     * Services/kinesisvideo</code>) is used.</p> <p> For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>.
      * </p>
      */

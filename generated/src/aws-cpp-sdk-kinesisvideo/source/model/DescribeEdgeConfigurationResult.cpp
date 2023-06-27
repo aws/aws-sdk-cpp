@@ -73,6 +73,12 @@ DescribeEdgeConfigurationResult& DescribeEdgeConfigurationResult::operator =(con
 
   }
 
+  if(jsonValue.ValueExists("EdgeAgentStatus"))
+  {
+    m_edgeAgentStatus = jsonValue.GetObject("EdgeAgentStatus");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

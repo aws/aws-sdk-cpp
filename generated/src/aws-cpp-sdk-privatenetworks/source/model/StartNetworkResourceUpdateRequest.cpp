@@ -13,6 +13,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 StartNetworkResourceUpdateRequest::StartNetworkResourceUpdateRequest() : 
+    m_commitmentConfigurationHasBeenSet(false),
     m_networkResourceArnHasBeenSet(false),
     m_returnReasonHasBeenSet(false),
     m_shippingAddressHasBeenSet(false),
@@ -24,6 +25,12 @@ StartNetworkResourceUpdateRequest::StartNetworkResourceUpdateRequest() :
 Aws::String StartNetworkResourceUpdateRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_commitmentConfigurationHasBeenSet)
+  {
+   payload.WithObject("commitmentConfiguration", m_commitmentConfiguration.Jsonize());
+
+  }
 
   if(m_networkResourceArnHasBeenSet)
   {

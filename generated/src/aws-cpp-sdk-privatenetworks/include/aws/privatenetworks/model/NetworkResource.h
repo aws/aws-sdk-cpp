@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/privatenetworks/PrivateNetworks_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/privatenetworks/model/CommitmentInformation.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/privatenetworks/model/HealthStatus.h>
@@ -84,6 +85,49 @@ namespace Model
      * <p>The attributes of the network resource.</p>
      */
     inline NetworkResource& AddAttributes(NameValuePair&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Information about the commitment period for the radio unit. Shows the
+     * duration, the date and time that the contract started and ends, and the renewal
+     * status of the commitment period.</p>
+     */
+    inline const CommitmentInformation& GetCommitmentInformation() const{ return m_commitmentInformation; }
+
+    /**
+     * <p>Information about the commitment period for the radio unit. Shows the
+     * duration, the date and time that the contract started and ends, and the renewal
+     * status of the commitment period.</p>
+     */
+    inline bool CommitmentInformationHasBeenSet() const { return m_commitmentInformationHasBeenSet; }
+
+    /**
+     * <p>Information about the commitment period for the radio unit. Shows the
+     * duration, the date and time that the contract started and ends, and the renewal
+     * status of the commitment period.</p>
+     */
+    inline void SetCommitmentInformation(const CommitmentInformation& value) { m_commitmentInformationHasBeenSet = true; m_commitmentInformation = value; }
+
+    /**
+     * <p>Information about the commitment period for the radio unit. Shows the
+     * duration, the date and time that the contract started and ends, and the renewal
+     * status of the commitment period.</p>
+     */
+    inline void SetCommitmentInformation(CommitmentInformation&& value) { m_commitmentInformationHasBeenSet = true; m_commitmentInformation = std::move(value); }
+
+    /**
+     * <p>Information about the commitment period for the radio unit. Shows the
+     * duration, the date and time that the contract started and ends, and the renewal
+     * status of the commitment period.</p>
+     */
+    inline NetworkResource& WithCommitmentInformation(const CommitmentInformation& value) { SetCommitmentInformation(value); return *this;}
+
+    /**
+     * <p>Information about the commitment period for the radio unit. Shows the
+     * duration, the date and time that the contract started and ends, and the renewal
+     * status of the commitment period.</p>
+     */
+    inline NetworkResource& WithCommitmentInformation(CommitmentInformation&& value) { SetCommitmentInformation(std::move(value)); return *this;}
 
 
     /**
@@ -668,6 +712,9 @@ namespace Model
 
     Aws::Vector<NameValuePair> m_attributes;
     bool m_attributesHasBeenSet = false;
+
+    CommitmentInformation m_commitmentInformation;
+    bool m_commitmentInformationHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet = false;

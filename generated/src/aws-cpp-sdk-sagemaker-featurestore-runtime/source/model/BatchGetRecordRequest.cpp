@@ -13,7 +13,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 BatchGetRecordRequest::BatchGetRecordRequest() : 
-    m_identifiersHasBeenSet(false)
+    m_identifiersHasBeenSet(false),
+    m_expirationTimeResponse(ExpirationTimeResponse::NOT_SET),
+    m_expirationTimeResponseHasBeenSet(false)
 {
 }
 
@@ -30,6 +32,11 @@ Aws::String BatchGetRecordRequest::SerializePayload() const
    }
    payload.WithArray("Identifiers", std::move(identifiersJsonList));
 
+  }
+
+  if(m_expirationTimeResponseHasBeenSet)
+  {
+   payload.WithString("ExpirationTimeResponse", ExpirationTimeResponseMapper::GetNameForExpirationTimeResponse(m_expirationTimeResponse));
   }
 
   return payload.View().WriteReadable();

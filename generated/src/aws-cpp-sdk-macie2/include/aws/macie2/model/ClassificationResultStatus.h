@@ -144,7 +144,7 @@ namespace Model
      * and Macie extracted and analyzed only some or none of the files in the archive.
      * To determine which files Macie analyzed, if any, refer to the corresponding
      * sensitive data discovery result for the finding
-     * (ClassificationDetails.detailedResultsLocation).</p></li>
+     * (classificationDetails.detailedResultsLocation).</p></li>
      * <li><p>ARCHIVE_EXCEEDS_SIZE_LIMIT - The object is an archive file whose total
      * storage size exceeds the size quota for this type of archive.</p></li>
      * <li><p>ARCHIVE_NESTING_LEVEL_OVER_LIMIT - The object is an archive file whose
@@ -206,7 +206,7 @@ namespace Model
      * and Macie extracted and analyzed only some or none of the files in the archive.
      * To determine which files Macie analyzed, if any, refer to the corresponding
      * sensitive data discovery result for the finding
-     * (ClassificationDetails.detailedResultsLocation).</p></li>
+     * (classificationDetails.detailedResultsLocation).</p></li>
      * <li><p>ARCHIVE_EXCEEDS_SIZE_LIMIT - The object is an archive file whose total
      * storage size exceeds the size quota for this type of archive.</p></li>
      * <li><p>ARCHIVE_NESTING_LEVEL_OVER_LIMIT - The object is an archive file whose
@@ -268,7 +268,7 @@ namespace Model
      * and Macie extracted and analyzed only some or none of the files in the archive.
      * To determine which files Macie analyzed, if any, refer to the corresponding
      * sensitive data discovery result for the finding
-     * (ClassificationDetails.detailedResultsLocation).</p></li>
+     * (classificationDetails.detailedResultsLocation).</p></li>
      * <li><p>ARCHIVE_EXCEEDS_SIZE_LIMIT - The object is an archive file whose total
      * storage size exceeds the size quota for this type of archive.</p></li>
      * <li><p>ARCHIVE_NESTING_LEVEL_OVER_LIMIT - The object is an archive file whose
@@ -330,7 +330,7 @@ namespace Model
      * and Macie extracted and analyzed only some or none of the files in the archive.
      * To determine which files Macie analyzed, if any, refer to the corresponding
      * sensitive data discovery result for the finding
-     * (ClassificationDetails.detailedResultsLocation).</p></li>
+     * (classificationDetails.detailedResultsLocation).</p></li>
      * <li><p>ARCHIVE_EXCEEDS_SIZE_LIMIT - The object is an archive file whose total
      * storage size exceeds the size quota for this type of archive.</p></li>
      * <li><p>ARCHIVE_NESTING_LEVEL_OVER_LIMIT - The object is an archive file whose
@@ -392,7 +392,7 @@ namespace Model
      * and Macie extracted and analyzed only some or none of the files in the archive.
      * To determine which files Macie analyzed, if any, refer to the corresponding
      * sensitive data discovery result for the finding
-     * (ClassificationDetails.detailedResultsLocation).</p></li>
+     * (classificationDetails.detailedResultsLocation).</p></li>
      * <li><p>ARCHIVE_EXCEEDS_SIZE_LIMIT - The object is an archive file whose total
      * storage size exceeds the size quota for this type of archive.</p></li>
      * <li><p>ARCHIVE_NESTING_LEVEL_OVER_LIMIT - The object is an archive file whose
@@ -454,7 +454,7 @@ namespace Model
      * and Macie extracted and analyzed only some or none of the files in the archive.
      * To determine which files Macie analyzed, if any, refer to the corresponding
      * sensitive data discovery result for the finding
-     * (ClassificationDetails.detailedResultsLocation).</p></li>
+     * (classificationDetails.detailedResultsLocation).</p></li>
      * <li><p>ARCHIVE_EXCEEDS_SIZE_LIMIT - The object is an archive file whose total
      * storage size exceeds the size quota for this type of archive.</p></li>
      * <li><p>ARCHIVE_NESTING_LEVEL_OVER_LIMIT - The object is an archive file whose
@@ -516,7 +516,7 @@ namespace Model
      * and Macie extracted and analyzed only some or none of the files in the archive.
      * To determine which files Macie analyzed, if any, refer to the corresponding
      * sensitive data discovery result for the finding
-     * (ClassificationDetails.detailedResultsLocation).</p></li>
+     * (classificationDetails.detailedResultsLocation).</p></li>
      * <li><p>ARCHIVE_EXCEEDS_SIZE_LIMIT - The object is an archive file whose total
      * storage size exceeds the size quota for this type of archive.</p></li>
      * <li><p>ARCHIVE_NESTING_LEVEL_OVER_LIMIT - The object is an archive file whose
@@ -578,7 +578,7 @@ namespace Model
      * and Macie extracted and analyzed only some or none of the files in the archive.
      * To determine which files Macie analyzed, if any, refer to the corresponding
      * sensitive data discovery result for the finding
-     * (ClassificationDetails.detailedResultsLocation).</p></li>
+     * (classificationDetails.detailedResultsLocation).</p></li>
      * <li><p>ARCHIVE_EXCEEDS_SIZE_LIMIT - The object is an archive file whose total
      * storage size exceeds the size quota for this type of archive.</p></li>
      * <li><p>ARCHIVE_NESTING_LEVEL_OVER_LIMIT - The object is an archive file whose

@@ -8,6 +8,7 @@
 #include <aws/sagemaker/SageMakerRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker/model/OnlineStoreConfigUpdate.h>
 #include <aws/sagemaker/model/FeatureDefinition.h>
 #include <utility>
 
@@ -141,6 +142,37 @@ namespace Model
      */
     inline UpdateFeatureGroupRequest& AddFeatureAdditions(FeatureDefinition&& value) { m_featureAdditionsHasBeenSet = true; m_featureAdditions.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Updates the feature group online store configuration.</p>
+     */
+    inline const OnlineStoreConfigUpdate& GetOnlineStoreConfig() const{ return m_onlineStoreConfig; }
+
+    /**
+     * <p>Updates the feature group online store configuration.</p>
+     */
+    inline bool OnlineStoreConfigHasBeenSet() const { return m_onlineStoreConfigHasBeenSet; }
+
+    /**
+     * <p>Updates the feature group online store configuration.</p>
+     */
+    inline void SetOnlineStoreConfig(const OnlineStoreConfigUpdate& value) { m_onlineStoreConfigHasBeenSet = true; m_onlineStoreConfig = value; }
+
+    /**
+     * <p>Updates the feature group online store configuration.</p>
+     */
+    inline void SetOnlineStoreConfig(OnlineStoreConfigUpdate&& value) { m_onlineStoreConfigHasBeenSet = true; m_onlineStoreConfig = std::move(value); }
+
+    /**
+     * <p>Updates the feature group online store configuration.</p>
+     */
+    inline UpdateFeatureGroupRequest& WithOnlineStoreConfig(const OnlineStoreConfigUpdate& value) { SetOnlineStoreConfig(value); return *this;}
+
+    /**
+     * <p>Updates the feature group online store configuration.</p>
+     */
+    inline UpdateFeatureGroupRequest& WithOnlineStoreConfig(OnlineStoreConfigUpdate&& value) { SetOnlineStoreConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_featureGroupName;
@@ -148,6 +180,9 @@ namespace Model
 
     Aws::Vector<FeatureDefinition> m_featureAdditions;
     bool m_featureAdditionsHasBeenSet = false;
+
+    OnlineStoreConfigUpdate m_onlineStoreConfig;
+    bool m_onlineStoreConfigHasBeenSet = false;
   };
 
 } // namespace Model

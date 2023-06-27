@@ -541,6 +541,55 @@ namespace Model
      */
     inline UpdateApplicationRequest& AddWorkerTypeSpecifications(const char* key, const WorkerTypeSpecificationInput& value) { m_workerTypeSpecificationsHasBeenSet = true; m_workerTypeSpecifications.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The Amazon EMR release label for the application. You can change the release
+     * label to use a different release of Amazon EMR.</p>
+     */
+    inline const Aws::String& GetReleaseLabel() const{ return m_releaseLabel; }
+
+    /**
+     * <p>The Amazon EMR release label for the application. You can change the release
+     * label to use a different release of Amazon EMR.</p>
+     */
+    inline bool ReleaseLabelHasBeenSet() const { return m_releaseLabelHasBeenSet; }
+
+    /**
+     * <p>The Amazon EMR release label for the application. You can change the release
+     * label to use a different release of Amazon EMR.</p>
+     */
+    inline void SetReleaseLabel(const Aws::String& value) { m_releaseLabelHasBeenSet = true; m_releaseLabel = value; }
+
+    /**
+     * <p>The Amazon EMR release label for the application. You can change the release
+     * label to use a different release of Amazon EMR.</p>
+     */
+    inline void SetReleaseLabel(Aws::String&& value) { m_releaseLabelHasBeenSet = true; m_releaseLabel = std::move(value); }
+
+    /**
+     * <p>The Amazon EMR release label for the application. You can change the release
+     * label to use a different release of Amazon EMR.</p>
+     */
+    inline void SetReleaseLabel(const char* value) { m_releaseLabelHasBeenSet = true; m_releaseLabel.assign(value); }
+
+    /**
+     * <p>The Amazon EMR release label for the application. You can change the release
+     * label to use a different release of Amazon EMR.</p>
+     */
+    inline UpdateApplicationRequest& WithReleaseLabel(const Aws::String& value) { SetReleaseLabel(value); return *this;}
+
+    /**
+     * <p>The Amazon EMR release label for the application. You can change the release
+     * label to use a different release of Amazon EMR.</p>
+     */
+    inline UpdateApplicationRequest& WithReleaseLabel(Aws::String&& value) { SetReleaseLabel(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon EMR release label for the application. You can change the release
+     * label to use a different release of Amazon EMR.</p>
+     */
+    inline UpdateApplicationRequest& WithReleaseLabel(const char* value) { SetReleaseLabel(value); return *this;}
+
   private:
 
     Aws::String m_applicationId;
@@ -572,6 +621,9 @@ namespace Model
 
     Aws::Map<Aws::String, WorkerTypeSpecificationInput> m_workerTypeSpecifications;
     bool m_workerTypeSpecificationsHasBeenSet = false;
+
+    Aws::String m_releaseLabel;
+    bool m_releaseLabelHasBeenSet = false;
   };
 
 } // namespace Model
