@@ -300,22 +300,22 @@ namespace Model
 
     /**
      * <p>When a list is truncated, this element specifies the last part in the list,
-     * as well as the value to use for the part-number-marker request parameter in a
-     * subsequent request.</p>
+     * as well as the value to use for the <code>part-number-marker</code> request
+     * parameter in a subsequent request.</p>
      */
     inline int GetNextPartNumberMarker() const{ return m_nextPartNumberMarker; }
 
     /**
      * <p>When a list is truncated, this element specifies the last part in the list,
-     * as well as the value to use for the part-number-marker request parameter in a
-     * subsequent request.</p>
+     * as well as the value to use for the <code>part-number-marker</code> request
+     * parameter in a subsequent request.</p>
      */
     inline void SetNextPartNumberMarker(int value) { m_nextPartNumberMarker = value; }
 
     /**
      * <p>When a list is truncated, this element specifies the last part in the list,
-     * as well as the value to use for the part-number-marker request parameter in a
-     * subsequent request.</p>
+     * as well as the value to use for the <code>part-number-marker</code> request
+     * parameter in a subsequent request.</p>
      */
     inline ListPartsResult& WithNextPartNumberMarker(int value) { SetNextPartNumberMarker(value); return *this;}
 

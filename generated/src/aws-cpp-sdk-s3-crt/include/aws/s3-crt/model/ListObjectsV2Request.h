@@ -9,7 +9,9 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3-crt/model/EncodingType.h>
 #include <aws/s3-crt/model/RequestPayer.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/s3-crt/model/OptionalObjectAttributes.h>
 #include <utility>
 
 namespace Aws
@@ -64,7 +66,7 @@ namespace Model
      * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
      * more information about S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
-     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
@@ -85,7 +87,7 @@ namespace Model
      * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
      * more information about S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
-     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
 
@@ -106,7 +108,7 @@ namespace Model
      * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
      * more information about S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
-     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
@@ -127,7 +129,7 @@ namespace Model
      * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
      * more information about S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
-     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
@@ -148,7 +150,7 @@ namespace Model
      * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
      * more information about S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
-     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
@@ -169,7 +171,7 @@ namespace Model
      * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
      * more information about S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
-     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline ListObjectsV2Request& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
@@ -190,7 +192,7 @@ namespace Model
      * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
      * more information about S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
-     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline ListObjectsV2Request& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
@@ -211,48 +213,48 @@ namespace Model
      * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
      * more information about S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
-     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline ListObjectsV2Request& WithBucket(const char* value) { SetBucket(value); return *this;}
 
 
     /**
-     * <p>A delimiter is a character you use to group keys.</p>
+     * <p>A delimiter is a character that you use to group keys.</p>
      */
     inline const Aws::String& GetDelimiter() const{ return m_delimiter; }
 
     /**
-     * <p>A delimiter is a character you use to group keys.</p>
+     * <p>A delimiter is a character that you use to group keys.</p>
      */
     inline bool DelimiterHasBeenSet() const { return m_delimiterHasBeenSet; }
 
     /**
-     * <p>A delimiter is a character you use to group keys.</p>
+     * <p>A delimiter is a character that you use to group keys.</p>
      */
     inline void SetDelimiter(const Aws::String& value) { m_delimiterHasBeenSet = true; m_delimiter = value; }
 
     /**
-     * <p>A delimiter is a character you use to group keys.</p>
+     * <p>A delimiter is a character that you use to group keys.</p>
      */
     inline void SetDelimiter(Aws::String&& value) { m_delimiterHasBeenSet = true; m_delimiter = std::move(value); }
 
     /**
-     * <p>A delimiter is a character you use to group keys.</p>
+     * <p>A delimiter is a character that you use to group keys.</p>
      */
     inline void SetDelimiter(const char* value) { m_delimiterHasBeenSet = true; m_delimiter.assign(value); }
 
     /**
-     * <p>A delimiter is a character you use to group keys.</p>
+     * <p>A delimiter is a character that you use to group keys.</p>
      */
     inline ListObjectsV2Request& WithDelimiter(const Aws::String& value) { SetDelimiter(value); return *this;}
 
     /**
-     * <p>A delimiter is a character you use to group keys.</p>
+     * <p>A delimiter is a character that you use to group keys.</p>
      */
     inline ListObjectsV2Request& WithDelimiter(Aws::String&& value) { SetDelimiter(std::move(value)); return *this;}
 
     /**
-     * <p>A delimiter is a character you use to group keys.</p>
+     * <p>A delimiter is a character that you use to group keys.</p>
      */
     inline ListObjectsV2Request& WithDelimiter(const char* value) { SetDelimiter(value); return *this;}
 
@@ -289,28 +291,28 @@ namespace Model
 
 
     /**
-     * <p>Sets the maximum number of keys returned in the response. By default the
+     * <p>Sets the maximum number of keys returned in the response. By default, the
      * action returns up to 1,000 key names. The response might contain fewer keys but
      * will never contain more.</p>
      */
     inline int GetMaxKeys() const{ return m_maxKeys; }
 
     /**
-     * <p>Sets the maximum number of keys returned in the response. By default the
+     * <p>Sets the maximum number of keys returned in the response. By default, the
      * action returns up to 1,000 key names. The response might contain fewer keys but
      * will never contain more.</p>
      */
     inline bool MaxKeysHasBeenSet() const { return m_maxKeysHasBeenSet; }
 
     /**
-     * <p>Sets the maximum number of keys returned in the response. By default the
+     * <p>Sets the maximum number of keys returned in the response. By default, the
      * action returns up to 1,000 key names. The response might contain fewer keys but
      * will never contain more.</p>
      */
     inline void SetMaxKeys(int value) { m_maxKeysHasBeenSet = true; m_maxKeys = value; }
 
     /**
-     * <p>Sets the maximum number of keys returned in the response. By default the
+     * <p>Sets the maximum number of keys returned in the response. By default, the
      * action returns up to 1,000 key names. The response might contain fewer keys but
      * will never contain more.</p>
      */
@@ -359,87 +361,87 @@ namespace Model
 
 
     /**
-     * <p>ContinuationToken indicates Amazon S3 that the list is being continued on
-     * this bucket with a token. ContinuationToken is obfuscated and is not a real
-     * key.</p>
+     * <p> <code>ContinuationToken</code> indicates to Amazon S3 that the list is being
+     * continued on this bucket with a token. <code>ContinuationToken</code> is
+     * obfuscated and is not a real key.</p>
      */
     inline const Aws::String& GetContinuationToken() const{ return m_continuationToken; }
 
     /**
-     * <p>ContinuationToken indicates Amazon S3 that the list is being continued on
-     * this bucket with a token. ContinuationToken is obfuscated and is not a real
-     * key.</p>
+     * <p> <code>ContinuationToken</code> indicates to Amazon S3 that the list is being
+     * continued on this bucket with a token. <code>ContinuationToken</code> is
+     * obfuscated and is not a real key.</p>
      */
     inline bool ContinuationTokenHasBeenSet() const { return m_continuationTokenHasBeenSet; }
 
     /**
-     * <p>ContinuationToken indicates Amazon S3 that the list is being continued on
-     * this bucket with a token. ContinuationToken is obfuscated and is not a real
-     * key.</p>
+     * <p> <code>ContinuationToken</code> indicates to Amazon S3 that the list is being
+     * continued on this bucket with a token. <code>ContinuationToken</code> is
+     * obfuscated and is not a real key.</p>
      */
     inline void SetContinuationToken(const Aws::String& value) { m_continuationTokenHasBeenSet = true; m_continuationToken = value; }
 
     /**
-     * <p>ContinuationToken indicates Amazon S3 that the list is being continued on
-     * this bucket with a token. ContinuationToken is obfuscated and is not a real
-     * key.</p>
+     * <p> <code>ContinuationToken</code> indicates to Amazon S3 that the list is being
+     * continued on this bucket with a token. <code>ContinuationToken</code> is
+     * obfuscated and is not a real key.</p>
      */
     inline void SetContinuationToken(Aws::String&& value) { m_continuationTokenHasBeenSet = true; m_continuationToken = std::move(value); }
 
     /**
-     * <p>ContinuationToken indicates Amazon S3 that the list is being continued on
-     * this bucket with a token. ContinuationToken is obfuscated and is not a real
-     * key.</p>
+     * <p> <code>ContinuationToken</code> indicates to Amazon S3 that the list is being
+     * continued on this bucket with a token. <code>ContinuationToken</code> is
+     * obfuscated and is not a real key.</p>
      */
     inline void SetContinuationToken(const char* value) { m_continuationTokenHasBeenSet = true; m_continuationToken.assign(value); }
 
     /**
-     * <p>ContinuationToken indicates Amazon S3 that the list is being continued on
-     * this bucket with a token. ContinuationToken is obfuscated and is not a real
-     * key.</p>
+     * <p> <code>ContinuationToken</code> indicates to Amazon S3 that the list is being
+     * continued on this bucket with a token. <code>ContinuationToken</code> is
+     * obfuscated and is not a real key.</p>
      */
     inline ListObjectsV2Request& WithContinuationToken(const Aws::String& value) { SetContinuationToken(value); return *this;}
 
     /**
-     * <p>ContinuationToken indicates Amazon S3 that the list is being continued on
-     * this bucket with a token. ContinuationToken is obfuscated and is not a real
-     * key.</p>
+     * <p> <code>ContinuationToken</code> indicates to Amazon S3 that the list is being
+     * continued on this bucket with a token. <code>ContinuationToken</code> is
+     * obfuscated and is not a real key.</p>
      */
     inline ListObjectsV2Request& WithContinuationToken(Aws::String&& value) { SetContinuationToken(std::move(value)); return *this;}
 
     /**
-     * <p>ContinuationToken indicates Amazon S3 that the list is being continued on
-     * this bucket with a token. ContinuationToken is obfuscated and is not a real
-     * key.</p>
+     * <p> <code>ContinuationToken</code> indicates to Amazon S3 that the list is being
+     * continued on this bucket with a token. <code>ContinuationToken</code> is
+     * obfuscated and is not a real key.</p>
      */
     inline ListObjectsV2Request& WithContinuationToken(const char* value) { SetContinuationToken(value); return *this;}
 
 
     /**
-     * <p>The owner field is not present in listV2 by default, if you want to return
-     * owner field with each key in the result then set the fetch owner field to
-     * true.</p>
+     * <p>The owner field is not present in <code>ListObjectsV2</code> by default. If
+     * you want to return the owner field with each key in the result, then set the
+     * <code>FetchOwner</code> field to <code>true</code>.</p>
      */
     inline bool GetFetchOwner() const{ return m_fetchOwner; }
 
     /**
-     * <p>The owner field is not present in listV2 by default, if you want to return
-     * owner field with each key in the result then set the fetch owner field to
-     * true.</p>
+     * <p>The owner field is not present in <code>ListObjectsV2</code> by default. If
+     * you want to return the owner field with each key in the result, then set the
+     * <code>FetchOwner</code> field to <code>true</code>.</p>
      */
     inline bool FetchOwnerHasBeenSet() const { return m_fetchOwnerHasBeenSet; }
 
     /**
-     * <p>The owner field is not present in listV2 by default, if you want to return
-     * owner field with each key in the result then set the fetch owner field to
-     * true.</p>
+     * <p>The owner field is not present in <code>ListObjectsV2</code> by default. If
+     * you want to return the owner field with each key in the result, then set the
+     * <code>FetchOwner</code> field to <code>true</code>.</p>
      */
     inline void SetFetchOwner(bool value) { m_fetchOwnerHasBeenSet = true; m_fetchOwner = value; }
 
     /**
-     * <p>The owner field is not present in listV2 by default, if you want to return
-     * owner field with each key in the result then set the fetch owner field to
-     * true.</p>
+     * <p>The owner field is not present in <code>ListObjectsV2</code> by default. If
+     * you want to return the owner field with each key in the result, then set the
+     * <code>FetchOwner</code> field to <code>true</code>.</p>
      */
     inline ListObjectsV2Request& WithFetchOwner(bool value) { SetFetchOwner(value); return *this;}
 
@@ -601,6 +603,55 @@ namespace Model
     inline ListObjectsV2Request& WithExpectedBucketOwner(const char* value) { SetExpectedBucketOwner(value); return *this;}
 
 
+    /**
+     * <p>Specifies the optional fields that you want returned in the response. Fields
+     * that you do not specify are not returned.</p>
+     */
+    inline const Aws::Vector<OptionalObjectAttributes>& GetOptionalObjectAttributes() const{ return m_optionalObjectAttributes; }
+
+    /**
+     * <p>Specifies the optional fields that you want returned in the response. Fields
+     * that you do not specify are not returned.</p>
+     */
+    inline bool OptionalObjectAttributesHasBeenSet() const { return m_optionalObjectAttributesHasBeenSet; }
+
+    /**
+     * <p>Specifies the optional fields that you want returned in the response. Fields
+     * that you do not specify are not returned.</p>
+     */
+    inline void SetOptionalObjectAttributes(const Aws::Vector<OptionalObjectAttributes>& value) { m_optionalObjectAttributesHasBeenSet = true; m_optionalObjectAttributes = value; }
+
+    /**
+     * <p>Specifies the optional fields that you want returned in the response. Fields
+     * that you do not specify are not returned.</p>
+     */
+    inline void SetOptionalObjectAttributes(Aws::Vector<OptionalObjectAttributes>&& value) { m_optionalObjectAttributesHasBeenSet = true; m_optionalObjectAttributes = std::move(value); }
+
+    /**
+     * <p>Specifies the optional fields that you want returned in the response. Fields
+     * that you do not specify are not returned.</p>
+     */
+    inline ListObjectsV2Request& WithOptionalObjectAttributes(const Aws::Vector<OptionalObjectAttributes>& value) { SetOptionalObjectAttributes(value); return *this;}
+
+    /**
+     * <p>Specifies the optional fields that you want returned in the response. Fields
+     * that you do not specify are not returned.</p>
+     */
+    inline ListObjectsV2Request& WithOptionalObjectAttributes(Aws::Vector<OptionalObjectAttributes>&& value) { SetOptionalObjectAttributes(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the optional fields that you want returned in the response. Fields
+     * that you do not specify are not returned.</p>
+     */
+    inline ListObjectsV2Request& AddOptionalObjectAttributes(const OptionalObjectAttributes& value) { m_optionalObjectAttributesHasBeenSet = true; m_optionalObjectAttributes.push_back(value); return *this; }
+
+    /**
+     * <p>Specifies the optional fields that you want returned in the response. Fields
+     * that you do not specify are not returned.</p>
+     */
+    inline ListObjectsV2Request& AddOptionalObjectAttributes(OptionalObjectAttributes&& value) { m_optionalObjectAttributesHasBeenSet = true; m_optionalObjectAttributes.push_back(std::move(value)); return *this; }
+
+
     
     inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
 
@@ -671,6 +722,9 @@ namespace Model
 
     Aws::String m_expectedBucketOwner;
     bool m_expectedBucketOwnerHasBeenSet = false;
+
+    Aws::Vector<OptionalObjectAttributes> m_optionalObjectAttributes;
+    bool m_optionalObjectAttributesHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
     bool m_customizedAccessLogTagHasBeenSet = false;

@@ -64,7 +64,7 @@ namespace Model
      * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
      * more information about S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
-     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
@@ -85,7 +85,7 @@ namespace Model
      * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
      * more information about S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
-     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
 
@@ -106,7 +106,7 @@ namespace Model
      * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
      * more information about S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
-     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
@@ -127,7 +127,7 @@ namespace Model
      * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
      * more information about S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
-     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
@@ -148,7 +148,7 @@ namespace Model
      * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
      * more information about S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
-     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
@@ -169,7 +169,7 @@ namespace Model
      * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
      * more information about S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
-     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline ListMultipartUploadsRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
@@ -190,7 +190,7 @@ namespace Model
      * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
      * more information about S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
-     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline ListMultipartUploadsRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
@@ -211,7 +211,7 @@ namespace Model
      * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
      * more information about S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
-     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline ListMultipartUploadsRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
@@ -325,98 +325,98 @@ namespace Model
 
 
     /**
-     * <p>Together with upload-id-marker, this parameter specifies the multipart upload
-     * after which listing should begin.</p> <p>If <code>upload-id-marker</code> is not
-     * specified, only the keys lexicographically greater than the specified
-     * <code>key-marker</code> will be included in the list.</p> <p>If
-     * <code>upload-id-marker</code> is specified, any multipart uploads for a key
-     * equal to the <code>key-marker</code> might also be included, provided those
-     * multipart uploads have upload IDs lexicographically greater than the specified
-     * <code>upload-id-marker</code>.</p>
+     * <p>Together with <code>upload-id-marker</code>, this parameter specifies the
+     * multipart upload after which listing should begin.</p> <p>If
+     * <code>upload-id-marker</code> is not specified, only the keys lexicographically
+     * greater than the specified <code>key-marker</code> will be included in the
+     * list.</p> <p>If <code>upload-id-marker</code> is specified, any multipart
+     * uploads for a key equal to the <code>key-marker</code> might also be included,
+     * provided those multipart uploads have upload IDs lexicographically greater than
+     * the specified <code>upload-id-marker</code>.</p>
      */
     inline const Aws::String& GetKeyMarker() const{ return m_keyMarker; }
 
     /**
-     * <p>Together with upload-id-marker, this parameter specifies the multipart upload
-     * after which listing should begin.</p> <p>If <code>upload-id-marker</code> is not
-     * specified, only the keys lexicographically greater than the specified
-     * <code>key-marker</code> will be included in the list.</p> <p>If
-     * <code>upload-id-marker</code> is specified, any multipart uploads for a key
-     * equal to the <code>key-marker</code> might also be included, provided those
-     * multipart uploads have upload IDs lexicographically greater than the specified
-     * <code>upload-id-marker</code>.</p>
+     * <p>Together with <code>upload-id-marker</code>, this parameter specifies the
+     * multipart upload after which listing should begin.</p> <p>If
+     * <code>upload-id-marker</code> is not specified, only the keys lexicographically
+     * greater than the specified <code>key-marker</code> will be included in the
+     * list.</p> <p>If <code>upload-id-marker</code> is specified, any multipart
+     * uploads for a key equal to the <code>key-marker</code> might also be included,
+     * provided those multipart uploads have upload IDs lexicographically greater than
+     * the specified <code>upload-id-marker</code>.</p>
      */
     inline bool KeyMarkerHasBeenSet() const { return m_keyMarkerHasBeenSet; }
 
     /**
-     * <p>Together with upload-id-marker, this parameter specifies the multipart upload
-     * after which listing should begin.</p> <p>If <code>upload-id-marker</code> is not
-     * specified, only the keys lexicographically greater than the specified
-     * <code>key-marker</code> will be included in the list.</p> <p>If
-     * <code>upload-id-marker</code> is specified, any multipart uploads for a key
-     * equal to the <code>key-marker</code> might also be included, provided those
-     * multipart uploads have upload IDs lexicographically greater than the specified
-     * <code>upload-id-marker</code>.</p>
+     * <p>Together with <code>upload-id-marker</code>, this parameter specifies the
+     * multipart upload after which listing should begin.</p> <p>If
+     * <code>upload-id-marker</code> is not specified, only the keys lexicographically
+     * greater than the specified <code>key-marker</code> will be included in the
+     * list.</p> <p>If <code>upload-id-marker</code> is specified, any multipart
+     * uploads for a key equal to the <code>key-marker</code> might also be included,
+     * provided those multipart uploads have upload IDs lexicographically greater than
+     * the specified <code>upload-id-marker</code>.</p>
      */
     inline void SetKeyMarker(const Aws::String& value) { m_keyMarkerHasBeenSet = true; m_keyMarker = value; }
 
     /**
-     * <p>Together with upload-id-marker, this parameter specifies the multipart upload
-     * after which listing should begin.</p> <p>If <code>upload-id-marker</code> is not
-     * specified, only the keys lexicographically greater than the specified
-     * <code>key-marker</code> will be included in the list.</p> <p>If
-     * <code>upload-id-marker</code> is specified, any multipart uploads for a key
-     * equal to the <code>key-marker</code> might also be included, provided those
-     * multipart uploads have upload IDs lexicographically greater than the specified
-     * <code>upload-id-marker</code>.</p>
+     * <p>Together with <code>upload-id-marker</code>, this parameter specifies the
+     * multipart upload after which listing should begin.</p> <p>If
+     * <code>upload-id-marker</code> is not specified, only the keys lexicographically
+     * greater than the specified <code>key-marker</code> will be included in the
+     * list.</p> <p>If <code>upload-id-marker</code> is specified, any multipart
+     * uploads for a key equal to the <code>key-marker</code> might also be included,
+     * provided those multipart uploads have upload IDs lexicographically greater than
+     * the specified <code>upload-id-marker</code>.</p>
      */
     inline void SetKeyMarker(Aws::String&& value) { m_keyMarkerHasBeenSet = true; m_keyMarker = std::move(value); }
 
     /**
-     * <p>Together with upload-id-marker, this parameter specifies the multipart upload
-     * after which listing should begin.</p> <p>If <code>upload-id-marker</code> is not
-     * specified, only the keys lexicographically greater than the specified
-     * <code>key-marker</code> will be included in the list.</p> <p>If
-     * <code>upload-id-marker</code> is specified, any multipart uploads for a key
-     * equal to the <code>key-marker</code> might also be included, provided those
-     * multipart uploads have upload IDs lexicographically greater than the specified
-     * <code>upload-id-marker</code>.</p>
+     * <p>Together with <code>upload-id-marker</code>, this parameter specifies the
+     * multipart upload after which listing should begin.</p> <p>If
+     * <code>upload-id-marker</code> is not specified, only the keys lexicographically
+     * greater than the specified <code>key-marker</code> will be included in the
+     * list.</p> <p>If <code>upload-id-marker</code> is specified, any multipart
+     * uploads for a key equal to the <code>key-marker</code> might also be included,
+     * provided those multipart uploads have upload IDs lexicographically greater than
+     * the specified <code>upload-id-marker</code>.</p>
      */
     inline void SetKeyMarker(const char* value) { m_keyMarkerHasBeenSet = true; m_keyMarker.assign(value); }
 
     /**
-     * <p>Together with upload-id-marker, this parameter specifies the multipart upload
-     * after which listing should begin.</p> <p>If <code>upload-id-marker</code> is not
-     * specified, only the keys lexicographically greater than the specified
-     * <code>key-marker</code> will be included in the list.</p> <p>If
-     * <code>upload-id-marker</code> is specified, any multipart uploads for a key
-     * equal to the <code>key-marker</code> might also be included, provided those
-     * multipart uploads have upload IDs lexicographically greater than the specified
-     * <code>upload-id-marker</code>.</p>
+     * <p>Together with <code>upload-id-marker</code>, this parameter specifies the
+     * multipart upload after which listing should begin.</p> <p>If
+     * <code>upload-id-marker</code> is not specified, only the keys lexicographically
+     * greater than the specified <code>key-marker</code> will be included in the
+     * list.</p> <p>If <code>upload-id-marker</code> is specified, any multipart
+     * uploads for a key equal to the <code>key-marker</code> might also be included,
+     * provided those multipart uploads have upload IDs lexicographically greater than
+     * the specified <code>upload-id-marker</code>.</p>
      */
     inline ListMultipartUploadsRequest& WithKeyMarker(const Aws::String& value) { SetKeyMarker(value); return *this;}
 
     /**
-     * <p>Together with upload-id-marker, this parameter specifies the multipart upload
-     * after which listing should begin.</p> <p>If <code>upload-id-marker</code> is not
-     * specified, only the keys lexicographically greater than the specified
-     * <code>key-marker</code> will be included in the list.</p> <p>If
-     * <code>upload-id-marker</code> is specified, any multipart uploads for a key
-     * equal to the <code>key-marker</code> might also be included, provided those
-     * multipart uploads have upload IDs lexicographically greater than the specified
-     * <code>upload-id-marker</code>.</p>
+     * <p>Together with <code>upload-id-marker</code>, this parameter specifies the
+     * multipart upload after which listing should begin.</p> <p>If
+     * <code>upload-id-marker</code> is not specified, only the keys lexicographically
+     * greater than the specified <code>key-marker</code> will be included in the
+     * list.</p> <p>If <code>upload-id-marker</code> is specified, any multipart
+     * uploads for a key equal to the <code>key-marker</code> might also be included,
+     * provided those multipart uploads have upload IDs lexicographically greater than
+     * the specified <code>upload-id-marker</code>.</p>
      */
     inline ListMultipartUploadsRequest& WithKeyMarker(Aws::String&& value) { SetKeyMarker(std::move(value)); return *this;}
 
     /**
-     * <p>Together with upload-id-marker, this parameter specifies the multipart upload
-     * after which listing should begin.</p> <p>If <code>upload-id-marker</code> is not
-     * specified, only the keys lexicographically greater than the specified
-     * <code>key-marker</code> will be included in the list.</p> <p>If
-     * <code>upload-id-marker</code> is specified, any multipart uploads for a key
-     * equal to the <code>key-marker</code> might also be included, provided those
-     * multipart uploads have upload IDs lexicographically greater than the specified
-     * <code>upload-id-marker</code>.</p>
+     * <p>Together with <code>upload-id-marker</code>, this parameter specifies the
+     * multipart upload after which listing should begin.</p> <p>If
+     * <code>upload-id-marker</code> is not specified, only the keys lexicographically
+     * greater than the specified <code>key-marker</code> will be included in the
+     * list.</p> <p>If <code>upload-id-marker</code> is specified, any multipart
+     * uploads for a key equal to the <code>key-marker</code> might also be included,
+     * provided those multipart uploads have upload IDs lexicographically greater than
+     * the specified <code>upload-id-marker</code>.</p>
      */
     inline ListMultipartUploadsRequest& WithKeyMarker(const char* value) { SetKeyMarker(value); return *this;}
 
@@ -453,64 +453,64 @@ namespace Model
     /**
      * <p>Lists in-progress uploads only for those keys that begin with the specified
      * prefix. You can use prefixes to separate a bucket into different grouping of
-     * keys. (You can think of using prefix to make groups in the same way you'd use a
-     * folder in a file system.)</p>
+     * keys. (You can think of using <code>prefix</code> to make groups in the same way
+     * that you'd use a folder in a file system.)</p>
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
 
     /**
      * <p>Lists in-progress uploads only for those keys that begin with the specified
      * prefix. You can use prefixes to separate a bucket into different grouping of
-     * keys. (You can think of using prefix to make groups in the same way you'd use a
-     * folder in a file system.)</p>
+     * keys. (You can think of using <code>prefix</code> to make groups in the same way
+     * that you'd use a folder in a file system.)</p>
      */
     inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
 
     /**
      * <p>Lists in-progress uploads only for those keys that begin with the specified
      * prefix. You can use prefixes to separate a bucket into different grouping of
-     * keys. (You can think of using prefix to make groups in the same way you'd use a
-     * folder in a file system.)</p>
+     * keys. (You can think of using <code>prefix</code> to make groups in the same way
+     * that you'd use a folder in a file system.)</p>
      */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
     /**
      * <p>Lists in-progress uploads only for those keys that begin with the specified
      * prefix. You can use prefixes to separate a bucket into different grouping of
-     * keys. (You can think of using prefix to make groups in the same way you'd use a
-     * folder in a file system.)</p>
+     * keys. (You can think of using <code>prefix</code> to make groups in the same way
+     * that you'd use a folder in a file system.)</p>
      */
     inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
 
     /**
      * <p>Lists in-progress uploads only for those keys that begin with the specified
      * prefix. You can use prefixes to separate a bucket into different grouping of
-     * keys. (You can think of using prefix to make groups in the same way you'd use a
-     * folder in a file system.)</p>
+     * keys. (You can think of using <code>prefix</code> to make groups in the same way
+     * that you'd use a folder in a file system.)</p>
      */
     inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
 
     /**
      * <p>Lists in-progress uploads only for those keys that begin with the specified
      * prefix. You can use prefixes to separate a bucket into different grouping of
-     * keys. (You can think of using prefix to make groups in the same way you'd use a
-     * folder in a file system.)</p>
+     * keys. (You can think of using <code>prefix</code> to make groups in the same way
+     * that you'd use a folder in a file system.)</p>
      */
     inline ListMultipartUploadsRequest& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
 
     /**
      * <p>Lists in-progress uploads only for those keys that begin with the specified
      * prefix. You can use prefixes to separate a bucket into different grouping of
-     * keys. (You can think of using prefix to make groups in the same way you'd use a
-     * folder in a file system.)</p>
+     * keys. (You can think of using <code>prefix</code> to make groups in the same way
+     * that you'd use a folder in a file system.)</p>
      */
     inline ListMultipartUploadsRequest& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
 
     /**
      * <p>Lists in-progress uploads only for those keys that begin with the specified
      * prefix. You can use prefixes to separate a bucket into different grouping of
-     * keys. (You can think of using prefix to make groups in the same way you'd use a
-     * folder in a file system.)</p>
+     * keys. (You can think of using <code>prefix</code> to make groups in the same way
+     * that you'd use a folder in a file system.)</p>
      */
     inline ListMultipartUploadsRequest& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 

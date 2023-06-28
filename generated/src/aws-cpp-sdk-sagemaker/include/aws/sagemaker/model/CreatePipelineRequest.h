@@ -122,42 +122,58 @@ namespace Model
 
 
     /**
-     * <p>The JSON pipeline definition of the pipeline.</p>
+     * <p>The <a
+     * href="https://aws-sagemaker-mlops.github.io/sagemaker-model-building-pipeline-definition-JSON-schema/">JSON
+     * pipeline definition</a> of the pipeline.</p>
      */
     inline const Aws::String& GetPipelineDefinition() const{ return m_pipelineDefinition; }
 
     /**
-     * <p>The JSON pipeline definition of the pipeline.</p>
+     * <p>The <a
+     * href="https://aws-sagemaker-mlops.github.io/sagemaker-model-building-pipeline-definition-JSON-schema/">JSON
+     * pipeline definition</a> of the pipeline.</p>
      */
     inline bool PipelineDefinitionHasBeenSet() const { return m_pipelineDefinitionHasBeenSet; }
 
     /**
-     * <p>The JSON pipeline definition of the pipeline.</p>
+     * <p>The <a
+     * href="https://aws-sagemaker-mlops.github.io/sagemaker-model-building-pipeline-definition-JSON-schema/">JSON
+     * pipeline definition</a> of the pipeline.</p>
      */
     inline void SetPipelineDefinition(const Aws::String& value) { m_pipelineDefinitionHasBeenSet = true; m_pipelineDefinition = value; }
 
     /**
-     * <p>The JSON pipeline definition of the pipeline.</p>
+     * <p>The <a
+     * href="https://aws-sagemaker-mlops.github.io/sagemaker-model-building-pipeline-definition-JSON-schema/">JSON
+     * pipeline definition</a> of the pipeline.</p>
      */
     inline void SetPipelineDefinition(Aws::String&& value) { m_pipelineDefinitionHasBeenSet = true; m_pipelineDefinition = std::move(value); }
 
     /**
-     * <p>The JSON pipeline definition of the pipeline.</p>
+     * <p>The <a
+     * href="https://aws-sagemaker-mlops.github.io/sagemaker-model-building-pipeline-definition-JSON-schema/">JSON
+     * pipeline definition</a> of the pipeline.</p>
      */
     inline void SetPipelineDefinition(const char* value) { m_pipelineDefinitionHasBeenSet = true; m_pipelineDefinition.assign(value); }
 
     /**
-     * <p>The JSON pipeline definition of the pipeline.</p>
+     * <p>The <a
+     * href="https://aws-sagemaker-mlops.github.io/sagemaker-model-building-pipeline-definition-JSON-schema/">JSON
+     * pipeline definition</a> of the pipeline.</p>
      */
     inline CreatePipelineRequest& WithPipelineDefinition(const Aws::String& value) { SetPipelineDefinition(value); return *this;}
 
     /**
-     * <p>The JSON pipeline definition of the pipeline.</p>
+     * <p>The <a
+     * href="https://aws-sagemaker-mlops.github.io/sagemaker-model-building-pipeline-definition-JSON-schema/">JSON
+     * pipeline definition</a> of the pipeline.</p>
      */
     inline CreatePipelineRequest& WithPipelineDefinition(Aws::String&& value) { SetPipelineDefinition(std::move(value)); return *this;}
 
     /**
-     * <p>The JSON pipeline definition of the pipeline.</p>
+     * <p>The <a
+     * href="https://aws-sagemaker-mlops.github.io/sagemaker-model-building-pipeline-definition-JSON-schema/">JSON
+     * pipeline definition</a> of the pipeline.</p>
      */
     inline CreatePipelineRequest& WithPipelineDefinition(const char* value) { SetPipelineDefinition(value); return *this;}
 

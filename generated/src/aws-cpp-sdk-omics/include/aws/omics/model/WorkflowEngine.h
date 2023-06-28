@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     WDL,
-    NEXTFLOW
+    NEXTFLOW,
+    CWL
   };
 
 namespace WorkflowEngineMapper

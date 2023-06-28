@@ -7,6 +7,7 @@
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -131,42 +132,42 @@ namespace Model
 
 
     /**
-     * <p>The fully qualified domain name of the Active Directory Domain.</p>
+     * <p>The fully qualified domain name (FQDN) of the Active Directory Domain.</p>
      */
     inline const Aws::String& GetFQDN() const{ return m_fQDN; }
 
     /**
-     * <p>The fully qualified domain name of the Active Directory Domain.</p>
+     * <p>The fully qualified domain name (FQDN) of the Active Directory Domain.</p>
      */
     inline bool FQDNHasBeenSet() const { return m_fQDNHasBeenSet; }
 
     /**
-     * <p>The fully qualified domain name of the Active Directory Domain.</p>
+     * <p>The fully qualified domain name (FQDN) of the Active Directory Domain.</p>
      */
     inline void SetFQDN(const Aws::String& value) { m_fQDNHasBeenSet = true; m_fQDN = value; }
 
     /**
-     * <p>The fully qualified domain name of the Active Directory Domain.</p>
+     * <p>The fully qualified domain name (FQDN) of the Active Directory Domain.</p>
      */
     inline void SetFQDN(Aws::String&& value) { m_fQDNHasBeenSet = true; m_fQDN = std::move(value); }
 
     /**
-     * <p>The fully qualified domain name of the Active Directory Domain.</p>
+     * <p>The fully qualified domain name (FQDN) of the Active Directory Domain.</p>
      */
     inline void SetFQDN(const char* value) { m_fQDNHasBeenSet = true; m_fQDN.assign(value); }
 
     /**
-     * <p>The fully qualified domain name of the Active Directory Domain.</p>
+     * <p>The fully qualified domain name (FQDN) of the Active Directory Domain.</p>
      */
     inline DomainMembership& WithFQDN(const Aws::String& value) { SetFQDN(value); return *this;}
 
     /**
-     * <p>The fully qualified domain name of the Active Directory Domain.</p>
+     * <p>The fully qualified domain name (FQDN) of the Active Directory Domain.</p>
      */
     inline DomainMembership& WithFQDN(Aws::String&& value) { SetFQDN(std::move(value)); return *this;}
 
     /**
-     * <p>The fully qualified domain name of the Active Directory Domain.</p>
+     * <p>The fully qualified domain name (FQDN) of the Active Directory Domain.</p>
      */
     inline DomainMembership& WithFQDN(const char* value) { SetFQDN(value); return *this;}
 
@@ -219,6 +220,151 @@ namespace Model
      */
     inline DomainMembership& WithIAMRoleName(const char* value) { SetIAMRoleName(value); return *this;}
 
+
+    /**
+     * <p>The Active Directory organizational unit for your DB instance to join.</p>
+     */
+    inline const Aws::String& GetOU() const{ return m_oU; }
+
+    /**
+     * <p>The Active Directory organizational unit for your DB instance to join.</p>
+     */
+    inline bool OUHasBeenSet() const { return m_oUHasBeenSet; }
+
+    /**
+     * <p>The Active Directory organizational unit for your DB instance to join.</p>
+     */
+    inline void SetOU(const Aws::String& value) { m_oUHasBeenSet = true; m_oU = value; }
+
+    /**
+     * <p>The Active Directory organizational unit for your DB instance to join.</p>
+     */
+    inline void SetOU(Aws::String&& value) { m_oUHasBeenSet = true; m_oU = std::move(value); }
+
+    /**
+     * <p>The Active Directory organizational unit for your DB instance to join.</p>
+     */
+    inline void SetOU(const char* value) { m_oUHasBeenSet = true; m_oU.assign(value); }
+
+    /**
+     * <p>The Active Directory organizational unit for your DB instance to join.</p>
+     */
+    inline DomainMembership& WithOU(const Aws::String& value) { SetOU(value); return *this;}
+
+    /**
+     * <p>The Active Directory organizational unit for your DB instance to join.</p>
+     */
+    inline DomainMembership& WithOU(Aws::String&& value) { SetOU(std::move(value)); return *this;}
+
+    /**
+     * <p>The Active Directory organizational unit for your DB instance to join.</p>
+     */
+    inline DomainMembership& WithOU(const char* value) { SetOU(value); return *this;}
+
+
+    /**
+     * <p>The ARN for the Secrets Manager secret that contains the credentials for the
+     * user performing the domain join.</p>
+     */
+    inline const Aws::String& GetAuthSecretArn() const{ return m_authSecretArn; }
+
+    /**
+     * <p>The ARN for the Secrets Manager secret that contains the credentials for the
+     * user performing the domain join.</p>
+     */
+    inline bool AuthSecretArnHasBeenSet() const { return m_authSecretArnHasBeenSet; }
+
+    /**
+     * <p>The ARN for the Secrets Manager secret that contains the credentials for the
+     * user performing the domain join.</p>
+     */
+    inline void SetAuthSecretArn(const Aws::String& value) { m_authSecretArnHasBeenSet = true; m_authSecretArn = value; }
+
+    /**
+     * <p>The ARN for the Secrets Manager secret that contains the credentials for the
+     * user performing the domain join.</p>
+     */
+    inline void SetAuthSecretArn(Aws::String&& value) { m_authSecretArnHasBeenSet = true; m_authSecretArn = std::move(value); }
+
+    /**
+     * <p>The ARN for the Secrets Manager secret that contains the credentials for the
+     * user performing the domain join.</p>
+     */
+    inline void SetAuthSecretArn(const char* value) { m_authSecretArnHasBeenSet = true; m_authSecretArn.assign(value); }
+
+    /**
+     * <p>The ARN for the Secrets Manager secret that contains the credentials for the
+     * user performing the domain join.</p>
+     */
+    inline DomainMembership& WithAuthSecretArn(const Aws::String& value) { SetAuthSecretArn(value); return *this;}
+
+    /**
+     * <p>The ARN for the Secrets Manager secret that contains the credentials for the
+     * user performing the domain join.</p>
+     */
+    inline DomainMembership& WithAuthSecretArn(Aws::String&& value) { SetAuthSecretArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN for the Secrets Manager secret that contains the credentials for the
+     * user performing the domain join.</p>
+     */
+    inline DomainMembership& WithAuthSecretArn(const char* value) { SetAuthSecretArn(value); return *this;}
+
+
+    /**
+     * <p>The IPv4 DNS IP addresses of your primary and secondary Active Directory
+     * domain controllers.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetDnsIps() const{ return m_dnsIps; }
+
+    /**
+     * <p>The IPv4 DNS IP addresses of your primary and secondary Active Directory
+     * domain controllers.</p>
+     */
+    inline bool DnsIpsHasBeenSet() const { return m_dnsIpsHasBeenSet; }
+
+    /**
+     * <p>The IPv4 DNS IP addresses of your primary and secondary Active Directory
+     * domain controllers.</p>
+     */
+    inline void SetDnsIps(const Aws::Vector<Aws::String>& value) { m_dnsIpsHasBeenSet = true; m_dnsIps = value; }
+
+    /**
+     * <p>The IPv4 DNS IP addresses of your primary and secondary Active Directory
+     * domain controllers.</p>
+     */
+    inline void SetDnsIps(Aws::Vector<Aws::String>&& value) { m_dnsIpsHasBeenSet = true; m_dnsIps = std::move(value); }
+
+    /**
+     * <p>The IPv4 DNS IP addresses of your primary and secondary Active Directory
+     * domain controllers.</p>
+     */
+    inline DomainMembership& WithDnsIps(const Aws::Vector<Aws::String>& value) { SetDnsIps(value); return *this;}
+
+    /**
+     * <p>The IPv4 DNS IP addresses of your primary and secondary Active Directory
+     * domain controllers.</p>
+     */
+    inline DomainMembership& WithDnsIps(Aws::Vector<Aws::String>&& value) { SetDnsIps(std::move(value)); return *this;}
+
+    /**
+     * <p>The IPv4 DNS IP addresses of your primary and secondary Active Directory
+     * domain controllers.</p>
+     */
+    inline DomainMembership& AddDnsIps(const Aws::String& value) { m_dnsIpsHasBeenSet = true; m_dnsIps.push_back(value); return *this; }
+
+    /**
+     * <p>The IPv4 DNS IP addresses of your primary and secondary Active Directory
+     * domain controllers.</p>
+     */
+    inline DomainMembership& AddDnsIps(Aws::String&& value) { m_dnsIpsHasBeenSet = true; m_dnsIps.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The IPv4 DNS IP addresses of your primary and secondary Active Directory
+     * domain controllers.</p>
+     */
+    inline DomainMembership& AddDnsIps(const char* value) { m_dnsIpsHasBeenSet = true; m_dnsIps.push_back(value); return *this; }
+
   private:
 
     Aws::String m_domain;
@@ -232,6 +378,15 @@ namespace Model
 
     Aws::String m_iAMRoleName;
     bool m_iAMRoleNameHasBeenSet = false;
+
+    Aws::String m_oU;
+    bool m_oUHasBeenSet = false;
+
+    Aws::String m_authSecretArn;
+    bool m_authSecretArnHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_dnsIps;
+    bool m_dnsIpsHasBeenSet = false;
   };
 
 } // namespace Model

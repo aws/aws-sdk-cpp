@@ -24,12 +24,11 @@ namespace Model
 {
 
   /**
-   * <p>The function's Lambda SnapStart setting. Set <code>ApplyOn</code> to
+   * <p>The function's <a
+   * href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Lambda
+   * SnapStart</a> setting. Set <code>ApplyOn</code> to
    * <code>PublishedVersions</code> to create a snapshot of the initialized execution
-   * environment when you publish a function version.</p> <p>SnapStart is supported
-   * with the <code>java11</code> runtime. For more information, see <a
-   * href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Improving
-   * startup performance with Lambda SnapStart</a>.</p><p><h3>See Also:</h3>   <a
+   * environment when you publish a function version.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/SnapStart">AWS
    * API Reference</a></p>
    */

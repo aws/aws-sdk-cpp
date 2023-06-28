@@ -672,7 +672,7 @@ namespace Model
      * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
      * more information about S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
-     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
 
@@ -693,7 +693,7 @@ namespace Model
      * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
      * more information about S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
-     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
@@ -714,7 +714,7 @@ namespace Model
      * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
      * more information about S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
-     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
@@ -735,7 +735,7 @@ namespace Model
      * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
      * more information about S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
-     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
@@ -756,7 +756,7 @@ namespace Model
      * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
      * more information about S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
-     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
@@ -777,7 +777,7 @@ namespace Model
      * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
      * more information about S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
-     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline PutObjectAclRequest& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
@@ -798,7 +798,7 @@ namespace Model
      * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
      * more information about S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
-     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline PutObjectAclRequest& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
@@ -819,7 +819,7 @@ namespace Model
      * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
      * more information about S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
-     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline PutObjectAclRequest& WithKey(const char* value) { SetKey(value); return *this;}
 

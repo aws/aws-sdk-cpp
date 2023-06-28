@@ -115,6 +115,12 @@ GetMonitorResult& GetMonitorResult::operator =(const Aws::AmazonWebServiceResult
 
   }
 
+  if(jsonValue.ValueExists("HealthEventsConfig"))
+  {
+    m_healthEventsConfig = jsonValue.GetObject("HealthEventsConfig");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

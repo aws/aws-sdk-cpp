@@ -20,14 +20,16 @@ using namespace Aws;
 GetHealthEventResult::GetHealthEventResult() : 
     m_status(HealthEventStatus::NOT_SET),
     m_percentOfTotalTrafficImpacted(0.0),
-    m_impactType(HealthEventImpactType::NOT_SET)
+    m_impactType(HealthEventImpactType::NOT_SET),
+    m_healthScoreThreshold(0.0)
 {
 }
 
 GetHealthEventResult::GetHealthEventResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_status(HealthEventStatus::NOT_SET),
     m_percentOfTotalTrafficImpacted(0.0),
-    m_impactType(HealthEventImpactType::NOT_SET)
+    m_impactType(HealthEventImpactType::NOT_SET),
+    m_healthScoreThreshold(0.0)
 {
   *this = result;
 }
@@ -95,6 +97,12 @@ GetHealthEventResult& GetHealthEventResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("ImpactType"))
   {
     m_impactType = HealthEventImpactTypeMapper::GetHealthEventImpactTypeForName(jsonValue.GetString("ImpactType"));
+
+  }
+
+  if(jsonValue.ValueExists("HealthScoreThreshold"))
+  {
+    m_healthScoreThreshold = jsonValue.GetDouble("HealthScoreThreshold");
 
   }
 

@@ -523,10 +523,11 @@ namespace Lambda
         /**
          * <p>Deletes a Lambda function. To delete a specific function version, use the
          * <code>Qualifier</code> parameter. Otherwise, all versions and aliases are
-         * deleted.</p> <p>To delete Lambda event source mappings that invoke a function,
-         * use <a>DeleteEventSourceMapping</a>. For Amazon Web Services and resources that
-         * invoke your function directly, delete the trigger in the service where you
-         * originally configured it.</p><p><h3>See Also:</h3>   <a
+         * deleted. This doesn't require the user to have explicit permissions for
+         * <a>DeleteAlias</a>.</p> <p>To delete Lambda event source mappings that invoke a
+         * function, use <a>DeleteEventSourceMapping</a>. For Amazon Web Services and
+         * resources that invoke your function directly, delete the trigger in the service
+         * where you originally configured it.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunction">AWS
          * API Reference</a></p>
          */

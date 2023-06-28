@@ -88,72 +88,77 @@ namespace Model
 
     /**
      * <p>The position in a stream from which to start reading. Required for Amazon
-     * Kinesis, Amazon DynamoDB, and Amazon MSK stream sources.
-     * <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams and
-     * Amazon DocumentDB.</p>
+     * Kinesis and Amazon DynamoDB Stream event sources. <code>AT_TIMESTAMP</code> is
+     * supported only for Amazon Kinesis streams, Amazon DocumentDB, Amazon MSK, and
+     * self-managed Apache Kafka.</p>
      */
     inline const EventSourcePosition& GetStartingPosition() const{ return m_startingPosition; }
 
     /**
      * <p>The position in a stream from which to start reading. Required for Amazon
-     * Kinesis, Amazon DynamoDB, and Amazon MSK stream sources.
-     * <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams and
-     * Amazon DocumentDB.</p>
+     * Kinesis and Amazon DynamoDB Stream event sources. <code>AT_TIMESTAMP</code> is
+     * supported only for Amazon Kinesis streams, Amazon DocumentDB, Amazon MSK, and
+     * self-managed Apache Kafka.</p>
      */
     inline void SetStartingPosition(const EventSourcePosition& value) { m_startingPosition = value; }
 
     /**
      * <p>The position in a stream from which to start reading. Required for Amazon
-     * Kinesis, Amazon DynamoDB, and Amazon MSK stream sources.
-     * <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams and
-     * Amazon DocumentDB.</p>
+     * Kinesis and Amazon DynamoDB Stream event sources. <code>AT_TIMESTAMP</code> is
+     * supported only for Amazon Kinesis streams, Amazon DocumentDB, Amazon MSK, and
+     * self-managed Apache Kafka.</p>
      */
     inline void SetStartingPosition(EventSourcePosition&& value) { m_startingPosition = std::move(value); }
 
     /**
      * <p>The position in a stream from which to start reading. Required for Amazon
-     * Kinesis, Amazon DynamoDB, and Amazon MSK stream sources.
-     * <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams and
-     * Amazon DocumentDB.</p>
+     * Kinesis and Amazon DynamoDB Stream event sources. <code>AT_TIMESTAMP</code> is
+     * supported only for Amazon Kinesis streams, Amazon DocumentDB, Amazon MSK, and
+     * self-managed Apache Kafka.</p>
      */
     inline UpdateEventSourceMappingResult& WithStartingPosition(const EventSourcePosition& value) { SetStartingPosition(value); return *this;}
 
     /**
      * <p>The position in a stream from which to start reading. Required for Amazon
-     * Kinesis, Amazon DynamoDB, and Amazon MSK stream sources.
-     * <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams and
-     * Amazon DocumentDB.</p>
+     * Kinesis and Amazon DynamoDB Stream event sources. <code>AT_TIMESTAMP</code> is
+     * supported only for Amazon Kinesis streams, Amazon DocumentDB, Amazon MSK, and
+     * self-managed Apache Kafka.</p>
      */
     inline UpdateEventSourceMappingResult& WithStartingPosition(EventSourcePosition&& value) { SetStartingPosition(std::move(value)); return *this;}
 
 
     /**
      * <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time
-     * from which to start reading.</p>
+     * from which to start reading. <code>StartingPositionTimestamp</code> cannot be in
+     * the future.</p>
      */
     inline const Aws::Utils::DateTime& GetStartingPositionTimestamp() const{ return m_startingPositionTimestamp; }
 
     /**
      * <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time
-     * from which to start reading.</p>
+     * from which to start reading. <code>StartingPositionTimestamp</code> cannot be in
+     * the future.</p>
      */
     inline void SetStartingPositionTimestamp(const Aws::Utils::DateTime& value) { m_startingPositionTimestamp = value; }
 
     /**
      * <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time
-     * from which to start reading.</p>
+     * from which to start reading. <code>StartingPositionTimestamp</code> cannot be in
+     * the future.</p>
      */
     inline void SetStartingPositionTimestamp(Aws::Utils::DateTime&& value) { m_startingPositionTimestamp = std::move(value); }
 
     /**
      * <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time
-     * from which to start reading.</p>
+     * from which to start reading. <code>StartingPositionTimestamp</code> cannot be in
+     * the future.</p>
      */
     inline UpdateEventSourceMappingResult& WithStartingPositionTimestamp(const Aws::Utils::DateTime& value) { SetStartingPositionTimestamp(value); return *this;}
 
     /**
      * <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time
-     * from which to start reading.</p>
+     * from which to start reading. <code>StartingPositionTimestamp</code> cannot be in
+     * the future.</p>
      */
     inline UpdateEventSourceMappingResult& WithStartingPositionTimestamp(Aws::Utils::DateTime&& value) { SetStartingPositionTimestamp(std::move(value)); return *this;}
 

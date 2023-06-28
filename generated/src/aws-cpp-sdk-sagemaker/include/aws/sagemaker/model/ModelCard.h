@@ -553,6 +553,63 @@ namespace Model
      */
     inline ModelCard& WithRiskRating(const char* value) { SetRiskRating(value); return *this;}
 
+
+    /**
+     * <p>The model package group that contains the model package. Only relevant for
+     * model cards created for model packages in the Amazon SageMaker Model Registry.
+     * </p>
+     */
+    inline const Aws::String& GetModelPackageGroupName() const{ return m_modelPackageGroupName; }
+
+    /**
+     * <p>The model package group that contains the model package. Only relevant for
+     * model cards created for model packages in the Amazon SageMaker Model Registry.
+     * </p>
+     */
+    inline bool ModelPackageGroupNameHasBeenSet() const { return m_modelPackageGroupNameHasBeenSet; }
+
+    /**
+     * <p>The model package group that contains the model package. Only relevant for
+     * model cards created for model packages in the Amazon SageMaker Model Registry.
+     * </p>
+     */
+    inline void SetModelPackageGroupName(const Aws::String& value) { m_modelPackageGroupNameHasBeenSet = true; m_modelPackageGroupName = value; }
+
+    /**
+     * <p>The model package group that contains the model package. Only relevant for
+     * model cards created for model packages in the Amazon SageMaker Model Registry.
+     * </p>
+     */
+    inline void SetModelPackageGroupName(Aws::String&& value) { m_modelPackageGroupNameHasBeenSet = true; m_modelPackageGroupName = std::move(value); }
+
+    /**
+     * <p>The model package group that contains the model package. Only relevant for
+     * model cards created for model packages in the Amazon SageMaker Model Registry.
+     * </p>
+     */
+    inline void SetModelPackageGroupName(const char* value) { m_modelPackageGroupNameHasBeenSet = true; m_modelPackageGroupName.assign(value); }
+
+    /**
+     * <p>The model package group that contains the model package. Only relevant for
+     * model cards created for model packages in the Amazon SageMaker Model Registry.
+     * </p>
+     */
+    inline ModelCard& WithModelPackageGroupName(const Aws::String& value) { SetModelPackageGroupName(value); return *this;}
+
+    /**
+     * <p>The model package group that contains the model package. Only relevant for
+     * model cards created for model packages in the Amazon SageMaker Model Registry.
+     * </p>
+     */
+    inline ModelCard& WithModelPackageGroupName(Aws::String&& value) { SetModelPackageGroupName(std::move(value)); return *this;}
+
+    /**
+     * <p>The model package group that contains the model package. Only relevant for
+     * model cards created for model packages in the Amazon SageMaker Model Registry.
+     * </p>
+     */
+    inline ModelCard& WithModelPackageGroupName(const char* value) { SetModelPackageGroupName(value); return *this;}
+
   private:
 
     Aws::String m_modelCardArn;
@@ -593,6 +650,9 @@ namespace Model
 
     Aws::String m_riskRating;
     bool m_riskRatingHasBeenSet = false;
+
+    Aws::String m_modelPackageGroupName;
+    bool m_modelPackageGroupNameHasBeenSet = false;
   };
 
 } // namespace Model
