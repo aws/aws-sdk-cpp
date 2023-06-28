@@ -28,6 +28,7 @@ namespace Aws
         static const int FLINK_1_13_HASH = HashingUtils::HashString("FLINK-1_13");
         static const int ZEPPELIN_FLINK_2_0_HASH = HashingUtils::HashString("ZEPPELIN-FLINK-2_0");
         static const int FLINK_1_15_HASH = HashingUtils::HashString("FLINK-1_15");
+        static const int ZEPPELIN_FLINK_3_0_HASH = HashingUtils::HashString("ZEPPELIN-FLINK-3_0");
 
 
         RuntimeEnvironment GetRuntimeEnvironmentForName(const Aws::String& name)
@@ -65,6 +66,10 @@ namespace Aws
           {
             return RuntimeEnvironment::FLINK_1_15;
           }
+          else if (hashCode == ZEPPELIN_FLINK_3_0_HASH)
+          {
+            return RuntimeEnvironment::ZEPPELIN_FLINK_3_0;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -95,6 +100,8 @@ namespace Aws
             return "ZEPPELIN-FLINK-2_0";
           case RuntimeEnvironment::FLINK_1_15:
             return "FLINK-1_15";
+          case RuntimeEnvironment::ZEPPELIN_FLINK_3_0:
+            return "ZEPPELIN-FLINK-3_0";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

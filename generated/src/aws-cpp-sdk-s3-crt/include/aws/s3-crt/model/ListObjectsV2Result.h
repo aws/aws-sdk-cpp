@@ -38,23 +38,26 @@ namespace Model
 
 
     /**
-     * <p>Set to false if all of the results were returned. Set to true if more keys
-     * are available to return. If the number of results exceeds that specified by
-     * MaxKeys, all of the results might not be returned.</p>
+     * <p>Set to <code>false</code> if all of the results were returned. Set to
+     * <code>true</code> if more keys are available to return. If the number of results
+     * exceeds that specified by <code>MaxKeys</code>, all of the results might not be
+     * returned.</p>
      */
     inline bool GetIsTruncated() const{ return m_isTruncated; }
 
     /**
-     * <p>Set to false if all of the results were returned. Set to true if more keys
-     * are available to return. If the number of results exceeds that specified by
-     * MaxKeys, all of the results might not be returned.</p>
+     * <p>Set to <code>false</code> if all of the results were returned. Set to
+     * <code>true</code> if more keys are available to return. If the number of results
+     * exceeds that specified by <code>MaxKeys</code>, all of the results might not be
+     * returned.</p>
      */
     inline void SetIsTruncated(bool value) { m_isTruncated = value; }
 
     /**
-     * <p>Set to false if all of the results were returned. Set to true if more keys
-     * are available to return. If the number of results exceeds that specified by
-     * MaxKeys, all of the results might not be returned.</p>
+     * <p>Set to <code>false</code> if all of the results were returned. Set to
+     * <code>true</code> if more keys are available to return. If the number of results
+     * exceeds that specified by <code>MaxKeys</code>, all of the results might not be
+     * returned.</p>
      */
     inline ListObjectsV2Result& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
 
@@ -112,7 +115,7 @@ namespace Model
      * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
      * more information about S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
-     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
@@ -133,7 +136,7 @@ namespace Model
      * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
      * more information about S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
-     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetName(const Aws::String& value) { m_name = value; }
 
@@ -154,7 +157,7 @@ namespace Model
      * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
      * more information about S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
-     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetName(Aws::String&& value) { m_name = std::move(value); }
 
@@ -175,7 +178,7 @@ namespace Model
      * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
      * more information about S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
-     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetName(const char* value) { m_name.assign(value); }
 
@@ -196,7 +199,7 @@ namespace Model
      * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
      * more information about S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
-     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline ListObjectsV2Result& WithName(const Aws::String& value) { SetName(value); return *this;}
 
@@ -217,7 +220,7 @@ namespace Model
      * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
      * more information about S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
-     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline ListObjectsV2Result& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
@@ -238,7 +241,7 @@ namespace Model
      * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
      * more information about S3 on Outposts ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
-     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline ListObjectsV2Result& WithName(const char* value) { SetName(value); return *this;}
 
@@ -280,85 +283,85 @@ namespace Model
 
 
     /**
-     * <p>Causes keys that contain the same string between the prefix and the first
-     * occurrence of the delimiter to be rolled up into a single result element in the
-     * CommonPrefixes collection. These rolled-up keys are not returned elsewhere in
-     * the response. Each rolled-up result counts as only one return against the
-     * <code>MaxKeys</code> value.</p>
+     * <p>Causes keys that contain the same string between the <code>prefix</code> and
+     * the first occurrence of the delimiter to be rolled up into a single result
+     * element in the <code>CommonPrefixes</code> collection. These rolled-up keys are
+     * not returned elsewhere in the response. Each rolled-up result counts as only one
+     * return against the <code>MaxKeys</code> value.</p>
      */
     inline const Aws::String& GetDelimiter() const{ return m_delimiter; }
 
     /**
-     * <p>Causes keys that contain the same string between the prefix and the first
-     * occurrence of the delimiter to be rolled up into a single result element in the
-     * CommonPrefixes collection. These rolled-up keys are not returned elsewhere in
-     * the response. Each rolled-up result counts as only one return against the
-     * <code>MaxKeys</code> value.</p>
+     * <p>Causes keys that contain the same string between the <code>prefix</code> and
+     * the first occurrence of the delimiter to be rolled up into a single result
+     * element in the <code>CommonPrefixes</code> collection. These rolled-up keys are
+     * not returned elsewhere in the response. Each rolled-up result counts as only one
+     * return against the <code>MaxKeys</code> value.</p>
      */
     inline void SetDelimiter(const Aws::String& value) { m_delimiter = value; }
 
     /**
-     * <p>Causes keys that contain the same string between the prefix and the first
-     * occurrence of the delimiter to be rolled up into a single result element in the
-     * CommonPrefixes collection. These rolled-up keys are not returned elsewhere in
-     * the response. Each rolled-up result counts as only one return against the
-     * <code>MaxKeys</code> value.</p>
+     * <p>Causes keys that contain the same string between the <code>prefix</code> and
+     * the first occurrence of the delimiter to be rolled up into a single result
+     * element in the <code>CommonPrefixes</code> collection. These rolled-up keys are
+     * not returned elsewhere in the response. Each rolled-up result counts as only one
+     * return against the <code>MaxKeys</code> value.</p>
      */
     inline void SetDelimiter(Aws::String&& value) { m_delimiter = std::move(value); }
 
     /**
-     * <p>Causes keys that contain the same string between the prefix and the first
-     * occurrence of the delimiter to be rolled up into a single result element in the
-     * CommonPrefixes collection. These rolled-up keys are not returned elsewhere in
-     * the response. Each rolled-up result counts as only one return against the
-     * <code>MaxKeys</code> value.</p>
+     * <p>Causes keys that contain the same string between the <code>prefix</code> and
+     * the first occurrence of the delimiter to be rolled up into a single result
+     * element in the <code>CommonPrefixes</code> collection. These rolled-up keys are
+     * not returned elsewhere in the response. Each rolled-up result counts as only one
+     * return against the <code>MaxKeys</code> value.</p>
      */
     inline void SetDelimiter(const char* value) { m_delimiter.assign(value); }
 
     /**
-     * <p>Causes keys that contain the same string between the prefix and the first
-     * occurrence of the delimiter to be rolled up into a single result element in the
-     * CommonPrefixes collection. These rolled-up keys are not returned elsewhere in
-     * the response. Each rolled-up result counts as only one return against the
-     * <code>MaxKeys</code> value.</p>
+     * <p>Causes keys that contain the same string between the <code>prefix</code> and
+     * the first occurrence of the delimiter to be rolled up into a single result
+     * element in the <code>CommonPrefixes</code> collection. These rolled-up keys are
+     * not returned elsewhere in the response. Each rolled-up result counts as only one
+     * return against the <code>MaxKeys</code> value.</p>
      */
     inline ListObjectsV2Result& WithDelimiter(const Aws::String& value) { SetDelimiter(value); return *this;}
 
     /**
-     * <p>Causes keys that contain the same string between the prefix and the first
-     * occurrence of the delimiter to be rolled up into a single result element in the
-     * CommonPrefixes collection. These rolled-up keys are not returned elsewhere in
-     * the response. Each rolled-up result counts as only one return against the
-     * <code>MaxKeys</code> value.</p>
+     * <p>Causes keys that contain the same string between the <code>prefix</code> and
+     * the first occurrence of the delimiter to be rolled up into a single result
+     * element in the <code>CommonPrefixes</code> collection. These rolled-up keys are
+     * not returned elsewhere in the response. Each rolled-up result counts as only one
+     * return against the <code>MaxKeys</code> value.</p>
      */
     inline ListObjectsV2Result& WithDelimiter(Aws::String&& value) { SetDelimiter(std::move(value)); return *this;}
 
     /**
-     * <p>Causes keys that contain the same string between the prefix and the first
-     * occurrence of the delimiter to be rolled up into a single result element in the
-     * CommonPrefixes collection. These rolled-up keys are not returned elsewhere in
-     * the response. Each rolled-up result counts as only one return against the
-     * <code>MaxKeys</code> value.</p>
+     * <p>Causes keys that contain the same string between the <code>prefix</code> and
+     * the first occurrence of the delimiter to be rolled up into a single result
+     * element in the <code>CommonPrefixes</code> collection. These rolled-up keys are
+     * not returned elsewhere in the response. Each rolled-up result counts as only one
+     * return against the <code>MaxKeys</code> value.</p>
      */
     inline ListObjectsV2Result& WithDelimiter(const char* value) { SetDelimiter(value); return *this;}
 
 
     /**
-     * <p>Sets the maximum number of keys returned in the response. By default the
+     * <p>Sets the maximum number of keys returned in the response. By default, the
      * action returns up to 1,000 key names. The response might contain fewer keys but
      * will never contain more.</p>
      */
     inline int GetMaxKeys() const{ return m_maxKeys; }
 
     /**
-     * <p>Sets the maximum number of keys returned in the response. By default the
+     * <p>Sets the maximum number of keys returned in the response. By default, the
      * action returns up to 1,000 key names. The response might contain fewer keys but
      * will never contain more.</p>
      */
     inline void SetMaxKeys(int value) { m_maxKeys = value; }
 
     /**
-     * <p>Sets the maximum number of keys returned in the response. By default the
+     * <p>Sets the maximum number of keys returned in the response. By default, the
      * action returns up to 1,000 key names. The response might contain fewer keys but
      * will never contain more.</p>
      */
@@ -473,111 +476,114 @@ namespace Model
 
     /**
      * <p>Encoding type used by Amazon S3 to encode object key names in the XML
-     * response.</p> <p>If you specify the encoding-type request parameter, Amazon S3
-     * includes this element in the response, and returns encoded key name values in
-     * the following response elements:</p> <p> <code>Delimiter, Prefix, Key,</code>
-     * and <code>StartAfter</code>.</p>
+     * response.</p> <p>If you specify the <code>encoding-type</code> request
+     * parameter, Amazon S3 includes this element in the response, and returns encoded
+     * key name values in the following response elements:</p> <p> <code>Delimiter,
+     * Prefix, Key,</code> and <code>StartAfter</code>.</p>
      */
     inline const EncodingType& GetEncodingType() const{ return m_encodingType; }
 
     /**
      * <p>Encoding type used by Amazon S3 to encode object key names in the XML
-     * response.</p> <p>If you specify the encoding-type request parameter, Amazon S3
-     * includes this element in the response, and returns encoded key name values in
-     * the following response elements:</p> <p> <code>Delimiter, Prefix, Key,</code>
-     * and <code>StartAfter</code>.</p>
+     * response.</p> <p>If you specify the <code>encoding-type</code> request
+     * parameter, Amazon S3 includes this element in the response, and returns encoded
+     * key name values in the following response elements:</p> <p> <code>Delimiter,
+     * Prefix, Key,</code> and <code>StartAfter</code>.</p>
      */
     inline void SetEncodingType(const EncodingType& value) { m_encodingType = value; }
 
     /**
      * <p>Encoding type used by Amazon S3 to encode object key names in the XML
-     * response.</p> <p>If you specify the encoding-type request parameter, Amazon S3
-     * includes this element in the response, and returns encoded key name values in
-     * the following response elements:</p> <p> <code>Delimiter, Prefix, Key,</code>
-     * and <code>StartAfter</code>.</p>
+     * response.</p> <p>If you specify the <code>encoding-type</code> request
+     * parameter, Amazon S3 includes this element in the response, and returns encoded
+     * key name values in the following response elements:</p> <p> <code>Delimiter,
+     * Prefix, Key,</code> and <code>StartAfter</code>.</p>
      */
     inline void SetEncodingType(EncodingType&& value) { m_encodingType = std::move(value); }
 
     /**
      * <p>Encoding type used by Amazon S3 to encode object key names in the XML
-     * response.</p> <p>If you specify the encoding-type request parameter, Amazon S3
-     * includes this element in the response, and returns encoded key name values in
-     * the following response elements:</p> <p> <code>Delimiter, Prefix, Key,</code>
-     * and <code>StartAfter</code>.</p>
+     * response.</p> <p>If you specify the <code>encoding-type</code> request
+     * parameter, Amazon S3 includes this element in the response, and returns encoded
+     * key name values in the following response elements:</p> <p> <code>Delimiter,
+     * Prefix, Key,</code> and <code>StartAfter</code>.</p>
      */
     inline ListObjectsV2Result& WithEncodingType(const EncodingType& value) { SetEncodingType(value); return *this;}
 
     /**
      * <p>Encoding type used by Amazon S3 to encode object key names in the XML
-     * response.</p> <p>If you specify the encoding-type request parameter, Amazon S3
-     * includes this element in the response, and returns encoded key name values in
-     * the following response elements:</p> <p> <code>Delimiter, Prefix, Key,</code>
-     * and <code>StartAfter</code>.</p>
+     * response.</p> <p>If you specify the <code>encoding-type</code> request
+     * parameter, Amazon S3 includes this element in the response, and returns encoded
+     * key name values in the following response elements:</p> <p> <code>Delimiter,
+     * Prefix, Key,</code> and <code>StartAfter</code>.</p>
      */
     inline ListObjectsV2Result& WithEncodingType(EncodingType&& value) { SetEncodingType(std::move(value)); return *this;}
 
 
     /**
-     * <p>KeyCount is the number of keys returned with this request. KeyCount will
-     * always be less than or equal to the <code>MaxKeys</code> field. Say you ask for
-     * 50 keys, your result will include 50 keys or fewer.</p>
+     * <p> <code>KeyCount</code> is the number of keys returned with this request.
+     * <code>KeyCount</code> will always be less than or equal to the
+     * <code>MaxKeys</code> field. For example, if you ask for 50 keys, your result
+     * will include 50 keys or fewer.</p>
      */
     inline int GetKeyCount() const{ return m_keyCount; }
 
     /**
-     * <p>KeyCount is the number of keys returned with this request. KeyCount will
-     * always be less than or equal to the <code>MaxKeys</code> field. Say you ask for
-     * 50 keys, your result will include 50 keys or fewer.</p>
+     * <p> <code>KeyCount</code> is the number of keys returned with this request.
+     * <code>KeyCount</code> will always be less than or equal to the
+     * <code>MaxKeys</code> field. For example, if you ask for 50 keys, your result
+     * will include 50 keys or fewer.</p>
      */
     inline void SetKeyCount(int value) { m_keyCount = value; }
 
     /**
-     * <p>KeyCount is the number of keys returned with this request. KeyCount will
-     * always be less than or equal to the <code>MaxKeys</code> field. Say you ask for
-     * 50 keys, your result will include 50 keys or fewer.</p>
+     * <p> <code>KeyCount</code> is the number of keys returned with this request.
+     * <code>KeyCount</code> will always be less than or equal to the
+     * <code>MaxKeys</code> field. For example, if you ask for 50 keys, your result
+     * will include 50 keys or fewer.</p>
      */
     inline ListObjectsV2Result& WithKeyCount(int value) { SetKeyCount(value); return *this;}
 
 
     /**
-     * <p> If ContinuationToken was sent with the request, it is included in the
-     * response.</p>
+     * <p> If <code>ContinuationToken</code> was sent with the request, it is included
+     * in the response.</p>
      */
     inline const Aws::String& GetContinuationToken() const{ return m_continuationToken; }
 
     /**
-     * <p> If ContinuationToken was sent with the request, it is included in the
-     * response.</p>
+     * <p> If <code>ContinuationToken</code> was sent with the request, it is included
+     * in the response.</p>
      */
     inline void SetContinuationToken(const Aws::String& value) { m_continuationToken = value; }
 
     /**
-     * <p> If ContinuationToken was sent with the request, it is included in the
-     * response.</p>
+     * <p> If <code>ContinuationToken</code> was sent with the request, it is included
+     * in the response.</p>
      */
     inline void SetContinuationToken(Aws::String&& value) { m_continuationToken = std::move(value); }
 
     /**
-     * <p> If ContinuationToken was sent with the request, it is included in the
-     * response.</p>
+     * <p> If <code>ContinuationToken</code> was sent with the request, it is included
+     * in the response.</p>
      */
     inline void SetContinuationToken(const char* value) { m_continuationToken.assign(value); }
 
     /**
-     * <p> If ContinuationToken was sent with the request, it is included in the
-     * response.</p>
+     * <p> If <code>ContinuationToken</code> was sent with the request, it is included
+     * in the response.</p>
      */
     inline ListObjectsV2Result& WithContinuationToken(const Aws::String& value) { SetContinuationToken(value); return *this;}
 
     /**
-     * <p> If ContinuationToken was sent with the request, it is included in the
-     * response.</p>
+     * <p> If <code>ContinuationToken</code> was sent with the request, it is included
+     * in the response.</p>
      */
     inline ListObjectsV2Result& WithContinuationToken(Aws::String&& value) { SetContinuationToken(std::move(value)); return *this;}
 
     /**
-     * <p> If ContinuationToken was sent with the request, it is included in the
-     * response.</p>
+     * <p> If <code>ContinuationToken</code> was sent with the request, it is included
+     * in the response.</p>
      */
     inline ListObjectsV2Result& WithContinuationToken(const char* value) { SetContinuationToken(value); return *this;}
 

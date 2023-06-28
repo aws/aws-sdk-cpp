@@ -3204,13 +3204,13 @@ namespace Aws
          * <p>Returns metadata about all versions of the objects in a bucket. You can also
          * use request parameters as selection criteria to return metadata about a subset
          * of all the object versions.</p>  <p> To use this operation, you must
-         * have permissions to perform the <code>s3:ListBucketVersions</code> action. Be
-         * aware of the name difference. </p>   <p> A 200 OK response can
-         * contain valid or invalid XML. Make sure to design your application to parse the
-         * contents of the response and handle it appropriately.</p>  <p>To use this
-         * operation, you must have READ access to the bucket.</p> <p>This action is not
-         * supported by Amazon S3 on Outposts.</p> <p>The following operations are related
-         * to <code>ListObjectVersions</code>:</p> <ul> <li> <p> <a
+         * have permission to perform the <code>s3:ListBucketVersions</code> action. Be
+         * aware of the name difference. </p>   <p> A <code>200 OK</code>
+         * response can contain valid or invalid XML. Make sure to design your application
+         * to parse the contents of the response and handle it appropriately.</p> 
+         * <p>To use this operation, you must have READ access to the bucket.</p> <p>This
+         * action is not supported by Amazon S3 on Outposts.</p> <p>The following
+         * operations are related to <code>ListObjectVersions</code>:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html">ListObjectsV2</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
@@ -3295,19 +3295,20 @@ namespace Aws
          * ascending order of the respective key names in the list. For more information
          * about listing objects, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ListingKeysUsingAPIs.html">Listing
-         * object keys programmatically</a> </p> <p>To use this operation, you must have
-         * READ access to the bucket.</p> <p>To use this action in an Identity and Access
-         * Management (IAM) policy, you must have permissions to perform the
-         * <code>s3:ListBucket</code> action. The bucket owner has this permission by
-         * default and can grant this permission to others. For more information about
-         * permissions, see <a
+         * object keys programmatically</a> in the <i>Amazon S3 User Guide</i>.</p> <p>To
+         * use this operation, you must have READ access to the bucket.</p> <p>To use this
+         * action in an Identity and Access Management (IAM) policy, you must have
+         * permission to perform the <code>s3:ListBucket</code> action. The bucket owner
+         * has this permission by default and can grant this permission to others. For more
+         * information about permissions, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
          * Related to Bucket Subresource Operations</a> and <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
-         * Access Permissions to Your Amazon S3 Resources</a>.</p>  <p>This
-         * section describes the latest revision of this action. We recommend that you use
-         * this revised API for application development. For backward compatibility, Amazon
-         * S3 continues to support the prior version of this API, <a
+         * Access Permissions to Your Amazon S3 Resources</a> in the <i>Amazon S3 User
+         * Guide</i>.</p>  <p>This section describes the latest revision of this
+         * action. We recommend that you use this revised API operation for application
+         * development. For backward compatibility, Amazon S3 continues to support the
+         * prior version of this API operation, <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjects.html">ListObjects</a>.</p>
          *  <p>To get a list of your buckets, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBuckets.html">ListBuckets</a>.</p>

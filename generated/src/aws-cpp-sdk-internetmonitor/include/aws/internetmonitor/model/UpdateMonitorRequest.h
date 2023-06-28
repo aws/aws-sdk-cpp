@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/internetmonitor/model/MonitorConfigState.h>
 #include <aws/internetmonitor/model/InternetMeasurementsLogDelivery.h>
+#include <aws/internetmonitor/model/HealthEventsConfig.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -429,6 +430,55 @@ namespace Model
      */
     inline UpdateMonitorRequest& WithTrafficPercentageToMonitor(int value) { SetTrafficPercentageToMonitor(value); return *this;}
 
+
+    /**
+     * <p>The list of health event thresholds. A health event threshold percentage, for
+     * performance and availability, determines when Internet Monitor creates a health
+     * event when there's an internet issue that affects your application end
+     * users.</p>
+     */
+    inline const HealthEventsConfig& GetHealthEventsConfig() const{ return m_healthEventsConfig; }
+
+    /**
+     * <p>The list of health event thresholds. A health event threshold percentage, for
+     * performance and availability, determines when Internet Monitor creates a health
+     * event when there's an internet issue that affects your application end
+     * users.</p>
+     */
+    inline bool HealthEventsConfigHasBeenSet() const { return m_healthEventsConfigHasBeenSet; }
+
+    /**
+     * <p>The list of health event thresholds. A health event threshold percentage, for
+     * performance and availability, determines when Internet Monitor creates a health
+     * event when there's an internet issue that affects your application end
+     * users.</p>
+     */
+    inline void SetHealthEventsConfig(const HealthEventsConfig& value) { m_healthEventsConfigHasBeenSet = true; m_healthEventsConfig = value; }
+
+    /**
+     * <p>The list of health event thresholds. A health event threshold percentage, for
+     * performance and availability, determines when Internet Monitor creates a health
+     * event when there's an internet issue that affects your application end
+     * users.</p>
+     */
+    inline void SetHealthEventsConfig(HealthEventsConfig&& value) { m_healthEventsConfigHasBeenSet = true; m_healthEventsConfig = std::move(value); }
+
+    /**
+     * <p>The list of health event thresholds. A health event threshold percentage, for
+     * performance and availability, determines when Internet Monitor creates a health
+     * event when there's an internet issue that affects your application end
+     * users.</p>
+     */
+    inline UpdateMonitorRequest& WithHealthEventsConfig(const HealthEventsConfig& value) { SetHealthEventsConfig(value); return *this;}
+
+    /**
+     * <p>The list of health event thresholds. A health event threshold percentage, for
+     * performance and availability, determines when Internet Monitor creates a health
+     * event when there's an internet issue that affects your application end
+     * users.</p>
+     */
+    inline UpdateMonitorRequest& WithHealthEventsConfig(HealthEventsConfig&& value) { SetHealthEventsConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_monitorName;
@@ -454,6 +504,9 @@ namespace Model
 
     int m_trafficPercentageToMonitor;
     bool m_trafficPercentageToMonitorHasBeenSet = false;
+
+    HealthEventsConfig m_healthEventsConfig;
+    bool m_healthEventsConfigHasBeenSet = false;
   };
 
 } // namespace Model
