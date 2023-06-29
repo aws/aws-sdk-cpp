@@ -21,9 +21,12 @@
         #else
             #define AWS_MWAA_API __declspec(dllimport)
         #endif /* AWS_MWAA_EXPORTS */
+        #define AWS_MWAA_EXTERN
     #else
         #define AWS_MWAA_API
+        #define AWS_MWAA_EXTERN extern
     #endif // USE_IMPORT_EXPORT
 #else // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
     #define AWS_MWAA_API
+    #define AWS_MWAA_EXTERN extern
 #endif // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)

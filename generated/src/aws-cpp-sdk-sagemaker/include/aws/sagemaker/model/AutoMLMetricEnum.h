@@ -28,7 +28,11 @@ namespace Model
     Precision,
     PrecisionMacro,
     Recall,
-    RecallMacro
+    RecallMacro,
+    MAPE,
+    MASE,
+    WAPE,
+    AverageWeightedQuantileLoss
   };
 
 namespace AutoMLMetricEnumMapper

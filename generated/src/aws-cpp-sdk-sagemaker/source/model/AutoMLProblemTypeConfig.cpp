@@ -21,14 +21,16 @@ namespace Model
 AutoMLProblemTypeConfig::AutoMLProblemTypeConfig() : 
     m_imageClassificationJobConfigHasBeenSet(false),
     m_textClassificationJobConfigHasBeenSet(false),
-    m_tabularJobConfigHasBeenSet(false)
+    m_tabularJobConfigHasBeenSet(false),
+    m_timeSeriesForecastingJobConfigHasBeenSet(false)
 {
 }
 
 AutoMLProblemTypeConfig::AutoMLProblemTypeConfig(JsonView jsonValue) : 
     m_imageClassificationJobConfigHasBeenSet(false),
     m_textClassificationJobConfigHasBeenSet(false),
-    m_tabularJobConfigHasBeenSet(false)
+    m_tabularJobConfigHasBeenSet(false),
+    m_timeSeriesForecastingJobConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +58,13 @@ AutoMLProblemTypeConfig& AutoMLProblemTypeConfig::operator =(JsonView jsonValue)
     m_tabularJobConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TimeSeriesForecastingJobConfig"))
+  {
+    m_timeSeriesForecastingJobConfig = jsonValue.GetObject("TimeSeriesForecastingJobConfig");
+
+    m_timeSeriesForecastingJobConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +87,12 @@ JsonValue AutoMLProblemTypeConfig::Jsonize() const
   if(m_tabularJobConfigHasBeenSet)
   {
    payload.WithObject("TabularJobConfig", m_tabularJobConfig.Jsonize());
+
+  }
+
+  if(m_timeSeriesForecastingJobConfigHasBeenSet)
+  {
+   payload.WithObject("TimeSeriesForecastingJobConfig", m_timeSeriesForecastingJobConfig.Jsonize());
 
   }
 

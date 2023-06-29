@@ -7,6 +7,8 @@
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/dynamodb/model/BatchStatementErrorCodeEnum.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/dynamodb/model/AttributeValue.h>
 #include <utility>
 
 namespace Aws
@@ -110,6 +112,79 @@ namespace Model
      */
     inline BatchStatementError& WithMessage(const char* value) { SetMessage(value); return *this;}
 
+
+    /**
+     * <p>The item which caused the condition check to fail. This will be set if
+     * ReturnValuesOnConditionCheckFailure is specified as <code>ALL_OLD</code>.</p>
+     */
+    inline const Aws::Map<Aws::String, AttributeValue>& GetItem() const{ return m_item; }
+
+    /**
+     * <p>The item which caused the condition check to fail. This will be set if
+     * ReturnValuesOnConditionCheckFailure is specified as <code>ALL_OLD</code>.</p>
+     */
+    inline bool ItemHasBeenSet() const { return m_itemHasBeenSet; }
+
+    /**
+     * <p>The item which caused the condition check to fail. This will be set if
+     * ReturnValuesOnConditionCheckFailure is specified as <code>ALL_OLD</code>.</p>
+     */
+    inline void SetItem(const Aws::Map<Aws::String, AttributeValue>& value) { m_itemHasBeenSet = true; m_item = value; }
+
+    /**
+     * <p>The item which caused the condition check to fail. This will be set if
+     * ReturnValuesOnConditionCheckFailure is specified as <code>ALL_OLD</code>.</p>
+     */
+    inline void SetItem(Aws::Map<Aws::String, AttributeValue>&& value) { m_itemHasBeenSet = true; m_item = std::move(value); }
+
+    /**
+     * <p>The item which caused the condition check to fail. This will be set if
+     * ReturnValuesOnConditionCheckFailure is specified as <code>ALL_OLD</code>.</p>
+     */
+    inline BatchStatementError& WithItem(const Aws::Map<Aws::String, AttributeValue>& value) { SetItem(value); return *this;}
+
+    /**
+     * <p>The item which caused the condition check to fail. This will be set if
+     * ReturnValuesOnConditionCheckFailure is specified as <code>ALL_OLD</code>.</p>
+     */
+    inline BatchStatementError& WithItem(Aws::Map<Aws::String, AttributeValue>&& value) { SetItem(std::move(value)); return *this;}
+
+    /**
+     * <p>The item which caused the condition check to fail. This will be set if
+     * ReturnValuesOnConditionCheckFailure is specified as <code>ALL_OLD</code>.</p>
+     */
+    inline BatchStatementError& AddItem(const Aws::String& key, const AttributeValue& value) { m_itemHasBeenSet = true; m_item.emplace(key, value); return *this; }
+
+    /**
+     * <p>The item which caused the condition check to fail. This will be set if
+     * ReturnValuesOnConditionCheckFailure is specified as <code>ALL_OLD</code>.</p>
+     */
+    inline BatchStatementError& AddItem(Aws::String&& key, const AttributeValue& value) { m_itemHasBeenSet = true; m_item.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The item which caused the condition check to fail. This will be set if
+     * ReturnValuesOnConditionCheckFailure is specified as <code>ALL_OLD</code>.</p>
+     */
+    inline BatchStatementError& AddItem(const Aws::String& key, AttributeValue&& value) { m_itemHasBeenSet = true; m_item.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The item which caused the condition check to fail. This will be set if
+     * ReturnValuesOnConditionCheckFailure is specified as <code>ALL_OLD</code>.</p>
+     */
+    inline BatchStatementError& AddItem(Aws::String&& key, AttributeValue&& value) { m_itemHasBeenSet = true; m_item.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The item which caused the condition check to fail. This will be set if
+     * ReturnValuesOnConditionCheckFailure is specified as <code>ALL_OLD</code>.</p>
+     */
+    inline BatchStatementError& AddItem(const char* key, AttributeValue&& value) { m_itemHasBeenSet = true; m_item.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The item which caused the condition check to fail. This will be set if
+     * ReturnValuesOnConditionCheckFailure is specified as <code>ALL_OLD</code>.</p>
+     */
+    inline BatchStatementError& AddItem(const char* key, const AttributeValue& value) { m_itemHasBeenSet = true; m_item.emplace(key, value); return *this; }
+
   private:
 
     BatchStatementErrorCodeEnum m_code;
@@ -117,6 +192,9 @@ namespace Model
 
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
+
+    Aws::Map<Aws::String, AttributeValue> m_item;
+    bool m_itemHasBeenSet = false;
   };
 
 } // namespace Model

@@ -20,12 +20,14 @@ namespace Model
 
 AnalysisRuleList::AnalysisRuleList() : 
     m_joinColumnsHasBeenSet(false),
+    m_allowedJoinOperatorsHasBeenSet(false),
     m_listColumnsHasBeenSet(false)
 {
 }
 
 AnalysisRuleList::AnalysisRuleList(JsonView jsonValue) : 
     m_joinColumnsHasBeenSet(false),
+    m_allowedJoinOperatorsHasBeenSet(false),
     m_listColumnsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -41,6 +43,16 @@ AnalysisRuleList& AnalysisRuleList::operator =(JsonView jsonValue)
       m_joinColumns.push_back(joinColumnsJsonList[joinColumnsIndex].AsString());
     }
     m_joinColumnsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("allowedJoinOperators"))
+  {
+    Aws::Utils::Array<JsonView> allowedJoinOperatorsJsonList = jsonValue.GetArray("allowedJoinOperators");
+    for(unsigned allowedJoinOperatorsIndex = 0; allowedJoinOperatorsIndex < allowedJoinOperatorsJsonList.GetLength(); ++allowedJoinOperatorsIndex)
+    {
+      m_allowedJoinOperators.push_back(JoinOperatorMapper::GetJoinOperatorForName(allowedJoinOperatorsJsonList[allowedJoinOperatorsIndex].AsString()));
+    }
+    m_allowedJoinOperatorsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("listColumns"))
@@ -68,6 +80,17 @@ JsonValue AnalysisRuleList::Jsonize() const
      joinColumnsJsonList[joinColumnsIndex].AsString(m_joinColumns[joinColumnsIndex]);
    }
    payload.WithArray("joinColumns", std::move(joinColumnsJsonList));
+
+  }
+
+  if(m_allowedJoinOperatorsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> allowedJoinOperatorsJsonList(m_allowedJoinOperators.size());
+   for(unsigned allowedJoinOperatorsIndex = 0; allowedJoinOperatorsIndex < allowedJoinOperatorsJsonList.GetLength(); ++allowedJoinOperatorsIndex)
+   {
+     allowedJoinOperatorsJsonList[allowedJoinOperatorsIndex].AsString(JoinOperatorMapper::GetNameForJoinOperator(m_allowedJoinOperators[allowedJoinOperatorsIndex]));
+   }
+   payload.WithArray("allowedJoinOperators", std::move(allowedJoinOperatorsJsonList));
 
   }
 

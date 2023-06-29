@@ -21,9 +21,12 @@
         #else
             #define AWS_MEDIAPACKAGE_API __declspec(dllimport)
         #endif /* AWS_MEDIAPACKAGE_EXPORTS */
+        #define AWS_MEDIAPACKAGE_EXTERN
     #else
         #define AWS_MEDIAPACKAGE_API
+        #define AWS_MEDIAPACKAGE_EXTERN extern
     #endif // USE_IMPORT_EXPORT
 #else // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
     #define AWS_MEDIAPACKAGE_API
+    #define AWS_MEDIAPACKAGE_EXTERN extern
 #endif // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)

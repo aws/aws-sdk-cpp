@@ -524,7 +524,7 @@ namespace Model
      * before this limit is reached, they are prompted to save any open documents
      * before being disconnected. After this time elapses, the instance is terminated
      * and replaced by a new instance.</p> <p>Specify a value between 600 and
-     * 360000.</p>
+     * 432000.</p>
      */
     inline int GetMaxUserDurationInSeconds() const{ return m_maxUserDurationInSeconds; }
 
@@ -534,7 +534,7 @@ namespace Model
      * before this limit is reached, they are prompted to save any open documents
      * before being disconnected. After this time elapses, the instance is terminated
      * and replaced by a new instance.</p> <p>Specify a value between 600 and
-     * 360000.</p>
+     * 432000.</p>
      */
     inline bool MaxUserDurationInSecondsHasBeenSet() const { return m_maxUserDurationInSecondsHasBeenSet; }
 
@@ -544,7 +544,7 @@ namespace Model
      * before this limit is reached, they are prompted to save any open documents
      * before being disconnected. After this time elapses, the instance is terminated
      * and replaced by a new instance.</p> <p>Specify a value between 600 and
-     * 360000.</p>
+     * 432000.</p>
      */
     inline void SetMaxUserDurationInSeconds(int value) { m_maxUserDurationInSecondsHasBeenSet = true; m_maxUserDurationInSeconds = value; }
 
@@ -554,7 +554,7 @@ namespace Model
      * before this limit is reached, they are prompted to save any open documents
      * before being disconnected. After this time elapses, the instance is terminated
      * and replaced by a new instance.</p> <p>Specify a value between 600 and
-     * 360000.</p>
+     * 432000.</p>
      */
     inline UpdateFleetRequest& WithMaxUserDurationInSeconds(int value) { SetMaxUserDurationInSeconds(value); return *this;}
 

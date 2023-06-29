@@ -23,6 +23,7 @@ namespace Aws
         static const int ImageClassification_HASH = HashingUtils::HashString("ImageClassification");
         static const int TextClassification_HASH = HashingUtils::HashString("TextClassification");
         static const int Tabular_HASH = HashingUtils::HashString("Tabular");
+        static const int TimeSeriesForecasting_HASH = HashingUtils::HashString("TimeSeriesForecasting");
 
 
         AutoMLProblemTypeConfigName GetAutoMLProblemTypeConfigNameForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == Tabular_HASH)
           {
             return AutoMLProblemTypeConfigName::Tabular;
+          }
+          else if (hashCode == TimeSeriesForecasting_HASH)
+          {
+            return AutoMLProblemTypeConfigName::TimeSeriesForecasting;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +65,8 @@ namespace Aws
             return "TextClassification";
           case AutoMLProblemTypeConfigName::Tabular:
             return "Tabular";
+          case AutoMLProblemTypeConfigName::TimeSeriesForecasting:
+            return "TimeSeriesForecasting";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

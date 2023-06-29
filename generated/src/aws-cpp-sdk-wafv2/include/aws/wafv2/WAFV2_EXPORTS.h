@@ -21,9 +21,12 @@
         #else
             #define AWS_WAFV2_API __declspec(dllimport)
         #endif /* AWS_WAFV2_EXPORTS */
+        #define AWS_WAFV2_EXTERN
     #else
         #define AWS_WAFV2_API
+        #define AWS_WAFV2_EXTERN extern
     #endif // USE_IMPORT_EXPORT
 #else // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
     #define AWS_WAFV2_API
+    #define AWS_WAFV2_EXTERN extern
 #endif // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)

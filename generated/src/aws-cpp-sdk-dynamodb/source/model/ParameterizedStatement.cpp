@@ -20,13 +20,17 @@ namespace Model
 
 ParameterizedStatement::ParameterizedStatement() : 
     m_statementHasBeenSet(false),
-    m_parametersHasBeenSet(false)
+    m_parametersHasBeenSet(false),
+    m_returnValuesOnConditionCheckFailure(ReturnValuesOnConditionCheckFailure::NOT_SET),
+    m_returnValuesOnConditionCheckFailureHasBeenSet(false)
 {
 }
 
 ParameterizedStatement::ParameterizedStatement(JsonView jsonValue) : 
     m_statementHasBeenSet(false),
-    m_parametersHasBeenSet(false)
+    m_parametersHasBeenSet(false),
+    m_returnValuesOnConditionCheckFailure(ReturnValuesOnConditionCheckFailure::NOT_SET),
+    m_returnValuesOnConditionCheckFailureHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -48,6 +52,13 @@ ParameterizedStatement& ParameterizedStatement::operator =(JsonView jsonValue)
       m_parameters.push_back(parametersJsonList[parametersIndex].AsObject());
     }
     m_parametersHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ReturnValuesOnConditionCheckFailure"))
+  {
+    m_returnValuesOnConditionCheckFailure = ReturnValuesOnConditionCheckFailureMapper::GetReturnValuesOnConditionCheckFailureForName(jsonValue.GetString("ReturnValuesOnConditionCheckFailure"));
+
+    m_returnValuesOnConditionCheckFailureHasBeenSet = true;
   }
 
   return *this;
@@ -72,6 +83,11 @@ JsonValue ParameterizedStatement::Jsonize() const
    }
    payload.WithArray("Parameters", std::move(parametersJsonList));
 
+  }
+
+  if(m_returnValuesOnConditionCheckFailureHasBeenSet)
+  {
+   payload.WithString("ReturnValuesOnConditionCheckFailure", ReturnValuesOnConditionCheckFailureMapper::GetNameForReturnValuesOnConditionCheckFailure(m_returnValuesOnConditionCheckFailure));
   }
 
   return payload;

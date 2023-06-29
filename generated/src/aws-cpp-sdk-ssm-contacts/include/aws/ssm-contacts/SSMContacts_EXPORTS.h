@@ -21,9 +21,12 @@
         #else
             #define AWS_SSMCONTACTS_API __declspec(dllimport)
         #endif /* AWS_SSMCONTACTS_EXPORTS */
+        #define AWS_SSMCONTACTS_EXTERN
     #else
         #define AWS_SSMCONTACTS_API
+        #define AWS_SSMCONTACTS_EXTERN extern
     #endif // USE_IMPORT_EXPORT
 #else // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
     #define AWS_SSMCONTACTS_API
+    #define AWS_SSMCONTACTS_EXTERN extern
 #endif // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)

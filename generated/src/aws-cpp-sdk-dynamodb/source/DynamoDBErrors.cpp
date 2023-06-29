@@ -6,6 +6,7 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/dynamodb/DynamoDBErrors.h>
+#include <aws/dynamodb/model/ConditionalCheckFailedException.h>
 #include <aws/dynamodb/model/TransactionCanceledException.h>
 
 using namespace Aws::Client;
@@ -17,6 +18,12 @@ namespace Aws
 {
 namespace DynamoDB
 {
+template<> AWS_DYNAMODB_API ConditionalCheckFailedException DynamoDBError::GetModeledError()
+{
+  assert(this->GetErrorType() == DynamoDBErrors::CONDITIONAL_CHECK_FAILED);
+  return ConditionalCheckFailedException(this->GetJsonPayload().View());
+}
+
 template<> AWS_DYNAMODB_API TransactionCanceledException DynamoDBError::GetModeledError()
 {
   assert(this->GetErrorType() == DynamoDBErrors::TRANSACTION_CANCELED);

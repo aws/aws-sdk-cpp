@@ -18,7 +18,10 @@ CreateAppBlockRequest::CreateAppBlockRequest() :
     m_displayNameHasBeenSet(false),
     m_sourceS3LocationHasBeenSet(false),
     m_setupScriptDetailsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_postSetupScriptDetailsHasBeenSet(false),
+    m_packagingType(PackagingType::NOT_SET),
+    m_packagingTypeHasBeenSet(false)
 {
 }
 
@@ -65,6 +68,17 @@ Aws::String CreateAppBlockRequest::SerializePayload() const
    }
    payload.WithObject("Tags", std::move(tagsJsonMap));
 
+  }
+
+  if(m_postSetupScriptDetailsHasBeenSet)
+  {
+   payload.WithObject("PostSetupScriptDetails", m_postSetupScriptDetails.Jsonize());
+
+  }
+
+  if(m_packagingTypeHasBeenSet)
+  {
+   payload.WithString("PackagingType", PackagingTypeMapper::GetNameForPackagingType(m_packagingType));
   }
 
   return payload.View().WriteReadable();

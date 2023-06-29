@@ -21,9 +21,12 @@
         #else
             #define AWS_SUPPORTAPP_API __declspec(dllimport)
         #endif /* AWS_SUPPORTAPP_EXPORTS */
+        #define AWS_SUPPORTAPP_EXTERN
     #else
         #define AWS_SUPPORTAPP_API
+        #define AWS_SUPPORTAPP_EXTERN extern
     #endif // USE_IMPORT_EXPORT
 #else // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
     #define AWS_SUPPORTAPP_API
+    #define AWS_SUPPORTAPP_EXTERN extern
 #endif // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)

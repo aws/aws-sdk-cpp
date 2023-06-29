@@ -21,9 +21,12 @@
         #else
             #define AWS_KMS_API __declspec(dllimport)
         #endif /* AWS_KMS_EXPORTS */
+        #define AWS_KMS_EXTERN
     #else
         #define AWS_KMS_API
+        #define AWS_KMS_EXTERN extern
     #endif // USE_IMPORT_EXPORT
 #else // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
     #define AWS_KMS_API
+    #define AWS_KMS_EXTERN extern
 #endif // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)

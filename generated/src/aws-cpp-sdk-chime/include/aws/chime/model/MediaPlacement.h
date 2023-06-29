@@ -121,124 +121,148 @@ namespace Model
 
 
     /**
-     * <p>The screen data URL.</p>
+     * <p>The screen data URL.</p>  <p> <b>This parameter is is no longer
+     * supported and no longer used by the Amazon Chime SDK.</b> </p> 
      */
     inline const Aws::String& GetScreenDataUrl() const{ return m_screenDataUrl; }
 
     /**
-     * <p>The screen data URL.</p>
+     * <p>The screen data URL.</p>  <p> <b>This parameter is is no longer
+     * supported and no longer used by the Amazon Chime SDK.</b> </p> 
      */
     inline bool ScreenDataUrlHasBeenSet() const { return m_screenDataUrlHasBeenSet; }
 
     /**
-     * <p>The screen data URL.</p>
+     * <p>The screen data URL.</p>  <p> <b>This parameter is is no longer
+     * supported and no longer used by the Amazon Chime SDK.</b> </p> 
      */
     inline void SetScreenDataUrl(const Aws::String& value) { m_screenDataUrlHasBeenSet = true; m_screenDataUrl = value; }
 
     /**
-     * <p>The screen data URL.</p>
+     * <p>The screen data URL.</p>  <p> <b>This parameter is is no longer
+     * supported and no longer used by the Amazon Chime SDK.</b> </p> 
      */
     inline void SetScreenDataUrl(Aws::String&& value) { m_screenDataUrlHasBeenSet = true; m_screenDataUrl = std::move(value); }
 
     /**
-     * <p>The screen data URL.</p>
+     * <p>The screen data URL.</p>  <p> <b>This parameter is is no longer
+     * supported and no longer used by the Amazon Chime SDK.</b> </p> 
      */
     inline void SetScreenDataUrl(const char* value) { m_screenDataUrlHasBeenSet = true; m_screenDataUrl.assign(value); }
 
     /**
-     * <p>The screen data URL.</p>
+     * <p>The screen data URL.</p>  <p> <b>This parameter is is no longer
+     * supported and no longer used by the Amazon Chime SDK.</b> </p> 
      */
     inline MediaPlacement& WithScreenDataUrl(const Aws::String& value) { SetScreenDataUrl(value); return *this;}
 
     /**
-     * <p>The screen data URL.</p>
+     * <p>The screen data URL.</p>  <p> <b>This parameter is is no longer
+     * supported and no longer used by the Amazon Chime SDK.</b> </p> 
      */
     inline MediaPlacement& WithScreenDataUrl(Aws::String&& value) { SetScreenDataUrl(std::move(value)); return *this;}
 
     /**
-     * <p>The screen data URL.</p>
+     * <p>The screen data URL.</p>  <p> <b>This parameter is is no longer
+     * supported and no longer used by the Amazon Chime SDK.</b> </p> 
      */
     inline MediaPlacement& WithScreenDataUrl(const char* value) { SetScreenDataUrl(value); return *this;}
 
 
     /**
-     * <p>The screen sharing URL.</p>
+     * <p>The screen sharing URL.</p>  <p> <b>This parameter is is no longer
+     * supported and no longer used by the Amazon Chime SDK.</b>.</p> 
      */
     inline const Aws::String& GetScreenSharingUrl() const{ return m_screenSharingUrl; }
 
     /**
-     * <p>The screen sharing URL.</p>
+     * <p>The screen sharing URL.</p>  <p> <b>This parameter is is no longer
+     * supported and no longer used by the Amazon Chime SDK.</b>.</p> 
      */
     inline bool ScreenSharingUrlHasBeenSet() const { return m_screenSharingUrlHasBeenSet; }
 
     /**
-     * <p>The screen sharing URL.</p>
+     * <p>The screen sharing URL.</p>  <p> <b>This parameter is is no longer
+     * supported and no longer used by the Amazon Chime SDK.</b>.</p> 
      */
     inline void SetScreenSharingUrl(const Aws::String& value) { m_screenSharingUrlHasBeenSet = true; m_screenSharingUrl = value; }
 
     /**
-     * <p>The screen sharing URL.</p>
+     * <p>The screen sharing URL.</p>  <p> <b>This parameter is is no longer
+     * supported and no longer used by the Amazon Chime SDK.</b>.</p> 
      */
     inline void SetScreenSharingUrl(Aws::String&& value) { m_screenSharingUrlHasBeenSet = true; m_screenSharingUrl = std::move(value); }
 
     /**
-     * <p>The screen sharing URL.</p>
+     * <p>The screen sharing URL.</p>  <p> <b>This parameter is is no longer
+     * supported and no longer used by the Amazon Chime SDK.</b>.</p> 
      */
     inline void SetScreenSharingUrl(const char* value) { m_screenSharingUrlHasBeenSet = true; m_screenSharingUrl.assign(value); }
 
     /**
-     * <p>The screen sharing URL.</p>
+     * <p>The screen sharing URL.</p>  <p> <b>This parameter is is no longer
+     * supported and no longer used by the Amazon Chime SDK.</b>.</p> 
      */
     inline MediaPlacement& WithScreenSharingUrl(const Aws::String& value) { SetScreenSharingUrl(value); return *this;}
 
     /**
-     * <p>The screen sharing URL.</p>
+     * <p>The screen sharing URL.</p>  <p> <b>This parameter is is no longer
+     * supported and no longer used by the Amazon Chime SDK.</b>.</p> 
      */
     inline MediaPlacement& WithScreenSharingUrl(Aws::String&& value) { SetScreenSharingUrl(std::move(value)); return *this;}
 
     /**
-     * <p>The screen sharing URL.</p>
+     * <p>The screen sharing URL.</p>  <p> <b>This parameter is is no longer
+     * supported and no longer used by the Amazon Chime SDK.</b>.</p> 
      */
     inline MediaPlacement& WithScreenSharingUrl(const char* value) { SetScreenSharingUrl(value); return *this;}
 
 
     /**
-     * <p>The screen viewing URL.</p>
+     * <p>The screen viewing URL.</p>  <p> <b>This parameter is is no longer
+     * supported and no longer used by the Amazon Chime SDK.</b> </p> 
      */
     inline const Aws::String& GetScreenViewingUrl() const{ return m_screenViewingUrl; }
 
     /**
-     * <p>The screen viewing URL.</p>
+     * <p>The screen viewing URL.</p>  <p> <b>This parameter is is no longer
+     * supported and no longer used by the Amazon Chime SDK.</b> </p> 
      */
     inline bool ScreenViewingUrlHasBeenSet() const { return m_screenViewingUrlHasBeenSet; }
 
     /**
-     * <p>The screen viewing URL.</p>
+     * <p>The screen viewing URL.</p>  <p> <b>This parameter is is no longer
+     * supported and no longer used by the Amazon Chime SDK.</b> </p> 
      */
     inline void SetScreenViewingUrl(const Aws::String& value) { m_screenViewingUrlHasBeenSet = true; m_screenViewingUrl = value; }
 
     /**
-     * <p>The screen viewing URL.</p>
+     * <p>The screen viewing URL.</p>  <p> <b>This parameter is is no longer
+     * supported and no longer used by the Amazon Chime SDK.</b> </p> 
      */
     inline void SetScreenViewingUrl(Aws::String&& value) { m_screenViewingUrlHasBeenSet = true; m_screenViewingUrl = std::move(value); }
 
     /**
-     * <p>The screen viewing URL.</p>
+     * <p>The screen viewing URL.</p>  <p> <b>This parameter is is no longer
+     * supported and no longer used by the Amazon Chime SDK.</b> </p> 
      */
     inline void SetScreenViewingUrl(const char* value) { m_screenViewingUrlHasBeenSet = true; m_screenViewingUrl.assign(value); }
 
     /**
-     * <p>The screen viewing URL.</p>
+     * <p>The screen viewing URL.</p>  <p> <b>This parameter is is no longer
+     * supported and no longer used by the Amazon Chime SDK.</b> </p> 
      */
     inline MediaPlacement& WithScreenViewingUrl(const Aws::String& value) { SetScreenViewingUrl(value); return *this;}
 
     /**
-     * <p>The screen viewing URL.</p>
+     * <p>The screen viewing URL.</p>  <p> <b>This parameter is is no longer
+     * supported and no longer used by the Amazon Chime SDK.</b> </p> 
      */
     inline MediaPlacement& WithScreenViewingUrl(Aws::String&& value) { SetScreenViewingUrl(std::move(value)); return *this;}
 
     /**
-     * <p>The screen viewing URL.</p>
+     * <p>The screen viewing URL.</p>  <p> <b>This parameter is is no longer
+     * supported and no longer used by the Amazon Chime SDK.</b> </p> 
      */
     inline MediaPlacement& WithScreenViewingUrl(const char* value) { SetScreenViewingUrl(value); return *this;}
 
@@ -285,42 +309,50 @@ namespace Model
 
 
     /**
-     * <p>The turn control URL.</p>
+     * <p>The turn control URL.</p>  <p> <b>This parameter is is no longer
+     * supported and no longer used by the Amazon Chime SDK.</b> </p> 
      */
     inline const Aws::String& GetTurnControlUrl() const{ return m_turnControlUrl; }
 
     /**
-     * <p>The turn control URL.</p>
+     * <p>The turn control URL.</p>  <p> <b>This parameter is is no longer
+     * supported and no longer used by the Amazon Chime SDK.</b> </p> 
      */
     inline bool TurnControlUrlHasBeenSet() const { return m_turnControlUrlHasBeenSet; }
 
     /**
-     * <p>The turn control URL.</p>
+     * <p>The turn control URL.</p>  <p> <b>This parameter is is no longer
+     * supported and no longer used by the Amazon Chime SDK.</b> </p> 
      */
     inline void SetTurnControlUrl(const Aws::String& value) { m_turnControlUrlHasBeenSet = true; m_turnControlUrl = value; }
 
     /**
-     * <p>The turn control URL.</p>
+     * <p>The turn control URL.</p>  <p> <b>This parameter is is no longer
+     * supported and no longer used by the Amazon Chime SDK.</b> </p> 
      */
     inline void SetTurnControlUrl(Aws::String&& value) { m_turnControlUrlHasBeenSet = true; m_turnControlUrl = std::move(value); }
 
     /**
-     * <p>The turn control URL.</p>
+     * <p>The turn control URL.</p>  <p> <b>This parameter is is no longer
+     * supported and no longer used by the Amazon Chime SDK.</b> </p> 
      */
     inline void SetTurnControlUrl(const char* value) { m_turnControlUrlHasBeenSet = true; m_turnControlUrl.assign(value); }
 
     /**
-     * <p>The turn control URL.</p>
+     * <p>The turn control URL.</p>  <p> <b>This parameter is is no longer
+     * supported and no longer used by the Amazon Chime SDK.</b> </p> 
      */
     inline MediaPlacement& WithTurnControlUrl(const Aws::String& value) { SetTurnControlUrl(value); return *this;}
 
     /**
-     * <p>The turn control URL.</p>
+     * <p>The turn control URL.</p>  <p> <b>This parameter is is no longer
+     * supported and no longer used by the Amazon Chime SDK.</b> </p> 
      */
     inline MediaPlacement& WithTurnControlUrl(Aws::String&& value) { SetTurnControlUrl(std::move(value)); return *this;}
 
     /**
-     * <p>The turn control URL.</p>
+     * <p>The turn control URL.</p>  <p> <b>This parameter is is no longer
+     * supported and no longer used by the Amazon Chime SDK.</b> </p> 
      */
     inline MediaPlacement& WithTurnControlUrl(const char* value) { SetTurnControlUrl(value); return *this;}
 

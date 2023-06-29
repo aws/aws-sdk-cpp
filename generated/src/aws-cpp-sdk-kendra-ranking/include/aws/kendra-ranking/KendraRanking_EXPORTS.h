@@ -21,9 +21,12 @@
         #else
             #define AWS_KENDRARANKING_API __declspec(dllimport)
         #endif /* AWS_KENDRARANKING_EXPORTS */
+        #define AWS_KENDRARANKING_EXTERN
     #else
         #define AWS_KENDRARANKING_API
+        #define AWS_KENDRARANKING_EXTERN extern
     #endif // USE_IMPORT_EXPORT
 #else // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
     #define AWS_KENDRARANKING_API
+    #define AWS_KENDRARANKING_EXTERN extern
 #endif // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)

@@ -21,9 +21,12 @@
         #else
             #define AWS_ROUTE53RESOLVER_API __declspec(dllimport)
         #endif /* AWS_ROUTE53RESOLVER_EXPORTS */
+        #define AWS_ROUTE53RESOLVER_EXTERN
     #else
         #define AWS_ROUTE53RESOLVER_API
+        #define AWS_ROUTE53RESOLVER_EXTERN extern
     #endif // USE_IMPORT_EXPORT
 #else // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
     #define AWS_ROUTE53RESOLVER_API
+    #define AWS_ROUTE53RESOLVER_EXTERN extern
 #endif // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)

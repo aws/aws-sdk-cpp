@@ -30,7 +30,11 @@ namespace Model
     Recall,
     RecallMacro,
     LogLoss,
-    InferenceLatency
+    InferenceLatency,
+    MAPE,
+    MASE,
+    WAPE,
+    AverageWeightedQuantileLoss
   };
 
 namespace AutoMLMetricExtendedEnumMapper

@@ -21,9 +21,12 @@
         #else
             #define AWS_IOTJOBSDATAPLANE_API __declspec(dllimport)
         #endif /* AWS_IOTJOBSDATAPLANE_EXPORTS */
+        #define AWS_IOTJOBSDATAPLANE_EXTERN
     #else
         #define AWS_IOTJOBSDATAPLANE_API
+        #define AWS_IOTJOBSDATAPLANE_EXTERN extern
     #endif // USE_IMPORT_EXPORT
 #else // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
     #define AWS_IOTJOBSDATAPLANE_API
+    #define AWS_IOTJOBSDATAPLANE_EXTERN extern
 #endif // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)

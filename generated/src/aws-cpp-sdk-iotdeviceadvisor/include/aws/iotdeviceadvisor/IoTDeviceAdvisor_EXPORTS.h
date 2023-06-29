@@ -21,9 +21,12 @@
         #else
             #define AWS_IOTDEVICEADVISOR_API __declspec(dllimport)
         #endif /* AWS_IOTDEVICEADVISOR_EXPORTS */
+        #define AWS_IOTDEVICEADVISOR_EXTERN
     #else
         #define AWS_IOTDEVICEADVISOR_API
+        #define AWS_IOTDEVICEADVISOR_EXTERN extern
     #endif // USE_IMPORT_EXPORT
 #else // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
     #define AWS_IOTDEVICEADVISOR_API
+    #define AWS_IOTDEVICEADVISOR_EXTERN extern
 #endif // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)

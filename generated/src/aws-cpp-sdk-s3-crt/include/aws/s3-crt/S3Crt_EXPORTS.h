@@ -21,9 +21,12 @@
         #else
             #define AWS_S3CRT_API __declspec(dllimport)
         #endif /* AWS_S3CRT_EXPORTS */
+        #define AWS_S3CRT_EXTERN
     #else
         #define AWS_S3CRT_API
+        #define AWS_S3CRT_EXTERN extern
     #endif // USE_IMPORT_EXPORT
 #else // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
     #define AWS_S3CRT_API
+    #define AWS_S3CRT_EXTERN extern
 #endif // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)

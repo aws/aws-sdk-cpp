@@ -21,9 +21,12 @@
         #else
             #define AWS_MQ_API __declspec(dllimport)
         #endif /* AWS_MQ_EXPORTS */
+        #define AWS_MQ_EXTERN
     #else
         #define AWS_MQ_API
+        #define AWS_MQ_EXTERN extern
     #endif // USE_IMPORT_EXPORT
 #else // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
     #define AWS_MQ_API
+    #define AWS_MQ_EXTERN extern
 #endif // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
