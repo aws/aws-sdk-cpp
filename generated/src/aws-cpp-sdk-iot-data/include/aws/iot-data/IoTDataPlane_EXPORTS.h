@@ -21,9 +21,12 @@
         #else
             #define AWS_IOTDATAPLANE_API __declspec(dllimport)
         #endif /* AWS_IOTDATAPLANE_EXPORTS */
+        #define AWS_IOTDATAPLANE_EXTERN
     #else
         #define AWS_IOTDATAPLANE_API
+        #define AWS_IOTDATAPLANE_EXTERN extern
     #endif // USE_IMPORT_EXPORT
 #else // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
     #define AWS_IOTDATAPLANE_API
+    #define AWS_IOTDATAPLANE_EXTERN extern
 #endif // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)

@@ -19,7 +19,8 @@ namespace Model
     WINDOWS_2012,
     AMAZON_LINUX,
     AMAZON_LINUX_2,
-    WINDOWS_2016
+    WINDOWS_2016,
+    AMAZON_LINUX_2023
   };
 
 namespace OperatingSystemMapper

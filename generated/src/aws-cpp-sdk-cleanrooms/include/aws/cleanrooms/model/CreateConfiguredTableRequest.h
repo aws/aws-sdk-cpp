@@ -119,32 +119,32 @@ namespace Model
 
 
     /**
-     * <p>A reference to the AWS Glue table being configured.</p>
+     * <p>A reference to the Glue table being configured.</p>
      */
     inline const TableReference& GetTableReference() const{ return m_tableReference; }
 
     /**
-     * <p>A reference to the AWS Glue table being configured.</p>
+     * <p>A reference to the Glue table being configured.</p>
      */
     inline bool TableReferenceHasBeenSet() const { return m_tableReferenceHasBeenSet; }
 
     /**
-     * <p>A reference to the AWS Glue table being configured.</p>
+     * <p>A reference to the Glue table being configured.</p>
      */
     inline void SetTableReference(const TableReference& value) { m_tableReferenceHasBeenSet = true; m_tableReference = value; }
 
     /**
-     * <p>A reference to the AWS Glue table being configured.</p>
+     * <p>A reference to the Glue table being configured.</p>
      */
     inline void SetTableReference(TableReference&& value) { m_tableReferenceHasBeenSet = true; m_tableReference = std::move(value); }
 
     /**
-     * <p>A reference to the AWS Glue table being configured.</p>
+     * <p>A reference to the Glue table being configured.</p>
      */
     inline CreateConfiguredTableRequest& WithTableReference(const TableReference& value) { SetTableReference(value); return *this;}
 
     /**
-     * <p>A reference to the AWS Glue table being configured.</p>
+     * <p>A reference to the Glue table being configured.</p>
      */
     inline CreateConfiguredTableRequest& WithTableReference(TableReference&& value) { SetTableReference(std::move(value)); return *this;}
 

@@ -21,9 +21,12 @@
         #else
             #define AWS_CLOUDDIRECTORY_API __declspec(dllimport)
         #endif /* AWS_CLOUDDIRECTORY_EXPORTS */
+        #define AWS_CLOUDDIRECTORY_EXTERN
     #else
         #define AWS_CLOUDDIRECTORY_API
+        #define AWS_CLOUDDIRECTORY_EXTERN extern
     #endif // USE_IMPORT_EXPORT
 #else // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
     #define AWS_CLOUDDIRECTORY_API
+    #define AWS_CLOUDDIRECTORY_EXTERN extern
 #endif // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)

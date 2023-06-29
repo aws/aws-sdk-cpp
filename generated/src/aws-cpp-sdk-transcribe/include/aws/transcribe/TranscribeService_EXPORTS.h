@@ -21,9 +21,12 @@
         #else
             #define AWS_TRANSCRIBESERVICE_API __declspec(dllimport)
         #endif /* AWS_TRANSCRIBESERVICE_EXPORTS */
+        #define AWS_TRANSCRIBESERVICE_EXTERN
     #else
         #define AWS_TRANSCRIBESERVICE_API
+        #define AWS_TRANSCRIBESERVICE_EXTERN extern
     #endif // USE_IMPORT_EXPORT
 #else // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
     #define AWS_TRANSCRIBESERVICE_API
+    #define AWS_TRANSCRIBESERVICE_EXTERN extern
 #endif // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)

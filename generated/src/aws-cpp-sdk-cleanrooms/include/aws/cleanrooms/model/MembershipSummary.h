@@ -206,50 +206,50 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the AWS principal that created the collaboration. Currently
-     * only supports AWS account ID.</p>
+     * <p>The identifier of the Amazon Web Services principal that created the
+     * collaboration. Currently only supports Amazon Web Services account ID.</p>
      */
     inline const Aws::String& GetCollaborationCreatorAccountId() const{ return m_collaborationCreatorAccountId; }
 
     /**
-     * <p>The identifier of the AWS principal that created the collaboration. Currently
-     * only supports AWS account ID.</p>
+     * <p>The identifier of the Amazon Web Services principal that created the
+     * collaboration. Currently only supports Amazon Web Services account ID.</p>
      */
     inline bool CollaborationCreatorAccountIdHasBeenSet() const { return m_collaborationCreatorAccountIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the AWS principal that created the collaboration. Currently
-     * only supports AWS account ID.</p>
+     * <p>The identifier of the Amazon Web Services principal that created the
+     * collaboration. Currently only supports Amazon Web Services account ID.</p>
      */
     inline void SetCollaborationCreatorAccountId(const Aws::String& value) { m_collaborationCreatorAccountIdHasBeenSet = true; m_collaborationCreatorAccountId = value; }
 
     /**
-     * <p>The identifier of the AWS principal that created the collaboration. Currently
-     * only supports AWS account ID.</p>
+     * <p>The identifier of the Amazon Web Services principal that created the
+     * collaboration. Currently only supports Amazon Web Services account ID.</p>
      */
     inline void SetCollaborationCreatorAccountId(Aws::String&& value) { m_collaborationCreatorAccountIdHasBeenSet = true; m_collaborationCreatorAccountId = std::move(value); }
 
     /**
-     * <p>The identifier of the AWS principal that created the collaboration. Currently
-     * only supports AWS account ID.</p>
+     * <p>The identifier of the Amazon Web Services principal that created the
+     * collaboration. Currently only supports Amazon Web Services account ID.</p>
      */
     inline void SetCollaborationCreatorAccountId(const char* value) { m_collaborationCreatorAccountIdHasBeenSet = true; m_collaborationCreatorAccountId.assign(value); }
 
     /**
-     * <p>The identifier of the AWS principal that created the collaboration. Currently
-     * only supports AWS account ID.</p>
+     * <p>The identifier of the Amazon Web Services principal that created the
+     * collaboration. Currently only supports Amazon Web Services account ID.</p>
      */
     inline MembershipSummary& WithCollaborationCreatorAccountId(const Aws::String& value) { SetCollaborationCreatorAccountId(value); return *this;}
 
     /**
-     * <p>The identifier of the AWS principal that created the collaboration. Currently
-     * only supports AWS account ID.</p>
+     * <p>The identifier of the Amazon Web Services principal that created the
+     * collaboration. Currently only supports Amazon Web Services account ID.</p>
      */
     inline MembershipSummary& WithCollaborationCreatorAccountId(Aws::String&& value) { SetCollaborationCreatorAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the AWS principal that created the collaboration. Currently
-     * only supports AWS account ID.</p>
+     * <p>The identifier of the Amazon Web Services principal that created the
+     * collaboration. Currently only supports Amazon Web Services account ID.</p>
      */
     inline MembershipSummary& WithCollaborationCreatorAccountId(const char* value) { SetCollaborationCreatorAccountId(value); return *this;}
 

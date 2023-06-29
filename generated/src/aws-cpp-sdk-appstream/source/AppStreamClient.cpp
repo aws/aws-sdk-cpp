@@ -21,6 +21,7 @@
 #include <aws/appstream/AppStreamClient.h>
 #include <aws/appstream/AppStreamErrorMarshaller.h>
 #include <aws/appstream/AppStreamEndpointProvider.h>
+#include <aws/appstream/model/AssociateAppBlockBuilderAppBlockRequest.h>
 #include <aws/appstream/model/AssociateApplicationFleetRequest.h>
 #include <aws/appstream/model/AssociateApplicationToEntitlementRequest.h>
 #include <aws/appstream/model/AssociateFleetRequest.h>
@@ -28,6 +29,8 @@
 #include <aws/appstream/model/BatchDisassociateUserStackRequest.h>
 #include <aws/appstream/model/CopyImageRequest.h>
 #include <aws/appstream/model/CreateAppBlockRequest.h>
+#include <aws/appstream/model/CreateAppBlockBuilderRequest.h>
+#include <aws/appstream/model/CreateAppBlockBuilderStreamingURLRequest.h>
 #include <aws/appstream/model/CreateApplicationRequest.h>
 #include <aws/appstream/model/CreateDirectoryConfigRequest.h>
 #include <aws/appstream/model/CreateEntitlementRequest.h>
@@ -40,6 +43,7 @@
 #include <aws/appstream/model/CreateUsageReportSubscriptionRequest.h>
 #include <aws/appstream/model/CreateUserRequest.h>
 #include <aws/appstream/model/DeleteAppBlockRequest.h>
+#include <aws/appstream/model/DeleteAppBlockBuilderRequest.h>
 #include <aws/appstream/model/DeleteApplicationRequest.h>
 #include <aws/appstream/model/DeleteDirectoryConfigRequest.h>
 #include <aws/appstream/model/DeleteEntitlementRequest.h>
@@ -50,6 +54,8 @@
 #include <aws/appstream/model/DeleteStackRequest.h>
 #include <aws/appstream/model/DeleteUsageReportSubscriptionRequest.h>
 #include <aws/appstream/model/DeleteUserRequest.h>
+#include <aws/appstream/model/DescribeAppBlockBuilderAppBlockAssociationsRequest.h>
+#include <aws/appstream/model/DescribeAppBlockBuildersRequest.h>
 #include <aws/appstream/model/DescribeAppBlocksRequest.h>
 #include <aws/appstream/model/DescribeApplicationFleetAssociationsRequest.h>
 #include <aws/appstream/model/DescribeApplicationsRequest.h>
@@ -65,6 +71,7 @@
 #include <aws/appstream/model/DescribeUserStackAssociationsRequest.h>
 #include <aws/appstream/model/DescribeUsersRequest.h>
 #include <aws/appstream/model/DisableUserRequest.h>
+#include <aws/appstream/model/DisassociateAppBlockBuilderAppBlockRequest.h>
 #include <aws/appstream/model/DisassociateApplicationFleetRequest.h>
 #include <aws/appstream/model/DisassociateApplicationFromEntitlementRequest.h>
 #include <aws/appstream/model/DisassociateFleetRequest.h>
@@ -74,12 +81,15 @@
 #include <aws/appstream/model/ListAssociatedStacksRequest.h>
 #include <aws/appstream/model/ListEntitledApplicationsRequest.h>
 #include <aws/appstream/model/ListTagsForResourceRequest.h>
+#include <aws/appstream/model/StartAppBlockBuilderRequest.h>
 #include <aws/appstream/model/StartFleetRequest.h>
 #include <aws/appstream/model/StartImageBuilderRequest.h>
+#include <aws/appstream/model/StopAppBlockBuilderRequest.h>
 #include <aws/appstream/model/StopFleetRequest.h>
 #include <aws/appstream/model/StopImageBuilderRequest.h>
 #include <aws/appstream/model/TagResourceRequest.h>
 #include <aws/appstream/model/UntagResourceRequest.h>
+#include <aws/appstream/model/UpdateAppBlockBuilderRequest.h>
 #include <aws/appstream/model/UpdateApplicationRequest.h>
 #include <aws/appstream/model/UpdateDirectoryConfigRequest.h>
 #include <aws/appstream/model/UpdateEntitlementRequest.h>
@@ -215,6 +225,15 @@ void AppStreamClient::OverrideEndpoint(const Aws::String& endpoint)
   m_endpointProvider->OverrideEndpoint(endpoint);
 }
 
+AssociateAppBlockBuilderAppBlockOutcome AppStreamClient::AssociateAppBlockBuilderAppBlock(const AssociateAppBlockBuilderAppBlockRequest& request) const
+{
+  AWS_OPERATION_GUARD(AssociateAppBlockBuilderAppBlock);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateAppBlockBuilderAppBlock, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AssociateAppBlockBuilderAppBlock, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return AssociateAppBlockBuilderAppBlockOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
 AssociateApplicationFleetOutcome AppStreamClient::AssociateApplicationFleet(const AssociateApplicationFleetRequest& request) const
 {
   AWS_OPERATION_GUARD(AssociateApplicationFleet);
@@ -276,6 +295,24 @@ CreateAppBlockOutcome AppStreamClient::CreateAppBlock(const CreateAppBlockReques
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateAppBlock, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   return CreateAppBlockOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateAppBlockBuilderOutcome AppStreamClient::CreateAppBlockBuilder(const CreateAppBlockBuilderRequest& request) const
+{
+  AWS_OPERATION_GUARD(CreateAppBlockBuilder);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAppBlockBuilder, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateAppBlockBuilder, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateAppBlockBuilderOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateAppBlockBuilderStreamingURLOutcome AppStreamClient::CreateAppBlockBuilderStreamingURL(const CreateAppBlockBuilderStreamingURLRequest& request) const
+{
+  AWS_OPERATION_GUARD(CreateAppBlockBuilderStreamingURL);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAppBlockBuilderStreamingURL, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateAppBlockBuilderStreamingURL, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateAppBlockBuilderStreamingURLOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateApplicationOutcome AppStreamClient::CreateApplication(const CreateApplicationRequest& request) const
@@ -386,6 +423,15 @@ DeleteAppBlockOutcome AppStreamClient::DeleteAppBlock(const DeleteAppBlockReques
   return DeleteAppBlockOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
+DeleteAppBlockBuilderOutcome AppStreamClient::DeleteAppBlockBuilder(const DeleteAppBlockBuilderRequest& request) const
+{
+  AWS_OPERATION_GUARD(DeleteAppBlockBuilder);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAppBlockBuilder, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteAppBlockBuilder, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteAppBlockBuilderOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
 DeleteApplicationOutcome AppStreamClient::DeleteApplication(const DeleteApplicationRequest& request) const
 {
   AWS_OPERATION_GUARD(DeleteApplication);
@@ -474,6 +520,24 @@ DeleteUserOutcome AppStreamClient::DeleteUser(const DeleteUserRequest& request) 
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteUser, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   return DeleteUserOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeAppBlockBuilderAppBlockAssociationsOutcome AppStreamClient::DescribeAppBlockBuilderAppBlockAssociations(const DescribeAppBlockBuilderAppBlockAssociationsRequest& request) const
+{
+  AWS_OPERATION_GUARD(DescribeAppBlockBuilderAppBlockAssociations);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAppBlockBuilderAppBlockAssociations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeAppBlockBuilderAppBlockAssociations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeAppBlockBuilderAppBlockAssociationsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeAppBlockBuildersOutcome AppStreamClient::DescribeAppBlockBuilders(const DescribeAppBlockBuildersRequest& request) const
+{
+  AWS_OPERATION_GUARD(DescribeAppBlockBuilders);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAppBlockBuilders, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeAppBlockBuilders, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeAppBlockBuildersOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeAppBlocksOutcome AppStreamClient::DescribeAppBlocks(const DescribeAppBlocksRequest& request) const
@@ -611,6 +675,15 @@ DisableUserOutcome AppStreamClient::DisableUser(const DisableUserRequest& reques
   return DisableUserOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
+DisassociateAppBlockBuilderAppBlockOutcome AppStreamClient::DisassociateAppBlockBuilderAppBlock(const DisassociateAppBlockBuilderAppBlockRequest& request) const
+{
+  AWS_OPERATION_GUARD(DisassociateAppBlockBuilderAppBlock);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateAppBlockBuilderAppBlock, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DisassociateAppBlockBuilderAppBlock, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DisassociateAppBlockBuilderAppBlockOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
 DisassociateApplicationFleetOutcome AppStreamClient::DisassociateApplicationFleet(const DisassociateApplicationFleetRequest& request) const
 {
   AWS_OPERATION_GUARD(DisassociateApplicationFleet);
@@ -692,6 +765,15 @@ ListTagsForResourceOutcome AppStreamClient::ListTagsForResource(const ListTagsFo
   return ListTagsForResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
+StartAppBlockBuilderOutcome AppStreamClient::StartAppBlockBuilder(const StartAppBlockBuilderRequest& request) const
+{
+  AWS_OPERATION_GUARD(StartAppBlockBuilder);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartAppBlockBuilder, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartAppBlockBuilder, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return StartAppBlockBuilderOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
 StartFleetOutcome AppStreamClient::StartFleet(const StartFleetRequest& request) const
 {
   AWS_OPERATION_GUARD(StartFleet);
@@ -708,6 +790,15 @@ StartImageBuilderOutcome AppStreamClient::StartImageBuilder(const StartImageBuil
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartImageBuilder, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   return StartImageBuilderOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StopAppBlockBuilderOutcome AppStreamClient::StopAppBlockBuilder(const StopAppBlockBuilderRequest& request) const
+{
+  AWS_OPERATION_GUARD(StopAppBlockBuilder);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopAppBlockBuilder, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StopAppBlockBuilder, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return StopAppBlockBuilderOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StopFleetOutcome AppStreamClient::StopFleet(const StopFleetRequest& request) const
@@ -744,6 +835,15 @@ UntagResourceOutcome AppStreamClient::UntagResource(const UntagResourceRequest& 
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   return UntagResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateAppBlockBuilderOutcome AppStreamClient::UpdateAppBlockBuilder(const UpdateAppBlockBuilderRequest& request) const
+{
+  AWS_OPERATION_GUARD(UpdateAppBlockBuilder);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAppBlockBuilder, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateAppBlockBuilder, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateAppBlockBuilderOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateApplicationOutcome AppStreamClient::UpdateApplication(const UpdateApplicationRequest& request) const

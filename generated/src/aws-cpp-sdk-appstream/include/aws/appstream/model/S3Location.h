@@ -79,42 +79,122 @@ namespace Model
 
 
     /**
-     * <p>The S3 key of the S3 object.</p>
+     * <p>The S3 key of the S3 object.</p> <p>This is required when used for the
+     * following:</p> <ul> <li> <p>IconS3Location (Actions: CreateApplication and
+     * UpdateApplication)</p> </li> <li> <p>SessionScriptS3Location (Actions:
+     * CreateFleet and UpdateFleet)</p> </li> <li> <p>ScriptDetails (Actions:
+     * CreateAppBlock)</p> </li> <li> <p>SourceS3Location when creating an app block
+     * with <code>CUSTOM</code> PackagingType (Actions: CreateAppBlock)</p> </li> <li>
+     * <p>SourceS3Location when creating an app block with <code>APPSTREAM2</code>
+     * PackagingType, and using an existing application package (VHD file). In this
+     * case, <code>S3Key</code> refers to the VHD file. If a new application package is
+     * required, then <code>S3Key</code> is not required. (Actions: CreateAppBlock)</p>
+     * </li> </ul>
      */
     inline const Aws::String& GetS3Key() const{ return m_s3Key; }
 
     /**
-     * <p>The S3 key of the S3 object.</p>
+     * <p>The S3 key of the S3 object.</p> <p>This is required when used for the
+     * following:</p> <ul> <li> <p>IconS3Location (Actions: CreateApplication and
+     * UpdateApplication)</p> </li> <li> <p>SessionScriptS3Location (Actions:
+     * CreateFleet and UpdateFleet)</p> </li> <li> <p>ScriptDetails (Actions:
+     * CreateAppBlock)</p> </li> <li> <p>SourceS3Location when creating an app block
+     * with <code>CUSTOM</code> PackagingType (Actions: CreateAppBlock)</p> </li> <li>
+     * <p>SourceS3Location when creating an app block with <code>APPSTREAM2</code>
+     * PackagingType, and using an existing application package (VHD file). In this
+     * case, <code>S3Key</code> refers to the VHD file. If a new application package is
+     * required, then <code>S3Key</code> is not required. (Actions: CreateAppBlock)</p>
+     * </li> </ul>
      */
     inline bool S3KeyHasBeenSet() const { return m_s3KeyHasBeenSet; }
 
     /**
-     * <p>The S3 key of the S3 object.</p>
+     * <p>The S3 key of the S3 object.</p> <p>This is required when used for the
+     * following:</p> <ul> <li> <p>IconS3Location (Actions: CreateApplication and
+     * UpdateApplication)</p> </li> <li> <p>SessionScriptS3Location (Actions:
+     * CreateFleet and UpdateFleet)</p> </li> <li> <p>ScriptDetails (Actions:
+     * CreateAppBlock)</p> </li> <li> <p>SourceS3Location when creating an app block
+     * with <code>CUSTOM</code> PackagingType (Actions: CreateAppBlock)</p> </li> <li>
+     * <p>SourceS3Location when creating an app block with <code>APPSTREAM2</code>
+     * PackagingType, and using an existing application package (VHD file). In this
+     * case, <code>S3Key</code> refers to the VHD file. If a new application package is
+     * required, then <code>S3Key</code> is not required. (Actions: CreateAppBlock)</p>
+     * </li> </ul>
      */
     inline void SetS3Key(const Aws::String& value) { m_s3KeyHasBeenSet = true; m_s3Key = value; }
 
     /**
-     * <p>The S3 key of the S3 object.</p>
+     * <p>The S3 key of the S3 object.</p> <p>This is required when used for the
+     * following:</p> <ul> <li> <p>IconS3Location (Actions: CreateApplication and
+     * UpdateApplication)</p> </li> <li> <p>SessionScriptS3Location (Actions:
+     * CreateFleet and UpdateFleet)</p> </li> <li> <p>ScriptDetails (Actions:
+     * CreateAppBlock)</p> </li> <li> <p>SourceS3Location when creating an app block
+     * with <code>CUSTOM</code> PackagingType (Actions: CreateAppBlock)</p> </li> <li>
+     * <p>SourceS3Location when creating an app block with <code>APPSTREAM2</code>
+     * PackagingType, and using an existing application package (VHD file). In this
+     * case, <code>S3Key</code> refers to the VHD file. If a new application package is
+     * required, then <code>S3Key</code> is not required. (Actions: CreateAppBlock)</p>
+     * </li> </ul>
      */
     inline void SetS3Key(Aws::String&& value) { m_s3KeyHasBeenSet = true; m_s3Key = std::move(value); }
 
     /**
-     * <p>The S3 key of the S3 object.</p>
+     * <p>The S3 key of the S3 object.</p> <p>This is required when used for the
+     * following:</p> <ul> <li> <p>IconS3Location (Actions: CreateApplication and
+     * UpdateApplication)</p> </li> <li> <p>SessionScriptS3Location (Actions:
+     * CreateFleet and UpdateFleet)</p> </li> <li> <p>ScriptDetails (Actions:
+     * CreateAppBlock)</p> </li> <li> <p>SourceS3Location when creating an app block
+     * with <code>CUSTOM</code> PackagingType (Actions: CreateAppBlock)</p> </li> <li>
+     * <p>SourceS3Location when creating an app block with <code>APPSTREAM2</code>
+     * PackagingType, and using an existing application package (VHD file). In this
+     * case, <code>S3Key</code> refers to the VHD file. If a new application package is
+     * required, then <code>S3Key</code> is not required. (Actions: CreateAppBlock)</p>
+     * </li> </ul>
      */
     inline void SetS3Key(const char* value) { m_s3KeyHasBeenSet = true; m_s3Key.assign(value); }
 
     /**
-     * <p>The S3 key of the S3 object.</p>
+     * <p>The S3 key of the S3 object.</p> <p>This is required when used for the
+     * following:</p> <ul> <li> <p>IconS3Location (Actions: CreateApplication and
+     * UpdateApplication)</p> </li> <li> <p>SessionScriptS3Location (Actions:
+     * CreateFleet and UpdateFleet)</p> </li> <li> <p>ScriptDetails (Actions:
+     * CreateAppBlock)</p> </li> <li> <p>SourceS3Location when creating an app block
+     * with <code>CUSTOM</code> PackagingType (Actions: CreateAppBlock)</p> </li> <li>
+     * <p>SourceS3Location when creating an app block with <code>APPSTREAM2</code>
+     * PackagingType, and using an existing application package (VHD file). In this
+     * case, <code>S3Key</code> refers to the VHD file. If a new application package is
+     * required, then <code>S3Key</code> is not required. (Actions: CreateAppBlock)</p>
+     * </li> </ul>
      */
     inline S3Location& WithS3Key(const Aws::String& value) { SetS3Key(value); return *this;}
 
     /**
-     * <p>The S3 key of the S3 object.</p>
+     * <p>The S3 key of the S3 object.</p> <p>This is required when used for the
+     * following:</p> <ul> <li> <p>IconS3Location (Actions: CreateApplication and
+     * UpdateApplication)</p> </li> <li> <p>SessionScriptS3Location (Actions:
+     * CreateFleet and UpdateFleet)</p> </li> <li> <p>ScriptDetails (Actions:
+     * CreateAppBlock)</p> </li> <li> <p>SourceS3Location when creating an app block
+     * with <code>CUSTOM</code> PackagingType (Actions: CreateAppBlock)</p> </li> <li>
+     * <p>SourceS3Location when creating an app block with <code>APPSTREAM2</code>
+     * PackagingType, and using an existing application package (VHD file). In this
+     * case, <code>S3Key</code> refers to the VHD file. If a new application package is
+     * required, then <code>S3Key</code> is not required. (Actions: CreateAppBlock)</p>
+     * </li> </ul>
      */
     inline S3Location& WithS3Key(Aws::String&& value) { SetS3Key(std::move(value)); return *this;}
 
     /**
-     * <p>The S3 key of the S3 object.</p>
+     * <p>The S3 key of the S3 object.</p> <p>This is required when used for the
+     * following:</p> <ul> <li> <p>IconS3Location (Actions: CreateApplication and
+     * UpdateApplication)</p> </li> <li> <p>SessionScriptS3Location (Actions:
+     * CreateFleet and UpdateFleet)</p> </li> <li> <p>ScriptDetails (Actions:
+     * CreateAppBlock)</p> </li> <li> <p>SourceS3Location when creating an app block
+     * with <code>CUSTOM</code> PackagingType (Actions: CreateAppBlock)</p> </li> <li>
+     * <p>SourceS3Location when creating an app block with <code>APPSTREAM2</code>
+     * PackagingType, and using an existing application package (VHD file). In this
+     * case, <code>S3Key</code> refers to the VHD file. If a new application package is
+     * required, then <code>S3Key</code> is not required. (Actions: CreateAppBlock)</p>
+     * </li> </ul>
      */
     inline S3Location& WithS3Key(const char* value) { SetS3Key(value); return *this;}
 

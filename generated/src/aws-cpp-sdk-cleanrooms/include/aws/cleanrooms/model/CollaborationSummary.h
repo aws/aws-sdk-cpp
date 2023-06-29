@@ -172,49 +172,49 @@ namespace Model
 
     /**
      * <p>The identifier used to reference members of the collaboration. Currently only
-     * supports AWS Account ID.</p>
+     * supports Amazon Web Services account ID.</p>
      */
     inline const Aws::String& GetCreatorAccountId() const{ return m_creatorAccountId; }
 
     /**
      * <p>The identifier used to reference members of the collaboration. Currently only
-     * supports AWS Account ID.</p>
+     * supports Amazon Web Services account ID.</p>
      */
     inline bool CreatorAccountIdHasBeenSet() const { return m_creatorAccountIdHasBeenSet; }
 
     /**
      * <p>The identifier used to reference members of the collaboration. Currently only
-     * supports AWS Account ID.</p>
+     * supports Amazon Web Services account ID.</p>
      */
     inline void SetCreatorAccountId(const Aws::String& value) { m_creatorAccountIdHasBeenSet = true; m_creatorAccountId = value; }
 
     /**
      * <p>The identifier used to reference members of the collaboration. Currently only
-     * supports AWS Account ID.</p>
+     * supports Amazon Web Services account ID.</p>
      */
     inline void SetCreatorAccountId(Aws::String&& value) { m_creatorAccountIdHasBeenSet = true; m_creatorAccountId = std::move(value); }
 
     /**
      * <p>The identifier used to reference members of the collaboration. Currently only
-     * supports AWS Account ID.</p>
+     * supports Amazon Web Services account ID.</p>
      */
     inline void SetCreatorAccountId(const char* value) { m_creatorAccountIdHasBeenSet = true; m_creatorAccountId.assign(value); }
 
     /**
      * <p>The identifier used to reference members of the collaboration. Currently only
-     * supports AWS Account ID.</p>
+     * supports Amazon Web Services account ID.</p>
      */
     inline CollaborationSummary& WithCreatorAccountId(const Aws::String& value) { SetCreatorAccountId(value); return *this;}
 
     /**
      * <p>The identifier used to reference members of the collaboration. Currently only
-     * supports AWS Account ID.</p>
+     * supports Amazon Web Services account ID.</p>
      */
     inline CollaborationSummary& WithCreatorAccountId(Aws::String&& value) { SetCreatorAccountId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier used to reference members of the collaboration. Currently only
-     * supports AWS Account ID.</p>
+     * supports Amazon Web Services account ID.</p>
      */
     inline CollaborationSummary& WithCreatorAccountId(const char* value) { SetCreatorAccountId(value); return *this;}
 

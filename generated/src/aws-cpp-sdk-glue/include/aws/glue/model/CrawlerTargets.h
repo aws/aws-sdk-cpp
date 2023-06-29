@@ -12,6 +12,7 @@
 #include <aws/glue/model/DynamoDBTarget.h>
 #include <aws/glue/model/CatalogTarget.h>
 #include <aws/glue/model/DeltaTarget.h>
+#include <aws/glue/model/IcebergTarget.h>
 #include <utility>
 
 namespace Aws
@@ -288,6 +289,47 @@ namespace Model
      */
     inline CrawlerTargets& AddDeltaTargets(DeltaTarget&& value) { m_deltaTargetsHasBeenSet = true; m_deltaTargets.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Specifies Apache Iceberg data store targets.</p>
+     */
+    inline const Aws::Vector<IcebergTarget>& GetIcebergTargets() const{ return m_icebergTargets; }
+
+    /**
+     * <p>Specifies Apache Iceberg data store targets.</p>
+     */
+    inline bool IcebergTargetsHasBeenSet() const { return m_icebergTargetsHasBeenSet; }
+
+    /**
+     * <p>Specifies Apache Iceberg data store targets.</p>
+     */
+    inline void SetIcebergTargets(const Aws::Vector<IcebergTarget>& value) { m_icebergTargetsHasBeenSet = true; m_icebergTargets = value; }
+
+    /**
+     * <p>Specifies Apache Iceberg data store targets.</p>
+     */
+    inline void SetIcebergTargets(Aws::Vector<IcebergTarget>&& value) { m_icebergTargetsHasBeenSet = true; m_icebergTargets = std::move(value); }
+
+    /**
+     * <p>Specifies Apache Iceberg data store targets.</p>
+     */
+    inline CrawlerTargets& WithIcebergTargets(const Aws::Vector<IcebergTarget>& value) { SetIcebergTargets(value); return *this;}
+
+    /**
+     * <p>Specifies Apache Iceberg data store targets.</p>
+     */
+    inline CrawlerTargets& WithIcebergTargets(Aws::Vector<IcebergTarget>&& value) { SetIcebergTargets(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies Apache Iceberg data store targets.</p>
+     */
+    inline CrawlerTargets& AddIcebergTargets(const IcebergTarget& value) { m_icebergTargetsHasBeenSet = true; m_icebergTargets.push_back(value); return *this; }
+
+    /**
+     * <p>Specifies Apache Iceberg data store targets.</p>
+     */
+    inline CrawlerTargets& AddIcebergTargets(IcebergTarget&& value) { m_icebergTargetsHasBeenSet = true; m_icebergTargets.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::Vector<S3Target> m_s3Targets;
@@ -307,6 +349,9 @@ namespace Model
 
     Aws::Vector<DeltaTarget> m_deltaTargets;
     bool m_deltaTargetsHasBeenSet = false;
+
+    Aws::Vector<IcebergTarget> m_icebergTargets;
+    bool m_icebergTargetsHasBeenSet = false;
   };
 
 } // namespace Model

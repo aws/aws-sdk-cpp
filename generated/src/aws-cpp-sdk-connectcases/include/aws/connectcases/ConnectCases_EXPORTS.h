@@ -21,9 +21,12 @@
         #else
             #define AWS_CONNECTCASES_API __declspec(dllimport)
         #endif /* AWS_CONNECTCASES_EXPORTS */
+        #define AWS_CONNECTCASES_EXTERN
     #else
         #define AWS_CONNECTCASES_API
+        #define AWS_CONNECTCASES_EXTERN extern
     #endif // USE_IMPORT_EXPORT
 #else // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
     #define AWS_CONNECTCASES_API
+    #define AWS_CONNECTCASES_EXTERN extern
 #endif // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)

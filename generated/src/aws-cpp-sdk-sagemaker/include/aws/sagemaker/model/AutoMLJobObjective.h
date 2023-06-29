@@ -50,7 +50,9 @@ namespace Model
      * types:</p> <ul> <li> <p>Regression: <code>MSE</code>.</p> </li> <li> <p>Binary
      * classification: <code>F1</code>.</p> </li> <li> <p>Multiclass classification:
      * <code>Accuracy</code>.</p> </li> </ul> </li> <li> <p>For image or text
-     * classification problem types: <code>Accuracy</code> </p> </li> </ul>
+     * classification problem types: <code>Accuracy</code> </p> </li> <li> <p>For
+     * time-series forecasting problem types: <code>AverageWeightedQuantileLoss</code>
+     * </p> </li> </ul>
      */
     inline const AutoMLMetricEnum& GetMetricName() const{ return m_metricName; }
 
@@ -66,7 +68,9 @@ namespace Model
      * types:</p> <ul> <li> <p>Regression: <code>MSE</code>.</p> </li> <li> <p>Binary
      * classification: <code>F1</code>.</p> </li> <li> <p>Multiclass classification:
      * <code>Accuracy</code>.</p> </li> </ul> </li> <li> <p>For image or text
-     * classification problem types: <code>Accuracy</code> </p> </li> </ul>
+     * classification problem types: <code>Accuracy</code> </p> </li> <li> <p>For
+     * time-series forecasting problem types: <code>AverageWeightedQuantileLoss</code>
+     * </p> </li> </ul>
      */
     inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
 
@@ -82,7 +86,9 @@ namespace Model
      * types:</p> <ul> <li> <p>Regression: <code>MSE</code>.</p> </li> <li> <p>Binary
      * classification: <code>F1</code>.</p> </li> <li> <p>Multiclass classification:
      * <code>Accuracy</code>.</p> </li> </ul> </li> <li> <p>For image or text
-     * classification problem types: <code>Accuracy</code> </p> </li> </ul>
+     * classification problem types: <code>Accuracy</code> </p> </li> <li> <p>For
+     * time-series forecasting problem types: <code>AverageWeightedQuantileLoss</code>
+     * </p> </li> </ul>
      */
     inline void SetMetricName(const AutoMLMetricEnum& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
 
@@ -98,7 +104,9 @@ namespace Model
      * types:</p> <ul> <li> <p>Regression: <code>MSE</code>.</p> </li> <li> <p>Binary
      * classification: <code>F1</code>.</p> </li> <li> <p>Multiclass classification:
      * <code>Accuracy</code>.</p> </li> </ul> </li> <li> <p>For image or text
-     * classification problem types: <code>Accuracy</code> </p> </li> </ul>
+     * classification problem types: <code>Accuracy</code> </p> </li> <li> <p>For
+     * time-series forecasting problem types: <code>AverageWeightedQuantileLoss</code>
+     * </p> </li> </ul>
      */
     inline void SetMetricName(AutoMLMetricEnum&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
 
@@ -114,7 +122,9 @@ namespace Model
      * types:</p> <ul> <li> <p>Regression: <code>MSE</code>.</p> </li> <li> <p>Binary
      * classification: <code>F1</code>.</p> </li> <li> <p>Multiclass classification:
      * <code>Accuracy</code>.</p> </li> </ul> </li> <li> <p>For image or text
-     * classification problem types: <code>Accuracy</code> </p> </li> </ul>
+     * classification problem types: <code>Accuracy</code> </p> </li> <li> <p>For
+     * time-series forecasting problem types: <code>AverageWeightedQuantileLoss</code>
+     * </p> </li> </ul>
      */
     inline AutoMLJobObjective& WithMetricName(const AutoMLMetricEnum& value) { SetMetricName(value); return *this;}
 
@@ -130,7 +140,9 @@ namespace Model
      * types:</p> <ul> <li> <p>Regression: <code>MSE</code>.</p> </li> <li> <p>Binary
      * classification: <code>F1</code>.</p> </li> <li> <p>Multiclass classification:
      * <code>Accuracy</code>.</p> </li> </ul> </li> <li> <p>For image or text
-     * classification problem types: <code>Accuracy</code> </p> </li> </ul>
+     * classification problem types: <code>Accuracy</code> </p> </li> <li> <p>For
+     * time-series forecasting problem types: <code>AverageWeightedQuantileLoss</code>
+     * </p> </li> </ul>
      */
     inline AutoMLJobObjective& WithMetricName(AutoMLMetricEnum&& value) { SetMetricName(std::move(value)); return *this;}
 

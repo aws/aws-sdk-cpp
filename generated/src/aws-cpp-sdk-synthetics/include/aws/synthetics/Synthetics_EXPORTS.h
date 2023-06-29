@@ -21,9 +21,12 @@
         #else
             #define AWS_SYNTHETICS_API __declspec(dllimport)
         #endif /* AWS_SYNTHETICS_EXPORTS */
+        #define AWS_SYNTHETICS_EXTERN
     #else
         #define AWS_SYNTHETICS_API
+        #define AWS_SYNTHETICS_EXTERN extern
     #endif // USE_IMPORT_EXPORT
 #else // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
     #define AWS_SYNTHETICS_API
+    #define AWS_SYNTHETICS_EXTERN extern
 #endif // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)

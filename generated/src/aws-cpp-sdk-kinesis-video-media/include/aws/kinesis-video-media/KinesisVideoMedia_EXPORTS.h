@@ -21,9 +21,12 @@
         #else
             #define AWS_KINESISVIDEOMEDIA_API __declspec(dllimport)
         #endif /* AWS_KINESISVIDEOMEDIA_EXPORTS */
+        #define AWS_KINESISVIDEOMEDIA_EXTERN
     #else
         #define AWS_KINESISVIDEOMEDIA_API
+        #define AWS_KINESISVIDEOMEDIA_EXTERN extern
     #endif // USE_IMPORT_EXPORT
 #else // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
     #define AWS_KINESISVIDEOMEDIA_API
+    #define AWS_KINESISVIDEOMEDIA_EXTERN extern
 #endif // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)

@@ -454,36 +454,40 @@ namespace Model
     /**
      * <p>The number of player slots in a match to keep open for future players. For
      * example, if the configuration's rule set specifies a match for a single
-     * 12-person team, and the additional player count is set to 2, only 10 players are
-     * selected for the match. This parameter is not used if <code>FlexMatchMode</code>
-     * is set to <code>STANDALONE</code>.</p>
+     * 10-person team, and the additional player count is set to 2, 10 players will be
+     * selected for the match and 2 more player slots will be open for future players.
+     * This parameter is not used if <code>FlexMatchMode</code> is set to
+     * <code>STANDALONE</code>.</p>
      */
     inline int GetAdditionalPlayerCount() const{ return m_additionalPlayerCount; }
 
     /**
      * <p>The number of player slots in a match to keep open for future players. For
      * example, if the configuration's rule set specifies a match for a single
-     * 12-person team, and the additional player count is set to 2, only 10 players are
-     * selected for the match. This parameter is not used if <code>FlexMatchMode</code>
-     * is set to <code>STANDALONE</code>.</p>
+     * 10-person team, and the additional player count is set to 2, 10 players will be
+     * selected for the match and 2 more player slots will be open for future players.
+     * This parameter is not used if <code>FlexMatchMode</code> is set to
+     * <code>STANDALONE</code>.</p>
      */
     inline bool AdditionalPlayerCountHasBeenSet() const { return m_additionalPlayerCountHasBeenSet; }
 
     /**
      * <p>The number of player slots in a match to keep open for future players. For
      * example, if the configuration's rule set specifies a match for a single
-     * 12-person team, and the additional player count is set to 2, only 10 players are
-     * selected for the match. This parameter is not used if <code>FlexMatchMode</code>
-     * is set to <code>STANDALONE</code>.</p>
+     * 10-person team, and the additional player count is set to 2, 10 players will be
+     * selected for the match and 2 more player slots will be open for future players.
+     * This parameter is not used if <code>FlexMatchMode</code> is set to
+     * <code>STANDALONE</code>.</p>
      */
     inline void SetAdditionalPlayerCount(int value) { m_additionalPlayerCountHasBeenSet = true; m_additionalPlayerCount = value; }
 
     /**
      * <p>The number of player slots in a match to keep open for future players. For
      * example, if the configuration's rule set specifies a match for a single
-     * 12-person team, and the additional player count is set to 2, only 10 players are
-     * selected for the match. This parameter is not used if <code>FlexMatchMode</code>
-     * is set to <code>STANDALONE</code>.</p>
+     * 10-person team, and the additional player count is set to 2, 10 players will be
+     * selected for the match and 2 more player slots will be open for future players.
+     * This parameter is not used if <code>FlexMatchMode</code> is set to
+     * <code>STANDALONE</code>.</p>
      */
     inline UpdateMatchmakingConfigurationRequest& WithAdditionalPlayerCount(int value) { SetAdditionalPlayerCount(value); return *this;}
 

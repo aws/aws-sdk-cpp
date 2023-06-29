@@ -21,9 +21,12 @@
         #else
             #define AWS_DEVOPSGURU_API __declspec(dllimport)
         #endif /* AWS_DEVOPSGURU_EXPORTS */
+        #define AWS_DEVOPSGURU_EXTERN
     #else
         #define AWS_DEVOPSGURU_API
+        #define AWS_DEVOPSGURU_EXTERN extern
     #endif // USE_IMPORT_EXPORT
 #else // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
     #define AWS_DEVOPSGURU_API
+    #define AWS_DEVOPSGURU_EXTERN extern
 #endif // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)

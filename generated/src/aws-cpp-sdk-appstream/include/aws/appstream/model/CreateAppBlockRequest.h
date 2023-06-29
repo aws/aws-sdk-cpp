@@ -10,6 +10,7 @@
 #include <aws/appstream/model/S3Location.h>
 #include <aws/appstream/model/ScriptDetails.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/appstream/model/PackagingType.h>
 #include <utility>
 
 namespace Aws
@@ -192,32 +193,38 @@ namespace Model
 
 
     /**
-     * <p>The setup script details of the app block.</p>
+     * <p>The setup script details of the app block. This must be provided for the
+     * <code>CUSTOM</code> PackagingType.</p>
      */
     inline const ScriptDetails& GetSetupScriptDetails() const{ return m_setupScriptDetails; }
 
     /**
-     * <p>The setup script details of the app block.</p>
+     * <p>The setup script details of the app block. This must be provided for the
+     * <code>CUSTOM</code> PackagingType.</p>
      */
     inline bool SetupScriptDetailsHasBeenSet() const { return m_setupScriptDetailsHasBeenSet; }
 
     /**
-     * <p>The setup script details of the app block.</p>
+     * <p>The setup script details of the app block. This must be provided for the
+     * <code>CUSTOM</code> PackagingType.</p>
      */
     inline void SetSetupScriptDetails(const ScriptDetails& value) { m_setupScriptDetailsHasBeenSet = true; m_setupScriptDetails = value; }
 
     /**
-     * <p>The setup script details of the app block.</p>
+     * <p>The setup script details of the app block. This must be provided for the
+     * <code>CUSTOM</code> PackagingType.</p>
      */
     inline void SetSetupScriptDetails(ScriptDetails&& value) { m_setupScriptDetailsHasBeenSet = true; m_setupScriptDetails = std::move(value); }
 
     /**
-     * <p>The setup script details of the app block.</p>
+     * <p>The setup script details of the app block. This must be provided for the
+     * <code>CUSTOM</code> PackagingType.</p>
      */
     inline CreateAppBlockRequest& WithSetupScriptDetails(const ScriptDetails& value) { SetSetupScriptDetails(value); return *this;}
 
     /**
-     * <p>The setup script details of the app block.</p>
+     * <p>The setup script details of the app block. This must be provided for the
+     * <code>CUSTOM</code> PackagingType.</p>
      */
     inline CreateAppBlockRequest& WithSetupScriptDetails(ScriptDetails&& value) { SetSetupScriptDetails(std::move(value)); return *this;}
 
@@ -287,6 +294,74 @@ namespace Model
      */
     inline CreateAppBlockRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The post setup script details of the app block. This can only be provided for
+     * the <code>APPSTREAM2</code> PackagingType.</p>
+     */
+    inline const ScriptDetails& GetPostSetupScriptDetails() const{ return m_postSetupScriptDetails; }
+
+    /**
+     * <p>The post setup script details of the app block. This can only be provided for
+     * the <code>APPSTREAM2</code> PackagingType.</p>
+     */
+    inline bool PostSetupScriptDetailsHasBeenSet() const { return m_postSetupScriptDetailsHasBeenSet; }
+
+    /**
+     * <p>The post setup script details of the app block. This can only be provided for
+     * the <code>APPSTREAM2</code> PackagingType.</p>
+     */
+    inline void SetPostSetupScriptDetails(const ScriptDetails& value) { m_postSetupScriptDetailsHasBeenSet = true; m_postSetupScriptDetails = value; }
+
+    /**
+     * <p>The post setup script details of the app block. This can only be provided for
+     * the <code>APPSTREAM2</code> PackagingType.</p>
+     */
+    inline void SetPostSetupScriptDetails(ScriptDetails&& value) { m_postSetupScriptDetailsHasBeenSet = true; m_postSetupScriptDetails = std::move(value); }
+
+    /**
+     * <p>The post setup script details of the app block. This can only be provided for
+     * the <code>APPSTREAM2</code> PackagingType.</p>
+     */
+    inline CreateAppBlockRequest& WithPostSetupScriptDetails(const ScriptDetails& value) { SetPostSetupScriptDetails(value); return *this;}
+
+    /**
+     * <p>The post setup script details of the app block. This can only be provided for
+     * the <code>APPSTREAM2</code> PackagingType.</p>
+     */
+    inline CreateAppBlockRequest& WithPostSetupScriptDetails(ScriptDetails&& value) { SetPostSetupScriptDetails(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The packaging type of the app block.</p>
+     */
+    inline const PackagingType& GetPackagingType() const{ return m_packagingType; }
+
+    /**
+     * <p>The packaging type of the app block.</p>
+     */
+    inline bool PackagingTypeHasBeenSet() const { return m_packagingTypeHasBeenSet; }
+
+    /**
+     * <p>The packaging type of the app block.</p>
+     */
+    inline void SetPackagingType(const PackagingType& value) { m_packagingTypeHasBeenSet = true; m_packagingType = value; }
+
+    /**
+     * <p>The packaging type of the app block.</p>
+     */
+    inline void SetPackagingType(PackagingType&& value) { m_packagingTypeHasBeenSet = true; m_packagingType = std::move(value); }
+
+    /**
+     * <p>The packaging type of the app block.</p>
+     */
+    inline CreateAppBlockRequest& WithPackagingType(const PackagingType& value) { SetPackagingType(value); return *this;}
+
+    /**
+     * <p>The packaging type of the app block.</p>
+     */
+    inline CreateAppBlockRequest& WithPackagingType(PackagingType&& value) { SetPackagingType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -306,6 +381,12 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    ScriptDetails m_postSetupScriptDetails;
+    bool m_postSetupScriptDetailsHasBeenSet = false;
+
+    PackagingType m_packagingType;
+    bool m_packagingTypeHasBeenSet = false;
   };
 
 } // namespace Model

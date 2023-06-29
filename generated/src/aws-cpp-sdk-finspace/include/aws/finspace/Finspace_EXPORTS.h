@@ -21,9 +21,12 @@
         #else
             #define AWS_FINSPACE_API __declspec(dllimport)
         #endif /* AWS_FINSPACE_EXPORTS */
+        #define AWS_FINSPACE_EXTERN
     #else
         #define AWS_FINSPACE_API
+        #define AWS_FINSPACE_EXTERN extern
     #endif // USE_IMPORT_EXPORT
 #else // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
     #define AWS_FINSPACE_API
+    #define AWS_FINSPACE_EXTERN extern
 #endif // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)

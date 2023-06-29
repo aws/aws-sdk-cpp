@@ -31,8 +31,8 @@ namespace Model
 {
 
   /**
-   * <p>The parameters for an AWS Clean Rooms protected query.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>The parameters for an Clean Rooms protected query.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ProtectedQuery">AWS
    * API Reference</a></p>
    */

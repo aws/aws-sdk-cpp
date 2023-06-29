@@ -122,42 +122,50 @@ namespace Model
 
 
     /**
-     * <p>The unique account ID for the AWS account that owns the schema.</p>
+     * <p>The unique account ID for the Amazon Web Services account that owns the
+     * schema.</p>
      */
     inline const Aws::String& GetCreatorAccountId() const{ return m_creatorAccountId; }
 
     /**
-     * <p>The unique account ID for the AWS account that owns the schema.</p>
+     * <p>The unique account ID for the Amazon Web Services account that owns the
+     * schema.</p>
      */
     inline bool CreatorAccountIdHasBeenSet() const { return m_creatorAccountIdHasBeenSet; }
 
     /**
-     * <p>The unique account ID for the AWS account that owns the schema.</p>
+     * <p>The unique account ID for the Amazon Web Services account that owns the
+     * schema.</p>
      */
     inline void SetCreatorAccountId(const Aws::String& value) { m_creatorAccountIdHasBeenSet = true; m_creatorAccountId = value; }
 
     /**
-     * <p>The unique account ID for the AWS account that owns the schema.</p>
+     * <p>The unique account ID for the Amazon Web Services account that owns the
+     * schema.</p>
      */
     inline void SetCreatorAccountId(Aws::String&& value) { m_creatorAccountIdHasBeenSet = true; m_creatorAccountId = std::move(value); }
 
     /**
-     * <p>The unique account ID for the AWS account that owns the schema.</p>
+     * <p>The unique account ID for the Amazon Web Services account that owns the
+     * schema.</p>
      */
     inline void SetCreatorAccountId(const char* value) { m_creatorAccountIdHasBeenSet = true; m_creatorAccountId.assign(value); }
 
     /**
-     * <p>The unique account ID for the AWS account that owns the schema.</p>
+     * <p>The unique account ID for the Amazon Web Services account that owns the
+     * schema.</p>
      */
     inline SchemaSummary& WithCreatorAccountId(const Aws::String& value) { SetCreatorAccountId(value); return *this;}
 
     /**
-     * <p>The unique account ID for the AWS account that owns the schema.</p>
+     * <p>The unique account ID for the Amazon Web Services account that owns the
+     * schema.</p>
      */
     inline SchemaSummary& WithCreatorAccountId(Aws::String&& value) { SetCreatorAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique account ID for the AWS account that owns the schema.</p>
+     * <p>The unique account ID for the Amazon Web Services account that owns the
+     * schema.</p>
      */
     inline SchemaSummary& WithCreatorAccountId(const char* value) { SetCreatorAccountId(value); return *this;}
 

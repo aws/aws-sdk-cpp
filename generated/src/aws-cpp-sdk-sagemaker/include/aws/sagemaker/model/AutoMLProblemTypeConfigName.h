@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     ImageClassification,
     TextClassification,
-    Tabular
+    Tabular,
+    TimeSeriesForecasting
   };
 
 namespace AutoMLProblemTypeConfigNameMapper

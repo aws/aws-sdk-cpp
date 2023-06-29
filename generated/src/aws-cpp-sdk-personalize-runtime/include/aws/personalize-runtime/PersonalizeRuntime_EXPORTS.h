@@ -21,9 +21,12 @@
         #else
             #define AWS_PERSONALIZERUNTIME_API __declspec(dllimport)
         #endif /* AWS_PERSONALIZERUNTIME_EXPORTS */
+        #define AWS_PERSONALIZERUNTIME_EXTERN
     #else
         #define AWS_PERSONALIZERUNTIME_API
+        #define AWS_PERSONALIZERUNTIME_EXTERN extern
     #endif // USE_IMPORT_EXPORT
 #else // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
     #define AWS_PERSONALIZERUNTIME_API
+    #define AWS_PERSONALIZERUNTIME_EXTERN extern
 #endif // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)

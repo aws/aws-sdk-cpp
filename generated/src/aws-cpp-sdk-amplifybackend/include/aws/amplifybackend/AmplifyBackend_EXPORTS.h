@@ -21,9 +21,12 @@
         #else
             #define AWS_AMPLIFYBACKEND_API __declspec(dllimport)
         #endif /* AWS_AMPLIFYBACKEND_EXPORTS */
+        #define AWS_AMPLIFYBACKEND_EXTERN
     #else
         #define AWS_AMPLIFYBACKEND_API
+        #define AWS_AMPLIFYBACKEND_EXTERN extern
     #endif // USE_IMPORT_EXPORT
 #else // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
     #define AWS_AMPLIFYBACKEND_API
+    #define AWS_AMPLIFYBACKEND_EXTERN extern
 #endif // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)

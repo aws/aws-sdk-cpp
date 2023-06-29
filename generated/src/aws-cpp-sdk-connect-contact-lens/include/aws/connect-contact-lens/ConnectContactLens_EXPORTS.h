@@ -21,9 +21,12 @@
         #else
             #define AWS_CONNECTCONTACTLENS_API __declspec(dllimport)
         #endif /* AWS_CONNECTCONTACTLENS_EXPORTS */
+        #define AWS_CONNECTCONTACTLENS_EXTERN
     #else
         #define AWS_CONNECTCONTACTLENS_API
+        #define AWS_CONNECTCONTACTLENS_EXTERN extern
     #endif // USE_IMPORT_EXPORT
 #else // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
     #define AWS_CONNECTCONTACTLENS_API
+    #define AWS_CONNECTCONTACTLENS_EXTERN extern
 #endif // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)

@@ -21,9 +21,12 @@
         #else
             #define AWS_ELASTICSEARCHSERVICE_API __declspec(dllimport)
         #endif /* AWS_ELASTICSEARCHSERVICE_EXPORTS */
+        #define AWS_ELASTICSEARCHSERVICE_EXTERN
     #else
         #define AWS_ELASTICSEARCHSERVICE_API
+        #define AWS_ELASTICSEARCHSERVICE_EXTERN extern
     #endif // USE_IMPORT_EXPORT
 #else // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
     #define AWS_ELASTICSEARCHSERVICE_API
+    #define AWS_ELASTICSEARCHSERVICE_EXTERN extern
 #endif // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
