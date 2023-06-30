@@ -16,9 +16,9 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 
 DeleteWorkspaceRequest::DeleteWorkspaceRequest() : 
+    m_workspaceIdHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_workspaceIdHasBeenSet(false)
+    m_clientTokenHasBeenSet(true)
 {
 }
 

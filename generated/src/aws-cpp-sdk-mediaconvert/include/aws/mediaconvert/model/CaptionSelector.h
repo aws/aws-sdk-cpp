@@ -45,10 +45,10 @@ namespace Model
      * The specific language to extract from source, using the ISO 639-2 or ISO 639-3
      * three-letter language code. If input is SCTE-27, complete this field and/or PID
      * to select the caption language to extract. If input is DVB-Sub and output is
-     * Burn-in or SMPTE-TT, complete this field and/or PID to select the caption
-     * language to extract. If input is DVB-Sub that is being passed through, omit this
-     * field (and PID field); there is no way to extract a specific language with
-     * pass-through captions.
+     * Burn-in, complete this field and/or PID to select the caption language to
+     * extract. If input is DVB-Sub that is being passed through, omit this field (and
+     * PID field); there is no way to extract a specific language with pass-through
+     * captions.
      */
     inline const Aws::String& GetCustomLanguageCode() const{ return m_customLanguageCode; }
 
@@ -56,10 +56,10 @@ namespace Model
      * The specific language to extract from source, using the ISO 639-2 or ISO 639-3
      * three-letter language code. If input is SCTE-27, complete this field and/or PID
      * to select the caption language to extract. If input is DVB-Sub and output is
-     * Burn-in or SMPTE-TT, complete this field and/or PID to select the caption
-     * language to extract. If input is DVB-Sub that is being passed through, omit this
-     * field (and PID field); there is no way to extract a specific language with
-     * pass-through captions.
+     * Burn-in, complete this field and/or PID to select the caption language to
+     * extract. If input is DVB-Sub that is being passed through, omit this field (and
+     * PID field); there is no way to extract a specific language with pass-through
+     * captions.
      */
     inline bool CustomLanguageCodeHasBeenSet() const { return m_customLanguageCodeHasBeenSet; }
 
@@ -67,10 +67,10 @@ namespace Model
      * The specific language to extract from source, using the ISO 639-2 or ISO 639-3
      * three-letter language code. If input is SCTE-27, complete this field and/or PID
      * to select the caption language to extract. If input is DVB-Sub and output is
-     * Burn-in or SMPTE-TT, complete this field and/or PID to select the caption
-     * language to extract. If input is DVB-Sub that is being passed through, omit this
-     * field (and PID field); there is no way to extract a specific language with
-     * pass-through captions.
+     * Burn-in, complete this field and/or PID to select the caption language to
+     * extract. If input is DVB-Sub that is being passed through, omit this field (and
+     * PID field); there is no way to extract a specific language with pass-through
+     * captions.
      */
     inline void SetCustomLanguageCode(const Aws::String& value) { m_customLanguageCodeHasBeenSet = true; m_customLanguageCode = value; }
 
@@ -78,10 +78,10 @@ namespace Model
      * The specific language to extract from source, using the ISO 639-2 or ISO 639-3
      * three-letter language code. If input is SCTE-27, complete this field and/or PID
      * to select the caption language to extract. If input is DVB-Sub and output is
-     * Burn-in or SMPTE-TT, complete this field and/or PID to select the caption
-     * language to extract. If input is DVB-Sub that is being passed through, omit this
-     * field (and PID field); there is no way to extract a specific language with
-     * pass-through captions.
+     * Burn-in, complete this field and/or PID to select the caption language to
+     * extract. If input is DVB-Sub that is being passed through, omit this field (and
+     * PID field); there is no way to extract a specific language with pass-through
+     * captions.
      */
     inline void SetCustomLanguageCode(Aws::String&& value) { m_customLanguageCodeHasBeenSet = true; m_customLanguageCode = std::move(value); }
 
@@ -89,10 +89,10 @@ namespace Model
      * The specific language to extract from source, using the ISO 639-2 or ISO 639-3
      * three-letter language code. If input is SCTE-27, complete this field and/or PID
      * to select the caption language to extract. If input is DVB-Sub and output is
-     * Burn-in or SMPTE-TT, complete this field and/or PID to select the caption
-     * language to extract. If input is DVB-Sub that is being passed through, omit this
-     * field (and PID field); there is no way to extract a specific language with
-     * pass-through captions.
+     * Burn-in, complete this field and/or PID to select the caption language to
+     * extract. If input is DVB-Sub that is being passed through, omit this field (and
+     * PID field); there is no way to extract a specific language with pass-through
+     * captions.
      */
     inline void SetCustomLanguageCode(const char* value) { m_customLanguageCodeHasBeenSet = true; m_customLanguageCode.assign(value); }
 
@@ -100,10 +100,10 @@ namespace Model
      * The specific language to extract from source, using the ISO 639-2 or ISO 639-3
      * three-letter language code. If input is SCTE-27, complete this field and/or PID
      * to select the caption language to extract. If input is DVB-Sub and output is
-     * Burn-in or SMPTE-TT, complete this field and/or PID to select the caption
-     * language to extract. If input is DVB-Sub that is being passed through, omit this
-     * field (and PID field); there is no way to extract a specific language with
-     * pass-through captions.
+     * Burn-in, complete this field and/or PID to select the caption language to
+     * extract. If input is DVB-Sub that is being passed through, omit this field (and
+     * PID field); there is no way to extract a specific language with pass-through
+     * captions.
      */
     inline CaptionSelector& WithCustomLanguageCode(const Aws::String& value) { SetCustomLanguageCode(value); return *this;}
 
@@ -111,10 +111,10 @@ namespace Model
      * The specific language to extract from source, using the ISO 639-2 or ISO 639-3
      * three-letter language code. If input is SCTE-27, complete this field and/or PID
      * to select the caption language to extract. If input is DVB-Sub and output is
-     * Burn-in or SMPTE-TT, complete this field and/or PID to select the caption
-     * language to extract. If input is DVB-Sub that is being passed through, omit this
-     * field (and PID field); there is no way to extract a specific language with
-     * pass-through captions.
+     * Burn-in, complete this field and/or PID to select the caption language to
+     * extract. If input is DVB-Sub that is being passed through, omit this field (and
+     * PID field); there is no way to extract a specific language with pass-through
+     * captions.
      */
     inline CaptionSelector& WithCustomLanguageCode(Aws::String&& value) { SetCustomLanguageCode(std::move(value)); return *this;}
 
@@ -122,10 +122,10 @@ namespace Model
      * The specific language to extract from source, using the ISO 639-2 or ISO 639-3
      * three-letter language code. If input is SCTE-27, complete this field and/or PID
      * to select the caption language to extract. If input is DVB-Sub and output is
-     * Burn-in or SMPTE-TT, complete this field and/or PID to select the caption
-     * language to extract. If input is DVB-Sub that is being passed through, omit this
-     * field (and PID field); there is no way to extract a specific language with
-     * pass-through captions.
+     * Burn-in, complete this field and/or PID to select the caption language to
+     * extract. If input is DVB-Sub that is being passed through, omit this field (and
+     * PID field); there is no way to extract a specific language with pass-through
+     * captions.
      */
     inline CaptionSelector& WithCustomLanguageCode(const char* value) { SetCustomLanguageCode(value); return *this;}
 
@@ -133,60 +133,60 @@ namespace Model
     /**
      * The specific language to extract from source. If input is SCTE-27, complete this
      * field and/or PID to select the caption language to extract. If input is DVB-Sub
-     * and output is Burn-in or SMPTE-TT, complete this field and/or PID to select the
-     * caption language to extract. If input is DVB-Sub that is being passed through,
-     * omit this field (and PID field); there is no way to extract a specific language
-     * with pass-through captions.
+     * and output is Burn-in, complete this field and/or PID to select the caption
+     * language to extract. If input is DVB-Sub that is being passed through, omit this
+     * field (and PID field); there is no way to extract a specific language with
+     * pass-through captions.
      */
     inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
 
     /**
      * The specific language to extract from source. If input is SCTE-27, complete this
      * field and/or PID to select the caption language to extract. If input is DVB-Sub
-     * and output is Burn-in or SMPTE-TT, complete this field and/or PID to select the
-     * caption language to extract. If input is DVB-Sub that is being passed through,
-     * omit this field (and PID field); there is no way to extract a specific language
-     * with pass-through captions.
+     * and output is Burn-in, complete this field and/or PID to select the caption
+     * language to extract. If input is DVB-Sub that is being passed through, omit this
+     * field (and PID field); there is no way to extract a specific language with
+     * pass-through captions.
      */
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
 
     /**
      * The specific language to extract from source. If input is SCTE-27, complete this
      * field and/or PID to select the caption language to extract. If input is DVB-Sub
-     * and output is Burn-in or SMPTE-TT, complete this field and/or PID to select the
-     * caption language to extract. If input is DVB-Sub that is being passed through,
-     * omit this field (and PID field); there is no way to extract a specific language
-     * with pass-through captions.
+     * and output is Burn-in, complete this field and/or PID to select the caption
+     * language to extract. If input is DVB-Sub that is being passed through, omit this
+     * field (and PID field); there is no way to extract a specific language with
+     * pass-through captions.
      */
     inline void SetLanguageCode(const LanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
 
     /**
      * The specific language to extract from source. If input is SCTE-27, complete this
      * field and/or PID to select the caption language to extract. If input is DVB-Sub
-     * and output is Burn-in or SMPTE-TT, complete this field and/or PID to select the
-     * caption language to extract. If input is DVB-Sub that is being passed through,
-     * omit this field (and PID field); there is no way to extract a specific language
-     * with pass-through captions.
+     * and output is Burn-in, complete this field and/or PID to select the caption
+     * language to extract. If input is DVB-Sub that is being passed through, omit this
+     * field (and PID field); there is no way to extract a specific language with
+     * pass-through captions.
      */
     inline void SetLanguageCode(LanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
 
     /**
      * The specific language to extract from source. If input is SCTE-27, complete this
      * field and/or PID to select the caption language to extract. If input is DVB-Sub
-     * and output is Burn-in or SMPTE-TT, complete this field and/or PID to select the
-     * caption language to extract. If input is DVB-Sub that is being passed through,
-     * omit this field (and PID field); there is no way to extract a specific language
-     * with pass-through captions.
+     * and output is Burn-in, complete this field and/or PID to select the caption
+     * language to extract. If input is DVB-Sub that is being passed through, omit this
+     * field (and PID field); there is no way to extract a specific language with
+     * pass-through captions.
      */
     inline CaptionSelector& WithLanguageCode(const LanguageCode& value) { SetLanguageCode(value); return *this;}
 
     /**
      * The specific language to extract from source. If input is SCTE-27, complete this
      * field and/or PID to select the caption language to extract. If input is DVB-Sub
-     * and output is Burn-in or SMPTE-TT, complete this field and/or PID to select the
-     * caption language to extract. If input is DVB-Sub that is being passed through,
-     * omit this field (and PID field); there is no way to extract a specific language
-     * with pass-through captions.
+     * and output is Burn-in, complete this field and/or PID to select the caption
+     * language to extract. If input is DVB-Sub that is being passed through, omit this
+     * field (and PID field); there is no way to extract a specific language with
+     * pass-through captions.
      */
     inline CaptionSelector& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
 

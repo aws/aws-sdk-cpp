@@ -19,30 +19,37 @@ namespace Model
 {
 
 WorkspaceDescription::WorkspaceDescription() : 
+    m_workspaceIdHasBeenSet(false),
     m_aliasHasBeenSet(false),
     m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_prometheusEndpointHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_workspaceIdHasBeenSet(false)
+    m_prometheusEndpointHasBeenSet(false),
+    m_createdAtHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
 WorkspaceDescription::WorkspaceDescription(JsonView jsonValue) : 
+    m_workspaceIdHasBeenSet(false),
     m_aliasHasBeenSet(false),
     m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_prometheusEndpointHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_workspaceIdHasBeenSet(false)
+    m_prometheusEndpointHasBeenSet(false),
+    m_createdAtHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 WorkspaceDescription& WorkspaceDescription::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("workspaceId"))
+  {
+    m_workspaceId = jsonValue.GetString("workspaceId");
+
+    m_workspaceIdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("alias"))
   {
     m_alias = jsonValue.GetString("alias");
@@ -57,11 +64,11 @@ WorkspaceDescription& WorkspaceDescription::operator =(JsonView jsonValue)
     m_arnHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("createdAt"))
+  if(jsonValue.ValueExists("status"))
   {
-    m_createdAt = jsonValue.GetDouble("createdAt");
+    m_status = jsonValue.GetObject("status");
 
-    m_createdAtHasBeenSet = true;
+    m_statusHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("prometheusEndpoint"))
@@ -71,11 +78,11 @@ WorkspaceDescription& WorkspaceDescription::operator =(JsonView jsonValue)
     m_prometheusEndpointHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("status"))
+  if(jsonValue.ValueExists("createdAt"))
   {
-    m_status = jsonValue.GetObject("status");
+    m_createdAt = jsonValue.GetDouble("createdAt");
 
-    m_statusHasBeenSet = true;
+    m_createdAtHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("tags"))
@@ -88,19 +95,18 @@ WorkspaceDescription& WorkspaceDescription::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("workspaceId"))
-  {
-    m_workspaceId = jsonValue.GetString("workspaceId");
-
-    m_workspaceIdHasBeenSet = true;
-  }
-
   return *this;
 }
 
 JsonValue WorkspaceDescription::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_workspaceIdHasBeenSet)
+  {
+   payload.WithString("workspaceId", m_workspaceId);
+
+  }
 
   if(m_aliasHasBeenSet)
   {
@@ -114,9 +120,10 @@ JsonValue WorkspaceDescription::Jsonize() const
 
   }
 
-  if(m_createdAtHasBeenSet)
+  if(m_statusHasBeenSet)
   {
-   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
+   payload.WithObject("status", m_status.Jsonize());
+
   }
 
   if(m_prometheusEndpointHasBeenSet)
@@ -125,10 +132,9 @@ JsonValue WorkspaceDescription::Jsonize() const
 
   }
 
-  if(m_statusHasBeenSet)
+  if(m_createdAtHasBeenSet)
   {
-   payload.WithObject("status", m_status.Jsonize());
-
+   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
   }
 
   if(m_tagsHasBeenSet)
@@ -139,12 +145,6 @@ JsonValue WorkspaceDescription::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
-
-  }
-
-  if(m_workspaceIdHasBeenSet)
-  {
-   payload.WithString("workspaceId", m_workspaceId);
 
   }
 

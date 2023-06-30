@@ -277,7 +277,12 @@ namespace Model
      * write access to the parent directory of the file location used in the
      * <code>StartFileTransfer</code> request. Additionally, you need to provide read
      * and write access to the parent directory of the files that you intend to send
-     * with <code>StartFileTransfer</code>.</p>
+     * with <code>StartFileTransfer</code>.</p> <p>If you are using Basic
+     * authentication for your AS2 connector, the access role requires the
+     * <code>secretsmanager:GetSecretValue</code> permission for the secret. If the
+     * secret is encrypted using a customer-managed key instead of the Amazon Web
+     * Services managed key in Secrets Manager, then the role also needs the
+     * <code>kms:Decrypt</code> permission for that key.</p>
      */
     inline const Aws::String& GetAccessRole() const{ return m_accessRole; }
 
@@ -292,7 +297,12 @@ namespace Model
      * write access to the parent directory of the file location used in the
      * <code>StartFileTransfer</code> request. Additionally, you need to provide read
      * and write access to the parent directory of the files that you intend to send
-     * with <code>StartFileTransfer</code>.</p>
+     * with <code>StartFileTransfer</code>.</p> <p>If you are using Basic
+     * authentication for your AS2 connector, the access role requires the
+     * <code>secretsmanager:GetSecretValue</code> permission for the secret. If the
+     * secret is encrypted using a customer-managed key instead of the Amazon Web
+     * Services managed key in Secrets Manager, then the role also needs the
+     * <code>kms:Decrypt</code> permission for that key.</p>
      */
     inline bool AccessRoleHasBeenSet() const { return m_accessRoleHasBeenSet; }
 
@@ -307,7 +317,12 @@ namespace Model
      * write access to the parent directory of the file location used in the
      * <code>StartFileTransfer</code> request. Additionally, you need to provide read
      * and write access to the parent directory of the files that you intend to send
-     * with <code>StartFileTransfer</code>.</p>
+     * with <code>StartFileTransfer</code>.</p> <p>If you are using Basic
+     * authentication for your AS2 connector, the access role requires the
+     * <code>secretsmanager:GetSecretValue</code> permission for the secret. If the
+     * secret is encrypted using a customer-managed key instead of the Amazon Web
+     * Services managed key in Secrets Manager, then the role also needs the
+     * <code>kms:Decrypt</code> permission for that key.</p>
      */
     inline void SetAccessRole(const Aws::String& value) { m_accessRoleHasBeenSet = true; m_accessRole = value; }
 
@@ -322,7 +337,12 @@ namespace Model
      * write access to the parent directory of the file location used in the
      * <code>StartFileTransfer</code> request. Additionally, you need to provide read
      * and write access to the parent directory of the files that you intend to send
-     * with <code>StartFileTransfer</code>.</p>
+     * with <code>StartFileTransfer</code>.</p> <p>If you are using Basic
+     * authentication for your AS2 connector, the access role requires the
+     * <code>secretsmanager:GetSecretValue</code> permission for the secret. If the
+     * secret is encrypted using a customer-managed key instead of the Amazon Web
+     * Services managed key in Secrets Manager, then the role also needs the
+     * <code>kms:Decrypt</code> permission for that key.</p>
      */
     inline void SetAccessRole(Aws::String&& value) { m_accessRoleHasBeenSet = true; m_accessRole = std::move(value); }
 
@@ -337,7 +357,12 @@ namespace Model
      * write access to the parent directory of the file location used in the
      * <code>StartFileTransfer</code> request. Additionally, you need to provide read
      * and write access to the parent directory of the files that you intend to send
-     * with <code>StartFileTransfer</code>.</p>
+     * with <code>StartFileTransfer</code>.</p> <p>If you are using Basic
+     * authentication for your AS2 connector, the access role requires the
+     * <code>secretsmanager:GetSecretValue</code> permission for the secret. If the
+     * secret is encrypted using a customer-managed key instead of the Amazon Web
+     * Services managed key in Secrets Manager, then the role also needs the
+     * <code>kms:Decrypt</code> permission for that key.</p>
      */
     inline void SetAccessRole(const char* value) { m_accessRoleHasBeenSet = true; m_accessRole.assign(value); }
 
@@ -352,7 +377,12 @@ namespace Model
      * write access to the parent directory of the file location used in the
      * <code>StartFileTransfer</code> request. Additionally, you need to provide read
      * and write access to the parent directory of the files that you intend to send
-     * with <code>StartFileTransfer</code>.</p>
+     * with <code>StartFileTransfer</code>.</p> <p>If you are using Basic
+     * authentication for your AS2 connector, the access role requires the
+     * <code>secretsmanager:GetSecretValue</code> permission for the secret. If the
+     * secret is encrypted using a customer-managed key instead of the Amazon Web
+     * Services managed key in Secrets Manager, then the role also needs the
+     * <code>kms:Decrypt</code> permission for that key.</p>
      */
     inline CreateAgreementRequest& WithAccessRole(const Aws::String& value) { SetAccessRole(value); return *this;}
 
@@ -367,7 +397,12 @@ namespace Model
      * write access to the parent directory of the file location used in the
      * <code>StartFileTransfer</code> request. Additionally, you need to provide read
      * and write access to the parent directory of the files that you intend to send
-     * with <code>StartFileTransfer</code>.</p>
+     * with <code>StartFileTransfer</code>.</p> <p>If you are using Basic
+     * authentication for your AS2 connector, the access role requires the
+     * <code>secretsmanager:GetSecretValue</code> permission for the secret. If the
+     * secret is encrypted using a customer-managed key instead of the Amazon Web
+     * Services managed key in Secrets Manager, then the role also needs the
+     * <code>kms:Decrypt</code> permission for that key.</p>
      */
     inline CreateAgreementRequest& WithAccessRole(Aws::String&& value) { SetAccessRole(std::move(value)); return *this;}
 
@@ -382,7 +417,12 @@ namespace Model
      * write access to the parent directory of the file location used in the
      * <code>StartFileTransfer</code> request. Additionally, you need to provide read
      * and write access to the parent directory of the files that you intend to send
-     * with <code>StartFileTransfer</code>.</p>
+     * with <code>StartFileTransfer</code>.</p> <p>If you are using Basic
+     * authentication for your AS2 connector, the access role requires the
+     * <code>secretsmanager:GetSecretValue</code> permission for the secret. If the
+     * secret is encrypted using a customer-managed key instead of the Amazon Web
+     * Services managed key in Secrets Manager, then the role also needs the
+     * <code>kms:Decrypt</code> permission for that key.</p>
      */
     inline CreateAgreementRequest& WithAccessRole(const char* value) { SetAccessRole(value); return *this;}
 

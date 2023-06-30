@@ -164,32 +164,32 @@ namespace Model
 
 
     /**
-     * Enable HDR10+ analyis and metadata injection. Compatible with HEVC only.
+     * Enable HDR10+ analysis and metadata injection. Compatible with HEVC only.
      */
     inline const Hdr10Plus& GetHdr10Plus() const{ return m_hdr10Plus; }
 
     /**
-     * Enable HDR10+ analyis and metadata injection. Compatible with HEVC only.
+     * Enable HDR10+ analysis and metadata injection. Compatible with HEVC only.
      */
     inline bool Hdr10PlusHasBeenSet() const { return m_hdr10PlusHasBeenSet; }
 
     /**
-     * Enable HDR10+ analyis and metadata injection. Compatible with HEVC only.
+     * Enable HDR10+ analysis and metadata injection. Compatible with HEVC only.
      */
     inline void SetHdr10Plus(const Hdr10Plus& value) { m_hdr10PlusHasBeenSet = true; m_hdr10Plus = value; }
 
     /**
-     * Enable HDR10+ analyis and metadata injection. Compatible with HEVC only.
+     * Enable HDR10+ analysis and metadata injection. Compatible with HEVC only.
      */
     inline void SetHdr10Plus(Hdr10Plus&& value) { m_hdr10PlusHasBeenSet = true; m_hdr10Plus = std::move(value); }
 
     /**
-     * Enable HDR10+ analyis and metadata injection. Compatible with HEVC only.
+     * Enable HDR10+ analysis and metadata injection. Compatible with HEVC only.
      */
     inline VideoPreprocessor& WithHdr10Plus(const Hdr10Plus& value) { SetHdr10Plus(value); return *this;}
 
     /**
-     * Enable HDR10+ analyis and metadata injection. Compatible with HEVC only.
+     * Enable HDR10+ analysis and metadata injection. Compatible with HEVC only.
      */
     inline VideoPreprocessor& WithHdr10Plus(Hdr10Plus&& value) { SetHdr10Plus(std::move(value)); return *this;}
 

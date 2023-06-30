@@ -389,6 +389,199 @@ namespace Model
      */
     inline As2ConnectorConfig& WithMdnResponse(MdnResponse&& value) { SetMdnResponse(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Provides Basic authentication support to the AS2 Connectors API. To use Basic
+     * authentication, you must provide the name or Amazon Resource Name (ARN) of a
+     * secret in Secrets Manager.</p> <p>The default value for this parameter is
+     * <code>null</code>, which indicates that Basic authentication is not enabled for
+     * the connector.</p> <p>If the connector should use Basic authentication, the
+     * secret needs to be in the following format:</p> <p> <code>{ "Username":
+     * "user-name", "Password": "user-password" }</code> </p> <p>Replace
+     * <code>user-name</code> and <code>user-password</code> with the credentials for
+     * the actual user that is being authenticated.</p> <p>Note the following:</p> <ul>
+     * <li> <p>You are storing these credentials in Secrets Manager, <i>not passing
+     * them directly</i> into this API.</p> </li> <li> <p>If you are using the API,
+     * SDKs, or CloudFormation to configure your connector, then you must create the
+     * secret before you can enable Basic authentication. However, if you are using the
+     * Amazon Web Services management console, you can have the system create the
+     * secret for you.</p> </li> </ul> <p>If you have previously enabled Basic
+     * authentication for a connector, you can disable it by using the
+     * <code>UpdateConnector</code> API call. For example, if you are using the CLI,
+     * you can run the following command to remove Basic authentication:</p> <p>
+     * <code>update-connector --connector-id my-connector-id --as2-config
+     * 'BasicAuthSecretId=""'</code> </p>
+     */
+    inline const Aws::String& GetBasicAuthSecretId() const{ return m_basicAuthSecretId; }
+
+    /**
+     * <p>Provides Basic authentication support to the AS2 Connectors API. To use Basic
+     * authentication, you must provide the name or Amazon Resource Name (ARN) of a
+     * secret in Secrets Manager.</p> <p>The default value for this parameter is
+     * <code>null</code>, which indicates that Basic authentication is not enabled for
+     * the connector.</p> <p>If the connector should use Basic authentication, the
+     * secret needs to be in the following format:</p> <p> <code>{ "Username":
+     * "user-name", "Password": "user-password" }</code> </p> <p>Replace
+     * <code>user-name</code> and <code>user-password</code> with the credentials for
+     * the actual user that is being authenticated.</p> <p>Note the following:</p> <ul>
+     * <li> <p>You are storing these credentials in Secrets Manager, <i>not passing
+     * them directly</i> into this API.</p> </li> <li> <p>If you are using the API,
+     * SDKs, or CloudFormation to configure your connector, then you must create the
+     * secret before you can enable Basic authentication. However, if you are using the
+     * Amazon Web Services management console, you can have the system create the
+     * secret for you.</p> </li> </ul> <p>If you have previously enabled Basic
+     * authentication for a connector, you can disable it by using the
+     * <code>UpdateConnector</code> API call. For example, if you are using the CLI,
+     * you can run the following command to remove Basic authentication:</p> <p>
+     * <code>update-connector --connector-id my-connector-id --as2-config
+     * 'BasicAuthSecretId=""'</code> </p>
+     */
+    inline bool BasicAuthSecretIdHasBeenSet() const { return m_basicAuthSecretIdHasBeenSet; }
+
+    /**
+     * <p>Provides Basic authentication support to the AS2 Connectors API. To use Basic
+     * authentication, you must provide the name or Amazon Resource Name (ARN) of a
+     * secret in Secrets Manager.</p> <p>The default value for this parameter is
+     * <code>null</code>, which indicates that Basic authentication is not enabled for
+     * the connector.</p> <p>If the connector should use Basic authentication, the
+     * secret needs to be in the following format:</p> <p> <code>{ "Username":
+     * "user-name", "Password": "user-password" }</code> </p> <p>Replace
+     * <code>user-name</code> and <code>user-password</code> with the credentials for
+     * the actual user that is being authenticated.</p> <p>Note the following:</p> <ul>
+     * <li> <p>You are storing these credentials in Secrets Manager, <i>not passing
+     * them directly</i> into this API.</p> </li> <li> <p>If you are using the API,
+     * SDKs, or CloudFormation to configure your connector, then you must create the
+     * secret before you can enable Basic authentication. However, if you are using the
+     * Amazon Web Services management console, you can have the system create the
+     * secret for you.</p> </li> </ul> <p>If you have previously enabled Basic
+     * authentication for a connector, you can disable it by using the
+     * <code>UpdateConnector</code> API call. For example, if you are using the CLI,
+     * you can run the following command to remove Basic authentication:</p> <p>
+     * <code>update-connector --connector-id my-connector-id --as2-config
+     * 'BasicAuthSecretId=""'</code> </p>
+     */
+    inline void SetBasicAuthSecretId(const Aws::String& value) { m_basicAuthSecretIdHasBeenSet = true; m_basicAuthSecretId = value; }
+
+    /**
+     * <p>Provides Basic authentication support to the AS2 Connectors API. To use Basic
+     * authentication, you must provide the name or Amazon Resource Name (ARN) of a
+     * secret in Secrets Manager.</p> <p>The default value for this parameter is
+     * <code>null</code>, which indicates that Basic authentication is not enabled for
+     * the connector.</p> <p>If the connector should use Basic authentication, the
+     * secret needs to be in the following format:</p> <p> <code>{ "Username":
+     * "user-name", "Password": "user-password" }</code> </p> <p>Replace
+     * <code>user-name</code> and <code>user-password</code> with the credentials for
+     * the actual user that is being authenticated.</p> <p>Note the following:</p> <ul>
+     * <li> <p>You are storing these credentials in Secrets Manager, <i>not passing
+     * them directly</i> into this API.</p> </li> <li> <p>If you are using the API,
+     * SDKs, or CloudFormation to configure your connector, then you must create the
+     * secret before you can enable Basic authentication. However, if you are using the
+     * Amazon Web Services management console, you can have the system create the
+     * secret for you.</p> </li> </ul> <p>If you have previously enabled Basic
+     * authentication for a connector, you can disable it by using the
+     * <code>UpdateConnector</code> API call. For example, if you are using the CLI,
+     * you can run the following command to remove Basic authentication:</p> <p>
+     * <code>update-connector --connector-id my-connector-id --as2-config
+     * 'BasicAuthSecretId=""'</code> </p>
+     */
+    inline void SetBasicAuthSecretId(Aws::String&& value) { m_basicAuthSecretIdHasBeenSet = true; m_basicAuthSecretId = std::move(value); }
+
+    /**
+     * <p>Provides Basic authentication support to the AS2 Connectors API. To use Basic
+     * authentication, you must provide the name or Amazon Resource Name (ARN) of a
+     * secret in Secrets Manager.</p> <p>The default value for this parameter is
+     * <code>null</code>, which indicates that Basic authentication is not enabled for
+     * the connector.</p> <p>If the connector should use Basic authentication, the
+     * secret needs to be in the following format:</p> <p> <code>{ "Username":
+     * "user-name", "Password": "user-password" }</code> </p> <p>Replace
+     * <code>user-name</code> and <code>user-password</code> with the credentials for
+     * the actual user that is being authenticated.</p> <p>Note the following:</p> <ul>
+     * <li> <p>You are storing these credentials in Secrets Manager, <i>not passing
+     * them directly</i> into this API.</p> </li> <li> <p>If you are using the API,
+     * SDKs, or CloudFormation to configure your connector, then you must create the
+     * secret before you can enable Basic authentication. However, if you are using the
+     * Amazon Web Services management console, you can have the system create the
+     * secret for you.</p> </li> </ul> <p>If you have previously enabled Basic
+     * authentication for a connector, you can disable it by using the
+     * <code>UpdateConnector</code> API call. For example, if you are using the CLI,
+     * you can run the following command to remove Basic authentication:</p> <p>
+     * <code>update-connector --connector-id my-connector-id --as2-config
+     * 'BasicAuthSecretId=""'</code> </p>
+     */
+    inline void SetBasicAuthSecretId(const char* value) { m_basicAuthSecretIdHasBeenSet = true; m_basicAuthSecretId.assign(value); }
+
+    /**
+     * <p>Provides Basic authentication support to the AS2 Connectors API. To use Basic
+     * authentication, you must provide the name or Amazon Resource Name (ARN) of a
+     * secret in Secrets Manager.</p> <p>The default value for this parameter is
+     * <code>null</code>, which indicates that Basic authentication is not enabled for
+     * the connector.</p> <p>If the connector should use Basic authentication, the
+     * secret needs to be in the following format:</p> <p> <code>{ "Username":
+     * "user-name", "Password": "user-password" }</code> </p> <p>Replace
+     * <code>user-name</code> and <code>user-password</code> with the credentials for
+     * the actual user that is being authenticated.</p> <p>Note the following:</p> <ul>
+     * <li> <p>You are storing these credentials in Secrets Manager, <i>not passing
+     * them directly</i> into this API.</p> </li> <li> <p>If you are using the API,
+     * SDKs, or CloudFormation to configure your connector, then you must create the
+     * secret before you can enable Basic authentication. However, if you are using the
+     * Amazon Web Services management console, you can have the system create the
+     * secret for you.</p> </li> </ul> <p>If you have previously enabled Basic
+     * authentication for a connector, you can disable it by using the
+     * <code>UpdateConnector</code> API call. For example, if you are using the CLI,
+     * you can run the following command to remove Basic authentication:</p> <p>
+     * <code>update-connector --connector-id my-connector-id --as2-config
+     * 'BasicAuthSecretId=""'</code> </p>
+     */
+    inline As2ConnectorConfig& WithBasicAuthSecretId(const Aws::String& value) { SetBasicAuthSecretId(value); return *this;}
+
+    /**
+     * <p>Provides Basic authentication support to the AS2 Connectors API. To use Basic
+     * authentication, you must provide the name or Amazon Resource Name (ARN) of a
+     * secret in Secrets Manager.</p> <p>The default value for this parameter is
+     * <code>null</code>, which indicates that Basic authentication is not enabled for
+     * the connector.</p> <p>If the connector should use Basic authentication, the
+     * secret needs to be in the following format:</p> <p> <code>{ "Username":
+     * "user-name", "Password": "user-password" }</code> </p> <p>Replace
+     * <code>user-name</code> and <code>user-password</code> with the credentials for
+     * the actual user that is being authenticated.</p> <p>Note the following:</p> <ul>
+     * <li> <p>You are storing these credentials in Secrets Manager, <i>not passing
+     * them directly</i> into this API.</p> </li> <li> <p>If you are using the API,
+     * SDKs, or CloudFormation to configure your connector, then you must create the
+     * secret before you can enable Basic authentication. However, if you are using the
+     * Amazon Web Services management console, you can have the system create the
+     * secret for you.</p> </li> </ul> <p>If you have previously enabled Basic
+     * authentication for a connector, you can disable it by using the
+     * <code>UpdateConnector</code> API call. For example, if you are using the CLI,
+     * you can run the following command to remove Basic authentication:</p> <p>
+     * <code>update-connector --connector-id my-connector-id --as2-config
+     * 'BasicAuthSecretId=""'</code> </p>
+     */
+    inline As2ConnectorConfig& WithBasicAuthSecretId(Aws::String&& value) { SetBasicAuthSecretId(std::move(value)); return *this;}
+
+    /**
+     * <p>Provides Basic authentication support to the AS2 Connectors API. To use Basic
+     * authentication, you must provide the name or Amazon Resource Name (ARN) of a
+     * secret in Secrets Manager.</p> <p>The default value for this parameter is
+     * <code>null</code>, which indicates that Basic authentication is not enabled for
+     * the connector.</p> <p>If the connector should use Basic authentication, the
+     * secret needs to be in the following format:</p> <p> <code>{ "Username":
+     * "user-name", "Password": "user-password" }</code> </p> <p>Replace
+     * <code>user-name</code> and <code>user-password</code> with the credentials for
+     * the actual user that is being authenticated.</p> <p>Note the following:</p> <ul>
+     * <li> <p>You are storing these credentials in Secrets Manager, <i>not passing
+     * them directly</i> into this API.</p> </li> <li> <p>If you are using the API,
+     * SDKs, or CloudFormation to configure your connector, then you must create the
+     * secret before you can enable Basic authentication. However, if you are using the
+     * Amazon Web Services management console, you can have the system create the
+     * secret for you.</p> </li> </ul> <p>If you have previously enabled Basic
+     * authentication for a connector, you can disable it by using the
+     * <code>UpdateConnector</code> API call. For example, if you are using the CLI,
+     * you can run the following command to remove Basic authentication:</p> <p>
+     * <code>update-connector --connector-id my-connector-id --as2-config
+     * 'BasicAuthSecretId=""'</code> </p>
+     */
+    inline As2ConnectorConfig& WithBasicAuthSecretId(const char* value) { SetBasicAuthSecretId(value); return *this;}
+
   private:
 
     Aws::String m_localProfileId;
@@ -414,6 +607,9 @@ namespace Model
 
     MdnResponse m_mdnResponse;
     bool m_mdnResponseHasBeenSet = false;
+
+    Aws::String m_basicAuthSecretId;
+    bool m_basicAuthSecretIdHasBeenSet = false;
   };
 
 } // namespace Model

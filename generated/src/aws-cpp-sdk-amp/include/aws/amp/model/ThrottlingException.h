@@ -79,6 +79,47 @@ namespace Model
 
 
     /**
+     * <p>Service Quotas requirement to identify originating service.</p>
+     */
+    inline const Aws::String& GetServiceCode() const{ return m_serviceCode; }
+
+    /**
+     * <p>Service Quotas requirement to identify originating service.</p>
+     */
+    inline bool ServiceCodeHasBeenSet() const { return m_serviceCodeHasBeenSet; }
+
+    /**
+     * <p>Service Quotas requirement to identify originating service.</p>
+     */
+    inline void SetServiceCode(const Aws::String& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = value; }
+
+    /**
+     * <p>Service Quotas requirement to identify originating service.</p>
+     */
+    inline void SetServiceCode(Aws::String&& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = std::move(value); }
+
+    /**
+     * <p>Service Quotas requirement to identify originating service.</p>
+     */
+    inline void SetServiceCode(const char* value) { m_serviceCodeHasBeenSet = true; m_serviceCode.assign(value); }
+
+    /**
+     * <p>Service Quotas requirement to identify originating service.</p>
+     */
+    inline ThrottlingException& WithServiceCode(const Aws::String& value) { SetServiceCode(value); return *this;}
+
+    /**
+     * <p>Service Quotas requirement to identify originating service.</p>
+     */
+    inline ThrottlingException& WithServiceCode(Aws::String&& value) { SetServiceCode(std::move(value)); return *this;}
+
+    /**
+     * <p>Service Quotas requirement to identify originating service.</p>
+     */
+    inline ThrottlingException& WithServiceCode(const char* value) { SetServiceCode(value); return *this;}
+
+
+    /**
      * <p>Service Quotas requirement to identify originating quota.</p>
      */
     inline const Aws::String& GetQuotaCode() const{ return m_quotaCode; }
@@ -139,60 +180,19 @@ namespace Model
      */
     inline ThrottlingException& WithRetryAfterSeconds(int value) { SetRetryAfterSeconds(value); return *this;}
 
-
-    /**
-     * <p>Service Quotas requirement to identify originating service.</p>
-     */
-    inline const Aws::String& GetServiceCode() const{ return m_serviceCode; }
-
-    /**
-     * <p>Service Quotas requirement to identify originating service.</p>
-     */
-    inline bool ServiceCodeHasBeenSet() const { return m_serviceCodeHasBeenSet; }
-
-    /**
-     * <p>Service Quotas requirement to identify originating service.</p>
-     */
-    inline void SetServiceCode(const Aws::String& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = value; }
-
-    /**
-     * <p>Service Quotas requirement to identify originating service.</p>
-     */
-    inline void SetServiceCode(Aws::String&& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = std::move(value); }
-
-    /**
-     * <p>Service Quotas requirement to identify originating service.</p>
-     */
-    inline void SetServiceCode(const char* value) { m_serviceCodeHasBeenSet = true; m_serviceCode.assign(value); }
-
-    /**
-     * <p>Service Quotas requirement to identify originating service.</p>
-     */
-    inline ThrottlingException& WithServiceCode(const Aws::String& value) { SetServiceCode(value); return *this;}
-
-    /**
-     * <p>Service Quotas requirement to identify originating service.</p>
-     */
-    inline ThrottlingException& WithServiceCode(Aws::String&& value) { SetServiceCode(std::move(value)); return *this;}
-
-    /**
-     * <p>Service Quotas requirement to identify originating service.</p>
-     */
-    inline ThrottlingException& WithServiceCode(const char* value) { SetServiceCode(value); return *this;}
-
   private:
 
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
+
+    Aws::String m_serviceCode;
+    bool m_serviceCodeHasBeenSet = false;
 
     Aws::String m_quotaCode;
     bool m_quotaCodeHasBeenSet = false;
 
     int m_retryAfterSeconds;
     bool m_retryAfterSecondsHasBeenSet = false;
-
-    Aws::String m_serviceCode;
-    bool m_serviceCodeHasBeenSet = false;
   };
 
 } // namespace Model

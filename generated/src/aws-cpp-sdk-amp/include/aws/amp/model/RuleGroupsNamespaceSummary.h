@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/amp/PrometheusService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/amp/model/RuleGroupsNamespaceStatus.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -83,68 +83,6 @@ namespace Model
 
 
     /**
-     * <p>The time when the rule groups namespace was created.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-
-    /**
-     * <p>The time when the rule groups namespace was created.</p>
-     */
-    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-
-    /**
-     * <p>The time when the rule groups namespace was created.</p>
-     */
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-
-    /**
-     * <p>The time when the rule groups namespace was created.</p>
-     */
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-
-    /**
-     * <p>The time when the rule groups namespace was created.</p>
-     */
-    inline RuleGroupsNamespaceSummary& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-
-    /**
-     * <p>The time when the rule groups namespace was created.</p>
-     */
-    inline RuleGroupsNamespaceSummary& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The time when the rule groups namespace was modified.</p>
-     */
-    inline const Aws::Utils::DateTime& GetModifiedAt() const{ return m_modifiedAt; }
-
-    /**
-     * <p>The time when the rule groups namespace was modified.</p>
-     */
-    inline bool ModifiedAtHasBeenSet() const { return m_modifiedAtHasBeenSet; }
-
-    /**
-     * <p>The time when the rule groups namespace was modified.</p>
-     */
-    inline void SetModifiedAt(const Aws::Utils::DateTime& value) { m_modifiedAtHasBeenSet = true; m_modifiedAt = value; }
-
-    /**
-     * <p>The time when the rule groups namespace was modified.</p>
-     */
-    inline void SetModifiedAt(Aws::Utils::DateTime&& value) { m_modifiedAtHasBeenSet = true; m_modifiedAt = std::move(value); }
-
-    /**
-     * <p>The time when the rule groups namespace was modified.</p>
-     */
-    inline RuleGroupsNamespaceSummary& WithModifiedAt(const Aws::Utils::DateTime& value) { SetModifiedAt(value); return *this;}
-
-    /**
-     * <p>The time when the rule groups namespace was modified.</p>
-     */
-    inline RuleGroupsNamespaceSummary& WithModifiedAt(Aws::Utils::DateTime&& value) { SetModifiedAt(std::move(value)); return *this;}
-
-
-    /**
      * <p>The rule groups namespace name.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -217,6 +155,68 @@ namespace Model
 
 
     /**
+     * <p>The time when the rule groups namespace was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+
+    /**
+     * <p>The time when the rule groups namespace was created.</p>
+     */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+
+    /**
+     * <p>The time when the rule groups namespace was created.</p>
+     */
+    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
+
+    /**
+     * <p>The time when the rule groups namespace was created.</p>
+     */
+    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
+
+    /**
+     * <p>The time when the rule groups namespace was created.</p>
+     */
+    inline RuleGroupsNamespaceSummary& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
+
+    /**
+     * <p>The time when the rule groups namespace was created.</p>
+     */
+    inline RuleGroupsNamespaceSummary& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The time when the rule groups namespace was modified.</p>
+     */
+    inline const Aws::Utils::DateTime& GetModifiedAt() const{ return m_modifiedAt; }
+
+    /**
+     * <p>The time when the rule groups namespace was modified.</p>
+     */
+    inline bool ModifiedAtHasBeenSet() const { return m_modifiedAtHasBeenSet; }
+
+    /**
+     * <p>The time when the rule groups namespace was modified.</p>
+     */
+    inline void SetModifiedAt(const Aws::Utils::DateTime& value) { m_modifiedAtHasBeenSet = true; m_modifiedAt = value; }
+
+    /**
+     * <p>The time when the rule groups namespace was modified.</p>
+     */
+    inline void SetModifiedAt(Aws::Utils::DateTime&& value) { m_modifiedAtHasBeenSet = true; m_modifiedAt = std::move(value); }
+
+    /**
+     * <p>The time when the rule groups namespace was modified.</p>
+     */
+    inline RuleGroupsNamespaceSummary& WithModifiedAt(const Aws::Utils::DateTime& value) { SetModifiedAt(value); return *this;}
+
+    /**
+     * <p>The time when the rule groups namespace was modified.</p>
+     */
+    inline RuleGroupsNamespaceSummary& WithModifiedAt(Aws::Utils::DateTime&& value) { SetModifiedAt(std::move(value)); return *this;}
+
+
+    /**
      * <p>The tags of this rule groups namespace.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
@@ -286,17 +286,17 @@ namespace Model
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet = false;
-
-    Aws::Utils::DateTime m_modifiedAt;
-    bool m_modifiedAtHasBeenSet = false;
-
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
     RuleGroupsNamespaceStatus m_status;
     bool m_statusHasBeenSet = false;
+
+    Aws::Utils::DateTime m_createdAt;
+    bool m_createdAtHasBeenSet = false;
+
+    Aws::Utils::DateTime m_modifiedAt;
+    bool m_modifiedAtHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
