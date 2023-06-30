@@ -31,7 +31,8 @@ As2ConnectorConfig::As2ConnectorConfig() :
     m_mdnSigningAlgorithm(MdnSigningAlg::NOT_SET),
     m_mdnSigningAlgorithmHasBeenSet(false),
     m_mdnResponse(MdnResponse::NOT_SET),
-    m_mdnResponseHasBeenSet(false)
+    m_mdnResponseHasBeenSet(false),
+    m_basicAuthSecretIdHasBeenSet(false)
 {
 }
 
@@ -48,7 +49,8 @@ As2ConnectorConfig::As2ConnectorConfig(JsonView jsonValue) :
     m_mdnSigningAlgorithm(MdnSigningAlg::NOT_SET),
     m_mdnSigningAlgorithmHasBeenSet(false),
     m_mdnResponse(MdnResponse::NOT_SET),
-    m_mdnResponseHasBeenSet(false)
+    m_mdnResponseHasBeenSet(false),
+    m_basicAuthSecretIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -111,6 +113,13 @@ As2ConnectorConfig& As2ConnectorConfig::operator =(JsonView jsonValue)
     m_mdnResponseHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("BasicAuthSecretId"))
+  {
+    m_basicAuthSecretId = jsonValue.GetString("BasicAuthSecretId");
+
+    m_basicAuthSecretIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -159,6 +168,12 @@ JsonValue As2ConnectorConfig::Jsonize() const
   if(m_mdnResponseHasBeenSet)
   {
    payload.WithString("MdnResponse", MdnResponseMapper::GetNameForMdnResponse(m_mdnResponse));
+  }
+
+  if(m_basicAuthSecretIdHasBeenSet)
+  {
+   payload.WithString("BasicAuthSecretId", m_basicAuthSecretId);
+
   }
 
   return payload;

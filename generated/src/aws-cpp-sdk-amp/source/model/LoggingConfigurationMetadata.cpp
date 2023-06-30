@@ -19,47 +19,26 @@ namespace Model
 {
 
 LoggingConfigurationMetadata::LoggingConfigurationMetadata() : 
-    m_createdAtHasBeenSet(false),
-    m_logGroupArnHasBeenSet(false),
-    m_modifiedAtHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_workspaceHasBeenSet(false)
+    m_workspaceHasBeenSet(false),
+    m_logGroupArnHasBeenSet(false),
+    m_createdAtHasBeenSet(false),
+    m_modifiedAtHasBeenSet(false)
 {
 }
 
 LoggingConfigurationMetadata::LoggingConfigurationMetadata(JsonView jsonValue) : 
-    m_createdAtHasBeenSet(false),
-    m_logGroupArnHasBeenSet(false),
-    m_modifiedAtHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_workspaceHasBeenSet(false)
+    m_workspaceHasBeenSet(false),
+    m_logGroupArnHasBeenSet(false),
+    m_createdAtHasBeenSet(false),
+    m_modifiedAtHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 LoggingConfigurationMetadata& LoggingConfigurationMetadata::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("createdAt"))
-  {
-    m_createdAt = jsonValue.GetDouble("createdAt");
-
-    m_createdAtHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("logGroupArn"))
-  {
-    m_logGroupArn = jsonValue.GetString("logGroupArn");
-
-    m_logGroupArnHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("modifiedAt"))
-  {
-    m_modifiedAt = jsonValue.GetDouble("modifiedAt");
-
-    m_modifiedAtHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetObject("status");
@@ -74,28 +53,33 @@ LoggingConfigurationMetadata& LoggingConfigurationMetadata::operator =(JsonView 
     m_workspaceHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("logGroupArn"))
+  {
+    m_logGroupArn = jsonValue.GetString("logGroupArn");
+
+    m_logGroupArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("createdAt"))
+  {
+    m_createdAt = jsonValue.GetDouble("createdAt");
+
+    m_createdAtHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("modifiedAt"))
+  {
+    m_modifiedAt = jsonValue.GetDouble("modifiedAt");
+
+    m_modifiedAtHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue LoggingConfigurationMetadata::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_createdAtHasBeenSet)
-  {
-   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
-  }
-
-  if(m_logGroupArnHasBeenSet)
-  {
-   payload.WithString("logGroupArn", m_logGroupArn);
-
-  }
-
-  if(m_modifiedAtHasBeenSet)
-  {
-   payload.WithDouble("modifiedAt", m_modifiedAt.SecondsWithMSPrecision());
-  }
 
   if(m_statusHasBeenSet)
   {
@@ -107,6 +91,22 @@ JsonValue LoggingConfigurationMetadata::Jsonize() const
   {
    payload.WithString("workspace", m_workspace);
 
+  }
+
+  if(m_logGroupArnHasBeenSet)
+  {
+   payload.WithString("logGroupArn", m_logGroupArn);
+
+  }
+
+  if(m_createdAtHasBeenSet)
+  {
+   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
+  }
+
+  if(m_modifiedAtHasBeenSet)
+  {
+   payload.WithDouble("modifiedAt", m_modifiedAt.SecondsWithMSPrecision());
   }
 
   return payload;

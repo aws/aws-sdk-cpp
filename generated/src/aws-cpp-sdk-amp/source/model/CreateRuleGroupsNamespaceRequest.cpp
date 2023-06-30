@@ -14,12 +14,12 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateRuleGroupsNamespaceRequest::CreateRuleGroupsNamespaceRequest() : 
+    m_workspaceIdHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_dataHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
-    m_dataHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_workspaceIdHasBeenSet(false)
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -27,9 +27,9 @@ Aws::String CreateRuleGroupsNamespaceRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_clientTokenHasBeenSet)
+  if(m_nameHasBeenSet)
   {
-   payload.WithString("clientToken", m_clientToken);
+   payload.WithString("name", m_name);
 
   }
 
@@ -38,9 +38,9 @@ Aws::String CreateRuleGroupsNamespaceRequest::SerializePayload() const
    payload.WithString("data", HashingUtils::Base64Encode(m_data));
   }
 
-  if(m_nameHasBeenSet)
+  if(m_clientTokenHasBeenSet)
   {
-   payload.WithString("name", m_name);
+   payload.WithString("clientToken", m_clientToken);
 
   }
 

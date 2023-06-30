@@ -41,42 +41,6 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of this rule groups namespace.</p>
-     */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of this rule groups namespace.</p>
-     */
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of this rule groups namespace.</p>
-     */
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of this rule groups namespace.</p>
-     */
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of this rule groups namespace.</p>
-     */
-    inline CreateRuleGroupsNamespaceResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of this rule groups namespace.</p>
-     */
-    inline CreateRuleGroupsNamespaceResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of this rule groups namespace.</p>
-     */
-    inline CreateRuleGroupsNamespaceResult& WithArn(const char* value) { SetArn(value); return *this;}
-
-
-    /**
      * <p>The rule groups namespace name.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -110,6 +74,42 @@ namespace Model
      * <p>The rule groups namespace name.</p>
      */
     inline CreateRuleGroupsNamespaceResult& WithName(const char* value) { SetName(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of this rule groups namespace.</p>
+     */
+    inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of this rule groups namespace.</p>
+     */
+    inline void SetArn(const Aws::String& value) { m_arn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of this rule groups namespace.</p>
+     */
+    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of this rule groups namespace.</p>
+     */
+    inline void SetArn(const char* value) { m_arn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of this rule groups namespace.</p>
+     */
+    inline CreateRuleGroupsNamespaceResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of this rule groups namespace.</p>
+     */
+    inline CreateRuleGroupsNamespaceResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of this rule groups namespace.</p>
+     */
+    inline CreateRuleGroupsNamespaceResult& WithArn(const char* value) { SetArn(value); return *this;}
 
 
     /**
@@ -222,9 +222,9 @@ namespace Model
 
   private:
 
-    Aws::String m_arn;
-
     Aws::String m_name;
+
+    Aws::String m_arn;
 
     RuleGroupsNamespaceStatus m_status;
 

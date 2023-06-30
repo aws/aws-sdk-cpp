@@ -7,6 +7,7 @@
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/BlueGreenUpdatePolicy.h>
 #include <aws/sagemaker/model/AutoRollbackConfig.h>
+#include <aws/sagemaker/model/RollingUpdatePolicy.h>
 #include <utility>
 
 namespace Aws
@@ -142,6 +143,43 @@ namespace Model
      */
     inline DeploymentConfig& WithAutoRollbackConfiguration(AutoRollbackConfig&& value) { SetAutoRollbackConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies a rolling deployment strategy for updating a SageMaker
+     * endpoint.</p>
+     */
+    inline const RollingUpdatePolicy& GetRollingUpdatePolicy() const{ return m_rollingUpdatePolicy; }
+
+    /**
+     * <p>Specifies a rolling deployment strategy for updating a SageMaker
+     * endpoint.</p>
+     */
+    inline bool RollingUpdatePolicyHasBeenSet() const { return m_rollingUpdatePolicyHasBeenSet; }
+
+    /**
+     * <p>Specifies a rolling deployment strategy for updating a SageMaker
+     * endpoint.</p>
+     */
+    inline void SetRollingUpdatePolicy(const RollingUpdatePolicy& value) { m_rollingUpdatePolicyHasBeenSet = true; m_rollingUpdatePolicy = value; }
+
+    /**
+     * <p>Specifies a rolling deployment strategy for updating a SageMaker
+     * endpoint.</p>
+     */
+    inline void SetRollingUpdatePolicy(RollingUpdatePolicy&& value) { m_rollingUpdatePolicyHasBeenSet = true; m_rollingUpdatePolicy = std::move(value); }
+
+    /**
+     * <p>Specifies a rolling deployment strategy for updating a SageMaker
+     * endpoint.</p>
+     */
+    inline DeploymentConfig& WithRollingUpdatePolicy(const RollingUpdatePolicy& value) { SetRollingUpdatePolicy(value); return *this;}
+
+    /**
+     * <p>Specifies a rolling deployment strategy for updating a SageMaker
+     * endpoint.</p>
+     */
+    inline DeploymentConfig& WithRollingUpdatePolicy(RollingUpdatePolicy&& value) { SetRollingUpdatePolicy(std::move(value)); return *this;}
+
   private:
 
     BlueGreenUpdatePolicy m_blueGreenUpdatePolicy;
@@ -149,6 +187,9 @@ namespace Model
 
     AutoRollbackConfig m_autoRollbackConfiguration;
     bool m_autoRollbackConfigurationHasBeenSet = false;
+
+    RollingUpdatePolicy m_rollingUpdatePolicy;
+    bool m_rollingUpdatePolicyHasBeenSet = false;
   };
 
 } // namespace Model
