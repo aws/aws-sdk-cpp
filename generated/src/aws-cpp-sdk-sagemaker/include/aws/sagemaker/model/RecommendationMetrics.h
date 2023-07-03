@@ -180,6 +180,39 @@ namespace Model
      */
     inline RecommendationMetrics& WithMemoryUtilization(double value) { SetMemoryUtilization(value); return *this;}
 
+
+    /**
+     * <p>The time it takes to launch new compute resources for a serverless endpoint.
+     * The time can vary depending on the model size, how long it takes to download the
+     * model, and the start-up time of the container.</p> <p> <code>NaN</code>
+     * indicates that the value is not available.</p>
+     */
+    inline int GetModelSetupTime() const{ return m_modelSetupTime; }
+
+    /**
+     * <p>The time it takes to launch new compute resources for a serverless endpoint.
+     * The time can vary depending on the model size, how long it takes to download the
+     * model, and the start-up time of the container.</p> <p> <code>NaN</code>
+     * indicates that the value is not available.</p>
+     */
+    inline bool ModelSetupTimeHasBeenSet() const { return m_modelSetupTimeHasBeenSet; }
+
+    /**
+     * <p>The time it takes to launch new compute resources for a serverless endpoint.
+     * The time can vary depending on the model size, how long it takes to download the
+     * model, and the start-up time of the container.</p> <p> <code>NaN</code>
+     * indicates that the value is not available.</p>
+     */
+    inline void SetModelSetupTime(int value) { m_modelSetupTimeHasBeenSet = true; m_modelSetupTime = value; }
+
+    /**
+     * <p>The time it takes to launch new compute resources for a serverless endpoint.
+     * The time can vary depending on the model size, how long it takes to download the
+     * model, and the start-up time of the container.</p> <p> <code>NaN</code>
+     * indicates that the value is not available.</p>
+     */
+    inline RecommendationMetrics& WithModelSetupTime(int value) { SetModelSetupTime(value); return *this;}
+
   private:
 
     double m_costPerHour;
@@ -199,6 +232,9 @@ namespace Model
 
     double m_memoryUtilization;
     bool m_memoryUtilizationHasBeenSet = false;
+
+    int m_modelSetupTime;
+    bool m_modelSetupTimeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -361,32 +361,32 @@ namespace Model
 
 
     /**
-     * <p>The minimum number of Amazon EC2 vCPUs that an environment should maintain
-     * (even if the compute environment is <code>DISABLED</code>).</p>  <p>This
+     * <p>The minimum number of vCPUs that a compute environment should maintain (even
+     * if the compute environment is <code>DISABLED</code>).</p>  <p>This
      * parameter isn't applicable to jobs that are running on Fargate resources. Don't
      * specify it.</p> 
      */
     inline int GetMinvCpus() const{ return m_minvCpus; }
 
     /**
-     * <p>The minimum number of Amazon EC2 vCPUs that an environment should maintain
-     * (even if the compute environment is <code>DISABLED</code>).</p>  <p>This
+     * <p>The minimum number of vCPUs that a compute environment should maintain (even
+     * if the compute environment is <code>DISABLED</code>).</p>  <p>This
      * parameter isn't applicable to jobs that are running on Fargate resources. Don't
      * specify it.</p> 
      */
     inline bool MinvCpusHasBeenSet() const { return m_minvCpusHasBeenSet; }
 
     /**
-     * <p>The minimum number of Amazon EC2 vCPUs that an environment should maintain
-     * (even if the compute environment is <code>DISABLED</code>).</p>  <p>This
+     * <p>The minimum number of vCPUs that a compute environment should maintain (even
+     * if the compute environment is <code>DISABLED</code>).</p>  <p>This
      * parameter isn't applicable to jobs that are running on Fargate resources. Don't
      * specify it.</p> 
      */
     inline void SetMinvCpus(int value) { m_minvCpusHasBeenSet = true; m_minvCpus = value; }
 
     /**
-     * <p>The minimum number of Amazon EC2 vCPUs that an environment should maintain
-     * (even if the compute environment is <code>DISABLED</code>).</p>  <p>This
+     * <p>The minimum number of vCPUs that a compute environment should maintain (even
+     * if the compute environment is <code>DISABLED</code>).</p>  <p>This
      * parameter isn't applicable to jobs that are running on Fargate resources. Don't
      * specify it.</p> 
      */
@@ -394,8 +394,8 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of Amazon EC2 vCPUs that a compute environment can
-     * reach.</p>  <p>With both <code>BEST_FIT_PROGRESSIVE</code> and
+     * <p>The maximum number of vCPUs that a compute environment can support.</p>
+     *  <p>With both <code>BEST_FIT_PROGRESSIVE</code> and
      * <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies using On-Demand or
      * Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances,
      * Batch might need to exceed <code>maxvCpus</code> to meet your capacity
@@ -406,8 +406,8 @@ namespace Model
     inline int GetMaxvCpus() const{ return m_maxvCpus; }
 
     /**
-     * <p>The maximum number of Amazon EC2 vCPUs that a compute environment can
-     * reach.</p>  <p>With both <code>BEST_FIT_PROGRESSIVE</code> and
+     * <p>The maximum number of vCPUs that a compute environment can support.</p>
+     *  <p>With both <code>BEST_FIT_PROGRESSIVE</code> and
      * <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies using On-Demand or
      * Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances,
      * Batch might need to exceed <code>maxvCpus</code> to meet your capacity
@@ -418,8 +418,8 @@ namespace Model
     inline bool MaxvCpusHasBeenSet() const { return m_maxvCpusHasBeenSet; }
 
     /**
-     * <p>The maximum number of Amazon EC2 vCPUs that a compute environment can
-     * reach.</p>  <p>With both <code>BEST_FIT_PROGRESSIVE</code> and
+     * <p>The maximum number of vCPUs that a compute environment can support.</p>
+     *  <p>With both <code>BEST_FIT_PROGRESSIVE</code> and
      * <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies using On-Demand or
      * Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances,
      * Batch might need to exceed <code>maxvCpus</code> to meet your capacity
@@ -430,8 +430,8 @@ namespace Model
     inline void SetMaxvCpus(int value) { m_maxvCpusHasBeenSet = true; m_maxvCpus = value; }
 
     /**
-     * <p>The maximum number of Amazon EC2 vCPUs that a compute environment can
-     * reach.</p>  <p>With both <code>BEST_FIT_PROGRESSIVE</code> and
+     * <p>The maximum number of vCPUs that a compute environment can support.</p>
+     *  <p>With both <code>BEST_FIT_PROGRESSIVE</code> and
      * <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies using On-Demand or
      * Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances,
      * Batch might need to exceed <code>maxvCpus</code> to meet your capacity
@@ -443,34 +443,34 @@ namespace Model
 
 
     /**
-     * <p>The desired number of Amazon EC2 vCPUS in the compute environment. Batch
-     * modifies this value between the minimum and maximum values based on job queue
-     * demand.</p>  <p>This parameter isn't applicable to jobs that are running
-     * on Fargate resources. Don't specify it.</p> 
+     * <p>The desired number of vCPUS in the compute environment. Batch modifies this
+     * value between the minimum and maximum values based on job queue demand.</p>
+     *  <p>This parameter isn't applicable to jobs that are running on Fargate
+     * resources. Don't specify it.</p> 
      */
     inline int GetDesiredvCpus() const{ return m_desiredvCpus; }
 
     /**
-     * <p>The desired number of Amazon EC2 vCPUS in the compute environment. Batch
-     * modifies this value between the minimum and maximum values based on job queue
-     * demand.</p>  <p>This parameter isn't applicable to jobs that are running
-     * on Fargate resources. Don't specify it.</p> 
+     * <p>The desired number of vCPUS in the compute environment. Batch modifies this
+     * value between the minimum and maximum values based on job queue demand.</p>
+     *  <p>This parameter isn't applicable to jobs that are running on Fargate
+     * resources. Don't specify it.</p> 
      */
     inline bool DesiredvCpusHasBeenSet() const { return m_desiredvCpusHasBeenSet; }
 
     /**
-     * <p>The desired number of Amazon EC2 vCPUS in the compute environment. Batch
-     * modifies this value between the minimum and maximum values based on job queue
-     * demand.</p>  <p>This parameter isn't applicable to jobs that are running
-     * on Fargate resources. Don't specify it.</p> 
+     * <p>The desired number of vCPUS in the compute environment. Batch modifies this
+     * value between the minimum and maximum values based on job queue demand.</p>
+     *  <p>This parameter isn't applicable to jobs that are running on Fargate
+     * resources. Don't specify it.</p> 
      */
     inline void SetDesiredvCpus(int value) { m_desiredvCpusHasBeenSet = true; m_desiredvCpus = value; }
 
     /**
-     * <p>The desired number of Amazon EC2 vCPUS in the compute environment. Batch
-     * modifies this value between the minimum and maximum values based on job queue
-     * demand.</p>  <p>This parameter isn't applicable to jobs that are running
-     * on Fargate resources. Don't specify it.</p> 
+     * <p>The desired number of vCPUS in the compute environment. Batch modifies this
+     * value between the minimum and maximum values based on job queue demand.</p>
+     *  <p>This parameter isn't applicable to jobs that are running on Fargate
+     * resources. Don't specify it.</p> 
      */
     inline ComputeResource& WithDesiredvCpus(int value) { SetDesiredvCpus(value); return *this;}
 
