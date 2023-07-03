@@ -12,6 +12,7 @@
 #include <aws/batch/model/NetworkConfiguration.h>
 #include <aws/batch/model/FargatePlatformConfiguration.h>
 #include <aws/batch/model/EphemeralStorage.h>
+#include <aws/batch/model/RuntimePlatform.h>
 #include <aws/batch/model/Volume.h>
 #include <aws/batch/model/KeyValuePair.h>
 #include <aws/batch/model/MountPoint.h>
@@ -1650,6 +1651,25 @@ namespace Model
      */
     inline ContainerProperties& WithEphemeralStorage(EphemeralStorage&& value) { SetEphemeralStorage(std::move(value)); return *this;}
 
+
+    
+    inline const RuntimePlatform& GetRuntimePlatform() const{ return m_runtimePlatform; }
+
+    
+    inline bool RuntimePlatformHasBeenSet() const { return m_runtimePlatformHasBeenSet; }
+
+    
+    inline void SetRuntimePlatform(const RuntimePlatform& value) { m_runtimePlatformHasBeenSet = true; m_runtimePlatform = value; }
+
+    
+    inline void SetRuntimePlatform(RuntimePlatform&& value) { m_runtimePlatformHasBeenSet = true; m_runtimePlatform = std::move(value); }
+
+    
+    inline ContainerProperties& WithRuntimePlatform(const RuntimePlatform& value) { SetRuntimePlatform(value); return *this;}
+
+    
+    inline ContainerProperties& WithRuntimePlatform(RuntimePlatform&& value) { SetRuntimePlatform(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_image;
@@ -1708,6 +1728,9 @@ namespace Model
 
     EphemeralStorage m_ephemeralStorage;
     bool m_ephemeralStorageHasBeenSet = false;
+
+    RuntimePlatform m_runtimePlatform;
+    bool m_runtimePlatformHasBeenSet = false;
   };
 
 } // namespace Model

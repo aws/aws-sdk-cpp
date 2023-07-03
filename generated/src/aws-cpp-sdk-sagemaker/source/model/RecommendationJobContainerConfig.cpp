@@ -26,7 +26,9 @@ RecommendationJobContainerConfig::RecommendationJobContainerConfig() :
     m_payloadConfigHasBeenSet(false),
     m_nearestModelNameHasBeenSet(false),
     m_supportedInstanceTypesHasBeenSet(false),
-    m_dataInputConfigHasBeenSet(false)
+    m_dataInputConfigHasBeenSet(false),
+    m_supportedEndpointType(RecommendationJobSupportedEndpointType::NOT_SET),
+    m_supportedEndpointTypeHasBeenSet(false)
 {
 }
 
@@ -38,7 +40,9 @@ RecommendationJobContainerConfig::RecommendationJobContainerConfig(JsonView json
     m_payloadConfigHasBeenSet(false),
     m_nearestModelNameHasBeenSet(false),
     m_supportedInstanceTypesHasBeenSet(false),
-    m_dataInputConfigHasBeenSet(false)
+    m_dataInputConfigHasBeenSet(false),
+    m_supportedEndpointType(RecommendationJobSupportedEndpointType::NOT_SET),
+    m_supportedEndpointTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -104,6 +108,13 @@ RecommendationJobContainerConfig& RecommendationJobContainerConfig::operator =(J
     m_dataInputConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SupportedEndpointType"))
+  {
+    m_supportedEndpointType = RecommendationJobSupportedEndpointTypeMapper::GetRecommendationJobSupportedEndpointTypeForName(jsonValue.GetString("SupportedEndpointType"));
+
+    m_supportedEndpointTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -162,6 +173,11 @@ JsonValue RecommendationJobContainerConfig::Jsonize() const
   {
    payload.WithString("DataInputConfig", m_dataInputConfig);
 
+  }
+
+  if(m_supportedEndpointTypeHasBeenSet)
+  {
+   payload.WithString("SupportedEndpointType", RecommendationJobSupportedEndpointTypeMapper::GetNameForRecommendationJobSupportedEndpointType(m_supportedEndpointType));
   }
 
   return payload;

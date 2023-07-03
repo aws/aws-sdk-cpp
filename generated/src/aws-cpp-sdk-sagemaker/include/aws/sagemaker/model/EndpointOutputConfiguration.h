@@ -7,6 +7,7 @@
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/model/ProductionVariantInstanceType.h>
+#include <aws/sagemaker/model/ProductionVariantServerlessConfig.h>
 #include <utility>
 
 namespace Aws
@@ -180,6 +181,25 @@ namespace Model
      */
     inline EndpointOutputConfiguration& WithInitialInstanceCount(int value) { SetInitialInstanceCount(value); return *this;}
 
+
+    
+    inline const ProductionVariantServerlessConfig& GetServerlessConfig() const{ return m_serverlessConfig; }
+
+    
+    inline bool ServerlessConfigHasBeenSet() const { return m_serverlessConfigHasBeenSet; }
+
+    
+    inline void SetServerlessConfig(const ProductionVariantServerlessConfig& value) { m_serverlessConfigHasBeenSet = true; m_serverlessConfig = value; }
+
+    
+    inline void SetServerlessConfig(ProductionVariantServerlessConfig&& value) { m_serverlessConfigHasBeenSet = true; m_serverlessConfig = std::move(value); }
+
+    
+    inline EndpointOutputConfiguration& WithServerlessConfig(const ProductionVariantServerlessConfig& value) { SetServerlessConfig(value); return *this;}
+
+    
+    inline EndpointOutputConfiguration& WithServerlessConfig(ProductionVariantServerlessConfig&& value) { SetServerlessConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_endpointName;
@@ -193,6 +213,9 @@ namespace Model
 
     int m_initialInstanceCount;
     bool m_initialInstanceCountHasBeenSet = false;
+
+    ProductionVariantServerlessConfig m_serverlessConfig;
+    bool m_serverlessConfigHasBeenSet = false;
   };
 
 } // namespace Model

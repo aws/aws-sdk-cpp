@@ -38,46 +38,22 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    /**
-     * <p>Batch size for each rolling step to provision capacity and turn on traffic on
-     * the new endpoint fleet, and terminate capacity on the old endpoint fleet. Value
-     * must be between 5% to 50% of the variant's total instance count.</p>
-     */
+    
     inline const CapacitySize& GetMaximumBatchSize() const{ return m_maximumBatchSize; }
 
-    /**
-     * <p>Batch size for each rolling step to provision capacity and turn on traffic on
-     * the new endpoint fleet, and terminate capacity on the old endpoint fleet. Value
-     * must be between 5% to 50% of the variant's total instance count.</p>
-     */
+    
     inline bool MaximumBatchSizeHasBeenSet() const { return m_maximumBatchSizeHasBeenSet; }
 
-    /**
-     * <p>Batch size for each rolling step to provision capacity and turn on traffic on
-     * the new endpoint fleet, and terminate capacity on the old endpoint fleet. Value
-     * must be between 5% to 50% of the variant's total instance count.</p>
-     */
+    
     inline void SetMaximumBatchSize(const CapacitySize& value) { m_maximumBatchSizeHasBeenSet = true; m_maximumBatchSize = value; }
 
-    /**
-     * <p>Batch size for each rolling step to provision capacity and turn on traffic on
-     * the new endpoint fleet, and terminate capacity on the old endpoint fleet. Value
-     * must be between 5% to 50% of the variant's total instance count.</p>
-     */
+    
     inline void SetMaximumBatchSize(CapacitySize&& value) { m_maximumBatchSizeHasBeenSet = true; m_maximumBatchSize = std::move(value); }
 
-    /**
-     * <p>Batch size for each rolling step to provision capacity and turn on traffic on
-     * the new endpoint fleet, and terminate capacity on the old endpoint fleet. Value
-     * must be between 5% to 50% of the variant's total instance count.</p>
-     */
+    
     inline RollingUpdatePolicy& WithMaximumBatchSize(const CapacitySize& value) { SetMaximumBatchSize(value); return *this;}
 
-    /**
-     * <p>Batch size for each rolling step to provision capacity and turn on traffic on
-     * the new endpoint fleet, and terminate capacity on the old endpoint fleet. Value
-     * must be between 5% to 50% of the variant's total instance count.</p>
-     */
+    
     inline RollingUpdatePolicy& WithMaximumBatchSize(CapacitySize&& value) { SetMaximumBatchSize(std::move(value)); return *this;}
 
 
@@ -131,58 +107,22 @@ namespace Model
     inline RollingUpdatePolicy& WithMaximumExecutionTimeoutInSeconds(int value) { SetMaximumExecutionTimeoutInSeconds(value); return *this;}
 
 
-    /**
-     * <p>Batch size for rollback to the old endpoint fleet. Each rolling step to
-     * provision capacity and turn on traffic on the old endpoint fleet, and terminate
-     * capacity on the new endpoint fleet. If this field is absent, the default value
-     * will be set to 100% of total capacity which means to bring up the whole capacity
-     * of the old fleet at once during rollback.</p>
-     */
+    
     inline const CapacitySize& GetRollbackMaximumBatchSize() const{ return m_rollbackMaximumBatchSize; }
 
-    /**
-     * <p>Batch size for rollback to the old endpoint fleet. Each rolling step to
-     * provision capacity and turn on traffic on the old endpoint fleet, and terminate
-     * capacity on the new endpoint fleet. If this field is absent, the default value
-     * will be set to 100% of total capacity which means to bring up the whole capacity
-     * of the old fleet at once during rollback.</p>
-     */
+    
     inline bool RollbackMaximumBatchSizeHasBeenSet() const { return m_rollbackMaximumBatchSizeHasBeenSet; }
 
-    /**
-     * <p>Batch size for rollback to the old endpoint fleet. Each rolling step to
-     * provision capacity and turn on traffic on the old endpoint fleet, and terminate
-     * capacity on the new endpoint fleet. If this field is absent, the default value
-     * will be set to 100% of total capacity which means to bring up the whole capacity
-     * of the old fleet at once during rollback.</p>
-     */
+    
     inline void SetRollbackMaximumBatchSize(const CapacitySize& value) { m_rollbackMaximumBatchSizeHasBeenSet = true; m_rollbackMaximumBatchSize = value; }
 
-    /**
-     * <p>Batch size for rollback to the old endpoint fleet. Each rolling step to
-     * provision capacity and turn on traffic on the old endpoint fleet, and terminate
-     * capacity on the new endpoint fleet. If this field is absent, the default value
-     * will be set to 100% of total capacity which means to bring up the whole capacity
-     * of the old fleet at once during rollback.</p>
-     */
+    
     inline void SetRollbackMaximumBatchSize(CapacitySize&& value) { m_rollbackMaximumBatchSizeHasBeenSet = true; m_rollbackMaximumBatchSize = std::move(value); }
 
-    /**
-     * <p>Batch size for rollback to the old endpoint fleet. Each rolling step to
-     * provision capacity and turn on traffic on the old endpoint fleet, and terminate
-     * capacity on the new endpoint fleet. If this field is absent, the default value
-     * will be set to 100% of total capacity which means to bring up the whole capacity
-     * of the old fleet at once during rollback.</p>
-     */
+    
     inline RollingUpdatePolicy& WithRollbackMaximumBatchSize(const CapacitySize& value) { SetRollbackMaximumBatchSize(value); return *this;}
 
-    /**
-     * <p>Batch size for rollback to the old endpoint fleet. Each rolling step to
-     * provision capacity and turn on traffic on the old endpoint fleet, and terminate
-     * capacity on the new endpoint fleet. If this field is absent, the default value
-     * will be set to 100% of total capacity which means to bring up the whole capacity
-     * of the old fleet at once during rollback.</p>
-     */
+    
     inline RollingUpdatePolicy& WithRollbackMaximumBatchSize(CapacitySize&& value) { SetRollbackMaximumBatchSize(std::move(value)); return *this;}
 
   private:
