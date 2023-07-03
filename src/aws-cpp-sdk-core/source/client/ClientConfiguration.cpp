@@ -254,7 +254,7 @@ std::shared_ptr<RetryStrategy> InitRetryStrategy(Aws::String retryMode)
         maxAttempts = static_cast<int>(Aws::Utils::StringUtils::ConvertToInt32(maxAttemptsString.c_str()));
         if (maxAttempts == 0)
         {
-            AWS_LOGSTREAM_WARN(CLIENT_CONFIG_TAG, "Retry Strategy will use the default max attempts.");
+            AWS_LOGSTREAM_INFO(CLIENT_CONFIG_TAG, "Retry Strategy will use the default max attempts.");
             maxAttempts = -1;
         }
     }
