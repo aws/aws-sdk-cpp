@@ -202,6 +202,8 @@ static void ${operation.name}RequestShutdownCallback(void *user_data)
   userData->putResponseHandler(userData->s3CrtClient, *(reinterpret_cast<const ${operation.name}Request*>(userData->originalRequest)), std::move(outcome), userData->asyncCallerContext);
 #elseif($operation.name == "GetObject")
   userData->getResponseHandler(userData->s3CrtClient, *(reinterpret_cast<const ${operation.name}Request*>(userData->originalRequest)), std::move(outcome), userData->asyncCallerContext);
+#elseif($operation.name == "CopyObject")
+  userData->copyResponseHandler(userData->s3CrtClient, *(reinterpret_cast<const ${operation.name}Request*>(userData->originalRequest)), std::move(outcome), userData->asyncCallerContext);
 #end
 #else
   (*handler)(userData->s3CrtClient, outcome, userData->userCallbackContext);
@@ -262,6 +264,8 @@ void ${className}::${operation.name}Async(${constText}${operation.request.shape.
   userData->putResponseHandler = handler;
 #elseif($operation.name == "GetObject")
   userData->getResponseHandler = handler;
+#elseif($operation.name == "CopyObject")
+  userData->copyResponseHandler = handler;
 #end
   userData->asyncCallerContext = handlerContext;
 #if($serviceModel.endpointRules)
@@ -275,6 +279,8 @@ void ${className}::${operation.name}Async(${constText}${operation.request.shape.
     return handler(this, request, PutObjectOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER_VALUE", "Input stream in bad state", false)), handlerContext);
 #elseif($operation.name == "GetObject")
     return handler(this, request, GetObjectOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER_VALUE", "Output stream in bad state", false)), handlerContext);
+#elseif($operation.name == "CopyObject")
+    return handler(this, request, CopyObjectOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::INTERNAL_FAILURE, "INTERNAL_FAILURE", "Unable to create s3 meta request", false)), handlerContext);
 #end
   }
 #else
@@ -285,6 +291,8 @@ void ${className}::${operation.name}Async(${constText}${operation.request.shape.
   options.type = AWS_S3_META_REQUEST_TYPE_PUT_OBJECT;
 #elseif($operation.name == "GetObject")
   options.type = AWS_S3_META_REQUEST_TYPE_GET_OBJECT;
+#elseif($operation.name == "CopyObject")
+  options.type = AWS_S3_META_REQUEST_TYPE_COPY_OBJECT;
 #else
   options.type = AWS_S3_META_REQUEST_TYPE_DEFAULT;
 #end
@@ -315,6 +323,8 @@ void ${className}::${operation.name}Async(${constText}${operation.request.shape.
     return handler(this, request, PutObjectOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::INTERNAL_FAILURE, "INTERNAL_FAILURE", "Unable to create s3 meta request", false)), handlerContext);
 #elseif($operation.name == "GetObject")
     return handler(this, request, GetObjectOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::INTERNAL_FAILURE, "INTERNAL_FAILURE", "Unable to create s3 meta request", false)), handlerContext);
+#elseif($operation.name == "CopyObject")
+    return handler(this, request, CopyObjectOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::INTERNAL_FAILURE, "INTERNAL_FAILURE", "Unable to create s3 meta request", false)), handlerContext);
 #end
   }
 }
@@ -361,6 +371,8 @@ void ${className}::${operation.name}Async(${constText}${operation.name}ResponseR
   userData->putResponseHandler = handler;
 #elseif($operation.name == "GetObject")
   userData->getResponseHandler = handler;
+#elseif($operation.name == "CopyObject")
+  userData->copyResponseHandler = handler;
 #end
   InitCommonCrtRequestOption(userData, &options, nullptr, ss.str(), Aws::Http::HttpMethod::HTTP_${operation.http.method});
   options.shutdown_callback = ${operation.name}RequestShutdownCallback;
@@ -368,6 +380,8 @@ void ${className}::${operation.name}Async(${constText}${operation.name}ResponseR
   options.type = AWS_S3_META_REQUEST_TYPE_PUT_OBJECT;
 #elseif($operation.name == "GetObject")
   options.type = AWS_S3_META_REQUEST_TYPE_GET_OBJECT;
+#elseif($operation.name == "CopyObject")
+  options.type = AWS_S3_META_REQUEST_TYPE_COPY_OBJECT;
 #else
   options.type = AWS_S3_META_REQUEST_TYPE_DEFAULT;
 #end
@@ -386,6 +400,8 @@ void ${className}::${operation.name}Async(${constText}${operation.name}ResponseR
     return handler(this, request, PutObjectOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::INTERNAL_FAILURE, "INTERNAL_FAILURE", "Unable to create s3 meta request", false)), handlerContext);
 #elseif($operation.name == "GetObject")
     return handler(this, request, GetObjectOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::INTERNAL_FAILURE, "INTERNAL_FAILURE", "Unable to create s3 meta request", false)), handlerContext);
+#elseif($operation.name == "CopyObject")
+  return handler(this, request, CopyObjectOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::INTERNAL_FAILURE, "INTERNAL_FAILURE", "Unable to create s3 meta request", false)), handlerContext);
 #end
   }
 }
