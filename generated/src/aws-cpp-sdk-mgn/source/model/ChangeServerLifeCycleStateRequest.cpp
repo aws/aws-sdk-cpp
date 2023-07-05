@@ -13,6 +13,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ChangeServerLifeCycleStateRequest::ChangeServerLifeCycleStateRequest() : 
+    m_accountIDHasBeenSet(false),
     m_lifeCycleHasBeenSet(false),
     m_sourceServerIDHasBeenSet(false)
 {
@@ -21,6 +22,12 @@ ChangeServerLifeCycleStateRequest::ChangeServerLifeCycleStateRequest() :
 Aws::String ChangeServerLifeCycleStateRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_accountIDHasBeenSet)
+  {
+   payload.WithString("accountID", m_accountID);
+
+  }
 
   if(m_lifeCycleHasBeenSet)
   {

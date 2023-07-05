@@ -13,6 +13,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateApplicationRequest::CreateApplicationRequest() : 
+    m_accountIDHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_tagsHasBeenSet(false)
@@ -22,6 +23,12 @@ CreateApplicationRequest::CreateApplicationRequest() :
 Aws::String CreateApplicationRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_accountIDHasBeenSet)
+  {
+   payload.WithString("accountID", m_accountID);
+
+  }
 
   if(m_descriptionHasBeenSet)
   {

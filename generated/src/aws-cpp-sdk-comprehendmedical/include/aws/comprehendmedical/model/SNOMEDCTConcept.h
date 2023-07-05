@@ -121,26 +121,26 @@ namespace Model
 
 
     /**
-     * <p> The level of confidence Comprehend Medical has that the entity should be
-     * linked to the identified SNOMED-CT concept. </p>
+     * <p> The level of confidence Amazon Comprehend Medical has that the entity should
+     * be linked to the identified SNOMED-CT concept. </p>
      */
     inline double GetScore() const{ return m_score; }
 
     /**
-     * <p> The level of confidence Comprehend Medical has that the entity should be
-     * linked to the identified SNOMED-CT concept. </p>
+     * <p> The level of confidence Amazon Comprehend Medical has that the entity should
+     * be linked to the identified SNOMED-CT concept. </p>
      */
     inline bool ScoreHasBeenSet() const { return m_scoreHasBeenSet; }
 
     /**
-     * <p> The level of confidence Comprehend Medical has that the entity should be
-     * linked to the identified SNOMED-CT concept. </p>
+     * <p> The level of confidence Amazon Comprehend Medical has that the entity should
+     * be linked to the identified SNOMED-CT concept. </p>
      */
     inline void SetScore(double value) { m_scoreHasBeenSet = true; m_score = value; }
 
     /**
-     * <p> The level of confidence Comprehend Medical has that the entity should be
-     * linked to the identified SNOMED-CT concept. </p>
+     * <p> The level of confidence Amazon Comprehend Medical has that the entity should
+     * be linked to the identified SNOMED-CT concept. </p>
      */
     inline SNOMEDCTConcept& WithScore(double value) { SetScore(value); return *this;}
 

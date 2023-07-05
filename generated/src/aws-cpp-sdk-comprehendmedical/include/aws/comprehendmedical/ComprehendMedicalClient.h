@@ -16,8 +16,13 @@ namespace Aws
 namespace ComprehendMedical
 {
   /**
-   * <p> Comprehend Medical; extracts structured information from unstructured
-   * clinical text. Use these actions to gain insight in your documents. </p>
+   * <p>Amazon Comprehend Medical extracts structured information from unstructured
+   * clinical text. Use these actions to gain insight in your documents. Amazon
+   * Comprehend Medical only detects entities in English language texts. Amazon
+   * Comprehend Medical places limits on the sizes of files allowed for different API
+   * operations. To learn more, see <a
+   * href="https://docs.aws.amazon.com/comprehend-medical/latest/dev/comprehendmedical-quotas.html">Guidelines
+   * and quotas</a> in the <i>Amazon Comprehend Medical Developer Guide</i>.</p>
    */
   class AWS_COMPREHENDMEDICAL_API ComprehendMedicalClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ComprehendMedicalClient>
   {
@@ -245,7 +250,7 @@ namespace ComprehendMedical
         }
 
         /**
-         * <p> Inspects the clinical text for protected health information (PHI) entities
+         * <p>Inspects the clinical text for protected health information (PHI) entities
          * and returns the entity category, location, and confidence score for each entity.
          * Amazon Comprehend Medical only detects entities in English language
          * texts.</p><p><h3>See Also:</h3>   <a
@@ -409,8 +414,8 @@ namespace ComprehendMedical
         }
 
         /**
-         * <p>Gets a list of protected health information (PHI) detection jobs that you
-         * have submitted.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets a list of protected health information (PHI) detection jobs you have
+         * submitted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/ListPHIDetectionJobs">AWS
          * API Reference</a></p>
          */

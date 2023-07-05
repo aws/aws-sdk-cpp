@@ -561,6 +561,27 @@ namespace Model
      */
     inline UpdateReplicationConfigurationTemplateRequest& WithUseDedicatedReplicationServer(bool value) { SetUseDedicatedReplicationServer(value); return *this;}
 
+
+    /**
+     * <p>Update replication configuration template use Fips Endpoint request.</p>
+     */
+    inline bool GetUseFipsEndpoint() const{ return m_useFipsEndpoint; }
+
+    /**
+     * <p>Update replication configuration template use Fips Endpoint request.</p>
+     */
+    inline bool UseFipsEndpointHasBeenSet() const { return m_useFipsEndpointHasBeenSet; }
+
+    /**
+     * <p>Update replication configuration template use Fips Endpoint request.</p>
+     */
+    inline void SetUseFipsEndpoint(bool value) { m_useFipsEndpointHasBeenSet = true; m_useFipsEndpoint = value; }
+
+    /**
+     * <p>Update replication configuration template use Fips Endpoint request.</p>
+     */
+    inline UpdateReplicationConfigurationTemplateRequest& WithUseFipsEndpoint(bool value) { SetUseFipsEndpoint(value); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -604,6 +625,9 @@ namespace Model
 
     bool m_useDedicatedReplicationServer;
     bool m_useDedicatedReplicationServerHasBeenSet = false;
+
+    bool m_useFipsEndpoint;
+    bool m_useFipsEndpointHasBeenSet = false;
   };
 
 } // namespace Model

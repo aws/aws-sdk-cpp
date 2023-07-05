@@ -20,7 +20,9 @@ DecryptRequest::DecryptRequest() :
     m_keyIdHasBeenSet(false),
     m_encryptionAlgorithm(EncryptionAlgorithmSpec::NOT_SET),
     m_encryptionAlgorithmHasBeenSet(false),
-    m_recipientHasBeenSet(false)
+    m_recipientHasBeenSet(false),
+    m_dryRun(false),
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -69,6 +71,12 @@ Aws::String DecryptRequest::SerializePayload() const
   if(m_recipientHasBeenSet)
   {
    payload.WithObject("Recipient", m_recipient.Jsonize());
+
+  }
+
+  if(m_dryRunHasBeenSet)
+  {
+   payload.WithBool("DryRun", m_dryRun);
 
   }
 

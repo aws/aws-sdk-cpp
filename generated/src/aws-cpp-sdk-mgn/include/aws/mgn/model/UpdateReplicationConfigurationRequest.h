@@ -6,10 +6,10 @@
 #pragma once
 #include <aws/mgn/Mgn_EXPORTS.h>
 #include <aws/mgn/MgnRequest.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mgn/model/ReplicationConfigurationDataPlaneRouting.h>
 #include <aws/mgn/model/ReplicationConfigurationDefaultLargeStagingDiskType.h>
 #include <aws/mgn/model/ReplicationConfigurationEbsEncryption.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/mgn/model/ReplicationConfigurationReplicatedDisk.h>
@@ -36,6 +36,47 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "UpdateReplicationConfiguration"; }
 
     AWS_MGN_API Aws::String SerializePayload() const override;
+
+
+    /**
+     * <p>Update replication configuration Account ID request.</p>
+     */
+    inline const Aws::String& GetAccountID() const{ return m_accountID; }
+
+    /**
+     * <p>Update replication configuration Account ID request.</p>
+     */
+    inline bool AccountIDHasBeenSet() const { return m_accountIDHasBeenSet; }
+
+    /**
+     * <p>Update replication configuration Account ID request.</p>
+     */
+    inline void SetAccountID(const Aws::String& value) { m_accountIDHasBeenSet = true; m_accountID = value; }
+
+    /**
+     * <p>Update replication configuration Account ID request.</p>
+     */
+    inline void SetAccountID(Aws::String&& value) { m_accountIDHasBeenSet = true; m_accountID = std::move(value); }
+
+    /**
+     * <p>Update replication configuration Account ID request.</p>
+     */
+    inline void SetAccountID(const char* value) { m_accountIDHasBeenSet = true; m_accountID.assign(value); }
+
+    /**
+     * <p>Update replication configuration Account ID request.</p>
+     */
+    inline UpdateReplicationConfigurationRequest& WithAccountID(const Aws::String& value) { SetAccountID(value); return *this;}
+
+    /**
+     * <p>Update replication configuration Account ID request.</p>
+     */
+    inline UpdateReplicationConfigurationRequest& WithAccountID(Aws::String&& value) { SetAccountID(std::move(value)); return *this;}
+
+    /**
+     * <p>Update replication configuration Account ID request.</p>
+     */
+    inline UpdateReplicationConfigurationRequest& WithAccountID(const char* value) { SetAccountID(value); return *this;}
 
 
     /**
@@ -603,7 +644,31 @@ namespace Model
      */
     inline UpdateReplicationConfigurationRequest& WithUseDedicatedReplicationServer(bool value) { SetUseDedicatedReplicationServer(value); return *this;}
 
+
+    /**
+     * <p>Update replication configuration use Fips Endpoint.</p>
+     */
+    inline bool GetUseFipsEndpoint() const{ return m_useFipsEndpoint; }
+
+    /**
+     * <p>Update replication configuration use Fips Endpoint.</p>
+     */
+    inline bool UseFipsEndpointHasBeenSet() const { return m_useFipsEndpointHasBeenSet; }
+
+    /**
+     * <p>Update replication configuration use Fips Endpoint.</p>
+     */
+    inline void SetUseFipsEndpoint(bool value) { m_useFipsEndpointHasBeenSet = true; m_useFipsEndpoint = value; }
+
+    /**
+     * <p>Update replication configuration use Fips Endpoint.</p>
+     */
+    inline UpdateReplicationConfigurationRequest& WithUseFipsEndpoint(bool value) { SetUseFipsEndpoint(value); return *this;}
+
   private:
+
+    Aws::String m_accountID;
+    bool m_accountIDHasBeenSet = false;
 
     bool m_associateDefaultSecurityGroup;
     bool m_associateDefaultSecurityGroupHasBeenSet = false;
@@ -649,6 +714,9 @@ namespace Model
 
     bool m_useDedicatedReplicationServer;
     bool m_useDedicatedReplicationServerHasBeenSet = false;
+
+    bool m_useFipsEndpoint;
+    bool m_useFipsEndpointHasBeenSet = false;
   };
 
 } // namespace Model

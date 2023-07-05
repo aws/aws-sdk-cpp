@@ -367,56 +367,32 @@ namespace Model
 
 
     /**
-     * <p> The status of a security control based on the compliance status of its
-     * findings. For more information about how control status is determined, see <a
-     * href="https://docs.aws.amazon.com/securityhub/latest/userguide/controls-overall-status.html">Determining
-     * the overall status of a control from its findings</a> in the <i>Security Hub
-     * User Guide</i>. </p>
+     * <p> The enablement status of a security control in a specific standard. </p>
      */
     inline const ControlStatus& GetSecurityControlStatus() const{ return m_securityControlStatus; }
 
     /**
-     * <p> The status of a security control based on the compliance status of its
-     * findings. For more information about how control status is determined, see <a
-     * href="https://docs.aws.amazon.com/securityhub/latest/userguide/controls-overall-status.html">Determining
-     * the overall status of a control from its findings</a> in the <i>Security Hub
-     * User Guide</i>. </p>
+     * <p> The enablement status of a security control in a specific standard. </p>
      */
     inline bool SecurityControlStatusHasBeenSet() const { return m_securityControlStatusHasBeenSet; }
 
     /**
-     * <p> The status of a security control based on the compliance status of its
-     * findings. For more information about how control status is determined, see <a
-     * href="https://docs.aws.amazon.com/securityhub/latest/userguide/controls-overall-status.html">Determining
-     * the overall status of a control from its findings</a> in the <i>Security Hub
-     * User Guide</i>. </p>
+     * <p> The enablement status of a security control in a specific standard. </p>
      */
     inline void SetSecurityControlStatus(const ControlStatus& value) { m_securityControlStatusHasBeenSet = true; m_securityControlStatus = value; }
 
     /**
-     * <p> The status of a security control based on the compliance status of its
-     * findings. For more information about how control status is determined, see <a
-     * href="https://docs.aws.amazon.com/securityhub/latest/userguide/controls-overall-status.html">Determining
-     * the overall status of a control from its findings</a> in the <i>Security Hub
-     * User Guide</i>. </p>
+     * <p> The enablement status of a security control in a specific standard. </p>
      */
     inline void SetSecurityControlStatus(ControlStatus&& value) { m_securityControlStatusHasBeenSet = true; m_securityControlStatus = std::move(value); }
 
     /**
-     * <p> The status of a security control based on the compliance status of its
-     * findings. For more information about how control status is determined, see <a
-     * href="https://docs.aws.amazon.com/securityhub/latest/userguide/controls-overall-status.html">Determining
-     * the overall status of a control from its findings</a> in the <i>Security Hub
-     * User Guide</i>. </p>
+     * <p> The enablement status of a security control in a specific standard. </p>
      */
     inline SecurityControl& WithSecurityControlStatus(const ControlStatus& value) { SetSecurityControlStatus(value); return *this;}
 
     /**
-     * <p> The status of a security control based on the compliance status of its
-     * findings. For more information about how control status is determined, see <a
-     * href="https://docs.aws.amazon.com/securityhub/latest/userguide/controls-overall-status.html">Determining
-     * the overall status of a control from its findings</a> in the <i>Security Hub
-     * User Guide</i>. </p>
+     * <p> The enablement status of a security control in a specific standard. </p>
      */
     inline SecurityControl& WithSecurityControlStatus(ControlStatus&& value) { SetSecurityControlStatus(std::move(value)); return *this;}
 

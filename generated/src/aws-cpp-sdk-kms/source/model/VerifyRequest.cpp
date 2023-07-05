@@ -21,7 +21,9 @@ VerifyRequest::VerifyRequest() :
     m_signatureHasBeenSet(false),
     m_signingAlgorithm(SigningAlgorithmSpec::NOT_SET),
     m_signingAlgorithmHasBeenSet(false),
-    m_grantTokensHasBeenSet(false)
+    m_grantTokensHasBeenSet(false),
+    m_dryRun(false),
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -63,6 +65,12 @@ Aws::String VerifyRequest::SerializePayload() const
      grantTokensJsonList[grantTokensIndex].AsString(m_grantTokens[grantTokensIndex]);
    }
    payload.WithArray("GrantTokens", std::move(grantTokensJsonList));
+
+  }
+
+  if(m_dryRunHasBeenSet)
+  {
+   payload.WithBool("DryRun", m_dryRun);
 
   }
 

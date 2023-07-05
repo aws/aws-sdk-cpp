@@ -122,7 +122,7 @@ namespace Model
      * keys is deleted. Otherwise, the waiting period begins immediately.</p> <p>This
      * value is optional. If you include a value, it must be between 7 and 30,
      * inclusive. If you do not include a value, it defaults to 30. You can use the <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-pending-deletion-window">
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-schedule-key-deletion-pending-window-in-days">
      * <code>kms:ScheduleKeyDeletionPendingWindowInDays</code> </a> condition key to
      * further constrain the values that principals can specify in the
      * <code>PendingWindowInDays</code> parameter.</p>
@@ -136,7 +136,7 @@ namespace Model
      * keys is deleted. Otherwise, the waiting period begins immediately.</p> <p>This
      * value is optional. If you include a value, it must be between 7 and 30,
      * inclusive. If you do not include a value, it defaults to 30. You can use the <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-pending-deletion-window">
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-schedule-key-deletion-pending-window-in-days">
      * <code>kms:ScheduleKeyDeletionPendingWindowInDays</code> </a> condition key to
      * further constrain the values that principals can specify in the
      * <code>PendingWindowInDays</code> parameter.</p>
@@ -150,7 +150,7 @@ namespace Model
      * keys is deleted. Otherwise, the waiting period begins immediately.</p> <p>This
      * value is optional. If you include a value, it must be between 7 and 30,
      * inclusive. If you do not include a value, it defaults to 30. You can use the <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-pending-deletion-window">
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-schedule-key-deletion-pending-window-in-days">
      * <code>kms:ScheduleKeyDeletionPendingWindowInDays</code> </a> condition key to
      * further constrain the values that principals can specify in the
      * <code>PendingWindowInDays</code> parameter.</p>
@@ -164,7 +164,7 @@ namespace Model
      * keys is deleted. Otherwise, the waiting period begins immediately.</p> <p>This
      * value is optional. If you include a value, it must be between 7 and 30,
      * inclusive. If you do not include a value, it defaults to 30. You can use the <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-pending-deletion-window">
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-schedule-key-deletion-pending-window-in-days">
      * <code>kms:ScheduleKeyDeletionPendingWindowInDays</code> </a> condition key to
      * further constrain the values that principals can specify in the
      * <code>PendingWindowInDays</code> parameter.</p>

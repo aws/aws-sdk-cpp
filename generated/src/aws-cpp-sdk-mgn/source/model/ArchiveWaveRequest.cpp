@@ -13,6 +13,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ArchiveWaveRequest::ArchiveWaveRequest() : 
+    m_accountIDHasBeenSet(false),
     m_waveIDHasBeenSet(false)
 {
 }
@@ -20,6 +21,12 @@ ArchiveWaveRequest::ArchiveWaveRequest() :
 Aws::String ArchiveWaveRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_accountIDHasBeenSet)
+  {
+   payload.WithString("accountID", m_accountID);
+
+  }
 
   if(m_waveIDHasBeenSet)
   {
