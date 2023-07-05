@@ -391,14 +391,6 @@ namespace Aws
          */
         virtual Model::CopyObjectOutcome CopyObject(const Model::CopyObjectRequest& request) const;
 
-        /**
-         * A Callable wrapper for CopyObject that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        template<typename CopyObjectRequestT = Model::CopyObjectRequest>
-        Model::CopyObjectOutcomeCallable CopyObjectCallable(const CopyObjectRequestT& request) const
-        {
-            return SubmitCallable(&S3CrtClient::CopyObject, request);
-        }
 
         /**
          * An Async wrapper for CopyObject that queues the request into a thread executor and triggers associated callback when operation has finished.
