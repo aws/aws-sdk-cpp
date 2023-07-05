@@ -18,7 +18,9 @@ GenerateMacRequest::GenerateMacRequest() :
     m_keyIdHasBeenSet(false),
     m_macAlgorithm(MacAlgorithmSpec::NOT_SET),
     m_macAlgorithmHasBeenSet(false),
-    m_grantTokensHasBeenSet(false)
+    m_grantTokensHasBeenSet(false),
+    m_dryRun(false),
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -50,6 +52,12 @@ Aws::String GenerateMacRequest::SerializePayload() const
      grantTokensJsonList[grantTokensIndex].AsString(m_grantTokens[grantTokensIndex]);
    }
    payload.WithArray("GrantTokens", std::move(grantTokensJsonList));
+
+  }
+
+  if(m_dryRunHasBeenSet)
+  {
+   payload.WithBool("DryRun", m_dryRun);
 
   }
 

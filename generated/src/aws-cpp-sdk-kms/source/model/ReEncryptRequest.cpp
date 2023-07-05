@@ -23,7 +23,9 @@ ReEncryptRequest::ReEncryptRequest() :
     m_sourceEncryptionAlgorithmHasBeenSet(false),
     m_destinationEncryptionAlgorithm(EncryptionAlgorithmSpec::NOT_SET),
     m_destinationEncryptionAlgorithmHasBeenSet(false),
-    m_grantTokensHasBeenSet(false)
+    m_grantTokensHasBeenSet(false),
+    m_dryRun(false),
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -88,6 +90,12 @@ Aws::String ReEncryptRequest::SerializePayload() const
      grantTokensJsonList[grantTokensIndex].AsString(m_grantTokens[grantTokensIndex]);
    }
    payload.WithArray("GrantTokens", std::move(grantTokensJsonList));
+
+  }
+
+  if(m_dryRunHasBeenSet)
+  {
+   payload.WithBool("DryRun", m_dryRun);
 
   }
 

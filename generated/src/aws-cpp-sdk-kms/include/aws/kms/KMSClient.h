@@ -2779,17 +2779,18 @@ namespace KMS
          * and potentially dangerous operation. When a KMS key is deleted, all data that
          * was encrypted under the KMS key is unrecoverable. (The only exception is a <a
          * href="kms/latest/developerguide/multi-region-keys-delete.html">multi-Region
-         * replica key</a>, or an asymmetric or HMAC KMS key with imported key
-         * material[BUGBUG-link to importing-keys-managing.html#import-delete-key.) To
-         * prevent the use of a KMS key without deleting it, use <a>DisableKey</a>. </p>
-         *  <p>You can schedule the deletion of a multi-Region primary key and
-         * its replica keys at any time. However, KMS will not delete a multi-Region
-         * primary key with existing replica keys. If you schedule the deletion of a
-         * primary key with replicas, its key state changes to
-         * <code>PendingReplicaDeletion</code> and it cannot be replicated or used in
-         * cryptographic operations. This status can continue indefinitely. When the last
-         * of its replicas keys is deleted (not just scheduled), the key state of the
-         * primary key changes to <code>PendingDeletion</code> and its waiting period
+         * replica key</a>, or an <a
+         * href="kms/latest/developerguide/importing-keys-managing.html#import-delete-key">asymmetric
+         * or HMAC KMS key with imported key material</a>.) To prevent the use of a KMS key
+         * without deleting it, use <a>DisableKey</a>. </p>  <p>You can
+         * schedule the deletion of a multi-Region primary key and its replica keys at any
+         * time. However, KMS will not delete a multi-Region primary key with existing
+         * replica keys. If you schedule the deletion of a primary key with replicas, its
+         * key state changes to <code>PendingReplicaDeletion</code> and it cannot be
+         * replicated or used in cryptographic operations. This status can continue
+         * indefinitely. When the last of its replicas keys is deleted (not just
+         * scheduled), the key state of the primary key changes to
+         * <code>PendingDeletion</code> and its waiting period
          * (<code>PendingWindowInDays</code>) begins. For details, see <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-delete.html">Deleting
          * multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>

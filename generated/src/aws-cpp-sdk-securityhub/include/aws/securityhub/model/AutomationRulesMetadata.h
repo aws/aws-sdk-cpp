@@ -84,49 +84,61 @@ namespace Model
 
     /**
      * <p> Whether the rule is active after it is created. If this parameter is equal
-     * to <code>ENABLED</code>, Security Hub will apply the rule to findings and
+     * to <code>ENABLED</code>, Security Hub starts applying the rule to findings and
      * finding updates after the rule is created. To change the value of this parameter
-     * after creating a rule, use <code>BatchUpdateAutomationRules</code>. </p>
+     * after creating a rule, use <a
+     * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateAutomationRules.html">
+     * <code>BatchUpdateAutomationRules</code> </a>. </p>
      */
     inline const RuleStatus& GetRuleStatus() const{ return m_ruleStatus; }
 
     /**
      * <p> Whether the rule is active after it is created. If this parameter is equal
-     * to <code>ENABLED</code>, Security Hub will apply the rule to findings and
+     * to <code>ENABLED</code>, Security Hub starts applying the rule to findings and
      * finding updates after the rule is created. To change the value of this parameter
-     * after creating a rule, use <code>BatchUpdateAutomationRules</code>. </p>
+     * after creating a rule, use <a
+     * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateAutomationRules.html">
+     * <code>BatchUpdateAutomationRules</code> </a>. </p>
      */
     inline bool RuleStatusHasBeenSet() const { return m_ruleStatusHasBeenSet; }
 
     /**
      * <p> Whether the rule is active after it is created. If this parameter is equal
-     * to <code>ENABLED</code>, Security Hub will apply the rule to findings and
+     * to <code>ENABLED</code>, Security Hub starts applying the rule to findings and
      * finding updates after the rule is created. To change the value of this parameter
-     * after creating a rule, use <code>BatchUpdateAutomationRules</code>. </p>
+     * after creating a rule, use <a
+     * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateAutomationRules.html">
+     * <code>BatchUpdateAutomationRules</code> </a>. </p>
      */
     inline void SetRuleStatus(const RuleStatus& value) { m_ruleStatusHasBeenSet = true; m_ruleStatus = value; }
 
     /**
      * <p> Whether the rule is active after it is created. If this parameter is equal
-     * to <code>ENABLED</code>, Security Hub will apply the rule to findings and
+     * to <code>ENABLED</code>, Security Hub starts applying the rule to findings and
      * finding updates after the rule is created. To change the value of this parameter
-     * after creating a rule, use <code>BatchUpdateAutomationRules</code>. </p>
+     * after creating a rule, use <a
+     * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateAutomationRules.html">
+     * <code>BatchUpdateAutomationRules</code> </a>. </p>
      */
     inline void SetRuleStatus(RuleStatus&& value) { m_ruleStatusHasBeenSet = true; m_ruleStatus = std::move(value); }
 
     /**
      * <p> Whether the rule is active after it is created. If this parameter is equal
-     * to <code>ENABLED</code>, Security Hub will apply the rule to findings and
+     * to <code>ENABLED</code>, Security Hub starts applying the rule to findings and
      * finding updates after the rule is created. To change the value of this parameter
-     * after creating a rule, use <code>BatchUpdateAutomationRules</code>. </p>
+     * after creating a rule, use <a
+     * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateAutomationRules.html">
+     * <code>BatchUpdateAutomationRules</code> </a>. </p>
      */
     inline AutomationRulesMetadata& WithRuleStatus(const RuleStatus& value) { SetRuleStatus(value); return *this;}
 
     /**
      * <p> Whether the rule is active after it is created. If this parameter is equal
-     * to <code>ENABLED</code>, Security Hub will apply the rule to findings and
+     * to <code>ENABLED</code>, Security Hub starts applying the rule to findings and
      * finding updates after the rule is created. To change the value of this parameter
-     * after creating a rule, use <code>BatchUpdateAutomationRules</code>. </p>
+     * after creating a rule, use <a
+     * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateAutomationRules.html">
+     * <code>BatchUpdateAutomationRules</code> </a>. </p>
      */
     inline AutomationRulesMetadata& WithRuleStatus(RuleStatus&& value) { SetRuleStatus(std::move(value)); return *this;}
 
@@ -247,8 +259,8 @@ namespace Model
      * that matches the rule criteria. This is useful when a finding matches the
      * criteria for multiple rules, and each rule has different actions. If the value
      * of this field is set to <code>true</code> for a rule, Security Hub applies the
-     * rule action to a finding that matches the rule criteria and won't evaluate other
-     * rules for the finding.&#x2028; The default value of this field is
+     * rule action to a finding that matches the rule criteria and doesn't evaluate
+     * other rules for the finding.&#x2028; The default value of this field is
      * <code>false</code>. </p>
      */
     inline bool GetIsTerminal() const{ return m_isTerminal; }
@@ -258,8 +270,8 @@ namespace Model
      * that matches the rule criteria. This is useful when a finding matches the
      * criteria for multiple rules, and each rule has different actions. If the value
      * of this field is set to <code>true</code> for a rule, Security Hub applies the
-     * rule action to a finding that matches the rule criteria and won't evaluate other
-     * rules for the finding.&#x2028; The default value of this field is
+     * rule action to a finding that matches the rule criteria and doesn't evaluate
+     * other rules for the finding.&#x2028; The default value of this field is
      * <code>false</code>. </p>
      */
     inline bool IsTerminalHasBeenSet() const { return m_isTerminalHasBeenSet; }
@@ -269,8 +281,8 @@ namespace Model
      * that matches the rule criteria. This is useful when a finding matches the
      * criteria for multiple rules, and each rule has different actions. If the value
      * of this field is set to <code>true</code> for a rule, Security Hub applies the
-     * rule action to a finding that matches the rule criteria and won't evaluate other
-     * rules for the finding.&#x2028; The default value of this field is
+     * rule action to a finding that matches the rule criteria and doesn't evaluate
+     * other rules for the finding.&#x2028; The default value of this field is
      * <code>false</code>. </p>
      */
     inline void SetIsTerminal(bool value) { m_isTerminalHasBeenSet = true; m_isTerminal = value; }
@@ -280,8 +292,8 @@ namespace Model
      * that matches the rule criteria. This is useful when a finding matches the
      * criteria for multiple rules, and each rule has different actions. If the value
      * of this field is set to <code>true</code> for a rule, Security Hub applies the
-     * rule action to a finding that matches the rule criteria and won't evaluate other
-     * rules for the finding.&#x2028; The default value of this field is
+     * rule action to a finding that matches the rule criteria and doesn't evaluate
+     * other rules for the finding.&#x2028; The default value of this field is
      * <code>false</code>. </p>
      */
     inline AutomationRulesMetadata& WithIsTerminal(bool value) { SetIsTerminal(value); return *this;}

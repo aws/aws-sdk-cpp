@@ -13,6 +13,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 GetLaunchConfigurationRequest::GetLaunchConfigurationRequest() : 
+    m_accountIDHasBeenSet(false),
     m_sourceServerIDHasBeenSet(false)
 {
 }
@@ -20,6 +21,12 @@ GetLaunchConfigurationRequest::GetLaunchConfigurationRequest() :
 Aws::String GetLaunchConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_accountIDHasBeenSet)
+  {
+   payload.WithString("accountID", m_accountID);
+
+  }
 
   if(m_sourceServerIDHasBeenSet)
   {

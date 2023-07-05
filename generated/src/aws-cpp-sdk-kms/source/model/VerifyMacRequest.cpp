@@ -19,7 +19,9 @@ VerifyMacRequest::VerifyMacRequest() :
     m_macAlgorithm(MacAlgorithmSpec::NOT_SET),
     m_macAlgorithmHasBeenSet(false),
     m_macHasBeenSet(false),
-    m_grantTokensHasBeenSet(false)
+    m_grantTokensHasBeenSet(false),
+    m_dryRun(false),
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -56,6 +58,12 @@ Aws::String VerifyMacRequest::SerializePayload() const
      grantTokensJsonList[grantTokensIndex].AsString(m_grantTokens[grantTokensIndex]);
    }
    payload.WithArray("GrantTokens", std::move(grantTokensJsonList));
+
+  }
+
+  if(m_dryRunHasBeenSet)
+  {
+   payload.WithBool("DryRun", m_dryRun);
 
   }
 

@@ -33,6 +33,47 @@ namespace Model
 
 
     /**
+     * <p>Request to get Replication Configuration by Account ID.</p>
+     */
+    inline const Aws::String& GetAccountID() const{ return m_accountID; }
+
+    /**
+     * <p>Request to get Replication Configuration by Account ID.</p>
+     */
+    inline bool AccountIDHasBeenSet() const { return m_accountIDHasBeenSet; }
+
+    /**
+     * <p>Request to get Replication Configuration by Account ID.</p>
+     */
+    inline void SetAccountID(const Aws::String& value) { m_accountIDHasBeenSet = true; m_accountID = value; }
+
+    /**
+     * <p>Request to get Replication Configuration by Account ID.</p>
+     */
+    inline void SetAccountID(Aws::String&& value) { m_accountIDHasBeenSet = true; m_accountID = std::move(value); }
+
+    /**
+     * <p>Request to get Replication Configuration by Account ID.</p>
+     */
+    inline void SetAccountID(const char* value) { m_accountIDHasBeenSet = true; m_accountID.assign(value); }
+
+    /**
+     * <p>Request to get Replication Configuration by Account ID.</p>
+     */
+    inline GetReplicationConfigurationRequest& WithAccountID(const Aws::String& value) { SetAccountID(value); return *this;}
+
+    /**
+     * <p>Request to get Replication Configuration by Account ID.</p>
+     */
+    inline GetReplicationConfigurationRequest& WithAccountID(Aws::String&& value) { SetAccountID(std::move(value)); return *this;}
+
+    /**
+     * <p>Request to get Replication Configuration by Account ID.</p>
+     */
+    inline GetReplicationConfigurationRequest& WithAccountID(const char* value) { SetAccountID(value); return *this;}
+
+
+    /**
      * <p>Request to get Replication Configuration by Source Server ID.</p>
      */
     inline const Aws::String& GetSourceServerID() const{ return m_sourceServerID; }
@@ -73,6 +114,9 @@ namespace Model
     inline GetReplicationConfigurationRequest& WithSourceServerID(const char* value) { SetSourceServerID(value); return *this;}
 
   private:
+
+    Aws::String m_accountID;
+    bool m_accountIDHasBeenSet = false;
 
     Aws::String m_sourceServerID;
     bool m_sourceServerIDHasBeenSet = false;

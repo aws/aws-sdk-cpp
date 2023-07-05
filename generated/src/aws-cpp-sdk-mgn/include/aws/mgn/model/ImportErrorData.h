@@ -38,6 +38,47 @@ namespace Model
 
 
     /**
+     * <p>Import error data source account ID.</p>
+     */
+    inline const Aws::String& GetAccountID() const{ return m_accountID; }
+
+    /**
+     * <p>Import error data source account ID.</p>
+     */
+    inline bool AccountIDHasBeenSet() const { return m_accountIDHasBeenSet; }
+
+    /**
+     * <p>Import error data source account ID.</p>
+     */
+    inline void SetAccountID(const Aws::String& value) { m_accountIDHasBeenSet = true; m_accountID = value; }
+
+    /**
+     * <p>Import error data source account ID.</p>
+     */
+    inline void SetAccountID(Aws::String&& value) { m_accountIDHasBeenSet = true; m_accountID = std::move(value); }
+
+    /**
+     * <p>Import error data source account ID.</p>
+     */
+    inline void SetAccountID(const char* value) { m_accountIDHasBeenSet = true; m_accountID.assign(value); }
+
+    /**
+     * <p>Import error data source account ID.</p>
+     */
+    inline ImportErrorData& WithAccountID(const Aws::String& value) { SetAccountID(value); return *this;}
+
+    /**
+     * <p>Import error data source account ID.</p>
+     */
+    inline ImportErrorData& WithAccountID(Aws::String&& value) { SetAccountID(std::move(value)); return *this;}
+
+    /**
+     * <p>Import error data source account ID.</p>
+     */
+    inline ImportErrorData& WithAccountID(const char* value) { SetAccountID(value); return *this;}
+
+
+    /**
      * <p>Import error data application ID.</p>
      */
     inline const Aws::String& GetApplicationID() const{ return m_applicationID; }
@@ -263,6 +304,9 @@ namespace Model
     inline ImportErrorData& WithWaveID(const char* value) { SetWaveID(value); return *this;}
 
   private:
+
+    Aws::String m_accountID;
+    bool m_accountIDHasBeenSet = false;
 
     Aws::String m_applicationID;
     bool m_applicationIDHasBeenSet = false;

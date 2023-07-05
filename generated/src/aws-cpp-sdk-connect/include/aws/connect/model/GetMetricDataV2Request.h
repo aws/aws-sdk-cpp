@@ -213,11 +213,11 @@ namespace Model
      * <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
      * <code>AGENT_HIERARCHY_LEVEL_FIVE</code> </p> </li> <li> <p> <b>Filter
      * values</b>: A maximum of 100 filter values are supported in a single request.
-     * For example, a <code>GetMetricDataV2</code> request can filter by 50 queues, 35
-     * agents, and 15 routing profiles for a total of 100 filter values.
-     * <code>VOICE</code>, <code>CHAT</code>, and <code>TASK</code> are valid
-     * <code>filterValue</code> for the <code>CHANNEL</code> filter key.</p> </li>
-     * </ul>
+     * VOICE, CHAT, and TASK are valid <code>filterValue</code> for the CHANNEL filter
+     * key. They do not count towards limitation of 100 filter values. For example, a
+     * GetMetricDataV2 request can filter by 50 queues, 35 agents, and 15 routing
+     * profiles for a total of 100 filter values, along with 3 channel filters.</p>
+     * </li> </ul>
      */
     inline const Aws::Vector<FilterV2>& GetFilters() const{ return m_filters; }
 
@@ -239,11 +239,11 @@ namespace Model
      * <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
      * <code>AGENT_HIERARCHY_LEVEL_FIVE</code> </p> </li> <li> <p> <b>Filter
      * values</b>: A maximum of 100 filter values are supported in a single request.
-     * For example, a <code>GetMetricDataV2</code> request can filter by 50 queues, 35
-     * agents, and 15 routing profiles for a total of 100 filter values.
-     * <code>VOICE</code>, <code>CHAT</code>, and <code>TASK</code> are valid
-     * <code>filterValue</code> for the <code>CHANNEL</code> filter key.</p> </li>
-     * </ul>
+     * VOICE, CHAT, and TASK are valid <code>filterValue</code> for the CHANNEL filter
+     * key. They do not count towards limitation of 100 filter values. For example, a
+     * GetMetricDataV2 request can filter by 50 queues, 35 agents, and 15 routing
+     * profiles for a total of 100 filter values, along with 3 channel filters.</p>
+     * </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
@@ -265,11 +265,11 @@ namespace Model
      * <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
      * <code>AGENT_HIERARCHY_LEVEL_FIVE</code> </p> </li> <li> <p> <b>Filter
      * values</b>: A maximum of 100 filter values are supported in a single request.
-     * For example, a <code>GetMetricDataV2</code> request can filter by 50 queues, 35
-     * agents, and 15 routing profiles for a total of 100 filter values.
-     * <code>VOICE</code>, <code>CHAT</code>, and <code>TASK</code> are valid
-     * <code>filterValue</code> for the <code>CHANNEL</code> filter key.</p> </li>
-     * </ul>
+     * VOICE, CHAT, and TASK are valid <code>filterValue</code> for the CHANNEL filter
+     * key. They do not count towards limitation of 100 filter values. For example, a
+     * GetMetricDataV2 request can filter by 50 queues, 35 agents, and 15 routing
+     * profiles for a total of 100 filter values, along with 3 channel filters.</p>
+     * </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<FilterV2>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
@@ -291,11 +291,11 @@ namespace Model
      * <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
      * <code>AGENT_HIERARCHY_LEVEL_FIVE</code> </p> </li> <li> <p> <b>Filter
      * values</b>: A maximum of 100 filter values are supported in a single request.
-     * For example, a <code>GetMetricDataV2</code> request can filter by 50 queues, 35
-     * agents, and 15 routing profiles for a total of 100 filter values.
-     * <code>VOICE</code>, <code>CHAT</code>, and <code>TASK</code> are valid
-     * <code>filterValue</code> for the <code>CHANNEL</code> filter key.</p> </li>
-     * </ul>
+     * VOICE, CHAT, and TASK are valid <code>filterValue</code> for the CHANNEL filter
+     * key. They do not count towards limitation of 100 filter values. For example, a
+     * GetMetricDataV2 request can filter by 50 queues, 35 agents, and 15 routing
+     * profiles for a total of 100 filter values, along with 3 channel filters.</p>
+     * </li> </ul>
      */
     inline void SetFilters(Aws::Vector<FilterV2>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
@@ -317,11 +317,11 @@ namespace Model
      * <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
      * <code>AGENT_HIERARCHY_LEVEL_FIVE</code> </p> </li> <li> <p> <b>Filter
      * values</b>: A maximum of 100 filter values are supported in a single request.
-     * For example, a <code>GetMetricDataV2</code> request can filter by 50 queues, 35
-     * agents, and 15 routing profiles for a total of 100 filter values.
-     * <code>VOICE</code>, <code>CHAT</code>, and <code>TASK</code> are valid
-     * <code>filterValue</code> for the <code>CHANNEL</code> filter key.</p> </li>
-     * </ul>
+     * VOICE, CHAT, and TASK are valid <code>filterValue</code> for the CHANNEL filter
+     * key. They do not count towards limitation of 100 filter values. For example, a
+     * GetMetricDataV2 request can filter by 50 queues, 35 agents, and 15 routing
+     * profiles for a total of 100 filter values, along with 3 channel filters.</p>
+     * </li> </ul>
      */
     inline GetMetricDataV2Request& WithFilters(const Aws::Vector<FilterV2>& value) { SetFilters(value); return *this;}
 
@@ -343,11 +343,11 @@ namespace Model
      * <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
      * <code>AGENT_HIERARCHY_LEVEL_FIVE</code> </p> </li> <li> <p> <b>Filter
      * values</b>: A maximum of 100 filter values are supported in a single request.
-     * For example, a <code>GetMetricDataV2</code> request can filter by 50 queues, 35
-     * agents, and 15 routing profiles for a total of 100 filter values.
-     * <code>VOICE</code>, <code>CHAT</code>, and <code>TASK</code> are valid
-     * <code>filterValue</code> for the <code>CHANNEL</code> filter key.</p> </li>
-     * </ul>
+     * VOICE, CHAT, and TASK are valid <code>filterValue</code> for the CHANNEL filter
+     * key. They do not count towards limitation of 100 filter values. For example, a
+     * GetMetricDataV2 request can filter by 50 queues, 35 agents, and 15 routing
+     * profiles for a total of 100 filter values, along with 3 channel filters.</p>
+     * </li> </ul>
      */
     inline GetMetricDataV2Request& WithFilters(Aws::Vector<FilterV2>&& value) { SetFilters(std::move(value)); return *this;}
 
@@ -369,11 +369,11 @@ namespace Model
      * <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
      * <code>AGENT_HIERARCHY_LEVEL_FIVE</code> </p> </li> <li> <p> <b>Filter
      * values</b>: A maximum of 100 filter values are supported in a single request.
-     * For example, a <code>GetMetricDataV2</code> request can filter by 50 queues, 35
-     * agents, and 15 routing profiles for a total of 100 filter values.
-     * <code>VOICE</code>, <code>CHAT</code>, and <code>TASK</code> are valid
-     * <code>filterValue</code> for the <code>CHANNEL</code> filter key.</p> </li>
-     * </ul>
+     * VOICE, CHAT, and TASK are valid <code>filterValue</code> for the CHANNEL filter
+     * key. They do not count towards limitation of 100 filter values. For example, a
+     * GetMetricDataV2 request can filter by 50 queues, 35 agents, and 15 routing
+     * profiles for a total of 100 filter values, along with 3 channel filters.</p>
+     * </li> </ul>
      */
     inline GetMetricDataV2Request& AddFilters(const FilterV2& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
@@ -395,11 +395,11 @@ namespace Model
      * <code>AGENT_HIERARCHY_LEVEL_FOUR</code> |
      * <code>AGENT_HIERARCHY_LEVEL_FIVE</code> </p> </li> <li> <p> <b>Filter
      * values</b>: A maximum of 100 filter values are supported in a single request.
-     * For example, a <code>GetMetricDataV2</code> request can filter by 50 queues, 35
-     * agents, and 15 routing profiles for a total of 100 filter values.
-     * <code>VOICE</code>, <code>CHAT</code>, and <code>TASK</code> are valid
-     * <code>filterValue</code> for the <code>CHANNEL</code> filter key.</p> </li>
-     * </ul>
+     * VOICE, CHAT, and TASK are valid <code>filterValue</code> for the CHANNEL filter
+     * key. They do not count towards limitation of 100 filter values. For example, a
+     * GetMetricDataV2 request can filter by 50 queues, 35 agents, and 15 routing
+     * profiles for a total of 100 filter values, along with 3 channel filters.</p>
+     * </li> </ul>
      */
     inline GetMetricDataV2Request& AddFilters(FilterV2&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

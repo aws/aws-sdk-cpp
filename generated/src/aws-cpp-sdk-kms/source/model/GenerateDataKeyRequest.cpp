@@ -20,7 +20,9 @@ GenerateDataKeyRequest::GenerateDataKeyRequest() :
     m_keySpec(DataKeySpec::NOT_SET),
     m_keySpecHasBeenSet(false),
     m_grantTokensHasBeenSet(false),
-    m_recipientHasBeenSet(false)
+    m_recipientHasBeenSet(false),
+    m_dryRun(false),
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -70,6 +72,12 @@ Aws::String GenerateDataKeyRequest::SerializePayload() const
   if(m_recipientHasBeenSet)
   {
    payload.WithObject("Recipient", m_recipient.Jsonize());
+
+  }
+
+  if(m_dryRunHasBeenSet)
+  {
+   payload.WithBool("DryRun", m_dryRun);
 
   }
 

@@ -13,6 +13,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateReplicationConfigurationRequest::UpdateReplicationConfigurationRequest() : 
+    m_accountIDHasBeenSet(false),
     m_associateDefaultSecurityGroup(false),
     m_associateDefaultSecurityGroupHasBeenSet(false),
     m_bandwidthThrottling(0),
@@ -34,13 +35,21 @@ UpdateReplicationConfigurationRequest::UpdateReplicationConfigurationRequest() :
     m_stagingAreaSubnetIdHasBeenSet(false),
     m_stagingAreaTagsHasBeenSet(false),
     m_useDedicatedReplicationServer(false),
-    m_useDedicatedReplicationServerHasBeenSet(false)
+    m_useDedicatedReplicationServerHasBeenSet(false),
+    m_useFipsEndpoint(false),
+    m_useFipsEndpointHasBeenSet(false)
 {
 }
 
 Aws::String UpdateReplicationConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_accountIDHasBeenSet)
+  {
+   payload.WithString("accountID", m_accountID);
+
+  }
 
   if(m_associateDefaultSecurityGroupHasBeenSet)
   {
@@ -141,6 +150,12 @@ Aws::String UpdateReplicationConfigurationRequest::SerializePayload() const
   if(m_useDedicatedReplicationServerHasBeenSet)
   {
    payload.WithBool("useDedicatedReplicationServer", m_useDedicatedReplicationServer);
+
+  }
+
+  if(m_useFipsEndpointHasBeenSet)
+  {
+   payload.WithBool("useFipsEndpoint", m_useFipsEndpoint);
 
   }
 

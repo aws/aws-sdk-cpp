@@ -13,6 +13,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DeleteWaveRequest::DeleteWaveRequest() : 
+    m_accountIDHasBeenSet(false),
     m_waveIDHasBeenSet(false)
 {
 }
@@ -20,6 +21,12 @@ DeleteWaveRequest::DeleteWaveRequest() :
 Aws::String DeleteWaveRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_accountIDHasBeenSet)
+  {
+   payload.WithString("accountID", m_accountID);
+
+  }
 
   if(m_waveIDHasBeenSet)
   {

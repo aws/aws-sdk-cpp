@@ -13,6 +13,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DeleteJobRequest::DeleteJobRequest() : 
+    m_accountIDHasBeenSet(false),
     m_jobIDHasBeenSet(false)
 {
 }
@@ -20,6 +21,12 @@ DeleteJobRequest::DeleteJobRequest() :
 Aws::String DeleteJobRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_accountIDHasBeenSet)
+  {
+   payload.WithString("accountID", m_accountID);
+
+  }
 
   if(m_jobIDHasBeenSet)
   {

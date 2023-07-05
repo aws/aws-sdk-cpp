@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/mgn/Mgn_EXPORTS.h>
 #include <aws/mgn/MgnRequest.h>
-#include <aws/mgn/model/ChangeServerLifeCycleStateSourceServerLifecycle.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mgn/model/ChangeServerLifeCycleStateSourceServerLifecycle.h>
 #include <utility>
 
 namespace Aws
@@ -31,6 +31,47 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "ChangeServerLifeCycleState"; }
 
     AWS_MGN_API Aws::String SerializePayload() const override;
+
+
+    /**
+     * <p>The request to change the source server migration account ID.</p>
+     */
+    inline const Aws::String& GetAccountID() const{ return m_accountID; }
+
+    /**
+     * <p>The request to change the source server migration account ID.</p>
+     */
+    inline bool AccountIDHasBeenSet() const { return m_accountIDHasBeenSet; }
+
+    /**
+     * <p>The request to change the source server migration account ID.</p>
+     */
+    inline void SetAccountID(const Aws::String& value) { m_accountIDHasBeenSet = true; m_accountID = value; }
+
+    /**
+     * <p>The request to change the source server migration account ID.</p>
+     */
+    inline void SetAccountID(Aws::String&& value) { m_accountIDHasBeenSet = true; m_accountID = std::move(value); }
+
+    /**
+     * <p>The request to change the source server migration account ID.</p>
+     */
+    inline void SetAccountID(const char* value) { m_accountIDHasBeenSet = true; m_accountID.assign(value); }
+
+    /**
+     * <p>The request to change the source server migration account ID.</p>
+     */
+    inline ChangeServerLifeCycleStateRequest& WithAccountID(const Aws::String& value) { SetAccountID(value); return *this;}
+
+    /**
+     * <p>The request to change the source server migration account ID.</p>
+     */
+    inline ChangeServerLifeCycleStateRequest& WithAccountID(Aws::String&& value) { SetAccountID(std::move(value)); return *this;}
+
+    /**
+     * <p>The request to change the source server migration account ID.</p>
+     */
+    inline ChangeServerLifeCycleStateRequest& WithAccountID(const char* value) { SetAccountID(value); return *this;}
 
 
     /**
@@ -113,6 +154,9 @@ namespace Model
     inline ChangeServerLifeCycleStateRequest& WithSourceServerID(const char* value) { SetSourceServerID(value); return *this;}
 
   private:
+
+    Aws::String m_accountID;
+    bool m_accountIDHasBeenSet = false;
 
     ChangeServerLifeCycleStateSourceServerLifecycle m_lifeCycle;
     bool m_lifeCycleHasBeenSet = false;

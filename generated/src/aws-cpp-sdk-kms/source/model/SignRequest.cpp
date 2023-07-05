@@ -20,7 +20,9 @@ SignRequest::SignRequest() :
     m_messageTypeHasBeenSet(false),
     m_grantTokensHasBeenSet(false),
     m_signingAlgorithm(SigningAlgorithmSpec::NOT_SET),
-    m_signingAlgorithmHasBeenSet(false)
+    m_signingAlgorithmHasBeenSet(false),
+    m_dryRun(false),
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -58,6 +60,12 @@ Aws::String SignRequest::SerializePayload() const
   if(m_signingAlgorithmHasBeenSet)
   {
    payload.WithString("SigningAlgorithm", SigningAlgorithmSpecMapper::GetNameForSigningAlgorithmSpec(m_signingAlgorithm));
+  }
+
+  if(m_dryRunHasBeenSet)
+  {
+   payload.WithBool("DryRun", m_dryRun);
+
   }
 
   return payload.View().WriteReadable();

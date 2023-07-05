@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p> An attribute that was extracted, but Comprehend Medical; was unable to
+   * <p>An attribute that was extracted, but Amazon Comprehend Medical was unable to
    * relate to an entity. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/UnmappedAttribute">AWS
    * API Reference</a></p>
