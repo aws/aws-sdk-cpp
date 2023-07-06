@@ -22,7 +22,8 @@ ColumnConfiguration::ColumnConfiguration() :
     m_columnHasBeenSet(false),
     m_formatConfigurationHasBeenSet(false),
     m_role(ColumnRole::NOT_SET),
-    m_roleHasBeenSet(false)
+    m_roleHasBeenSet(false),
+    m_colorsConfigurationHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ ColumnConfiguration::ColumnConfiguration(JsonView jsonValue) :
     m_columnHasBeenSet(false),
     m_formatConfigurationHasBeenSet(false),
     m_role(ColumnRole::NOT_SET),
-    m_roleHasBeenSet(false)
+    m_roleHasBeenSet(false),
+    m_colorsConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -58,6 +60,13 @@ ColumnConfiguration& ColumnConfiguration::operator =(JsonView jsonValue)
     m_roleHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ColorsConfiguration"))
+  {
+    m_colorsConfiguration = jsonValue.GetObject("ColorsConfiguration");
+
+    m_colorsConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -80,6 +89,12 @@ JsonValue ColumnConfiguration::Jsonize() const
   if(m_roleHasBeenSet)
   {
    payload.WithString("Role", ColumnRoleMapper::GetNameForColumnRole(m_role));
+  }
+
+  if(m_colorsConfigurationHasBeenSet)
+  {
+   payload.WithObject("ColorsConfiguration", m_colorsConfiguration.Jsonize());
+
   }
 
   return payload;

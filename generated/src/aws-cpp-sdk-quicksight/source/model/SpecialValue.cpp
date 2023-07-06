@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/outposts/model/AssetState.h>
+#include <aws/quicksight/model/SpecialValue.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
@@ -13,53 +13,53 @@ using namespace Aws::Utils;
 
 namespace Aws
 {
-  namespace Outposts
+  namespace QuickSight
   {
     namespace Model
     {
-      namespace AssetStateMapper
+      namespace SpecialValueMapper
       {
 
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int RETIRING_HASH = HashingUtils::HashString("RETIRING");
-        static const int ISOLATED_HASH = HashingUtils::HashString("ISOLATED");
+        static const int EMPTY_HASH = HashingUtils::HashString("EMPTY");
+        static const int NULL__HASH = HashingUtils::HashString("NULL");
+        static const int OTHER_HASH = HashingUtils::HashString("OTHER");
 
 
-        AssetState GetAssetStateForName(const Aws::String& name)
+        SpecialValue GetSpecialValueForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == ACTIVE_HASH)
+          if (hashCode == EMPTY_HASH)
           {
-            return AssetState::ACTIVE;
+            return SpecialValue::EMPTY;
           }
-          else if (hashCode == RETIRING_HASH)
+          else if (hashCode == NULL__HASH)
           {
-            return AssetState::RETIRING;
+            return SpecialValue::NULL_;
           }
-          else if (hashCode == ISOLATED_HASH)
+          else if (hashCode == OTHER_HASH)
           {
-            return AssetState::ISOLATED;
+            return SpecialValue::OTHER;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<AssetState>(hashCode);
+            return static_cast<SpecialValue>(hashCode);
           }
 
-          return AssetState::NOT_SET;
+          return SpecialValue::NOT_SET;
         }
 
-        Aws::String GetNameForAssetState(AssetState enumValue)
+        Aws::String GetNameForSpecialValue(SpecialValue enumValue)
         {
           switch(enumValue)
           {
-          case AssetState::ACTIVE:
-            return "ACTIVE";
-          case AssetState::RETIRING:
-            return "RETIRING";
-          case AssetState::ISOLATED:
-            return "ISOLATED";
+          case SpecialValue::EMPTY:
+            return "EMPTY";
+          case SpecialValue::NULL_:
+            return "NULL";
+          case SpecialValue::OTHER:
+            return "OTHER";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -71,7 +71,7 @@ namespace Aws
           }
         }
 
-      } // namespace AssetStateMapper
+      } // namespace SpecialValueMapper
     } // namespace Model
-  } // namespace Outposts
+  } // namespace QuickSight
 } // namespace Aws

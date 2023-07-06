@@ -26,7 +26,8 @@ namespace Model
 
   /**
    * <p>The source of the asset bundle zip file that contains the data that you want
-   * to import.</p><p><h3>See Also:</h3>   <a
+   * to import. The file must be in <code>QUICKSIGHT_JSON</code>
+   * format.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/AssetBundleImportSource">AWS
    * API Reference</a></p>
    */

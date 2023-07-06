@@ -289,42 +289,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of the previous order.</p>
+     * <p>The ID of the previous order item.</p>
      */
     inline const Aws::String& GetPreviousOrderId() const{ return m_previousOrderId; }
 
     /**
-     * <p>The ID of the previous order.</p>
+     * <p>The ID of the previous order item.</p>
      */
     inline bool PreviousOrderIdHasBeenSet() const { return m_previousOrderIdHasBeenSet; }
 
     /**
-     * <p>The ID of the previous order.</p>
+     * <p>The ID of the previous order item.</p>
      */
     inline void SetPreviousOrderId(const Aws::String& value) { m_previousOrderIdHasBeenSet = true; m_previousOrderId = value; }
 
     /**
-     * <p>The ID of the previous order.</p>
+     * <p>The ID of the previous order item.</p>
      */
     inline void SetPreviousOrderId(Aws::String&& value) { m_previousOrderIdHasBeenSet = true; m_previousOrderId = std::move(value); }
 
     /**
-     * <p>The ID of the previous order.</p>
+     * <p>The ID of the previous order item.</p>
      */
     inline void SetPreviousOrderId(const char* value) { m_previousOrderIdHasBeenSet = true; m_previousOrderId.assign(value); }
 
     /**
-     * <p>The ID of the previous order.</p>
+     * <p>The ID of the previous order item.</p>
      */
     inline LineItem& WithPreviousOrderId(const Aws::String& value) { SetPreviousOrderId(value); return *this;}
 
     /**
-     * <p>The ID of the previous order.</p>
+     * <p>The ID of the previous order item.</p>
      */
     inline LineItem& WithPreviousOrderId(Aws::String&& value) { SetPreviousOrderId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the previous order.</p>
+     * <p>The ID of the previous order item.</p>
      */
     inline LineItem& WithPreviousOrderId(const char* value) { SetPreviousOrderId(value); return *this;}
 
