@@ -24,7 +24,7 @@ namespace Model
   /**
    * <p>Indicates whether your instance is configured for hibernation. This parameter
    * is valid only if the instance meets the <a
-   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html">hibernation
    * prerequisites</a>. For more information, see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
    * your instance</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3> 
@@ -44,26 +44,26 @@ namespace Model
 
 
     /**
-     * <p>If this parameter is set to <code>true</code>, your instance is enabled for
-     * hibernation; otherwise, it is not enabled for hibernation.</p>
+     * <p>If <code>true</code>, your instance is enabled for hibernation; otherwise, it
+     * is not enabled for hibernation.</p>
      */
     inline bool GetConfigured() const{ return m_configured; }
 
     /**
-     * <p>If this parameter is set to <code>true</code>, your instance is enabled for
-     * hibernation; otherwise, it is not enabled for hibernation.</p>
+     * <p>If <code>true</code>, your instance is enabled for hibernation; otherwise, it
+     * is not enabled for hibernation.</p>
      */
     inline bool ConfiguredHasBeenSet() const { return m_configuredHasBeenSet; }
 
     /**
-     * <p>If this parameter is set to <code>true</code>, your instance is enabled for
-     * hibernation; otherwise, it is not enabled for hibernation.</p>
+     * <p>If <code>true</code>, your instance is enabled for hibernation; otherwise, it
+     * is not enabled for hibernation.</p>
      */
     inline void SetConfigured(bool value) { m_configuredHasBeenSet = true; m_configured = value; }
 
     /**
-     * <p>If this parameter is set to <code>true</code>, your instance is enabled for
-     * hibernation; otherwise, it is not enabled for hibernation.</p>
+     * <p>If <code>true</code>, your instance is enabled for hibernation; otherwise, it
+     * is not enabled for hibernation.</p>
      */
     inline HibernationOptions& WithConfigured(bool value) { SetConfigured(value); return *this;}
 

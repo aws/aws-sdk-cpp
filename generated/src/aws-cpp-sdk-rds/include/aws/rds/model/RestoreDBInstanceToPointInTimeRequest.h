@@ -1328,106 +1328,106 @@ namespace Model
 
 
     /**
-     * <p>Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * <p>The name of the IAM role to use when making API calls to the Directory
+     * Service.</p> <p>This setting doesn't apply to RDS Custom DB instances.</p>
      */
     inline const Aws::String& GetDomainIAMRoleName() const{ return m_domainIAMRoleName; }
 
     /**
-     * <p>Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * <p>The name of the IAM role to use when making API calls to the Directory
+     * Service.</p> <p>This setting doesn't apply to RDS Custom DB instances.</p>
      */
     inline bool DomainIAMRoleNameHasBeenSet() const { return m_domainIAMRoleNameHasBeenSet; }
 
     /**
-     * <p>Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * <p>The name of the IAM role to use when making API calls to the Directory
+     * Service.</p> <p>This setting doesn't apply to RDS Custom DB instances.</p>
      */
     inline void SetDomainIAMRoleName(const Aws::String& value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName = value; }
 
     /**
-     * <p>Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * <p>The name of the IAM role to use when making API calls to the Directory
+     * Service.</p> <p>This setting doesn't apply to RDS Custom DB instances.</p>
      */
     inline void SetDomainIAMRoleName(Aws::String&& value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName = std::move(value); }
 
     /**
-     * <p>Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * <p>The name of the IAM role to use when making API calls to the Directory
+     * Service.</p> <p>This setting doesn't apply to RDS Custom DB instances.</p>
      */
     inline void SetDomainIAMRoleName(const char* value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName.assign(value); }
 
     /**
-     * <p>Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * <p>The name of the IAM role to use when making API calls to the Directory
+     * Service.</p> <p>This setting doesn't apply to RDS Custom DB instances.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithDomainIAMRoleName(const Aws::String& value) { SetDomainIAMRoleName(value); return *this;}
 
     /**
-     * <p>Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * <p>The name of the IAM role to use when making API calls to the Directory
+     * Service.</p> <p>This setting doesn't apply to RDS Custom DB instances.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithDomainIAMRoleName(Aws::String&& value) { SetDomainIAMRoleName(std::move(value)); return *this;}
 
     /**
-     * <p>Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * <p>The name of the IAM role to use when making API calls to the Directory
+     * Service.</p> <p>This setting doesn't apply to RDS Custom DB instances.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithDomainIAMRoleName(const char* value) { SetDomainIAMRoleName(value); return *this;}
 
 
     /**
-     * <p>Specifies the fully qualified domain name of an Active Directory domain.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Cannot be greater than 64 characters.</p> </li>
+     * <p>The fully qualified domain name (FQDN) of an Active Directory domain.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 64 characters.</p> </li>
      * </ul> <p>Example: <code>mymanagedADtest.mymanagedAD.mydomain</code> </p>
      */
     inline const Aws::String& GetDomainFqdn() const{ return m_domainFqdn; }
 
     /**
-     * <p>Specifies the fully qualified domain name of an Active Directory domain.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Cannot be greater than 64 characters.</p> </li>
+     * <p>The fully qualified domain name (FQDN) of an Active Directory domain.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 64 characters.</p> </li>
      * </ul> <p>Example: <code>mymanagedADtest.mymanagedAD.mydomain</code> </p>
      */
     inline bool DomainFqdnHasBeenSet() const { return m_domainFqdnHasBeenSet; }
 
     /**
-     * <p>Specifies the fully qualified domain name of an Active Directory domain.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Cannot be greater than 64 characters.</p> </li>
+     * <p>The fully qualified domain name (FQDN) of an Active Directory domain.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 64 characters.</p> </li>
      * </ul> <p>Example: <code>mymanagedADtest.mymanagedAD.mydomain</code> </p>
      */
     inline void SetDomainFqdn(const Aws::String& value) { m_domainFqdnHasBeenSet = true; m_domainFqdn = value; }
 
     /**
-     * <p>Specifies the fully qualified domain name of an Active Directory domain.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Cannot be greater than 64 characters.</p> </li>
+     * <p>The fully qualified domain name (FQDN) of an Active Directory domain.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 64 characters.</p> </li>
      * </ul> <p>Example: <code>mymanagedADtest.mymanagedAD.mydomain</code> </p>
      */
     inline void SetDomainFqdn(Aws::String&& value) { m_domainFqdnHasBeenSet = true; m_domainFqdn = std::move(value); }
 
     /**
-     * <p>Specifies the fully qualified domain name of an Active Directory domain.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Cannot be greater than 64 characters.</p> </li>
+     * <p>The fully qualified domain name (FQDN) of an Active Directory domain.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 64 characters.</p> </li>
      * </ul> <p>Example: <code>mymanagedADtest.mymanagedAD.mydomain</code> </p>
      */
     inline void SetDomainFqdn(const char* value) { m_domainFqdnHasBeenSet = true; m_domainFqdn.assign(value); }
 
     /**
-     * <p>Specifies the fully qualified domain name of an Active Directory domain.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Cannot be greater than 64 characters.</p> </li>
+     * <p>The fully qualified domain name (FQDN) of an Active Directory domain.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 64 characters.</p> </li>
      * </ul> <p>Example: <code>mymanagedADtest.mymanagedAD.mydomain</code> </p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithDomainFqdn(const Aws::String& value) { SetDomainFqdn(value); return *this;}
 
     /**
-     * <p>Specifies the fully qualified domain name of an Active Directory domain.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Cannot be greater than 64 characters.</p> </li>
+     * <p>The fully qualified domain name (FQDN) of an Active Directory domain.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 64 characters.</p> </li>
      * </ul> <p>Example: <code>mymanagedADtest.mymanagedAD.mydomain</code> </p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithDomainFqdn(Aws::String&& value) { SetDomainFqdn(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the fully qualified domain name of an Active Directory domain.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Cannot be greater than 64 characters.</p> </li>
+     * <p>The fully qualified domain name (FQDN) of an Active Directory domain.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 64 characters.</p> </li>
      * </ul> <p>Example: <code>mymanagedADtest.mymanagedAD.mydomain</code> </p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithDomainFqdn(const char* value) { SetDomainFqdn(value); return *this;}
@@ -1436,7 +1436,7 @@ namespace Model
     /**
      * <p>The Active Directory organizational unit for your DB instance to join.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be in the distinguished name format.</p>
-     * </li> <li> <p>Cannot be greater than 64 characters.</p> </li> </ul> <p>Example:
+     * </li> <li> <p>Can't be longer than 64 characters.</p> </li> </ul> <p>Example:
      * <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code>
      * </p>
      */
@@ -1445,7 +1445,7 @@ namespace Model
     /**
      * <p>The Active Directory organizational unit for your DB instance to join.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be in the distinguished name format.</p>
-     * </li> <li> <p>Cannot be greater than 64 characters.</p> </li> </ul> <p>Example:
+     * </li> <li> <p>Can't be longer than 64 characters.</p> </li> </ul> <p>Example:
      * <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code>
      * </p>
      */
@@ -1454,7 +1454,7 @@ namespace Model
     /**
      * <p>The Active Directory organizational unit for your DB instance to join.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be in the distinguished name format.</p>
-     * </li> <li> <p>Cannot be greater than 64 characters.</p> </li> </ul> <p>Example:
+     * </li> <li> <p>Can't be longer than 64 characters.</p> </li> </ul> <p>Example:
      * <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code>
      * </p>
      */
@@ -1463,7 +1463,7 @@ namespace Model
     /**
      * <p>The Active Directory organizational unit for your DB instance to join.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be in the distinguished name format.</p>
-     * </li> <li> <p>Cannot be greater than 64 characters.</p> </li> </ul> <p>Example:
+     * </li> <li> <p>Can't be longer than 64 characters.</p> </li> </ul> <p>Example:
      * <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code>
      * </p>
      */
@@ -1472,7 +1472,7 @@ namespace Model
     /**
      * <p>The Active Directory organizational unit for your DB instance to join.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be in the distinguished name format.</p>
-     * </li> <li> <p>Cannot be greater than 64 characters.</p> </li> </ul> <p>Example:
+     * </li> <li> <p>Can't be longer than 64 characters.</p> </li> </ul> <p>Example:
      * <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code>
      * </p>
      */
@@ -1481,7 +1481,7 @@ namespace Model
     /**
      * <p>The Active Directory organizational unit for your DB instance to join.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be in the distinguished name format.</p>
-     * </li> <li> <p>Cannot be greater than 64 characters.</p> </li> </ul> <p>Example:
+     * </li> <li> <p>Can't be longer than 64 characters.</p> </li> </ul> <p>Example:
      * <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code>
      * </p>
      */
@@ -1490,7 +1490,7 @@ namespace Model
     /**
      * <p>The Active Directory organizational unit for your DB instance to join.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be in the distinguished name format.</p>
-     * </li> <li> <p>Cannot be greater than 64 characters.</p> </li> </ul> <p>Example:
+     * </li> <li> <p>Can't be longer than 64 characters.</p> </li> </ul> <p>Example:
      * <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code>
      * </p>
      */
@@ -1499,7 +1499,7 @@ namespace Model
     /**
      * <p>The Active Directory organizational unit for your DB instance to join.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be in the distinguished name format.</p>
-     * </li> <li> <p>Cannot be greater than 64 characters.</p> </li> </ul> <p>Example:
+     * </li> <li> <p>Can't be longer than 64 characters.</p> </li> </ul> <p>Example:
      * <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code>
      * </p>
      */
@@ -1507,72 +1507,72 @@ namespace Model
 
 
     /**
-     * <p>The ARN for the Secrets Manager secret that contains the credentials for the
-     * user performing the domain join.</p> <p>Constraints:</p> <ul> <li> <p>Cannot be
-     * greater than 64 characters.</p> </li> </ul> <p>Example:
+     * <p>The ARN for the Secrets Manager secret with the credentials for the user
+     * joining the domain.</p> <p>Constraints:</p> <ul> <li> <p>Can't be longer than 64
+     * characters.</p> </li> </ul> <p>Example:
      * <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code>
      * </p>
      */
     inline const Aws::String& GetDomainAuthSecretArn() const{ return m_domainAuthSecretArn; }
 
     /**
-     * <p>The ARN for the Secrets Manager secret that contains the credentials for the
-     * user performing the domain join.</p> <p>Constraints:</p> <ul> <li> <p>Cannot be
-     * greater than 64 characters.</p> </li> </ul> <p>Example:
+     * <p>The ARN for the Secrets Manager secret with the credentials for the user
+     * joining the domain.</p> <p>Constraints:</p> <ul> <li> <p>Can't be longer than 64
+     * characters.</p> </li> </ul> <p>Example:
      * <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code>
      * </p>
      */
     inline bool DomainAuthSecretArnHasBeenSet() const { return m_domainAuthSecretArnHasBeenSet; }
 
     /**
-     * <p>The ARN for the Secrets Manager secret that contains the credentials for the
-     * user performing the domain join.</p> <p>Constraints:</p> <ul> <li> <p>Cannot be
-     * greater than 64 characters.</p> </li> </ul> <p>Example:
+     * <p>The ARN for the Secrets Manager secret with the credentials for the user
+     * joining the domain.</p> <p>Constraints:</p> <ul> <li> <p>Can't be longer than 64
+     * characters.</p> </li> </ul> <p>Example:
      * <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code>
      * </p>
      */
     inline void SetDomainAuthSecretArn(const Aws::String& value) { m_domainAuthSecretArnHasBeenSet = true; m_domainAuthSecretArn = value; }
 
     /**
-     * <p>The ARN for the Secrets Manager secret that contains the credentials for the
-     * user performing the domain join.</p> <p>Constraints:</p> <ul> <li> <p>Cannot be
-     * greater than 64 characters.</p> </li> </ul> <p>Example:
+     * <p>The ARN for the Secrets Manager secret with the credentials for the user
+     * joining the domain.</p> <p>Constraints:</p> <ul> <li> <p>Can't be longer than 64
+     * characters.</p> </li> </ul> <p>Example:
      * <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code>
      * </p>
      */
     inline void SetDomainAuthSecretArn(Aws::String&& value) { m_domainAuthSecretArnHasBeenSet = true; m_domainAuthSecretArn = std::move(value); }
 
     /**
-     * <p>The ARN for the Secrets Manager secret that contains the credentials for the
-     * user performing the domain join.</p> <p>Constraints:</p> <ul> <li> <p>Cannot be
-     * greater than 64 characters.</p> </li> </ul> <p>Example:
+     * <p>The ARN for the Secrets Manager secret with the credentials for the user
+     * joining the domain.</p> <p>Constraints:</p> <ul> <li> <p>Can't be longer than 64
+     * characters.</p> </li> </ul> <p>Example:
      * <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code>
      * </p>
      */
     inline void SetDomainAuthSecretArn(const char* value) { m_domainAuthSecretArnHasBeenSet = true; m_domainAuthSecretArn.assign(value); }
 
     /**
-     * <p>The ARN for the Secrets Manager secret that contains the credentials for the
-     * user performing the domain join.</p> <p>Constraints:</p> <ul> <li> <p>Cannot be
-     * greater than 64 characters.</p> </li> </ul> <p>Example:
+     * <p>The ARN for the Secrets Manager secret with the credentials for the user
+     * joining the domain.</p> <p>Constraints:</p> <ul> <li> <p>Can't be longer than 64
+     * characters.</p> </li> </ul> <p>Example:
      * <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code>
      * </p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithDomainAuthSecretArn(const Aws::String& value) { SetDomainAuthSecretArn(value); return *this;}
 
     /**
-     * <p>The ARN for the Secrets Manager secret that contains the credentials for the
-     * user performing the domain join.</p> <p>Constraints:</p> <ul> <li> <p>Cannot be
-     * greater than 64 characters.</p> </li> </ul> <p>Example:
+     * <p>The ARN for the Secrets Manager secret with the credentials for the user
+     * joining the domain.</p> <p>Constraints:</p> <ul> <li> <p>Can't be longer than 64
+     * characters.</p> </li> </ul> <p>Example:
      * <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code>
      * </p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithDomainAuthSecretArn(Aws::String&& value) { SetDomainAuthSecretArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN for the Secrets Manager secret that contains the credentials for the
-     * user performing the domain join.</p> <p>Constraints:</p> <ul> <li> <p>Cannot be
-     * greater than 64 characters.</p> </li> </ul> <p>Example:
+     * <p>The ARN for the Secrets Manager secret with the credentials for the user
+     * joining the domain.</p> <p>Constraints:</p> <ul> <li> <p>Can't be longer than 64
+     * characters.</p> </li> </ul> <p>Example:
      * <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code>
      * </p>
      */

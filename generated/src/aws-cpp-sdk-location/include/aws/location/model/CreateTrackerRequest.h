@@ -76,6 +76,39 @@ namespace Model
 
 
     /**
+     * <p>Whether to enable position <code>UPDATE</code> events from this tracker to be
+     * sent to EventBridge.</p>  <p>You do not need enable this feature to get
+     * <code>ENTER</code> and <code>EXIT</code> events for geofences with this tracker.
+     * Those events are always sent to EventBridge.</p> 
+     */
+    inline bool GetEventBridgeEnabled() const{ return m_eventBridgeEnabled; }
+
+    /**
+     * <p>Whether to enable position <code>UPDATE</code> events from this tracker to be
+     * sent to EventBridge.</p>  <p>You do not need enable this feature to get
+     * <code>ENTER</code> and <code>EXIT</code> events for geofences with this tracker.
+     * Those events are always sent to EventBridge.</p> 
+     */
+    inline bool EventBridgeEnabledHasBeenSet() const { return m_eventBridgeEnabledHasBeenSet; }
+
+    /**
+     * <p>Whether to enable position <code>UPDATE</code> events from this tracker to be
+     * sent to EventBridge.</p>  <p>You do not need enable this feature to get
+     * <code>ENTER</code> and <code>EXIT</code> events for geofences with this tracker.
+     * Those events are always sent to EventBridge.</p> 
+     */
+    inline void SetEventBridgeEnabled(bool value) { m_eventBridgeEnabledHasBeenSet = true; m_eventBridgeEnabled = value; }
+
+    /**
+     * <p>Whether to enable position <code>UPDATE</code> events from this tracker to be
+     * sent to EventBridge.</p>  <p>You do not need enable this feature to get
+     * <code>ENTER</code> and <code>EXIT</code> events for geofences with this tracker.
+     * Those events are always sent to EventBridge.</p> 
+     */
+    inline CreateTrackerRequest& WithEventBridgeEnabled(bool value) { SetEventBridgeEnabled(value); return *this;}
+
+
+    /**
      * <p>A key identifier for an <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
      * Web Services KMS customer managed key</a>. Enter a key ID, key ARN, alias name,
@@ -531,6 +564,9 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
+
+    bool m_eventBridgeEnabled;
+    bool m_eventBridgeEnabledHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet = false;

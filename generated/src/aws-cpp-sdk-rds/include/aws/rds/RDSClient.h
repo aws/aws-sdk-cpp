@@ -1079,7 +1079,7 @@ namespace Aws
          * subsystem.</p> <p>You can create a global database that is initially empty, and
          * then add a primary cluster and a secondary cluster to it. Or you can specify an
          * existing Aurora cluster during the create operation, and this cluster becomes
-         * the primary cluster of the global database.</p>  <p>This action applies
+         * the primary cluster of the global database.</p>  <p>This operation applies
          * only to Aurora DB clusters.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateGlobalCluster">AWS
          * API Reference</a></p>

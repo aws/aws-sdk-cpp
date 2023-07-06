@@ -24,7 +24,7 @@ namespace Model
   /**
    * <p>Indicates whether your instance is configured for hibernation. This parameter
    * is valid only if the instance meets the <a
-   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html">hibernation
    * prerequisites</a>. For more information, see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
    * your instance</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3> 
@@ -44,26 +44,26 @@ namespace Model
 
 
     /**
-     * <p>If you set this parameter to <code>true</code>, your instance is enabled for
-     * hibernation.</p> <p>Default: <code>false</code> </p>
+     * <p>Set to <code>true</code> to enable your instance for hibernation.</p>
+     * <p>Default: <code>false</code> </p>
      */
     inline bool GetConfigured() const{ return m_configured; }
 
     /**
-     * <p>If you set this parameter to <code>true</code>, your instance is enabled for
-     * hibernation.</p> <p>Default: <code>false</code> </p>
+     * <p>Set to <code>true</code> to enable your instance for hibernation.</p>
+     * <p>Default: <code>false</code> </p>
      */
     inline bool ConfiguredHasBeenSet() const { return m_configuredHasBeenSet; }
 
     /**
-     * <p>If you set this parameter to <code>true</code>, your instance is enabled for
-     * hibernation.</p> <p>Default: <code>false</code> </p>
+     * <p>Set to <code>true</code> to enable your instance for hibernation.</p>
+     * <p>Default: <code>false</code> </p>
      */
     inline void SetConfigured(bool value) { m_configuredHasBeenSet = true; m_configured = value; }
 
     /**
-     * <p>If you set this parameter to <code>true</code>, your instance is enabled for
-     * hibernation.</p> <p>Default: <code>false</code> </p>
+     * <p>Set to <code>true</code> to enable your instance for hibernation.</p>
+     * <p>Default: <code>false</code> </p>
      */
     inline HibernationOptionsRequest& WithConfigured(bool value) { SetConfigured(value); return *this;}
 

@@ -3565,7 +3565,7 @@ namespace QuickSight
          * successfully completed, a download URL that contains the exported assets is
          * returned. The URL is valid for 5 minutes and can be refreshed with a
          * <code>DescribeAssetBundleExportJob</code> API call. Each Amazon QuickSight
-         * account can run up to 10 export jobs concurrently.</p> <p>The API caller must
+         * account can run up to 5 export jobs concurrently.</p> <p>The API caller must
          * have the necessary permissions in their IAM role to access each resource before
          * the resources can be exported.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/StartAssetBundleExportJob">AWS
@@ -3597,7 +3597,7 @@ namespace QuickSight
          * also choose to import a naming prefix and specified configuration overrides. The
          * assets that are contained in the bundle file that you provide are used to create
          * or update a new or existing asset in your Amazon QuickSight account. Each Amazon
-         * QuickSight account can run up to 10 import jobs concurrently.</p> <p>The API
+         * QuickSight account can run up to 5 import jobs concurrently.</p> <p>The API
          * caller must have the necessary <code>"create"</code>, <code>"describe"</code>,
          * and <code>"update"</code> permissions in their IAM role to access each resource
          * type that is contained in the bundle file before the resources can be

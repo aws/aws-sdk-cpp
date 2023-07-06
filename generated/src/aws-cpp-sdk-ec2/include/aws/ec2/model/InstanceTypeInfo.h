@@ -19,6 +19,7 @@
 #include <aws/ec2/model/FpgaInfo.h>
 #include <aws/ec2/model/PlacementGroupInfo.h>
 #include <aws/ec2/model/InferenceAcceleratorInfo.h>
+#include <aws/ec2/model/NitroEnclavesSupport.h>
 #include <aws/ec2/model/UsageClassType.h>
 #include <aws/ec2/model/RootDeviceType.h>
 #include <aws/ec2/model/VirtualizationType.h>
@@ -790,6 +791,37 @@ namespace Model
      */
     inline InstanceTypeInfo& AddSupportedBootModes(BootModeType&& value) { m_supportedBootModesHasBeenSet = true; m_supportedBootModes.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Indicates whether Nitro Enclaves is supported.</p>
+     */
+    inline const NitroEnclavesSupport& GetNitroEnclavesSupport() const{ return m_nitroEnclavesSupport; }
+
+    /**
+     * <p>Indicates whether Nitro Enclaves is supported.</p>
+     */
+    inline bool NitroEnclavesSupportHasBeenSet() const { return m_nitroEnclavesSupportHasBeenSet; }
+
+    /**
+     * <p>Indicates whether Nitro Enclaves is supported.</p>
+     */
+    inline void SetNitroEnclavesSupport(const NitroEnclavesSupport& value) { m_nitroEnclavesSupportHasBeenSet = true; m_nitroEnclavesSupport = value; }
+
+    /**
+     * <p>Indicates whether Nitro Enclaves is supported.</p>
+     */
+    inline void SetNitroEnclavesSupport(NitroEnclavesSupport&& value) { m_nitroEnclavesSupportHasBeenSet = true; m_nitroEnclavesSupport = std::move(value); }
+
+    /**
+     * <p>Indicates whether Nitro Enclaves is supported.</p>
+     */
+    inline InstanceTypeInfo& WithNitroEnclavesSupport(const NitroEnclavesSupport& value) { SetNitroEnclavesSupport(value); return *this;}
+
+    /**
+     * <p>Indicates whether Nitro Enclaves is supported.</p>
+     */
+    inline InstanceTypeInfo& WithNitroEnclavesSupport(NitroEnclavesSupport&& value) { SetNitroEnclavesSupport(std::move(value)); return *this;}
+
   private:
 
     InstanceType m_instanceType;
@@ -863,6 +895,9 @@ namespace Model
 
     Aws::Vector<BootModeType> m_supportedBootModes;
     bool m_supportedBootModesHasBeenSet = false;
+
+    NitroEnclavesSupport m_nitroEnclavesSupport;
+    bool m_nitroEnclavesSupportHasBeenSet = false;
   };
 
 } // namespace Model

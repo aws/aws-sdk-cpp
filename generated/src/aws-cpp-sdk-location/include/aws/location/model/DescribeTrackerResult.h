@@ -108,6 +108,28 @@ namespace Model
 
 
     /**
+     * <p>Whether <code>UPDATE</code> events from this tracker in EventBridge are
+     * enabled. If set to <code>true</code> these events will be sent to
+     * EventBridge.</p>
+     */
+    inline bool GetEventBridgeEnabled() const{ return m_eventBridgeEnabled; }
+
+    /**
+     * <p>Whether <code>UPDATE</code> events from this tracker in EventBridge are
+     * enabled. If set to <code>true</code> these events will be sent to
+     * EventBridge.</p>
+     */
+    inline void SetEventBridgeEnabled(bool value) { m_eventBridgeEnabled = value; }
+
+    /**
+     * <p>Whether <code>UPDATE</code> events from this tracker in EventBridge are
+     * enabled. If set to <code>true</code> these events will be sent to
+     * EventBridge.</p>
+     */
+    inline DescribeTrackerResult& WithEventBridgeEnabled(bool value) { SetEventBridgeEnabled(value); return *this;}
+
+
+    /**
      * <p>A key identifier for an <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
      * Web Services KMS customer managed key</a> assigned to the Amazon Location
@@ -406,6 +428,8 @@ namespace Model
     Aws::Utils::DateTime m_createTime;
 
     Aws::String m_description;
+
+    bool m_eventBridgeEnabled;
 
     Aws::String m_kmsKeyId;
 

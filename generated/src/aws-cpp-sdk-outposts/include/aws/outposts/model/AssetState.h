@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     ACTIVE,
-    RETIRING
+    RETIRING,
+    ISOLATED
   };
 
 namespace AssetStateMapper

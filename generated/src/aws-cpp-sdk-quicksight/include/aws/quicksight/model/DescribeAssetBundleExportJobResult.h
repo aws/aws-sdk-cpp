@@ -422,27 +422,42 @@ namespace Model
 
 
     /**
-     * <p>The format of the export.</p>
+     * <p>The format of the exported asset bundle. A <code>QUICKSIGHT_JSON</code>
+     * formatted file can be used to make a <code>StartAssetBundleImportJob</code> API
+     * call. A <code>CLOUDFORMATION_JSON</code> formatted file can be used in the
+     * CloudFormation console and with the CloudFormation APIs.</p>
      */
     inline const AssetBundleExportFormat& GetExportFormat() const{ return m_exportFormat; }
 
     /**
-     * <p>The format of the export.</p>
+     * <p>The format of the exported asset bundle. A <code>QUICKSIGHT_JSON</code>
+     * formatted file can be used to make a <code>StartAssetBundleImportJob</code> API
+     * call. A <code>CLOUDFORMATION_JSON</code> formatted file can be used in the
+     * CloudFormation console and with the CloudFormation APIs.</p>
      */
     inline void SetExportFormat(const AssetBundleExportFormat& value) { m_exportFormat = value; }
 
     /**
-     * <p>The format of the export.</p>
+     * <p>The format of the exported asset bundle. A <code>QUICKSIGHT_JSON</code>
+     * formatted file can be used to make a <code>StartAssetBundleImportJob</code> API
+     * call. A <code>CLOUDFORMATION_JSON</code> formatted file can be used in the
+     * CloudFormation console and with the CloudFormation APIs.</p>
      */
     inline void SetExportFormat(AssetBundleExportFormat&& value) { m_exportFormat = std::move(value); }
 
     /**
-     * <p>The format of the export.</p>
+     * <p>The format of the exported asset bundle. A <code>QUICKSIGHT_JSON</code>
+     * formatted file can be used to make a <code>StartAssetBundleImportJob</code> API
+     * call. A <code>CLOUDFORMATION_JSON</code> formatted file can be used in the
+     * CloudFormation console and with the CloudFormation APIs.</p>
      */
     inline DescribeAssetBundleExportJobResult& WithExportFormat(const AssetBundleExportFormat& value) { SetExportFormat(value); return *this;}
 
     /**
-     * <p>The format of the export.</p>
+     * <p>The format of the exported asset bundle. A <code>QUICKSIGHT_JSON</code>
+     * formatted file can be used to make a <code>StartAssetBundleImportJob</code> API
+     * call. A <code>CLOUDFORMATION_JSON</code> formatted file can be used in the
+     * CloudFormation console and with the CloudFormation APIs.</p>
      */
     inline DescribeAssetBundleExportJobResult& WithExportFormat(AssetBundleExportFormat&& value) { SetExportFormat(std::move(value)); return *this;}
 

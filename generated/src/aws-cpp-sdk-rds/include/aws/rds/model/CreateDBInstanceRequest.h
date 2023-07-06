@@ -44,361 +44,369 @@ namespace Model
 
     /**
      * <p>The meaning of this parameter differs depending on the database engine.</p>
-     * <dl> <dt>Amazon Aurora MySQL</dt> <dt>Amazon Aurora PostgreSQL</dt> <dt>Amazon
-     * RDS Custom for Oracle</dt> <dt>Amazon RDS Custom for SQL Server</dt> <dt>RDS for
-     * MariaDB</dt> <dt>RDS for MySQL</dt> <dt>RDS for Oracle</dt> <dt>RDS for
-     * PostgreSQL</dt> <dt>RDS for SQL Server</dt> <dd> <p>The name of the database to
-     * create when the primary DB instance of the Aurora MySQL DB cluster is created.
-     * If you don't specify a value, Amazon RDS doesn't create a database in the DB
+     * <dl> <dt>Amazon Aurora MySQL</dt> <dd> <p>The name of the database to create
+     * when the primary DB instance of the Aurora MySQL DB cluster is created. If you
+     * don't specify a value, Amazon RDS doesn't create a database in the DB
      * cluster.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 alphanumeric
      * characters.</p> </li> <li> <p>Can't be a word reserved by the database
-     * engine.</p> </li> </ul> </dd> <dd> <p>The name of the database to create when
-     * the primary DB instance of the Aurora PostgreSQL DB cluster is created.</p>
-     * <p>Default: <code>postgres</code> </p> <p>Constraints:</p> <ul> <li> <p>Must
-     * contain 1 to 63 alphanumeric characters.</p> </li> <li> <p>Must begin with a
-     * letter. Subsequent characters can be letters, underscores, or digits (0 to
-     * 9).</p> </li> <li> <p>Can't be a word reserved by the database engine.</p> </li>
-     * </ul> </dd> <dd> <p>The Oracle System ID (SID) of the created RDS Custom DB
-     * instance.</p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain 1 to 8 alphanumeric characters.</p> </li> <li> <p>Must contain a
-     * letter.</p> </li> <li> <p>Can't be a word reserved by the database engine.</p>
-     * </li> </ul> </dd> <dd> <p>Not applicable. Must be null.</p> </dd> <dd> <p>The
+     * engine.</p> </li> </ul> </dd> <dt>Amazon Aurora PostgreSQL</dt> <dd> <p>The name
+     * of the database to create when the primary DB instance of the Aurora PostgreSQL
+     * DB cluster is created.</p> <p>Default: <code>postgres</code> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63 alphanumeric
+     * characters.</p> </li> <li> <p>Must begin with a letter. Subsequent characters
+     * can be letters, underscores, or digits (0 to 9).</p> </li> <li> <p>Can't be a
+     * word reserved by the database engine.</p> </li> </ul> </dd> <dt>Amazon RDS
+     * Custom for Oracle</dt> <dd> <p>The Oracle System ID (SID) of the created RDS
+     * Custom DB instance.</p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p>
+     * <ul> <li> <p>Must contain 1 to 8 alphanumeric characters.</p> </li> <li> <p>Must
+     * contain a letter.</p> </li> <li> <p>Can't be a word reserved by the database
+     * engine.</p> </li> </ul> </dd> <dt>Amazon RDS Custom for SQL Server</dt> <dd>
+     * <p>Not applicable. Must be null.</p> </dd> <dt>RDS for MariaDB</dt> <dd> <p>The
      * name of the database to create when the DB instance is created. If you don't
      * specify a value, Amazon RDS doesn't create a database in the DB instance.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
      * </li> <li> <p>Must begin with a letter. Subsequent characters can be letters,
      * underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word reserved by the
-     * database engine.</p> </li> </ul> </dd> <dd> <p>The name of the database to
-     * create when the DB instance is created. If you don't specify a value, Amazon RDS
-     * doesn't create a database in the DB instance.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Must begin with a
-     * letter. Subsequent characters can be letters, underscores, or digits (0-9).</p>
-     * </li> <li> <p>Can't be a word reserved by the database engine.</p> </li> </ul>
-     * </dd> <dd> <p>The Oracle System ID (SID) of the created DB instance.</p>
-     * <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't be
-     * longer than 8 characters.</p> </li> <li> <p>Can't be a word reserved by the
-     * database engine, such as the string <code>NULL</code>.</p> </li> </ul> </dd>
-     * <dd> <p>The name of the database to create when the DB instance is created.</p>
-     * <p>Default: <code>postgres</code> </p> <p>Constraints:</p> <ul> <li> <p>Must
-     * contain 1 to 63 letters, numbers, or underscores.</p> </li> <li> <p>Must begin
-     * with a letter. Subsequent characters can be letters, underscores, or digits
-     * (0-9).</p> </li> <li> <p>Can't be a word reserved by the database engine.</p>
-     * </li> </ul> </dd> <dd> <p>Not applicable. Must be null.</p> </dd> </dl>
+     * database engine.</p> </li> </ul> </dd> <dt>RDS for MySQL</dt> <dd> <p>The name
+     * of the database to create when the DB instance is created. If you don't specify
+     * a value, Amazon RDS doesn't create a database in the DB instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
+     * </li> <li> <p>Must begin with a letter. Subsequent characters can be letters,
+     * underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word reserved by the
+     * database engine.</p> </li> </ul> </dd> <dt>RDS for Oracle</dt> <dd> <p>The
+     * Oracle System ID (SID) of the created DB instance.</p> <p>Default:
+     * <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8
+     * characters.</p> </li> <li> <p>Can't be a word reserved by the database engine,
+     * such as the string <code>NULL</code>.</p> </li> </ul> </dd> <dt>RDS for
+     * PostgreSQL</dt> <dd> <p>The name of the database to create when the DB instance
+     * is created.</p> <p>Default: <code>postgres</code> </p> <p>Constraints:</p> <ul>
+     * <li> <p>Must contain 1 to 63 letters, numbers, or underscores.</p> </li> <li>
+     * <p>Must begin with a letter. Subsequent characters can be letters, underscores,
+     * or digits (0-9).</p> </li> <li> <p>Can't be a word reserved by the database
+     * engine.</p> </li> </ul> </dd> <dt>RDS for SQL Server</dt> <dd> <p>Not
+     * applicable. Must be null.</p> </dd> </dl>
      */
     inline const Aws::String& GetDBName() const{ return m_dBName; }
 
     /**
      * <p>The meaning of this parameter differs depending on the database engine.</p>
-     * <dl> <dt>Amazon Aurora MySQL</dt> <dt>Amazon Aurora PostgreSQL</dt> <dt>Amazon
-     * RDS Custom for Oracle</dt> <dt>Amazon RDS Custom for SQL Server</dt> <dt>RDS for
-     * MariaDB</dt> <dt>RDS for MySQL</dt> <dt>RDS for Oracle</dt> <dt>RDS for
-     * PostgreSQL</dt> <dt>RDS for SQL Server</dt> <dd> <p>The name of the database to
-     * create when the primary DB instance of the Aurora MySQL DB cluster is created.
-     * If you don't specify a value, Amazon RDS doesn't create a database in the DB
+     * <dl> <dt>Amazon Aurora MySQL</dt> <dd> <p>The name of the database to create
+     * when the primary DB instance of the Aurora MySQL DB cluster is created. If you
+     * don't specify a value, Amazon RDS doesn't create a database in the DB
      * cluster.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 alphanumeric
      * characters.</p> </li> <li> <p>Can't be a word reserved by the database
-     * engine.</p> </li> </ul> </dd> <dd> <p>The name of the database to create when
-     * the primary DB instance of the Aurora PostgreSQL DB cluster is created.</p>
-     * <p>Default: <code>postgres</code> </p> <p>Constraints:</p> <ul> <li> <p>Must
-     * contain 1 to 63 alphanumeric characters.</p> </li> <li> <p>Must begin with a
-     * letter. Subsequent characters can be letters, underscores, or digits (0 to
-     * 9).</p> </li> <li> <p>Can't be a word reserved by the database engine.</p> </li>
-     * </ul> </dd> <dd> <p>The Oracle System ID (SID) of the created RDS Custom DB
-     * instance.</p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain 1 to 8 alphanumeric characters.</p> </li> <li> <p>Must contain a
-     * letter.</p> </li> <li> <p>Can't be a word reserved by the database engine.</p>
-     * </li> </ul> </dd> <dd> <p>Not applicable. Must be null.</p> </dd> <dd> <p>The
+     * engine.</p> </li> </ul> </dd> <dt>Amazon Aurora PostgreSQL</dt> <dd> <p>The name
+     * of the database to create when the primary DB instance of the Aurora PostgreSQL
+     * DB cluster is created.</p> <p>Default: <code>postgres</code> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63 alphanumeric
+     * characters.</p> </li> <li> <p>Must begin with a letter. Subsequent characters
+     * can be letters, underscores, or digits (0 to 9).</p> </li> <li> <p>Can't be a
+     * word reserved by the database engine.</p> </li> </ul> </dd> <dt>Amazon RDS
+     * Custom for Oracle</dt> <dd> <p>The Oracle System ID (SID) of the created RDS
+     * Custom DB instance.</p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p>
+     * <ul> <li> <p>Must contain 1 to 8 alphanumeric characters.</p> </li> <li> <p>Must
+     * contain a letter.</p> </li> <li> <p>Can't be a word reserved by the database
+     * engine.</p> </li> </ul> </dd> <dt>Amazon RDS Custom for SQL Server</dt> <dd>
+     * <p>Not applicable. Must be null.</p> </dd> <dt>RDS for MariaDB</dt> <dd> <p>The
      * name of the database to create when the DB instance is created. If you don't
      * specify a value, Amazon RDS doesn't create a database in the DB instance.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
      * </li> <li> <p>Must begin with a letter. Subsequent characters can be letters,
      * underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word reserved by the
-     * database engine.</p> </li> </ul> </dd> <dd> <p>The name of the database to
-     * create when the DB instance is created. If you don't specify a value, Amazon RDS
-     * doesn't create a database in the DB instance.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Must begin with a
-     * letter. Subsequent characters can be letters, underscores, or digits (0-9).</p>
-     * </li> <li> <p>Can't be a word reserved by the database engine.</p> </li> </ul>
-     * </dd> <dd> <p>The Oracle System ID (SID) of the created DB instance.</p>
-     * <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't be
-     * longer than 8 characters.</p> </li> <li> <p>Can't be a word reserved by the
-     * database engine, such as the string <code>NULL</code>.</p> </li> </ul> </dd>
-     * <dd> <p>The name of the database to create when the DB instance is created.</p>
-     * <p>Default: <code>postgres</code> </p> <p>Constraints:</p> <ul> <li> <p>Must
-     * contain 1 to 63 letters, numbers, or underscores.</p> </li> <li> <p>Must begin
-     * with a letter. Subsequent characters can be letters, underscores, or digits
-     * (0-9).</p> </li> <li> <p>Can't be a word reserved by the database engine.</p>
-     * </li> </ul> </dd> <dd> <p>Not applicable. Must be null.</p> </dd> </dl>
+     * database engine.</p> </li> </ul> </dd> <dt>RDS for MySQL</dt> <dd> <p>The name
+     * of the database to create when the DB instance is created. If you don't specify
+     * a value, Amazon RDS doesn't create a database in the DB instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
+     * </li> <li> <p>Must begin with a letter. Subsequent characters can be letters,
+     * underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word reserved by the
+     * database engine.</p> </li> </ul> </dd> <dt>RDS for Oracle</dt> <dd> <p>The
+     * Oracle System ID (SID) of the created DB instance.</p> <p>Default:
+     * <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8
+     * characters.</p> </li> <li> <p>Can't be a word reserved by the database engine,
+     * such as the string <code>NULL</code>.</p> </li> </ul> </dd> <dt>RDS for
+     * PostgreSQL</dt> <dd> <p>The name of the database to create when the DB instance
+     * is created.</p> <p>Default: <code>postgres</code> </p> <p>Constraints:</p> <ul>
+     * <li> <p>Must contain 1 to 63 letters, numbers, or underscores.</p> </li> <li>
+     * <p>Must begin with a letter. Subsequent characters can be letters, underscores,
+     * or digits (0-9).</p> </li> <li> <p>Can't be a word reserved by the database
+     * engine.</p> </li> </ul> </dd> <dt>RDS for SQL Server</dt> <dd> <p>Not
+     * applicable. Must be null.</p> </dd> </dl>
      */
     inline bool DBNameHasBeenSet() const { return m_dBNameHasBeenSet; }
 
     /**
      * <p>The meaning of this parameter differs depending on the database engine.</p>
-     * <dl> <dt>Amazon Aurora MySQL</dt> <dt>Amazon Aurora PostgreSQL</dt> <dt>Amazon
-     * RDS Custom for Oracle</dt> <dt>Amazon RDS Custom for SQL Server</dt> <dt>RDS for
-     * MariaDB</dt> <dt>RDS for MySQL</dt> <dt>RDS for Oracle</dt> <dt>RDS for
-     * PostgreSQL</dt> <dt>RDS for SQL Server</dt> <dd> <p>The name of the database to
-     * create when the primary DB instance of the Aurora MySQL DB cluster is created.
-     * If you don't specify a value, Amazon RDS doesn't create a database in the DB
+     * <dl> <dt>Amazon Aurora MySQL</dt> <dd> <p>The name of the database to create
+     * when the primary DB instance of the Aurora MySQL DB cluster is created. If you
+     * don't specify a value, Amazon RDS doesn't create a database in the DB
      * cluster.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 alphanumeric
      * characters.</p> </li> <li> <p>Can't be a word reserved by the database
-     * engine.</p> </li> </ul> </dd> <dd> <p>The name of the database to create when
-     * the primary DB instance of the Aurora PostgreSQL DB cluster is created.</p>
-     * <p>Default: <code>postgres</code> </p> <p>Constraints:</p> <ul> <li> <p>Must
-     * contain 1 to 63 alphanumeric characters.</p> </li> <li> <p>Must begin with a
-     * letter. Subsequent characters can be letters, underscores, or digits (0 to
-     * 9).</p> </li> <li> <p>Can't be a word reserved by the database engine.</p> </li>
-     * </ul> </dd> <dd> <p>The Oracle System ID (SID) of the created RDS Custom DB
-     * instance.</p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain 1 to 8 alphanumeric characters.</p> </li> <li> <p>Must contain a
-     * letter.</p> </li> <li> <p>Can't be a word reserved by the database engine.</p>
-     * </li> </ul> </dd> <dd> <p>Not applicable. Must be null.</p> </dd> <dd> <p>The
+     * engine.</p> </li> </ul> </dd> <dt>Amazon Aurora PostgreSQL</dt> <dd> <p>The name
+     * of the database to create when the primary DB instance of the Aurora PostgreSQL
+     * DB cluster is created.</p> <p>Default: <code>postgres</code> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63 alphanumeric
+     * characters.</p> </li> <li> <p>Must begin with a letter. Subsequent characters
+     * can be letters, underscores, or digits (0 to 9).</p> </li> <li> <p>Can't be a
+     * word reserved by the database engine.</p> </li> </ul> </dd> <dt>Amazon RDS
+     * Custom for Oracle</dt> <dd> <p>The Oracle System ID (SID) of the created RDS
+     * Custom DB instance.</p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p>
+     * <ul> <li> <p>Must contain 1 to 8 alphanumeric characters.</p> </li> <li> <p>Must
+     * contain a letter.</p> </li> <li> <p>Can't be a word reserved by the database
+     * engine.</p> </li> </ul> </dd> <dt>Amazon RDS Custom for SQL Server</dt> <dd>
+     * <p>Not applicable. Must be null.</p> </dd> <dt>RDS for MariaDB</dt> <dd> <p>The
      * name of the database to create when the DB instance is created. If you don't
      * specify a value, Amazon RDS doesn't create a database in the DB instance.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
      * </li> <li> <p>Must begin with a letter. Subsequent characters can be letters,
      * underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word reserved by the
-     * database engine.</p> </li> </ul> </dd> <dd> <p>The name of the database to
-     * create when the DB instance is created. If you don't specify a value, Amazon RDS
-     * doesn't create a database in the DB instance.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Must begin with a
-     * letter. Subsequent characters can be letters, underscores, or digits (0-9).</p>
-     * </li> <li> <p>Can't be a word reserved by the database engine.</p> </li> </ul>
-     * </dd> <dd> <p>The Oracle System ID (SID) of the created DB instance.</p>
-     * <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't be
-     * longer than 8 characters.</p> </li> <li> <p>Can't be a word reserved by the
-     * database engine, such as the string <code>NULL</code>.</p> </li> </ul> </dd>
-     * <dd> <p>The name of the database to create when the DB instance is created.</p>
-     * <p>Default: <code>postgres</code> </p> <p>Constraints:</p> <ul> <li> <p>Must
-     * contain 1 to 63 letters, numbers, or underscores.</p> </li> <li> <p>Must begin
-     * with a letter. Subsequent characters can be letters, underscores, or digits
-     * (0-9).</p> </li> <li> <p>Can't be a word reserved by the database engine.</p>
-     * </li> </ul> </dd> <dd> <p>Not applicable. Must be null.</p> </dd> </dl>
+     * database engine.</p> </li> </ul> </dd> <dt>RDS for MySQL</dt> <dd> <p>The name
+     * of the database to create when the DB instance is created. If you don't specify
+     * a value, Amazon RDS doesn't create a database in the DB instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
+     * </li> <li> <p>Must begin with a letter. Subsequent characters can be letters,
+     * underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word reserved by the
+     * database engine.</p> </li> </ul> </dd> <dt>RDS for Oracle</dt> <dd> <p>The
+     * Oracle System ID (SID) of the created DB instance.</p> <p>Default:
+     * <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8
+     * characters.</p> </li> <li> <p>Can't be a word reserved by the database engine,
+     * such as the string <code>NULL</code>.</p> </li> </ul> </dd> <dt>RDS for
+     * PostgreSQL</dt> <dd> <p>The name of the database to create when the DB instance
+     * is created.</p> <p>Default: <code>postgres</code> </p> <p>Constraints:</p> <ul>
+     * <li> <p>Must contain 1 to 63 letters, numbers, or underscores.</p> </li> <li>
+     * <p>Must begin with a letter. Subsequent characters can be letters, underscores,
+     * or digits (0-9).</p> </li> <li> <p>Can't be a word reserved by the database
+     * engine.</p> </li> </ul> </dd> <dt>RDS for SQL Server</dt> <dd> <p>Not
+     * applicable. Must be null.</p> </dd> </dl>
      */
     inline void SetDBName(const Aws::String& value) { m_dBNameHasBeenSet = true; m_dBName = value; }
 
     /**
      * <p>The meaning of this parameter differs depending on the database engine.</p>
-     * <dl> <dt>Amazon Aurora MySQL</dt> <dt>Amazon Aurora PostgreSQL</dt> <dt>Amazon
-     * RDS Custom for Oracle</dt> <dt>Amazon RDS Custom for SQL Server</dt> <dt>RDS for
-     * MariaDB</dt> <dt>RDS for MySQL</dt> <dt>RDS for Oracle</dt> <dt>RDS for
-     * PostgreSQL</dt> <dt>RDS for SQL Server</dt> <dd> <p>The name of the database to
-     * create when the primary DB instance of the Aurora MySQL DB cluster is created.
-     * If you don't specify a value, Amazon RDS doesn't create a database in the DB
+     * <dl> <dt>Amazon Aurora MySQL</dt> <dd> <p>The name of the database to create
+     * when the primary DB instance of the Aurora MySQL DB cluster is created. If you
+     * don't specify a value, Amazon RDS doesn't create a database in the DB
      * cluster.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 alphanumeric
      * characters.</p> </li> <li> <p>Can't be a word reserved by the database
-     * engine.</p> </li> </ul> </dd> <dd> <p>The name of the database to create when
-     * the primary DB instance of the Aurora PostgreSQL DB cluster is created.</p>
-     * <p>Default: <code>postgres</code> </p> <p>Constraints:</p> <ul> <li> <p>Must
-     * contain 1 to 63 alphanumeric characters.</p> </li> <li> <p>Must begin with a
-     * letter. Subsequent characters can be letters, underscores, or digits (0 to
-     * 9).</p> </li> <li> <p>Can't be a word reserved by the database engine.</p> </li>
-     * </ul> </dd> <dd> <p>The Oracle System ID (SID) of the created RDS Custom DB
-     * instance.</p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain 1 to 8 alphanumeric characters.</p> </li> <li> <p>Must contain a
-     * letter.</p> </li> <li> <p>Can't be a word reserved by the database engine.</p>
-     * </li> </ul> </dd> <dd> <p>Not applicable. Must be null.</p> </dd> <dd> <p>The
+     * engine.</p> </li> </ul> </dd> <dt>Amazon Aurora PostgreSQL</dt> <dd> <p>The name
+     * of the database to create when the primary DB instance of the Aurora PostgreSQL
+     * DB cluster is created.</p> <p>Default: <code>postgres</code> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63 alphanumeric
+     * characters.</p> </li> <li> <p>Must begin with a letter. Subsequent characters
+     * can be letters, underscores, or digits (0 to 9).</p> </li> <li> <p>Can't be a
+     * word reserved by the database engine.</p> </li> </ul> </dd> <dt>Amazon RDS
+     * Custom for Oracle</dt> <dd> <p>The Oracle System ID (SID) of the created RDS
+     * Custom DB instance.</p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p>
+     * <ul> <li> <p>Must contain 1 to 8 alphanumeric characters.</p> </li> <li> <p>Must
+     * contain a letter.</p> </li> <li> <p>Can't be a word reserved by the database
+     * engine.</p> </li> </ul> </dd> <dt>Amazon RDS Custom for SQL Server</dt> <dd>
+     * <p>Not applicable. Must be null.</p> </dd> <dt>RDS for MariaDB</dt> <dd> <p>The
      * name of the database to create when the DB instance is created. If you don't
      * specify a value, Amazon RDS doesn't create a database in the DB instance.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
      * </li> <li> <p>Must begin with a letter. Subsequent characters can be letters,
      * underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word reserved by the
-     * database engine.</p> </li> </ul> </dd> <dd> <p>The name of the database to
-     * create when the DB instance is created. If you don't specify a value, Amazon RDS
-     * doesn't create a database in the DB instance.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Must begin with a
-     * letter. Subsequent characters can be letters, underscores, or digits (0-9).</p>
-     * </li> <li> <p>Can't be a word reserved by the database engine.</p> </li> </ul>
-     * </dd> <dd> <p>The Oracle System ID (SID) of the created DB instance.</p>
-     * <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't be
-     * longer than 8 characters.</p> </li> <li> <p>Can't be a word reserved by the
-     * database engine, such as the string <code>NULL</code>.</p> </li> </ul> </dd>
-     * <dd> <p>The name of the database to create when the DB instance is created.</p>
-     * <p>Default: <code>postgres</code> </p> <p>Constraints:</p> <ul> <li> <p>Must
-     * contain 1 to 63 letters, numbers, or underscores.</p> </li> <li> <p>Must begin
-     * with a letter. Subsequent characters can be letters, underscores, or digits
-     * (0-9).</p> </li> <li> <p>Can't be a word reserved by the database engine.</p>
-     * </li> </ul> </dd> <dd> <p>Not applicable. Must be null.</p> </dd> </dl>
+     * database engine.</p> </li> </ul> </dd> <dt>RDS for MySQL</dt> <dd> <p>The name
+     * of the database to create when the DB instance is created. If you don't specify
+     * a value, Amazon RDS doesn't create a database in the DB instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
+     * </li> <li> <p>Must begin with a letter. Subsequent characters can be letters,
+     * underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word reserved by the
+     * database engine.</p> </li> </ul> </dd> <dt>RDS for Oracle</dt> <dd> <p>The
+     * Oracle System ID (SID) of the created DB instance.</p> <p>Default:
+     * <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8
+     * characters.</p> </li> <li> <p>Can't be a word reserved by the database engine,
+     * such as the string <code>NULL</code>.</p> </li> </ul> </dd> <dt>RDS for
+     * PostgreSQL</dt> <dd> <p>The name of the database to create when the DB instance
+     * is created.</p> <p>Default: <code>postgres</code> </p> <p>Constraints:</p> <ul>
+     * <li> <p>Must contain 1 to 63 letters, numbers, or underscores.</p> </li> <li>
+     * <p>Must begin with a letter. Subsequent characters can be letters, underscores,
+     * or digits (0-9).</p> </li> <li> <p>Can't be a word reserved by the database
+     * engine.</p> </li> </ul> </dd> <dt>RDS for SQL Server</dt> <dd> <p>Not
+     * applicable. Must be null.</p> </dd> </dl>
      */
     inline void SetDBName(Aws::String&& value) { m_dBNameHasBeenSet = true; m_dBName = std::move(value); }
 
     /**
      * <p>The meaning of this parameter differs depending on the database engine.</p>
-     * <dl> <dt>Amazon Aurora MySQL</dt> <dt>Amazon Aurora PostgreSQL</dt> <dt>Amazon
-     * RDS Custom for Oracle</dt> <dt>Amazon RDS Custom for SQL Server</dt> <dt>RDS for
-     * MariaDB</dt> <dt>RDS for MySQL</dt> <dt>RDS for Oracle</dt> <dt>RDS for
-     * PostgreSQL</dt> <dt>RDS for SQL Server</dt> <dd> <p>The name of the database to
-     * create when the primary DB instance of the Aurora MySQL DB cluster is created.
-     * If you don't specify a value, Amazon RDS doesn't create a database in the DB
+     * <dl> <dt>Amazon Aurora MySQL</dt> <dd> <p>The name of the database to create
+     * when the primary DB instance of the Aurora MySQL DB cluster is created. If you
+     * don't specify a value, Amazon RDS doesn't create a database in the DB
      * cluster.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 alphanumeric
      * characters.</p> </li> <li> <p>Can't be a word reserved by the database
-     * engine.</p> </li> </ul> </dd> <dd> <p>The name of the database to create when
-     * the primary DB instance of the Aurora PostgreSQL DB cluster is created.</p>
-     * <p>Default: <code>postgres</code> </p> <p>Constraints:</p> <ul> <li> <p>Must
-     * contain 1 to 63 alphanumeric characters.</p> </li> <li> <p>Must begin with a
-     * letter. Subsequent characters can be letters, underscores, or digits (0 to
-     * 9).</p> </li> <li> <p>Can't be a word reserved by the database engine.</p> </li>
-     * </ul> </dd> <dd> <p>The Oracle System ID (SID) of the created RDS Custom DB
-     * instance.</p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain 1 to 8 alphanumeric characters.</p> </li> <li> <p>Must contain a
-     * letter.</p> </li> <li> <p>Can't be a word reserved by the database engine.</p>
-     * </li> </ul> </dd> <dd> <p>Not applicable. Must be null.</p> </dd> <dd> <p>The
+     * engine.</p> </li> </ul> </dd> <dt>Amazon Aurora PostgreSQL</dt> <dd> <p>The name
+     * of the database to create when the primary DB instance of the Aurora PostgreSQL
+     * DB cluster is created.</p> <p>Default: <code>postgres</code> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63 alphanumeric
+     * characters.</p> </li> <li> <p>Must begin with a letter. Subsequent characters
+     * can be letters, underscores, or digits (0 to 9).</p> </li> <li> <p>Can't be a
+     * word reserved by the database engine.</p> </li> </ul> </dd> <dt>Amazon RDS
+     * Custom for Oracle</dt> <dd> <p>The Oracle System ID (SID) of the created RDS
+     * Custom DB instance.</p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p>
+     * <ul> <li> <p>Must contain 1 to 8 alphanumeric characters.</p> </li> <li> <p>Must
+     * contain a letter.</p> </li> <li> <p>Can't be a word reserved by the database
+     * engine.</p> </li> </ul> </dd> <dt>Amazon RDS Custom for SQL Server</dt> <dd>
+     * <p>Not applicable. Must be null.</p> </dd> <dt>RDS for MariaDB</dt> <dd> <p>The
      * name of the database to create when the DB instance is created. If you don't
      * specify a value, Amazon RDS doesn't create a database in the DB instance.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
      * </li> <li> <p>Must begin with a letter. Subsequent characters can be letters,
      * underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word reserved by the
-     * database engine.</p> </li> </ul> </dd> <dd> <p>The name of the database to
-     * create when the DB instance is created. If you don't specify a value, Amazon RDS
-     * doesn't create a database in the DB instance.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Must begin with a
-     * letter. Subsequent characters can be letters, underscores, or digits (0-9).</p>
-     * </li> <li> <p>Can't be a word reserved by the database engine.</p> </li> </ul>
-     * </dd> <dd> <p>The Oracle System ID (SID) of the created DB instance.</p>
-     * <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't be
-     * longer than 8 characters.</p> </li> <li> <p>Can't be a word reserved by the
-     * database engine, such as the string <code>NULL</code>.</p> </li> </ul> </dd>
-     * <dd> <p>The name of the database to create when the DB instance is created.</p>
-     * <p>Default: <code>postgres</code> </p> <p>Constraints:</p> <ul> <li> <p>Must
-     * contain 1 to 63 letters, numbers, or underscores.</p> </li> <li> <p>Must begin
-     * with a letter. Subsequent characters can be letters, underscores, or digits
-     * (0-9).</p> </li> <li> <p>Can't be a word reserved by the database engine.</p>
-     * </li> </ul> </dd> <dd> <p>Not applicable. Must be null.</p> </dd> </dl>
+     * database engine.</p> </li> </ul> </dd> <dt>RDS for MySQL</dt> <dd> <p>The name
+     * of the database to create when the DB instance is created. If you don't specify
+     * a value, Amazon RDS doesn't create a database in the DB instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
+     * </li> <li> <p>Must begin with a letter. Subsequent characters can be letters,
+     * underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word reserved by the
+     * database engine.</p> </li> </ul> </dd> <dt>RDS for Oracle</dt> <dd> <p>The
+     * Oracle System ID (SID) of the created DB instance.</p> <p>Default:
+     * <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8
+     * characters.</p> </li> <li> <p>Can't be a word reserved by the database engine,
+     * such as the string <code>NULL</code>.</p> </li> </ul> </dd> <dt>RDS for
+     * PostgreSQL</dt> <dd> <p>The name of the database to create when the DB instance
+     * is created.</p> <p>Default: <code>postgres</code> </p> <p>Constraints:</p> <ul>
+     * <li> <p>Must contain 1 to 63 letters, numbers, or underscores.</p> </li> <li>
+     * <p>Must begin with a letter. Subsequent characters can be letters, underscores,
+     * or digits (0-9).</p> </li> <li> <p>Can't be a word reserved by the database
+     * engine.</p> </li> </ul> </dd> <dt>RDS for SQL Server</dt> <dd> <p>Not
+     * applicable. Must be null.</p> </dd> </dl>
      */
     inline void SetDBName(const char* value) { m_dBNameHasBeenSet = true; m_dBName.assign(value); }
 
     /**
      * <p>The meaning of this parameter differs depending on the database engine.</p>
-     * <dl> <dt>Amazon Aurora MySQL</dt> <dt>Amazon Aurora PostgreSQL</dt> <dt>Amazon
-     * RDS Custom for Oracle</dt> <dt>Amazon RDS Custom for SQL Server</dt> <dt>RDS for
-     * MariaDB</dt> <dt>RDS for MySQL</dt> <dt>RDS for Oracle</dt> <dt>RDS for
-     * PostgreSQL</dt> <dt>RDS for SQL Server</dt> <dd> <p>The name of the database to
-     * create when the primary DB instance of the Aurora MySQL DB cluster is created.
-     * If you don't specify a value, Amazon RDS doesn't create a database in the DB
+     * <dl> <dt>Amazon Aurora MySQL</dt> <dd> <p>The name of the database to create
+     * when the primary DB instance of the Aurora MySQL DB cluster is created. If you
+     * don't specify a value, Amazon RDS doesn't create a database in the DB
      * cluster.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 alphanumeric
      * characters.</p> </li> <li> <p>Can't be a word reserved by the database
-     * engine.</p> </li> </ul> </dd> <dd> <p>The name of the database to create when
-     * the primary DB instance of the Aurora PostgreSQL DB cluster is created.</p>
-     * <p>Default: <code>postgres</code> </p> <p>Constraints:</p> <ul> <li> <p>Must
-     * contain 1 to 63 alphanumeric characters.</p> </li> <li> <p>Must begin with a
-     * letter. Subsequent characters can be letters, underscores, or digits (0 to
-     * 9).</p> </li> <li> <p>Can't be a word reserved by the database engine.</p> </li>
-     * </ul> </dd> <dd> <p>The Oracle System ID (SID) of the created RDS Custom DB
-     * instance.</p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain 1 to 8 alphanumeric characters.</p> </li> <li> <p>Must contain a
-     * letter.</p> </li> <li> <p>Can't be a word reserved by the database engine.</p>
-     * </li> </ul> </dd> <dd> <p>Not applicable. Must be null.</p> </dd> <dd> <p>The
+     * engine.</p> </li> </ul> </dd> <dt>Amazon Aurora PostgreSQL</dt> <dd> <p>The name
+     * of the database to create when the primary DB instance of the Aurora PostgreSQL
+     * DB cluster is created.</p> <p>Default: <code>postgres</code> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63 alphanumeric
+     * characters.</p> </li> <li> <p>Must begin with a letter. Subsequent characters
+     * can be letters, underscores, or digits (0 to 9).</p> </li> <li> <p>Can't be a
+     * word reserved by the database engine.</p> </li> </ul> </dd> <dt>Amazon RDS
+     * Custom for Oracle</dt> <dd> <p>The Oracle System ID (SID) of the created RDS
+     * Custom DB instance.</p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p>
+     * <ul> <li> <p>Must contain 1 to 8 alphanumeric characters.</p> </li> <li> <p>Must
+     * contain a letter.</p> </li> <li> <p>Can't be a word reserved by the database
+     * engine.</p> </li> </ul> </dd> <dt>Amazon RDS Custom for SQL Server</dt> <dd>
+     * <p>Not applicable. Must be null.</p> </dd> <dt>RDS for MariaDB</dt> <dd> <p>The
      * name of the database to create when the DB instance is created. If you don't
      * specify a value, Amazon RDS doesn't create a database in the DB instance.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
      * </li> <li> <p>Must begin with a letter. Subsequent characters can be letters,
      * underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word reserved by the
-     * database engine.</p> </li> </ul> </dd> <dd> <p>The name of the database to
-     * create when the DB instance is created. If you don't specify a value, Amazon RDS
-     * doesn't create a database in the DB instance.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Must begin with a
-     * letter. Subsequent characters can be letters, underscores, or digits (0-9).</p>
-     * </li> <li> <p>Can't be a word reserved by the database engine.</p> </li> </ul>
-     * </dd> <dd> <p>The Oracle System ID (SID) of the created DB instance.</p>
-     * <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't be
-     * longer than 8 characters.</p> </li> <li> <p>Can't be a word reserved by the
-     * database engine, such as the string <code>NULL</code>.</p> </li> </ul> </dd>
-     * <dd> <p>The name of the database to create when the DB instance is created.</p>
-     * <p>Default: <code>postgres</code> </p> <p>Constraints:</p> <ul> <li> <p>Must
-     * contain 1 to 63 letters, numbers, or underscores.</p> </li> <li> <p>Must begin
-     * with a letter. Subsequent characters can be letters, underscores, or digits
-     * (0-9).</p> </li> <li> <p>Can't be a word reserved by the database engine.</p>
-     * </li> </ul> </dd> <dd> <p>Not applicable. Must be null.</p> </dd> </dl>
+     * database engine.</p> </li> </ul> </dd> <dt>RDS for MySQL</dt> <dd> <p>The name
+     * of the database to create when the DB instance is created. If you don't specify
+     * a value, Amazon RDS doesn't create a database in the DB instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
+     * </li> <li> <p>Must begin with a letter. Subsequent characters can be letters,
+     * underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word reserved by the
+     * database engine.</p> </li> </ul> </dd> <dt>RDS for Oracle</dt> <dd> <p>The
+     * Oracle System ID (SID) of the created DB instance.</p> <p>Default:
+     * <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8
+     * characters.</p> </li> <li> <p>Can't be a word reserved by the database engine,
+     * such as the string <code>NULL</code>.</p> </li> </ul> </dd> <dt>RDS for
+     * PostgreSQL</dt> <dd> <p>The name of the database to create when the DB instance
+     * is created.</p> <p>Default: <code>postgres</code> </p> <p>Constraints:</p> <ul>
+     * <li> <p>Must contain 1 to 63 letters, numbers, or underscores.</p> </li> <li>
+     * <p>Must begin with a letter. Subsequent characters can be letters, underscores,
+     * or digits (0-9).</p> </li> <li> <p>Can't be a word reserved by the database
+     * engine.</p> </li> </ul> </dd> <dt>RDS for SQL Server</dt> <dd> <p>Not
+     * applicable. Must be null.</p> </dd> </dl>
      */
     inline CreateDBInstanceRequest& WithDBName(const Aws::String& value) { SetDBName(value); return *this;}
 
     /**
      * <p>The meaning of this parameter differs depending on the database engine.</p>
-     * <dl> <dt>Amazon Aurora MySQL</dt> <dt>Amazon Aurora PostgreSQL</dt> <dt>Amazon
-     * RDS Custom for Oracle</dt> <dt>Amazon RDS Custom for SQL Server</dt> <dt>RDS for
-     * MariaDB</dt> <dt>RDS for MySQL</dt> <dt>RDS for Oracle</dt> <dt>RDS for
-     * PostgreSQL</dt> <dt>RDS for SQL Server</dt> <dd> <p>The name of the database to
-     * create when the primary DB instance of the Aurora MySQL DB cluster is created.
-     * If you don't specify a value, Amazon RDS doesn't create a database in the DB
+     * <dl> <dt>Amazon Aurora MySQL</dt> <dd> <p>The name of the database to create
+     * when the primary DB instance of the Aurora MySQL DB cluster is created. If you
+     * don't specify a value, Amazon RDS doesn't create a database in the DB
      * cluster.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 alphanumeric
      * characters.</p> </li> <li> <p>Can't be a word reserved by the database
-     * engine.</p> </li> </ul> </dd> <dd> <p>The name of the database to create when
-     * the primary DB instance of the Aurora PostgreSQL DB cluster is created.</p>
-     * <p>Default: <code>postgres</code> </p> <p>Constraints:</p> <ul> <li> <p>Must
-     * contain 1 to 63 alphanumeric characters.</p> </li> <li> <p>Must begin with a
-     * letter. Subsequent characters can be letters, underscores, or digits (0 to
-     * 9).</p> </li> <li> <p>Can't be a word reserved by the database engine.</p> </li>
-     * </ul> </dd> <dd> <p>The Oracle System ID (SID) of the created RDS Custom DB
-     * instance.</p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain 1 to 8 alphanumeric characters.</p> </li> <li> <p>Must contain a
-     * letter.</p> </li> <li> <p>Can't be a word reserved by the database engine.</p>
-     * </li> </ul> </dd> <dd> <p>Not applicable. Must be null.</p> </dd> <dd> <p>The
+     * engine.</p> </li> </ul> </dd> <dt>Amazon Aurora PostgreSQL</dt> <dd> <p>The name
+     * of the database to create when the primary DB instance of the Aurora PostgreSQL
+     * DB cluster is created.</p> <p>Default: <code>postgres</code> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63 alphanumeric
+     * characters.</p> </li> <li> <p>Must begin with a letter. Subsequent characters
+     * can be letters, underscores, or digits (0 to 9).</p> </li> <li> <p>Can't be a
+     * word reserved by the database engine.</p> </li> </ul> </dd> <dt>Amazon RDS
+     * Custom for Oracle</dt> <dd> <p>The Oracle System ID (SID) of the created RDS
+     * Custom DB instance.</p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p>
+     * <ul> <li> <p>Must contain 1 to 8 alphanumeric characters.</p> </li> <li> <p>Must
+     * contain a letter.</p> </li> <li> <p>Can't be a word reserved by the database
+     * engine.</p> </li> </ul> </dd> <dt>Amazon RDS Custom for SQL Server</dt> <dd>
+     * <p>Not applicable. Must be null.</p> </dd> <dt>RDS for MariaDB</dt> <dd> <p>The
      * name of the database to create when the DB instance is created. If you don't
      * specify a value, Amazon RDS doesn't create a database in the DB instance.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
      * </li> <li> <p>Must begin with a letter. Subsequent characters can be letters,
      * underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word reserved by the
-     * database engine.</p> </li> </ul> </dd> <dd> <p>The name of the database to
-     * create when the DB instance is created. If you don't specify a value, Amazon RDS
-     * doesn't create a database in the DB instance.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Must begin with a
-     * letter. Subsequent characters can be letters, underscores, or digits (0-9).</p>
-     * </li> <li> <p>Can't be a word reserved by the database engine.</p> </li> </ul>
-     * </dd> <dd> <p>The Oracle System ID (SID) of the created DB instance.</p>
-     * <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't be
-     * longer than 8 characters.</p> </li> <li> <p>Can't be a word reserved by the
-     * database engine, such as the string <code>NULL</code>.</p> </li> </ul> </dd>
-     * <dd> <p>The name of the database to create when the DB instance is created.</p>
-     * <p>Default: <code>postgres</code> </p> <p>Constraints:</p> <ul> <li> <p>Must
-     * contain 1 to 63 letters, numbers, or underscores.</p> </li> <li> <p>Must begin
-     * with a letter. Subsequent characters can be letters, underscores, or digits
-     * (0-9).</p> </li> <li> <p>Can't be a word reserved by the database engine.</p>
-     * </li> </ul> </dd> <dd> <p>Not applicable. Must be null.</p> </dd> </dl>
+     * database engine.</p> </li> </ul> </dd> <dt>RDS for MySQL</dt> <dd> <p>The name
+     * of the database to create when the DB instance is created. If you don't specify
+     * a value, Amazon RDS doesn't create a database in the DB instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
+     * </li> <li> <p>Must begin with a letter. Subsequent characters can be letters,
+     * underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word reserved by the
+     * database engine.</p> </li> </ul> </dd> <dt>RDS for Oracle</dt> <dd> <p>The
+     * Oracle System ID (SID) of the created DB instance.</p> <p>Default:
+     * <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8
+     * characters.</p> </li> <li> <p>Can't be a word reserved by the database engine,
+     * such as the string <code>NULL</code>.</p> </li> </ul> </dd> <dt>RDS for
+     * PostgreSQL</dt> <dd> <p>The name of the database to create when the DB instance
+     * is created.</p> <p>Default: <code>postgres</code> </p> <p>Constraints:</p> <ul>
+     * <li> <p>Must contain 1 to 63 letters, numbers, or underscores.</p> </li> <li>
+     * <p>Must begin with a letter. Subsequent characters can be letters, underscores,
+     * or digits (0-9).</p> </li> <li> <p>Can't be a word reserved by the database
+     * engine.</p> </li> </ul> </dd> <dt>RDS for SQL Server</dt> <dd> <p>Not
+     * applicable. Must be null.</p> </dd> </dl>
      */
     inline CreateDBInstanceRequest& WithDBName(Aws::String&& value) { SetDBName(std::move(value)); return *this;}
 
     /**
      * <p>The meaning of this parameter differs depending on the database engine.</p>
-     * <dl> <dt>Amazon Aurora MySQL</dt> <dt>Amazon Aurora PostgreSQL</dt> <dt>Amazon
-     * RDS Custom for Oracle</dt> <dt>Amazon RDS Custom for SQL Server</dt> <dt>RDS for
-     * MariaDB</dt> <dt>RDS for MySQL</dt> <dt>RDS for Oracle</dt> <dt>RDS for
-     * PostgreSQL</dt> <dt>RDS for SQL Server</dt> <dd> <p>The name of the database to
-     * create when the primary DB instance of the Aurora MySQL DB cluster is created.
-     * If you don't specify a value, Amazon RDS doesn't create a database in the DB
+     * <dl> <dt>Amazon Aurora MySQL</dt> <dd> <p>The name of the database to create
+     * when the primary DB instance of the Aurora MySQL DB cluster is created. If you
+     * don't specify a value, Amazon RDS doesn't create a database in the DB
      * cluster.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 alphanumeric
      * characters.</p> </li> <li> <p>Can't be a word reserved by the database
-     * engine.</p> </li> </ul> </dd> <dd> <p>The name of the database to create when
-     * the primary DB instance of the Aurora PostgreSQL DB cluster is created.</p>
-     * <p>Default: <code>postgres</code> </p> <p>Constraints:</p> <ul> <li> <p>Must
-     * contain 1 to 63 alphanumeric characters.</p> </li> <li> <p>Must begin with a
-     * letter. Subsequent characters can be letters, underscores, or digits (0 to
-     * 9).</p> </li> <li> <p>Can't be a word reserved by the database engine.</p> </li>
-     * </ul> </dd> <dd> <p>The Oracle System ID (SID) of the created RDS Custom DB
-     * instance.</p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain 1 to 8 alphanumeric characters.</p> </li> <li> <p>Must contain a
-     * letter.</p> </li> <li> <p>Can't be a word reserved by the database engine.</p>
-     * </li> </ul> </dd> <dd> <p>Not applicable. Must be null.</p> </dd> <dd> <p>The
+     * engine.</p> </li> </ul> </dd> <dt>Amazon Aurora PostgreSQL</dt> <dd> <p>The name
+     * of the database to create when the primary DB instance of the Aurora PostgreSQL
+     * DB cluster is created.</p> <p>Default: <code>postgres</code> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63 alphanumeric
+     * characters.</p> </li> <li> <p>Must begin with a letter. Subsequent characters
+     * can be letters, underscores, or digits (0 to 9).</p> </li> <li> <p>Can't be a
+     * word reserved by the database engine.</p> </li> </ul> </dd> <dt>Amazon RDS
+     * Custom for Oracle</dt> <dd> <p>The Oracle System ID (SID) of the created RDS
+     * Custom DB instance.</p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p>
+     * <ul> <li> <p>Must contain 1 to 8 alphanumeric characters.</p> </li> <li> <p>Must
+     * contain a letter.</p> </li> <li> <p>Can't be a word reserved by the database
+     * engine.</p> </li> </ul> </dd> <dt>Amazon RDS Custom for SQL Server</dt> <dd>
+     * <p>Not applicable. Must be null.</p> </dd> <dt>RDS for MariaDB</dt> <dd> <p>The
      * name of the database to create when the DB instance is created. If you don't
      * specify a value, Amazon RDS doesn't create a database in the DB instance.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
      * </li> <li> <p>Must begin with a letter. Subsequent characters can be letters,
      * underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word reserved by the
-     * database engine.</p> </li> </ul> </dd> <dd> <p>The name of the database to
-     * create when the DB instance is created. If you don't specify a value, Amazon RDS
-     * doesn't create a database in the DB instance.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Must begin with a
-     * letter. Subsequent characters can be letters, underscores, or digits (0-9).</p>
-     * </li> <li> <p>Can't be a word reserved by the database engine.</p> </li> </ul>
-     * </dd> <dd> <p>The Oracle System ID (SID) of the created DB instance.</p>
-     * <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't be
-     * longer than 8 characters.</p> </li> <li> <p>Can't be a word reserved by the
-     * database engine, such as the string <code>NULL</code>.</p> </li> </ul> </dd>
-     * <dd> <p>The name of the database to create when the DB instance is created.</p>
-     * <p>Default: <code>postgres</code> </p> <p>Constraints:</p> <ul> <li> <p>Must
-     * contain 1 to 63 letters, numbers, or underscores.</p> </li> <li> <p>Must begin
-     * with a letter. Subsequent characters can be letters, underscores, or digits
-     * (0-9).</p> </li> <li> <p>Can't be a word reserved by the database engine.</p>
-     * </li> </ul> </dd> <dd> <p>Not applicable. Must be null.</p> </dd> </dl>
+     * database engine.</p> </li> </ul> </dd> <dt>RDS for MySQL</dt> <dd> <p>The name
+     * of the database to create when the DB instance is created. If you don't specify
+     * a value, Amazon RDS doesn't create a database in the DB instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
+     * </li> <li> <p>Must begin with a letter. Subsequent characters can be letters,
+     * underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word reserved by the
+     * database engine.</p> </li> </ul> </dd> <dt>RDS for Oracle</dt> <dd> <p>The
+     * Oracle System ID (SID) of the created DB instance.</p> <p>Default:
+     * <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8
+     * characters.</p> </li> <li> <p>Can't be a word reserved by the database engine,
+     * such as the string <code>NULL</code>.</p> </li> </ul> </dd> <dt>RDS for
+     * PostgreSQL</dt> <dd> <p>The name of the database to create when the DB instance
+     * is created.</p> <p>Default: <code>postgres</code> </p> <p>Constraints:</p> <ul>
+     * <li> <p>Must contain 1 to 63 letters, numbers, or underscores.</p> </li> <li>
+     * <p>Must begin with a letter. Subsequent characters can be letters, underscores,
+     * or digits (0-9).</p> </li> <li> <p>Can't be a word reserved by the database
+     * engine.</p> </li> </ul> </dd> <dt>RDS for SQL Server</dt> <dd> <p>Not
+     * applicable. Must be null.</p> </dd> </dl>
      */
     inline CreateDBInstanceRequest& WithDBName(const char* value) { SetDBName(value); return *this;}
 
@@ -481,44 +489,44 @@ namespace Model
      * <p>This setting doesn't apply to Amazon Aurora DB instances. Aurora cluster
      * volumes automatically grow as the amount of data in your database increases,
      * though you are only charged for the space that you use in an Aurora cluster
-     * volume.</p> <dl> <dt>Amazon RDS Custom</dt> <dt>RDS for MariaDB</dt> <dt>RDS for
-     * MySQL</dt> <dt>RDS for Oracle</dt> <dt>RDS for PostgreSQL</dt> <dt>RDS for SQL
-     * Server</dt> <dd> <p>Constraints to the amount of storage for each storage type
-     * are the following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2, gp3):
-     * Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS
-     * Custom for SQL Server.</p> </li> <li> <p>Provisioned IOPS storage (io1): Must be
-     * an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for
-     * SQL Server.</p> </li> </ul> </dd> <dd> <p>Constraints to the amount of storage
+     * volume.</p> <dl> <dt>Amazon RDS Custom</dt> <dd> <p>Constraints to the amount of
+     * storage for each storage type are the following:</p> <ul> <li> <p>General
+     * Purpose (SSD) storage (gp2, gp3): Must be an integer from 40 to 65536 for RDS
+     * Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 40 to 65536 for RDS
+     * Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li> </ul> </dd>
+     * <dt>RDS for MariaDB</dt> <dd> <p>Constraints to the amount of storage for each
+     * storage type are the following:</p> <ul> <li> <p>General Purpose (SSD) storage
+     * (gp2, gp3): Must be an integer from 20 to 65536.</p> </li> <li> <p>Provisioned
+     * IOPS storage (io1): Must be an integer from 100 to 65536.</p> </li> <li>
+     * <p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p> </li>
+     * </ul> </dd> <dt>RDS for MySQL</dt> <dd> <p>Constraints to the amount of storage
      * for each storage type are the following:</p> <ul> <li> <p>General Purpose (SSD)
      * storage (gp2, gp3): Must be an integer from 20 to 65536.</p> </li> <li>
      * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
      * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
-     * 3072.</p> </li> </ul> </dd> <dd> <p>Constraints to the amount of storage for
-     * each storage type are the following:</p> <ul> <li> <p>General Purpose (SSD)
-     * storage (gp2, gp3): Must be an integer from 20 to 65536.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
-     * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
-     * 3072.</p> </li> </ul> </dd> <dd> <p>Constraints to the amount of storage for
-     * each storage type are the following:</p> <ul> <li> <p>General Purpose (SSD)
-     * storage (gp2, gp3): Must be an integer from 20 to 65536.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
-     * </li> <li> <p>Magnetic storage (standard): Must be an integer from 10 to
-     * 3072.</p> </li> </ul> </dd> <dd> <p>Constraints to the amount of storage for
-     * each storage type are the following:</p> <ul> <li> <p>General Purpose (SSD)
-     * storage (gp2, gp3): Must be an integer from 20 to 65536.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
-     * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
-     * 3072.</p> </li> </ul> </dd> <dd> <p>Constraints to the amount of storage for
-     * each storage type are the following:</p> <ul> <li> <p>General Purpose (SSD)
-     * storage (gp2, gp3):</p> <ul> <li> <p>Enterprise and Standard editions: Must be
-     * an integer from 20 to 16384.</p> </li> <li> <p>Web and Express editions: Must be
-     * an integer from 20 to 16384.</p> </li> </ul> </li> <li> <p>Provisioned IOPS
-     * storage (io1):</p> <ul> <li> <p>Enterprise and Standard editions: Must be an
-     * integer from 100 to 16384.</p> </li> <li> <p>Web and Express editions: Must be
-     * an integer from 100 to 16384.</p> </li> </ul> </li> <li> <p>Magnetic storage
-     * (standard):</p> <ul> <li> <p>Enterprise and Standard editions: Must be an
-     * integer from 20 to 1024.</p> </li> <li> <p>Web and Express editions: Must be an
-     * integer from 20 to 1024.</p> </li> </ul> </li> </ul> </dd> </dl>
+     * 3072.</p> </li> </ul> </dd> <dt>RDS for Oracle</dt> <dd> <p>Constraints to the
+     * amount of storage for each storage type are the following:</p> <ul> <li>
+     * <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to
+     * 65536.</p> </li> <li> <p>Provisioned IOPS storage (io1): Must be an integer from
+     * 100 to 65536.</p> </li> <li> <p>Magnetic storage (standard): Must be an integer
+     * from 10 to 3072.</p> </li> </ul> </dd> <dt>RDS for PostgreSQL</dt> <dd>
+     * <p>Constraints to the amount of storage for each storage type are the
+     * following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an
+     * integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS storage (io1): Must
+     * be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic storage (standard):
+     * Must be an integer from 5 to 3072.</p> </li> </ul> </dd> <dt>RDS for SQL
+     * Server</dt> <dd> <p>Constraints to the amount of storage for each storage type
+     * are the following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2,
+     * gp3):</p> <ul> <li> <p>Enterprise and Standard editions: Must be an integer from
+     * 20 to 16384.</p> </li> <li> <p>Web and Express editions: Must be an integer from
+     * 20 to 16384.</p> </li> </ul> </li> <li> <p>Provisioned IOPS storage (io1):</p>
+     * <ul> <li> <p>Enterprise and Standard editions: Must be an integer from 100 to
+     * 16384.</p> </li> <li> <p>Web and Express editions: Must be an integer from 100
+     * to 16384.</p> </li> </ul> </li> <li> <p>Magnetic storage (standard):</p> <ul>
+     * <li> <p>Enterprise and Standard editions: Must be an integer from 20 to
+     * 1024.</p> </li> <li> <p>Web and Express editions: Must be an integer from 20 to
+     * 1024.</p> </li> </ul> </li> </ul> </dd> </dl>
      */
     inline int GetAllocatedStorage() const{ return m_allocatedStorage; }
 
@@ -527,44 +535,44 @@ namespace Model
      * <p>This setting doesn't apply to Amazon Aurora DB instances. Aurora cluster
      * volumes automatically grow as the amount of data in your database increases,
      * though you are only charged for the space that you use in an Aurora cluster
-     * volume.</p> <dl> <dt>Amazon RDS Custom</dt> <dt>RDS for MariaDB</dt> <dt>RDS for
-     * MySQL</dt> <dt>RDS for Oracle</dt> <dt>RDS for PostgreSQL</dt> <dt>RDS for SQL
-     * Server</dt> <dd> <p>Constraints to the amount of storage for each storage type
-     * are the following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2, gp3):
-     * Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS
-     * Custom for SQL Server.</p> </li> <li> <p>Provisioned IOPS storage (io1): Must be
-     * an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for
-     * SQL Server.</p> </li> </ul> </dd> <dd> <p>Constraints to the amount of storage
+     * volume.</p> <dl> <dt>Amazon RDS Custom</dt> <dd> <p>Constraints to the amount of
+     * storage for each storage type are the following:</p> <ul> <li> <p>General
+     * Purpose (SSD) storage (gp2, gp3): Must be an integer from 40 to 65536 for RDS
+     * Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 40 to 65536 for RDS
+     * Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li> </ul> </dd>
+     * <dt>RDS for MariaDB</dt> <dd> <p>Constraints to the amount of storage for each
+     * storage type are the following:</p> <ul> <li> <p>General Purpose (SSD) storage
+     * (gp2, gp3): Must be an integer from 20 to 65536.</p> </li> <li> <p>Provisioned
+     * IOPS storage (io1): Must be an integer from 100 to 65536.</p> </li> <li>
+     * <p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p> </li>
+     * </ul> </dd> <dt>RDS for MySQL</dt> <dd> <p>Constraints to the amount of storage
      * for each storage type are the following:</p> <ul> <li> <p>General Purpose (SSD)
      * storage (gp2, gp3): Must be an integer from 20 to 65536.</p> </li> <li>
      * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
      * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
-     * 3072.</p> </li> </ul> </dd> <dd> <p>Constraints to the amount of storage for
-     * each storage type are the following:</p> <ul> <li> <p>General Purpose (SSD)
-     * storage (gp2, gp3): Must be an integer from 20 to 65536.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
-     * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
-     * 3072.</p> </li> </ul> </dd> <dd> <p>Constraints to the amount of storage for
-     * each storage type are the following:</p> <ul> <li> <p>General Purpose (SSD)
-     * storage (gp2, gp3): Must be an integer from 20 to 65536.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
-     * </li> <li> <p>Magnetic storage (standard): Must be an integer from 10 to
-     * 3072.</p> </li> </ul> </dd> <dd> <p>Constraints to the amount of storage for
-     * each storage type are the following:</p> <ul> <li> <p>General Purpose (SSD)
-     * storage (gp2, gp3): Must be an integer from 20 to 65536.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
-     * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
-     * 3072.</p> </li> </ul> </dd> <dd> <p>Constraints to the amount of storage for
-     * each storage type are the following:</p> <ul> <li> <p>General Purpose (SSD)
-     * storage (gp2, gp3):</p> <ul> <li> <p>Enterprise and Standard editions: Must be
-     * an integer from 20 to 16384.</p> </li> <li> <p>Web and Express editions: Must be
-     * an integer from 20 to 16384.</p> </li> </ul> </li> <li> <p>Provisioned IOPS
-     * storage (io1):</p> <ul> <li> <p>Enterprise and Standard editions: Must be an
-     * integer from 100 to 16384.</p> </li> <li> <p>Web and Express editions: Must be
-     * an integer from 100 to 16384.</p> </li> </ul> </li> <li> <p>Magnetic storage
-     * (standard):</p> <ul> <li> <p>Enterprise and Standard editions: Must be an
-     * integer from 20 to 1024.</p> </li> <li> <p>Web and Express editions: Must be an
-     * integer from 20 to 1024.</p> </li> </ul> </li> </ul> </dd> </dl>
+     * 3072.</p> </li> </ul> </dd> <dt>RDS for Oracle</dt> <dd> <p>Constraints to the
+     * amount of storage for each storage type are the following:</p> <ul> <li>
+     * <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to
+     * 65536.</p> </li> <li> <p>Provisioned IOPS storage (io1): Must be an integer from
+     * 100 to 65536.</p> </li> <li> <p>Magnetic storage (standard): Must be an integer
+     * from 10 to 3072.</p> </li> </ul> </dd> <dt>RDS for PostgreSQL</dt> <dd>
+     * <p>Constraints to the amount of storage for each storage type are the
+     * following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an
+     * integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS storage (io1): Must
+     * be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic storage (standard):
+     * Must be an integer from 5 to 3072.</p> </li> </ul> </dd> <dt>RDS for SQL
+     * Server</dt> <dd> <p>Constraints to the amount of storage for each storage type
+     * are the following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2,
+     * gp3):</p> <ul> <li> <p>Enterprise and Standard editions: Must be an integer from
+     * 20 to 16384.</p> </li> <li> <p>Web and Express editions: Must be an integer from
+     * 20 to 16384.</p> </li> </ul> </li> <li> <p>Provisioned IOPS storage (io1):</p>
+     * <ul> <li> <p>Enterprise and Standard editions: Must be an integer from 100 to
+     * 16384.</p> </li> <li> <p>Web and Express editions: Must be an integer from 100
+     * to 16384.</p> </li> </ul> </li> <li> <p>Magnetic storage (standard):</p> <ul>
+     * <li> <p>Enterprise and Standard editions: Must be an integer from 20 to
+     * 1024.</p> </li> <li> <p>Web and Express editions: Must be an integer from 20 to
+     * 1024.</p> </li> </ul> </li> </ul> </dd> </dl>
      */
     inline bool AllocatedStorageHasBeenSet() const { return m_allocatedStorageHasBeenSet; }
 
@@ -573,44 +581,44 @@ namespace Model
      * <p>This setting doesn't apply to Amazon Aurora DB instances. Aurora cluster
      * volumes automatically grow as the amount of data in your database increases,
      * though you are only charged for the space that you use in an Aurora cluster
-     * volume.</p> <dl> <dt>Amazon RDS Custom</dt> <dt>RDS for MariaDB</dt> <dt>RDS for
-     * MySQL</dt> <dt>RDS for Oracle</dt> <dt>RDS for PostgreSQL</dt> <dt>RDS for SQL
-     * Server</dt> <dd> <p>Constraints to the amount of storage for each storage type
-     * are the following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2, gp3):
-     * Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS
-     * Custom for SQL Server.</p> </li> <li> <p>Provisioned IOPS storage (io1): Must be
-     * an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for
-     * SQL Server.</p> </li> </ul> </dd> <dd> <p>Constraints to the amount of storage
+     * volume.</p> <dl> <dt>Amazon RDS Custom</dt> <dd> <p>Constraints to the amount of
+     * storage for each storage type are the following:</p> <ul> <li> <p>General
+     * Purpose (SSD) storage (gp2, gp3): Must be an integer from 40 to 65536 for RDS
+     * Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 40 to 65536 for RDS
+     * Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li> </ul> </dd>
+     * <dt>RDS for MariaDB</dt> <dd> <p>Constraints to the amount of storage for each
+     * storage type are the following:</p> <ul> <li> <p>General Purpose (SSD) storage
+     * (gp2, gp3): Must be an integer from 20 to 65536.</p> </li> <li> <p>Provisioned
+     * IOPS storage (io1): Must be an integer from 100 to 65536.</p> </li> <li>
+     * <p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p> </li>
+     * </ul> </dd> <dt>RDS for MySQL</dt> <dd> <p>Constraints to the amount of storage
      * for each storage type are the following:</p> <ul> <li> <p>General Purpose (SSD)
      * storage (gp2, gp3): Must be an integer from 20 to 65536.</p> </li> <li>
      * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
      * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
-     * 3072.</p> </li> </ul> </dd> <dd> <p>Constraints to the amount of storage for
-     * each storage type are the following:</p> <ul> <li> <p>General Purpose (SSD)
-     * storage (gp2, gp3): Must be an integer from 20 to 65536.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
-     * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
-     * 3072.</p> </li> </ul> </dd> <dd> <p>Constraints to the amount of storage for
-     * each storage type are the following:</p> <ul> <li> <p>General Purpose (SSD)
-     * storage (gp2, gp3): Must be an integer from 20 to 65536.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
-     * </li> <li> <p>Magnetic storage (standard): Must be an integer from 10 to
-     * 3072.</p> </li> </ul> </dd> <dd> <p>Constraints to the amount of storage for
-     * each storage type are the following:</p> <ul> <li> <p>General Purpose (SSD)
-     * storage (gp2, gp3): Must be an integer from 20 to 65536.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
-     * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
-     * 3072.</p> </li> </ul> </dd> <dd> <p>Constraints to the amount of storage for
-     * each storage type are the following:</p> <ul> <li> <p>General Purpose (SSD)
-     * storage (gp2, gp3):</p> <ul> <li> <p>Enterprise and Standard editions: Must be
-     * an integer from 20 to 16384.</p> </li> <li> <p>Web and Express editions: Must be
-     * an integer from 20 to 16384.</p> </li> </ul> </li> <li> <p>Provisioned IOPS
-     * storage (io1):</p> <ul> <li> <p>Enterprise and Standard editions: Must be an
-     * integer from 100 to 16384.</p> </li> <li> <p>Web and Express editions: Must be
-     * an integer from 100 to 16384.</p> </li> </ul> </li> <li> <p>Magnetic storage
-     * (standard):</p> <ul> <li> <p>Enterprise and Standard editions: Must be an
-     * integer from 20 to 1024.</p> </li> <li> <p>Web and Express editions: Must be an
-     * integer from 20 to 1024.</p> </li> </ul> </li> </ul> </dd> </dl>
+     * 3072.</p> </li> </ul> </dd> <dt>RDS for Oracle</dt> <dd> <p>Constraints to the
+     * amount of storage for each storage type are the following:</p> <ul> <li>
+     * <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to
+     * 65536.</p> </li> <li> <p>Provisioned IOPS storage (io1): Must be an integer from
+     * 100 to 65536.</p> </li> <li> <p>Magnetic storage (standard): Must be an integer
+     * from 10 to 3072.</p> </li> </ul> </dd> <dt>RDS for PostgreSQL</dt> <dd>
+     * <p>Constraints to the amount of storage for each storage type are the
+     * following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an
+     * integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS storage (io1): Must
+     * be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic storage (standard):
+     * Must be an integer from 5 to 3072.</p> </li> </ul> </dd> <dt>RDS for SQL
+     * Server</dt> <dd> <p>Constraints to the amount of storage for each storage type
+     * are the following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2,
+     * gp3):</p> <ul> <li> <p>Enterprise and Standard editions: Must be an integer from
+     * 20 to 16384.</p> </li> <li> <p>Web and Express editions: Must be an integer from
+     * 20 to 16384.</p> </li> </ul> </li> <li> <p>Provisioned IOPS storage (io1):</p>
+     * <ul> <li> <p>Enterprise and Standard editions: Must be an integer from 100 to
+     * 16384.</p> </li> <li> <p>Web and Express editions: Must be an integer from 100
+     * to 16384.</p> </li> </ul> </li> <li> <p>Magnetic storage (standard):</p> <ul>
+     * <li> <p>Enterprise and Standard editions: Must be an integer from 20 to
+     * 1024.</p> </li> <li> <p>Web and Express editions: Must be an integer from 20 to
+     * 1024.</p> </li> </ul> </li> </ul> </dd> </dl>
      */
     inline void SetAllocatedStorage(int value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
 
@@ -619,44 +627,44 @@ namespace Model
      * <p>This setting doesn't apply to Amazon Aurora DB instances. Aurora cluster
      * volumes automatically grow as the amount of data in your database increases,
      * though you are only charged for the space that you use in an Aurora cluster
-     * volume.</p> <dl> <dt>Amazon RDS Custom</dt> <dt>RDS for MariaDB</dt> <dt>RDS for
-     * MySQL</dt> <dt>RDS for Oracle</dt> <dt>RDS for PostgreSQL</dt> <dt>RDS for SQL
-     * Server</dt> <dd> <p>Constraints to the amount of storage for each storage type
-     * are the following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2, gp3):
-     * Must be an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS
-     * Custom for SQL Server.</p> </li> <li> <p>Provisioned IOPS storage (io1): Must be
-     * an integer from 40 to 65536 for RDS Custom for Oracle, 16384 for RDS Custom for
-     * SQL Server.</p> </li> </ul> </dd> <dd> <p>Constraints to the amount of storage
+     * volume.</p> <dl> <dt>Amazon RDS Custom</dt> <dd> <p>Constraints to the amount of
+     * storage for each storage type are the following:</p> <ul> <li> <p>General
+     * Purpose (SSD) storage (gp2, gp3): Must be an integer from 40 to 65536 for RDS
+     * Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 40 to 65536 for RDS
+     * Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li> </ul> </dd>
+     * <dt>RDS for MariaDB</dt> <dd> <p>Constraints to the amount of storage for each
+     * storage type are the following:</p> <ul> <li> <p>General Purpose (SSD) storage
+     * (gp2, gp3): Must be an integer from 20 to 65536.</p> </li> <li> <p>Provisioned
+     * IOPS storage (io1): Must be an integer from 100 to 65536.</p> </li> <li>
+     * <p>Magnetic storage (standard): Must be an integer from 5 to 3072.</p> </li>
+     * </ul> </dd> <dt>RDS for MySQL</dt> <dd> <p>Constraints to the amount of storage
      * for each storage type are the following:</p> <ul> <li> <p>General Purpose (SSD)
      * storage (gp2, gp3): Must be an integer from 20 to 65536.</p> </li> <li>
      * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
      * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
-     * 3072.</p> </li> </ul> </dd> <dd> <p>Constraints to the amount of storage for
-     * each storage type are the following:</p> <ul> <li> <p>General Purpose (SSD)
-     * storage (gp2, gp3): Must be an integer from 20 to 65536.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
-     * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
-     * 3072.</p> </li> </ul> </dd> <dd> <p>Constraints to the amount of storage for
-     * each storage type are the following:</p> <ul> <li> <p>General Purpose (SSD)
-     * storage (gp2, gp3): Must be an integer from 20 to 65536.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
-     * </li> <li> <p>Magnetic storage (standard): Must be an integer from 10 to
-     * 3072.</p> </li> </ul> </dd> <dd> <p>Constraints to the amount of storage for
-     * each storage type are the following:</p> <ul> <li> <p>General Purpose (SSD)
-     * storage (gp2, gp3): Must be an integer from 20 to 65536.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 65536.</p>
-     * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
-     * 3072.</p> </li> </ul> </dd> <dd> <p>Constraints to the amount of storage for
-     * each storage type are the following:</p> <ul> <li> <p>General Purpose (SSD)
-     * storage (gp2, gp3):</p> <ul> <li> <p>Enterprise and Standard editions: Must be
-     * an integer from 20 to 16384.</p> </li> <li> <p>Web and Express editions: Must be
-     * an integer from 20 to 16384.</p> </li> </ul> </li> <li> <p>Provisioned IOPS
-     * storage (io1):</p> <ul> <li> <p>Enterprise and Standard editions: Must be an
-     * integer from 100 to 16384.</p> </li> <li> <p>Web and Express editions: Must be
-     * an integer from 100 to 16384.</p> </li> </ul> </li> <li> <p>Magnetic storage
-     * (standard):</p> <ul> <li> <p>Enterprise and Standard editions: Must be an
-     * integer from 20 to 1024.</p> </li> <li> <p>Web and Express editions: Must be an
-     * integer from 20 to 1024.</p> </li> </ul> </li> </ul> </dd> </dl>
+     * 3072.</p> </li> </ul> </dd> <dt>RDS for Oracle</dt> <dd> <p>Constraints to the
+     * amount of storage for each storage type are the following:</p> <ul> <li>
+     * <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 20 to
+     * 65536.</p> </li> <li> <p>Provisioned IOPS storage (io1): Must be an integer from
+     * 100 to 65536.</p> </li> <li> <p>Magnetic storage (standard): Must be an integer
+     * from 10 to 3072.</p> </li> </ul> </dd> <dt>RDS for PostgreSQL</dt> <dd>
+     * <p>Constraints to the amount of storage for each storage type are the
+     * following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2, gp3): Must be an
+     * integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS storage (io1): Must
+     * be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic storage (standard):
+     * Must be an integer from 5 to 3072.</p> </li> </ul> </dd> <dt>RDS for SQL
+     * Server</dt> <dd> <p>Constraints to the amount of storage for each storage type
+     * are the following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2,
+     * gp3):</p> <ul> <li> <p>Enterprise and Standard editions: Must be an integer from
+     * 20 to 16384.</p> </li> <li> <p>Web and Express editions: Must be an integer from
+     * 20 to 16384.</p> </li> </ul> </li> <li> <p>Provisioned IOPS storage (io1):</p>
+     * <ul> <li> <p>Enterprise and Standard editions: Must be an integer from 100 to
+     * 16384.</p> </li> <li> <p>Web and Express editions: Must be an integer from 100
+     * to 16384.</p> </li> </ul> </li> <li> <p>Magnetic storage (standard):</p> <ul>
+     * <li> <p>Enterprise and Standard editions: Must be an integer from 20 to
+     * 1024.</p> </li> <li> <p>Web and Express editions: Must be an integer from 20 to
+     * 1024.</p> </li> </ul> </li> </ul> </dd> </dl>
      */
     inline CreateDBInstanceRequest& WithAllocatedStorage(int value) { SetAllocatedStorage(value); return *this;}
 
@@ -2000,31 +2008,28 @@ namespace Model
      * <p>The following are the database engines and links to information about the
      * major and minor versions that are available with Amazon RDS. Not every database
      * engine is available for every Amazon Web Services Region.</p> <dl> <dt>Amazon
-     * RDS Custom for Oracle</dt> <dt>Amazon RDS Custom for SQL Server</dt> <dt>RDS for
-     * MariaDB</dt> <dt>RDS for Microsoft SQL Server</dt> <dt>RDS for MySQL</dt>
-     * <dt>RDS for Oracle</dt> <dt>RDS for PostgreSQL</dt> <dd> <p>A custom engine
-     * version (CEV) that you have previously created. This setting is required for RDS
-     * Custom for Oracle. The CEV name has the following format:
-     * 19.<i>customized_string</i>. A valid CEV name is <code>19.my_cev1</code>. For
-     * more information, see <a
+     * RDS Custom for Oracle</dt> <dd> <p>A custom engine version (CEV) that you have
+     * previously created. This setting is required for RDS Custom for Oracle. The CEV
+     * name has the following format: 19.<i>customized_string</i>. A valid CEV name is
+     * <code>19.my_cev1</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create">
      * Creating an RDS Custom for Oracle DB instance</a> in the <i>Amazon RDS User
-     * Guide</i>.</p> </dd> <dd> <p>See <a
+     * Guide</i>.</p> </dd> <dt>Amazon RDS Custom for SQL Server</dt> <dd> <p>See <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits-MS.html">RDS
      * Custom for SQL Server general requirements</a> in the <i>Amazon RDS User
-     * Guide</i>.</p> </dd> <dd> <p>For information, see <a
+     * Guide</i>.</p> </dd> <dt>RDS for MariaDB</dt> <dd> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
-     * on Amazon RDS versions</a> in the <i>Amazon RDS User Guide</i>.</p> </dd> <dd>
-     * <p>For information, see <a
+     * on Amazon RDS versions</a> in the <i>Amazon RDS User Guide</i>.</p> </dd>
+     * <dt>RDS for Microsoft SQL Server</dt> <dd> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">Microsoft
      * SQL Server versions on Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
-     * </dd> <dd> <p>For information, see <a
+     * </dd> <dt>RDS for MySQL</dt> <dd> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
-     * on Amazon RDS versions</a> in the <i>Amazon RDS User Guide</i>.</p> </dd> <dd>
-     * <p>For information, see <a
+     * on Amazon RDS versions</a> in the <i>Amazon RDS User Guide</i>.</p> </dd>
+     * <dt>RDS for Oracle</dt> <dd> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle
      * Database Engine release notes</a> in the <i>Amazon RDS User Guide</i>.</p> </dd>
-     * <dd> <p>For information, see <a
+     * <dt>RDS for PostgreSQL</dt> <dd> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon
      * RDS for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User
      * Guide</i>.</p> </dd> </dl>
@@ -2039,31 +2044,28 @@ namespace Model
      * <p>The following are the database engines and links to information about the
      * major and minor versions that are available with Amazon RDS. Not every database
      * engine is available for every Amazon Web Services Region.</p> <dl> <dt>Amazon
-     * RDS Custom for Oracle</dt> <dt>Amazon RDS Custom for SQL Server</dt> <dt>RDS for
-     * MariaDB</dt> <dt>RDS for Microsoft SQL Server</dt> <dt>RDS for MySQL</dt>
-     * <dt>RDS for Oracle</dt> <dt>RDS for PostgreSQL</dt> <dd> <p>A custom engine
-     * version (CEV) that you have previously created. This setting is required for RDS
-     * Custom for Oracle. The CEV name has the following format:
-     * 19.<i>customized_string</i>. A valid CEV name is <code>19.my_cev1</code>. For
-     * more information, see <a
+     * RDS Custom for Oracle</dt> <dd> <p>A custom engine version (CEV) that you have
+     * previously created. This setting is required for RDS Custom for Oracle. The CEV
+     * name has the following format: 19.<i>customized_string</i>. A valid CEV name is
+     * <code>19.my_cev1</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create">
      * Creating an RDS Custom for Oracle DB instance</a> in the <i>Amazon RDS User
-     * Guide</i>.</p> </dd> <dd> <p>See <a
+     * Guide</i>.</p> </dd> <dt>Amazon RDS Custom for SQL Server</dt> <dd> <p>See <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits-MS.html">RDS
      * Custom for SQL Server general requirements</a> in the <i>Amazon RDS User
-     * Guide</i>.</p> </dd> <dd> <p>For information, see <a
+     * Guide</i>.</p> </dd> <dt>RDS for MariaDB</dt> <dd> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
-     * on Amazon RDS versions</a> in the <i>Amazon RDS User Guide</i>.</p> </dd> <dd>
-     * <p>For information, see <a
+     * on Amazon RDS versions</a> in the <i>Amazon RDS User Guide</i>.</p> </dd>
+     * <dt>RDS for Microsoft SQL Server</dt> <dd> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">Microsoft
      * SQL Server versions on Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
-     * </dd> <dd> <p>For information, see <a
+     * </dd> <dt>RDS for MySQL</dt> <dd> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
-     * on Amazon RDS versions</a> in the <i>Amazon RDS User Guide</i>.</p> </dd> <dd>
-     * <p>For information, see <a
+     * on Amazon RDS versions</a> in the <i>Amazon RDS User Guide</i>.</p> </dd>
+     * <dt>RDS for Oracle</dt> <dd> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle
      * Database Engine release notes</a> in the <i>Amazon RDS User Guide</i>.</p> </dd>
-     * <dd> <p>For information, see <a
+     * <dt>RDS for PostgreSQL</dt> <dd> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon
      * RDS for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User
      * Guide</i>.</p> </dd> </dl>
@@ -2078,31 +2080,28 @@ namespace Model
      * <p>The following are the database engines and links to information about the
      * major and minor versions that are available with Amazon RDS. Not every database
      * engine is available for every Amazon Web Services Region.</p> <dl> <dt>Amazon
-     * RDS Custom for Oracle</dt> <dt>Amazon RDS Custom for SQL Server</dt> <dt>RDS for
-     * MariaDB</dt> <dt>RDS for Microsoft SQL Server</dt> <dt>RDS for MySQL</dt>
-     * <dt>RDS for Oracle</dt> <dt>RDS for PostgreSQL</dt> <dd> <p>A custom engine
-     * version (CEV) that you have previously created. This setting is required for RDS
-     * Custom for Oracle. The CEV name has the following format:
-     * 19.<i>customized_string</i>. A valid CEV name is <code>19.my_cev1</code>. For
-     * more information, see <a
+     * RDS Custom for Oracle</dt> <dd> <p>A custom engine version (CEV) that you have
+     * previously created. This setting is required for RDS Custom for Oracle. The CEV
+     * name has the following format: 19.<i>customized_string</i>. A valid CEV name is
+     * <code>19.my_cev1</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create">
      * Creating an RDS Custom for Oracle DB instance</a> in the <i>Amazon RDS User
-     * Guide</i>.</p> </dd> <dd> <p>See <a
+     * Guide</i>.</p> </dd> <dt>Amazon RDS Custom for SQL Server</dt> <dd> <p>See <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits-MS.html">RDS
      * Custom for SQL Server general requirements</a> in the <i>Amazon RDS User
-     * Guide</i>.</p> </dd> <dd> <p>For information, see <a
+     * Guide</i>.</p> </dd> <dt>RDS for MariaDB</dt> <dd> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
-     * on Amazon RDS versions</a> in the <i>Amazon RDS User Guide</i>.</p> </dd> <dd>
-     * <p>For information, see <a
+     * on Amazon RDS versions</a> in the <i>Amazon RDS User Guide</i>.</p> </dd>
+     * <dt>RDS for Microsoft SQL Server</dt> <dd> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">Microsoft
      * SQL Server versions on Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
-     * </dd> <dd> <p>For information, see <a
+     * </dd> <dt>RDS for MySQL</dt> <dd> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
-     * on Amazon RDS versions</a> in the <i>Amazon RDS User Guide</i>.</p> </dd> <dd>
-     * <p>For information, see <a
+     * on Amazon RDS versions</a> in the <i>Amazon RDS User Guide</i>.</p> </dd>
+     * <dt>RDS for Oracle</dt> <dd> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle
      * Database Engine release notes</a> in the <i>Amazon RDS User Guide</i>.</p> </dd>
-     * <dd> <p>For information, see <a
+     * <dt>RDS for PostgreSQL</dt> <dd> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon
      * RDS for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User
      * Guide</i>.</p> </dd> </dl>
@@ -2117,31 +2116,28 @@ namespace Model
      * <p>The following are the database engines and links to information about the
      * major and minor versions that are available with Amazon RDS. Not every database
      * engine is available for every Amazon Web Services Region.</p> <dl> <dt>Amazon
-     * RDS Custom for Oracle</dt> <dt>Amazon RDS Custom for SQL Server</dt> <dt>RDS for
-     * MariaDB</dt> <dt>RDS for Microsoft SQL Server</dt> <dt>RDS for MySQL</dt>
-     * <dt>RDS for Oracle</dt> <dt>RDS for PostgreSQL</dt> <dd> <p>A custom engine
-     * version (CEV) that you have previously created. This setting is required for RDS
-     * Custom for Oracle. The CEV name has the following format:
-     * 19.<i>customized_string</i>. A valid CEV name is <code>19.my_cev1</code>. For
-     * more information, see <a
+     * RDS Custom for Oracle</dt> <dd> <p>A custom engine version (CEV) that you have
+     * previously created. This setting is required for RDS Custom for Oracle. The CEV
+     * name has the following format: 19.<i>customized_string</i>. A valid CEV name is
+     * <code>19.my_cev1</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create">
      * Creating an RDS Custom for Oracle DB instance</a> in the <i>Amazon RDS User
-     * Guide</i>.</p> </dd> <dd> <p>See <a
+     * Guide</i>.</p> </dd> <dt>Amazon RDS Custom for SQL Server</dt> <dd> <p>See <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits-MS.html">RDS
      * Custom for SQL Server general requirements</a> in the <i>Amazon RDS User
-     * Guide</i>.</p> </dd> <dd> <p>For information, see <a
+     * Guide</i>.</p> </dd> <dt>RDS for MariaDB</dt> <dd> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
-     * on Amazon RDS versions</a> in the <i>Amazon RDS User Guide</i>.</p> </dd> <dd>
-     * <p>For information, see <a
+     * on Amazon RDS versions</a> in the <i>Amazon RDS User Guide</i>.</p> </dd>
+     * <dt>RDS for Microsoft SQL Server</dt> <dd> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">Microsoft
      * SQL Server versions on Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
-     * </dd> <dd> <p>For information, see <a
+     * </dd> <dt>RDS for MySQL</dt> <dd> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
-     * on Amazon RDS versions</a> in the <i>Amazon RDS User Guide</i>.</p> </dd> <dd>
-     * <p>For information, see <a
+     * on Amazon RDS versions</a> in the <i>Amazon RDS User Guide</i>.</p> </dd>
+     * <dt>RDS for Oracle</dt> <dd> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle
      * Database Engine release notes</a> in the <i>Amazon RDS User Guide</i>.</p> </dd>
-     * <dd> <p>For information, see <a
+     * <dt>RDS for PostgreSQL</dt> <dd> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon
      * RDS for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User
      * Guide</i>.</p> </dd> </dl>
@@ -2156,31 +2152,28 @@ namespace Model
      * <p>The following are the database engines and links to information about the
      * major and minor versions that are available with Amazon RDS. Not every database
      * engine is available for every Amazon Web Services Region.</p> <dl> <dt>Amazon
-     * RDS Custom for Oracle</dt> <dt>Amazon RDS Custom for SQL Server</dt> <dt>RDS for
-     * MariaDB</dt> <dt>RDS for Microsoft SQL Server</dt> <dt>RDS for MySQL</dt>
-     * <dt>RDS for Oracle</dt> <dt>RDS for PostgreSQL</dt> <dd> <p>A custom engine
-     * version (CEV) that you have previously created. This setting is required for RDS
-     * Custom for Oracle. The CEV name has the following format:
-     * 19.<i>customized_string</i>. A valid CEV name is <code>19.my_cev1</code>. For
-     * more information, see <a
+     * RDS Custom for Oracle</dt> <dd> <p>A custom engine version (CEV) that you have
+     * previously created. This setting is required for RDS Custom for Oracle. The CEV
+     * name has the following format: 19.<i>customized_string</i>. A valid CEV name is
+     * <code>19.my_cev1</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create">
      * Creating an RDS Custom for Oracle DB instance</a> in the <i>Amazon RDS User
-     * Guide</i>.</p> </dd> <dd> <p>See <a
+     * Guide</i>.</p> </dd> <dt>Amazon RDS Custom for SQL Server</dt> <dd> <p>See <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits-MS.html">RDS
      * Custom for SQL Server general requirements</a> in the <i>Amazon RDS User
-     * Guide</i>.</p> </dd> <dd> <p>For information, see <a
+     * Guide</i>.</p> </dd> <dt>RDS for MariaDB</dt> <dd> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
-     * on Amazon RDS versions</a> in the <i>Amazon RDS User Guide</i>.</p> </dd> <dd>
-     * <p>For information, see <a
+     * on Amazon RDS versions</a> in the <i>Amazon RDS User Guide</i>.</p> </dd>
+     * <dt>RDS for Microsoft SQL Server</dt> <dd> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">Microsoft
      * SQL Server versions on Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
-     * </dd> <dd> <p>For information, see <a
+     * </dd> <dt>RDS for MySQL</dt> <dd> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
-     * on Amazon RDS versions</a> in the <i>Amazon RDS User Guide</i>.</p> </dd> <dd>
-     * <p>For information, see <a
+     * on Amazon RDS versions</a> in the <i>Amazon RDS User Guide</i>.</p> </dd>
+     * <dt>RDS for Oracle</dt> <dd> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle
      * Database Engine release notes</a> in the <i>Amazon RDS User Guide</i>.</p> </dd>
-     * <dd> <p>For information, see <a
+     * <dt>RDS for PostgreSQL</dt> <dd> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon
      * RDS for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User
      * Guide</i>.</p> </dd> </dl>
@@ -2195,31 +2188,28 @@ namespace Model
      * <p>The following are the database engines and links to information about the
      * major and minor versions that are available with Amazon RDS. Not every database
      * engine is available for every Amazon Web Services Region.</p> <dl> <dt>Amazon
-     * RDS Custom for Oracle</dt> <dt>Amazon RDS Custom for SQL Server</dt> <dt>RDS for
-     * MariaDB</dt> <dt>RDS for Microsoft SQL Server</dt> <dt>RDS for MySQL</dt>
-     * <dt>RDS for Oracle</dt> <dt>RDS for PostgreSQL</dt> <dd> <p>A custom engine
-     * version (CEV) that you have previously created. This setting is required for RDS
-     * Custom for Oracle. The CEV name has the following format:
-     * 19.<i>customized_string</i>. A valid CEV name is <code>19.my_cev1</code>. For
-     * more information, see <a
+     * RDS Custom for Oracle</dt> <dd> <p>A custom engine version (CEV) that you have
+     * previously created. This setting is required for RDS Custom for Oracle. The CEV
+     * name has the following format: 19.<i>customized_string</i>. A valid CEV name is
+     * <code>19.my_cev1</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create">
      * Creating an RDS Custom for Oracle DB instance</a> in the <i>Amazon RDS User
-     * Guide</i>.</p> </dd> <dd> <p>See <a
+     * Guide</i>.</p> </dd> <dt>Amazon RDS Custom for SQL Server</dt> <dd> <p>See <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits-MS.html">RDS
      * Custom for SQL Server general requirements</a> in the <i>Amazon RDS User
-     * Guide</i>.</p> </dd> <dd> <p>For information, see <a
+     * Guide</i>.</p> </dd> <dt>RDS for MariaDB</dt> <dd> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
-     * on Amazon RDS versions</a> in the <i>Amazon RDS User Guide</i>.</p> </dd> <dd>
-     * <p>For information, see <a
+     * on Amazon RDS versions</a> in the <i>Amazon RDS User Guide</i>.</p> </dd>
+     * <dt>RDS for Microsoft SQL Server</dt> <dd> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">Microsoft
      * SQL Server versions on Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
-     * </dd> <dd> <p>For information, see <a
+     * </dd> <dt>RDS for MySQL</dt> <dd> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
-     * on Amazon RDS versions</a> in the <i>Amazon RDS User Guide</i>.</p> </dd> <dd>
-     * <p>For information, see <a
+     * on Amazon RDS versions</a> in the <i>Amazon RDS User Guide</i>.</p> </dd>
+     * <dt>RDS for Oracle</dt> <dd> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle
      * Database Engine release notes</a> in the <i>Amazon RDS User Guide</i>.</p> </dd>
-     * <dd> <p>For information, see <a
+     * <dt>RDS for PostgreSQL</dt> <dd> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon
      * RDS for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User
      * Guide</i>.</p> </dd> </dl>
@@ -2234,31 +2224,28 @@ namespace Model
      * <p>The following are the database engines and links to information about the
      * major and minor versions that are available with Amazon RDS. Not every database
      * engine is available for every Amazon Web Services Region.</p> <dl> <dt>Amazon
-     * RDS Custom for Oracle</dt> <dt>Amazon RDS Custom for SQL Server</dt> <dt>RDS for
-     * MariaDB</dt> <dt>RDS for Microsoft SQL Server</dt> <dt>RDS for MySQL</dt>
-     * <dt>RDS for Oracle</dt> <dt>RDS for PostgreSQL</dt> <dd> <p>A custom engine
-     * version (CEV) that you have previously created. This setting is required for RDS
-     * Custom for Oracle. The CEV name has the following format:
-     * 19.<i>customized_string</i>. A valid CEV name is <code>19.my_cev1</code>. For
-     * more information, see <a
+     * RDS Custom for Oracle</dt> <dd> <p>A custom engine version (CEV) that you have
+     * previously created. This setting is required for RDS Custom for Oracle. The CEV
+     * name has the following format: 19.<i>customized_string</i>. A valid CEV name is
+     * <code>19.my_cev1</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create">
      * Creating an RDS Custom for Oracle DB instance</a> in the <i>Amazon RDS User
-     * Guide</i>.</p> </dd> <dd> <p>See <a
+     * Guide</i>.</p> </dd> <dt>Amazon RDS Custom for SQL Server</dt> <dd> <p>See <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits-MS.html">RDS
      * Custom for SQL Server general requirements</a> in the <i>Amazon RDS User
-     * Guide</i>.</p> </dd> <dd> <p>For information, see <a
+     * Guide</i>.</p> </dd> <dt>RDS for MariaDB</dt> <dd> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
-     * on Amazon RDS versions</a> in the <i>Amazon RDS User Guide</i>.</p> </dd> <dd>
-     * <p>For information, see <a
+     * on Amazon RDS versions</a> in the <i>Amazon RDS User Guide</i>.</p> </dd>
+     * <dt>RDS for Microsoft SQL Server</dt> <dd> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">Microsoft
      * SQL Server versions on Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
-     * </dd> <dd> <p>For information, see <a
+     * </dd> <dt>RDS for MySQL</dt> <dd> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
-     * on Amazon RDS versions</a> in the <i>Amazon RDS User Guide</i>.</p> </dd> <dd>
-     * <p>For information, see <a
+     * on Amazon RDS versions</a> in the <i>Amazon RDS User Guide</i>.</p> </dd>
+     * <dt>RDS for Oracle</dt> <dd> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle
      * Database Engine release notes</a> in the <i>Amazon RDS User Guide</i>.</p> </dd>
-     * <dd> <p>For information, see <a
+     * <dt>RDS for PostgreSQL</dt> <dd> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon
      * RDS for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User
      * Guide</i>.</p> </dd> </dl>
@@ -2273,31 +2260,28 @@ namespace Model
      * <p>The following are the database engines and links to information about the
      * major and minor versions that are available with Amazon RDS. Not every database
      * engine is available for every Amazon Web Services Region.</p> <dl> <dt>Amazon
-     * RDS Custom for Oracle</dt> <dt>Amazon RDS Custom for SQL Server</dt> <dt>RDS for
-     * MariaDB</dt> <dt>RDS for Microsoft SQL Server</dt> <dt>RDS for MySQL</dt>
-     * <dt>RDS for Oracle</dt> <dt>RDS for PostgreSQL</dt> <dd> <p>A custom engine
-     * version (CEV) that you have previously created. This setting is required for RDS
-     * Custom for Oracle. The CEV name has the following format:
-     * 19.<i>customized_string</i>. A valid CEV name is <code>19.my_cev1</code>. For
-     * more information, see <a
+     * RDS Custom for Oracle</dt> <dd> <p>A custom engine version (CEV) that you have
+     * previously created. This setting is required for RDS Custom for Oracle. The CEV
+     * name has the following format: 19.<i>customized_string</i>. A valid CEV name is
+     * <code>19.my_cev1</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create">
      * Creating an RDS Custom for Oracle DB instance</a> in the <i>Amazon RDS User
-     * Guide</i>.</p> </dd> <dd> <p>See <a
+     * Guide</i>.</p> </dd> <dt>Amazon RDS Custom for SQL Server</dt> <dd> <p>See <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-reqs-limits-MS.html">RDS
      * Custom for SQL Server general requirements</a> in the <i>Amazon RDS User
-     * Guide</i>.</p> </dd> <dd> <p>For information, see <a
+     * Guide</i>.</p> </dd> <dt>RDS for MariaDB</dt> <dd> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
-     * on Amazon RDS versions</a> in the <i>Amazon RDS User Guide</i>.</p> </dd> <dd>
-     * <p>For information, see <a
+     * on Amazon RDS versions</a> in the <i>Amazon RDS User Guide</i>.</p> </dd>
+     * <dt>RDS for Microsoft SQL Server</dt> <dd> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">Microsoft
      * SQL Server versions on Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
-     * </dd> <dd> <p>For information, see <a
+     * </dd> <dt>RDS for MySQL</dt> <dd> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
-     * on Amazon RDS versions</a> in the <i>Amazon RDS User Guide</i>.</p> </dd> <dd>
-     * <p>For information, see <a
+     * on Amazon RDS versions</a> in the <i>Amazon RDS User Guide</i>.</p> </dd>
+     * <dt>RDS for Oracle</dt> <dd> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle
      * Database Engine release notes</a> in the <i>Amazon RDS User Guide</i>.</p> </dd>
-     * <dd> <p>For information, see <a
+     * <dt>RDS for PostgreSQL</dt> <dd> <p>For information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon
      * RDS for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User
      * Guide</i>.</p> </dd> </dl>
@@ -3373,57 +3357,57 @@ namespace Model
 
 
     /**
-     * <p>Specifies the fully qualified domain name of an Active Directory domain.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Cannot be greater than 64 characters.</p> </li>
+     * <p>The fully qualified domain name (FQDN) of an Active Directory domain.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 64 characters.</p> </li>
      * </ul> <p>Example: <code>mymanagedADtest.mymanagedAD.mydomain</code> </p>
      */
     inline const Aws::String& GetDomainFqdn() const{ return m_domainFqdn; }
 
     /**
-     * <p>Specifies the fully qualified domain name of an Active Directory domain.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Cannot be greater than 64 characters.</p> </li>
+     * <p>The fully qualified domain name (FQDN) of an Active Directory domain.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 64 characters.</p> </li>
      * </ul> <p>Example: <code>mymanagedADtest.mymanagedAD.mydomain</code> </p>
      */
     inline bool DomainFqdnHasBeenSet() const { return m_domainFqdnHasBeenSet; }
 
     /**
-     * <p>Specifies the fully qualified domain name of an Active Directory domain.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Cannot be greater than 64 characters.</p> </li>
+     * <p>The fully qualified domain name (FQDN) of an Active Directory domain.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 64 characters.</p> </li>
      * </ul> <p>Example: <code>mymanagedADtest.mymanagedAD.mydomain</code> </p>
      */
     inline void SetDomainFqdn(const Aws::String& value) { m_domainFqdnHasBeenSet = true; m_domainFqdn = value; }
 
     /**
-     * <p>Specifies the fully qualified domain name of an Active Directory domain.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Cannot be greater than 64 characters.</p> </li>
+     * <p>The fully qualified domain name (FQDN) of an Active Directory domain.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 64 characters.</p> </li>
      * </ul> <p>Example: <code>mymanagedADtest.mymanagedAD.mydomain</code> </p>
      */
     inline void SetDomainFqdn(Aws::String&& value) { m_domainFqdnHasBeenSet = true; m_domainFqdn = std::move(value); }
 
     /**
-     * <p>Specifies the fully qualified domain name of an Active Directory domain.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Cannot be greater than 64 characters.</p> </li>
+     * <p>The fully qualified domain name (FQDN) of an Active Directory domain.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 64 characters.</p> </li>
      * </ul> <p>Example: <code>mymanagedADtest.mymanagedAD.mydomain</code> </p>
      */
     inline void SetDomainFqdn(const char* value) { m_domainFqdnHasBeenSet = true; m_domainFqdn.assign(value); }
 
     /**
-     * <p>Specifies the fully qualified domain name of an Active Directory domain.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Cannot be greater than 64 characters.</p> </li>
+     * <p>The fully qualified domain name (FQDN) of an Active Directory domain.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 64 characters.</p> </li>
      * </ul> <p>Example: <code>mymanagedADtest.mymanagedAD.mydomain</code> </p>
      */
     inline CreateDBInstanceRequest& WithDomainFqdn(const Aws::String& value) { SetDomainFqdn(value); return *this;}
 
     /**
-     * <p>Specifies the fully qualified domain name of an Active Directory domain.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Cannot be greater than 64 characters.</p> </li>
+     * <p>The fully qualified domain name (FQDN) of an Active Directory domain.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 64 characters.</p> </li>
      * </ul> <p>Example: <code>mymanagedADtest.mymanagedAD.mydomain</code> </p>
      */
     inline CreateDBInstanceRequest& WithDomainFqdn(Aws::String&& value) { SetDomainFqdn(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the fully qualified domain name of an Active Directory domain.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Cannot be greater than 64 characters.</p> </li>
+     * <p>The fully qualified domain name (FQDN) of an Active Directory domain.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 64 characters.</p> </li>
      * </ul> <p>Example: <code>mymanagedADtest.mymanagedAD.mydomain</code> </p>
      */
     inline CreateDBInstanceRequest& WithDomainFqdn(const char* value) { SetDomainFqdn(value); return *this;}
@@ -3432,7 +3416,7 @@ namespace Model
     /**
      * <p>The Active Directory organizational unit for your DB instance to join.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be in the distinguished name format.</p>
-     * </li> <li> <p>Cannot be greater than 64 characters.</p> </li> </ul> <p>Example:
+     * </li> <li> <p>Can't be longer than 64 characters.</p> </li> </ul> <p>Example:
      * <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code>
      * </p>
      */
@@ -3441,7 +3425,7 @@ namespace Model
     /**
      * <p>The Active Directory organizational unit for your DB instance to join.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be in the distinguished name format.</p>
-     * </li> <li> <p>Cannot be greater than 64 characters.</p> </li> </ul> <p>Example:
+     * </li> <li> <p>Can't be longer than 64 characters.</p> </li> </ul> <p>Example:
      * <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code>
      * </p>
      */
@@ -3450,7 +3434,7 @@ namespace Model
     /**
      * <p>The Active Directory organizational unit for your DB instance to join.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be in the distinguished name format.</p>
-     * </li> <li> <p>Cannot be greater than 64 characters.</p> </li> </ul> <p>Example:
+     * </li> <li> <p>Can't be longer than 64 characters.</p> </li> </ul> <p>Example:
      * <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code>
      * </p>
      */
@@ -3459,7 +3443,7 @@ namespace Model
     /**
      * <p>The Active Directory organizational unit for your DB instance to join.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be in the distinguished name format.</p>
-     * </li> <li> <p>Cannot be greater than 64 characters.</p> </li> </ul> <p>Example:
+     * </li> <li> <p>Can't be longer than 64 characters.</p> </li> </ul> <p>Example:
      * <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code>
      * </p>
      */
@@ -3468,7 +3452,7 @@ namespace Model
     /**
      * <p>The Active Directory organizational unit for your DB instance to join.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be in the distinguished name format.</p>
-     * </li> <li> <p>Cannot be greater than 64 characters.</p> </li> </ul> <p>Example:
+     * </li> <li> <p>Can't be longer than 64 characters.</p> </li> </ul> <p>Example:
      * <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code>
      * </p>
      */
@@ -3477,7 +3461,7 @@ namespace Model
     /**
      * <p>The Active Directory organizational unit for your DB instance to join.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be in the distinguished name format.</p>
-     * </li> <li> <p>Cannot be greater than 64 characters.</p> </li> </ul> <p>Example:
+     * </li> <li> <p>Can't be longer than 64 characters.</p> </li> </ul> <p>Example:
      * <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code>
      * </p>
      */
@@ -3486,7 +3470,7 @@ namespace Model
     /**
      * <p>The Active Directory organizational unit for your DB instance to join.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be in the distinguished name format.</p>
-     * </li> <li> <p>Cannot be greater than 64 characters.</p> </li> </ul> <p>Example:
+     * </li> <li> <p>Can't be longer than 64 characters.</p> </li> </ul> <p>Example:
      * <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code>
      * </p>
      */
@@ -3495,7 +3479,7 @@ namespace Model
     /**
      * <p>The Active Directory organizational unit for your DB instance to join.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be in the distinguished name format.</p>
-     * </li> <li> <p>Cannot be greater than 64 characters.</p> </li> </ul> <p>Example:
+     * </li> <li> <p>Can't be longer than 64 characters.</p> </li> </ul> <p>Example:
      * <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code>
      * </p>
      */
@@ -3503,64 +3487,64 @@ namespace Model
 
 
     /**
-     * <p>The ARN for the Secrets Manager secret that contains the credentials for the
-     * user performing the domain join.</p> <p>Example:
+     * <p>The ARN for the Secrets Manager secret with the credentials for the user
+     * joining the domain.</p> <p>Example:
      * <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code>
      * </p>
      */
     inline const Aws::String& GetDomainAuthSecretArn() const{ return m_domainAuthSecretArn; }
 
     /**
-     * <p>The ARN for the Secrets Manager secret that contains the credentials for the
-     * user performing the domain join.</p> <p>Example:
+     * <p>The ARN for the Secrets Manager secret with the credentials for the user
+     * joining the domain.</p> <p>Example:
      * <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code>
      * </p>
      */
     inline bool DomainAuthSecretArnHasBeenSet() const { return m_domainAuthSecretArnHasBeenSet; }
 
     /**
-     * <p>The ARN for the Secrets Manager secret that contains the credentials for the
-     * user performing the domain join.</p> <p>Example:
+     * <p>The ARN for the Secrets Manager secret with the credentials for the user
+     * joining the domain.</p> <p>Example:
      * <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code>
      * </p>
      */
     inline void SetDomainAuthSecretArn(const Aws::String& value) { m_domainAuthSecretArnHasBeenSet = true; m_domainAuthSecretArn = value; }
 
     /**
-     * <p>The ARN for the Secrets Manager secret that contains the credentials for the
-     * user performing the domain join.</p> <p>Example:
+     * <p>The ARN for the Secrets Manager secret with the credentials for the user
+     * joining the domain.</p> <p>Example:
      * <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code>
      * </p>
      */
     inline void SetDomainAuthSecretArn(Aws::String&& value) { m_domainAuthSecretArnHasBeenSet = true; m_domainAuthSecretArn = std::move(value); }
 
     /**
-     * <p>The ARN for the Secrets Manager secret that contains the credentials for the
-     * user performing the domain join.</p> <p>Example:
+     * <p>The ARN for the Secrets Manager secret with the credentials for the user
+     * joining the domain.</p> <p>Example:
      * <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code>
      * </p>
      */
     inline void SetDomainAuthSecretArn(const char* value) { m_domainAuthSecretArnHasBeenSet = true; m_domainAuthSecretArn.assign(value); }
 
     /**
-     * <p>The ARN for the Secrets Manager secret that contains the credentials for the
-     * user performing the domain join.</p> <p>Example:
+     * <p>The ARN for the Secrets Manager secret with the credentials for the user
+     * joining the domain.</p> <p>Example:
      * <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code>
      * </p>
      */
     inline CreateDBInstanceRequest& WithDomainAuthSecretArn(const Aws::String& value) { SetDomainAuthSecretArn(value); return *this;}
 
     /**
-     * <p>The ARN for the Secrets Manager secret that contains the credentials for the
-     * user performing the domain join.</p> <p>Example:
+     * <p>The ARN for the Secrets Manager secret with the credentials for the user
+     * joining the domain.</p> <p>Example:
      * <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code>
      * </p>
      */
     inline CreateDBInstanceRequest& WithDomainAuthSecretArn(Aws::String&& value) { SetDomainAuthSecretArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN for the Secrets Manager secret that contains the credentials for the
-     * user performing the domain join.</p> <p>Example:
+     * <p>The ARN for the Secrets Manager secret with the credentials for the user
+     * joining the domain.</p> <p>Example:
      * <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code>
      * </p>
      */
@@ -3650,7 +3634,7 @@ namespace Model
 
 
     /**
-     * <p>Spcifies whether to copy tags from the DB instance to snapshots of the DB
+     * <p>Specifies whether to copy tags from the DB instance to snapshots of the DB
      * instance. By default, tags are not copied.</p> <p>This setting doesn't apply to
      * Amazon Aurora DB instances. Copying tags to snapshots is managed by the DB
      * cluster. Setting this value for an Aurora DB instance has no effect on the DB
@@ -3659,7 +3643,7 @@ namespace Model
     inline bool GetCopyTagsToSnapshot() const{ return m_copyTagsToSnapshot; }
 
     /**
-     * <p>Spcifies whether to copy tags from the DB instance to snapshots of the DB
+     * <p>Specifies whether to copy tags from the DB instance to snapshots of the DB
      * instance. By default, tags are not copied.</p> <p>This setting doesn't apply to
      * Amazon Aurora DB instances. Copying tags to snapshots is managed by the DB
      * cluster. Setting this value for an Aurora DB instance has no effect on the DB
@@ -3668,7 +3652,7 @@ namespace Model
     inline bool CopyTagsToSnapshotHasBeenSet() const { return m_copyTagsToSnapshotHasBeenSet; }
 
     /**
-     * <p>Spcifies whether to copy tags from the DB instance to snapshots of the DB
+     * <p>Specifies whether to copy tags from the DB instance to snapshots of the DB
      * instance. By default, tags are not copied.</p> <p>This setting doesn't apply to
      * Amazon Aurora DB instances. Copying tags to snapshots is managed by the DB
      * cluster. Setting this value for an Aurora DB instance has no effect on the DB
@@ -3677,7 +3661,7 @@ namespace Model
     inline void SetCopyTagsToSnapshot(bool value) { m_copyTagsToSnapshotHasBeenSet = true; m_copyTagsToSnapshot = value; }
 
     /**
-     * <p>Spcifies whether to copy tags from the DB instance to snapshots of the DB
+     * <p>Specifies whether to copy tags from the DB instance to snapshots of the DB
      * instance. By default, tags are not copied.</p> <p>This setting doesn't apply to
      * Amazon Aurora DB instances. Copying tags to snapshots is managed by the DB
      * cluster. Setting this value for an Aurora DB instance has no effect on the DB

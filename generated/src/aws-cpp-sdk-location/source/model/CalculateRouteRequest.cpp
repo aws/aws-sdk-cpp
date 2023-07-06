@@ -5,12 +5,15 @@
 
 #include <aws/location/model/CalculateRouteRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/http/URI.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
 using namespace Aws::LocationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+using namespace Aws::Http;
 
 CalculateRouteRequest::CalculateRouteRequest() : 
     m_calculatorNameHasBeenSet(false),
@@ -24,6 +27,7 @@ CalculateRouteRequest::CalculateRouteRequest() :
     m_distanceUnitHasBeenSet(false),
     m_includeLegGeometry(false),
     m_includeLegGeometryHasBeenSet(false),
+    m_keyHasBeenSet(false),
     m_travelMode(TravelMode::NOT_SET),
     m_travelModeHasBeenSet(false),
     m_truckModeOptionsHasBeenSet(false),
@@ -115,6 +119,17 @@ Aws::String CalculateRouteRequest::SerializePayload() const
   return payload.View().WriteReadable();
 }
 
+void CalculateRouteRequest::AddQueryStringParameters(URI& uri) const
+{
+    Aws::StringStream ss;
+    if(m_keyHasBeenSet)
+    {
+      ss << m_key;
+      uri.AddQueryStringParameter("key", ss.str());
+      ss.str("");
+    }
+
+}
 
 
 
