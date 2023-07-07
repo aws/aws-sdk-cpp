@@ -882,6 +882,56 @@ namespace MediaLive
         }
 
         /**
+         * Get account configuration<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeAccountConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeAccountConfigurationOutcome DescribeAccountConfiguration(const Model::DescribeAccountConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeAccountConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeAccountConfigurationRequestT = Model::DescribeAccountConfigurationRequest>
+        Model::DescribeAccountConfigurationOutcomeCallable DescribeAccountConfigurationCallable(const DescribeAccountConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&MediaLiveClient::DescribeAccountConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeAccountConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeAccountConfigurationRequestT = Model::DescribeAccountConfigurationRequest>
+        void DescribeAccountConfigurationAsync(const DescribeAccountConfigurationRequestT& request, const DescribeAccountConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaLiveClient::DescribeAccountConfiguration, request, handler, context);
+        }
+
+        /**
+         * Describe the latest thumbnails data.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeThumbnails">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeThumbnailsOutcome DescribeThumbnails(const Model::DescribeThumbnailsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeThumbnails that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeThumbnailsRequestT = Model::DescribeThumbnailsRequest>
+        Model::DescribeThumbnailsOutcomeCallable DescribeThumbnailsCallable(const DescribeThumbnailsRequestT& request) const
+        {
+            return SubmitCallable(&MediaLiveClient::DescribeThumbnails, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeThumbnails that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeThumbnailsRequestT = Model::DescribeThumbnailsRequest>
+        void DescribeThumbnailsAsync(const DescribeThumbnailsRequestT& request, const DescribeThumbnailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaLiveClient::DescribeThumbnails, request, handler, context);
+        }
+
+        /**
          * Produces list of channels that have been created<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListChannels">AWS
          * API Reference</a></p>
@@ -1213,6 +1263,31 @@ namespace MediaLive
         void RejectInputDeviceTransferAsync(const RejectInputDeviceTransferRequestT& request, const RejectInputDeviceTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&MediaLiveClient::RejectInputDeviceTransfer, request, handler, context);
+        }
+
+        /**
+         * Update account configuration<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateAccountConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateAccountConfigurationOutcome UpdateAccountConfiguration(const Model::UpdateAccountConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateAccountConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateAccountConfigurationRequestT = Model::UpdateAccountConfigurationRequest>
+        Model::UpdateAccountConfigurationOutcomeCallable UpdateAccountConfigurationCallable(const UpdateAccountConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&MediaLiveClient::UpdateAccountConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateAccountConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateAccountConfigurationRequestT = Model::UpdateAccountConfigurationRequest>
+        void UpdateAccountConfigurationAsync(const UpdateAccountConfigurationRequestT& request, const UpdateAccountConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaLiveClient::UpdateAccountConfiguration, request, handler, context);
         }
 
         /**

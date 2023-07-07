@@ -301,6 +301,34 @@ namespace DatabaseMigrationService
         }
 
         /**
+         * <p>Creates a configuration that you can later provide to configure and start an
+         * DMS Serverless replication. You can also provide options to validate the
+         * configuration inputs before you start the replication.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateReplicationConfigOutcome CreateReplicationConfig(const Model::CreateReplicationConfigRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateReplicationConfig that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateReplicationConfigRequestT = Model::CreateReplicationConfigRequest>
+        Model::CreateReplicationConfigOutcomeCallable CreateReplicationConfigCallable(const CreateReplicationConfigRequestT& request) const
+        {
+            return SubmitCallable(&DatabaseMigrationServiceClient::CreateReplicationConfig, request);
+        }
+
+        /**
+         * An Async wrapper for CreateReplicationConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateReplicationConfigRequestT = Model::CreateReplicationConfigRequest>
+        void CreateReplicationConfigAsync(const CreateReplicationConfigRequestT& request, const CreateReplicationConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DatabaseMigrationServiceClient::CreateReplicationConfig, request, handler, context);
+        }
+
+        /**
          * <p>Creates the replication instance using the specified parameters.</p> <p>DMS
          * requires that your account have certain roles with appropriate permissions
          * before you can create a replication instance. For information on the required
@@ -337,8 +365,14 @@ namespace DatabaseMigrationService
          * <p>Creates a replication subnet group given a list of the subnet IDs in a
          * VPC.</p> <p>The VPC needs to have at least one subnet in at least two
          * availability zones in the Amazon Web Services Region, otherwise the service will
-         * throw a <code>ReplicationSubnetGroupDoesNotCoverEnoughAZs</code>
-         * exception.</p><p><h3>See Also:</h3>   <a
+         * throw a <code>ReplicationSubnetGroupDoesNotCoverEnoughAZs</code> exception.</p>
+         * <p>If a replication subnet group exists in your Amazon Web Services account, the
+         * CreateReplicationSubnetGroup action returns the following error message: The
+         * Replication Subnet Group already exists. In this case, delete the existing
+         * replication subnet group. To do so, use the <a
+         * href="https://docs.aws.amazon.com/en_us/dms/latest/APIReference/API_DeleteReplicationSubnetGroup.html">DeleteReplicationSubnetGroup</a>
+         * action. Optionally, choose Subnet groups in the DMS console, then choose your
+         * subnet group. Next, choose Delete from Actions.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationSubnetGroup">AWS
          * API Reference</a></p>
          */
@@ -540,6 +574,35 @@ namespace DatabaseMigrationService
         void DeleteFleetAdvisorDatabasesAsync(const DeleteFleetAdvisorDatabasesRequestT& request, const DeleteFleetAdvisorDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DatabaseMigrationServiceClient::DeleteFleetAdvisorDatabases, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes an DMS Serverless replication configuration. This effectively
+         * deprovisions any and all replications that use this configuration. You can't
+         * delete the configuration for an DMS Serverless replication that is ongoing. You
+         * can delete the configuration when the replication is in a non-RUNNING and
+         * non-STARTING state.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteReplicationConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteReplicationConfigOutcome DeleteReplicationConfig(const Model::DeleteReplicationConfigRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteReplicationConfig that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteReplicationConfigRequestT = Model::DeleteReplicationConfigRequest>
+        Model::DeleteReplicationConfigOutcomeCallable DeleteReplicationConfigCallable(const DeleteReplicationConfigRequestT& request) const
+        {
+            return SubmitCallable(&DatabaseMigrationServiceClient::DeleteReplicationConfig, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteReplicationConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteReplicationConfigRequestT = Model::DeleteReplicationConfigRequest>
+        void DeleteReplicationConfigAsync(const DeleteReplicationConfigRequestT& request, const DeleteReplicationConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DatabaseMigrationServiceClient::DeleteReplicationConfig, request, handler, context);
         }
 
         /**
@@ -1199,6 +1262,32 @@ namespace DatabaseMigrationService
         }
 
         /**
+         * <p>Returns one or more existing DMS Serverless replication configurations as a
+         * list of structures.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationConfigs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeReplicationConfigsOutcome DescribeReplicationConfigs(const Model::DescribeReplicationConfigsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeReplicationConfigs that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeReplicationConfigsRequestT = Model::DescribeReplicationConfigsRequest>
+        Model::DescribeReplicationConfigsOutcomeCallable DescribeReplicationConfigsCallable(const DescribeReplicationConfigsRequestT& request) const
+        {
+            return SubmitCallable(&DatabaseMigrationServiceClient::DescribeReplicationConfigs, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeReplicationConfigs that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeReplicationConfigsRequestT = Model::DescribeReplicationConfigsRequest>
+        void DescribeReplicationConfigsAsync(const DescribeReplicationConfigsRequestT& request, const DescribeReplicationConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DatabaseMigrationServiceClient::DescribeReplicationConfigs, request, handler, context);
+        }
+
+        /**
          * <p>Returns information about the task logs for the specified task.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationInstanceTaskLogs">AWS
@@ -1274,6 +1363,33 @@ namespace DatabaseMigrationService
         void DescribeReplicationSubnetGroupsAsync(const DescribeReplicationSubnetGroupsRequestT& request, const DescribeReplicationSubnetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DatabaseMigrationServiceClient::DescribeReplicationSubnetGroups, request, handler, context);
+        }
+
+        /**
+         * <p>Returns table and schema statistics for one or more provisioned replications
+         * that use a given DMS Serverless replication configuration.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationTableStatistics">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeReplicationTableStatisticsOutcome DescribeReplicationTableStatistics(const Model::DescribeReplicationTableStatisticsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeReplicationTableStatistics that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeReplicationTableStatisticsRequestT = Model::DescribeReplicationTableStatisticsRequest>
+        Model::DescribeReplicationTableStatisticsOutcomeCallable DescribeReplicationTableStatisticsCallable(const DescribeReplicationTableStatisticsRequestT& request) const
+        {
+            return SubmitCallable(&DatabaseMigrationServiceClient::DescribeReplicationTableStatistics, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeReplicationTableStatistics that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeReplicationTableStatisticsRequestT = Model::DescribeReplicationTableStatisticsRequest>
+        void DescribeReplicationTableStatisticsAsync(const DescribeReplicationTableStatisticsRequestT& request, const DescribeReplicationTableStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DatabaseMigrationServiceClient::DescribeReplicationTableStatistics, request, handler, context);
         }
 
         /**
@@ -1389,6 +1505,33 @@ namespace DatabaseMigrationService
         void DescribeReplicationTasksAsync(const DescribeReplicationTasksRequestT& request, const DescribeReplicationTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DatabaseMigrationServiceClient::DescribeReplicationTasks, request, handler, context);
+        }
+
+        /**
+         * <p>Provides details on replication progress by returning status information for
+         * one or more provisioned DMS Serverless replications.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplications">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeReplicationsOutcome DescribeReplications(const Model::DescribeReplicationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeReplications that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeReplicationsRequestT = Model::DescribeReplicationsRequest>
+        Model::DescribeReplicationsOutcomeCallable DescribeReplicationsCallable(const DescribeReplicationsRequestT& request) const
+        {
+            return SubmitCallable(&DatabaseMigrationServiceClient::DescribeReplications, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeReplications that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeReplicationsRequestT = Model::DescribeReplicationsRequest>
+        void DescribeReplicationsAsync(const DescribeReplicationsRequestT& request, const DescribeReplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DatabaseMigrationServiceClient::DescribeReplications, request, handler, context);
         }
 
         /**
@@ -1554,6 +1697,39 @@ namespace DatabaseMigrationService
         void ModifyEventSubscriptionAsync(const ModifyEventSubscriptionRequestT& request, const ModifyEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DatabaseMigrationServiceClient::ModifyEventSubscription, request, handler, context);
+        }
+
+        /**
+         * <p>Modifies an existing DMS Serverless replication configuration that you can
+         * use to start a replication. This command includes input validation and logic to
+         * check the state of any replication that uses this configuration. You can only
+         * modify a replication configuration before any replication that uses it has
+         * started. As soon as you have initially started a replication with a given
+         * configuiration, you can't modify that configuration, even if you stop it.</p>
+         * <p>Other run statuses that allow you to run this command include FAILED and
+         * CREATED. A provisioning state that allows you to run this command is
+         * FAILED_PROVISION.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyReplicationConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyReplicationConfigOutcome ModifyReplicationConfig(const Model::ModifyReplicationConfigRequest& request) const;
+
+        /**
+         * A Callable wrapper for ModifyReplicationConfig that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ModifyReplicationConfigRequestT = Model::ModifyReplicationConfigRequest>
+        Model::ModifyReplicationConfigOutcomeCallable ModifyReplicationConfigCallable(const ModifyReplicationConfigRequestT& request) const
+        {
+            return SubmitCallable(&DatabaseMigrationServiceClient::ModifyReplicationConfig, request);
+        }
+
+        /**
+         * An Async wrapper for ModifyReplicationConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ModifyReplicationConfigRequestT = Model::ModifyReplicationConfigRequest>
+        void ModifyReplicationConfigAsync(const ModifyReplicationConfigRequestT& request, const ModifyReplicationConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DatabaseMigrationServiceClient::ModifyReplicationConfig, request, handler, context);
         }
 
         /**
@@ -1724,6 +1900,34 @@ namespace DatabaseMigrationService
         }
 
         /**
+         * <p>Reloads the target database table with the source data for a given DMS
+         * Serverless replication configuration.</p> <p>You can only use this operation
+         * with a task in the RUNNING state, otherwise the service will throw an
+         * <code>InvalidResourceStateFault</code> exception.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ReloadReplicationTables">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ReloadReplicationTablesOutcome ReloadReplicationTables(const Model::ReloadReplicationTablesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ReloadReplicationTables that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ReloadReplicationTablesRequestT = Model::ReloadReplicationTablesRequest>
+        Model::ReloadReplicationTablesOutcomeCallable ReloadReplicationTablesCallable(const ReloadReplicationTablesRequestT& request) const
+        {
+            return SubmitCallable(&DatabaseMigrationServiceClient::ReloadReplicationTables, request);
+        }
+
+        /**
+         * An Async wrapper for ReloadReplicationTables that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ReloadReplicationTablesRequestT = Model::ReloadReplicationTablesRequest>
+        void ReloadReplicationTablesAsync(const ReloadReplicationTablesRequestT& request, const ReloadReplicationTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DatabaseMigrationServiceClient::ReloadReplicationTables, request, handler, context);
+        }
+
+        /**
          * <p>Reloads the target database table with the source data. </p> <p>You can only
          * use this operation with a task in the <code>RUNNING</code> state, otherwise the
          * service will throw an <code>InvalidResourceStateFault</code>
@@ -1834,6 +2038,36 @@ namespace DatabaseMigrationService
         }
 
         /**
+         * <p>For a given DMS Serverless replication configuration, DMS connects to the
+         * source endpoint and collects the metadata to analyze the replication workload.
+         * Using this metadata, DMS then computes and provisions the required capacity and
+         * starts replicating to the target endpoint using the server resources that DMS
+         * has provisioned for the DMS Serverless replication.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartReplication">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartReplicationOutcome StartReplication(const Model::StartReplicationRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartReplication that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartReplicationRequestT = Model::StartReplicationRequest>
+        Model::StartReplicationOutcomeCallable StartReplicationCallable(const StartReplicationRequestT& request) const
+        {
+            return SubmitCallable(&DatabaseMigrationServiceClient::StartReplication, request);
+        }
+
+        /**
+         * An Async wrapper for StartReplication that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartReplicationRequestT = Model::StartReplicationRequest>
+        void StartReplicationAsync(const StartReplicationRequestT& request, const StartReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DatabaseMigrationServiceClient::StartReplication, request, handler, context);
+        }
+
+        /**
          * <p>Starts the replication task.</p> <p>For more information about DMS tasks, see
          * <a
          * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html">Working
@@ -1926,6 +2160,33 @@ namespace DatabaseMigrationService
         void StartReplicationTaskAssessmentRunAsync(const StartReplicationTaskAssessmentRunRequestT& request, const StartReplicationTaskAssessmentRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DatabaseMigrationServiceClient::StartReplicationTaskAssessmentRun, request, handler, context);
+        }
+
+        /**
+         * <p>For a given DMS Serverless replication configuration, DMS stops any and all
+         * ongoing DMS Serverless replications. This command doesn't deprovision the
+         * stopped replications.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StopReplication">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopReplicationOutcome StopReplication(const Model::StopReplicationRequest& request) const;
+
+        /**
+         * A Callable wrapper for StopReplication that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StopReplicationRequestT = Model::StopReplicationRequest>
+        Model::StopReplicationOutcomeCallable StopReplicationCallable(const StopReplicationRequestT& request) const
+        {
+            return SubmitCallable(&DatabaseMigrationServiceClient::StopReplication, request);
+        }
+
+        /**
+         * An Async wrapper for StopReplication that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StopReplicationRequestT = Model::StopReplicationRequest>
+        void StopReplicationAsync(const StopReplicationRequestT& request, const StopReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DatabaseMigrationServiceClient::StopReplication, request, handler, context);
         }
 
         /**

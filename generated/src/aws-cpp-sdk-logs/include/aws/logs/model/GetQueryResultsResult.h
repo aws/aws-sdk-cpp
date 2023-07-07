@@ -95,41 +95,36 @@ namespace Model
 
     /**
      * <p>Includes the number of log events scanned by the query, the number of log
-     * events that matched the query criteria, and the total number of bytes in the log
-     * events that were scanned. These values reflect the full raw results of the
-     * query.</p>
+     * events that matched the query criteria, and the total number of bytes in the
+     * scanned log events. These values reflect the full raw results of the query.</p>
      */
     inline const QueryStatistics& GetStatistics() const{ return m_statistics; }
 
     /**
      * <p>Includes the number of log events scanned by the query, the number of log
-     * events that matched the query criteria, and the total number of bytes in the log
-     * events that were scanned. These values reflect the full raw results of the
-     * query.</p>
+     * events that matched the query criteria, and the total number of bytes in the
+     * scanned log events. These values reflect the full raw results of the query.</p>
      */
     inline void SetStatistics(const QueryStatistics& value) { m_statistics = value; }
 
     /**
      * <p>Includes the number of log events scanned by the query, the number of log
-     * events that matched the query criteria, and the total number of bytes in the log
-     * events that were scanned. These values reflect the full raw results of the
-     * query.</p>
+     * events that matched the query criteria, and the total number of bytes in the
+     * scanned log events. These values reflect the full raw results of the query.</p>
      */
     inline void SetStatistics(QueryStatistics&& value) { m_statistics = std::move(value); }
 
     /**
      * <p>Includes the number of log events scanned by the query, the number of log
-     * events that matched the query criteria, and the total number of bytes in the log
-     * events that were scanned. These values reflect the full raw results of the
-     * query.</p>
+     * events that matched the query criteria, and the total number of bytes in the
+     * scanned log events. These values reflect the full raw results of the query.</p>
      */
     inline GetQueryResultsResult& WithStatistics(const QueryStatistics& value) { SetStatistics(value); return *this;}
 
     /**
      * <p>Includes the number of log events scanned by the query, the number of log
-     * events that matched the query criteria, and the total number of bytes in the log
-     * events that were scanned. These values reflect the full raw results of the
-     * query.</p>
+     * events that matched the query criteria, and the total number of bytes in the
+     * scanned log events. These values reflect the full raw results of the query.</p>
      */
     inline GetQueryResultsResult& WithStatistics(QueryStatistics&& value) { SetStatistics(std::move(value)); return *this;}
 
@@ -185,6 +180,70 @@ namespace Model
     inline GetQueryResultsResult& WithStatus(QueryStatus&& value) { SetStatus(std::move(value)); return *this;}
 
 
+    /**
+     * <p>If you associated an KMS key with the CloudWatch Logs Insights query results
+     * in this account, this field displays the ARN of the key that's used to encrypt
+     * the query results when <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a>
+     * stores them.</p>
+     */
+    inline const Aws::String& GetEncryptionKey() const{ return m_encryptionKey; }
+
+    /**
+     * <p>If you associated an KMS key with the CloudWatch Logs Insights query results
+     * in this account, this field displays the ARN of the key that's used to encrypt
+     * the query results when <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a>
+     * stores them.</p>
+     */
+    inline void SetEncryptionKey(const Aws::String& value) { m_encryptionKey = value; }
+
+    /**
+     * <p>If you associated an KMS key with the CloudWatch Logs Insights query results
+     * in this account, this field displays the ARN of the key that's used to encrypt
+     * the query results when <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a>
+     * stores them.</p>
+     */
+    inline void SetEncryptionKey(Aws::String&& value) { m_encryptionKey = std::move(value); }
+
+    /**
+     * <p>If you associated an KMS key with the CloudWatch Logs Insights query results
+     * in this account, this field displays the ARN of the key that's used to encrypt
+     * the query results when <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a>
+     * stores them.</p>
+     */
+    inline void SetEncryptionKey(const char* value) { m_encryptionKey.assign(value); }
+
+    /**
+     * <p>If you associated an KMS key with the CloudWatch Logs Insights query results
+     * in this account, this field displays the ARN of the key that's used to encrypt
+     * the query results when <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a>
+     * stores them.</p>
+     */
+    inline GetQueryResultsResult& WithEncryptionKey(const Aws::String& value) { SetEncryptionKey(value); return *this;}
+
+    /**
+     * <p>If you associated an KMS key with the CloudWatch Logs Insights query results
+     * in this account, this field displays the ARN of the key that's used to encrypt
+     * the query results when <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a>
+     * stores them.</p>
+     */
+    inline GetQueryResultsResult& WithEncryptionKey(Aws::String&& value) { SetEncryptionKey(std::move(value)); return *this;}
+
+    /**
+     * <p>If you associated an KMS key with the CloudWatch Logs Insights query results
+     * in this account, this field displays the ARN of the key that's used to encrypt
+     * the query results when <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a>
+     * stores them.</p>
+     */
+    inline GetQueryResultsResult& WithEncryptionKey(const char* value) { SetEncryptionKey(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -213,6 +272,8 @@ namespace Model
     QueryStatistics m_statistics;
 
     QueryStatus m_status;
+
+    Aws::String m_encryptionKey;
 
     Aws::String m_requestId;
   };

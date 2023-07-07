@@ -143,8 +143,10 @@ namespace Model
      * class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
      * <p>For more information on the settings and capacities for the available
      * replication instance classes, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-     * Selecting the right DMS replication instance for your migration</a>. </p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.Types.html
+     * "> Choosing the right DMS replication instance</a>; and, <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_BestPractices.SizingReplicationInstance.html">Selecting
+     * the best size for a replication instance</a>. </p>
      */
     inline const Aws::String& GetReplicationInstanceClass() const{ return m_replicationInstanceClass; }
 
@@ -154,8 +156,10 @@ namespace Model
      * class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
      * <p>For more information on the settings and capacities for the available
      * replication instance classes, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-     * Selecting the right DMS replication instance for your migration</a>. </p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.Types.html
+     * "> Choosing the right DMS replication instance</a>; and, <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_BestPractices.SizingReplicationInstance.html">Selecting
+     * the best size for a replication instance</a>. </p>
      */
     inline bool ReplicationInstanceClassHasBeenSet() const { return m_replicationInstanceClassHasBeenSet; }
 
@@ -165,8 +169,10 @@ namespace Model
      * class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
      * <p>For more information on the settings and capacities for the available
      * replication instance classes, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-     * Selecting the right DMS replication instance for your migration</a>. </p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.Types.html
+     * "> Choosing the right DMS replication instance</a>; and, <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_BestPractices.SizingReplicationInstance.html">Selecting
+     * the best size for a replication instance</a>. </p>
      */
     inline void SetReplicationInstanceClass(const Aws::String& value) { m_replicationInstanceClassHasBeenSet = true; m_replicationInstanceClass = value; }
 
@@ -176,8 +182,10 @@ namespace Model
      * class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
      * <p>For more information on the settings and capacities for the available
      * replication instance classes, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-     * Selecting the right DMS replication instance for your migration</a>. </p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.Types.html
+     * "> Choosing the right DMS replication instance</a>; and, <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_BestPractices.SizingReplicationInstance.html">Selecting
+     * the best size for a replication instance</a>. </p>
      */
     inline void SetReplicationInstanceClass(Aws::String&& value) { m_replicationInstanceClassHasBeenSet = true; m_replicationInstanceClass = std::move(value); }
 
@@ -187,8 +195,10 @@ namespace Model
      * class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
      * <p>For more information on the settings and capacities for the available
      * replication instance classes, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-     * Selecting the right DMS replication instance for your migration</a>. </p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.Types.html
+     * "> Choosing the right DMS replication instance</a>; and, <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_BestPractices.SizingReplicationInstance.html">Selecting
+     * the best size for a replication instance</a>. </p>
      */
     inline void SetReplicationInstanceClass(const char* value) { m_replicationInstanceClassHasBeenSet = true; m_replicationInstanceClass.assign(value); }
 
@@ -198,8 +208,10 @@ namespace Model
      * class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
      * <p>For more information on the settings and capacities for the available
      * replication instance classes, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-     * Selecting the right DMS replication instance for your migration</a>. </p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.Types.html
+     * "> Choosing the right DMS replication instance</a>; and, <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_BestPractices.SizingReplicationInstance.html">Selecting
+     * the best size for a replication instance</a>. </p>
      */
     inline CreateReplicationInstanceRequest& WithReplicationInstanceClass(const Aws::String& value) { SetReplicationInstanceClass(value); return *this;}
 
@@ -209,8 +221,10 @@ namespace Model
      * class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
      * <p>For more information on the settings and capacities for the available
      * replication instance classes, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-     * Selecting the right DMS replication instance for your migration</a>. </p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.Types.html
+     * "> Choosing the right DMS replication instance</a>; and, <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_BestPractices.SizingReplicationInstance.html">Selecting
+     * the best size for a replication instance</a>. </p>
      */
     inline CreateReplicationInstanceRequest& WithReplicationInstanceClass(Aws::String&& value) { SetReplicationInstanceClass(std::move(value)); return *this;}
 
@@ -220,8 +234,10 @@ namespace Model
      * class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
      * <p>For more information on the settings and capacities for the available
      * replication instance classes, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-     * Selecting the right DMS replication instance for your migration</a>. </p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.Types.html
+     * "> Choosing the right DMS replication instance</a>; and, <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_BestPractices.SizingReplicationInstance.html">Selecting
+     * the best size for a replication instance</a>. </p>
      */
     inline CreateReplicationInstanceRequest& WithReplicationInstanceClass(const char* value) { SetReplicationInstanceClass(value); return *this;}
 
@@ -293,56 +309,56 @@ namespace Model
     /**
      * <p>The Availability Zone where the replication instance will be created. The
      * default value is a random, system-chosen Availability Zone in the endpoint's
-     * Amazon Web Services Region, for example: <code>us-east-1d</code> </p>
+     * Amazon Web Services Region, for example: <code>us-east-1d</code>.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
 
     /**
      * <p>The Availability Zone where the replication instance will be created. The
      * default value is a random, system-chosen Availability Zone in the endpoint's
-     * Amazon Web Services Region, for example: <code>us-east-1d</code> </p>
+     * Amazon Web Services Region, for example: <code>us-east-1d</code>.</p>
      */
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
 
     /**
      * <p>The Availability Zone where the replication instance will be created. The
      * default value is a random, system-chosen Availability Zone in the endpoint's
-     * Amazon Web Services Region, for example: <code>us-east-1d</code> </p>
+     * Amazon Web Services Region, for example: <code>us-east-1d</code>.</p>
      */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
      * <p>The Availability Zone where the replication instance will be created. The
      * default value is a random, system-chosen Availability Zone in the endpoint's
-     * Amazon Web Services Region, for example: <code>us-east-1d</code> </p>
+     * Amazon Web Services Region, for example: <code>us-east-1d</code>.</p>
      */
     inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
      * <p>The Availability Zone where the replication instance will be created. The
      * default value is a random, system-chosen Availability Zone in the endpoint's
-     * Amazon Web Services Region, for example: <code>us-east-1d</code> </p>
+     * Amazon Web Services Region, for example: <code>us-east-1d</code>.</p>
      */
     inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
 
     /**
      * <p>The Availability Zone where the replication instance will be created. The
      * default value is a random, system-chosen Availability Zone in the endpoint's
-     * Amazon Web Services Region, for example: <code>us-east-1d</code> </p>
+     * Amazon Web Services Region, for example: <code>us-east-1d</code>.</p>
      */
     inline CreateReplicationInstanceRequest& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
 
     /**
      * <p>The Availability Zone where the replication instance will be created. The
      * default value is a random, system-chosen Availability Zone in the endpoint's
-     * Amazon Web Services Region, for example: <code>us-east-1d</code> </p>
+     * Amazon Web Services Region, for example: <code>us-east-1d</code>.</p>
      */
     inline CreateReplicationInstanceRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
      * <p>The Availability Zone where the replication instance will be created. The
      * default value is a random, system-chosen Availability Zone in the endpoint's
-     * Amazon Web Services Region, for example: <code>us-east-1d</code> </p>
+     * Amazon Web Services Region, for example: <code>us-east-1d</code>.</p>
      */
     inline CreateReplicationInstanceRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 

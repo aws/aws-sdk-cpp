@@ -35,42 +35,58 @@ namespace Model
 
 
     /**
-     * <p>The name of the log group.</p>
+     * <p>The name of the log group.</p> <p>In your <code>AssociateKmsKey</code>
+     * operation, you must specify either the <code>resourceIdentifier</code> parameter
+     * or the <code>logGroup</code> parameter, but you can't specify both.</p>
      */
     inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
 
     /**
-     * <p>The name of the log group.</p>
+     * <p>The name of the log group.</p> <p>In your <code>AssociateKmsKey</code>
+     * operation, you must specify either the <code>resourceIdentifier</code> parameter
+     * or the <code>logGroup</code> parameter, but you can't specify both.</p>
      */
     inline bool LogGroupNameHasBeenSet() const { return m_logGroupNameHasBeenSet; }
 
     /**
-     * <p>The name of the log group.</p>
+     * <p>The name of the log group.</p> <p>In your <code>AssociateKmsKey</code>
+     * operation, you must specify either the <code>resourceIdentifier</code> parameter
+     * or the <code>logGroup</code> parameter, but you can't specify both.</p>
      */
     inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
     /**
-     * <p>The name of the log group.</p>
+     * <p>The name of the log group.</p> <p>In your <code>AssociateKmsKey</code>
+     * operation, you must specify either the <code>resourceIdentifier</code> parameter
+     * or the <code>logGroup</code> parameter, but you can't specify both.</p>
      */
     inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::move(value); }
 
     /**
-     * <p>The name of the log group.</p>
+     * <p>The name of the log group.</p> <p>In your <code>AssociateKmsKey</code>
+     * operation, you must specify either the <code>resourceIdentifier</code> parameter
+     * or the <code>logGroup</code> parameter, but you can't specify both.</p>
      */
     inline void SetLogGroupName(const char* value) { m_logGroupNameHasBeenSet = true; m_logGroupName.assign(value); }
 
     /**
-     * <p>The name of the log group.</p>
+     * <p>The name of the log group.</p> <p>In your <code>AssociateKmsKey</code>
+     * operation, you must specify either the <code>resourceIdentifier</code> parameter
+     * or the <code>logGroup</code> parameter, but you can't specify both.</p>
      */
     inline AssociateKmsKeyRequest& WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
 
     /**
-     * <p>The name of the log group.</p>
+     * <p>The name of the log group.</p> <p>In your <code>AssociateKmsKey</code>
+     * operation, you must specify either the <code>resourceIdentifier</code> parameter
+     * or the <code>logGroup</code> parameter, but you can't specify both.</p>
      */
     inline AssociateKmsKeyRequest& WithLogGroupName(Aws::String&& value) { SetLogGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the log group.</p>
+     * <p>The name of the log group.</p> <p>In your <code>AssociateKmsKey</code>
+     * operation, you must specify either the <code>resourceIdentifier</code> parameter
+     * or the <code>logGroup</code> parameter, but you can't specify both.</p>
      */
     inline AssociateKmsKeyRequest& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
 
@@ -155,6 +171,151 @@ namespace Model
      */
     inline AssociateKmsKeyRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
+
+    /**
+     * <p>Specifies the target for this operation. You must specify one of the
+     * following:</p> <ul> <li> <p>Specify the following ARN to have future <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetQueryResults.html">GetQueryResults</a>
+     * operations in this account encrypt the results with the specified KMS key.
+     * Replace <i>REGION</i> and <i>ACCOUNT_ID</i> with your Region and account ID.</p>
+     * <p> <code>arn:aws:logs:<i>REGION</i>:<i>ACCOUNT_ID</i>:query-result:*</code>
+     * </p> </li> <li> <p>Specify the ARN of a log group to have CloudWatch Logs use
+     * the KMS key to encrypt log events that are ingested and stored by that log
+     * group. The log group ARN must be in the following format. Replace <i>REGION</i>
+     * and <i>ACCOUNT_ID</i> with your Region and account ID.</p> <p>
+     * <code>arn:aws:logs:<i>REGION</i>:<i>ACCOUNT_ID</i>:log-group:<i>LOG_GROUP_NAME</i>
+     * </code> </p> </li> </ul> <p>In your <code>AssociateKmsKey</code> operation, you
+     * must specify either the <code>resourceIdentifier</code> parameter or the
+     * <code>logGroup</code> parameter, but you can't specify both.</p>
+     */
+    inline const Aws::String& GetResourceIdentifier() const{ return m_resourceIdentifier; }
+
+    /**
+     * <p>Specifies the target for this operation. You must specify one of the
+     * following:</p> <ul> <li> <p>Specify the following ARN to have future <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetQueryResults.html">GetQueryResults</a>
+     * operations in this account encrypt the results with the specified KMS key.
+     * Replace <i>REGION</i> and <i>ACCOUNT_ID</i> with your Region and account ID.</p>
+     * <p> <code>arn:aws:logs:<i>REGION</i>:<i>ACCOUNT_ID</i>:query-result:*</code>
+     * </p> </li> <li> <p>Specify the ARN of a log group to have CloudWatch Logs use
+     * the KMS key to encrypt log events that are ingested and stored by that log
+     * group. The log group ARN must be in the following format. Replace <i>REGION</i>
+     * and <i>ACCOUNT_ID</i> with your Region and account ID.</p> <p>
+     * <code>arn:aws:logs:<i>REGION</i>:<i>ACCOUNT_ID</i>:log-group:<i>LOG_GROUP_NAME</i>
+     * </code> </p> </li> </ul> <p>In your <code>AssociateKmsKey</code> operation, you
+     * must specify either the <code>resourceIdentifier</code> parameter or the
+     * <code>logGroup</code> parameter, but you can't specify both.</p>
+     */
+    inline bool ResourceIdentifierHasBeenSet() const { return m_resourceIdentifierHasBeenSet; }
+
+    /**
+     * <p>Specifies the target for this operation. You must specify one of the
+     * following:</p> <ul> <li> <p>Specify the following ARN to have future <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetQueryResults.html">GetQueryResults</a>
+     * operations in this account encrypt the results with the specified KMS key.
+     * Replace <i>REGION</i> and <i>ACCOUNT_ID</i> with your Region and account ID.</p>
+     * <p> <code>arn:aws:logs:<i>REGION</i>:<i>ACCOUNT_ID</i>:query-result:*</code>
+     * </p> </li> <li> <p>Specify the ARN of a log group to have CloudWatch Logs use
+     * the KMS key to encrypt log events that are ingested and stored by that log
+     * group. The log group ARN must be in the following format. Replace <i>REGION</i>
+     * and <i>ACCOUNT_ID</i> with your Region and account ID.</p> <p>
+     * <code>arn:aws:logs:<i>REGION</i>:<i>ACCOUNT_ID</i>:log-group:<i>LOG_GROUP_NAME</i>
+     * </code> </p> </li> </ul> <p>In your <code>AssociateKmsKey</code> operation, you
+     * must specify either the <code>resourceIdentifier</code> parameter or the
+     * <code>logGroup</code> parameter, but you can't specify both.</p>
+     */
+    inline void SetResourceIdentifier(const Aws::String& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = value; }
+
+    /**
+     * <p>Specifies the target for this operation. You must specify one of the
+     * following:</p> <ul> <li> <p>Specify the following ARN to have future <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetQueryResults.html">GetQueryResults</a>
+     * operations in this account encrypt the results with the specified KMS key.
+     * Replace <i>REGION</i> and <i>ACCOUNT_ID</i> with your Region and account ID.</p>
+     * <p> <code>arn:aws:logs:<i>REGION</i>:<i>ACCOUNT_ID</i>:query-result:*</code>
+     * </p> </li> <li> <p>Specify the ARN of a log group to have CloudWatch Logs use
+     * the KMS key to encrypt log events that are ingested and stored by that log
+     * group. The log group ARN must be in the following format. Replace <i>REGION</i>
+     * and <i>ACCOUNT_ID</i> with your Region and account ID.</p> <p>
+     * <code>arn:aws:logs:<i>REGION</i>:<i>ACCOUNT_ID</i>:log-group:<i>LOG_GROUP_NAME</i>
+     * </code> </p> </li> </ul> <p>In your <code>AssociateKmsKey</code> operation, you
+     * must specify either the <code>resourceIdentifier</code> parameter or the
+     * <code>logGroup</code> parameter, but you can't specify both.</p>
+     */
+    inline void SetResourceIdentifier(Aws::String&& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = std::move(value); }
+
+    /**
+     * <p>Specifies the target for this operation. You must specify one of the
+     * following:</p> <ul> <li> <p>Specify the following ARN to have future <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetQueryResults.html">GetQueryResults</a>
+     * operations in this account encrypt the results with the specified KMS key.
+     * Replace <i>REGION</i> and <i>ACCOUNT_ID</i> with your Region and account ID.</p>
+     * <p> <code>arn:aws:logs:<i>REGION</i>:<i>ACCOUNT_ID</i>:query-result:*</code>
+     * </p> </li> <li> <p>Specify the ARN of a log group to have CloudWatch Logs use
+     * the KMS key to encrypt log events that are ingested and stored by that log
+     * group. The log group ARN must be in the following format. Replace <i>REGION</i>
+     * and <i>ACCOUNT_ID</i> with your Region and account ID.</p> <p>
+     * <code>arn:aws:logs:<i>REGION</i>:<i>ACCOUNT_ID</i>:log-group:<i>LOG_GROUP_NAME</i>
+     * </code> </p> </li> </ul> <p>In your <code>AssociateKmsKey</code> operation, you
+     * must specify either the <code>resourceIdentifier</code> parameter or the
+     * <code>logGroup</code> parameter, but you can't specify both.</p>
+     */
+    inline void SetResourceIdentifier(const char* value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier.assign(value); }
+
+    /**
+     * <p>Specifies the target for this operation. You must specify one of the
+     * following:</p> <ul> <li> <p>Specify the following ARN to have future <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetQueryResults.html">GetQueryResults</a>
+     * operations in this account encrypt the results with the specified KMS key.
+     * Replace <i>REGION</i> and <i>ACCOUNT_ID</i> with your Region and account ID.</p>
+     * <p> <code>arn:aws:logs:<i>REGION</i>:<i>ACCOUNT_ID</i>:query-result:*</code>
+     * </p> </li> <li> <p>Specify the ARN of a log group to have CloudWatch Logs use
+     * the KMS key to encrypt log events that are ingested and stored by that log
+     * group. The log group ARN must be in the following format. Replace <i>REGION</i>
+     * and <i>ACCOUNT_ID</i> with your Region and account ID.</p> <p>
+     * <code>arn:aws:logs:<i>REGION</i>:<i>ACCOUNT_ID</i>:log-group:<i>LOG_GROUP_NAME</i>
+     * </code> </p> </li> </ul> <p>In your <code>AssociateKmsKey</code> operation, you
+     * must specify either the <code>resourceIdentifier</code> parameter or the
+     * <code>logGroup</code> parameter, but you can't specify both.</p>
+     */
+    inline AssociateKmsKeyRequest& WithResourceIdentifier(const Aws::String& value) { SetResourceIdentifier(value); return *this;}
+
+    /**
+     * <p>Specifies the target for this operation. You must specify one of the
+     * following:</p> <ul> <li> <p>Specify the following ARN to have future <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetQueryResults.html">GetQueryResults</a>
+     * operations in this account encrypt the results with the specified KMS key.
+     * Replace <i>REGION</i> and <i>ACCOUNT_ID</i> with your Region and account ID.</p>
+     * <p> <code>arn:aws:logs:<i>REGION</i>:<i>ACCOUNT_ID</i>:query-result:*</code>
+     * </p> </li> <li> <p>Specify the ARN of a log group to have CloudWatch Logs use
+     * the KMS key to encrypt log events that are ingested and stored by that log
+     * group. The log group ARN must be in the following format. Replace <i>REGION</i>
+     * and <i>ACCOUNT_ID</i> with your Region and account ID.</p> <p>
+     * <code>arn:aws:logs:<i>REGION</i>:<i>ACCOUNT_ID</i>:log-group:<i>LOG_GROUP_NAME</i>
+     * </code> </p> </li> </ul> <p>In your <code>AssociateKmsKey</code> operation, you
+     * must specify either the <code>resourceIdentifier</code> parameter or the
+     * <code>logGroup</code> parameter, but you can't specify both.</p>
+     */
+    inline AssociateKmsKeyRequest& WithResourceIdentifier(Aws::String&& value) { SetResourceIdentifier(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the target for this operation. You must specify one of the
+     * following:</p> <ul> <li> <p>Specify the following ARN to have future <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetQueryResults.html">GetQueryResults</a>
+     * operations in this account encrypt the results with the specified KMS key.
+     * Replace <i>REGION</i> and <i>ACCOUNT_ID</i> with your Region and account ID.</p>
+     * <p> <code>arn:aws:logs:<i>REGION</i>:<i>ACCOUNT_ID</i>:query-result:*</code>
+     * </p> </li> <li> <p>Specify the ARN of a log group to have CloudWatch Logs use
+     * the KMS key to encrypt log events that are ingested and stored by that log
+     * group. The log group ARN must be in the following format. Replace <i>REGION</i>
+     * and <i>ACCOUNT_ID</i> with your Region and account ID.</p> <p>
+     * <code>arn:aws:logs:<i>REGION</i>:<i>ACCOUNT_ID</i>:log-group:<i>LOG_GROUP_NAME</i>
+     * </code> </p> </li> </ul> <p>In your <code>AssociateKmsKey</code> operation, you
+     * must specify either the <code>resourceIdentifier</code> parameter or the
+     * <code>logGroup</code> parameter, but you can't specify both.</p>
+     */
+    inline AssociateKmsKeyRequest& WithResourceIdentifier(const char* value) { SetResourceIdentifier(value); return *this;}
+
   private:
 
     Aws::String m_logGroupName;
@@ -162,6 +323,9 @@ namespace Model
 
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet = false;
+
+    Aws::String m_resourceIdentifier;
+    bool m_resourceIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

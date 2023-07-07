@@ -2378,6 +2378,43 @@ namespace Model
      */
     inline OracleSettings& WithConvertTimestampWithZoneToUTC(bool value) { SetConvertTimestampWithZoneToUTC(value); return *this;}
 
+
+    /**
+     * <p>The timeframe in minutes to check for open transactions for a CDC-only
+     * task.</p> <p>You can specify an integer value between 0 (the default) and 240
+     * (the maximum). </p>  <p>This parameter is only valid in DMS version 3.5.0
+     * and later. DMS supports a window of up to 9.5 hours including the value for
+     * <code>OpenTransactionWindow</code>.</p> 
+     */
+    inline int GetOpenTransactionWindow() const{ return m_openTransactionWindow; }
+
+    /**
+     * <p>The timeframe in minutes to check for open transactions for a CDC-only
+     * task.</p> <p>You can specify an integer value between 0 (the default) and 240
+     * (the maximum). </p>  <p>This parameter is only valid in DMS version 3.5.0
+     * and later. DMS supports a window of up to 9.5 hours including the value for
+     * <code>OpenTransactionWindow</code>.</p> 
+     */
+    inline bool OpenTransactionWindowHasBeenSet() const { return m_openTransactionWindowHasBeenSet; }
+
+    /**
+     * <p>The timeframe in minutes to check for open transactions for a CDC-only
+     * task.</p> <p>You can specify an integer value between 0 (the default) and 240
+     * (the maximum). </p>  <p>This parameter is only valid in DMS version 3.5.0
+     * and later. DMS supports a window of up to 9.5 hours including the value for
+     * <code>OpenTransactionWindow</code>.</p> 
+     */
+    inline void SetOpenTransactionWindow(int value) { m_openTransactionWindowHasBeenSet = true; m_openTransactionWindow = value; }
+
+    /**
+     * <p>The timeframe in minutes to check for open transactions for a CDC-only
+     * task.</p> <p>You can specify an integer value between 0 (the default) and 240
+     * (the maximum). </p>  <p>This parameter is only valid in DMS version 3.5.0
+     * and later. DMS supports a window of up to 9.5 hours including the value for
+     * <code>OpenTransactionWindow</code>.</p> 
+     */
+    inline OracleSettings& WithOpenTransactionWindow(int value) { SetOpenTransactionWindow(value); return *this;}
+
   private:
 
     bool m_addSupplementalLogging;
@@ -2505,6 +2542,9 @@ namespace Model
 
     bool m_convertTimestampWithZoneToUTC;
     bool m_convertTimestampWithZoneToUTCHasBeenSet = false;
+
+    int m_openTransactionWindow;
+    bool m_openTransactionWindowHasBeenSet = false;
   };
 
 } // namespace Model

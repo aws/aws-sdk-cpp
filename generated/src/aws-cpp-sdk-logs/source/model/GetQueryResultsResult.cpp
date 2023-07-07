@@ -59,6 +59,12 @@ GetQueryResultsResult& GetQueryResultsResult::operator =(const Aws::AmazonWebSer
 
   }
 
+  if(jsonValue.ValueExists("encryptionKey"))
+  {
+    m_encryptionKey = jsonValue.GetString("encryptionKey");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

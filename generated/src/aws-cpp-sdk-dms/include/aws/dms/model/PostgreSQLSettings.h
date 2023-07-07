@@ -7,6 +7,7 @@
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dms/model/PluginNameValue.h>
+#include <aws/dms/model/LongVarcharMappingType.h>
 #include <utility>
 
 namespace Aws
@@ -620,7 +621,7 @@ namespace Model
      * doesn't have a valid <code>CdcStartPosition</code> setting, DMS raises an
      * error.</p> <p>For more information about setting the
      * <code>CdcStartPosition</code> request parameter, see <a
-     * href="dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining
      * a CDC native start point</a> in the <i>Database Migration Service User
      * Guide</i>. For more information about using <code>CdcStartPosition</code>, see
      * <a
@@ -643,7 +644,7 @@ namespace Model
      * doesn't have a valid <code>CdcStartPosition</code> setting, DMS raises an
      * error.</p> <p>For more information about setting the
      * <code>CdcStartPosition</code> request parameter, see <a
-     * href="dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining
      * a CDC native start point</a> in the <i>Database Migration Service User
      * Guide</i>. For more information about using <code>CdcStartPosition</code>, see
      * <a
@@ -666,7 +667,7 @@ namespace Model
      * doesn't have a valid <code>CdcStartPosition</code> setting, DMS raises an
      * error.</p> <p>For more information about setting the
      * <code>CdcStartPosition</code> request parameter, see <a
-     * href="dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining
      * a CDC native start point</a> in the <i>Database Migration Service User
      * Guide</i>. For more information about using <code>CdcStartPosition</code>, see
      * <a
@@ -689,7 +690,7 @@ namespace Model
      * doesn't have a valid <code>CdcStartPosition</code> setting, DMS raises an
      * error.</p> <p>For more information about setting the
      * <code>CdcStartPosition</code> request parameter, see <a
-     * href="dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining
      * a CDC native start point</a> in the <i>Database Migration Service User
      * Guide</i>. For more information about using <code>CdcStartPosition</code>, see
      * <a
@@ -712,7 +713,7 @@ namespace Model
      * doesn't have a valid <code>CdcStartPosition</code> setting, DMS raises an
      * error.</p> <p>For more information about setting the
      * <code>CdcStartPosition</code> request parameter, see <a
-     * href="dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining
      * a CDC native start point</a> in the <i>Database Migration Service User
      * Guide</i>. For more information about using <code>CdcStartPosition</code>, see
      * <a
@@ -735,7 +736,7 @@ namespace Model
      * doesn't have a valid <code>CdcStartPosition</code> setting, DMS raises an
      * error.</p> <p>For more information about setting the
      * <code>CdcStartPosition</code> request parameter, see <a
-     * href="dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining
      * a CDC native start point</a> in the <i>Database Migration Service User
      * Guide</i>. For more information about using <code>CdcStartPosition</code>, see
      * <a
@@ -758,7 +759,7 @@ namespace Model
      * doesn't have a valid <code>CdcStartPosition</code> setting, DMS raises an
      * error.</p> <p>For more information about setting the
      * <code>CdcStartPosition</code> request parameter, see <a
-     * href="dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining
      * a CDC native start point</a> in the <i>Database Migration Service User
      * Guide</i>. For more information about using <code>CdcStartPosition</code>, see
      * <a
@@ -781,7 +782,7 @@ namespace Model
      * doesn't have a valid <code>CdcStartPosition</code> setting, DMS raises an
      * error.</p> <p>For more information about setting the
      * <code>CdcStartPosition</code> request parameter, see <a
-     * href="dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining
      * a CDC native start point</a> in the <i>Database Migration Service User
      * Guide</i>. For more information about using <code>CdcStartPosition</code>, see
      * <a
@@ -1096,6 +1097,58 @@ namespace Model
      */
     inline PostgreSQLSettings& WithMapBooleanAsBoolean(bool value) { SetMapBooleanAsBoolean(value); return *this;}
 
+
+    /**
+     * <p>When true, DMS migrates JSONB values as CLOB.</p>
+     */
+    inline bool GetMapJsonbAsClob() const{ return m_mapJsonbAsClob; }
+
+    /**
+     * <p>When true, DMS migrates JSONB values as CLOB.</p>
+     */
+    inline bool MapJsonbAsClobHasBeenSet() const { return m_mapJsonbAsClobHasBeenSet; }
+
+    /**
+     * <p>When true, DMS migrates JSONB values as CLOB.</p>
+     */
+    inline void SetMapJsonbAsClob(bool value) { m_mapJsonbAsClobHasBeenSet = true; m_mapJsonbAsClob = value; }
+
+    /**
+     * <p>When true, DMS migrates JSONB values as CLOB.</p>
+     */
+    inline PostgreSQLSettings& WithMapJsonbAsClob(bool value) { SetMapJsonbAsClob(value); return *this;}
+
+
+    /**
+     * <p>When true, DMS migrates LONG values as VARCHAR.</p>
+     */
+    inline const LongVarcharMappingType& GetMapLongVarcharAs() const{ return m_mapLongVarcharAs; }
+
+    /**
+     * <p>When true, DMS migrates LONG values as VARCHAR.</p>
+     */
+    inline bool MapLongVarcharAsHasBeenSet() const { return m_mapLongVarcharAsHasBeenSet; }
+
+    /**
+     * <p>When true, DMS migrates LONG values as VARCHAR.</p>
+     */
+    inline void SetMapLongVarcharAs(const LongVarcharMappingType& value) { m_mapLongVarcharAsHasBeenSet = true; m_mapLongVarcharAs = value; }
+
+    /**
+     * <p>When true, DMS migrates LONG values as VARCHAR.</p>
+     */
+    inline void SetMapLongVarcharAs(LongVarcharMappingType&& value) { m_mapLongVarcharAsHasBeenSet = true; m_mapLongVarcharAs = std::move(value); }
+
+    /**
+     * <p>When true, DMS migrates LONG values as VARCHAR.</p>
+     */
+    inline PostgreSQLSettings& WithMapLongVarcharAs(const LongVarcharMappingType& value) { SetMapLongVarcharAs(value); return *this;}
+
+    /**
+     * <p>When true, DMS migrates LONG values as VARCHAR.</p>
+     */
+    inline PostgreSQLSettings& WithMapLongVarcharAs(LongVarcharMappingType&& value) { SetMapLongVarcharAs(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_afterConnectScript;
@@ -1157,6 +1210,12 @@ namespace Model
 
     bool m_mapBooleanAsBoolean;
     bool m_mapBooleanAsBooleanHasBeenSet = false;
+
+    bool m_mapJsonbAsClob;
+    bool m_mapJsonbAsClobHasBeenSet = false;
+
+    LongVarcharMappingType m_mapLongVarcharAs;
+    bool m_mapLongVarcharAsHasBeenSet = false;
   };
 
 } // namespace Model
