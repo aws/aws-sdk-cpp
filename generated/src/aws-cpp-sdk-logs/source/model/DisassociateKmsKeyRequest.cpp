@@ -13,7 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DisassociateKmsKeyRequest::DisassociateKmsKeyRequest() : 
-    m_logGroupNameHasBeenSet(false)
+    m_logGroupNameHasBeenSet(false),
+    m_resourceIdentifierHasBeenSet(false)
 {
 }
 
@@ -24,6 +25,12 @@ Aws::String DisassociateKmsKeyRequest::SerializePayload() const
   if(m_logGroupNameHasBeenSet)
   {
    payload.WithString("logGroupName", m_logGroupName);
+
+  }
+
+  if(m_resourceIdentifierHasBeenSet)
+  {
+   payload.WithString("resourceIdentifier", m_resourceIdentifier);
 
   }
 

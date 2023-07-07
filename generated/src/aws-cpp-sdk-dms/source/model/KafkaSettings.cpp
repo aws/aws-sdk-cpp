@@ -48,7 +48,9 @@ KafkaSettings::KafkaSettings() :
     m_noHexPrefix(false),
     m_noHexPrefixHasBeenSet(false),
     m_saslMechanism(KafkaSaslMechanism::NOT_SET),
-    m_saslMechanismHasBeenSet(false)
+    m_saslMechanismHasBeenSet(false),
+    m_sslEndpointIdentificationAlgorithm(KafkaSslEndpointIdentificationAlgorithm::NOT_SET),
+    m_sslEndpointIdentificationAlgorithmHasBeenSet(false)
 {
 }
 
@@ -82,7 +84,9 @@ KafkaSettings::KafkaSettings(JsonView jsonValue) :
     m_noHexPrefix(false),
     m_noHexPrefixHasBeenSet(false),
     m_saslMechanism(KafkaSaslMechanism::NOT_SET),
-    m_saslMechanismHasBeenSet(false)
+    m_saslMechanismHasBeenSet(false),
+    m_sslEndpointIdentificationAlgorithm(KafkaSslEndpointIdentificationAlgorithm::NOT_SET),
+    m_sslEndpointIdentificationAlgorithmHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -222,6 +226,13 @@ KafkaSettings& KafkaSettings::operator =(JsonView jsonValue)
     m_saslMechanismHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SslEndpointIdentificationAlgorithm"))
+  {
+    m_sslEndpointIdentificationAlgorithm = KafkaSslEndpointIdentificationAlgorithmMapper::GetKafkaSslEndpointIdentificationAlgorithmForName(jsonValue.GetString("SslEndpointIdentificationAlgorithm"));
+
+    m_sslEndpointIdentificationAlgorithmHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -338,6 +349,11 @@ JsonValue KafkaSettings::Jsonize() const
   if(m_saslMechanismHasBeenSet)
   {
    payload.WithString("SaslMechanism", KafkaSaslMechanismMapper::GetNameForKafkaSaslMechanism(m_saslMechanism));
+  }
+
+  if(m_sslEndpointIdentificationAlgorithmHasBeenSet)
+  {
+   payload.WithString("SslEndpointIdentificationAlgorithm", KafkaSslEndpointIdentificationAlgorithmMapper::GetNameForKafkaSslEndpointIdentificationAlgorithm(m_sslEndpointIdentificationAlgorithm));
   }
 
   return payload;

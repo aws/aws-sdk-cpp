@@ -38,7 +38,7 @@ namespace Model
     /**
      * <p>The log group on which to perform the query.</p>  <p>A
      * <code>StartQuery</code> operation must include exactly one of the following
-     * parameters: <code>logGroupName</code>, <code>logGroupNames</code> or
+     * parameters: <code>logGroupName</code>, <code>logGroupNames</code>, or
      * <code>logGroupIdentifiers</code>. </p> 
      */
     inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
@@ -46,7 +46,7 @@ namespace Model
     /**
      * <p>The log group on which to perform the query.</p>  <p>A
      * <code>StartQuery</code> operation must include exactly one of the following
-     * parameters: <code>logGroupName</code>, <code>logGroupNames</code> or
+     * parameters: <code>logGroupName</code>, <code>logGroupNames</code>, or
      * <code>logGroupIdentifiers</code>. </p> 
      */
     inline bool LogGroupNameHasBeenSet() const { return m_logGroupNameHasBeenSet; }
@@ -54,7 +54,7 @@ namespace Model
     /**
      * <p>The log group on which to perform the query.</p>  <p>A
      * <code>StartQuery</code> operation must include exactly one of the following
-     * parameters: <code>logGroupName</code>, <code>logGroupNames</code> or
+     * parameters: <code>logGroupName</code>, <code>logGroupNames</code>, or
      * <code>logGroupIdentifiers</code>. </p> 
      */
     inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
@@ -62,7 +62,7 @@ namespace Model
     /**
      * <p>The log group on which to perform the query.</p>  <p>A
      * <code>StartQuery</code> operation must include exactly one of the following
-     * parameters: <code>logGroupName</code>, <code>logGroupNames</code> or
+     * parameters: <code>logGroupName</code>, <code>logGroupNames</code>, or
      * <code>logGroupIdentifiers</code>. </p> 
      */
     inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::move(value); }
@@ -70,7 +70,7 @@ namespace Model
     /**
      * <p>The log group on which to perform the query.</p>  <p>A
      * <code>StartQuery</code> operation must include exactly one of the following
-     * parameters: <code>logGroupName</code>, <code>logGroupNames</code> or
+     * parameters: <code>logGroupName</code>, <code>logGroupNames</code>, or
      * <code>logGroupIdentifiers</code>. </p> 
      */
     inline void SetLogGroupName(const char* value) { m_logGroupNameHasBeenSet = true; m_logGroupName.assign(value); }
@@ -78,7 +78,7 @@ namespace Model
     /**
      * <p>The log group on which to perform the query.</p>  <p>A
      * <code>StartQuery</code> operation must include exactly one of the following
-     * parameters: <code>logGroupName</code>, <code>logGroupNames</code> or
+     * parameters: <code>logGroupName</code>, <code>logGroupNames</code>, or
      * <code>logGroupIdentifiers</code>. </p> 
      */
     inline StartQueryRequest& WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
@@ -86,7 +86,7 @@ namespace Model
     /**
      * <p>The log group on which to perform the query.</p>  <p>A
      * <code>StartQuery</code> operation must include exactly one of the following
-     * parameters: <code>logGroupName</code>, <code>logGroupNames</code> or
+     * parameters: <code>logGroupName</code>, <code>logGroupNames</code>, or
      * <code>logGroupIdentifiers</code>. </p> 
      */
     inline StartQueryRequest& WithLogGroupName(Aws::String&& value) { SetLogGroupName(std::move(value)); return *this;}
@@ -94,7 +94,7 @@ namespace Model
     /**
      * <p>The log group on which to perform the query.</p>  <p>A
      * <code>StartQuery</code> operation must include exactly one of the following
-     * parameters: <code>logGroupName</code>, <code>logGroupNames</code> or
+     * parameters: <code>logGroupName</code>, <code>logGroupNames</code>, or
      * <code>logGroupIdentifiers</code>. </p> 
      */
     inline StartQueryRequest& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
@@ -104,7 +104,7 @@ namespace Model
      * <p>The list of log groups to be queried. You can include up to 50 log
      * groups.</p>  <p>A <code>StartQuery</code> operation must include exactly
      * one of the following parameters: <code>logGroupName</code>,
-     * <code>logGroupNames</code> or <code>logGroupIdentifiers</code>. </p> 
+     * <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>. </p> 
      */
     inline const Aws::Vector<Aws::String>& GetLogGroupNames() const{ return m_logGroupNames; }
 
@@ -112,7 +112,7 @@ namespace Model
      * <p>The list of log groups to be queried. You can include up to 50 log
      * groups.</p>  <p>A <code>StartQuery</code> operation must include exactly
      * one of the following parameters: <code>logGroupName</code>,
-     * <code>logGroupNames</code> or <code>logGroupIdentifiers</code>. </p> 
+     * <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>. </p> 
      */
     inline bool LogGroupNamesHasBeenSet() const { return m_logGroupNamesHasBeenSet; }
 
@@ -120,7 +120,7 @@ namespace Model
      * <p>The list of log groups to be queried. You can include up to 50 log
      * groups.</p>  <p>A <code>StartQuery</code> operation must include exactly
      * one of the following parameters: <code>logGroupName</code>,
-     * <code>logGroupNames</code> or <code>logGroupIdentifiers</code>. </p> 
+     * <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>. </p> 
      */
     inline void SetLogGroupNames(const Aws::Vector<Aws::String>& value) { m_logGroupNamesHasBeenSet = true; m_logGroupNames = value; }
 
@@ -128,7 +128,7 @@ namespace Model
      * <p>The list of log groups to be queried. You can include up to 50 log
      * groups.</p>  <p>A <code>StartQuery</code> operation must include exactly
      * one of the following parameters: <code>logGroupName</code>,
-     * <code>logGroupNames</code> or <code>logGroupIdentifiers</code>. </p> 
+     * <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>. </p> 
      */
     inline void SetLogGroupNames(Aws::Vector<Aws::String>&& value) { m_logGroupNamesHasBeenSet = true; m_logGroupNames = std::move(value); }
 
@@ -136,7 +136,7 @@ namespace Model
      * <p>The list of log groups to be queried. You can include up to 50 log
      * groups.</p>  <p>A <code>StartQuery</code> operation must include exactly
      * one of the following parameters: <code>logGroupName</code>,
-     * <code>logGroupNames</code> or <code>logGroupIdentifiers</code>. </p> 
+     * <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>. </p> 
      */
     inline StartQueryRequest& WithLogGroupNames(const Aws::Vector<Aws::String>& value) { SetLogGroupNames(value); return *this;}
 
@@ -144,7 +144,7 @@ namespace Model
      * <p>The list of log groups to be queried. You can include up to 50 log
      * groups.</p>  <p>A <code>StartQuery</code> operation must include exactly
      * one of the following parameters: <code>logGroupName</code>,
-     * <code>logGroupNames</code> or <code>logGroupIdentifiers</code>. </p> 
+     * <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>. </p> 
      */
     inline StartQueryRequest& WithLogGroupNames(Aws::Vector<Aws::String>&& value) { SetLogGroupNames(std::move(value)); return *this;}
 
@@ -152,7 +152,7 @@ namespace Model
      * <p>The list of log groups to be queried. You can include up to 50 log
      * groups.</p>  <p>A <code>StartQuery</code> operation must include exactly
      * one of the following parameters: <code>logGroupName</code>,
-     * <code>logGroupNames</code> or <code>logGroupIdentifiers</code>. </p> 
+     * <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>. </p> 
      */
     inline StartQueryRequest& AddLogGroupNames(const Aws::String& value) { m_logGroupNamesHasBeenSet = true; m_logGroupNames.push_back(value); return *this; }
 
@@ -160,7 +160,7 @@ namespace Model
      * <p>The list of log groups to be queried. You can include up to 50 log
      * groups.</p>  <p>A <code>StartQuery</code> operation must include exactly
      * one of the following parameters: <code>logGroupName</code>,
-     * <code>logGroupNames</code> or <code>logGroupIdentifiers</code>. </p> 
+     * <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>. </p> 
      */
     inline StartQueryRequest& AddLogGroupNames(Aws::String&& value) { m_logGroupNamesHasBeenSet = true; m_logGroupNames.push_back(std::move(value)); return *this; }
 
@@ -168,7 +168,7 @@ namespace Model
      * <p>The list of log groups to be queried. You can include up to 50 log
      * groups.</p>  <p>A <code>StartQuery</code> operation must include exactly
      * one of the following parameters: <code>logGroupName</code>,
-     * <code>logGroupNames</code> or <code>logGroupIdentifiers</code>. </p> 
+     * <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>. </p> 
      */
     inline StartQueryRequest& AddLogGroupNames(const char* value) { m_logGroupNamesHasBeenSet = true; m_logGroupNames.push_back(value); return *this; }
 
@@ -181,7 +181,7 @@ namespace Model
      * in the monitoring account.</p> <p>If you specify an ARN, the ARN can't end with
      * an asterisk (*).</p> <p>A <code>StartQuery</code> operation must include exactly
      * one of the following parameters: <code>logGroupName</code>,
-     * <code>logGroupNames</code> or <code>logGroupIdentifiers</code>. </p>
+     * <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>. </p>
      */
     inline const Aws::Vector<Aws::String>& GetLogGroupIdentifiers() const{ return m_logGroupIdentifiers; }
 
@@ -193,7 +193,7 @@ namespace Model
      * in the monitoring account.</p> <p>If you specify an ARN, the ARN can't end with
      * an asterisk (*).</p> <p>A <code>StartQuery</code> operation must include exactly
      * one of the following parameters: <code>logGroupName</code>,
-     * <code>logGroupNames</code> or <code>logGroupIdentifiers</code>. </p>
+     * <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>. </p>
      */
     inline bool LogGroupIdentifiersHasBeenSet() const { return m_logGroupIdentifiersHasBeenSet; }
 
@@ -205,7 +205,7 @@ namespace Model
      * in the monitoring account.</p> <p>If you specify an ARN, the ARN can't end with
      * an asterisk (*).</p> <p>A <code>StartQuery</code> operation must include exactly
      * one of the following parameters: <code>logGroupName</code>,
-     * <code>logGroupNames</code> or <code>logGroupIdentifiers</code>. </p>
+     * <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>. </p>
      */
     inline void SetLogGroupIdentifiers(const Aws::Vector<Aws::String>& value) { m_logGroupIdentifiersHasBeenSet = true; m_logGroupIdentifiers = value; }
 
@@ -217,7 +217,7 @@ namespace Model
      * in the monitoring account.</p> <p>If you specify an ARN, the ARN can't end with
      * an asterisk (*).</p> <p>A <code>StartQuery</code> operation must include exactly
      * one of the following parameters: <code>logGroupName</code>,
-     * <code>logGroupNames</code> or <code>logGroupIdentifiers</code>. </p>
+     * <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>. </p>
      */
     inline void SetLogGroupIdentifiers(Aws::Vector<Aws::String>&& value) { m_logGroupIdentifiersHasBeenSet = true; m_logGroupIdentifiers = std::move(value); }
 
@@ -229,7 +229,7 @@ namespace Model
      * in the monitoring account.</p> <p>If you specify an ARN, the ARN can't end with
      * an asterisk (*).</p> <p>A <code>StartQuery</code> operation must include exactly
      * one of the following parameters: <code>logGroupName</code>,
-     * <code>logGroupNames</code> or <code>logGroupIdentifiers</code>. </p>
+     * <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>. </p>
      */
     inline StartQueryRequest& WithLogGroupIdentifiers(const Aws::Vector<Aws::String>& value) { SetLogGroupIdentifiers(value); return *this;}
 
@@ -241,7 +241,7 @@ namespace Model
      * in the monitoring account.</p> <p>If you specify an ARN, the ARN can't end with
      * an asterisk (*).</p> <p>A <code>StartQuery</code> operation must include exactly
      * one of the following parameters: <code>logGroupName</code>,
-     * <code>logGroupNames</code> or <code>logGroupIdentifiers</code>. </p>
+     * <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>. </p>
      */
     inline StartQueryRequest& WithLogGroupIdentifiers(Aws::Vector<Aws::String>&& value) { SetLogGroupIdentifiers(std::move(value)); return *this;}
 
@@ -253,7 +253,7 @@ namespace Model
      * in the monitoring account.</p> <p>If you specify an ARN, the ARN can't end with
      * an asterisk (*).</p> <p>A <code>StartQuery</code> operation must include exactly
      * one of the following parameters: <code>logGroupName</code>,
-     * <code>logGroupNames</code> or <code>logGroupIdentifiers</code>. </p>
+     * <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>. </p>
      */
     inline StartQueryRequest& AddLogGroupIdentifiers(const Aws::String& value) { m_logGroupIdentifiersHasBeenSet = true; m_logGroupIdentifiers.push_back(value); return *this; }
 
@@ -265,7 +265,7 @@ namespace Model
      * in the monitoring account.</p> <p>If you specify an ARN, the ARN can't end with
      * an asterisk (*).</p> <p>A <code>StartQuery</code> operation must include exactly
      * one of the following parameters: <code>logGroupName</code>,
-     * <code>logGroupNames</code> or <code>logGroupIdentifiers</code>. </p>
+     * <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>. </p>
      */
     inline StartQueryRequest& AddLogGroupIdentifiers(Aws::String&& value) { m_logGroupIdentifiersHasBeenSet = true; m_logGroupIdentifiers.push_back(std::move(value)); return *this; }
 
@@ -277,7 +277,7 @@ namespace Model
      * in the monitoring account.</p> <p>If you specify an ARN, the ARN can't end with
      * an asterisk (*).</p> <p>A <code>StartQuery</code> operation must include exactly
      * one of the following parameters: <code>logGroupName</code>,
-     * <code>logGroupNames</code> or <code>logGroupIdentifiers</code>. </p>
+     * <code>logGroupNames</code>, or <code>logGroupIdentifiers</code>. </p>
      */
     inline StartQueryRequest& AddLogGroupIdentifiers(const char* value) { m_logGroupIdentifiersHasBeenSet = true; m_logGroupIdentifiers.push_back(value); return *this; }
 

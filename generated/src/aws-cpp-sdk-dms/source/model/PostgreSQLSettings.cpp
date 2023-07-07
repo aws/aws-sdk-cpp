@@ -48,7 +48,11 @@ PostgreSQLSettings::PostgreSQLSettings() :
     m_trimSpaceInChar(false),
     m_trimSpaceInCharHasBeenSet(false),
     m_mapBooleanAsBoolean(false),
-    m_mapBooleanAsBooleanHasBeenSet(false)
+    m_mapBooleanAsBooleanHasBeenSet(false),
+    m_mapJsonbAsClob(false),
+    m_mapJsonbAsClobHasBeenSet(false),
+    m_mapLongVarcharAs(LongVarcharMappingType::NOT_SET),
+    m_mapLongVarcharAsHasBeenSet(false)
 {
 }
 
@@ -82,7 +86,11 @@ PostgreSQLSettings::PostgreSQLSettings(JsonView jsonValue) :
     m_trimSpaceInChar(false),
     m_trimSpaceInCharHasBeenSet(false),
     m_mapBooleanAsBoolean(false),
-    m_mapBooleanAsBooleanHasBeenSet(false)
+    m_mapBooleanAsBooleanHasBeenSet(false),
+    m_mapJsonbAsClob(false),
+    m_mapJsonbAsClobHasBeenSet(false),
+    m_mapLongVarcharAs(LongVarcharMappingType::NOT_SET),
+    m_mapLongVarcharAsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -229,6 +237,20 @@ PostgreSQLSettings& PostgreSQLSettings::operator =(JsonView jsonValue)
     m_mapBooleanAsBooleanHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MapJsonbAsClob"))
+  {
+    m_mapJsonbAsClob = jsonValue.GetBool("MapJsonbAsClob");
+
+    m_mapJsonbAsClobHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MapLongVarcharAs"))
+  {
+    m_mapLongVarcharAs = LongVarcharMappingTypeMapper::GetLongVarcharMappingTypeForName(jsonValue.GetString("MapLongVarcharAs"));
+
+    m_mapLongVarcharAsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -353,6 +375,17 @@ JsonValue PostgreSQLSettings::Jsonize() const
   {
    payload.WithBool("MapBooleanAsBoolean", m_mapBooleanAsBoolean);
 
+  }
+
+  if(m_mapJsonbAsClobHasBeenSet)
+  {
+   payload.WithBool("MapJsonbAsClob", m_mapJsonbAsClob);
+
+  }
+
+  if(m_mapLongVarcharAsHasBeenSet)
+  {
+   payload.WithString("MapLongVarcharAs", LongVarcharMappingTypeMapper::GetNameForLongVarcharMappingType(m_mapLongVarcharAs));
   }
 
   return payload;

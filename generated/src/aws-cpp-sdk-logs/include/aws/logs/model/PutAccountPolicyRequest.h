@@ -388,49 +388,49 @@ namespace Model
 
 
     /**
-     * <p>Currently the only valid value for this parameter is <code>GLOBAL</code>,
-     * which specifies that the data protection policy applies to all log groups in the
-     * account. If you omit this parameter, the default of <code>GLOBAL</code> is
+     * <p>Currently the only valid value for this parameter is <code>ALL</code>, which
+     * specifies that the data protection policy applies to all log groups in the
+     * account. If you omit this parameter, the default of <code>ALL</code> is
      * used.</p>
      */
     inline const Scope& GetScope() const{ return m_scope; }
 
     /**
-     * <p>Currently the only valid value for this parameter is <code>GLOBAL</code>,
-     * which specifies that the data protection policy applies to all log groups in the
-     * account. If you omit this parameter, the default of <code>GLOBAL</code> is
+     * <p>Currently the only valid value for this parameter is <code>ALL</code>, which
+     * specifies that the data protection policy applies to all log groups in the
+     * account. If you omit this parameter, the default of <code>ALL</code> is
      * used.</p>
      */
     inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
 
     /**
-     * <p>Currently the only valid value for this parameter is <code>GLOBAL</code>,
-     * which specifies that the data protection policy applies to all log groups in the
-     * account. If you omit this parameter, the default of <code>GLOBAL</code> is
+     * <p>Currently the only valid value for this parameter is <code>ALL</code>, which
+     * specifies that the data protection policy applies to all log groups in the
+     * account. If you omit this parameter, the default of <code>ALL</code> is
      * used.</p>
      */
     inline void SetScope(const Scope& value) { m_scopeHasBeenSet = true; m_scope = value; }
 
     /**
-     * <p>Currently the only valid value for this parameter is <code>GLOBAL</code>,
-     * which specifies that the data protection policy applies to all log groups in the
-     * account. If you omit this parameter, the default of <code>GLOBAL</code> is
+     * <p>Currently the only valid value for this parameter is <code>ALL</code>, which
+     * specifies that the data protection policy applies to all log groups in the
+     * account. If you omit this parameter, the default of <code>ALL</code> is
      * used.</p>
      */
     inline void SetScope(Scope&& value) { m_scopeHasBeenSet = true; m_scope = std::move(value); }
 
     /**
-     * <p>Currently the only valid value for this parameter is <code>GLOBAL</code>,
-     * which specifies that the data protection policy applies to all log groups in the
-     * account. If you omit this parameter, the default of <code>GLOBAL</code> is
+     * <p>Currently the only valid value for this parameter is <code>ALL</code>, which
+     * specifies that the data protection policy applies to all log groups in the
+     * account. If you omit this parameter, the default of <code>ALL</code> is
      * used.</p>
      */
     inline PutAccountPolicyRequest& WithScope(const Scope& value) { SetScope(value); return *this;}
 
     /**
-     * <p>Currently the only valid value for this parameter is <code>GLOBAL</code>,
-     * which specifies that the data protection policy applies to all log groups in the
-     * account. If you omit this parameter, the default of <code>GLOBAL</code> is
+     * <p>Currently the only valid value for this parameter is <code>ALL</code>, which
+     * specifies that the data protection policy applies to all log groups in the
+     * account. If you omit this parameter, the default of <code>ALL</code> is
      * used.</p>
      */
     inline PutAccountPolicyRequest& WithScope(Scope&& value) { SetScope(std::move(value)); return *this;}

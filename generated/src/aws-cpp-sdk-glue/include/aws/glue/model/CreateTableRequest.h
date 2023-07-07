@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/glue/model/TableInput.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/glue/model/OpenTableFormatInput.h>
 #include <aws/glue/model/PartitionIndex.h>
 #include <utility>
 
@@ -261,6 +262,43 @@ namespace Model
      */
     inline CreateTableRequest& WithTransactionId(const char* value) { SetTransactionId(value); return *this;}
 
+
+    /**
+     * <p>Specifies an <code>OpenTableFormatInput</code> structure when creating an
+     * open format table.</p>
+     */
+    inline const OpenTableFormatInput& GetOpenTableFormatInput() const{ return m_openTableFormatInput; }
+
+    /**
+     * <p>Specifies an <code>OpenTableFormatInput</code> structure when creating an
+     * open format table.</p>
+     */
+    inline bool OpenTableFormatInputHasBeenSet() const { return m_openTableFormatInputHasBeenSet; }
+
+    /**
+     * <p>Specifies an <code>OpenTableFormatInput</code> structure when creating an
+     * open format table.</p>
+     */
+    inline void SetOpenTableFormatInput(const OpenTableFormatInput& value) { m_openTableFormatInputHasBeenSet = true; m_openTableFormatInput = value; }
+
+    /**
+     * <p>Specifies an <code>OpenTableFormatInput</code> structure when creating an
+     * open format table.</p>
+     */
+    inline void SetOpenTableFormatInput(OpenTableFormatInput&& value) { m_openTableFormatInputHasBeenSet = true; m_openTableFormatInput = std::move(value); }
+
+    /**
+     * <p>Specifies an <code>OpenTableFormatInput</code> structure when creating an
+     * open format table.</p>
+     */
+    inline CreateTableRequest& WithOpenTableFormatInput(const OpenTableFormatInput& value) { SetOpenTableFormatInput(value); return *this;}
+
+    /**
+     * <p>Specifies an <code>OpenTableFormatInput</code> structure when creating an
+     * open format table.</p>
+     */
+    inline CreateTableRequest& WithOpenTableFormatInput(OpenTableFormatInput&& value) { SetOpenTableFormatInput(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_catalogId;
@@ -277,6 +315,9 @@ namespace Model
 
     Aws::String m_transactionId;
     bool m_transactionIdHasBeenSet = false;
+
+    OpenTableFormatInput m_openTableFormatInput;
+    bool m_openTableFormatInputHasBeenSet = false;
   };
 
 } // namespace Model

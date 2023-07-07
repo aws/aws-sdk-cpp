@@ -9,6 +9,7 @@
 #include <aws/dms/model/MessageFormatValue.h>
 #include <aws/dms/model/KafkaSecurityProtocol.h>
 #include <aws/dms/model/KafkaSaslMechanism.h>
+#include <aws/dms/model/KafkaSslEndpointIdentificationAlgorithm.h>
 #include <utility>
 
 namespace Aws
@@ -901,6 +902,43 @@ namespace Model
      */
     inline KafkaSettings& WithSaslMechanism(KafkaSaslMechanism&& value) { SetSaslMechanism(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Sets hostname verification for the certificate. This setting is supported in
+     * DMS version 3.5.1 and later. </p>
+     */
+    inline const KafkaSslEndpointIdentificationAlgorithm& GetSslEndpointIdentificationAlgorithm() const{ return m_sslEndpointIdentificationAlgorithm; }
+
+    /**
+     * <p>Sets hostname verification for the certificate. This setting is supported in
+     * DMS version 3.5.1 and later. </p>
+     */
+    inline bool SslEndpointIdentificationAlgorithmHasBeenSet() const { return m_sslEndpointIdentificationAlgorithmHasBeenSet; }
+
+    /**
+     * <p>Sets hostname verification for the certificate. This setting is supported in
+     * DMS version 3.5.1 and later. </p>
+     */
+    inline void SetSslEndpointIdentificationAlgorithm(const KafkaSslEndpointIdentificationAlgorithm& value) { m_sslEndpointIdentificationAlgorithmHasBeenSet = true; m_sslEndpointIdentificationAlgorithm = value; }
+
+    /**
+     * <p>Sets hostname verification for the certificate. This setting is supported in
+     * DMS version 3.5.1 and later. </p>
+     */
+    inline void SetSslEndpointIdentificationAlgorithm(KafkaSslEndpointIdentificationAlgorithm&& value) { m_sslEndpointIdentificationAlgorithmHasBeenSet = true; m_sslEndpointIdentificationAlgorithm = std::move(value); }
+
+    /**
+     * <p>Sets hostname verification for the certificate. This setting is supported in
+     * DMS version 3.5.1 and later. </p>
+     */
+    inline KafkaSettings& WithSslEndpointIdentificationAlgorithm(const KafkaSslEndpointIdentificationAlgorithm& value) { SetSslEndpointIdentificationAlgorithm(value); return *this;}
+
+    /**
+     * <p>Sets hostname verification for the certificate. This setting is supported in
+     * DMS version 3.5.1 and later. </p>
+     */
+    inline KafkaSettings& WithSslEndpointIdentificationAlgorithm(KafkaSslEndpointIdentificationAlgorithm&& value) { SetSslEndpointIdentificationAlgorithm(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_broker;
@@ -959,6 +997,9 @@ namespace Model
 
     KafkaSaslMechanism m_saslMechanism;
     bool m_saslMechanismHasBeenSet = false;
+
+    KafkaSslEndpointIdentificationAlgorithm m_sslEndpointIdentificationAlgorithm;
+    bool m_sslEndpointIdentificationAlgorithmHasBeenSet = false;
   };
 
 } // namespace Model

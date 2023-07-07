@@ -49,7 +49,8 @@ ModifyEndpointRequest::ModifyEndpointRequest() :
     m_redisSettingsHasBeenSet(false),
     m_exactSettings(false),
     m_exactSettingsHasBeenSet(false),
-    m_gcpMySQLSettingsHasBeenSet(false)
+    m_gcpMySQLSettingsHasBeenSet(false),
+    m_timestreamSettingsHasBeenSet(false)
 {
 }
 
@@ -250,6 +251,12 @@ Aws::String ModifyEndpointRequest::SerializePayload() const
   if(m_gcpMySQLSettingsHasBeenSet)
   {
    payload.WithObject("GcpMySQLSettings", m_gcpMySQLSettings.Jsonize());
+
+  }
+
+  if(m_timestreamSettingsHasBeenSet)
+  {
+   payload.WithObject("TimestreamSettings", m_timestreamSettings.Jsonize());
 
   }
 

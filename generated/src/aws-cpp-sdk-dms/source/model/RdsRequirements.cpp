@@ -28,7 +28,8 @@ RdsRequirements::RdsRequirements() :
     m_storageSizeHasBeenSet(false),
     m_storageIops(0),
     m_storageIopsHasBeenSet(false),
-    m_deploymentOptionHasBeenSet(false)
+    m_deploymentOptionHasBeenSet(false),
+    m_engineVersionHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ RdsRequirements::RdsRequirements(JsonView jsonValue) :
     m_storageSizeHasBeenSet(false),
     m_storageIops(0),
     m_storageIopsHasBeenSet(false),
-    m_deploymentOptionHasBeenSet(false)
+    m_deploymentOptionHasBeenSet(false),
+    m_engineVersionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -91,6 +93,13 @@ RdsRequirements& RdsRequirements::operator =(JsonView jsonValue)
     m_deploymentOptionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EngineVersion"))
+  {
+    m_engineVersion = jsonValue.GetString("EngineVersion");
+
+    m_engineVersionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -131,6 +140,12 @@ JsonValue RdsRequirements::Jsonize() const
   if(m_deploymentOptionHasBeenSet)
   {
    payload.WithString("DeploymentOption", m_deploymentOption);
+
+  }
+
+  if(m_engineVersionHasBeenSet)
+  {
+   payload.WithString("EngineVersion", m_engineVersion);
 
   }
 
