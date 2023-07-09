@@ -19,7 +19,9 @@ CreateGrantRequest::CreateGrantRequest() :
     m_operationsHasBeenSet(false),
     m_constraintsHasBeenSet(false),
     m_grantTokensHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_dryRun(false),
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -76,6 +78,12 @@ Aws::String CreateGrantRequest::SerializePayload() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
+
+  }
+
+  if(m_dryRunHasBeenSet)
+  {
+   payload.WithBool("DryRun", m_dryRun);
 
   }
 

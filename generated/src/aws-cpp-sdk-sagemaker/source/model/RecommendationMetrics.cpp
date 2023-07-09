@@ -30,7 +30,9 @@ RecommendationMetrics::RecommendationMetrics() :
     m_cpuUtilization(0.0),
     m_cpuUtilizationHasBeenSet(false),
     m_memoryUtilization(0.0),
-    m_memoryUtilizationHasBeenSet(false)
+    m_memoryUtilizationHasBeenSet(false),
+    m_modelSetupTime(0),
+    m_modelSetupTimeHasBeenSet(false)
 {
 }
 
@@ -46,7 +48,9 @@ RecommendationMetrics::RecommendationMetrics(JsonView jsonValue) :
     m_cpuUtilization(0.0),
     m_cpuUtilizationHasBeenSet(false),
     m_memoryUtilization(0.0),
-    m_memoryUtilizationHasBeenSet(false)
+    m_memoryUtilizationHasBeenSet(false),
+    m_modelSetupTime(0),
+    m_modelSetupTimeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -95,6 +99,13 @@ RecommendationMetrics& RecommendationMetrics::operator =(JsonView jsonValue)
     m_memoryUtilizationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ModelSetupTime"))
+  {
+    m_modelSetupTime = jsonValue.GetInteger("ModelSetupTime");
+
+    m_modelSetupTimeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -135,6 +146,12 @@ JsonValue RecommendationMetrics::Jsonize() const
   if(m_memoryUtilizationHasBeenSet)
   {
    payload.WithDouble("MemoryUtilization", m_memoryUtilization);
+
+  }
+
+  if(m_modelSetupTimeHasBeenSet)
+  {
+   payload.WithInteger("ModelSetupTime", m_modelSetupTime);
 
   }
 

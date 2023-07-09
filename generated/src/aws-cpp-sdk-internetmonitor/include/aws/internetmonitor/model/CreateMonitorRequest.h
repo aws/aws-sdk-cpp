@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/internetmonitor/model/InternetMeasurementsLogDelivery.h>
+#include <aws/internetmonitor/model/HealthEventsConfig.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -414,6 +415,61 @@ namespace Model
      */
     inline CreateMonitorRequest& WithTrafficPercentageToMonitor(int value) { SetTrafficPercentageToMonitor(value); return *this;}
 
+
+    /**
+     * <p>Defines the health event threshold percentages, for performance score and
+     * availability score. Internet Monitor creates a health event when there's an
+     * internet issue that affects your application end users where a health score
+     * percentage is at or below a set threshold. If you don't set a health event
+     * threshold, the default calue is 95%.</p>
+     */
+    inline const HealthEventsConfig& GetHealthEventsConfig() const{ return m_healthEventsConfig; }
+
+    /**
+     * <p>Defines the health event threshold percentages, for performance score and
+     * availability score. Internet Monitor creates a health event when there's an
+     * internet issue that affects your application end users where a health score
+     * percentage is at or below a set threshold. If you don't set a health event
+     * threshold, the default calue is 95%.</p>
+     */
+    inline bool HealthEventsConfigHasBeenSet() const { return m_healthEventsConfigHasBeenSet; }
+
+    /**
+     * <p>Defines the health event threshold percentages, for performance score and
+     * availability score. Internet Monitor creates a health event when there's an
+     * internet issue that affects your application end users where a health score
+     * percentage is at or below a set threshold. If you don't set a health event
+     * threshold, the default calue is 95%.</p>
+     */
+    inline void SetHealthEventsConfig(const HealthEventsConfig& value) { m_healthEventsConfigHasBeenSet = true; m_healthEventsConfig = value; }
+
+    /**
+     * <p>Defines the health event threshold percentages, for performance score and
+     * availability score. Internet Monitor creates a health event when there's an
+     * internet issue that affects your application end users where a health score
+     * percentage is at or below a set threshold. If you don't set a health event
+     * threshold, the default calue is 95%.</p>
+     */
+    inline void SetHealthEventsConfig(HealthEventsConfig&& value) { m_healthEventsConfigHasBeenSet = true; m_healthEventsConfig = std::move(value); }
+
+    /**
+     * <p>Defines the health event threshold percentages, for performance score and
+     * availability score. Internet Monitor creates a health event when there's an
+     * internet issue that affects your application end users where a health score
+     * percentage is at or below a set threshold. If you don't set a health event
+     * threshold, the default calue is 95%.</p>
+     */
+    inline CreateMonitorRequest& WithHealthEventsConfig(const HealthEventsConfig& value) { SetHealthEventsConfig(value); return *this;}
+
+    /**
+     * <p>Defines the health event threshold percentages, for performance score and
+     * availability score. Internet Monitor creates a health event when there's an
+     * internet issue that affects your application end users where a health score
+     * percentage is at or below a set threshold. If you don't set a health event
+     * threshold, the default calue is 95%.</p>
+     */
+    inline CreateMonitorRequest& WithHealthEventsConfig(HealthEventsConfig&& value) { SetHealthEventsConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_monitorName;
@@ -436,6 +492,9 @@ namespace Model
 
     int m_trafficPercentageToMonitor;
     bool m_trafficPercentageToMonitorHasBeenSet = false;
+
+    HealthEventsConfig m_healthEventsConfig;
+    bool m_healthEventsConfigHasBeenSet = false;
   };
 
 } // namespace Model

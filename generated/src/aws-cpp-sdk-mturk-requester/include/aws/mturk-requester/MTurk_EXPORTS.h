@@ -21,9 +21,12 @@
         #else
             #define AWS_MTURK_API __declspec(dllimport)
         #endif /* AWS_MTURK_EXPORTS */
+        #define AWS_MTURK_EXTERN
     #else
         #define AWS_MTURK_API
+        #define AWS_MTURK_EXTERN extern
     #endif // USE_IMPORT_EXPORT
 #else // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
     #define AWS_MTURK_API
+    #define AWS_MTURK_EXTERN extern
 #endif // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)

@@ -8,6 +8,7 @@
 #include <aws/quicksight/model/ColumnIdentifier.h>
 #include <aws/quicksight/model/FormatConfiguration.h>
 #include <aws/quicksight/model/ColumnRole.h>
+#include <aws/quicksight/model/ColorsConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -131,6 +132,37 @@ namespace Model
      */
     inline ColumnConfiguration& WithRole(ColumnRole&& value) { SetRole(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The color configurations of the column.</p>
+     */
+    inline const ColorsConfiguration& GetColorsConfiguration() const{ return m_colorsConfiguration; }
+
+    /**
+     * <p>The color configurations of the column.</p>
+     */
+    inline bool ColorsConfigurationHasBeenSet() const { return m_colorsConfigurationHasBeenSet; }
+
+    /**
+     * <p>The color configurations of the column.</p>
+     */
+    inline void SetColorsConfiguration(const ColorsConfiguration& value) { m_colorsConfigurationHasBeenSet = true; m_colorsConfiguration = value; }
+
+    /**
+     * <p>The color configurations of the column.</p>
+     */
+    inline void SetColorsConfiguration(ColorsConfiguration&& value) { m_colorsConfigurationHasBeenSet = true; m_colorsConfiguration = std::move(value); }
+
+    /**
+     * <p>The color configurations of the column.</p>
+     */
+    inline ColumnConfiguration& WithColorsConfiguration(const ColorsConfiguration& value) { SetColorsConfiguration(value); return *this;}
+
+    /**
+     * <p>The color configurations of the column.</p>
+     */
+    inline ColumnConfiguration& WithColorsConfiguration(ColorsConfiguration&& value) { SetColorsConfiguration(std::move(value)); return *this;}
+
   private:
 
     ColumnIdentifier m_column;
@@ -141,6 +173,9 @@ namespace Model
 
     ColumnRole m_role;
     bool m_roleHasBeenSet = false;
+
+    ColorsConfiguration m_colorsConfiguration;
+    bool m_colorsConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -113,9 +113,9 @@ namespace Model
 
 
     /**
-     * Specify the MXF profile, also called shim, for this output. When you choose
-     * Auto, MediaConvert chooses a profile based on the video codec and resolution.
-     * For a list of codecs supported with each MXF profile, see
+     * Specify the MXF profile, also called shim, for this output. To automatically
+     * select a profile according to your output video codec and resolution, leave
+     * blank. For a list of codecs supported with each MXF profile, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/codecs-supported-with-each-mxf-profile.html.
      * For more information about the automatic selection behavior, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/default-automatic-selection-of-mxf-profiles.html.
@@ -123,9 +123,9 @@ namespace Model
     inline const MxfProfile& GetProfile() const{ return m_profile; }
 
     /**
-     * Specify the MXF profile, also called shim, for this output. When you choose
-     * Auto, MediaConvert chooses a profile based on the video codec and resolution.
-     * For a list of codecs supported with each MXF profile, see
+     * Specify the MXF profile, also called shim, for this output. To automatically
+     * select a profile according to your output video codec and resolution, leave
+     * blank. For a list of codecs supported with each MXF profile, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/codecs-supported-with-each-mxf-profile.html.
      * For more information about the automatic selection behavior, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/default-automatic-selection-of-mxf-profiles.html.
@@ -133,9 +133,9 @@ namespace Model
     inline bool ProfileHasBeenSet() const { return m_profileHasBeenSet; }
 
     /**
-     * Specify the MXF profile, also called shim, for this output. When you choose
-     * Auto, MediaConvert chooses a profile based on the video codec and resolution.
-     * For a list of codecs supported with each MXF profile, see
+     * Specify the MXF profile, also called shim, for this output. To automatically
+     * select a profile according to your output video codec and resolution, leave
+     * blank. For a list of codecs supported with each MXF profile, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/codecs-supported-with-each-mxf-profile.html.
      * For more information about the automatic selection behavior, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/default-automatic-selection-of-mxf-profiles.html.
@@ -143,9 +143,9 @@ namespace Model
     inline void SetProfile(const MxfProfile& value) { m_profileHasBeenSet = true; m_profile = value; }
 
     /**
-     * Specify the MXF profile, also called shim, for this output. When you choose
-     * Auto, MediaConvert chooses a profile based on the video codec and resolution.
-     * For a list of codecs supported with each MXF profile, see
+     * Specify the MXF profile, also called shim, for this output. To automatically
+     * select a profile according to your output video codec and resolution, leave
+     * blank. For a list of codecs supported with each MXF profile, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/codecs-supported-with-each-mxf-profile.html.
      * For more information about the automatic selection behavior, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/default-automatic-selection-of-mxf-profiles.html.
@@ -153,9 +153,9 @@ namespace Model
     inline void SetProfile(MxfProfile&& value) { m_profileHasBeenSet = true; m_profile = std::move(value); }
 
     /**
-     * Specify the MXF profile, also called shim, for this output. When you choose
-     * Auto, MediaConvert chooses a profile based on the video codec and resolution.
-     * For a list of codecs supported with each MXF profile, see
+     * Specify the MXF profile, also called shim, for this output. To automatically
+     * select a profile according to your output video codec and resolution, leave
+     * blank. For a list of codecs supported with each MXF profile, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/codecs-supported-with-each-mxf-profile.html.
      * For more information about the automatic selection behavior, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/default-automatic-selection-of-mxf-profiles.html.
@@ -163,9 +163,9 @@ namespace Model
     inline MxfSettings& WithProfile(const MxfProfile& value) { SetProfile(value); return *this;}
 
     /**
-     * Specify the MXF profile, also called shim, for this output. When you choose
-     * Auto, MediaConvert chooses a profile based on the video codec and resolution.
-     * For a list of codecs supported with each MXF profile, see
+     * Specify the MXF profile, also called shim, for this output. To automatically
+     * select a profile according to your output video codec and resolution, leave
+     * blank. For a list of codecs supported with each MXF profile, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/codecs-supported-with-each-mxf-profile.html.
      * For more information about the automatic selection behavior, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/default-automatic-selection-of-mxf-profiles.html.

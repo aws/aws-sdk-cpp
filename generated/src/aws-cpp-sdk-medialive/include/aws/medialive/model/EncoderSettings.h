@@ -14,6 +14,7 @@
 #include <aws/medialive/model/MotionGraphicsConfiguration.h>
 #include <aws/medialive/model/NielsenConfiguration.h>
 #include <aws/medialive/model/TimecodeConfig.h>
+#include <aws/medialive/model/ThumbnailConfiguration.h>
 #include <aws/medialive/model/AudioDescription.h>
 #include <aws/medialive/model/CaptionDescription.h>
 #include <aws/medialive/model/OutputGroup.h>
@@ -412,6 +413,37 @@ namespace Model
     
     inline EncoderSettings& AddVideoDescriptions(VideoDescription&& value) { m_videoDescriptionsHasBeenSet = true; m_videoDescriptions.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * Thumbnail configuration settings.
+     */
+    inline const ThumbnailConfiguration& GetThumbnailConfiguration() const{ return m_thumbnailConfiguration; }
+
+    /**
+     * Thumbnail configuration settings.
+     */
+    inline bool ThumbnailConfigurationHasBeenSet() const { return m_thumbnailConfigurationHasBeenSet; }
+
+    /**
+     * Thumbnail configuration settings.
+     */
+    inline void SetThumbnailConfiguration(const ThumbnailConfiguration& value) { m_thumbnailConfigurationHasBeenSet = true; m_thumbnailConfiguration = value; }
+
+    /**
+     * Thumbnail configuration settings.
+     */
+    inline void SetThumbnailConfiguration(ThumbnailConfiguration&& value) { m_thumbnailConfigurationHasBeenSet = true; m_thumbnailConfiguration = std::move(value); }
+
+    /**
+     * Thumbnail configuration settings.
+     */
+    inline EncoderSettings& WithThumbnailConfiguration(const ThumbnailConfiguration& value) { SetThumbnailConfiguration(value); return *this;}
+
+    /**
+     * Thumbnail configuration settings.
+     */
+    inline EncoderSettings& WithThumbnailConfiguration(ThumbnailConfiguration&& value) { SetThumbnailConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<AudioDescription> m_audioDescriptions;
@@ -449,6 +481,9 @@ namespace Model
 
     Aws::Vector<VideoDescription> m_videoDescriptions;
     bool m_videoDescriptionsHasBeenSet = false;
+
+    ThumbnailConfiguration m_thumbnailConfiguration;
+    bool m_thumbnailConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -34,6 +34,47 @@ namespace Model
 
 
     /**
+     * <p>Account ID.</p>
+     */
+    inline const Aws::String& GetAccountID() const{ return m_accountID; }
+
+    /**
+     * <p>Account ID.</p>
+     */
+    inline bool AccountIDHasBeenSet() const { return m_accountIDHasBeenSet; }
+
+    /**
+     * <p>Account ID.</p>
+     */
+    inline void SetAccountID(const Aws::String& value) { m_accountIDHasBeenSet = true; m_accountID = value; }
+
+    /**
+     * <p>Account ID.</p>
+     */
+    inline void SetAccountID(Aws::String&& value) { m_accountIDHasBeenSet = true; m_accountID = std::move(value); }
+
+    /**
+     * <p>Account ID.</p>
+     */
+    inline void SetAccountID(const char* value) { m_accountIDHasBeenSet = true; m_accountID.assign(value); }
+
+    /**
+     * <p>Account ID.</p>
+     */
+    inline CreateWaveRequest& WithAccountID(const Aws::String& value) { SetAccountID(value); return *this;}
+
+    /**
+     * <p>Account ID.</p>
+     */
+    inline CreateWaveRequest& WithAccountID(Aws::String&& value) { SetAccountID(std::move(value)); return *this;}
+
+    /**
+     * <p>Account ID.</p>
+     */
+    inline CreateWaveRequest& WithAccountID(const char* value) { SetAccountID(value); return *this;}
+
+
+    /**
      * <p>Wave description.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
@@ -181,6 +222,9 @@ namespace Model
     inline CreateWaveRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
   private:
+
+    Aws::String m_accountID;
+    bool m_accountIDHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;

@@ -477,7 +477,7 @@ namespace Model
 
     /**
      * <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
-     * <p>If you specify <code>encoding-type</code> request parameter, Amazon S3
+     * <p>If you specify the <code>encoding-type</code> request parameter, Amazon S3
      * includes this element in the response, and returns encoded key name values in
      * the following response elements:</p> <p> <code>Delimiter</code>,
      * <code>KeyMarker</code>, <code>Prefix</code>, <code>NextKeyMarker</code>,
@@ -487,7 +487,7 @@ namespace Model
 
     /**
      * <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
-     * <p>If you specify <code>encoding-type</code> request parameter, Amazon S3
+     * <p>If you specify the <code>encoding-type</code> request parameter, Amazon S3
      * includes this element in the response, and returns encoded key name values in
      * the following response elements:</p> <p> <code>Delimiter</code>,
      * <code>KeyMarker</code>, <code>Prefix</code>, <code>NextKeyMarker</code>,
@@ -497,7 +497,7 @@ namespace Model
 
     /**
      * <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
-     * <p>If you specify <code>encoding-type</code> request parameter, Amazon S3
+     * <p>If you specify the <code>encoding-type</code> request parameter, Amazon S3
      * includes this element in the response, and returns encoded key name values in
      * the following response elements:</p> <p> <code>Delimiter</code>,
      * <code>KeyMarker</code>, <code>Prefix</code>, <code>NextKeyMarker</code>,
@@ -507,7 +507,7 @@ namespace Model
 
     /**
      * <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
-     * <p>If you specify <code>encoding-type</code> request parameter, Amazon S3
+     * <p>If you specify the <code>encoding-type</code> request parameter, Amazon S3
      * includes this element in the response, and returns encoded key name values in
      * the following response elements:</p> <p> <code>Delimiter</code>,
      * <code>KeyMarker</code>, <code>Prefix</code>, <code>NextKeyMarker</code>,
@@ -517,7 +517,7 @@ namespace Model
 
     /**
      * <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
-     * <p>If you specify <code>encoding-type</code> request parameter, Amazon S3
+     * <p>If you specify the <code>encoding-type</code> request parameter, Amazon S3
      * includes this element in the response, and returns encoded key name values in
      * the following response elements:</p> <p> <code>Delimiter</code>,
      * <code>KeyMarker</code>, <code>Prefix</code>, <code>NextKeyMarker</code>,

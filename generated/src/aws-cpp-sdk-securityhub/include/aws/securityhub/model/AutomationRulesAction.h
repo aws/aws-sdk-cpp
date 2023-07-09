@@ -41,9 +41,8 @@ namespace Model
 
     /**
      * <p> Specifies that the rule action should update the <code>Types</code> finding
-     * field. The <code>Types</code> finding field provides one or more finding types
-     * in the format of namespace/category/classifier that classify a finding. For more
-     * information, see <a
+     * field. The <code>Types</code> finding field classifies findings in the format of
+     * namespace/category/classifier. For more information, see <a
      * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format-type-taxonomy.html">Types
      * taxonomy for ASFF</a> in the <i>Security Hub User Guide</i>. </p>
      */
@@ -51,9 +50,8 @@ namespace Model
 
     /**
      * <p> Specifies that the rule action should update the <code>Types</code> finding
-     * field. The <code>Types</code> finding field provides one or more finding types
-     * in the format of namespace/category/classifier that classify a finding. For more
-     * information, see <a
+     * field. The <code>Types</code> finding field classifies findings in the format of
+     * namespace/category/classifier. For more information, see <a
      * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format-type-taxonomy.html">Types
      * taxonomy for ASFF</a> in the <i>Security Hub User Guide</i>. </p>
      */
@@ -61,9 +59,8 @@ namespace Model
 
     /**
      * <p> Specifies that the rule action should update the <code>Types</code> finding
-     * field. The <code>Types</code> finding field provides one or more finding types
-     * in the format of namespace/category/classifier that classify a finding. For more
-     * information, see <a
+     * field. The <code>Types</code> finding field classifies findings in the format of
+     * namespace/category/classifier. For more information, see <a
      * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format-type-taxonomy.html">Types
      * taxonomy for ASFF</a> in the <i>Security Hub User Guide</i>. </p>
      */
@@ -71,9 +68,8 @@ namespace Model
 
     /**
      * <p> Specifies that the rule action should update the <code>Types</code> finding
-     * field. The <code>Types</code> finding field provides one or more finding types
-     * in the format of namespace/category/classifier that classify a finding. For more
-     * information, see <a
+     * field. The <code>Types</code> finding field classifies findings in the format of
+     * namespace/category/classifier. For more information, see <a
      * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format-type-taxonomy.html">Types
      * taxonomy for ASFF</a> in the <i>Security Hub User Guide</i>. </p>
      */
@@ -81,9 +77,8 @@ namespace Model
 
     /**
      * <p> Specifies that the rule action should update the <code>Types</code> finding
-     * field. The <code>Types</code> finding field provides one or more finding types
-     * in the format of namespace/category/classifier that classify a finding. For more
-     * information, see <a
+     * field. The <code>Types</code> finding field classifies findings in the format of
+     * namespace/category/classifier. For more information, see <a
      * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format-type-taxonomy.html">Types
      * taxonomy for ASFF</a> in the <i>Security Hub User Guide</i>. </p>
      */
@@ -91,9 +86,8 @@ namespace Model
 
     /**
      * <p> Specifies that the rule action should update the <code>Types</code> finding
-     * field. The <code>Types</code> finding field provides one or more finding types
-     * in the format of namespace/category/classifier that classify a finding. For more
-     * information, see <a
+     * field. The <code>Types</code> finding field classifies findings in the format of
+     * namespace/category/classifier. For more information, see <a
      * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format-type-taxonomy.html">Types
      * taxonomy for ASFF</a> in the <i>Security Hub User Guide</i>. </p>
      */

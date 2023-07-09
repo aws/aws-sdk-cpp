@@ -21,9 +21,12 @@
         #else
             #define AWS_TIMESTREAMQUERY_API __declspec(dllimport)
         #endif /* AWS_TIMESTREAMQUERY_EXPORTS */
+        #define AWS_TIMESTREAMQUERY_EXTERN
     #else
         #define AWS_TIMESTREAMQUERY_API
+        #define AWS_TIMESTREAMQUERY_EXTERN extern
     #endif // USE_IMPORT_EXPORT
 #else // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
     #define AWS_TIMESTREAMQUERY_API
+    #define AWS_TIMESTREAMQUERY_EXTERN extern
 #endif // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)

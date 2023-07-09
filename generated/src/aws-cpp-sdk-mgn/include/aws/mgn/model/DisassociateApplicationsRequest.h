@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/mgn/Mgn_EXPORTS.h>
 #include <aws/mgn/MgnRequest.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -31,6 +31,47 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "DisassociateApplications"; }
 
     AWS_MGN_API Aws::String SerializePayload() const override;
+
+
+    /**
+     * <p>Account ID.</p>
+     */
+    inline const Aws::String& GetAccountID() const{ return m_accountID; }
+
+    /**
+     * <p>Account ID.</p>
+     */
+    inline bool AccountIDHasBeenSet() const { return m_accountIDHasBeenSet; }
+
+    /**
+     * <p>Account ID.</p>
+     */
+    inline void SetAccountID(const Aws::String& value) { m_accountIDHasBeenSet = true; m_accountID = value; }
+
+    /**
+     * <p>Account ID.</p>
+     */
+    inline void SetAccountID(Aws::String&& value) { m_accountIDHasBeenSet = true; m_accountID = std::move(value); }
+
+    /**
+     * <p>Account ID.</p>
+     */
+    inline void SetAccountID(const char* value) { m_accountIDHasBeenSet = true; m_accountID.assign(value); }
+
+    /**
+     * <p>Account ID.</p>
+     */
+    inline DisassociateApplicationsRequest& WithAccountID(const Aws::String& value) { SetAccountID(value); return *this;}
+
+    /**
+     * <p>Account ID.</p>
+     */
+    inline DisassociateApplicationsRequest& WithAccountID(Aws::String&& value) { SetAccountID(std::move(value)); return *this;}
+
+    /**
+     * <p>Account ID.</p>
+     */
+    inline DisassociateApplicationsRequest& WithAccountID(const char* value) { SetAccountID(value); return *this;}
 
 
     /**
@@ -120,6 +161,9 @@ namespace Model
     inline DisassociateApplicationsRequest& WithWaveID(const char* value) { SetWaveID(value); return *this;}
 
   private:
+
+    Aws::String m_accountID;
+    bool m_accountIDHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_applicationIDs;
     bool m_applicationIDsHasBeenSet = false;

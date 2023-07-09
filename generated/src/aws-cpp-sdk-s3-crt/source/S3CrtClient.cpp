@@ -527,6 +527,103 @@ void S3CrtClient::InitCommonCrtRequestOption(CrtRequestCallbackUserData *userDat
   aws_uri_init_parse(options->endpoint, Aws::get_aws_allocator(), &endpointCursor);
 }
 
+static void CopyObjectRequestShutdownCallback(void *user_data)
+{
+  auto *userData = static_cast<S3CrtClient::CrtRequestCallbackUserData*>(user_data);
+  // call user callback and release user_data
+  S3Crt::Model::CopyObjectOutcome outcome(userData->s3CrtClient->GenerateXmlOutcome(userData->response));
+  userData->copyResponseHandler(userData->s3CrtClient, *(reinterpret_cast<const CopyObjectRequest*>(userData->originalRequest)), std::move(outcome), userData->asyncCallerContext);
+
+  Aws::Delete(userData);
+}
+
+void S3CrtClient::CopyObjectAsync(const CopyObjectRequest& request, const CopyObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
+{
+  if (!m_endpointProvider) {
+    return handler(this, request, CopyObjectOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::INTERNAL_FAILURE, "INTERNAL_FAILURE", "Endpoint provider is not initialized", false)), handlerContext);
+  }
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CopyObject", "Required field: Bucket, is not set");
+    return handler(this, request, CopyObjectOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false)), handlerContext);
+  }
+  if (!request.CopySourceHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CopyObject", "Required field: CopySource, is not set");
+    return handler(this, request, CopyObjectOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CopySource]", false)), handlerContext);
+  }
+  if (!request.KeyHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CopyObject", "Required field: Key, is not set");
+    return handler(this, request, CopyObjectOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Key]", false)), handlerContext);
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  if (!endpointResolutionOutcome.IsSuccess()) {
+    handler(this, request, CopyObjectOutcome(Aws::Client::AWSError<CoreErrors>(
+        CoreErrors::ENDPOINT_RESOLUTION_FAILURE, "ENDPOINT_RESOLUTION_FAILURE", endpointResolutionOutcome.GetError().GetMessage(), false)), handlerContext);
+    return;
+  }
+  endpointResolutionOutcome.GetResult().AddPathSegments(request.GetKey());
+
+  // make aws_s3_meta_request with callbacks
+  CrtRequestCallbackUserData *userData = Aws::New<CrtRequestCallbackUserData>(ALLOCATION_TAG);
+  aws_s3_meta_request_options options;
+  AWS_ZERO_STRUCT(options);
+  aws_uri endpoint;
+  AWS_ZERO_STRUCT(endpoint);
+  options.endpoint = &endpoint;
+  std::unique_ptr<aws_uri, void(*)(aws_uri*)> endpointCleanup { options.endpoint, &aws_uri_clean_up };
+
+  userData->copyResponseHandler = handler;
+  userData->asyncCallerContext = handlerContext;
+  InitCommonCrtRequestOption(userData, &options, &request, endpointResolutionOutcome.GetResult().GetURI(), Aws::Http::HttpMethod::HTTP_PUT);
+  if (userData != nullptr &&
+    userData->request != nullptr &&
+    userData->request->GetContentBody() != nullptr &&
+    userData->request->GetContentBody()->fail())
+  {
+    return handler(this, request, CopyObjectOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::INTERNAL_FAILURE, "INTERNAL_FAILURE", "Unable to create s3 meta request", false)), handlerContext);
+  }
+  options.shutdown_callback = CopyObjectRequestShutdownCallback;
+  options.type = AWS_S3_META_REQUEST_TYPE_COPY_OBJECT;
+  struct aws_signing_config_aws signing_config_override = m_s3CrtSigningConfig;
+  if (endpointResolutionOutcome.GetResult().GetAttributes() && endpointResolutionOutcome.GetResult().GetAttributes()->authScheme.GetSigningRegion()) {
+    signing_config_override.region = Aws::Crt::ByteCursorFromCString(endpointResolutionOutcome.GetResult().GetAttributes()->authScheme.GetSigningRegion()->c_str());
+  }
+  if (endpointResolutionOutcome.GetResult().GetAttributes() && endpointResolutionOutcome.GetResult().GetAttributes()->authScheme.GetSigningRegionSet()) {
+    signing_config_override.region = Aws::Crt::ByteCursorFromCString(endpointResolutionOutcome.GetResult().GetAttributes()->authScheme.GetSigningRegionSet()->c_str());
+  }
+  if (endpointResolutionOutcome.GetResult().GetAttributes() && endpointResolutionOutcome.GetResult().GetAttributes()->authScheme.GetSigningName()) {
+    signing_config_override.service = Aws::Crt::ByteCursorFromCString(endpointResolutionOutcome.GetResult().GetAttributes()->authScheme.GetSigningName()->c_str());
+  }
+  options.signing_config = &signing_config_override;
+
+  std::shared_ptr<Aws::Crt::Http::HttpRequest> crtHttpRequest = userData->request->ToCrtHttpRequest();
+  options.message= crtHttpRequest->GetUnderlyingMessage();
+  userData->crtHttpRequest = crtHttpRequest;
+
+  if (aws_s3_client_make_meta_request(m_s3CrtClient, &options) == nullptr)
+  {
+    return handler(this, request, CopyObjectOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::INTERNAL_FAILURE, "INTERNAL_FAILURE", "Unable to create s3 meta request", false)), handlerContext);
+  }
+}
+
+CopyObjectOutcome S3CrtClient::CopyObject(const CopyObjectRequest& request) const
+{
+  AWS_OPERATION_GUARD(CopyObject);
+  Aws::Utils::Threading::Semaphore sem(0, 1);
+  CopyObjectOutcome res;
+
+  auto handler = CopyObjectResponseReceivedHandler{[&](const S3CrtClient*, const CopyObjectRequest&, const CopyObjectOutcome& outcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext> &) {
+      res = std::move(outcome);
+      sem.ReleaseAll();
+  }};
+
+  S3CrtClient::CopyObjectAsync(request, handler, nullptr);
+  sem.WaitOne();
+  return res;
+}
+
 static void GetObjectRequestShutdownCallback(void *user_data)
 {
   auto *userData = static_cast<S3CrtClient::CrtRequestCallbackUserData*>(user_data);
@@ -759,31 +856,6 @@ CompleteMultipartUploadOutcome S3CrtClient::CompleteMultipartUpload(const Comple
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CompleteMultipartUpload, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   endpointResolutionOutcome.GetResult().AddPathSegments(request.GetKey());
   return CompleteMultipartUploadOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
-}
-
-CopyObjectOutcome S3CrtClient::CopyObject(const CopyObjectRequest& request) const
-{
-  AWS_OPERATION_GUARD(CopyObject);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CopyObject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.BucketHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("CopyObject", "Required field: Bucket, is not set");
-    return CopyObjectOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
-  }
-  if (!request.CopySourceHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("CopyObject", "Required field: CopySource, is not set");
-    return CopyObjectOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CopySource]", false));
-  }
-  if (!request.KeyHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("CopyObject", "Required field: Key, is not set");
-    return CopyObjectOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Key]", false));
-  }
-  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
-  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CopyObject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-  endpointResolutionOutcome.GetResult().AddPathSegments(request.GetKey());
-  return CopyObjectOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT));
 }
 
 CreateBucketOutcome S3CrtClient::CreateBucket(const CreateBucketRequest& request) const

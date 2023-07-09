@@ -2099,8 +2099,10 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether an instance is enabled for hibernation. For more
-     * information, see <a
+     * <p>Indicates whether an instance is enabled for hibernation. This parameter is
+     * valid only if the instance meets the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html">hibernation
+     * prerequisites</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
      * your instance</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>You can't enable
      * hibernation and Amazon Web Services Nitro Enclaves on the same instance.</p>
@@ -2108,8 +2110,10 @@ namespace Model
     inline const HibernationOptionsRequest& GetHibernationOptions() const{ return m_hibernationOptions; }
 
     /**
-     * <p>Indicates whether an instance is enabled for hibernation. For more
-     * information, see <a
+     * <p>Indicates whether an instance is enabled for hibernation. This parameter is
+     * valid only if the instance meets the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html">hibernation
+     * prerequisites</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
      * your instance</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>You can't enable
      * hibernation and Amazon Web Services Nitro Enclaves on the same instance.</p>
@@ -2117,8 +2121,10 @@ namespace Model
     inline bool HibernationOptionsHasBeenSet() const { return m_hibernationOptionsHasBeenSet; }
 
     /**
-     * <p>Indicates whether an instance is enabled for hibernation. For more
-     * information, see <a
+     * <p>Indicates whether an instance is enabled for hibernation. This parameter is
+     * valid only if the instance meets the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html">hibernation
+     * prerequisites</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
      * your instance</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>You can't enable
      * hibernation and Amazon Web Services Nitro Enclaves on the same instance.</p>
@@ -2126,8 +2132,10 @@ namespace Model
     inline void SetHibernationOptions(const HibernationOptionsRequest& value) { m_hibernationOptionsHasBeenSet = true; m_hibernationOptions = value; }
 
     /**
-     * <p>Indicates whether an instance is enabled for hibernation. For more
-     * information, see <a
+     * <p>Indicates whether an instance is enabled for hibernation. This parameter is
+     * valid only if the instance meets the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html">hibernation
+     * prerequisites</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
      * your instance</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>You can't enable
      * hibernation and Amazon Web Services Nitro Enclaves on the same instance.</p>
@@ -2135,8 +2143,10 @@ namespace Model
     inline void SetHibernationOptions(HibernationOptionsRequest&& value) { m_hibernationOptionsHasBeenSet = true; m_hibernationOptions = std::move(value); }
 
     /**
-     * <p>Indicates whether an instance is enabled for hibernation. For more
-     * information, see <a
+     * <p>Indicates whether an instance is enabled for hibernation. This parameter is
+     * valid only if the instance meets the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html">hibernation
+     * prerequisites</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
      * your instance</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>You can't enable
      * hibernation and Amazon Web Services Nitro Enclaves on the same instance.</p>
@@ -2144,8 +2154,10 @@ namespace Model
     inline RunInstancesRequest& WithHibernationOptions(const HibernationOptionsRequest& value) { SetHibernationOptions(value); return *this;}
 
     /**
-     * <p>Indicates whether an instance is enabled for hibernation. For more
-     * information, see <a
+     * <p>Indicates whether an instance is enabled for hibernation. This parameter is
+     * valid only if the instance meets the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html">hibernation
+     * prerequisites</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
      * your instance</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>You can't enable
      * hibernation and Amazon Web Services Nitro Enclaves on the same instance.</p>
@@ -2240,7 +2252,7 @@ namespace Model
     /**
      * <p>Indicates whether the instance is enabled for Amazon Web Services Nitro
      * Enclaves. For more information, see <a
-     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What
+     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">What
      * is Amazon Web Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro
      * Enclaves User Guide</i>.</p> <p>You can't enable Amazon Web Services Nitro
      * Enclaves and hibernation on the same instance.</p>
@@ -2250,7 +2262,7 @@ namespace Model
     /**
      * <p>Indicates whether the instance is enabled for Amazon Web Services Nitro
      * Enclaves. For more information, see <a
-     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What
+     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">What
      * is Amazon Web Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro
      * Enclaves User Guide</i>.</p> <p>You can't enable Amazon Web Services Nitro
      * Enclaves and hibernation on the same instance.</p>
@@ -2260,7 +2272,7 @@ namespace Model
     /**
      * <p>Indicates whether the instance is enabled for Amazon Web Services Nitro
      * Enclaves. For more information, see <a
-     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What
+     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">What
      * is Amazon Web Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro
      * Enclaves User Guide</i>.</p> <p>You can't enable Amazon Web Services Nitro
      * Enclaves and hibernation on the same instance.</p>
@@ -2270,7 +2282,7 @@ namespace Model
     /**
      * <p>Indicates whether the instance is enabled for Amazon Web Services Nitro
      * Enclaves. For more information, see <a
-     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What
+     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">What
      * is Amazon Web Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro
      * Enclaves User Guide</i>.</p> <p>You can't enable Amazon Web Services Nitro
      * Enclaves and hibernation on the same instance.</p>
@@ -2280,7 +2292,7 @@ namespace Model
     /**
      * <p>Indicates whether the instance is enabled for Amazon Web Services Nitro
      * Enclaves. For more information, see <a
-     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What
+     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">What
      * is Amazon Web Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro
      * Enclaves User Guide</i>.</p> <p>You can't enable Amazon Web Services Nitro
      * Enclaves and hibernation on the same instance.</p>
@@ -2290,7 +2302,7 @@ namespace Model
     /**
      * <p>Indicates whether the instance is enabled for Amazon Web Services Nitro
      * Enclaves. For more information, see <a
-     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What
+     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">What
      * is Amazon Web Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro
      * Enclaves User Guide</i>.</p> <p>You can't enable Amazon Web Services Nitro
      * Enclaves and hibernation on the same instance.</p>

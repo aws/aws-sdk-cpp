@@ -341,6 +341,47 @@ namespace Model
      */
     inline RdsConfiguration& WithDeploymentOption(const char* value) { SetDeploymentOption(value); return *this;}
 
+
+    /**
+     * <p>Describes the recommended target Amazon RDS engine version.</p>
+     */
+    inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
+
+    /**
+     * <p>Describes the recommended target Amazon RDS engine version.</p>
+     */
+    inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
+
+    /**
+     * <p>Describes the recommended target Amazon RDS engine version.</p>
+     */
+    inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
+
+    /**
+     * <p>Describes the recommended target Amazon RDS engine version.</p>
+     */
+    inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
+
+    /**
+     * <p>Describes the recommended target Amazon RDS engine version.</p>
+     */
+    inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
+
+    /**
+     * <p>Describes the recommended target Amazon RDS engine version.</p>
+     */
+    inline RdsConfiguration& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
+
+    /**
+     * <p>Describes the recommended target Amazon RDS engine version.</p>
+     */
+    inline RdsConfiguration& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>Describes the recommended target Amazon RDS engine version.</p>
+     */
+    inline RdsConfiguration& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
+
   private:
 
     Aws::String m_engineEdition;
@@ -366,6 +407,9 @@ namespace Model
 
     Aws::String m_deploymentOption;
     bool m_deploymentOptionHasBeenSet = false;
+
+    Aws::String m_engineVersion;
+    bool m_engineVersionHasBeenSet = false;
   };
 
 } // namespace Model

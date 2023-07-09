@@ -152,58 +152,66 @@ namespace Model
 
 
     /**
-     * <p>The share identifier for the job. If the job queue doesn't have a scheduling
-     * policy, then this parameter must not be specified. If the job queue has a
-     * scheduling policy, then this parameter must be specified.</p>
+     * <p>The share identifier for the job. Don't specify this parameter if the job
+     * queue doesn't have a scheduling policy. If the job queue has a scheduling
+     * policy, then this parameter must be specified.</p> <p>This string is limited to
+     * 255 alphanumeric characters, and can be followed by an asterisk (*).</p>
      */
     inline const Aws::String& GetShareIdentifier() const{ return m_shareIdentifier; }
 
     /**
-     * <p>The share identifier for the job. If the job queue doesn't have a scheduling
-     * policy, then this parameter must not be specified. If the job queue has a
-     * scheduling policy, then this parameter must be specified.</p>
+     * <p>The share identifier for the job. Don't specify this parameter if the job
+     * queue doesn't have a scheduling policy. If the job queue has a scheduling
+     * policy, then this parameter must be specified.</p> <p>This string is limited to
+     * 255 alphanumeric characters, and can be followed by an asterisk (*).</p>
      */
     inline bool ShareIdentifierHasBeenSet() const { return m_shareIdentifierHasBeenSet; }
 
     /**
-     * <p>The share identifier for the job. If the job queue doesn't have a scheduling
-     * policy, then this parameter must not be specified. If the job queue has a
-     * scheduling policy, then this parameter must be specified.</p>
+     * <p>The share identifier for the job. Don't specify this parameter if the job
+     * queue doesn't have a scheduling policy. If the job queue has a scheduling
+     * policy, then this parameter must be specified.</p> <p>This string is limited to
+     * 255 alphanumeric characters, and can be followed by an asterisk (*).</p>
      */
     inline void SetShareIdentifier(const Aws::String& value) { m_shareIdentifierHasBeenSet = true; m_shareIdentifier = value; }
 
     /**
-     * <p>The share identifier for the job. If the job queue doesn't have a scheduling
-     * policy, then this parameter must not be specified. If the job queue has a
-     * scheduling policy, then this parameter must be specified.</p>
+     * <p>The share identifier for the job. Don't specify this parameter if the job
+     * queue doesn't have a scheduling policy. If the job queue has a scheduling
+     * policy, then this parameter must be specified.</p> <p>This string is limited to
+     * 255 alphanumeric characters, and can be followed by an asterisk (*).</p>
      */
     inline void SetShareIdentifier(Aws::String&& value) { m_shareIdentifierHasBeenSet = true; m_shareIdentifier = std::move(value); }
 
     /**
-     * <p>The share identifier for the job. If the job queue doesn't have a scheduling
-     * policy, then this parameter must not be specified. If the job queue has a
-     * scheduling policy, then this parameter must be specified.</p>
+     * <p>The share identifier for the job. Don't specify this parameter if the job
+     * queue doesn't have a scheduling policy. If the job queue has a scheduling
+     * policy, then this parameter must be specified.</p> <p>This string is limited to
+     * 255 alphanumeric characters, and can be followed by an asterisk (*).</p>
      */
     inline void SetShareIdentifier(const char* value) { m_shareIdentifierHasBeenSet = true; m_shareIdentifier.assign(value); }
 
     /**
-     * <p>The share identifier for the job. If the job queue doesn't have a scheduling
-     * policy, then this parameter must not be specified. If the job queue has a
-     * scheduling policy, then this parameter must be specified.</p>
+     * <p>The share identifier for the job. Don't specify this parameter if the job
+     * queue doesn't have a scheduling policy. If the job queue has a scheduling
+     * policy, then this parameter must be specified.</p> <p>This string is limited to
+     * 255 alphanumeric characters, and can be followed by an asterisk (*).</p>
      */
     inline SubmitJobRequest& WithShareIdentifier(const Aws::String& value) { SetShareIdentifier(value); return *this;}
 
     /**
-     * <p>The share identifier for the job. If the job queue doesn't have a scheduling
-     * policy, then this parameter must not be specified. If the job queue has a
-     * scheduling policy, then this parameter must be specified.</p>
+     * <p>The share identifier for the job. Don't specify this parameter if the job
+     * queue doesn't have a scheduling policy. If the job queue has a scheduling
+     * policy, then this parameter must be specified.</p> <p>This string is limited to
+     * 255 alphanumeric characters, and can be followed by an asterisk (*).</p>
      */
     inline SubmitJobRequest& WithShareIdentifier(Aws::String&& value) { SetShareIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>The share identifier for the job. If the job queue doesn't have a scheduling
-     * policy, then this parameter must not be specified. If the job queue has a
-     * scheduling policy, then this parameter must be specified.</p>
+     * <p>The share identifier for the job. Don't specify this parameter if the job
+     * queue doesn't have a scheduling policy. If the job queue has a scheduling
+     * policy, then this parameter must be specified.</p> <p>This string is limited to
+     * 255 alphanumeric characters, and can be followed by an asterisk (*).</p>
      */
     inline SubmitJobRequest& WithShareIdentifier(const char* value) { SetShareIdentifier(value); return *this;}
 

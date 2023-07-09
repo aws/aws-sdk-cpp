@@ -47,7 +47,8 @@ namespace Model
      * <p>The type of channel. Defines whether the data are used for training or
      * validation. The default value is <code>training</code>. Channels for
      * <code>training</code> and <code>validation</code> must share the same
-     * <code>ContentType</code> </p>
+     * <code>ContentType</code> </p>  <p>The type of channel defaults to
+     * <code>training</code> for the time-series forecasting problem type.</p> 
      */
     inline const AutoMLChannelType& GetChannelType() const{ return m_channelType; }
 
@@ -55,7 +56,8 @@ namespace Model
      * <p>The type of channel. Defines whether the data are used for training or
      * validation. The default value is <code>training</code>. Channels for
      * <code>training</code> and <code>validation</code> must share the same
-     * <code>ContentType</code> </p>
+     * <code>ContentType</code> </p>  <p>The type of channel defaults to
+     * <code>training</code> for the time-series forecasting problem type.</p> 
      */
     inline bool ChannelTypeHasBeenSet() const { return m_channelTypeHasBeenSet; }
 
@@ -63,7 +65,8 @@ namespace Model
      * <p>The type of channel. Defines whether the data are used for training or
      * validation. The default value is <code>training</code>. Channels for
      * <code>training</code> and <code>validation</code> must share the same
-     * <code>ContentType</code> </p>
+     * <code>ContentType</code> </p>  <p>The type of channel defaults to
+     * <code>training</code> for the time-series forecasting problem type.</p> 
      */
     inline void SetChannelType(const AutoMLChannelType& value) { m_channelTypeHasBeenSet = true; m_channelType = value; }
 
@@ -71,7 +74,8 @@ namespace Model
      * <p>The type of channel. Defines whether the data are used for training or
      * validation. The default value is <code>training</code>. Channels for
      * <code>training</code> and <code>validation</code> must share the same
-     * <code>ContentType</code> </p>
+     * <code>ContentType</code> </p>  <p>The type of channel defaults to
+     * <code>training</code> for the time-series forecasting problem type.</p> 
      */
     inline void SetChannelType(AutoMLChannelType&& value) { m_channelTypeHasBeenSet = true; m_channelType = std::move(value); }
 
@@ -79,7 +83,8 @@ namespace Model
      * <p>The type of channel. Defines whether the data are used for training or
      * validation. The default value is <code>training</code>. Channels for
      * <code>training</code> and <code>validation</code> must share the same
-     * <code>ContentType</code> </p>
+     * <code>ContentType</code> </p>  <p>The type of channel defaults to
+     * <code>training</code> for the time-series forecasting problem type.</p> 
      */
     inline AutoMLJobChannel& WithChannelType(const AutoMLChannelType& value) { SetChannelType(value); return *this;}
 
@@ -87,20 +92,24 @@ namespace Model
      * <p>The type of channel. Defines whether the data are used for training or
      * validation. The default value is <code>training</code>. Channels for
      * <code>training</code> and <code>validation</code> must share the same
-     * <code>ContentType</code> </p>
+     * <code>ContentType</code> </p>  <p>The type of channel defaults to
+     * <code>training</code> for the time-series forecasting problem type.</p> 
      */
     inline AutoMLJobChannel& WithChannelType(AutoMLChannelType&& value) { SetChannelType(std::move(value)); return *this;}
 
 
     /**
      * <p>The content type of the data from the input source. The following are the
-     * allowed content types for different problems:</p> <ul> <li> <p>For Tabular
+     * allowed content types for different problems:</p> <ul> <li> <p>For tabular
      * problem types: <code>text/csv;header=present</code> or
      * <code>x-application/vnd.amazon+parquet</code>. The default value is
-     * <code>text/csv;header=present</code>.</p> </li> <li> <p>For ImageClassification:
-     * <code>image/png</code>, <code>image/jpeg</code>, or <code>image/ *</code>. The
-     * default value is <code>image/ *</code>.</p> </li> <li> <p>For TextClassification:
-     * <code>text/csv;header=present</code> or
+     * <code>text/csv;header=present</code>.</p> </li> <li> <p>For image
+     * classification: <code>image/png</code>, <code>image/jpeg</code>, or
+     * <code>image/ *</code>. The default value is <code>image/ *</code>.</p> </li> <li>
+     * <p>For text classification: <code>text/csv;header=present</code> or
+     * <code>x-application/vnd.amazon+parquet</code>. The default value is
+     * <code>text/csv;header=present</code>.</p> </li> <li> <p>For time-series
+     * forecasting: <code>text/csv;header=present</code> or
      * <code>x-application/vnd.amazon+parquet</code>. The default value is
      * <code>text/csv;header=present</code>.</p> </li> </ul>
      */
@@ -108,13 +117,16 @@ namespace Model
 
     /**
      * <p>The content type of the data from the input source. The following are the
-     * allowed content types for different problems:</p> <ul> <li> <p>For Tabular
+     * allowed content types for different problems:</p> <ul> <li> <p>For tabular
      * problem types: <code>text/csv;header=present</code> or
      * <code>x-application/vnd.amazon+parquet</code>. The default value is
-     * <code>text/csv;header=present</code>.</p> </li> <li> <p>For ImageClassification:
-     * <code>image/png</code>, <code>image/jpeg</code>, or <code>image/ *</code>. The
-     * default value is <code>image/ *</code>.</p> </li> <li> <p>For TextClassification:
-     * <code>text/csv;header=present</code> or
+     * <code>text/csv;header=present</code>.</p> </li> <li> <p>For image
+     * classification: <code>image/png</code>, <code>image/jpeg</code>, or
+     * <code>image/ *</code>. The default value is <code>image/ *</code>.</p> </li> <li>
+     * <p>For text classification: <code>text/csv;header=present</code> or
+     * <code>x-application/vnd.amazon+parquet</code>. The default value is
+     * <code>text/csv;header=present</code>.</p> </li> <li> <p>For time-series
+     * forecasting: <code>text/csv;header=present</code> or
      * <code>x-application/vnd.amazon+parquet</code>. The default value is
      * <code>text/csv;header=present</code>.</p> </li> </ul>
      */
@@ -122,13 +134,16 @@ namespace Model
 
     /**
      * <p>The content type of the data from the input source. The following are the
-     * allowed content types for different problems:</p> <ul> <li> <p>For Tabular
+     * allowed content types for different problems:</p> <ul> <li> <p>For tabular
      * problem types: <code>text/csv;header=present</code> or
      * <code>x-application/vnd.amazon+parquet</code>. The default value is
-     * <code>text/csv;header=present</code>.</p> </li> <li> <p>For ImageClassification:
-     * <code>image/png</code>, <code>image/jpeg</code>, or <code>image/ *</code>. The
-     * default value is <code>image/ *</code>.</p> </li> <li> <p>For TextClassification:
-     * <code>text/csv;header=present</code> or
+     * <code>text/csv;header=present</code>.</p> </li> <li> <p>For image
+     * classification: <code>image/png</code>, <code>image/jpeg</code>, or
+     * <code>image/ *</code>. The default value is <code>image/ *</code>.</p> </li> <li>
+     * <p>For text classification: <code>text/csv;header=present</code> or
+     * <code>x-application/vnd.amazon+parquet</code>. The default value is
+     * <code>text/csv;header=present</code>.</p> </li> <li> <p>For time-series
+     * forecasting: <code>text/csv;header=present</code> or
      * <code>x-application/vnd.amazon+parquet</code>. The default value is
      * <code>text/csv;header=present</code>.</p> </li> </ul>
      */
@@ -136,13 +151,16 @@ namespace Model
 
     /**
      * <p>The content type of the data from the input source. The following are the
-     * allowed content types for different problems:</p> <ul> <li> <p>For Tabular
+     * allowed content types for different problems:</p> <ul> <li> <p>For tabular
      * problem types: <code>text/csv;header=present</code> or
      * <code>x-application/vnd.amazon+parquet</code>. The default value is
-     * <code>text/csv;header=present</code>.</p> </li> <li> <p>For ImageClassification:
-     * <code>image/png</code>, <code>image/jpeg</code>, or <code>image/ *</code>. The
-     * default value is <code>image/ *</code>.</p> </li> <li> <p>For TextClassification:
-     * <code>text/csv;header=present</code> or
+     * <code>text/csv;header=present</code>.</p> </li> <li> <p>For image
+     * classification: <code>image/png</code>, <code>image/jpeg</code>, or
+     * <code>image/ *</code>. The default value is <code>image/ *</code>.</p> </li> <li>
+     * <p>For text classification: <code>text/csv;header=present</code> or
+     * <code>x-application/vnd.amazon+parquet</code>. The default value is
+     * <code>text/csv;header=present</code>.</p> </li> <li> <p>For time-series
+     * forecasting: <code>text/csv;header=present</code> or
      * <code>x-application/vnd.amazon+parquet</code>. The default value is
      * <code>text/csv;header=present</code>.</p> </li> </ul>
      */
@@ -150,13 +168,16 @@ namespace Model
 
     /**
      * <p>The content type of the data from the input source. The following are the
-     * allowed content types for different problems:</p> <ul> <li> <p>For Tabular
+     * allowed content types for different problems:</p> <ul> <li> <p>For tabular
      * problem types: <code>text/csv;header=present</code> or
      * <code>x-application/vnd.amazon+parquet</code>. The default value is
-     * <code>text/csv;header=present</code>.</p> </li> <li> <p>For ImageClassification:
-     * <code>image/png</code>, <code>image/jpeg</code>, or <code>image/ *</code>. The
-     * default value is <code>image/ *</code>.</p> </li> <li> <p>For TextClassification:
-     * <code>text/csv;header=present</code> or
+     * <code>text/csv;header=present</code>.</p> </li> <li> <p>For image
+     * classification: <code>image/png</code>, <code>image/jpeg</code>, or
+     * <code>image/ *</code>. The default value is <code>image/ *</code>.</p> </li> <li>
+     * <p>For text classification: <code>text/csv;header=present</code> or
+     * <code>x-application/vnd.amazon+parquet</code>. The default value is
+     * <code>text/csv;header=present</code>.</p> </li> <li> <p>For time-series
+     * forecasting: <code>text/csv;header=present</code> or
      * <code>x-application/vnd.amazon+parquet</code>. The default value is
      * <code>text/csv;header=present</code>.</p> </li> </ul>
      */
@@ -164,13 +185,16 @@ namespace Model
 
     /**
      * <p>The content type of the data from the input source. The following are the
-     * allowed content types for different problems:</p> <ul> <li> <p>For Tabular
+     * allowed content types for different problems:</p> <ul> <li> <p>For tabular
      * problem types: <code>text/csv;header=present</code> or
      * <code>x-application/vnd.amazon+parquet</code>. The default value is
-     * <code>text/csv;header=present</code>.</p> </li> <li> <p>For ImageClassification:
-     * <code>image/png</code>, <code>image/jpeg</code>, or <code>image/ *</code>. The
-     * default value is <code>image/ *</code>.</p> </li> <li> <p>For TextClassification:
-     * <code>text/csv;header=present</code> or
+     * <code>text/csv;header=present</code>.</p> </li> <li> <p>For image
+     * classification: <code>image/png</code>, <code>image/jpeg</code>, or
+     * <code>image/ *</code>. The default value is <code>image/ *</code>.</p> </li> <li>
+     * <p>For text classification: <code>text/csv;header=present</code> or
+     * <code>x-application/vnd.amazon+parquet</code>. The default value is
+     * <code>text/csv;header=present</code>.</p> </li> <li> <p>For time-series
+     * forecasting: <code>text/csv;header=present</code> or
      * <code>x-application/vnd.amazon+parquet</code>. The default value is
      * <code>text/csv;header=present</code>.</p> </li> </ul>
      */
@@ -178,13 +202,16 @@ namespace Model
 
     /**
      * <p>The content type of the data from the input source. The following are the
-     * allowed content types for different problems:</p> <ul> <li> <p>For Tabular
+     * allowed content types for different problems:</p> <ul> <li> <p>For tabular
      * problem types: <code>text/csv;header=present</code> or
      * <code>x-application/vnd.amazon+parquet</code>. The default value is
-     * <code>text/csv;header=present</code>.</p> </li> <li> <p>For ImageClassification:
-     * <code>image/png</code>, <code>image/jpeg</code>, or <code>image/ *</code>. The
-     * default value is <code>image/ *</code>.</p> </li> <li> <p>For TextClassification:
-     * <code>text/csv;header=present</code> or
+     * <code>text/csv;header=present</code>.</p> </li> <li> <p>For image
+     * classification: <code>image/png</code>, <code>image/jpeg</code>, or
+     * <code>image/ *</code>. The default value is <code>image/ *</code>.</p> </li> <li>
+     * <p>For text classification: <code>text/csv;header=present</code> or
+     * <code>x-application/vnd.amazon+parquet</code>. The default value is
+     * <code>text/csv;header=present</code>.</p> </li> <li> <p>For time-series
+     * forecasting: <code>text/csv;header=present</code> or
      * <code>x-application/vnd.amazon+parquet</code>. The default value is
      * <code>text/csv;header=present</code>.</p> </li> </ul>
      */
@@ -192,13 +219,16 @@ namespace Model
 
     /**
      * <p>The content type of the data from the input source. The following are the
-     * allowed content types for different problems:</p> <ul> <li> <p>For Tabular
+     * allowed content types for different problems:</p> <ul> <li> <p>For tabular
      * problem types: <code>text/csv;header=present</code> or
      * <code>x-application/vnd.amazon+parquet</code>. The default value is
-     * <code>text/csv;header=present</code>.</p> </li> <li> <p>For ImageClassification:
-     * <code>image/png</code>, <code>image/jpeg</code>, or <code>image/ *</code>. The
-     * default value is <code>image/ *</code>.</p> </li> <li> <p>For TextClassification:
-     * <code>text/csv;header=present</code> or
+     * <code>text/csv;header=present</code>.</p> </li> <li> <p>For image
+     * classification: <code>image/png</code>, <code>image/jpeg</code>, or
+     * <code>image/ *</code>. The default value is <code>image/ *</code>.</p> </li> <li>
+     * <p>For text classification: <code>text/csv;header=present</code> or
+     * <code>x-application/vnd.amazon+parquet</code>. The default value is
+     * <code>text/csv;header=present</code>.</p> </li> <li> <p>For time-series
+     * forecasting: <code>text/csv;header=present</code> or
      * <code>x-application/vnd.amazon+parquet</code>. The default value is
      * <code>text/csv;header=present</code>.</p> </li> </ul>
      */

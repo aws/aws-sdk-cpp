@@ -35,6 +35,10 @@ namespace Aws
         static const int RecallMacro_HASH = HashingUtils::HashString("RecallMacro");
         static const int LogLoss_HASH = HashingUtils::HashString("LogLoss");
         static const int InferenceLatency_HASH = HashingUtils::HashString("InferenceLatency");
+        static const int MAPE_HASH = HashingUtils::HashString("MAPE");
+        static const int MASE_HASH = HashingUtils::HashString("MASE");
+        static const int WAPE_HASH = HashingUtils::HashString("WAPE");
+        static const int AverageWeightedQuantileLoss_HASH = HashingUtils::HashString("AverageWeightedQuantileLoss");
 
 
         AutoMLMetricExtendedEnum GetAutoMLMetricExtendedEnumForName(const Aws::String& name)
@@ -100,6 +104,22 @@ namespace Aws
           {
             return AutoMLMetricExtendedEnum::InferenceLatency;
           }
+          else if (hashCode == MAPE_HASH)
+          {
+            return AutoMLMetricExtendedEnum::MAPE;
+          }
+          else if (hashCode == MASE_HASH)
+          {
+            return AutoMLMetricExtendedEnum::MASE;
+          }
+          else if (hashCode == WAPE_HASH)
+          {
+            return AutoMLMetricExtendedEnum::WAPE;
+          }
+          else if (hashCode == AverageWeightedQuantileLoss_HASH)
+          {
+            return AutoMLMetricExtendedEnum::AverageWeightedQuantileLoss;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -144,6 +164,14 @@ namespace Aws
             return "LogLoss";
           case AutoMLMetricExtendedEnum::InferenceLatency:
             return "InferenceLatency";
+          case AutoMLMetricExtendedEnum::MAPE:
+            return "MAPE";
+          case AutoMLMetricExtendedEnum::MASE:
+            return "MASE";
+          case AutoMLMetricExtendedEnum::WAPE:
+            return "WAPE";
+          case AutoMLMetricExtendedEnum::AverageWeightedQuantileLoss:
+            return "AverageWeightedQuantileLoss";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

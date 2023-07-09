@@ -13,6 +13,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 TerminateTargetInstancesRequest::TerminateTargetInstancesRequest() : 
+    m_accountIDHasBeenSet(false),
     m_sourceServerIDsHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
@@ -21,6 +22,12 @@ TerminateTargetInstancesRequest::TerminateTargetInstancesRequest() :
 Aws::String TerminateTargetInstancesRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_accountIDHasBeenSet)
+  {
+   payload.WithString("accountID", m_accountID);
+
+  }
 
   if(m_sourceServerIDsHasBeenSet)
   {

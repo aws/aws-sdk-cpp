@@ -421,7 +421,7 @@ namespace Model
 
     /**
      * <p>Specifies the severity that's assigned to findings that the custom data
-     * identifier produces, based on the number of occurrences of text that matches the
+     * identifier produces, based on the number of occurrences of text that match the
      * custom data identifier's detection criteria. By default, Amazon Macie creates
      * findings for S3 objects that contain at least one occurrence of text that
      * matches the detection criteria, and Macie assigns the MEDIUM severity to those
@@ -431,7 +431,7 @@ namespace Model
 
     /**
      * <p>Specifies the severity that's assigned to findings that the custom data
-     * identifier produces, based on the number of occurrences of text that matches the
+     * identifier produces, based on the number of occurrences of text that match the
      * custom data identifier's detection criteria. By default, Amazon Macie creates
      * findings for S3 objects that contain at least one occurrence of text that
      * matches the detection criteria, and Macie assigns the MEDIUM severity to those
@@ -441,7 +441,7 @@ namespace Model
 
     /**
      * <p>Specifies the severity that's assigned to findings that the custom data
-     * identifier produces, based on the number of occurrences of text that matches the
+     * identifier produces, based on the number of occurrences of text that match the
      * custom data identifier's detection criteria. By default, Amazon Macie creates
      * findings for S3 objects that contain at least one occurrence of text that
      * matches the detection criteria, and Macie assigns the MEDIUM severity to those
@@ -451,7 +451,7 @@ namespace Model
 
     /**
      * <p>Specifies the severity that's assigned to findings that the custom data
-     * identifier produces, based on the number of occurrences of text that matches the
+     * identifier produces, based on the number of occurrences of text that match the
      * custom data identifier's detection criteria. By default, Amazon Macie creates
      * findings for S3 objects that contain at least one occurrence of text that
      * matches the detection criteria, and Macie assigns the MEDIUM severity to those
@@ -461,7 +461,7 @@ namespace Model
 
     /**
      * <p>Specifies the severity that's assigned to findings that the custom data
-     * identifier produces, based on the number of occurrences of text that matches the
+     * identifier produces, based on the number of occurrences of text that match the
      * custom data identifier's detection criteria. By default, Amazon Macie creates
      * findings for S3 objects that contain at least one occurrence of text that
      * matches the detection criteria, and Macie assigns the MEDIUM severity to those
@@ -471,7 +471,7 @@ namespace Model
 
     /**
      * <p>Specifies the severity that's assigned to findings that the custom data
-     * identifier produces, based on the number of occurrences of text that matches the
+     * identifier produces, based on the number of occurrences of text that match the
      * custom data identifier's detection criteria. By default, Amazon Macie creates
      * findings for S3 objects that contain at least one occurrence of text that
      * matches the detection criteria, and Macie assigns the MEDIUM severity to those
@@ -481,7 +481,7 @@ namespace Model
 
     /**
      * <p>Specifies the severity that's assigned to findings that the custom data
-     * identifier produces, based on the number of occurrences of text that matches the
+     * identifier produces, based on the number of occurrences of text that match the
      * custom data identifier's detection criteria. By default, Amazon Macie creates
      * findings for S3 objects that contain at least one occurrence of text that
      * matches the detection criteria, and Macie assigns the MEDIUM severity to those

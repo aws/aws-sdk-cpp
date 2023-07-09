@@ -21,9 +21,12 @@
         #else
             #define AWS_PROMETHEUSSERVICE_API __declspec(dllimport)
         #endif /* AWS_PROMETHEUSSERVICE_EXPORTS */
+        #define AWS_PROMETHEUSSERVICE_EXTERN
     #else
         #define AWS_PROMETHEUSSERVICE_API
+        #define AWS_PROMETHEUSSERVICE_EXTERN extern
     #endif // USE_IMPORT_EXPORT
 #else // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
     #define AWS_PROMETHEUSSERVICE_API
+    #define AWS_PROMETHEUSSERVICE_EXTERN extern
 #endif // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)

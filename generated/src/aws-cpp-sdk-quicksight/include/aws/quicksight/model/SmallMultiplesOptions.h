@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/quicksight/model/PanelConfiguration.h>
+#include <aws/quicksight/model/SmallMultiplesAxisProperties.h>
 #include <utility>
 
 namespace Aws
@@ -134,6 +135,68 @@ namespace Model
      */
     inline SmallMultiplesOptions& WithPanelConfiguration(PanelConfiguration&& value) { SetPanelConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The properties of a small multiples X axis.</p>
+     */
+    inline const SmallMultiplesAxisProperties& GetXAxis() const{ return m_xAxis; }
+
+    /**
+     * <p>The properties of a small multiples X axis.</p>
+     */
+    inline bool XAxisHasBeenSet() const { return m_xAxisHasBeenSet; }
+
+    /**
+     * <p>The properties of a small multiples X axis.</p>
+     */
+    inline void SetXAxis(const SmallMultiplesAxisProperties& value) { m_xAxisHasBeenSet = true; m_xAxis = value; }
+
+    /**
+     * <p>The properties of a small multiples X axis.</p>
+     */
+    inline void SetXAxis(SmallMultiplesAxisProperties&& value) { m_xAxisHasBeenSet = true; m_xAxis = std::move(value); }
+
+    /**
+     * <p>The properties of a small multiples X axis.</p>
+     */
+    inline SmallMultiplesOptions& WithXAxis(const SmallMultiplesAxisProperties& value) { SetXAxis(value); return *this;}
+
+    /**
+     * <p>The properties of a small multiples X axis.</p>
+     */
+    inline SmallMultiplesOptions& WithXAxis(SmallMultiplesAxisProperties&& value) { SetXAxis(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The properties of a small multiples Y axis.</p>
+     */
+    inline const SmallMultiplesAxisProperties& GetYAxis() const{ return m_yAxis; }
+
+    /**
+     * <p>The properties of a small multiples Y axis.</p>
+     */
+    inline bool YAxisHasBeenSet() const { return m_yAxisHasBeenSet; }
+
+    /**
+     * <p>The properties of a small multiples Y axis.</p>
+     */
+    inline void SetYAxis(const SmallMultiplesAxisProperties& value) { m_yAxisHasBeenSet = true; m_yAxis = value; }
+
+    /**
+     * <p>The properties of a small multiples Y axis.</p>
+     */
+    inline void SetYAxis(SmallMultiplesAxisProperties&& value) { m_yAxisHasBeenSet = true; m_yAxis = std::move(value); }
+
+    /**
+     * <p>The properties of a small multiples Y axis.</p>
+     */
+    inline SmallMultiplesOptions& WithYAxis(const SmallMultiplesAxisProperties& value) { SetYAxis(value); return *this;}
+
+    /**
+     * <p>The properties of a small multiples Y axis.</p>
+     */
+    inline SmallMultiplesOptions& WithYAxis(SmallMultiplesAxisProperties&& value) { SetYAxis(std::move(value)); return *this;}
+
   private:
 
     long long m_maxVisibleRows;
@@ -144,6 +207,12 @@ namespace Model
 
     PanelConfiguration m_panelConfiguration;
     bool m_panelConfigurationHasBeenSet = false;
+
+    SmallMultiplesAxisProperties m_xAxis;
+    bool m_xAxisHasBeenSet = false;
+
+    SmallMultiplesAxisProperties m_yAxis;
+    bool m_yAxisHasBeenSet = false;
   };
 
 } // namespace Model

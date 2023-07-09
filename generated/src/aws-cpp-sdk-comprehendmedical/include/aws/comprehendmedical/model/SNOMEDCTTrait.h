@@ -69,26 +69,26 @@ namespace Model
 
 
     /**
-     * <p> The level of confidence that Comprehend Medical has in the accuracy of a
-     * detected trait. </p>
+     * <p> The level of confidence that Amazon Comprehend Medical has in the accuracy
+     * of a detected trait. </p>
      */
     inline double GetScore() const{ return m_score; }
 
     /**
-     * <p> The level of confidence that Comprehend Medical has in the accuracy of a
-     * detected trait. </p>
+     * <p> The level of confidence that Amazon Comprehend Medical has in the accuracy
+     * of a detected trait. </p>
      */
     inline bool ScoreHasBeenSet() const { return m_scoreHasBeenSet; }
 
     /**
-     * <p> The level of confidence that Comprehend Medical has in the accuracy of a
-     * detected trait. </p>
+     * <p> The level of confidence that Amazon Comprehend Medical has in the accuracy
+     * of a detected trait. </p>
      */
     inline void SetScore(double value) { m_scoreHasBeenSet = true; m_score = value; }
 
     /**
-     * <p> The level of confidence that Comprehend Medical has in the accuracy of a
-     * detected trait. </p>
+     * <p> The level of confidence that Amazon Comprehend Medical has in the accuracy
+     * of a detected trait. </p>
      */
     inline SNOMEDCTTrait& WithScore(double value) { SetScore(value); return *this;}
 

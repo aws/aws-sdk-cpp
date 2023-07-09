@@ -191,42 +191,50 @@ namespace Model
 
 
     /**
-     * <p>The full key (name) that's assigned to the object.</p>
+     * <p>The full name (<i>key</i>) of the object, including the object's prefix if
+     * applicable.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
 
     /**
-     * <p>The full key (name) that's assigned to the object.</p>
+     * <p>The full name (<i>key</i>) of the object, including the object's prefix if
+     * applicable.</p>
      */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
-     * <p>The full key (name) that's assigned to the object.</p>
+     * <p>The full name (<i>key</i>) of the object, including the object's prefix if
+     * applicable.</p>
      */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
-     * <p>The full key (name) that's assigned to the object.</p>
+     * <p>The full name (<i>key</i>) of the object, including the object's prefix if
+     * applicable.</p>
      */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
-     * <p>The full key (name) that's assigned to the object.</p>
+     * <p>The full name (<i>key</i>) of the object, including the object's prefix if
+     * applicable.</p>
      */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     /**
-     * <p>The full key (name) that's assigned to the object.</p>
+     * <p>The full name (<i>key</i>) of the object, including the object's prefix if
+     * applicable.</p>
      */
     inline S3Object& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
     /**
-     * <p>The full key (name) that's assigned to the object.</p>
+     * <p>The full name (<i>key</i>) of the object, including the object's prefix if
+     * applicable.</p>
      */
     inline S3Object& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
-     * <p>The full key (name) that's assigned to the object.</p>
+     * <p>The full name (<i>key</i>) of the object, including the object's prefix if
+     * applicable.</p>
      */
     inline S3Object& WithKey(const char* value) { SetKey(value); return *this;}
 
@@ -269,42 +277,50 @@ namespace Model
 
 
     /**
-     * <p>The path to the object, including the full key (name).</p>
+     * <p>The full path to the affected object, including the name of the affected
+     * bucket and the object's name (key).</p>
      */
     inline const Aws::String& GetPath() const{ return m_path; }
 
     /**
-     * <p>The path to the object, including the full key (name).</p>
+     * <p>The full path to the affected object, including the name of the affected
+     * bucket and the object's name (key).</p>
      */
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
 
     /**
-     * <p>The path to the object, including the full key (name).</p>
+     * <p>The full path to the affected object, including the name of the affected
+     * bucket and the object's name (key).</p>
      */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
 
     /**
-     * <p>The path to the object, including the full key (name).</p>
+     * <p>The full path to the affected object, including the name of the affected
+     * bucket and the object's name (key).</p>
      */
     inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
 
     /**
-     * <p>The path to the object, including the full key (name).</p>
+     * <p>The full path to the affected object, including the name of the affected
+     * bucket and the object's name (key).</p>
      */
     inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
 
     /**
-     * <p>The path to the object, including the full key (name).</p>
+     * <p>The full path to the affected object, including the name of the affected
+     * bucket and the object's name (key).</p>
      */
     inline S3Object& WithPath(const Aws::String& value) { SetPath(value); return *this;}
 
     /**
-     * <p>The path to the object, including the full key (name).</p>
+     * <p>The full path to the affected object, including the name of the affected
+     * bucket and the object's name (key).</p>
      */
     inline S3Object& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
 
     /**
-     * <p>The path to the object, including the full key (name).</p>
+     * <p>The full path to the affected object, including the name of the affected
+     * bucket and the object's name (key).</p>
      */
     inline S3Object& WithPath(const char* value) { SetPath(value); return *this;}
 

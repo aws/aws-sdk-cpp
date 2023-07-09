@@ -38,6 +38,47 @@ namespace Model
 
 
     /**
+     * <p>Source server post migration custom account ID.</p>
+     */
+    inline const Aws::String& GetAccountID() const{ return m_accountID; }
+
+    /**
+     * <p>Source server post migration custom account ID.</p>
+     */
+    inline bool AccountIDHasBeenSet() const { return m_accountIDHasBeenSet; }
+
+    /**
+     * <p>Source server post migration custom account ID.</p>
+     */
+    inline void SetAccountID(const Aws::String& value) { m_accountIDHasBeenSet = true; m_accountID = value; }
+
+    /**
+     * <p>Source server post migration custom account ID.</p>
+     */
+    inline void SetAccountID(Aws::String&& value) { m_accountIDHasBeenSet = true; m_accountID = std::move(value); }
+
+    /**
+     * <p>Source server post migration custom account ID.</p>
+     */
+    inline void SetAccountID(const char* value) { m_accountIDHasBeenSet = true; m_accountID.assign(value); }
+
+    /**
+     * <p>Source server post migration custom account ID.</p>
+     */
+    inline PutSourceServerActionRequest& WithAccountID(const Aws::String& value) { SetAccountID(value); return *this;}
+
+    /**
+     * <p>Source server post migration custom account ID.</p>
+     */
+    inline PutSourceServerActionRequest& WithAccountID(Aws::String&& value) { SetAccountID(std::move(value)); return *this;}
+
+    /**
+     * <p>Source server post migration custom account ID.</p>
+     */
+    inline PutSourceServerActionRequest& WithAccountID(const char* value) { SetAccountID(value); return *this;}
+
+
+    /**
      * <p>Source server post migration custom action ID.</p>
      */
     inline const Aws::String& GetActionID() const{ return m_actionID; }
@@ -520,6 +561,9 @@ namespace Model
     inline PutSourceServerActionRequest& WithTimeoutSeconds(int value) { SetTimeoutSeconds(value); return *this;}
 
   private:
+
+    Aws::String m_accountID;
+    bool m_accountIDHasBeenSet = false;
 
     Aws::String m_actionID;
     bool m_actionIDHasBeenSet = false;

@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/amp/PrometheusService_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
-#include <aws/core/utils/Array.h>
 #include <aws/amp/model/AlertManagerDefinitionStatus.h>
+#include <aws/core/utils/Array.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -41,34 +41,34 @@ namespace Model
 
 
     /**
-     * <p>The time when the alert manager definition was created.</p>
+     * <p>The status of alert manager definition.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const AlertManagerDefinitionStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The time when the alert manager definition was created.</p>
+     * <p>The status of alert manager definition.</p>
      */
-    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The time when the alert manager definition was created.</p>
+     * <p>The status of alert manager definition.</p>
      */
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
+    inline void SetStatus(const AlertManagerDefinitionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The time when the alert manager definition was created.</p>
+     * <p>The status of alert manager definition.</p>
      */
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
+    inline void SetStatus(AlertManagerDefinitionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The time when the alert manager definition was created.</p>
+     * <p>The status of alert manager definition.</p>
      */
-    inline AlertManagerDefinitionDescription& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
+    inline AlertManagerDefinitionDescription& WithStatus(const AlertManagerDefinitionStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The time when the alert manager definition was created.</p>
+     * <p>The status of alert manager definition.</p>
      */
-    inline AlertManagerDefinitionDescription& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    inline AlertManagerDefinitionDescription& WithStatus(AlertManagerDefinitionStatus&& value) { SetStatus(std::move(value)); return *this;}
 
 
     /**
@@ -103,6 +103,37 @@ namespace Model
 
 
     /**
+     * <p>The time when the alert manager definition was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+
+    /**
+     * <p>The time when the alert manager definition was created.</p>
+     */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+
+    /**
+     * <p>The time when the alert manager definition was created.</p>
+     */
+    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
+
+    /**
+     * <p>The time when the alert manager definition was created.</p>
+     */
+    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
+
+    /**
+     * <p>The time when the alert manager definition was created.</p>
+     */
+    inline AlertManagerDefinitionDescription& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
+
+    /**
+     * <p>The time when the alert manager definition was created.</p>
+     */
+    inline AlertManagerDefinitionDescription& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+
+
+    /**
      * <p>The time when the alert manager definition was modified.</p>
      */
     inline const Aws::Utils::DateTime& GetModifiedAt() const{ return m_modifiedAt; }
@@ -132,50 +163,19 @@ namespace Model
      */
     inline AlertManagerDefinitionDescription& WithModifiedAt(Aws::Utils::DateTime&& value) { SetModifiedAt(std::move(value)); return *this;}
 
-
-    /**
-     * <p>The status of alert manager definition.</p>
-     */
-    inline const AlertManagerDefinitionStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of alert manager definition.</p>
-     */
-    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The status of alert manager definition.</p>
-     */
-    inline void SetStatus(const AlertManagerDefinitionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The status of alert manager definition.</p>
-     */
-    inline void SetStatus(AlertManagerDefinitionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The status of alert manager definition.</p>
-     */
-    inline AlertManagerDefinitionDescription& WithStatus(const AlertManagerDefinitionStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of alert manager definition.</p>
-     */
-    inline AlertManagerDefinitionDescription& WithStatus(AlertManagerDefinitionStatus&& value) { SetStatus(std::move(value)); return *this;}
-
   private:
 
-    Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet = false;
+    AlertManagerDefinitionStatus m_status;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::ByteBuffer m_data;
     bool m_dataHasBeenSet = false;
 
+    Aws::Utils::DateTime m_createdAt;
+    bool m_createdAtHasBeenSet = false;
+
     Aws::Utils::DateTime m_modifiedAt;
     bool m_modifiedAtHasBeenSet = false;
-
-    AlertManagerDefinitionStatus m_status;
-    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

@@ -80,12 +80,12 @@ using S3DefaultEpProviderBase =
 namespace Endpoint
 {
 /**
- * Export endpoint provider symbols from DLL
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
  */
-template class AWS_S3_API
+AWS_S3_EXTERN template class AWS_S3_API
     Aws::Endpoint::EndpointProviderBase<S3::Endpoint::S3ClientConfiguration, S3::Endpoint::S3BuiltInParameters, S3::Endpoint::S3ClientContextParameters>;
 
-template class AWS_S3_API
+AWS_S3_EXTERN template class AWS_S3_API
     Aws::Endpoint::DefaultEndpointProvider<S3::Endpoint::S3ClientConfiguration, S3::Endpoint::S3BuiltInParameters, S3::Endpoint::S3ClientContextParameters>;
 } // namespace Endpoint
 

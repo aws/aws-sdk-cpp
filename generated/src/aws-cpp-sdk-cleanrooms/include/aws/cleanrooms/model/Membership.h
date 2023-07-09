@@ -208,49 +208,49 @@ namespace Model
 
     /**
      * <p>The identifier used to reference members of the collaboration. Currently only
-     * supports AWS account ID.</p>
+     * supports Amazon Web Services account ID.</p>
      */
     inline const Aws::String& GetCollaborationCreatorAccountId() const{ return m_collaborationCreatorAccountId; }
 
     /**
      * <p>The identifier used to reference members of the collaboration. Currently only
-     * supports AWS account ID.</p>
+     * supports Amazon Web Services account ID.</p>
      */
     inline bool CollaborationCreatorAccountIdHasBeenSet() const { return m_collaborationCreatorAccountIdHasBeenSet; }
 
     /**
      * <p>The identifier used to reference members of the collaboration. Currently only
-     * supports AWS account ID.</p>
+     * supports Amazon Web Services account ID.</p>
      */
     inline void SetCollaborationCreatorAccountId(const Aws::String& value) { m_collaborationCreatorAccountIdHasBeenSet = true; m_collaborationCreatorAccountId = value; }
 
     /**
      * <p>The identifier used to reference members of the collaboration. Currently only
-     * supports AWS account ID.</p>
+     * supports Amazon Web Services account ID.</p>
      */
     inline void SetCollaborationCreatorAccountId(Aws::String&& value) { m_collaborationCreatorAccountIdHasBeenSet = true; m_collaborationCreatorAccountId = std::move(value); }
 
     /**
      * <p>The identifier used to reference members of the collaboration. Currently only
-     * supports AWS account ID.</p>
+     * supports Amazon Web Services account ID.</p>
      */
     inline void SetCollaborationCreatorAccountId(const char* value) { m_collaborationCreatorAccountIdHasBeenSet = true; m_collaborationCreatorAccountId.assign(value); }
 
     /**
      * <p>The identifier used to reference members of the collaboration. Currently only
-     * supports AWS account ID.</p>
+     * supports Amazon Web Services account ID.</p>
      */
     inline Membership& WithCollaborationCreatorAccountId(const Aws::String& value) { SetCollaborationCreatorAccountId(value); return *this;}
 
     /**
      * <p>The identifier used to reference members of the collaboration. Currently only
-     * supports AWS account ID.</p>
+     * supports Amazon Web Services account ID.</p>
      */
     inline Membership& WithCollaborationCreatorAccountId(Aws::String&& value) { SetCollaborationCreatorAccountId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier used to reference members of the collaboration. Currently only
-     * supports AWS account ID.</p>
+     * supports Amazon Web Services account ID.</p>
      */
     inline Membership& WithCollaborationCreatorAccountId(const char* value) { SetCollaborationCreatorAccountId(value); return *this;}
 

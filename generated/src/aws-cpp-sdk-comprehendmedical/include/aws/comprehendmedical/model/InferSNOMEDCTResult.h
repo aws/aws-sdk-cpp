@@ -40,7 +40,7 @@ namespace Model
      * <p> The collection of medical concept entities extracted from the input text and
      * their associated information. For each entity, the response provides the entity
      * text, the entity category, where the entity text begins and ends, and the level
-     * of confidence that Comprehend Medical has in the detection and analysis.
+     * of confidence that Amazon Comprehend Medical has in the detection and analysis.
      * Attributes and traits of the entity are also returned. </p>
      */
     inline const Aws::Vector<SNOMEDCTEntity>& GetEntities() const{ return m_entities; }
@@ -49,7 +49,7 @@ namespace Model
      * <p> The collection of medical concept entities extracted from the input text and
      * their associated information. For each entity, the response provides the entity
      * text, the entity category, where the entity text begins and ends, and the level
-     * of confidence that Comprehend Medical has in the detection and analysis.
+     * of confidence that Amazon Comprehend Medical has in the detection and analysis.
      * Attributes and traits of the entity are also returned. </p>
      */
     inline void SetEntities(const Aws::Vector<SNOMEDCTEntity>& value) { m_entities = value; }
@@ -58,7 +58,7 @@ namespace Model
      * <p> The collection of medical concept entities extracted from the input text and
      * their associated information. For each entity, the response provides the entity
      * text, the entity category, where the entity text begins and ends, and the level
-     * of confidence that Comprehend Medical has in the detection and analysis.
+     * of confidence that Amazon Comprehend Medical has in the detection and analysis.
      * Attributes and traits of the entity are also returned. </p>
      */
     inline void SetEntities(Aws::Vector<SNOMEDCTEntity>&& value) { m_entities = std::move(value); }
@@ -67,7 +67,7 @@ namespace Model
      * <p> The collection of medical concept entities extracted from the input text and
      * their associated information. For each entity, the response provides the entity
      * text, the entity category, where the entity text begins and ends, and the level
-     * of confidence that Comprehend Medical has in the detection and analysis.
+     * of confidence that Amazon Comprehend Medical has in the detection and analysis.
      * Attributes and traits of the entity are also returned. </p>
      */
     inline InferSNOMEDCTResult& WithEntities(const Aws::Vector<SNOMEDCTEntity>& value) { SetEntities(value); return *this;}
@@ -76,7 +76,7 @@ namespace Model
      * <p> The collection of medical concept entities extracted from the input text and
      * their associated information. For each entity, the response provides the entity
      * text, the entity category, where the entity text begins and ends, and the level
-     * of confidence that Comprehend Medical has in the detection and analysis.
+     * of confidence that Amazon Comprehend Medical has in the detection and analysis.
      * Attributes and traits of the entity are also returned. </p>
      */
     inline InferSNOMEDCTResult& WithEntities(Aws::Vector<SNOMEDCTEntity>&& value) { SetEntities(std::move(value)); return *this;}
@@ -85,7 +85,7 @@ namespace Model
      * <p> The collection of medical concept entities extracted from the input text and
      * their associated information. For each entity, the response provides the entity
      * text, the entity category, where the entity text begins and ends, and the level
-     * of confidence that Comprehend Medical has in the detection and analysis.
+     * of confidence that Amazon Comprehend Medical has in the detection and analysis.
      * Attributes and traits of the entity are also returned. </p>
      */
     inline InferSNOMEDCTResult& AddEntities(const SNOMEDCTEntity& value) { m_entities.push_back(value); return *this; }
@@ -94,7 +94,7 @@ namespace Model
      * <p> The collection of medical concept entities extracted from the input text and
      * their associated information. For each entity, the response provides the entity
      * text, the entity category, where the entity text begins and ends, and the level
-     * of confidence that Comprehend Medical has in the detection and analysis.
+     * of confidence that Amazon Comprehend Medical has in the detection and analysis.
      * Attributes and traits of the entity are also returned. </p>
      */
     inline InferSNOMEDCTResult& AddEntities(SNOMEDCTEntity&& value) { m_entities.push_back(std::move(value)); return *this; }

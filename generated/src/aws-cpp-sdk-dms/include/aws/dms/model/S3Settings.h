@@ -947,9 +947,11 @@ namespace Model
 
     /**
      * <p>A value that enables a full load to write INSERT operations to the
-     * comma-separated value (.csv) output files only to indicate how the rows were
-     * added to the source database.</p>  <p>DMS supports the
+     * comma-separated value (.csv) or .parquet output files only to indicate how the
+     * rows were added to the source database.</p>  <p>DMS supports the
      * <code>IncludeOpForFullLoad</code> parameter in versions 3.1.4 and later.</p>
+     * <p>DMS supports the use of the .parquet files with the
+     * <code>IncludeOpForFullLoad</code> parameter in versions 3.4.7 and later.</p>
      *  <p>For full load, records can only be inserted. By default (the
      * <code>false</code> setting), no information is recorded in these output files
      * for a full load to indicate that the rows were inserted at the source database.
@@ -968,9 +970,11 @@ namespace Model
 
     /**
      * <p>A value that enables a full load to write INSERT operations to the
-     * comma-separated value (.csv) output files only to indicate how the rows were
-     * added to the source database.</p>  <p>DMS supports the
+     * comma-separated value (.csv) or .parquet output files only to indicate how the
+     * rows were added to the source database.</p>  <p>DMS supports the
      * <code>IncludeOpForFullLoad</code> parameter in versions 3.1.4 and later.</p>
+     * <p>DMS supports the use of the .parquet files with the
+     * <code>IncludeOpForFullLoad</code> parameter in versions 3.4.7 and later.</p>
      *  <p>For full load, records can only be inserted. By default (the
      * <code>false</code> setting), no information is recorded in these output files
      * for a full load to indicate that the rows were inserted at the source database.
@@ -989,9 +993,11 @@ namespace Model
 
     /**
      * <p>A value that enables a full load to write INSERT operations to the
-     * comma-separated value (.csv) output files only to indicate how the rows were
-     * added to the source database.</p>  <p>DMS supports the
+     * comma-separated value (.csv) or .parquet output files only to indicate how the
+     * rows were added to the source database.</p>  <p>DMS supports the
      * <code>IncludeOpForFullLoad</code> parameter in versions 3.1.4 and later.</p>
+     * <p>DMS supports the use of the .parquet files with the
+     * <code>IncludeOpForFullLoad</code> parameter in versions 3.4.7 and later.</p>
      *  <p>For full load, records can only be inserted. By default (the
      * <code>false</code> setting), no information is recorded in these output files
      * for a full load to indicate that the rows were inserted at the source database.
@@ -1010,9 +1016,11 @@ namespace Model
 
     /**
      * <p>A value that enables a full load to write INSERT operations to the
-     * comma-separated value (.csv) output files only to indicate how the rows were
-     * added to the source database.</p>  <p>DMS supports the
+     * comma-separated value (.csv) or .parquet output files only to indicate how the
+     * rows were added to the source database.</p>  <p>DMS supports the
      * <code>IncludeOpForFullLoad</code> parameter in versions 3.1.4 and later.</p>
+     * <p>DMS supports the use of the .parquet files with the
+     * <code>IncludeOpForFullLoad</code> parameter in versions 3.4.7 and later.</p>
      *  <p>For full load, records can only be inserted. By default (the
      * <code>false</code> setting), no information is recorded in these output files
      * for a full load to indicate that the rows were inserted at the source database.
@@ -1387,8 +1395,9 @@ namespace Model
      * default setting is <code>false</code>, but when
      * <code>CdcInsertsAndUpdates</code> is set to <code>true</code> or <code>y</code>,
      * only INSERTs and UPDATEs from the source database are migrated to the .csv or
-     * .parquet file. </p> <p>For .csv file format only, how these INSERTs and UPDATEs
-     * are recorded depends on the value of the <code>IncludeOpForFullLoad</code>
+     * .parquet file.</p>  <p>DMS supports the use of the .parquet files in
+     * versions 3.4.7 and later.</p>  <p>How these INSERTs and UPDATEs are
+     * recorded depends on the value of the <code>IncludeOpForFullLoad</code>
      * parameter. If <code>IncludeOpForFullLoad</code> is set to <code>true</code>, the
      * first field of every CDC record is set to either <code>I</code> or
      * <code>U</code> to indicate INSERT and UPDATE operations at the source. But if
@@ -1412,8 +1421,9 @@ namespace Model
      * default setting is <code>false</code>, but when
      * <code>CdcInsertsAndUpdates</code> is set to <code>true</code> or <code>y</code>,
      * only INSERTs and UPDATEs from the source database are migrated to the .csv or
-     * .parquet file. </p> <p>For .csv file format only, how these INSERTs and UPDATEs
-     * are recorded depends on the value of the <code>IncludeOpForFullLoad</code>
+     * .parquet file.</p>  <p>DMS supports the use of the .parquet files in
+     * versions 3.4.7 and later.</p>  <p>How these INSERTs and UPDATEs are
+     * recorded depends on the value of the <code>IncludeOpForFullLoad</code>
      * parameter. If <code>IncludeOpForFullLoad</code> is set to <code>true</code>, the
      * first field of every CDC record is set to either <code>I</code> or
      * <code>U</code> to indicate INSERT and UPDATE operations at the source. But if
@@ -1437,8 +1447,9 @@ namespace Model
      * default setting is <code>false</code>, but when
      * <code>CdcInsertsAndUpdates</code> is set to <code>true</code> or <code>y</code>,
      * only INSERTs and UPDATEs from the source database are migrated to the .csv or
-     * .parquet file. </p> <p>For .csv file format only, how these INSERTs and UPDATEs
-     * are recorded depends on the value of the <code>IncludeOpForFullLoad</code>
+     * .parquet file.</p>  <p>DMS supports the use of the .parquet files in
+     * versions 3.4.7 and later.</p>  <p>How these INSERTs and UPDATEs are
+     * recorded depends on the value of the <code>IncludeOpForFullLoad</code>
      * parameter. If <code>IncludeOpForFullLoad</code> is set to <code>true</code>, the
      * first field of every CDC record is set to either <code>I</code> or
      * <code>U</code> to indicate INSERT and UPDATE operations at the source. But if
@@ -1462,8 +1473,9 @@ namespace Model
      * default setting is <code>false</code>, but when
      * <code>CdcInsertsAndUpdates</code> is set to <code>true</code> or <code>y</code>,
      * only INSERTs and UPDATEs from the source database are migrated to the .csv or
-     * .parquet file. </p> <p>For .csv file format only, how these INSERTs and UPDATEs
-     * are recorded depends on the value of the <code>IncludeOpForFullLoad</code>
+     * .parquet file.</p>  <p>DMS supports the use of the .parquet files in
+     * versions 3.4.7 and later.</p>  <p>How these INSERTs and UPDATEs are
+     * recorded depends on the value of the <code>IncludeOpForFullLoad</code>
      * parameter. If <code>IncludeOpForFullLoad</code> is set to <code>true</code>, the
      * first field of every CDC record is set to either <code>I</code> or
      * <code>U</code> to indicate INSERT and UPDATE operations at the source. But if

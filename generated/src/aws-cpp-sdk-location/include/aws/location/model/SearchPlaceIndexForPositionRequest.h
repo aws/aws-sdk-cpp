@@ -12,6 +12,10 @@
 
 namespace Aws
 {
+namespace Http
+{
+    class URI;
+} //namespace Http
 namespace LocationService
 {
 namespace Model
@@ -31,6 +35,8 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "SearchPlaceIndexForPosition"; }
 
     AWS_LOCATIONSERVICE_API Aws::String SerializePayload() const override;
+
+    AWS_LOCATIONSERVICE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -75,6 +81,63 @@ namespace Model
 
 
     /**
+     * <p>The optional <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     * key</a> to authorize the request.</p>
+     */
+    inline const Aws::String& GetKey() const{ return m_key; }
+
+    /**
+     * <p>The optional <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     * key</a> to authorize the request.</p>
+     */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p>The optional <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     * key</a> to authorize the request.</p>
+     */
+    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
+
+    /**
+     * <p>The optional <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     * key</a> to authorize the request.</p>
+     */
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
+
+    /**
+     * <p>The optional <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     * key</a> to authorize the request.</p>
+     */
+    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
+
+    /**
+     * <p>The optional <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     * key</a> to authorize the request.</p>
+     */
+    inline SearchPlaceIndexForPositionRequest& WithKey(const Aws::String& value) { SetKey(value); return *this;}
+
+    /**
+     * <p>The optional <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     * key</a> to authorize the request.</p>
+     */
+    inline SearchPlaceIndexForPositionRequest& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
+
+    /**
+     * <p>The optional <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     * key</a> to authorize the request.</p>
+     */
+    inline SearchPlaceIndexForPositionRequest& WithKey(const char* value) { SetKey(value); return *this;}
+
+
+    /**
      * <p>The preferred language used to return results. The value must be a valid <a
      * href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example,
      * <code>en</code> for English.</p> <p>This setting affects the languages used in
@@ -85,7 +148,7 @@ namespace Model
      * set to <code>en</code>. The <code>city</code> in the results will most likely be
      * returned as <code>Athens</code>.</p> <p>If you set the <code>language</code>
      * parameter to <code>el</code>, for Greek, then the <code>city</code> in the
-     * results will more likely be returned as <code>��θήνα</code>.</p> <p>If the data
+     * results will more likely be returned as <code>Αθήνα</code>.</p> <p>If the data
      * provider does not have a value for Greek, the result will be in a language that
      * the provider does support.</p>
      */
@@ -102,7 +165,7 @@ namespace Model
      * set to <code>en</code>. The <code>city</code> in the results will most likely be
      * returned as <code>Athens</code>.</p> <p>If you set the <code>language</code>
      * parameter to <code>el</code>, for Greek, then the <code>city</code> in the
-     * results will more likely be returned as <code>��θήνα</code>.</p> <p>If the data
+     * results will more likely be returned as <code>Αθήνα</code>.</p> <p>If the data
      * provider does not have a value for Greek, the result will be in a language that
      * the provider does support.</p>
      */
@@ -119,7 +182,7 @@ namespace Model
      * set to <code>en</code>. The <code>city</code> in the results will most likely be
      * returned as <code>Athens</code>.</p> <p>If you set the <code>language</code>
      * parameter to <code>el</code>, for Greek, then the <code>city</code> in the
-     * results will more likely be returned as <code>��θήνα</code>.</p> <p>If the data
+     * results will more likely be returned as <code>Αθήνα</code>.</p> <p>If the data
      * provider does not have a value for Greek, the result will be in a language that
      * the provider does support.</p>
      */
@@ -136,7 +199,7 @@ namespace Model
      * set to <code>en</code>. The <code>city</code> in the results will most likely be
      * returned as <code>Athens</code>.</p> <p>If you set the <code>language</code>
      * parameter to <code>el</code>, for Greek, then the <code>city</code> in the
-     * results will more likely be returned as <code>��θήνα</code>.</p> <p>If the data
+     * results will more likely be returned as <code>Αθήνα</code>.</p> <p>If the data
      * provider does not have a value for Greek, the result will be in a language that
      * the provider does support.</p>
      */
@@ -153,7 +216,7 @@ namespace Model
      * set to <code>en</code>. The <code>city</code> in the results will most likely be
      * returned as <code>Athens</code>.</p> <p>If you set the <code>language</code>
      * parameter to <code>el</code>, for Greek, then the <code>city</code> in the
-     * results will more likely be returned as <code>��θήνα</code>.</p> <p>If the data
+     * results will more likely be returned as <code>Αθήνα</code>.</p> <p>If the data
      * provider does not have a value for Greek, the result will be in a language that
      * the provider does support.</p>
      */
@@ -170,7 +233,7 @@ namespace Model
      * set to <code>en</code>. The <code>city</code> in the results will most likely be
      * returned as <code>Athens</code>.</p> <p>If you set the <code>language</code>
      * parameter to <code>el</code>, for Greek, then the <code>city</code> in the
-     * results will more likely be returned as <code>��θήνα</code>.</p> <p>If the data
+     * results will more likely be returned as <code>Αθήνα</code>.</p> <p>If the data
      * provider does not have a value for Greek, the result will be in a language that
      * the provider does support.</p>
      */
@@ -187,7 +250,7 @@ namespace Model
      * set to <code>en</code>. The <code>city</code> in the results will most likely be
      * returned as <code>Athens</code>.</p> <p>If you set the <code>language</code>
      * parameter to <code>el</code>, for Greek, then the <code>city</code> in the
-     * results will more likely be returned as <code>��θήνα</code>.</p> <p>If the data
+     * results will more likely be returned as <code>Αθήνα</code>.</p> <p>If the data
      * provider does not have a value for Greek, the result will be in a language that
      * the provider does support.</p>
      */
@@ -204,7 +267,7 @@ namespace Model
      * set to <code>en</code>. The <code>city</code> in the results will most likely be
      * returned as <code>Athens</code>.</p> <p>If you set the <code>language</code>
      * parameter to <code>el</code>, for Greek, then the <code>city</code> in the
-     * results will more likely be returned as <code>��θήνα</code>.</p> <p>If the data
+     * results will more likely be returned as <code>Αθήνα</code>.</p> <p>If the data
      * provider does not have a value for Greek, the result will be in a language that
      * the provider does support.</p>
      */
@@ -310,6 +373,9 @@ namespace Model
 
     Aws::String m_indexName;
     bool m_indexNameHasBeenSet = false;
+
+    Aws::String m_key;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_language;
     bool m_languageHasBeenSet = false;

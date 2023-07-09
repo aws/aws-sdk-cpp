@@ -341,6 +341,22 @@ CopyObjectOutcome S3Client::CopyObject(const CopyObjectRequest& request) const
   return CopyObjectOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT));
 }
 
+CopyObjectOutcomeCallable S3Client::CopyObjectCallable(const CopyObjectRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CopyObjectOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CopyObject(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3Client::CopyObjectAsync(const CopyObjectRequest& request, const CopyObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CopyObject(request), context);
+    } );
+}
+
 CreateBucketOutcome S3Client::CreateBucket(const CreateBucketRequest& request) const
 {
   AWS_OPERATION_GUARD(CreateBucket);

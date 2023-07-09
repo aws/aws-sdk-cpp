@@ -414,7 +414,20 @@ namespace Connect
          * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribePhoneNumber.html">DescribePhoneNumber</a>
          * API to verify the status of a previous <a
          * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimPhoneNumber.html">ClaimPhoneNumber</a>
-         * operation.</p> <p><h3>See Also:</h3>   <a
+         * operation.</p>  <p>If you plan to claim and release numbers
+         * frequently during a 30 day period, contact us for a service quota exception.
+         * Otherwise, it is possible you will be blocked from claiming and releasing any
+         * more numbers until 30 days past the oldest number released has expired.</p>
+         * <p>By default you can claim and release up to 200% of your maximum number of
+         * active phone numbers during any 30 day period. If you claim and release phone
+         * numbers using the UI or API during a rolling 30 day cycle that exceeds 200% of
+         * your phone number service level quota, you will be blocked from claiming any
+         * more numbers until 30 days past the oldest number released has expired. </p>
+         * <p>For example, if you already have 99 claimed numbers and a service level quota
+         * of 99 phone numbers, and in any 30 day period you release 99, claim 99, and then
+         * release 99, you will have exceeded the 200% limit. At that point you are blocked
+         * from claiming any more numbers until you open an Amazon Web Services support
+         * ticket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ClaimPhoneNumber">AWS
          * API Reference</a></p>
          */
@@ -704,8 +717,13 @@ namespace Connect
          * distribution group and you are calling this API using an instance in the
          * alternate Amazon Web Services Region associated with the traffic distribution
          * group, you must provide a full phone number ARN. If a UUID is provided in this
-         * scenario, you will receive a <code>ResourceNotFoundException</code>.</p>
-         * <p><h3>See Also:</h3>   <a
+         * scenario, you will receive a <code>ResourceNotFoundException</code>.</p> <p>Only
+         * use the phone number ARN format that doesn't contain <code>instance</code> in
+         * the path, for example,
+         * <code>arn:aws:connect:us-east-1:1234567890:phone-number/uuid</code>. This is the
+         * same ARN format that is returned when you call the <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a>
+         * API.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateQueue">AWS
          * API Reference</a></p>
          */
@@ -3648,7 +3666,20 @@ namespace Connect
          * <p>After releasing a phone number, the phone number enters into a cooldown
          * period of 30 days. It cannot be searched for or claimed again until the period
          * has ended. If you accidentally release a phone number, contact Amazon Web
-         * Services Support.</p> <p><h3>See Also:</h3>   <a
+         * Services Support.</p>  <p>If you plan to claim and release numbers
+         * frequently during a 30 day period, contact us for a service quota exception.
+         * Otherwise, it is possible you will be blocked from claiming and releasing any
+         * more numbers until 30 days past the oldest number released has expired.</p>
+         * <p>By default you can claim and release up to 200% of your maximum number of
+         * active phone numbers during any 30 day period. If you claim and release phone
+         * numbers using the UI or API during a rolling 30 day cycle that exceeds 200% of
+         * your phone number service level quota, you will be blocked from claiming any
+         * more numbers until 30 days past the oldest number released has expired. </p>
+         * <p>For example, if you already have 99 claimed numbers and a service level quota
+         * of 99 phone numbers, and in any 30 day period you release 99, claim 99, and then
+         * release 99, you will have exceeded the 200% limit. At that point you are blocked
+         * from claiming any more numbers until you open an Amazon Web Services support
+         * ticket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ReleasePhoneNumber">AWS
          * API Reference</a></p>
          */
@@ -3811,8 +3842,7 @@ namespace Connect
         }
 
         /**
-         * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Searches queues in an Amazon Connect instance, with optional
+         * <p>Searches queues in an Amazon Connect instance, with optional
          * filtering.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchQueues">AWS
          * API Reference</a></p>
@@ -3864,9 +3894,34 @@ namespace Connect
         }
 
         /**
-         * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Searches routing profiles in an Amazon Connect instance, with
-         * optional filtering.</p><p><h3>See Also:</h3>   <a
+         * <p>Searches tags used in an Amazon Connect instance using optional search
+         * criteria.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchResourceTags">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SearchResourceTagsOutcome SearchResourceTags(const Model::SearchResourceTagsRequest& request) const;
+
+        /**
+         * A Callable wrapper for SearchResourceTags that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename SearchResourceTagsRequestT = Model::SearchResourceTagsRequest>
+        Model::SearchResourceTagsOutcomeCallable SearchResourceTagsCallable(const SearchResourceTagsRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::SearchResourceTags, request);
+        }
+
+        /**
+         * An Async wrapper for SearchResourceTags that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename SearchResourceTagsRequestT = Model::SearchResourceTagsRequest>
+        void SearchResourceTagsAsync(const SearchResourceTagsRequestT& request, const SearchResourceTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::SearchResourceTags, request, handler, context);
+        }
+
+        /**
+         * <p>Searches routing profiles in an Amazon Connect instance, with optional
+         * filtering.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchRoutingProfiles">AWS
          * API Reference</a></p>
          */
@@ -3891,9 +3946,8 @@ namespace Connect
         }
 
         /**
-         * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Searches security profiles in an Amazon Connect instance, with
-         * optional filtering.</p><p><h3>See Also:</h3>   <a
+         * <p>Searches security profiles in an Amazon Connect instance, with optional
+         * filtering.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchSecurityProfiles">AWS
          * API Reference</a></p>
          */
@@ -5001,8 +5055,13 @@ namespace Connect
          * distribution group and you are calling this API using an instance in the
          * alternate Amazon Web Services Region associated with the traffic distribution
          * group, you must provide a full phone number ARN. If a UUID is provided in this
-         * scenario, you will receive a <code>ResourceNotFoundException</code>.</p>
-         * <p><h3>See Also:</h3>   <a
+         * scenario, you will receive a <code>ResourceNotFoundException</code>.</p> <p>Only
+         * use the phone number ARN format that doesn't contain <code>instance</code> in
+         * the path, for example,
+         * <code>arn:aws:connect:us-east-1:1234567890:phone-number/uuid</code>. This is the
+         * same ARN format that is returned when you call the <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a>
+         * API.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueOutboundCallerConfig">AWS
          * API Reference</a></p>
          */

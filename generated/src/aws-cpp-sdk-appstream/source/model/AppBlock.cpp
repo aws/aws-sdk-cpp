@@ -25,7 +25,13 @@ AppBlock::AppBlock() :
     m_displayNameHasBeenSet(false),
     m_sourceS3LocationHasBeenSet(false),
     m_setupScriptDetailsHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
+    m_createdTimeHasBeenSet(false),
+    m_postSetupScriptDetailsHasBeenSet(false),
+    m_packagingType(PackagingType::NOT_SET),
+    m_packagingTypeHasBeenSet(false),
+    m_state(AppBlockState::NOT_SET),
+    m_stateHasBeenSet(false),
+    m_appBlockErrorsHasBeenSet(false)
 {
 }
 
@@ -36,7 +42,13 @@ AppBlock::AppBlock(JsonView jsonValue) :
     m_displayNameHasBeenSet(false),
     m_sourceS3LocationHasBeenSet(false),
     m_setupScriptDetailsHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
+    m_createdTimeHasBeenSet(false),
+    m_postSetupScriptDetailsHasBeenSet(false),
+    m_packagingType(PackagingType::NOT_SET),
+    m_packagingTypeHasBeenSet(false),
+    m_state(AppBlockState::NOT_SET),
+    m_stateHasBeenSet(false),
+    m_appBlockErrorsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -92,6 +104,37 @@ AppBlock& AppBlock::operator =(JsonView jsonValue)
     m_createdTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PostSetupScriptDetails"))
+  {
+    m_postSetupScriptDetails = jsonValue.GetObject("PostSetupScriptDetails");
+
+    m_postSetupScriptDetailsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PackagingType"))
+  {
+    m_packagingType = PackagingTypeMapper::GetPackagingTypeForName(jsonValue.GetString("PackagingType"));
+
+    m_packagingTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("State"))
+  {
+    m_state = AppBlockStateMapper::GetAppBlockStateForName(jsonValue.GetString("State"));
+
+    m_stateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AppBlockErrors"))
+  {
+    Aws::Utils::Array<JsonView> appBlockErrorsJsonList = jsonValue.GetArray("AppBlockErrors");
+    for(unsigned appBlockErrorsIndex = 0; appBlockErrorsIndex < appBlockErrorsJsonList.GetLength(); ++appBlockErrorsIndex)
+    {
+      m_appBlockErrors.push_back(appBlockErrorsJsonList[appBlockErrorsIndex].AsObject());
+    }
+    m_appBlockErrorsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -138,6 +181,33 @@ JsonValue AppBlock::Jsonize() const
   if(m_createdTimeHasBeenSet)
   {
    payload.WithDouble("CreatedTime", m_createdTime.SecondsWithMSPrecision());
+  }
+
+  if(m_postSetupScriptDetailsHasBeenSet)
+  {
+   payload.WithObject("PostSetupScriptDetails", m_postSetupScriptDetails.Jsonize());
+
+  }
+
+  if(m_packagingTypeHasBeenSet)
+  {
+   payload.WithString("PackagingType", PackagingTypeMapper::GetNameForPackagingType(m_packagingType));
+  }
+
+  if(m_stateHasBeenSet)
+  {
+   payload.WithString("State", AppBlockStateMapper::GetNameForAppBlockState(m_state));
+  }
+
+  if(m_appBlockErrorsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> appBlockErrorsJsonList(m_appBlockErrors.size());
+   for(unsigned appBlockErrorsIndex = 0; appBlockErrorsIndex < appBlockErrorsJsonList.GetLength(); ++appBlockErrorsIndex)
+   {
+     appBlockErrorsJsonList[appBlockErrorsIndex].AsObject(m_appBlockErrors[appBlockErrorsIndex].Jsonize());
+   }
+   payload.WithArray("AppBlockErrors", std::move(appBlockErrorsJsonList));
+
   }
 
   return payload;

@@ -130,8 +130,8 @@ namespace IVS
    * specified channel. At most 5 requests per second per channel are allowed, each
    * with a maximum 1 KB payload. (If 5 TPS is not sufficient for your needs, we
    * recommend batching your data into a single PutMetadata call.) At most 155
-   * requests per second per account are allowed.</p> </li> </ul> <p>
-   * <b>PlaybackKeyPair Endpoints</b> </p> <p>For more information, see <a
+   * requests per second per account are allowed.</p> </li> </ul> <p> <b>Private
+   * Channel Endpoints</b> </p> <p>For more information, see <a
    * href="https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html">Setting
    * Up Private Channels</a> in the <i>Amazon IVS User Guide</i>.</p> <ul> <li> <p>
    * <a>ImportPlaybackKeyPair</a> — Imports the public portion of a new key pair and
@@ -146,18 +146,23 @@ namespace IVS
    * information about playback key pairs.</p> </li> <li> <p>
    * <a>DeletePlaybackKeyPair</a> — Deletes a specified authorization key pair. This
    * invalidates future viewer tokens generated using the key pair’s
-   * <code>privateKey</code>.</p> </li> </ul> <p> <b>RecordingConfiguration
-   * Endpoints</b> </p> <ul> <li> <p> <a>CreateRecordingConfiguration</a> — Creates a
-   * new recording configuration, used to enable recording to Amazon S3.</p> </li>
-   * <li> <p> <a>GetRecordingConfiguration</a> — Gets the recording-configuration
-   * metadata for the specified ARN.</p> </li> <li> <p>
-   * <a>ListRecordingConfigurations</a> — Gets summary information about all
-   * recording configurations in your account, in the Amazon Web Services region
-   * where the API request is processed.</p> </li> <li> <p>
-   * <a>DeleteRecordingConfiguration</a> — Deletes the recording configuration for
-   * the specified ARN.</p> </li> </ul> <p> <b>Amazon Web Services Tags Endpoints</b>
-   * </p> <ul> <li> <p> <a>TagResource</a> — Adds or updates tags for the Amazon Web
-   * Services resource with the specified ARN.</p> </li> <li> <p>
+   * <code>privateKey</code>.</p> </li> <li> <p> <a>StartViewerSessionRevocation</a>
+   * — Starts the process of revoking the viewer session associated with a specified
+   * channel ARN and viewer ID. Optionally, you can provide a version to revoke
+   * viewer sessions less than and including that version.</p> </li> <li> <p>
+   * <a>BatchStartViewerSessionRevocation</a> — Performs
+   * <a>StartViewerSessionRevocation</a> on multiple channel ARN and viewer ID pairs
+   * simultaneously.</p> </li> </ul> <p> <b>RecordingConfiguration Endpoints</b> </p>
+   * <ul> <li> <p> <a>CreateRecordingConfiguration</a> — Creates a new recording
+   * configuration, used to enable recording to Amazon S3.</p> </li> <li> <p>
+   * <a>GetRecordingConfiguration</a> — Gets the recording-configuration metadata for
+   * the specified ARN.</p> </li> <li> <p> <a>ListRecordingConfigurations</a> — Gets
+   * summary information about all recording configurations in your account, in the
+   * Amazon Web Services region where the API request is processed.</p> </li> <li>
+   * <p> <a>DeleteRecordingConfiguration</a> — Deletes the recording configuration
+   * for the specified ARN.</p> </li> </ul> <p> <b>Amazon Web Services Tags
+   * Endpoints</b> </p> <ul> <li> <p> <a>TagResource</a> — Adds or updates tags for
+   * the Amazon Web Services resource with the specified ARN.</p> </li> <li> <p>
    * <a>UntagResource</a> — Removes tags from the resource with the specified
    * ARN.</p> </li> <li> <p> <a>ListTagsForResource</a> — Gets information about
    * Amazon Web Services tags for the specified ARN.</p> </li> </ul>
@@ -270,6 +275,32 @@ namespace IVS
         void BatchGetStreamKeyAsync(const BatchGetStreamKeyRequestT& request, const BatchGetStreamKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&IVSClient::BatchGetStreamKey, request, handler, context);
+        }
+
+        /**
+         * <p>Performs <a>StartViewerSessionRevocation</a> on multiple channel ARN and
+         * viewer ID pairs simultaneously.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/BatchStartViewerSessionRevocation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchStartViewerSessionRevocationOutcome BatchStartViewerSessionRevocation(const Model::BatchStartViewerSessionRevocationRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchStartViewerSessionRevocation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename BatchStartViewerSessionRevocationRequestT = Model::BatchStartViewerSessionRevocationRequest>
+        Model::BatchStartViewerSessionRevocationOutcomeCallable BatchStartViewerSessionRevocationCallable(const BatchStartViewerSessionRevocationRequestT& request) const
+        {
+            return SubmitCallable(&IVSClient::BatchStartViewerSessionRevocation, request);
+        }
+
+        /**
+         * An Async wrapper for BatchStartViewerSessionRevocation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename BatchStartViewerSessionRevocationRequestT = Model::BatchStartViewerSessionRevocationRequest>
+        void BatchStartViewerSessionRevocationAsync(const BatchStartViewerSessionRevocationRequestT& request, const BatchStartViewerSessionRevocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IVSClient::BatchStartViewerSessionRevocation, request, handler, context);
         }
 
         /**
@@ -890,6 +921,36 @@ namespace IVS
         void PutMetadataAsync(const PutMetadataRequestT& request, const PutMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&IVSClient::PutMetadata, request, handler, context);
+        }
+
+        /**
+         * <p>Starts the process of revoking the viewer session associated with a specified
+         * channel ARN and viewer ID. Optionally, you can provide a version to revoke
+         * viewer sessions less than and including that version. For instructions on
+         * associating a viewer ID with a viewer session, see <a
+         * href="https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html">Setting
+         * Up Private Channels</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/StartViewerSessionRevocation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartViewerSessionRevocationOutcome StartViewerSessionRevocation(const Model::StartViewerSessionRevocationRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartViewerSessionRevocation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartViewerSessionRevocationRequestT = Model::StartViewerSessionRevocationRequest>
+        Model::StartViewerSessionRevocationOutcomeCallable StartViewerSessionRevocationCallable(const StartViewerSessionRevocationRequestT& request) const
+        {
+            return SubmitCallable(&IVSClient::StartViewerSessionRevocation, request);
+        }
+
+        /**
+         * An Async wrapper for StartViewerSessionRevocation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartViewerSessionRevocationRequestT = Model::StartViewerSessionRevocationRequest>
+        void StartViewerSessionRevocationAsync(const StartViewerSessionRevocationRequestT& request, const StartViewerSessionRevocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IVSClient::StartViewerSessionRevocation, request, handler, context);
         }
 
         /**

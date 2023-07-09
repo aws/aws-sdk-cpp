@@ -322,6 +322,25 @@ namespace Model
     inline GetHealthEventResult& WithImpactType(HealthEventImpactType&& value) { SetImpactType(std::move(value)); return *this;}
 
 
+    /**
+     * <p>The threshold percentage for health events when Amazon CloudWatch Internet
+     * Monitor creates a health event.</p>
+     */
+    inline double GetHealthScoreThreshold() const{ return m_healthScoreThreshold; }
+
+    /**
+     * <p>The threshold percentage for health events when Amazon CloudWatch Internet
+     * Monitor creates a health event.</p>
+     */
+    inline void SetHealthScoreThreshold(double value) { m_healthScoreThreshold = value; }
+
+    /**
+     * <p>The threshold percentage for health events when Amazon CloudWatch Internet
+     * Monitor creates a health event.</p>
+     */
+    inline GetHealthEventResult& WithHealthScoreThreshold(double value) { SetHealthScoreThreshold(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -364,6 +383,8 @@ namespace Model
     double m_percentOfTotalTrafficImpacted;
 
     HealthEventImpactType m_impactType;
+
+    double m_healthScoreThreshold;
 
     Aws::String m_requestId;
   };

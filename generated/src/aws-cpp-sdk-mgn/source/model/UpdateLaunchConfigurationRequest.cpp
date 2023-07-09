@@ -13,6 +13,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateLaunchConfigurationRequest::UpdateLaunchConfigurationRequest() : 
+    m_accountIDHasBeenSet(false),
     m_bootMode(BootMode::NOT_SET),
     m_bootModeHasBeenSet(false),
     m_copyPrivateIp(false),
@@ -36,6 +37,12 @@ UpdateLaunchConfigurationRequest::UpdateLaunchConfigurationRequest() :
 Aws::String UpdateLaunchConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_accountIDHasBeenSet)
+  {
+   payload.WithString("accountID", m_accountID);
+
+  }
 
   if(m_bootModeHasBeenSet)
   {

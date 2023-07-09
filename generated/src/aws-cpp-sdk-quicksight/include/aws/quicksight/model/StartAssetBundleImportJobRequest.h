@@ -127,37 +127,37 @@ namespace Model
 
     /**
      * <p>The source of the asset bundle zip file that contains the data that you want
-     * to import.</p>
+     * to import. The file must be in <code>QUICKSIGHT_JSON</code> format. </p>
      */
     inline const AssetBundleImportSource& GetAssetBundleImportSource() const{ return m_assetBundleImportSource; }
 
     /**
      * <p>The source of the asset bundle zip file that contains the data that you want
-     * to import.</p>
+     * to import. The file must be in <code>QUICKSIGHT_JSON</code> format. </p>
      */
     inline bool AssetBundleImportSourceHasBeenSet() const { return m_assetBundleImportSourceHasBeenSet; }
 
     /**
      * <p>The source of the asset bundle zip file that contains the data that you want
-     * to import.</p>
+     * to import. The file must be in <code>QUICKSIGHT_JSON</code> format. </p>
      */
     inline void SetAssetBundleImportSource(const AssetBundleImportSource& value) { m_assetBundleImportSourceHasBeenSet = true; m_assetBundleImportSource = value; }
 
     /**
      * <p>The source of the asset bundle zip file that contains the data that you want
-     * to import.</p>
+     * to import. The file must be in <code>QUICKSIGHT_JSON</code> format. </p>
      */
     inline void SetAssetBundleImportSource(AssetBundleImportSource&& value) { m_assetBundleImportSourceHasBeenSet = true; m_assetBundleImportSource = std::move(value); }
 
     /**
      * <p>The source of the asset bundle zip file that contains the data that you want
-     * to import.</p>
+     * to import. The file must be in <code>QUICKSIGHT_JSON</code> format. </p>
      */
     inline StartAssetBundleImportJobRequest& WithAssetBundleImportSource(const AssetBundleImportSource& value) { SetAssetBundleImportSource(value); return *this;}
 
     /**
      * <p>The source of the asset bundle zip file that contains the data that you want
-     * to import.</p>
+     * to import. The file must be in <code>QUICKSIGHT_JSON</code> format. </p>
      */
     inline StartAssetBundleImportJobRequest& WithAssetBundleImportSource(AssetBundleImportSource&& value) { SetAssetBundleImportSource(std::move(value)); return *this;}
 

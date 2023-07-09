@@ -33,6 +33,10 @@ namespace Aws
         static const int PrecisionMacro_HASH = HashingUtils::HashString("PrecisionMacro");
         static const int Recall_HASH = HashingUtils::HashString("Recall");
         static const int RecallMacro_HASH = HashingUtils::HashString("RecallMacro");
+        static const int MAPE_HASH = HashingUtils::HashString("MAPE");
+        static const int MASE_HASH = HashingUtils::HashString("MASE");
+        static const int WAPE_HASH = HashingUtils::HashString("WAPE");
+        static const int AverageWeightedQuantileLoss_HASH = HashingUtils::HashString("AverageWeightedQuantileLoss");
 
 
         AutoMLMetricEnum GetAutoMLMetricEnumForName(const Aws::String& name)
@@ -90,6 +94,22 @@ namespace Aws
           {
             return AutoMLMetricEnum::RecallMacro;
           }
+          else if (hashCode == MAPE_HASH)
+          {
+            return AutoMLMetricEnum::MAPE;
+          }
+          else if (hashCode == MASE_HASH)
+          {
+            return AutoMLMetricEnum::MASE;
+          }
+          else if (hashCode == WAPE_HASH)
+          {
+            return AutoMLMetricEnum::WAPE;
+          }
+          else if (hashCode == AverageWeightedQuantileLoss_HASH)
+          {
+            return AutoMLMetricEnum::AverageWeightedQuantileLoss;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -130,6 +150,14 @@ namespace Aws
             return "Recall";
           case AutoMLMetricEnum::RecallMacro:
             return "RecallMacro";
+          case AutoMLMetricEnum::MAPE:
+            return "MAPE";
+          case AutoMLMetricEnum::MASE:
+            return "MASE";
+          case AutoMLMetricEnum::WAPE:
+            return "WAPE";
+          case AutoMLMetricEnum::AverageWeightedQuantileLoss:
+            return "AverageWeightedQuantileLoss";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

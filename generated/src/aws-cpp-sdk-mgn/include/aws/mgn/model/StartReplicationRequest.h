@@ -33,6 +33,47 @@ namespace Model
 
 
     /**
+     * <p>Account ID on which to start replication.</p>
+     */
+    inline const Aws::String& GetAccountID() const{ return m_accountID; }
+
+    /**
+     * <p>Account ID on which to start replication.</p>
+     */
+    inline bool AccountIDHasBeenSet() const { return m_accountIDHasBeenSet; }
+
+    /**
+     * <p>Account ID on which to start replication.</p>
+     */
+    inline void SetAccountID(const Aws::String& value) { m_accountIDHasBeenSet = true; m_accountID = value; }
+
+    /**
+     * <p>Account ID on which to start replication.</p>
+     */
+    inline void SetAccountID(Aws::String&& value) { m_accountIDHasBeenSet = true; m_accountID = std::move(value); }
+
+    /**
+     * <p>Account ID on which to start replication.</p>
+     */
+    inline void SetAccountID(const char* value) { m_accountIDHasBeenSet = true; m_accountID.assign(value); }
+
+    /**
+     * <p>Account ID on which to start replication.</p>
+     */
+    inline StartReplicationRequest& WithAccountID(const Aws::String& value) { SetAccountID(value); return *this;}
+
+    /**
+     * <p>Account ID on which to start replication.</p>
+     */
+    inline StartReplicationRequest& WithAccountID(Aws::String&& value) { SetAccountID(std::move(value)); return *this;}
+
+    /**
+     * <p>Account ID on which to start replication.</p>
+     */
+    inline StartReplicationRequest& WithAccountID(const char* value) { SetAccountID(value); return *this;}
+
+
+    /**
      * <p>ID of source server on which to start replication.</p>
      */
     inline const Aws::String& GetSourceServerID() const{ return m_sourceServerID; }
@@ -73,6 +114,9 @@ namespace Model
     inline StartReplicationRequest& WithSourceServerID(const char* value) { SetSourceServerID(value); return *this;}
 
   private:
+
+    Aws::String m_accountID;
+    bool m_accountIDHasBeenSet = false;
 
     Aws::String m_sourceServerID;
     bool m_sourceServerIDHasBeenSet = false;

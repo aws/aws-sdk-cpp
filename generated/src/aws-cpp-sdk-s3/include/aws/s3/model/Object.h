@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/s3/model/ObjectStorageClass.h>
 #include <aws/s3/model/Owner.h>
+#include <aws/s3/model/RestoreStatus.h>
 #include <aws/s3/model/ChecksumAlgorithm.h>
 #include <utility>
 
@@ -399,6 +400,61 @@ namespace Model
      */
     inline Object& WithOwner(Owner&& value) { SetOwner(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies the restoration status of an object. Objects in certain storage
+     * classes must be restored before they can be retrieved. For more information
+     * about these storage classes and how to work with archived objects, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/archived-objects.html">
+     * Working with archived objects</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline const RestoreStatus& GetRestoreStatus() const{ return m_restoreStatus; }
+
+    /**
+     * <p>Specifies the restoration status of an object. Objects in certain storage
+     * classes must be restored before they can be retrieved. For more information
+     * about these storage classes and how to work with archived objects, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/archived-objects.html">
+     * Working with archived objects</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline bool RestoreStatusHasBeenSet() const { return m_restoreStatusHasBeenSet; }
+
+    /**
+     * <p>Specifies the restoration status of an object. Objects in certain storage
+     * classes must be restored before they can be retrieved. For more information
+     * about these storage classes and how to work with archived objects, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/archived-objects.html">
+     * Working with archived objects</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline void SetRestoreStatus(const RestoreStatus& value) { m_restoreStatusHasBeenSet = true; m_restoreStatus = value; }
+
+    /**
+     * <p>Specifies the restoration status of an object. Objects in certain storage
+     * classes must be restored before they can be retrieved. For more information
+     * about these storage classes and how to work with archived objects, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/archived-objects.html">
+     * Working with archived objects</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline void SetRestoreStatus(RestoreStatus&& value) { m_restoreStatusHasBeenSet = true; m_restoreStatus = std::move(value); }
+
+    /**
+     * <p>Specifies the restoration status of an object. Objects in certain storage
+     * classes must be restored before they can be retrieved. For more information
+     * about these storage classes and how to work with archived objects, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/archived-objects.html">
+     * Working with archived objects</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline Object& WithRestoreStatus(const RestoreStatus& value) { SetRestoreStatus(value); return *this;}
+
+    /**
+     * <p>Specifies the restoration status of an object. Objects in certain storage
+     * classes must be restored before they can be retrieved. For more information
+     * about these storage classes and how to work with archived objects, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/archived-objects.html">
+     * Working with archived objects</a> in the <i>Amazon S3 User Guide</i>.</p>
+     */
+    inline Object& WithRestoreStatus(RestoreStatus&& value) { SetRestoreStatus(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_key;
@@ -421,6 +477,9 @@ namespace Model
 
     Owner m_owner;
     bool m_ownerHasBeenSet = false;
+
+    RestoreStatus m_restoreStatus;
+    bool m_restoreStatusHasBeenSet = false;
   };
 
 } // namespace Model

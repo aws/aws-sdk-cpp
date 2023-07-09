@@ -80,12 +80,12 @@ using S3CrtDefaultEpProviderBase =
 namespace Endpoint
 {
 /**
- * Export endpoint provider symbols from DLL
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
  */
-template class AWS_S3CRT_API
+AWS_S3CRT_EXTERN template class AWS_S3CRT_API
     Aws::Endpoint::EndpointProviderBase<S3Crt::Endpoint::S3CrtClientConfiguration, S3Crt::Endpoint::S3CrtBuiltInParameters, S3Crt::Endpoint::S3CrtClientContextParameters>;
 
-template class AWS_S3CRT_API
+AWS_S3CRT_EXTERN template class AWS_S3CRT_API
     Aws::Endpoint::DefaultEndpointProvider<S3Crt::Endpoint::S3CrtClientConfiguration, S3Crt::Endpoint::S3CrtBuiltInParameters, S3Crt::Endpoint::S3CrtClientContextParameters>;
 } // namespace Endpoint
 

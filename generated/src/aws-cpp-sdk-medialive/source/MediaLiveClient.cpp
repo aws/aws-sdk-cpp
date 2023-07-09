@@ -53,6 +53,8 @@
 #include <aws/medialive/model/DescribeOfferingRequest.h>
 #include <aws/medialive/model/DescribeReservationRequest.h>
 #include <aws/medialive/model/DescribeScheduleRequest.h>
+#include <aws/medialive/model/DescribeAccountConfigurationRequest.h>
+#include <aws/medialive/model/DescribeThumbnailsRequest.h>
 #include <aws/medialive/model/ListChannelsRequest.h>
 #include <aws/medialive/model/ListInputDeviceTransfersRequest.h>
 #include <aws/medialive/model/ListInputDevicesRequest.h>
@@ -66,6 +68,7 @@
 #include <aws/medialive/model/PurchaseOfferingRequest.h>
 #include <aws/medialive/model/RebootInputDeviceRequest.h>
 #include <aws/medialive/model/RejectInputDeviceTransferRequest.h>
+#include <aws/medialive/model/UpdateAccountConfigurationRequest.h>
 #include <aws/medialive/model/StartChannelRequest.h>
 #include <aws/medialive/model/StartInputDeviceMaintenanceWindowRequest.h>
 #include <aws/medialive/model/StartMultiplexRequest.h>
@@ -705,6 +708,43 @@ DescribeScheduleOutcome MediaLiveClient::DescribeSchedule(const DescribeSchedule
   return DescribeScheduleOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
+DescribeAccountConfigurationOutcome MediaLiveClient::DescribeAccountConfiguration(const DescribeAccountConfigurationRequest& request) const
+{
+  AWS_OPERATION_GUARD(DescribeAccountConfiguration);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAccountConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeAccountConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/prod/accountConfiguration");
+  return DescribeAccountConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeThumbnailsOutcome MediaLiveClient::DescribeThumbnails(const DescribeThumbnailsRequest& request) const
+{
+  AWS_OPERATION_GUARD(DescribeThumbnails);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeThumbnails, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ChannelIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeThumbnails", "Required field: ChannelId, is not set");
+    return DescribeThumbnailsOutcome(Aws::Client::AWSError<MediaLiveErrors>(MediaLiveErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelId]", false));
+  }
+  if (!request.PipelineIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeThumbnails", "Required field: PipelineId, is not set");
+    return DescribeThumbnailsOutcome(Aws::Client::AWSError<MediaLiveErrors>(MediaLiveErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PipelineId]", false));
+  }
+  if (!request.ThumbnailTypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeThumbnails", "Required field: ThumbnailType, is not set");
+    return DescribeThumbnailsOutcome(Aws::Client::AWSError<MediaLiveErrors>(MediaLiveErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThumbnailType]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeThumbnails, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/prod/channels/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChannelId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/thumbnails");
+  return DescribeThumbnailsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
 ListChannelsOutcome MediaLiveClient::ListChannels(const ListChannelsRequest& request) const
 {
   AWS_OPERATION_GUARD(ListChannels);
@@ -872,6 +912,16 @@ RejectInputDeviceTransferOutcome MediaLiveClient::RejectInputDeviceTransfer(cons
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInputDeviceId());
   endpointResolutionOutcome.GetResult().AddPathSegments("/reject");
   return RejectInputDeviceTransferOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateAccountConfigurationOutcome MediaLiveClient::UpdateAccountConfiguration(const UpdateAccountConfigurationRequest& request) const
+{
+  AWS_OPERATION_GUARD(UpdateAccountConfiguration);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAccountConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateAccountConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/prod/accountConfiguration");
+  return UpdateAccountConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 StartChannelOutcome MediaLiveClient::StartChannel(const StartChannelRequest& request) const

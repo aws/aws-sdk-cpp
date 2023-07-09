@@ -41,6 +41,42 @@ namespace Model
 
 
     /**
+     * <p>The generated ID of the workspace that was just created.</p>
+     */
+    inline const Aws::String& GetWorkspaceId() const{ return m_workspaceId; }
+
+    /**
+     * <p>The generated ID of the workspace that was just created.</p>
+     */
+    inline void SetWorkspaceId(const Aws::String& value) { m_workspaceId = value; }
+
+    /**
+     * <p>The generated ID of the workspace that was just created.</p>
+     */
+    inline void SetWorkspaceId(Aws::String&& value) { m_workspaceId = std::move(value); }
+
+    /**
+     * <p>The generated ID of the workspace that was just created.</p>
+     */
+    inline void SetWorkspaceId(const char* value) { m_workspaceId.assign(value); }
+
+    /**
+     * <p>The generated ID of the workspace that was just created.</p>
+     */
+    inline CreateWorkspaceResult& WithWorkspaceId(const Aws::String& value) { SetWorkspaceId(value); return *this;}
+
+    /**
+     * <p>The generated ID of the workspace that was just created.</p>
+     */
+    inline CreateWorkspaceResult& WithWorkspaceId(Aws::String&& value) { SetWorkspaceId(std::move(value)); return *this;}
+
+    /**
+     * <p>The generated ID of the workspace that was just created.</p>
+     */
+    inline CreateWorkspaceResult& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
+
+
+    /**
      * <p>The ARN of the workspace that was just created.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
@@ -163,42 +199,6 @@ namespace Model
     inline CreateWorkspaceResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 
 
-    /**
-     * <p>The generated ID of the workspace that was just created.</p>
-     */
-    inline const Aws::String& GetWorkspaceId() const{ return m_workspaceId; }
-
-    /**
-     * <p>The generated ID of the workspace that was just created.</p>
-     */
-    inline void SetWorkspaceId(const Aws::String& value) { m_workspaceId = value; }
-
-    /**
-     * <p>The generated ID of the workspace that was just created.</p>
-     */
-    inline void SetWorkspaceId(Aws::String&& value) { m_workspaceId = std::move(value); }
-
-    /**
-     * <p>The generated ID of the workspace that was just created.</p>
-     */
-    inline void SetWorkspaceId(const char* value) { m_workspaceId.assign(value); }
-
-    /**
-     * <p>The generated ID of the workspace that was just created.</p>
-     */
-    inline CreateWorkspaceResult& WithWorkspaceId(const Aws::String& value) { SetWorkspaceId(value); return *this;}
-
-    /**
-     * <p>The generated ID of the workspace that was just created.</p>
-     */
-    inline CreateWorkspaceResult& WithWorkspaceId(Aws::String&& value) { SetWorkspaceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The generated ID of the workspace that was just created.</p>
-     */
-    inline CreateWorkspaceResult& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
-
-
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -222,13 +222,13 @@ namespace Model
 
   private:
 
+    Aws::String m_workspaceId;
+
     Aws::String m_arn;
 
     WorkspaceStatus m_status;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-
-    Aws::String m_workspaceId;
 
     Aws::String m_requestId;
   };

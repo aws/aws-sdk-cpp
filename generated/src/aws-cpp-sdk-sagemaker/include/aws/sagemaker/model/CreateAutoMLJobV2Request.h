@@ -97,10 +97,11 @@ namespace Model
      * Each channel is a named input source. Similar to the <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html#sagemaker-CreateAutoMLJob-request-InputDataConfig">InputDataConfig</a>
      * attribute in the <code>CreateAutoMLJob</code> input parameters. The supported
-     * formats depend on the problem type:</p> <ul> <li> <p>For Tabular problem types:
-     * <code>S3Prefix</code>, <code>ManifestFile</code>.</p> </li> <li> <p>For
-     * ImageClassification: <code>S3Prefix</code>, <code>ManifestFile</code>,
-     * <code>AugmentedManifestFile</code>.</p> </li> <li> <p>For TextClassification:
+     * formats depend on the problem type:</p> <ul> <li> <p>For tabular problem types:
+     * <code>S3Prefix</code>, <code>ManifestFile</code>.</p> </li> <li> <p>For image
+     * classification: <code>S3Prefix</code>, <code>ManifestFile</code>,
+     * <code>AugmentedManifestFile</code>.</p> </li> <li> <p>For text classification:
+     * <code>S3Prefix</code>.</p> </li> <li> <p>For time-series forecasting:
      * <code>S3Prefix</code>.</p> </li> </ul>
      */
     inline const Aws::Vector<AutoMLJobChannel>& GetAutoMLJobInputDataConfig() const{ return m_autoMLJobInputDataConfig; }
@@ -110,10 +111,11 @@ namespace Model
      * Each channel is a named input source. Similar to the <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html#sagemaker-CreateAutoMLJob-request-InputDataConfig">InputDataConfig</a>
      * attribute in the <code>CreateAutoMLJob</code> input parameters. The supported
-     * formats depend on the problem type:</p> <ul> <li> <p>For Tabular problem types:
-     * <code>S3Prefix</code>, <code>ManifestFile</code>.</p> </li> <li> <p>For
-     * ImageClassification: <code>S3Prefix</code>, <code>ManifestFile</code>,
-     * <code>AugmentedManifestFile</code>.</p> </li> <li> <p>For TextClassification:
+     * formats depend on the problem type:</p> <ul> <li> <p>For tabular problem types:
+     * <code>S3Prefix</code>, <code>ManifestFile</code>.</p> </li> <li> <p>For image
+     * classification: <code>S3Prefix</code>, <code>ManifestFile</code>,
+     * <code>AugmentedManifestFile</code>.</p> </li> <li> <p>For text classification:
+     * <code>S3Prefix</code>.</p> </li> <li> <p>For time-series forecasting:
      * <code>S3Prefix</code>.</p> </li> </ul>
      */
     inline bool AutoMLJobInputDataConfigHasBeenSet() const { return m_autoMLJobInputDataConfigHasBeenSet; }
@@ -123,10 +125,11 @@ namespace Model
      * Each channel is a named input source. Similar to the <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html#sagemaker-CreateAutoMLJob-request-InputDataConfig">InputDataConfig</a>
      * attribute in the <code>CreateAutoMLJob</code> input parameters. The supported
-     * formats depend on the problem type:</p> <ul> <li> <p>For Tabular problem types:
-     * <code>S3Prefix</code>, <code>ManifestFile</code>.</p> </li> <li> <p>For
-     * ImageClassification: <code>S3Prefix</code>, <code>ManifestFile</code>,
-     * <code>AugmentedManifestFile</code>.</p> </li> <li> <p>For TextClassification:
+     * formats depend on the problem type:</p> <ul> <li> <p>For tabular problem types:
+     * <code>S3Prefix</code>, <code>ManifestFile</code>.</p> </li> <li> <p>For image
+     * classification: <code>S3Prefix</code>, <code>ManifestFile</code>,
+     * <code>AugmentedManifestFile</code>.</p> </li> <li> <p>For text classification:
+     * <code>S3Prefix</code>.</p> </li> <li> <p>For time-series forecasting:
      * <code>S3Prefix</code>.</p> </li> </ul>
      */
     inline void SetAutoMLJobInputDataConfig(const Aws::Vector<AutoMLJobChannel>& value) { m_autoMLJobInputDataConfigHasBeenSet = true; m_autoMLJobInputDataConfig = value; }
@@ -136,10 +139,11 @@ namespace Model
      * Each channel is a named input source. Similar to the <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html#sagemaker-CreateAutoMLJob-request-InputDataConfig">InputDataConfig</a>
      * attribute in the <code>CreateAutoMLJob</code> input parameters. The supported
-     * formats depend on the problem type:</p> <ul> <li> <p>For Tabular problem types:
-     * <code>S3Prefix</code>, <code>ManifestFile</code>.</p> </li> <li> <p>For
-     * ImageClassification: <code>S3Prefix</code>, <code>ManifestFile</code>,
-     * <code>AugmentedManifestFile</code>.</p> </li> <li> <p>For TextClassification:
+     * formats depend on the problem type:</p> <ul> <li> <p>For tabular problem types:
+     * <code>S3Prefix</code>, <code>ManifestFile</code>.</p> </li> <li> <p>For image
+     * classification: <code>S3Prefix</code>, <code>ManifestFile</code>,
+     * <code>AugmentedManifestFile</code>.</p> </li> <li> <p>For text classification:
+     * <code>S3Prefix</code>.</p> </li> <li> <p>For time-series forecasting:
      * <code>S3Prefix</code>.</p> </li> </ul>
      */
     inline void SetAutoMLJobInputDataConfig(Aws::Vector<AutoMLJobChannel>&& value) { m_autoMLJobInputDataConfigHasBeenSet = true; m_autoMLJobInputDataConfig = std::move(value); }
@@ -149,10 +153,11 @@ namespace Model
      * Each channel is a named input source. Similar to the <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html#sagemaker-CreateAutoMLJob-request-InputDataConfig">InputDataConfig</a>
      * attribute in the <code>CreateAutoMLJob</code> input parameters. The supported
-     * formats depend on the problem type:</p> <ul> <li> <p>For Tabular problem types:
-     * <code>S3Prefix</code>, <code>ManifestFile</code>.</p> </li> <li> <p>For
-     * ImageClassification: <code>S3Prefix</code>, <code>ManifestFile</code>,
-     * <code>AugmentedManifestFile</code>.</p> </li> <li> <p>For TextClassification:
+     * formats depend on the problem type:</p> <ul> <li> <p>For tabular problem types:
+     * <code>S3Prefix</code>, <code>ManifestFile</code>.</p> </li> <li> <p>For image
+     * classification: <code>S3Prefix</code>, <code>ManifestFile</code>,
+     * <code>AugmentedManifestFile</code>.</p> </li> <li> <p>For text classification:
+     * <code>S3Prefix</code>.</p> </li> <li> <p>For time-series forecasting:
      * <code>S3Prefix</code>.</p> </li> </ul>
      */
     inline CreateAutoMLJobV2Request& WithAutoMLJobInputDataConfig(const Aws::Vector<AutoMLJobChannel>& value) { SetAutoMLJobInputDataConfig(value); return *this;}
@@ -162,10 +167,11 @@ namespace Model
      * Each channel is a named input source. Similar to the <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html#sagemaker-CreateAutoMLJob-request-InputDataConfig">InputDataConfig</a>
      * attribute in the <code>CreateAutoMLJob</code> input parameters. The supported
-     * formats depend on the problem type:</p> <ul> <li> <p>For Tabular problem types:
-     * <code>S3Prefix</code>, <code>ManifestFile</code>.</p> </li> <li> <p>For
-     * ImageClassification: <code>S3Prefix</code>, <code>ManifestFile</code>,
-     * <code>AugmentedManifestFile</code>.</p> </li> <li> <p>For TextClassification:
+     * formats depend on the problem type:</p> <ul> <li> <p>For tabular problem types:
+     * <code>S3Prefix</code>, <code>ManifestFile</code>.</p> </li> <li> <p>For image
+     * classification: <code>S3Prefix</code>, <code>ManifestFile</code>,
+     * <code>AugmentedManifestFile</code>.</p> </li> <li> <p>For text classification:
+     * <code>S3Prefix</code>.</p> </li> <li> <p>For time-series forecasting:
      * <code>S3Prefix</code>.</p> </li> </ul>
      */
     inline CreateAutoMLJobV2Request& WithAutoMLJobInputDataConfig(Aws::Vector<AutoMLJobChannel>&& value) { SetAutoMLJobInputDataConfig(std::move(value)); return *this;}
@@ -175,10 +181,11 @@ namespace Model
      * Each channel is a named input source. Similar to the <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html#sagemaker-CreateAutoMLJob-request-InputDataConfig">InputDataConfig</a>
      * attribute in the <code>CreateAutoMLJob</code> input parameters. The supported
-     * formats depend on the problem type:</p> <ul> <li> <p>For Tabular problem types:
-     * <code>S3Prefix</code>, <code>ManifestFile</code>.</p> </li> <li> <p>For
-     * ImageClassification: <code>S3Prefix</code>, <code>ManifestFile</code>,
-     * <code>AugmentedManifestFile</code>.</p> </li> <li> <p>For TextClassification:
+     * formats depend on the problem type:</p> <ul> <li> <p>For tabular problem types:
+     * <code>S3Prefix</code>, <code>ManifestFile</code>.</p> </li> <li> <p>For image
+     * classification: <code>S3Prefix</code>, <code>ManifestFile</code>,
+     * <code>AugmentedManifestFile</code>.</p> </li> <li> <p>For text classification:
+     * <code>S3Prefix</code>.</p> </li> <li> <p>For time-series forecasting:
      * <code>S3Prefix</code>.</p> </li> </ul>
      */
     inline CreateAutoMLJobV2Request& AddAutoMLJobInputDataConfig(const AutoMLJobChannel& value) { m_autoMLJobInputDataConfigHasBeenSet = true; m_autoMLJobInputDataConfig.push_back(value); return *this; }
@@ -188,10 +195,11 @@ namespace Model
      * Each channel is a named input source. Similar to the <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html#sagemaker-CreateAutoMLJob-request-InputDataConfig">InputDataConfig</a>
      * attribute in the <code>CreateAutoMLJob</code> input parameters. The supported
-     * formats depend on the problem type:</p> <ul> <li> <p>For Tabular problem types:
-     * <code>S3Prefix</code>, <code>ManifestFile</code>.</p> </li> <li> <p>For
-     * ImageClassification: <code>S3Prefix</code>, <code>ManifestFile</code>,
-     * <code>AugmentedManifestFile</code>.</p> </li> <li> <p>For TextClassification:
+     * formats depend on the problem type:</p> <ul> <li> <p>For tabular problem types:
+     * <code>S3Prefix</code>, <code>ManifestFile</code>.</p> </li> <li> <p>For image
+     * classification: <code>S3Prefix</code>, <code>ManifestFile</code>,
+     * <code>AugmentedManifestFile</code>.</p> </li> <li> <p>For text classification:
+     * <code>S3Prefix</code>.</p> </li> <li> <p>For time-series forecasting:
      * <code>S3Prefix</code>.</p> </li> </ul>
      */
     inline CreateAutoMLJobV2Request& AddAutoMLJobInputDataConfig(AutoMLJobChannel&& value) { m_autoMLJobInputDataConfigHasBeenSet = true; m_autoMLJobInputDataConfig.push_back(std::move(value)); return *this; }
@@ -524,7 +532,10 @@ namespace Model
      * <p>This structure specifies how to split the data into train and validation
      * datasets.</p> <p>The validation and training datasets must contain the same
      * headers. For jobs created by calling <code>CreateAutoMLJob</code>, the
-     * validation dataset must be less than 2 GB in size.</p>
+     * validation dataset must be less than 2 GB in size.</p>  <p>This attribute
+     * must not be set for the time-series forecasting problem type, as Autopilot
+     * automatically splits the input dataset into training and validation sets.</p>
+     * 
      */
     inline const AutoMLDataSplitConfig& GetDataSplitConfig() const{ return m_dataSplitConfig; }
 
@@ -532,7 +543,10 @@ namespace Model
      * <p>This structure specifies how to split the data into train and validation
      * datasets.</p> <p>The validation and training datasets must contain the same
      * headers. For jobs created by calling <code>CreateAutoMLJob</code>, the
-     * validation dataset must be less than 2 GB in size.</p>
+     * validation dataset must be less than 2 GB in size.</p>  <p>This attribute
+     * must not be set for the time-series forecasting problem type, as Autopilot
+     * automatically splits the input dataset into training and validation sets.</p>
+     * 
      */
     inline bool DataSplitConfigHasBeenSet() const { return m_dataSplitConfigHasBeenSet; }
 
@@ -540,7 +554,10 @@ namespace Model
      * <p>This structure specifies how to split the data into train and validation
      * datasets.</p> <p>The validation and training datasets must contain the same
      * headers. For jobs created by calling <code>CreateAutoMLJob</code>, the
-     * validation dataset must be less than 2 GB in size.</p>
+     * validation dataset must be less than 2 GB in size.</p>  <p>This attribute
+     * must not be set for the time-series forecasting problem type, as Autopilot
+     * automatically splits the input dataset into training and validation sets.</p>
+     * 
      */
     inline void SetDataSplitConfig(const AutoMLDataSplitConfig& value) { m_dataSplitConfigHasBeenSet = true; m_dataSplitConfig = value; }
 
@@ -548,7 +565,10 @@ namespace Model
      * <p>This structure specifies how to split the data into train and validation
      * datasets.</p> <p>The validation and training datasets must contain the same
      * headers. For jobs created by calling <code>CreateAutoMLJob</code>, the
-     * validation dataset must be less than 2 GB in size.</p>
+     * validation dataset must be less than 2 GB in size.</p>  <p>This attribute
+     * must not be set for the time-series forecasting problem type, as Autopilot
+     * automatically splits the input dataset into training and validation sets.</p>
+     * 
      */
     inline void SetDataSplitConfig(AutoMLDataSplitConfig&& value) { m_dataSplitConfigHasBeenSet = true; m_dataSplitConfig = std::move(value); }
 
@@ -556,7 +576,10 @@ namespace Model
      * <p>This structure specifies how to split the data into train and validation
      * datasets.</p> <p>The validation and training datasets must contain the same
      * headers. For jobs created by calling <code>CreateAutoMLJob</code>, the
-     * validation dataset must be less than 2 GB in size.</p>
+     * validation dataset must be less than 2 GB in size.</p>  <p>This attribute
+     * must not be set for the time-series forecasting problem type, as Autopilot
+     * automatically splits the input dataset into training and validation sets.</p>
+     * 
      */
     inline CreateAutoMLJobV2Request& WithDataSplitConfig(const AutoMLDataSplitConfig& value) { SetDataSplitConfig(value); return *this;}
 
@@ -564,7 +587,10 @@ namespace Model
      * <p>This structure specifies how to split the data into train and validation
      * datasets.</p> <p>The validation and training datasets must contain the same
      * headers. For jobs created by calling <code>CreateAutoMLJob</code>, the
-     * validation dataset must be less than 2 GB in size.</p>
+     * validation dataset must be less than 2 GB in size.</p>  <p>This attribute
+     * must not be set for the time-series forecasting problem type, as Autopilot
+     * automatically splits the input dataset into training and validation sets.</p>
+     * 
      */
     inline CreateAutoMLJobV2Request& WithDataSplitConfig(AutoMLDataSplitConfig&& value) { SetDataSplitConfig(std::move(value)); return *this;}
 

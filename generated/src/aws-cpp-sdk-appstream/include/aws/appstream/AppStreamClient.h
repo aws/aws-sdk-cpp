@@ -93,6 +93,32 @@ namespace AppStream
         virtual ~AppStreamClient();
 
         /**
+         * <p>Associates the specified app block builder with the specified app
+         * block.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AssociateAppBlockBuilderAppBlock">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateAppBlockBuilderAppBlockOutcome AssociateAppBlockBuilderAppBlock(const Model::AssociateAppBlockBuilderAppBlockRequest& request) const;
+
+        /**
+         * A Callable wrapper for AssociateAppBlockBuilderAppBlock that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename AssociateAppBlockBuilderAppBlockRequestT = Model::AssociateAppBlockBuilderAppBlockRequest>
+        Model::AssociateAppBlockBuilderAppBlockOutcomeCallable AssociateAppBlockBuilderAppBlockCallable(const AssociateAppBlockBuilderAppBlockRequestT& request) const
+        {
+            return SubmitCallable(&AppStreamClient::AssociateAppBlockBuilderAppBlock, request);
+        }
+
+        /**
+         * An Async wrapper for AssociateAppBlockBuilderAppBlock that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename AssociateAppBlockBuilderAppBlockRequestT = Model::AssociateAppBlockBuilderAppBlockRequest>
+        void AssociateAppBlockBuilderAppBlockAsync(const AssociateAppBlockBuilderAppBlockRequestT& request, const AssociateAppBlockBuilderAppBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AppStreamClient::AssociateAppBlockBuilderAppBlock, request, handler, context);
+        }
+
+        /**
          * <p>Associates the specified application with the specified fleet. This is only
          * supported for Elastic fleets.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AssociateApplicationFleet">AWS
@@ -278,6 +304,57 @@ namespace AppStream
         void CreateAppBlockAsync(const CreateAppBlockRequestT& request, const CreateAppBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&AppStreamClient::CreateAppBlock, request, handler, context);
+        }
+
+        /**
+         * <p>Creates an app block builder.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateAppBlockBuilder">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateAppBlockBuilderOutcome CreateAppBlockBuilder(const Model::CreateAppBlockBuilderRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateAppBlockBuilder that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateAppBlockBuilderRequestT = Model::CreateAppBlockBuilderRequest>
+        Model::CreateAppBlockBuilderOutcomeCallable CreateAppBlockBuilderCallable(const CreateAppBlockBuilderRequestT& request) const
+        {
+            return SubmitCallable(&AppStreamClient::CreateAppBlockBuilder, request);
+        }
+
+        /**
+         * An Async wrapper for CreateAppBlockBuilder that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateAppBlockBuilderRequestT = Model::CreateAppBlockBuilderRequest>
+        void CreateAppBlockBuilderAsync(const CreateAppBlockBuilderRequestT& request, const CreateAppBlockBuilderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AppStreamClient::CreateAppBlockBuilder, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a URL to start a create app block builder streaming
+         * session.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateAppBlockBuilderStreamingURL">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateAppBlockBuilderStreamingURLOutcome CreateAppBlockBuilderStreamingURL(const Model::CreateAppBlockBuilderStreamingURLRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateAppBlockBuilderStreamingURL that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateAppBlockBuilderStreamingURLRequestT = Model::CreateAppBlockBuilderStreamingURLRequest>
+        Model::CreateAppBlockBuilderStreamingURLOutcomeCallable CreateAppBlockBuilderStreamingURLCallable(const CreateAppBlockBuilderStreamingURLRequestT& request) const
+        {
+            return SubmitCallable(&AppStreamClient::CreateAppBlockBuilderStreamingURL, request);
+        }
+
+        /**
+         * An Async wrapper for CreateAppBlockBuilderStreamingURL that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateAppBlockBuilderStreamingURLRequestT = Model::CreateAppBlockBuilderStreamingURLRequest>
+        void CreateAppBlockBuilderStreamingURLAsync(const CreateAppBlockBuilderStreamingURLRequestT& request, const CreateAppBlockBuilderStreamingURLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AppStreamClient::CreateAppBlockBuilderStreamingURL, request, handler, context);
         }
 
         /**
@@ -610,6 +687,32 @@ namespace AppStream
         }
 
         /**
+         * <p>Deletes an app block builder.</p> <p>An app block builder can only be deleted
+         * when it has no association with an app block.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteAppBlockBuilder">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteAppBlockBuilderOutcome DeleteAppBlockBuilder(const Model::DeleteAppBlockBuilderRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteAppBlockBuilder that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteAppBlockBuilderRequestT = Model::DeleteAppBlockBuilderRequest>
+        Model::DeleteAppBlockBuilderOutcomeCallable DeleteAppBlockBuilderCallable(const DeleteAppBlockBuilderRequestT& request) const
+        {
+            return SubmitCallable(&AppStreamClient::DeleteAppBlockBuilder, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteAppBlockBuilder that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteAppBlockBuilderRequestT = Model::DeleteAppBlockBuilderRequest>
+        void DeleteAppBlockBuilderAsync(const DeleteAppBlockBuilderRequestT& request, const DeleteAppBlockBuilderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AppStreamClient::DeleteAppBlockBuilder, request, handler, context);
+        }
+
+        /**
          * <p>Deletes an application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteApplication">AWS
          * API Reference</a></p>
@@ -867,6 +970,58 @@ namespace AppStream
         void DeleteUserAsync(const DeleteUserRequestT& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&AppStreamClient::DeleteUser, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves a list that describes one or more app block builder
+         * associations.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeAppBlockBuilderAppBlockAssociations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeAppBlockBuilderAppBlockAssociationsOutcome DescribeAppBlockBuilderAppBlockAssociations(const Model::DescribeAppBlockBuilderAppBlockAssociationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeAppBlockBuilderAppBlockAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeAppBlockBuilderAppBlockAssociationsRequestT = Model::DescribeAppBlockBuilderAppBlockAssociationsRequest>
+        Model::DescribeAppBlockBuilderAppBlockAssociationsOutcomeCallable DescribeAppBlockBuilderAppBlockAssociationsCallable(const DescribeAppBlockBuilderAppBlockAssociationsRequestT& request) const
+        {
+            return SubmitCallable(&AppStreamClient::DescribeAppBlockBuilderAppBlockAssociations, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeAppBlockBuilderAppBlockAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeAppBlockBuilderAppBlockAssociationsRequestT = Model::DescribeAppBlockBuilderAppBlockAssociationsRequest>
+        void DescribeAppBlockBuilderAppBlockAssociationsAsync(const DescribeAppBlockBuilderAppBlockAssociationsRequestT& request, const DescribeAppBlockBuilderAppBlockAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AppStreamClient::DescribeAppBlockBuilderAppBlockAssociations, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves a list that describes one or more app block builders.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeAppBlockBuilders">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeAppBlockBuildersOutcome DescribeAppBlockBuilders(const Model::DescribeAppBlockBuildersRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeAppBlockBuilders that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeAppBlockBuildersRequestT = Model::DescribeAppBlockBuildersRequest>
+        Model::DescribeAppBlockBuildersOutcomeCallable DescribeAppBlockBuildersCallable(const DescribeAppBlockBuildersRequestT& request) const
+        {
+            return SubmitCallable(&AppStreamClient::DescribeAppBlockBuilders, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeAppBlockBuilders that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeAppBlockBuildersRequestT = Model::DescribeAppBlockBuildersRequest>
+        void DescribeAppBlockBuildersAsync(const DescribeAppBlockBuildersRequestT& request, const DescribeAppBlockBuildersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AppStreamClient::DescribeAppBlockBuilders, request, handler, context);
         }
 
         /**
@@ -1277,6 +1432,32 @@ namespace AppStream
         }
 
         /**
+         * <p>Disassociates a specified app block builder from a specified app
+         * block.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisassociateAppBlockBuilderAppBlock">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateAppBlockBuilderAppBlockOutcome DisassociateAppBlockBuilderAppBlock(const Model::DisassociateAppBlockBuilderAppBlockRequest& request) const;
+
+        /**
+         * A Callable wrapper for DisassociateAppBlockBuilderAppBlock that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DisassociateAppBlockBuilderAppBlockRequestT = Model::DisassociateAppBlockBuilderAppBlockRequest>
+        Model::DisassociateAppBlockBuilderAppBlockOutcomeCallable DisassociateAppBlockBuilderAppBlockCallable(const DisassociateAppBlockBuilderAppBlockRequestT& request) const
+        {
+            return SubmitCallable(&AppStreamClient::DisassociateAppBlockBuilderAppBlock, request);
+        }
+
+        /**
+         * An Async wrapper for DisassociateAppBlockBuilderAppBlock that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DisassociateAppBlockBuilderAppBlockRequestT = Model::DisassociateAppBlockBuilderAppBlockRequest>
+        void DisassociateAppBlockBuilderAppBlockAsync(const DisassociateAppBlockBuilderAppBlockRequestT& request, const DisassociateAppBlockBuilderAppBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AppStreamClient::DisassociateAppBlockBuilderAppBlock, request, handler, context);
+        }
+
+        /**
          * <p>Disassociates the specified application from the fleet.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisassociateApplicationFleet">AWS
@@ -1515,6 +1696,34 @@ namespace AppStream
         }
 
         /**
+         * <p>Starts an app block builder.</p> <p>An app block builder can only be started
+         * when it's associated with an app block.</p> <p>Starting an app block builder
+         * starts a new instance, which is equivalent to an elastic fleet instance with
+         * application builder assistance functionality.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartAppBlockBuilder">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartAppBlockBuilderOutcome StartAppBlockBuilder(const Model::StartAppBlockBuilderRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartAppBlockBuilder that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartAppBlockBuilderRequestT = Model::StartAppBlockBuilderRequest>
+        Model::StartAppBlockBuilderOutcomeCallable StartAppBlockBuilderCallable(const StartAppBlockBuilderRequestT& request) const
+        {
+            return SubmitCallable(&AppStreamClient::StartAppBlockBuilder, request);
+        }
+
+        /**
+         * An Async wrapper for StartAppBlockBuilder that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartAppBlockBuilderRequestT = Model::StartAppBlockBuilderRequest>
+        void StartAppBlockBuilderAsync(const StartAppBlockBuilderRequestT& request, const StartAppBlockBuilderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AppStreamClient::StartAppBlockBuilder, request, handler, context);
+        }
+
+        /**
          * <p>Starts the specified fleet.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartFleet">AWS
          * API Reference</a></p>
@@ -1562,6 +1771,33 @@ namespace AppStream
         void StartImageBuilderAsync(const StartImageBuilderRequestT& request, const StartImageBuilderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&AppStreamClient::StartImageBuilder, request, handler, context);
+        }
+
+        /**
+         * <p>Stops an app block builder.</p> <p>Stopping an app block builder terminates
+         * the instance, and the instance state is not persisted.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StopAppBlockBuilder">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopAppBlockBuilderOutcome StopAppBlockBuilder(const Model::StopAppBlockBuilderRequest& request) const;
+
+        /**
+         * A Callable wrapper for StopAppBlockBuilder that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StopAppBlockBuilderRequestT = Model::StopAppBlockBuilderRequest>
+        Model::StopAppBlockBuilderOutcomeCallable StopAppBlockBuilderCallable(const StopAppBlockBuilderRequestT& request) const
+        {
+            return SubmitCallable(&AppStreamClient::StopAppBlockBuilder, request);
+        }
+
+        /**
+         * An Async wrapper for StopAppBlockBuilder that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StopAppBlockBuilderRequestT = Model::StopAppBlockBuilderRequest>
+        void StopAppBlockBuilderAsync(const StopAppBlockBuilderRequestT& request, const StopAppBlockBuilderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AppStreamClient::StopAppBlockBuilder, request, handler, context);
         }
 
         /**
@@ -1676,6 +1912,36 @@ namespace AppStream
         void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&AppStreamClient::UntagResource, request, handler, context);
+        }
+
+        /**
+         * <p>Updates an app block builder.</p> <p>If the app block builder is in the
+         * <code>STARTING</code> or <code>STOPPING</code> state, you can't update it. If
+         * the app block builder is in the <code>RUNNING</code> state, you can only update
+         * the DisplayName and Description. If the app block builder is in the
+         * <code>STOPPED</code> state, you can update any attribute except the
+         * Name.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateAppBlockBuilder">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateAppBlockBuilderOutcome UpdateAppBlockBuilder(const Model::UpdateAppBlockBuilderRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateAppBlockBuilder that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateAppBlockBuilderRequestT = Model::UpdateAppBlockBuilderRequest>
+        Model::UpdateAppBlockBuilderOutcomeCallable UpdateAppBlockBuilderCallable(const UpdateAppBlockBuilderRequestT& request) const
+        {
+            return SubmitCallable(&AppStreamClient::UpdateAppBlockBuilder, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateAppBlockBuilder that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateAppBlockBuilderRequestT = Model::UpdateAppBlockBuilderRequest>
+        void UpdateAppBlockBuilderAsync(const UpdateAppBlockBuilderRequestT& request, const UpdateAppBlockBuilderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AppStreamClient::UpdateAppBlockBuilder, request, handler, context);
         }
 
         /**

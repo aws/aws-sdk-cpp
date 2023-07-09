@@ -125,80 +125,93 @@ namespace Model
 
 
     /**
-     * <p>Specifies additional user-defined properties to store with the Geofence. An
-     * array of key-value pairs.</p>
+     * <p>Associates one of more properties with the geofence. A property is a
+     * key-value pair stored with the geofence and added to any geofence event
+     * triggered with that geofence.</p> <p>Format: <code>"key" : "value"</code> </p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetGeofenceProperties() const{ return m_geofenceProperties; }
 
     /**
-     * <p>Specifies additional user-defined properties to store with the Geofence. An
-     * array of key-value pairs.</p>
+     * <p>Associates one of more properties with the geofence. A property is a
+     * key-value pair stored with the geofence and added to any geofence event
+     * triggered with that geofence.</p> <p>Format: <code>"key" : "value"</code> </p>
      */
     inline bool GeofencePropertiesHasBeenSet() const { return m_geofencePropertiesHasBeenSet; }
 
     /**
-     * <p>Specifies additional user-defined properties to store with the Geofence. An
-     * array of key-value pairs.</p>
+     * <p>Associates one of more properties with the geofence. A property is a
+     * key-value pair stored with the geofence and added to any geofence event
+     * triggered with that geofence.</p> <p>Format: <code>"key" : "value"</code> </p>
      */
     inline void SetGeofenceProperties(const Aws::Map<Aws::String, Aws::String>& value) { m_geofencePropertiesHasBeenSet = true; m_geofenceProperties = value; }
 
     /**
-     * <p>Specifies additional user-defined properties to store with the Geofence. An
-     * array of key-value pairs.</p>
+     * <p>Associates one of more properties with the geofence. A property is a
+     * key-value pair stored with the geofence and added to any geofence event
+     * triggered with that geofence.</p> <p>Format: <code>"key" : "value"</code> </p>
      */
     inline void SetGeofenceProperties(Aws::Map<Aws::String, Aws::String>&& value) { m_geofencePropertiesHasBeenSet = true; m_geofenceProperties = std::move(value); }
 
     /**
-     * <p>Specifies additional user-defined properties to store with the Geofence. An
-     * array of key-value pairs.</p>
+     * <p>Associates one of more properties with the geofence. A property is a
+     * key-value pair stored with the geofence and added to any geofence event
+     * triggered with that geofence.</p> <p>Format: <code>"key" : "value"</code> </p>
      */
     inline PutGeofenceRequest& WithGeofenceProperties(const Aws::Map<Aws::String, Aws::String>& value) { SetGeofenceProperties(value); return *this;}
 
     /**
-     * <p>Specifies additional user-defined properties to store with the Geofence. An
-     * array of key-value pairs.</p>
+     * <p>Associates one of more properties with the geofence. A property is a
+     * key-value pair stored with the geofence and added to any geofence event
+     * triggered with that geofence.</p> <p>Format: <code>"key" : "value"</code> </p>
      */
     inline PutGeofenceRequest& WithGeofenceProperties(Aws::Map<Aws::String, Aws::String>&& value) { SetGeofenceProperties(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies additional user-defined properties to store with the Geofence. An
-     * array of key-value pairs.</p>
+     * <p>Associates one of more properties with the geofence. A property is a
+     * key-value pair stored with the geofence and added to any geofence event
+     * triggered with that geofence.</p> <p>Format: <code>"key" : "value"</code> </p>
      */
     inline PutGeofenceRequest& AddGeofenceProperties(const Aws::String& key, const Aws::String& value) { m_geofencePropertiesHasBeenSet = true; m_geofenceProperties.emplace(key, value); return *this; }
 
     /**
-     * <p>Specifies additional user-defined properties to store with the Geofence. An
-     * array of key-value pairs.</p>
+     * <p>Associates one of more properties with the geofence. A property is a
+     * key-value pair stored with the geofence and added to any geofence event
+     * triggered with that geofence.</p> <p>Format: <code>"key" : "value"</code> </p>
      */
     inline PutGeofenceRequest& AddGeofenceProperties(Aws::String&& key, const Aws::String& value) { m_geofencePropertiesHasBeenSet = true; m_geofenceProperties.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Specifies additional user-defined properties to store with the Geofence. An
-     * array of key-value pairs.</p>
+     * <p>Associates one of more properties with the geofence. A property is a
+     * key-value pair stored with the geofence and added to any geofence event
+     * triggered with that geofence.</p> <p>Format: <code>"key" : "value"</code> </p>
      */
     inline PutGeofenceRequest& AddGeofenceProperties(const Aws::String& key, Aws::String&& value) { m_geofencePropertiesHasBeenSet = true; m_geofenceProperties.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Specifies additional user-defined properties to store with the Geofence. An
-     * array of key-value pairs.</p>
+     * <p>Associates one of more properties with the geofence. A property is a
+     * key-value pair stored with the geofence and added to any geofence event
+     * triggered with that geofence.</p> <p>Format: <code>"key" : "value"</code> </p>
      */
     inline PutGeofenceRequest& AddGeofenceProperties(Aws::String&& key, Aws::String&& value) { m_geofencePropertiesHasBeenSet = true; m_geofenceProperties.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Specifies additional user-defined properties to store with the Geofence. An
-     * array of key-value pairs.</p>
+     * <p>Associates one of more properties with the geofence. A property is a
+     * key-value pair stored with the geofence and added to any geofence event
+     * triggered with that geofence.</p> <p>Format: <code>"key" : "value"</code> </p>
      */
     inline PutGeofenceRequest& AddGeofenceProperties(const char* key, Aws::String&& value) { m_geofencePropertiesHasBeenSet = true; m_geofenceProperties.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Specifies additional user-defined properties to store with the Geofence. An
-     * array of key-value pairs.</p>
+     * <p>Associates one of more properties with the geofence. A property is a
+     * key-value pair stored with the geofence and added to any geofence event
+     * triggered with that geofence.</p> <p>Format: <code>"key" : "value"</code> </p>
      */
     inline PutGeofenceRequest& AddGeofenceProperties(Aws::String&& key, const char* value) { m_geofencePropertiesHasBeenSet = true; m_geofenceProperties.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Specifies additional user-defined properties to store with the Geofence. An
-     * array of key-value pairs.</p>
+     * <p>Associates one of more properties with the geofence. A property is a
+     * key-value pair stored with the geofence and added to any geofence event
+     * triggered with that geofence.</p> <p>Format: <code>"key" : "value"</code> </p>
      */
     inline PutGeofenceRequest& AddGeofenceProperties(const char* key, const char* value) { m_geofencePropertiesHasBeenSet = true; m_geofenceProperties.emplace(key, value); return *this; }
 

@@ -24,7 +24,8 @@ UpdateApplicationRequest::UpdateApplicationRequest() :
     m_architecture(Architecture::NOT_SET),
     m_architectureHasBeenSet(false),
     m_imageConfigurationHasBeenSet(false),
-    m_workerTypeSpecificationsHasBeenSet(false)
+    m_workerTypeSpecificationsHasBeenSet(false),
+    m_releaseLabelHasBeenSet(false)
 {
 }
 
@@ -92,6 +93,12 @@ Aws::String UpdateApplicationRequest::SerializePayload() const
      workerTypeSpecificationsJsonMap.WithObject(workerTypeSpecificationsItem.first, workerTypeSpecificationsItem.second.Jsonize());
    }
    payload.WithObject("workerTypeSpecifications", std::move(workerTypeSpecificationsJsonMap));
+
+  }
+
+  if(m_releaseLabelHasBeenSet)
+  {
+   payload.WithString("releaseLabel", m_releaseLabel);
 
   }
 

@@ -23,6 +23,7 @@ AnalysisRuleAggregation::AnalysisRuleAggregation() :
     m_joinColumnsHasBeenSet(false),
     m_joinRequired(JoinRequiredOption::NOT_SET),
     m_joinRequiredHasBeenSet(false),
+    m_allowedJoinOperatorsHasBeenSet(false),
     m_dimensionColumnsHasBeenSet(false),
     m_scalarFunctionsHasBeenSet(false),
     m_outputConstraintsHasBeenSet(false)
@@ -34,6 +35,7 @@ AnalysisRuleAggregation::AnalysisRuleAggregation(JsonView jsonValue) :
     m_joinColumnsHasBeenSet(false),
     m_joinRequired(JoinRequiredOption::NOT_SET),
     m_joinRequiredHasBeenSet(false),
+    m_allowedJoinOperatorsHasBeenSet(false),
     m_dimensionColumnsHasBeenSet(false),
     m_scalarFunctionsHasBeenSet(false),
     m_outputConstraintsHasBeenSet(false)
@@ -68,6 +70,16 @@ AnalysisRuleAggregation& AnalysisRuleAggregation::operator =(JsonView jsonValue)
     m_joinRequired = JoinRequiredOptionMapper::GetJoinRequiredOptionForName(jsonValue.GetString("joinRequired"));
 
     m_joinRequiredHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("allowedJoinOperators"))
+  {
+    Aws::Utils::Array<JsonView> allowedJoinOperatorsJsonList = jsonValue.GetArray("allowedJoinOperators");
+    for(unsigned allowedJoinOperatorsIndex = 0; allowedJoinOperatorsIndex < allowedJoinOperatorsJsonList.GetLength(); ++allowedJoinOperatorsIndex)
+    {
+      m_allowedJoinOperators.push_back(JoinOperatorMapper::GetJoinOperatorForName(allowedJoinOperatorsJsonList[allowedJoinOperatorsIndex].AsString()));
+    }
+    m_allowedJoinOperatorsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("dimensionColumns"))
@@ -132,6 +144,17 @@ JsonValue AnalysisRuleAggregation::Jsonize() const
   if(m_joinRequiredHasBeenSet)
   {
    payload.WithString("joinRequired", JoinRequiredOptionMapper::GetNameForJoinRequiredOption(m_joinRequired));
+  }
+
+  if(m_allowedJoinOperatorsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> allowedJoinOperatorsJsonList(m_allowedJoinOperators.size());
+   for(unsigned allowedJoinOperatorsIndex = 0; allowedJoinOperatorsIndex < allowedJoinOperatorsJsonList.GetLength(); ++allowedJoinOperatorsIndex)
+   {
+     allowedJoinOperatorsJsonList[allowedJoinOperatorsIndex].AsString(JoinOperatorMapper::GetNameForJoinOperator(m_allowedJoinOperators[allowedJoinOperatorsIndex]));
+   }
+   payload.WithArray("allowedJoinOperators", std::move(allowedJoinOperatorsJsonList));
+
   }
 
   if(m_dimensionColumnsHasBeenSet)

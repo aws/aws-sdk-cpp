@@ -18,7 +18,9 @@ using namespace Aws::Http;
 GetRecordRequest::GetRecordRequest() : 
     m_featureGroupNameHasBeenSet(false),
     m_recordIdentifierValueAsStringHasBeenSet(false),
-    m_featureNamesHasBeenSet(false)
+    m_featureNamesHasBeenSet(false),
+    m_expirationTimeResponse(ExpirationTimeResponse::NOT_SET),
+    m_expirationTimeResponseHasBeenSet(false)
 {
 }
 
@@ -45,6 +47,13 @@ void GetRecordRequest::AddQueryStringParameters(URI& uri) const
         uri.AddQueryStringParameter("FeatureName", ss.str());
         ss.str("");
       }
+    }
+
+    if(m_expirationTimeResponseHasBeenSet)
+    {
+      ss << ExpirationTimeResponseMapper::GetNameForExpirationTimeResponse(m_expirationTimeResponse);
+      uri.AddQueryStringParameter("ExpirationTimeResponse", ss.str());
+      ss.str("");
     }
 
 }

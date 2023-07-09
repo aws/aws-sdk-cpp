@@ -27,6 +27,7 @@
 #include <aws/dms/model/DocDbSettings.h>
 #include <aws/dms/model/RedisSettings.h>
 #include <aws/dms/model/GcpMySQLSettings.h>
+#include <aws/dms/model/TimestreamSettings.h>
 #include <utility>
 
 namespace Aws
@@ -1793,6 +1794,37 @@ namespace Model
      */
     inline ModifyEndpointRequest& WithGcpMySQLSettings(GcpMySQLSettings&& value) { SetGcpMySQLSettings(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Settings in JSON format for the target Amazon Timestream endpoint.</p>
+     */
+    inline const TimestreamSettings& GetTimestreamSettings() const{ return m_timestreamSettings; }
+
+    /**
+     * <p>Settings in JSON format for the target Amazon Timestream endpoint.</p>
+     */
+    inline bool TimestreamSettingsHasBeenSet() const { return m_timestreamSettingsHasBeenSet; }
+
+    /**
+     * <p>Settings in JSON format for the target Amazon Timestream endpoint.</p>
+     */
+    inline void SetTimestreamSettings(const TimestreamSettings& value) { m_timestreamSettingsHasBeenSet = true; m_timestreamSettings = value; }
+
+    /**
+     * <p>Settings in JSON format for the target Amazon Timestream endpoint.</p>
+     */
+    inline void SetTimestreamSettings(TimestreamSettings&& value) { m_timestreamSettingsHasBeenSet = true; m_timestreamSettings = std::move(value); }
+
+    /**
+     * <p>Settings in JSON format for the target Amazon Timestream endpoint.</p>
+     */
+    inline ModifyEndpointRequest& WithTimestreamSettings(const TimestreamSettings& value) { SetTimestreamSettings(value); return *this;}
+
+    /**
+     * <p>Settings in JSON format for the target Amazon Timestream endpoint.</p>
+     */
+    inline ModifyEndpointRequest& WithTimestreamSettings(TimestreamSettings&& value) { SetTimestreamSettings(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_endpointArn;
@@ -1893,6 +1925,9 @@ namespace Model
 
     GcpMySQLSettings m_gcpMySQLSettings;
     bool m_gcpMySQLSettingsHasBeenSet = false;
+
+    TimestreamSettings m_timestreamSettings;
+    bool m_timestreamSettingsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -41,65 +41,49 @@ namespace Model
 
     /**
      * <p>The URI of the S3 bucket that contains the input data. The bucket must be in
-     * the same region as the API endpoint that you are calling.</p> <p>Each file in
-     * the document collection must be less than 40 KB. You can store a maximum of 30
-     * GB in the bucket.</p>
+     * the same region as the API endpoint that you are calling.</p>
      */
     inline const Aws::String& GetS3Bucket() const{ return m_s3Bucket; }
 
     /**
      * <p>The URI of the S3 bucket that contains the input data. The bucket must be in
-     * the same region as the API endpoint that you are calling.</p> <p>Each file in
-     * the document collection must be less than 40 KB. You can store a maximum of 30
-     * GB in the bucket.</p>
+     * the same region as the API endpoint that you are calling.</p>
      */
     inline bool S3BucketHasBeenSet() const { return m_s3BucketHasBeenSet; }
 
     /**
      * <p>The URI of the S3 bucket that contains the input data. The bucket must be in
-     * the same region as the API endpoint that you are calling.</p> <p>Each file in
-     * the document collection must be less than 40 KB. You can store a maximum of 30
-     * GB in the bucket.</p>
+     * the same region as the API endpoint that you are calling.</p>
      */
     inline void SetS3Bucket(const Aws::String& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = value; }
 
     /**
      * <p>The URI of the S3 bucket that contains the input data. The bucket must be in
-     * the same region as the API endpoint that you are calling.</p> <p>Each file in
-     * the document collection must be less than 40 KB. You can store a maximum of 30
-     * GB in the bucket.</p>
+     * the same region as the API endpoint that you are calling.</p>
      */
     inline void SetS3Bucket(Aws::String&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::move(value); }
 
     /**
      * <p>The URI of the S3 bucket that contains the input data. The bucket must be in
-     * the same region as the API endpoint that you are calling.</p> <p>Each file in
-     * the document collection must be less than 40 KB. You can store a maximum of 30
-     * GB in the bucket.</p>
+     * the same region as the API endpoint that you are calling.</p>
      */
     inline void SetS3Bucket(const char* value) { m_s3BucketHasBeenSet = true; m_s3Bucket.assign(value); }
 
     /**
      * <p>The URI of the S3 bucket that contains the input data. The bucket must be in
-     * the same region as the API endpoint that you are calling.</p> <p>Each file in
-     * the document collection must be less than 40 KB. You can store a maximum of 30
-     * GB in the bucket.</p>
+     * the same region as the API endpoint that you are calling.</p>
      */
     inline InputDataConfig& WithS3Bucket(const Aws::String& value) { SetS3Bucket(value); return *this;}
 
     /**
      * <p>The URI of the S3 bucket that contains the input data. The bucket must be in
-     * the same region as the API endpoint that you are calling.</p> <p>Each file in
-     * the document collection must be less than 40 KB. You can store a maximum of 30
-     * GB in the bucket.</p>
+     * the same region as the API endpoint that you are calling.</p>
      */
     inline InputDataConfig& WithS3Bucket(Aws::String&& value) { SetS3Bucket(std::move(value)); return *this;}
 
     /**
      * <p>The URI of the S3 bucket that contains the input data. The bucket must be in
-     * the same region as the API endpoint that you are calling.</p> <p>Each file in
-     * the document collection must be less than 40 KB. You can store a maximum of 30
-     * GB in the bucket.</p>
+     * the same region as the API endpoint that you are calling.</p>
      */
     inline InputDataConfig& WithS3Bucket(const char* value) { SetS3Bucket(value); return *this;}
 

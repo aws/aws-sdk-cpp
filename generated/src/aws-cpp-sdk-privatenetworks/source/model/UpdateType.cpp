@@ -22,6 +22,7 @@ namespace Aws
 
         static const int REPLACE_HASH = HashingUtils::HashString("REPLACE");
         static const int RETURN_HASH = HashingUtils::HashString("RETURN");
+        static const int COMMITMENT_HASH = HashingUtils::HashString("COMMITMENT");
 
 
         UpdateType GetUpdateTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == RETURN_HASH)
           {
             return UpdateType::RETURN;
+          }
+          else if (hashCode == COMMITMENT_HASH)
+          {
+            return UpdateType::COMMITMENT;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "REPLACE";
           case UpdateType::RETURN:
             return "RETURN";
+          case UpdateType::COMMITMENT:
+            return "COMMITMENT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

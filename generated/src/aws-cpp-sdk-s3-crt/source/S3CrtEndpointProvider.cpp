@@ -7,6 +7,22 @@
 
 namespace Aws
 {
+#ifndef AWS_S3CRT_EXPORTS // Except for Windows DLL
+namespace Endpoint
+{
+/**
+ * Instantiate endpoint providers
+ */
+template class Aws::Endpoint::EndpointProviderBase<S3Crt::Endpoint::S3CrtClientConfiguration,
+    S3Crt::Endpoint::S3CrtBuiltInParameters,
+    S3Crt::Endpoint::S3CrtClientContextParameters>;
+
+template class Aws::Endpoint::DefaultEndpointProvider<S3Crt::Endpoint::S3CrtClientConfiguration,
+    S3Crt::Endpoint::S3CrtBuiltInParameters,
+    S3Crt::Endpoint::S3CrtClientContextParameters>;
+} // namespace Endpoint
+#endif
+
 namespace S3Crt
 {
 namespace Endpoint

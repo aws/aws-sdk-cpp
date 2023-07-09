@@ -6,10 +6,10 @@
 #pragma once
 #include <aws/mgn/Mgn_EXPORTS.h>
 #include <aws/mgn/MgnRequest.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mgn/model/BootMode.h>
 #include <aws/mgn/model/LaunchDisposition.h>
 #include <aws/mgn/model/Licensing.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mgn/model/PostLaunchActions.h>
 #include <aws/mgn/model/TargetInstanceTypeRightSizingMethod.h>
 #include <utility>
@@ -35,6 +35,47 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "UpdateLaunchConfiguration"; }
 
     AWS_MGN_API Aws::String SerializePayload() const override;
+
+
+    /**
+     * <p>Update Launch configuration Account ID.</p>
+     */
+    inline const Aws::String& GetAccountID() const{ return m_accountID; }
+
+    /**
+     * <p>Update Launch configuration Account ID.</p>
+     */
+    inline bool AccountIDHasBeenSet() const { return m_accountIDHasBeenSet; }
+
+    /**
+     * <p>Update Launch configuration Account ID.</p>
+     */
+    inline void SetAccountID(const Aws::String& value) { m_accountIDHasBeenSet = true; m_accountID = value; }
+
+    /**
+     * <p>Update Launch configuration Account ID.</p>
+     */
+    inline void SetAccountID(Aws::String&& value) { m_accountIDHasBeenSet = true; m_accountID = std::move(value); }
+
+    /**
+     * <p>Update Launch configuration Account ID.</p>
+     */
+    inline void SetAccountID(const char* value) { m_accountIDHasBeenSet = true; m_accountID.assign(value); }
+
+    /**
+     * <p>Update Launch configuration Account ID.</p>
+     */
+    inline UpdateLaunchConfigurationRequest& WithAccountID(const Aws::String& value) { SetAccountID(value); return *this;}
+
+    /**
+     * <p>Update Launch configuration Account ID.</p>
+     */
+    inline UpdateLaunchConfigurationRequest& WithAccountID(Aws::String&& value) { SetAccountID(std::move(value)); return *this;}
+
+    /**
+     * <p>Update Launch configuration Account ID.</p>
+     */
+    inline UpdateLaunchConfigurationRequest& WithAccountID(const char* value) { SetAccountID(value); return *this;}
 
 
     /**
@@ -366,6 +407,9 @@ namespace Model
     inline UpdateLaunchConfigurationRequest& WithTargetInstanceTypeRightSizingMethod(TargetInstanceTypeRightSizingMethod&& value) { SetTargetInstanceTypeRightSizingMethod(std::move(value)); return *this;}
 
   private:
+
+    Aws::String m_accountID;
+    bool m_accountIDHasBeenSet = false;
 
     BootMode m_bootMode;
     bool m_bootModeHasBeenSet = false;

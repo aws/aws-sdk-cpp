@@ -68,7 +68,8 @@ ContainerDefinition::ContainerDefinition() :
     m_healthCheckHasBeenSet(false),
     m_systemControlsHasBeenSet(false),
     m_resourceRequirementsHasBeenSet(false),
-    m_firelensConfigurationHasBeenSet(false)
+    m_firelensConfigurationHasBeenSet(false),
+    m_credentialSpecsHasBeenSet(false)
 {
 }
 
@@ -122,7 +123,8 @@ ContainerDefinition::ContainerDefinition(JsonView jsonValue) :
     m_healthCheckHasBeenSet(false),
     m_systemControlsHasBeenSet(false),
     m_resourceRequirementsHasBeenSet(false),
-    m_firelensConfigurationHasBeenSet(false)
+    m_firelensConfigurationHasBeenSet(false),
+    m_credentialSpecsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -456,6 +458,16 @@ ContainerDefinition& ContainerDefinition::operator =(JsonView jsonValue)
     m_firelensConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("credentialSpecs"))
+  {
+    Aws::Utils::Array<JsonView> credentialSpecsJsonList = jsonValue.GetArray("credentialSpecs");
+    for(unsigned credentialSpecsIndex = 0; credentialSpecsIndex < credentialSpecsJsonList.GetLength(); ++credentialSpecsIndex)
+    {
+      m_credentialSpecs.push_back(credentialSpecsJsonList[credentialSpecsIndex].AsString());
+    }
+    m_credentialSpecsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -784,6 +796,17 @@ JsonValue ContainerDefinition::Jsonize() const
   if(m_firelensConfigurationHasBeenSet)
   {
    payload.WithObject("firelensConfiguration", m_firelensConfiguration.Jsonize());
+
+  }
+
+  if(m_credentialSpecsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> credentialSpecsJsonList(m_credentialSpecs.size());
+   for(unsigned credentialSpecsIndex = 0; credentialSpecsIndex < credentialSpecsJsonList.GetLength(); ++credentialSpecsIndex)
+   {
+     credentialSpecsJsonList[credentialSpecsIndex].AsString(m_credentialSpecs[credentialSpecsIndex]);
+   }
+   payload.WithArray("credentialSpecs", std::move(credentialSpecsJsonList));
 
   }
 

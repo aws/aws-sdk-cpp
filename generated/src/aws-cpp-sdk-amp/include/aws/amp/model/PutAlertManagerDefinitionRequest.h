@@ -39,6 +39,78 @@ namespace Model
 
 
     /**
+     * <p>The ID of the workspace in which to update the alert manager definition.</p>
+     */
+    inline const Aws::String& GetWorkspaceId() const{ return m_workspaceId; }
+
+    /**
+     * <p>The ID of the workspace in which to update the alert manager definition.</p>
+     */
+    inline bool WorkspaceIdHasBeenSet() const { return m_workspaceIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the workspace in which to update the alert manager definition.</p>
+     */
+    inline void SetWorkspaceId(const Aws::String& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = value; }
+
+    /**
+     * <p>The ID of the workspace in which to update the alert manager definition.</p>
+     */
+    inline void SetWorkspaceId(Aws::String&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = std::move(value); }
+
+    /**
+     * <p>The ID of the workspace in which to update the alert manager definition.</p>
+     */
+    inline void SetWorkspaceId(const char* value) { m_workspaceIdHasBeenSet = true; m_workspaceId.assign(value); }
+
+    /**
+     * <p>The ID of the workspace in which to update the alert manager definition.</p>
+     */
+    inline PutAlertManagerDefinitionRequest& WithWorkspaceId(const Aws::String& value) { SetWorkspaceId(value); return *this;}
+
+    /**
+     * <p>The ID of the workspace in which to update the alert manager definition.</p>
+     */
+    inline PutAlertManagerDefinitionRequest& WithWorkspaceId(Aws::String&& value) { SetWorkspaceId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the workspace in which to update the alert manager definition.</p>
+     */
+    inline PutAlertManagerDefinitionRequest& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
+
+
+    /**
+     * <p>The alert manager definition data.</p>
+     */
+    inline const Aws::Utils::ByteBuffer& GetData() const{ return m_data; }
+
+    /**
+     * <p>The alert manager definition data.</p>
+     */
+    inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
+
+    /**
+     * <p>The alert manager definition data.</p>
+     */
+    inline void SetData(const Aws::Utils::ByteBuffer& value) { m_dataHasBeenSet = true; m_data = value; }
+
+    /**
+     * <p>The alert manager definition data.</p>
+     */
+    inline void SetData(Aws::Utils::ByteBuffer&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
+
+    /**
+     * <p>The alert manager definition data.</p>
+     */
+    inline PutAlertManagerDefinitionRequest& WithData(const Aws::Utils::ByteBuffer& value) { SetData(value); return *this;}
+
+    /**
+     * <p>The alert manager definition data.</p>
+     */
+    inline PutAlertManagerDefinitionRequest& WithData(Aws::Utils::ByteBuffer&& value) { SetData(std::move(value)); return *this;}
+
+
+    /**
      * <p>Optional, unique, case-sensitive, user-provided identifier to ensure the
      * idempotency of the request.</p>
      */
@@ -86,88 +158,16 @@ namespace Model
      */
     inline PutAlertManagerDefinitionRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
-
-    /**
-     * <p>The alert manager definition data.</p>
-     */
-    inline const Aws::Utils::ByteBuffer& GetData() const{ return m_data; }
-
-    /**
-     * <p>The alert manager definition data.</p>
-     */
-    inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
-
-    /**
-     * <p>The alert manager definition data.</p>
-     */
-    inline void SetData(const Aws::Utils::ByteBuffer& value) { m_dataHasBeenSet = true; m_data = value; }
-
-    /**
-     * <p>The alert manager definition data.</p>
-     */
-    inline void SetData(Aws::Utils::ByteBuffer&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
-
-    /**
-     * <p>The alert manager definition data.</p>
-     */
-    inline PutAlertManagerDefinitionRequest& WithData(const Aws::Utils::ByteBuffer& value) { SetData(value); return *this;}
-
-    /**
-     * <p>The alert manager definition data.</p>
-     */
-    inline PutAlertManagerDefinitionRequest& WithData(Aws::Utils::ByteBuffer&& value) { SetData(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The ID of the workspace in which to update the alert manager definition.</p>
-     */
-    inline const Aws::String& GetWorkspaceId() const{ return m_workspaceId; }
-
-    /**
-     * <p>The ID of the workspace in which to update the alert manager definition.</p>
-     */
-    inline bool WorkspaceIdHasBeenSet() const { return m_workspaceIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the workspace in which to update the alert manager definition.</p>
-     */
-    inline void SetWorkspaceId(const Aws::String& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = value; }
-
-    /**
-     * <p>The ID of the workspace in which to update the alert manager definition.</p>
-     */
-    inline void SetWorkspaceId(Aws::String&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = std::move(value); }
-
-    /**
-     * <p>The ID of the workspace in which to update the alert manager definition.</p>
-     */
-    inline void SetWorkspaceId(const char* value) { m_workspaceIdHasBeenSet = true; m_workspaceId.assign(value); }
-
-    /**
-     * <p>The ID of the workspace in which to update the alert manager definition.</p>
-     */
-    inline PutAlertManagerDefinitionRequest& WithWorkspaceId(const Aws::String& value) { SetWorkspaceId(value); return *this;}
-
-    /**
-     * <p>The ID of the workspace in which to update the alert manager definition.</p>
-     */
-    inline PutAlertManagerDefinitionRequest& WithWorkspaceId(Aws::String&& value) { SetWorkspaceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the workspace in which to update the alert manager definition.</p>
-     */
-    inline PutAlertManagerDefinitionRequest& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
-
   private:
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_workspaceId;
+    bool m_workspaceIdHasBeenSet = false;
 
     Aws::Utils::ByteBuffer m_data;
     bool m_dataHasBeenSet = false;
 
-    Aws::String m_workspaceId;
-    bool m_workspaceIdHasBeenSet = false;
+    Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

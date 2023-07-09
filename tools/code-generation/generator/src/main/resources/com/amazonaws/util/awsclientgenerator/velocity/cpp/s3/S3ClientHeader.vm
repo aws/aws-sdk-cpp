@@ -192,6 +192,7 @@ namespace ${rootNamespace}
           const S3CrtClient *s3CrtClient;
           GetObjectResponseReceivedHandler getResponseHandler;
           PutObjectResponseReceivedHandler putResponseHandler;
+          CopyObjectResponseReceivedHandler copyResponseHandler;
           std::shared_ptr<const Aws::Client::AsyncCallerContext> asyncCallerContext;
           const Aws::AmazonWebServiceRequest *originalRequest;
           std::shared_ptr<Aws::Http::HttpRequest> request;

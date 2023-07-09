@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/mgn/Mgn_EXPORTS.h>
 #include <aws/mgn/MgnRequest.h>
-#include <aws/mgn/model/ListApplicationsRequestFilters.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mgn/model/ListApplicationsRequestFilters.h>
 #include <utility>
 
 namespace Aws
@@ -31,6 +31,47 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "ListApplications"; }
 
     AWS_MGN_API Aws::String SerializePayload() const override;
+
+
+    /**
+     * <p>Applications list Account ID.</p>
+     */
+    inline const Aws::String& GetAccountID() const{ return m_accountID; }
+
+    /**
+     * <p>Applications list Account ID.</p>
+     */
+    inline bool AccountIDHasBeenSet() const { return m_accountIDHasBeenSet; }
+
+    /**
+     * <p>Applications list Account ID.</p>
+     */
+    inline void SetAccountID(const Aws::String& value) { m_accountIDHasBeenSet = true; m_accountID = value; }
+
+    /**
+     * <p>Applications list Account ID.</p>
+     */
+    inline void SetAccountID(Aws::String&& value) { m_accountIDHasBeenSet = true; m_accountID = std::move(value); }
+
+    /**
+     * <p>Applications list Account ID.</p>
+     */
+    inline void SetAccountID(const char* value) { m_accountIDHasBeenSet = true; m_accountID.assign(value); }
+
+    /**
+     * <p>Applications list Account ID.</p>
+     */
+    inline ListApplicationsRequest& WithAccountID(const Aws::String& value) { SetAccountID(value); return *this;}
+
+    /**
+     * <p>Applications list Account ID.</p>
+     */
+    inline ListApplicationsRequest& WithAccountID(Aws::String&& value) { SetAccountID(std::move(value)); return *this;}
+
+    /**
+     * <p>Applications list Account ID.</p>
+     */
+    inline ListApplicationsRequest& WithAccountID(const char* value) { SetAccountID(value); return *this;}
 
 
     /**
@@ -126,6 +167,9 @@ namespace Model
     inline ListApplicationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
+    Aws::String m_accountID;
+    bool m_accountIDHasBeenSet = false;
 
     ListApplicationsRequestFilters m_filters;
     bool m_filtersHasBeenSet = false;

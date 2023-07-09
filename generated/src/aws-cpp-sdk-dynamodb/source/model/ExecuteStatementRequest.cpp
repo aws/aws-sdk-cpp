@@ -21,7 +21,9 @@ ExecuteStatementRequest::ExecuteStatementRequest() :
     m_returnConsumedCapacity(ReturnConsumedCapacity::NOT_SET),
     m_returnConsumedCapacityHasBeenSet(false),
     m_limit(0),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_returnValuesOnConditionCheckFailure(ReturnValuesOnConditionCheckFailure::NOT_SET),
+    m_returnValuesOnConditionCheckFailureHasBeenSet(false)
 {
 }
 
@@ -67,6 +69,11 @@ Aws::String ExecuteStatementRequest::SerializePayload() const
   {
    payload.WithInteger("Limit", m_limit);
 
+  }
+
+  if(m_returnValuesOnConditionCheckFailureHasBeenSet)
+  {
+   payload.WithString("ReturnValuesOnConditionCheckFailure", ReturnValuesOnConditionCheckFailureMapper::GetNameForReturnValuesOnConditionCheckFailure(m_returnValuesOnConditionCheckFailure));
   }
 
   return payload.View().WriteReadable();

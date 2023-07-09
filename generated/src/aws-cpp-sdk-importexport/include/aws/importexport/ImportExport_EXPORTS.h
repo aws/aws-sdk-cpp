@@ -21,9 +21,12 @@
         #else
             #define AWS_IMPORTEXPORT_API __declspec(dllimport)
         #endif /* AWS_IMPORTEXPORT_EXPORTS */
+        #define AWS_IMPORTEXPORT_EXTERN
     #else
         #define AWS_IMPORTEXPORT_API
+        #define AWS_IMPORTEXPORT_EXTERN extern
     #endif // USE_IMPORT_EXPORT
 #else // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
     #define AWS_IMPORTEXPORT_API
+    #define AWS_IMPORTEXPORT_EXTERN extern
 #endif // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)

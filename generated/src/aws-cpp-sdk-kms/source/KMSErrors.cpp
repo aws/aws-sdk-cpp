@@ -62,6 +62,7 @@ static const int INVALID_CIPHERTEXT_HASH = HashingUtils::HashString("InvalidCiph
 static const int XKS_KEY_ALREADY_IN_USE_HASH = HashingUtils::HashString("XksKeyAlreadyInUseException");
 static const int K_M_S_INVALID_SIGNATURE_HASH = HashingUtils::HashString("KMSInvalidSignatureException");
 static const int CUSTOM_KEY_STORE_INVALID_STATE_HASH = HashingUtils::HashString("CustomKeyStoreInvalidStateException");
+static const int DRY_RUN_OPERATION_HASH = HashingUtils::HashString("DryRunOperationException");
 static const int XKS_PROXY_INVALID_CONFIGURATION_HASH = HashingUtils::HashString("XksProxyInvalidConfigurationException");
 static const int EXPIRED_IMPORT_TOKEN_HASH = HashingUtils::HashString("ExpiredImportTokenException");
 
@@ -245,6 +246,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == CUSTOM_KEY_STORE_INVALID_STATE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(KMSErrors::CUSTOM_KEY_STORE_INVALID_STATE), false);
+  }
+  else if (hashCode == DRY_RUN_OPERATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KMSErrors::DRY_RUN_OPERATION), false);
   }
   else if (hashCode == XKS_PROXY_INVALID_CONFIGURATION_HASH)
   {

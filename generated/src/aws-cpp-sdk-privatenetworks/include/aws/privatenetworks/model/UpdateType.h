@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     REPLACE,
-    RETURN
+    RETURN,
+    COMMITMENT
   };
 
 namespace UpdateTypeMapper

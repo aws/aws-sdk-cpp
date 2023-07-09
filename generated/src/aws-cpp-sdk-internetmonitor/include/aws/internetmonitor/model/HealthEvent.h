@@ -390,6 +390,35 @@ namespace Model
      */
     inline HealthEvent& WithImpactType(HealthEventImpactType&& value) { SetImpactType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The value of the threshold percentage for performance or availability that
+     * was configured when Amazon CloudWatch Internet Monitor created the health
+     * event.</p>
+     */
+    inline double GetHealthScoreThreshold() const{ return m_healthScoreThreshold; }
+
+    /**
+     * <p>The value of the threshold percentage for performance or availability that
+     * was configured when Amazon CloudWatch Internet Monitor created the health
+     * event.</p>
+     */
+    inline bool HealthScoreThresholdHasBeenSet() const { return m_healthScoreThresholdHasBeenSet; }
+
+    /**
+     * <p>The value of the threshold percentage for performance or availability that
+     * was configured when Amazon CloudWatch Internet Monitor created the health
+     * event.</p>
+     */
+    inline void SetHealthScoreThreshold(double value) { m_healthScoreThresholdHasBeenSet = true; m_healthScoreThreshold = value; }
+
+    /**
+     * <p>The value of the threshold percentage for performance or availability that
+     * was configured when Amazon CloudWatch Internet Monitor created the health
+     * event.</p>
+     */
+    inline HealthEvent& WithHealthScoreThreshold(double value) { SetHealthScoreThreshold(value); return *this;}
+
   private:
 
     Aws::String m_eventArn;
@@ -421,6 +450,9 @@ namespace Model
 
     HealthEventImpactType m_impactType;
     bool m_impactTypeHasBeenSet = false;
+
+    double m_healthScoreThreshold;
+    bool m_healthScoreThresholdHasBeenSet = false;
   };
 
 } // namespace Model

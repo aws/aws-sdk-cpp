@@ -89,24 +89,44 @@ namespace Model
     /**
      * <p>The amount of provisioned concurrency to allocate for the serverless
      * endpoint. Should be less than or equal to <code>MaxConcurrency</code>.</p>
+     *  <p>This field is not supported for serverless endpoint recommendations
+     * for Inference Recommender jobs. For more information about creating an Inference
+     * Recommender job, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceRecommendationsJob.html">CreateInferenceRecommendationsJobs</a>.</p>
+     * 
      */
     inline int GetProvisionedConcurrency() const{ return m_provisionedConcurrency; }
 
     /**
      * <p>The amount of provisioned concurrency to allocate for the serverless
      * endpoint. Should be less than or equal to <code>MaxConcurrency</code>.</p>
+     *  <p>This field is not supported for serverless endpoint recommendations
+     * for Inference Recommender jobs. For more information about creating an Inference
+     * Recommender job, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceRecommendationsJob.html">CreateInferenceRecommendationsJobs</a>.</p>
+     * 
      */
     inline bool ProvisionedConcurrencyHasBeenSet() const { return m_provisionedConcurrencyHasBeenSet; }
 
     /**
      * <p>The amount of provisioned concurrency to allocate for the serverless
      * endpoint. Should be less than or equal to <code>MaxConcurrency</code>.</p>
+     *  <p>This field is not supported for serverless endpoint recommendations
+     * for Inference Recommender jobs. For more information about creating an Inference
+     * Recommender job, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceRecommendationsJob.html">CreateInferenceRecommendationsJobs</a>.</p>
+     * 
      */
     inline void SetProvisionedConcurrency(int value) { m_provisionedConcurrencyHasBeenSet = true; m_provisionedConcurrency = value; }
 
     /**
      * <p>The amount of provisioned concurrency to allocate for the serverless
      * endpoint. Should be less than or equal to <code>MaxConcurrency</code>.</p>
+     *  <p>This field is not supported for serverless endpoint recommendations
+     * for Inference Recommender jobs. For more information about creating an Inference
+     * Recommender job, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceRecommendationsJob.html">CreateInferenceRecommendationsJobs</a>.</p>
+     * 
      */
     inline ProductionVariantServerlessConfig& WithProvisionedConcurrency(int value) { SetProvisionedConcurrency(value); return *this;}
 

@@ -1328,52 +1328,337 @@ namespace Model
 
 
     /**
-     * <p>Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * <p>The name of the IAM role to use when making API calls to the Directory
+     * Service.</p> <p>This setting doesn't apply to RDS Custom DB instances.</p>
      */
     inline const Aws::String& GetDomainIAMRoleName() const{ return m_domainIAMRoleName; }
 
     /**
-     * <p>Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * <p>The name of the IAM role to use when making API calls to the Directory
+     * Service.</p> <p>This setting doesn't apply to RDS Custom DB instances.</p>
      */
     inline bool DomainIAMRoleNameHasBeenSet() const { return m_domainIAMRoleNameHasBeenSet; }
 
     /**
-     * <p>Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * <p>The name of the IAM role to use when making API calls to the Directory
+     * Service.</p> <p>This setting doesn't apply to RDS Custom DB instances.</p>
      */
     inline void SetDomainIAMRoleName(const Aws::String& value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName = value; }
 
     /**
-     * <p>Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * <p>The name of the IAM role to use when making API calls to the Directory
+     * Service.</p> <p>This setting doesn't apply to RDS Custom DB instances.</p>
      */
     inline void SetDomainIAMRoleName(Aws::String&& value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName = std::move(value); }
 
     /**
-     * <p>Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * <p>The name of the IAM role to use when making API calls to the Directory
+     * Service.</p> <p>This setting doesn't apply to RDS Custom DB instances.</p>
      */
     inline void SetDomainIAMRoleName(const char* value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName.assign(value); }
 
     /**
-     * <p>Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * <p>The name of the IAM role to use when making API calls to the Directory
+     * Service.</p> <p>This setting doesn't apply to RDS Custom DB instances.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithDomainIAMRoleName(const Aws::String& value) { SetDomainIAMRoleName(value); return *this;}
 
     /**
-     * <p>Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * <p>The name of the IAM role to use when making API calls to the Directory
+     * Service.</p> <p>This setting doesn't apply to RDS Custom DB instances.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithDomainIAMRoleName(Aws::String&& value) { SetDomainIAMRoleName(std::move(value)); return *this;}
 
     /**
-     * <p>Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.</p> <p>This setting doesn't apply to RDS Custom.</p>
+     * <p>The name of the IAM role to use when making API calls to the Directory
+     * Service.</p> <p>This setting doesn't apply to RDS Custom DB instances.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithDomainIAMRoleName(const char* value) { SetDomainIAMRoleName(value); return *this;}
+
+
+    /**
+     * <p>The fully qualified domain name (FQDN) of an Active Directory domain.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 64 characters.</p> </li>
+     * </ul> <p>Example: <code>mymanagedADtest.mymanagedAD.mydomain</code> </p>
+     */
+    inline const Aws::String& GetDomainFqdn() const{ return m_domainFqdn; }
+
+    /**
+     * <p>The fully qualified domain name (FQDN) of an Active Directory domain.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 64 characters.</p> </li>
+     * </ul> <p>Example: <code>mymanagedADtest.mymanagedAD.mydomain</code> </p>
+     */
+    inline bool DomainFqdnHasBeenSet() const { return m_domainFqdnHasBeenSet; }
+
+    /**
+     * <p>The fully qualified domain name (FQDN) of an Active Directory domain.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 64 characters.</p> </li>
+     * </ul> <p>Example: <code>mymanagedADtest.mymanagedAD.mydomain</code> </p>
+     */
+    inline void SetDomainFqdn(const Aws::String& value) { m_domainFqdnHasBeenSet = true; m_domainFqdn = value; }
+
+    /**
+     * <p>The fully qualified domain name (FQDN) of an Active Directory domain.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 64 characters.</p> </li>
+     * </ul> <p>Example: <code>mymanagedADtest.mymanagedAD.mydomain</code> </p>
+     */
+    inline void SetDomainFqdn(Aws::String&& value) { m_domainFqdnHasBeenSet = true; m_domainFqdn = std::move(value); }
+
+    /**
+     * <p>The fully qualified domain name (FQDN) of an Active Directory domain.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 64 characters.</p> </li>
+     * </ul> <p>Example: <code>mymanagedADtest.mymanagedAD.mydomain</code> </p>
+     */
+    inline void SetDomainFqdn(const char* value) { m_domainFqdnHasBeenSet = true; m_domainFqdn.assign(value); }
+
+    /**
+     * <p>The fully qualified domain name (FQDN) of an Active Directory domain.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 64 characters.</p> </li>
+     * </ul> <p>Example: <code>mymanagedADtest.mymanagedAD.mydomain</code> </p>
+     */
+    inline RestoreDBInstanceToPointInTimeRequest& WithDomainFqdn(const Aws::String& value) { SetDomainFqdn(value); return *this;}
+
+    /**
+     * <p>The fully qualified domain name (FQDN) of an Active Directory domain.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 64 characters.</p> </li>
+     * </ul> <p>Example: <code>mymanagedADtest.mymanagedAD.mydomain</code> </p>
+     */
+    inline RestoreDBInstanceToPointInTimeRequest& WithDomainFqdn(Aws::String&& value) { SetDomainFqdn(std::move(value)); return *this;}
+
+    /**
+     * <p>The fully qualified domain name (FQDN) of an Active Directory domain.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 64 characters.</p> </li>
+     * </ul> <p>Example: <code>mymanagedADtest.mymanagedAD.mydomain</code> </p>
+     */
+    inline RestoreDBInstanceToPointInTimeRequest& WithDomainFqdn(const char* value) { SetDomainFqdn(value); return *this;}
+
+
+    /**
+     * <p>The Active Directory organizational unit for your DB instance to join.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be in the distinguished name format.</p>
+     * </li> <li> <p>Can't be longer than 64 characters.</p> </li> </ul> <p>Example:
+     * <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code>
+     * </p>
+     */
+    inline const Aws::String& GetDomainOu() const{ return m_domainOu; }
+
+    /**
+     * <p>The Active Directory organizational unit for your DB instance to join.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be in the distinguished name format.</p>
+     * </li> <li> <p>Can't be longer than 64 characters.</p> </li> </ul> <p>Example:
+     * <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code>
+     * </p>
+     */
+    inline bool DomainOuHasBeenSet() const { return m_domainOuHasBeenSet; }
+
+    /**
+     * <p>The Active Directory organizational unit for your DB instance to join.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be in the distinguished name format.</p>
+     * </li> <li> <p>Can't be longer than 64 characters.</p> </li> </ul> <p>Example:
+     * <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code>
+     * </p>
+     */
+    inline void SetDomainOu(const Aws::String& value) { m_domainOuHasBeenSet = true; m_domainOu = value; }
+
+    /**
+     * <p>The Active Directory organizational unit for your DB instance to join.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be in the distinguished name format.</p>
+     * </li> <li> <p>Can't be longer than 64 characters.</p> </li> </ul> <p>Example:
+     * <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code>
+     * </p>
+     */
+    inline void SetDomainOu(Aws::String&& value) { m_domainOuHasBeenSet = true; m_domainOu = std::move(value); }
+
+    /**
+     * <p>The Active Directory organizational unit for your DB instance to join.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be in the distinguished name format.</p>
+     * </li> <li> <p>Can't be longer than 64 characters.</p> </li> </ul> <p>Example:
+     * <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code>
+     * </p>
+     */
+    inline void SetDomainOu(const char* value) { m_domainOuHasBeenSet = true; m_domainOu.assign(value); }
+
+    /**
+     * <p>The Active Directory organizational unit for your DB instance to join.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be in the distinguished name format.</p>
+     * </li> <li> <p>Can't be longer than 64 characters.</p> </li> </ul> <p>Example:
+     * <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code>
+     * </p>
+     */
+    inline RestoreDBInstanceToPointInTimeRequest& WithDomainOu(const Aws::String& value) { SetDomainOu(value); return *this;}
+
+    /**
+     * <p>The Active Directory organizational unit for your DB instance to join.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be in the distinguished name format.</p>
+     * </li> <li> <p>Can't be longer than 64 characters.</p> </li> </ul> <p>Example:
+     * <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code>
+     * </p>
+     */
+    inline RestoreDBInstanceToPointInTimeRequest& WithDomainOu(Aws::String&& value) { SetDomainOu(std::move(value)); return *this;}
+
+    /**
+     * <p>The Active Directory organizational unit for your DB instance to join.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be in the distinguished name format.</p>
+     * </li> <li> <p>Can't be longer than 64 characters.</p> </li> </ul> <p>Example:
+     * <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code>
+     * </p>
+     */
+    inline RestoreDBInstanceToPointInTimeRequest& WithDomainOu(const char* value) { SetDomainOu(value); return *this;}
+
+
+    /**
+     * <p>The ARN for the Secrets Manager secret with the credentials for the user
+     * joining the domain.</p> <p>Constraints:</p> <ul> <li> <p>Can't be longer than 64
+     * characters.</p> </li> </ul> <p>Example:
+     * <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code>
+     * </p>
+     */
+    inline const Aws::String& GetDomainAuthSecretArn() const{ return m_domainAuthSecretArn; }
+
+    /**
+     * <p>The ARN for the Secrets Manager secret with the credentials for the user
+     * joining the domain.</p> <p>Constraints:</p> <ul> <li> <p>Can't be longer than 64
+     * characters.</p> </li> </ul> <p>Example:
+     * <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code>
+     * </p>
+     */
+    inline bool DomainAuthSecretArnHasBeenSet() const { return m_domainAuthSecretArnHasBeenSet; }
+
+    /**
+     * <p>The ARN for the Secrets Manager secret with the credentials for the user
+     * joining the domain.</p> <p>Constraints:</p> <ul> <li> <p>Can't be longer than 64
+     * characters.</p> </li> </ul> <p>Example:
+     * <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code>
+     * </p>
+     */
+    inline void SetDomainAuthSecretArn(const Aws::String& value) { m_domainAuthSecretArnHasBeenSet = true; m_domainAuthSecretArn = value; }
+
+    /**
+     * <p>The ARN for the Secrets Manager secret with the credentials for the user
+     * joining the domain.</p> <p>Constraints:</p> <ul> <li> <p>Can't be longer than 64
+     * characters.</p> </li> </ul> <p>Example:
+     * <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code>
+     * </p>
+     */
+    inline void SetDomainAuthSecretArn(Aws::String&& value) { m_domainAuthSecretArnHasBeenSet = true; m_domainAuthSecretArn = std::move(value); }
+
+    /**
+     * <p>The ARN for the Secrets Manager secret with the credentials for the user
+     * joining the domain.</p> <p>Constraints:</p> <ul> <li> <p>Can't be longer than 64
+     * characters.</p> </li> </ul> <p>Example:
+     * <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code>
+     * </p>
+     */
+    inline void SetDomainAuthSecretArn(const char* value) { m_domainAuthSecretArnHasBeenSet = true; m_domainAuthSecretArn.assign(value); }
+
+    /**
+     * <p>The ARN for the Secrets Manager secret with the credentials for the user
+     * joining the domain.</p> <p>Constraints:</p> <ul> <li> <p>Can't be longer than 64
+     * characters.</p> </li> </ul> <p>Example:
+     * <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code>
+     * </p>
+     */
+    inline RestoreDBInstanceToPointInTimeRequest& WithDomainAuthSecretArn(const Aws::String& value) { SetDomainAuthSecretArn(value); return *this;}
+
+    /**
+     * <p>The ARN for the Secrets Manager secret with the credentials for the user
+     * joining the domain.</p> <p>Constraints:</p> <ul> <li> <p>Can't be longer than 64
+     * characters.</p> </li> </ul> <p>Example:
+     * <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code>
+     * </p>
+     */
+    inline RestoreDBInstanceToPointInTimeRequest& WithDomainAuthSecretArn(Aws::String&& value) { SetDomainAuthSecretArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN for the Secrets Manager secret with the credentials for the user
+     * joining the domain.</p> <p>Constraints:</p> <ul> <li> <p>Can't be longer than 64
+     * characters.</p> </li> </ul> <p>Example:
+     * <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code>
+     * </p>
+     */
+    inline RestoreDBInstanceToPointInTimeRequest& WithDomainAuthSecretArn(const char* value) { SetDomainAuthSecretArn(value); return *this;}
+
+
+    /**
+     * <p>The IPv4 DNS IP addresses of your primary and secondary Active Directory
+     * domain controllers.</p> <p>Constraints:</p> <ul> <li> <p>Two IP addresses must
+     * be provided. If there isn't a secondary domain controller, use the IP address of
+     * the primary domain controller for both entries in the list.</p> </li> </ul>
+     * <p>Example: <code>123.124.125.126,234.235.236.237</code> </p>
+     */
+    inline const Aws::Vector<Aws::String>& GetDomainDnsIps() const{ return m_domainDnsIps; }
+
+    /**
+     * <p>The IPv4 DNS IP addresses of your primary and secondary Active Directory
+     * domain controllers.</p> <p>Constraints:</p> <ul> <li> <p>Two IP addresses must
+     * be provided. If there isn't a secondary domain controller, use the IP address of
+     * the primary domain controller for both entries in the list.</p> </li> </ul>
+     * <p>Example: <code>123.124.125.126,234.235.236.237</code> </p>
+     */
+    inline bool DomainDnsIpsHasBeenSet() const { return m_domainDnsIpsHasBeenSet; }
+
+    /**
+     * <p>The IPv4 DNS IP addresses of your primary and secondary Active Directory
+     * domain controllers.</p> <p>Constraints:</p> <ul> <li> <p>Two IP addresses must
+     * be provided. If there isn't a secondary domain controller, use the IP address of
+     * the primary domain controller for both entries in the list.</p> </li> </ul>
+     * <p>Example: <code>123.124.125.126,234.235.236.237</code> </p>
+     */
+    inline void SetDomainDnsIps(const Aws::Vector<Aws::String>& value) { m_domainDnsIpsHasBeenSet = true; m_domainDnsIps = value; }
+
+    /**
+     * <p>The IPv4 DNS IP addresses of your primary and secondary Active Directory
+     * domain controllers.</p> <p>Constraints:</p> <ul> <li> <p>Two IP addresses must
+     * be provided. If there isn't a secondary domain controller, use the IP address of
+     * the primary domain controller for both entries in the list.</p> </li> </ul>
+     * <p>Example: <code>123.124.125.126,234.235.236.237</code> </p>
+     */
+    inline void SetDomainDnsIps(Aws::Vector<Aws::String>&& value) { m_domainDnsIpsHasBeenSet = true; m_domainDnsIps = std::move(value); }
+
+    /**
+     * <p>The IPv4 DNS IP addresses of your primary and secondary Active Directory
+     * domain controllers.</p> <p>Constraints:</p> <ul> <li> <p>Two IP addresses must
+     * be provided. If there isn't a secondary domain controller, use the IP address of
+     * the primary domain controller for both entries in the list.</p> </li> </ul>
+     * <p>Example: <code>123.124.125.126,234.235.236.237</code> </p>
+     */
+    inline RestoreDBInstanceToPointInTimeRequest& WithDomainDnsIps(const Aws::Vector<Aws::String>& value) { SetDomainDnsIps(value); return *this;}
+
+    /**
+     * <p>The IPv4 DNS IP addresses of your primary and secondary Active Directory
+     * domain controllers.</p> <p>Constraints:</p> <ul> <li> <p>Two IP addresses must
+     * be provided. If there isn't a secondary domain controller, use the IP address of
+     * the primary domain controller for both entries in the list.</p> </li> </ul>
+     * <p>Example: <code>123.124.125.126,234.235.236.237</code> </p>
+     */
+    inline RestoreDBInstanceToPointInTimeRequest& WithDomainDnsIps(Aws::Vector<Aws::String>&& value) { SetDomainDnsIps(std::move(value)); return *this;}
+
+    /**
+     * <p>The IPv4 DNS IP addresses of your primary and secondary Active Directory
+     * domain controllers.</p> <p>Constraints:</p> <ul> <li> <p>Two IP addresses must
+     * be provided. If there isn't a secondary domain controller, use the IP address of
+     * the primary domain controller for both entries in the list.</p> </li> </ul>
+     * <p>Example: <code>123.124.125.126,234.235.236.237</code> </p>
+     */
+    inline RestoreDBInstanceToPointInTimeRequest& AddDomainDnsIps(const Aws::String& value) { m_domainDnsIpsHasBeenSet = true; m_domainDnsIps.push_back(value); return *this; }
+
+    /**
+     * <p>The IPv4 DNS IP addresses of your primary and secondary Active Directory
+     * domain controllers.</p> <p>Constraints:</p> <ul> <li> <p>Two IP addresses must
+     * be provided. If there isn't a secondary domain controller, use the IP address of
+     * the primary domain controller for both entries in the list.</p> </li> </ul>
+     * <p>Example: <code>123.124.125.126,234.235.236.237</code> </p>
+     */
+    inline RestoreDBInstanceToPointInTimeRequest& AddDomainDnsIps(Aws::String&& value) { m_domainDnsIpsHasBeenSet = true; m_domainDnsIps.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The IPv4 DNS IP addresses of your primary and secondary Active Directory
+     * domain controllers.</p> <p>Constraints:</p> <ul> <li> <p>Two IP addresses must
+     * be provided. If there isn't a secondary domain controller, use the IP address of
+     * the primary domain controller for both entries in the list.</p> </li> </ul>
+     * <p>Example: <code>123.124.125.126,234.235.236.237</code> </p>
+     */
+    inline RestoreDBInstanceToPointInTimeRequest& AddDomainDnsIps(const char* value) { m_domainDnsIpsHasBeenSet = true; m_domainDnsIps.push_back(value); return *this; }
 
 
     /**
@@ -2389,6 +2674,18 @@ namespace Model
 
     Aws::String m_domainIAMRoleName;
     bool m_domainIAMRoleNameHasBeenSet = false;
+
+    Aws::String m_domainFqdn;
+    bool m_domainFqdnHasBeenSet = false;
+
+    Aws::String m_domainOu;
+    bool m_domainOuHasBeenSet = false;
+
+    Aws::String m_domainAuthSecretArn;
+    bool m_domainAuthSecretArnHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_domainDnsIps;
+    bool m_domainDnsIpsHasBeenSet = false;
 
     bool m_enableIAMDatabaseAuthentication;
     bool m_enableIAMDatabaseAuthenticationHasBeenSet = false;

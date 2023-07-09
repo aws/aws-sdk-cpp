@@ -22,7 +22,8 @@ EndpointInputConfiguration::EndpointInputConfiguration() :
     m_instanceType(ProductionVariantInstanceType::NOT_SET),
     m_instanceTypeHasBeenSet(false),
     m_inferenceSpecificationNameHasBeenSet(false),
-    m_environmentParameterRangesHasBeenSet(false)
+    m_environmentParameterRangesHasBeenSet(false),
+    m_serverlessConfigHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ EndpointInputConfiguration::EndpointInputConfiguration(JsonView jsonValue) :
     m_instanceType(ProductionVariantInstanceType::NOT_SET),
     m_instanceTypeHasBeenSet(false),
     m_inferenceSpecificationNameHasBeenSet(false),
-    m_environmentParameterRangesHasBeenSet(false)
+    m_environmentParameterRangesHasBeenSet(false),
+    m_serverlessConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -58,6 +60,13 @@ EndpointInputConfiguration& EndpointInputConfiguration::operator =(JsonView json
     m_environmentParameterRangesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ServerlessConfig"))
+  {
+    m_serverlessConfig = jsonValue.GetObject("ServerlessConfig");
+
+    m_serverlessConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -79,6 +88,12 @@ JsonValue EndpointInputConfiguration::Jsonize() const
   if(m_environmentParameterRangesHasBeenSet)
   {
    payload.WithObject("EnvironmentParameterRanges", m_environmentParameterRanges.Jsonize());
+
+  }
+
+  if(m_serverlessConfigHasBeenSet)
+  {
+   payload.WithObject("ServerlessConfig", m_serverlessConfig.Jsonize());
 
   }
 

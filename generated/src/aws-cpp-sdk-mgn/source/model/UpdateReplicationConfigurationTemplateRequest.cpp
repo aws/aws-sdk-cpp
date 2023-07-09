@@ -33,7 +33,9 @@ UpdateReplicationConfigurationTemplateRequest::UpdateReplicationConfigurationTem
     m_stagingAreaSubnetIdHasBeenSet(false),
     m_stagingAreaTagsHasBeenSet(false),
     m_useDedicatedReplicationServer(false),
-    m_useDedicatedReplicationServerHasBeenSet(false)
+    m_useDedicatedReplicationServerHasBeenSet(false),
+    m_useFipsEndpoint(false),
+    m_useFipsEndpointHasBeenSet(false)
 {
 }
 
@@ -129,6 +131,12 @@ Aws::String UpdateReplicationConfigurationTemplateRequest::SerializePayload() co
   if(m_useDedicatedReplicationServerHasBeenSet)
   {
    payload.WithBool("useDedicatedReplicationServer", m_useDedicatedReplicationServer);
+
+  }
+
+  if(m_useFipsEndpointHasBeenSet)
+  {
+   payload.WithBool("useFipsEndpoint", m_useFipsEndpoint);
 
   }
 

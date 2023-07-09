@@ -38,6 +38,7 @@ namespace Aws
         static const int GeneratingModelInsightsReport_HASH = HashingUtils::HashString("GeneratingModelInsightsReport");
         static const int ModelInsightsError_HASH = HashingUtils::HashString("ModelInsightsError");
         static const int TrainingModels_HASH = HashingUtils::HashString("TrainingModels");
+        static const int PreTraining_HASH = HashingUtils::HashString("PreTraining");
 
 
         AutoMLJobSecondaryStatus GetAutoMLJobSecondaryStatusForName(const Aws::String& name)
@@ -115,6 +116,10 @@ namespace Aws
           {
             return AutoMLJobSecondaryStatus::TrainingModels;
           }
+          else if (hashCode == PreTraining_HASH)
+          {
+            return AutoMLJobSecondaryStatus::PreTraining;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -165,6 +170,8 @@ namespace Aws
             return "ModelInsightsError";
           case AutoMLJobSecondaryStatus::TrainingModels:
             return "TrainingModels";
+          case AutoMLJobSecondaryStatus::PreTraining:
+            return "PreTraining";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -21,9 +21,12 @@
         #else
             #define AWS_ELASTICTRANSCODER_API __declspec(dllimport)
         #endif /* AWS_ELASTICTRANSCODER_EXPORTS */
+        #define AWS_ELASTICTRANSCODER_EXTERN
     #else
         #define AWS_ELASTICTRANSCODER_API
+        #define AWS_ELASTICTRANSCODER_EXTERN extern
     #endif // USE_IMPORT_EXPORT
 #else // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
     #define AWS_ELASTICTRANSCODER_API
+    #define AWS_ELASTICTRANSCODER_EXTERN extern
 #endif // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)

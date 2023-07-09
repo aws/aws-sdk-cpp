@@ -8,6 +8,7 @@
 #include <aws/sagemaker-featurestore-runtime/SageMakerFeatureStoreRuntimeRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker-featurestore-runtime/model/TtlDuration.h>
 #include <aws/sagemaker-featurestore-runtime/model/FeatureValue.h>
 #include <aws/sagemaker-featurestore-runtime/model/TargetStore.h>
 #include <utility>
@@ -205,6 +206,61 @@ namespace Model
      */
     inline PutRecordRequest& AddTargetStores(TargetStore&& value) { m_targetStoresHasBeenSet = true; m_targetStores.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Time to live duration, where the record is hard deleted after the expiration
+     * time is reached; <code>ExpiresAt</code> = <code>EventTime</code> +
+     * <code>TtlDuration</code>. For information on HardDelete, see the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_DeleteRecord.html">DeleteRecord</a>
+     * API in the Amazon SageMaker API Reference guide.</p>
+     */
+    inline const TtlDuration& GetTtlDuration() const{ return m_ttlDuration; }
+
+    /**
+     * <p>Time to live duration, where the record is hard deleted after the expiration
+     * time is reached; <code>ExpiresAt</code> = <code>EventTime</code> +
+     * <code>TtlDuration</code>. For information on HardDelete, see the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_DeleteRecord.html">DeleteRecord</a>
+     * API in the Amazon SageMaker API Reference guide.</p>
+     */
+    inline bool TtlDurationHasBeenSet() const { return m_ttlDurationHasBeenSet; }
+
+    /**
+     * <p>Time to live duration, where the record is hard deleted after the expiration
+     * time is reached; <code>ExpiresAt</code> = <code>EventTime</code> +
+     * <code>TtlDuration</code>. For information on HardDelete, see the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_DeleteRecord.html">DeleteRecord</a>
+     * API in the Amazon SageMaker API Reference guide.</p>
+     */
+    inline void SetTtlDuration(const TtlDuration& value) { m_ttlDurationHasBeenSet = true; m_ttlDuration = value; }
+
+    /**
+     * <p>Time to live duration, where the record is hard deleted after the expiration
+     * time is reached; <code>ExpiresAt</code> = <code>EventTime</code> +
+     * <code>TtlDuration</code>. For information on HardDelete, see the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_DeleteRecord.html">DeleteRecord</a>
+     * API in the Amazon SageMaker API Reference guide.</p>
+     */
+    inline void SetTtlDuration(TtlDuration&& value) { m_ttlDurationHasBeenSet = true; m_ttlDuration = std::move(value); }
+
+    /**
+     * <p>Time to live duration, where the record is hard deleted after the expiration
+     * time is reached; <code>ExpiresAt</code> = <code>EventTime</code> +
+     * <code>TtlDuration</code>. For information on HardDelete, see the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_DeleteRecord.html">DeleteRecord</a>
+     * API in the Amazon SageMaker API Reference guide.</p>
+     */
+    inline PutRecordRequest& WithTtlDuration(const TtlDuration& value) { SetTtlDuration(value); return *this;}
+
+    /**
+     * <p>Time to live duration, where the record is hard deleted after the expiration
+     * time is reached; <code>ExpiresAt</code> = <code>EventTime</code> +
+     * <code>TtlDuration</code>. For information on HardDelete, see the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_DeleteRecord.html">DeleteRecord</a>
+     * API in the Amazon SageMaker API Reference guide.</p>
+     */
+    inline PutRecordRequest& WithTtlDuration(TtlDuration&& value) { SetTtlDuration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_featureGroupName;
@@ -215,6 +271,9 @@ namespace Model
 
     Aws::Vector<TargetStore> m_targetStores;
     bool m_targetStoresHasBeenSet = false;
+
+    TtlDuration m_ttlDuration;
+    bool m_ttlDurationHasBeenSet = false;
   };
 
 } // namespace Model

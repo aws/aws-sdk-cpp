@@ -62,12 +62,12 @@ using S3ControlDefaultEpProviderBase =
 namespace Endpoint
 {
 /**
- * Export endpoint provider symbols from DLL
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
  */
-template class AWS_S3CONTROL_API
+AWS_S3CONTROL_EXTERN template class AWS_S3CONTROL_API
     Aws::Endpoint::EndpointProviderBase<S3Control::Endpoint::S3ControlClientConfiguration, S3Control::Endpoint::S3ControlBuiltInParameters, S3Control::Endpoint::S3ControlClientContextParameters>;
 
-template class AWS_S3CONTROL_API
+AWS_S3CONTROL_EXTERN template class AWS_S3CONTROL_API
     Aws::Endpoint::DefaultEndpointProvider<S3Control::Endpoint::S3ControlClientConfiguration, S3Control::Endpoint::S3ControlBuiltInParameters, S3Control::Endpoint::S3ControlClientContextParameters>;
 } // namespace Endpoint
 

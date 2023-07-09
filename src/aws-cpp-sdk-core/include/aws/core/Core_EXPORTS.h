@@ -18,12 +18,15 @@
         #else // AWS_CORE_EXPORTS
             #define  AWS_CORE_API __declspec(dllimport)
         #endif // AWS_CORE_EXPORTS
+        #define AWS_CORE_EXTERN
     #else // USE_IMPORT_EXPORT
         #define AWS_CORE_API
+        #define AWS_CORE_EXTERN extern
     #endif // USE_IMPORT_EXPORT
     #define AWS_CORE_LOCAL
 #else // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (_WIN32)
     #define AWS_CORE_API
+    #define AWS_CORE_EXTERN extern
     #if __GNUC__ >= 4
         #define AWS_CORE_LOCAL __attribute__((visibility("hidden")))
     #else

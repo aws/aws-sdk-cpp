@@ -737,7 +737,7 @@ namespace Model
      * <code>/aws/automations</code> key in OperationalData to associate an Automation
      * runbook with the OpsItem. To view Amazon Web Services CLI example commands that
      * use these keys, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-manually-create-OpsItems.html">Creating
      * OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
      */
@@ -762,7 +762,7 @@ namespace Model
      * <code>/aws/automations</code> key in OperationalData to associate an Automation
      * runbook with the OpsItem. To view Amazon Web Services CLI example commands that
      * use these keys, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-manually-create-OpsItems.html">Creating
      * OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
      */
@@ -787,7 +787,7 @@ namespace Model
      * <code>/aws/automations</code> key in OperationalData to associate an Automation
      * runbook with the OpsItem. To view Amazon Web Services CLI example commands that
      * use these keys, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-manually-create-OpsItems.html">Creating
      * OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
      */
@@ -812,7 +812,7 @@ namespace Model
      * <code>/aws/automations</code> key in OperationalData to associate an Automation
      * runbook with the OpsItem. To view Amazon Web Services CLI example commands that
      * use these keys, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-manually-create-OpsItems.html">Creating
      * OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
      */
@@ -837,7 +837,7 @@ namespace Model
      * <code>/aws/automations</code> key in OperationalData to associate an Automation
      * runbook with the OpsItem. To view Amazon Web Services CLI example commands that
      * use these keys, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-manually-create-OpsItems.html">Creating
      * OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
      */
@@ -862,7 +862,7 @@ namespace Model
      * <code>/aws/automations</code> key in OperationalData to associate an Automation
      * runbook with the OpsItem. To view Amazon Web Services CLI example commands that
      * use these keys, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-manually-create-OpsItems.html">Creating
      * OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
      */
@@ -887,7 +887,7 @@ namespace Model
      * <code>/aws/automations</code> key in OperationalData to associate an Automation
      * runbook with the OpsItem. To view Amazon Web Services CLI example commands that
      * use these keys, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-manually-create-OpsItems.html">Creating
      * OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
      */
@@ -912,7 +912,7 @@ namespace Model
      * <code>/aws/automations</code> key in OperationalData to associate an Automation
      * runbook with the OpsItem. To view Amazon Web Services CLI example commands that
      * use these keys, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-manually-create-OpsItems.html">Creating
      * OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
      */
@@ -937,7 +937,7 @@ namespace Model
      * <code>/aws/automations</code> key in OperationalData to associate an Automation
      * runbook with the OpsItem. To view Amazon Web Services CLI example commands that
      * use these keys, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-manually-create-OpsItems.html">Creating
      * OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
      */
@@ -962,7 +962,7 @@ namespace Model
      * <code>/aws/automations</code> key in OperationalData to associate an Automation
      * runbook with the OpsItem. To view Amazon Web Services CLI example commands that
      * use these keys, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-manually-create-OpsItems.html">Creating
      * OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
      */
@@ -987,7 +987,7 @@ namespace Model
      * <code>/aws/automations</code> key in OperationalData to associate an Automation
      * runbook with the OpsItem. To view Amazon Web Services CLI example commands that
      * use these keys, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-manually-create-OpsItems.html">Creating
      * OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
      */
@@ -1012,7 +1012,7 @@ namespace Model
      * <code>/aws/automations</code> key in OperationalData to associate an Automation
      * runbook with the OpsItem. To view Amazon Web Services CLI example commands that
      * use these keys, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-manually-create-OpsItems.html">Creating
      * OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
      */

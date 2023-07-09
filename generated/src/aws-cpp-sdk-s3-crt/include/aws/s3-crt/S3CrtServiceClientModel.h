@@ -308,7 +308,6 @@ namespace Aws
       /* Service model Outcome callable definitions */
       typedef std::future<AbortMultipartUploadOutcome> AbortMultipartUploadOutcomeCallable;
       typedef std::future<CompleteMultipartUploadOutcome> CompleteMultipartUploadOutcomeCallable;
-      typedef std::future<CopyObjectOutcome> CopyObjectOutcomeCallable;
       typedef std::future<CreateBucketOutcome> CreateBucketOutcomeCallable;
       typedef std::future<CreateMultipartUploadOutcome> CreateMultipartUploadOutcomeCallable;
       typedef std::future<DeleteBucketOutcome> DeleteBucketOutcomeCallable;

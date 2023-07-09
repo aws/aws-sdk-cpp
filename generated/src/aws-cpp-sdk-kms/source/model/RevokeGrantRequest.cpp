@@ -14,7 +14,9 @@ using namespace Aws::Utils;
 
 RevokeGrantRequest::RevokeGrantRequest() : 
     m_keyIdHasBeenSet(false),
-    m_grantIdHasBeenSet(false)
+    m_grantIdHasBeenSet(false),
+    m_dryRun(false),
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -31,6 +33,12 @@ Aws::String RevokeGrantRequest::SerializePayload() const
   if(m_grantIdHasBeenSet)
   {
    payload.WithString("GrantId", m_grantId);
+
+  }
+
+  if(m_dryRunHasBeenSet)
+  {
+   payload.WithBool("DryRun", m_dryRun);
 
   }
 

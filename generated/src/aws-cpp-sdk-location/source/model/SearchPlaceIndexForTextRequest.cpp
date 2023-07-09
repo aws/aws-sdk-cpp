@@ -5,12 +5,15 @@
 
 #include <aws/location/model/SearchPlaceIndexForTextRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/http/URI.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
 using namespace Aws::LocationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+using namespace Aws::Http;
 
 SearchPlaceIndexForTextRequest::SearchPlaceIndexForTextRequest() : 
     m_biasPositionHasBeenSet(false),
@@ -18,6 +21,7 @@ SearchPlaceIndexForTextRequest::SearchPlaceIndexForTextRequest() :
     m_filterCategoriesHasBeenSet(false),
     m_filterCountriesHasBeenSet(false),
     m_indexNameHasBeenSet(false),
+    m_keyHasBeenSet(false),
     m_languageHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
@@ -94,6 +98,17 @@ Aws::String SearchPlaceIndexForTextRequest::SerializePayload() const
   return payload.View().WriteReadable();
 }
 
+void SearchPlaceIndexForTextRequest::AddQueryStringParameters(URI& uri) const
+{
+    Aws::StringStream ss;
+    if(m_keyHasBeenSet)
+    {
+      ss << m_key;
+      uri.AddQueryStringParameter("key", ss.str());
+      ss.str("");
+    }
+
+}
 
 
 

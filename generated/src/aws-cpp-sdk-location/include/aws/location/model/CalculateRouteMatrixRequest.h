@@ -17,6 +17,10 @@
 
 namespace Aws
 {
+namespace Http
+{
+    class URI;
+} //namespace Http
 namespace LocationService
 {
 namespace Model
@@ -36,6 +40,8 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "CalculateRouteMatrix"; }
 
     AWS_LOCATIONSERVICE_API Aws::String SerializePayload() const override;
+
+    AWS_LOCATIONSERVICE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -610,6 +616,63 @@ namespace Model
 
 
     /**
+     * <p>The optional <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     * key</a> to authorize the request.</p>
+     */
+    inline const Aws::String& GetKey() const{ return m_key; }
+
+    /**
+     * <p>The optional <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     * key</a> to authorize the request.</p>
+     */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p>The optional <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     * key</a> to authorize the request.</p>
+     */
+    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
+
+    /**
+     * <p>The optional <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     * key</a> to authorize the request.</p>
+     */
+    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
+
+    /**
+     * <p>The optional <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     * key</a> to authorize the request.</p>
+     */
+    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
+
+    /**
+     * <p>The optional <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     * key</a> to authorize the request.</p>
+     */
+    inline CalculateRouteMatrixRequest& WithKey(const Aws::String& value) { SetKey(value); return *this;}
+
+    /**
+     * <p>The optional <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     * key</a> to authorize the request.</p>
+     */
+    inline CalculateRouteMatrixRequest& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
+
+    /**
+     * <p>The optional <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     * key</a> to authorize the request.</p>
+     */
+    inline CalculateRouteMatrixRequest& WithKey(const char* value) { SetKey(value); return *this;}
+
+
+    /**
      * <p>Specifies the mode of transport when calculating a route. Used in estimating
      * the speed of travel and road compatibility.</p> <p>The <code>TravelMode</code>
      * you specify also determines how you specify route preferences: </p> <ul> <li>
@@ -782,6 +845,9 @@ namespace Model
 
     DistanceUnit m_distanceUnit;
     bool m_distanceUnitHasBeenSet = false;
+
+    Aws::String m_key;
+    bool m_keyHasBeenSet = false;
 
     TravelMode m_travelMode;
     bool m_travelModeHasBeenSet = false;

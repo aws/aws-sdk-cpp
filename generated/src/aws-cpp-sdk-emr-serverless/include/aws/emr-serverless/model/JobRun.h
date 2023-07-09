@@ -33,7 +33,7 @@ namespace Model
 
   /**
    * <p>Information about a job run. A job run is a unit of work, such as a Spark
-   * JAR, Hive query, or SparkSQL query, that you submit to an EMR Serverless
+   * JAR, Hive query, or SparkSQL query, that you submit to an Amazon EMR Serverless
    * application.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/JobRun">AWS
    * API Reference</a></p>
@@ -428,42 +428,50 @@ namespace Model
 
 
     /**
-     * <p>The EMR release associated with the application your job is running on.</p>
+     * <p>The Amazon EMR release associated with the application your job is running
+     * on.</p>
      */
     inline const Aws::String& GetReleaseLabel() const{ return m_releaseLabel; }
 
     /**
-     * <p>The EMR release associated with the application your job is running on.</p>
+     * <p>The Amazon EMR release associated with the application your job is running
+     * on.</p>
      */
     inline bool ReleaseLabelHasBeenSet() const { return m_releaseLabelHasBeenSet; }
 
     /**
-     * <p>The EMR release associated with the application your job is running on.</p>
+     * <p>The Amazon EMR release associated with the application your job is running
+     * on.</p>
      */
     inline void SetReleaseLabel(const Aws::String& value) { m_releaseLabelHasBeenSet = true; m_releaseLabel = value; }
 
     /**
-     * <p>The EMR release associated with the application your job is running on.</p>
+     * <p>The Amazon EMR release associated with the application your job is running
+     * on.</p>
      */
     inline void SetReleaseLabel(Aws::String&& value) { m_releaseLabelHasBeenSet = true; m_releaseLabel = std::move(value); }
 
     /**
-     * <p>The EMR release associated with the application your job is running on.</p>
+     * <p>The Amazon EMR release associated with the application your job is running
+     * on.</p>
      */
     inline void SetReleaseLabel(const char* value) { m_releaseLabelHasBeenSet = true; m_releaseLabel.assign(value); }
 
     /**
-     * <p>The EMR release associated with the application your job is running on.</p>
+     * <p>The Amazon EMR release associated with the application your job is running
+     * on.</p>
      */
     inline JobRun& WithReleaseLabel(const Aws::String& value) { SetReleaseLabel(value); return *this;}
 
     /**
-     * <p>The EMR release associated with the application your job is running on.</p>
+     * <p>The Amazon EMR release associated with the application your job is running
+     * on.</p>
      */
     inline JobRun& WithReleaseLabel(Aws::String&& value) { SetReleaseLabel(std::move(value)); return *this;}
 
     /**
-     * <p>The EMR release associated with the application your job is running on.</p>
+     * <p>The Amazon EMR release associated with the application your job is running
+     * on.</p>
      */
     inline JobRun& WithReleaseLabel(const char* value) { SetReleaseLabel(value); return *this;}
 
@@ -723,50 +731,50 @@ namespace Model
 
 
     /**
-     * <p>The aggregate vCPU, memory, and storage that AWS has billed for the job run.
-     * The billed resources include a 1-minute minimum usage for workers, plus
-     * additional storage over 20 GB per worker. Note that billed resources do not
-     * include usage for idle pre-initialized workers.</p>
+     * <p>The aggregate vCPU, memory, and storage that Amazon Web Services has billed
+     * for the job run. The billed resources include a 1-minute minimum usage for
+     * workers, plus additional storage over 20 GB per worker. Note that billed
+     * resources do not include usage for idle pre-initialized workers.</p>
      */
     inline const ResourceUtilization& GetBilledResourceUtilization() const{ return m_billedResourceUtilization; }
 
     /**
-     * <p>The aggregate vCPU, memory, and storage that AWS has billed for the job run.
-     * The billed resources include a 1-minute minimum usage for workers, plus
-     * additional storage over 20 GB per worker. Note that billed resources do not
-     * include usage for idle pre-initialized workers.</p>
+     * <p>The aggregate vCPU, memory, and storage that Amazon Web Services has billed
+     * for the job run. The billed resources include a 1-minute minimum usage for
+     * workers, plus additional storage over 20 GB per worker. Note that billed
+     * resources do not include usage for idle pre-initialized workers.</p>
      */
     inline bool BilledResourceUtilizationHasBeenSet() const { return m_billedResourceUtilizationHasBeenSet; }
 
     /**
-     * <p>The aggregate vCPU, memory, and storage that AWS has billed for the job run.
-     * The billed resources include a 1-minute minimum usage for workers, plus
-     * additional storage over 20 GB per worker. Note that billed resources do not
-     * include usage for idle pre-initialized workers.</p>
+     * <p>The aggregate vCPU, memory, and storage that Amazon Web Services has billed
+     * for the job run. The billed resources include a 1-minute minimum usage for
+     * workers, plus additional storage over 20 GB per worker. Note that billed
+     * resources do not include usage for idle pre-initialized workers.</p>
      */
     inline void SetBilledResourceUtilization(const ResourceUtilization& value) { m_billedResourceUtilizationHasBeenSet = true; m_billedResourceUtilization = value; }
 
     /**
-     * <p>The aggregate vCPU, memory, and storage that AWS has billed for the job run.
-     * The billed resources include a 1-minute minimum usage for workers, plus
-     * additional storage over 20 GB per worker. Note that billed resources do not
-     * include usage for idle pre-initialized workers.</p>
+     * <p>The aggregate vCPU, memory, and storage that Amazon Web Services has billed
+     * for the job run. The billed resources include a 1-minute minimum usage for
+     * workers, plus additional storage over 20 GB per worker. Note that billed
+     * resources do not include usage for idle pre-initialized workers.</p>
      */
     inline void SetBilledResourceUtilization(ResourceUtilization&& value) { m_billedResourceUtilizationHasBeenSet = true; m_billedResourceUtilization = std::move(value); }
 
     /**
-     * <p>The aggregate vCPU, memory, and storage that AWS has billed for the job run.
-     * The billed resources include a 1-minute minimum usage for workers, plus
-     * additional storage over 20 GB per worker. Note that billed resources do not
-     * include usage for idle pre-initialized workers.</p>
+     * <p>The aggregate vCPU, memory, and storage that Amazon Web Services has billed
+     * for the job run. The billed resources include a 1-minute minimum usage for
+     * workers, plus additional storage over 20 GB per worker. Note that billed
+     * resources do not include usage for idle pre-initialized workers.</p>
      */
     inline JobRun& WithBilledResourceUtilization(const ResourceUtilization& value) { SetBilledResourceUtilization(value); return *this;}
 
     /**
-     * <p>The aggregate vCPU, memory, and storage that AWS has billed for the job run.
-     * The billed resources include a 1-minute minimum usage for workers, plus
-     * additional storage over 20 GB per worker. Note that billed resources do not
-     * include usage for idle pre-initialized workers.</p>
+     * <p>The aggregate vCPU, memory, and storage that Amazon Web Services has billed
+     * for the job run. The billed resources include a 1-minute minimum usage for
+     * workers, plus additional storage over 20 GB per worker. Note that billed
+     * resources do not include usage for idle pre-initialized workers.</p>
      */
     inline JobRun& WithBilledResourceUtilization(ResourceUtilization&& value) { SetBilledResourceUtilization(std::move(value)); return *this;}
 

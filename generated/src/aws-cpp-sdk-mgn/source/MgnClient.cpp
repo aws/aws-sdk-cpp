@@ -55,21 +55,25 @@
 #include <aws/mgn/model/ListExportsRequest.h>
 #include <aws/mgn/model/ListImportErrorsRequest.h>
 #include <aws/mgn/model/ListImportsRequest.h>
+#include <aws/mgn/model/ListManagedAccountsRequest.h>
 #include <aws/mgn/model/ListSourceServerActionsRequest.h>
 #include <aws/mgn/model/ListTagsForResourceRequest.h>
 #include <aws/mgn/model/ListTemplateActionsRequest.h>
 #include <aws/mgn/model/ListWavesRequest.h>
 #include <aws/mgn/model/MarkAsArchivedRequest.h>
+#include <aws/mgn/model/PauseReplicationRequest.h>
 #include <aws/mgn/model/PutSourceServerActionRequest.h>
 #include <aws/mgn/model/PutTemplateActionRequest.h>
 #include <aws/mgn/model/RemoveSourceServerActionRequest.h>
 #include <aws/mgn/model/RemoveTemplateActionRequest.h>
+#include <aws/mgn/model/ResumeReplicationRequest.h>
 #include <aws/mgn/model/RetryDataReplicationRequest.h>
 #include <aws/mgn/model/StartCutoverRequest.h>
 #include <aws/mgn/model/StartExportRequest.h>
 #include <aws/mgn/model/StartImportRequest.h>
 #include <aws/mgn/model/StartReplicationRequest.h>
 #include <aws/mgn/model/StartTestRequest.h>
+#include <aws/mgn/model/StopReplicationRequest.h>
 #include <aws/mgn/model/TagResourceRequest.h>
 #include <aws/mgn/model/TerminateTargetInstancesRequest.h>
 #include <aws/mgn/model/UnarchiveApplicationRequest.h>
@@ -551,6 +555,16 @@ ListImportsOutcome MgnClient::ListImports(const ListImportsRequest& request) con
   return ListImportsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
+ListManagedAccountsOutcome MgnClient::ListManagedAccounts(const ListManagedAccountsRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListManagedAccounts);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListManagedAccounts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListManagedAccounts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/ListManagedAccounts");
+  return ListManagedAccountsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
 ListSourceServerActionsOutcome MgnClient::ListSourceServerActions(const ListSourceServerActionsRequest& request) const
 {
   AWS_OPERATION_GUARD(ListSourceServerActions);
@@ -607,6 +621,16 @@ MarkAsArchivedOutcome MgnClient::MarkAsArchived(const MarkAsArchivedRequest& req
   return MarkAsArchivedOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
+PauseReplicationOutcome MgnClient::PauseReplication(const PauseReplicationRequest& request) const
+{
+  AWS_OPERATION_GUARD(PauseReplication);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PauseReplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PauseReplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/PauseReplication");
+  return PauseReplicationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
 PutSourceServerActionOutcome MgnClient::PutSourceServerAction(const PutSourceServerActionRequest& request) const
 {
   AWS_OPERATION_GUARD(PutSourceServerAction);
@@ -645,6 +669,16 @@ RemoveTemplateActionOutcome MgnClient::RemoveTemplateAction(const RemoveTemplate
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RemoveTemplateAction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   endpointResolutionOutcome.GetResult().AddPathSegments("/RemoveTemplateAction");
   return RemoveTemplateActionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ResumeReplicationOutcome MgnClient::ResumeReplication(const ResumeReplicationRequest& request) const
+{
+  AWS_OPERATION_GUARD(ResumeReplication);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ResumeReplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ResumeReplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/ResumeReplication");
+  return ResumeReplicationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 RetryDataReplicationOutcome MgnClient::RetryDataReplication(const RetryDataReplicationRequest& request) const
@@ -705,6 +739,16 @@ StartTestOutcome MgnClient::StartTest(const StartTestRequest& request) const
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartTest, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   endpointResolutionOutcome.GetResult().AddPathSegments("/StartTest");
   return StartTestOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StopReplicationOutcome MgnClient::StopReplication(const StopReplicationRequest& request) const
+{
+  AWS_OPERATION_GUARD(StopReplication);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopReplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StopReplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/StopReplication");
+  return StopReplicationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagResourceOutcome MgnClient::TagResource(const TagResourceRequest& request) const

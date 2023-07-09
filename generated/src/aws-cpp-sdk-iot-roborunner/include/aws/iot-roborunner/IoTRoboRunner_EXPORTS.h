@@ -21,9 +21,12 @@
         #else
             #define AWS_IOTROBORUNNER_API __declspec(dllimport)
         #endif /* AWS_IOTROBORUNNER_EXPORTS */
+        #define AWS_IOTROBORUNNER_EXTERN
     #else
         #define AWS_IOTROBORUNNER_API
+        #define AWS_IOTROBORUNNER_EXTERN extern
     #endif // USE_IMPORT_EXPORT
 #else // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
     #define AWS_IOTROBORUNNER_API
+    #define AWS_IOTROBORUNNER_EXTERN extern
 #endif // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)

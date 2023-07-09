@@ -12,6 +12,7 @@
 #include <aws/internetmonitor/model/MonitorProcessingStatusCode.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/internetmonitor/model/InternetMeasurementsLogDelivery.h>
+#include <aws/internetmonitor/model/HealthEventsConfig.h>
 #include <utility>
 
 namespace Aws
@@ -459,6 +460,47 @@ namespace Model
     inline GetMonitorResult& WithTrafficPercentageToMonitor(int value) { SetTrafficPercentageToMonitor(value); return *this;}
 
 
+    /**
+     * <p>The list of health event thresholds. A health event threshold percentage, for
+     * performance and availability, determines the level of impact at which Amazon
+     * CloudWatch Internet Monitor creates a health event when there's an internet
+     * issue that affects your application end users.</p>
+     */
+    inline const HealthEventsConfig& GetHealthEventsConfig() const{ return m_healthEventsConfig; }
+
+    /**
+     * <p>The list of health event thresholds. A health event threshold percentage, for
+     * performance and availability, determines the level of impact at which Amazon
+     * CloudWatch Internet Monitor creates a health event when there's an internet
+     * issue that affects your application end users.</p>
+     */
+    inline void SetHealthEventsConfig(const HealthEventsConfig& value) { m_healthEventsConfig = value; }
+
+    /**
+     * <p>The list of health event thresholds. A health event threshold percentage, for
+     * performance and availability, determines the level of impact at which Amazon
+     * CloudWatch Internet Monitor creates a health event when there's an internet
+     * issue that affects your application end users.</p>
+     */
+    inline void SetHealthEventsConfig(HealthEventsConfig&& value) { m_healthEventsConfig = std::move(value); }
+
+    /**
+     * <p>The list of health event thresholds. A health event threshold percentage, for
+     * performance and availability, determines the level of impact at which Amazon
+     * CloudWatch Internet Monitor creates a health event when there's an internet
+     * issue that affects your application end users.</p>
+     */
+    inline GetMonitorResult& WithHealthEventsConfig(const HealthEventsConfig& value) { SetHealthEventsConfig(value); return *this;}
+
+    /**
+     * <p>The list of health event thresholds. A health event threshold percentage, for
+     * performance and availability, determines the level of impact at which Amazon
+     * CloudWatch Internet Monitor creates a health event when there's an internet
+     * issue that affects your application end users.</p>
+     */
+    inline GetMonitorResult& WithHealthEventsConfig(HealthEventsConfig&& value) { SetHealthEventsConfig(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -505,6 +547,8 @@ namespace Model
     InternetMeasurementsLogDelivery m_internetMeasurementsLogDelivery;
 
     int m_trafficPercentageToMonitor;
+
+    HealthEventsConfig m_healthEventsConfig;
 
     Aws::String m_requestId;
   };

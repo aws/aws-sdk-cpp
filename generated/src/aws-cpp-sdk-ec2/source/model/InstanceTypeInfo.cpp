@@ -54,7 +54,9 @@ InstanceTypeInfo::InstanceTypeInfo() :
     m_dedicatedHostsSupportedHasBeenSet(false),
     m_autoRecoverySupported(false),
     m_autoRecoverySupportedHasBeenSet(false),
-    m_supportedBootModesHasBeenSet(false)
+    m_supportedBootModesHasBeenSet(false),
+    m_nitroEnclavesSupport(NitroEnclavesSupport::NOT_SET),
+    m_nitroEnclavesSupportHasBeenSet(false)
 {
 }
 
@@ -92,7 +94,9 @@ InstanceTypeInfo::InstanceTypeInfo(const XmlNode& xmlNode) :
     m_dedicatedHostsSupportedHasBeenSet(false),
     m_autoRecoverySupported(false),
     m_autoRecoverySupportedHasBeenSet(false),
-    m_supportedBootModesHasBeenSet(false)
+    m_supportedBootModesHasBeenSet(false),
+    m_nitroEnclavesSupport(NitroEnclavesSupport::NOT_SET),
+    m_nitroEnclavesSupportHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -271,6 +275,12 @@ InstanceTypeInfo& InstanceTypeInfo::operator =(const XmlNode& xmlNode)
 
       m_supportedBootModesHasBeenSet = true;
     }
+    XmlNode nitroEnclavesSupportNode = resultNode.FirstChild("nitroEnclavesSupport");
+    if(!nitroEnclavesSupportNode.IsNull())
+    {
+      m_nitroEnclavesSupport = NitroEnclavesSupportMapper::GetNitroEnclavesSupportForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nitroEnclavesSupportNode.GetText()).c_str()).c_str());
+      m_nitroEnclavesSupportHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -434,6 +444,11 @@ void InstanceTypeInfo::OutputToStream(Aws::OStream& oStream, const char* locatio
       }
   }
 
+  if(m_nitroEnclavesSupportHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".NitroEnclavesSupport=" << NitroEnclavesSupportMapper::GetNameForNitroEnclavesSupport(m_nitroEnclavesSupport) << "&";
+  }
+
 }
 
 void InstanceTypeInfo::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -569,6 +584,10 @@ void InstanceTypeInfo::OutputToStream(Aws::OStream& oStream, const char* locatio
       {
         oStream << location << ".SupportedBootModes." << supportedBootModesIdx++ << "=" << BootModeTypeMapper::GetNameForBootModeType(item) << "&";
       }
+  }
+  if(m_nitroEnclavesSupportHasBeenSet)
+  {
+      oStream << location << ".NitroEnclavesSupport=" << NitroEnclavesSupportMapper::GetNameForNitroEnclavesSupport(m_nitroEnclavesSupport) << "&";
   }
 }
 

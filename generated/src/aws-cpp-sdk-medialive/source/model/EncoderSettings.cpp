@@ -30,7 +30,8 @@ EncoderSettings::EncoderSettings() :
     m_nielsenConfigurationHasBeenSet(false),
     m_outputGroupsHasBeenSet(false),
     m_timecodeConfigHasBeenSet(false),
-    m_videoDescriptionsHasBeenSet(false)
+    m_videoDescriptionsHasBeenSet(false),
+    m_thumbnailConfigurationHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,8 @@ EncoderSettings::EncoderSettings(JsonView jsonValue) :
     m_nielsenConfigurationHasBeenSet(false),
     m_outputGroupsHasBeenSet(false),
     m_timecodeConfigHasBeenSet(false),
-    m_videoDescriptionsHasBeenSet(false)
+    m_videoDescriptionsHasBeenSet(false),
+    m_thumbnailConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -149,6 +151,13 @@ EncoderSettings& EncoderSettings::operator =(JsonView jsonValue)
     m_videoDescriptionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("thumbnailConfiguration"))
+  {
+    m_thumbnailConfiguration = jsonValue.GetObject("thumbnailConfiguration");
+
+    m_thumbnailConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -245,6 +254,12 @@ JsonValue EncoderSettings::Jsonize() const
      videoDescriptionsJsonList[videoDescriptionsIndex].AsObject(m_videoDescriptions[videoDescriptionsIndex].Jsonize());
    }
    payload.WithArray("videoDescriptions", std::move(videoDescriptionsJsonList));
+
+  }
+
+  if(m_thumbnailConfigurationHasBeenSet)
+  {
+   payload.WithObject("thumbnailConfiguration", m_thumbnailConfiguration.Jsonize());
 
   }
 

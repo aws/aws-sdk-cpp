@@ -50,28 +50,28 @@ namespace Model
 
     /**
      * <p>An attribute value of <a
-     * href="docs.cedarpolicy.comcedar-syntax-datatypes.html#datatype-boolean">Boolean</a>
+     * href="https://docs.cedarpolicy.com/syntax-datatypes.html#boolean">Boolean</a>
      * type.</p> <p>Example: <code>{"boolean": true}</code> </p>
      */
     inline bool GetBoolean() const{ return m_boolean; }
 
     /**
      * <p>An attribute value of <a
-     * href="docs.cedarpolicy.comcedar-syntax-datatypes.html#datatype-boolean">Boolean</a>
+     * href="https://docs.cedarpolicy.com/syntax-datatypes.html#boolean">Boolean</a>
      * type.</p> <p>Example: <code>{"boolean": true}</code> </p>
      */
     inline bool BooleanHasBeenSet() const { return m_booleanHasBeenSet; }
 
     /**
      * <p>An attribute value of <a
-     * href="docs.cedarpolicy.comcedar-syntax-datatypes.html#datatype-boolean">Boolean</a>
+     * href="https://docs.cedarpolicy.com/syntax-datatypes.html#boolean">Boolean</a>
      * type.</p> <p>Example: <code>{"boolean": true}</code> </p>
      */
     inline void SetBoolean(bool value) { m_booleanHasBeenSet = true; m_boolean = value; }
 
     /**
      * <p>An attribute value of <a
-     * href="docs.cedarpolicy.comcedar-syntax-datatypes.html#datatype-boolean">Boolean</a>
+     * href="https://docs.cedarpolicy.com/syntax-datatypes.html#boolean">Boolean</a>
      * type.</p> <p>Example: <code>{"boolean": true}</code> </p>
      */
     inline AttributeValue& WithBoolean(bool value) { SetBoolean(value); return *this;}
@@ -128,28 +128,28 @@ namespace Model
 
     /**
      * <p>An attribute value of <a
-     * href="docs.cedarpolicy.comcedar-syntax-datatypes.html#datatype-long">Long</a>
+     * href="https://docs.cedarpolicy.com/syntax-datatypes.html#long">Long</a>
      * type.</p> <p>Example: <code>{"long": 0}</code> </p>
      */
     inline long long GetLong() const{ return m_long; }
 
     /**
      * <p>An attribute value of <a
-     * href="docs.cedarpolicy.comcedar-syntax-datatypes.html#datatype-long">Long</a>
+     * href="https://docs.cedarpolicy.com/syntax-datatypes.html#long">Long</a>
      * type.</p> <p>Example: <code>{"long": 0}</code> </p>
      */
     inline bool LongHasBeenSet() const { return m_longHasBeenSet; }
 
     /**
      * <p>An attribute value of <a
-     * href="docs.cedarpolicy.comcedar-syntax-datatypes.html#datatype-long">Long</a>
+     * href="https://docs.cedarpolicy.com/syntax-datatypes.html#long">Long</a>
      * type.</p> <p>Example: <code>{"long": 0}</code> </p>
      */
     inline void SetLong(long long value) { m_longHasBeenSet = true; m_long = value; }
 
     /**
      * <p>An attribute value of <a
-     * href="docs.cedarpolicy.comcedar-syntax-datatypes.html#datatype-long">Long</a>
+     * href="https://docs.cedarpolicy.com/syntax-datatypes.html#long">Long</a>
      * type.</p> <p>Example: <code>{"long": 0}</code> </p>
      */
     inline AttributeValue& WithLong(long long value) { SetLong(value); return *this;}
@@ -157,56 +157,56 @@ namespace Model
 
     /**
      * <p>An attribute value of <a
-     * href="docs.cedarpolicy.comcedar-syntax-datatypes.html#datatype-string">String</a>
+     * href="https://docs.cedarpolicy.com/syntax-datatypes.html#string">String</a>
      * type.</p> <p>Example: <code>{"string": "abc"}</code> </p>
      */
     inline const Aws::String& GetString() const{ return m_string; }
 
     /**
      * <p>An attribute value of <a
-     * href="docs.cedarpolicy.comcedar-syntax-datatypes.html#datatype-string">String</a>
+     * href="https://docs.cedarpolicy.com/syntax-datatypes.html#string">String</a>
      * type.</p> <p>Example: <code>{"string": "abc"}</code> </p>
      */
     inline bool StringHasBeenSet() const { return m_stringHasBeenSet; }
 
     /**
      * <p>An attribute value of <a
-     * href="docs.cedarpolicy.comcedar-syntax-datatypes.html#datatype-string">String</a>
+     * href="https://docs.cedarpolicy.com/syntax-datatypes.html#string">String</a>
      * type.</p> <p>Example: <code>{"string": "abc"}</code> </p>
      */
     inline void SetString(const Aws::String& value) { m_stringHasBeenSet = true; m_string = value; }
 
     /**
      * <p>An attribute value of <a
-     * href="docs.cedarpolicy.comcedar-syntax-datatypes.html#datatype-string">String</a>
+     * href="https://docs.cedarpolicy.com/syntax-datatypes.html#string">String</a>
      * type.</p> <p>Example: <code>{"string": "abc"}</code> </p>
      */
     inline void SetString(Aws::String&& value) { m_stringHasBeenSet = true; m_string = std::move(value); }
 
     /**
      * <p>An attribute value of <a
-     * href="docs.cedarpolicy.comcedar-syntax-datatypes.html#datatype-string">String</a>
+     * href="https://docs.cedarpolicy.com/syntax-datatypes.html#string">String</a>
      * type.</p> <p>Example: <code>{"string": "abc"}</code> </p>
      */
     inline void SetString(const char* value) { m_stringHasBeenSet = true; m_string.assign(value); }
 
     /**
      * <p>An attribute value of <a
-     * href="docs.cedarpolicy.comcedar-syntax-datatypes.html#datatype-string">String</a>
+     * href="https://docs.cedarpolicy.com/syntax-datatypes.html#string">String</a>
      * type.</p> <p>Example: <code>{"string": "abc"}</code> </p>
      */
     inline AttributeValue& WithString(const Aws::String& value) { SetString(value); return *this;}
 
     /**
      * <p>An attribute value of <a
-     * href="docs.cedarpolicy.comcedar-syntax-datatypes.html#datatype-string">String</a>
+     * href="https://docs.cedarpolicy.com/syntax-datatypes.html#string">String</a>
      * type.</p> <p>Example: <code>{"string": "abc"}</code> </p>
      */
     inline AttributeValue& WithString(Aws::String&& value) { SetString(std::move(value)); return *this;}
 
     /**
      * <p>An attribute value of <a
-     * href="docs.cedarpolicy.comcedar-syntax-datatypes.html#datatype-string">String</a>
+     * href="https://docs.cedarpolicy.com/syntax-datatypes.html#string">String</a>
      * type.</p> <p>Example: <code>{"string": "abc"}</code> </p>
      */
     inline AttributeValue& WithString(const char* value) { SetString(value); return *this;}
@@ -214,141 +214,141 @@ namespace Model
 
     /**
      * <p>An attribute value of <a
-     * href="docs.cedarpolicy.comcedar-syntax-datatypes.html#datatype-set">Set</a>
-     * type.</p> <p>Example: <code>{"set": [ {} ] }</code> </p>
+     * href="https://docs.cedarpolicy.com/syntax-datatypes.html#set">Set</a> type.</p>
+     * <p>Example: <code>{"set": [ {} ] }</code> </p>
      */
     inline const Aws::Vector<AttributeValue>& GetSet() const{ return m_set; }
 
     /**
      * <p>An attribute value of <a
-     * href="docs.cedarpolicy.comcedar-syntax-datatypes.html#datatype-set">Set</a>
-     * type.</p> <p>Example: <code>{"set": [ {} ] }</code> </p>
+     * href="https://docs.cedarpolicy.com/syntax-datatypes.html#set">Set</a> type.</p>
+     * <p>Example: <code>{"set": [ {} ] }</code> </p>
      */
     inline bool SetHasBeenSet() const { return m_setHasBeenSet; }
 
     /**
      * <p>An attribute value of <a
-     * href="docs.cedarpolicy.comcedar-syntax-datatypes.html#datatype-set">Set</a>
-     * type.</p> <p>Example: <code>{"set": [ {} ] }</code> </p>
+     * href="https://docs.cedarpolicy.com/syntax-datatypes.html#set">Set</a> type.</p>
+     * <p>Example: <code>{"set": [ {} ] }</code> </p>
      */
     inline void SetSet(const Aws::Vector<AttributeValue>& value) { m_setHasBeenSet = true; m_set = value; }
 
     /**
      * <p>An attribute value of <a
-     * href="docs.cedarpolicy.comcedar-syntax-datatypes.html#datatype-set">Set</a>
-     * type.</p> <p>Example: <code>{"set": [ {} ] }</code> </p>
+     * href="https://docs.cedarpolicy.com/syntax-datatypes.html#set">Set</a> type.</p>
+     * <p>Example: <code>{"set": [ {} ] }</code> </p>
      */
     inline void SetSet(Aws::Vector<AttributeValue>&& value) { m_setHasBeenSet = true; m_set = std::move(value); }
 
     /**
      * <p>An attribute value of <a
-     * href="docs.cedarpolicy.comcedar-syntax-datatypes.html#datatype-set">Set</a>
-     * type.</p> <p>Example: <code>{"set": [ {} ] }</code> </p>
+     * href="https://docs.cedarpolicy.com/syntax-datatypes.html#set">Set</a> type.</p>
+     * <p>Example: <code>{"set": [ {} ] }</code> </p>
      */
     inline AttributeValue& WithSet(const Aws::Vector<AttributeValue>& value) { SetSet(value); return *this;}
 
     /**
      * <p>An attribute value of <a
-     * href="docs.cedarpolicy.comcedar-syntax-datatypes.html#datatype-set">Set</a>
-     * type.</p> <p>Example: <code>{"set": [ {} ] }</code> </p>
+     * href="https://docs.cedarpolicy.com/syntax-datatypes.html#set">Set</a> type.</p>
+     * <p>Example: <code>{"set": [ {} ] }</code> </p>
      */
     inline AttributeValue& WithSet(Aws::Vector<AttributeValue>&& value) { SetSet(std::move(value)); return *this;}
 
     /**
      * <p>An attribute value of <a
-     * href="docs.cedarpolicy.comcedar-syntax-datatypes.html#datatype-set">Set</a>
-     * type.</p> <p>Example: <code>{"set": [ {} ] }</code> </p>
+     * href="https://docs.cedarpolicy.com/syntax-datatypes.html#set">Set</a> type.</p>
+     * <p>Example: <code>{"set": [ {} ] }</code> </p>
      */
     inline AttributeValue& AddSet(const AttributeValue& value) { m_setHasBeenSet = true; m_set.push_back(value); return *this; }
 
     /**
      * <p>An attribute value of <a
-     * href="docs.cedarpolicy.comcedar-syntax-datatypes.html#datatype-set">Set</a>
-     * type.</p> <p>Example: <code>{"set": [ {} ] }</code> </p>
+     * href="https://docs.cedarpolicy.com/syntax-datatypes.html#set">Set</a> type.</p>
+     * <p>Example: <code>{"set": [ {} ] }</code> </p>
      */
     inline AttributeValue& AddSet(AttributeValue&& value) { m_setHasBeenSet = true; m_set.push_back(std::move(value)); return *this; }
 
 
     /**
      * <p>An attribute value of <a
-     * href="docs.cedarpolicy.comcedar-syntax-datatypes.html#datatype-record">Record</a>
+     * href="https://docs.cedarpolicy.com/syntax-datatypes.html#record">Record</a>
      * type.</p> <p>Example: <code>{"record": { "keyName": {} } }</code> </p>
      */
     inline const Aws::Map<Aws::String, AttributeValue>& GetRecord() const{ return m_record; }
 
     /**
      * <p>An attribute value of <a
-     * href="docs.cedarpolicy.comcedar-syntax-datatypes.html#datatype-record">Record</a>
+     * href="https://docs.cedarpolicy.com/syntax-datatypes.html#record">Record</a>
      * type.</p> <p>Example: <code>{"record": { "keyName": {} } }</code> </p>
      */
     inline bool RecordHasBeenSet() const { return m_recordHasBeenSet; }
 
     /**
      * <p>An attribute value of <a
-     * href="docs.cedarpolicy.comcedar-syntax-datatypes.html#datatype-record">Record</a>
+     * href="https://docs.cedarpolicy.com/syntax-datatypes.html#record">Record</a>
      * type.</p> <p>Example: <code>{"record": { "keyName": {} } }</code> </p>
      */
     inline void SetRecord(const Aws::Map<Aws::String, AttributeValue>& value) { m_recordHasBeenSet = true; m_record = value; }
 
     /**
      * <p>An attribute value of <a
-     * href="docs.cedarpolicy.comcedar-syntax-datatypes.html#datatype-record">Record</a>
+     * href="https://docs.cedarpolicy.com/syntax-datatypes.html#record">Record</a>
      * type.</p> <p>Example: <code>{"record": { "keyName": {} } }</code> </p>
      */
     inline void SetRecord(Aws::Map<Aws::String, AttributeValue>&& value) { m_recordHasBeenSet = true; m_record = std::move(value); }
 
     /**
      * <p>An attribute value of <a
-     * href="docs.cedarpolicy.comcedar-syntax-datatypes.html#datatype-record">Record</a>
+     * href="https://docs.cedarpolicy.com/syntax-datatypes.html#record">Record</a>
      * type.</p> <p>Example: <code>{"record": { "keyName": {} } }</code> </p>
      */
     inline AttributeValue& WithRecord(const Aws::Map<Aws::String, AttributeValue>& value) { SetRecord(value); return *this;}
 
     /**
      * <p>An attribute value of <a
-     * href="docs.cedarpolicy.comcedar-syntax-datatypes.html#datatype-record">Record</a>
+     * href="https://docs.cedarpolicy.com/syntax-datatypes.html#record">Record</a>
      * type.</p> <p>Example: <code>{"record": { "keyName": {} } }</code> </p>
      */
     inline AttributeValue& WithRecord(Aws::Map<Aws::String, AttributeValue>&& value) { SetRecord(std::move(value)); return *this;}
 
     /**
      * <p>An attribute value of <a
-     * href="docs.cedarpolicy.comcedar-syntax-datatypes.html#datatype-record">Record</a>
+     * href="https://docs.cedarpolicy.com/syntax-datatypes.html#record">Record</a>
      * type.</p> <p>Example: <code>{"record": { "keyName": {} } }</code> </p>
      */
     inline AttributeValue& AddRecord(const Aws::String& key, const AttributeValue& value) { m_recordHasBeenSet = true; m_record.emplace(key, value); return *this; }
 
     /**
      * <p>An attribute value of <a
-     * href="docs.cedarpolicy.comcedar-syntax-datatypes.html#datatype-record">Record</a>
+     * href="https://docs.cedarpolicy.com/syntax-datatypes.html#record">Record</a>
      * type.</p> <p>Example: <code>{"record": { "keyName": {} } }</code> </p>
      */
     inline AttributeValue& AddRecord(Aws::String&& key, const AttributeValue& value) { m_recordHasBeenSet = true; m_record.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>An attribute value of <a
-     * href="docs.cedarpolicy.comcedar-syntax-datatypes.html#datatype-record">Record</a>
+     * href="https://docs.cedarpolicy.com/syntax-datatypes.html#record">Record</a>
      * type.</p> <p>Example: <code>{"record": { "keyName": {} } }</code> </p>
      */
     inline AttributeValue& AddRecord(const Aws::String& key, AttributeValue&& value) { m_recordHasBeenSet = true; m_record.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>An attribute value of <a
-     * href="docs.cedarpolicy.comcedar-syntax-datatypes.html#datatype-record">Record</a>
+     * href="https://docs.cedarpolicy.com/syntax-datatypes.html#record">Record</a>
      * type.</p> <p>Example: <code>{"record": { "keyName": {} } }</code> </p>
      */
     inline AttributeValue& AddRecord(Aws::String&& key, AttributeValue&& value) { m_recordHasBeenSet = true; m_record.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>An attribute value of <a
-     * href="docs.cedarpolicy.comcedar-syntax-datatypes.html#datatype-record">Record</a>
+     * href="https://docs.cedarpolicy.com/syntax-datatypes.html#record">Record</a>
      * type.</p> <p>Example: <code>{"record": { "keyName": {} } }</code> </p>
      */
     inline AttributeValue& AddRecord(const char* key, AttributeValue&& value) { m_recordHasBeenSet = true; m_record.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>An attribute value of <a
-     * href="docs.cedarpolicy.comcedar-syntax-datatypes.html#datatype-record">Record</a>
+     * href="https://docs.cedarpolicy.com/syntax-datatypes.html#record">Record</a>
      * type.</p> <p>Example: <code>{"record": { "keyName": {} } }</code> </p>
      */
     inline AttributeValue& AddRecord(const char* key, const AttributeValue& value) { m_recordHasBeenSet = true; m_record.emplace(key, value); return *this; }

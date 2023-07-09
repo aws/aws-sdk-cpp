@@ -108,74 +108,86 @@ namespace Model
 
 
     /**
-     * <p>Contains additional user-defined properties stored with the geofence. An
-     * array of key-value pairs.</p>
+     * <p>User defined properties of the geofence. A property is a key-value pair
+     * stored with the geofence and added to any geofence event triggered with that
+     * geofence.</p> <p>Format: <code>"key" : "value"</code> </p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetGeofenceProperties() const{ return m_geofenceProperties; }
 
     /**
-     * <p>Contains additional user-defined properties stored with the geofence. An
-     * array of key-value pairs.</p>
+     * <p>User defined properties of the geofence. A property is a key-value pair
+     * stored with the geofence and added to any geofence event triggered with that
+     * geofence.</p> <p>Format: <code>"key" : "value"</code> </p>
      */
     inline void SetGeofenceProperties(const Aws::Map<Aws::String, Aws::String>& value) { m_geofenceProperties = value; }
 
     /**
-     * <p>Contains additional user-defined properties stored with the geofence. An
-     * array of key-value pairs.</p>
+     * <p>User defined properties of the geofence. A property is a key-value pair
+     * stored with the geofence and added to any geofence event triggered with that
+     * geofence.</p> <p>Format: <code>"key" : "value"</code> </p>
      */
     inline void SetGeofenceProperties(Aws::Map<Aws::String, Aws::String>&& value) { m_geofenceProperties = std::move(value); }
 
     /**
-     * <p>Contains additional user-defined properties stored with the geofence. An
-     * array of key-value pairs.</p>
+     * <p>User defined properties of the geofence. A property is a key-value pair
+     * stored with the geofence and added to any geofence event triggered with that
+     * geofence.</p> <p>Format: <code>"key" : "value"</code> </p>
      */
     inline GetGeofenceResult& WithGeofenceProperties(const Aws::Map<Aws::String, Aws::String>& value) { SetGeofenceProperties(value); return *this;}
 
     /**
-     * <p>Contains additional user-defined properties stored with the geofence. An
-     * array of key-value pairs.</p>
+     * <p>User defined properties of the geofence. A property is a key-value pair
+     * stored with the geofence and added to any geofence event triggered with that
+     * geofence.</p> <p>Format: <code>"key" : "value"</code> </p>
      */
     inline GetGeofenceResult& WithGeofenceProperties(Aws::Map<Aws::String, Aws::String>&& value) { SetGeofenceProperties(std::move(value)); return *this;}
 
     /**
-     * <p>Contains additional user-defined properties stored with the geofence. An
-     * array of key-value pairs.</p>
+     * <p>User defined properties of the geofence. A property is a key-value pair
+     * stored with the geofence and added to any geofence event triggered with that
+     * geofence.</p> <p>Format: <code>"key" : "value"</code> </p>
      */
     inline GetGeofenceResult& AddGeofenceProperties(const Aws::String& key, const Aws::String& value) { m_geofenceProperties.emplace(key, value); return *this; }
 
     /**
-     * <p>Contains additional user-defined properties stored with the geofence. An
-     * array of key-value pairs.</p>
+     * <p>User defined properties of the geofence. A property is a key-value pair
+     * stored with the geofence and added to any geofence event triggered with that
+     * geofence.</p> <p>Format: <code>"key" : "value"</code> </p>
      */
     inline GetGeofenceResult& AddGeofenceProperties(Aws::String&& key, const Aws::String& value) { m_geofenceProperties.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Contains additional user-defined properties stored with the geofence. An
-     * array of key-value pairs.</p>
+     * <p>User defined properties of the geofence. A property is a key-value pair
+     * stored with the geofence and added to any geofence event triggered with that
+     * geofence.</p> <p>Format: <code>"key" : "value"</code> </p>
      */
     inline GetGeofenceResult& AddGeofenceProperties(const Aws::String& key, Aws::String&& value) { m_geofenceProperties.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Contains additional user-defined properties stored with the geofence. An
-     * array of key-value pairs.</p>
+     * <p>User defined properties of the geofence. A property is a key-value pair
+     * stored with the geofence and added to any geofence event triggered with that
+     * geofence.</p> <p>Format: <code>"key" : "value"</code> </p>
      */
     inline GetGeofenceResult& AddGeofenceProperties(Aws::String&& key, Aws::String&& value) { m_geofenceProperties.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Contains additional user-defined properties stored with the geofence. An
-     * array of key-value pairs.</p>
+     * <p>User defined properties of the geofence. A property is a key-value pair
+     * stored with the geofence and added to any geofence event triggered with that
+     * geofence.</p> <p>Format: <code>"key" : "value"</code> </p>
      */
     inline GetGeofenceResult& AddGeofenceProperties(const char* key, Aws::String&& value) { m_geofenceProperties.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Contains additional user-defined properties stored with the geofence. An
-     * array of key-value pairs.</p>
+     * <p>User defined properties of the geofence. A property is a key-value pair
+     * stored with the geofence and added to any geofence event triggered with that
+     * geofence.</p> <p>Format: <code>"key" : "value"</code> </p>
      */
     inline GetGeofenceResult& AddGeofenceProperties(Aws::String&& key, const char* value) { m_geofenceProperties.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Contains additional user-defined properties stored with the geofence. An
-     * array of key-value pairs.</p>
+     * <p>User defined properties of the geofence. A property is a key-value pair
+     * stored with the geofence and added to any geofence event triggered with that
+     * geofence.</p> <p>Format: <code>"key" : "value"</code> </p>
      */
     inline GetGeofenceResult& AddGeofenceProperties(const char* key, const char* value) { m_geofenceProperties.emplace(key, value); return *this; }
 

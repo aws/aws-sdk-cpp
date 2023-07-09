@@ -17,6 +17,7 @@ using namespace Aws::Http;
 
 GetPlaceRequest::GetPlaceRequest() : 
     m_indexNameHasBeenSet(false),
+    m_keyHasBeenSet(false),
     m_languageHasBeenSet(false),
     m_placeIdHasBeenSet(false)
 {
@@ -30,6 +31,13 @@ Aws::String GetPlaceRequest::SerializePayload() const
 void GetPlaceRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;
+    if(m_keyHasBeenSet)
+    {
+      ss << m_key;
+      uri.AddQueryStringParameter("key", ss.str());
+      ss.str("");
+    }
+
     if(m_languageHasBeenSet)
     {
       ss << m_language;

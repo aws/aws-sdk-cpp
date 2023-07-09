@@ -19,7 +19,8 @@ namespace Model
     ALL,
     EXCLUDE,
     INCLUDE,
-    NONE
+    NONE,
+    RECOMMENDED
   };
 
 namespace ManagedDataIdentifierSelectorMapper

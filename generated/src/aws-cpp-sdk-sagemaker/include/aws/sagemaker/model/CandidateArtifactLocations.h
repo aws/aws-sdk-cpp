@@ -135,6 +135,63 @@ namespace Model
      */
     inline CandidateArtifactLocations& WithModelInsights(const char* value) { SetModelInsights(value); return *this;}
 
+
+    /**
+     * <p>The Amazon S3 prefix to the accuracy metrics and the inference results
+     * observed over the testing window. Available only for the time-series forecasting
+     * problem type.</p>
+     */
+    inline const Aws::String& GetBacktestResults() const{ return m_backtestResults; }
+
+    /**
+     * <p>The Amazon S3 prefix to the accuracy metrics and the inference results
+     * observed over the testing window. Available only for the time-series forecasting
+     * problem type.</p>
+     */
+    inline bool BacktestResultsHasBeenSet() const { return m_backtestResultsHasBeenSet; }
+
+    /**
+     * <p>The Amazon S3 prefix to the accuracy metrics and the inference results
+     * observed over the testing window. Available only for the time-series forecasting
+     * problem type.</p>
+     */
+    inline void SetBacktestResults(const Aws::String& value) { m_backtestResultsHasBeenSet = true; m_backtestResults = value; }
+
+    /**
+     * <p>The Amazon S3 prefix to the accuracy metrics and the inference results
+     * observed over the testing window. Available only for the time-series forecasting
+     * problem type.</p>
+     */
+    inline void SetBacktestResults(Aws::String&& value) { m_backtestResultsHasBeenSet = true; m_backtestResults = std::move(value); }
+
+    /**
+     * <p>The Amazon S3 prefix to the accuracy metrics and the inference results
+     * observed over the testing window. Available only for the time-series forecasting
+     * problem type.</p>
+     */
+    inline void SetBacktestResults(const char* value) { m_backtestResultsHasBeenSet = true; m_backtestResults.assign(value); }
+
+    /**
+     * <p>The Amazon S3 prefix to the accuracy metrics and the inference results
+     * observed over the testing window. Available only for the time-series forecasting
+     * problem type.</p>
+     */
+    inline CandidateArtifactLocations& WithBacktestResults(const Aws::String& value) { SetBacktestResults(value); return *this;}
+
+    /**
+     * <p>The Amazon S3 prefix to the accuracy metrics and the inference results
+     * observed over the testing window. Available only for the time-series forecasting
+     * problem type.</p>
+     */
+    inline CandidateArtifactLocations& WithBacktestResults(Aws::String&& value) { SetBacktestResults(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon S3 prefix to the accuracy metrics and the inference results
+     * observed over the testing window. Available only for the time-series forecasting
+     * problem type.</p>
+     */
+    inline CandidateArtifactLocations& WithBacktestResults(const char* value) { SetBacktestResults(value); return *this;}
+
   private:
 
     Aws::String m_explainability;
@@ -142,6 +199,9 @@ namespace Model
 
     Aws::String m_modelInsights;
     bool m_modelInsightsHasBeenSet = false;
+
+    Aws::String m_backtestResults;
+    bool m_backtestResultsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -25,10 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>The request caused OpsItems to exceed one or more quotas. For information
-   * about OpsItem quotas, see <a
-   * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-learn-more.html#OpsCenter-learn-more-limits">What
-   * are the resource limits for OpsCenter?</a>.</p><p><h3>See Also:</h3>   <a
+   * <p>The request caused OpsItems to exceed one or more quotas.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/OpsItemLimitExceededException">AWS
    * API Reference</a></p>
    */

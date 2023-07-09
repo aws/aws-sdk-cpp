@@ -23,6 +23,7 @@
 #include <aws/ivs/IVSEndpointProvider.h>
 #include <aws/ivs/model/BatchGetChannelRequest.h>
 #include <aws/ivs/model/BatchGetStreamKeyRequest.h>
+#include <aws/ivs/model/BatchStartViewerSessionRevocationRequest.h>
 #include <aws/ivs/model/CreateChannelRequest.h>
 #include <aws/ivs/model/CreateRecordingConfigurationRequest.h>
 #include <aws/ivs/model/CreateStreamKeyRequest.h>
@@ -45,6 +46,7 @@
 #include <aws/ivs/model/ListStreamsRequest.h>
 #include <aws/ivs/model/ListTagsForResourceRequest.h>
 #include <aws/ivs/model/PutMetadataRequest.h>
+#include <aws/ivs/model/StartViewerSessionRevocationRequest.h>
 #include <aws/ivs/model/StopStreamRequest.h>
 #include <aws/ivs/model/TagResourceRequest.h>
 #include <aws/ivs/model/UntagResourceRequest.h>
@@ -196,6 +198,16 @@ BatchGetStreamKeyOutcome IVSClient::BatchGetStreamKey(const BatchGetStreamKeyReq
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchGetStreamKey, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   endpointResolutionOutcome.GetResult().AddPathSegments("/BatchGetStreamKey");
   return BatchGetStreamKeyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+BatchStartViewerSessionRevocationOutcome IVSClient::BatchStartViewerSessionRevocation(const BatchStartViewerSessionRevocationRequest& request) const
+{
+  AWS_OPERATION_GUARD(BatchStartViewerSessionRevocation);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchStartViewerSessionRevocation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchStartViewerSessionRevocation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/BatchStartViewerSessionRevocation");
+  return BatchStartViewerSessionRevocationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateChannelOutcome IVSClient::CreateChannel(const CreateChannelRequest& request) const
@@ -422,6 +434,16 @@ PutMetadataOutcome IVSClient::PutMetadata(const PutMetadataRequest& request) con
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutMetadata, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   endpointResolutionOutcome.GetResult().AddPathSegments("/PutMetadata");
   return PutMetadataOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartViewerSessionRevocationOutcome IVSClient::StartViewerSessionRevocation(const StartViewerSessionRevocationRequest& request) const
+{
+  AWS_OPERATION_GUARD(StartViewerSessionRevocation);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartViewerSessionRevocation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartViewerSessionRevocation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/StartViewerSessionRevocation");
+  return StartViewerSessionRevocationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StopStreamOutcome IVSClient::StopStream(const StopStreamRequest& request) const

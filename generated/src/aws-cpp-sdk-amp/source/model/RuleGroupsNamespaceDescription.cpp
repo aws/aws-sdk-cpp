@@ -21,22 +21,22 @@ namespace Model
 
 RuleGroupsNamespaceDescription::RuleGroupsNamespaceDescription() : 
     m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_dataHasBeenSet(false),
-    m_modifiedAtHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_statusHasBeenSet(false),
+    m_dataHasBeenSet(false),
+    m_createdAtHasBeenSet(false),
+    m_modifiedAtHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
 
 RuleGroupsNamespaceDescription::RuleGroupsNamespaceDescription(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_dataHasBeenSet(false),
-    m_modifiedAtHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_statusHasBeenSet(false),
+    m_dataHasBeenSet(false),
+    m_createdAtHasBeenSet(false),
+    m_modifiedAtHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -51,26 +51,6 @@ RuleGroupsNamespaceDescription& RuleGroupsNamespaceDescription::operator =(JsonV
     m_arnHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("createdAt"))
-  {
-    m_createdAt = jsonValue.GetDouble("createdAt");
-
-    m_createdAtHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("data"))
-  {
-    m_data = HashingUtils::Base64Decode(jsonValue.GetString("data"));
-    m_dataHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("modifiedAt"))
-  {
-    m_modifiedAt = jsonValue.GetDouble("modifiedAt");
-
-    m_modifiedAtHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
@@ -83,6 +63,26 @@ RuleGroupsNamespaceDescription& RuleGroupsNamespaceDescription::operator =(JsonV
     m_status = jsonValue.GetObject("status");
 
     m_statusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("data"))
+  {
+    m_data = HashingUtils::Base64Decode(jsonValue.GetString("data"));
+    m_dataHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("createdAt"))
+  {
+    m_createdAt = jsonValue.GetDouble("createdAt");
+
+    m_createdAtHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("modifiedAt"))
+  {
+    m_modifiedAt = jsonValue.GetDouble("modifiedAt");
+
+    m_modifiedAtHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("tags"))
@@ -108,21 +108,6 @@ JsonValue RuleGroupsNamespaceDescription::Jsonize() const
 
   }
 
-  if(m_createdAtHasBeenSet)
-  {
-   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
-  }
-
-  if(m_dataHasBeenSet)
-  {
-   payload.WithString("data", HashingUtils::Base64Encode(m_data));
-  }
-
-  if(m_modifiedAtHasBeenSet)
-  {
-   payload.WithDouble("modifiedAt", m_modifiedAt.SecondsWithMSPrecision());
-  }
-
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
@@ -133,6 +118,21 @@ JsonValue RuleGroupsNamespaceDescription::Jsonize() const
   {
    payload.WithObject("status", m_status.Jsonize());
 
+  }
+
+  if(m_dataHasBeenSet)
+  {
+   payload.WithString("data", HashingUtils::Base64Encode(m_data));
+  }
+
+  if(m_createdAtHasBeenSet)
+  {
+   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
+  }
+
+  if(m_modifiedAtHasBeenSet)
+  {
+   payload.WithDouble("modifiedAt", m_modifiedAt.SecondsWithMSPrecision());
   }
 
   if(m_tagsHasBeenSet)

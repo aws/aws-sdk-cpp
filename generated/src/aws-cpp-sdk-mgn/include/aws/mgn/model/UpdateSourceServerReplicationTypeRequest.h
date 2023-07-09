@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/mgn/Mgn_EXPORTS.h>
 #include <aws/mgn/MgnRequest.h>
-#include <aws/mgn/model/ReplicationType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mgn/model/ReplicationType.h>
 #include <utility>
 
 namespace Aws
@@ -31,6 +31,47 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "UpdateSourceServerReplicationType"; }
 
     AWS_MGN_API Aws::String SerializePayload() const override;
+
+
+    /**
+     * <p>Account ID on which to update replication type.</p>
+     */
+    inline const Aws::String& GetAccountID() const{ return m_accountID; }
+
+    /**
+     * <p>Account ID on which to update replication type.</p>
+     */
+    inline bool AccountIDHasBeenSet() const { return m_accountIDHasBeenSet; }
+
+    /**
+     * <p>Account ID on which to update replication type.</p>
+     */
+    inline void SetAccountID(const Aws::String& value) { m_accountIDHasBeenSet = true; m_accountID = value; }
+
+    /**
+     * <p>Account ID on which to update replication type.</p>
+     */
+    inline void SetAccountID(Aws::String&& value) { m_accountIDHasBeenSet = true; m_accountID = std::move(value); }
+
+    /**
+     * <p>Account ID on which to update replication type.</p>
+     */
+    inline void SetAccountID(const char* value) { m_accountIDHasBeenSet = true; m_accountID.assign(value); }
+
+    /**
+     * <p>Account ID on which to update replication type.</p>
+     */
+    inline UpdateSourceServerReplicationTypeRequest& WithAccountID(const Aws::String& value) { SetAccountID(value); return *this;}
+
+    /**
+     * <p>Account ID on which to update replication type.</p>
+     */
+    inline UpdateSourceServerReplicationTypeRequest& WithAccountID(Aws::String&& value) { SetAccountID(std::move(value)); return *this;}
+
+    /**
+     * <p>Account ID on which to update replication type.</p>
+     */
+    inline UpdateSourceServerReplicationTypeRequest& WithAccountID(const char* value) { SetAccountID(value); return *this;}
 
 
     /**
@@ -105,6 +146,9 @@ namespace Model
     inline UpdateSourceServerReplicationTypeRequest& WithSourceServerID(const char* value) { SetSourceServerID(value); return *this;}
 
   private:
+
+    Aws::String m_accountID;
+    bool m_accountIDHasBeenSet = false;
 
     ReplicationType m_replicationType;
     bool m_replicationTypeHasBeenSet = false;

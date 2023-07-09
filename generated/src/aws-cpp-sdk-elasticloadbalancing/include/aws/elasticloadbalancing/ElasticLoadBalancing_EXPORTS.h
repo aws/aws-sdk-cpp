@@ -21,9 +21,12 @@
         #else
             #define AWS_ELASTICLOADBALANCING_API __declspec(dllimport)
         #endif /* AWS_ELASTICLOADBALANCING_EXPORTS */
+        #define AWS_ELASTICLOADBALANCING_EXTERN
     #else
         #define AWS_ELASTICLOADBALANCING_API
+        #define AWS_ELASTICLOADBALANCING_EXTERN extern
     #endif // USE_IMPORT_EXPORT
 #else // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
     #define AWS_ELASTICLOADBALANCING_API
+    #define AWS_ELASTICLOADBALANCING_EXTERN extern
 #endif // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)

@@ -28,6 +28,7 @@ ListObjectsRequest::ListObjectsRequest() :
     m_requestPayer(RequestPayer::NOT_SET),
     m_requestPayerHasBeenSet(false),
     m_expectedBucketOwnerHasBeenSet(false),
+    m_optionalObjectAttributesHasBeenSet(false),
     m_customizedAccessLogTagHasBeenSet(false)
 {
 }
@@ -108,6 +109,16 @@ Aws::Http::HeaderValueCollection ListObjectsRequest::GetRequestSpecificHeaders()
     ss << m_expectedBucketOwner;
     headers.emplace("x-amz-expected-bucket-owner",  ss.str());
     ss.str("");
+  }
+
+  if(m_optionalObjectAttributesHasBeenSet)
+  {
+    for(const auto& item : m_optionalObjectAttributes)
+    {
+      ss << OptionalObjectAttributesMapper::GetNameForOptionalObjectAttributes(item);
+      headers.emplace("x-amz-optional-object-attributes", ss.str());
+      ss.str("");
+    }
   }
 
   return headers;

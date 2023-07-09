@@ -33,8 +33,9 @@ namespace Model
    * <p> The collection of medical entities extracted from the input text and their
    * associated information. For each entity, the response provides the entity text,
    * the entity category, where the entity text begins and ends, and the level of
-   * confidence that Comprehend Medical has in the detection and analysis. Attributes
-   * and traits of the entity are also returned. </p><p><h3>See Also:</h3>   <a
+   * confidence that Amazon Comprehend Medical has in the detection and analysis.
+   * Attributes and traits of the entity are also returned. </p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/SNOMEDCTEntity">AWS
    * API Reference</a></p>
    */
@@ -194,26 +195,26 @@ namespace Model
 
 
     /**
-     * <p> The level of confidence that Comprehend Medical has in the accuracy of the
-     * detected entity. </p>
+     * <p> The level of confidence that Amazon Comprehend Medical has in the accuracy
+     * of the detected entity. </p>
      */
     inline double GetScore() const{ return m_score; }
 
     /**
-     * <p> The level of confidence that Comprehend Medical has in the accuracy of the
-     * detected entity. </p>
+     * <p> The level of confidence that Amazon Comprehend Medical has in the accuracy
+     * of the detected entity. </p>
      */
     inline bool ScoreHasBeenSet() const { return m_scoreHasBeenSet; }
 
     /**
-     * <p> The level of confidence that Comprehend Medical has in the accuracy of the
-     * detected entity. </p>
+     * <p> The level of confidence that Amazon Comprehend Medical has in the accuracy
+     * of the detected entity. </p>
      */
     inline void SetScore(double value) { m_scoreHasBeenSet = true; m_score = value; }
 
     /**
-     * <p> The level of confidence that Comprehend Medical has in the accuracy of the
-     * detected entity. </p>
+     * <p> The level of confidence that Amazon Comprehend Medical has in the accuracy
+     * of the detected entity. </p>
      */
     inline SNOMEDCTEntity& WithScore(double value) { SetScore(value); return *this;}
 

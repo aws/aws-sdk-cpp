@@ -108,73 +108,73 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Comprehend Medical; read access to your input data. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med">
-     * Role-Based Permissions Required for Asynchronous Operations</a>.</p>
+     * (IAM) role that grants Amazon Comprehend Medical read access to your input data.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med">Role-Based
+     * Permissions Required for Asynchronous Operations</a>.</p>
      */
     inline const Aws::String& GetDataAccessRoleArn() const{ return m_dataAccessRoleArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Comprehend Medical; read access to your input data. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med">
-     * Role-Based Permissions Required for Asynchronous Operations</a>.</p>
+     * (IAM) role that grants Amazon Comprehend Medical read access to your input data.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med">Role-Based
+     * Permissions Required for Asynchronous Operations</a>.</p>
      */
     inline bool DataAccessRoleArnHasBeenSet() const { return m_dataAccessRoleArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Comprehend Medical; read access to your input data. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med">
-     * Role-Based Permissions Required for Asynchronous Operations</a>.</p>
+     * (IAM) role that grants Amazon Comprehend Medical read access to your input data.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med">Role-Based
+     * Permissions Required for Asynchronous Operations</a>.</p>
      */
     inline void SetDataAccessRoleArn(const Aws::String& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Comprehend Medical; read access to your input data. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med">
-     * Role-Based Permissions Required for Asynchronous Operations</a>.</p>
+     * (IAM) role that grants Amazon Comprehend Medical read access to your input data.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med">Role-Based
+     * Permissions Required for Asynchronous Operations</a>.</p>
      */
     inline void SetDataAccessRoleArn(Aws::String&& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Comprehend Medical; read access to your input data. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med">
-     * Role-Based Permissions Required for Asynchronous Operations</a>.</p>
+     * (IAM) role that grants Amazon Comprehend Medical read access to your input data.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med">Role-Based
+     * Permissions Required for Asynchronous Operations</a>.</p>
      */
     inline void SetDataAccessRoleArn(const char* value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Comprehend Medical; read access to your input data. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med">
-     * Role-Based Permissions Required for Asynchronous Operations</a>.</p>
+     * (IAM) role that grants Amazon Comprehend Medical read access to your input data.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med">Role-Based
+     * Permissions Required for Asynchronous Operations</a>.</p>
      */
     inline StartEntitiesDetectionV2JobRequest& WithDataAccessRoleArn(const Aws::String& value) { SetDataAccessRoleArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Comprehend Medical; read access to your input data. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med">
-     * Role-Based Permissions Required for Asynchronous Operations</a>.</p>
+     * (IAM) role that grants Amazon Comprehend Medical read access to your input data.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med">Role-Based
+     * Permissions Required for Asynchronous Operations</a>.</p>
      */
     inline StartEntitiesDetectionV2JobRequest& WithDataAccessRoleArn(Aws::String&& value) { SetDataAccessRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Comprehend Medical; read access to your input data. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med">
-     * Role-Based Permissions Required for Asynchronous Operations</a>.</p>
+     * (IAM) role that grants Amazon Comprehend Medical read access to your input data.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med">Role-Based
+     * Permissions Required for Asynchronous Operations</a>.</p>
      */
     inline StartEntitiesDetectionV2JobRequest& WithDataAccessRoleArn(const char* value) { SetDataAccessRoleArn(value); return *this;}
 
@@ -222,49 +222,49 @@ namespace Model
 
     /**
      * <p>A unique identifier for the request. If you don't set the client request
-     * token, Comprehend Medical; generates one for you.</p>
+     * token, Amazon Comprehend Medical generates one for you.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
 
     /**
      * <p>A unique identifier for the request. If you don't set the client request
-     * token, Comprehend Medical; generates one for you.</p>
+     * token, Amazon Comprehend Medical generates one for you.</p>
      */
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
      * <p>A unique identifier for the request. If you don't set the client request
-     * token, Comprehend Medical; generates one for you.</p>
+     * token, Amazon Comprehend Medical generates one for you.</p>
      */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
 
     /**
      * <p>A unique identifier for the request. If you don't set the client request
-     * token, Comprehend Medical; generates one for you.</p>
+     * token, Amazon Comprehend Medical generates one for you.</p>
      */
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
 
     /**
      * <p>A unique identifier for the request. If you don't set the client request
-     * token, Comprehend Medical; generates one for you.</p>
+     * token, Amazon Comprehend Medical generates one for you.</p>
      */
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
 
     /**
      * <p>A unique identifier for the request. If you don't set the client request
-     * token, Comprehend Medical; generates one for you.</p>
+     * token, Amazon Comprehend Medical generates one for you.</p>
      */
     inline StartEntitiesDetectionV2JobRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
 
     /**
      * <p>A unique identifier for the request. If you don't set the client request
-     * token, Comprehend Medical; generates one for you.</p>
+     * token, Amazon Comprehend Medical generates one for you.</p>
      */
     inline StartEntitiesDetectionV2JobRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
 
     /**
      * <p>A unique identifier for the request. If you don't set the client request
-     * token, Comprehend Medical; generates one for you.</p>
+     * token, Amazon Comprehend Medical generates one for you.</p>
      */
     inline StartEntitiesDetectionV2JobRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
@@ -320,37 +320,37 @@ namespace Model
 
     /**
      * <p>The language of the input documents. All documents must be in the same
-     * language. Comprehend Medical; processes files in US English (en).</p>
+     * language. Amazon Comprehend Medical processes files in US English (en).</p>
      */
     inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
 
     /**
      * <p>The language of the input documents. All documents must be in the same
-     * language. Comprehend Medical; processes files in US English (en).</p>
+     * language. Amazon Comprehend Medical processes files in US English (en).</p>
      */
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
 
     /**
      * <p>The language of the input documents. All documents must be in the same
-     * language. Comprehend Medical; processes files in US English (en).</p>
+     * language. Amazon Comprehend Medical processes files in US English (en).</p>
      */
     inline void SetLanguageCode(const LanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
 
     /**
      * <p>The language of the input documents. All documents must be in the same
-     * language. Comprehend Medical; processes files in US English (en).</p>
+     * language. Amazon Comprehend Medical processes files in US English (en).</p>
      */
     inline void SetLanguageCode(LanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
 
     /**
      * <p>The language of the input documents. All documents must be in the same
-     * language. Comprehend Medical; processes files in US English (en).</p>
+     * language. Amazon Comprehend Medical processes files in US English (en).</p>
      */
     inline StartEntitiesDetectionV2JobRequest& WithLanguageCode(const LanguageCode& value) { SetLanguageCode(value); return *this;}
 
     /**
      * <p>The language of the input documents. All documents must be in the same
-     * language. Comprehend Medical; processes files in US English (en).</p>
+     * language. Amazon Comprehend Medical processes files in US English (en).</p>
      */
     inline StartEntitiesDetectionV2JobRequest& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
 

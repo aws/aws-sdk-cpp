@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/dynamodb/model/ReturnConsumedCapacity.h>
+#include <aws/dynamodb/model/ReturnValuesOnConditionCheckFailure.h>
 #include <aws/dynamodb/model/AttributeValue.h>
 #include <utility>
 
@@ -268,6 +269,61 @@ namespace Model
      */
     inline ExecuteStatementRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
+
+    /**
+     * <p>An optional parameter that returns the item attributes for an
+     * <code>ExecuteStatement</code> operation that failed a condition check.</p>
+     * <p>There is no additional cost associated with requesting a return value aside
+     * from the small network and processing overhead of receiving a larger response.
+     * No read capacity units are consumed.</p>
+     */
+    inline const ReturnValuesOnConditionCheckFailure& GetReturnValuesOnConditionCheckFailure() const{ return m_returnValuesOnConditionCheckFailure; }
+
+    /**
+     * <p>An optional parameter that returns the item attributes for an
+     * <code>ExecuteStatement</code> operation that failed a condition check.</p>
+     * <p>There is no additional cost associated with requesting a return value aside
+     * from the small network and processing overhead of receiving a larger response.
+     * No read capacity units are consumed.</p>
+     */
+    inline bool ReturnValuesOnConditionCheckFailureHasBeenSet() const { return m_returnValuesOnConditionCheckFailureHasBeenSet; }
+
+    /**
+     * <p>An optional parameter that returns the item attributes for an
+     * <code>ExecuteStatement</code> operation that failed a condition check.</p>
+     * <p>There is no additional cost associated with requesting a return value aside
+     * from the small network and processing overhead of receiving a larger response.
+     * No read capacity units are consumed.</p>
+     */
+    inline void SetReturnValuesOnConditionCheckFailure(const ReturnValuesOnConditionCheckFailure& value) { m_returnValuesOnConditionCheckFailureHasBeenSet = true; m_returnValuesOnConditionCheckFailure = value; }
+
+    /**
+     * <p>An optional parameter that returns the item attributes for an
+     * <code>ExecuteStatement</code> operation that failed a condition check.</p>
+     * <p>There is no additional cost associated with requesting a return value aside
+     * from the small network and processing overhead of receiving a larger response.
+     * No read capacity units are consumed.</p>
+     */
+    inline void SetReturnValuesOnConditionCheckFailure(ReturnValuesOnConditionCheckFailure&& value) { m_returnValuesOnConditionCheckFailureHasBeenSet = true; m_returnValuesOnConditionCheckFailure = std::move(value); }
+
+    /**
+     * <p>An optional parameter that returns the item attributes for an
+     * <code>ExecuteStatement</code> operation that failed a condition check.</p>
+     * <p>There is no additional cost associated with requesting a return value aside
+     * from the small network and processing overhead of receiving a larger response.
+     * No read capacity units are consumed.</p>
+     */
+    inline ExecuteStatementRequest& WithReturnValuesOnConditionCheckFailure(const ReturnValuesOnConditionCheckFailure& value) { SetReturnValuesOnConditionCheckFailure(value); return *this;}
+
+    /**
+     * <p>An optional parameter that returns the item attributes for an
+     * <code>ExecuteStatement</code> operation that failed a condition check.</p>
+     * <p>There is no additional cost associated with requesting a return value aside
+     * from the small network and processing overhead of receiving a larger response.
+     * No read capacity units are consumed.</p>
+     */
+    inline ExecuteStatementRequest& WithReturnValuesOnConditionCheckFailure(ReturnValuesOnConditionCheckFailure&& value) { SetReturnValuesOnConditionCheckFailure(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_statement;
@@ -287,6 +343,9 @@ namespace Model
 
     int m_limit;
     bool m_limitHasBeenSet = false;
+
+    ReturnValuesOnConditionCheckFailure m_returnValuesOnConditionCheckFailure;
+    bool m_returnValuesOnConditionCheckFailureHasBeenSet = false;
   };
 
 } // namespace Model

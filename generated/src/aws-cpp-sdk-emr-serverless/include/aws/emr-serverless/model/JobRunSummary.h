@@ -421,42 +421,50 @@ namespace Model
 
 
     /**
-     * <p>The EMR release associated with the application your job is running on.</p>
+     * <p>The Amazon EMR release associated with the application your job is running
+     * on.</p>
      */
     inline const Aws::String& GetReleaseLabel() const{ return m_releaseLabel; }
 
     /**
-     * <p>The EMR release associated with the application your job is running on.</p>
+     * <p>The Amazon EMR release associated with the application your job is running
+     * on.</p>
      */
     inline bool ReleaseLabelHasBeenSet() const { return m_releaseLabelHasBeenSet; }
 
     /**
-     * <p>The EMR release associated with the application your job is running on.</p>
+     * <p>The Amazon EMR release associated with the application your job is running
+     * on.</p>
      */
     inline void SetReleaseLabel(const Aws::String& value) { m_releaseLabelHasBeenSet = true; m_releaseLabel = value; }
 
     /**
-     * <p>The EMR release associated with the application your job is running on.</p>
+     * <p>The Amazon EMR release associated with the application your job is running
+     * on.</p>
      */
     inline void SetReleaseLabel(Aws::String&& value) { m_releaseLabelHasBeenSet = true; m_releaseLabel = std::move(value); }
 
     /**
-     * <p>The EMR release associated with the application your job is running on.</p>
+     * <p>The Amazon EMR release associated with the application your job is running
+     * on.</p>
      */
     inline void SetReleaseLabel(const char* value) { m_releaseLabelHasBeenSet = true; m_releaseLabel.assign(value); }
 
     /**
-     * <p>The EMR release associated with the application your job is running on.</p>
+     * <p>The Amazon EMR release associated with the application your job is running
+     * on.</p>
      */
     inline JobRunSummary& WithReleaseLabel(const Aws::String& value) { SetReleaseLabel(value); return *this;}
 
     /**
-     * <p>The EMR release associated with the application your job is running on.</p>
+     * <p>The Amazon EMR release associated with the application your job is running
+     * on.</p>
      */
     inline JobRunSummary& WithReleaseLabel(Aws::String&& value) { SetReleaseLabel(std::move(value)); return *this;}
 
     /**
-     * <p>The EMR release associated with the application your job is running on.</p>
+     * <p>The Amazon EMR release associated with the application your job is running
+     * on.</p>
      */
     inline JobRunSummary& WithReleaseLabel(const char* value) { SetReleaseLabel(value); return *this;}
 

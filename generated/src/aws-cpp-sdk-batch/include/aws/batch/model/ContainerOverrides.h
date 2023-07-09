@@ -27,8 +27,10 @@ namespace Model
 {
 
   /**
-   * <p>The overrides that should be sent to a container.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>The overrides that should be sent to a container.</p> <p>For information
+   * about using Batch overrides when you connect event sources to targets, see <a
+   * href="https://docs.aws.amazon.com/eventbridge/latest/pipes-reference/API_BatchContainerOverrides.html">BatchContainerOverrides</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ContainerOverrides">AWS
    * API Reference</a></p>
    */
@@ -43,55 +45,64 @@ namespace Model
 
     /**
      * <p>The command to send to the container that overrides the default command from
-     * the Docker image or the job definition.</p>
+     * the Docker image or the job definition.</p>  <p>This parameter can't
+     * contain an empty string.</p> 
      */
     inline const Aws::Vector<Aws::String>& GetCommand() const{ return m_command; }
 
     /**
      * <p>The command to send to the container that overrides the default command from
-     * the Docker image or the job definition.</p>
+     * the Docker image or the job definition.</p>  <p>This parameter can't
+     * contain an empty string.</p> 
      */
     inline bool CommandHasBeenSet() const { return m_commandHasBeenSet; }
 
     /**
      * <p>The command to send to the container that overrides the default command from
-     * the Docker image or the job definition.</p>
+     * the Docker image or the job definition.</p>  <p>This parameter can't
+     * contain an empty string.</p> 
      */
     inline void SetCommand(const Aws::Vector<Aws::String>& value) { m_commandHasBeenSet = true; m_command = value; }
 
     /**
      * <p>The command to send to the container that overrides the default command from
-     * the Docker image or the job definition.</p>
+     * the Docker image or the job definition.</p>  <p>This parameter can't
+     * contain an empty string.</p> 
      */
     inline void SetCommand(Aws::Vector<Aws::String>&& value) { m_commandHasBeenSet = true; m_command = std::move(value); }
 
     /**
      * <p>The command to send to the container that overrides the default command from
-     * the Docker image or the job definition.</p>
+     * the Docker image or the job definition.</p>  <p>This parameter can't
+     * contain an empty string.</p> 
      */
     inline ContainerOverrides& WithCommand(const Aws::Vector<Aws::String>& value) { SetCommand(value); return *this;}
 
     /**
      * <p>The command to send to the container that overrides the default command from
-     * the Docker image or the job definition.</p>
+     * the Docker image or the job definition.</p>  <p>This parameter can't
+     * contain an empty string.</p> 
      */
     inline ContainerOverrides& WithCommand(Aws::Vector<Aws::String>&& value) { SetCommand(std::move(value)); return *this;}
 
     /**
      * <p>The command to send to the container that overrides the default command from
-     * the Docker image or the job definition.</p>
+     * the Docker image or the job definition.</p>  <p>This parameter can't
+     * contain an empty string.</p> 
      */
     inline ContainerOverrides& AddCommand(const Aws::String& value) { m_commandHasBeenSet = true; m_command.push_back(value); return *this; }
 
     /**
      * <p>The command to send to the container that overrides the default command from
-     * the Docker image or the job definition.</p>
+     * the Docker image or the job definition.</p>  <p>This parameter can't
+     * contain an empty string.</p> 
      */
     inline ContainerOverrides& AddCommand(Aws::String&& value) { m_commandHasBeenSet = true; m_command.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The command to send to the container that overrides the default command from
-     * the Docker image or the job definition.</p>
+     * the Docker image or the job definition.</p>  <p>This parameter can't
+     * contain an empty string.</p> 
      */
     inline ContainerOverrides& AddCommand(const char* value) { m_commandHasBeenSet = true; m_command.push_back(value); return *this; }
 

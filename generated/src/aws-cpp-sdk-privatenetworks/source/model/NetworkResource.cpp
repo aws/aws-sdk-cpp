@@ -20,6 +20,7 @@ namespace Model
 
 NetworkResource::NetworkResource() : 
     m_attributesHasBeenSet(false),
+    m_commitmentInformationHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_health(HealthStatus::NOT_SET),
@@ -43,6 +44,7 @@ NetworkResource::NetworkResource() :
 
 NetworkResource::NetworkResource(JsonView jsonValue) : 
     m_attributesHasBeenSet(false),
+    m_commitmentInformationHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_health(HealthStatus::NOT_SET),
@@ -75,6 +77,13 @@ NetworkResource& NetworkResource::operator =(JsonView jsonValue)
       m_attributes.push_back(attributesJsonList[attributesIndex].AsObject());
     }
     m_attributesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("commitmentInformation"))
+  {
+    m_commitmentInformation = jsonValue.GetObject("commitmentInformation");
+
+    m_commitmentInformationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("createdAt"))
@@ -197,6 +206,12 @@ JsonValue NetworkResource::Jsonize() const
      attributesJsonList[attributesIndex].AsObject(m_attributes[attributesIndex].Jsonize());
    }
    payload.WithArray("attributes", std::move(attributesJsonList));
+
+  }
+
+  if(m_commitmentInformationHasBeenSet)
+  {
+   payload.WithObject("commitmentInformation", m_commitmentInformation.Jsonize());
 
   }
 

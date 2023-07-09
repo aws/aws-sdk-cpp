@@ -329,90 +329,90 @@ namespace Model
 
 
     /**
-     * <p> Contextual information for the entity.</p>
+     * <p>Contextual information for the entity.</p>
      */
     inline const Aws::Vector<RxNormTrait>& GetTraits() const{ return m_traits; }
 
     /**
-     * <p> Contextual information for the entity.</p>
+     * <p>Contextual information for the entity.</p>
      */
     inline bool TraitsHasBeenSet() const { return m_traitsHasBeenSet; }
 
     /**
-     * <p> Contextual information for the entity.</p>
+     * <p>Contextual information for the entity.</p>
      */
     inline void SetTraits(const Aws::Vector<RxNormTrait>& value) { m_traitsHasBeenSet = true; m_traits = value; }
 
     /**
-     * <p> Contextual information for the entity.</p>
+     * <p>Contextual information for the entity.</p>
      */
     inline void SetTraits(Aws::Vector<RxNormTrait>&& value) { m_traitsHasBeenSet = true; m_traits = std::move(value); }
 
     /**
-     * <p> Contextual information for the entity.</p>
+     * <p>Contextual information for the entity.</p>
      */
     inline RxNormEntity& WithTraits(const Aws::Vector<RxNormTrait>& value) { SetTraits(value); return *this;}
 
     /**
-     * <p> Contextual information for the entity.</p>
+     * <p>Contextual information for the entity.</p>
      */
     inline RxNormEntity& WithTraits(Aws::Vector<RxNormTrait>&& value) { SetTraits(std::move(value)); return *this;}
 
     /**
-     * <p> Contextual information for the entity.</p>
+     * <p>Contextual information for the entity.</p>
      */
     inline RxNormEntity& AddTraits(const RxNormTrait& value) { m_traitsHasBeenSet = true; m_traits.push_back(value); return *this; }
 
     /**
-     * <p> Contextual information for the entity.</p>
+     * <p>Contextual information for the entity.</p>
      */
     inline RxNormEntity& AddTraits(RxNormTrait&& value) { m_traitsHasBeenSet = true; m_traits.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p> The RxNorm concepts that the entity could refer to, along with a score
+     * <p>The RxNorm concepts that the entity could refer to, along with a score
      * indicating the likelihood of the match.</p>
      */
     inline const Aws::Vector<RxNormConcept>& GetRxNormConcepts() const{ return m_rxNormConcepts; }
 
     /**
-     * <p> The RxNorm concepts that the entity could refer to, along with a score
+     * <p>The RxNorm concepts that the entity could refer to, along with a score
      * indicating the likelihood of the match.</p>
      */
     inline bool RxNormConceptsHasBeenSet() const { return m_rxNormConceptsHasBeenSet; }
 
     /**
-     * <p> The RxNorm concepts that the entity could refer to, along with a score
+     * <p>The RxNorm concepts that the entity could refer to, along with a score
      * indicating the likelihood of the match.</p>
      */
     inline void SetRxNormConcepts(const Aws::Vector<RxNormConcept>& value) { m_rxNormConceptsHasBeenSet = true; m_rxNormConcepts = value; }
 
     /**
-     * <p> The RxNorm concepts that the entity could refer to, along with a score
+     * <p>The RxNorm concepts that the entity could refer to, along with a score
      * indicating the likelihood of the match.</p>
      */
     inline void SetRxNormConcepts(Aws::Vector<RxNormConcept>&& value) { m_rxNormConceptsHasBeenSet = true; m_rxNormConcepts = std::move(value); }
 
     /**
-     * <p> The RxNorm concepts that the entity could refer to, along with a score
+     * <p>The RxNorm concepts that the entity could refer to, along with a score
      * indicating the likelihood of the match.</p>
      */
     inline RxNormEntity& WithRxNormConcepts(const Aws::Vector<RxNormConcept>& value) { SetRxNormConcepts(value); return *this;}
 
     /**
-     * <p> The RxNorm concepts that the entity could refer to, along with a score
+     * <p>The RxNorm concepts that the entity could refer to, along with a score
      * indicating the likelihood of the match.</p>
      */
     inline RxNormEntity& WithRxNormConcepts(Aws::Vector<RxNormConcept>&& value) { SetRxNormConcepts(std::move(value)); return *this;}
 
     /**
-     * <p> The RxNorm concepts that the entity could refer to, along with a score
+     * <p>The RxNorm concepts that the entity could refer to, along with a score
      * indicating the likelihood of the match.</p>
      */
     inline RxNormEntity& AddRxNormConcepts(const RxNormConcept& value) { m_rxNormConceptsHasBeenSet = true; m_rxNormConcepts.push_back(value); return *this; }
 
     /**
-     * <p> The RxNorm concepts that the entity could refer to, along with a score
+     * <p>The RxNorm concepts that the entity could refer to, along with a score
      * indicating the likelihood of the match.</p>
      */
     inline RxNormEntity& AddRxNormConcepts(RxNormConcept&& value) { m_rxNormConceptsHasBeenSet = true; m_rxNormConcepts.push_back(std::move(value)); return *this; }

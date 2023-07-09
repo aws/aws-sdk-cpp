@@ -48,6 +48,8 @@
 #include <aws/medialive/model/DescribeOfferingResult.h>
 #include <aws/medialive/model/DescribeReservationResult.h>
 #include <aws/medialive/model/DescribeScheduleResult.h>
+#include <aws/medialive/model/DescribeAccountConfigurationResult.h>
+#include <aws/medialive/model/DescribeThumbnailsResult.h>
 #include <aws/medialive/model/ListChannelsResult.h>
 #include <aws/medialive/model/ListInputDeviceTransfersResult.h>
 #include <aws/medialive/model/ListInputDevicesResult.h>
@@ -61,6 +63,7 @@
 #include <aws/medialive/model/PurchaseOfferingResult.h>
 #include <aws/medialive/model/RebootInputDeviceResult.h>
 #include <aws/medialive/model/RejectInputDeviceTransferResult.h>
+#include <aws/medialive/model/UpdateAccountConfigurationResult.h>
 #include <aws/medialive/model/StartChannelResult.h>
 #include <aws/medialive/model/StartInputDeviceMaintenanceWindowResult.h>
 #include <aws/medialive/model/StartMultiplexResult.h>
@@ -148,6 +151,8 @@ namespace Aws
       class DescribeOfferingRequest;
       class DescribeReservationRequest;
       class DescribeScheduleRequest;
+      class DescribeAccountConfigurationRequest;
+      class DescribeThumbnailsRequest;
       class ListChannelsRequest;
       class ListInputDeviceTransfersRequest;
       class ListInputDevicesRequest;
@@ -161,6 +166,7 @@ namespace Aws
       class PurchaseOfferingRequest;
       class RebootInputDeviceRequest;
       class RejectInputDeviceTransferRequest;
+      class UpdateAccountConfigurationRequest;
       class StartChannelRequest;
       class StartInputDeviceMaintenanceWindowRequest;
       class StartMultiplexRequest;
@@ -210,6 +216,8 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeOfferingResult, MediaLiveError> DescribeOfferingOutcome;
       typedef Aws::Utils::Outcome<DescribeReservationResult, MediaLiveError> DescribeReservationOutcome;
       typedef Aws::Utils::Outcome<DescribeScheduleResult, MediaLiveError> DescribeScheduleOutcome;
+      typedef Aws::Utils::Outcome<DescribeAccountConfigurationResult, MediaLiveError> DescribeAccountConfigurationOutcome;
+      typedef Aws::Utils::Outcome<DescribeThumbnailsResult, MediaLiveError> DescribeThumbnailsOutcome;
       typedef Aws::Utils::Outcome<ListChannelsResult, MediaLiveError> ListChannelsOutcome;
       typedef Aws::Utils::Outcome<ListInputDeviceTransfersResult, MediaLiveError> ListInputDeviceTransfersOutcome;
       typedef Aws::Utils::Outcome<ListInputDevicesResult, MediaLiveError> ListInputDevicesOutcome;
@@ -223,6 +231,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<PurchaseOfferingResult, MediaLiveError> PurchaseOfferingOutcome;
       typedef Aws::Utils::Outcome<RebootInputDeviceResult, MediaLiveError> RebootInputDeviceOutcome;
       typedef Aws::Utils::Outcome<RejectInputDeviceTransferResult, MediaLiveError> RejectInputDeviceTransferOutcome;
+      typedef Aws::Utils::Outcome<UpdateAccountConfigurationResult, MediaLiveError> UpdateAccountConfigurationOutcome;
       typedef Aws::Utils::Outcome<StartChannelResult, MediaLiveError> StartChannelOutcome;
       typedef Aws::Utils::Outcome<StartInputDeviceMaintenanceWindowResult, MediaLiveError> StartInputDeviceMaintenanceWindowOutcome;
       typedef Aws::Utils::Outcome<StartMultiplexResult, MediaLiveError> StartMultiplexOutcome;
@@ -272,6 +281,8 @@ namespace Aws
       typedef std::future<DescribeOfferingOutcome> DescribeOfferingOutcomeCallable;
       typedef std::future<DescribeReservationOutcome> DescribeReservationOutcomeCallable;
       typedef std::future<DescribeScheduleOutcome> DescribeScheduleOutcomeCallable;
+      typedef std::future<DescribeAccountConfigurationOutcome> DescribeAccountConfigurationOutcomeCallable;
+      typedef std::future<DescribeThumbnailsOutcome> DescribeThumbnailsOutcomeCallable;
       typedef std::future<ListChannelsOutcome> ListChannelsOutcomeCallable;
       typedef std::future<ListInputDeviceTransfersOutcome> ListInputDeviceTransfersOutcomeCallable;
       typedef std::future<ListInputDevicesOutcome> ListInputDevicesOutcomeCallable;
@@ -285,6 +296,7 @@ namespace Aws
       typedef std::future<PurchaseOfferingOutcome> PurchaseOfferingOutcomeCallable;
       typedef std::future<RebootInputDeviceOutcome> RebootInputDeviceOutcomeCallable;
       typedef std::future<RejectInputDeviceTransferOutcome> RejectInputDeviceTransferOutcomeCallable;
+      typedef std::future<UpdateAccountConfigurationOutcome> UpdateAccountConfigurationOutcomeCallable;
       typedef std::future<StartChannelOutcome> StartChannelOutcomeCallable;
       typedef std::future<StartInputDeviceMaintenanceWindowOutcome> StartInputDeviceMaintenanceWindowOutcomeCallable;
       typedef std::future<StartMultiplexOutcome> StartMultiplexOutcomeCallable;
@@ -337,6 +349,8 @@ namespace Aws
     typedef std::function<void(const MediaLiveClient*, const Model::DescribeOfferingRequest&, const Model::DescribeOfferingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeOfferingResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::DescribeReservationRequest&, const Model::DescribeReservationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeReservationResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::DescribeScheduleRequest&, const Model::DescribeScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeScheduleResponseReceivedHandler;
+    typedef std::function<void(const MediaLiveClient*, const Model::DescribeAccountConfigurationRequest&, const Model::DescribeAccountConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccountConfigurationResponseReceivedHandler;
+    typedef std::function<void(const MediaLiveClient*, const Model::DescribeThumbnailsRequest&, const Model::DescribeThumbnailsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeThumbnailsResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::ListChannelsRequest&, const Model::ListChannelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListChannelsResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::ListInputDeviceTransfersRequest&, const Model::ListInputDeviceTransfersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInputDeviceTransfersResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::ListInputDevicesRequest&, const Model::ListInputDevicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInputDevicesResponseReceivedHandler;
@@ -350,6 +364,7 @@ namespace Aws
     typedef std::function<void(const MediaLiveClient*, const Model::PurchaseOfferingRequest&, const Model::PurchaseOfferingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PurchaseOfferingResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::RebootInputDeviceRequest&, const Model::RebootInputDeviceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RebootInputDeviceResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::RejectInputDeviceTransferRequest&, const Model::RejectInputDeviceTransferOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RejectInputDeviceTransferResponseReceivedHandler;
+    typedef std::function<void(const MediaLiveClient*, const Model::UpdateAccountConfigurationRequest&, const Model::UpdateAccountConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAccountConfigurationResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::StartChannelRequest&, const Model::StartChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartChannelResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::StartInputDeviceMaintenanceWindowRequest&, const Model::StartInputDeviceMaintenanceWindowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartInputDeviceMaintenanceWindowResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::StartMultiplexRequest&, const Model::StartMultiplexOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartMultiplexResponseReceivedHandler;

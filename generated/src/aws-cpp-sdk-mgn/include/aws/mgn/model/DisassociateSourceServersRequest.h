@@ -34,6 +34,47 @@ namespace Model
 
 
     /**
+     * <p>Account ID.</p>
+     */
+    inline const Aws::String& GetAccountID() const{ return m_accountID; }
+
+    /**
+     * <p>Account ID.</p>
+     */
+    inline bool AccountIDHasBeenSet() const { return m_accountIDHasBeenSet; }
+
+    /**
+     * <p>Account ID.</p>
+     */
+    inline void SetAccountID(const Aws::String& value) { m_accountIDHasBeenSet = true; m_accountID = value; }
+
+    /**
+     * <p>Account ID.</p>
+     */
+    inline void SetAccountID(Aws::String&& value) { m_accountIDHasBeenSet = true; m_accountID = std::move(value); }
+
+    /**
+     * <p>Account ID.</p>
+     */
+    inline void SetAccountID(const char* value) { m_accountIDHasBeenSet = true; m_accountID.assign(value); }
+
+    /**
+     * <p>Account ID.</p>
+     */
+    inline DisassociateSourceServersRequest& WithAccountID(const Aws::String& value) { SetAccountID(value); return *this;}
+
+    /**
+     * <p>Account ID.</p>
+     */
+    inline DisassociateSourceServersRequest& WithAccountID(Aws::String&& value) { SetAccountID(std::move(value)); return *this;}
+
+    /**
+     * <p>Account ID.</p>
+     */
+    inline DisassociateSourceServersRequest& WithAccountID(const char* value) { SetAccountID(value); return *this;}
+
+
+    /**
      * <p>Application ID.</p>
      */
     inline const Aws::String& GetApplicationID() const{ return m_applicationID; }
@@ -120,6 +161,9 @@ namespace Model
     inline DisassociateSourceServersRequest& AddSourceServerIDs(const char* value) { m_sourceServerIDsHasBeenSet = true; m_sourceServerIDs.push_back(value); return *this; }
 
   private:
+
+    Aws::String m_accountID;
+    bool m_accountIDHasBeenSet = false;
 
     Aws::String m_applicationID;
     bool m_applicationIDHasBeenSet = false;

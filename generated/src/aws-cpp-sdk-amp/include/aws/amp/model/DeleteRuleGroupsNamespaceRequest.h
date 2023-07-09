@@ -44,6 +44,88 @@ namespace Model
 
 
     /**
+     * <p>The ID of the workspace to delete rule group definition.</p>
+     */
+    inline const Aws::String& GetWorkspaceId() const{ return m_workspaceId; }
+
+    /**
+     * <p>The ID of the workspace to delete rule group definition.</p>
+     */
+    inline bool WorkspaceIdHasBeenSet() const { return m_workspaceIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the workspace to delete rule group definition.</p>
+     */
+    inline void SetWorkspaceId(const Aws::String& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = value; }
+
+    /**
+     * <p>The ID of the workspace to delete rule group definition.</p>
+     */
+    inline void SetWorkspaceId(Aws::String&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = std::move(value); }
+
+    /**
+     * <p>The ID of the workspace to delete rule group definition.</p>
+     */
+    inline void SetWorkspaceId(const char* value) { m_workspaceIdHasBeenSet = true; m_workspaceId.assign(value); }
+
+    /**
+     * <p>The ID of the workspace to delete rule group definition.</p>
+     */
+    inline DeleteRuleGroupsNamespaceRequest& WithWorkspaceId(const Aws::String& value) { SetWorkspaceId(value); return *this;}
+
+    /**
+     * <p>The ID of the workspace to delete rule group definition.</p>
+     */
+    inline DeleteRuleGroupsNamespaceRequest& WithWorkspaceId(Aws::String&& value) { SetWorkspaceId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the workspace to delete rule group definition.</p>
+     */
+    inline DeleteRuleGroupsNamespaceRequest& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
+
+
+    /**
+     * <p>The rule groups namespace name.</p>
+     */
+    inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The rule groups namespace name.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The rule groups namespace name.</p>
+     */
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /**
+     * <p>The rule groups namespace name.</p>
+     */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
+
+    /**
+     * <p>The rule groups namespace name.</p>
+     */
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+
+    /**
+     * <p>The rule groups namespace name.</p>
+     */
+    inline DeleteRuleGroupsNamespaceRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /**
+     * <p>The rule groups namespace name.</p>
+     */
+    inline DeleteRuleGroupsNamespaceRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+
+    /**
+     * <p>The rule groups namespace name.</p>
+     */
+    inline DeleteRuleGroupsNamespaceRequest& WithName(const char* value) { SetName(value); return *this;}
+
+
+    /**
      * <p>Optional, unique, case-sensitive, user-provided identifier to ensure the
      * idempotency of the request.</p>
      */
@@ -91,98 +173,16 @@ namespace Model
      */
     inline DeleteRuleGroupsNamespaceRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
-
-    /**
-     * <p>The rule groups namespace name.</p>
-     */
-    inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The rule groups namespace name.</p>
-     */
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The rule groups namespace name.</p>
-     */
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The rule groups namespace name.</p>
-     */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The rule groups namespace name.</p>
-     */
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The rule groups namespace name.</p>
-     */
-    inline DeleteRuleGroupsNamespaceRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The rule groups namespace name.</p>
-     */
-    inline DeleteRuleGroupsNamespaceRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The rule groups namespace name.</p>
-     */
-    inline DeleteRuleGroupsNamespaceRequest& WithName(const char* value) { SetName(value); return *this;}
-
-
-    /**
-     * <p>The ID of the workspace to delete rule group definition.</p>
-     */
-    inline const Aws::String& GetWorkspaceId() const{ return m_workspaceId; }
-
-    /**
-     * <p>The ID of the workspace to delete rule group definition.</p>
-     */
-    inline bool WorkspaceIdHasBeenSet() const { return m_workspaceIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the workspace to delete rule group definition.</p>
-     */
-    inline void SetWorkspaceId(const Aws::String& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = value; }
-
-    /**
-     * <p>The ID of the workspace to delete rule group definition.</p>
-     */
-    inline void SetWorkspaceId(Aws::String&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = std::move(value); }
-
-    /**
-     * <p>The ID of the workspace to delete rule group definition.</p>
-     */
-    inline void SetWorkspaceId(const char* value) { m_workspaceIdHasBeenSet = true; m_workspaceId.assign(value); }
-
-    /**
-     * <p>The ID of the workspace to delete rule group definition.</p>
-     */
-    inline DeleteRuleGroupsNamespaceRequest& WithWorkspaceId(const Aws::String& value) { SetWorkspaceId(value); return *this;}
-
-    /**
-     * <p>The ID of the workspace to delete rule group definition.</p>
-     */
-    inline DeleteRuleGroupsNamespaceRequest& WithWorkspaceId(Aws::String&& value) { SetWorkspaceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the workspace to delete rule group definition.</p>
-     */
-    inline DeleteRuleGroupsNamespaceRequest& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
-
   private:
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_workspaceId;
+    bool m_workspaceIdHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    Aws::String m_workspaceId;
-    bool m_workspaceIdHasBeenSet = false;
+    Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

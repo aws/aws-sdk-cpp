@@ -20,6 +20,7 @@
 /* Service model headers required in IVSClient header */
 #include <aws/ivs/model/BatchGetChannelResult.h>
 #include <aws/ivs/model/BatchGetStreamKeyResult.h>
+#include <aws/ivs/model/BatchStartViewerSessionRevocationResult.h>
 #include <aws/ivs/model/CreateChannelResult.h>
 #include <aws/ivs/model/CreateRecordingConfigurationResult.h>
 #include <aws/ivs/model/CreateStreamKeyResult.h>
@@ -38,6 +39,7 @@
 #include <aws/ivs/model/ListStreamSessionsResult.h>
 #include <aws/ivs/model/ListStreamsResult.h>
 #include <aws/ivs/model/ListTagsForResourceResult.h>
+#include <aws/ivs/model/StartViewerSessionRevocationResult.h>
 #include <aws/ivs/model/StopStreamResult.h>
 #include <aws/ivs/model/TagResourceResult.h>
 #include <aws/ivs/model/UntagResourceResult.h>
@@ -85,6 +87,7 @@ namespace Aws
       /* Service model forward declarations required in IVSClient header */
       class BatchGetChannelRequest;
       class BatchGetStreamKeyRequest;
+      class BatchStartViewerSessionRevocationRequest;
       class CreateChannelRequest;
       class CreateRecordingConfigurationRequest;
       class CreateStreamKeyRequest;
@@ -107,6 +110,7 @@ namespace Aws
       class ListStreamsRequest;
       class ListTagsForResourceRequest;
       class PutMetadataRequest;
+      class StartViewerSessionRevocationRequest;
       class StopStreamRequest;
       class TagResourceRequest;
       class UntagResourceRequest;
@@ -116,6 +120,7 @@ namespace Aws
       /* Service model Outcome class definitions */
       typedef Aws::Utils::Outcome<BatchGetChannelResult, IVSError> BatchGetChannelOutcome;
       typedef Aws::Utils::Outcome<BatchGetStreamKeyResult, IVSError> BatchGetStreamKeyOutcome;
+      typedef Aws::Utils::Outcome<BatchStartViewerSessionRevocationResult, IVSError> BatchStartViewerSessionRevocationOutcome;
       typedef Aws::Utils::Outcome<CreateChannelResult, IVSError> CreateChannelOutcome;
       typedef Aws::Utils::Outcome<CreateRecordingConfigurationResult, IVSError> CreateRecordingConfigurationOutcome;
       typedef Aws::Utils::Outcome<CreateStreamKeyResult, IVSError> CreateStreamKeyOutcome;
@@ -138,6 +143,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListStreamsResult, IVSError> ListStreamsOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, IVSError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, IVSError> PutMetadataOutcome;
+      typedef Aws::Utils::Outcome<StartViewerSessionRevocationResult, IVSError> StartViewerSessionRevocationOutcome;
       typedef Aws::Utils::Outcome<StopStreamResult, IVSError> StopStreamOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, IVSError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, IVSError> UntagResourceOutcome;
@@ -147,6 +153,7 @@ namespace Aws
       /* Service model Outcome callable definitions */
       typedef std::future<BatchGetChannelOutcome> BatchGetChannelOutcomeCallable;
       typedef std::future<BatchGetStreamKeyOutcome> BatchGetStreamKeyOutcomeCallable;
+      typedef std::future<BatchStartViewerSessionRevocationOutcome> BatchStartViewerSessionRevocationOutcomeCallable;
       typedef std::future<CreateChannelOutcome> CreateChannelOutcomeCallable;
       typedef std::future<CreateRecordingConfigurationOutcome> CreateRecordingConfigurationOutcomeCallable;
       typedef std::future<CreateStreamKeyOutcome> CreateStreamKeyOutcomeCallable;
@@ -169,6 +176,7 @@ namespace Aws
       typedef std::future<ListStreamsOutcome> ListStreamsOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<PutMetadataOutcome> PutMetadataOutcomeCallable;
+      typedef std::future<StartViewerSessionRevocationOutcome> StartViewerSessionRevocationOutcomeCallable;
       typedef std::future<StopStreamOutcome> StopStreamOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
@@ -181,6 +189,7 @@ namespace Aws
     /* Service model async handlers definitions */
     typedef std::function<void(const IVSClient*, const Model::BatchGetChannelRequest&, const Model::BatchGetChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetChannelResponseReceivedHandler;
     typedef std::function<void(const IVSClient*, const Model::BatchGetStreamKeyRequest&, const Model::BatchGetStreamKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetStreamKeyResponseReceivedHandler;
+    typedef std::function<void(const IVSClient*, const Model::BatchStartViewerSessionRevocationRequest&, const Model::BatchStartViewerSessionRevocationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchStartViewerSessionRevocationResponseReceivedHandler;
     typedef std::function<void(const IVSClient*, const Model::CreateChannelRequest&, const Model::CreateChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateChannelResponseReceivedHandler;
     typedef std::function<void(const IVSClient*, const Model::CreateRecordingConfigurationRequest&, const Model::CreateRecordingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRecordingConfigurationResponseReceivedHandler;
     typedef std::function<void(const IVSClient*, const Model::CreateStreamKeyRequest&, const Model::CreateStreamKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStreamKeyResponseReceivedHandler;
@@ -203,6 +212,7 @@ namespace Aws
     typedef std::function<void(const IVSClient*, const Model::ListStreamsRequest&, const Model::ListStreamsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStreamsResponseReceivedHandler;
     typedef std::function<void(const IVSClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const IVSClient*, const Model::PutMetadataRequest&, const Model::PutMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutMetadataResponseReceivedHandler;
+    typedef std::function<void(const IVSClient*, const Model::StartViewerSessionRevocationRequest&, const Model::StartViewerSessionRevocationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartViewerSessionRevocationResponseReceivedHandler;
     typedef std::function<void(const IVSClient*, const Model::StopStreamRequest&, const Model::StopStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopStreamResponseReceivedHandler;
     typedef std::function<void(const IVSClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const IVSClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;

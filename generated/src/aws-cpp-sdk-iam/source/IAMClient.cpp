@@ -84,6 +84,7 @@
 #include <aws/iam/model/GetGroupPolicyRequest.h>
 #include <aws/iam/model/GetInstanceProfileRequest.h>
 #include <aws/iam/model/GetLoginProfileRequest.h>
+#include <aws/iam/model/GetMFADeviceRequest.h>
 #include <aws/iam/model/GetOpenIDConnectProviderRequest.h>
 #include <aws/iam/model/GetOrganizationsAccessReportRequest.h>
 #include <aws/iam/model/GetPolicyRequest.h>
@@ -896,6 +897,15 @@ GetLoginProfileOutcome IAMClient::GetLoginProfile(const GetLoginProfileRequest& 
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetLoginProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   return GetLoginProfileOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+}
+
+GetMFADeviceOutcome IAMClient::GetMFADevice(const GetMFADeviceRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetMFADevice);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMFADevice, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetMFADevice, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetMFADeviceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
 }
 
 GetOpenIDConnectProviderOutcome IAMClient::GetOpenIDConnectProvider(const GetOpenIDConnectProviderRequest& request) const

@@ -14,6 +14,8 @@ using namespace Aws::Utils;
 
 CreateTrackerRequest::CreateTrackerRequest() : 
     m_descriptionHasBeenSet(false),
+    m_eventBridgeEnabled(false),
+    m_eventBridgeEnabledHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
     m_positionFiltering(PositionFiltering::NOT_SET),
     m_positionFilteringHasBeenSet(false),
@@ -29,6 +31,12 @@ Aws::String CreateTrackerRequest::SerializePayload() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("Description", m_description);
+
+  }
+
+  if(m_eventBridgeEnabledHasBeenSet)
+  {
+   payload.WithBool("EventBridgeEnabled", m_eventBridgeEnabled);
 
   }
 

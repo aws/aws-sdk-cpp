@@ -566,6 +566,39 @@ namespace Model
      */
     inline GenerateDataKeyPairWithoutPlaintextRequest& AddGrantTokens(const char* value) { m_grantTokensHasBeenSet = true; m_grantTokens.push_back(value); return *this; }
 
+
+    /**
+     * <p>Checks if your request will succeed. <code>DryRun</code> is an optional
+     * parameter. </p> <p>To learn more about how to use this parameter, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing
+     * your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
+     */
+    inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks if your request will succeed. <code>DryRun</code> is an optional
+     * parameter. </p> <p>To learn more about how to use this parameter, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing
+     * your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
+     */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks if your request will succeed. <code>DryRun</code> is an optional
+     * parameter. </p> <p>To learn more about how to use this parameter, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing
+     * your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
+     */
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+
+    /**
+     * <p>Checks if your request will succeed. <code>DryRun</code> is an optional
+     * parameter. </p> <p>To learn more about how to use this parameter, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing
+     * your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
+     */
+    inline GenerateDataKeyPairWithoutPlaintextRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
   private:
 
     Aws::Map<Aws::String, Aws::String> m_encryptionContext;
@@ -579,6 +612,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_grantTokens;
     bool m_grantTokensHasBeenSet = false;
+
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

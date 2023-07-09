@@ -36,7 +36,11 @@ MongoDbSettings::MongoDbSettings() :
     m_authSourceHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
     m_secretsManagerAccessRoleArnHasBeenSet(false),
-    m_secretsManagerSecretIdHasBeenSet(false)
+    m_secretsManagerSecretIdHasBeenSet(false),
+    m_useUpdateLookUp(false),
+    m_useUpdateLookUpHasBeenSet(false),
+    m_replicateShardCollections(false),
+    m_replicateShardCollectionsHasBeenSet(false)
 {
 }
 
@@ -58,7 +62,11 @@ MongoDbSettings::MongoDbSettings(JsonView jsonValue) :
     m_authSourceHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
     m_secretsManagerAccessRoleArnHasBeenSet(false),
-    m_secretsManagerSecretIdHasBeenSet(false)
+    m_secretsManagerSecretIdHasBeenSet(false),
+    m_useUpdateLookUp(false),
+    m_useUpdateLookUpHasBeenSet(false),
+    m_replicateShardCollections(false),
+    m_replicateShardCollectionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -163,6 +171,20 @@ MongoDbSettings& MongoDbSettings::operator =(JsonView jsonValue)
     m_secretsManagerSecretIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("UseUpdateLookUp"))
+  {
+    m_useUpdateLookUp = jsonValue.GetBool("UseUpdateLookUp");
+
+    m_useUpdateLookUpHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ReplicateShardCollections"))
+  {
+    m_replicateShardCollections = jsonValue.GetBool("ReplicateShardCollections");
+
+    m_replicateShardCollectionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -248,6 +270,18 @@ JsonValue MongoDbSettings::Jsonize() const
   if(m_secretsManagerSecretIdHasBeenSet)
   {
    payload.WithString("SecretsManagerSecretId", m_secretsManagerSecretId);
+
+  }
+
+  if(m_useUpdateLookUpHasBeenSet)
+  {
+   payload.WithBool("UseUpdateLookUp", m_useUpdateLookUp);
+
+  }
+
+  if(m_replicateShardCollectionsHasBeenSet)
+  {
+   payload.WithBool("ReplicateShardCollections", m_replicateShardCollections);
 
   }
 

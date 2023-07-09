@@ -21,9 +21,12 @@
         #else
             #define AWS_EC2INSTANCECONNECT_API __declspec(dllimport)
         #endif /* AWS_EC2INSTANCECONNECT_EXPORTS */
+        #define AWS_EC2INSTANCECONNECT_EXTERN
     #else
         #define AWS_EC2INSTANCECONNECT_API
+        #define AWS_EC2INSTANCECONNECT_EXTERN extern
     #endif // USE_IMPORT_EXPORT
 #else // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
     #define AWS_EC2INSTANCECONNECT_API
+    #define AWS_EC2INSTANCECONNECT_EXTERN extern
 #endif // defined (USE_WINDOWS_DLL_SEMANTICS) || defined (WIN32)
