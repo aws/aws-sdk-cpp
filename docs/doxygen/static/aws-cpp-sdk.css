@@ -15,4 +15,36 @@
     }
 }
 
+div.memberdecls div[class^='memitem']{
+    transition: none;
+    padding-top: var(--spacing-small);
+    padding-bottom: var(--spacing-small);
+    border-top: 1px solid var(--separator-color);
+    border-bottom: 1px solid var(--separator-color);
+    background-color: var(--fragment-background);
+}
+
+div.memberdecls .memItemLeft,
+div.memberdecls .memItemRight,
+div.memberdecls .memTemplItemLeft,
+div.memberdecls .memTemplItemRight,
+div.memberdecls .memTemplParams {
+    transition: none;
+    padding-top: var(--spacing-small);
+    padding-bottom: var(--spacing-small);
+    background-color: var(--fragment-background);
+}
+
+span.memSeparator {
+    border-color: var(--separator-color);
+}
+
+div.memberdecls .memSeparator {
+    background: var(--page-background-color);
+    height: var(--spacing-large);
+    display:inline-block;
+    border: 0;
+    transition: none;
+}
+
 
