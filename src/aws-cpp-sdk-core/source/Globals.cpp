@@ -72,5 +72,6 @@ namespace Aws
     void CleanupEnumOverflowContainer()
     {
         Aws::Delete(g_enumOverflow);
+        g_enumOverflow = nullptr;
     }
 }
