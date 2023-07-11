@@ -42,7 +42,6 @@ namespace Aws
             void ShutdownComponentRegistry()
             {
                 std::unique_lock<std::mutex> lock(s_registryMutex);
-                assert(s_registry);
 
                 Aws::Delete(s_registry);
                 s_registry = nullptr;
@@ -80,7 +79,11 @@ namespace Aws
             void TerminateAllComponents()
             {
                 std::unique_lock<std::mutex> lock(s_registryMutex);
-                assert(s_registry);
+
+                if (!s_registry) {
+                    // Registry already shut down -- nothing to do.
+                    return;
+                }
 
                 for(const auto it : *s_registry)
                 {
