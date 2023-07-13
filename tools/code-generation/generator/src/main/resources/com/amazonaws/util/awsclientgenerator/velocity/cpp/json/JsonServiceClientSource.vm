@@ -35,6 +35,7 @@ using namespace ${rootNamespace}::${serviceNamespace};
 using namespace ${rootNamespace}::${serviceNamespace}::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
+using namespace smithy::components::tracing;
 #if($serviceModel.endpointRules)
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 #end

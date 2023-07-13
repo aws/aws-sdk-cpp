@@ -70,6 +70,12 @@ namespace Aws
             SslLatency,
 
             /**
+             * Request the SDK to have access to the download speed in bytes per
+             * second for a request.
+             */
+             Throughput,
+
+            /**
              * Unknow Metrics Type
              */
             Unknown

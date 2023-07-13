@@ -31,6 +31,9 @@
 \#include <aws/${metadata.projectName}/model/${operation.request.shape.name}.h>
 #end
 #end
+
+\#include <smithy/tracing/TracingUtils.h>
+
 #if($serviceModel.metadata.namespace == "S3Crt")
 \#include <aws/core/Version.h>
 \#include <aws/core/platform/OSVersionInfo.h>

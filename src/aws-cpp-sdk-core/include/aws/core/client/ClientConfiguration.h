@@ -12,6 +12,8 @@
 #include <aws/core/http/HttpTypes.h>
 #include <aws/core/utils/Array.h>
 #include <aws/crt/Optional.h>
+#include <smithy/tracing/TelemetryProvider.h>
+#include <smithy/tracing/NoopTelemetryProvider.h>
 #include <memory>
 
 namespace Aws
@@ -301,6 +303,12 @@ namespace Aws
                                                           const Aws::String& profileProperty,
                                                           const Aws::Vector<Aws::String>& allowedValues,
                                                           const Aws::String& defaultValue);
+
+            /**
+             * A wrapper for interfacing with telemetry functionality.
+             */
+            std::shared_ptr<smithy::components::tracing::TelemetryProvider> telemetryProvider =
+                smithy::components::tracing::NoopTelemetryProvider::CreateProvider();
         };
 
         /**

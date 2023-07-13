@@ -4,76 +4,66 @@
  */
 #pragma once
 
-#include <smithy/tracing/TraceProbe.h>
-#include <smithy/tracing/TraceStatType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <smithy/Smithy_EXPORTS.h>
 #include <memory>
-#include <chrono>
-#include <mutex>
+#include <utility>
 
 namespace smithy {
     namespace components {
         namespace tracing {
             /**
-             * Experimental - This definition is a work in progress API
-             * changes are expected.
-             *
-             * The basic unit of a "Trace". Represents a time period during which events
-             * or metrics can take place such as counts, timers, statistics, and messages.
-             * Additionally child "Traces" can exist in a parent trace that will have its
-             * own unique events. Keeps track of where and when an event happened.
+             * Status of the span.
              */
-            class SMITHY_API TraceSpan : public std::enable_shared_from_this<TraceSpan> {
+            enum class SMITHY_API TraceSpanStatus {
+                UNSET,
+                OK,
+                ERROR,
+            };
+
+            /**
+             * The basic unit of a "Trace". Represents a time period during which events
+             * occur. Child spans and events can take place within trace. It is a hierarchy
+             * and ledger of timing and events during a operation.
+             */
+            class SMITHY_API TraceSpan {
             public:
-                TraceSpan(std::shared_ptr<TraceProbe> probe);
+                /**
+                 * Create a Span
+                 * @param name The name of the span.
+                 */
+                TraceSpan(Aws::String name) : m_name(std::move(name)) {}
 
-                TraceSpan(std::shared_ptr<TraceSpan> parentSpan);
+                virtual ~TraceSpan() = default;
 
-                TraceSpan(const TraceSpan &) = delete;
+                /**
+                 * Emit a event associated with the span.
+                 * @param name The name of the event.
+                 * @param attributes the attributes or dimensions associate with this measurement.
+                 */
+                virtual void emitEvent(Aws::String name, const Aws::Map<Aws::String, Aws::String> &attributes) = 0;
 
-                TraceSpan &operator=(const TraceSpan &) = delete;
+                /**
+                 * Set a Attribute to span.
+                 * @param key The key of the dimension/attribute.
+                 * @param value The value of the dimension/attribute.
+                 */
+                virtual void setAttribute(Aws::String key, Aws::String value) = 0;
 
-                TraceSpan(TraceSpan &&) = delete;
+                /**
+                 * Set the statue of the span.
+                 * @param status The status to be assigned.
+                 */
+                virtual void setStatus(TraceSpanStatus status) = 0;
 
-                TraceSpan &operator=(TraceSpan &&) = delete;
-
-                virtual ~TraceSpan();
-
-                TraceEvent newCountEvent(Aws::String &&eventName,
-                    const Aws::String &componentId,
-                    TraceEventLevel level,
-                    uint64_t count) const;
-
-                TraceEvent newTimerEvent(Aws::String &&eventName,
-                    const Aws::String &componentId,
-                    TraceEventLevel level,
-                    std::chrono::milliseconds timeTaken) const;
-
-                TraceEvent newStatEvent(Aws::String &&eventName,
-                    const Aws::String &componentId,
-                    TraceEventLevel level,
-                    TraceStatType statType,
-                    double value) const;
-
-                TraceEvent newMessageEvent(Aws::String &&eventName,
-                    const Aws::String &componentId,
-                    TraceEventLevel level,
-                    Aws::String &&message) const;
-
-                std::shared_ptr<TraceSpan> newChildSpan();
-
-                void emitTraceEvent(TraceEvent &&event);
-
-                void emitTraceEvents(std::vector<TraceEvent> &&events);
-
-                void flushEvents() noexcept;
+                /**
+                 * End the span and mark as finished.
+                 */
+                virtual void end() = 0;
 
             private:
-                Aws::Vector<TraceEvent> spanEvents;
-                std::shared_ptr<TraceProbe> probe;
-                std::shared_ptr<TraceSpan> parentSpan;
-                Aws::String spanId;
-                std::mutex eventsLock;
+                Aws::String m_name;
             };
         }
     }

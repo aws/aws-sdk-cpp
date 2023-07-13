@@ -332,21 +332,30 @@ void ${className}::${operation.name}Async(${constText}${operation.request.shape.
 ${operation.name}Outcome ${className}::${operation.name}(${constText}${operation.request.shape.name}& request) const
 {
   AWS_OPERATION_GUARD(${operation.name});
-  Aws::Utils::Threading::Semaphore sem(0, 1);
-  ${operation.name}Outcome res;
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetObject, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  return TracingUtils::MakeCallWithTiming<${operation.name}Outcome>(
+    [&]()-> ${operation.name}Outcome {
+      Aws::Utils::Threading::Semaphore sem(0, 1);
+      ${operation.name}Outcome res;
 
 #if($operation.result && $operation.result.shape.hasStreamMembers())
-  auto handler = ${operation.name}ResponseReceivedHandler{[&](const S3CrtClient*, const ${operation.request.shape.name}&, ${operation.name}Outcome outcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext> &) {
+      auto handler = ${operation.name}ResponseReceivedHandler{[&](const S3CrtClient*, const ${operation.request.shape.name}&, ${operation.name}Outcome outcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext> &) {
 #else
-  auto handler = ${operation.name}ResponseReceivedHandler{[&](const S3CrtClient*, const ${operation.request.shape.name}&, const ${operation.name}Outcome& outcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext> &) {
+      auto handler = ${operation.name}ResponseReceivedHandler{[&](const S3CrtClient*, const ${operation.request.shape.name}&, const ${operation.name}Outcome& outcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext> &) {
 #end
-      res = std::move(outcome);
-      sem.ReleaseAll();
-  }};
+        res = std::move(outcome);
+        sem.ReleaseAll();
+      }};
 
-  ${className}::${operation.name}Async(request, handler, nullptr);
-  sem.WaitOne();
-  return res;
+      ${className}::${operation.name}Async(request, handler, nullptr);
+      sem.WaitOne();
+      return res;
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
 #else## no request

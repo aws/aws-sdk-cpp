@@ -59,7 +59,9 @@
         // Aws common runtime libraries
         "mqtt",
         // Aws common runtime API
-        "Mtls"
+        "Mtls",
+	    // Opentelemetry
+	    "Otel", "opentelemetry", "nostd", "OPTEL", "tparam"
     ],
     "ignoreWords": [
         // variables defined in ConcurrentStreamBuf
