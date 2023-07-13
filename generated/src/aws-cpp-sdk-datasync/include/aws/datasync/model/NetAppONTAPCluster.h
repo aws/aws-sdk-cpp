@@ -383,6 +383,27 @@ namespace Model
      */
     inline NetAppONTAPCluster& WithRecommendationStatus(RecommendationStatus&& value) { SetRecommendationStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The number of LUNs (logical unit numbers) in the cluster.</p>
+     */
+    inline long long GetLunCount() const{ return m_lunCount; }
+
+    /**
+     * <p>The number of LUNs (logical unit numbers) in the cluster.</p>
+     */
+    inline bool LunCountHasBeenSet() const { return m_lunCountHasBeenSet; }
+
+    /**
+     * <p>The number of LUNs (logical unit numbers) in the cluster.</p>
+     */
+    inline void SetLunCount(long long value) { m_lunCountHasBeenSet = true; m_lunCount = value; }
+
+    /**
+     * <p>The number of LUNs (logical unit numbers) in the cluster.</p>
+     */
+    inline NetAppONTAPCluster& WithLunCount(long long value) { SetLunCount(value); return *this;}
+
   private:
 
     long long m_cifsShareCount;
@@ -414,6 +435,9 @@ namespace Model
 
     RecommendationStatus m_recommendationStatus;
     bool m_recommendationStatusHasBeenSet = false;
+
+    long long m_lunCount;
+    bool m_lunCountHasBeenSet = false;
   };
 
 } // namespace Model

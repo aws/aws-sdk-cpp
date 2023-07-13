@@ -85,6 +85,7 @@
 #include <aws/personalize/model/TagResourceRequest.h>
 #include <aws/personalize/model/UntagResourceRequest.h>
 #include <aws/personalize/model/UpdateCampaignRequest.h>
+#include <aws/personalize/model/UpdateDatasetRequest.h>
 #include <aws/personalize/model/UpdateMetricAttributionRequest.h>
 #include <aws/personalize/model/UpdateRecommenderRequest.h>
 
@@ -790,6 +791,15 @@ UpdateCampaignOutcome PersonalizeClient::UpdateCampaign(const UpdateCampaignRequ
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateCampaign, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   return UpdateCampaignOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateDatasetOutcome PersonalizeClient::UpdateDataset(const UpdateDatasetRequest& request) const
+{
+  AWS_OPERATION_GUARD(UpdateDataset);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDataset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateDataset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateDatasetOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateMetricAttributionOutcome PersonalizeClient::UpdateMetricAttribution(const UpdateMetricAttributionRequest& request) const

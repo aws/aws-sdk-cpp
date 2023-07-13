@@ -52,7 +52,7 @@ namespace Model
      * the columns from the original dataset that are not already declared in
      * <code>TimeSeriesConfig</code>. If provided, the AutoML job V2 only considers
      * these additional columns as a complement to the ones declared in
-     * <code>TimeSeriesConfig</code>.</p> <p> You can input
+     * <code>TimeSeriesConfig</code>.</p> <p>You can input
      * <code>FeatureAttributeNames</code> (optional) in JSON format as shown below:
      * </p> <p> <code>{ "FeatureAttributeNames":["col1", "col2", ...] }</code>.</p>
      * <p>You can also specify the data type of the feature (optional) in the format
@@ -60,13 +60,7 @@ namespace Model
      * "col2":"categorical" ... } }</code> </p> <p>Autopilot supports the following
      * data types: <code>numeric</code>, <code>categorical</code>, <code>text</code>,
      * and <code>datetime</code>.</p>  <p>These column keys must not include any
-     * column set in <code>TimeSeriesConfig</code>.</p>  <p>When not provided,
-     * the AutoML job V2 includes all the columns from the original dataset that are
-     * not already declared in <code>TimeSeriesConfig</code>. If provided, the AutoML
-     * job V2 only considers these additional columns as a complement to the ones
-     * declared in <code>TimeSeriesConfig</code>.</p> <p>Autopilot supports the
-     * following data types: <code>numeric</code>, <code>categorical</code>,
-     * <code>text</code>, and <code>datetime</code>.</p>
+     * column set in <code>TimeSeriesConfig</code>.</p> 
      */
     inline const Aws::String& GetFeatureSpecificationS3Uri() const{ return m_featureSpecificationS3Uri; }
 
@@ -77,7 +71,7 @@ namespace Model
      * the columns from the original dataset that are not already declared in
      * <code>TimeSeriesConfig</code>. If provided, the AutoML job V2 only considers
      * these additional columns as a complement to the ones declared in
-     * <code>TimeSeriesConfig</code>.</p> <p> You can input
+     * <code>TimeSeriesConfig</code>.</p> <p>You can input
      * <code>FeatureAttributeNames</code> (optional) in JSON format as shown below:
      * </p> <p> <code>{ "FeatureAttributeNames":["col1", "col2", ...] }</code>.</p>
      * <p>You can also specify the data type of the feature (optional) in the format
@@ -85,13 +79,7 @@ namespace Model
      * "col2":"categorical" ... } }</code> </p> <p>Autopilot supports the following
      * data types: <code>numeric</code>, <code>categorical</code>, <code>text</code>,
      * and <code>datetime</code>.</p>  <p>These column keys must not include any
-     * column set in <code>TimeSeriesConfig</code>.</p>  <p>When not provided,
-     * the AutoML job V2 includes all the columns from the original dataset that are
-     * not already declared in <code>TimeSeriesConfig</code>. If provided, the AutoML
-     * job V2 only considers these additional columns as a complement to the ones
-     * declared in <code>TimeSeriesConfig</code>.</p> <p>Autopilot supports the
-     * following data types: <code>numeric</code>, <code>categorical</code>,
-     * <code>text</code>, and <code>datetime</code>.</p>
+     * column set in <code>TimeSeriesConfig</code>.</p> 
      */
     inline bool FeatureSpecificationS3UriHasBeenSet() const { return m_featureSpecificationS3UriHasBeenSet; }
 
@@ -102,7 +90,7 @@ namespace Model
      * the columns from the original dataset that are not already declared in
      * <code>TimeSeriesConfig</code>. If provided, the AutoML job V2 only considers
      * these additional columns as a complement to the ones declared in
-     * <code>TimeSeriesConfig</code>.</p> <p> You can input
+     * <code>TimeSeriesConfig</code>.</p> <p>You can input
      * <code>FeatureAttributeNames</code> (optional) in JSON format as shown below:
      * </p> <p> <code>{ "FeatureAttributeNames":["col1", "col2", ...] }</code>.</p>
      * <p>You can also specify the data type of the feature (optional) in the format
@@ -110,13 +98,7 @@ namespace Model
      * "col2":"categorical" ... } }</code> </p> <p>Autopilot supports the following
      * data types: <code>numeric</code>, <code>categorical</code>, <code>text</code>,
      * and <code>datetime</code>.</p>  <p>These column keys must not include any
-     * column set in <code>TimeSeriesConfig</code>.</p>  <p>When not provided,
-     * the AutoML job V2 includes all the columns from the original dataset that are
-     * not already declared in <code>TimeSeriesConfig</code>. If provided, the AutoML
-     * job V2 only considers these additional columns as a complement to the ones
-     * declared in <code>TimeSeriesConfig</code>.</p> <p>Autopilot supports the
-     * following data types: <code>numeric</code>, <code>categorical</code>,
-     * <code>text</code>, and <code>datetime</code>.</p>
+     * column set in <code>TimeSeriesConfig</code>.</p> 
      */
     inline void SetFeatureSpecificationS3Uri(const Aws::String& value) { m_featureSpecificationS3UriHasBeenSet = true; m_featureSpecificationS3Uri = value; }
 
@@ -127,7 +109,7 @@ namespace Model
      * the columns from the original dataset that are not already declared in
      * <code>TimeSeriesConfig</code>. If provided, the AutoML job V2 only considers
      * these additional columns as a complement to the ones declared in
-     * <code>TimeSeriesConfig</code>.</p> <p> You can input
+     * <code>TimeSeriesConfig</code>.</p> <p>You can input
      * <code>FeatureAttributeNames</code> (optional) in JSON format as shown below:
      * </p> <p> <code>{ "FeatureAttributeNames":["col1", "col2", ...] }</code>.</p>
      * <p>You can also specify the data type of the feature (optional) in the format
@@ -135,13 +117,7 @@ namespace Model
      * "col2":"categorical" ... } }</code> </p> <p>Autopilot supports the following
      * data types: <code>numeric</code>, <code>categorical</code>, <code>text</code>,
      * and <code>datetime</code>.</p>  <p>These column keys must not include any
-     * column set in <code>TimeSeriesConfig</code>.</p>  <p>When not provided,
-     * the AutoML job V2 includes all the columns from the original dataset that are
-     * not already declared in <code>TimeSeriesConfig</code>. If provided, the AutoML
-     * job V2 only considers these additional columns as a complement to the ones
-     * declared in <code>TimeSeriesConfig</code>.</p> <p>Autopilot supports the
-     * following data types: <code>numeric</code>, <code>categorical</code>,
-     * <code>text</code>, and <code>datetime</code>.</p>
+     * column set in <code>TimeSeriesConfig</code>.</p> 
      */
     inline void SetFeatureSpecificationS3Uri(Aws::String&& value) { m_featureSpecificationS3UriHasBeenSet = true; m_featureSpecificationS3Uri = std::move(value); }
 
@@ -152,7 +128,7 @@ namespace Model
      * the columns from the original dataset that are not already declared in
      * <code>TimeSeriesConfig</code>. If provided, the AutoML job V2 only considers
      * these additional columns as a complement to the ones declared in
-     * <code>TimeSeriesConfig</code>.</p> <p> You can input
+     * <code>TimeSeriesConfig</code>.</p> <p>You can input
      * <code>FeatureAttributeNames</code> (optional) in JSON format as shown below:
      * </p> <p> <code>{ "FeatureAttributeNames":["col1", "col2", ...] }</code>.</p>
      * <p>You can also specify the data type of the feature (optional) in the format
@@ -160,13 +136,7 @@ namespace Model
      * "col2":"categorical" ... } }</code> </p> <p>Autopilot supports the following
      * data types: <code>numeric</code>, <code>categorical</code>, <code>text</code>,
      * and <code>datetime</code>.</p>  <p>These column keys must not include any
-     * column set in <code>TimeSeriesConfig</code>.</p>  <p>When not provided,
-     * the AutoML job V2 includes all the columns from the original dataset that are
-     * not already declared in <code>TimeSeriesConfig</code>. If provided, the AutoML
-     * job V2 only considers these additional columns as a complement to the ones
-     * declared in <code>TimeSeriesConfig</code>.</p> <p>Autopilot supports the
-     * following data types: <code>numeric</code>, <code>categorical</code>,
-     * <code>text</code>, and <code>datetime</code>.</p>
+     * column set in <code>TimeSeriesConfig</code>.</p> 
      */
     inline void SetFeatureSpecificationS3Uri(const char* value) { m_featureSpecificationS3UriHasBeenSet = true; m_featureSpecificationS3Uri.assign(value); }
 
@@ -177,7 +147,7 @@ namespace Model
      * the columns from the original dataset that are not already declared in
      * <code>TimeSeriesConfig</code>. If provided, the AutoML job V2 only considers
      * these additional columns as a complement to the ones declared in
-     * <code>TimeSeriesConfig</code>.</p> <p> You can input
+     * <code>TimeSeriesConfig</code>.</p> <p>You can input
      * <code>FeatureAttributeNames</code> (optional) in JSON format as shown below:
      * </p> <p> <code>{ "FeatureAttributeNames":["col1", "col2", ...] }</code>.</p>
      * <p>You can also specify the data type of the feature (optional) in the format
@@ -185,13 +155,7 @@ namespace Model
      * "col2":"categorical" ... } }</code> </p> <p>Autopilot supports the following
      * data types: <code>numeric</code>, <code>categorical</code>, <code>text</code>,
      * and <code>datetime</code>.</p>  <p>These column keys must not include any
-     * column set in <code>TimeSeriesConfig</code>.</p>  <p>When not provided,
-     * the AutoML job V2 includes all the columns from the original dataset that are
-     * not already declared in <code>TimeSeriesConfig</code>. If provided, the AutoML
-     * job V2 only considers these additional columns as a complement to the ones
-     * declared in <code>TimeSeriesConfig</code>.</p> <p>Autopilot supports the
-     * following data types: <code>numeric</code>, <code>categorical</code>,
-     * <code>text</code>, and <code>datetime</code>.</p>
+     * column set in <code>TimeSeriesConfig</code>.</p> 
      */
     inline TimeSeriesForecastingJobConfig& WithFeatureSpecificationS3Uri(const Aws::String& value) { SetFeatureSpecificationS3Uri(value); return *this;}
 
@@ -202,7 +166,7 @@ namespace Model
      * the columns from the original dataset that are not already declared in
      * <code>TimeSeriesConfig</code>. If provided, the AutoML job V2 only considers
      * these additional columns as a complement to the ones declared in
-     * <code>TimeSeriesConfig</code>.</p> <p> You can input
+     * <code>TimeSeriesConfig</code>.</p> <p>You can input
      * <code>FeatureAttributeNames</code> (optional) in JSON format as shown below:
      * </p> <p> <code>{ "FeatureAttributeNames":["col1", "col2", ...] }</code>.</p>
      * <p>You can also specify the data type of the feature (optional) in the format
@@ -210,13 +174,7 @@ namespace Model
      * "col2":"categorical" ... } }</code> </p> <p>Autopilot supports the following
      * data types: <code>numeric</code>, <code>categorical</code>, <code>text</code>,
      * and <code>datetime</code>.</p>  <p>These column keys must not include any
-     * column set in <code>TimeSeriesConfig</code>.</p>  <p>When not provided,
-     * the AutoML job V2 includes all the columns from the original dataset that are
-     * not already declared in <code>TimeSeriesConfig</code>. If provided, the AutoML
-     * job V2 only considers these additional columns as a complement to the ones
-     * declared in <code>TimeSeriesConfig</code>.</p> <p>Autopilot supports the
-     * following data types: <code>numeric</code>, <code>categorical</code>,
-     * <code>text</code>, and <code>datetime</code>.</p>
+     * column set in <code>TimeSeriesConfig</code>.</p> 
      */
     inline TimeSeriesForecastingJobConfig& WithFeatureSpecificationS3Uri(Aws::String&& value) { SetFeatureSpecificationS3Uri(std::move(value)); return *this;}
 
@@ -227,7 +185,7 @@ namespace Model
      * the columns from the original dataset that are not already declared in
      * <code>TimeSeriesConfig</code>. If provided, the AutoML job V2 only considers
      * these additional columns as a complement to the ones declared in
-     * <code>TimeSeriesConfig</code>.</p> <p> You can input
+     * <code>TimeSeriesConfig</code>.</p> <p>You can input
      * <code>FeatureAttributeNames</code> (optional) in JSON format as shown below:
      * </p> <p> <code>{ "FeatureAttributeNames":["col1", "col2", ...] }</code>.</p>
      * <p>You can also specify the data type of the feature (optional) in the format
@@ -235,13 +193,7 @@ namespace Model
      * "col2":"categorical" ... } }</code> </p> <p>Autopilot supports the following
      * data types: <code>numeric</code>, <code>categorical</code>, <code>text</code>,
      * and <code>datetime</code>.</p>  <p>These column keys must not include any
-     * column set in <code>TimeSeriesConfig</code>.</p>  <p>When not provided,
-     * the AutoML job V2 includes all the columns from the original dataset that are
-     * not already declared in <code>TimeSeriesConfig</code>. If provided, the AutoML
-     * job V2 only considers these additional columns as a complement to the ones
-     * declared in <code>TimeSeriesConfig</code>.</p> <p>Autopilot supports the
-     * following data types: <code>numeric</code>, <code>categorical</code>,
-     * <code>text</code>, and <code>datetime</code>.</p>
+     * column set in <code>TimeSeriesConfig</code>.</p> 
      */
     inline TimeSeriesForecastingJobConfig& WithFeatureSpecificationS3Uri(const char* value) { SetFeatureSpecificationS3Uri(value); return *this;}
 

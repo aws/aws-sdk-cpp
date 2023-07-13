@@ -34,7 +34,9 @@ NetAppONTAPCluster::NetAppONTAPCluster() :
     m_clusterBlockStorageLogicalUsedHasBeenSet(false),
     m_recommendationsHasBeenSet(false),
     m_recommendationStatus(RecommendationStatus::NOT_SET),
-    m_recommendationStatusHasBeenSet(false)
+    m_recommendationStatusHasBeenSet(false),
+    m_lunCount(0),
+    m_lunCountHasBeenSet(false)
 {
 }
 
@@ -54,7 +56,9 @@ NetAppONTAPCluster::NetAppONTAPCluster(JsonView jsonValue) :
     m_clusterBlockStorageLogicalUsedHasBeenSet(false),
     m_recommendationsHasBeenSet(false),
     m_recommendationStatus(RecommendationStatus::NOT_SET),
-    m_recommendationStatusHasBeenSet(false)
+    m_recommendationStatusHasBeenSet(false),
+    m_lunCount(0),
+    m_lunCountHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -134,6 +138,13 @@ NetAppONTAPCluster& NetAppONTAPCluster::operator =(JsonView jsonValue)
     m_recommendationStatusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LunCount"))
+  {
+    m_lunCount = jsonValue.GetInt64("LunCount");
+
+    m_lunCountHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -203,6 +214,12 @@ JsonValue NetAppONTAPCluster::Jsonize() const
   if(m_recommendationStatusHasBeenSet)
   {
    payload.WithString("RecommendationStatus", RecommendationStatusMapper::GetNameForRecommendationStatus(m_recommendationStatus));
+  }
+
+  if(m_lunCountHasBeenSet)
+  {
+   payload.WithInt64("LunCount", m_lunCount);
+
   }
 
   return payload;

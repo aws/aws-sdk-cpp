@@ -7,6 +7,7 @@
 #include <aws/personalize/Personalize_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/personalize/model/DatasetUpdateSummary.h>
 #include <utility>
 
 namespace Aws
@@ -377,6 +378,37 @@ namespace Model
      */
     inline Dataset& WithLastUpdatedDateTime(Aws::Utils::DateTime&& value) { SetLastUpdatedDateTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Describes the latest update to the dataset.</p>
+     */
+    inline const DatasetUpdateSummary& GetLatestDatasetUpdate() const{ return m_latestDatasetUpdate; }
+
+    /**
+     * <p>Describes the latest update to the dataset.</p>
+     */
+    inline bool LatestDatasetUpdateHasBeenSet() const { return m_latestDatasetUpdateHasBeenSet; }
+
+    /**
+     * <p>Describes the latest update to the dataset.</p>
+     */
+    inline void SetLatestDatasetUpdate(const DatasetUpdateSummary& value) { m_latestDatasetUpdateHasBeenSet = true; m_latestDatasetUpdate = value; }
+
+    /**
+     * <p>Describes the latest update to the dataset.</p>
+     */
+    inline void SetLatestDatasetUpdate(DatasetUpdateSummary&& value) { m_latestDatasetUpdateHasBeenSet = true; m_latestDatasetUpdate = std::move(value); }
+
+    /**
+     * <p>Describes the latest update to the dataset.</p>
+     */
+    inline Dataset& WithLatestDatasetUpdate(const DatasetUpdateSummary& value) { SetLatestDatasetUpdate(value); return *this;}
+
+    /**
+     * <p>Describes the latest update to the dataset.</p>
+     */
+    inline Dataset& WithLatestDatasetUpdate(DatasetUpdateSummary&& value) { SetLatestDatasetUpdate(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -402,6 +434,9 @@ namespace Model
 
     Aws::Utils::DateTime m_lastUpdatedDateTime;
     bool m_lastUpdatedDateTimeHasBeenSet = false;
+
+    DatasetUpdateSummary m_latestDatasetUpdate;
+    bool m_latestDatasetUpdateHasBeenSet = false;
   };
 
 } // namespace Model

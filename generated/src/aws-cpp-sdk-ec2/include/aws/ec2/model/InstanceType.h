@@ -669,7 +669,18 @@ namespace Model
     i4g_2xlarge,
     i4g_4xlarge,
     i4g_8xlarge,
-    i4g_16xlarge
+    i4g_16xlarge,
+    hpc7g_4xlarge,
+    hpc7g_8xlarge,
+    hpc7g_16xlarge,
+    c7gn_medium,
+    c7gn_large,
+    c7gn_xlarge,
+    c7gn_2xlarge,
+    c7gn_4xlarge,
+    c7gn_8xlarge,
+    c7gn_12xlarge,
+    c7gn_16xlarge
   };
 
 namespace InstanceTypeMapper

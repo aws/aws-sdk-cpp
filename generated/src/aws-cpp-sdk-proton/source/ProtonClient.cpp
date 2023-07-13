@@ -39,6 +39,7 @@
 #include <aws/proton/model/CreateServiceTemplateVersionRequest.h>
 #include <aws/proton/model/CreateTemplateSyncConfigRequest.h>
 #include <aws/proton/model/DeleteComponentRequest.h>
+#include <aws/proton/model/DeleteDeploymentRequest.h>
 #include <aws/proton/model/DeleteEnvironmentRequest.h>
 #include <aws/proton/model/DeleteEnvironmentAccountConnectionRequest.h>
 #include <aws/proton/model/DeleteEnvironmentTemplateRequest.h>
@@ -51,6 +52,7 @@
 #include <aws/proton/model/DeleteTemplateSyncConfigRequest.h>
 #include <aws/proton/model/GetAccountSettingsRequest.h>
 #include <aws/proton/model/GetComponentRequest.h>
+#include <aws/proton/model/GetDeploymentRequest.h>
 #include <aws/proton/model/GetEnvironmentRequest.h>
 #include <aws/proton/model/GetEnvironmentAccountConnectionRequest.h>
 #include <aws/proton/model/GetEnvironmentTemplateRequest.h>
@@ -70,6 +72,7 @@
 #include <aws/proton/model/ListComponentOutputsRequest.h>
 #include <aws/proton/model/ListComponentProvisionedResourcesRequest.h>
 #include <aws/proton/model/ListComponentsRequest.h>
+#include <aws/proton/model/ListDeploymentsRequest.h>
 #include <aws/proton/model/ListEnvironmentAccountConnectionsRequest.h>
 #include <aws/proton/model/ListEnvironmentOutputsRequest.h>
 #include <aws/proton/model/ListEnvironmentProvisionedResourcesRequest.h>
@@ -396,6 +399,15 @@ DeleteComponentOutcome ProtonClient::DeleteComponent(const DeleteComponentReques
   return DeleteComponentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
+DeleteDeploymentOutcome ProtonClient::DeleteDeployment(const DeleteDeploymentRequest& request) const
+{
+  AWS_OPERATION_GUARD(DeleteDeployment);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDeployment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteDeployment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteDeploymentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
 DeleteEnvironmentOutcome ProtonClient::DeleteEnvironment(const DeleteEnvironmentRequest& request) const
 {
   AWS_OPERATION_GUARD(DeleteEnvironment);
@@ -502,6 +514,15 @@ GetComponentOutcome ProtonClient::GetComponent(const GetComponentRequest& reques
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetComponent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   return GetComponentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetDeploymentOutcome ProtonClient::GetDeployment(const GetDeploymentRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetDeployment);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDeployment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetDeployment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetDeploymentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetEnvironmentOutcome ProtonClient::GetEnvironment(const GetEnvironmentRequest& request) const
@@ -673,6 +694,15 @@ ListComponentsOutcome ProtonClient::ListComponents(const ListComponentsRequest& 
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListComponents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   return ListComponentsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListDeploymentsOutcome ProtonClient::ListDeployments(const ListDeploymentsRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListDeployments);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDeployments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDeployments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListDeploymentsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListEnvironmentAccountConnectionsOutcome ProtonClient::ListEnvironmentAccountConnections(const ListEnvironmentAccountConnectionsRequest& request) const

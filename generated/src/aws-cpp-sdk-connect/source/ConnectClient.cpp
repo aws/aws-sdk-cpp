@@ -62,7 +62,9 @@
 #include <aws/connect/model/DeleteInstanceRequest.h>
 #include <aws/connect/model/DeleteIntegrationAssociationRequest.h>
 #include <aws/connect/model/DeletePromptRequest.h>
+#include <aws/connect/model/DeleteQueueRequest.h>
 #include <aws/connect/model/DeleteQuickConnectRequest.h>
+#include <aws/connect/model/DeleteRoutingProfileRequest.h>
 #include <aws/connect/model/DeleteRuleRequest.h>
 #include <aws/connect/model/DeleteSecurityProfileRequest.h>
 #include <aws/connect/model/DeleteTaskTemplateRequest.h>
@@ -1070,6 +1072,28 @@ DeletePromptOutcome ConnectClient::DeletePrompt(const DeletePromptRequest& reque
   return DeletePromptOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
+DeleteQueueOutcome ConnectClient::DeleteQueue(const DeleteQueueRequest& request) const
+{
+  AWS_OPERATION_GUARD(DeleteQueue);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteQueue, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.InstanceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteQueue", "Required field: InstanceId, is not set");
+    return DeleteQueueOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
+  }
+  if (!request.QueueIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteQueue", "Required field: QueueId, is not set");
+    return DeleteQueueOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QueueId]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteQueue, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/queues/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQueueId());
+  return DeleteQueueOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
 DeleteQuickConnectOutcome ConnectClient::DeleteQuickConnect(const DeleteQuickConnectRequest& request) const
 {
   AWS_OPERATION_GUARD(DeleteQuickConnect);
@@ -1090,6 +1114,28 @@ DeleteQuickConnectOutcome ConnectClient::DeleteQuickConnect(const DeleteQuickCon
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQuickConnectId());
   return DeleteQuickConnectOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteRoutingProfileOutcome ConnectClient::DeleteRoutingProfile(const DeleteRoutingProfileRequest& request) const
+{
+  AWS_OPERATION_GUARD(DeleteRoutingProfile);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteRoutingProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.InstanceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteRoutingProfile", "Required field: InstanceId, is not set");
+    return DeleteRoutingProfileOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
+  }
+  if (!request.RoutingProfileIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteRoutingProfile", "Required field: RoutingProfileId, is not set");
+    return DeleteRoutingProfileOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RoutingProfileId]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteRoutingProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/routing-profiles/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRoutingProfileId());
+  return DeleteRoutingProfileOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteRuleOutcome ConnectClient::DeleteRule(const DeleteRuleRequest& request) const

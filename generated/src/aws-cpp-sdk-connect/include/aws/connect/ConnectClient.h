@@ -1261,6 +1261,31 @@ namespace Connect
         }
 
         /**
+         * <p>Deletes a queue.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteQueue">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteQueueOutcome DeleteQueue(const Model::DeleteQueueRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteQueue that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteQueueRequestT = Model::DeleteQueueRequest>
+        Model::DeleteQueueOutcomeCallable DeleteQueueCallable(const DeleteQueueRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::DeleteQueue, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteQueue that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteQueueRequestT = Model::DeleteQueueRequest>
+        void DeleteQueueAsync(const DeleteQueueRequestT& request, const DeleteQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::DeleteQueue, request, handler, context);
+        }
+
+        /**
          * <p>Deletes a quick connect.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteQuickConnect">AWS
          * API Reference</a></p>
@@ -1283,6 +1308,31 @@ namespace Connect
         void DeleteQuickConnectAsync(const DeleteQuickConnectRequestT& request, const DeleteQuickConnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ConnectClient::DeleteQuickConnect, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a routing profile.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteRoutingProfile">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteRoutingProfileOutcome DeleteRoutingProfile(const Model::DeleteRoutingProfileRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteRoutingProfile that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteRoutingProfileRequestT = Model::DeleteRoutingProfileRequest>
+        Model::DeleteRoutingProfileOutcomeCallable DeleteRoutingProfileCallable(const DeleteRoutingProfileRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::DeleteRoutingProfile, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteRoutingProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteRoutingProfileRequestT = Model::DeleteRoutingProfileRequest>
+        void DeleteRoutingProfileAsync(const DeleteRoutingProfileRequestT& request, const DeleteRoutingProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::DeleteRoutingProfile, request, handler, context);
         }
 
         /**

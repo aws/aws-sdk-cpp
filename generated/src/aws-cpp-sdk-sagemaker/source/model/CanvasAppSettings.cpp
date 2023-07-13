@@ -20,13 +20,15 @@ namespace Model
 
 CanvasAppSettings::CanvasAppSettings() : 
     m_timeSeriesForecastingSettingsHasBeenSet(false),
-    m_modelRegisterSettingsHasBeenSet(false)
+    m_modelRegisterSettingsHasBeenSet(false),
+    m_workspaceSettingsHasBeenSet(false)
 {
 }
 
 CanvasAppSettings::CanvasAppSettings(JsonView jsonValue) : 
     m_timeSeriesForecastingSettingsHasBeenSet(false),
-    m_modelRegisterSettingsHasBeenSet(false)
+    m_modelRegisterSettingsHasBeenSet(false),
+    m_workspaceSettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,13 @@ CanvasAppSettings& CanvasAppSettings::operator =(JsonView jsonValue)
     m_modelRegisterSettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("WorkspaceSettings"))
+  {
+    m_workspaceSettings = jsonValue.GetObject("WorkspaceSettings");
+
+    m_workspaceSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +72,12 @@ JsonValue CanvasAppSettings::Jsonize() const
   if(m_modelRegisterSettingsHasBeenSet)
   {
    payload.WithObject("ModelRegisterSettings", m_modelRegisterSettings.Jsonize());
+
+  }
+
+  if(m_workspaceSettingsHasBeenSet)
+  {
+   payload.WithObject("WorkspaceSettings", m_workspaceSettings.Jsonize());
 
   }
 

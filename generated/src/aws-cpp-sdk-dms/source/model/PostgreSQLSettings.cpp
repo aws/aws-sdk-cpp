@@ -52,7 +52,10 @@ PostgreSQLSettings::PostgreSQLSettings() :
     m_mapJsonbAsClob(false),
     m_mapJsonbAsClobHasBeenSet(false),
     m_mapLongVarcharAs(LongVarcharMappingType::NOT_SET),
-    m_mapLongVarcharAsHasBeenSet(false)
+    m_mapLongVarcharAsHasBeenSet(false),
+    m_databaseMode(DatabaseMode::NOT_SET),
+    m_databaseModeHasBeenSet(false),
+    m_babelfishDatabaseNameHasBeenSet(false)
 {
 }
 
@@ -90,7 +93,10 @@ PostgreSQLSettings::PostgreSQLSettings(JsonView jsonValue) :
     m_mapJsonbAsClob(false),
     m_mapJsonbAsClobHasBeenSet(false),
     m_mapLongVarcharAs(LongVarcharMappingType::NOT_SET),
-    m_mapLongVarcharAsHasBeenSet(false)
+    m_mapLongVarcharAsHasBeenSet(false),
+    m_databaseMode(DatabaseMode::NOT_SET),
+    m_databaseModeHasBeenSet(false),
+    m_babelfishDatabaseNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -251,6 +257,20 @@ PostgreSQLSettings& PostgreSQLSettings::operator =(JsonView jsonValue)
     m_mapLongVarcharAsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DatabaseMode"))
+  {
+    m_databaseMode = DatabaseModeMapper::GetDatabaseModeForName(jsonValue.GetString("DatabaseMode"));
+
+    m_databaseModeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("BabelfishDatabaseName"))
+  {
+    m_babelfishDatabaseName = jsonValue.GetString("BabelfishDatabaseName");
+
+    m_babelfishDatabaseNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -386,6 +406,17 @@ JsonValue PostgreSQLSettings::Jsonize() const
   if(m_mapLongVarcharAsHasBeenSet)
   {
    payload.WithString("MapLongVarcharAs", LongVarcharMappingTypeMapper::GetNameForLongVarcharMappingType(m_mapLongVarcharAs));
+  }
+
+  if(m_databaseModeHasBeenSet)
+  {
+   payload.WithString("DatabaseMode", DatabaseModeMapper::GetNameForDatabaseMode(m_databaseMode));
+  }
+
+  if(m_babelfishDatabaseNameHasBeenSet)
+  {
+   payload.WithString("BabelfishDatabaseName", m_babelfishDatabaseName);
+
   }
 
   return payload;

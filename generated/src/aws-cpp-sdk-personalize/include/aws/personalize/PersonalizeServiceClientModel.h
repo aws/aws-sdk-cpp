@@ -72,6 +72,7 @@
 #include <aws/personalize/model/TagResourceResult.h>
 #include <aws/personalize/model/UntagResourceResult.h>
 #include <aws/personalize/model/UpdateCampaignResult.h>
+#include <aws/personalize/model/UpdateDatasetResult.h>
 #include <aws/personalize/model/UpdateMetricAttributionResult.h>
 #include <aws/personalize/model/UpdateRecommenderResult.h>
 #include <aws/core/NoResult.h>
@@ -179,6 +180,7 @@ namespace Aws
       class TagResourceRequest;
       class UntagResourceRequest;
       class UpdateCampaignRequest;
+      class UpdateDatasetRequest;
       class UpdateMetricAttributionRequest;
       class UpdateRecommenderRequest;
       /* End of service model forward declarations required in PersonalizeClient header */
@@ -248,6 +250,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<TagResourceResult, PersonalizeError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, PersonalizeError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateCampaignResult, PersonalizeError> UpdateCampaignOutcome;
+      typedef Aws::Utils::Outcome<UpdateDatasetResult, PersonalizeError> UpdateDatasetOutcome;
       typedef Aws::Utils::Outcome<UpdateMetricAttributionResult, PersonalizeError> UpdateMetricAttributionOutcome;
       typedef Aws::Utils::Outcome<UpdateRecommenderResult, PersonalizeError> UpdateRecommenderOutcome;
       /* End of service model Outcome class definitions */
@@ -317,6 +320,7 @@ namespace Aws
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateCampaignOutcome> UpdateCampaignOutcomeCallable;
+      typedef std::future<UpdateDatasetOutcome> UpdateDatasetOutcomeCallable;
       typedef std::future<UpdateMetricAttributionOutcome> UpdateMetricAttributionOutcomeCallable;
       typedef std::future<UpdateRecommenderOutcome> UpdateRecommenderOutcomeCallable;
       /* End of service model Outcome callable definitions */
@@ -389,6 +393,7 @@ namespace Aws
     typedef std::function<void(const PersonalizeClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::UpdateCampaignRequest&, const Model::UpdateCampaignOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCampaignResponseReceivedHandler;
+    typedef std::function<void(const PersonalizeClient*, const Model::UpdateDatasetRequest&, const Model::UpdateDatasetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDatasetResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::UpdateMetricAttributionRequest&, const Model::UpdateMetricAttributionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMetricAttributionResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::UpdateRecommenderRequest&, const Model::UpdateRecommenderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRecommenderResponseReceivedHandler;
     /* End of service model async handlers definitions */

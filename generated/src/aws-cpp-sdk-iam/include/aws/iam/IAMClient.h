@@ -133,12 +133,14 @@ namespace IAM
          * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateIamInstanceProfile.html">associate
          * the instance profile</a>, or you can stop your instance and then restart it.</p>
          *  <p>The caller of this operation must be granted the <code>PassRole</code>
-         * permission on the IAM role by a permissions policy.</p>  <p>For more
+         * permission on the IAM role by a permissions policy.</p>  <p> For more
          * information about roles, see <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
-         * with roles</a>. For more information about instance profiles, see <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-         * instance profiles</a>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
+         * roles</a> in the <i>IAM User Guide</i>. For more information about instance
+         * profiles, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2_instance-profiles.html">Using
+         * instance profiles</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AddRoleToInstanceProfile">AWS
          * API Reference</a></p>
          */
@@ -520,15 +522,15 @@ namespace IAM
          * certificates that the IdP uses</p> </li> </ul> <p>You get all of this
          * information from the OIDC IdP you want to use to access Amazon Web Services.</p>
          *  <p>Amazon Web Services secures communication with some OIDC identity
-         * providers (IdPs) through our library of trusted certificate authorities (CAs)
-         * instead of using a certificate thumbprint to verify your IdP server certificate.
-         * These OIDC IdPs include Google, Auth0, and those that use an Amazon S3 bucket to
-         * host a JSON Web Key Set (JWKS) endpoint. In these cases, your legacy thumbprint
-         * remains in your configuration, but is no longer used for validation.</p> 
-         *  <p>The trust for the OIDC provider is derived from the IAM provider that
-         * this operation creates. Therefore, it is best to limit access to the
-         * <a>CreateOpenIDConnectProvider</a> operation to highly privileged users.</p>
-         * <p><h3>See Also:</h3>   <a
+         * providers (IdPs) through our library of trusted root certificate authorities
+         * (CAs) instead of using a certificate thumbprint to verify your IdP server
+         * certificate. These OIDC IdPs include Auth0, GitHub, Google, and those that use
+         * an Amazon S3 bucket to host a JSON Web Key Set (JWKS) endpoint. In these cases,
+         * your legacy thumbprint remains in your configuration, but is no longer used for
+         * validation.</p>   <p>The trust for the OIDC provider is derived
+         * from the IAM provider that this operation creates. Therefore, it is best to
+         * limit access to the <a>CreateOpenIDConnectProvider</a> operation to highly
+         * privileged users.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateOpenIDConnectProvider">AWS
          * API Reference</a></p>
          */
@@ -625,11 +627,11 @@ namespace IAM
         }
 
         /**
-         * <p>Creates a new role for your Amazon Web Services account. For more information
-         * about roles, see <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">IAM
-         * roles</a>. For information about quotas for role names and the number of roles
-         * you can create, see <a
+         * <p>Creates a new role for your Amazon Web Services account.</p> <p> For more
+         * information about roles, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
+         * roles</a> in the <i>IAM User Guide</i>. For information about quotas for role
+         * names and the number of roles you can create, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM
          * and STS quotas</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateRole">AWS API
@@ -1017,8 +1019,9 @@ namespace IAM
          * Deleting a role or instance profile that is associated with a running instance
          * will break any applications running on the instance.</p>  <p>For
          * more information about instance profiles, see <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-         * instance profiles</a>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2_instance-profiles.html">Using
+         * instance profiles</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteInstanceProfile">AWS
          * API Reference</a></p>
          */
@@ -2246,7 +2249,7 @@ namespace IAM
          * <p> Retrieves information about the specified instance profile, including the
          * instance profile's path, GUID, ARN, and role. For more information about
          * instance profiles, see <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2_instance-profiles.html">Using
          * instance profiles</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetInstanceProfile">AWS
@@ -2486,14 +2489,14 @@ namespace IAM
          * <p>Retrieves information about the specified role, including the role's path,
          * GUID, ARN, and the role's trust policy that grants permission to assume the
          * role. For more information about roles, see <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
-         * with roles</a>.</p>  <p>Policies returned by this operation are
-         * URL-encoded compliant with <a href="https://tools.ietf.org/html/rfc3986">RFC
-         * 3986</a>. You can use a URL decoding method to convert the policy back to plain
-         * JSON text. For example, if you use Java, you can use the <code>decode</code>
-         * method of the <code>java.net.URLDecoder</code> utility class in the Java SDK.
-         * Other languages and SDKs provide similar functionality.</p> <p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
+         * roles</a> in the <i>IAM User Guide</i>.</p>  <p>Policies returned by this
+         * operation are URL-encoded compliant with <a
+         * href="https://tools.ietf.org/html/rfc3986">RFC 3986</a>. You can use a URL
+         * decoding method to convert the policy back to plain JSON text. For example, if
+         * you use Java, you can use the <code>decode</code> method of the
+         * <code>java.net.URLDecoder</code> utility class in the Java SDK. Other languages
+         * and SDKs provide similar functionality.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetRole">AWS API
          * Reference</a></p>
          */
@@ -2530,11 +2533,10 @@ namespace IAM
          * policy's default version, then use <a>GetPolicyVersion</a> to retrieve the
          * policy document.</p> <p>For more information about policies, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-         * policies and inline policies</a> in the <i>IAM User Guide</i>.</p> <p>For more
+         * policies and inline policies</a> in the <i>IAM User Guide</i>.</p> <p> For more
          * information about roles, see <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html">Using
-         * roles to delegate permissions and federate identities</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
+         * roles</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetRolePolicy">AWS
          * API Reference</a></p>
          */
@@ -3174,14 +3176,14 @@ namespace IAM
          * <p>Lists the instance profiles that have the specified path prefix. If there are
          * none, the operation returns an empty list. For more information about instance
          * profiles, see <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-         * instance profiles</a>.</p>  <p>IAM resource-listing operations return a
-         * subset of the available attributes for the resource. For example, this operation
-         * does not return tags, even though they are an attribute of the returned object.
-         * To view all of the information for an instance profile, see
-         * <a>GetInstanceProfile</a>.</p>  <p>You can paginate the results using the
-         * <code>MaxItems</code> and <code>Marker</code> parameters.</p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2_instance-profiles.html">Using
+         * instance profiles</a> in the <i>IAM User Guide</i>.</p>  <p>IAM
+         * resource-listing operations return a subset of the available attributes for the
+         * resource. For example, this operation does not return tags, even though they are
+         * an attribute of the returned object. To view all of the information for an
+         * instance profile, see <a>GetInstanceProfile</a>.</p>  <p>You can paginate
+         * the results using the <code>MaxItems</code> and <code>Marker</code>
+         * parameters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListInstanceProfiles">AWS
          * API Reference</a></p>
          */
@@ -3209,10 +3211,10 @@ namespace IAM
          * <p>Lists the instance profiles that have the specified associated IAM role. If
          * there are none, the operation returns an empty list. For more information about
          * instance profiles, go to <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-         * instance profiles</a>.</p> <p>You can paginate the results using the
-         * <code>MaxItems</code> and <code>Marker</code> parameters.</p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2_instance-profiles.html">Using
+         * instance profiles</a> in the <i>IAM User Guide</i>.</p> <p>You can paginate the
+         * results using the <code>MaxItems</code> and <code>Marker</code>
+         * parameters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListInstanceProfilesForRole">AWS
          * API Reference</a></p>
          */
@@ -3573,15 +3575,15 @@ namespace IAM
         /**
          * <p>Lists the IAM roles that have the specified path prefix. If there are none,
          * the operation returns an empty list. For more information about roles, see <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
-         * with roles</a>.</p>  <p>IAM resource-listing operations return a subset of
-         * the available attributes for the resource. This operation does not return the
-         * following attributes, even though they are an attribute of the returned
-         * object:</p> <ul> <li> <p>PermissionsBoundary</p> </li> <li> <p>RoleLastUsed</p>
-         * </li> <li> <p>Tags</p> </li> </ul> <p>To view all of the information for a role,
-         * see <a>GetRole</a>.</p>  <p>You can paginate the results using the
-         * <code>MaxItems</code> and <code>Marker</code> parameters.</p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
+         * roles</a> in the <i>IAM User Guide</i>.</p>  <p>IAM resource-listing
+         * operations return a subset of the available attributes for the resource. This
+         * operation does not return the following attributes, even though they are an
+         * attribute of the returned object:</p> <ul> <li> <p>PermissionsBoundary</p> </li>
+         * <li> <p>RoleLastUsed</p> </li> <li> <p>Tags</p> </li> </ul> <p>To view all of
+         * the information for a role, see <a>GetRole</a>.</p>  <p>You can paginate
+         * the results using the <code>MaxItems</code> and <code>Marker</code>
+         * parameters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListRoles">AWS API
          * Reference</a></p>
          */
@@ -4058,12 +4060,11 @@ namespace IAM
          * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">
          * <code>CreateRole</code> </a>. You can update a role's trust policy using <a
          * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAssumeRolePolicy.html">
-         * <code>UpdateAssumerolePolicy</code> </a>. For more information about IAM roles,
-         * see <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html">Using
-         * roles to delegate permissions and federate identities</a>.</p> <p>A role can
-         * also have a managed policy attached to it. To attach a managed policy to a role,
-         * use <a
+         * <code>UpdateAssumeRolePolicy</code> </a>. For more information about roles, see
+         * <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html">IAM
+         * roles</a> in the <i>IAM User Guide</i>.</p> <p>A role can also have a managed
+         * policy attached to it. To attach a managed policy to a role, use <a
          * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_AttachRolePolicy.html">
          * <code>AttachRolePolicy</code> </a>. To create a new managed policy, use <a
          * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">
@@ -4216,11 +4217,13 @@ namespace IAM
          * with the role you are about to remove from the instance profile. Removing a role
          * from an instance profile that is associated with a running instance might break
          * any applications running on the instance.</p>  <p> For more
-         * information about IAM roles, see <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
-         * with roles</a>. For more information about instance profiles, see <a
-         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About
-         * instance profiles</a>.</p><p><h3>See Also:</h3>   <a
+         * information about roles, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
+         * roles</a> in the <i>IAM User Guide</i>. For more information about instance
+         * profiles, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2_instance-profiles.html">Using
+         * instance profiles</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/RemoveRoleFromInstanceProfile">AWS
          * API Reference</a></p>
          */
@@ -5330,15 +5333,15 @@ namespace IAM
          * <i>does</i> change, any attempt to assume an IAM role that specifies the OIDC
          * provider as a principal fails until the certificate thumbprint is updated.</p>
          *  <p>Amazon Web Services secures communication with some OIDC identity
-         * providers (IdPs) through our library of trusted certificate authorities (CAs)
-         * instead of using a certificate thumbprint to verify your IdP server certificate.
-         * These OIDC IdPs include Google, Auth0, and those that use an Amazon S3 bucket to
-         * host a JSON Web Key Set (JWKS) endpoint. In these cases, your legacy thumbprint
-         * remains in your configuration, but is no longer used for validation.</p> 
-         *  <p>Trust for the OIDC provider is derived from the provider certificate
-         * and is validated by the thumbprint. Therefore, it is best to limit access to the
-         * <code>UpdateOpenIDConnectProviderThumbprint</code> operation to highly
-         * privileged users.</p> <p><h3>See Also:</h3>   <a
+         * providers (IdPs) through our library of trusted root certificate authorities
+         * (CAs) instead of using a certificate thumbprint to verify your IdP server
+         * certificate. These OIDC IdPs include Auth0, GitHub, Google, and those that use
+         * an Amazon S3 bucket to host a JSON Web Key Set (JWKS) endpoint. In these cases,
+         * your legacy thumbprint remains in your configuration, but is no longer used for
+         * validation.</p>   <p>Trust for the OIDC provider is derived from
+         * the provider certificate and is validated by the thumbprint. Therefore, it is
+         * best to limit access to the <code>UpdateOpenIDConnectProviderThumbprint</code>
+         * operation to highly privileged users.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateOpenIDConnectProviderThumbprint">AWS
          * API Reference</a></p>
          */

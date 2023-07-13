@@ -226,6 +226,47 @@ namespace Model
 
 
     /**
+     * <p>The ID of the last attempted deployment of this service instance.</p>
+     */
+    inline const Aws::String& GetLastAttemptedDeploymentId() const{ return m_lastAttemptedDeploymentId; }
+
+    /**
+     * <p>The ID of the last attempted deployment of this service instance.</p>
+     */
+    inline bool LastAttemptedDeploymentIdHasBeenSet() const { return m_lastAttemptedDeploymentIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the last attempted deployment of this service instance.</p>
+     */
+    inline void SetLastAttemptedDeploymentId(const Aws::String& value) { m_lastAttemptedDeploymentIdHasBeenSet = true; m_lastAttemptedDeploymentId = value; }
+
+    /**
+     * <p>The ID of the last attempted deployment of this service instance.</p>
+     */
+    inline void SetLastAttemptedDeploymentId(Aws::String&& value) { m_lastAttemptedDeploymentIdHasBeenSet = true; m_lastAttemptedDeploymentId = std::move(value); }
+
+    /**
+     * <p>The ID of the last attempted deployment of this service instance.</p>
+     */
+    inline void SetLastAttemptedDeploymentId(const char* value) { m_lastAttemptedDeploymentIdHasBeenSet = true; m_lastAttemptedDeploymentId.assign(value); }
+
+    /**
+     * <p>The ID of the last attempted deployment of this service instance.</p>
+     */
+    inline ServiceInstance& WithLastAttemptedDeploymentId(const Aws::String& value) { SetLastAttemptedDeploymentId(value); return *this;}
+
+    /**
+     * <p>The ID of the last attempted deployment of this service instance.</p>
+     */
+    inline ServiceInstance& WithLastAttemptedDeploymentId(Aws::String&& value) { SetLastAttemptedDeploymentId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the last attempted deployment of this service instance.</p>
+     */
+    inline ServiceInstance& WithLastAttemptedDeploymentId(const char* value) { SetLastAttemptedDeploymentId(value); return *this;}
+
+
+    /**
      * <p>The last client request token received.</p>
      */
     inline const Aws::String& GetLastClientRequestToken() const{ return m_lastClientRequestToken; }
@@ -326,6 +367,47 @@ namespace Model
      * <p>The time when the service instance was last deployed successfully.</p>
      */
     inline ServiceInstance& WithLastDeploymentSucceededAt(Aws::Utils::DateTime&& value) { SetLastDeploymentSucceededAt(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The ID of the last successful deployment of this service instance.</p>
+     */
+    inline const Aws::String& GetLastSucceededDeploymentId() const{ return m_lastSucceededDeploymentId; }
+
+    /**
+     * <p>The ID of the last successful deployment of this service instance.</p>
+     */
+    inline bool LastSucceededDeploymentIdHasBeenSet() const { return m_lastSucceededDeploymentIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the last successful deployment of this service instance.</p>
+     */
+    inline void SetLastSucceededDeploymentId(const Aws::String& value) { m_lastSucceededDeploymentIdHasBeenSet = true; m_lastSucceededDeploymentId = value; }
+
+    /**
+     * <p>The ID of the last successful deployment of this service instance.</p>
+     */
+    inline void SetLastSucceededDeploymentId(Aws::String&& value) { m_lastSucceededDeploymentIdHasBeenSet = true; m_lastSucceededDeploymentId = std::move(value); }
+
+    /**
+     * <p>The ID of the last successful deployment of this service instance.</p>
+     */
+    inline void SetLastSucceededDeploymentId(const char* value) { m_lastSucceededDeploymentIdHasBeenSet = true; m_lastSucceededDeploymentId.assign(value); }
+
+    /**
+     * <p>The ID of the last successful deployment of this service instance.</p>
+     */
+    inline ServiceInstance& WithLastSucceededDeploymentId(const Aws::String& value) { SetLastSucceededDeploymentId(value); return *this;}
+
+    /**
+     * <p>The ID of the last successful deployment of this service instance.</p>
+     */
+    inline ServiceInstance& WithLastSucceededDeploymentId(Aws::String&& value) { SetLastSucceededDeploymentId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the last successful deployment of this service instance.</p>
+     */
+    inline ServiceInstance& WithLastSucceededDeploymentId(const char* value) { SetLastSucceededDeploymentId(value); return *this;}
 
 
     /**
@@ -614,6 +696,9 @@ namespace Model
     Aws::String m_environmentName;
     bool m_environmentNameHasBeenSet = false;
 
+    Aws::String m_lastAttemptedDeploymentId;
+    bool m_lastAttemptedDeploymentIdHasBeenSet = false;
+
     Aws::String m_lastClientRequestToken;
     bool m_lastClientRequestTokenHasBeenSet = false;
 
@@ -622,6 +707,9 @@ namespace Model
 
     Aws::Utils::DateTime m_lastDeploymentSucceededAt;
     bool m_lastDeploymentSucceededAtHasBeenSet = false;
+
+    Aws::String m_lastSucceededDeploymentId;
+    bool m_lastSucceededDeploymentIdHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;

@@ -521,6 +521,27 @@ namespace Model
      */
     inline NetAppONTAPVolume& WithRecommendationStatus(RecommendationStatus&& value) { SetRecommendationStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The number of LUNs (logical unit numbers) in the volume.</p>
+     */
+    inline long long GetLunCount() const{ return m_lunCount; }
+
+    /**
+     * <p>The number of LUNs (logical unit numbers) in the volume.</p>
+     */
+    inline bool LunCountHasBeenSet() const { return m_lunCountHasBeenSet; }
+
+    /**
+     * <p>The number of LUNs (logical unit numbers) in the volume.</p>
+     */
+    inline void SetLunCount(long long value) { m_lunCountHasBeenSet = true; m_lunCount = value; }
+
+    /**
+     * <p>The number of LUNs (logical unit numbers) in the volume.</p>
+     */
+    inline NetAppONTAPVolume& WithLunCount(long long value) { SetLunCount(value); return *this;}
+
   private:
 
     Aws::String m_volumeName;
@@ -564,6 +585,9 @@ namespace Model
 
     RecommendationStatus m_recommendationStatus;
     bool m_recommendationStatusHasBeenSet = false;
+
+    long long m_lunCount;
+    bool m_lunCountHasBeenSet = false;
   };
 
 } // namespace Model
