@@ -43,6 +43,8 @@
 #include <aws/core/platform/Environment.h>
 #include <aws/core/platform/OSVersionInfo.h>
 
+#include <smithy/tracing/TracingUtils.h>
+
 #include <cstring>
 #include <cassert>
 #include <iomanip>
@@ -53,6 +55,7 @@ using namespace Aws::Http;
 using namespace Aws::Utils;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils::Xml;
+using namespace smithy::components::tracing;
 
 static const int SUCCESS_RESPONSE_MIN = 200;
 static const int SUCCESS_RESPONSE_MAX = 299;
@@ -115,6 +118,7 @@ AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
     const std::shared_ptr<Aws::Client::AWSAuthSigner>& signer,
     const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller) :
     m_region(configuration.region),
+    m_telemetryProvider(configuration.telemetryProvider),
     m_httpClient(CreateHttpClient(configuration)),
     m_signerProvider(Aws::MakeUnique<Aws::Auth::DefaultAuthSignerProvider>(AWS_CLIENT_LOG_TAG, signer)),
     m_errorMarshaller(errorMarshaller),
@@ -135,6 +139,7 @@ AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
     const std::shared_ptr<Aws::Auth::AWSAuthSignerProvider>& signerProvider,
     const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller) :
     m_region(configuration.region),
+    m_telemetryProvider(configuration.telemetryProvider),
     m_httpClient(CreateHttpClient(configuration)),
     m_signerProvider(signerProvider),
     m_errorMarshaller(errorMarshaller),
@@ -279,6 +284,9 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
             m_retryStrategy->RequestBookkeeping(outcome, lastError);
         }
         coreMetrics.httpClientMetrics = httpRequest->GetRequestMetrics();
+        TracingUtils::EmitCoreHttpMetrics(httpRequest->GetRequestMetrics(),
+            *m_telemetryProvider->getMeter(this->GetServiceClientName(), {}),
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},{TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
         if (outcome.IsSuccess())
         {
             Aws::Monitoring::OnRequestSucceeded(this->GetServiceClientName(), request.GetServiceRequestName(), httpRequest, outcome, coreMetrics, contexts);
@@ -314,7 +322,13 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
             }
         }
 
-        long sleepMillis = m_retryStrategy->CalculateDelayBeforeNextRetry(outcome.GetError(), retries);
+        long sleepMillis = TracingUtils::MakeCallWithTiming<long>(
+            [&]() -> long {
+                return m_retryStrategy->CalculateDelayBeforeNextRetry(outcome.GetError(), retries);
+            },
+            TracingUtils::SMITHY_CLIENT_SERVICE_BACKOFF_DELAY_METRIC,
+            *m_telemetryProvider->getMeter(this->GetServiceClientName(), {}),
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},{TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
         //AdjustClockSkew returns true means clock skew was the problem and skew was adjusted, false otherwise.
         //sleep if clock skew and region was NOT the problem. AdjustClockSkew may update error inside outcome.
         bool shouldSleep = !AdjustClockSkew(outcome, signerName) && !retryWithCorrectRegion;
@@ -359,6 +373,9 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
         httpRequest->SetHeaderValue(Http::SDK_REQUEST_HEADER, requestInfo);
         Aws::Monitoring::OnRequestRetry(this->GetServiceClientName(), request.GetServiceRequestName(), httpRequest, contexts);
     }
+    auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+    auto counter = meter->CreateCounter(TracingUtils::SMITHY_CLIENT_SERVICE_ATTEMPTS_METRIC, TracingUtils::COUNT_METRIC_TYPE, "");
+    counter->add(requestInfo.attempt, {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},{TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
     Aws::Monitoring::OnFinish(this->GetServiceClientName(), request.GetServiceRequestName(), httpRequest, contexts);
     return outcome;
 }
@@ -411,6 +428,9 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
             m_retryStrategy->RequestBookkeeping(outcome, lastError);
         }
         coreMetrics.httpClientMetrics = httpRequest->GetRequestMetrics();
+        TracingUtils::EmitCoreHttpMetrics(httpRequest->GetRequestMetrics(),
+            *m_telemetryProvider->getMeter(this->GetServiceClientName(), {}),
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, requestName},{TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
         if (outcome.IsSuccess())
         {
             Aws::Monitoring::OnRequestSucceeded(this->GetServiceClientName(), requestName, httpRequest, outcome, coreMetrics, contexts);
@@ -446,7 +466,13 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
             }
         }
 
-        long sleepMillis = m_retryStrategy->CalculateDelayBeforeNextRetry(outcome.GetError(), retries);
+        long sleepMillis = TracingUtils::MakeCallWithTiming<long>(
+            [&]() -> long {
+                return m_retryStrategy->CalculateDelayBeforeNextRetry(outcome.GetError(), retries);
+            },
+            TracingUtils::SMITHY_CLIENT_SERVICE_BACKOFF_DELAY_METRIC,
+            *m_telemetryProvider->getMeter(this->GetServiceClientName(), {}),
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, requestName},{TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
         //AdjustClockSkew returns true means clock skew was the problem and skew was adjusted, false otherwise.
         //sleep if clock skew and region was NOT the problem. AdjustClockSkew may update error inside outcome.
         bool shouldSleep = !AdjustClockSkew(outcome, signerName) && !retryWithCorrectRegion;
@@ -481,6 +507,9 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
         httpRequest->SetHeaderValue(Http::SDK_REQUEST_HEADER, requestInfo);
         Aws::Monitoring::OnRequestRetry(this->GetServiceClientName(), requestName, httpRequest, contexts);
     }
+    auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+    auto counter = meter->CreateCounter(TracingUtils::SMITHY_CLIENT_SERVICE_ATTEMPTS_METRIC, TracingUtils::COUNT_METRIC_TYPE, "");
+    counter->add(requestInfo.attempt, {{TracingUtils::SMITHY_METHOD_DIMENSION, requestName},{TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
     Aws::Monitoring::OnFinish(this->GetServiceClientName(), requestName, httpRequest, contexts);
     return outcome;
 }
@@ -488,9 +517,22 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
 HttpResponseOutcome AWSClient::AttemptOneRequest(const std::shared_ptr<HttpRequest>& httpRequest, const Aws::AmazonWebServiceRequest& request,
     const char* signerName, const char* signerRegionOverride, const char* signerServiceNameOverride) const
 {
-    BuildHttpRequest(request, httpRequest);
+    TracingUtils::MakeCallWithTiming(
+        [&]() -> void {
+            BuildHttpRequest(request, httpRequest);
+        },
+        TracingUtils::SMITHY_CLIENT_SERIALIZATION_METRIC,
+        *m_telemetryProvider->getMeter(this->GetServiceClientName(), {}),
+        {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},{TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+
     auto signer = GetSignerByName(signerName);
-    if (!signer->SignRequest(*httpRequest, signerRegionOverride, signerServiceNameOverride, request.SignBody()))
+    auto signedRequest = TracingUtils::MakeCallWithTiming<bool>([&]() -> bool {
+            return signer->SignRequest(*httpRequest, signerRegionOverride, signerServiceNameOverride, true);
+        },
+        TracingUtils::SMITHY_CLIENT_SIGNING_METRIC,
+        *m_telemetryProvider->getMeter(this->GetServiceClientName(), {}),
+        {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},{TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+    if (!signedRequest)
     {
         AWS_LOGSTREAM_ERROR(AWS_CLIENT_LOG_TAG, "Request signing failed. Returning error.");
         return HttpResponseOutcome(AWSError<CoreErrors>(CoreErrors::CLIENT_SIGNING_FAILURE, "", "SDK failed to sign the request", false/*retryable*/));
@@ -502,8 +544,13 @@ HttpResponseOutcome AWSClient::AttemptOneRequest(const std::shared_ptr<HttpReque
     }
 
     AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Request Successfully signed");
-    std::shared_ptr<HttpResponse> httpResponse(
-        m_httpClient->MakeRequest(httpRequest, m_readRateLimiter.get(), m_writeRateLimiter.get()));
+    auto httpResponse = TracingUtils::MakeCallWithTiming<std::shared_ptr<HttpResponse>>(
+        [&]() -> std::shared_ptr<HttpResponse> {
+            return m_httpClient->MakeRequest(httpRequest, m_readRateLimiter.get(), m_writeRateLimiter.get());
+        },
+        TracingUtils::SMITHY_CLIENT_SERVICE_CALL_METRIC,
+        *m_telemetryProvider->getMeter(this->GetServiceClientName(), {}),
+        {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},{TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 
     if (request.ShouldValidateResponseChecksum())
     {
@@ -547,7 +594,13 @@ HttpResponseOutcome AWSClient::AttemptOneRequest(const std::shared_ptr<HttpReque
     AWS_UNREFERENCED_PARAM(requestName);
 
     auto signer = GetSignerByName(signerName);
-    if (!signer->SignRequest(*httpRequest, signerRegionOverride, signerServiceNameOverride, true))
+    auto signedRequest = ::TracingUtils::MakeCallWithTiming<bool>([&]() -> bool {
+            return signer->SignRequest(*httpRequest, signerRegionOverride, signerServiceNameOverride, true);
+        },
+        TracingUtils::SMITHY_CLIENT_SIGNING_METRIC,
+        *m_telemetryProvider->getMeter(this->GetServiceClientName(), {}),
+        {{TracingUtils::SMITHY_METHOD_DIMENSION, requestName},{TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+    if (!signedRequest)
     {
         AWS_LOGSTREAM_ERROR(AWS_CLIENT_LOG_TAG, "Request signing failed. Returning error.");
         return HttpResponseOutcome(AWSError<CoreErrors>(CoreErrors::CLIENT_SIGNING_FAILURE, "", "SDK failed to sign the request", false/*retryable*/));
@@ -557,8 +610,13 @@ HttpResponseOutcome AWSClient::AttemptOneRequest(const std::shared_ptr<HttpReque
     AddCommonHeaders(*httpRequest);
 
     AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Request Successfully signed");
-    std::shared_ptr<HttpResponse> httpResponse(
-        m_httpClient->MakeRequest(httpRequest, m_readRateLimiter.get(), m_writeRateLimiter.get()));
+    auto httpResponse = ::TracingUtils::MakeCallWithTiming<std::shared_ptr<HttpResponse>>(
+        [&]() -> std::shared_ptr<HttpResponse> {
+            return m_httpClient->MakeRequest(httpRequest, m_readRateLimiter.get(), m_writeRateLimiter.get());
+        },
+        TracingUtils::SMITHY_CLIENT_SERVICE_CALL_METRIC,
+        *m_telemetryProvider->getMeter(this->GetServiceClientName(), {}),
+        {{TracingUtils::SMITHY_METHOD_DIMENSION, requestName},{TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 
     if (DoesResponseGenerateError(httpResponse))
     {

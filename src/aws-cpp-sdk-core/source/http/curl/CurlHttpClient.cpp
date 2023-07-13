@@ -552,7 +552,8 @@ CurlHttpClient::CurlHttpClient(const ClientConfiguration& clientConfig) :
     m_proxyKeyPasswd(clientConfig.proxySSLKeyPassword),
     m_proxyPort(clientConfig.proxyPort), m_verifySSL(clientConfig.verifySSL), m_caPath(clientConfig.caPath),
     m_caFile(clientConfig.caFile),
-    m_disableExpectHeader(clientConfig.disableExpectHeader)
+    m_disableExpectHeader(clientConfig.disableExpectHeader),
+    m_telemetryProvider(clientConfig.telemetryProvider)
 {
     if (clientConfig.followRedirects == FollowRedirectsPolicy::NEVER ||
        (clientConfig.followRedirects == FollowRedirectsPolicy::DEFAULT && clientConfig.region == Aws::Region::AWS_GLOBAL))
@@ -828,6 +829,13 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(const std::shared_ptr<
         if (ret == CURLE_OK)
         {
             request->AddRequestMetric(GetHttpClientMetricNameByType(HttpClientMetricsType::SslLatency), static_cast<int64_t>(timep * 1000));
+        }
+
+        curl_off_t speed;
+        ret = curl_easy_getinfo(connectionHandle, CURLINFO_SPEED_DOWNLOAD_T, &speed); // throughput
+        if (ret == CURLE_OK)
+        {
+            request->AddRequestMetric(GetHttpClientMetricNameByType(HttpClientMetricsType::Throughput), static_cast<int64_t>(speed));
         }
 
         const char* ip = nullptr;
