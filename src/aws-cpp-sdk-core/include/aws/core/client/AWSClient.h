@@ -317,6 +317,7 @@ namespace Aws
 
             static CoreErrors GuessBodylessErrorType(Aws::Http::HttpResponseCode responseCode);
             static bool DoesResponseGenerateError(const std::shared_ptr<Aws::Http::HttpResponse>& response);
+            std::shared_ptr<smithy::components::tracing::TelemetryProvider> m_telemetryProvider;
         private:
             /**
              * Try to adjust signer's clock

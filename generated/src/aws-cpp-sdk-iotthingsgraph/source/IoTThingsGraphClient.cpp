@@ -22,6 +22,9 @@
 #include <aws/iotthingsgraph/IoTThingsGraphErrorMarshaller.h>
 #include <aws/iotthingsgraph/IoTThingsGraphEndpointProvider.h>
 
+#include <smithy/tracing/TracingUtils.h>
+
+
 using namespace Aws;
 using namespace Aws::Auth;
 using namespace Aws::Client;
@@ -29,6 +32,7 @@ using namespace Aws::IoTThingsGraph;
 using namespace Aws::IoTThingsGraph::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
+using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
 const char* IoTThingsGraphClient::SERVICE_NAME = "iotthingsgraph";
