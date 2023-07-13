@@ -734,6 +734,31 @@ namespace Proton
         }
 
         /**
+         * <p>Delete the deployment.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteDeployment">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteDeploymentOutcome DeleteDeployment(const Model::DeleteDeploymentRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteDeployment that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteDeploymentRequestT = Model::DeleteDeploymentRequest>
+        Model::DeleteDeploymentOutcomeCallable DeleteDeploymentCallable(const DeleteDeploymentRequestT& request) const
+        {
+            return SubmitCallable(&ProtonClient::DeleteDeployment, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteDeployment that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteDeploymentRequestT = Model::DeleteDeploymentRequest>
+        void DeleteDeploymentAsync(const DeleteDeploymentRequestT& request, const DeleteDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ProtonClient::DeleteDeployment, request, handler, context);
+        }
+
+        /**
          * <p>Delete an environment.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteEnvironment">AWS
          * API Reference</a></p>
@@ -1070,6 +1095,31 @@ namespace Proton
         void GetComponentAsync(const GetComponentRequestT& request, const GetComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ProtonClient::GetComponent, request, handler, context);
+        }
+
+        /**
+         * <p>Get detailed data for a deployment.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetDeployment">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetDeploymentOutcome GetDeployment(const Model::GetDeploymentRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetDeployment that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetDeploymentRequestT = Model::GetDeploymentRequest>
+        Model::GetDeploymentOutcomeCallable GetDeploymentCallable(const GetDeploymentRequestT& request) const
+        {
+            return SubmitCallable(&ProtonClient::GetDeployment, request);
+        }
+
+        /**
+         * An Async wrapper for GetDeployment that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetDeploymentRequestT = Model::GetDeploymentRequest>
+        void GetDeploymentAsync(const GetDeploymentRequestT& request, const GetDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ProtonClient::GetDeployment, request, handler, context);
         }
 
         /**
@@ -1588,6 +1638,32 @@ namespace Proton
         void ListComponentsAsync(const ListComponentsRequestT& request, const ListComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ProtonClient::ListComponents, request, handler, context);
+        }
+
+        /**
+         * <p>List deployments. You can filter the result list by environment, service, or
+         * a single service instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListDeployments">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListDeploymentsOutcome ListDeployments(const Model::ListDeploymentsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListDeployments that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListDeploymentsRequestT = Model::ListDeploymentsRequest>
+        Model::ListDeploymentsOutcomeCallable ListDeploymentsCallable(const ListDeploymentsRequestT& request) const
+        {
+            return SubmitCallable(&ProtonClient::ListDeployments, request);
+        }
+
+        /**
+         * An Async wrapper for ListDeployments that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListDeploymentsRequestT = Model::ListDeploymentsRequest>
+        void ListDeploymentsAsync(const ListDeploymentsRequestT& request, const ListDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ProtonClient::ListDeployments, request, handler, context);
         }
 
         /**

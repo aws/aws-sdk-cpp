@@ -2133,6 +2133,34 @@ namespace Personalize
         }
 
         /**
+         * <p>Update a dataset to replace its schema with a new or existing one. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/updating-dataset-schema.html">Replacing
+         * a dataset's schema</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/UpdateDataset">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateDatasetOutcome UpdateDataset(const Model::UpdateDatasetRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateDataset that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateDatasetRequestT = Model::UpdateDatasetRequest>
+        Model::UpdateDatasetOutcomeCallable UpdateDatasetCallable(const UpdateDatasetRequestT& request) const
+        {
+            return SubmitCallable(&PersonalizeClient::UpdateDataset, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateDataset that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateDatasetRequestT = Model::UpdateDatasetRequest>
+        void UpdateDatasetAsync(const UpdateDatasetRequestT& request, const UpdateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PersonalizeClient::UpdateDataset, request, handler, context);
+        }
+
+        /**
          * <p>Updates a metric attribution.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/UpdateMetricAttribution">AWS
          * API Reference</a></p>

@@ -9,6 +9,7 @@
 #include <aws/fsx/model/SecurityStyle.h>
 #include <aws/fsx/model/TieringPolicy.h>
 #include <aws/fsx/model/InputOntapVolumeType.h>
+#include <aws/fsx/model/CreateSnaplockConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -214,30 +215,26 @@ namespace Model
 
 
     /**
-     * <p>Specifies the size of the volume, in megabytes (MB), that you are creating.
-     * Provide any whole number in the range of 20–104857600 to specify the size of the
-     * volume.</p>
+     * <p>Specifies the size of the volume, in megabytes (MB), that you are
+     * creating.</p>
      */
     inline int GetSizeInMegabytes() const{ return m_sizeInMegabytes; }
 
     /**
-     * <p>Specifies the size of the volume, in megabytes (MB), that you are creating.
-     * Provide any whole number in the range of 20–104857600 to specify the size of the
-     * volume.</p>
+     * <p>Specifies the size of the volume, in megabytes (MB), that you are
+     * creating.</p>
      */
     inline bool SizeInMegabytesHasBeenSet() const { return m_sizeInMegabytesHasBeenSet; }
 
     /**
-     * <p>Specifies the size of the volume, in megabytes (MB), that you are creating.
-     * Provide any whole number in the range of 20–104857600 to specify the size of the
-     * volume.</p>
+     * <p>Specifies the size of the volume, in megabytes (MB), that you are
+     * creating.</p>
      */
     inline void SetSizeInMegabytes(int value) { m_sizeInMegabytesHasBeenSet = true; m_sizeInMegabytes = value; }
 
     /**
-     * <p>Specifies the size of the volume, in megabytes (MB), that you are creating.
-     * Provide any whole number in the range of 20–104857600 to specify the size of the
-     * volume.</p>
+     * <p>Specifies the size of the volume, in megabytes (MB), that you are
+     * creating.</p>
      */
     inline CreateOntapVolumeConfiguration& WithSizeInMegabytes(int value) { SetSizeInMegabytes(value); return *this;}
 
@@ -593,6 +590,37 @@ namespace Model
      */
     inline CreateOntapVolumeConfiguration& WithCopyTagsToBackups(bool value) { SetCopyTagsToBackups(value); return *this;}
 
+
+    /**
+     * <p>Specifies the SnapLock configuration for an FSx for ONTAP volume. </p>
+     */
+    inline const CreateSnaplockConfiguration& GetSnaplockConfiguration() const{ return m_snaplockConfiguration; }
+
+    /**
+     * <p>Specifies the SnapLock configuration for an FSx for ONTAP volume. </p>
+     */
+    inline bool SnaplockConfigurationHasBeenSet() const { return m_snaplockConfigurationHasBeenSet; }
+
+    /**
+     * <p>Specifies the SnapLock configuration for an FSx for ONTAP volume. </p>
+     */
+    inline void SetSnaplockConfiguration(const CreateSnaplockConfiguration& value) { m_snaplockConfigurationHasBeenSet = true; m_snaplockConfiguration = value; }
+
+    /**
+     * <p>Specifies the SnapLock configuration for an FSx for ONTAP volume. </p>
+     */
+    inline void SetSnaplockConfiguration(CreateSnaplockConfiguration&& value) { m_snaplockConfigurationHasBeenSet = true; m_snaplockConfiguration = std::move(value); }
+
+    /**
+     * <p>Specifies the SnapLock configuration for an FSx for ONTAP volume. </p>
+     */
+    inline CreateOntapVolumeConfiguration& WithSnaplockConfiguration(const CreateSnaplockConfiguration& value) { SetSnaplockConfiguration(value); return *this;}
+
+    /**
+     * <p>Specifies the SnapLock configuration for an FSx for ONTAP volume. </p>
+     */
+    inline CreateOntapVolumeConfiguration& WithSnaplockConfiguration(CreateSnaplockConfiguration&& value) { SetSnaplockConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_junctionPath;
@@ -621,6 +649,9 @@ namespace Model
 
     bool m_copyTagsToBackups;
     bool m_copyTagsToBackupsHasBeenSet = false;
+
+    CreateSnaplockConfiguration m_snaplockConfiguration;
+    bool m_snaplockConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

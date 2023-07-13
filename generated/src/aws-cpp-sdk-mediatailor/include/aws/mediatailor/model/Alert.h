@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/mediatailor/MediaTailor_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediatailor/model/AlertCategory.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
@@ -127,6 +128,37 @@ namespace Model
      * alert.</p>
      */
     inline Alert& WithAlertMessage(const char* value) { SetAlertMessage(value); return *this;}
+
+
+    /**
+     * <p>The category that MediaTailor assigns to the alert.</p>
+     */
+    inline const AlertCategory& GetCategory() const{ return m_category; }
+
+    /**
+     * <p>The category that MediaTailor assigns to the alert.</p>
+     */
+    inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
+
+    /**
+     * <p>The category that MediaTailor assigns to the alert.</p>
+     */
+    inline void SetCategory(const AlertCategory& value) { m_categoryHasBeenSet = true; m_category = value; }
+
+    /**
+     * <p>The category that MediaTailor assigns to the alert.</p>
+     */
+    inline void SetCategory(AlertCategory&& value) { m_categoryHasBeenSet = true; m_category = std::move(value); }
+
+    /**
+     * <p>The category that MediaTailor assigns to the alert.</p>
+     */
+    inline Alert& WithCategory(const AlertCategory& value) { SetCategory(value); return *this;}
+
+    /**
+     * <p>The category that MediaTailor assigns to the alert.</p>
+     */
+    inline Alert& WithCategory(AlertCategory&& value) { SetCategory(std::move(value)); return *this;}
 
 
     /**
@@ -253,6 +285,9 @@ namespace Model
 
     Aws::String m_alertMessage;
     bool m_alertMessageHasBeenSet = false;
+
+    AlertCategory m_category;
+    bool m_categoryHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
     bool m_lastModifiedTimeHasBeenSet = false;

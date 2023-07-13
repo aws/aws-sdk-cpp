@@ -267,7 +267,9 @@ namespace Model
      * <p>The ARN, key ID, or alias of the KMS key that Secrets Manager uses to encrypt
      * new secret versions as well as any existing versions with the staging labels
      * <code>AWSCURRENT</code>, <code>AWSPENDING</code>, or <code>AWSPREVIOUS</code>.
-     * For more information about versions and staging labels, see <a
+     * If you don't have <code>kms:Encrypt</code> permission to the new key, Secrets
+     * Manager does not re-ecrypt existing secret versions with the new key. For more
+     * information about versions and staging labels, see <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/getting-started.html#term_version">Concepts:
      * Version</a>.</p> <p>A key alias is always prefixed by <code>alias/</code>, for
      * example <code>alias/aws/secretsmanager</code>. For more information, see <a
@@ -292,7 +294,9 @@ namespace Model
      * <p>The ARN, key ID, or alias of the KMS key that Secrets Manager uses to encrypt
      * new secret versions as well as any existing versions with the staging labels
      * <code>AWSCURRENT</code>, <code>AWSPENDING</code>, or <code>AWSPREVIOUS</code>.
-     * For more information about versions and staging labels, see <a
+     * If you don't have <code>kms:Encrypt</code> permission to the new key, Secrets
+     * Manager does not re-ecrypt existing secret versions with the new key. For more
+     * information about versions and staging labels, see <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/getting-started.html#term_version">Concepts:
      * Version</a>.</p> <p>A key alias is always prefixed by <code>alias/</code>, for
      * example <code>alias/aws/secretsmanager</code>. For more information, see <a
@@ -317,7 +321,9 @@ namespace Model
      * <p>The ARN, key ID, or alias of the KMS key that Secrets Manager uses to encrypt
      * new secret versions as well as any existing versions with the staging labels
      * <code>AWSCURRENT</code>, <code>AWSPENDING</code>, or <code>AWSPREVIOUS</code>.
-     * For more information about versions and staging labels, see <a
+     * If you don't have <code>kms:Encrypt</code> permission to the new key, Secrets
+     * Manager does not re-ecrypt existing secret versions with the new key. For more
+     * information about versions and staging labels, see <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/getting-started.html#term_version">Concepts:
      * Version</a>.</p> <p>A key alias is always prefixed by <code>alias/</code>, for
      * example <code>alias/aws/secretsmanager</code>. For more information, see <a
@@ -342,7 +348,9 @@ namespace Model
      * <p>The ARN, key ID, or alias of the KMS key that Secrets Manager uses to encrypt
      * new secret versions as well as any existing versions with the staging labels
      * <code>AWSCURRENT</code>, <code>AWSPENDING</code>, or <code>AWSPREVIOUS</code>.
-     * For more information about versions and staging labels, see <a
+     * If you don't have <code>kms:Encrypt</code> permission to the new key, Secrets
+     * Manager does not re-ecrypt existing secret versions with the new key. For more
+     * information about versions and staging labels, see <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/getting-started.html#term_version">Concepts:
      * Version</a>.</p> <p>A key alias is always prefixed by <code>alias/</code>, for
      * example <code>alias/aws/secretsmanager</code>. For more information, see <a
@@ -367,7 +375,9 @@ namespace Model
      * <p>The ARN, key ID, or alias of the KMS key that Secrets Manager uses to encrypt
      * new secret versions as well as any existing versions with the staging labels
      * <code>AWSCURRENT</code>, <code>AWSPENDING</code>, or <code>AWSPREVIOUS</code>.
-     * For more information about versions and staging labels, see <a
+     * If you don't have <code>kms:Encrypt</code> permission to the new key, Secrets
+     * Manager does not re-ecrypt existing secret versions with the new key. For more
+     * information about versions and staging labels, see <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/getting-started.html#term_version">Concepts:
      * Version</a>.</p> <p>A key alias is always prefixed by <code>alias/</code>, for
      * example <code>alias/aws/secretsmanager</code>. For more information, see <a
@@ -392,7 +402,9 @@ namespace Model
      * <p>The ARN, key ID, or alias of the KMS key that Secrets Manager uses to encrypt
      * new secret versions as well as any existing versions with the staging labels
      * <code>AWSCURRENT</code>, <code>AWSPENDING</code>, or <code>AWSPREVIOUS</code>.
-     * For more information about versions and staging labels, see <a
+     * If you don't have <code>kms:Encrypt</code> permission to the new key, Secrets
+     * Manager does not re-ecrypt existing secret versions with the new key. For more
+     * information about versions and staging labels, see <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/getting-started.html#term_version">Concepts:
      * Version</a>.</p> <p>A key alias is always prefixed by <code>alias/</code>, for
      * example <code>alias/aws/secretsmanager</code>. For more information, see <a
@@ -417,7 +429,9 @@ namespace Model
      * <p>The ARN, key ID, or alias of the KMS key that Secrets Manager uses to encrypt
      * new secret versions as well as any existing versions with the staging labels
      * <code>AWSCURRENT</code>, <code>AWSPENDING</code>, or <code>AWSPREVIOUS</code>.
-     * For more information about versions and staging labels, see <a
+     * If you don't have <code>kms:Encrypt</code> permission to the new key, Secrets
+     * Manager does not re-ecrypt existing secret versions with the new key. For more
+     * information about versions and staging labels, see <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/getting-started.html#term_version">Concepts:
      * Version</a>.</p> <p>A key alias is always prefixed by <code>alias/</code>, for
      * example <code>alias/aws/secretsmanager</code>. For more information, see <a
@@ -442,7 +456,9 @@ namespace Model
      * <p>The ARN, key ID, or alias of the KMS key that Secrets Manager uses to encrypt
      * new secret versions as well as any existing versions with the staging labels
      * <code>AWSCURRENT</code>, <code>AWSPENDING</code>, or <code>AWSPREVIOUS</code>.
-     * For more information about versions and staging labels, see <a
+     * If you don't have <code>kms:Encrypt</code> permission to the new key, Secrets
+     * Manager does not re-ecrypt existing secret versions with the new key. For more
+     * information about versions and staging labels, see <a
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/getting-started.html#term_version">Concepts:
      * Version</a>.</p> <p>A key alias is always prefixed by <code>alias/</code>, for
      * example <code>alias/aws/secretsmanager</code>. For more information, see <a

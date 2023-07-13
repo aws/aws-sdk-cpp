@@ -26,7 +26,8 @@ Dataset::Dataset() :
     m_schemaArnHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false)
+    m_lastUpdatedDateTimeHasBeenSet(false),
+    m_latestDatasetUpdateHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ Dataset::Dataset(JsonView jsonValue) :
     m_schemaArnHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false)
+    m_lastUpdatedDateTimeHasBeenSet(false),
+    m_latestDatasetUpdateHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -101,6 +103,13 @@ Dataset& Dataset::operator =(JsonView jsonValue)
     m_lastUpdatedDateTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("latestDatasetUpdate"))
+  {
+    m_latestDatasetUpdate = jsonValue.GetObject("latestDatasetUpdate");
+
+    m_latestDatasetUpdateHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -152,6 +161,12 @@ JsonValue Dataset::Jsonize() const
   if(m_lastUpdatedDateTimeHasBeenSet)
   {
    payload.WithDouble("lastUpdatedDateTime", m_lastUpdatedDateTime.SecondsWithMSPrecision());
+  }
+
+  if(m_latestDatasetUpdateHasBeenSet)
+  {
+   payload.WithObject("latestDatasetUpdate", m_latestDatasetUpdate.Jsonize());
+
   }
 
   return payload;

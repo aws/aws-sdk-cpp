@@ -25,8 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>Use to specify skipping a final backup, or to add tags to a final
-   * backup.</p><p><h3>See Also:</h3>   <a
+   * <p>Use to specify skipping a final backup, adding tags to a final backup, or
+   * bypassing the retention period of an FSx for ONTAP SnapLock Enterprise volume
+   * when deleting an FSx for ONTAP volume. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteVolumeOntapConfiguration">AWS
    * API Reference</a></p>
    */
@@ -88,6 +89,55 @@ namespace Model
     
     inline DeleteVolumeOntapConfiguration& AddFinalBackupTags(Tag&& value) { m_finalBackupTagsHasBeenSet = true; m_finalBackupTags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Setting this to <code>true</code> allows a SnapLock administrator to delete
+     * an FSx for ONTAP SnapLock Enterprise volume with unexpired write once, read many
+     * (WORM) files. The IAM permission
+     * <code>fsx:BypassSnaplockEnterpriseRetention</code> is also required to delete
+     * SnapLock Enterprise volumes with unexpired WORM files. The default value is
+     * <code>false</code>. </p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/how-snaplock-works.html#snaplock-delete-volume">
+     * Deleting a SnapLock volume </a>. </p>
+     */
+    inline bool GetBypassSnaplockEnterpriseRetention() const{ return m_bypassSnaplockEnterpriseRetention; }
+
+    /**
+     * <p>Setting this to <code>true</code> allows a SnapLock administrator to delete
+     * an FSx for ONTAP SnapLock Enterprise volume with unexpired write once, read many
+     * (WORM) files. The IAM permission
+     * <code>fsx:BypassSnaplockEnterpriseRetention</code> is also required to delete
+     * SnapLock Enterprise volumes with unexpired WORM files. The default value is
+     * <code>false</code>. </p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/how-snaplock-works.html#snaplock-delete-volume">
+     * Deleting a SnapLock volume </a>. </p>
+     */
+    inline bool BypassSnaplockEnterpriseRetentionHasBeenSet() const { return m_bypassSnaplockEnterpriseRetentionHasBeenSet; }
+
+    /**
+     * <p>Setting this to <code>true</code> allows a SnapLock administrator to delete
+     * an FSx for ONTAP SnapLock Enterprise volume with unexpired write once, read many
+     * (WORM) files. The IAM permission
+     * <code>fsx:BypassSnaplockEnterpriseRetention</code> is also required to delete
+     * SnapLock Enterprise volumes with unexpired WORM files. The default value is
+     * <code>false</code>. </p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/how-snaplock-works.html#snaplock-delete-volume">
+     * Deleting a SnapLock volume </a>. </p>
+     */
+    inline void SetBypassSnaplockEnterpriseRetention(bool value) { m_bypassSnaplockEnterpriseRetentionHasBeenSet = true; m_bypassSnaplockEnterpriseRetention = value; }
+
+    /**
+     * <p>Setting this to <code>true</code> allows a SnapLock administrator to delete
+     * an FSx for ONTAP SnapLock Enterprise volume with unexpired write once, read many
+     * (WORM) files. The IAM permission
+     * <code>fsx:BypassSnaplockEnterpriseRetention</code> is also required to delete
+     * SnapLock Enterprise volumes with unexpired WORM files. The default value is
+     * <code>false</code>. </p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/how-snaplock-works.html#snaplock-delete-volume">
+     * Deleting a SnapLock volume </a>. </p>
+     */
+    inline DeleteVolumeOntapConfiguration& WithBypassSnaplockEnterpriseRetention(bool value) { SetBypassSnaplockEnterpriseRetention(value); return *this;}
+
   private:
 
     bool m_skipFinalBackup;
@@ -95,6 +145,9 @@ namespace Model
 
     Aws::Vector<Tag> m_finalBackupTags;
     bool m_finalBackupTagsHasBeenSet = false;
+
+    bool m_bypassSnaplockEnterpriseRetention;
+    bool m_bypassSnaplockEnterpriseRetentionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,7 +29,8 @@ UpdateOntapVolumeConfiguration::UpdateOntapVolumeConfiguration() :
     m_tieringPolicyHasBeenSet(false),
     m_snapshotPolicyHasBeenSet(false),
     m_copyTagsToBackups(false),
-    m_copyTagsToBackupsHasBeenSet(false)
+    m_copyTagsToBackupsHasBeenSet(false),
+    m_snaplockConfigurationHasBeenSet(false)
 {
 }
 
@@ -44,7 +45,8 @@ UpdateOntapVolumeConfiguration::UpdateOntapVolumeConfiguration(JsonView jsonValu
     m_tieringPolicyHasBeenSet(false),
     m_snapshotPolicyHasBeenSet(false),
     m_copyTagsToBackups(false),
-    m_copyTagsToBackupsHasBeenSet(false)
+    m_copyTagsToBackupsHasBeenSet(false),
+    m_snaplockConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -100,6 +102,13 @@ UpdateOntapVolumeConfiguration& UpdateOntapVolumeConfiguration::operator =(JsonV
     m_copyTagsToBackupsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SnaplockConfiguration"))
+  {
+    m_snaplockConfiguration = jsonValue.GetObject("SnaplockConfiguration");
+
+    m_snaplockConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -145,6 +154,12 @@ JsonValue UpdateOntapVolumeConfiguration::Jsonize() const
   if(m_copyTagsToBackupsHasBeenSet)
   {
    payload.WithBool("CopyTagsToBackups", m_copyTagsToBackups);
+
+  }
+
+  if(m_snaplockConfigurationHasBeenSet)
+  {
+   payload.WithObject("SnaplockConfiguration", m_snaplockConfiguration.Jsonize());
 
   }
 

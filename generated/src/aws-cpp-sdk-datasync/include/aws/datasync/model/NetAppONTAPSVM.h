@@ -493,6 +493,27 @@ namespace Model
      */
     inline NetAppONTAPSVM& WithTotalSnapshotCapacityUsed(long long value) { SetTotalSnapshotCapacityUsed(value); return *this;}
 
+
+    /**
+     * <p>The number of LUNs (logical unit numbers) in the SVM.</p>
+     */
+    inline long long GetLunCount() const{ return m_lunCount; }
+
+    /**
+     * <p>The number of LUNs (logical unit numbers) in the SVM.</p>
+     */
+    inline bool LunCountHasBeenSet() const { return m_lunCountHasBeenSet; }
+
+    /**
+     * <p>The number of LUNs (logical unit numbers) in the SVM.</p>
+     */
+    inline void SetLunCount(long long value) { m_lunCountHasBeenSet = true; m_lunCount = value; }
+
+    /**
+     * <p>The number of LUNs (logical unit numbers) in the SVM.</p>
+     */
+    inline NetAppONTAPSVM& WithLunCount(long long value) { SetLunCount(value); return *this;}
+
   private:
 
     Aws::String m_clusterUuid;
@@ -533,6 +554,9 @@ namespace Model
 
     long long m_totalSnapshotCapacityUsed;
     bool m_totalSnapshotCapacityUsedHasBeenSet = false;
+
+    long long m_lunCount;
+    bool m_lunCountHasBeenSet = false;
   };
 
 } // namespace Model

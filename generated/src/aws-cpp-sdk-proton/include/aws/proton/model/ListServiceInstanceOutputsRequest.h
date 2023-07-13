@@ -35,6 +35,47 @@ namespace Model
 
 
     /**
+     * <p>The ID of the deployment whose outputs you want.</p>
+     */
+    inline const Aws::String& GetDeploymentId() const{ return m_deploymentId; }
+
+    /**
+     * <p>The ID of the deployment whose outputs you want.</p>
+     */
+    inline bool DeploymentIdHasBeenSet() const { return m_deploymentIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the deployment whose outputs you want.</p>
+     */
+    inline void SetDeploymentId(const Aws::String& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
+
+    /**
+     * <p>The ID of the deployment whose outputs you want.</p>
+     */
+    inline void SetDeploymentId(Aws::String&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = std::move(value); }
+
+    /**
+     * <p>The ID of the deployment whose outputs you want.</p>
+     */
+    inline void SetDeploymentId(const char* value) { m_deploymentIdHasBeenSet = true; m_deploymentId.assign(value); }
+
+    /**
+     * <p>The ID of the deployment whose outputs you want.</p>
+     */
+    inline ListServiceInstanceOutputsRequest& WithDeploymentId(const Aws::String& value) { SetDeploymentId(value); return *this;}
+
+    /**
+     * <p>The ID of the deployment whose outputs you want.</p>
+     */
+    inline ListServiceInstanceOutputsRequest& WithDeploymentId(Aws::String&& value) { SetDeploymentId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the deployment whose outputs you want.</p>
+     */
+    inline ListServiceInstanceOutputsRequest& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
+
+
+    /**
      * <p>A token that indicates the location of the next output in the array of
      * outputs, after the list of outputs that was previously requested.</p>
      */
@@ -173,6 +214,9 @@ namespace Model
     inline ListServiceInstanceOutputsRequest& WithServiceName(const char* value) { SetServiceName(value); return *this;}
 
   private:
+
+    Aws::String m_deploymentId;
+    bool m_deploymentIdHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;

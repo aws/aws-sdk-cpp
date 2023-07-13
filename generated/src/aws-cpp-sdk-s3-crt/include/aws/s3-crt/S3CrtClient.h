@@ -259,11 +259,13 @@ namespace Aws
          * chunk encoded. If it were not, it would not contain the content-length, and you
          * would need to read the entire body.</p>  <p>The copy request charge is
          * based on the storage class and Region that you specify for the destination
-         * object. For pricing information, see <a
-         * href="http://aws.amazon.com/s3/pricing/">Amazon S3 pricing</a>.</p> 
-         * <p>Amazon S3 transfer acceleration does not support cross-Region copies. If you
-         * request a cross-Region copy using a transfer acceleration endpoint, you get a
-         * 400 <code>Bad Request</code> error. For more information, see <a
+         * object. The request can also result in a data retrieval charge for the source if
+         * the source storage class bills for data retrieval. For pricing information, see
+         * <a href="http://aws.amazon.com/s3/pricing/">Amazon S3 pricing</a>.</p>
+         *  <p>Amazon S3 transfer acceleration does not support cross-Region
+         * copies. If you request a cross-Region copy using a transfer acceleration
+         * endpoint, you get a 400 <code>Bad Request</code> error. For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-acceleration.html">Transfer
          * Acceleration</a>.</p>  <dl> <dt>Metadata</dt> <dd> <p>When copying
          * an object, you can preserve all metadata (the default) or specify new metadata.

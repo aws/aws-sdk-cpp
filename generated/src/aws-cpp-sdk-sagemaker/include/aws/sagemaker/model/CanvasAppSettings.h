@@ -7,6 +7,7 @@
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/TimeSeriesForecastingSettings.h>
 #include <aws/sagemaker/model/ModelRegisterSettings.h>
+#include <aws/sagemaker/model/WorkspaceSettings.h>
 #include <utility>
 
 namespace Aws
@@ -99,6 +100,37 @@ namespace Model
      */
     inline CanvasAppSettings& WithModelRegisterSettings(ModelRegisterSettings&& value) { SetModelRegisterSettings(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The workspace settings for the SageMaker Canvas application.</p>
+     */
+    inline const WorkspaceSettings& GetWorkspaceSettings() const{ return m_workspaceSettings; }
+
+    /**
+     * <p>The workspace settings for the SageMaker Canvas application.</p>
+     */
+    inline bool WorkspaceSettingsHasBeenSet() const { return m_workspaceSettingsHasBeenSet; }
+
+    /**
+     * <p>The workspace settings for the SageMaker Canvas application.</p>
+     */
+    inline void SetWorkspaceSettings(const WorkspaceSettings& value) { m_workspaceSettingsHasBeenSet = true; m_workspaceSettings = value; }
+
+    /**
+     * <p>The workspace settings for the SageMaker Canvas application.</p>
+     */
+    inline void SetWorkspaceSettings(WorkspaceSettings&& value) { m_workspaceSettingsHasBeenSet = true; m_workspaceSettings = std::move(value); }
+
+    /**
+     * <p>The workspace settings for the SageMaker Canvas application.</p>
+     */
+    inline CanvasAppSettings& WithWorkspaceSettings(const WorkspaceSettings& value) { SetWorkspaceSettings(value); return *this;}
+
+    /**
+     * <p>The workspace settings for the SageMaker Canvas application.</p>
+     */
+    inline CanvasAppSettings& WithWorkspaceSettings(WorkspaceSettings&& value) { SetWorkspaceSettings(std::move(value)); return *this;}
+
   private:
 
     TimeSeriesForecastingSettings m_timeSeriesForecastingSettings;
@@ -106,6 +138,9 @@ namespace Model
 
     ModelRegisterSettings m_modelRegisterSettings;
     bool m_modelRegisterSettingsHasBeenSet = false;
+
+    WorkspaceSettings m_workspaceSettings;
+    bool m_workspaceSettingsHasBeenSet = false;
   };
 
 } // namespace Model

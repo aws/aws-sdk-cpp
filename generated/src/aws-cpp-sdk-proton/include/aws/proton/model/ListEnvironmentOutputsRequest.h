@@ -35,6 +35,47 @@ namespace Model
 
 
     /**
+     * <p>The ID of the deployment whose outputs you want.</p>
+     */
+    inline const Aws::String& GetDeploymentId() const{ return m_deploymentId; }
+
+    /**
+     * <p>The ID of the deployment whose outputs you want.</p>
+     */
+    inline bool DeploymentIdHasBeenSet() const { return m_deploymentIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the deployment whose outputs you want.</p>
+     */
+    inline void SetDeploymentId(const Aws::String& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
+
+    /**
+     * <p>The ID of the deployment whose outputs you want.</p>
+     */
+    inline void SetDeploymentId(Aws::String&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = std::move(value); }
+
+    /**
+     * <p>The ID of the deployment whose outputs you want.</p>
+     */
+    inline void SetDeploymentId(const char* value) { m_deploymentIdHasBeenSet = true; m_deploymentId.assign(value); }
+
+    /**
+     * <p>The ID of the deployment whose outputs you want.</p>
+     */
+    inline ListEnvironmentOutputsRequest& WithDeploymentId(const Aws::String& value) { SetDeploymentId(value); return *this;}
+
+    /**
+     * <p>The ID of the deployment whose outputs you want.</p>
+     */
+    inline ListEnvironmentOutputsRequest& WithDeploymentId(Aws::String&& value) { SetDeploymentId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the deployment whose outputs you want.</p>
+     */
+    inline ListEnvironmentOutputsRequest& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
+
+
+    /**
      * <p>The environment name.</p>
      */
     inline const Aws::String& GetEnvironmentName() const{ return m_environmentName; }
@@ -132,6 +173,9 @@ namespace Model
     inline ListEnvironmentOutputsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
+    Aws::String m_deploymentId;
+    bool m_deploymentIdHasBeenSet = false;
 
     Aws::String m_environmentName;
     bool m_environmentNameHasBeenSet = false;

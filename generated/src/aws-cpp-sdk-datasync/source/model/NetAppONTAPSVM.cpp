@@ -38,7 +38,9 @@ NetAppONTAPSVM::NetAppONTAPSVM() :
     m_recommendationStatus(RecommendationStatus::NOT_SET),
     m_recommendationStatusHasBeenSet(false),
     m_totalSnapshotCapacityUsed(0),
-    m_totalSnapshotCapacityUsedHasBeenSet(false)
+    m_totalSnapshotCapacityUsedHasBeenSet(false),
+    m_lunCount(0),
+    m_lunCountHasBeenSet(false)
 {
 }
 
@@ -62,7 +64,9 @@ NetAppONTAPSVM::NetAppONTAPSVM(JsonView jsonValue) :
     m_recommendationStatus(RecommendationStatus::NOT_SET),
     m_recommendationStatusHasBeenSet(false),
     m_totalSnapshotCapacityUsed(0),
-    m_totalSnapshotCapacityUsedHasBeenSet(false)
+    m_totalSnapshotCapacityUsedHasBeenSet(false),
+    m_lunCount(0),
+    m_lunCountHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -166,6 +170,13 @@ NetAppONTAPSVM& NetAppONTAPSVM::operator =(JsonView jsonValue)
     m_totalSnapshotCapacityUsedHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LunCount"))
+  {
+    m_lunCount = jsonValue.GetInt64("LunCount");
+
+    m_lunCountHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -257,6 +268,12 @@ JsonValue NetAppONTAPSVM::Jsonize() const
   if(m_totalSnapshotCapacityUsedHasBeenSet)
   {
    payload.WithInt64("TotalSnapshotCapacityUsed", m_totalSnapshotCapacityUsed);
+
+  }
+
+  if(m_lunCountHasBeenSet)
+  {
+   payload.WithInt64("LunCount", m_lunCount);
 
   }
 

@@ -10,6 +10,7 @@
 #include <aws/fsx/model/SecurityStyle.h>
 #include <aws/fsx/model/TieringPolicy.h>
 #include <aws/fsx/model/OntapVolumeType.h>
+#include <aws/fsx/model/SnaplockConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -691,6 +692,37 @@ namespace Model
      */
     inline OntapVolumeConfiguration& WithCopyTagsToBackups(bool value) { SetCopyTagsToBackups(value); return *this;}
 
+
+    /**
+     * <p>The SnapLock configuration object for an FSx for ONTAP SnapLock volume. </p>
+     */
+    inline const SnaplockConfiguration& GetSnaplockConfiguration() const{ return m_snaplockConfiguration; }
+
+    /**
+     * <p>The SnapLock configuration object for an FSx for ONTAP SnapLock volume. </p>
+     */
+    inline bool SnaplockConfigurationHasBeenSet() const { return m_snaplockConfigurationHasBeenSet; }
+
+    /**
+     * <p>The SnapLock configuration object for an FSx for ONTAP SnapLock volume. </p>
+     */
+    inline void SetSnaplockConfiguration(const SnaplockConfiguration& value) { m_snaplockConfigurationHasBeenSet = true; m_snaplockConfiguration = value; }
+
+    /**
+     * <p>The SnapLock configuration object for an FSx for ONTAP SnapLock volume. </p>
+     */
+    inline void SetSnaplockConfiguration(SnaplockConfiguration&& value) { m_snaplockConfigurationHasBeenSet = true; m_snaplockConfiguration = std::move(value); }
+
+    /**
+     * <p>The SnapLock configuration object for an FSx for ONTAP SnapLock volume. </p>
+     */
+    inline OntapVolumeConfiguration& WithSnaplockConfiguration(const SnaplockConfiguration& value) { SetSnaplockConfiguration(value); return *this;}
+
+    /**
+     * <p>The SnapLock configuration object for an FSx for ONTAP SnapLock volume. </p>
+     */
+    inline OntapVolumeConfiguration& WithSnaplockConfiguration(SnaplockConfiguration&& value) { SetSnaplockConfiguration(std::move(value)); return *this;}
+
   private:
 
     FlexCacheEndpointType m_flexCacheEndpointType;
@@ -728,6 +760,9 @@ namespace Model
 
     bool m_copyTagsToBackups;
     bool m_copyTagsToBackupsHasBeenSet = false;
+
+    SnaplockConfiguration m_snaplockConfiguration;
+    bool m_snaplockConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

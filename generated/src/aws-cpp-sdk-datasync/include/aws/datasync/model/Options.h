@@ -880,62 +880,50 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether tasks should be queued before executing the tasks. The
-     * default is <code>ENABLED</code>, which means the tasks will be queued.</p> <p>If
-     * you use the same agent to run multiple tasks, you can enable the tasks to run in
-     * series. For more information, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#queue-task-execution">Queueing
-     * task executions</a>.</p>
+     * <p>Specifies whether your transfer tasks should be put into a queue during
+     * certain scenarios when <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#running-multiple-tasks">running
+     * multiple tasks</a>. This is <code>ENABLED</code> by default.</p>
      */
     inline const TaskQueueing& GetTaskQueueing() const{ return m_taskQueueing; }
 
     /**
-     * <p>Specifies whether tasks should be queued before executing the tasks. The
-     * default is <code>ENABLED</code>, which means the tasks will be queued.</p> <p>If
-     * you use the same agent to run multiple tasks, you can enable the tasks to run in
-     * series. For more information, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#queue-task-execution">Queueing
-     * task executions</a>.</p>
+     * <p>Specifies whether your transfer tasks should be put into a queue during
+     * certain scenarios when <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#running-multiple-tasks">running
+     * multiple tasks</a>. This is <code>ENABLED</code> by default.</p>
      */
     inline bool TaskQueueingHasBeenSet() const { return m_taskQueueingHasBeenSet; }
 
     /**
-     * <p>Specifies whether tasks should be queued before executing the tasks. The
-     * default is <code>ENABLED</code>, which means the tasks will be queued.</p> <p>If
-     * you use the same agent to run multiple tasks, you can enable the tasks to run in
-     * series. For more information, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#queue-task-execution">Queueing
-     * task executions</a>.</p>
+     * <p>Specifies whether your transfer tasks should be put into a queue during
+     * certain scenarios when <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#running-multiple-tasks">running
+     * multiple tasks</a>. This is <code>ENABLED</code> by default.</p>
      */
     inline void SetTaskQueueing(const TaskQueueing& value) { m_taskQueueingHasBeenSet = true; m_taskQueueing = value; }
 
     /**
-     * <p>Specifies whether tasks should be queued before executing the tasks. The
-     * default is <code>ENABLED</code>, which means the tasks will be queued.</p> <p>If
-     * you use the same agent to run multiple tasks, you can enable the tasks to run in
-     * series. For more information, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#queue-task-execution">Queueing
-     * task executions</a>.</p>
+     * <p>Specifies whether your transfer tasks should be put into a queue during
+     * certain scenarios when <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#running-multiple-tasks">running
+     * multiple tasks</a>. This is <code>ENABLED</code> by default.</p>
      */
     inline void SetTaskQueueing(TaskQueueing&& value) { m_taskQueueingHasBeenSet = true; m_taskQueueing = std::move(value); }
 
     /**
-     * <p>Specifies whether tasks should be queued before executing the tasks. The
-     * default is <code>ENABLED</code>, which means the tasks will be queued.</p> <p>If
-     * you use the same agent to run multiple tasks, you can enable the tasks to run in
-     * series. For more information, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#queue-task-execution">Queueing
-     * task executions</a>.</p>
+     * <p>Specifies whether your transfer tasks should be put into a queue during
+     * certain scenarios when <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#running-multiple-tasks">running
+     * multiple tasks</a>. This is <code>ENABLED</code> by default.</p>
      */
     inline Options& WithTaskQueueing(const TaskQueueing& value) { SetTaskQueueing(value); return *this;}
 
     /**
-     * <p>Specifies whether tasks should be queued before executing the tasks. The
-     * default is <code>ENABLED</code>, which means the tasks will be queued.</p> <p>If
-     * you use the same agent to run multiple tasks, you can enable the tasks to run in
-     * series. For more information, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#queue-task-execution">Queueing
-     * task executions</a>.</p>
+     * <p>Specifies whether your transfer tasks should be put into a queue during
+     * certain scenarios when <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#running-multiple-tasks">running
+     * multiple tasks</a>. This is <code>ENABLED</code> by default.</p>
      */
     inline Options& WithTaskQueueing(TaskQueueing&& value) { SetTaskQueueing(std::move(value)); return *this;}
 

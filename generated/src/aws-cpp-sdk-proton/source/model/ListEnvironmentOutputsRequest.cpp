@@ -13,6 +13,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ListEnvironmentOutputsRequest::ListEnvironmentOutputsRequest() : 
+    m_deploymentIdHasBeenSet(false),
     m_environmentNameHasBeenSet(false),
     m_nextTokenHasBeenSet(false)
 {
@@ -21,6 +22,12 @@ ListEnvironmentOutputsRequest::ListEnvironmentOutputsRequest() :
 Aws::String ListEnvironmentOutputsRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_deploymentIdHasBeenSet)
+  {
+   payload.WithString("deploymentId", m_deploymentId);
+
+  }
 
   if(m_environmentNameHasBeenSet)
   {
