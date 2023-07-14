@@ -47,4 +47,15 @@ div.memberdecls .memSeparator {
     transition: none;
 }
 
+div.memproto div.memname,
+div.memproto span {
+    font-family: var(--font-family-monospace) !important;
+    color: var(--page-foreground-color);
+    font-size: var(--memname-font-size);
+    text-shadow: none;
+}
 
+div.memproto span.paramname {
+    font-weight: 600;
+    color: var(--primary-dark-color);
+}
